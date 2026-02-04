@@ -7,78 +7,82 @@
  */
 
 interface WorkerInstance {
-  worker: Worker
-  refCount: number
-  lastUsed: number
-  isInitializing: boolean
+  worker: Worker;
+  refCount: number;
+  lastUsed: number;
+  isInitializing: boolean;
 }
 
 interface WorkerConfig {
-  workerPath: string
-  maxIdleTime?: number // in milliseconds, default 5 minutes
-  type?: 'module' | 'classic'
+  workerPath: string;
+  maxIdleTime?: number; // in milliseconds, default 5 minutes
+  type?: "module" | "classic";
 }
 
-type WorkerType = 'imageCompressor'
+type WorkerType = "imageCompressor" | "fileZipper";
 
 class WorkerManager {
-  private workers: Map<WorkerType, WorkerInstance> = new Map()
-  private cleanupInterval: NodeJS.Timeout | null = null
-  private readonly DEFAULT_MAX_IDLE_TIME = 5 * 60 * 1000 // 5 minutes
+  private workers: Map<WorkerType, WorkerInstance> = new Map();
+  private cleanupInterval: NodeJS.Timeout | null = null;
+  private readonly DEFAULT_MAX_IDLE_TIME = 5 * 60 * 1000; // 5 minutes
 
   constructor() {
     // Start cleanup interval to remove unused workers
-    this.startCleanupInterval()
+    this.startCleanupInterval();
   }
 
   /**
    * Get or create a worker instance
    */
   async getWorker(type: WorkerType, config: WorkerConfig): Promise<Worker> {
-    const { workerPath, maxIdleTime = this.DEFAULT_MAX_IDLE_TIME, type: workerType = 'module' } = config
+    const {
+      workerPath,
+      maxIdleTime = this.DEFAULT_MAX_IDLE_TIME,
+      type: workerType = "module",
+    } = config;
 
     // Check if worker already exists
-    let workerInstance = this.workers.get(type)
+    let workerInstance = this.workers.get(type);
 
     if (workerInstance) {
       // Update reference count and last used time
-      workerInstance.refCount++
-      workerInstance.lastUsed = Date.now()
+      workerInstance.refCount++;
+      workerInstance.lastUsed = Date.now();
       // console.log(`[WorkerManager] Reusing ${type} worker (refCount: ${workerInstance.refCount})`)
 
       // Wait for initialization if in progress
       if (workerInstance.isInitializing) {
-        await this.waitForInitialization(type)
+        await this.waitForInitialization(type);
       }
 
-      return workerInstance.worker
+      return workerInstance.worker;
     }
 
     try {
-      const worker = new Worker(workerPath, { type: workerType })
+      const worker = new Worker(workerPath, { type: workerType });
 
       // Create worker instance
       workerInstance = {
         worker,
         refCount: 1,
         lastUsed: Date.now(),
-        isInitializing: true
-      }
+        isInitializing: true,
+      };
 
-      this.workers.set(type, workerInstance)
+      this.workers.set(type, workerInstance);
 
       // Set up error handling
-      this.setupWorkerErrorHandling(worker, type)
+      this.setupWorkerErrorHandling(worker, type);
 
       // Wait a brief moment for worker to initialize
-      await this.waitForInitialization(type)
+      await this.waitForInitialization(type);
 
-      workerInstance.isInitializing = false
+      workerInstance.isInitializing = false;
 
-      return worker
+      return worker;
     } catch (error) {
-      console.error(`[WorkerManager] Failed to create ${type} worker:`, error)
-      throw error
+      console.error(`[WorkerManager] Failed to create ${type} worker:`, error);
+      throw error;
     }
   }
 
@@ -86,21 +90,23 @@ class WorkerManager {
    * Release a worker reference
    */
   releaseWorker(type: WorkerType): void {
-    const workerInstance = this.workers.get(type)
+    const workerInstance = this.workers.get(type);
 
     if (!workerInstance) {
-      console.warn(`[WorkerManager] Attempted to release non-existent ${type} worker`)
-      return
+      console.warn(
+        `[WorkerManager] Attempted to release non-existent ${type} worker`,
+      );
+      return;
     }
 
-    workerInstance.refCount--
-    workerInstance.lastUsed = Date.now()
+    workerInstance.refCount--;
+    workerInstance.lastUsed = Date.now();
 
     // console.log(`[WorkerManager] Released ${type} worker (refCount: ${workerInstance.refCount})`)
 
     // Schedule cleanup if no more references
     if (workerInstance.refCount <= 0) {
-      this.scheduleCleanup(type)
+      this.scheduleCleanup(type);
     }
   }
 
@@ -108,21 +114,21 @@ class WorkerManager {
    * Force terminate a specific worker
    */
   terminateWorker(type: WorkerType): void {
-    const workerInstance = this.workers.get(type)
+    const workerInstance = this.workers.get(type);
 
     if (!workerInstance) {
-      return
+      return;
     }
 
     // console.log(`[WorkerManager] Terminating ${type} worker`)
 
     try {
-      workerInstance.worker.terminate()
+      workerInstance.worker.terminate();
     } catch (error) {
-      console.error(`[WorkerManager] Error terminating ${type} worker:`, error)
+      console.error(`[WorkerManager] Error terminating ${type} worker:`, error);
     }
 
-    this.workers.delete(type)
+    this.workers.delete(type);
   }
 
   /**
@@ -133,30 +139,45 @@ class WorkerManager {
 
     for (const [type, workerInstance] of Array.from(this.workers.entries())) {
       try {
-        workerInstance.worker.terminate()
+        workerInstance.worker.terminate();
       } catch (error) {
-        console.error(`[WorkerManager] Error terminating ${type} worker:`, error)
+        console.error(
+          `[WorkerManager] Error terminating ${type} worker:`,
+          error,
+        );
       }
     }
 
-    this.workers.clear()
+    this.workers.clear();
   }
 
   /**
    * Get worker statistics
    */
-  getStats(): { [key in WorkerType]?: { refCount: number; lastUsed: number; isInitializing: boolean } } {
-    const stats: { [key in WorkerType]?: { refCount: number; lastUsed: number; isInitializing: boolean } } = {}
+  getStats(): {
+    [key in WorkerType]?: {
+      refCount: number;
+      lastUsed: number;
+      isInitializing: boolean;
+    };
+  } {
+    const stats: {
+      [key in WorkerType]?: {
+        refCount: number;
+        lastUsed: number;
+        isInitializing: boolean;
+      };
+    } = {};
 
     for (const [type, workerInstance] of Array.from(this.workers.entries())) {
       stats[type] = {
         refCount: workerInstance.refCount,
         lastUsed: workerInstance.lastUsed,
-        isInitializing: workerInstance.isInitializing
-      }
+        isInitializing: workerInstance.isInitializing,
+      };
     }
 
-    return stats
+    return stats;
   }
 
   /**
@@ -164,29 +185,29 @@ class WorkerManager {
    */
   private waitForInitialization(type: WorkerType): Promise<void> {
     return new Promise((resolve) => {
-      const maxWaitTime = 5000 // 5 seconds
+      const maxWaitTime = 5000; // 5 seconds
       const timeout = setTimeout(() => {
-        console.warn(`[WorkerManager] ${type} worker initialization timeout`)
-        resolve()
-      }, maxWaitTime)
+        console.warn(`[WorkerManager] ${type} worker initialization timeout`);
+        resolve();
+      }, maxWaitTime);
 
-      const workerInstance = this.workers.get(type)
+      const workerInstance = this.workers.get(type);
       if (!workerInstance) {
-        clearTimeout(timeout)
-        resolve()
-        return
+        clearTimeout(timeout);
+        resolve();
+        return;
       }
 
       const handleInit = (event: MessageEvent) => {
-        if (event.data && event.data.type === 'worker-ready') {
-          workerInstance.worker.removeEventListener('message', handleInit)
-          clearTimeout(timeout)
-          resolve()
+        if (event.data && event.data.type === "worker-ready") {
+          workerInstance.worker.removeEventListener("message", handleInit);
+          clearTimeout(timeout);
+          resolve();
         }
-      }
+      };
 
-      workerInstance.worker.addEventListener('message', handleInit)
-    })
+      workerInstance.worker.addEventListener("message", handleInit);
+    });
   }
 
   /**
@@ -194,13 +215,13 @@ class WorkerManager {
    */
   private setupWorkerErrorHandling(worker: Worker, type: WorkerType): void {
     worker.onerror = (error) => {
-      console.error(`[WorkerManager] ${type} worker error:`, error)
+      console.error(`[WorkerManager] ${type} worker error:`, error);
       // Don't automatically terminate on error, let the component handle it
-    }
+    };
 
     worker.onmessageerror = (error) => {
-      console.error(`[WorkerManager] ${type} worker message error:`, error)
-    }
+      console.error(`[WorkerManager] ${type} worker message error:`, error);
+    };
   }
 
   /**
@@ -209,25 +230,25 @@ class WorkerManager {
   private scheduleCleanup(type: WorkerType): void {
     // Schedule cleanup after max idle time
     setTimeout(() => {
-      this.cleanupWorker(type)
-    }, this.DEFAULT_MAX_IDLE_TIME)
+      this.cleanupWorker(type);
+    }, this.DEFAULT_MAX_IDLE_TIME);
   }
 
   /**
    * Clean up idle worker if no longer needed
    */
   private cleanupWorker(type: WorkerType): void {
-    const workerInstance = this.workers.get(type)
+    const workerInstance = this.workers.get(type);
 
     if (!workerInstance || workerInstance.refCount > 0) {
-      return
+      return;
     }
 
-    const timeSinceLastUsed = Date.now() - workerInstance.lastUsed
+    const timeSinceLastUsed = Date.now() - workerInstance.lastUsed;
 
     if (timeSinceLastUsed >= this.DEFAULT_MAX_IDLE_TIME) {
       // console.log(`[WorkerManager] Cleaning up idle ${type} worker`)
-      this.terminateWorker(type)
+      this.terminateWorker(type);
     }
   }
 
@@ -236,12 +257,12 @@ class WorkerManager {
    */
   private startCleanupInterval(): void {
     if (this.cleanupInterval) {
-      return
+      return;
     }
 
     this.cleanupInterval = setInterval(() => {
-      this.performPeriodicCleanup()
-    }, 60000) // Check every minute
+      this.performPeriodicCleanup();
+    }, 60000); // Check every minute
   }
 
   /**
@@ -249,7 +270,7 @@ class WorkerManager {
    */
   private performPeriodicCleanup(): void {
     for (const [type] of Array.from(this.workers.keys())) {
-      this.cleanupWorker(type as WorkerType)
+      this.cleanupWorker(type as WorkerType);
     }
   }
 
@@ -258,20 +279,32 @@ class WorkerManager {
    */
   destroy(): void {
     if (this.cleanupInterval) {
-      clearInterval(this.cleanupInterval)
-      this.cleanupInterval = null
+      clearInterval(this.cleanupInterval);
+      this.cleanupInterval = null;
     }
 
-    this.terminateAllWorkers()
+    this.terminateAllWorkers();
   }
 }
-export const workerManager = new WorkerManager()
-export type { WorkerType, WorkerConfig }
+export const workerManager = new WorkerManager();
+export type { WorkerType, WorkerConfig };
 
-export const destroyWorkerManager = () => workerManager.destroy()
+export const destroyWorkerManager = () => workerManager.destroy();
 
-export const getImageCompressorWorker = () => workerManager.getWorker('imageCompressor', {
-    workerPath: '/workers/imageCompressor.js', type: 'module'
-  })
+export const getImageCompressorWorker = () =>
+  workerManager.getWorker("imageCompressor", {
+    workerPath: "/workers/imageCompressor.js",
+    type: "module",
+  });
 
-export const releaseImageCompressorWorker = () => workerManager.releaseWorker('imageCompressor')
+export const releaseImageCompressorWorker = () =>
+  workerManager.releaseWorker("imageCompressor");
+
+export const getFileZipperWorker = () =>
+  workerManager.getWorker("fileZipper", {
+    workerPath: "/workers/fileZipper.ts",
+    type: "module",
+  });
+
+export const releaseFileZipperWorker = () =>
+  workerManager.releaseWorker("fileZipper");
