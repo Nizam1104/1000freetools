@@ -18,15 +18,8 @@
  * - Output: { type: 'error', error: string }
  */
 
-// TypeScript declarations for web worker globals
-declare function importScripts(...urls: string[]): void;
-declare const JSZip: any;
-
-// Import JSZip for creating zip files
-// Note: JSZip needs to be loaded via CDN in the worker
-importScripts(
-  "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js",
-);
+// Import JSZip for creating zip files - this will be bundled by webpack
+import JSZip from 'jszip';
 
 // Send ready signal to indicate worker is initialized
 self.postMessage({ type: "worker-ready" });

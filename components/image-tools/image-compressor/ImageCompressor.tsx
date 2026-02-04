@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/collapsible";
 import NextImage from "next/image";
 import ImageComparisonSlider from "./ImageComparisonSlider";
+import { zipAndDownloadFiles } from "@/utils/zipFiles";
 
 // Helper function to get ImageData from file
 const getImageDataFromFile = async (
@@ -160,6 +161,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
   const [bulkProcessing, setBulkProcessing] = useState<boolean>(false);
   const [bulkProgress, setBulkProgress] = useState<number>(0);
   const [bulkError, setBulkError] = useState<string | null>(null);
+  const [allProcessed, setAllProcessed] = useState<boolean>(false);
 
   // Compression settings
   const [quality, setQuality] = useState<number>(initialQuality);
@@ -206,6 +208,47 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
     sns: 50,
     uv_mode: 3,
   });
+
+  // Effect to check if all images have been processed
+  React.useEffect(() => {
+    if (!bulkProcessing && bulkResults.length > 0) {
+      const allCompleted = bulkResults.every(result => result.status === 'completed' || result.status === 'error');
+      if (allCompleted) {
+        const allSuccessful = bulkResults.every(result => result.status === 'completed');
+        setAllProcessed(allSuccessful);
+      }
+    }
+  }, [bulkResults, bulkProcessing]);
+
+  // Function to download all processed images as a zip
+  const handleDownloadAll = useCallback(async () => {
+    if (!allProcessed) return;
+
+    // Extract the files that were successfully processed
+    const processedFiles = bulkResults
+      .filter(result => result.status === 'completed' && result.compressedUrl)
+      .map(result => {
+        // Create a new File object from the blob using the original filename with new extension
+        const fileExtension = outputFormat === 'mozjpeg' ? 'jpg' : outputFormat;
+        const newFilename = result.file.name.replace(/\.[^/.]+$/, `.${fileExtension}`);
+
+        // Since we have compressedUrl as an object URL, we need to fetch the blob
+        // TS knows compressedUrl is not null here due to the filter
+        return fetch(result.compressedUrl!)
+          .then(res => res.blob())
+          .then(blob => new File([blob], newFilename, { type: `image/${outputFormat}` }));
+      });
+
+    try {
+      // Wait for all file objects to be created
+      const files = await Promise.all(processedFiles);
+      // Zip and download the files
+      await zipAndDownloadFiles(files, `compressed-images-${Date.now()}.zip`);
+    } catch (error) {
+      console.error('Error downloading files:', error);
+      setBulkError('Failed to download files');
+    }
+  }, [allProcessed, bulkResults, outputFormat]);
 
   // Get current format options
   const getCurrentFormatOptions = () => {
@@ -1386,6 +1429,31 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                     Clear All
                   </Button>
                 </div>
+
+                {/* Download All Button - appears when all images are processed successfully */}
+                {allProcessed && !bulkProcessing && (
+                  <div className="flex justify-center mt-4">
+                    <Button
+                      onClick={handleDownloadAll}
+                      className="flex items-center gap-2 px-6 py-3"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
+                      Download All as ZIP
+                    </Button>
+                  </div>
+                )}
 
                 {/* Overall Progress */}
                 {bulkProcessing && (

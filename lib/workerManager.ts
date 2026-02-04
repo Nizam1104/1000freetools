@@ -302,7 +302,7 @@ export const releaseImageCompressorWorker = () =>
 
 export const getFileZipperWorker = () =>
   workerManager.getWorker("fileZipper", {
-    workerPath: "/workers/fileZipper.ts",
+    workerPath: "/workers/fileZipper.bundle.js",
     type: "module",
   });
 
