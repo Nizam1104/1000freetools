@@ -35,6 +35,7 @@ import {
 import NextImage from "next/image";
 import ImageComparisonSlider from "./ImageComparisonSlider";
 import { zipAndDownloadFiles } from "@/utils/zipFiles";
+import { decodeQoiFormat, decodeJxlFormat } from "@/utils/decodImageFormats";
 
 // Helper function to get ImageData from file
 const getImageDataFromFile = async (
@@ -121,6 +122,10 @@ interface WP2Options {
   uv_mode?: number;
 }
 
+interface PNGOptions {
+  lossless?: boolean;
+}
+
 interface ImageCompressorProps {
   initialQuality?: number;
   initialOutputFormat?: string;
@@ -143,9 +148,11 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
     width: number;
     height: number;
   } | null>(null);
+  const [hasTransparency, setHasTransparency] = useState<boolean>(false);
 
   // Bulk processing state
   const [isBulkMode, setIsBulkMode] = useState<boolean>(false);
+  const [preserveFormats, setPreserveFormats] = useState<boolean>(false);
   const [bulkFiles, setBulkFiles] = useState<File[]>([]);
   const [bulkResults, setBulkResults] = useState<
     Array<{
@@ -154,6 +161,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       compressedUrl: string | null;
       originalSize: number;
       compressedSize: number | null;
+      outputFormat?: string; // Track the format used for this image
       status: "pending" | "processing" | "completed" | "error";
       error?: string;
     }>
@@ -209,12 +217,20 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
     uv_mode: 3,
   });
 
+  const [pngOptions, setPngOptions] = useState<PNGOptions>({
+    lossless: false, // Default to lossy compression
+  });
+
   // Effect to check if all images have been processed
   React.useEffect(() => {
     if (!bulkProcessing && bulkResults.length > 0) {
-      const allCompleted = bulkResults.every(result => result.status === 'completed' || result.status === 'error');
+      const allCompleted = bulkResults.every(
+        (result) => result.status === "completed" || result.status === "error",
+      );
       if (allCompleted) {
-        const allSuccessful = bulkResults.every(result => result.status === 'completed');
+        const allSuccessful = bulkResults.every(
+          (result) => result.status === "completed",
+        );
         setAllProcessed(allSuccessful);
       }
     }
@@ -226,17 +242,28 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
 
     // Extract the files that were successfully processed
     const processedFiles = bulkResults
-      .filter(result => result.status === 'completed' && result.compressedUrl)
-      .map(result => {
-        // Create a new File object from the blob using the original filename with new extension
-        const fileExtension = outputFormat === 'mozjpeg' ? 'jpg' : outputFormat;
-        const newFilename = result.file.name.replace(/\.[^/.]+$/, `.${fileExtension}`);
+      .filter((result) => result.status === "completed" && result.compressedUrl)
+      .map((result) => {
+        // Use the stored outputFormat for this specific image
+        const fileExtension =
+          result.outputFormat === "mozjpeg"
+            ? "jpg"
+            : result.outputFormat || "jpg";
+        const newFilename = result.file.name.replace(
+          /\.[^/.]+$/,
+          `.${fileExtension}`,
+        );
 
         // Since we have compressedUrl as an object URL, we need to fetch the blob
         // TS knows compressedUrl is not null here due to the filter
         return fetch(result.compressedUrl!)
-          .then(res => res.blob())
-          .then(blob => new File([blob], newFilename, { type: `image/${outputFormat}` }));
+          .then((res) => res.blob())
+          .then(
+            (blob) =>
+              new File([blob], newFilename, {
+                type: `image/${result.outputFormat || "jpeg"}`,
+              }),
+          );
       });
 
     try {
@@ -245,8 +272,8 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       // Zip and download the files
       await zipAndDownloadFiles(files, `compressed-images-${Date.now()}.zip`);
     } catch (error) {
-      console.error('Error downloading files:', error);
-      setBulkError('Failed to download files');
+      console.error("Error downloading files:", error);
+      setBulkError("Failed to download files");
     }
   }, [allProcessed, bulkResults, outputFormat]);
 
@@ -267,6 +294,8 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       case "wp2":
       case "webp2":
         return wp2Options;
+      case "png":
+        return pngOptions;
       default:
         return {};
     }
@@ -300,7 +329,11 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
 
           const handleMessage = (e: MessageEvent) => {
             if (e.data.type === "COMPRESSION_SUCCESS") {
-              console.log("COMPRESSION_SUCCESS", e.data.result);
+              // Capture transparency status
+              if (e.data.hasTransparency !== undefined) {
+                setHasTransparency(e.data.hasTransparency);
+              }
+
               const resultBlob = new Blob([e.data.result], {
                 type: `image/${outputFormat}`,
               });
@@ -335,6 +368,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
               format: outputFormat,
               quality: quality * 100, // Convert 0-1 to 0-100
               options: formatOptions,
+              isBulkMode: false, // Single image mode
             },
             [imageData.data.buffer],
           );
@@ -343,7 +377,16 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         // Release worker back to manager
         releaseImageCompressorWorker();
 
-        setCompressedImage(URL.createObjectURL(compressedBlob));
+        if (outputFormat === "qoi") {
+          const dataUrl = await decodeQoiFormat(compressedBlob);
+          setCompressedImage(dataUrl || "");
+        } else if (outputFormat === "jxl") {
+          const dataUrl = await decodeJxlFormat(compressedBlob);
+          setCompressedImage(dataUrl || "");
+        } else {
+          setCompressedImage(URL.createObjectURL(compressedBlob));
+        }
+
         setCompressedSize(compressedBlob.size);
         setShowCompressAgain(false);
       } catch (e: any) {
@@ -368,6 +411,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       avifOptions,
       jxlOptions,
       wp2Options,
+      pngOptions,
     ],
   );
 
@@ -382,8 +426,8 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         return;
       }
 
-      if (files.length > 25) {
-        setBulkError("Maximum 25 images allowed at a time");
+      if (files.length > 100) {
+        setBulkError("Maximum 100 images allowed at a time");
         event.target.value = "";
         return;
       }
@@ -441,14 +485,33 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
             maxDimension,
           );
 
+          // Determine the format to use
+          let targetFormat = outputFormat;
+          if (preserveFormats) {
+            // Extract original format from file extension
+            const extension =
+              result.file.name.split(".").pop()?.toLowerCase() || "jpg";
+            // Map common extensions to format names
+            const formatMap: Record<string, string> = {
+              jpg: "mozjpeg",
+              jpeg: "mozjpeg",
+              png: "png",
+              webp: "webp",
+              avif: "avif",
+              jxl: "jxl",
+              qoi: "qoi",
+              wp2: "wp2",
+            };
+            targetFormat = formatMap[extension] || "mozjpeg";
+          }
+
           const compressedBlob: Blob = await new Promise((resolve, reject) => {
             if (!worker) return reject(new Error("Worker not available."));
 
             const handleMessage = (e: MessageEvent) => {
               if (e.data.type === "COMPRESSION_SUCCESS") {
-                console.log("COMPRESSION_SUCCESS", e.data.result);
                 const resultBlob = new Blob([e.data.result], {
-                  type: `image/${outputFormat}`,
+                  type: `image/${targetFormat}`,
                 });
                 worker.removeEventListener("message", handleMessage);
                 worker.removeEventListener("error", handleError);
@@ -477,9 +540,10 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                   width: imageData.width,
                   height: imageData.height,
                 },
-                format: outputFormat,
+                format: targetFormat,
                 quality: quality * 100,
                 options: formatOptions,
+                isBulkMode: true, // Bulk mode - skip transparency checks
               },
               [imageData.data.buffer],
             );
@@ -495,6 +559,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                     ...r,
                     compressedUrl: URL.createObjectURL(compressedBlob),
                     compressedSize: compressedBlob.size,
+                    outputFormat: targetFormat, // Store the format used
                     status: "completed" as const,
                   }
                 : r,
@@ -537,6 +602,8 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
     avifOptions,
     jxlOptions,
     wp2Options,
+    pngOptions,
+    preserveFormats,
   ]);
 
   const clearBulkImages = useCallback(() => {
@@ -569,16 +636,46 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         return;
       }
 
+      // Detect file format and set output format accordingly
+      const extension = file.name.split(".").pop()?.toLowerCase() || "jpg";
+      const formatMap: Record<string, string> = {
+        jpg: "mozjpeg",
+        jpeg: "mozjpeg",
+        png: "png",
+        webp: "webp",
+        avif: "avif",
+        jxl: "jxl",
+        qoi: "qoi",
+        wp2: "wp2",
+      };
+      const detectedFormat = formatMap[extension] || "mozjpeg";
+      setOutputFormat(detectedFormat);
+
       setOriginalImage(URL.createObjectURL(file));
       setOriginalSize(file.size);
       setCurrentFile(file);
       setCompressedImage(null);
       setCompressedSize(null);
       setShowCompressAgain(false);
+      setError(null);
 
-      await compressImage(file);
+      // Get image dimensions for display
+      try {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          setImageDimensions({
+            width: img.width,
+            height: img.height,
+          });
+          URL.revokeObjectURL(url);
+        };
+        img.src = url;
+      } catch (e) {
+        console.error("Failed to load image dimensions:", e);
+      }
     },
-    [compressImage],
+    [],
   );
 
   const handleSettingsChange = useCallback(() => {
@@ -622,13 +719,13 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
             onClick={() => setIsBulkMode(true)}
             className="px-4 py-2"
           >
-            Bulk Processing (Max 25)
+            Bulk Processing (Max 100)
           </Button>
         </div>
       </div>
 
       <TooltipProvider>
-        <Card className="mb-8 border-0 shadow-lg">
+        <Card className="mb-8 border-0 shadow-lg w-screen sm:w-[80vw] md:w-[70vw] lg:w-[50vw]">
           <CardContent className="space-y-4">
             {/* File Upload Section */}
             <div className="rounded-lg border p-4 shadow-sm">
@@ -720,7 +817,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                       </p>
                       <p className="text-xs opacity-70">
                         {isBulkMode
-                          ? "PNG, JPG, GIF up to 25 images"
+                          ? "PNG, JPG, GIF up to 100 images"
                           : "PNG, JPG, GIF up to 10MB"}
                       </p>
                     </div>
@@ -740,10 +837,38 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                       clipRule="evenodd"
                     />
                   </svg>
-                  Maximum 25 images at a time
+                  Maximum 100 images at a time
                 </p>
               )}
             </div>
+
+            {/* JPG Transparency Warning */}
+            {!isBulkMode &&
+              hasTransparency &&
+              (outputFormat === "mozjpeg" ||
+                outputFormat === "jpg" ||
+                outputFormat === "jpeg") && (
+                <div className="rounded-lg border border-amber-200 bg-amber-50 dark:bg-amber-950 dark:border-amber-800 p-3">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      className="w-4 h-4 text-amber-600 dark:text-amber-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                      />
+                    </svg>
+                    <span className="text-xs font-medium text-amber-900 dark:text-amber-100">
+                      jpg don't support transparence
+                    </span>
+                  </div>
+                </div>
+              )}
 
             {/* Settings Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -781,99 +906,80 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                 />
               </div>
 
-              {/* Output Format Setting */}
-              <div className="rounded-lg border p-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <Label className="text-xs font-semibold">Output Format</Label>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <svg
-                        className="w-3 h-3 opacity-50"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p className="text-xs max-w-xs">
-                        Choose the output format. WebP, AVIF, and JXL offer
-                        better compression.
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
+              {/* Output Format Setting - Hidden in bulk mode when preserveFormats is true */}
+              {(!isBulkMode || !preserveFormats) && (
+                <div className="rounded-lg border p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Label className="text-xs font-semibold">
+                      Output Format
+                    </Label>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <svg
+                          className="w-3 h-3 opacity-50"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="text-xs max-w-xs">
+                          Choose the output format. WebP, AVIF, and JXL offer
+                          better compression.
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                  <Select
+                    value={outputFormat}
+                    onValueChange={handleFormatChange}
+                    disabled={loading}
+                  >
+                    <SelectTrigger className="w-full h-8 text-sm">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="mozjpeg">JPEG (MozJPEG)</SelectItem>
+                      <SelectItem value="webp">WebP</SelectItem>
+                      <SelectItem value="avif">AVIF</SelectItem>
+                      <SelectItem value="png">PNG</SelectItem>
+                      <SelectItem value="qoi">QOI (Lossless)</SelectItem>
+                      <SelectItem value="jxl">JPEG XL</SelectItem>
+                      <SelectItem value="wp2">WebP2</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
-                <Select
-                  value={outputFormat}
-                  onValueChange={handleFormatChange}
-                  disabled={loading}
-                >
-                  <SelectTrigger className="w-full h-8 text-sm">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="mozjpeg">JPEG (MozJPEG)</SelectItem>
-                    <SelectItem value="webp">WebP</SelectItem>
-                    <SelectItem value="avif">AVIF</SelectItem>
-                    <SelectItem value="png">PNG</SelectItem>
-                    <SelectItem value="qoi">QOI (Lossless)</SelectItem>
-                    <SelectItem value="jxl">JPEG XL</SelectItem>
-                    <SelectItem value="wp2">WebP2</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
+              )}
 
-            {/* Dimension Controls */}
-            <div className="rounded-lg border p-3">
-              <div className="flex items-center gap-2 mb-2">
-                <Label className="text-xs font-semibold">Dimensions</Label>
-                {imageDimensions && (
-                  <span className="text-xs opacity-70">
-                    Current: {imageDimensions.width} × {imageDimensions.height}
-                  </span>
-                )}
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div>
-                  <Label className="text-xs opacity-70">
-                    Max Width (0 = no limit)
-                  </Label>
-                  <Input
-                    type="number"
-                    min="0"
-                    value={maxWidth}
-                    onChange={(e) => {
-                      setMaxWidth(parseInt(e.target.value) || 0);
-                      handleSettingsChange();
-                    }}
-                    className="h-8 text-sm"
-                    disabled={loading}
-                  />
+              {/* Preserve Formats Checkbox - Only in bulk mode */}
+              {isBulkMode && (
+                <div className="rounded-lg border p-3">
+                  <div className="flex items-center justify-between">
+                    <Label
+                      htmlFor="preserve-formats"
+                      className="text-xs font-semibold cursor-pointer"
+                    >
+                      Preserve formats for each image
+                    </Label>
+                    <Switch
+                      id="preserve-formats"
+                      checked={preserveFormats}
+                      onCheckedChange={setPreserveFormats}
+                    />
+                  </div>
+                  <p className="text-xs opacity-70 mt-2">
+                    When enabled, each image will keep its original format
+                    (JPG→JPG, PNG→PNG, etc.)
+                  </p>
                 </div>
-                <div>
-                  <Label className="text-xs opacity-70">
-                    Max Height (0 = no limit)
-                  </Label>
-                  <Input
-                    type="number"
-                    min="0"
-                    value={maxHeight}
-                    onChange={(e) => {
-                      setMaxHeight(parseInt(e.target.value) || 0);
-                      handleSettingsChange();
-                    }}
-                    className="h-8 text-sm"
-                    disabled={loading}
-                  />
-                </div>
-              </div>
+              )}
             </div>
 
             {/* Advanced Options */}
@@ -900,6 +1006,53 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                 </Button>
               </CollapsibleTrigger>
               <CollapsibleContent className="mt-3 space-y-3">
+                {/* Dimension Controls */}
+                <div className="rounded-lg border p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Label className="text-xs font-semibold">Dimensions</Label>
+                    {imageDimensions && (
+                      <span className="text-xs opacity-70">
+                        Current: {imageDimensions.width} ×{" "}
+                        {imageDimensions.height}
+                      </span>
+                    )}
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <Label className="text-xs opacity-70">
+                        Max Width (0 = no limit)
+                      </Label>
+                      <Input
+                        type="number"
+                        min="0"
+                        value={maxWidth}
+                        onChange={(e) => {
+                          setMaxWidth(parseInt(e.target.value) || 0);
+                          handleSettingsChange();
+                        }}
+                        className="h-8 text-sm"
+                        disabled={loading}
+                      />
+                    </div>
+                    <div>
+                      <Label className="text-xs opacity-70">
+                        Max Height (0 = no limit)
+                      </Label>
+                      <Input
+                        type="number"
+                        min="0"
+                        value={maxHeight}
+                        onChange={(e) => {
+                          setMaxHeight(parseInt(e.target.value) || 0);
+                          handleSettingsChange();
+                        }}
+                        className="h-8 text-sm"
+                        disabled={loading}
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 {/* JPEG Options */}
                 {(outputFormat === "mozjpeg" ||
                   outputFormat === "jpeg" ||
@@ -1280,73 +1433,141 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                   </div>
                 )}
 
-                {/* PNG & QOI - No options */}
-                {(outputFormat === "png" || outputFormat === "qoi") && (
+                {/* PNG Options */}
+                {outputFormat === "png" && (
+                  <div className="rounded-lg border p-3 space-y-3">
+                    <Label className="text-xs font-semibold">PNG Options</Label>
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-col gap-1">
+                        <Label className="text-xs font-medium">
+                          Lossless Compression
+                        </Label>
+                        <p className="text-xs opacity-70 max-w-xs">
+                          {pngOptions.lossless
+                            ? "Perfect quality, larger file size"
+                            : "Good quality, smaller file size"}
+                        </p>
+                      </div>
+                      <Switch
+                        checked={pngOptions.lossless}
+                        onCheckedChange={(checked) => {
+                          setPngOptions({
+                            ...pngOptions,
+                            lossless: checked,
+                          });
+                          handleSettingsChange();
+                        }}
+                      />
+                    </div>
+
+                    <div className="rounded-md bg-muted/50 p-2">
+                      <p className="text-xs opacity-80">
+                        <strong>Lossy:</strong> Reduces file size by removing
+                        some data. Good for web use.
+                        <br />
+                        <strong>Lossless:</strong> Preserves all image data.
+                        Best for archiving.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* QOI - No options */}
+                {outputFormat === "qoi" && (
                   <div className="rounded-lg border p-3">
                     <p className="text-xs opacity-70">
-                      {outputFormat === "png"
-                        ? "PNG uses browser-based compression with no additional options."
-                        : "QOI is a lossless format with no configurable options."}
+                      QOI is a lossless format with no configurable options.
                     </p>
                   </div>
                 )}
               </CollapsibleContent>
             </Collapsible>
 
-            {/* Compress Again Button */}
-            {showCompressAgain && currentFile && (
+            {/* Compress Button - Show when file is uploaded but not yet compressed */}
+            {!isBulkMode && currentFile && !compressedImage && !loading && (
               <div className="flex justify-center pt-2">
                 <Button
                   onClick={handleCompressAgain}
                   disabled={loading}
-                  size="sm"
-                  className="flex items-center gap-2 h-9 px-4"
+                  size="lg"
+                  className="flex items-center gap-2 h-11 px-6"
                 >
-                  {loading ? (
-                    <>
-                      <svg
-                        className="animate-spin -ml-1 mr-2 h-3 w-3"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                      Compressing...
-                    </>
-                  ) : (
-                    <>
-                      <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                        />
-                      </svg>
-                      Compress Again
-                    </>
-                  )}
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                    />
+                  </svg>
+                  Compress Image
                 </Button>
               </div>
             )}
+
+            {/* Compress Again Button - Show when already compressed and settings changed */}
+            {!isBulkMode &&
+              showCompressAgain &&
+              currentFile &&
+              compressedImage && (
+                <div className="flex justify-center pt-2">
+                  <Button
+                    onClick={handleCompressAgain}
+                    disabled={loading}
+                    size="sm"
+                    className="flex items-center gap-2 h-9 px-4"
+                  >
+                    {loading ? (
+                      <>
+                        <svg
+                          className="animate-spin -ml-1 mr-2 h-3 w-3"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Compressing...
+                      </>
+                    ) : (
+                      <>
+                        <svg
+                          className="w-3 h-3"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                          />
+                        </svg>
+                        Compress Again
+                      </>
+                    )}
+                  </Button>
+                </div>
+              )}
 
             {/* Bulk Processing Controls */}
             {isBulkMode && bulkResults.length > 0 && (
@@ -1402,7 +1623,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                             d="M13 10V3L4 14h7v7l9-11h-7z"
                           />
                         </svg>
-                        Process All Images
+                        Process All Images ({bulkResults.length})
                       </>
                     )}
                   </Button>
@@ -1645,6 +1866,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
               compressedImage={compressedImage}
               originalSize={originalSize}
               compressedSize={compressedSize}
+              outputFormat={outputFormat}
             />
           </div>
 
@@ -1689,6 +1911,48 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                 </Button>
               </div>
             )}
+          </div>
+        </>
+      ) : !isBulkMode && originalImage && !compressedImage ? (
+        <>
+          {/* Show uploaded image preview before compression */}
+          <div className="mt-4 w-full max-w-2xl mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">
+                  Uploaded Image Preview
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="relative w-full h-64 md:h-96 rounded border overflow-hidden mb-4">
+                  <NextImage
+                    src={originalImage}
+                    alt="Uploaded image preview"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 672px"
+                  />
+                </div>
+                <div className="space-y-2 text-sm">
+                  {imageDimensions && (
+                    <p>
+                      <span className="font-semibold">Dimensions:</span>{" "}
+                      {imageDimensions.width} × {imageDimensions.height} px
+                    </p>
+                  )}
+                  {originalSize && (
+                    <p>
+                      <span className="font-semibold">Original Size:</span>{" "}
+                      {(originalSize / 1024).toFixed(2)} KB
+                    </p>
+                  )}
+                  <p>
+                    <span className="font-semibold">Output Format:</span>{" "}
+                    {outputFormat.toUpperCase()}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </>
       ) : (
