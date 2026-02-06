@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import { useState, useRef } from "react";
 import pako from "pako";
 
@@ -553,14 +555,14 @@ var UPNG = (function () {
         else if (depth == 2)
           for (var x = 0; x < w; x++) {
             var gr =
-                85 * ((data[off + (x >>> 2)] >>> (6 - ((x & 3) << 1))) & 3),
+              85 * ((data[off + (x >>> 2)] >>> (6 - ((x & 3) << 1))) & 3),
               al = gr == tr * 85 ? 0 : 255;
             bf32[to + x] = (al << 24) | (gr << 16) | (gr << 8) | gr;
           }
         else if (depth == 4)
           for (var x = 0; x < w; x++) {
             var gr =
-                17 * ((data[off + (x >>> 1)] >>> (4 - ((x & 1) << 2))) & 15),
+              17 * ((data[off + (x >>> 1)] >>> (4 - ((x & 1) << 2))) & 15),
               al = gr == tr * 17 ? 0 : 255;
             bf32[to + x] = (al << 24) | (gr << 16) | (gr << 8) | gr;
           }
@@ -1419,9 +1421,9 @@ var UPNG = (function () {
     var err = new Int16Array(w * h * 4);
 
     /*
-		var S=2, M = [
-			0,2,
-		    3,1];  //*/
+    var S=2, M = [
+      0,2,
+        3,1];  //*/
     //*
     var S = 4,
       M = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5]; //*/
@@ -1895,13 +1897,13 @@ var UPNG = (function () {
   }
   function framize(bufs, w, h, alwaysBlend, evenCrd, forbidPrev) {
     /*  DISPOSE
-			- 0 : no change
-			- 1 : clear to transparent
-			- 2 : retstore to content before rendering (previous frame disposed)
-			BLEND
-			- 0 : replace
-			- 1 : blend
-		*/
+      - 0 : no change
+      - 1 : clear to transparent
+      - 2 : retstore to content before rendering (previous frame disposed)
+      BLEND
+      - 0 : replace
+      - 1 : blend
+    */
     var frms = [];
     for (var j = 0; j < bufs.length; j++) {
       var cimg = new Uint8Array(bufs[j]),
@@ -1915,9 +1917,9 @@ var UPNG = (function () {
         blend = alwaysBlend ? 1 : 0;
       if (j != 0) {
         var tlim =
-            forbidPrev || alwaysBlend || j == 1 || frms[j - 2].dispose != 0
-              ? 1
-              : 2,
+          forbidPrev || alwaysBlend || j == 1 || frms[j - 2].dispose != 0
+            ? 1
+            : 2,
           tstp = 0,
           tarea = 1e9;
         for (var it = 0; it < tlim; it++) {

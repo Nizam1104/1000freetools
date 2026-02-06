@@ -12,6 +12,7 @@ import avifModule from '/modules/avif_enc.js';
 import qoiModule from '/modules/qoi_enc.js';
 import jxlModule from '/modules/jxl_enc.js';
 import wp2Module from '/modules/wp2_enc.js';
+import UPNG from '/modules/a.js';
 
 let mozjpegEncoder = null;
 let webpEncoder = null;
@@ -31,7 +32,6 @@ async function getMozJpegEncoder() {
       }
     });
   }
-  console.log('returing mozjpegEncoder')
   return mozjpegEncoder;
 }
 
@@ -254,20 +254,15 @@ async function compressWP2(imageData, quality, options = {}) {
   );
 }
 
-async function compressPNG(imageData, quality) {
-  // PNG compression using browser's built-in or oxipng
-  const canvas = new OffscreenCanvas(imageData.width, imageData.height);
-  const ctx = canvas.getContext('2d');
-  ctx.putImageData(imageData, 0, 0);
-
-  const safeQuality = typeof quality === 'number' ? Math.max(0, Math.min(100, quality)) : 75;
-
-  const blob = await canvas.convertToBlob({
-    type: 'image/png',
-    quality: safeQuality / 100
-  });
-
-  return new Uint8Array(await blob.arrayBuffer());
+async function compressPNG(imageDataBuffer, quality, options = {}) {
+  const decoded = UPNG.decode(imageDataBuffer);
+  const rgbFrames = UPNG.toRGBA8(decoded);
+  // For PNG, determine if lossless based on options
+  const compressionLevel = options.lossless ? 256 : quality; // 256 for lossless, or use quality level
+  const compressed = UPNG.encode(rgbFrames, decoded.width, decoded.height, compressionLevel);
+  console.log('here');
+  // Return the raw encoded bytes, not as a Blob
+  return new Uint8Array(compressed);
 }
 
 self.onmessage = async (e) => {
@@ -310,21 +305,41 @@ self.onmessage = async (e) => {
         break;
 
       case 'png':
-        compressedData = await compressPNG(imageData, safeQuality);
+        console.log('png', imageData)
+        compressedData = await compressPNG(imageData.buffer, safeQuality, options);
         break;
 
       default:
         throw new Error(`Unsupported format: ${format}`);
     }
 
-    self.postMessage(
-      {
+    // Determine if the result contains a transferable buffer
+    let hasTransferable = false;
+    let transferables = [];
+
+    // Check if compressedData has a buffer property that is transferable
+    if (compressedData && compressedData.buffer instanceof ArrayBuffer) {
+      hasTransferable = true;
+      transferables = [compressedData.buffer];
+    }
+
+    if (hasTransferable) {
+      self.postMessage(
+        {
+          type: 'COMPRESSION_SUCCESS',
+          result: compressedData,
+          format: format
+        },
+        transferables
+      );
+    } else {
+      // If it's not transferable, send without transferables
+      self.postMessage({
         type: 'COMPRESSION_SUCCESS',
         result: compressedData,
         format: format
-      },
-      [compressedData.buffer]
-    );
+      });
+    }
 
   } catch (error) {
     self.postMessage({
