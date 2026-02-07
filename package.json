@@ -8,7 +8,8 @@
     "build:worker": "webpack --config webpack.worker.js",
     "start": "next start",
     "lint": "eslint",
-    "dev-workers": "node build-workers.js --watch"
+    "dev-workers": "node build-workers.js --watch",
+    "build:zip": "cd out && zip -r ../indeetools.zip ."
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
