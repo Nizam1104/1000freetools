@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "dev-workers": "node build-workers.js --watch",
-    "build:zip": "cd out && zip -r ../indeetools.zip ."
+    "build:zip": "cd out && zip -r ../1000freetools.zip ."
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
