@@ -89,6 +89,14 @@ const getImageDataFromFile = async (
   });
 };
 
+// Helper function to convert internal format names to proper file extensions
+const getFormatExtension = (format: string): string => {
+  if (format === "mozjpeg") {
+    return "jpg";
+  }
+  return format || "jpg";
+};
+
 // Format-specific option types
 interface MozJPEGOptions {
   progressive?: boolean;
@@ -229,10 +237,11 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         (result) => result.status === "completed" || result.status === "error",
       );
       if (allCompleted) {
-        const allSuccessful = bulkResults.every(
+        // Set allProcessed to true if at least one image was successfully processed
+        const hasSuccessful = bulkResults.some(
           (result) => result.status === "completed",
         );
-        setAllProcessed(allSuccessful);
+        setAllProcessed(hasSuccessful);
       }
     }
   }, [bulkResults, bulkProcessing]);
@@ -246,10 +255,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       .filter((result) => result.status === "completed" && result.compressedUrl)
       .map((result) => {
         // Use the stored outputFormat for this specific image
-        const fileExtension =
-          result.outputFormat === "mozjpeg"
-            ? "jpg"
-            : result.outputFormat || "jpg";
+        const fileExtension = getFormatExtension(result.outputFormat || "");
         const newFilename = result.file.name.replace(
           /\.[^/.]+$/,
           `.${fileExtension}`,
@@ -276,7 +282,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       console.error("Error downloading files:", error);
       setBulkError("Failed to download files");
     }
-  }, [allProcessed, bulkResults, outputFormat]);
+  }, [allProcessed, bulkResults]);
 
   // Get current format options
   const getCurrentFormatOptions = () => {
@@ -310,16 +316,16 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       try {
         // Get worker from manager
         const worker = await getImageCompressorWorker();
-        let abuf = null
+        let abuf = null;
 
         // Get ImageData from the original file
         const maxDimension = Math.max(maxWidth || 0, maxHeight || 0);
         const imageData = await getImageDataFromFile(file, maxDimension);
 
-        if (outputFormat === 'png') {
-          abuf = await file.arrayBuffer()
+        if (outputFormat === "png") {
+          abuf = await file.arrayBuffer();
         } else {
-          abuf = imageData.data.buffer
+          abuf = imageData.data.buffer;
           setImageDimensions({
             width: imageData.width,
             height: imageData.height,
@@ -365,7 +371,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
           worker.addEventListener("error", handleError);
 
           // Post message with transferable ImageData.data
-          if (outputFormat === 'png') {
+          if (outputFormat === "png") {
             // For PNG, we send ArrayBuffer directly
             worker.postMessage(
               {
@@ -376,7 +382,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                   height: imageData.height,
                 },
                 format: outputFormat,
-                quality: Math.floor(quality * 100 * 2.56), // quality should be in between 0-256 
+                quality: Math.floor(quality * 100 * 2.56), // quality should be in between 0-256
                 options: formatOptions,
                 isBulkMode: false, // Single image mode
               },
@@ -532,9 +538,9 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
             targetFormat = formatMap[extension] || "mozjpeg";
           }
 
-          let abuf = null;
+          let abuf = new ArrayBuffer(0);
 
-          if (targetFormat === 'png') {
+          if (targetFormat === "png") {
             abuf = await result.file.arrayBuffer();
           }
 
@@ -566,7 +572,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
             worker.addEventListener("error", handleError);
 
             // Post message with transferable
-            if (targetFormat === 'png') {
+            if (targetFormat === "png") {
               // For PNG, we send ArrayBuffer directly
               worker.postMessage(
                 {
@@ -609,12 +615,12 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
             prev.map((r, idx) =>
               idx === i
                 ? {
-                  ...r,
-                  compressedUrl: URL.createObjectURL(compressedBlob),
-                  compressedSize: compressedBlob.size,
-                  outputFormat: targetFormat, // Store the format used
-                  status: "completed" as const,
-                }
+                    ...r,
+                    compressedUrl: URL.createObjectURL(compressedBlob),
+                    compressedSize: compressedBlob.size,
+                    outputFormat: targetFormat, // Store the format used
+                    status: "completed" as const,
+                  }
                 : r,
             ),
           );
@@ -624,11 +630,11 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
             prev.map((r, idx) =>
               idx === i
                 ? {
-                  ...r,
-                  status: "error" as const,
-                  error:
-                    error instanceof Error ? error.message : "Unknown error",
-                }
+                    ...r,
+                    status: "error" as const,
+                    error:
+                      error instanceof Error ? error.message : "Unknown error",
+                  }
                 : r,
             ),
           );
@@ -844,10 +850,11 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                 <div className="hidden sm:block mx-auto">
                   <label
                     htmlFor="file-input"
-                    className={`flex items-center justify-center w-full p-3 border-2 border-dashed rounded-md cursor-pointer transition-all duration-200 ${loading || bulkProcessing
-                      ? "border-muted bg-muted cursor-not-allowed"
-                      : "border-border bg-background hover:bg-muted hover:border-primary"
-                      }`}
+                    className={`flex items-center justify-center w-full p-3 border-2 border-dashed rounded-md cursor-pointer transition-all duration-200 ${
+                      loading || bulkProcessing
+                        ? "border-muted bg-muted cursor-not-allowed"
+                        : "border-border bg-background hover:bg-muted hover:border-primary"
+                    }`}
                   >
                     <div className="text-center">
                       <svg
@@ -1109,92 +1116,92 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                 {(outputFormat === "mozjpeg" ||
                   outputFormat === "jpeg" ||
                   outputFormat === "jpg") && (
-                    <div className="rounded-lg border p-3 space-y-3">
-                      <Label className="text-xs font-semibold">
-                        JPEG Options
-                      </Label>
+                  <div className="rounded-lg border p-3 space-y-3">
+                    <Label className="text-xs font-semibold">
+                      JPEG Options
+                    </Label>
 
-                      <div className="flex items-center justify-between">
-                        <Label className="text-xs">Progressive</Label>
-                        <Switch
-                          checked={mozjpegOptions.progressive}
-                          onCheckedChange={(checked) => {
-                            setMozjpegOptions({
-                              ...mozjpegOptions,
-                              progressive: checked,
-                            });
-                            handleSettingsChange();
-                          }}
-                        />
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <Label className="text-xs">Optimize Coding</Label>
-                        <Switch
-                          checked={mozjpegOptions.optimize_coding}
-                          onCheckedChange={(checked) => {
-                            setMozjpegOptions({
-                              ...mozjpegOptions,
-                              optimize_coding: checked,
-                            });
-                            handleSettingsChange();
-                          }}
-                        />
-                      </div>
-
-                      <div>
-                        <div className="flex items-center justify-between mb-1">
-                          <Label className="text-xs">Smoothing</Label>
-                          <span className="text-xs">
-                            {mozjpegOptions.smoothing}
-                          </span>
-                        </div>
-                        <Slider
-                          value={[mozjpegOptions.smoothing || 0]}
-                          onValueChange={(value) => {
-                            setMozjpegOptions({
-                              ...mozjpegOptions,
-                              smoothing: value[0],
-                            });
-                            handleSettingsChange();
-                          }}
-                          min={0}
-                          max={100}
-                          step={1}
-                          className="w-full"
-                        />
-                      </div>
-
-                      <div>
-                        <Label className="text-xs mb-1 block">
-                          Chroma Subsampling
-                        </Label>
-                        <Select
-                          value={String(mozjpegOptions.chroma_subsample)}
-                          onValueChange={(value) => {
-                            setMozjpegOptions({
-                              ...mozjpegOptions,
-                              chroma_subsample: parseInt(value),
-                            });
-                            handleSettingsChange();
-                          }}
-                        >
-                          <SelectTrigger className="h-8 text-sm">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="0">
-                              4:4:4 (Best quality)
-                            </SelectItem>
-                            <SelectItem value="1">4:2:2</SelectItem>
-                            <SelectItem value="2">
-                              4:2:0 (Smallest size)
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
+                    <div className="flex items-center justify-between">
+                      <Label className="text-xs">Progressive</Label>
+                      <Switch
+                        checked={mozjpegOptions.progressive}
+                        onCheckedChange={(checked) => {
+                          setMozjpegOptions({
+                            ...mozjpegOptions,
+                            progressive: checked,
+                          });
+                          handleSettingsChange();
+                        }}
+                      />
                     </div>
-                  )}
+
+                    <div className="flex items-center justify-between">
+                      <Label className="text-xs">Optimize Coding</Label>
+                      <Switch
+                        checked={mozjpegOptions.optimize_coding}
+                        onCheckedChange={(checked) => {
+                          setMozjpegOptions({
+                            ...mozjpegOptions,
+                            optimize_coding: checked,
+                          });
+                          handleSettingsChange();
+                        }}
+                      />
+                    </div>
+
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <Label className="text-xs">Smoothing</Label>
+                        <span className="text-xs">
+                          {mozjpegOptions.smoothing}
+                        </span>
+                      </div>
+                      <Slider
+                        value={[mozjpegOptions.smoothing || 0]}
+                        onValueChange={(value) => {
+                          setMozjpegOptions({
+                            ...mozjpegOptions,
+                            smoothing: value[0],
+                          });
+                          handleSettingsChange();
+                        }}
+                        min={0}
+                        max={100}
+                        step={1}
+                        className="w-full"
+                      />
+                    </div>
+
+                    <div>
+                      <Label className="text-xs mb-1 block">
+                        Chroma Subsampling
+                      </Label>
+                      <Select
+                        value={String(mozjpegOptions.chroma_subsample)}
+                        onValueChange={(value) => {
+                          setMozjpegOptions({
+                            ...mozjpegOptions,
+                            chroma_subsample: parseInt(value),
+                          });
+                          handleSettingsChange();
+                        }}
+                      >
+                        <SelectTrigger className="h-8 text-sm">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="0">
+                            4:4:4 (Best quality)
+                          </SelectItem>
+                          <SelectItem value="1">4:2:2</SelectItem>
+                          <SelectItem value="2">
+                            4:2:0 (Smallest size)
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                )}
 
                 {/* WebP Options */}
                 {outputFormat === "webp" && (
@@ -1808,7 +1815,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                             result.compressedUrl && (
                               <a
                                 href={result.compressedUrl}
-                                download={`compressed-${result.file.name.split(".")[0]}.${outputFormat}`}
+                                download={`compressed-${result.file.name.split(".")[0]}.${getFormatExtension(result.outputFormat || "")}`}
                                 className="inline-flex items-center text-xs"
                               >
                                 <svg
@@ -1942,7 +1949,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                 <Button asChild variant="default" size="sm" className="mt-2">
                   <a
                     href={compressedImage}
-                    download={`compressed-${Date.now()}.${outputFormat}`}
+                    download={`compressed-${Date.now()}.${getFormatExtension(outputFormat)}`}
                     className="inline-flex items-center"
                   >
                     <svg
