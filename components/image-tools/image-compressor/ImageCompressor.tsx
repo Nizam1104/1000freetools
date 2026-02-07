@@ -36,7 +36,7 @@ import {
 import NextImage from "next/image";
 import ImageComparisonSlider from "./ImageComparisonSlider";
 import { zipAndDownloadFiles } from "@/utils/zipFiles";
-import { decodeQoiFormat, decodeJxlFormat } from "@/utils/decodImageFormats";
+import { decodeQoiFormat } from "@/utils/decodImageFormats";
 
 // Helper function to get ImageData from file
 const getImageDataFromFile = async (
@@ -117,12 +117,6 @@ interface AVIFOptions {
   subsample?: number;
   enableSharpYUV?: boolean;
   sharpness?: number;
-}
-
-interface JXLOptions {
-  effort?: number;
-  progressive?: boolean;
-  lossyPalette?: boolean;
 }
 
 interface WP2Options {
@@ -214,12 +208,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
     sharpness: 0,
   });
 
-  const [jxlOptions, setJXLOptions] = useState<JXLOptions>({
-    effort: 7,
-    progressive: false,
-    lossyPalette: false,
-  });
-
   const [wp2Options, setWP2Options] = useState<WP2Options>({
     effort: 5,
     sns: 50,
@@ -295,9 +283,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         return webpOptions;
       case "avif":
         return avifOptions;
-      case "jxl":
-      case "jpegxl":
-        return jxlOptions;
       case "wp2":
       case "webp2":
         return wp2Options;
@@ -413,9 +398,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         if (outputFormat === "qoi") {
           const dataUrl = await decodeQoiFormat(compressedBlob);
           setCompressedImage(dataUrl || "");
-        } else if (outputFormat === "jxl") {
-          const dataUrl = await decodeJxlFormat(compressedBlob);
-          setCompressedImage(dataUrl || "");
         } else {
           setCompressedImage(URL.createObjectURL(compressedBlob));
         }
@@ -442,7 +424,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
       mozjpegOptions,
       webpOptions,
       avifOptions,
-      jxlOptions,
       wp2Options,
       pngOptions,
     ],
@@ -459,8 +440,8 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         return;
       }
 
-      if (files.length > 100) {
-        setBulkError("Maximum 100 images allowed at a time");
+      if (files.length > 50) {
+        setBulkError("Maximum 50 images allowed at a time");
         event.target.value = "";
         return;
       }
@@ -531,7 +512,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
               png: "png",
               webp: "webp",
               avif: "avif",
-              jxl: "jxl",
               qoi: "qoi",
               wp2: "wp2",
             };
@@ -659,7 +639,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
     mozjpegOptions,
     webpOptions,
     avifOptions,
-    jxlOptions,
     wp2Options,
     pngOptions,
     preserveFormats,
@@ -703,7 +682,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
         png: "png",
         webp: "webp",
         avif: "avif",
-        jxl: "jxl",
         qoi: "qoi",
         wp2: "wp2",
       };
@@ -778,7 +756,7 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
             onClick={() => setIsBulkMode(true)}
             className="px-4 py-2"
           >
-            Bulk Processing (Max 100)
+            Bulk Processing (Max 50)
           </Button>
         </div>
       </div>
@@ -1010,7 +988,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                       <SelectItem value="avif">AVIF</SelectItem>
                       <SelectItem value="png">PNG</SelectItem>
                       <SelectItem value="qoi">QOI (Lossless)</SelectItem>
-                      <SelectItem value="jxl">JPEG XL</SelectItem>
                       <SelectItem value="wp2">WebP2</SelectItem>
                     </SelectContent>
                   </Select>
@@ -1384,64 +1361,6 @@ const ImageCompressor: React.FC<ImageCompressorProps> = ({
                         max={7}
                         step={1}
                         className="w-full"
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* JXL Options */}
-                {(outputFormat === "jxl" || outputFormat === "jpegxl") && (
-                  <div className="rounded-lg border p-3 space-y-3">
-                    <Label className="text-xs font-semibold">
-                      JPEG XL Options
-                    </Label>
-
-                    <div>
-                      <div className="flex items-center justify-between mb-1">
-                        <Label className="text-xs">Effort</Label>
-                        <span className="text-xs">{jxlOptions.effort}</span>
-                      </div>
-                      <Slider
-                        value={[jxlOptions.effort || 7]}
-                        onValueChange={(value) => {
-                          setJXLOptions({ ...jxlOptions, effort: value[0] });
-                          handleSettingsChange();
-                        }}
-                        min={1}
-                        max={9}
-                        step={1}
-                        className="w-full"
-                      />
-                      <p className="text-xs opacity-70 mt-1">
-                        1 = Fast, 9 = Slowest/Best
-                      </p>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <Label className="text-xs">Progressive</Label>
-                      <Switch
-                        checked={jxlOptions.progressive}
-                        onCheckedChange={(checked) => {
-                          setJXLOptions({
-                            ...jxlOptions,
-                            progressive: checked,
-                          });
-                          handleSettingsChange();
-                        }}
-                      />
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <Label className="text-xs">Lossy Palette</Label>
-                      <Switch
-                        checked={jxlOptions.lossyPalette}
-                        onCheckedChange={(checked) => {
-                          setJXLOptions({
-                            ...jxlOptions,
-                            lossyPalette: checked,
-                          });
-                          handleSettingsChange();
-                        }}
                       />
                     </div>
                   </div>

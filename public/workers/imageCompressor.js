@@ -16,7 +16,6 @@ import mozjpegModule from "/modules/mozjpeg_enc.js";
 import webpModule from "/modules/webp_enc.js";
 import avifModule from "/modules/avif_enc.js";
 import qoiModule from "/modules/qoi_enc.js";
-import jxlModule from "/modules/jxl_enc.js";
 import wp2Module from "/modules/wp2_enc.js";
 import UPNG from "/modules/a.js";
 
@@ -24,7 +23,6 @@ let mozjpegEncoder = null;
 let webpEncoder = null;
 let avifEncoder = null;
 let qoiEncoder = null;
-let jxlEncoder = null;
 let wp2Encoder = null;
 
 async function getMozJpegEncoder() {
@@ -89,22 +87,6 @@ async function getQOIEncoder() {
     });
   }
   return qoiEncoder;
-}
-
-async function getJXLEncoder() {
-  if (!jxlEncoder) {
-    jxlEncoder = await jxlModule({
-      locateFile: (path) => {
-        if (path.endsWith(".wasm")) {
-          return (
-            "https://cdn.1000freetools.com/static-assets/squoosh-codecs/" + path
-          );
-        }
-        return path;
-      },
-    });
-  }
-  return jxlEncoder;
 }
 
 async function getWP2Encoder() {
@@ -187,23 +169,39 @@ async function compressWebP(imageData, quality, options = {}) {
 }
 
 async function compressAVIF(imageData, quality, options = {}) {
-  const encoder = await getAVIFEncoder();
-  const safeQuality =
-    typeof quality === "number" ? Math.max(0, Math.min(100, quality)) : 75;
+  try {
+    const encoder = await getAVIFEncoder();
+    const safeQuality =
+      typeof quality === "number" ? Math.max(0, Math.min(100, quality)) : 75;
 
-  return encoder.encode(imageData.data, imageData.width, imageData.height, {
-    quality: safeQuality,
-    qualityAlpha: options.qualityAlpha ?? -1,
-    denoiseLevel: options.denoiseLevel ?? 0,
-    tileColsLog2: options.tileColsLog2 ?? 0,
-    tileRowsLog2: options.tileRowsLog2 ?? 0,
-    speed: options.speed ?? 6,
-    subsample: options.subsample ?? 1,
-    chromaDeltaQ: options.chromaDeltaQ ?? false,
-    sharpness: options.sharpness ?? 0,
-    enableSharpYUV: options.enableSharpYUV ?? false,
-    tune: options.tune ?? 0,
-  });
+    const result = encoder.encode(
+      imageData.data,
+      imageData.width,
+      imageData.height,
+      {
+        quality: safeQuality,
+        qualityAlpha: options.qualityAlpha ?? -1,
+        denoiseLevel: options.denoiseLevel ?? 0,
+        tileColsLog2: options.tileColsLog2 ?? 0,
+        tileRowsLog2: options.tileRowsLog2 ?? 0,
+        speed: options.speed ?? 6,
+        subsample: options.subsample ?? 1,
+        chromaDeltaQ: options.chromaDeltaQ ?? false,
+        sharpness: options.sharpness ?? 0,
+        enableSharpYUV: options.enableSharpYUV ?? false,
+        tune: options.tune ?? 0,
+      },
+    );
+
+    // Reset encoder to free memory
+    avifEncoder = null;
+
+    return result;
+  } catch (error) {
+    // Reset encoder on error
+    avifEncoder = null;
+    throw error;
+  }
 }
 
 async function compressQOI(imageData, quality) {
@@ -212,39 +210,38 @@ async function compressQOI(imageData, quality) {
   return encoder.encode(imageData.data, imageData.width, imageData.height, {});
 }
 
-async function compressJXL(imageData, quality, options = {}) {
-  const encoder = await getJXLEncoder();
-  const safeQuality =
-    typeof quality === "number" ? Math.max(0, Math.min(100, quality)) : 75;
-
-  return encoder.encode(imageData.data, imageData.width, imageData.height, {
-    effort: options.effort ?? 7,
-    quality: safeQuality,
-    progressive: options.progressive ?? false,
-    epf: options.epf ?? -1,
-    lossyPalette: options.lossyPalette ?? false,
-    decodingSpeedTier: options.decodingSpeedTier ?? 0,
-    photonNoiseIso: options.photonNoiseIso ?? 0,
-    lossyModular: options.lossyModular ?? false,
-  });
-}
-
 async function compressWP2(imageData, quality, options = {}) {
-  const encoder = await getWP2Encoder();
-  const safeQuality =
-    typeof quality === "number" ? Math.max(0, Math.min(100, quality)) : 75;
+  try {
+    const encoder = await getWP2Encoder();
+    const safeQuality =
+      typeof quality === "number" ? Math.max(0, Math.min(100, quality)) : 75;
 
-  return encoder.encode(imageData.data, imageData.width, imageData.height, {
-    quality: safeQuality,
-    alpha_quality: options.alpha_quality ?? 100,
-    effort: options.effort ?? 5,
-    pass: options.pass ?? 1,
-    sns: options.sns ?? 50,
-    uv_mode: options.uv_mode ?? 3, // UVModeAuto
-    csp_type: options.csp_type ?? 1, // kYCbCr
-    error_diffusion: options.error_diffusion ?? 0,
-    use_random_matrix: options.use_random_matrix ?? false,
-  });
+    const result = encoder.encode(
+      imageData.data,
+      imageData.width,
+      imageData.height,
+      {
+        quality: safeQuality,
+        alpha_quality: options.alpha_quality ?? 100,
+        effort: options.effort ?? 5,
+        pass: options.pass ?? 1,
+        sns: options.sns ?? 50,
+        uv_mode: options.uv_mode ?? 3, // UVModeAuto
+        csp_type: options.csp_type ?? 1, // kYCbCr
+        error_diffusion: options.error_diffusion ?? 0,
+        use_random_matrix: options.use_random_matrix ?? false,
+      },
+    );
+
+    // Reset encoder to free memory
+    wp2Encoder = null;
+
+    return result;
+  } catch (error) {
+    // Reset encoder on error
+    wp2Encoder = null;
+    throw error;
+  }
 }
 
 async function compressPNG(imageDataBuffer, quality, options = {}) {
@@ -290,12 +287,6 @@ self.onmessage = async (e) => {
 
       case "qoi":
         compressedData = await compressQOI(imageData, safeQuality);
-        break;
-
-      case "jxl":
-      case "jpegxl":
-      case "jpeg-xl":
-        compressedData = await compressJXL(imageData, safeQuality, options);
         break;
 
       case "wp2":
@@ -344,10 +335,15 @@ self.onmessage = async (e) => {
       });
     }
   } catch (error) {
+    // Provide more detailed error information
+    const errorMessage = error.message || String(error);
+    const detailedError = `${format.toUpperCase()} compression failed: ${errorMessage}`;
+
     self.postMessage({
       type: "COMPRESSION_ERROR",
-      error: error.message,
+      error: detailedError,
       stack: error.stack,
+      format: format,
     });
   }
 };
