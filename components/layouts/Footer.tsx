@@ -7,7 +7,11 @@ import { Twitter, Wrench } from "lucide-react";
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" }
+  { name: "Contact", href: "/contact" },
+];
+
+const popularTools = [
+  { name: "Image Compressor", href: "/image-tools/image-compressor" },
 ];
 
 export default function Footer() {
@@ -33,6 +37,21 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
               </Link>
             </div>
+          </div>
+        </div>
+
+        <div className="lg:col-span-3">
+          <h3 className="font-semibold mb-4 mt-8">Popular Tools</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            {popularTools.slice(0, 9).map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+              >
+                • {tool.name}
+              </Link>
+            ))}
           </div>
         </div>
 

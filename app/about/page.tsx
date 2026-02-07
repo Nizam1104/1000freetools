@@ -127,6 +127,13 @@ export default function AboutPage() {
             </section>
 
             <section className="mb-10">
+                <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">Building on Experience</h2>
+                <p className="mb-4 leading-relaxed">
+                    My last site <a href="https://indeetools.com" className="text-blue-600 hover:underline">indeetools.com</a> with 100+ useful tools is SEO dead due to some issues so I am adding tools here gradually with improved SEO, so you will see more tools here soon.
+                </p>
+            </section>
+
+            <section className="mb-10">
                 <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">Frequently Asked Questions</h2>
                 <p className="mb-4 leading-relaxed">
                     Are these tools really free?
