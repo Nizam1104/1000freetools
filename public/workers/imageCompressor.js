@@ -17,7 +17,7 @@ import webpModule from "/modules/webp_enc.js";
 import avifModule from "/modules/avif_enc.js";
 import qoiModule from "/modules/qoi_enc.js";
 import wp2Module from "/modules/wp2_enc.js";
-import UPNG from "/modules/a.js";
+import UPNG from "/modules/upng.js";
 
 let mozjpegEncoder = null;
 let webpEncoder = null;
