@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     google: "google-site-verification-code", // Add your Google verification code
   },
   alternates: {
-    canonical: "/",  // Root canonical URL
+    canonical: "/",
   },
 };
 
@@ -92,7 +92,11 @@ export default function RootLayout({
       <head>
         {/* Preconnect to critical origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
 
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -101,9 +105,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
-      <body
-        className={`${robotoSlab.variable} ${bebasNeue.variable} w-screen`}
-      >
+      <body className={`${robotoSlab.variable} ${bebasNeue.variable} w-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
