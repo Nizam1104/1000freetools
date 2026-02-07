@@ -14,10 +14,11 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
       <header className="mb-12 text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-6">
-          About 1000FreeTools - Free Online Tools That Actually Work
+          About 1000FreeTools
         </h1>
         <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-          Your Go-To Collection of Free, Fast & Privacy-First Online Utilities
+          1000FreeTools is a collection of tools which are free, fast,
+          privacy-first and absolutely free without any limits.
         </p>
       </header>
 
