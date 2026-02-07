@@ -9,9 +9,9 @@ export default function PrimaryLayout({
   return (
     <>
       <Header />
-      <div className="flex-1 overflow-auto w-full flex justify-center items-center">
+      <main className="flex-1 overflow-auto w-full flex justify-center items-center w-screen">
         {children}
-      </div>
+      </main>
       <Footer />
     </>
   );
