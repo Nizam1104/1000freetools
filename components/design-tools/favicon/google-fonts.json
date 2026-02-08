@@ -1,0 +1,873 @@
+[
+  { "name": "Arial", "value": "Arial", "google": false },
+  { "name": "Helvetica", "value": "Helvetica", "google": false },
+  { "name": "Times New Roman", "value": "Times New Roman", "google": false },
+  { "name": "Georgia", "value": "Georgia", "google": false },
+  { "name": "Verdana", "value": "Verdana", "google": false },
+  { "name": "Courier New", "value": "Courier New", "google": false },
+  { "name": "Trebuchet MS", "value": "Trebuchet MS", "google": false },
+  { "name": "Impact", "value": "Impact", "google": false },
+  { "name": "Comic Sans MS", "value": "Comic Sans MS", "google": false },
+  { "name": "Tahoma", "value": "Tahoma", "google": false },
+
+  { "name": "Inter", "value": "Inter", "google": true },
+  { "name": "Roboto", "value": "Roboto", "google": true },
+  { "name": "Open Sans", "value": "Open Sans", "google": true },
+  { "name": "Lato", "value": "Lato", "google": true },
+  { "name": "Montserrat", "value": "Montserrat", "google": true },
+  { "name": "Poppins", "value": "Poppins", "google": true },
+  { "name": "Raleway", "value": "Raleway", "google": true },
+  { "name": "Ubuntu", "value": "Ubuntu", "google": true },
+  { "name": "Nunito", "value": "Nunito", "google": true },
+  { "name": "Rubik", "value": "Rubik", "google": true },
+  { "name": "Mukta", "value": "Mukta", "google": true },
+  { "name": "Oswald", "value": "Oswald", "google": true },
+  { "name": "Fira Sans", "value": "Fira Sans", "google": true },
+  { "name": "Source Sans Pro", "value": "Source Sans Pro", "google": true },
+  { "name": "Work Sans", "value": "Work Sans", "google": true },
+  { "name": "Noto Sans", "value": "Noto Sans", "google": true },
+  { "name": "DM Sans", "value": "DM Sans", "google": true },
+  { "name": "Manrope", "value": "Manrope", "google": true },
+  { "name": "Sofia Sans", "value": "Sofia Sans", "google": true },
+  { "name": "Lexend", "value": "Lexend", "google": true },
+  { "name": "Space Grotesk", "value": "Space Grotesk", "google": true },
+  { "name": "Urbanist", "value": "Urbanist", "google": true },
+  { "name": "Plus Jakarta Sans", "value": "Plus Jakarta Sans", "google": true },
+  { "name": "Figtree", "value": "Figtree", "google": true },
+  { "name": "Instrument Sans", "value": "Instrument Sans", "google": true },
+  { "name": "Be Vietnam Pro", "value": "Be Vietnam Pro", "google": true },
+  { "name": "Sora", "value": "Sora", "google": true },
+  { "name": "Outfit", "value": "Outfit", "google": true },
+  { "name": "Anek Latin", "value": "Anek Latin", "google": true },
+  { "name": "Sen", "value": "Sen", "google": true },
+  { "name": "Kanit", "value": "Kanit", "google": true },
+  { "name": "Prompt", "value": "Prompt", "google": true },
+  { "name": "Mitr", "value": "Mitr", "google": true },
+  { "name": "Sarabun", "value": "Sarabun", "google": true },
+  { "name": "Pridi", "value": "Pridi", "google": true },
+  { "name": "Thasadith", "value": "Thasadith", "google": true },
+  { "name": "K2D", "value": "K2D", "google": true },
+  { "name": "Mali", "value": "Mali", "google": true },
+  { "name": "Maitree", "value": "Maitree", "google": true },
+  { "name": "Sriracha", "value": "Sriracha", "google": true },
+  { "name": "Kodchasan", "value": "Kodchasan", "google": true },
+  { "name": "Charm", "value": "Charm", "google": true },
+  { "name": "Bai Jamjuree", "value": "Bai Jamjuree", "google": true },
+  { "name": "Sukhumvit Set", "value": "Sukhumvit Set", "google": true },
+  { "name": "Athiti", "value": "Athiti", "google": true },
+  { "name": "Niramit", "value": "Niramit", "google": true },
+  { "name": "IBM Plex Sans", "value": "IBM Plex Sans", "google": true },
+  { "name": "Noto Sans JP", "value": "Noto Sans JP", "google": true },
+  { "name": "Noto Sans KR", "value": "Noto Sans KR", "google": true },
+  { "name": "Noto Sans SC", "value": "Noto Sans SC", "google": true },
+  { "name": "Noto Sans TC", "value": "Noto Sans TC", "google": true },
+  { "name": "Noto Sans Arabic", "value": "Noto Sans Arabic", "google": true },
+  { "name": "Noto Sans Hebrew", "value": "Noto Sans Hebrew", "google": true },
+  {
+    "name": "Noto Sans Devanagari",
+    "value": "Noto Sans Devanagari",
+    "google": true
+  },
+  { "name": "Noto Sans Thai", "value": "Noto Sans Thai", "google": true },
+  { "name": "Noto Sans Bengali", "value": "Noto Sans Bengali", "google": true },
+  { "name": "Noto Sans Telugu", "value": "Noto Sans Telugu", "google": true },
+  { "name": "Noto Sans Tamil", "value": "Noto Sans Tamil", "google": true },
+  {
+    "name": "Noto Sans Gujarati",
+    "value": "Noto Sans Gujarati",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Gurmukhi",
+    "value": "Noto Sans Gurmukhi",
+    "google": true
+  },
+  { "name": "Noto Sans Kannada", "value": "Noto Sans Kannada", "google": true },
+  {
+    "name": "Noto Sans Malayalam",
+    "value": "Noto Sans Malayalam",
+    "google": true
+  },
+  { "name": "Noto Sans Sinhala", "value": "Noto Sans Sinhala", "google": true },
+  { "name": "Noto Sans Burmese", "value": "Noto Sans Burmese", "google": true },
+  { "name": "Noto Sans Khmer", "value": "Noto Sans Khmer", "google": true },
+  { "name": "Noto Sans Lao", "value": "Noto Sans Lao", "google": true },
+  { "name": "Noto Sans Tibetan", "value": "Noto Sans Tibetan", "google": true },
+  {
+    "name": "Noto Sans Georgian",
+    "value": "Noto Sans Georgian",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Armenian",
+    "value": "Noto Sans Armenian",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Ethiopic",
+    "value": "Noto Sans Ethiopic",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Cherokee",
+    "value": "Noto Sans Cherokee",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Canadian Aboriginal",
+    "value": "Noto Sans Canadian Aboriginal",
+    "google": true
+  },
+  { "name": "Noto Sans Ogham", "value": "Noto Sans Ogham", "google": true },
+  { "name": "Noto Sans Runic", "value": "Noto Sans Runic", "google": true },
+  { "name": "Noto Sans Newa", "value": "Noto Sans Newa", "google": true },
+  { "name": "Noto Sans Brahmi", "value": "Noto Sans Brahmi", "google": true },
+  { "name": "Noto Sans Kaithi", "value": "Noto Sans Kaithi", "google": true },
+  {
+    "name": "Noto Sans Sorang Soreng",
+    "value": "Noto Sans Sorang Soreng",
+    "google": true
+  },
+  { "name": "Noto Sans Symbols", "value": "Noto Sans Symbols", "google": true },
+  {
+    "name": "Noto Sans Symbols 2",
+    "value": "Noto Sans Symbols 2",
+    "google": true
+  },
+  { "name": "Noto Sans Music", "value": "Noto Sans Music", "google": true },
+  { "name": "Noto Sans Math", "value": "Noto Sans Math", "google": true },
+  {
+    "name": "Noto Sans Znamenny",
+    "value": "Noto Sans Znamenny",
+    "google": true
+  },
+  { "name": "Noto Sans Adlam", "value": "Noto Sans Adlam", "google": true },
+  { "name": "Noto Sans Hanunoo", "value": "Noto Sans Hanunoo", "google": true },
+  { "name": "Noto Sans Buhid", "value": "Noto Sans Buhid", "google": true },
+  {
+    "name": "Noto Sans Tagbanwa",
+    "value": "Noto Sans Tagbanwa",
+    "google": true
+  },
+  { "name": "Noto Sans Tagalog", "value": "Noto Sans Tagalog", "google": true },
+  {
+    "name": "Noto Sans Hanifi Rohingya",
+    "value": "Noto Sans Hanifi Rohingya",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Old Italic",
+    "value": "Noto Sans Old Italic",
+    "google": true
+  },
+  { "name": "Noto Sans Gothic", "value": "Noto Sans Gothic", "google": true },
+  { "name": "Noto Sans Deseret", "value": "Noto Sans Deseret", "google": true },
+  {
+    "name": "Noto Sans Vithkuqi",
+    "value": "Noto Sans Vithkuqi",
+    "google": true
+  },
+  { "name": "Noto Sans Marchen", "value": "Noto Sans Marchen", "google": true },
+  { "name": "Noto Sans Lisu", "value": "Noto Sans Lisu", "google": true },
+  { "name": "Noto Sans Miao", "value": "Noto Sans Miao", "google": true },
+  { "name": "Noto Sans PhagsPa", "value": "Noto Sans PhagsPa", "google": true },
+  {
+    "name": "Noto Sans Saurashtra",
+    "value": "Noto Sans Saurashtra",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Devanagari UI",
+    "value": "Noto Sans Devanagari UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Bengali UI",
+    "value": "Noto Sans Bengali UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Telugu UI",
+    "value": "Noto Sans Telugu UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Tamil UI",
+    "value": "Noto Sans Tamil UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Gujarati UI",
+    "value": "Noto Sans Gujarati UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Gurmukhi UI",
+    "value": "Noto Sans Gurmukhi UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Kannada UI",
+    "value": "Noto Sans Kannada UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Malayalam UI",
+    "value": "Noto Sans Malayalam UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Sinhala UI",
+    "value": "Noto Sans Sinhala UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Khmer UI",
+    "value": "Noto Sans Khmer UI",
+    "google": true
+  },
+  { "name": "Noto Sans Lao UI", "value": "Noto Sans Lao UI", "google": true },
+  {
+    "name": "Noto Sans Tibetan UI",
+    "value": "Noto Sans Tibetan UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Georgian UI",
+    "value": "Noto Sans Georgian UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Armenian UI",
+    "value": "Noto Sans Armenian UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Ethiopic UI",
+    "value": "Noto Sans Ethiopic UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Cherokee UI",
+    "value": "Noto Sans Cherokee UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Canadian Aboriginal UI",
+    "value": "Noto Sans Canadian Aboriginal UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Ogham UI",
+    "value": "Noto Sans Ogham UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Runic UI",
+    "value": "Noto Sans Runic UI",
+    "google": true
+  },
+  { "name": "Noto Sans Newa UI", "value": "Noto Sans Newa UI", "google": true },
+  {
+    "name": "Noto Sans Brahmi UI",
+    "value": "Noto Sans Brahmi UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Kaithi UI",
+    "value": "Noto Sans Kaithi UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Sorang Soreng UI",
+    "value": "Noto Sans Sorang Soreng UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Symbols UI",
+    "value": "Noto Sans Symbols UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Symbols 2 UI",
+    "value": "Noto Sans Symbols 2 UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Music UI",
+    "value": "Noto Sans Music UI",
+    "google": true
+  },
+  { "name": "Noto Sans Math UI", "value": "Noto Sans Math UI", "google": true },
+  {
+    "name": "Noto Sans Znamenny UI",
+    "value": "Noto Sans Znamenny UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Adlam UI",
+    "value": "Noto Sans Adlam UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Hanunoo UI",
+    "value": "Noto Sans Hanunoo UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Buhid UI",
+    "value": "Noto Sans Buhid UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Tagbanwa UI",
+    "value": "Noto Sans Tagbanwa UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Tagalog UI",
+    "value": "Noto Sans Tagalog UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Hanifi Rohingya UI",
+    "value": "Noto Sans Hanifi Rohingya UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Old Italic UI",
+    "value": "Noto Sans Old Italic UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Gothic UI",
+    "value": "Noto Sans Gothic UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Deseret UI",
+    "value": "Noto Sans Deseret UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Vithkuqi UI",
+    "value": "Noto Sans Vithkuqi UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Marchen UI",
+    "value": "Noto Sans Marchen UI",
+    "google": true
+  },
+  { "name": "Noto Sans Lisu UI", "value": "Noto Sans Lisu UI", "google": true },
+  { "name": "Noto Sans Miao UI", "value": "Noto Sans Miao UI", "google": true },
+  {
+    "name": "Noto Sans PhagsPa UI",
+    "value": "Noto Sans PhagsPa UI",
+    "google": true
+  },
+  {
+    "name": "Noto Sans Saurashtra UI",
+    "value": "Noto Sans Saurashtra UI",
+    "google": true
+  },
+
+  { "name": "Bebas Neue", "value": "Bebas Neue", "google": true },
+  { "name": "Righteous", "value": "Righteous", "google": true },
+  { "name": "Slabo 27px", "value": "Slabo 27px", "google": true },
+  { "name": "Anton", "value": "Anton", "google": true },
+  { "name": "Bungee", "value": "Bungee", "google": true },
+  { "name": "Press Start 2P", "value": "Press Start 2P", "google": true },
+  { "name": "Permanent Marker", "value": "Permanent Marker", "google": true },
+  { "name": "Luckiest Guy", "value": "Luckiest Guy", "google": true },
+  { "name": "Gloria Hallelujah", "value": "Gloria Hallelujah", "google": true },
+  { "name": "Fredoka One", "value": "Fredoka One", "google": true },
+  { "name": "Monoton", "value": "Monoton", "google": true },
+  { "name": "Aldrich", "value": "Aldrich", "google": true },
+  { "name": "Black Ops One", "value": "Black Ops One", "google": true },
+  { "name": "Bangers", "value": "Bangers", "google": true },
+  { "name": "Boogaloo", "value": "Boogaloo", "google": true },
+  { "name": "Cabin Sketch", "value": "Cabin Sketch", "google": true },
+  { "name": "Caesar Dressing", "value": "Caesar Dressing", "google": true },
+  { "name": "Creepster", "value": "Creepster", "google": true },
+  { "name": "Emilys Candy", "value": "Emilys Candy", "google": true },
+  { "name": "Erica One", "value": "Erica One", "google": true },
+  { "name": "Faster One", "value": "Faster One", "google": true },
+  { "name": "Finger Paint", "value": "Finger Paint", "google": true },
+  { "name": "Flavors", "value": "Flavors", "google": true },
+  { "name": "Fruktur", "value": "Fruktur", "google": true },
+  { "name": "Gochi Hand", "value": "Gochi Hand", "google": true },
+  { "name": "Gravitas One", "value": "Gravitas One", "google": true },
+  { "name": "Hanalei Fill", "value": "Hanalei Fill", "google": true },
+  { "name": "Henny Penny", "value": "Henny Penny", "google": true },
+  { "name": "Irish Grover", "value": "Irish Grover", "google": true },
+  { "name": "Just Another Hand", "value": "Just Another Hand", "google": true },
+  { "name": "Kavoon", "value": "Kavoon", "google": true },
+  { "name": "Kenia", "value": "Kenia", "google": true },
+  { "name": "Krona One", "value": "Krona One", "google": true },
+  { "name": "Lancelot", "value": "Lancelot", "google": true },
+  { "name": "Life Savers", "value": "Life Savers", "google": true },
+  { "name": "Lily Script One", "value": "Lily Script One", "google": true },
+  { "name": "Lobster", "value": "Lobster", "google": true },
+  { "name": "Londrina Outline", "value": "Londrina Outline", "google": true },
+  { "name": "Londrina Shadow", "value": "Londrina Shadow", "google": true },
+  { "name": "Londrina Sketch", "value": "Londrina Sketch", "google": true },
+  { "name": "Londrina Solid", "value": "Londrina Solid", "google": true },
+  { "name": "Lovers Quarrel", "value": "Lovers Quarrel", "google": true },
+  { "name": "Merienda One", "value": "Merienda One", "google": true },
+  { "name": "Metal Mania", "value": "Metal Mania", "google": true },
+  { "name": "Michroma", "value": "Michroma", "google": true },
+  { "name": "Milonga", "value": "Milonga", "google": true },
+  { "name": "Monofett", "value": "Monofett", "google": true },
+  { "name": "Moul", "value": "Moul", "google": true },
+  {
+    "name": "Mountains of Christmas",
+    "value": "Mountains of Christmas",
+    "google": true
+  },
+  { "name": "New Rocker", "value": "New Rocker", "google": true },
+  { "name": "Nosifier", "value": "Nosifier", "google": true },
+  { "name": "Nova Cut", "value": "Nova Cut", "google": true },
+  { "name": "Nova Flat", "value": "Nova Flat", "google": true },
+  { "name": "Nova Mono", "value": "Nova Mono", "google": true },
+  { "name": "Nova Oval", "value": "Nova Oval", "google": true },
+  { "name": "Nova Round", "value": "Nova Round", "google": true },
+  { "name": "Nova Script", "value": "Nova Script", "google": true },
+  { "name": "Nova Slim", "value": "Nova Slim", "google": true },
+  { "name": "Nova Square", "value": "Nova Square", "google": true },
+  { "name": "Nunito", "value": "Nunito", "google": true },
+  { "name": "Oleo Script", "value": "Oleo Script", "google": true },
+  {
+    "name": "Oleo Script Swash Caps",
+    "value": "Oleo Script Swash Caps",
+    "google": true
+  },
+  { "name": "Orbitron", "value": "Orbitron", "google": true },
+  { "name": "Orienta", "value": "Orienta", "google": true },
+  { "name": "Original Surfer", "value": "Original Surfer", "google": true },
+  { "name": "Overlock", "value": "Overlock", "google": true },
+  { "name": "Overlock SC", "value": "Overlock SC", "google": true },
+  { "name": "Pacifico", "value": "Pacifico", "google": true },
+  { "name": "Passero One", "value": "Passero One", "google": true },
+  { "name": "Patua One", "value": "Patua One", "google": true },
+  { "name": "Peralta", "value": "Peralta", "google": true },
+  {
+    "name": "Petit Formal Script",
+    "value": "Petit Formal Script",
+    "google": true
+  },
+  { "name": "Piedra", "value": "Piedra", "google": true },
+  { "name": "Pinyon Script", "value": "Pinyon Script", "google": true },
+  { "name": "Plaster", "value": "Plaster", "google": true },
+  { "name": "Play", "value": "Play", "google": true },
+  { "name": "Playfair Display", "value": "Playfair Display", "google": true },
+  {
+    "name": "Playfair Display SC",
+    "value": "Playfair Display SC",
+    "google": true
+  },
+  { "name": "Podkova", "value": "Podkova", "google": true },
+  { "name": "Port Lligat Sans", "value": "Port Lligat Sans", "google": true },
+  { "name": "Port Lligat Slab", "value": "Port Lligat Slab", "google": true },
+  { "name": "Prata", "value": "Prata", "google": true },
+  { "name": "Preahvihear", "value": "Preahvihear", "google": true },
+  { "name": "Press Start 2P", "value": "Press Start 2P", "google": true },
+  { "name": "Princess Sofia", "value": "Princess Sofia", "google": true },
+  { "name": "Prosto One", "value": "Prosto One", "google": true },
+  { "name": "Quattrocento", "value": "Quattrocento", "google": true },
+  { "name": "Quattrocento Sans", "value": "Quattrocento Sans", "google": true },
+  { "name": "Raleway", "value": "Raleway", "google": true },
+  { "name": "Raleway Dots", "value": "Raleway Dots", "google": true },
+  { "name": "Rambla", "value": "Rambla", "google": true },
+  { "name": "Rammetto One", "value": "Rammetto One", "google": true },
+  { "name": "Ranchers", "value": "Ranchers", "google": true },
+  { "name": "Rationale", "value": "Rationale", "google": true },
+  { "name": "Redressed", "value": "Redressed", "google": true },
+  { "name": "Reenie Beanie", "value": "Reenie Beanie", "google": true },
+  { "name": "Rokkitt", "value": "Rokkitt", "google": true },
+  { "name": "Romanesco", "value": "Romanesco", "google": true },
+  { "name": "Ropa Sans", "value": "Ropa Sans", "google": true },
+  { "name": "Ropa Sans SC", "value": "Ropa Sans SC", "google": true },
+  { "name": "Rosario", "value": "Rosario", "google": true },
+  { "name": "Rosarivo", "value": "Rosarivo", "google": true },
+  { "name": "Rouge Script", "value": "Rouge Script", "google": true },
+  { "name": "Rubik", "value": "Rubik", "google": true },
+  { "name": "Rubik Distressed", "value": "Rubik Distressed", "google": true },
+  { "name": "Rubik Mono One", "value": "Rubik Mono One", "google": true },
+  { "name": "Rubik Puddles", "value": "Rubik Puddles", "google": true },
+  { "name": "Ruda", "value": "Ruda", "google": true },
+  { "name": "Rufina", "value": "Rufina", "google": true },
+  { "name": "Ruge Boogie", "value": "Ruge Boogie", "google": true },
+  { "name": "Ruluko", "value": "Ruluko", "google": true },
+  { "name": "Rum Raisin", "value": "Rum Raisin", "google": true },
+  { "name": "Ruslan Display", "value": "Ruslan Display", "google": true },
+  { "name": "Russo One", "value": "Russo One", "google": true },
+  { "name": "Ruthie", "value": "Ruthie", "google": true },
+  { "name": "Rye", "value": "Rye", "google": true },
+  { "name": "Sacramento", "value": "Sacramento", "google": true },
+  { "name": "Sail", "value": "Sail", "google": true },
+  { "name": "Salsa", "value": "Salsa", "google": true },
+  { "name": "Sanchez", "value": "Sanchez", "google": true },
+  { "name": "Sancreek", "value": "Sancreek", "google": true },
+  { "name": "Sansita One", "value": "Sansita One", "google": true },
+  { "name": "Satisfy", "value": "Satisfy", "google": true },
+  { "name": "Scada", "value": "Scada", "google": true },
+  { "name": "Schoolbell", "value": "Schoolbell", "google": true },
+  { "name": "Seaweed Script", "value": "Seaweed Script", "google": true },
+  { "name": "Sevillana", "value": "Sevillana", "google": true },
+  { "name": "Seymour One", "value": "Seymour One", "google": true },
+  {
+    "name": "Shadows Into Light",
+    "value": "Shadows Into Light",
+    "google": true
+  },
+  {
+    "name": "Shadows Into Light Two",
+    "value": "Shadows Into Light Two",
+    "google": true
+  },
+  { "name": "Shanti", "value": "Shanti", "google": true },
+  { "name": "Share", "value": "Share", "google": true },
+  { "name": "Share Tech", "value": "Share Tech", "google": true },
+  { "name": "Share Tech Mono", "value": "Share Tech Mono", "google": true },
+  { "name": "Short Stack", "value": "Short Stack", "google": true },
+  { "name": "Siemreap", "value": "Siemreap", "google": true },
+  { "name": "Sigmar One", "value": "Sigmar One", "google": true },
+  { "name": "Signika", "value": "Signika", "google": true },
+  { "name": "Signika Negative", "value": "Signika Negative", "google": true },
+  { "name": "Simonetta", "value": "Simonetta", "google": true },
+  { "name": "Sintony", "value": "Sintony", "google": true },
+  { "name": "Sirin Stencil", "value": "Sirin Stencil", "google": true },
+  { "name": "Six Caps", "value": "Six Caps", "google": true },
+  { "name": "Skranji", "value": "Skranji", "google": true },
+  { "name": "Slackey", "value": "Slackey", "google": true },
+  { "name": "Smokum", "value": "Smokum", "google": true },
+  { "name": "Smythe", "value": "Smythe", "google": true },
+  { "name": "Sniglet", "value": "Sniglet", "google": true },
+  { "name": "Snippet", "value": "Snippet", "google": true },
+  { "name": "Snowburst One", "value": "Snowburst One", "google": true },
+  { "name": "Sofadi One", "value": "Sofadi One", "google": true },
+  { "name": "Sofia", "value": "Sofia", "google": true },
+  { "name": "Sonsie One", "value": "Sonsie One", "google": true },
+  { "name": "Sorts Mill Goudy", "value": "Sorts Mill Goudy", "google": true },
+  { "name": "Source Code Pro", "value": "Source Code Pro", "google": true },
+  { "name": "Source Sans Pro", "value": "Source Sans Pro", "google": true },
+  { "name": "Source Serif Pro", "value": "Source Serif Pro", "google": true },
+  { "name": "Space Mono", "value": "Space Mono", "google": true },
+  { "name": "Special Elite", "value": "Special Elite", "google": true },
+  { "name": "Spicy Rice", "value": "Spicy Rice", "google": true },
+  { "name": "Spinnaker", "value": "Spinnaker", "google": true },
+  { "name": "Spirax", "value": "Spirax", "google": true },
+  { "name": "Squada One", "value": "Squada One", "google": true },
+  { "name": "Stalemate", "value": "Stalemate", "google": true },
+  { "name": "Stalinist One", "value": "Stalinist One", "google": true },
+  { "name": "Stardos Stencil", "value": "Stardos Stencil", "google": true },
+  {
+    "name": "Stint Ultra Condensed",
+    "value": "Stint Ultra Condensed",
+    "google": true
+  },
+  {
+    "name": "Stint Ultra Expanded",
+    "value": "Stint Ultra Expanded",
+    "google": true
+  },
+  { "name": "Stoke", "value": "Stoke", "google": true },
+  { "name": "Strait", "value": "Strait", "google": true },
+  {
+    "name": "Sue Ellen Francisco",
+    "value": "Sue Ellen Francisco",
+    "google": true
+  },
+  { "name": "Suns", "value": "Suns", "google": true },
+  { "name": "Supermercado One", "value": "Supermercado One", "google": true },
+  { "name": "Sura", "value": "Sura", "google": true },
+  { "name": "Suranna", "value": "Suranna", "google": true },
+  { "name": "Suravaram", "value": "Suravaram", "google": true },
+  {
+    "name": "Swanky and Moo Moo",
+    "value": "Swanky and Moo Moo",
+    "google": true
+  },
+  { "name": "Syncopate", "value": "Syncopate", "google": true },
+  { "name": "Tauri", "value": "Tauri", "google": true },
+  { "name": "Telex", "value": "Telex", "google": true },
+  { "name": "Tenor Sans", "value": "Tenor Sans", "google": true },
+  { "name": "Text Me One", "value": "Text Me One", "google": true },
+  {
+    "name": "The Girl Next Door",
+    "value": "The Girl Next Door",
+    "google": true
+  },
+  { "name": "Tienne", "value": "Tienne", "google": true },
+  { "name": "Tillana", "value": "Tillana", "google": true },
+  { "name": "Timmana", "value": "Timmana", "google": true },
+  { "name": "Tinos", "value": "Tinos", "google": true },
+  { "name": "Titan One", "value": "Titan One", "google": true },
+  { "name": "Titillium Web", "value": "Titillium Web", "google": true },
+  { "name": "Trade Winds", "value": "Trade Winds", "google": true },
+  { "name": "Trocchi", "value": "Trocchi", "google": true },
+  { "name": "Trochut", "value": "Trochut", "google": true },
+  { "name": "Trykker", "value": "Trykker", "google": true },
+  { "name": "Tulpen One", "value": "Tulpen One", "google": true },
+  { "name": "Uncial Antiqua", "value": "Uncial Antiqua", "google": true },
+  { "name": "Underdog", "value": "Underdog", "google": true },
+  { "name": "Unica One", "value": "Unica One", "google": true },
+  {
+    "name": "UnifrakturMaguntia",
+    "value": "UnifrakturMaguntia",
+    "google": true
+  },
+  { "name": "Unkempt", "value": "Unkempt", "google": true },
+  { "name": "Unlock", "value": "Unlock", "google": true },
+  { "name": "Updock", "value": "Updock", "google": true },
+  { "name": "Urbanist", "value": "Urbanist", "google": true },
+  { "name": "Varela", "value": "Varela", "google": true },
+  { "name": "Varela Round", "value": "Varela Round", "google": true },
+  { "name": "Vast Shadow", "value": "Vast Shadow", "google": true },
+  { "name": "Vesper Libre", "value": "Vesper Libre", "google": true },
+  { "name": "Vibur", "value": "Vibur", "google": true },
+  { "name": "Vidaloka", "value": "Vidaloka", "google": true },
+  { "name": "Viga", "value": "Viga", "google": true },
+  { "name": "Voces", "value": "Voces", "google": true },
+  { "name": "Volkhov", "value": "Volkhov", "google": true },
+  { "name": "Vollkorn", "value": "Vollkorn", "google": true },
+  { "name": "Voltaire", "value": "Voltaire", "google": true },
+  { "name": "VT323", "value": "VT323", "google": true },
+  {
+    "name": "Waiting for the Sunrise",
+    "value": "Waiting for the Sunrise",
+    "google": true
+  },
+  { "name": "Wallpoet", "value": "Wallpoet", "google": true },
+  { "name": "Walter Turncoat", "value": "Walter Turncoat", "google": true },
+  { "name": "Warnes", "value": "Warnes", "google": true },
+  { "name": "Wellfleet", "value": "Wellfleet", "google": true },
+  { "name": "Wendy One", "value": "Wendy One", "google": true },
+  { "name": "Wire One", "value": "Wire One", "google": true },
+  { "name": "Work Sans", "value": "Work Sans", "google": true },
+  { "name": "Yanone Kaffeesatz", "value": "Yanone Kaffeesatz", "google": true },
+  { "name": "Yantramanav", "value": "Yantramanav", "google": true },
+  { "name": "Yatra One", "value": "Yatra One", "google": true },
+  { "name": "Yellowtail", "value": "Yellowtail", "google": true },
+  { "name": "Yeseva One", "value": "Yeseva One", "google": true },
+  { "name": "Yesteryear", "value": "Yesteryear", "google": true },
+  { "name": "Yrsa", "value": "Yrsa", "google": true },
+  { "name": "ZCOOL KuaiLe", "value": "ZCOOL KuaiLe", "google": true },
+  {
+    "name": "ZCOOL QingKe HuangYou",
+    "value": "ZCOOL QingKe HuangYou",
+    "google": true
+  },
+  { "name": "ZCOOL XiaoWei", "value": "ZCOOL XiaoWei", "google": true },
+  { "name": "Zen Dots", "value": "Zen Dots", "google": true },
+  { "name": "Zeyada", "value": "Zeyada", "google": true },
+  { "name": "Zilla Slab", "value": "Zilla Slab", "google": true },
+  {
+    "name": "Zilla Slab Highlight",
+    "value": "Zilla Slab Highlight",
+    "google": true
+  },
+  { "name": "Zilla Slab Inline", "value": "Zilla Slab Inline", "google": true },
+  { "name": "Zilla Slab Shadow", "value": "Zilla Slab Shadow", "google": true },
+  {
+    "name": "Zilla Slab Highlight",
+    "value": "Zilla Slab Highlight",
+    "google": true
+  },
+  { "name": "Zilla Slab", "value": "Zilla Slab", "google": true },
+
+  { "name": "Leckerli One", "value": "Leckerli One", "google": true },
+  { "name": "Dancing Script", "value": "Dancing Script", "google": true },
+  { "name": "Caveat", "value": "Caveat", "google": true },
+  { "name": "Great Vibes", "value": "Great Vibes", "google": true },
+  { "name": "Allura", "value": "Allura", "google": true },
+  { "name": "Arizonia", "value": "Arizonia", "google": true },
+  { "name": "Awadh", "value": "Awadh", "google": true },
+  { "name": "Bilbo Swash Caps", "value": "Bilbo Swash Caps", "google": true },
+  { "name": "Bilbo", "value": "Bilbo", "google": true },
+  { "name": "Bungee Inline", "value": "Bungee Inline", "google": true },
+  { "name": "Bungee Outline", "value": "Bungee Outline", "google": true },
+  { "name": "Bungee Shade", "value": "Bungee Shade", "google": true },
+  { "name": "Caveat Brush", "value": "Caveat Brush", "google": true },
+  { "name": "Charmonman", "value": "Charmonman", "google": true },
+  {
+    "name": "Cormorant Garamond",
+    "value": "Cormorant Garamond",
+    "google": true
+  },
+  { "name": "Cormorant Infant", "value": "Cormorant Infant", "google": true },
+  { "name": "Cormorant SC", "value": "Cormorant SC", "google": true },
+  { "name": "Cormorant Unicase", "value": "Cormorant Unicase", "google": true },
+  { "name": "Cormorant Upright", "value": "Cormorant Upright", "google": true },
+  { "name": "Cormorant", "value": "Cormorant", "google": true },
+  { "name": "Crimson Text", "value": "Crimson Text", "google": true },
+  { "name": "Euphoria Script", "value": "Euphoria Script", "google": true },
+  { "name": "Felipa", "value": "Felipa", "google": true },
+  { "name": "Fontdiner Swanky", "value": "Fontdiner Swanky", "google": true },
+  {
+    "name": "Herr Von Muellerhoff",
+    "value": "Herr Von Muellerhoff",
+    "google": true
+  },
+  { "name": "Hi Melody", "value": "Hi Melody", "google": true },
+  { "name": "Italianno", "value": "Italianno", "google": true },
+  { "name": "Jim Nightshade", "value": "Jim Nightshade", "google": true },
+  { "name": "Kaushan Script", "value": "Kaushan Script", "google": true },
+  { "name": "Kite One", "value": "Kite One", "google": true },
+  { "name": "La Belle Aurore", "value": "La Belle Aurore", "google": true },
+  { "name": "Marck Script", "value": "Marck Script", "google": true },
+  { "name": "Meddon", "value": "Meddon", "google": true },
+  { "name": "MedievalSharp", "value": "MedievalSharp", "google": true },
+  { "name": "Merienda", "value": "Merienda", "google": true },
+  { "name": "Mr Dafoe", "value": "Mr Dafoe", "google": true },
+  { "name": "Mr De Haviland", "value": "Mr De Haviland", "google": true },
+  {
+    "name": "Mrs Saint Delafield",
+    "value": "Mrs Saint Delafield",
+    "google": true
+  },
+  { "name": "Mrs Sheppards", "value": "Mrs Sheppards", "google": true },
+  { "name": "Niconne", "value": "Niconne", "google": true },
+  { "name": "Paprika", "value": "Paprika", "google": true },
+  { "name": "Parisienne", "value": "Parisienne", "google": true },
+  {
+    "name": "Petit Formal Script",
+    "value": "Petit Formal Script",
+    "google": true
+  },
+  { "name": "Pinyon Script", "value": "Pinyon Script", "google": true },
+  { "name": "Princess Sofia", "value": "Princess Sofia", "google": true },
+  { "name": "Quintessential", "value": "Quintessential", "google": true },
+  { "name": "Qwigley", "value": "Qwigley", "google": true },
+  { "name": "Rochester", "value": "Rochester", "google": true },
+  { "name": "Romanesco", "value": "Romanesco", "google": true },
+  { "name": "Rouge Script", "value": "Rouge Script", "google": true },
+  { "name": "Ruthie", "value": "Ruthie", "google": true },
+  { "name": "Sacramento", "value": "Sacramento", "google": true },
+  { "name": "Satisfy", "value": "Satisfy", "google": true },
+  { "name": "Seaweed Script", "value": "Seaweed Script", "google": true },
+  {
+    "name": "Sedgwick Ave Display",
+    "value": "Sedgwick Ave Display",
+    "google": true
+  },
+  { "name": "Sedgwick Ave", "value": "Sedgwick Ave", "google": true },
+  {
+    "name": "Shadows Into Light",
+    "value": "Shadows Into Light",
+    "google": true
+  },
+  {
+    "name": "Shadows Into Light Two",
+    "value": "Shadows Into Light Two",
+    "google": true
+  },
+  { "name": "Stalemate", "value": "Stalemate", "google": true },
+  {
+    "name": "Sue Ellen Francisco",
+    "value": "Sue Ellen Francisco",
+    "google": true
+  },
+  {
+    "name": "Swanky and Moo Moo",
+    "value": "Swanky and Moo Moo",
+    "google": true
+  },
+  { "name": "Tangerine", "value": "Tangerine", "google": true },
+  {
+    "name": "The Girl Next Door",
+    "value": "The Girl Next Door",
+    "google": true
+  },
+  { "name": "Tillana", "value": "Tillana", "google": true },
+  { "name": "Tinos", "value": "Tinos", "google": true },
+  { "name": "Trade Winds", "value": "Trade Winds", "google": true },
+  {
+    "name": "UnifrakturMaguntia",
+    "value": "UnifrakturMaguntia",
+    "google": true
+  },
+  { "name": "Uncial Antiqua", "value": "Uncial Antiqua", "google": true },
+  { "name": "Vibur", "value": "Vibur", "google": true },
+  { "name": "Vidaloka", "value": "Vidaloka", "google": true },
+  {
+    "name": "Waiting for the Sunrise",
+    "value": "Waiting for the Sunrise",
+    "google": true
+  },
+  { "name": "Water Brush", "value": "Water Brush", "google": true },
+  { "name": "Yellowtail", "value": "Yellowtail", "google": true },
+  { "name": "Yesteryear", "value": "Yesteryear", "google": true },
+  { "name": "Zeyada", "value": "Zeyada", "google": true },
+
+  { "name": "Fira Code", "value": "Fira Code", "google": true },
+  { "name": "Fira Mono", "value": "Fira Mono", "google": true },
+  { "name": "Inconsolata", "value": "Inconsolata", "google": true },
+  { "name": "IBM Plex Mono", "value": "IBM Plex Mono", "google": true },
+  { "name": "JetBrains Mono", "value": "JetBrains Mono", "google": true },
+  {
+    "name": "Major Mono Display",
+    "value": "Major Mono Display",
+    "google": true
+  },
+  { "name": "Martian Mono", "value": "Martian Mono", "google": true },
+  { "name": "Miriam Libre", "value": "Miriam Libre", "google": true },
+  { "name": "Mona Sans", "value": "Mona Sans", "google": true },
+  { "name": "Monofett", "value": "Monofett", "google": true },
+  { "name": "Monoid", "value": "Monoid", "google": true },
+  { "name": "Monoton", "value": "Monoton", "google": true },
+  { "name": "Moo Lah Lah", "value": "Moo Lah Lah", "google": true },
+  {
+    "name": "Nanum Gothic Coding",
+    "value": "Nanum Gothic Coding",
+    "google": true
+  },
+  { "name": "Nova Cut", "value": "Nova Cut", "google": true },
+  { "name": "Nova Flat", "value": "Nova Flat", "google": true },
+  { "name": "Nova Mono", "value": "Nova Mono", "google": true },
+  { "name": "Nova Oval", "value": "Nova Oval", "google": true },
+  { "name": "Nova Round", "value": "Nova Round", "google": true },
+  { "name": "Nova Script", "value": "Nova Script", "google": true },
+  { "name": "Nova Slim", "value": "Nova Slim", "google": true },
+  { "name": "Nova Square", "value": "Nova Square", "google": true },
+  { "name": "Press Start 2P", "value": "Press Start 2P", "google": true },
+  { "name": "Quantico", "value": "Quantico", "google": true },
+  { "name": "Quattrocento Sans", "value": "Quattrocento Sans", "google": true },
+  { "name": "Rajdhani", "value": "Rajdhani", "google": true },
+  { "name": "Rationale", "value": "Rationale", "google": true },
+  { "name": "Red Hat Mono", "value": "Red Hat Mono", "google": true },
+  { "name": "Red Hat Display", "value": "Red Hat Display", "google": true },
+  { "name": "Roboto Mono", "value": "Roboto Mono", "google": true },
+  { "name": "Rokkitt", "value": "Rokkitt", "google": true },
+  { "name": "Share Tech Mono", "value": "Share Tech Mono", "google": true },
+  { "name": "Source Code Pro", "value": "Source Code Pro", "google": true },
+  { "name": "Space Mono", "value": "Space Mono", "google": true },
+  { "name": "Special Elite", "value": "Special Elite", "google": true },
+  { "name": "Spectral SC", "value": "Spectral SC", "google": true },
+  { "name": "Spectral", "value": "Spectral", "google": true },
+  { "name": "Texturina", "value": "Texturina", "google": true },
+  { "name": "VT323", "value": "VT323", "google": true },
+  { "name": "Ubuntu Mono", "value": "Ubuntu Mono", "google": true },
+  { "name": "Victor Mono", "value": "Victor Mono", "google": true },
+  { "name": "Voces", "value": "Voces", "google": true },
+  { "name": "Xanh Mono", "value": "Xanh Mono", "google": true },
+  { "name": "Zen Antique", "value": "Zen Antique", "google": true },
+  { "name": "Zen Antique Soft", "value": "Zen Antique Soft", "google": true },
+  { "name": "Zen Dots", "value": "Zen Dots", "google": true },
+  {
+    "name": "Zen Kaku Gothic Antique",
+    "value": "Zen Kaku Gothic Antique",
+    "google": true
+  },
+  {
+    "name": "Zen Kaku Gothic New",
+    "value": "Zen Kaku Gothic New",
+    "google": true
+  },
+  { "name": "Zen Kurenaido", "value": "Zen Kurenaido", "google": true },
+  { "name": "Zen Loop", "value": "Zen Loop", "google": true },
+  { "name": "Zen Maru Gothic", "value": "Zen Maru Gothic", "google": true },
+  { "name": "Zen Old Mincho", "value": "Zen Old Mincho", "google": true },
+  { "name": "Zen Tokyo Zoo", "value": "Zen Tokyo Zoo", "google": true }
+]
