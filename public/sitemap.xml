@@ -25,7 +25,14 @@
     <loc>https://1000freetools.com/image-tools/image-compressor</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://1000freetools.com/design-tools/favicon-generator</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
