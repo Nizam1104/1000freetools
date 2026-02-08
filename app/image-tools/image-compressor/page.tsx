@@ -3,6 +3,16 @@ import ImageCompressor from "@/components/image-tools/image-compressor/ImageComp
 import Faqs from "@/components/utils/Faqs";
 import NextImage from "next/image";
 
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+
+const moreTools = [
+  {
+    toolName: "Favicon Generator",
+    toolDescription: "Create Favicon for your website",
+    toolLink: "/design-tools/favicon-generator",
+  },
+];
+
 export default function ImageCompressorPage() {
   const faqsData = [
     {
@@ -304,6 +314,11 @@ export default function ImageCompressorPage() {
         </h2>
 
         <Faqs faqs={faqsData} />
+
+        <section>
+          <ToolLinkCards tools={moreTools} />
+        </section>
+
         {/* Attribution */}
         <div className="mt-8 p-4 rounded-lg text-sm">
           <p>

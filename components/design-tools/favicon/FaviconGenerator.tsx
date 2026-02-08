@@ -278,15 +278,6 @@ These favicon files were generated using the Favicon Generator tool.
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-4">Favicon Generator</h1>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Create professional favicons from text. Customize colors, fonts, and
-          shapes to generate perfect icons for your website.
-        </p>
-      </div>
-
       <div className="grid lg:grid-cols-12 gap-6">
         {/* Left Column - Controls */}
         <div className="lg:col-span-5 space-y-6">
@@ -639,40 +630,6 @@ These favicon files were generated using the Favicon Generator tool.
           </Card>
         </div>
       </div>
-
-      {/* How to Use Section */}
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>How to Use</CardTitle>
-          <CardDescription>
-            Simple steps to create and implement your favicon
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ol className="space-y-2 text-sm">
-            <li>
-              <strong>1. Enter your text:</strong> Add 1-3 characters that
-              represent your brand
-            </li>
-            <li>
-              <strong>2. Customize appearance:</strong> Choose colors, fonts,
-              and shapes that match your brand
-            </li>
-            <li>
-              <strong>3. Download files:</strong> Get all the necessary formats
-              for different devices and browsers
-            </li>
-            <li>
-              <strong>4. Upload to your website:</strong> Place the files in
-              your website&apos;s root directory
-            </li>
-            <li>
-              <strong>5. Add HTML code:</strong> Include the provided HTML code
-              in your website&apos;s head section
-            </li>
-          </ol>
-        </CardContent>
-      </Card>
     </div>
   );
 }

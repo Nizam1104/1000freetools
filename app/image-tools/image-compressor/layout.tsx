@@ -11,7 +11,17 @@ export const metadata: Metadata = {
   title: "Free Image Compressor - Reduce File Size Without Losing Quality",
   description:
     "Looking to compress your images without sacrificing quality? Our free online image compressor is here, supports many image formats.",
-  keywords: [],
+  keywords: [
+    "image compressor",
+    "free image compressor online",
+    "image comprssor online",
+    "photo comressor",
+    "jpg compressor online",
+    "png compressor online",
+    "image compress to 100kb",
+    "Free jpg compressor",
+    "avif image compressor",
+  ],
   alternates: {
     canonical: "https://1000freetools.com/image-tools/image-compressor",
   },

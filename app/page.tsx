@@ -149,27 +149,42 @@ export default function Home() {
             your work easier
           </p>
 
-          {/* Image Tools Category */}
-          <div className="max-w-6xl mx-auto mb-12">
-            <h3 className="text-2xl font-semibold mb-6 flex items-center">
-              <FileImage className="mr-2 h-6 w-6 text-primary" />
-              Image Tools
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link
-                href="/image-tools/image-compressor"
-                className="block p-6 border border-border rounded-lg bg-card"
-              >
-                <h4 className="text-xl font-semibold mb-2">Image Compressor</h4>
-                <p className="text-muted-foreground mb-4">
-                  Compress images without losing quality. Supports JPEG, PNG,
-                  WebP, AVIF, and more formats.
-                </p>
-                <span className="text-primary font-medium inline-flex items-center">
-                  Try it now
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </span>
-              </Link>
+          <div className="flex space-x-4">
+            <div className="max-w-6xl mx-auto mb-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Link
+                  href="/image-tools/image-compressor"
+                  className="block p-6 border border-border rounded-lg bg-card"
+                >
+                  <h4 className="text-xl font-semibold mb-2">
+                    Image Compressor
+                  </h4>
+                  <p className="text-muted-foreground mb-4">
+                    Compress images without losing quality. Supports JPEG, PNG,
+                    WebP, AVIF, and more formats.
+                  </p>
+                  <span className="text-primary font-medium inline-flex items-center">
+                    Try it now
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </span>
+                </Link>
+                <Link
+                  href="/design-tools/favicon-generator"
+                  className="block p-6 border border-border rounded-lg bg-card"
+                >
+                  <h4 className="text-xl font-semibold mb-2">
+                    Favicon Generator
+                  </h4>
+                  <p className="text-muted-foreground mb-4">
+                    Create Professional Looking Favicon for Free, supports text,
+                    image, and emojis
+                  </p>
+                  <span className="text-primary font-medium inline-flex items-center">
+                    Try it now
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
 
