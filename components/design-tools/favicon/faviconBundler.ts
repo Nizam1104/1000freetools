@@ -1,11 +1,14 @@
 // Direct favicon generation without workers
 export interface FaviconOptions {
-  text: string;
+  text?: string;
+  imageUrl?: string;
+  emoji?: string;
+  contentType?: 'text' | 'image' | 'emoji';
   backgroundColor: string;
-  fontColor: string;
-  fontFamily: string;
-  fontSize: number;
-  fontWeight: string;
+  fontColor?: string;
+  fontFamily?: string;
+  fontSize?: number;
+  fontWeight?: string;
   shape: "square" | "circle" | "rounded";
   canvasSize: number;
 }
@@ -33,7 +36,7 @@ export class CanvasToIconGenerator {
    */
   async generateFaviconBundle(options: FaviconOptions): Promise<FaviconBundle> {
     // Create the base canvas
-    this.createBaseCanvas(options);
+    await this.createBaseCanvasAsync(options);
 
     // Use the existing FaviconGenerator class
     const generator = new FaviconGenerator(this.canvas);
@@ -41,17 +44,20 @@ export class CanvasToIconGenerator {
   }
 
   /**
-   * Create the base canvas with text and background
+   * Async version of createBaseCanvas to handle image loading
    */
-  private createBaseCanvas(options: FaviconOptions): void {
+  private async createBaseCanvasAsync(options: FaviconOptions): Promise<void> {
     const {
       canvasSize,
       text,
+      imageUrl,
+      emoji,
+      contentType = 'text',
       backgroundColor,
-      fontColor,
-      fontFamily,
-      fontSize,
-      fontWeight,
+      fontColor = '#FFFFFF',
+      fontFamily = 'Arial, sans-serif',
+      fontSize = 64,
+      fontWeight = 'bold',
       shape,
     } = options;
 
@@ -61,27 +67,95 @@ export class CanvasToIconGenerator {
 
     const ctx = this.canvas.getContext("2d")!;
 
-    // Scale for retina displays
-    const scale = 1;
-    const scaledSize = canvasSize / scale;
+    // Clear canvas
+    ctx.clearRect(0, 0, canvasSize, canvasSize);
+
+    // Draw background
+    this.drawBackground(ctx, backgroundColor, shape, canvasSize);
+
+    // Draw content based on type
+    switch (contentType) {
+      case 'image':
+        if (imageUrl) {
+          await this.drawImage(ctx, imageUrl, canvasSize);
+        }
+        break;
+      case 'emoji':
+        if (emoji) {
+          this.drawEmoji(ctx, emoji, canvasSize);
+        }
+        break;
+      case 'text':
+      default:
+        if (text && text.trim() !== "") {
+          this.drawText(
+            ctx,
+            text,
+            fontColor,
+            fontFamily,
+            fontSize,
+            fontWeight,
+            canvasSize,
+          );
+        }
+    }
+  }
+
+  /**
+   * Create the base canvas with text and background
+   */
+  private createBaseCanvas(options: FaviconOptions): void {
+    const {
+      canvasSize,
+      text,
+      imageUrl,
+      emoji,
+      contentType = 'text',
+      backgroundColor,
+      fontColor = '#FFFFFF',
+      fontFamily = 'Arial, sans-serif',
+      fontSize = 64,
+      fontWeight = 'bold',
+      shape,
+    } = options;
+
+    // Set canvas size (2x for retina displays)
+    this.canvas.width = canvasSize;
+    this.canvas.height = canvasSize;
+
+    const ctx = this.canvas.getContext("2d")!;
 
     // Clear canvas
     ctx.clearRect(0, 0, canvasSize, canvasSize);
 
     // Draw background
-    this.drawBackground(ctx, backgroundColor, shape, scaledSize);
+    this.drawBackground(ctx, backgroundColor, shape, canvasSize);
 
-    // Draw text
-    if (text && text.trim() !== "") {
-      this.drawText(
-        ctx,
-        text,
-        fontColor,
-        fontFamily,
-        fontSize,
-        fontWeight,
-        scaledSize,
-      );
+    // Draw content based on type
+    switch (contentType) {
+      case 'image':
+        if (imageUrl) {
+          this.drawImage(ctx, imageUrl, canvasSize);
+        }
+        break;
+      case 'emoji':
+        if (emoji) {
+          this.drawEmoji(ctx, emoji, canvasSize);
+        }
+        break;
+      case 'text':
+      default:
+        if (text && text.trim() !== "") {
+          this.drawText(
+            ctx,
+            text,
+            fontColor,
+            fontFamily,
+            fontSize,
+            fontWeight,
+            canvasSize,
+          );
+        }
     }
   }
 
@@ -137,6 +211,77 @@ export class CanvasToIconGenerator {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(text, size / 2, size / 2);
+  }
+
+  /**
+   * Draw an image on the canvas
+   */
+  private async drawImage(
+    ctx: CanvasRenderingContext2D,
+    imageUrl: string,
+    size: number,
+  ): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous'; // Handle CORS if needed
+      img.onload = () => {
+        try {
+          // Calculate dimensions to fit image in the canvas while maintaining aspect ratio
+          const scale = Math.min(size / img.width, size / img.height);
+          const width = img.width * scale;
+          const height = img.height * scale;
+          const x = (size - width) / 2;
+          const y = (size - height) / 2;
+
+          ctx.drawImage(img, x, y, width, height);
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
+      };
+      img.onerror = (error) => {
+        console.error('Error loading image:', error);
+        // Draw a fallback if image fails to load
+        this.drawFallbackContent(ctx, size);
+        resolve(); // Resolve anyway to continue processing
+      };
+      img.src = imageUrl;
+    });
+  }
+
+  /**
+   * Draw an emoji on the canvas
+   */
+  private drawEmoji(
+    ctx: CanvasRenderingContext2D,
+    emoji: string,
+    size: number,
+  ): void {
+    // Use a large font size for the emoji
+    const fontSize = size * 0.8;
+    ctx.font = `normal ${fontSize}px Arial, sans-serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    // Enable text smoothing for better emoji appearance
+    ctx.imageSmoothingEnabled = true;
+    ctx.textRendering = 'optimizeLegibility';
+
+    ctx.fillText(emoji, size / 2, size / 2);
+  }
+
+  /**
+   * Draw fallback content when image fails to load
+   */
+  private drawFallbackContent(
+    ctx: CanvasRenderingContext2D,
+    size: number,
+  ): void {
+    ctx.fillStyle = '#CCCCCC';
+    ctx.font = `bold ${size * 0.4}px Arial`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('IMG', size / 2, size / 2);
   }
 }
 

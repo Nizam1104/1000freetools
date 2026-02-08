@@ -20,16 +20,18 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Download, Type } from "lucide-react";
+import { Download, Type, Upload } from "lucide-react";
 import { toast } from "sonner";
 import JSZip from "jszip";
 import FaviconPreview from "./FaviconPreview";
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/dist/css/rcp.css";
+import { EmojiPicker } from "@/components/utils/EmojiPicker";
 
 import GOOGLE_FONTS from "./google-fonts.json";
 
 import { generateFaviconBundle, FaviconBundle } from "./faviconBundler";
+import { loadFont } from "@/utils/loadFonts";
 
 // Expanded Google Fonts list - 250+ popular and aesthetically pleasing fonts for favicons
 
@@ -40,7 +42,15 @@ const SHAPES = [
 ];
 
 export default function FaviconGeneratorComponent() {
+  const [contentType, setContentType] = useState<"text" | "image" | "emoji">(
+    "text",
+  );
   const [text, setText] = useState("A");
+  // Change imageUrl to imageFile for file upload
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  // Also maintain a URL for preview purposes
+  const [imagePreviewUrl, setImagePreviewUrl] = useState<string>("");
+  const [emoji, setEmoji] = useState("😀");
   const [fontFamily, setFontFamily] = useState("Arial");
   const [fontSizePercentage, setFontSizePercentage] = useState(70); // percentage-based sizing
   const [fontWeight, setFontWeight] = useState("400");
@@ -57,6 +67,28 @@ export default function FaviconGeneratorComponent() {
   const [backgroundColor, setBackgroundColor] = useColor("#000000");
   const [fontColor, setFontColor] = useColor("#FFFFFF");
 
+  // Function to handle image file selection
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate file type
+      if (!file.type.match("image.*")) {
+        toast.error("Please select a valid image file (JPEG, PNG, GIF, etc.)");
+        return;
+      }
+
+      // Set the file
+      setImageFile(file);
+
+      // Create a preview URL
+      const previewUrl = URL.createObjectURL(file);
+      setImagePreviewUrl(previewUrl);
+
+      // Clean up the previous preview URL when component unmounts or image changes
+      return () => URL.revokeObjectURL(previewUrl);
+    }
+  };
+
   // Calculate font size based on percentage and canvas size
   const calculateFontSize = useCallback(
     (canvasSize: number): number => {
@@ -67,17 +99,37 @@ export default function FaviconGeneratorComponent() {
 
   // Direct favicon generation function
   const generateFavicons = useCallback(async () => {
-    // Validate inputs
-    if (!text || text.trim() === "") {
+    // Validate inputs based on content type
+    if (contentType === "text" && (!text || text.trim() === "")) {
       toast.error("Please enter some text for your favicon");
       throw new Error("Text is required");
+    } else if (contentType === "image" && !imageFile) {
+      toast.error("Please upload an image for your favicon");
+      throw new Error("Image file is required");
+    } else if (contentType === "emoji" && !emoji) {
+      toast.error("Please select an emoji for your favicon");
+      throw new Error("Emoji is required");
     }
 
     try {
       setIsGenerating(true);
 
+      // Convert image file to data URL if image content type is selected
+      let imageUrlForProcessing = "";
+      if (contentType === "image" && imageFile) {
+        const reader = new FileReader();
+        imageUrlForProcessing = await new Promise((resolve, reject) => {
+          reader.onload = (e) => resolve(e.target?.result as string);
+          reader.onerror = (e) => reject(reader.error);
+          reader.readAsDataURL(imageFile);
+        });
+      }
+
       const bundle = await generateFaviconBundle({
+        contentType,
         text: text.trim(),
+        imageUrl: imageUrlForProcessing, // Use processed image URL
+        emoji,
         backgroundColor: backgroundColor.hex,
         fontColor: fontColor.hex,
         fontFamily,
@@ -97,7 +149,10 @@ export default function FaviconGeneratorComponent() {
       setIsGenerating(false);
     }
   }, [
+    contentType,
     text,
+    imageFile, // Changed from imageUrl to imageFile
+    emoji,
     backgroundColor.hex,
     fontColor.hex,
     fontFamily,
@@ -106,102 +161,40 @@ export default function FaviconGeneratorComponent() {
     calculateFontSize,
   ]);
 
+  // Clean up image preview URL when component unmounts or image changes
+  useEffect(() => {
+    return () => {
+      if (imagePreviewUrl) {
+        URL.revokeObjectURL(imagePreviewUrl);
+      }
+    };
+  }, [imagePreviewUrl]);
+
   // Load Google Fonts and handle font changes
   useEffect(() => {
-    // Only load the WebFont script once
-    if (!document.querySelector('script[src*="webfont.js"]')) {
-      const script = document.createElement("script");
-      script.src =
-        "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
-      script.async = true;
-      document.head.appendChild(script);
-    }
+    const loadSelectedFont = async () => {
+      setIsFontLoading(true);
+      setFontLoaded(false);
 
-    const loadFontAndRegenerate = () => {
-      // @ts-expect-error WebFont is loaded from external script
-      if (window.WebFont) {
-        // Load the currently selected font if it's a Google font
-        const selectedFont = GOOGLE_FONTS.find((f) => f.value === fontFamily);
-        if (selectedFont?.google) {
-          setIsFontLoading(true);
-          setFontLoaded(false);
-          // @ts-expect-error WebFont API is not typed
-          window.WebFont.load({
-            google: {
-              families: [fontFamily],
-            },
-            active: () => {
-              // Font loaded successfully - add a small delay to ensure it's fully available
-              setTimeout(() => {
-                setFontLoaded(true);
-                setIsFontLoading(false);
-                // Force regeneration by incrementing a key to trigger useEffect
-                // This will cause the main favicon generation useEffect to run again
-                setFontLoadKey((prev) => prev + 1);
-              }, 100); // 100ms delay to ensure font is fully loaded
-            },
-            inactive: () => {
-              console.warn(`Font ${fontFamily} failed to load`);
-              // Font failed to load, but we still need to show something
-              setFontLoaded(true);
-              setIsFontLoading(false);
-              setFontLoadKey((prev) => prev + 1);
-            },
-            timeout: 5000, // 5 second timeout
-          });
-        } else {
-          // System font, no loading needed
-          setFontLoaded(true);
-          setIsFontLoading(false);
-          setFontLoadKey((prev) => prev + 1);
-        }
-      } else {
-        console.warn("WebFont not available");
-        // If WebFont is not available, still try to regenerate for system fonts
-        const selectedFont = GOOGLE_FONTS.find((f) => f.value === fontFamily);
-        if (!selectedFont?.google) {
-          setFontLoaded(true);
-          setIsFontLoading(false);
-          setFontLoadKey((prev) => prev + 1);
-        } else {
-          // Google font but WebFont not available, still try to proceed
-          setFontLoaded(true);
-          setIsFontLoading(false);
-        }
+      try {
+        const isLoaded = await loadFont(fontFamily, GOOGLE_FONTS);
+
+        setFontLoaded(true);
+        setIsFontLoading(false);
+
+        // Force regeneration by incrementing a key to trigger useEffect
+        // This will cause the main favicon generation useEffect to run again
+        setFontLoadKey((prev) => prev + 1);
+      } catch (error) {
+        console.error("Error loading font:", error);
+        setFontLoaded(true);
+        setIsFontLoading(false);
+        setFontLoadKey((prev) => prev + 1);
       }
     };
 
-    // Add a small delay to ensure the WebFont script is loaded
-    const timer = setTimeout(loadFontAndRegenerate, 100);
-
-    return () => clearTimeout(timer);
+    loadSelectedFont();
   }, [fontFamily]); // Depend on fontFamily to reload when it changes
-
-  const downloadFile = async (dataUrl: string, filename: string) => {
-    try {
-      console.log("data url", dataUrl);
-      // Use fetch to properly handle the data URL
-      const response = await fetch(dataUrl);
-      const blob = await response.blob();
-
-      // Create object URL for the blob
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Clean up object URL
-      setTimeout(() => URL.revokeObjectURL(url), 100);
-
-      toast.success(`Downloaded ${filename}`);
-    } catch (error) {
-      console.error(`Error downloading ${filename}:`, error);
-      toast.error(`Failed to download ${filename}`);
-    }
-  };
 
   const downloadAll = async () => {
     try {
@@ -309,21 +302,94 @@ These favicon files were generated using the Favicon Generator tool.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* Text Input */}
+              {/* Content Type Selection */}
               <div className="space-y-2">
-                <Label htmlFor="favicon-text">Text Content</Label>
-                <Input
-                  id="favicon-text"
-                  value={text}
-                  onChange={(e) => setText(e.target.value.slice(0, 3))}
-                  placeholder=""
-                  maxLength={3}
-                  className="text-lg font-semibold"
-                />
-                <div className="text-xs text-muted-foreground">
-                  Enter 1-3 characters
-                </div>
+                <Label>Content Type</Label>
+                <Tabs
+                  value={contentType}
+                  onValueChange={(value: string) =>
+                    setContentType(value as "text" | "image" | "emoji")
+                  }
+                  className="w-full"
+                >
+                  <TabsList className="grid w-full grid-cols-3">
+                    <TabsTrigger value="text">Text</TabsTrigger>
+                    <TabsTrigger value="image">Image</TabsTrigger>
+                    <TabsTrigger value="emoji">Emoji</TabsTrigger>
+                  </TabsList>
+                </Tabs>
               </div>
+
+              {/* Text Input (shown only when text is selected) */}
+              {contentType === "text" && (
+                <div className="space-y-2">
+                  <Label htmlFor="favicon-text">Text Content</Label>
+                  <Input
+                    id="favicon-text"
+                    value={text}
+                    onChange={(e) => setText(e.target.value.slice(0, 3))}
+                    placeholder=""
+                    maxLength={3}
+                    className="text-lg font-semibold"
+                  />
+                  <div className="text-xs text-muted-foreground">
+                    Enter 1-3 characters
+                  </div>
+                </div>
+              )}
+
+              {/* Image Upload (shown only when image is selected) */}
+              {contentType === "image" && (
+                <div className="space-y-2">
+                  <Label htmlFor="favicon-image-upload">Upload Image</Label>
+                  <div className="flex items-center gap-2">
+                    <Input
+                      id="favicon-image-upload"
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="text-sm"
+                    />
+                    {imagePreviewUrl && (
+                      <div className="relative w-16 h-16 border rounded overflow-hidden">
+                        <img
+                          src={imagePreviewUrl}
+                          alt="Preview"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Upload an image file (JPG, PNG, GIF, etc.)
+                  </div>
+                </div>
+              )}
+
+              {/* Emoji Selector (shown only when emoji is selected) */}
+              {contentType === "emoji" && (
+                <div className="space-y-2">
+                  <Label htmlFor="favicon-emoji">Emoji</Label>
+                  <div className="flex items-center gap-2">
+                    <Input
+                      id="favicon-emoji"
+                      value={emoji}
+                      onChange={(e) => setEmoji(e.target.value)}
+                      placeholder="Select an emoji..."
+                      className="text-2xl text-center"
+                      maxLength={5}
+                    />
+                    <EmojiPicker onEmojiSelect={setEmoji}>
+                      <Button variant="outline" size="sm" type="button">
+                        <span className="text-xl">{emoji}</span>
+                      </Button>
+                    </EmojiPicker>
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Select an emoji
+                  </div>
+                </div>
+              )}
 
               {/* Colors */}
               <div className="space-y-3">
@@ -358,80 +424,85 @@ These favicon files were generated using the Favicon Generator tool.
                 </div>
               </div>
 
-              {/* Typography Settings */}
-              <div className="space-y-3">
-                <Label className="text-sm font-medium">Typography</Label>
-
+              {/* Typography Settings (shown only for text content type) */}
+              {contentType === "text" && (
                 <div className="space-y-3">
-                  <div className="space-y-2">
-                    <Label htmlFor="font-family" className="text-xs">
-                      Font Family
-                    </Label>
-                    <Select value={fontFamily} onValueChange={setFontFamily}>
-                      <SelectTrigger className="h-8">
-                        <SelectValue placeholder="Select font" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {GOOGLE_FONTS.map((font, index) => (
-                          <SelectItem
-                            key={`${font.value}-${index}`}
-                            value={font.value}
-                          >
-                            {font.name}
-                            {font.google && (
-                              <Badge
-                                variant="secondary"
-                                className="ml-2 text-xs"
-                              >
-                                G
-                              </Badge>
-                            )}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                  <Label className="text-sm font-medium">Typography</Label>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-3">
                     <div className="space-y-2">
-                      <Label htmlFor="font-weight" className="text-xs">
-                        Weight
+                      <Label htmlFor="font-family" className="text-xs">
+                        Font Family
                       </Label>
-                      <Select value={fontWeight} onValueChange={setFontWeight}>
+                      <Select value={fontFamily} onValueChange={setFontFamily}>
                         <SelectTrigger className="h-8">
-                          <SelectValue />
+                          <SelectValue placeholder="Select font" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="100">Thin</SelectItem>
-                          <SelectItem value="300">Light</SelectItem>
-                          <SelectItem value="400">Normal</SelectItem>
-                          <SelectItem value="500">Medium</SelectItem>
-                          <SelectItem value="600">Semi Bold</SelectItem>
-                          <SelectItem value="700">Bold</SelectItem>
-                          <SelectItem value="900">Black</SelectItem>
+                          {GOOGLE_FONTS.map((font, index) => (
+                            <SelectItem
+                              key={`${font.value}-${index}`}
+                              value={font.value}
+                            >
+                              {font.name}
+                              {font.google && (
+                                <Badge
+                                  variant="secondary"
+                                  className="ml-2 text-xs"
+                                >
+                                  G
+                                </Badge>
+                              )}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="font-size" className="text-xs">
-                        Size: {fontSizePercentage}%
-                      </Label>
-                      <Input
-                        id="font-size"
-                        type="range"
-                        min="10"
-                        max="150"
-                        value={fontSizePercentage}
-                        onChange={(e) =>
-                          setFontSizePercentage(Number(e.target.value))
-                        }
-                        className="w-full h-8"
-                      />
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-2">
+                        <Label htmlFor="font-weight" className="text-xs">
+                          Weight
+                        </Label>
+                        <Select
+                          value={fontWeight}
+                          onValueChange={setFontWeight}
+                        >
+                          <SelectTrigger className="h-8">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="100">Thin</SelectItem>
+                            <SelectItem value="300">Light</SelectItem>
+                            <SelectItem value="400">Normal</SelectItem>
+                            <SelectItem value="500">Medium</SelectItem>
+                            <SelectItem value="600">Semi Bold</SelectItem>
+                            <SelectItem value="700">Bold</SelectItem>
+                            <SelectItem value="900">Black</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="font-size" className="text-xs">
+                          Size: {fontSizePercentage}%
+                        </Label>
+                        <Input
+                          id="font-size"
+                          type="range"
+                          min="10"
+                          max="150"
+                          value={fontSizePercentage}
+                          onChange={(e) =>
+                            setFontSizePercentage(Number(e.target.value))
+                          }
+                          className="w-full h-8"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Shape */}
               <div className="space-y-2">
@@ -471,7 +542,10 @@ These favicon files were generated using the Favicon Generator tool.
                   <div className="flex justify-center items-center bg-muted/50 rounded-lg p-3">
                     <div className="border border-border rounded shadow-lg ">
                       <FaviconPreview
+                        contentType={contentType}
                         text={text}
+                        imageUrl={imagePreviewUrl} // Use preview URL for previews
+                        emoji={emoji}
                         backgroundColor={backgroundColor.hex}
                         fontColor={fontColor.hex}
                         fontFamily={fontFamily}
@@ -492,7 +566,10 @@ These favicon files were generated using the Favicon Generator tool.
                   <div className="flex justify-center items-center bg-muted/50 rounded-lg p-3">
                     <div className="border border-border rounded shadow-lg ">
                       <FaviconPreview
+                        contentType={contentType}
                         text={text}
+                        imageUrl={imagePreviewUrl} // Use preview URL for previews
+                        emoji={emoji}
                         backgroundColor={backgroundColor.hex}
                         fontColor={fontColor.hex}
                         fontFamily={fontFamily}
@@ -513,7 +590,10 @@ These favicon files were generated using the Favicon Generator tool.
                   <div className="flex justify-center items-center bg-muted/50 rounded-lg p-3">
                     <div className="border border-border rounded shadow-lg ">
                       <FaviconPreview
+                        contentType={contentType}
                         text={text}
+                        imageUrl={imagePreviewUrl} // Use preview URL for previews
+                        emoji={emoji}
                         backgroundColor={backgroundColor.hex}
                         fontColor={fontColor.hex}
                         fontFamily={fontFamily}
@@ -555,48 +635,6 @@ These favicon files were generated using the Favicon Generator tool.
                 <Download className="mr-2 h-4 w-4" />
                 {isGenerating ? "Generating..." : "Download All as ZIP"}
               </Button>
-
-              <Tabs defaultValue="code" className="w-full">
-                <TabsList className="grid w-full grid-cols-1">
-                  <TabsTrigger value="code">HTML Code</TabsTrigger>
-                </TabsList>
-
-                <TabsContent value="code" className="space-y-3">
-                  <div className="p-3 bg-muted rounded-lg">
-                    <h4 className="font-medium mb-2 text-sm">HTML Code:</h4>
-                    <pre className="text-xs text-muted-foreground overflow-x-auto">
-                      {`<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon-16.png" type="image/png">
-<link rel="icon" href="/favicon-32.png" type="image/png">
-<link rel="icon" href="/favicon-64.png" type="image/png">
-<link rel="apple-touch-icon" href="/favicon-180.png">
-<link rel="manifest" href="/sitemap.xml">`}
-                    </pre>
-                  </div>
-                  <div className="p-3 bg-muted rounded-lg">
-                    <h4 className="font-medium mb-2 text-sm">
-                      site.webmanifest:
-                    </h4>
-                    <pre className="text-xs text-muted-foreground overflow-x-auto">
-                      {`{
-  "name": "Your Website Name",
-  "icons": [
-    {
-      "src": "/favicon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}`}
-                    </pre>
-                  </div>
-                </TabsContent>
-              </Tabs>
             </CardContent>
           </Card>
         </div>

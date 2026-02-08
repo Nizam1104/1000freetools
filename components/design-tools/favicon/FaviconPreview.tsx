@@ -3,12 +3,15 @@
 import { useEffect, useRef } from "react";
 
 interface FaviconPreviewProps {
-  text: string;
+  contentType?: 'text' | 'image' | 'emoji';
+  text?: string;
+  imageUrl?: string;
+  emoji?: string;
   backgroundColor: string;
-  fontColor: string;
-  fontFamily: string;
-  fontSize: number;
-  fontWeight: string;
+  fontColor?: string;
+  fontFamily?: string;
+  fontSize?: number;
+  fontWeight?: string;
   shape: string;
   size: number;
   className?: string;
@@ -17,12 +20,15 @@ interface FaviconPreviewProps {
 }
 
 export default function FaviconPreview({
-  text,
+  contentType = 'text',
+  text = '',
+  imageUrl = '',
+  emoji = '',
   backgroundColor,
-  fontColor,
-  fontFamily,
-  fontSize,
-  fontWeight,
+  fontColor = '#FFFFFF',
+  fontFamily = 'Arial, sans-serif',
+  fontSize = 14,
+  fontWeight = 'bold',
   shape,
   size,
   className = "",
@@ -74,7 +80,28 @@ export default function FaviconPreview({
           break;
       }
 
-      // Draw text with improved centering
+      // Draw content based on type
+      switch (contentType) {
+        case 'image':
+          if (imageUrl) {
+            drawImageContent();
+          }
+          break;
+        case 'emoji':
+          if (emoji) {
+            drawEmojiContent();
+          }
+          break;
+        case 'text':
+        default:
+          if (text) {
+            drawTextContent();
+          }
+      }
+    };
+
+    // Draw text content
+    const drawTextContent = () => {
       ctx.fillStyle = fontColor;
       ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
       ctx.textAlign = "center";
@@ -86,30 +113,88 @@ export default function FaviconPreview({
       ctx.fillText(text.slice(0, 3), x, y);
     };
 
-    // Check if font is actually loaded in the browser
-    const checkAndRender = async () => {
-      try {
-        // Try to check if the font is loaded using the Font Loading API
-        if (document.fonts && document.fonts.check) {
-          const fontSpec = `${fontWeight} ${fontSize}px ${fontFamily}`;
-          const isFontLoaded = document.fonts.check(fontSpec);
+    // Draw image content
+    const drawImageContent = () => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
 
-          if (!isFontLoaded) {
-            // Wait for the font to load
-            await document.fonts.load(fontSpec);
-          }
+      img.onload = () => {
+        try {
+          // Calculate dimensions to fit image in the canvas while maintaining aspect ratio
+          const scale = Math.min(size / img.width, size / img.height);
+          const width = img.width * scale;
+          const height = img.height * scale;
+          const x = (size - width) / 2;
+          const y = (size - height) / 2;
+
+          ctx.drawImage(img, x, y, width, height);
+        } catch (error) {
+          console.error('Error drawing image:', error);
+          drawFallbackContent();
         }
-      } catch (error) {
-        console.warn("Font loading check failed:", error);
-      } finally {
-        // Render regardless of font check result
-        renderFavicon();
+      };
+
+      img.onerror = (error) => {
+        console.error('Error loading image:', error);
+        drawFallbackContent();
+      };
+
+      img.src = imageUrl;
+    };
+
+    // Draw emoji content
+    const drawEmojiContent = () => {
+      // Use a large font size for the emoji
+      const emojiFontSize = size * 0.8;
+      ctx.font = `normal ${emojiFontSize}px Arial, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      // Enable text smoothing for better emoji appearance
+      ctx.imageSmoothingEnabled = true;
+      ctx.textRendering = 'optimizeLegibility';
+
+      ctx.fillText(emoji.slice(0, 5), size / 2, size / 2);
+    };
+
+    // Draw fallback content when image fails to load
+    const drawFallbackContent = () => {
+      ctx.fillStyle = '#CCCCCC';
+      ctx.font = `bold ${size * 0.4}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('IMG', size / 2, size / 2);
+    };
+
+    // Check if font is actually loaded in the browser (only for text content)
+    const checkAndRender = async () => {
+      if (contentType === 'text') {
+        try {
+          // Try to check if the font is loaded using the Font Loading API
+          if (document.fonts && document.fonts.check) {
+            const fontSpec = `${fontWeight} ${fontSize}px ${fontFamily}`;
+            const isFontLoaded = document.fonts.check(fontSpec);
+
+            if (!isFontLoaded) {
+              // Wait for the font to load
+              await document.fonts.load(fontSpec);
+            }
+          }
+        } catch (error) {
+          console.warn("Font loading check failed:", error);
+        }
       }
+
+      // Render regardless of font check result
+      renderFavicon();
     };
 
     checkAndRender();
   }, [
+    contentType,
     text,
+    imageUrl,
+    emoji,
     backgroundColor,
     fontColor,
     fontFamily,
