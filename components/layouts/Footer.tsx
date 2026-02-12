@@ -13,6 +13,7 @@ const quickLinks = [
 const popularTools = [
   { name: "Image Compressor", href: "/image-tools/image-compressor" },
   { name: "Favicon Generator", href: "/design-tools/favicon-generator" },
+  { name: "Mock Data Generator", href: "/developer-tools/mock-data-generator" }
 ];
 
 export default function Footer() {

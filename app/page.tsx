@@ -13,16 +13,6 @@ export const metadata: Metadata = {
   title: "1000 Free Tools - Free Online Web Tools & Utilities",
   description:
     "Free online tools Fast, secure, and privacy-focused web utilities that work directly in your browser. | 1000freetools.com",
-  keywords: [
-    "free online tools",
-    "web utilities",
-    "image compressor",
-    "file converter",
-    "online tools",
-    "free tools",
-    "browser tools",
-    "privacy-focused tools",
-  ],
   openGraph: {
     title: "1000 Free Tools - Free Online Web Tools & Utilities",
     description:
@@ -32,6 +22,24 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const tools = [
+    {
+      name: "Image Compressor",
+      description: "Compress images without losing quality. Supports JPEG, PNG, WebP, AVIF, and more formats.",
+      href: "/image-tools/image-compressor"
+    },
+    {
+      name: "Favicon Generator",
+      description: "Create Professional Looking Favicon for Free, supports text, image, and emojis",
+      href: "/design-tools/favicon-generator"
+    },
+    {
+      name: "Mock Data Generator",
+      description: "Generate mock data for testing and development. Supports JSON, CSV, and more formats.",
+      href: "/developer-tools/mock-data-generator"
+    }
+  ];
+
   return (
     <main className="min-h-screen relative">
       {/* Schema.org structured data for SEO */}
@@ -75,7 +83,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="#tools"
+              href="explore-all-tools"
               className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-primary-foreground bg-primary rounded-md"
             >
               Browse Tools
@@ -149,41 +157,24 @@ export default function Home() {
             your work easier
           </p>
 
+          {/* Dynamic tools section */}
           <div className="flex space-x-4">
             <div className="max-w-6xl mx-auto mb-12">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Link
-                  href="/image-tools/image-compressor"
-                  className="block p-6 border border-border rounded-lg bg-card"
-                >
-                  <h4 className="text-xl font-semibold mb-2">
-                    Image Compressor
-                  </h4>
-                  <p className="text-muted-foreground mb-4">
-                    Compress images without losing quality. Supports JPEG, PNG,
-                    WebP, AVIF, and more formats.
-                  </p>
-                  <span className="text-primary font-medium inline-flex items-center">
-                    Try it now
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </span>
-                </Link>
-                <Link
-                  href="/design-tools/favicon-generator"
-                  className="block p-6 border border-border rounded-lg bg-card"
-                >
-                  <h4 className="text-xl font-semibold mb-2">
-                    Favicon Generator
-                  </h4>
-                  <p className="text-muted-foreground mb-4">
-                    Create Professional Looking Favicon for Free, supports text,
-                    image, and emojis
-                  </p>
-                  <span className="text-primary font-medium inline-flex items-center">
-                    Try it now
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </span>
-                </Link>
+                {tools.map((tool) => (
+                  <Link
+                    href={tool.href}
+                    key={tool.name}
+                    className="block p-6 border border-border rounded-lg bg-card hover:border-primary hover:shadow-md transition-colors duration-200"
+                  >
+                    <h4 className="text-xl font-semibold mb-2">{tool.name}</h4>
+                    <p className="text-muted-foreground mb-4">{tool.description}</p>
+                    <span className="text-primary font-medium inline-flex items-center">
+                      Try it now
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </span>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -202,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-muted/50 py-16">
+      {/* <section className="bg-muted/50 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -220,7 +211,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section for SEO */}
       <section className="py-16">

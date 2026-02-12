@@ -1,9 +1,24 @@
 import ImageCompressor from "@/components/image-tools/image-compressor/ImageCompressor";
-
 import Faqs from "@/components/utils/Faqs";
 import NextImage from "next/image";
-
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { Metadata } from "next";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Image Compressor - Reduce File Size Online",
+  description:
+    "Compress images online while maintaining quality. Supports JPEG, PNG, WebP, and AVIF formats. Process single images or batch compress up to 50 files at once.",
+  alternates: {
+    canonical: "https://1000freetools.com/image-tools/image-compressor",
+  },
+};
 
 const moreTools = [
   {
@@ -18,134 +33,130 @@ export default function ImageCompressorPage() {
     {
       question: "How does image compression work?",
       answer:
-        "Image compression reduces file size by removing unnecessary data or optimizing how image information is stored. Our tool offers both lossless compression (no quality loss) and lossy compression (smaller files with minimal visible quality reduction).",
+        "Image compression reduces file size by removing redundant data or optimizing how information is stored. Lossless compression preserves all original data, while lossy compression achieves smaller files by discarding some information that's less noticeable to the human eye.",
     },
     {
-      question: "Can I compress images without losing quality?",
+      question: "Will compression affect image quality?",
       answer:
-        "Yes! Our free online image compressor without losing quality uses lossless compression algorithms that reduce file size while maintaining 100% of the original image quality. Simply select the lossless option before compressing.",
+        "It depends on your settings. Lossless compression maintains perfect quality. Lossy compression at 80-90% quality typically produces excellent results with significant file size reduction. Lower quality settings will show more visible differences.",
     },
     {
-      question: "How many images can I compress at once?",
+      question: "What formats are supported?",
       answer:
-        "You can compress 50 images at once free, and even more if needed. Our bulk image compressor has no strict file limits - it's a truly free image compressor no file limit service. Process hundreds of images in a single batch if required.",
+        "We support JPEG, PNG, WebP, AVIF, QOI, JXL, and WebP2. You can also convert between formats - for example, converting a PNG to WebP often results in smaller files.",
     },
     {
-      question: "What image formats do you support?",
+      question: "How many images can I process at once?",
       answer:
-        "We support all major formats including JPEG, PNG, WebP, AVIF, QOI, JXL, and WP2. You can also convert between formats - for example, convert JPG to WebP with compression or use our AVIF image converter and compressor.",
+        "You can compress up to 50 images simultaneously using the bulk processing mode. There are no daily limits or signup requirements.",
     },
     {
-      question: "Can I compress PNG to a specific file size like 100KB?",
+      question: "Is my data secure?",
       answer:
-        "Yes! You can compress PNG to 100KB or compress images to 20KB by adjusting the quality settings. Our tool gives you precise control over the output file size, making it easy to meet specific requirements for websites, email, or other platforms.",
+        "Yes. All compression happens directly in your browser. Your images are never uploaded to our servers, ensuring complete privacy. When you close the tab, all data is immediately cleared.",
     },
     {
-      question: "Is this really free with no limits?",
+      question: "Which format should I choose?",
       answer:
-        "Absolutely! This is a completely free unlimited image compression service with no hidden fees, no signup requirements, and no daily limits. Compress images for website free unlimited, batch compress images online free, or reduce large images for email free - anytime, as much as you need.",
+        "JPEG works well for photos and is universally supported. WebP offers better compression with wide browser support. AVIF provides the best compression but has slightly less browser support. PNG is best for images with transparency or text.",
     },
     {
-      question: "How do I compress multiple images at once?",
+      question: "Can I resize images while compressing?",
       answer:
-        "Simply drag and drop multiple files into the upload area, or click to select multiple images from your computer. Our bulk image compression tool online will process all files simultaneously and let you download them as individual files or as a convenient zip archive.",
+        "Yes. In the advanced options, you can set maximum width and height dimensions. The tool will resize images proportionally while maintaining aspect ratio.",
     },
     {
-      question:
-        "What's the difference between JPEG, WebP, and AVIF compression?",
+      question: "Why use this over other tools?",
       answer:
-        "JPEG is the most widely supported format, great for photos. WebP offers better compression than JPEG with similar quality and works in all modern browsers. AVIF provides even better compression than WebP but has slightly less browser support. Our tool lets you compress JPEG online, use our WebP converter, or convert and compress images to AVIF based on your needs.",
-    },
-    {
-      question: "Will compressing images improve my website's SEO?",
-      answer:
-        "Yes! Optimizing images for web performance free is crucial for SEO. Smaller image files improve page load speed, which is a ranking factor for search engines. Our best online image optimizer for SEO helps you achieve faster Core Web Vitals scores and better user experience.",
-    },
-    {
-      question: "Can I use this tool for commercial projects?",
-      answer:
-        "Yes! Our free bulk photo compressor tool is available for both personal and commercial use. Whether you're optimizing images for a client website, preparing product photos for an online store, or reducing photo size for website upload, you can use our tool freely.",
-    },
-    {
-      question: "Are my images stored on your servers?",
-      answer:
-        "No. All image compression happens directly in your browser. Your images are never uploaded to our servers, ensuring complete privacy and security. Once you close the browser tab, all data is immediately deleted.",
-    },
-    {
-      question: "What's the best compression setting to use?",
-      answer:
-        "It depends on your needs. For archival or professional photography, use lossless image compression. For web use, a quality setting of 80-90% offers excellent visual quality with significant file size reduction. For email or social media where file size is critical, you can go lower to compress large images for email free while maintaining acceptable quality.",
+        "This tool runs entirely in your browser for privacy, supports modern formats like AVIF and WebP2, offers both single and batch processing, and provides advanced options for fine-tuning compression settings. Plus, it's completely free with no restrictions.",
     },
   ];
 
   return (
     <div className="flex flex-col gap-6 w-full">
-      {/* Title and description */}
       <div className="prose max-w-4xl mx-auto px-4">
+        <div>
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/image-tools">Image Tools</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/image-tools/image-compressor">
+                  Image Compressor
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
         <h1 className="text-2xl font-semibold mt-4 mb-4">
-          Compress Images Online - Fast, Free, and Unlimited
+          Compress Images Online
         </h1>
         <p className="mb-6">
-          Whether you need to compress a single photo or process hundreds of
-          images at once, our tool handles it all. We support all popular
-          formats including JPEG, PNG, WebP, and AVIF, with no file limits or
-          hidden fees.
+          Reduce image file sizes while maintaining quality. Supports all major
+          formats including JPEG, PNG, WebP, and AVIF. Process single images or
+          batch compress up to 50 files at once.
         </p>
 
         <ImageCompressor />
 
-        <h2 className="text-2xl font-semibold mt-4 mb-4">
-          Why Compress Your Images?
+        <h2 className="text-2xl font-semibold mt-8 mb-4">
+          Why Compress Images?
         </h2>
         <p className="mb-4">
-          Large image files slow down your website, eat up storage space, and
-          take forever to upload. By compressing images, you can:
+          Large image files slow down websites, consume storage space, and take
+          longer to upload or share. Compression helps you:
         </p>
         <ul className="list-disc pl-6 mb-6 space-y-2">
           <li>
-            <strong>Speed up your website</strong> - Smaller images mean faster
-            page loads and better SEO rankings
+            Improve website loading speed and SEO rankings
           </li>
           <li>
-            <strong>Save storage space</strong> - Reduce file sizes by up to 80%
-            without noticeable quality loss
+            Save storage space - reduce file sizes by 50-80% while maintaining visual quality
           </li>
           <li>
-            <strong>Share easily</strong> - Compressed photos upload faster to
-            email, social media, and cloud storage
+            Share files faster via email, messaging, or cloud storage
           </li>
           <li>
-            <strong>Improve performance</strong> - Optimized images use less
-            bandwidth and load instantly on mobile devices
+            Reduce bandwidth usage on mobile devices
           </li>
         </ul>
 
         <div>
           <h2 className="text-2xl font-semibold mt-8 mb-4">
-            Compare before and after
+            Before and After Comparison
           </h2>
-          <p>
-            You can compare the original and compressed iamges here side by side
-            original image on the left and compressed image on the right
-            Original is 4MB and compressed is 700KB You can compress image to
-            100KB also for PNG images and 20KB for JPEG images without
-            significant quality loss
+          <p className="mb-4">
+            Here's a real example showing the original 4MB image compared to the
+            compressed 700KB version. Notice how visual quality remains high
+            while file size drops significantly.
           </p>
-          <div className="flex flex-col md:flex-row gap-4">
-            <NextImage
-              src="https://cdn.1000freetools.com/static-assets/on-page-images/image-compressor-original-image.png"
-              alt="Original Image"
-              width={400}
-              height={300}
-            />
-            <NextImage
-              src="https://cdn.1000freetools.com/static-assets/on-page-images/image-compressor-after-image.png"
-              alt="Compressed Image"
-              width={400}
-              height={300}
-            />
+          <div className="flex flex-col md:flex-row gap-4 mb-4">
+            <div className="flex-1">
+              <NextImage
+                src="https://cdn.1000freetools.com/static-assets/on-page-images/image-compressor-original-image.png"
+                alt="Original 4MB image"
+                width={400}
+                height={300}
+              />
+              <p className="text-sm mt-2">Original: 4MB</p>
+            </div>
+            <div className="flex-1">
+              <NextImage
+                src="https://cdn.1000freetools.com/static-assets/on-page-images/image-compressor-after-image.png"
+                alt="Compressed 700KB image"
+                width={400}
+                height={300}
+              />
+              <p className="text-sm mt-2">Compressed: 700KB (82% smaller)</p>
+            </div>
           </div>
-          <div>
+          <p className="text-sm">
             Photo by{" "}
             <a href="https://unsplash.com/@jpsmedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
               Jack Stapleton
@@ -154,160 +165,74 @@ export default function ImageCompressorPage() {
             <a href="https://unsplash.com/photos/two-black-cars-parked-on-a-street-t2BHviYqB1g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
               Unsplash
             </a>
-          </div>
+          </p>
         </div>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
-          How to Use Our Free Image Compressor
-        </h2>
-        <p className="mb-4">
-          Using our online image compressor is incredibly simple, whether you're
-          working with a single photo or need to batch compress images:
-        </p>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">How to Use</h2>
         <ol className="list-decimal pl-6 mb-6 space-y-2">
           <li>
-            <strong>Upload your images</strong> - Drag and drop your files or
-            click to browse. You can compress 50 images at once free, or even
-            more if needed
+            Upload your image(s) by dragging and dropping or clicking to browse
           </li>
           <li>
-            <strong>Choose your settings</strong> - Select lossless image
-            compression for perfect quality, or adjust the quality slider to
-            reduce image size further. You can compress images to 20KB or
-            compress PNG to 100KB depending on your needs
+            Adjust the quality slider (80-90% recommended for most uses) and
+            select your preferred output format
           </li>
           <li>
-            <strong>Download instantly</strong> - Get your compressed images
-            individually or as a convenient zip file for bulk downloads
+            Click "Compress Image" and download the result
           </li>
         </ol>
         <p className="mb-6">
-          Our bulk image compressor handles multiple files simultaneously,
-          making it the perfect choice when you need to compress multiple images
-          for website uploads, email attachments, or social media posts.
+          For batch processing, switch to "Bulk Processing" mode to handle
+          multiple images at once. You can download files individually or as a
+          ZIP archive.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
-          Powerful Features for Every Need
-        </h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Key Features</h2>
         <ul className="list-disc pl-6 mb-6 space-y-2">
           <li>
-            <strong>Batch Image Compression</strong> - Our bulk image
-            compression tool online lets you compress multiple images
-            simultaneously online. Process entire photo galleries in seconds
-            with our free unlimited image compression service
+            Single or batch processing (up to 50 images)
           </li>
           <li>
-            <strong>Format Conversion & Optimization</strong> - Convert JPG to
-            WebP with compression, use our AVIF image converter and compressor,
-            or compress JPEG online. We support all modern formats including
-            WebP converter, AVIF compressor, and more
+            Multiple format support: JPEG, PNG, WebP, AVIF, and more
           </li>
           <li>
-            <strong>Advanced Compression Engines</strong> - Powered by MozJPEG
-            compressor online free and WebP2 image compression tool technology
-            for superior results. Our algorithms reduce photo size for website
-            upload while maintaining exceptional visual quality
+            Adjustable quality settings and advanced options
           </li>
           <li>
-            <strong>Lossless & Lossy Options</strong> - Choose free online image
-            compressor without losing quality for perfect preservation, or
-            compress images for website free unlimited with adjustable quality
-            settings
+            Optional image resizing while compressing
           </li>
           <li>
-            <strong>Flexible File Sizes</strong> - Need to compress PNG to
-            smallest size online? Or reduce large images for email free? Set
-            your target and compress images to 20KB or any size you need
+            Client-side processing - your images never leave your device
           </li>
           <li>
-            <strong>No File Limits</strong> - Unlike other services, we're a
-            free image compressor no file limit tool. Batch convert images to
-            WebP free or compress images in bulk for free without restrictions
+            No file size limits, registration, or usage restrictions
           </li>
         </ul>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">
-          Best Online Image Optimizer for SEO and Web Performance
-        </h2>
-        <p className="mb-6">
-          Web designers and developers choose our tool as the best free image
-          compressor for web optimization. When you optimize images for web
-          performance free, you improve Core Web Vitals scores, boost SEO
-          rankings, and create faster user experiences.
-        </p>
-        <p className="mb-6">
-          Our image size reducer online uses industry-leading compression
-          technology to deliver the smallest possible file sizes. Whether you
-          need to compress JPEG without quality loss online or batch compress
-          images online free, our tool maintains visual quality that looks
-          stunning on any device.
-        </p>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
-          All Formats Supported
+          Choosing the Right Format
         </h2>
         <p className="mb-4">
-          Our versatile photo compressor works with all popular image formats:
+          Different formats work better for different use cases:
         </p>
         <ul className="list-disc pl-6 mb-6 space-y-2">
           <li>
-            <strong>JPEG/JPG</strong> - Compress JPEG online with our advanced
-            MozJPEG engine for maximum efficiency
+            <strong>JPEG</strong> - Best for photographs. Universally supported
+            but doesn't handle transparency
           </li>
           <li>
-            <strong>PNG</strong> - Compress PNG online with transparency
-            preservation, or compress PNG to 100KB for specific size
-            requirements
+            <strong>PNG</strong> - Ideal for images with transparency, text, or
+            sharp edges. Larger file sizes than JPEG
           </li>
           <li>
-            <strong>WebP</strong> - Convert and compress to WebP format for
-            modern web compatibility and smaller file sizes
+            <strong>WebP</strong> - Modern format with excellent compression and
+            quality. Supported by all current browsers
           </li>
           <li>
-            <strong>AVIF</strong> - Use our AVIF compressor to convert and
-            compress images to AVIF, the newest high-efficiency format
-          </li>
-          <li>
-            <strong>And more</strong> - Support for QOI, JXL, and other emerging
-            formats
+            <strong>AVIF</strong> - Newest format offering superior compression.
+            Growing browser support
           </li>
         </ul>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
-          Perfect for Bulk Processing
-        </h2>
-        <p className="mb-6">
-          Need a bulk photo compressor tool? Our batch image compressor is
-          designed for efficiency. Compress multiple images simultaneously
-          online without waiting for each file to process individually. Whether
-          you're preparing images for a website launch, organizing a photo
-          library, or optimizing product images for an e-commerce store, our
-          bulk compress images online free service handles it all.
-        </p>
-        <p className="mb-6">
-          The best part? It's a completely free unlimited image compression tool
-          with no hidden fees, no signup requirements, and no file size or
-          quantity restrictions. Just upload, compress, and download.
-        </p>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
-          Free, Unlimited, No Signup Required
-        </h2>
-        <p className="mb-6">
-          Unlike other image compressor online free services that limit your
-          uploads or require registration, we provide unlimited free image
-          compression service. Process as many photos as you need, whenever you
-          need - completely free. Our free bulk photo compressor tool is always
-          available, with no daily limits or premium upsells.
-        </p>
-        <p className="mb-6">
-          Ready to reduce image file size without losing quality? Upload your
-          first file above and experience the best online image optimizer for
-          SEO and web performance. Whether you need to compress large images for
-          email free or optimize images for website free unlimited, we've got
-          you covered.
-        </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">
           Frequently Asked Questions
@@ -315,12 +240,11 @@ export default function ImageCompressorPage() {
 
         <Faqs faqs={faqsData} />
 
-        <section>
+        <section className="mt-8">
           <ToolLinkCards tools={moreTools} />
         </section>
 
-        {/* Attribution */}
-        <div className="mt-8 p-4 rounded-lg text-sm">
+        <div className="mt-8 p-4 rounded-lg text-sm border">
           <p>
             <strong>Attribution:</strong> This tool uses compression libraries
             from{" "}

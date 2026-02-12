@@ -19,7 +19,7 @@ interface WorkerConfig {
   type?: "module" | "classic";
 }
 
-type WorkerType = "imageCompressor" | "fileZipper";
+type WorkerType = "imageCompressor" | "fileZipper" | "mockDataGenerator"
 
 class WorkerManager {
   private workers: Map<WorkerType, WorkerInstance> = new Map();
@@ -308,3 +308,9 @@ export const getFileZipperWorker = () =>
 
 export const releaseFileZipperWorker = () =>
   workerManager.releaseWorker("fileZipper");
+
+export const getMockDataWorker = () =>
+  workerManager.getWorker('mockDataGenerator', { workerPath: '/workers/mockDataWorker.bundle.js', type: 'classic' })
+
+export const releaseMockDataWorker = () =>
+  workerManager.releaseWorker('mockDataGenerator')

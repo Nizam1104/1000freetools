@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us - 1000 Free Tools",
-  description: "About us - 1000 Free Tools",
-  keywords: ["about", "1000freetools"],
+  description: "Truly free online tools with no sign-ups, no limits, and no paywalls. Fast, privacy-first utilities that actually work.",
+  keywords: ["free online tools", "web utilities", "no signup tools", "privacy-first tools"],
   alternates: {
     canonical: "https://1000freetools.com/about",
   },
@@ -11,263 +12,100 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
-      <header className="mb-12 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-6">
-          About 1000FreeTools
-        </h1>
-        <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-          1000FreeTools is a collection of tools which are free, fast,
-          privacy-first and absolutely free without any limits.
-        </p>
-      </header>
+    <div className="max-w-4xl mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold mb-6">About 1000FreeTools</h1>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          Our Mission: Free Tools That Actually Work
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          We believe free tools should be truly free, easy to use, and respect
-          your time.
+      <div className="prose prose-lg max-w-none">
+        <p className="text-xl text-gray-600 mb-8">
+          Free online tools that actually work—no sign-ups, no limits, no paywalls.
         </p>
-        <ul className="space-y-2 pl-5 list-disc">
-          <li>✅ No sign-ups required — Start using tools instantly</li>
-          <li>
-            ✅ No hidden paywalls or limits — Full functionality, always free
-          </li>
-          <li>✅ No confusing interfaces — Clean, intuitive design</li>
-          <li>✅ Just tools that work — Reliable performance every time</li>
-        </ul>
-      </section>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          Why We Built 1000FreeTools
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          Too many "free" online tools come with frustrating limitations,
-          aggressive upsells, or cluttered experiences. We're doing it
-          differently.
-        </p>
-        <p className="mb-4 leading-relaxed">1000FreeTools exists to:</p>
-        <ul className="space-y-2 pl-5 list-disc">
-          <li>
-            Solve small but frequent problems quickly — Save time on everyday
-            tasks
-          </li>
-          <li>
-            Provide clean, focused tools that do one job exceptionally well
-          </li>
-          <li>
-            Keep powerful utilities accessible to everyone — No premium tiers,
-            no locked features
-          </li>
-          <li>
-            Build quality over quantity — Launching tools that truly matter
-          </li>
-        </ul>
-        <p className="mt-4 leading-relaxed">
-          We're growing thoughtfully. Rather than flooding the internet with
-          hundreds of mediocre pages, we're releasing well-crafted tools one at
-          a time, each with proper functionality, comprehensive content, and
-          excellent user experience.
-        </p>
-      </section>
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
+          <p>
+            We built 1000FreeTools because too many "free" online tools come with hidden costs,
+            annoying sign-up walls, and feature limitations. We believe powerful utilities should
+            be accessible to everyone—instantly and completely free.
+          </p>
+        </section>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          What Makes Our Online Tools Different
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          Every tool at 1000FreeTools is designed with care:
-        </p>
-        <ul className="space-y-2 pl-5 list-disc">
-          <li>
-            ⚡ Lightning fast — Optimized for speed and performance across all
-            devices
-          </li>
-          <li>
-            🔒 Privacy-first — Your data stays on your device; we don't store
-            files unless clearly stated
-          </li>
-          <li>
-            📱 Works everywhere — Fully responsive on desktop, tablet, and
-            mobile
-          </li>
-          <li>
-            🧩 Instant clarity — No learning curve, no tutorials needed—just use
-            it
-          </li>
-          <li>
-            🆓 Completely free — No hidden costs, trials, or subscription traps
-          </li>
-        </ul>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          Free Online Tools You'll Find Here
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          Our growing collection includes utilities across multiple categories:
-        </p>
-        <ul className="space-y-2 pl-5 list-disc">
-          <li>🖼️ Image & Media Tools</li>
-          <ul className="pl-8 space-y-1">
-            <li>Image Compressor — Reduce file sizes without losing quality</li>
-            <li>
-              Background Remover — Remove image backgrounds instantly with AI
-            </li>
-            <li>Image resizer, format converter, and more (coming soon)</li>
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">What Makes Us Different</h2>
+          <ul className="space-y-2">
+            <li>✅ <strong>No sign-ups required</strong> — Use tools instantly</li>
+            <li>✅ <strong>No hidden limits</strong> — Full functionality, always free</li>
+            <li>✅ <strong>Privacy-first</strong> — Your data stays on your device</li>
+            <li>✅ <strong>Lightning fast</strong> — Optimized for performance</li>
+            <li>✅ <strong>Mobile-friendly</strong> — Works on any device</li>
           </ul>
-          <li>📝 Text & Content Tools</li>
-          <ul className="pl-8 space-y-1">
-            <li>Text formatters, case converters, word counters</li>
-            <li>Character counters and text analysis tools (launching soon)</li>
-          </ul>
-          <li>💻 Developer Utilities</li>
-          <ul className="pl-8 space-y-1">
-            <li>JSON formatters and validators</li>
-            <li>Code beautifiers and minifiers</li>
-            <li>Base64 encoders/decoders and URL encoders (in development)</li>
-          </ul>
-          <li>🔢 Calculators & Converters</li>
-          <ul className="pl-8 space-y-1">
-            <li>Unit converters (length, weight, temperature)</li>
-            <li>Percentage calculators and math utilities</li>
-            <li>Date and time calculators (coming soon)</li>
-          </ul>
-          <li>⚙️ Productivity Helpers</li>
-          <ul className="pl-8 space-y-1">
-            <li>QR code generators</li>
-            <li>Password generators</li>
-            <li>Color palette tools and more (expanding regularly)</li>
-          </ul>
-        </ul>
-        <p className="mt-4 leading-relaxed">
-          More categories coming soon as we expand our free tool collection.
-        </p>
-      </section>
+        </section>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          Our Philosophy: Building the Best Free Online Tools
-        </h2>
-        <ul className="space-y-2 pl-5 list-disc">
-          <li>
-            Quality over quantity — We only build tools people actually need and
-            will use regularly
-          </li>
-          <li>
-            Transparency — What each tool does (and doesn't do) is clearly
-            explained upfront
-          </li>
-          <li>
-            Longevity — Our tools are built to remain useful for years, not just
-            chase trends
-          </li>
-          <li>
-            User-focused — Every feature decision is based on real user needs
-            and feedback
-          </li>
-          <li>SEO-optimized — Easy to find when you need them most</li>
-        </ul>
-        <p className="mt-4 leading-relaxed">
-          We believe that small, well-designed tools can save you hours over
-          time and make your daily workflow smoother.
-        </p>
-      </section>
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Available Tools</h2>
+          <p>
+            Our collection includes image tools (compressor, background remover), text utilities,
+            developer tools, calculators, and productivity helpers. We're adding new tools regularly,
+            focusing on quality over quantity.
+          </p>
+          <p className="mt-4">
+            <Link href="/explore-all-tools" className="text-blue-600 hover:underline">
+              Browse all free tools →
+            </Link>
+          </p>
+        </section>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          Just Getting Started 🚀
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          1000FreeTools is in its early stages, but we're building with purpose.
-          New tools are added regularly, existing ones are continuously
-          improved, and your feedback directly shapes what we create next.
-        </p>
-        <p className="mb-4 leading-relaxed">Currently Available Free Tools:</p>
-        <ul className="space-y-2 pl-5 list-disc">
-          <li>✓ Image Compressor — Reduce file sizes without losing quality</li>
-          <li>✓ Background Remover — Remove image backgrounds instantly</li>
-        </ul>
-        <p className="mt-4 leading-relaxed">
-          Many more tools are in development. We're starting small to ensure
-          everything we release is genuinely useful, well-executed, and
-          optimized for search engines.
-        </p>
-      </section>
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Our Philosophy</h2>
+          <p>
+            We build tools people actually need for everyday tasks. Each utility is designed to
+            do one job exceptionally well—no bloat, no complexity. We're starting small and growing
+            thoughtfully, ensuring every tool we release is genuinely useful and well-crafted.
+          </p>
+        </section>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          Building on Experience
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          My last site{" "}
-          <a
-            href="https://indeetools.com"
-            className="text-blue-600 hover:underline"
-          >
-            indeetools.com
-          </a>{" "}
-          with 100+ useful tools is SEO dead due to some issues so I am adding
-          tools here gradually with improved SEO, so you will see more tools
-          here soon.
-        </p>
-      </section>
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">FAQ</h2>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          Frequently Asked Questions
-        </h2>
-        <p className="mb-4 leading-relaxed">Are these tools really free?</p>
-        <p className="mb-2 leading-relaxed">
-          Yes! All tools on 1000FreeTools are completely free with no hidden
-          charges, trial periods, or premium upsells.
-        </p>
-        <p className="mb-4 leading-relaxed">Do I need to create an account?</p>
-        <p className="mb-2 leading-relaxed">
-          No sign-up required. Just visit, use the tool, and get your work done.
-        </p>
-        <p className="mb-4 leading-relaxed">Is my data safe?</p>
-        <p className="mb-2 leading-relaxed">
-          Absolutely. Most tools process data directly in your browser. We don't
-          upload or store your files unless explicitly stated (like with certain
-          AI tools that require server processing).
-        </p>
-        <p className="mb-4 leading-relaxed">What tools are coming next?</p>
-        <p className="mb-2 leading-relaxed">
-          We're actively developing PDF converters, code formatters, color
-          pickers, and many more utilities based on user requests.
-        </p>
-      </section>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-lg mb-2">Are these tools really free?</h3>
+              <p>Yes. All tools are completely free with no hidden charges or premium tiers.</p>
+            </div>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4 pb-2 border-b">
-          We're Here to Help
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          Have a tool idea? Found a bug? Want to suggest improvements?
-        </p>
-        <p className="mb-4 leading-relaxed">
-          We're actively listening — the best free online tools are built with
-          real users in mind.
-        </p>
-        <ul className="space-y-2 pl-5 list-disc">
-          <li>📧 Contact us: contact @1000freetools.com</li>
-          <li>💡 Suggest a tool: Share your ideas with us</li>
-          <li>🐛 Report an issue: Help us improve</li>
-        </ul>
-        <p className="mt-4 leading-relaxed">
-          Join thousands of users who trust 1000FreeTools for their daily online
-          utility needs. Bookmark us and discover why our free tools are
-          different.
-        </p>
-        <p className="mt-4 leading-relaxed">
-          Start using our free online tools today → 1000FreeTools.com
-        </p>
-      </section>
+            <div>
+              <h3 className="font-semibold text-lg mb-2">Do I need to create an account?</h3>
+              <p>No sign-up required. Just visit and use any tool instantly.</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-lg mb-2">Is my data safe?</h3>
+              <p>
+                Yes. Most tools process data directly in your browser. We don't upload or store
+                your files unless explicitly stated.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+          <p>
+            Have a tool suggestion or found an issue? Contact us at{" "}
+            <a href="mailto:contact@1000freetools.com" className="text-blue-600 hover:underline">
+              contact@1000freetools.com
+            </a>
+          </p>
+        </section>
+
+        <div className="bg-gray-50 p-6 rounded-lg mt-12">
+          <p className="text-center text-gray-700">
+            Join thousands using 1000FreeTools for their daily online needs.{" "}
+            <a href="/" className="text-blue-600 font-semibold hover:underline">
+              Start using our free tools →
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
