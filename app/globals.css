@@ -195,6 +195,35 @@ body {
 
   body {
     @apply bg-background text-foreground;
+
+    /* 
+    🎨 TEST THESE 10 PREMIUM FONTS - Just uncomment one at a time to test:
+    
+    1. Inter (Modern, UI-focused, excellent readability) - CURRENTLY ACTIVE
+    2. Open Sans (Clean, neutral, most popular)
+    3. Lato (Warm, friendly, great for body text)
+    4. Merriweather (Elegant serif, perfect for articles)
+    5. Source Sans 3 (Professional, Adobe design)
+    6. Nunito (Rounded, friendly, highly legible)
+    7. Work Sans (Geometric, modern, versatile)
+    8. Plus Jakarta Sans (Contemporary, elegant)
+    9. DM Sans (Low-contrast, excellent readability)
+    10. Manrope (Modern, geometric, balanced)
+    */
+
+    /* Current default font */
+    /* font-family: var(--font-inter), system-ui, sans-serif; */
+
+    /* Uncomment one of these to test different fonts: */
+    /* font-family: var(--font-open-sans), Arial, sans-serif; */
+    font-family: var(--font-lato), Arial, sans-serif;
+    /* font-family: var(--font-merriweather), Georgia, serif; */
+    /* font-family: var(--font-source-sans-3), Arial, sans-serif; */
+    /* font-family: var(--font-nunito), Arial, sans-serif; */
+    /* font-family: var(--font-work-sans), Arial, sans-serif; */
+    /* font-family: var(--font-plus-jakarta-sans), Arial, sans-serif; */
+    /* font-family: var(--font-dm-sans), Arial, sans-serif; */
+    /* font-family: var(--font-manrope), Arial, sans-serif; */
   }
 }
 
