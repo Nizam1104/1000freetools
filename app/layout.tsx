@@ -1,116 +1,15 @@
 import "./globals.css";
-import {
-  Inter,
-  Open_Sans,
-  Lato,
-  Merriweather,
-  Source_Sans_3,
-  Nunito,
-  Work_Sans,
-  Plus_Jakarta_Sans,
-  DM_Sans,
-  Manrope
-} from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import PrimaryLayout from "@/components/layouts/PrimaryLayout";
 import { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
-// 1. Inter - Modern, highly readable, excellent for UI
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
-
-// 2. Open Sans - Clean, neutral, extremely readable
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-open-sans",
-  display: "swap",
-  preload: true,
-  fallback: ["Arial", "sans-serif"],
-});
-
-// 3. Lato - Warm, friendly, great for body text
-const lato = Lato({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  variable: "--font-lato",
-  display: "swap",
-  preload: true,
-  fallback: ["Arial", "sans-serif"],
-});
-
-// 4. Merriweather - Elegant serif, perfect for long-form content
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  variable: "--font-merriweather",
-  display: "swap",
-  preload: true,
-  fallback: ["Georgia", "serif"],
-});
-
-// 5. Source Sans 3 - Professional, clean, Adobe's design
-const sourceSans3 = Source_Sans_3({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-source-sans-3",
-  display: "swap",
-  preload: true,
-  fallback: ["Arial", "sans-serif"],
-});
-
-// 6. Nunito - Rounded, friendly, highly legible
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-nunito",
-  display: "swap",
-  preload: true,
-  fallback: ["Arial", "sans-serif"],
-});
-
-// 7. Work Sans - Geometric, modern, great for headings and body
+// Work Sans - Geometric, modern, great for headings and body
 const workSans = Work_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-work-sans",
-  display: "swap",
-  preload: true,
-  fallback: ["Arial", "sans-serif"],
-});
-
-// 8. Plus Jakarta Sans - Contemporary, elegant, versatile
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-plus-jakarta-sans",
-  display: "swap",
-  preload: true,
-  fallback: ["Arial", "sans-serif"],
-});
-
-// 9. DM Sans - Geometric, low-contrast, excellent readability
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-dm-sans",
-  display: "swap",
-  preload: true,
-  fallback: ["Arial", "sans-serif"],
-});
-
-// 10. Manrope - Modern, geometric, perfect balance
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-manrope",
   display: "swap",
   preload: true,
   fallback: ["Arial", "sans-serif"],
@@ -197,7 +96,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
-      <body className={`${inter.variable} ${openSans.variable} ${lato.variable} ${merriweather.variable} ${sourceSans3.variable} ${nunito.variable} ${workSans.variable} ${plusJakartaSans.variable} ${dmSans.variable} ${manrope.variable} w-screen`}>
+      <body className={`${workSans.variable} w-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
