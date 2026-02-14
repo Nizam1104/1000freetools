@@ -5,10 +5,10 @@ import Script from "next/script";
 
 const imageTools = [
   {
-    toolName: "Image Compressor",
-    toolDescription:
+    name: "Image Compressor",
+    description:
       "Compress images online - reduce file size while maintaining quality",
-    toolLink: "/image-tools/image-compressor",
+    href: "/image-tools/image-compressor",
   },
 ];
 
@@ -36,26 +36,28 @@ export default function ImageToolsPage() {
     },
     {
       question: "Are all these tool Free?",
-      answer: "Yes! all current and upcoming tools are free to use. No hidden charges, no premium plans, no limits."
+      answer:
+        "Yes! all current and upcoming tools are free to use. No hidden charges, no premium plans, no limits.",
     },
     {
       question: "Do you store my images?",
-      answer: "No! all images are processed in your browser and are not stored on our servers."
-    }
+      answer:
+        "No! all images are processed in your browser and are not stored on our servers.",
+    },
   ];
 
   // JSON-LD Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqsData.map(faq => ({
+    mainEntity: faqsData.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+        text: faq.answer,
+      },
+    })),
   };
 
   return (
@@ -74,7 +76,8 @@ export default function ImageToolsPage() {
               Free Image Tools
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Free online image tools. Compress, edit, convert, resize and optimize images with ease.
+              Free online image tools. Compress, edit, convert, resize and
+              optimize images with ease.
             </p>
           </div>
         </section>
@@ -90,9 +93,14 @@ export default function ImageToolsPage() {
         {/* Main Content */}
         <section className="container mx-auto px-4 py-12">
           <div className="prose max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-4">Why use 1000freetools?</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              Why use 1000freetools?
+            </h2>
             <p className="text-muted-foreground mb-6">
-              1000freetools is a free online tool that helps you compress, edit, convert, resize and optimize images with ease. All processing happens directly in your browser, so your images stay private and never touch our servers.
+              1000freetools is a free online tool that helps you compress, edit,
+              convert, resize and optimize images with ease. All processing
+              happens directly in your browser, so your images stay private and
+              never touch our servers.
             </p>
           </div>
         </section>

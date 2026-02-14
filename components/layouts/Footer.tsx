@@ -10,10 +10,37 @@ const quickLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-const popularTools = [
-  { name: "Image Compressor", href: "/image-tools/image-compressor" },
-  { name: "Favicon Generator", href: "/design-tools/favicon-generator" },
-  { name: "Mock Data Generator", href: "/developer-tools/mock-data-generator" }
+const toolsByCategory = [
+  {
+    categoryName: "Image Tools",
+    tools: [
+      { name: "Image Compressor", href: "/image-tools/image-compressor" },
+    ],
+  },
+  {
+    categoryName: "Design Tools",
+    tools: [
+      { name: "Favicon Generator", href: "/design-tools/favicon-generator" },
+    ],
+  },
+  {
+    categoryName: "Developer Tools",
+    tools: [
+      {
+        name: "Mock Data Generator",
+        href: "/developer-tools/mock-data-generator",
+      },
+    ],
+  },
+  {
+    categoryName: "CSV Tools",
+    tools: [
+      {
+        name: "CSV Viewer",
+        href: "/csv-tools/csv-viewer",
+      },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -40,41 +67,52 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-        </div>
 
-        <div className="lg:col-span-3">
-          <h3 className="font-semibold mb-4 mt-8">Popular Tools</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-            {popularTools.slice(0, 9).map((tool) => (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
-              >
-                • {tool.name}
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {/* Quick Links Section */}
+            <div>
+              <h3 className="font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                {quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
         <Separator className="my-8" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {/* Quick Links Section */}
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        {/* Popular Tools Section */}
+        <div className="lg:col-span-3">
+          <h3 className="font-semibold mb-4 mt-8">Popular Tools</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {toolsByCategory.map((category, index) => (
+              <div key={index}>
+                <h4 className="font-medium mb-3 text-foreground">
+                  {category.categoryName}
+                </h4>
+                <ul className="space-y-2">
+                  {category.tools.map((tool, toolIndex) => (
+                    <li key={toolIndex}>
+                      <Link
+                        href={tool.href}
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        {tool.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
