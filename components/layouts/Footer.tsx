@@ -41,6 +41,15 @@ const toolsByCategory = [
       },
     ],
   },
+  {
+    categoryName: "Video Tools",
+    tools: [
+      {
+        name: "Video Compressor",
+        href: "/video-tools/video-compressor",
+      },
+    ],
+  },
 ];
 
 export default function Footer() {

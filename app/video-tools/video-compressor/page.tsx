@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,8 +21,23 @@ import {
   CompressionSettings,
 } from "@/utils/video-utils/videoCompressor";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export default function VideoCompressionPage() {
+  const relatedTools = [
+    {
+      name: "Image Compressor",
+      description: "Single and bulk image compressor, No Limits",
+      href: "/image-tools/image-compressor",
+    },
+  ];
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -180,8 +189,78 @@ export default function VideoCompressionPage() {
     }
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What's the maximum file size I can compress?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "There's no hard limit imposed by the tool itself. The maximum file size depends entirely on your device's available RAM. Users with 8GB RAM have successfully compressed 4GB+ video files. If you encounter memory issues with very large files, try closing other applications or using a device with more RAM.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Will compression reduce video quality?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Compression always involves some trade-off between file size and quality. However, with the right bitrate settings, you can significantly reduce file size with minimal visible quality loss. Start with 2-3 Mbps for 1080p videos and adjust based on your needs.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which format should I choose - MP4 or WebM?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "MP4 with H.264 offers the best compatibility across devices and platforms. WebM with VP9 provides better compression efficiency (smaller files at the same quality) but may not play on older devices. Choose MP4 for sharing, WebM for web use or when file size is critical.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does compression take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Processing time depends on your video length, selected settings, and device performance. A 10-minute 1080p video typically takes 2-5 minutes on modern laptops. Longer videos or 4K content will take proportionally longer. The progress bar shows real-time completion status.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does this work on mobile devices?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, the compressor works on modern mobile browsers, though performance varies by device. Mobile devices with limited RAM may struggle with very large files. For best results on mobile, compress smaller videos or reduce the resolution settings.",
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="container mx-auto py-8 px-4 max-w-4xl">
+    <div className="container mx-auto py-8 px-4 max-w-4xl 2xl:max-w-5xl">
+      <div className="mb-2 sm:mb-4 md:mb-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/video-tools">Video Tools</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/design-tools/favicon-generator">
+                Video Compressor
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold mb-4">
           Video Compressor - Reduce Video File Size Online Free
@@ -721,6 +800,10 @@ export default function VideoCompressionPage() {
             },
           ]}
         />
+      </section>
+
+      <section>
+        <ToolLinkCards tools={relatedTools} />
       </section>
     </div>
   );
