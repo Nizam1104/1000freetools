@@ -5,10 +5,9 @@ import Script from "next/script";
 
 const designTools = [
   {
-    toolName: "Favicon Generator",
-    toolDescription:
-      "Create professional favicons from text, images, or emojis",
-    toolLink: "/design-tools/favicon-generator",
+    name: "Favicon Generator",
+    description: "Create professional favicons from text, images, or emojis",
+    href: "/design-tools/favicon-generator",
   },
 ];
 
@@ -36,7 +35,8 @@ export default function DesignToolsPage() {
     },
     {
       question: "Are all these tools free?",
-      answer: "Yes! all current and upcoming tools are free to use. No hidden charges, no premium plans, no limits."
+      answer:
+        "Yes! all current and upcoming tools are free to use. No hidden charges, no premium plans, no limits.",
     },
     {
       question: "Do I need to install any software?",
@@ -54,14 +54,14 @@ export default function DesignToolsPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqsData.map(faq => ({
+    mainEntity: faqsData.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+        text: faq.answer,
+      },
+    })),
   };
 
   return (
@@ -80,7 +80,8 @@ export default function DesignToolsPage() {
               Free Design Tools | 1000 Free Tools
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Professional online design tools that help you create web graphics quickly and easily. No software installation required.
+              Professional online design tools that help you create web graphics
+              quickly and easily. No software installation required.
             </p>
           </div>
         </section>
@@ -96,14 +97,21 @@ export default function DesignToolsPage() {
         {/* Main Content */}
         <section className="container mx-auto px-4 py-12">
           <div className="prose max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-4">Simple Design Tools for Everyone</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              Simple Design Tools for Everyone
+            </h2>
             <p className="text-muted-foreground mb-6">
-              Our design tools are built for web designers, developers, and anyone who needs to create professional graphics without complex software. Everything runs in your browser, making it fast, private, and accessible from any device.
+              Our design tools are built for web designers, developers, and
+              anyone who needs to create professional graphics without complex
+              software. Everything runs in your browser, making it fast,
+              private, and accessible from any device.
             </p>
 
             <h2 className="text-2xl font-semibold mb-4">How to Use</h2>
             <p className="text-muted-foreground mb-6">
-              Choose a tool from the list above, customize your design using the available options, and download your creation. It's that simple. No sign-up required, no watermarks, completely free.
+              Choose a tool from the list above, customize your design using the
+              available options, and download your creation. It's that simple.
+              No sign-up required, no watermarks, completely free.
             </p>
 
             <h2 className="text-2xl font-semibold mb-4">Key Benefits</h2>

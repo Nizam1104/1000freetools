@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description: "Browse all free online tools including image compressors, design utilities, developer tools and more. All tools run directly in your browser with no registration required.",
     type: "website",
   },
+  alternates: {
+    canonical: "https://1000freetools.com/explore-all-tools"
+  }
 };
 
 // All tools data grouped by category
@@ -66,7 +69,7 @@ export default function ExploreAllToolsPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
             {category.categoryName}
           </h2>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2 sm:gap-y-4 md:gap-y-6 gap-x-2 sm:gap-x-4 md:gap-x-6">
             {category.tools.map((tool, toolIndex) => (
               <Link

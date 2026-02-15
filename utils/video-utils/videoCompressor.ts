@@ -77,10 +77,14 @@ export const compressVideo = async (
     // Get the compressed video buffer
     const compressedBuffer = output.target.buffer;
 
+    if (!compressedBuffer) {
+        throw new Error('Compression failed: no output buffer');
+    }
+
     // Create a blob from the compressed video
     const blob = new Blob([new Uint8Array(compressedBuffer)], {
         type: `video/${settings.format}`
     });
-    
+
     return URL.createObjectURL(blob);
 };

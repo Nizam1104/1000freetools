@@ -15,9 +15,9 @@ import ToolLinkCards from "@/components/utils/ToolLinkCards";
 // more tools
 const tools = [
   {
-    toolName: "Image Compressor",
-    toolDescription: "Compress images to reduce file size",
-    toolLink: "/image-tools/image-compressor",
+    name: "Image Compressor",
+    description: "Compress images to reduce file size",
+    href: "/image-tools/image-compressor",
   },
 ];
 
@@ -85,34 +85,55 @@ export default function FaviconGeneratorPage() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Features Section */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">Features of Favicon Generator</h2>
+            <h2 className="text-2xl font-bold mb-6">
+              Features of Favicon Generator
+            </h2>
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">Text to Favicon</strong>
-                  <span className="text-muted-foreground">Turn letters into icons with custom fonts, colors, and shapes.</span>
+                  <strong className="block text-foreground">
+                    Text to Favicon
+                  </strong>
+                  <span className="text-muted-foreground">
+                    Turn letters into icons with custom fonts, colors, and
+                    shapes.
+                  </span>
                 </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">Image Converter</strong>
-                  <span className="text-muted-foreground">Convert PNG, JPG, or SVG logos into pixel-perfect favicons.</span>
+                  <strong className="block text-foreground">
+                    Image Converter
+                  </strong>
+                  <span className="text-muted-foreground">
+                    Convert PNG, JPG, or SVG logos into pixel-perfect favicons.
+                  </span>
                 </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">Emoji Support</strong>
-                  <span className="text-muted-foreground">Create fun, expressive icons using the standard emoji library.</span>
+                  <strong className="block text-foreground">
+                    Emoji Support
+                  </strong>
+                  <span className="text-muted-foreground">
+                    Create fun, expressive icons using the standard emoji
+                    library.
+                  </span>
                 </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">Complete Package</strong>
-                  <span className="text-muted-foreground">Get .ico for legacy browsers and high-res .png for iOS/Android.</span>
+                  <strong className="block text-foreground">
+                    Complete Package
+                  </strong>
+                  <span className="text-muted-foreground">
+                    Get .ico for legacy browsers and high-res .png for
+                    iOS/Android.
+                  </span>
                 </div>
               </li>
             </ul>
@@ -120,34 +141,55 @@ export default function FaviconGeneratorPage() {
 
           {/* Why Choose Section */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">Why Choose This Favicon Maker</h2>
+            <h2 className="text-2xl font-bold mb-6">
+              Why Choose This Favicon Maker
+            </h2>
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">100% Free & Open</strong>
-                  <span className="text-muted-foreground">No hidden costs, no sign-ups, and open-source transparency.</span>
+                  <strong className="block text-foreground">
+                    100% Free & Open
+                  </strong>
+                  <span className="text-muted-foreground">
+                    No hidden costs, no sign-ups, and open-source transparency.
+                  </span>
                 </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">Privacy First</strong>
-                  <span className="text-muted-foreground">Processing happens in your browser. No images are uploaded to servers.</span>
+                  <strong className="block text-foreground">
+                    Privacy First
+                  </strong>
+                  <span className="text-muted-foreground">
+                    Processing happens in your browser. No images are uploaded
+                    to servers.
+                  </span>
                 </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">Instant Preview</strong>
-                  <span className="text-muted-foreground">See exactly how your icon looks in browser tabs before downloading.</span>
+                  <strong className="block text-foreground">
+                    Instant Preview
+                  </strong>
+                  <span className="text-muted-foreground">
+                    See exactly how your icon looks in browser tabs before
+                    downloading.
+                  </span>
                 </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">✓</span>
                 <div>
-                  <strong className="block text-foreground">Developer Friendly</strong>
-                  <span className="text-muted-foreground">Generates the exact HTML code you need for your website head.</span>
+                  <strong className="block text-foreground">
+                    Developer Friendly
+                  </strong>
+                  <span className="text-muted-foreground">
+                    Generates the exact HTML code you need for your website
+                    head.
+                  </span>
                 </div>
               </li>
             </ul>
@@ -157,25 +199,31 @@ export default function FaviconGeneratorPage() {
 
       {/* FAQs Section */}
       <section className="container mx-auto px-4 py-8 mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Frequently Asked Questions
+        </h2>
         <Faqs
           faqs={[
             {
               question: "What file formats does this tool generate?",
-              answer: "It generates a standard favicon.ico file (containing multiple sizes) for older browsers and high-resolution PNG files (16x16 up to 512x512) for modern browsers, Android, and iOS devices."
+              answer:
+                "It generates a standard favicon.ico file (containing multiple sizes) for older browsers and high-resolution PNG files (16x16 up to 512x512) for modern browsers, Android, and iOS devices.",
             },
             {
               question: "How do I add the favicon to my website?",
-              answer: "Download the ZIP file, extract it, and place the images in your website's root folder. Then, copy the provided HTML code into the <head> section of your pages."
+              answer:
+                "Download the ZIP file, extract it, and place the images in your website's root folder. Then, copy the provided HTML code into the <head> section of your pages.",
             },
             {
               question: "Can I use these favicons commercially?",
-              answer: "Yes! You can use the favicons generated here for any personal or commercial project without restriction or attribution."
+              answer:
+                "Yes! You can use the favicons generated here for any personal or commercial project without restriction or attribution.",
             },
             {
               question: "Is my data safe?",
-              answer: "Absolutely. All image processing happens locally in your web browser. We do not store or upload your images to any server."
-            }
+              answer:
+                "Absolutely. All image processing happens locally in your web browser. We do not store or upload your images to any server.",
+            },
           ]}
         />
         <script
@@ -184,41 +232,41 @@ export default function FaviconGeneratorPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": [
+              mainEntity: [
                 {
                   "@type": "Question",
-                  "name": "What file formats does this tool generate?",
-                  "acceptedAnswer": {
+                  name: "What file formats does this tool generate?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "It generates a standard favicon.ico file (containing multiple sizes) for older browsers and high-resolution PNG files (16x16 up to 512x512) for modern browsers, Android, and iOS devices."
-                  }
+                    text: "It generates a standard favicon.ico file (containing multiple sizes) for older browsers and high-resolution PNG files (16x16 up to 512x512) for modern browsers, Android, and iOS devices.",
+                  },
                 },
                 {
                   "@type": "Question",
-                  "name": "How do I add the favicon to my website?",
-                  "acceptedAnswer": {
+                  name: "How do I add the favicon to my website?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "Download the ZIP file, extract it, and place the images in your website's root folder. Then, copy the provided HTML code into the <head> section of your pages."
-                  }
+                    text: "Download the ZIP file, extract it, and place the images in your website's root folder. Then, copy the provided HTML code into the <head> section of your pages.",
+                  },
                 },
                 {
                   "@type": "Question",
-                  "name": "Can I use these favicons commercially?",
-                  "acceptedAnswer": {
+                  name: "Can I use these favicons commercially?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "Yes! You can use the favicons generated here for any personal or commercial project without restriction or attribution."
-                  }
+                    text: "Yes! You can use the favicons generated here for any personal or commercial project without restriction or attribution.",
+                  },
                 },
                 {
                   "@type": "Question",
-                  "name": "Is my data safe?",
-                  "acceptedAnswer": {
+                  name: "Is my data safe?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "Absolutely. All image processing happens locally in your web browser. We do not store or upload your images to any server."
-                  }
-                }
-              ]
-            })
+                    text: "Absolutely. All image processing happens locally in your web browser. We do not store or upload your images to any server.",
+                  },
+                },
+              ],
+            }),
           }}
         />
       </section>

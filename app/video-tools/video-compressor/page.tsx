@@ -17,6 +17,7 @@ export default function VideoCompressionPage() {
     const [isProcessing, setIsProcessing] = useState(false);
     const [progress, setProgress] = useState(0);
     const [compressedUrl, setCompressedUrl] = useState<string | null>(null);
+    const [compressedFileSize, setCompressedFileSize] = useState<number | null>(null);
     const [error, setError] = useState<string | null>(null);
     const originalVideoUrl = useRef<string | null>(null);
 
@@ -26,8 +27,9 @@ export default function VideoCompressionPage() {
         height: 720,
         bitrate: 2000000, // 2 Mbps
         codec: 'vp9', // Default to VP9
-        format: 'webm', // Default to WebM
+        format: 'mp4', // Default to MP4
     });
+    const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
 
     // Clean up object URLs when component unmounts or file changes
     useEffect(() => {
@@ -39,19 +41,23 @@ export default function VideoCompressionPage() {
                 URL.revokeObjectURL(compressedUrl);
             }
         };
-    }, []);
+    }, [compressedUrl]);
 
-    // Handle original video URL when selectedFile changes
+    // Handle original video URL and reset compression results when selectedFile changes
     useEffect(() => {
         if (originalVideoUrl.current) {
             URL.revokeObjectURL(originalVideoUrl.current);
             originalVideoUrl.current = null;
         }
-        
+
         if (selectedFile) {
             originalVideoUrl.current = URL.createObjectURL(selectedFile);
         }
-        
+
+        // Reset compression results when file changes
+        setCompressedUrl(null);
+        setCompressedFileSize(null);
+
         return () => {
             if (originalVideoUrl.current) {
                 URL.revokeObjectURL(originalVideoUrl.current);
@@ -96,6 +102,16 @@ export default function VideoCompressionPage() {
                 }
             );
 
+            // Get the size of the compressed file
+            try {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                setCompressedFileSize(blob.size);
+            } catch (sizeErr) {
+                console.error('Could not determine compressed file size:', sizeErr);
+                setCompressedFileSize(null);
+            }
+
             setCompressedUrl(url);
         } catch (err) {
             console.error('Compression error:', err);
@@ -127,8 +143,8 @@ export default function VideoCompressionPage() {
                     {/* File Upload Section */}
                     <div className="space-y-2">
                         <Label htmlFor="video-upload">Select Video File</Label>
-                        <div className="relative flex flex-col items-center justify-center border-2 border-dashed border-input rounded-lg p-8 transition-colors hover:border-accent">
-                            <Upload className="h-12 w-12 text-muted-foreground mb-2" />
+                        <div className="relative flex flex-col items-center justify-center border-2 border-dashed border-input rounded-lg p-4 transition-colors hover:border-accent">
+                            <Upload className="h-8 w-8 text-muted-foreground mb-1" />
                             <Input
                                 id="video-upload"
                                 type="file"
@@ -139,7 +155,7 @@ export default function VideoCompressionPage() {
                             />
                             <Label
                                 htmlFor="video-upload"
-                                className="cursor-pointer text-center w-full py-6"
+                                className="cursor-pointer text-center w-full py-2"
                             >
                                 <span className="text-muted-foreground text-sm">
                                     {selectedFile ? `Selected: ${selectedFile.name}` : 'Click to upload a video file or drag and drop'}
@@ -188,48 +204,6 @@ export default function VideoCompressionPage() {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <Label>Video Codec</Label>
-                                        <Select
-                                            value={compressionSettings.codec}
-                                            onValueChange={(value) => handleSettingChange('codec', value)}
-                                            disabled={isProcessing}
-                                        >
-                                            <SelectTrigger>
-                                                <SelectValue />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="vp9">VP9</SelectItem>
-                                                <SelectItem value="vp8">VP8</SelectItem>
-                                                <SelectItem value="avc1">H.264</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label>Resolution: {compressionSettings.width} x {compressionSettings.height}</Label>
-                                        <div className="grid grid-cols-2 gap-2">
-                                            <div className="space-y-2">
-                                                <Label className="text-xs">Width</Label>
-                                                <Input
-                                                    type="number"
-                                                    value={compressionSettings.width}
-                                                    onChange={(e) => handleSettingChange('width', Number(e.target.value))}
-                                                    disabled={isProcessing}
-                                                />
-                                            </div>
-                                            <div className="space-y-2">
-                                                <Label className="text-xs">Height</Label>
-                                                <Input
-                                                    type="number"
-                                                    value={compressionSettings.height}
-                                                    onChange={(e) => handleSettingChange('height', Number(e.target.value))}
-                                                    disabled={isProcessing}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-2">
                                         <div className="flex justify-between text-sm">
                                             <Label>Bitrate: {(compressionSettings.bitrate / 1000000).toFixed(2)} Mbps</Label>
                                         </div>
@@ -242,7 +216,71 @@ export default function VideoCompressionPage() {
                                             disabled={isProcessing}
                                             className="w-full"
                                         />
+                                        <p className="text-xs text-muted-foreground italic">
+                                            Low bitrate → low quality video, high compression
+                                        </p>
+                                        <p className='text-xs text-muted-foreground italic'>
+                                            High bitrate → high quality video, less compression
+                                        </p>
                                     </div>
+
+                                    {/* Advanced Options Toggle */}
+                                    <div className="pt-2">
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
+                                            className="text-sm text-blue-600 hover:text-blue-800 underline"
+                                        >
+                                            {showAdvancedOptions ? 'Hide Advanced Options' : 'Show Advanced Options'}
+                                        </button>
+                                    </div>
+
+                                    {/* Advanced Options */}
+                                    {showAdvancedOptions && (
+                                        <div className="space-y-4 pt-4 border-t border-gray-200">
+                                            <div className="space-y-2">
+                                                <Label>Video Codec</Label>
+                                                <Select
+                                                    value={compressionSettings.codec}
+                                                    onValueChange={(value) => handleSettingChange('codec', value)}
+                                                    disabled={isProcessing}
+                                                >
+                                                    <SelectTrigger>
+                                                        <SelectValue />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        <SelectItem value="vp9">VP9</SelectItem>
+                                                        <SelectItem value="vp8">VP8</SelectItem>
+                                                        <SelectItem value="avc1">H.264</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                            </div>
+
+                                            <div className="space-y-2">
+                                                <Label>Resolution: {compressionSettings.width} x {compressionSettings.height}</Label>
+                                                <div className="grid grid-cols-2 gap-2">
+                                                    <div className="space-y-2">
+                                                        <Label className="text-xs">Width</Label>
+                                                        <Input
+                                                            type="number"
+                                                            value={compressionSettings.width}
+                                                            onChange={(e) => handleSettingChange('width', Number(e.target.value))}
+                                                            disabled={isProcessing}
+                                                        />
+                                                    </div>
+                                                    <div className="space-y-2">
+                                                        <Label className="text-xs">Height</Label>
+                                                        <Input
+                                                            type="number"
+                                                            value={compressionSettings.height}
+                                                            onChange={(e) => handleSettingChange('height', Number(e.target.value))}
+                                                            disabled={isProcessing}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </CardContent>
                             </Card>
 
@@ -292,26 +330,78 @@ export default function VideoCompressionPage() {
 
                     {/* Result Display */}
                     {compressedUrl && !isProcessing && (
-                        <Card>
-                            <CardHeader>
-                                <CardTitle className="text-lg">Compression Complete!</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="space-y-4">
-                                    <video
-                                        src={compressedUrl}
-                                        controls
-                                        className="w-full h-auto rounded-md bg-muted"
-                                    />
-                                    <div className="flex justify-center">
-                                        <Button onClick={handleDownload}>
-                                            <Download className="h-4 w-4 mr-2" />
-                                            Download Compressed Video
-                                        </Button>
+                        <div className="space-y-4">
+                            <video
+                                src={compressedUrl}
+                                controls
+                                className="w-full h-auto rounded-md bg-muted"
+                            />
+                            {/* File Size Information */}
+                            <div className="bg-gray-50 p-3 rounded-md border">
+                                <h3 className="font-medium text-sm mb-2">File Size Information</h3>
+
+                                <div className="grid grid-cols-3 gap-2">
+                                    {/* Original */}
+                                    <div className="text-center">
+                                        <p className="text-xs text-muted-foreground">
+                                            Original
+                                        </p>
+                                        <p className="text-sm font-semibold">
+                                            {selectedFile
+                                                ? `${(selectedFile.size / (1024 * 1024)).toFixed(2)} MB`
+                                                : "N/A"}
+                                        </p>
+                                    </div>
+
+                                    {/* Compressed */}
+                                    <div className="text-center">
+                                        <p className="text-xs text-muted-foreground">
+                                            Compressed
+                                        </p>
+                                        <p className="text-sm font-semibold text-green-600">
+                                            {compressedFileSize !== null
+                                                ? `${(compressedFileSize / (1024 * 1024)).toFixed(2)} MB`
+                                                : "…"}
+                                        </p>
+                                    </div>
+
+                                    {/* Savings */}
+                                    <div className="text-center">
+                                        <p className="text-xs text-muted-foreground">
+                                            Savings
+                                        </p>
+                                        <p className="text-sm font-semibold text-blue-600">
+                                            {selectedFile && compressedFileSize !== null
+                                                ? `${(
+                                                    (1 - compressedFileSize / selectedFile.size) *
+                                                    100
+                                                ).toFixed(1)}%`
+                                                : "N/A"}
+                                        </p>
                                     </div>
                                 </div>
-                            </CardContent>
-                        </Card>
+
+                                {selectedFile && compressedFileSize !== null && (
+                                    <p className="mt-2 text-xs text-center text-muted-foreground">
+                                        Reduced by{" "}
+                                        <span className="font-medium">
+                                            {(
+                                                (selectedFile.size - compressedFileSize) /
+                                                (1024 * 1024)
+                                            ).toFixed(2)}{" "}
+                                            MB
+                                        </span>
+                                    </p>
+                                )}
+                            </div>
+
+                            <div className="flex justify-center">
+                                <Button onClick={handleDownload}>
+                                    <Download className="h-4 w-4 mr-2" />
+                                    Download Compressed Video
+                                </Button>
+                            </div>
+                        </div>
                     )}
                 </CardContent>
             </Card>
