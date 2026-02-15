@@ -19,6 +19,7 @@ export default function VideoCompressionPage() {
     const [compressedUrl, setCompressedUrl] = useState<string | null>(null);
     const [compressedFileSize, setCompressedFileSize] = useState<number | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [videoDuration, setVideoDuration] = useState<number | null>(null); // Duration in seconds
     const originalVideoUrl = useRef<string | null>(null);
 
     // Compression settings
@@ -51,7 +52,15 @@ export default function VideoCompressionPage() {
         }
 
         if (selectedFile) {
-            originalVideoUrl.current = URL.createObjectURL(selectedFile);
+            const url = URL.createObjectURL(selectedFile);
+            originalVideoUrl.current = url;
+
+            // Get video duration
+            const video = document.createElement('video');
+            video.src = url;
+            video.onloadedmetadata = () => {
+                setVideoDuration(video.duration);
+            };
         }
 
         // Reset compression results when file changes
@@ -81,6 +90,21 @@ export default function VideoCompressionPage() {
             ...prev,
             [field]: value
         }));
+    };
+
+    // Calculate the approximate output size based on bitrate and duration
+    const calculateApproximateSize = (): string => {
+        if (!videoDuration || videoDuration <= 0) {
+            return "Calculate after loading video";
+        }
+
+        // Bitrate is in bits per second, duration is in seconds
+        // Total bits = bitrate * duration
+        // Convert to MB: (bits * seconds) / 8 bits per byte / 1024^2 bytes per MB
+        const totalBits = compressionSettings.bitrate * videoDuration;
+        const sizeInMB = (totalBits / 8) / (1024 * 1024);
+
+        return `${sizeInMB.toFixed(2)} MB`;
     };
 
     const handleCompress = async () => {
@@ -206,6 +230,7 @@ export default function VideoCompressionPage() {
                                     <div className="space-y-2">
                                         <div className="flex justify-between text-sm">
                                             <Label>Bitrate: {(compressionSettings.bitrate / 1000000).toFixed(2)} Mbps</Label>
+                                            <span className="text-sm font-mono">~{calculateApproximateSize()} estimated</span>
                                         </div>
                                         <Slider
                                             min={100000}
