@@ -26,6 +26,11 @@ const moreTools = [
     description: "Create Favicon for your website",
     href: "/design-tools/favicon-generator",
   },
+  {
+    name: "Video Compressor",
+    description: "In browser video compression without limits",
+    href: "/video-tools/video-compressor",
+  },
 ];
 
 export default function ImageCompressorPage() {

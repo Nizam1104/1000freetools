@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://1000freetools.com/sitemap.xml
+
+# Content signals for AI and search usage
+# search: yes
+# ai-input: no
+# ai-train: no
