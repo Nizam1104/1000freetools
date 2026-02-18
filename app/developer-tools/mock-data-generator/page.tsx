@@ -143,7 +143,7 @@ export default function MockDataGeneratorPage() {
             How to Use the Mock Data Generator
           </h2>
 
-          <ol className="mt-4 space-y-2 text-base sm:text-lg">
+          <ol className="mt-4 space-y-2 text-base sm:text-lg list-decimal">
             <li>Add the number of fields you need</li>
             <li>Enter meaningful field names</li>
             <li>Select appropriate data types (name, age, UUID, etc.)</li>
@@ -152,6 +152,11 @@ export default function MockDataGeneratorPage() {
             <li>
               Enter the number of rows and click <strong>Generate</strong>
             </li>
+          </ol>
+
+          <ol className="mt-4 space-y-2 text-base sm:text-lg list-decimal">
+            <li>You can write JSON Schema as per the rules</li>
+            <li>There is an option to generate json schema with 'AI Prompt'</li>
           </ol>
         </section>
 

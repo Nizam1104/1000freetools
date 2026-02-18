@@ -45,15 +45,6 @@ const escapeHTML = (str: string | number | boolean): string => {
 // let faker: any = null
 let generateExcelFromFields: any = null
 
-// Load faker library only when needed
-// const loadFaker = async () => {
-//     if (!faker) {
-//         const fakerModule = await import('@faker-js/faker')
-//         faker = fakerModule.faker
-//     }
-//     return faker
-// }
-
 // Load Excel generator only when needed
 const loadExcelGenerator = async () => {
     if (!generateExcelFromFields) {

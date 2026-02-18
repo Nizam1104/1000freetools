@@ -32,6 +32,109 @@ interface MockField {
   optionsInput?: string; // Store raw input for "Random Element from Array" fields
 }
 
+const AIPrompt = `You are a JSON schema generator for a mock data generator tool. I will describe the dataset I need, and you will generate a JSON schema array following these specifications:
+
+AVAILABLE FIELD TYPES:
+${JSON.stringify(fieldSpecs, null, 2)}
+
+JSON SCHEMA FORMAT:
+Generate a JSON array where each field object follows this structure:
+[
+  {
+    "fieldName": "field_name_here",
+    "type": "field_type_from_above_list",
+    "blankPercentage": 0,  // Optional: 0-100, percentage of empty values (default: 0)
+    "options": ["option1", "option2"]  // Only for "Random Element from Array" type
+  }
+]
+
+RULES:
+1. Each field must have "fieldName" (string) and "type" (one of the types listed above)
+2. "blankPercentage" is optional - include only if you want some values to be empty (0-100)
+3. "options" is only required for "Random Element from Array" type - provide an array of string values
+4. Field names should be descriptive and use camelCase or snake_case
+5. Choose appropriate field types based on the data context
+
+EXAMPLE SCHEMAS:
+
+Example 1 - User Data:
+[
+  {
+    "fieldName": "userId",
+    "type": "uuid"
+  },
+  {
+    "fieldName": "firstName",
+    "type": "firstName"
+  },
+  {
+    "fieldName": "lastName",
+    "type": "lastName"
+  },
+  {
+    "fieldName": "email",
+    "type": "email",
+    "blankPercentage": 5
+  },
+  {
+    "fieldName": "age",
+    "type": "integer"
+  },
+  {
+    "fieldName": "phone",
+    "type": "phone",
+    "blankPercentage": 10
+  },
+  {
+    "fieldName": "city",
+    "type": "city"
+  },
+  {
+    "fieldName": "country",
+    "type": "country"
+  }
+]
+
+Example 2 - E-commerce Product Data:
+[
+  {
+    "fieldName": "productId",
+    "type": "nanoid"
+  },
+  {
+    "fieldName": "productName",
+    "type": "product"
+  },
+  {
+    "fieldName": "description",
+    "type": "productDescription"
+  },
+  {
+    "fieldName": "price",
+    "type": "price"
+  },
+  {
+    "fieldName": "category",
+    "type": "department"
+  },
+  {
+    "fieldName": "inStock",
+    "type": "boolean"
+  },
+  {
+    "fieldName": "rating",
+    "type": "rating"
+  },
+  {
+    "fieldName": "imageUrl",
+    "type": "image"
+  }
+]
+
+
+NOW, GENERATE A JSON SCHEMA FOR THE FOLLOWING DATASET REQUIREMENT:
+[Describe your dataset requirements here - e.g., "I need a dataset for a library management system with books, members, and borrowing records"]`
+
 export default function MockDataGenerator() {
   const [fields, setFields] = useState<MockField[]>([]);
   const [showFieldTypesDialog, setShowFieldTypesDialog] = useState(false);
@@ -778,12 +881,77 @@ export default function MockDataGenerator() {
 
             {/* AI Prompt Tab */}
             <TabsContent value="ai" className="space-y-4">
-              <div className="flex items-center justify-center py-12">
-                <div className="text-center space-y-4">
-                  <h3 className="text-lg font-semibold">AI Prompt Generation</h3>
-                  <p className="text-muted-foreground max-w-md">
-                    This feature is coming soon. You will be able to describe your data structure in natural language and AI will generate the field schema for you.
+              <div className="space-y-6">
+                <div className="border rounded-lg p-6 bg-card">
+                  <h3 className="text-lg font-semibold mb-4">Generate JSON Schema with AI</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Use the following prompt with your preferred AI chatbot (ChatGPT, Claude, etc.) to generate a JSON schema for your mock data requirements.
                   </p>
+
+                  <div className="relative">
+                    <Textarea
+                      readOnly
+                      value={AIPrompt}
+                      className="min-h-[600px] max-h-[700px] overflow-y-auto font-mono text-sm bg-muted"
+                    />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="absolute top-2 right-2"
+                      onClick={async () => {
+
+                        try {
+                          await navigator.clipboard.writeText(AIPrompt);
+                          toast.success("Prompt copied to clipboard!");
+                        } catch (error) {
+                          toast.error("Failed to copy prompt");
+                        }
+                      }}
+                    >
+                      <Copy className="h-4 w-4 mr-2" />
+                      Copy Prompt
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="border rounded-lg p-6 bg-card space-y-4">
+                  <h3 className="text-lg font-semibold">How to Use This Prompt</h3>
+                  <ol className="list-decimal list-inside space-y-3 text-muted-foreground">
+                    <li>
+                      <strong>Copy the prompt</strong> by clicking the "Copy Prompt" button above
+                    </li>
+                    <li>
+                      <strong>Paste into your preferred AI chatbot</strong> (ChatGPT, Claude, Gemini, etc.)
+                    </li>
+                    <li>
+                      <strong>Replace the last line</strong> with your specific dataset requirements. For example:
+                      <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
+                        <li>"Generate a schema for a blog with authors, posts, and comments"</li>
+                        <li>"I need a dataset for a hospital management system with patients, doctors, and appointments"</li>
+                        <li>"Create a schema for a real estate listing with properties, agents, and transactions"</li>
+                        <li>"Generate a schema for a social media platform with users, posts, likes, and followers"</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Review the AI's response</strong> - it will generate a JSON schema array with all the field specifications
+                    </li>
+                    <li>
+                      <strong>Copy the generated JSON schema</strong> from the AI response
+                    </li>
+                    <li>
+                      <strong>Paste it in the "JSON Schema" tab</strong> of this tool and click "Convert to Fields"
+                    </li>
+                  </ol>
+
+                  <div className="mt-4 p-4 bg-muted rounded-lg">
+                    <p className="text-sm font-semibold mb-2">💡 Pro Tips:</p>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Be specific about your requirements - mention the entities and their relationships</li>
+                      <li>Specify if you need certain fields to have blank values (e.g., "10% of phone numbers should be empty")</li>
+                      <li>For custom dropdown values, ask the AI to use "Random Element from Array" type with specific options</li>
+                      <li>You can request multiple related schemas (e.g., separate schemas for users, orders, and products)</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </TabsContent>
