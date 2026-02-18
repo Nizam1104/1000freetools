@@ -3,15 +3,17 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Explore All Tools - 1000 Free Online Tools",
-  description: "Browse all free online tools including image compressors, design utilities, developer tools and more. All tools run directly in your browser with no registration required.",
+  description:
+    "Browse all free online tools including image compressors, design utilities, developer tools and more. All tools run directly in your browser with no registration required.",
   openGraph: {
     title: "Explore All Tools - 1000 Free Online Tools",
-    description: "Browse all free online tools including image compressors, design utilities, developer tools and more. All tools run directly in your browser with no registration required.",
+    description:
+      "Browse all free online tools including image compressors, design utilities, developer tools and more. All tools run directly in your browser with no registration required.",
     type: "website",
   },
   alternates: {
-    canonical: "https://1000freetools.com/explore-all-tools"
-  }
+    canonical: "https://1000freetools.com/explore-all-tools",
+  },
 };
 
 // All tools data grouped by category
@@ -21,31 +23,60 @@ const toolsByCategory = [
     tools: [
       {
         name: "Image Compressor",
-        description: "Compress images without losing quality. Supports JPEG, PNG, WebP, AVIF, and more formats.",
+        description:
+          "Compress images without losing quality. Supports JPEG, PNG, WebP, AVIF, and more formats.",
         href: "/image-tools/image-compressor",
-      }
-    ]
+      },
+    ],
   },
   {
     categoryName: "Design Tools",
     tools: [
       {
         name: "Favicon Generator",
-        description: "Create Professional Looking Favicon for Free, supports text, image, and emojis",
+        description:
+          "Create Professional Looking Favicon for Free, supports text, image, and emojis",
         href: "/design-tools/favicon-generator",
-      }
-    ]
+      },
+    ],
   },
   {
     categoryName: "Developer Tools",
     tools: [
       {
         name: "Mock Data Generator",
-        description: "Generate realistic test data for your applications to speed up development and testing.",
+        description:
+          "Generate realistic test data for your applications to speed up development and testing.",
         href: "/developer-tools/mock-data-generator",
-      }
-    ]
-  }
+      },
+    ],
+  },
+  {
+    categoryName: "Video Tools",
+    tools: [
+      {
+        name: "Video Compressor",
+        description: "Compress videos online - reduce file size, No size limit",
+        href: "/video-tools/video-compressor",
+      },
+      {
+        name: "Video MetaData Viewer",
+        description: "See Video or Audio files metadata",
+        href: "/video-tools/video-metadata-viewer",
+      },
+      {
+        name: "Video Player",
+        description: "Play any video file format instantly, Supports subtitles",
+        href: "/video-tools/video-player",
+      },
+      {
+        name: "Video Format Converter",
+        description:
+          "Convert between video formats, Supports wide range of video formats",
+        href: "/video-tools/video-format-converter",
+      },
+    ],
+  },
 ];
 
 export default function ExploreAllToolsPage() {
@@ -58,7 +89,8 @@ export default function ExploreAllToolsPage() {
             Explore All Tools
           </h1>
           <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
-            Browse our comprehensive collection of free online tools that run directly in your browser.
+            Browse our comprehensive collection of free online tools that run
+            directly in your browser.
           </p>
         </div>
       </section>

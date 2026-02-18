@@ -28,7 +28,7 @@ const moreTools = [
   },
   {
     name: "Video Compressor",
-    description: "In browser video compression without limits",
+    description: "Compress videos online - reduce file size, No size limit",
     href: "/video-tools/video-compressor",
   },
 ];

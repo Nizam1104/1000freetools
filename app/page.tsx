@@ -25,19 +25,43 @@ export default function Home() {
   const tools = [
     {
       name: "Image Compressor",
-      description: "Compress images without losing quality. Supports JPEG, PNG, WebP, AVIF, and more formats.",
-      href: "/image-tools/image-compressor"
+      description:
+        "Compress images without losing quality. Supports JPEG, PNG, WebP, AVIF, and more formats.",
+      href: "/image-tools/image-compressor",
     },
     {
       name: "Favicon Generator",
-      description: "Create Professional Looking Favicon for Free, supports text, image, and emojis",
-      href: "/design-tools/favicon-generator"
+      description:
+        "Create Professional Looking Favicon for Free, supports text, image, and emojis",
+      href: "/design-tools/favicon-generator",
     },
     {
       name: "Mock Data Generator",
-      description: "Generate mock data for testing and development. Supports JSON, CSV, and more formats.",
-      href: "/developer-tools/mock-data-generator"
-    }
+      description:
+        "Generate mock data for testing and development. Supports JSON, CSV, and more formats.",
+      href: "/developer-tools/mock-data-generator",
+    },
+    {
+      name: "Video Compressor",
+      description: "Compress videos online - reduce file size, No size limit",
+      href: "/video-tools/video-compressor",
+    },
+    {
+      name: "Video MetaData Viewer",
+      description: "See Video or Audio files metadata",
+      href: "/video-tools/video-metadata-viewer",
+    },
+    {
+      name: "Video Player",
+      description: "Play any video file format instantly, Supports subtitles",
+      href: "/video-tools/video-player",
+    },
+    {
+      name: "Video Format Converter",
+      description:
+        "Convert between video formats, Supports wide range of video formats",
+      href: "/video-tools/video-format-converter",
+    },
   ];
 
   return (
@@ -168,7 +192,9 @@ export default function Home() {
                     className="block p-6 border border-border rounded-lg bg-card hover:border-primary hover:shadow-md transition-colors duration-200"
                   >
                     <h4 className="text-xl font-semibold mb-2">{tool.name}</h4>
-                    <p className="text-muted-foreground mb-4">{tool.description}</p>
+                    <p className="text-muted-foreground mb-4">
+                      {tool.description}
+                    </p>
                     <span className="text-primary font-medium inline-flex items-center">
                       Try it now
                       <ArrowRight className="ml-1 h-4 w-4" />

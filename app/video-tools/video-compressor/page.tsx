@@ -37,6 +37,22 @@ export default function VideoCompressionPage() {
       description: "Single and bulk image compressor, No Limits",
       href: "/image-tools/image-compressor",
     },
+    {
+      name: "Video MetaData Viewer",
+      description: "See Video or Audio files metadata",
+      href: "/video-tools/video-metadata-viewer",
+    },
+    {
+      name: "Video Player",
+      description: "Play any video file format instantly, Supports subtitles",
+      href: "/video-tools/video-player",
+    },
+    {
+      name: "Video Format Converter",
+      description:
+        "Convert between video formats, Supports wide range of video formats",
+      href: "/video-tools/video-format-converter",
+    },
   ];
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);

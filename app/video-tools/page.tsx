@@ -6,9 +6,24 @@ import Script from "next/script";
 const videoTools = [
   {
     name: "Video Compressor",
-    description:
-      "Compress videos online - reduce file size while maintaining quality",
+    description: "Compress videos online - reduce file size, No size limit",
     href: "/video-tools/video-compressor",
+  },
+  {
+    name: "Video MetaData Viewer",
+    description: "See Video or Audio files metadata",
+    href: "/video-tools/video-metadata-viewer",
+  },
+  {
+    name: "Video Player",
+    description: "Play any video file format instantly, Supports subtitles",
+    href: "/video-tools/video-player",
+  },
+  {
+    name: "Video Format Converter",
+    description:
+      "Convert between video formats, Supports wide range of video formats",
+    href: "/video-tools/video-format-converter",
   },
 ];
 

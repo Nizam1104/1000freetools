@@ -18,6 +18,7 @@ import {
   Globe,
   CheckCircle2,
 } from "lucide-react";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 
 const faqData = [
   {
@@ -31,8 +32,7 @@ const faqData = [
       "No. This is one of the key advantages of our tool. All metadata extraction happens locally inside your browser using client-side processing. Your files are never transmitted or stored anywhere — making it ideal for sensitive or proprietary media.",
   },
   {
-    question:
-      "How do I check video metadata without installing software?",
+    question: "How do I check video metadata without installing software?",
     answer:
       'Simply open this page in your browser, click "Select a File," and choose your video or audio file. Results appear within seconds — no installation, no plugins, no extensions required.',
   },
@@ -49,6 +49,29 @@ const faqData = [
 ];
 
 export default function ShowVideoAudioMetadata() {
+  const relatedTools = [
+    {
+      name: "Image Compressor",
+      description: "Single and bulk image compressor, No Limits",
+      href: "/image-tools/image-compressor",
+    },
+    {
+      name: "Video Compressor",
+      description: "Compress videos online - reduce file size, No size limit",
+      href: "/video-tools/video-compressor",
+    },
+    {
+      name: "Video Player",
+      description: "Play any video file format instantly, Supports subtitles",
+      href: "/video-tools/video-player",
+    },
+    {
+      name: "Video Format Converter",
+      description:
+        "Convert between video formats, Supports wide range of video formats",
+      href: "/video-tools/video-format-converter",
+    },
+  ];
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       {/* Hero Section */}
@@ -70,8 +93,9 @@ export default function ShowVideoAudioMetadata() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              View detailed metadata from video and audio files instantly. No uploads,
-              no software, no waiting — everything happens in your browser.
+              View detailed metadata from video and audio files instantly. No
+              uploads, no software, no waiting — everything happens in your
+              browser.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -105,9 +129,7 @@ export default function ShowVideoAudioMetadata() {
       {/* Features Grid */}
       <section className="container mx-auto max-w-6xl px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">
-            What You'll See
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight">What You'll See</h2>
           <p className="mt-4 text-muted-foreground">
             Get comprehensive technical details about your media files
           </p>
@@ -123,27 +145,32 @@ export default function ShowVideoAudioMetadata() {
             {
               icon: Settings,
               title: "Track Details",
-              description: "Codec, language, duration, time resolution, and browser compatibility",
+              description:
+                "Codec, language, duration, time resolution, and browser compatibility",
             },
             {
               icon: Eye,
               title: "Video Properties",
-              description: "Resolution, frame rate, color space, HDR status, and rotation",
+              description:
+                "Resolution, frame rate, color space, HDR status, and rotation",
             },
             {
               icon: Music,
               title: "Audio Properties",
-              description: "Sample rate and channel configuration (mono, stereo, etc.)",
+              description:
+                "Sample rate and channel configuration (mono, stereo, etc.)",
             },
             {
               icon: Zap,
               title: "Packet Statistics",
-              description: "Average bitrate, packet count, and packet rate per track",
+              description:
+                "Average bitrate, packet count, and packet rate per track",
             },
             {
               icon: Download,
               title: "Embedded Tags",
-              description: "Title, artist, album, genre, date, and embedded cover art",
+              description:
+                "Title, artist, album, genre, date, and embedded cover art",
             },
           ].map((feature, index) => (
             <Card
@@ -176,18 +203,18 @@ export default function ShowVideoAudioMetadata() {
                   What Is Media File Metadata?
                 </h2>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Media metadata is the hidden technical information embedded inside
-                  every video and audio file. It describes how a file was encoded,
-                  not just what it contains. This includes details like the codec
-                  used, resolution, bit rate, frame rate, audio channels, sample
-                  rate, and duration.
+                  Media metadata is the hidden technical information embedded
+                  inside every video and audio file. It describes how a file was
+                  encoded, not just what it contains. This includes details like
+                  the codec used, resolution, bit rate, frame rate, audio
+                  channels, sample rate, and duration.
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Metadata is essential for compatibility checks, quality assurance,
-                  archiving, and troubleshooting playback issues. For example,
-                  knowing that a video file uses H.265 instead of H.264 tells you
-                  immediately whether it will play on a given device — without
-                  pressing play.
+                  Metadata is essential for compatibility checks, quality
+                  assurance, archiving, and troubleshooting playback issues. For
+                  example, knowing that a video file uses H.265 instead of H.264
+                  tells you immediately whether it will play on a given device —
+                  without pressing play.
                 </p>
               </div>
               <div className="relative hidden lg:block">
@@ -200,7 +227,9 @@ export default function ShowVideoAudioMetadata() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">Video Codec</p>
-                        <p className="text-xs text-muted-foreground">H.264 / H.265 / VP9</p>
+                        <p className="text-xs text-muted-foreground">
+                          H.264 / H.265 / VP9
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -209,7 +238,9 @@ export default function ShowVideoAudioMetadata() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">Audio Codec</p>
-                        <p className="text-xs text-muted-foreground">AAC / MP3 / FLAC</p>
+                        <p className="text-xs text-muted-foreground">
+                          AAC / MP3 / FLAC
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -218,7 +249,9 @@ export default function ShowVideoAudioMetadata() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">Resolution</p>
-                        <p className="text-xs text-muted-foreground">1920x1080 / 3840x2160</p>
+                        <p className="text-xs text-muted-foreground">
+                          1920x1080 / 3840x2160
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -227,7 +260,9 @@ export default function ShowVideoAudioMetadata() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">Bitrate</p>
-                        <p className="text-xs text-muted-foreground">Variable / Constant</p>
+                        <p className="text-xs text-muted-foreground">
+                          Variable / Constant
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -254,22 +289,26 @@ export default function ShowVideoAudioMetadata() {
             {
               icon: Shield,
               title: "100% Private",
-              description: "Your files never leave your device — processing happens entirely in your browser",
+              description:
+                "Your files never leave your device — processing happens entirely in your browser",
             },
             {
               icon: Zap,
               title: "Instant Access",
-              description: "No software to install — works instantly in any modern browser",
+              description:
+                "No software to install — works instantly in any modern browser",
             },
             {
               icon: Globe,
               title: "Broad Format Support",
-              description: "MP4, MOV, WebM, MKV, MP3, WAV, AAC, FLAC, Ogg, MPEG-TS, and more",
+              description:
+                "MP4, MOV, WebM, MKV, MP3, WAV, AAC, FLAC, Ogg, MPEG-TS, and more",
             },
             {
               icon: CheckCircle2,
               title: "Deep Technical Detail",
-              description: "Codec strings, bitrate, color space, and per-track packet stats",
+              description:
+                "Codec strings, bitrate, color space, and per-track packet stats",
             },
           ].map((feature, index) => (
             <div
@@ -291,9 +330,7 @@ export default function ShowVideoAudioMetadata() {
       {/* How It Works */}
       <section className="container mx-auto max-w-6xl px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">
-            How It Works
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight">How It Works</h2>
           <p className="mt-4 text-muted-foreground">
             Three simple steps to view your media metadata
           </p>
@@ -305,19 +342,22 @@ export default function ShowVideoAudioMetadata() {
               step: "01",
               icon: Upload,
               title: "Select Your File",
-              description: "Click the upload button and choose any video or audio file from your device",
+              description:
+                "Click the upload button and choose any video or audio file from your device",
             },
             {
               step: "02",
               icon: Zap,
               title: "Instant Analysis",
-              description: "Our tool reads every layer of technical data from your file in seconds",
+              description:
+                "Our tool reads every layer of technical data from your file in seconds",
             },
             {
               step: "03",
               icon: Eye,
               title: "View Results",
-              description: "Get a complete technical profile with codec, resolution, bitrate, and more",
+              description:
+                "Get a complete technical profile with codec, resolution, bitrate, and more",
             },
           ].map((item, index) => (
             <div key={index} className="relative">
@@ -354,16 +394,27 @@ export default function ShowVideoAudioMetadata() {
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
-              {["MP4", "MOV", "WebM", "MKV", "MP3", "WAV", "AAC", "FLAC", "Ogg", "MPEG-TS", "AVI", "WMV"].map(
-                (format) => (
-                  <span
-                    key={format}
-                    className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
-                  >
-                    {format}
-                  </span>
-                )
-              )}
+              {[
+                "MP4",
+                "MOV",
+                "WebM",
+                "MKV",
+                "MP3",
+                "WAV",
+                "AAC",
+                "FLAC",
+                "Ogg",
+                "MPEG-TS",
+                "AVI",
+                "WMV",
+              ].map((format) => (
+                <span
+                  key={format}
+                  className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
+                >
+                  {format}
+                </span>
+              ))}
             </div>
           </CardContent>
         </Card>
@@ -381,6 +432,8 @@ export default function ShowVideoAudioMetadata() {
         </div>
         <Faqs faqs={faqData} />
       </section>
+
+      <ToolLinkCards tools={relatedTools} />
 
       {/* JSON-LD Schema */}
       <script

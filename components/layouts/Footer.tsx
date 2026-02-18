@@ -48,6 +48,18 @@ const toolsByCategory = [
         name: "Video Compressor",
         href: "/video-tools/video-compressor",
       },
+      {
+        name: "Video MetaData Viewer",
+        href: "/video-tools/video-metadata-viewer",
+      },
+      {
+        name: "Video Player",
+        href: "/video-tools/video-player",
+      },
+      {
+        name: "Video Format Converter",
+        href: "/video-tools/video-format-converter",
+      },
     ],
   },
 ];

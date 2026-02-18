@@ -1,6 +1,7 @@
 import VideoFormatsConversion from "@/components/video-tools/VideoFormatsConverter";
 import Faqs from "@/components/utils/Faqs";
 import Script from "next/script";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 
 const faqData = [
   {
@@ -44,6 +45,28 @@ const faqSchema = {
 };
 
 export default function VideoFormatsConversionPage() {
+  const relatedTools = [
+    {
+      name: "Image Compressor",
+      description: "Single and bulk image compressor, No Limits",
+      href: "/image-tools/image-compressor",
+    },
+    {
+      name: "Video Compressor",
+      description: "Compress videos online - reduce file size, No size limit",
+      href: "/video-tools/video-compressor",
+    },
+    {
+      name: "Video MetaData Viewer",
+      description: "See Video or Audio files metadata",
+      href: "/video-tools/video-metadata-viewer",
+    },
+    {
+      name: "Video Player",
+      description: "Play any video file format instantly, Supports subtitles",
+      href: "/video-tools/video-player",
+    },
+  ];
   return (
     <>
       <Script
@@ -221,6 +244,8 @@ export default function VideoFormatsConversionPage() {
           </h2>
           <Faqs faqs={faqData} />
         </section>
+
+        <ToolLinkCards tools={relatedTools} />
       </div>
     </>
   );
