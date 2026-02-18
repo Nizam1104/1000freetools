@@ -656,7 +656,7 @@ const generateMockValue = async (field: Field) => {
             return _faker.helpers.arrayElement(['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'])
 
         case 'social_media_platform':
-            return _faker.helpers.arrayElement(['Facebook', 'Twitter', 'Instagram', 'LinkedIn', 'TikTok'])
+            return _faker.helpers.arrayElement(['Facebook', 'X', 'Instagram', 'LinkedIn', 'TikTok', 'Reddit', 'Youtube'])
 
         case 'hashtag':
             return '#' + _faker.lorem.word()

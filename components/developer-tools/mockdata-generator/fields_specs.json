@@ -1,0 +1,762 @@
+[
+	{
+		"type": "actor_name",
+		"description": "A randomly generated actor's full name"
+	},
+	{
+		"type": "address",
+		"description": "A randomly generated street address"
+	},
+	{
+		"type": "age",
+		"description": "A random number between 1 and 100 representing age"
+	},
+	{
+		"type": "airline",
+		"description": "A randomly generated airline name"
+	},
+	{
+		"type": "airport_code",
+		"description": "A randomly generated airport IATA code"
+	},
+	{
+		"type": "album_name",
+		"description": "A randomly generated album name"
+	},
+	{
+		"type": "animal_name",
+		"description": "A randomly generated animal name (cat breed)"
+	},
+	{
+		"type": "animal_type",
+		"description": "A randomly generated animal type"
+	},
+	{
+		"type": "api_endpoint",
+		"description": "A randomly generated API endpoint URL"
+	},
+	{
+		"type": "artist_name",
+		"description": "A randomly generated artist name"
+	},
+	{
+		"type": "avatar_url",
+		"description": "A randomly generated avatar image URL"
+	},
+	{
+		"type": "bank_name",
+		"description": "A randomly generated bank/account name"
+	},
+	{
+		"type": "bic",
+		"description": "A randomly generated Bank Identifier Code"
+	},
+	{
+		"type": "birthdate",
+		"description": "A randomly generated birthdate for ages 18-65"
+	},
+	{
+		"type": "bitcoin_address",
+		"description": "A randomly generated Bitcoin wallet address"
+	},
+	{
+		"type": "blood_type",
+		"description": "A randomly selected blood type (A+, A-, B+, B-, AB+, AB-, O+, O-)"
+	},
+	{
+		"type": "book_author",
+		"description": "A randomly generated book author name"
+	},
+	{
+		"type": "book_genre",
+		"description": "A randomly generated book genre"
+	},
+	{
+		"type": "book_title",
+		"description": "A randomly generated book title"
+	},
+	{
+		"type": "boolean",
+		"description": "A random true or false value"
+	},
+	{
+		"type": "brand_name",
+		"description": "A randomly generated brand/company name"
+	},
+	{
+		"type": "building_number",
+		"description": "A randomly generated building number"
+	},
+	{
+		"type": "buzzword",
+		"description": "A randomly generated company buzzword"
+	},
+	{
+		"type": "cardinal_direction",
+		"description": "A randomly generated cardinal direction (N, S, E, W)"
+	},
+	{
+		"type": "catch_phrase",
+		"description": "A randomly generated company catch phrase"
+	},
+	{
+		"type": "character_sequence",
+		"description": "A random 10-character alphanumeric string"
+	},
+	{
+		"type": "city",
+		"description": "A randomly generated city name"
+	},
+	{
+		"type": "color",
+		"description": "A randomly generated human-readable color name"
+	},
+	{
+		"type": "column_name",
+		"description": "A randomly generated column name"
+	},
+	{
+		"type": "company",
+		"description": "A randomly generated company name"
+	},
+	{
+		"type": "content_type",
+		"description": "A randomly generated MIME content type"
+	},
+	{
+		"type": "country",
+		"description": "A randomly generated country name"
+	},
+	{
+		"type": "country_code",
+		"description": "A randomly generated country code"
+	},
+	{
+		"type": "county",
+		"description": "A randomly generated county name"
+	},
+	{
+		"type": "credit_card",
+		"description": "A randomly generated credit card number"
+	},
+	{
+		"type": "credit_card_type",
+		"description": "A randomly selected credit card provider (Visa, MasterCard, etc.)"
+	},
+	{
+		"type": "css_class",
+		"description": "A random word suitable for CSS class name"
+	},
+	{
+		"type": "css_property",
+		"description": "A randomly selected CSS property name"
+	},
+	{
+		"type": "css_selector",
+		"description": "A randomly selected CSS selector pattern"
+	},
+	{
+		"type": "css_value",
+		"description": "A randomly selected CSS value"
+	},
+	{
+		"type": "currency",
+		"description": "A randomly generated currency name"
+	},
+	{
+		"type": "currency_code",
+		"description": "A randomly generated currency code (USD, EUR, etc.)"
+	},
+	{
+		"type": "currency_symbol",
+		"description": "A randomly generated currency symbol ($, €, etc.)"
+	},
+	{
+		"type": "current",
+		"description": "A random current between 1 and 100 Amperes"
+	},
+	{
+		"type": "data_unit",
+		"description": "A randomly selected data unit (bytes, KB, MB, GB, TB)"
+	},
+	{
+		"type": "database_column",
+		"description": "A randomly generated database column name"
+	},
+	{
+		"type": "database_name",
+		"description": "A randomly generated database name"
+	},
+	{
+		"type": "database_type",
+		"description": "A randomly generated database type"
+	},
+	{
+		"type": "date",
+		"description": "A random past date in ISO format (YYYY-MM-DD)"
+	},
+	{
+		"type": "date_format",
+		"description": "A randomly selected date format string"
+	},
+	{
+		"type": "date_future",
+		"description": "A random future date in ISO format"
+	},
+	{
+		"type": "date_past",
+		"description": "A random past date in ISO format"
+	},
+	{
+		"type": "datetime",
+		"description": "A randomly generated datetime in ISO format"
+	},
+	{
+		"type": "department",
+		"description": "A randomly generated commerce department"
+	},
+	{
+		"type": "deployment_environment",
+		"description": "A randomly selected environment (development, staging, production)"
+	},
+	{
+		"type": "digits",
+		"description": "A random 10-digit numeric string"
+	},
+	{
+		"type": "direction",
+		"description": "A randomly generated direction"
+	},
+	{
+		"type": "director_name",
+		"description": "A randomly generated director's full name"
+	},
+	{
+		"type": "directory_path",
+		"description": "A randomly generated directory path"
+	},
+	{
+		"type": "doctor_name",
+		"description": "A randomly generated doctor's full name"
+	},
+	{
+		"type": "domain_name",
+		"description": "A randomly generated domain name"
+	},
+	{
+		"type": "duration",
+		"description": "A randomly selected duration string (1h, 30m, 2d, etc.)"
+	},
+	{
+		"type": "email",
+		"description": "A randomly generated email address"
+	},
+	{
+		"type": "email_provider",
+		"description": "A randomly selected email provider domain"
+	},
+	{
+		"type": "emoji",
+		"description": "A randomly generated emoji"
+	},
+	{
+		"type": "energy",
+		"description": "A random energy value between 1 and 1000 kWh"
+	},
+	{
+		"type": "error_message",
+		"description": "A randomly selected HTTP error message"
+	},
+	{
+		"type": "ethereum_address",
+		"description": "A randomly generated Ethereum wallet address"
+	},
+	{
+		"type": "file_extension",
+		"description": "A randomly generated file extension"
+	},
+	{
+		"type": "file_name",
+		"description": "A randomly generated file name"
+	},
+	{
+		"type": "file_path",
+		"description": "A randomly generated file path"
+	},
+	{
+		"type": "firstName",
+		"description": "A randomly generated first name"
+	},
+	{
+		"type": "flight_number",
+		"description": "A randomly generated flight number"
+	},
+	{
+		"type": "frequency",
+		"description": "A randomly selected frequency (daily, weekly, monthly, yearly)"
+	},
+	{
+		"type": "gender",
+		"description": "A randomly generated gender/sex"
+	},
+	{
+		"type": "git_branch",
+		"description": "A randomly generated git branch name"
+	},
+	{
+		"type": "git_commit_hash",
+		"description": "A randomly generated git commit SHA"
+	},
+	{
+		"type": "hacker_phrase",
+		"description": "A randomly generated hacker/tech phrase"
+	},
+	{
+		"type": "hashtag",
+		"description": "A random word prefixed with #"
+	},
+	{
+		"type": "health_condition",
+		"description": "A randomly selected health condition"
+	},
+	{
+		"type": "hex_color",
+		"description": "A randomly generated hex color code (e.g., #ff5733)"
+	},
+	{
+		"type": "hexadecimal",
+		"description": "A random 10-character hexadecimal string"
+	},
+	{
+		"type": "hospital_name",
+		"description": "A randomly generated hospital name"
+	},
+	{
+		"type": "html_attribute",
+		"description": "A randomly selected HTML attribute name"
+	},
+	{
+		"type": "html_element",
+		"description": "A randomly selected HTML element tag"
+	},
+	{
+		"type": "html_tag",
+		"description": "A randomly selected HTML tag"
+	},
+	{
+		"type": "http_method",
+		"description": "A randomly selected HTTP method (GET, POST, PUT, DELETE, PATCH)"
+	},
+	{
+		"type": "http_status_code",
+		"description": "A randomly generated HTTP status code"
+	},
+	{
+		"type": "iban",
+		"description": "A randomly generated International Bank Account Number"
+	},
+	{
+		"type": "image_url",
+		"description": "A randomly generated image URL"
+	},
+	{
+		"type": "industry",
+		"description": "A randomly generated company buzz phrase"
+	},
+	{
+		"type": "instrument",
+		"description": "A randomly selected musical instrument"
+	},
+	{
+		"type": "ip_address",
+		"description": "A randomly generated IPv4 address"
+	},
+	{
+		"type": "ip_address_v6",
+		"description": "A randomly generated IPv6 address"
+	},
+	{
+		"type": "isbn",
+		"description": "A randomly generated ISBN number"
+	},
+	{
+		"type": "javascript_framework",
+		"description": "A randomly selected JS framework (React, Vue, Angular, etc.)"
+	},
+	{
+		"type": "job_title",
+		"description": "A randomly generated job title"
+	},
+	{
+		"type": "json_key",
+		"description": "A random word suitable for JSON key"
+	},
+	{
+		"type": "json_value",
+		"description": "A random word suitable for JSON value"
+	},
+	{
+		"type": "language",
+		"description": "A randomly generated language"
+	},
+	{
+		"type": "language_code",
+		"description": "A randomly selected language code"
+	},
+	{
+		"type": "lastName",
+		"description": "A randomly generated last name"
+	},
+	{
+		"type": "latitude",
+		"description": "A random latitude coordinate as a string"
+	},
+	{
+		"type": "length",
+		"description": "A random length between 1 and 100 cm"
+	},
+	{
+		"type": "locale",
+		"description": "A locale code (default: en-US)"
+	},
+	{
+		"type": "locale_code",
+		"description": "A locale code (default: en-US)"
+	},
+	{
+		"type": "longitude",
+		"description": "A random longitude coordinate as a string"
+	},
+	{
+		"type": "lorem_ipsum",
+		"description": "Random lorem ipsum text"
+	},
+	{
+		"type": "mac_address",
+		"description": "A randomly generated MAC address"
+	},
+	{
+		"type": "material",
+		"description": "A randomly generated product material"
+	},
+	{
+		"type": "md5",
+		"description": "A random 32-character lowercase alphanumeric string (MD5-like)"
+	},
+	{
+		"type": "medication",
+		"description": "A randomly selected medication name"
+	},
+	{
+		"type": "memory_unit",
+		"description": "A randomly selected memory unit"
+	},
+	{
+		"type": "mime_type",
+		"description": "A randomly generated MIME type"
+	},
+	{
+		"type": "movie_genre",
+		"description": "A randomly selected movie genre"
+	},
+	{
+		"type": "movie_title",
+		"description": "A randomly generated movie title (3 words)"
+	},
+	{
+		"type": "music_genre",
+		"description": "A randomly generated music genre"
+	},
+	{
+		"type": "name",
+		"description": "A randomly generated full name"
+	},
+	{
+		"type": "network_protocol",
+		"description": "A randomly selected network protocol"
+	},
+	{
+		"type": "number",
+		"description": "A random integer between 1 and 1000"
+	},
+	{
+		"type": "ordinal_direction",
+		"description": "A randomly generated ordinal direction (NE, SE, SW, NW)"
+	},
+	{
+		"type": "paragraph",
+		"description": "A randomly generated paragraph of text"
+	},
+	{
+		"type": "password",
+		"description": "A randomly generated password"
+	},
+	{
+		"type": "percentage",
+		"description": "A random number between 0 and 100 as a string"
+	},
+	{
+		"type": "phone",
+		"description": "A randomly generated phone number"
+	},
+	{
+		"type": "phone_area_code",
+		"description": "A random 3-digit area code (200-999)"
+	},
+	{
+		"type": "phone_country_code",
+		"description": "A random international country code (+1 to +99)"
+	},
+	{
+		"type": "port_number",
+		"description": "A random port number between 1 and 65535"
+	},
+	{
+		"type": "power",
+		"description": "A random power value between 1 and 1000 Watts"
+	},
+	{
+		"type": "prefix",
+		"description": "A randomly generated name prefix (Mr., Mrs., Dr., etc.)"
+	},
+	{
+		"type": "pressure",
+		"description": "A random pressure between 980 and 1050 hPa"
+	},
+	{
+		"type": "price",
+		"description": "A randomly generated price value"
+	},
+	{
+		"type": "product_category",
+		"description": "A randomly generated product category/department"
+	},
+	{
+		"type": "product_description",
+		"description": "A randomly generated product description"
+	},
+	{
+		"type": "product_name",
+		"description": "A randomly generated product name"
+	},
+	{
+		"type": "programming_language",
+		"description": "A programming language (default: JavaScript)"
+	},
+	{
+		"type": "ratio",
+		"description": "A randomly generated ratio string (e.g., 3:5)"
+	},
+	{
+		"type": "regex_pattern",
+		"description": "A randomly selected regex pattern string"
+	},
+	{
+		"type": "resistance",
+		"description": "A random resistance between 1 and 1000 Ohms"
+	},
+	{
+		"type": "rgb_color",
+		"description": "A randomly generated RGB color value"
+	},
+	{
+		"type": "rgba_color",
+		"description": "A randomly generated RGBA color value with alpha"
+	},
+	{
+		"type": "routing_number",
+		"description": "A randomly generated bank routing number"
+	},
+	{
+		"type": "scale",
+		"description": "A randomly selected scale size (small, medium, large, x-large)"
+	},
+	{
+		"type": "secondary_address",
+		"description": "A randomly generated secondary address (apt, suite, etc.)"
+	},
+	{
+		"type": "select",
+		"description": "A value selected from provided options array"
+	},
+	{
+		"type": "semver",
+		"description": "A randomly generated semantic version string"
+	},
+	{
+		"type": "sentence",
+		"description": "A randomly generated sentence"
+	},
+	{
+		"type": "sha1",
+		"description": "A random 40-character lowercase alphanumeric string (SHA1-like)"
+	},
+	{
+		"type": "slogan",
+		"description": "A randomly generated company slogan"
+	},
+	{
+		"type": "social_media_platform",
+		"description": "A randomly selected social media platform"
+	},
+	{
+		"type": "song_title",
+		"description": "A randomly generated song title"
+	},
+	{
+		"type": "speed",
+		"description": "A random speed between 1 and 200 km/h"
+	},
+	{
+		"type": "sql_query",
+		"description": "A basic SQL SELECT query template"
+	},
+	{
+		"type": "state",
+		"description": "A randomly generated state or province name"
+	},
+	{
+		"type": "state_abbr",
+		"description": "A randomly generated state abbreviation (e.g., CA, NY)"
+	},
+	{
+		"type": "stock_symbol",
+		"description": "A randomly generated stock currency code"
+	},
+	{
+		"type": "storage_unit",
+		"description": "A randomly selected storage unit"
+	},
+	{
+		"type": "street_name",
+		"description": "A randomly generated street name"
+	},
+	{
+		"type": "string",
+		"description": "A random lorem ipsum word"
+	},
+	{
+		"type": "subdomain",
+		"description": "A randomly generated subdomain"
+	},
+	{
+		"type": "suffix",
+		"description": "A randomly generated name suffix (Jr., Sr., III, etc.)"
+	},
+	{
+		"type": "table_name",
+		"description": "A randomly generated table name"
+	},
+	{
+		"type": "temperature",
+		"description": "A random temperature between -10 and 40 degrees Celsius"
+	},
+	{
+		"type": "template_string",
+		"description": "A template string with a random word inside braces"
+	},
+	{
+		"type": "text",
+		"description": "Two randomly generated paragraphs of text"
+	},
+	{
+		"type": "time",
+		"description": "A randomly generated time string"
+	},
+	{
+		"type": "time_format",
+		"description": "A randomly selected time format string"
+	},
+	{
+		"type": "time_zone_abbreviation",
+		"description": "A timezone identifier"
+	},
+	{
+		"type": "timestamp",
+		"description": "Current timestamp in ISO format"
+	},
+	{
+		"type": "timezone",
+		"description": "A randomly generated timezone identifier"
+	},
+	{
+		"type": "tld",
+		"description": "A randomly generated top-level domain (com, org, net, etc.)"
+	},
+	{
+		"type": "transaction_id",
+		"description": "A randomly generated transaction type"
+	},
+	{
+		"type": "tv_genre",
+		"description": "A randomly selected TV show genre"
+	},
+	{
+		"type": "tv_show",
+		"description": "A randomly generated TV show title (3 words)"
+	},
+	{
+		"type": "unit_of_measurement",
+		"description": "A randomly generated unit symbol"
+	},
+	{
+		"type": "url",
+		"description": "A randomly generated website URL"
+	},
+	{
+		"type": "user_agent",
+		"description": "A randomly generated browser user agent string"
+	},
+	{
+		"type": "username",
+		"description": "A randomly generated username"
+	},
+	{
+		"type": "uuid",
+		"description": "A universally unique identifier"
+	},
+	{
+		"type": "validation_rule",
+		"description": "A randomly selected validation rule name"
+	},
+	{
+		"type": "vehicle_color",
+		"description": "A randomly generated vehicle color"
+	},
+	{
+		"type": "vehicle_manufacturer",
+		"description": "A randomly generated vehicle manufacturer"
+	},
+	{
+		"type": "vehicle_model",
+		"description": "A randomly generated vehicle model"
+	},
+	{
+		"type": "vehicle_type",
+		"description": "A randomly generated vehicle type"
+	},
+	{
+		"type": "vehicle_vin",
+		"description": "A randomly generated vehicle identification number"
+	},
+	{
+		"type": "voltage",
+		"description": "A random voltage between 110 and 240 Volts"
+	},
+	{
+		"type": "volume",
+		"description": "A random volume between 1 and 1000 liters"
+	},
+	{
+		"type": "weight",
+		"description": "A random weight between 1 and 200 kg"
+	},
+	{
+		"type": "word",
+		"description": "A single random lorem ipsum word"
+	},
+	{
+		"type": "zip_code",
+		"description": "A randomly generated postal/zip code"
+	}
+]
