@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       "Create realistic test data in seconds. Generate CSV, JSON, Excel files with customizable fields and data types.",
   },
   alternates: {
-    canonical: "https://1000freetools.com/tools/mock-data-generator",
+    canonical: "https://1000freetools.com/developer-tools/mock-data-generator",
   },
 };
 
