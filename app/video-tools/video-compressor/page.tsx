@@ -33,12 +33,7 @@ import {
 export default function VideoCompressionPage() {
   const relatedTools = [
     {
-      name: "Image Compressor",
-      description: "Single and bulk image compressor, No Limits",
-      href: "/image-tools/image-compressor",
-    },
-    {
-      name: "Video MetaData Viewer",
+      name: "Video Metadata Viewer",
       description: "See Video or Audio files metadata",
       href: "/video-tools/video-metadata-viewer",
     },
@@ -52,6 +47,58 @@ export default function VideoCompressionPage() {
       description:
         "Convert between video formats, Supports wide range of video formats",
       href: "/video-tools/video-format-converter",
+    },
+    {
+      name: "Change Video FPS",
+      description:
+        "Change video frame rate to 24fps, 30fps, 60fps or custom FPS",
+      href: "/video-tools/change-video-fps",
+    },
+    {
+      name: "Crop Video",
+      description: "Crop videos online - remove unwanted edges and reframe",
+      href: "/video-tools/crop-video",
+    },
+    {
+      name: "Enhance Video Quality",
+      description: "Upscale, sharpen, denoise and improve video quality",
+      href: "/video-tools/enhance-video-quality",
+    },
+    {
+      name: "Extract Audio from Video",
+      description: "Extract audio from video files - save as MP3, AAC, or WAV",
+      href: "/video-tools/extract-audio-from-video",
+    },
+    {
+      name: "Resize Video Dimensions",
+      description: "Resize video to 4K, 1080p, 720p or custom dimensions",
+      href: "/video-tools/resize-video-dimensions",
+    },
+    {
+      name: "Rotate Video",
+      description: "Rotate videos 90°, 180° or 270° - fix orientation",
+      href: "/video-tools/rotate-video",
+    },
+    {
+      name: "Video Color Space Transformation",
+      description: "Adjust brightness, contrast, saturation, hue and more",
+      href: "/video-tools/video-color-space-transformation",
+    },
+    {
+      name: "Video Grayscale",
+      description: "Convert videos to black and white instantly",
+      href: "/video-tools/video-grayscale",
+    },
+    {
+      name: "Video Overlays",
+      description: "Add watermarks, logos or image overlays to videos",
+      href: "/video-tools/video-overlays",
+    },
+    {
+      name: "Video Transparency Maker",
+      description:
+        "Adjust video opacity and transparency with custom background",
+      href: "/video-tools/video-transparency-maker",
     },
   ];
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -266,7 +313,7 @@ export default function VideoCompressionPage() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/design-tools/favicon-generator">
+              <BreadcrumbLink href="/video-tools/video-compressor">
                 Video Compressor
               </BreadcrumbLink>
             </BreadcrumbItem>

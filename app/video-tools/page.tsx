@@ -25,6 +25,56 @@ const videoTools = [
       "Convert between video formats, Supports wide range of video formats",
     href: "/video-tools/video-format-converter",
   },
+  {
+    name: "Change Video FPS",
+    description: "Change video frame rate to 24fps, 30fps, 60fps or custom FPS",
+    href: "/video-tools/change-video-fps",
+  },
+  {
+    name: "Crop Video",
+    description: "Crop videos online - remove unwanted edges and reframe",
+    href: "/video-tools/crop-video",
+  },
+  {
+    name: "Enhance Video Quality",
+    description: "Upscale, sharpen, denoise and improve video quality",
+    href: "/video-tools/enhance-video-quality",
+  },
+  {
+    name: "Extract Audio from Video",
+    description: "Extract audio from video files - save as MP3, AAC, or WAV",
+    href: "/video-tools/extract-audio-from-video",
+  },
+  {
+    name: "Resize Video Dimensions",
+    description: "Resize video to 4K, 1080p, 720p or custom dimensions",
+    href: "/video-tools/resize-video-dimensions",
+  },
+  {
+    name: "Rotate Video",
+    description: "Rotate videos 90°, 180° or 270° - fix orientation",
+    href: "/video-tools/rotate-video",
+  },
+  {
+    name: "Video Color Space Transformation",
+    description: "Adjust brightness, contrast, saturation, hue and more",
+    href: "/video-tools/video-color-space-transformation",
+  },
+  {
+    name: "Video Grayscale",
+    description: "Convert videos to black and white instantly",
+    href: "/video-tools/video-grayscale",
+  },
+  {
+    name: "Video Overlays",
+    description: "Add watermarks, logos or image overlays to videos",
+    href: "/video-tools/video-overlays",
+  },
+  {
+    name: "Video Transparency Maker",
+    description: "Adjust video opacity and transparency with custom background",
+    href: "/video-tools/video-transparency-maker",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -47,7 +97,7 @@ export default function VideoToolsPage() {
     {
       question: "What video formats do you support?",
       answer:
-        "We support MP4, MOV, AVI, MKV, WMV, and other common video formats. You can compress and convert between these formats easily.",
+        "We support MP4, MOV, AVI, MKV, WMV, WebM, and other common video formats. You can compress, convert, edit, and optimize videos in all these formats.",
     },
     {
       question: "Are all these tools Free?",
@@ -92,7 +142,8 @@ export default function VideoToolsPage() {
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
               Free online video tools. Compress, edit, convert, resize and
-              optimize videos with ease.
+              optimize videos with ease. All processing happens directly in your browser, so your videos stay private and
+              never touch our servers.
             </p>
           </div>
         </section>
@@ -100,7 +151,7 @@ export default function VideoToolsPage() {
         {/* Tools Section */}
         <section className="container mx-auto px-4 py-8">
           <h2 className="text-3xl font-semibold mb-8 text-center">
-            Available Tools
+            All Available Tools
           </h2>
           <ToolLinkCards tools={videoTools} />
         </section>
