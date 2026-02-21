@@ -37,7 +37,7 @@ const res = await fetch("https://api.indexnow.org/indexnow", {
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
     host: "1000freetools.com",
-    key: "dc3ad10d-44a7-4990-a328-f0599afe54eb",
+    key: "f7dd6e8f72054d3c9673eb39d3a7da3f",
     urlList: urls,
   }),
 });
