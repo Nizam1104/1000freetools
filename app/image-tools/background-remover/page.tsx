@@ -7,34 +7,35 @@ import Faqs from "@/components/utils/Faqs";
 export default function BackgroundRemover() {
   const faqs = [
     {
-      question: "Is this background remover free?",
+      question:
+        "Will I lose image quality when I remove background from image online?",
       answer:
-        "Yes. Our background remover tool is entirely free to use with no hidden costs or subscriptions required.",
+        "No. The tool processes your image while maintaining your original subject resolution and clarity. It strictly removes the unwanted pixels without downscaling the primary foreground object, meaning your final transparent PNG will look just as crisp as the file you uploaded.",
     },
     {
-      question: "Will I lose image quality after removing the background?",
+      question: "Does the tool store my uploaded photos on a server?",
       answer:
-        "No. The tool processes your image and removes the background while maintaining your original subject resolution and clarity.",
-    },
-    {
-      question: "What types of images work best?",
-      answer:
-        "Images with clear contrast between the subject foreground and the background backdrop yield the best accuracy. Crisp edges make detection simple.",
+        "No. All image processing mechanics take place locally within your web browser. Your sensitive files remain strictly on your own device and are never transmitted to cloud storage, guaranteeing complete privacy and security for your personal photography.",
     },
     {
       question: "Can I process multiple images at once?",
       answer:
-        "Yes. You have the ability to upload up to 25 images simultaneously for bulk background removal processing directly in your browser.",
+        "Yes, you have the ability to upload up to 25 images simultaneously for bulk background removal processing. Since the application leverages your local device performance, you can quickly convert entire albums of product photos or portraits in a single run.",
     },
     {
-      question: "Are my photos uploaded to a public server?",
+      question: "What types of images yield the best extraction results?",
       answer:
-        "No. All image processing takes place locally within your web browser. Your sensitive files remain strictly on your own device.",
+        "Images representing a clear contrast between the subject foreground and the backdrop yield the highest accuracy. While the AI handles complex edges, subjects shot against solid contrasting colors make the automated detection process extraordinarily simple and flawless.",
     },
     {
-      question: "What image formats do you support?",
+      question: "What image formats do you support for uploading?",
       answer:
-        "We support major formats like JPG, JPEG, PNG, and WebP for input. The final downloaded file with the transparent background is saved as a PNG.",
+        "The application supports all major input formats including JPG, JPEG, PNG, and WebP. Regardless of what file type you provide initially, the software automatically saves your final isolated image as a transparent PNG so you can use it immediately in design projects.",
+    },
+    {
+      question: "Is this automated background remover truly free to use?",
+      answer:
+        "Yes, our background remover utility operates entirely free to use with no hidden costs, watermark stamps, or mandatory subscriptions required. You get unlimited access to powerful local AI extraction technology directly from your internet browser.",
     },
   ];
 
@@ -107,94 +108,109 @@ export default function BackgroundRemover() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Professional Image Transparency
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Achieving clean image extractions is a critical step for modern
-            graphic design. When you sell products online or create professional
-            presentations, a cluttered background distracts viewers from your
-            main subject. A transparent background gives you the flexibility to
-            place your product over any color, texture, or scene. Our free tool
-            provides a fast and reliable way to remove these unwanted elements
-            entirely in your browser.
-          </p>
-          <p className="mb-4">
-            You no longer need to spend hours manually tracing subjects with a
-            digital pen or lasso tool in expensive editing software. Automated
-            intelligent edge detection handles the heavy lifting for you. We
-            evaluate the contrast between the primary object and the distant
-            background, selecting the precise boundary. This saves you
-            significant time and effort when you have tight deadlines for visual
-            projects.
-          </p>
-          <p className="mb-4">
-            Security remains a top priority during this process. Because all
-            computations occur within your local browser environment, your
-            personal photos never leave your device. You maintain full ownership
-            and privacy over every file you upload. This local processing model
-            also eliminates slow upload times associated with traditional web
-            services, allowing you to get your transparent PNG files instantly.
+            Bad backgrounds ruin photos and require heavy editing work to fix.
+            If you need to remove background from image online, this tool
+            automatically detects your main subject and erases the background
+            behind it. It uses local browser AI to extract people, products, or
+            objects, giving you a clean transparent PNG instantly. You do not
+            need to upload any images to an external server, keeping your
+            workflow safe and extremely fast.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            We designed the interface to be entirely straightforward and
-            accessible. To begin, you locate the file upload section on the
-            page. You select the files directly from your computer using the
-            file browser or simply drag and drop the photos onto the designated
-            drop zone. Our tool immediately reads the image data into memory and
-            begins analyzing the distinct visual layers.
+            <strong>1. Drop your photos</strong>
+            <br />
+            Simply drag and drop one or multiple images into the designated
+            area. The tool instantly loads your files into the browser without
+            any waiting time, supporting formats like JPG, PNG, and WebP.
           </p>
           <p className="mb-4">
-            Once you provide the input file, the automated process takes over.
-            You do not need to highlight edges or specify colors. The
-            application identifies human figures, products, text, or graphic
-            elements as the foreground subject. It then separates this subject
-            from the background pixels. You watch as the original backdrop drops
-            away, replaced by a checkerboard pattern indicating transparency.
+            <strong>2. Wait for automatic AI extraction</strong>
+            <br />
+            You do not need to click any buttons or trace edges. The intelligent
+            software automatically identifies the foreground subject and
+            separates it from the backdrop natively on your device.
           </p>
           <p className="mb-4">
-            After the extraction completes, you examine the resulting image
-            inside the preview window. If you uploaded multiple photos
-            simultaneously, you review all of them in the provided list view.
-            You then click the download button right next to each image. The
-            browser saves the new file directly to your local storage drive as a
-            high-quality PNG image, ensuring the transparency channel is
-            perfectly intact for your future design needs.
+            <strong>3. Review and download</strong>
+            <br />
+            Check the preview window to see the checkerboard pattern confirming
+            transparency. Click the download button next to your desired image
+            to instantly save the crisp, background-free PNG directly to your
+            computer.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            This tool specializes in rapid background elimination without the
-            complexity of traditional graphic design applications. The primary
-            function relies on robust client-side algorithms that differentiate
-            subjects from their surroundings. You process standard formats such
-            as JPG, WebP, and PNG directly. The system converts the final image
-            into a PNG format to preserve the empty pixel data.
+            <strong>Creating professional presentations</strong>
+            <br />
+            Embedding photos with clashing backgrounds makes slides look
+            amateurish. You remove the background to smoothly overlay your
+            subject onto colored presentation templates or corporate graphics.
           </p>
           <p className="mb-4">
-            Bulk processing represents a major advantage of our platform. You
-            select up to 25 distinct images at a single time for removal. The
-            browser processes them back-to-back automatically. This batch
-            capability makes the tool ideal for e-commerce store owners who need
-            to standardize product catalogs or photographers managing large
-            volumes of portrait shots.
+            <strong>Preparing e-commerce product listings</strong>
+            <br />
+            Online marketplaces like Amazon and Shopify require pure white or
+            transparent backdrops. Extracting the product from its natural
+            setting ensures your store catalog looks uniform and professional.
           </p>
           <p className="mb-4">
-            Our application provides accurate outcomes even on complex edges
-            like hair or fur. It handles high-resolution images well, utilizing
-            the memory and processing power of your own machine. We ensure the
-            software operates cleanly across all modern web browsers without
-            installing distinct applications or plugins. You gain a highly
-            capable visual extraction utility accessible from anywhere without a
-            mandatory subscription or account.
+            <strong>Designing social media thumbnail graphics</strong>
+            <br />
+            Youtubers and creators constantly need cutout portraits for video
+            thumbnails. Generating a transparent PNG lets you easily paste
+            yourself over bright, eye-catching backgrounds to increase
+            engagement.
+          </p>
+          <p className="mb-4">
+            <strong>Making custom digital stickers</strong>
+            <br />
+            Crafters and chat users love turning photos of pets or friends into
+            fun stickers. Removing the busy bedroom or outdoor environment
+            leaves just the subject ready for meme creation.
+          </p>
+          <p className="mb-4">
+            <strong>Replacing boring portrait backgrounds</strong>
+            <br />
+            Sometimes a great headshot is ruined by a messy office wall.
+            Eliminating the original backdrop enables you to swap in a clean
+            studio gradient or outdoor scene for your LinkedIn profile.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Bulk Upload Support</strong>
+            <br />
+            This built-in capability lets you select up to 25 distinct files
+            simultaneously instead of doing them one by one. The local engine
+            queues them up and processes the batch sequentially to save massive
+            amounts of time.
+          </p>
+          <p className="mb-4">
+            <strong>Automatic Edge Detection</strong>
+            <br />
+            There are no sliders for this feature, as the AI dynamically
+            analyzes contrast and pixel data on its own. It handles complex
+            boundaries like hair and fine edges automatically, taking the
+            guesswork out of extraction.
+          </p>
+          <p className="mb-4">
+            <strong>Format Conversion</strong>
+            <br />
+            When you import formats like JPG which do not support transparency
+            natively, the tool processes the image and automatically exports it
+            as a PNG file. This ensures the transparent channel data remains
+            perfectly intact upon saving.
           </p>
         </section>
 

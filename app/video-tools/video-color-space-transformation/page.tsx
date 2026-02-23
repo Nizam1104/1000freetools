@@ -1,66 +1,57 @@
 "use client";
 
-import { useState, useRef } from 'react';
-import { Conversion, Input, Output, Mp4OutputFormat, BufferTarget, BlobSource, ALL_FORMATS } from 'mediabunny';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { Progress } from '@/components/ui/progress';
+import { useState, useRef } from "react";
+import {
+  Conversion,
+  Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
+  BlobSource,
+  ALL_FORMATS,
+} from "mediabunny";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { Progress } from "@/components/ui/progress";
 import Faqs from "@/components/utils/Faqs";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Script from "next/script";
 
 const faqData = [
   {
-    question: "What color adjustments can I make to my video?",
+    question: "Do I need color grading software to fix a dark video online?",
     answer:
-      "You can adjust brightness (darker/brighter), contrast (flat vs. punchy), saturation (grayscale to vivid color), hue rotation (shift all colors around the color wheel), sepia (warm vintage tone), and invert (negative/inverted colors).",
+      "No, you don't need to purchase or download confusing timeline software like Premiere Pro. You can adjust video brightness online free right in your browser using this precise slider tool. Because the processing maps directly to your device memory, you can rescue underexposed footage without waiting for massive file uploads.",
   },
   {
-    question: "How do I give my video a cinematic color grade?",
+    question: "What exactly does the Hue Rotate slider actually do?",
     answer:
-      "A simple cinematic grade: slightly reduce brightness (e.g. 0.9), increase contrast (e.g. 1.2), slightly reduce saturation (e.g. 0.85), and add a very small amount of sepia (e.g. 0.1) for warm tones.",
+      "The Hue Rotation algorithm grabs every single pixel in your video and forcefully slides its color identity across the visual spectrum wheel. If you type in 180 degrees, it perfectly flips your footage into its complete color opposite, successfully turning a red car blue, and a blue sky orange.",
   },
   {
-    question: "What does hue rotation do?",
+    question: "How do I make my digital video look like an old vintage film?",
     answer:
-      "Hue rotation shifts every color in your video around the color wheel by the specified degree. At 180°, all colors become their complements (reds become cyan, blues become yellow, etc.).",
+      "To simulate a classic retro aesthetic, drag the Sepia slider to 1.0 to flood the frame with warm, brownish-yellow tones. To mimic the washed-out chemical fading of old film stock, pull the Saturation slider down to 0.7 to suck out the vibrant colors, and gently reduce the Contrast to 0.9 to flatten the harsh black shadows.",
   },
   {
-    question: "Can I convert a video to grayscale with this tool?",
+    question:
+      "Will dragging the brightness slider to maximum ruin my footage quality?",
     answer:
-      "Yes. Set the Saturation slider to 0 to fully desaturate the video, producing a black-and-white result. For a dedicated grayscale converter, see the Video Grayscale tool.",
+      "Yes, aggressively pushing the brightness slider to 2.0 forces the system to artificially blast fake white light into every pixel. Dark shadows will transform into ugly, noisy gray blocks, and bright areas will completely 'blow out' into pure, detail-free white screens.",
   },
   {
-    question: "Does this tool process every single frame?",
+    question:
+      "Why does the 'Original' and 'Transformed' preview button look the exact same?",
     answer:
-      "Yes. Each video frame is individually processed with your color settings applied as a CSS filter, then re-encoded into the output MP4 — so the adjustments are permanently embedded in every frame.",
+      "The preview window relies on the browser's native processing engine to display changes. First ensure you have actually clicked the 'Apply Transform' button and waited for the progress bar to reach 100%. The system must physically re-encode the MP4 before it can generate the Transformed preview file to compare against the Original.",
   },
   {
-    question: "Will the color changes affect the audio track?",
+    question:
+      "Are these color space changes permanently burned into the mp4 file?",
     answer:
-      "No. Color transformations only affect the video stream. Your audio is passed through to the output unchanged.",
-  },
-  {
-    question: "How do I create a sepia vintage look?",
-    answer:
-      "Increase the Sepia slider toward 1.0, reduce Saturation slightly (e.g. 0.7), and lower Contrast a bit (e.g. 0.9) for an aged, warm film look.",
-  },
-  {
-    question: "Can I preview the color effect before processing the whole video?",
-    answer:
-      "The sliders update the settings in real time. After you process the video, a before/after toggle lets you compare the original and transformed versions directly in the player.",
-  },
-  {
-    question: "What is the invert effect used for?",
-    answer:
-      "The Invert filter reverses all color values, creating a negative-film effect. It's used for creative visual effects, accessibility applications, or artistic purposes.",
-  },
-  {
-    question: "Is the output quality the same as the original?",
-    answer:
-      "The video is re-encoded with the color transformations applied, which involves standard MP4 compression. The visual quality is preserved as closely as the encoding process allows.",
+      "Absolutely. Instead of just adding a temporary color filter layer that might disappear when uploaded to Instagram or TikTok, this tool acts as a destructive encoder. It permanently rewrites the core mathematical color values of every single frame, ensuring the changes stick forever on any platform.",
   },
 ];
 
@@ -84,7 +75,9 @@ export default function VideoColorSpaceTransformationPage() {
   const [progress, setProgress] = useState(0);
   const [outputUrl, setOutputUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [previewMode, setPreviewMode] = useState<'original' | 'transformed'>('original');
+  const [previewMode, setPreviewMode] = useState<"original" | "transformed">(
+    "original",
+  );
 
   const [brightness, setBrightness] = useState(1);
   const [contrast, setContrast] = useState(1);
@@ -104,7 +97,7 @@ export default function VideoColorSpaceTransformationPage() {
       setVideoUrl(url);
       setOutputUrl(null);
       setError(null);
-      setPreviewMode('original');
+      setPreviewMode("original");
       setBrightness(1);
       setContrast(1);
       setSaturation(1);
@@ -116,7 +109,7 @@ export default function VideoColorSpaceTransformationPage() {
 
   const handleTransform = async () => {
     if (!videoFile) {
-      setError('Please select a video to transform');
+      setError("Please select a video to transform");
       return;
     }
 
@@ -144,8 +137,11 @@ export default function VideoColorSpaceTransformationPage() {
         video: {
           process: async (sample) => {
             if (!transformCanvas) {
-              transformCanvas = new OffscreenCanvas(sample.displayWidth, sample.displayHeight);
-              transformCtx = transformCanvas.getContext('2d');
+              transformCanvas = new OffscreenCanvas(
+                sample.displayWidth,
+                sample.displayHeight,
+              );
+              transformCtx = transformCanvas.getContext("2d");
             }
 
             if (transformCanvas && transformCtx) {
@@ -176,16 +172,20 @@ export default function VideoColorSpaceTransformationPage() {
 
       const transformedBuffer = output.target.buffer;
       if (!transformedBuffer) {
-        throw new Error('Failed to get transformed video buffer');
+        throw new Error("Failed to get transformed video buffer");
       }
-      const transformedBlob = new Blob([transformedBuffer], { type: 'video/mp4' });
+      const transformedBlob = new Blob([transformedBuffer], {
+        type: "video/mp4",
+      });
       const transformedUrl = URL.createObjectURL(transformedBlob);
       setOutputUrl(transformedUrl);
       setProgress(100);
 
       input.dispose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to transform video colors');
+      setError(
+        err instanceof Error ? err.message : "Failed to transform video colors",
+      );
     } finally {
       setIsProcessing(false);
     }
@@ -193,9 +193,9 @@ export default function VideoColorSpaceTransformationPage() {
 
   const handleDownload = () => {
     if (!outputUrl) return;
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = outputUrl;
-    a.download = `color-transformed-${videoFile?.name || 'video.mp4'}`;
+    a.download = `color-transformed-${videoFile?.name || "video.mp4"}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -206,7 +206,7 @@ export default function VideoColorSpaceTransformationPage() {
     setVideoUrl(null);
     setOutputUrl(null);
     setError(null);
-    setPreviewMode('original');
+    setPreviewMode("original");
     setBrightness(1);
     setContrast(1);
     setSaturation(1);
@@ -312,11 +312,15 @@ export default function VideoColorSpaceTransformationPage() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-                Video Color Space Transformer – Adjust Video Colors Online for Free
+                Video Color Space Transformer – Adjust Video Colors Online for
+                Free
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Precisely control the visual look of your video with full color adjustment tools. Dial in brightness, contrast, saturation, hue rotation, sepia, and invert effects — all processed locally in your browser.
+                Precisely control the visual look of your video with full color
+                adjustment tools. Dial in brightness, contrast, saturation, hue
+                rotation, sepia, and invert effects — all processed locally in
+                your browser.
               </p>
             </div>
           </div>
@@ -328,7 +332,9 @@ export default function VideoColorSpaceTransformationPage() {
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 blur-xl opacity-50" />
             <div className="relative rounded-3xl border bg-card/50 backdrop-blur-sm shadow-2xl">
               <div className="p-6">
-                <h2 className="text-xl font-bold mb-6">Video Color Space Transformer</h2>
+                <h2 className="text-xl font-bold mb-6">
+                  Video Color Space Transformer
+                </h2>
 
                 {/* File Upload */}
                 <Card className="mb-6">
@@ -360,15 +366,21 @@ export default function VideoColorSpaceTransformationPage() {
                         {/* Preview Mode Toggle */}
                         <div className="mb-4 flex gap-2">
                           <Button
-                            variant={previewMode === 'original' ? 'default' : 'outline'}
-                            onClick={() => setPreviewMode('original')}
+                            variant={
+                              previewMode === "original" ? "default" : "outline"
+                            }
+                            onClick={() => setPreviewMode("original")}
                             className="flex-1"
                           >
                             Original
                           </Button>
                           <Button
-                            variant={previewMode === 'transformed' && outputUrl ? 'default' : 'outline'}
-                            onClick={() => setPreviewMode('transformed')}
+                            variant={
+                              previewMode === "transformed" && outputUrl
+                                ? "default"
+                                : "outline"
+                            }
+                            onClick={() => setPreviewMode("transformed")}
                             className="flex-1"
                             disabled={!outputUrl}
                           >
@@ -377,7 +389,7 @@ export default function VideoColorSpaceTransformationPage() {
                         </div>
 
                         {/* Original Video */}
-                        {previewMode === 'original' && (
+                        {previewMode === "original" && (
                           <div>
                             <video
                               ref={videoRef}
@@ -385,12 +397,14 @@ export default function VideoColorSpaceTransformationPage() {
                               controls
                               className="w-full rounded-md bg-black aspect-video"
                             />
-                            <p className="text-sm text-muted-foreground mt-2 text-center">Original Video</p>
+                            <p className="text-sm text-muted-foreground mt-2 text-center">
+                              Original Video
+                            </p>
                           </div>
                         )}
 
                         {/* Transformed Video Preview */}
-                        {outputUrl && previewMode === 'transformed' && (
+                        {outputUrl && previewMode === "transformed" && (
                           <div>
                             <video
                               ref={transformedVideoRef}
@@ -398,7 +412,9 @@ export default function VideoColorSpaceTransformationPage() {
                               controls
                               className="w-full rounded-md bg-black aspect-video"
                             />
-                            <p className="text-sm text-muted-foreground mt-2 text-center">Transformed Preview</p>
+                            <p className="text-sm text-muted-foreground mt-2 text-center">
+                              Transformed Preview
+                            </p>
                           </div>
                         )}
                       </CardContent>
@@ -407,10 +423,16 @@ export default function VideoColorSpaceTransformationPage() {
                     {/* Color Transformation Settings */}
                     <Card>
                       <CardContent className="pt-6">
-                        <h2 className="text-lg font-semibold mb-4">Color Settings</h2>
+                        <h2 className="text-lg font-semibold mb-4">
+                          Color Settings
+                        </h2>
                         <div className="space-y-4">
                           {/* Reset Settings Button */}
-                          <Button variant="outline" onClick={handleResetSettings} className="w-full">
+                          <Button
+                            variant="outline"
+                            onClick={handleResetSettings}
+                            className="w-full"
+                          >
                             Reset to Defaults
                           </Button>
 
@@ -418,7 +440,9 @@ export default function VideoColorSpaceTransformationPage() {
                           <div>
                             <div className="flex justify-between mb-2">
                               <Label>Brightness</Label>
-                              <span className="text-sm text-muted-foreground">{brightness.toFixed(2)}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {brightness.toFixed(2)}
+                              </span>
                             </div>
                             <Slider
                               value={[brightness]}
@@ -433,7 +457,9 @@ export default function VideoColorSpaceTransformationPage() {
                           <div>
                             <div className="flex justify-between mb-2">
                               <Label>Contrast</Label>
-                              <span className="text-sm text-muted-foreground">{contrast.toFixed(2)}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {contrast.toFixed(2)}
+                              </span>
                             </div>
                             <Slider
                               value={[contrast]}
@@ -448,7 +474,9 @@ export default function VideoColorSpaceTransformationPage() {
                           <div>
                             <div className="flex justify-between mb-2">
                               <Label>Saturation</Label>
-                              <span className="text-sm text-muted-foreground">{saturation.toFixed(2)}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {saturation.toFixed(2)}
+                              </span>
                             </div>
                             <Slider
                               value={[saturation]}
@@ -463,7 +491,9 @@ export default function VideoColorSpaceTransformationPage() {
                           <div>
                             <div className="flex justify-between mb-2">
                               <Label>Hue Rotate</Label>
-                              <span className="text-sm text-muted-foreground">{hueRotate}°</span>
+                              <span className="text-sm text-muted-foreground">
+                                {hueRotate}°
+                              </span>
                             </div>
                             <Slider
                               value={[hueRotate]}
@@ -478,7 +508,9 @@ export default function VideoColorSpaceTransformationPage() {
                           <div>
                             <div className="flex justify-between mb-2">
                               <Label>Sepia</Label>
-                              <span className="text-sm text-muted-foreground">{sepia.toFixed(2)}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {sepia.toFixed(2)}
+                              </span>
                             </div>
                             <Slider
                               value={[sepia]}
@@ -493,7 +525,9 @@ export default function VideoColorSpaceTransformationPage() {
                           <div>
                             <div className="flex justify-between mb-2">
                               <Label>Invert</Label>
-                              <span className="text-sm text-muted-foreground">{invert.toFixed(2)}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {invert.toFixed(2)}
+                              </span>
                             </div>
                             <Slider
                               value={[invert]}
@@ -507,7 +541,11 @@ export default function VideoColorSpaceTransformationPage() {
                           {/* Action Buttons */}
                           <div className="flex flex-col gap-4 pt-4">
                             <div className="flex gap-2">
-                              <Button variant="outline" onClick={handleReset} className="flex-1">
+                              <Button
+                                variant="outline"
+                                onClick={handleReset}
+                                className="flex-1"
+                              >
                                 Reset
                               </Button>
                               <Button
@@ -515,7 +553,9 @@ export default function VideoColorSpaceTransformationPage() {
                                 disabled={isProcessing}
                                 className="flex-1"
                               >
-                                {isProcessing ? 'Processing...' : 'Apply Transform'}
+                                {isProcessing
+                                  ? "Processing..."
+                                  : "Apply Transform"}
                               </Button>
                             </div>
 
@@ -541,13 +581,18 @@ export default function VideoColorSpaceTransformationPage() {
                               <div className="p-4 bg-muted rounded-md">
                                 <div className="flex items-center gap-2 mb-2">
                                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                  <span className="text-sm font-medium text-green-600 dark:text-green-500">Conversion Complete</span>
+                                  <span className="text-sm font-medium text-green-600 dark:text-green-500">
+                                    Conversion Complete
+                                  </span>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
                                   Your video has been successfully transformed.
                                 </p>
                               </div>
-                              <Button onClick={handleDownload} className="w-full">
+                              <Button
+                                onClick={handleDownload}
+                                className="w-full"
+                              >
                                 Download Transformed Video
                               </Button>
                             </div>
@@ -567,13 +612,18 @@ export default function VideoColorSpaceTransformationPage() {
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What the Video Color Space Transformer Does
+                What it Does
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The Video Color Space Transformer applies CSS-based color filter effects directly to every frame of your video. You get independent sliders for six color parameters: Brightness (0–2x), Contrast (0–2x), Saturation (0–2x for grayscale through vivid), Hue Rotation (0–360°), Sepia intensity (0–100%), and Invert (0–100% for a negative effect).
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                Adjustments are applied per-frame during re-encoding, so the effects are permanently baked into the output MP4. A before/after preview toggle lets you compare the original and transformed video side by side.
+                When you accidentally record crucial footage in a dim room or
+                under terrible fluorescent office lights, you can adjust video
+                colors online to rescue the clip. This utility acts as a direct
+                line into the raw visual data of your MP4 file, allowing you to
+                manipulate six specific atmospheric variables including
+                brightness, saturation, and contrast. Instead of applying a
+                flimsy, peel-off filter, the application uses local browser
+                processing to physically burn the new color values deep into
+                every single frame permanently.
               </p>
             </CardContent>
           </Card>
@@ -582,61 +632,186 @@ export default function VideoColorSpaceTransformationPage() {
         {/* How to Use Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use the Tool</h2>
-            <p className="mt-4 text-muted-foreground">
-              Transform your video colors in 6 simple steps
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
           </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Upload your target video
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Drop your dark, washed-out, or poorly white-balanced MP4 file
+                into the browser processing grid inside the app. The interface
+                will immediately mount your original, unaltered footage into the
+                left-hand preview window, ensuring you have a true baseline
+                reading before you begin manipulating the visual data.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Slide the visual adjustments
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Grab the variable sliders and push or pull them to alter the
+                footage. If the clip is too dark, slowly drag the brightness
+                slider above 1.0. If the colors look flat and gray, boost the
+                saturation to 1.3 to inject heavy vibrancy back into the pixels.
+                If you make a disastrous mistake, click "Reset to Defaults" to
+                restart.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Render the final MP4
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Click the Apply Transform button to command your computer
+                processor to start physically rewriting the math behind millions
+                of colored pixels. Once the progress bar hits 100%, hit the
+                "Transformed" preview button to verify the new permanent color
+                grade, and click download to claim the hard file.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-6">
-            {[
-              {
-                step: "01",
-                title: "Select Video",
-                description: "Select your video file using the upload button",
-              },
-              {
-                step: "02",
-                title: "Adjust Colors",
-                description: "Adjust any combination of the six color sliders",
-              },
-              {
-                step: "03",
-                title: "Reset Option",
-                description: "Use 'Reset to Defaults' to return all sliders to neutral",
-              },
-              {
-                step: "04",
-                title: "Apply Transform",
-                description: "Click 'Apply Transform' to process the video",
-              },
-              {
-                step: "05",
-                title: "Compare",
-                description: "Toggle between Original and Transformed to compare",
-              },
-              {
-                step: "06",
-                title: "Download",
-                description: "Download your transformed video output",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {index < 5 && (
-                  <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-                )}
-                <div className="relative text-center">
-                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                    <span className="text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                  <p className="relative mt-2 text-sm text-muted-foreground">
-                    {item.description}
+        {/* Use Cases Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Rescuing dark smartphone footage
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Everyday users often capture incredible concert moments or
+                  birthday parties, only to discover the dim room lighting
+                  ruined the shot. Sliding the brightness controller from 1.0 up
+                  to 1.4 artificially floods the dark clip with light, revealing
+                  faces, text, and details that were completely swallowed by
+                  black shadows.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Punching up dull marketing clips
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Social media marketers filming real estate walkthroughs on
+                  cloudy days often end up with dreary, uninviting gray footage.
+                  Aggressively bumping the saturation to 1.3 and the contrast to
+                  1.2 violently forces the dull, flat colors to pop, making the
+                  green grass and blue skies look incredibly vibrant to
+                  potential buyers.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Crafting retro sepia flashbacks
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Indie filmmakers shooting a sudden flashback scene or a dusty
+                  western sequence need to detach the viewer from modern
+                  reality. Ramping the Sepia slider up to 1.0 instantly slathers
+                  the entire frame in a gritty, yellowish-brown crust, instantly
+                  mimicking the chemical wash of 19th-century photography.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Generating horror movie negatives
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Creative editors crafting terrifying horror sizzle reels or
+                  jarring glitch-art transitions often need highly unnatural
+                  aesthetics. Smashing the Invert slider to maximum flips every
+                  single color to its absolute opposite, turning bright white
+                  skin into demonic pitch black, and dark shadows into screaming
+                  white light.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Matching multi-camera colors</h3>
+                <p className="text-sm text-muted-foreground">
+                  Podcast producers filming with a high-end Sony camera and a
+                  cheap webcam at the same time will notice the webcam footage
+                  looks sickly and pale. By carefully dialing up the warmth and
+                  saturation on just the webcam file, they can forcefully bridge
+                  the visual gap and make the two distinct cameras look
+                  identical in the final edit.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Brightness & Contrast Control
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    The Brightness variable strictly controls the overall
+                    luminance energy in the frame, allowing you to lift a
+                    pitch-black video out of darkness by exceeding 1.0. Contrast
+                    dictates the mathematical distance between your brightest
+                    whites and darkest blacks; lowering it makes the video look
+                    foggy, while raising it makes the image look sharp, glossy,
+                    and dramatic.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Saturation Slider</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Saturation is the volume knob for your colors. Driving the
+                    slider above 1.0 injects heavy artificial dyes into the
+                    pixels, turning normal red into a blinding laser red.
+                    Pulling the slider below 1.0 slowly drains the life out of
+                    the frame until the video is reduced to a stark,
+                    black-and-white grayscale wasteland at 0.0.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Hue Rotate Mechanism</h3>
+                  <p className="text-muted-foreground mt-2">
+                    This bizarre tool selects every color value and shifts it
+                    across the 360-degree color wheel. A 90-degree shift
+                    radically alters the fundamental reality of the footage,
+                    turning green grass purple, orange construction cones pink,
+                    and blue oceans green. It is generally used for psychedelic
+                    music videos rather than standard color correction.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs Section */}
@@ -645,9 +820,6 @@ export default function VideoColorSpaceTransformationPage() {
             <h2 className="text-3xl font-bold tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Everything you need to know about color transformation
-            </p>
           </div>
           <Faqs faqs={faqData} />
         </section>
@@ -655,7 +827,9 @@ export default function VideoColorSpaceTransformationPage() {
         {/* Related Tools Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">More Video Tools</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              More Video Tools
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Explore our other free video editing tools
             </p>

@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Conversion, Input, Output, Mp4OutputFormat, BufferTarget, BlobSource, ALL_FORMATS } from "mediabunny";
+import {
+  Conversion,
+  Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
+  BlobSource,
+  ALL_FORMATS,
+} from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -12,54 +20,35 @@ import Script from "next/script";
 
 const faqData = [
   {
-    question: "What does changing FPS actually do to my video?",
+    question:
+      "Why doesn't increasing the frame rate make my existing video smoother?",
     answer:
-      "Frame rate (FPS) determines how many individual frames are shown per second. Lowering FPS drops frames to reduce file size and create a choppier look; increasing FPS duplicates frames to make motion appear smoother.",
+      "When you change video fps online to a higher number using this tool, it duplicates existing frames to reach the target rate rather than inventing new motion data. For genuine motion smoothing, you would need an AI interpolation tool that analyzes the video and draws entirely new frames between the existing ones.",
   },
   {
-    question: "Will changing the frame rate change the speed of my video?",
+    question: "Does modifying the frame rate change my video's total duration?",
     answer:
-      "No. This tool changes how many frames are displayed per second without altering your video's duration or playback speed. Your video will play at the same length.",
+      "No, the duration and audio sync remain exactly the same. The tool adjusts how many frames are packed into each second of playback, skipping or duplicating frames as needed to fit the new speed without stretching or squishing the timeline.",
   },
   {
-    question: "What is the best FPS for YouTube videos?",
+    question: "Will my video lose quality if I lower the frame rate?",
     answer:
-      "YouTube recommends 24, 25, 30, 48, 50, or 60fps. For standard content, 30fps is the sweet spot; for gaming or action footage, 60fps delivers noticeably smoother motion.",
+      "Lowering the frame rate will make the motion appear less fluid and choppier, but the visual clarity of the individual frames remains intact. This is often an acceptable trade-off when you urgently need to reduce data usage or meet strict platform requirements.",
   },
   {
-    question: "Why would I convert a video to 24fps?",
+    question: "Can anyone else see the video I am processing?",
     answer:
-      "24fps is the standard frame rate used in cinema. Converting your footage to 24fps gives it a natural cinematic, film-like feel that's popular for short films, vlogs, and creative video projects.",
+      "Everything happens locally inside your web browser, meaning the video file is never uploaded or transmitted to a server. You can process highly sensitive or private footage offline, and nobody else will ever have access to it.",
   },
   {
-    question: "Can I increase FPS to make my video smoother?",
+    question: "What happens if I convert a 60fps gaming clip to 30fps?",
     answer:
-      "You can increase the FPS value, but this tool duplicates existing frames rather than generating new ones through interpolation. For true motion smoothing, dedicated AI tools are needed. Increasing FPS here is mainly useful for compatibility purposes.",
+      "The tool will simply discard every other frame, effectively halving the visual smoothness. This is a very common workflow for creators who record gameplay at 60fps but want to upload a smaller, more standard 30fps file to social media.",
   },
   {
-    question: "What video formats does this tool accept?",
+    question: "Why does the video processing take longer for longer videos?",
     answer:
-      "The tool accepts all common video formats including MP4, MOV, WebM, MKV, and AVI. The output file is always exported as MP4.",
-  },
-  {
-    question: "Is my video uploaded to a server when I use this tool?",
-    answer:
-      "No. All processing happens entirely in your browser using local compute resources. Your video never leaves your device, which keeps your files completely private.",
-  },
-  {
-    question: "What's the difference between 30fps and 60fps?",
-    answer:
-      "30fps is the standard for most web video and TV content. 60fps doubles the frames per second, making fast motion and action sequences appear significantly smoother — commonly used in gaming content, sports, and slow-motion footage.",
-  },
-  {
-    question: "What FPS should I use for animation?",
-    answer:
-      "Traditional animation often uses 12fps (classic hand-drawn look) or 24fps for smoother movement. Stop-motion projects typically target 12–15fps.",
-  },
-  {
-    question: "Is there a file size limit for videos I can process?",
-    answer:
-      "There is no hard limit imposed by the tool, but very large files will take longer to process since everything runs in your browser. For best performance, files under 500MB work most efficiently.",
+      "Because the tool relies entirely on the processing power of your own device, larger and longer files take more time to encode. Closing other demanding applications on your computer can help speed up the conversion process significantly.",
   },
 ];
 
@@ -138,14 +127,18 @@ export default function ChangeVideoFpsPage() {
       if (!fpsChangedBuffer) {
         throw new Error("Failed to get FPS-changed video buffer");
       }
-      const fpsChangedBlob = new Blob([fpsChangedBuffer], { type: "video/mp4" });
+      const fpsChangedBlob = new Blob([fpsChangedBuffer], {
+        type: "video/mp4",
+      });
       const fpsChangedUrl = URL.createObjectURL(fpsChangedBlob);
       setOutputUrl(fpsChangedUrl);
       setProgress(100);
 
       input.dispose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to change video FPS");
+      setError(
+        err instanceof Error ? err.message : "Failed to change video FPS",
+      );
     } finally {
       setIsProcessing(false);
     }
@@ -184,7 +177,8 @@ export default function ChangeVideoFpsPage() {
     },
     {
       name: "Video Format Converter",
-      description: "Convert between video formats, Supports wide range of video formats",
+      description:
+        "Convert between video formats, Supports wide range of video formats",
       href: "/video-tools/video-format-converter",
     },
     {
@@ -233,7 +227,9 @@ export default function ChangeVideoFpsPage() {
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Adjust your video's frame rate to any value — from cinematic 24fps to smooth 60fps — entirely in your browser. No uploads to servers, no waiting, completely free.
+                Adjust your video's frame rate to any value — from cinematic
+                24fps to smooth 60fps — entirely in your browser. No uploads to
+                servers, no waiting, completely free.
               </p>
             </div>
           </div>
@@ -281,7 +277,10 @@ export default function ChangeVideoFpsPage() {
                         />
                         <div className="mt-4 p-3 bg-muted rounded-md">
                           <p className="text-sm text-muted-foreground">
-                            Target FPS: <span className="text-foreground font-medium">{targetFps}</span>
+                            Target FPS:{" "}
+                            <span className="text-foreground font-medium">
+                              {targetFps}
+                            </span>
                           </p>
                         </div>
                       </CardContent>
@@ -290,7 +289,9 @@ export default function ChangeVideoFpsPage() {
                     {/* FPS Settings */}
                     <Card>
                       <CardContent className="pt-6">
-                        <h2 className="text-lg font-semibold mb-4">Frame Rate Settings</h2>
+                        <h2 className="text-lg font-semibold mb-4">
+                          Frame Rate Settings
+                        </h2>
                         <div className="space-y-4">
                           {/* FPS Preset Buttons */}
                           <div>
@@ -299,12 +300,20 @@ export default function ChangeVideoFpsPage() {
                               {fpsPresets.map((option) => (
                                 <Button
                                   key={option.fps}
-                                  variant={targetFps === option.fps ? "default" : "outline"}
+                                  variant={
+                                    targetFps === option.fps
+                                      ? "default"
+                                      : "outline"
+                                  }
                                   onClick={() => setTargetFps(option.fps)}
                                   className="flex flex-col h-auto py-2"
                                 >
-                                  <span className="font-semibold">{option.label}</span>
-                                  <span className="text-xs opacity-75">{option.desc}</span>
+                                  <span className="font-semibold">
+                                    {option.label}
+                                  </span>
+                                  <span className="text-xs opacity-75">
+                                    {option.desc}
+                                  </span>
                                 </Button>
                               ))}
                             </div>
@@ -312,12 +321,16 @@ export default function ChangeVideoFpsPage() {
 
                           {/* Custom FPS Input */}
                           <div>
-                            <Label className="mb-2 block">Custom Frame Rate</Label>
+                            <Label className="mb-2 block">
+                              Custom Frame Rate
+                            </Label>
                             <div className="flex gap-2">
                               <input
                                 type="number"
                                 value={targetFps || ""}
-                                onChange={(e) => setTargetFps(parseInt(e.target.value) || 0)}
+                                onChange={(e) =>
+                                  setTargetFps(parseInt(e.target.value) || 0)
+                                }
                                 min={1}
                                 max={120}
                                 placeholder="Enter FPS (1-120)"
@@ -329,10 +342,18 @@ export default function ChangeVideoFpsPage() {
                           {/* Action Buttons */}
                           <div className="flex flex-col gap-4 pt-4">
                             <div className="flex gap-2">
-                              <Button variant="outline" onClick={handleReset} className="flex-1">
+                              <Button
+                                variant="outline"
+                                onClick={handleReset}
+                                className="flex-1"
+                              >
                                 Reset
                               </Button>
-                              <Button onClick={handleChangeFps} disabled={isProcessing || !targetFps} className="flex-1">
+                              <Button
+                                onClick={handleChangeFps}
+                                disabled={isProcessing || !targetFps}
+                                className="flex-1"
+                              >
                                 {isProcessing ? "Processing..." : "Change FPS"}
                               </Button>
                             </div>
@@ -357,14 +378,19 @@ export default function ChangeVideoFpsPage() {
                           {outputUrl && (
                             <div className="mt-4 space-y-4">
                               <div>
-                                <h3 className="text-sm font-semibold mb-2">Result</h3>
+                                <h3 className="text-sm font-semibold mb-2">
+                                  Result
+                                </h3>
                                 <video
                                   src={outputUrl}
                                   controls
                                   className="w-full rounded-md bg-black aspect-video mb-3"
                                 />
                               </div>
-                              <Button onClick={handleDownload} className="w-full">
+                              <Button
+                                onClick={handleDownload}
+                                className="w-full"
+                              >
                                 Download FPS-Changed Video
                               </Button>
                             </div>
@@ -384,13 +410,18 @@ export default function ChangeVideoFpsPage() {
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What the Video FPS Changer Does
+                What it Does
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The Video FPS Changer lets you modify the frame rate of any video file directly in your browser. Whether you need the cinematic look of 24fps, the standard 30fps for web content, silky smooth 60fps for gaming footage, or any custom value between 1 and 120, this tool handles it instantly.
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                It works by re-encoding your video's frame timing without sending your file to any external server — your footage stays private on your device. The output is always a clean MP4 file ready to share or upload.
+                When your video looks too choppy or doesn't match the required
+                frame rate for a specific platform, you can change video fps
+                online to fix it directly in your browser. This tool adjusts how
+                many frames your video displays every second without altering
+                its playback speed or sending your file to an external server.
+                By modifying the frame rate locally, you maintain complete
+                privacy while preparing your video for web standard 30fps,
+                cinematic 24fps, or even lowering the fps to reduce the overall
+                file size when bandwidth is tight.
               </p>
             </CardContent>
           </Card>
@@ -399,56 +430,155 @@ export default function ChangeVideoFpsPage() {
         {/* How to Use Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use the Tool</h2>
-            <p className="mt-4 text-muted-foreground">
-              Change your video's frame rate in 5 simple steps
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
           </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Select your video
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Click the upload button to load your video into the browser.
+                This process happens instantly without any uploading because the
+                tool reads the file directly from your local storage, keeping
+                your media secure and saving you time on slow connections.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Choose your target FPS
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Use the quick presets or type a custom number between 1 and 120
+                in the input field. Lowering the frame rate will drop frames and
+                can save bandwidth, while increasing it duplicates frames to
+                meet specific platform requirements without actually inventing
+                new motion data.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Process and download
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Hit the process button to start the local re-encoding phase.
+                Once the progress bar finishes, you will see a preview of the
+                adjusted video right next to your original, allowing you to
+                verify the frame rate change before downloading the final file
+                to your device.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-5">
-            {[
-              {
-                step: "01",
-                title: "Select Video",
-                description: "Click 'Select Video' and choose any video file from your device",
-              },
-              {
-                step: "02",
-                title: "Preview Loads",
-                description: "Your video appears in the preview player on the left",
-              },
-              {
-                step: "03",
-                title: "Choose FPS",
-                description: "Select a frame rate from Quick Presets or enter a custom value",
-              },
-              {
-                step: "04",
-                title: "Process",
-                description: "Click 'Change FPS' and wait a few seconds while your video is processed",
-              },
-              {
-                step: "05",
-                title: "Download",
-                description: "Preview the result and click 'Download FPS-Changed Video' to save",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {index < 4 && (
-                  <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-                )}
-                <div className="relative text-center">
-                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                    <span className="text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                  <p className="relative mt-2 text-sm text-muted-foreground">
-                    {item.description}
+        {/* Use Cases Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Matching cinema standards</h3>
+                <p className="text-sm text-muted-foreground">
+                  If you shot a video at 30fps or 60fps but want it to feel more
+                  like a traditional movie, converting it to 24fps will give it
+                  that natural cinematic look. This is especially helpful for
+                  short films or creative vlog segments.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Reducing file bandwidth</h3>
+                <p className="text-sm text-muted-foreground">
+                  When you need to send a video over a slow connection, dropping
+                  the frame rate down to 15fps or even 10fps severely reduces
+                  the amount of data the video requires. The video will look
+                  choppier, but it becomes much easier to share.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Meeting platform requirements
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Sometimes specific upload portals or legacy software strictly
+                  require a 30fps file to process correctly. Changing your frame
+                  rate to the standard 30fps ensures maximum compatibility
+                  across almost all modern and older systems.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Creating animation references
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  If you are animating a sequence and need a reference video,
+                  lowering the frame rate to 12fps matches the standard timing
+                  for classic hand-drawn animation. This lets you study the
+                  motion exactly as you would draw it.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Standardizing mixed footage</h3>
+                <p className="text-sm text-muted-foreground">
+                  When editing a project using clips from different cameras with
+                  varying frame rates, modifying them all to share the same FPS
+                  prevents playback glitches in your editing timeline. This tool
+                  provides a quick way to unify your media before you start
+                  editing.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Quick Presets</h3>
+                  <p className="text-muted-foreground mt-2">
+                    These buttons offer the most common frame rates like 24, 30,
+                    and 60, allowing you to instantly set the target without
+                    typing. Use these if you are aiming for standard web,
+                    cinema, or gaming frame rates to save time.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Custom Frame Rate</h3>
+                  <p className="text-muted-foreground mt-2">
+                    This input lets you specify exactly how many frames per
+                    second the output video should have, ranging from 1 to 120.
+                    This is useful for very specific technical requirements,
+                    like matching an unusual legacy format or creating an
+                    extremely low frame rate for a stylistic choice.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs Section */}
@@ -457,9 +587,6 @@ export default function ChangeVideoFpsPage() {
             <h2 className="text-3xl font-bold tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Everything you need to know about changing video FPS
-            </p>
           </div>
           <Faqs faqs={faqData} />
         </section>
@@ -467,7 +594,9 @@ export default function ChangeVideoFpsPage() {
         {/* Related Tools Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">More Video Tools</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              More Video Tools
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Explore our other free video editing tools
             </p>

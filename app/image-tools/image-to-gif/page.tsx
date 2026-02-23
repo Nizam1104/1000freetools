@@ -58,29 +58,37 @@ export const metadata: Metadata = {
 export default function ImageToGifPage() {
   const faqs = [
     {
-      question: "Is this image to GIF maker completely free to use?",
+      question:
+        "Is it really possible to convert images to GIF online free without watermarks?",
       answer:
-        "Yes. Our animated GIF generator is entirely free. You process as many images as you need without encountering watermarks or hidden payment requests.",
+        "Yes, our animated GIF generator is completely free and unmetered. You can process folders of up to 50 images into a dynamic animation without encountering mandatory payments, hidden subscriptions, or forced promotional watermarks on your final file.",
     },
     {
-      question: "How many images can I combine into a single GIF?",
+      question: "How many individual photos can I combine into a single GIF?",
       answer:
-        "You can load up to 50 distinct images into the timeline simultaneously. We recommend utilizing between 15 and 30 frames for the most fluid playback experience.",
+        "You can securely drag and drop up to 50 distinct images into the timeline simultaneously. For the smoothest and most fluid playback experience, we generally recommend utilizing between 15 and 30 high-quality frames per animation.",
     },
     {
-      question: "Are my private pictures uploaded to a remote server?",
+      question:
+        "Are my private family pictures uploaded to a remote server for processing?",
       answer:
-        "No. The conversion algorithms run locally using your device resources. Your photos never leave your active web browser protecting your complete privacy.",
+        "No. All frame sequencing and rendering algorithms run strictly locally using your device's native hardware resources. Your personal photos never leave your active web browser window, guaranteeing complete privacy and security.",
     },
     {
-      question: "What image file types does the converter support?",
+      question: "What image formats can I upload into the animation maker?",
       answer:
-        "The tool recognizes standard formats including JPG, PNG, and WebP natively. You mix and match these varied formats directly within the same animation timeline securely.",
+        "The timeline natively recognizes and imports standard image formats including JPG, PNG, and WebP flawlessly. You can even mix and match these varied formats directly within the exact same animation sequence without causing playback errors.",
     },
     {
-      question: "Can I adjust how fast the animation plays?",
+      question: "Can I adjust how fast the customized animation plays?",
       answer:
-        "Yes. You control the specific delay duration between frames directly. You test different timing parameters using the live visual preview before initiating the final download.",
+        "Yes, the interface provides a dedicated millisecond delay slider. You can manually control the specific duration each distinct image remains visible, testing entirely different timing parameters via the live visual preview before initiating your final download.",
+    },
+    {
+      question:
+        "Will the final GIF shrink the resolution of my uploaded photos?",
+      answer:
+        "The software automatically scales differently sized uploads onto a uniform canvas background to prevent stuttering. You have direct control over the target width and height constraints to determine the exact pixel dimensions of the generated file.",
     },
   ];
 
@@ -121,110 +129,119 @@ export default function ImageToGifPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Engage Your Audience with Movement
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Movement captures human attention significantly faster than static
-            content. When you present products online, demonstrating features
-            through a short animation provides immediate clarity for your
-            potential customers. A well-constructed GIF illustrates step-by-step
-            processes concisely, effectively replacing lengthy paragraphs of
-            descriptive text. You enhance educational materials, software
-            tutorials, and marketing emails rapidly by converting your sequence
-            of instructional screenshots into a universally supported moving
-            image.
-          </p>
-          <p className="mb-4">
-            Video files often present compatibility issues across different
-            digital ecosystems. Certain email clients block embedded videos
-            automatically. Social media platforms frequently struggle processing
-            heavy video formats optimally. A standard animated GIF sidesteps
-            these technical obstacles reliably. They function natively across
-            almost every digital communication platform available today. Your
-            animations play instantly on smartphones, tablets, and legacy
-            desktops alike without requiring supplementary media players.
-          </p>
-          <p className="mb-4">
-            Processing multiple images into an animation traditionally
-            necessitated installing heavy, complex desktop applications. These
-            programs frequently feature steep learning curves and significant
-            hardware requirements. Our modern web-based approach mitigates these
-            barriers effectively. We provide explicit timeline controls right
-            inside your browser window. You construct dynamic visual content
-            securely utilizing your existing personal libraries. Because
-            everything evaluates locally, your sensitive graphical assets remain
-            completely private on your host machine.
+            Sometimes explaining a process with static screenshots is confusing,
+            but sending a massive video file is impossible due to email limits.
+            Our tool allows you to convert images to GIF online free directly
+            inside your web browser. It instantly strings up to 50 static JPG,
+            PNG, or WebP photos together into a smoothly looping animation.
+            Processing happens entirely on your local hardware, granting you
+            precise control over frame delays and final dimensions without
+            compromising the privacy of your original files.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            Initiating your animation project requires only your base images.
-            You drag matching photos directly from your file manager onto our
-            clearly defined drop zone. The system detects standard file
-            extensions like JPG, PNG, and WebP automatically. The interface then
-            arrays all uploaded visual assets onto an interactive graphical
-            timeline. You reorganize the exact playing order instantly simply by
-            dragging the preview tiles into new positions.
+            <strong>1. Upload your image sequence</strong>
+            <br />
+            Drag a folder containing your sequence of photos directly into the
+            designated drop zone on the screen. The interface will instantly
+            array all the detected visual assets onto an interactive graphical
+            timeline below the preview window.
           </p>
           <p className="mb-4">
-            Fine tuning the visual playback serves as the core step for premium
-            results. You examine the provided settings panel to adjust the frame
-            delay interval. This determines the specific duration each distinct
-            image remains visible before transitioning. You click the preview
-            button frequently to observe the impact of your modifications.
-            Adjusting the target width and height constraints controls the
-            overall physical footprint of the final file. You select lower
-            scaling parameters specifically when generating animations for
-            restrictive email marketing campaigns.
+            <strong>2. Organize frames and adjust timing</strong>
+            <br />
+            Reorganize the playing order simply by dragging the preview tiles
+            left or right. Use the delay slider to set the exact millisecond
+            duration each image should remain on screen, constantly testing the
+            flow using the live preview canvas.
           </p>
           <p className="mb-4">
-            Finalizing your production takes only a single action. When the
-            preview loop accurately reflects your intentions, you press the
-            convert button. The client-side engine rapidly stitches the
-            individual frames together employing standard graphical encoding
-            routines. A download dialog appears immediately upon completion. You
-            save the finalized animated sequence directly to your local file
-            system, ready for immediate digital distribution.
+            <strong>3. Set dimensions and download</strong>
+            <br />
+            Input your desired final width and height for the animation to
+            ensure it fits your intended platform perfectly. Once the preview
+            loop looks flawless, click the convert button to instantly generate
+            and download the completed animated file.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            This specialized assembly application functions primarily as a frame
-            sequence engine. It ingests independent, differently formatted
-            visual data points and homogenizes them into a single, standardized
-            moving container. The native JavaScript operations manage the
-            complexity of matching color palettes and timing metadata
-            exclusively utilizing your device processor. This direct approach
-            yields exceptionally fast rendering times, avoiding the network
-            latency inherent in cloud-based conversion platforms entirely.
+            <strong>Demonstrating software features in documentation</strong>
+            <br />
+            When writing a help center article, describing a complex multi-click
+            workflow purely with text frustrates users. Combining four or five
+            sequential screenshots into a looping animation visually guides the
+            reader through the exact interface steps effortlessly.
           </p>
           <p className="mb-4">
-            The platform grants granular control concerning repetition
-            parameters. You instruct the finalized animation to loop
-            continuously or configure it to pause after a predetermined number
-            of cycles. Accommodating varied image resolutions seamlessly
-            presents another core functionality. The engine automatically scales
-            differently sized uploads onto a uniform canvas background,
-            guaranteeing a stable, non-stuttering viewing experience for your
-            final audience. You never crop photos identically prior to
-            uploading.
+            <strong>Showcasing product variations in email marketing</strong>
+            <br />
+            Ecommerce email campaigns look cluttered when you embed separate
+            photos for every color variation of a single product. Stacking the
+            red, blue, and green product photos into a snappy, rotating graphic
+            showcases the entire inventory compactly within the email body.
           </p>
           <p className="mb-4">
-            Optimized memory management enables extensive project capabilities.
-            You process up to fifty individual frames efficiently without
-            locking your active browser sessions. We developed this utility
-            specifically for robust productivity environments, completely
-            removing unnecessary cosmetic functions that dilute processing
-            speeds. You generate lightweight, communicative graphical animations
-            perpetually free of imposed limitations or forced subscription
-            models.
+            <strong>Animating rigid architectural or design mockups</strong>
+            <br />
+            Presenting flat architectural renderings to a client often lacks
+            emotional impact. Dropping progressive "before, during construction,
+            and after" renderings into the timeline creates a compelling visual
+            narrative that reveals the stunning transformation dynamically.
+          </p>
+          <p className="mb-4">
+            <strong>Creating engaging digital banner advertisements</strong>
+            <br />
+            Static banner ads suffer from terrible click-through rates on modern
+            websites. By animating three distinct text graphics that flash a
+            promotional message rhythmically, you command the viewer's attention
+            and dramatically increase your advertising engagement.
+          </p>
+          <p className="mb-4">
+            <strong>
+              Transforming burst photography into living portraits
+            </strong>
+            <br />
+            Smartphones frequently capture a rapid burst of photos to ensure
+            subjects aren't blinking. Instead of deleting the extras, compiling
+            the burst sequence into an animation brings the candid smiles and
+            subtle body movements back to life perfectly.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Frame Delay (Speed Controls)</strong>
+            <br />
+            This millisecond value dictates exactly how long the timeline pauses
+            on a specific picture before jumping to the next one. A lower number
+            creates rapid, frantic movement, while a higher value (like 1000ms)
+            pauses for a full second, which is ideal for readable slideshows.
+          </p>
+          <p className="mb-4">
+            <strong>Canvas Width and Height</strong>
+            <br />
+            Since uploaded photos might have different shapes, this forces the
+            final file into a uniform bounding box mathematically. Establishing
+            a strict 500x500 square guarantees the animation will display
+            flawlessly regardless of whether you upload portrait or landscape
+            source files.
+          </p>
+          <p className="mb-4">
+            <strong>Interactive Frame Timeline</strong>
+            <br />
+            This visual dashboard represents the exact chronological blueprint
+            of your project. You can click the small 'X' icons to instantly
+            delete redundant frames or physically drag the thumbnail blocks to
+            fix a photo that loaded totally out of sequence.
           </p>
         </section>
 

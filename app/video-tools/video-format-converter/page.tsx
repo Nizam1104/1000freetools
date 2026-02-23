@@ -2,32 +2,44 @@ import VideoFormatsConversion from "@/components/video-tools/VideoFormatsConvert
 import Faqs from "@/components/utils/Faqs";
 import Script from "next/script";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { Card, CardContent } from "@/components/ui/card";
 
 const faqData = [
   {
-    question: "Is this video converter really free with no file size limit?",
+    question:
+      "Do I need to download a sketchy desktop application to convert my MP4 file?",
     answer:
-      "Yes. There are no hidden fees, no account required, and no file size restrictions. Because conversion runs entirely in your browser, we have no server costs to pass on — so it's genuinely unlimited and free to use.",
+      "No. You can run a full video format conversion directly through your Chrome or Safari browser window. Because this tool utilizes local memory processing, it effectively turns your web browser into a secure, offline conversion engine without requiring you to install random executable files.",
   },
   {
-    question: "Are my video files safe? Will they be uploaded anywhere?",
+    question:
+      "Why did my WebM file instantly convert to MP4 in one second flat?",
     answer:
-      "Your files are 100% safe. All conversion processing happens locally inside your browser using WebAssembly. Nothing is ever uploaded to a server, shared, or stored. Once you close the tab, all data is gone.",
+      "You likely triggered a raw transmuxing phase. If the internal video codec matches the new wrapper container you selected, the engine simply copies the raw audio and video streams and pastes them into the new format instead of slowly re-rendering every single frame.",
   },
   {
-    question: "Why would I convert MP4 to WebM — or vice versa?",
+    question:
+      "How do I extract just the background music from a YouTube recorded video?",
     answer:
-      "MP4 (H.264) offers the widest device compatibility, making it ideal for sharing. WebM (VP9 or AV1) is optimized for web streaming and has better compression at the same quality. You might convert WebM to MP4 to play a video on a TV or phone, or convert MP4 to WebM for a website to reduce load times.",
+      "Simply drop your video file into the converter and select MP3 or WAV from the Output Format dropdown menu. The processing engine will violently strip away the visual data track while completely preserving the original audio stream quality.",
   },
   {
-    question: "What is transmuxing and why does it matter?",
+    question:
+      "Why does converting a video to AV1 codec drastically crash my laptop performance?",
     answer:
-      "Transmuxing means changing the container format (e.g., MKV to MP4) without re-encoding the video or audio streams inside. Because the codec data isn't touched, transmuxing is dramatically faster than full re-encoding and doesn't cause any quality loss. This tool automatically transmuxes when possible and only re-encodes when the codecs truly need to change.",
+      "AV1 is an incredibly dense, highly advanced compression algorithm specifically designed to crush massive 4K files into tiny digital packages. Because the mathematics required are so wildly complex, older computer CPUs will effectively max out to 100% capacity trying to compile the data.",
   },
   {
-    question: "Can I convert a video file to MP3 or another audio-only format?",
+    question:
+      "Can anyone on the internet view the private videos I am converting?",
     answer:
-      "Yes. Select any video file as your input, then choose an audio output format — MP3, AAC, WAV, FLAC, or Opus. The tool will automatically strip the video track and export only the audio stream. This is perfect for extracting music, podcasts, or voiceovers from video recordings.",
+      "Absolutely not. This completely sandboxed architecture guarantees your private footage never leaves your physical hardware. Your raw MP4 files are never uploaded to our servers, ensuring no external party can intercept your data.",
+  },
+  {
+    question:
+      "Is there a maximum Gb file size cap enforced by the conversion server?",
+    answer:
+      "Because we literally do not have a server crunching your files, we enforce absolutely zero arbitrary limits. However, your internet browser itself has a rigid internal RAM wall, meaning attempting to convert a massive 15GB raw ProRes file might force Google Chrome to crash.",
   },
 ];
 
@@ -63,7 +75,8 @@ export default function VideoFormatsConversionPage() {
     },
     {
       name: "Change Video FPS",
-      description: "Change video frame rate to 24fps, 30fps, 60fps or custom FPS",
+      description:
+        "Change video frame rate to 24fps, 30fps, 60fps or custom FPS",
       href: "/video-tools/change-video-fps",
     },
     {
@@ -108,7 +121,8 @@ export default function VideoFormatsConversionPage() {
     },
     {
       name: "Video Transparency Maker",
-      description: "Adjust video opacity and transparency with custom background",
+      description:
+        "Adjust video opacity and transparency with custom background",
       href: "/video-tools/video-transparency-maker",
     },
   ];
@@ -137,149 +151,205 @@ export default function VideoFormatsConversionPage() {
           <VideoFormatsConversion />
         </section>
 
-        {/* What Is a Video Format? */}
+        {/* What The Tool Does Section */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-bold tracking-tight">
-            What Is a Video Format?
-          </h2>
-          <div className="prose prose-lg dark:prose-invert max-w-none text-muted-foreground">
-            <p className="leading-relaxed">
-              A video format (also called a container format) is a file
-              structure that holds video, audio, subtitles, and metadata
-              together in one file. Common containers include MP4, MKV, WebM,
-              and MOV. Each container can hold different video codecs (like
-              H.264, H.265, VP9, or AV1) and audio codecs (like AAC, Opus, MP3,
-              or FLAC).
-            </p>
-            <p className="leading-relaxed">
-              When a video player, website, or device can't open your file, it's
-              often a container or codec mismatch — not a corrupted file. The
-              right video format converter resolves these issues in seconds by
-              repackaging or re-encoding your media into a compatible format.
-            </p>
-          </div>
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                What it Does
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                When you try to play an obscure MKV movie file on your smart TV
+                and receive an aggressive "Unsupported Format" error, you must
+                convert the video to MP4 online to fix the problem. This browser
+                architecture acts as a local digital translator, ripping open
+                incompatible video containers and seamlessly repacking the raw
+                visual data into a universally accepted format. Built entirely
+                to run on your own CPU, this bypasses horrible cloud upload
+                limits, allowing you to quickly smash massive WebM, MOV, or AVI
+                files down to playable formats without paying exorbitant
+                subscription fees.
+              </p>
+            </CardContent>
+          </Card>
         </section>
 
-        {/* What This Tool Does */}
+        {/* How to Use Section */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-bold tracking-tight">
-            What Does This Video Converter Do?
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            This tool gives you full control over your media files directly in
-            the browser using WebAssembly-powered processing — the same
-            technology used in professional desktop software, delivered for free
-            online.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">
-                1
-              </span>
-              <div>
-                <h3 className="font-semibold">Container Conversion</h3>
-                <p className="text-sm text-muted-foreground">
-                  Switch between MP4, WebM, MKV, and MOV containers
-                </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
               </div>
+              <h3 className="relative font-semibold text-xl">
+                Import your target file
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Push your corrupted or unsupported video directly into the
+                browser dashboard. The internal system immediately inspects the
+                hidden internal metadata, officially logging whether your clip
+                is wrapped in an MP4, MOV, or obscure WebM container before
+                establishing a baseline starting point.
+              </p>
             </div>
-            <div className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">
-                2
-              </span>
-              <div>
-                <h3 className="font-semibold">Video Codec Conversion</h3>
-                <p className="text-sm text-muted-foreground">
-                  Re-encode between H.264, H.265, VP8, VP9, and AV1 codecs
-                </p>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
               </div>
+              <h3 className="relative font-semibold text-xl">
+                Select a new destination
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Open the output dropdown to command the processor what specific
+                architecture it should build. If you want maximum compatibility
+                across vintage devices, select the MP4 wrapper powered by an
+                H.264 video codec. For audio extraction, choose the specific MP3
+                or WAV format.
+              </p>
             </div>
-            <div className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">
-                3
-              </span>
-              <div>
-                <h3 className="font-semibold">Audio Extraction</h3>
-                <p className="text-sm text-muted-foreground">
-                  Strip the video track and export audio-only files as MP3, WAV,
-                  AAC, FLAC, or Opus
-                </p>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
               </div>
-            </div>
-            <div className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">
-                4
-              </span>
-              <div>
-                <h3 className="font-semibold">Fast Transmuxing</h3>
-                <p className="text-sm text-muted-foreground">
-                  Copy tracks without re-encoding when codecs are compatible
-                </p>
-              </div>
+              <h3 className="relative font-semibold text-xl">
+                Execute the conversion
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Hit the convert button to unleash your CPU power on the raw
+                data. If the engine determines the codecs align perfectly, it
+                performs a blazing-fast transmux copy. If the pixels must be
+                entirely redrawn, you must monitor the progress bar until the
+                heavy lifting finishes, eventually prompting the final download.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Why Choose This Tool */}
+        {/* Use Cases Section */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-bold tracking-tight text-center">
-            Why Use Our Video Format Converter?
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-lg bg-card border border-border space-y-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-xl">🔒</span>
-              </div>
-              <h3 className="font-semibold text-lg">100% Private</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                All processing happens in your browser using local computation.
-                No files are uploaded to any server, making this the safest way
-                to convert sensitive or personal video content online.
-              </p>
-            </div>
-            <div className="p-6 rounded-lg bg-card border border-border space-y-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-xl">⚡</span>
-              </div>
-              <h3 className="font-semibold text-lg">Fast Transmuxing</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                When your input and output codecs are compatible, the tool
-                transmuxes — copying tracks directly without re-encoding. This
-                makes many conversions nearly instant, regardless of file size.
-              </p>
-            </div>
-            <div className="p-6 rounded-lg bg-card border border-border space-y-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-xl">🆓</span>
-              </div>
-              <h3 className="font-semibold text-lg">Completely Free</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                No subscriptions, no file size caps, no daily limits. Convert as
-                many video and audio files as you need, for free, forever.
-              </p>
-            </div>
-            <div className="p-6 rounded-lg bg-card border border-border space-y-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-xl">🌐</span>
-              </div>
-              <h3 className="font-semibold text-lg">No Installation</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Works on any modern browser — Chrome, Firefox, Safari, or Edge.
-                No software downloads, no plugins, no admin rights needed.
-              </p>
-            </div>
-            <div className="p-6 rounded-lg bg-card border border-border space-y-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-xl">📁</span>
-              </div>
-              <h3 className="font-semibold text-lg">Broad Format Support</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Supports all major video and audio formats with a full
-                conversion matrix of compatible output options automatically
-                shown based on your input file.
-              </p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
           </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Fixing smart TV playback issues
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Home theater enthusiasts frequently transfer high-fidelity MKV
+                  movie rips onto a USB stick, only to discover their older LG
+                  or Samsung television refuses to read the container.
+                  Processing the heavy MKV rapidly into a standard MP4
+                  completely resolves the agonizing black-screen error without
+                  sacrificing a single pixel of visual quality.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Extracting podcast audio</h3>
+                <p className="text-sm text-muted-foreground">
+                  Digital media fans regularly encounter fantastic 3-hour long
+                  video interviews on YouTube that contain excellent dialogue
+                  but unnecessary static visuals. Injecting the downloaded video
+                  file into the converter and forcing an MP3 output violently
+                  rips away the gigabytes of heavy video data, leaving behind a
+                  lightweight audio track perfect for a morning commute.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Prepping web animations</h3>
+                <p className="text-sm text-muted-foreground">
+                  Web developers crafting high-speed landing pages despise
+                  standard MP4 background loops because they severely hurt SEO
+                  loading speeds. Forcibly re-encoding that heavy video directly
+                  into a streamlined WebM file natively utilizing the modern VP9
+                  algorithm ensures the banner loads almost instantaneously for
+                  mobile traffic.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Sanitizing Apple recordings</h3>
+                <p className="text-sm text-muted-foreground">
+                  Android owners or Windows desktop users often struggle to open
+                  native MOV files furiously texted to them by iPhone users.
+                  Dragging that frustrating proprietary Apple container through
+                  the converter immediately unpacks the strange format and
+                  neutralizes it back into a standard MP4 file capable of
+                  playing on any cheap Android device.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Bypassing outdated application logic
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Students submitting massive final video assignments to
+                  incredibly old university blackboard portals often watch the
+                  system reject their state-of-the-art WebM renders. Smashing
+                  that file backwards into a dinosaur-era AVI or basic MP4
+                  container guarantees the inflexible academic software accepts
+                  the submission properly.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="space-y-6">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Container Architecture</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The exact wrapper you choose (MP4, MKV, MOV) actively
+                    dictates where your file can actually be opened.
+                    Standardizing your workflow by choosing MP4 mathematically
+                    guarantees your audience doesn't need to download VLC media
+                    player just to witness your footage.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Audio Extraction Output</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Choosing an audio designation like MP3 or WAV commands the
+                    processor to actively ignore all color and movement data.
+                    Choosing MP3 provides excellent storage compression, whereas
+                    selecting WAV forces the engine to export an utterly
+                    massive, uncompressed sonic waveform for professional music
+                    editing.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Underlying Action (Transmux vs Encode)
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    When converting MKV to MP4 using identical internal codecs,
+                    the engine performs a "Transmux"—physically copying the raw
+                    data over in seconds. If you switch from H.264 to AV1, it
+                    performs a brutal "Encode," demanding extreme CPU resources
+                    to fundamentally rewrite billions of unique pixels.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs */}

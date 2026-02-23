@@ -88,34 +88,35 @@ const relatedTools = [
 export default function AddWaterMarkOnImagePage() {
   const faqs = [
     {
-      question: "Is this image watermark tool free to use?",
+      question:
+        "How do I add watermark to image online without losing quality?",
       answer:
-        "Yes. Our tool is entirely free to use and does not require any payment or registration. You get full access to all customizable watermark features immediately.",
+        "Our tool processes your files locally within your browser, which means it relies on your own device to render the final image. Because no servers compress the files in transit, your final downloaded photo retains the exact dimensions and high resolution of your original upload. You simply adjust the opacity and position, and the output matches your initial quality.",
     },
     {
-      question: "What image formats are supported for uploading?",
+      question: "Does this tool store my photos on a server?",
       answer:
-        "We support common formats including JPG, PNG, and WebP. You upload these formats seamlessly directly within your browser for fast processing.",
+        "No. All processing happens entirely within the memory of your local web browser. We never upload your sensitive files or the applied watermarks to our servers, ensuring complete privacy from start to finish. Once you close the tab, the image data is completely cleared from your active session.",
     },
     {
-      question: "Does the tool store my images on any server?",
+      question: "Can I use both a text and a logo on the same image?",
       answer:
-        "No. All processing happens entirely within your browser. We never upload your images to our servers ensuring maximum privacy and security for your files.",
+        "Currently, the tool supports adding either a custom text string or a single uploaded logo graphic per session. If you need both, we recommend uploading a pre-designed transparent logo file that already includes your desired text. This ensures perfect alignment between your brand mark and your copyright notice.",
     },
     {
-      question: "Can I use both text and logos as a watermark?",
+      question: "What image formats can I upload to be watermarked?",
       answer:
-        "Yes. You have the flexibility to type out text for a copyright notice or upload a separate logo image. You apply whichever format best suits your branding needs.",
+        "You can upload all standard web and photography formats, including JPG, PNG, and WebP. The application will read these files normally and output a flattened, protected image that is ready for online distribution. The formatting remains consistent so you don't face compatibility issues.",
     },
     {
-      question: "How do I make the watermark transparent?",
+      question: "How do I make the watermark less distracting?",
       answer:
-        "Settings allow you to adjust the opacity slider. By lowering the opacity setting, you create a subtle watermark that protects your content while keeping the underlying image visible.",
+        "The best way to reduce distraction is by using the opacity slider located in the settings panel. By lowering the opacity to around 30 percent, the watermark becomes semi-transparent. This allows the essential details of your photograph to show through clearly while still providing noticeable copyright protection.",
     },
     {
-      question: "Is there a limit to how many images I process?",
+      question: "Is there a limit to how many photos I can process?",
       answer:
-        "There are no strict usage limits. You process as many photos as you need without restriction or watermarked constraints applied natively by our tool.",
+        "There are no usage limits or restrictions on the number of images you can protect using this platform. You can process as many photos as you need, one after another, completely free of charge. We do not enforce any artificial paywalls or demand account registration to unlock continuous usage.",
     },
   ];
 
@@ -156,104 +157,119 @@ export default function AddWaterMarkOnImagePage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Protect Your Visual Content
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Protecting your original photos and graphics is essential for
-            safeguarding your hard work. When you share images online, people
-            easily download and reuse them without giving proper credit.
-            Applying a watermark adds a clear layer of protection that
-            identifies you as the creator. Our online tool provides a reliable
-            way to brand your visual assets before you publish them to the web.
-          </p>
-          <p className="mb-4">
-            A watermark acts as a deterrent against unauthorized use. Whether
-            you are a professional photographer looking to secure client proofs
-            or a small business owner sharing product images on social media,
-            adding your logo or a copyright text string keeps your brand
-            visible. Doing this establishes ownership. Our free web application
-            brings this capability directly to your screen without requiring
-            complex image editing software installations.
-          </p>
-          <p className="mb-4">
-            Every file you process remains on your local device. We never
-            transfer your sensitive images to cloud servers. The entire
-            watermarking process takes place in your web browser. This means you
-            experience faster processing times while eliminating entirely the
-            security risks associated with uploading confidential files to third
-            party storage systems.
+            When you share photos or graphics online, they often get downloaded
+            or reused without credit. You need a fast way to protect your work
+            before uploading it. This tool lets you add watermark to image
+            online directly in your browser. It overlays your custom text or
+            logo onto your picture without sending anything to a server. You
+            maintain full quality of your original file, ensuring your branding
+            is secure and your photography stays protected.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            Our interface is built for speed and simplicity. You add a watermark
-            to your photos by following a direct, organized workflow. First, you
-            click the upload area or drag and drop your target image directly
-            into the workspace. The tool immediately reads your file and
-            prepares it for editing. We support all common formats such as JPG,
-            PNG, and WebP for full flexibility.
+            <strong>1. Upload your image locally</strong>
+            <br />
+            Select the photo you want to protect by clicking the upload area or
+            dragging it onto the screen. The image loads securely into your
+            browser memory, so there are no slow upload times or privacy
+            concerns.
           </p>
           <p className="mb-4">
-            Once your image appears on the screen, you choose the type of
-            watermark you wish to apply. If you select text, you type your name
-            or copyright notice into the provided input field. You then
-            customize the font size, pick a color that contrasts well with your
-            image, and adjust the exact position. If you prefer to use a logo,
-            you upload an image file with a transparent background. You scale
-            this logo and move it to the perfect spot on your main image.
+            <strong>2. Configure your watermark</strong>
+            <br />
+            Choose to add a text layer or upload a secondary logo image with a
+            transparent background. You will see precise controls to adjust the
+            font size, pick a contrasting color, and set the opacity slider so
+            the mark blends perfectly.
           </p>
           <p className="mb-4">
-            The opacity setting gives you final control over how the watermark
-            appears. You adjust the slider to make your text or logo more
-            transparent. A semi-transparent watermark allows your main image to
-            remain clearly visible while still providing solid protection. After
-            you configure all settings to your liking, you verify the live
-            preview shown on your screen. You click the download button to save
-            the updated image directly to your computer. The entire process
-            takes less than a minute.
+            <strong>3. Position and download</strong>
+            <br />
+            Drag your custom text or logo to the exact spot on the canvas, such
+            as a corner or directly over the main subject. The live preview
+            shows exactly how it will look, and clicking download instantly
+            saves the protected file.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            This application simplifies the task of branding and securing your
-            image files. It handles both minimal text overlays and custom
-            uploaded logos. We developed this platform specifically to give you
-            the exact tools you need for image protection without cluttering
-            your screen with unnecessary features. The processing algorithm
-            applies your modifications instantly.
+            <strong>Protecting professional photography client proofs</strong>
+            <br />
+            When sending unedited or draft photos to a client for review, you
+            want to prevent unauthorized printing. Adding a semi-transparent
+            text watermark across the center ensures they can evaluate the
+            composition while preserving your copyright.
           </p>
           <p className="mb-4">
-            A core feature of our platform is the precise positioning system.
-            You drag your text or logo to any corner or center it directly over
-            the subject of your photo. The live preview updates immediately as
-            you make changes. You see exactly what the final output will look
-            like before you execute the download. You avoid the trial and error
-            associated with slower server-side processing tools.
+            <strong>Branding e-commerce product images</strong>
+            <br />
+            Store owners need to stop competitors from stealing their product
+            photography. Placing a subtle logo watermark in the bottom corner of
+            your catalog shots keeps your brand visible on every listing.
           </p>
           <p className="mb-4">
-            Furthermore, the opacity control ensures your watermarks are
-            professional and unobtrusive. Heavy, solid colors often ruin the
-            aesthetic of a beautiful photograph. By lowering the opacity, you
-            blend your logo into the picture naturally. You also gain access to
-            standard typography controls for text watermarks. You select fonts,
-            assign solid colors, and modify spacing to match your established
-            brand guidelines. All these features work seamlessly together to
-            deliver a polished final product.
+            <strong>Securing digital art before social media posting</strong>
+            <br />
+            Artists often struggle with uncredited reposts on platforms like
+            Instagram and Twitter. Applying a customized signature watermark
+            online guarantees your artwork is permanently tied to your name.
           </p>
-          <p>
-            Because we process everything on your client machine, the tool
-            scales effortlessly. You process heavy high-resolution images
-            rapidly. Your browser utilizes your local device resources to render
-            the final output. The resulting downloaded file maintains the high
-            quality dimensions of your original upload alongside your newly
-            applied protective branding.
+          <p className="mb-4">
+            <strong>Watermarking real estate listing photos</strong>
+            <br />
+            Agents invest money in high-quality property pictures that are
+            frequently scraped by housing aggregators. Adding your agency logo
+            to these real estate photos protects your investment and drives
+            leads back to your firm.
+          </p>
+          <p className="mb-4">
+            <strong>Creating meme templates with creator credit</strong>
+            <br />
+            Content creators who design viral templates want recognition as
+            their work spreads. Quickly adding a small social media handle
+            watermark ensures you get credit as the image gets shared across
+            networks.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Text or Logo Toggle</strong>
+            <br />
+            This switches between typing a custom text string and uploading a
+            separate image file to use as the mark. Use text for simple
+            copyright notices, and use a logo if you have an established brand
+            graphic.
+          </p>
+          <p className="mb-4">
+            <strong>Opacity Slider</strong>
+            <br />
+            This controls how transparent the watermark appears over your main
+            image. Lower settings (around 30-40%) are recommended for center
+            placement so the underlying details remain visible.
+          </p>
+          <p className="mb-4">
+            <strong>Color and Font Size</strong>
+            <br />
+            These options adjust the styling of text watermarks to ensure they
+            are readable. Choose a color that contrasts sharply with the area
+            behind the text, and scale the font size so it is noticeable but not
+            overwhelming.
+          </p>
+          <p className="mb-4">
+            <strong>Drag Positioning</strong>
+            <br />
+            This allows you to move the overlay anywhere on the image canvas
+            freely. Corner placement works best for subtle branding, while
+            center placement is ideal for strict copy protection.
           </p>
         </section>
 

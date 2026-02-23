@@ -1,65 +1,58 @@
 "use client";
 
-import { useState, useRef } from 'react';
-import { Conversion, Input, Output, Mp4OutputFormat, BufferTarget, BlobSource, ALL_FORMATS } from 'mediabunny';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Progress } from '@/components/ui/progress';
+import { useState, useRef } from "react";
+import {
+  Conversion,
+  Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
+  BlobSource,
+  ALL_FORMATS,
+} from "mediabunny";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
 import Faqs from "@/components/utils/Faqs";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Script from "next/script";
 
 const faqData = [
   {
-    question: "Will converting to grayscale reduce my video quality?",
+    question:
+      "Do I need to download video editing software to make my clip black and white?",
     answer:
-      "No. The grayscale conversion preserves pixel luminance values at full fidelity. The only change is removal of color (chroma) information. Output quality closely matches the original.",
+      "No. You can run a full grayscale conversion directly inside your Chrome or Safari browser window. Because this tool utilizes local memory processing, you bypass terrible cloud upload times and instantly strip color from your footage without downloading an executable desktop program like Premiere Pro.",
   },
   {
-    question: "What is the difference between grayscale and black and white?",
+    question:
+      "Will making my video black and white reduce its actual file size?",
     answer:
-      "In video editing, these terms are often used interchangeably. Technically, grayscale means the image contains a full range of gray tones from black to white, preserving all luminance variation — as opposed to a pure two-tone black-and-white image.",
+      "Surprisingly, no not immediately. A grayscale filter artificially drains color, but it doesn't change the underlying structural MP4 mathematics. The video still maintains a digital slot for color data, even if that slot is visually empty, so your file size will remain largely identical.",
   },
   {
-    question: "Does grayscale conversion reduce file size?",
+    question:
+      "How long does a local browser grayscale conversion actually take?",
     answer:
-      "Typically not significantly. The video is still encoded as RGB/YUV data with chroma channels intact — only the color information is zeroed out visually. File size depends more on resolution and bitrate than color.",
+      "Because this system does not rely on a distant cloud server, your rendering speed is entirely dictated by your own physical processor. A heavy 4K file on an old laptop could take 20 minutes to re-encode, while a short 1080p clip on a modern gaming PC might take exactly five seconds.",
   },
   {
-    question: "Can I convert only part of my video to grayscale?",
+    question:
+      "Are there ugly watermarks burned into the center of my final footage?",
     answer:
-      "This tool converts the entire video. For partial conversion, you would need a non-linear editor like DaVinci Resolve or Premiere Pro.",
+      "Zero watermarks. This utility acts as a direct, private conversion tool running heavily on your local computer hardware. Since we avoid paying massive cloud computing fees, we don't have to ruin your output footage with transparent logos to force a subscription upgrade.",
   },
   {
-    question: "What video formats can I convert to grayscale?",
+    question: "Does converting to grayscale violently destroy my audio track?",
     answer:
-      "The tool accepts MP4, MOV, WebM, MKV, AVI, and other common video formats. Output is always MP4.",
+      "Not at all. The processing algorithm is strictly configured to exclusively target visual color pixel arrays. Your original dialogue, background music, and overall stereo audio waveform absolutely remain completely untouched and perfectly embedded in the final MP4.",
   },
   {
-    question: "Is there a preview before I download?",
+    question:
+      "Are the black and white filters permanently baked into the video?",
     answer:
-      "Yes. After processing, you can toggle between 'Original' and 'Grayscale' preview modes to compare the two versions before downloading.",
-  },
-  {
-    question: "Does the tool preserve the audio?",
-    answer:
-      "Yes. The audio track is passed through unchanged. Only the video frames are affected by the grayscale conversion.",
-  },
-  {
-    question: "How long does it take to convert a video to grayscale?",
-    answer:
-      "Processing time depends on video length and resolution. Most short clips (under 2 minutes) at standard resolutions process in under a minute in modern browsers.",
-  },
-  {
-    question: "Is my video safe? Is it uploaded to a server?",
-    answer:
-      "Your video is never uploaded. All processing runs locally in your browser using your device's resources. Your footage stays completely private.",
-  },
-  {
-    question: "What's a good use case for converting video to grayscale?",
-    answer:
-      "Black-and-white conversion is popular for documentary style, artistic short films, music videos, adding a retro or historical feel, removing distracting color information from surveillance or reference footage, and social media content with a distinct aesthetic.",
+      "Yes, this acts as a deeply destructive encoder. Rather than adding a flimsy, temporary Instagram filter on top of the clip, it structurally redraws the internal color identity of every single frame, ensuring the black and white aesthetic is violently locked in forever, no matter where you upload it next.",
   },
 ];
 
@@ -83,7 +76,9 @@ export default function VideoGrayscalePage() {
   const [progress, setProgress] = useState(0);
   const [outputUrl, setOutputUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [previewMode, setPreviewMode] = useState<'original' | 'grayscale'>('original');
+  const [previewMode, setPreviewMode] = useState<"original" | "grayscale">(
+    "original",
+  );
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const grayscaleVideoRef = useRef<HTMLVideoElement>(null);
@@ -96,13 +91,13 @@ export default function VideoGrayscalePage() {
       setVideoUrl(url);
       setOutputUrl(null);
       setError(null);
-      setPreviewMode('original');
+      setPreviewMode("original");
     }
   };
 
   const handleGrayscale = async () => {
     if (!videoFile) {
-      setError('Please select a video to convert to grayscale');
+      setError("Please select a video to convert to grayscale");
       return;
     }
 
@@ -130,10 +125,13 @@ export default function VideoGrayscalePage() {
         video: {
           process: async (sample) => {
             if (!grayscaleCanvas) {
-              grayscaleCanvas = new OffscreenCanvas(sample.displayWidth, sample.displayHeight);
-              grayscaleCtx = grayscaleCanvas.getContext('2d');
+              grayscaleCanvas = new OffscreenCanvas(
+                sample.displayWidth,
+                sample.displayHeight,
+              );
+              grayscaleCtx = grayscaleCanvas.getContext("2d");
               if (grayscaleCtx) {
-                grayscaleCtx.filter = 'grayscale(100%)';
+                grayscaleCtx.filter = "grayscale(100%)";
               }
             }
 
@@ -155,16 +153,20 @@ export default function VideoGrayscalePage() {
 
       const grayscaleBuffer = output.target.buffer;
       if (!grayscaleBuffer) {
-        throw new Error('Failed to get grayscale video buffer');
+        throw new Error("Failed to get grayscale video buffer");
       }
-      const grayscaleBlob = new Blob([grayscaleBuffer], { type: 'video/mp4' });
+      const grayscaleBlob = new Blob([grayscaleBuffer], { type: "video/mp4" });
       const grayscaleUrl = URL.createObjectURL(grayscaleBlob);
       setOutputUrl(grayscaleUrl);
       setProgress(100);
 
       input.dispose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to convert video to grayscale');
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Failed to convert video to grayscale",
+      );
     } finally {
       setIsProcessing(false);
     }
@@ -172,9 +174,9 @@ export default function VideoGrayscalePage() {
 
   const handleDownload = () => {
     if (!outputUrl) return;
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = outputUrl;
-    a.download = `grayscale-${videoFile?.name || 'video.mp4'}`;
+    a.download = `grayscale-${videoFile?.name || "video.mp4"}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -185,7 +187,7 @@ export default function VideoGrayscalePage() {
     setVideoUrl(null);
     setOutputUrl(null);
     setError(null);
-    setPreviewMode('original');
+    setPreviewMode("original");
   };
 
   const relatedTools = [
@@ -276,11 +278,14 @@ export default function VideoGrayscalePage() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-                Video Grayscale Converter – Convert Video to Black & White Online
+                Video Grayscale Converter – Convert Video to Black & White
+                Online
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Transform any color video into a timeless black-and-white film with one click. Full grayscale conversion with no quality loss, no watermarks, and no software to install.
+                Transform any color video into a timeless black-and-white film
+                with one click. Full grayscale conversion with no quality loss,
+                no watermarks, and no software to install.
               </p>
             </div>
           </div>
@@ -292,7 +297,9 @@ export default function VideoGrayscalePage() {
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 blur-xl opacity-50" />
             <div className="relative rounded-3xl border bg-card/50 backdrop-blur-sm shadow-2xl">
               <div className="p-6">
-                <h2 className="text-xl font-bold mb-6">Video Grayscale Converter</h2>
+                <h2 className="text-xl font-bold mb-6">
+                  Video Grayscale Converter
+                </h2>
 
                 {/* File Upload */}
                 <Card className="mb-6">
@@ -324,15 +331,21 @@ export default function VideoGrayscalePage() {
                         {/* Preview Mode Toggle */}
                         <div className="mb-4 flex gap-2">
                           <Button
-                            variant={previewMode === 'original' ? 'default' : 'outline'}
-                            onClick={() => setPreviewMode('original')}
+                            variant={
+                              previewMode === "original" ? "default" : "outline"
+                            }
+                            onClick={() => setPreviewMode("original")}
                             className="flex-1"
                           >
                             Original
                           </Button>
                           <Button
-                            variant={previewMode === 'grayscale' && outputUrl ? 'default' : 'outline'}
-                            onClick={() => setPreviewMode('grayscale')}
+                            variant={
+                              previewMode === "grayscale" && outputUrl
+                                ? "default"
+                                : "outline"
+                            }
+                            onClick={() => setPreviewMode("grayscale")}
                             className="flex-1"
                             disabled={!outputUrl}
                           >
@@ -341,7 +354,7 @@ export default function VideoGrayscalePage() {
                         </div>
 
                         {/* Original Video */}
-                        {previewMode === 'original' && (
+                        {previewMode === "original" && (
                           <div>
                             <video
                               ref={videoRef}
@@ -349,12 +362,14 @@ export default function VideoGrayscalePage() {
                               controls
                               className="w-full rounded-md bg-black aspect-video"
                             />
-                            <p className="text-sm text-muted-foreground mt-2 text-center">Original Video</p>
+                            <p className="text-sm text-muted-foreground mt-2 text-center">
+                              Original Video
+                            </p>
                           </div>
                         )}
 
                         {/* Grayscale Video Preview */}
-                        {outputUrl && previewMode === 'grayscale' && (
+                        {outputUrl && previewMode === "grayscale" && (
                           <div>
                             <video
                               ref={grayscaleVideoRef}
@@ -362,7 +377,9 @@ export default function VideoGrayscalePage() {
                               controls
                               className="w-full rounded-md bg-black aspect-video"
                             />
-                            <p className="text-sm text-muted-foreground mt-2 text-center">Grayscale Preview</p>
+                            <p className="text-sm text-muted-foreground mt-2 text-center">
+                              Grayscale Preview
+                            </p>
                           </div>
                         )}
                       </CardContent>
@@ -371,21 +388,30 @@ export default function VideoGrayscalePage() {
                     {/* Conversion Settings */}
                     <Card>
                       <CardContent className="pt-6">
-                        <h2 className="text-lg font-semibold mb-4">Conversion Settings</h2>
+                        <h2 className="text-lg font-semibold mb-4">
+                          Conversion Settings
+                        </h2>
                         <div className="space-y-4">
                           {/* Info Card */}
                           <div className="p-4 bg-muted rounded-md">
-                            <h3 className="font-medium mb-2">About Grayscale Conversion</h3>
+                            <h3 className="font-medium mb-2">
+                              About Grayscale Conversion
+                            </h3>
                             <p className="text-sm text-muted-foreground">
-                              This tool converts your video to black and white by removing all color
-                              information while preserving the luminance (brightness) of each pixel.
+                              This tool converts your video to black and white
+                              by removing all color information while preserving
+                              the luminance (brightness) of each pixel.
                             </p>
                           </div>
 
                           {/* Action Buttons */}
                           <div className="flex flex-col gap-4 pt-4">
                             <div className="flex gap-2">
-                              <Button variant="outline" onClick={handleReset} className="flex-1">
+                              <Button
+                                variant="outline"
+                                onClick={handleReset}
+                                className="flex-1"
+                              >
                                 Reset
                               </Button>
                               <Button
@@ -393,7 +419,9 @@ export default function VideoGrayscalePage() {
                                 disabled={isProcessing}
                                 className="flex-1"
                               >
-                                {isProcessing ? 'Processing...' : 'Convert to Grayscale'}
+                                {isProcessing
+                                  ? "Processing..."
+                                  : "Convert to Grayscale"}
                               </Button>
                             </div>
 
@@ -419,13 +447,19 @@ export default function VideoGrayscalePage() {
                               <div className="p-4 bg-muted rounded-md">
                                 <div className="flex items-center gap-2 mb-2">
                                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                  <span className="text-sm font-medium text-green-600 dark:text-green-500">Conversion Complete</span>
+                                  <span className="text-sm font-medium text-green-600 dark:text-green-500">
+                                    Conversion Complete
+                                  </span>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
-                                  Your video has been successfully converted to grayscale.
+                                  Your video has been successfully converted to
+                                  grayscale.
                                 </p>
                               </div>
-                              <Button onClick={handleDownload} className="w-full">
+                              <Button
+                                onClick={handleDownload}
+                                className="w-full"
+                              >
                                 Download Grayscale Video
                               </Button>
                             </div>
@@ -445,13 +479,18 @@ export default function VideoGrayscalePage() {
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What the Video Grayscale Converter Does
+                What it Does
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The Video Grayscale Converter removes all color information from your video by applying a 100% grayscale filter to every frame during re-encoding. The luminance (brightness) of each pixel is preserved, giving you a rich, natural-looking monochrome output rather than a flat or washed-out result.
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                This is perfect for creating cinematic black-and-white films, artistic video content, reducing visual complexity, or preparing footage for platforms or projects that call for a classic monochrome aesthetic.
+                When you need to force a serious, moody tone into a colorful
+                clip, you can convert video to grayscale online for free. This
+                web application bypasses massive professional software suites
+                entirely, reading your MP4 file locally in the browser and
+                mathematically stripping out every ounce of RGB saturation. It
+                brutally forces the entire visual spectrum down to pure black,
+                white, and neutral grays, effectively generating permanent,
+                cinematic monochrome footage without destroying the underlying
+                resolution or audio fidelity.
               </p>
             </CardContent>
           </Card>
@@ -460,56 +499,190 @@ export default function VideoGrayscalePage() {
         {/* How to Use Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use the Tool</h2>
-            <p className="mt-4 text-muted-foreground">
-              Convert your video to grayscale in 5 simple steps
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
           </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Import the colorful file
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Drop your raw, over-saturated video right onto the dashboard
+                surface to immediately mount the footage into your computer's
+                temporary memory. The system mounts an "Original" preview player
+                immediately, granting you a clear baseline reference before you
+                utterly destroy the color spectrum.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Execute the grayscale conversion
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Smash the "Convert to Grayscale" trigger to unleash your local
+                CPU on the file. Because this does not upload to a distant
+                server, you must physically wait while your processor
+                systematically recalculates the luminance values and
+                mathematically drains the specific color data out of every
+                single frame.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Compare and download
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Once the progress line slams 100%, immediately flip back and
+                forth between the "Original" and "Grayscale" preview buttons to
+                verify the drastic visual tone shift. If you are satisfied with
+                the stark visual contrast, hit download to pull the newly
+                rendered MP4 down to your local storage drive forever.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-5">
-            {[
-              {
-                step: "01",
-                title: "Select Video",
-                description: "Click 'Select Video' to upload any video file",
-              },
-              {
-                step: "02",
-                title: "Preview Loads",
-                description: "Your original color video appears in the preview player",
-              },
-              {
-                step: "03",
-                title: "Convert",
-                description: "Click 'Convert to Grayscale' to start processing",
-              },
-              {
-                step: "04",
-                title: "Compare",
-                description: "Toggle to 'Grayscale' preview to see the result",
-              },
-              {
-                step: "05",
-                title: "Download",
-                description: "Download your black-and-white output video",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {index < 4 && (
-                  <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-                )}
-                <div className="relative text-center">
-                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                    <span className="text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                  <p className="relative mt-2 text-sm text-muted-foreground">
-                    {item.description}
+        {/* Use Cases Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Simulating old documentary footage
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Historical vloggers compiling video essays frequently need to
+                  insert modern smartphone footage seamlessly next to 1940s
+                  archive film. Aggressively processing their vibrant 4K clips
+                  completely drains the color, instantly grounding the new
+                  footage inside an old, grim, heavily authentic monochrome
+                  aesthetic.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Sanitizing corporate surveillance video
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Security analysts reviewing bizarre security camera footage
+                  often get severely distracted by bright neon clothing or
+                  flashy background lights. Running the raw file through a
+                  violent grayscale purge flattens the visual field, brutally
+                  removing distracting hues so the examiner can focus strictly
+                  on pure shapes and mechanical movement.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Generating horror trailer flashbacks
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Indie horror directors explicitly require jarring, unsettling
+                  transitions right before a jump scare to violently detach the
+                  viewer from reality. Ripping the color entirely out of a scene
+                  instantly triggers an eerie, sterile, almost dead visual tone
+                  that flawlessly signals an impending psychological nightmare
+                  to the entire audience.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Crafting edgy punk music videos
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Underground musicians shooting aggressive performance clips
+                  hate the cheerful look of normal digital video. Rapidly
+                  smashing the entire video into stark black and white heavily
+                  amplifies harsh shadows and stark lighting, artificially
+                  injecting an aggressive, lo-fi punk rock identity permanently
+                  into the final master.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Solving terrible mixed lighting
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Amateur filmmakers shooting in a desperate location that
+                  contains terrible blue LED light and nasty yellow incandescent
+                  bulbs simultaneously often end up with an unfixable, ugly
+                  color grade. Abandoning the color entirely and forcefully
+                  converting to grayscale masks the disastrous lighting mixture
+                  completely under a blanket of smooth gray tones.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">
+                    The Grayscale 100% Filter
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    This brutal algorithmic filter aggressively isolates the
+                    independent Red, Green, and Blue sub-pixel data embedded
+                    deeply in the footage. It systematically commands the
+                    encoder to average out the individual color intensity
+                    values, violently converting every single pixel into an
+                    equivalent shade of neutral gray based purely on native
+                    luminance.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Offscreen Canvas Engine</h3>
+                  <p className="text-muted-foreground mt-2">
+                    To prevent your internet browser from instantly hanging and
+                    crashing under heavy video crunching, the system triggers a
+                    background "Offscreen Canvas." It silently draws and alters
+                    millions of pixels invisibly behind the active window,
+                    protecting your main web session from intense computer
+                    processing stutter.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Permanent Destructive Export
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    The system relies heavily on the `Mp4OutputFormat` module to
+                    completely rewrite the video. It essentially feeds your old
+                    MP4 into the shredder and actively burns the newly generated
+                    black and white frames into an entirely fresh file, proving
+                    this is not just a cheap, reversible aesthetic overlay.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs Section */}
@@ -528,7 +701,9 @@ export default function VideoGrayscalePage() {
         {/* Related Tools Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">More Video Tools</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              More Video Tools
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Explore our other free video editing tools
             </p>

@@ -1,65 +1,55 @@
 "use client";
 
-import { useState, useRef } from 'react';
-import { Conversion, Input, Output, Mp4OutputFormat, BufferTarget, BlobSource, ALL_FORMATS } from 'mediabunny';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Progress } from '@/components/ui/progress';
+import { useState, useRef } from "react";
+import {
+  Conversion,
+  Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
+  BlobSource,
+  ALL_FORMATS,
+} from "mediabunny";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
 import Faqs from "@/components/utils/Faqs";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Script from "next/script";
 
 const faqData = [
   {
-    question: "Why does my phone video appear sideways even though it looked fine while recording?",
+    question: "How can I rotate video online free without watermarks?",
     answer:
-      "Phones store rotation information as metadata, but some video players and platforms ignore that metadata and play the raw frame orientation instead. Rotating the actual pixels with this tool permanently fixes the orientation for all players.",
+      "You can easily rotate video online free right now without paying anything or downloading a shady application to your hard drive. Because this tool runs entirely through your internet browser window using local processing, we don't have to charge server fees or insert ugly watermarks over your final exported clip.",
   },
   {
-    question: "What's the difference between 90° clockwise and 270° clockwise?",
+    question:
+      "Why did my smartphone footage record sideways in the first place?",
     answer:
-      "90° clockwise turns a portrait (vertical) video into landscape orientation rotating to the right. 270° clockwise (or 90° counter-clockwise) rotates to the left — useful if your video was recorded with the phone rotated the other way.",
+      "When you quickly flip your smartphone from portrait to landscape mode, the internal gyroscope sometimes fails to log the change before you press the record button. While the phone might add hidden metadata telling its own native gallery app to flip the footage during playback, uploading that raw file to other websites causes them to ignore the metadata and play the video sideways.",
   },
   {
-    question: "Does rotating a video reduce its quality?",
+    question:
+      "What is the difference between rotating 90 degrees and 270 degrees?",
     answer:
-      "The tool re-encodes the video, which involves a small amount of standard MP4 compression. Visual quality is preserved as closely as possible, but like any re-encode, there is a minimal generation loss.",
+      "Rotating a video 90 degrees clockwise will tilt the top edge of your phone footage down toward the right hand side. Rotating 270 degrees clockwise actually achieves the exact same result as rotating the video 90 degrees counter-clockwise, meaning the top edge falls toward the left hand side.",
   },
   {
-    question: "Can I rotate a video 180 degrees to flip it upside down?",
+    question: "Will rotating a 16:9 widescreen video change its dimensions?",
     answer:
-      "Yes. Select the 180° option to completely invert the video orientation — useful for footage recorded with a camera mounted upside down.",
+      "Yes, aggressively turning a horizontal 1920x1080 clip by 90 degrees effectively stands the rectangle up on its end. The processing engine swaps the mathematical dimensions, meaning your final exported video size will become a vertical 1080x1920 format.",
   },
   {
-    question: "Will rotation change my video's aspect ratio?",
+    question: "Can I use this tool to flip a video backwards like a mirror?",
     answer:
-      "Yes, for 90° and 270° rotations. A 1920x1080 (landscape) video becomes 1080x1920 (portrait) after a 90° rotation, as width and height swap. A 180° rotation keeps the same dimensions.",
+      "No, this specific rotation engine only spins the two-dimensional plane of the video in a circle using 90-degree increments. Creating a mirror image effect requires a dedicated horizontal or vertical flipping tool to invert the left and right side pixels.",
   },
   {
-    question: "Does this tool add a watermark to rotated videos?",
+    question: "Are these rotation changes actually permanent?",
     answer:
-      "No. There is no watermark added at any time. Your output video is clean and ready to publish.",
-  },
-  {
-    question: "What video formats can I rotate?",
-    answer:
-      "You can upload MP4, MOV, WebM, MKV, and other common video formats. The output is always MP4.",
-  },
-  {
-    question: "Is my video kept private when I use this tool?",
-    answer:
-      "Yes. All video processing runs inside your browser. Your video file is never uploaded to any server.",
-  },
-  {
-    question: "Can I flip a video horizontally or vertically with this tool?",
-    answer:
-      "This tool specifically handles rotation (90°/180°/270°). Horizontal and vertical flipping are separate operations not included in this particular tool.",
-  },
-  {
-    question: "How long does it take to rotate a video?",
-    answer:
-      "Processing time depends on video length, resolution, and your device's performance. Short clips at standard resolutions typically process in seconds.",
+      "Yes, unlike basic playback software that simply applies a temporary visual rotation tag on top of the file, this application forces a hard encode. It completely rewrites every single moving pixel in the footage into the new rotated position, ensuring the video will play correctly on every screen, television, and social media platform in the world.",
   },
 ];
 
@@ -105,7 +95,7 @@ export default function RotateVideoPage() {
 
   const handleRotate = async () => {
     if (!videoFile || rotation === 0) {
-      setError('Please select a video and choose a rotation angle');
+      setError("Please select a video and choose a rotation angle");
       return;
     }
 
@@ -141,16 +131,16 @@ export default function RotateVideoPage() {
 
       const rotatedBuffer = output.target.buffer;
       if (!rotatedBuffer) {
-        throw new Error('Failed to get rotated video buffer');
+        throw new Error("Failed to get rotated video buffer");
       }
-      const rotatedBlob = new Blob([rotatedBuffer], { type: 'video/mp4' });
+      const rotatedBlob = new Blob([rotatedBuffer], { type: "video/mp4" });
       const rotatedUrl = URL.createObjectURL(rotatedBlob);
       setOutputUrl(rotatedUrl);
       setProgress(100);
 
       input.dispose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to rotate video');
+      setError(err instanceof Error ? err.message : "Failed to rotate video");
     } finally {
       setIsProcessing(false);
     }
@@ -158,9 +148,9 @@ export default function RotateVideoPage() {
 
   const handleDownload = () => {
     if (!outputUrl) return;
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = outputUrl;
-    a.download = `rotated-${rotation}-${videoFile?.name || 'video.mp4'}`;
+    a.download = `rotated-${rotation}-${videoFile?.name || "video.mp4"}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -173,10 +163,10 @@ export default function RotateVideoPage() {
   };
 
   const rotationOptions = [
-    { degrees: 90, label: '90° Clockwise', icon: '↻' },
-    { degrees: 180, label: '180°', icon: '↻↻' },
-    { degrees: 270, label: '270° Clockwise', icon: '↺' },
-    { degrees: 0, label: 'Reset', icon: '↶' },
+    { degrees: 90, label: "90° Clockwise", icon: "↻" },
+    { degrees: 180, label: "180°", icon: "↻↻" },
+    { degrees: 270, label: "270° Clockwise", icon: "↺" },
+    { degrees: 0, label: "Reset", icon: "↶" },
   ];
 
   const relatedTools = [
@@ -271,7 +261,9 @@ export default function RotateVideoPage() {
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Fix sideways or upside-down videos instantly. Rotate your footage clockwise or counter-clockwise in exact 90-degree increments — no apps, no watermarks, no uploads to servers.
+                Fix sideways or upside-down videos instantly. Rotate your
+                footage clockwise or counter-clockwise in exact 90-degree
+                increments — no apps, no watermarks, no uploads to servers.
               </p>
             </div>
           </div>
@@ -321,7 +313,10 @@ export default function RotateVideoPage() {
                         {rotation !== 0 && (
                           <div className="mt-4 p-3 bg-muted rounded-md">
                             <p className="text-sm text-muted-foreground">
-                              Rotation: <span className="text-foreground font-medium">{rotation}°</span>
+                              Rotation:{" "}
+                              <span className="text-foreground font-medium">
+                                {rotation}°
+                              </span>
                             </p>
                           </div>
                         )}
@@ -331,17 +326,29 @@ export default function RotateVideoPage() {
                     {/* Rotation Settings */}
                     <Card>
                       <CardContent className="pt-6">
-                        <h2 className="text-lg font-semibold mb-4">Rotation Settings</h2>
+                        <h2 className="text-lg font-semibold mb-4">
+                          Rotation Settings
+                        </h2>
                         <div className="space-y-4">
                           {/* Rotation Buttons */}
                           <div>
-                            <Label className="mb-2 block">Select Rotation Angle</Label>
+                            <Label className="mb-2 block">
+                              Select Rotation Angle
+                            </Label>
                             <div className="grid grid-cols-2 gap-2">
                               {rotationOptions.map((option) => (
                                 <Button
                                   key={option.degrees}
-                                  variant={rotation === option.degrees ? 'default' : 'outline'}
-                                  onClick={() => handleRotationChange(option.degrees as 0 | 90 | 180 | 270)}
+                                  variant={
+                                    rotation === option.degrees
+                                      ? "default"
+                                      : "outline"
+                                  }
+                                  onClick={() =>
+                                    handleRotationChange(
+                                      option.degrees as 0 | 90 | 180 | 270,
+                                    )
+                                  }
                                   className="flex items-center justify-center gap-2"
                                 >
                                   <span className="text-lg">{option.icon}</span>
@@ -354,7 +361,11 @@ export default function RotateVideoPage() {
                           {/* Action Buttons */}
                           <div className="flex flex-col gap-4 pt-4">
                             <div className="flex gap-2">
-                              <Button variant="outline" onClick={handleReset} className="flex-1">
+                              <Button
+                                variant="outline"
+                                onClick={handleReset}
+                                className="flex-1"
+                              >
                                 Reset
                               </Button>
                               <Button
@@ -362,7 +373,9 @@ export default function RotateVideoPage() {
                                 disabled={isProcessing || rotation === 0}
                                 className="flex-1"
                               >
-                                {isProcessing ? 'Processing...' : 'Rotate Video'}
+                                {isProcessing
+                                  ? "Processing..."
+                                  : "Rotate Video"}
                               </Button>
                             </div>
 
@@ -386,14 +399,19 @@ export default function RotateVideoPage() {
                           {outputUrl && (
                             <div className="mt-4 space-y-4">
                               <div>
-                                <h3 className="text-sm font-semibold mb-2">Result</h3>
+                                <h3 className="text-sm font-semibold mb-2">
+                                  Result
+                                </h3>
                                 <video
                                   src={outputUrl}
                                   controls
                                   className="w-full rounded-md bg-black aspect-video mb-3"
                                 />
                               </div>
-                              <Button onClick={handleDownload} className="w-full">
+                              <Button
+                                onClick={handleDownload}
+                                className="w-full"
+                              >
                                 Download Rotated Video
                               </Button>
                             </div>
@@ -413,13 +431,18 @@ export default function RotateVideoPage() {
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What the Video Rotator Does
+                What it Does
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The Video Rotator permanently rotates the pixel content of your video by 90°, 180°, or 270° clockwise. Unlike some tools that only add rotation metadata (which some players ignore), this tool actually re-encodes the frames at the correct orientation so your video looks right in every player and on every platform.
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                It's the perfect fix for phone videos recorded in the wrong orientation, drone footage exported sideways, or screen recordings that came out upside down.
+                When you accidentally hold your smartphone the wrong way and
+                record an incredibly vital moment permanently sideways, you can
+                rotate video online free to fix the orientation. Instead of
+                simply slapping a metadata tag onto the file that many players
+                ignore, this tool mathematically rebuilds the underlying pixel
+                structure of your clip and permanently locks it into the correct
+                upright position. Because it functions completely inside your
+                active web browser window, you never have to waste bandwidth
+                uploading bulky files to a remote cloud server.
               </p>
             </CardContent>
           </Card>
@@ -428,56 +451,183 @@ export default function RotateVideoPage() {
         {/* How to Use Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use the Tool</h2>
-            <p className="mt-4 text-muted-foreground">
-              Rotate your video in 5 simple steps
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
           </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Insert the broken footage
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Drop your target MP4 or MOV file directly into the application
+                space to safely load it into your local browser cache. The
+                application will instantly display the video exactly as the raw
+                file data dictates, ignoring any deceptive orientation metadata
+                tags your phone might have maliciously attached to confuse other
+                media players.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Select the rotation increment
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Locate the rotation setting buttons and pick the 90-degree
+                increment that actively spins your footage until gravity points
+                the correct direction. The user interface does not provide a
+                visual live preview of the spin, so you must mentally picture
+                whether you need a quick 90-degree twist or a full 180-degree
+                flip.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Engage the local encoder
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Press the primary rotation button to order your local machine to
+                begin rendering a permanent version of your file using standard
+                MP4 formatting. Wait patiently without closing the browser tab
+                as the processor painstakingly writes every single frame into
+                its new orientation, and then export the finalized file
+                immediately to your desktop.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-5">
-            {[
-              {
-                step: "01",
-                title: "Select Video",
-                description: "Click 'Select Video' to choose your video file",
-              },
-              {
-                step: "02",
-                title: "Preview Loads",
-                description: "Your original video appears in the preview on the left",
-              },
-              {
-                step: "03",
-                title: "Choose Angle",
-                description: "Select 90° Clockwise, 180°, or 270° Clockwise",
-              },
-              {
-                step: "04",
-                title: "Process",
-                description: "Click 'Rotate Video' to process your video",
-              },
-              {
-                step: "05",
-                title: "Download",
-                description: "Preview the rotated output and download",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {index < 4 && (
-                  <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-                )}
-                <div className="relative text-center">
-                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                    <span className="text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                  <p className="relative mt-2 text-sm text-muted-foreground">
-                    {item.description}
+        {/* Use Cases Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Rescuing sideways smartphone clips
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Everyday users often begin filming an incredible event while
+                  holding their phone vertically, then quickly rotate it
+                  horizontally mid-recording. Applying a hard 90-degree
+                  clockwise encode permanently spins the painfully crooked final
+                  footage so viewers don't have to tilt their physical monitors
+                  to watch the action.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Flipping upside-down action cameras
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Cyclists occasionally have to mount bulky action cameras
+                  entirely upside-down underneath their handlebars to fit
+                  limited mounting space. Triggering the 180-degree rotation
+                  flips the resulting high-speed footage completely right-side
+                  up so the sky finally appears at the top of the video.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Erasing false rotation metadata tags
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Some Android phones attempt to be helpful by slapping a
+                  digital "turn 90 degrees" sticker onto a video file, which
+                  confuses desktop editing software. Passing the clip through a
+                  tough local re-encoder burns the physical orientation into the
+                  actual pixels, stripping the confusing metadata away forever.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Generating creative advertising assets
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Marketers handling long tracking shots of towering skyscrapers
+                  occasionally want the video to playfully slide horizontally
+                  across the viewer's screen for effect. Knocking the building
+                  onto its side with a 90-degree spin creates an interesting,
+                  disorienting scrolling effect perfect for social media
+                  timelines.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Conforming digital sign packages
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Store owners deploying looping promotional videos to tall,
+                  upright mall kiosks must ensure their horizontal MP4 files
+                  properly fit the hardware. Throwing a quick 90-degree twist on
+                  the landscape advertisement instantly changes the aspect ratio
+                  to a 9:16 vertical pillar that perfectly matches the TV
+                  screen.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">90° Clockwise</h3>
+                  <p className="text-muted-foreground mt-2">
+                    This setting forcefully turns the entire video one quarter
+                    of a circle to the right. Use this common command when your
+                    landscape footage loads upright as a skinny tower,
+                    completely fixing the mistake while simultaneously reversing
+                    the width and height dimensions.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">180° Inversion</h3>
+                  <p className="text-muted-foreground mt-2">
+                    This command tells the engine to flip the entire video frame
+                    completely upside down. It leaves the foundational aspect
+                    ratio and width pixel dimensions completely unchanged,
+                    making it the perfect tool for correcting video recorded
+                    holding a phone carelessly backwards.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">270° Clockwise</h3>
+                  <p className="text-muted-foreground mt-2">
+                    This option rotates the video three quarters of a circle to
+                    the right, which acts exactly like turning the footage one
+                    single quarter to the left. If a 90-degree clockwise turn
+                    results in your footage laying face down in the dirt, click
+                    this setting instead.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs Section */}
@@ -486,9 +636,6 @@ export default function RotateVideoPage() {
             <h2 className="text-3xl font-bold tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Everything you need to know about rotating videos
-            </p>
           </div>
           <Faqs faqs={faqData} />
         </section>
@@ -496,7 +643,9 @@ export default function RotateVideoPage() {
         {/* Related Tools Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">More Video Tools</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              More Video Tools
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Explore our other free video editing tools
             </p>

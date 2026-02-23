@@ -22,29 +22,34 @@ import ToolLinkCards from "@/components/utils/ToolLinkCards";
 
 const faqData = [
   {
-    question: "Is this video metadata viewer really free?",
+    question:
+      "How do I check a video file's true internal resolution and framerate?",
     answer:
-      "Yes, completely. There are no usage limits, no sign-up requirements, and no premium tiers. You can view audio and video file metadata in your browser as many times as you need at no cost.",
+      'You simply drag the mysterious video file onto the dashboard surface to instantly rip open its structure. The viewer immediately scans the deeply embedded hex data, accurately revealing whether that supposedly "4K" file is actually a tiny 720p 30fps track deceptively stretched upward.',
   },
   {
-    question: "Do my files get uploaded to a server?",
+    question:
+      "Does this metadata viewer upload my massive unreleased movie to your server?",
     answer:
-      "No. This is one of the key advantages of our tool. All metadata extraction happens locally inside your browser using client-side processing. Your files are never transmitted or stored anywhere — making it ideal for sensitive or proprietary media.",
+      "Absolutely not. Because the analyzer leverages specific client-side Web APIs, it purely reads the file headers from your local computer's memory. Your gigabyte-scale video never touches a cloud firewall, ensuring complete, impenetrable security for proprietary media.",
   },
   {
-    question: "How do I check video metadata without installing software?",
+    question:
+      "Can I find out exactly what secret codec my video is actually using?",
     answer:
-      'Simply open this page in your browser, click "Select a File," and choose your video or audio file. Results appear within seconds — no installation, no plugins, no extensions required.',
+      'Yes. Far beyond a generic ".MP4" extension, this tool digs into the specific mathematical architecture utilized, instantly reporting if your video is using a standard H.264 engine, an advanced H.265 (HEVC), or a powerful new VP9 algorithm.',
   },
   {
-    question: "Which file formats are supported?",
+    question:
+      "Why does my supposedly identical video file play badly on certain Apple devices?",
     answer:
-      "The tool supports all major formats including MP4, MOV, WebM, MKV, MP3, WAV, AAC, FLAC, Ogg, and MPEG-TS. If you need to read MP4 metadata online or check the specs of a lesser-known container, this tool handles it.",
+      "Your metadata likely contains an invisible audio codec discrepancy. While both files might structurally appear as MP4s, the inspector could successfully reveal one file utilizes a universal AAC audio format, while the other secretly relies on an older AC3 codec that specific Apple mobile processors explicitly refuse to play.",
   },
   {
-    question: "Can I see the codec and bitrate of my video file?",
+    question:
+      "Can I use this inspector tool to see the metadata of an MP3 audio file?",
     answer:
-      "Yes. For every track in your file, you'll get the codec name, codec parameter string, average bitrate, packet count, and packet rate. For video tracks you also get resolution, frame rate, color space, and HDR information — everything you need to check video resolution, codec, and bitrate in one place.",
+      "Yes, it fully supports deep audio inspection. Injecting an MP3 or WAV file into the scanner accurately uncovers the core acoustic architecture, exposing the exact audio bitrate, the distinct sample rate (like 44.1kHz), and the total number of stereo or mono channels.",
   },
 ];
 
@@ -62,12 +67,14 @@ export default function ShowVideoAudioMetadata() {
     },
     {
       name: "Video Format Converter",
-      description: "Convert between video formats, Supports wide range of video formats",
+      description:
+        "Convert between video formats, Supports wide range of video formats",
       href: "/video-tools/video-format-converter",
     },
     {
       name: "Change Video FPS",
-      description: "Change video frame rate to 24fps, 30fps, 60fps or custom FPS",
+      description:
+        "Change video frame rate to 24fps, 30fps, 60fps or custom FPS",
       href: "/video-tools/change-video-fps",
     },
     {
@@ -112,7 +119,8 @@ export default function ShowVideoAudioMetadata() {
     },
     {
       name: "Video Transparency Maker",
-      description: "Adjust video opacity and transparency with custom background",
+      description:
+        "Adjust video opacity and transparency with custom background",
       href: "/video-tools/video-transparency-maker",
     },
   ];
@@ -170,295 +178,205 @@ export default function ShowVideoAudioMetadata() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="container mx-auto max-w-6xl px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">What You'll See</h2>
-          <p className="mt-4 text-muted-foreground">
-            Get comprehensive technical details about your media files
-          </p>
-        </div>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              icon: FileVideo,
-              title: "File Info",
-              description: "Name, size, format, and full MIME type",
-            },
-            {
-              icon: Settings,
-              title: "Track Details",
-              description:
-                "Codec, language, duration, time resolution, and browser compatibility",
-            },
-            {
-              icon: Eye,
-              title: "Video Properties",
-              description:
-                "Resolution, frame rate, color space, HDR status, and rotation",
-            },
-            {
-              icon: Music,
-              title: "Audio Properties",
-              description:
-                "Sample rate and channel configuration (mono, stereo, etc.)",
-            },
-            {
-              icon: Zap,
-              title: "Packet Statistics",
-              description:
-                "Average bitrate, packet count, and packet rate per track",
-            },
-            {
-              icon: Download,
-              title: "Embedded Tags",
-              description:
-                "Title, artist, album, genre, date, and embedded cover art",
-            },
-          ].map((feature, index) => (
-            <Card
-              key={index}
-              className="group relative overflow-hidden border-muted/50 bg-card/50 backdrop-blur-sm transition-all hover:shadow-lg hover:border-primary/20"
-            >
-              <CardHeader>
-                <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <feature.icon className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-lg">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* What Is Metadata Section */}
+      {/* What it Does Section */}
       <section className="container mx-auto max-w-6xl px-4 py-16">
         <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
           <CardContent className="p-8 sm:p-12">
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div>
-                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-                  What Is Media File Metadata?
-                </h2>
-                <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Media metadata is the hidden technical information embedded
-                  inside every video and audio file. It describes how a file was
-                  encoded, not just what it contains. This includes details like
-                  the codec used, resolution, bit rate, frame rate, audio
-                  channels, sample rate, and duration.
-                </p>
-                <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Metadata is essential for compatibility checks, quality
-                  assurance, archiving, and troubleshooting playback issues. For
-                  example, knowing that a video file uses H.265 instead of H.264
-                  tells you immediately whether it will play on a given device —
-                  without pressing play.
-                </p>
-              </div>
-              <div className="relative hidden lg:block">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary/20 to-primary/5 blur-xl" />
-                <div className="relative rounded-2xl border bg-card p-6 shadow-lg">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <FileVideo className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium">Video Codec</p>
-                        <p className="text-xs text-muted-foreground">
-                          H.264 / H.265 / VP9
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Music className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium">Audio Codec</p>
-                        <p className="text-xs text-muted-foreground">
-                          AAC / MP3 / FLAC
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Settings className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium">Resolution</p>
-                        <p className="text-xs text-muted-foreground">
-                          1920x1080 / 3840x2160
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Zap className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium">Bitrate</p>
-                        <p className="text-xs text-muted-foreground">
-                          Variable / Constant
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+              What it Does
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              When a shady freelancer delivers an MP4 file that suspiciously
+              stutters on your computer, you must instantly verify its internal
+              architecture. This powerful browser utility forcibly rips open the
+              video file's hidden structural layer, completely ignoring the
+              visual images perfectly to scan deeply embedded text codes. By
+              analyzing this invisible matrix locally on your hard drive, it
+              reveals the absolute truth regarding exact framerates, concealed
+              audio codecs, and specific compression bitrates without waiting
+              hours for massive files to upload to an external cloud server.
+            </p>
           </CardContent>
         </Card>
       </section>
 
-      {/* Why Choose Section */}
+      {/* How to Use Section */}
       <section className="container mx-auto max-w-6xl px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">
-            Why Use Our Free Media Metadata Viewer?
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            The smart choice for professionals and enthusiasts alike
-          </p>
+          <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
         </div>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: Shield,
-              title: "100% Private",
-              description:
-                "Your files never leave your device — processing happens entirely in your browser",
-            },
-            {
-              icon: Zap,
-              title: "Instant Access",
-              description:
-                "No software to install — works instantly in any modern browser",
-            },
-            {
-              icon: Globe,
-              title: "Broad Format Support",
-              description:
-                "MP4, MOV, WebM, MKV, MP3, WAV, AAC, FLAC, Ogg, MPEG-TS, and more",
-            },
-            {
-              icon: CheckCircle2,
-              title: "Deep Technical Detail",
-              description:
-                "Codec strings, bitrate, color space, and per-track packet stats",
-            },
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="group rounded-2xl border border-muted/50 bg-card/50 p-6 text-center transition-all hover:shadow-lg hover:border-primary/20 hover:-translate-y-1"
-            >
-              <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <feature.icon className="h-7 w-7" />
-              </div>
-              <h3 className="font-semibold text-lg">{feature.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {feature.description}
-              </p>
+        <div className="grid gap-8 sm:grid-cols-3">
+          <div className="relative text-center">
+            <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+              <span className="text-2xl font-bold">1</span>
             </div>
-          ))}
+            <h3 className="relative font-semibold text-xl">
+              Deposit the mysterious file
+            </h3>
+            <p className="relative mt-2 text-sm text-muted-foreground text-left">
+              Directly drag the problematic MP4, MKV, or audio track straight
+              onto the digital scanner. Your browser immediately creates a
+              secure, offline bridge to your system's temporary memory,
+              guaranteeing that huge mult-gigabyte movie files never
+              accidentally trigger a slow Wi-Fi upload block.
+            </p>
+          </div>
+          <div className="relative text-center">
+            <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+              <span className="text-2xl font-bold">2</span>
+            </div>
+            <h3 className="relative font-semibold text-xl">
+              Let the engine rip
+            </h3>
+            <p className="relative mt-2 text-sm text-muted-foreground text-left">
+              The internal WebAssembly parser brutally hacks through the outer
+              video container almost instantly. Instead of attempting to play
+              the actual movie, it aggressively hunts down the specialized
+              header strings injected heavily into the very first few blocks of
+              binary data.
+            </p>
+          </div>
+          <div className="relative text-center">
+            <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+              <span className="text-2xl font-bold">3</span>
+            </div>
+            <h3 className="relative font-semibold text-xl">
+              Extract the hard data
+            </h3>
+            <p className="relative mt-2 text-sm text-muted-foreground text-left">
+              In under a second, the interface accurately updates to expose the
+              naked parameters. Clearly review the rigid frame dimensions,
+              double-check the exact audio sample rate, or meticulously verify
+              the specific digital codec signature to mathematically prove
+              exactly why the file refuses to play correctly.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Use Cases Section */}
       <section className="container mx-auto max-w-6xl px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">How It Works</h2>
-          <p className="mt-4 text-muted-foreground">
-            Three simple steps to view your media metadata
-          </p>
+          <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
         </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Exposing fake 4K video</h3>
+              <p className="text-sm text-muted-foreground">
+                Video editors receiving raw footage often suspect the cameraman
+                secretly shot in blurry 1080p and deceptively upscaled the
+                timeline export. Directly scanning the raw video file’s metadata
+                instantly reveals its true structural dimensions, completely
+                verifying the underlying resolution without needing to install
+                complicated desktop analysis programs.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">
+                Troubleshooting playback errors
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Digital archivists dealing with a massive hard drive of ancient
+                AVIs frequently encounter files that play clean video but
+                absolutely zero audio. Utilizing the metadata scanner reliably
+                proves that the video features a highly obscure, unsupported
+                internal audio codec, giving them the exact technical
+                information needed to transcode perfectly.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">
+                Verifying rigid broadcast limits
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Television directors preparing to heavily distribute a
+                commercial spot are bound by intensely strict network delivery
+                specifications. Passing the final render file through the
+                inspector strongly guarantees the frame rate is locked at
+                exactly 23.976fps and the bitrate hits the required density,
+                totally avoiding a catastrophic rejection.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">
+                Auditing massive podcast archives
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Audio engineers attempting to remaster an enormous backlog of
+                five-year-old MP3 podcast episodes desperately need to
+                understand their core audio quality baseline. Dropping the files
+                into the scanner instantly reveals the bitrate density and the
+                channel frequency without opening a heavy audio editing
+                application.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">
+                Preventing Apple ecosystem failures
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Designers trying to strictly optimize a web banner video heavily
+                target the VP9 codec for massive file size savings, but fear
+                alienating Safari users. Scanning the final WebM file securely
+                verifies its internal structure, confirming if the file
+                genuinely requires a secondary MP4 fallback loop to successfully
+                play on older iPhones.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
 
-        <div className="grid gap-8 sm:grid-cols-3">
-          {[
-            {
-              step: "01",
-              icon: Upload,
-              title: "Select Your File",
-              description:
-                "Click the upload button and choose any video or audio file from your device",
-            },
-            {
-              step: "02",
-              icon: Zap,
-              title: "Instant Analysis",
-              description:
-                "Our tool reads every layer of technical data from your file in seconds",
-            },
-            {
-              step: "03",
-              icon: Eye,
-              title: "View Results",
-              description:
-                "Get a complete technical profile with codec, resolution, bitrate, and more",
-            },
-          ].map((item, index) => (
-            <div key={index} className="relative">
-              {index < 2 && (
-                <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-              )}
-              <div className="relative text-center">
-                <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                  <item.icon className="h-7 w-7" />
-                </div>
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-6xl font-bold text-primary/5">
-                  {item.step}
-                </div>
-                <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                <p className="relative mt-2 text-sm text-muted-foreground">
-                  {item.description}
+      {/* Settings Explained Section */}
+      <section className="container mx-auto max-w-6xl px-4 py-16">
+        <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+          <CardContent className="p-8 sm:p-12">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+              Settings Explained
+            </h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-bold text-lg">Codec Designation</h3>
+                <p className="text-muted-foreground mt-2">
+                  The codec is the extremely complex mathematical formula
+                  heavily utilized to compress the raw visual information into a
+                  manageable size. Identifying complex strings like "avc1"
+                  firmly indicates you are using the highly compatible H.264
+                  video compression standard, whereas finding "vp09" proves your
+                  video requires significant modern processing.
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Supported Formats */}
-      <section className="container mx-auto max-w-6xl px-4 py-16">
-        <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-muted/30 to-card">
-          <CardContent className="p-8 sm:p-12">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold tracking-tight">
-                Supported File Formats
-              </h2>
-              <p className="mt-2 text-muted-foreground">
-                Works with all major video and audio formats
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "MP4",
-                "MOV",
-                "WebM",
-                "MKV",
-                "MP3",
-                "WAV",
-                "AAC",
-                "FLAC",
-                "Ogg",
-                "MPEG-TS",
-                "AVI",
-                "WMV",
-              ].map((format) => (
-                <span
-                  key={format}
-                  className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
-                >
-                  {format}
-                </span>
-              ))}
+              <div>
+                <h3 className="font-bold text-lg">Bitrate Density</h3>
+                <p className="text-muted-foreground mt-2">
+                  This precise metric heavily dictates exactly how much gigabyte
+                  data is physically shoved through the processor every single
+                  second. A shockingly low bitrate mathematically guarantees
+                  your video will instantly dissolve into ugly pixelated blocks
+                  during fast motion, while an intensely high number explains
+                  why your short clip requires massive storage capacity.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Resolution Framework</h3>
+                <p className="text-muted-foreground mt-2">
+                  The specific grid coordinates, like 1920x1080, entirely
+                  dictate the literal physical volume of pixels forcibly
+                  arranged in horizontal and vertical lines. Knowing your true
+                  resolution strongly guarantees you perfectly match the video
+                  editing sequence settings inside Premiere Pro or strictly meet
+                  harsh YouTube upload requirements.
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>

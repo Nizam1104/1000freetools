@@ -23,29 +23,36 @@ export const metadata: Metadata = {
 export default function CropImagePage() {
   const faqs = [
     {
-      question: "Is this image cropper tool free to use?",
+      question:
+        "Does the tool reduce my image quality when I crop image online?",
       answer:
-        "Yes. Our cropping tool is completely free. You do not need to register an account or pay any fees to crop your photos.",
+        "No. The cropped area retains its exact original resolution and detail. Unlike some tools that compress the file during saving, our cropper strictly removes the unwanted outer pixels and saves the remaining area at its highest possible quality.",
     },
     {
-      question: "Does the tool reduce my image quality?",
+      question:
+        "Are my private photos uploaded to your servers for processing?",
       answer:
-        "No. The cropped area retains its exact original resolution and detail. We do not compress or downgrade your image quality during the cropping process.",
+        "No. All cropping mechanics take place locally within your own web browser. Your personal images, documents, and graphics never leave your device, ensuring maximum security and privacy from the moment you upload to the final download.",
     },
     {
-      question: "Are my photos uploaded to the internet?",
+      question: "What image formats can I upload into the cropping tool?",
       answer:
-        "No. The tool processes your image entirely within your browser on your own device. Your files remain completely secure and private.",
+        "You can upload and crop all major web image formats, including JPG, JPEG, PNG, and WebP. The application processes these files smoothly inside the browser window and will output an optimized file ready for immediate use.",
     },
     {
-      question: "What image formats can I crop?",
+      question: "Can I perfectly center the crop box over my subject?",
       answer:
-        "You can load all common image formats including JPG, PNG, and WebP. The tool handles them smoothly directly within your browser window.",
+        "Yes, you can manually drag the entire crop box across the image canvas after setting the general size. This allows you to position the frame perfectly over the exact center of your subject before finalizing the cut.",
     },
     {
-      question: "Can I use specific aspect ratios?",
+      question: "Will this tool let me crop a picture into a perfect circle?",
       answer:
-        "Yes. The interface provides standard aspect ratio presets. You also have the freedom to manually drag the corners for a completely freeform custom crop.",
+        "Currently, the tool strictly supports rectangular and square cropping boundaries, which represents standard image file geometry. If you need a circular graphic, we recommend cropping the image to a perfect 1:1 square first before applying a circular mask in your website's CSS.",
+    },
+    {
+      question: "Is there a cost to crop multiple images every day?",
+      answer:
+        "There are no costs, subscriptions, or restrictive limits applied to our platform. You can use the free image cropper tool to edit as many photographs as you need throughout the day without encountering annoying paywalls or forced watermarks.",
     },
   ];
 
@@ -86,99 +93,113 @@ export default function CropImagePage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Improve Your Visual Composition
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Framing forms the foundation of all good photography and graphic
-            design. Whether you take a quick snapshot on your phone or manage a
-            folder of professional photographs, you frequently capture extra
-            background details that you do not need. Cropping provides the
-            simplest method to fix these compositional errors. Removing empty
-            space or distracting objects from the edges of your photo instantly
-            directs the attention of the viewer to your main subject.
-          </p>
-          <p className="mb-4">
-            Different platforms require different image dimensions. Social media
-            sites demand square formats, panoramic banners, or vertical portrait
-            layouts. A single unedited photo rarely fits all these requirements
-            perfectly. By utilizing an accurate cropping tool, you generate
-            optimized versions of the same original file for every distinct
-            network. Our software provides the precise controls necessary to
-            resize the visible framing of your graphics specifically for these
-            unique publishing standards.
-          </p>
-          <p className="mb-4">
-            Security and privacy represent core benefits of our platform. We
-            built this utility to run entirely locally on your machine. When you
-            drop a file onto our page, your browser reads the data directly
-            without transmitting a single byte across the internet. You process
-            deeply personal photos, confidential business documents, or
-            proprietary artwork securely. You avoid the risks associated with
-            cloud storage providers entirely.
+            Photos rarely have perfect framing out of the camera. If you capture
+            too much background or unwanted objects on the edges, you need to
+            crop image online to fix the composition. This browser-based tool
+            lets you instantly reframe pictures, remove borders, and focus
+            entirely on your main subject. It processes everything locally on
+            your device without uploading files to a server, ensuring your
+            private photos remain secure while keeping the cropped area at its
+            maximum original resolution.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            We designed the interface to minimize friction and maximize speed.
-            To start, you click the upload area or simply drag a file from your
-            computer desktop directly onto the web page. Your browser loads the
-            image and immediately presents a visual cropping boundary overlaid
-            on top of your photo. The platform supports all standard formats
-            including JPG, PNG, and WebP natively.
+            <strong>1. Load your image securely</strong>
+            <br />
+            Click the upload block or drag your photo directly into the browser
+            window. The file imports instantly from your local storage,
+            supporting all common formats like JPG, PNG, and WebP natively.
           </p>
           <p className="mb-4">
-            Controlling the crop boundary feels intuitive. You click and drag
-            the corners or edges of the highlighted box to adjust the framing.
-            As you move your mouse, the unselected outer regions darken to
-            provide a clear preview of your final result. If you need a specific
-            proportion naturally suited for professional printing or social
-            media, you select one of the provided aspect ratio presets. This
-            locks the proportions dynamically as you scale the box.
+            <strong>2. Set your crop boundaries</strong>
+            <br />
+            Click and drag the highlighted box corners to establish new image
+            borders. You can adjust the frame freely or lock the dimensions to
+            standard aspect ratios tailored for specific social media platforms.
           </p>
           <p className="mb-4">
-            Once you secure the perfect composition, you finalize your work with
-            a single confirmation click. The application restructures the image
-            data based on your specific boundary limits. You then click the
-            download button located actively on the screen. The browser
-            instantly saves the newly cropped file directly into your local
-            download directory, maintaining your original image resolution
-            perfectly within the selected frame.
+            <strong>3. Confirm and download</strong>
+            <br />
+            Once your subject is perfectly framed and the dark outer edges show
+            what will be removed, apply the crop. Click the download button to
+            instantly save the newly formatted image straight to your computer.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            Our specialized application delivers precise pixel-level control
-            across all your reframing tasks. The underlying engine relies
-            entirely on your local browser capabilities, bypassing slow external
-            servers. The primary function focuses strictly on truncating
-            unwanted margins and establishing new boundaries for your
-            photographs. The tool does not alter your underlying pixel data
-            through unwanted compression algorithms or quality reduction
-            filters.
+            <strong>Fixing composition in social media portraits</strong>
+            <br />
+            When you take a portrait shot, there is often too much headroom or
+            empty sky above the subject. Cropping the image tighter draws the
+            viewer's eye directly to the person's face for a more impactful
+            profile picture.
           </p>
           <p className="mb-4">
-            A prominent feature includes the responsive drag-and-drop workspace.
-            The application handles massive megapixel images effortlessly. You
-            zoom into detailed areas and execute accurate cuts without
-            experiencing lag. The tool also provides fixed ratio grids. This
-            guarantees your final output strictly obeys predefined mathematical
-            proportions required by modern digital displays.
+            <strong>Removing watermarks or unwanted borders</strong>
+            <br />
+            Sometimes downloaded stock photos or scanned documents have messy
+            white borders or small corner watermarks. You can simply drag the
+            crop boundary slightly inward to cut out these distracting edges
+            completely.
           </p>
           <p className="mb-4">
-            Furthermore, the platform provides an entirely non-destructive
-            temporary workspace. Up until the exact moment you hit the download
-            button, your original file remains untouched safely on your hard
-            drive. You test multiple different cropping variations rapidly. We
-            deliver a high-performance utility that handles your daily image
-            formatting routines efficiently entirely for free. You process an
-            unlimited number of files without encountering restrictive paywalls.
+            <strong>Optimizing banners for website headers</strong>
+            <br />
+            Website builders require very specific wide aspect ratios for header
+            graphics. Using the manual crop tool allows you to isolate a
+            panoramic slice of a standard photograph that fits perfectly into
+            your site layout.
+          </p>
+          <p className="mb-4">
+            <strong>Zooming in on distant wildlife photography</strong>
+            <br />
+            If your camera lens wasn't long enough to capture a bird or animal
+            up close, the subject may look tiny in the center of the frame.
+            Cropping heavily into the center effectively zooms in on the animal,
+            improving the final focus.
+          </p>
+          <p className="mb-4">
+            <strong>Preparing square thumbnail images</strong>
+            <br />
+            E-commerce stores and podcast directories usually require perfectly
+            square imagery. You can use the 1:1 aspect ratio preset to guarantee
+            your rectangular product photo is cut into an exact square without
+            stretching.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Freeform Cropping</strong>
+            <br />
+            This default mode allows you to drag all four corners independently
+            without any mathematical restrictions. It is ideal for general
+            editing when you simply want to remove distracting elements from the
+            edges based on visual feel alone.
+          </p>
+          <p className="mb-4">
+            <strong>Aspect Ratio Presets (1:1, 16:9, 4:3)</strong>
+            <br />
+            These pre-configured options lock the proportion of the crop box so
+            it maintains a specific shape as you resize it. Use 1:1 for social
+            thumbnails, 16:9 for video thumbnails, and 4:3 for standard
+            photography prints.
+          </p>
+          <p className="mb-4">
+            <strong>Zoom and Pan Controls</strong>
+            <br />
+            When working with very high-resolution images, you can zoom into the
+            canvas to see pixel-level details. Panning allows you to move the
+            enlarged image around the workspace to ensure your crop lines
+            perfectly intersect the desired boundaries.
           </p>
         </section>
 

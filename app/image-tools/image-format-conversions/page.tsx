@@ -66,29 +66,40 @@ export default function ImageFormatConversionsPage() {
 
   const faqs = [
     {
-      question: "Is this image converter tool free to use?",
+      question:
+        "Is this image format converter completely free for bulk process tasks?",
       answer:
-        "Yes. Converting between image formats using our platform is completely free. You perform bulk conversions without encountering hidden subscriptions.",
+        "Yes, our robust batch processing engine is entirely free to use without mandatory subscriptions. You can efficiently queue and export up to 200 files simultaneously without encountering restrictive paywalls or hidden processing fees.",
     },
     {
-      question: "Which image formats do you support?",
+      question:
+        "Which specific file types can I upload to the conversion tool?",
       answer:
-        "We support a wide array of formats including JPG, PNG, WebP, BMP, GIF, AVIF, and TIFF. You seamlessly convert between these types securely.",
+        "You can confidently upload all major structures including JPG, PNG, WebP, BMP, GIF, AVIF, TIFF, ICO, SVG, and modern HEIC files. The intelligent engine will automatically parse these inputs and display the compatible output options.",
     },
     {
-      question: "Is there a limit to how many images I can convert?",
+      question:
+        "Will my transparent PNG graphics gain a white background if converted?",
       answer:
-        "You process up to 200 images simultaneously. This bulk processing capability handles large folders efficiently directly within your browser.",
+        "It depends on your chosen target format. If you convert a transparent image to WebP or AVIF, the transparency is perfectly preserved. However, converting to standard JPG will physically flatten the transparent pixels into a solid background.",
     },
     {
-      question: "Will I lose image quality during conversion?",
+      question:
+        "Are my confidential photography files uploaded to an internet server?",
       answer:
-        "The converter maintains high fidelity automatically. By default, it preserves maximum quality limits matching your chosen output format specifications.",
+        "No. We prioritize absolute data security by executing every mathematical conversion command strictly inside your localized browser memory. Your sensitive files, document scans, and portraits are never broadcast across the wider internet.",
     },
     {
-      question: "Do you save my converted photos?",
+      question:
+        "How do I download my pictures after a massive batch conversion finishes?",
       answer:
-        "No. All conversion operations happen locally on your hardware. We never transmit or store your personal files on internet servers.",
+        "Once the progress bar hits 100%, you can choose to click individual buttons underneath specific thumbnails, or you can click the convenient 'Download All' button. This will package your entire processed queue into a single, organized ZIP file.",
+    },
+    {
+      question:
+        "Does converting the file automatically compress the overall file size?",
+      answer:
+        "It depends exclusively on the specific target. Changing an uncompressed BMP into a modern WebP or AVIF format will aggressively shrink the physical footprint on your hard drive while maintaining the identical visual fidelity.",
     },
   ];
 
@@ -683,108 +694,118 @@ export default function ImageFormatConversionsPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Adapt Your Visual Content Easily
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Managing distinct image formats creates unnecessary friction during
-            your daily digital tasks. Website developers frequently need modern
-            WebP files to increase page loading speeds dramatically.
-            Photographers require high-resolution TIFF images for print, while
-            social media managers rely strictly on standard JPG files for
-            universal compatibility. Converting these graphical formats manually
-            via desktop software wastes valuable time. A robust online converter
-            solves this issue by instantly adapting your graphics to meet the
-            exact requirements of any digital platform.
-          </p>
-          <p className="mb-4">
-            File sizes heavily depend directly on the specific formatting
-            chosen. Older formats like BMP and standard PNG files contain
-            massive amounts of uncompressed data. This bloats your physical
-            storage drives needlessly. By converting these older standards into
-            highly efficient contemporary formats like WebP or AVIF, you
-            significantly reduce the footprint of your entire digital library.
-            Doing this optimizes your storage workflow cleanly without
-            sacrificing noticeable visual quality.
-          </p>
-          <p className="mb-4">
-            Privacy ranks alongside speed as a primary requirement. We
-            constructed this application specifically to decode and encode your
-            graphic structures locally within your modern browser. When you drop
-            a sensitive document or a family portrait onto the screen, your
-            local computer handles the heavy mathematical translation. You
-            safely convert highly confidential documents instantly without
-            exposing them to remote cloud processing services.
+            Website builders and social media platforms frequently reject
+            specific graphic types like HEIC or uncompressed TIFFs. This
+            intelligent image format converter swiftly transitions your files
+            into universally compatible types like JPG, WebP, or AVIF directly
+            within your browser. It solves compatibility issues instantly while
+            utilizing a secure, offline batch-processing engine capable of
+            converting up to 200 files simultaneously without uploading anything
+            to a remote database.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            We built this streamlined interface to handle large volumes of work
-            flawlessly. You begin the translation process by locating the
-            central upload region on your screen. You select multiple files
-            simultaneously using the file picker mode or simply highlight an
-            entire folder of photos and drag them violently onto the interface.
-            The application immediately reads the existing internal formatting
-            of every individual file and displays them neatly into an organized
-            grid structure.
+            <strong>1. Stage your heavy batch</strong>
+            <br />
+            Select up to 200 files from your directory and drag them directly
+            into the dashed upload area. The application instantly parses the
+            local data and renders precise mini-preview cards so you can verify
+            the queue is correct.
           </p>
           <p className="mb-4">
-            Once you load the images onto the visual stage, you navigate to the
-            main formatting dropdown menu. You click to expose the extensive
-            list of supported outputs. The system intelligently filters this
-            specific list based exclusively on the specific files you uploaded,
-            ensuring you select valid target formats. You pick a target like
-            JPG, PNG, or AVIF based on your immediate needs. You verify the
-            individual file cards update correctly.
+            <strong>2. Select your targeted file extension</strong>
+            <br />
+            Navigate to the dropdown menu labeled "Convert to" near the top
+            controls. Choose a specific target extension like WebP or PNG,
+            causing the system to automatically validate that format against
+            every file loaded in the queue.
           </p>
           <p className="mb-4">
-            Generating the final exports requires only a single definitive
-            click. You press the prominent convert button located above the
-            picture grid. The local engine initiates the processing sequence for
-            every queued item sequentially. A transparent progress bar provides
-            real-time updates regarding the overall batch status. Once the
-            software finishes computing the mathematical data, you choose
-            between clicking individual download buttons or packing the entire
-            converted library into a single optimized zip file.
+            <strong>3. Execute the bulk transition</strong>
+            <br />
+            Hit the "Convert All" command to trigger the local scripting
+            process. Watch the individual status bars update in real-time, then
+            use the "Download All" feature to pack the finalized files instantly
+            into a single neat ZIP archive.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            This specialized encoding platform operates strictly as a local
-            format translator. The fundamental engine utilizes advanced
-            scripting algorithms to disassemble the structure of an incoming
-            image and rebuild it utilizing an entirely different structural
-            blueprint. By executing these complex commands via your native
-            hardware instructions, the tool provides professional application
-            performance entirely inside an open web tab. You execute reliable
-            conversions continuously without experiencing crashing or slow
-            response times.
+            <strong>Preparing iPhone photography for Windows users</strong>
+            <br />
+            Apple devices default to shooting in the highly efficient HEIC
+            format, which generally displays poorly on older PC hardware.
+            Dropping a vacation album into the tool and targeting standard JPG
+            ensures family members on older machines can effortlessly view the
+            memories.
           </p>
           <p className="mb-4">
-            The batch manipulation feature serves as the core utility for
-            professional users. You drag up to two hundred distinct items into
-            the processor simultaneously. The robust queue management software
-            tracks each individual file progression securely. Even if you
-            encounter a corrupted file mid-queue, the system isolates the
-            specific error cleanly while successfully generating the remaining
-            valid images. You review detailed status updates instantly located
-            directly underneath each image thumbnail.
+            <strong>Modernizing a WordPress media library</strong>
+            <br />
+            Heavy JPG hero banners severely slow down website loading and impact
+            your core web vital metrics. By batch-converting your massive
+            headers into modern WebP structures, you dramatically boost loading
+            velocity without noticeably degrading the visual punch.
           </p>
           <p className="mb-4">
-            Furthermore, the platform guarantees immediate availability. Since
-            no remote queueing exists, you never wait in line behind other
-            active internet users. You gain unmetered access to advanced
-            conversion libraries capable of handling complex transparency
-            translation routines. The resulting files maintain pristine visual
-            integrity explicitly mirroring the graphical content you uploaded
-            initially. We supply this extremely capable bulk processing
-            mechanism devoid of required payments or hidden constraints.
+            <strong>Generating app icon transparency</strong>
+            <br />
+            When you receive a flattened logo asset as a JPG file, you cannot
+            easily place it over colored website themes. Transitioning the
+            specific file into a PNG structure allows graphic designers to
+            easily extract the background securely for proper overlaying.
+          </p>
+          <p className="mb-4">
+            <strong>Standardizing messy client document submissions</strong>
+            <br />
+            Freelancers frequently receive disorganized zipped folders
+            containing a chaotic mix of BMP, GIF, and PDF references. Imposing
+            order by converting the entire messy batch strictly into uniform JPG
+            files allows for clean chronological sorting and reviewing.
+          </p>
+          <p className="mb-4">
+            <strong>Archiving raw graphics efficiently</strong>
+            <br />
+            TIFF files contain massive amounts of uncompressed data used by
+            printers, which rapidly consume external hard drives. Flipping these
+            finalized print layouts into highly compressed AVIFs creates a dense
+            archive that retains high visual detail for long-term historical
+            storage.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Output Format Dropdown</strong>
+            <br />
+            This primary control dictates the structural blueprint your files
+            will adopt. Select JPG for universal sharing, PNG for preserving
+            missing background pixels, and WebP or AVIF when speed and
+            microscopic file sizes represent your top priority.
+          </p>
+          <p className="mb-4">
+            <strong>Queue Limit (200 Files)</strong>
+            <br />
+            This restriction ensures your specific web browser does not
+            unexpectedly crash from memory exhaustion. Processing massive queues
+            requires temporary RAM allocations, so limiting the batch protects
+            the stability of your active system.
+          </p>
+          <p className="mb-4">
+            <strong>Download All (ZIP Feature)</strong>
+            <br />
+            Instead of manually clicking "Save" two hundred distinct times, this
+            function dynamically bundles the completed data layer into a
+            standard ZIP folder. It represents the fastest method for
+            maintaining organized local directory structures.
           </p>
         </section>
 

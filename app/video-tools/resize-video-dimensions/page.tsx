@@ -1,66 +1,57 @@
 "use client";
 
-import { useState, useRef } from 'react';
-import { Conversion, Input, Output, Mp4OutputFormat, BufferTarget, BlobSource, ALL_FORMATS } from 'mediabunny';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { Progress } from '@/components/ui/progress';
+import { useState, useRef } from "react";
+import {
+  Conversion,
+  Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
+  BlobSource,
+  ALL_FORMATS,
+} from "mediabunny";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { Progress } from "@/components/ui/progress";
 import Faqs from "@/components/utils/Faqs";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Script from "next/script";
 
 const faqData = [
   {
-    question: "What is the difference between Fill, Contain, and Cover fit modes?",
+    question: "How can I resize video free online without losing quality?",
     answer:
-      "Fill stretches your video to exactly match the new dimensions regardless of aspect ratio. Contain shrinks or scales the video to fit inside the new dimensions while keeping the aspect ratio, adding black bars in empty areas. Cover scales the video so it fills the entire frame, cropping parts of the video that extend beyond the edges.",
+      "You can resize video free online right inside your browser window without paying any premium fees. Since your device processes the actual video shrinking locally, it bypasses cloud server requirements, keeping the tool free while ensuring your original file quality isn't compromised by forced server-side compression blocks.",
   },
   {
-    question: "How do I resize a video without distorting it?",
+    question: "What exactly do the Fill, Contain, and Cover scaling modes do?",
     answer:
-      "Enable 'Maintain Aspect Ratio' and use the Contain fit mode. This ensures the video scales proportionally without stretching, filling any empty space with black bars.",
+      "If your target resolution doesn't match your original video shape, you have three options. Fill forcefully stretches the image to fit the new box, potentially warping objects. Contain safely shrinks the video until it fits, generating harmless black bars in the leftover empty space. Cover forcefully zooms the video in until it fills the entire frame, actively cropping away footage that spills outside the boundaries.",
   },
   {
-    question: "Can I resize a video to 1920x1080 (Full HD)?",
+    question:
+      "Will typing in a huge 4K pixel size actually make my clip look better?",
     answer:
-      "Yes. Simply click the '1080p' quick preset, or manually type 1920 in the width field and 1080 in the height field.",
+      "No, stretching a small video into a massive 3840x2160 pixel box does not magically invent high-definition details that were never captured by your camera. It simply pulls the existing pixels further apart, which often makes low-resolution footage look considerably softer or chunkier.",
   },
   {
-    question: "Will resizing a video to a larger size improve quality?",
+    question:
+      "Why does the height number change automatically when I type a new width?",
     answer:
-      "No. Upscaling beyond the original resolution does not add detail — it only stretches existing pixels. For true quality improvement, use the Video Quality Enhancer tool with a higher bitrate setting.",
+      "When 'Maintain Aspect Ratio' is turned on, the calculator mechanically locks the proportional relationship between the width and the height. If you cut the total width exactly in half, the tool instantly cuts the height exactly in half to prevent your video subject from looking squished or stretched.",
   },
   {
-    question: "What does maintaining the aspect ratio mean?",
+    question: "Can anyone else download the private footage I upload here?",
     answer:
-      "Aspect ratio is the proportional relationship between width and height (e.g., 16:9). When this option is enabled, changing the width automatically recalculates the correct height to preserve the original proportions.",
+      "Nobody else can download or even view your video because it never leaves your physical hard drive. The application's encoding engine downloads directly to your device memory and executes the resizing locally, guaranteeing complete privacy for sensitive or unreleased recordings.",
   },
   {
-    question: "Can I resize a video to a vertical format for TikTok?",
+    question:
+      "Why does converting a 1080p clip down to 720p take so long on my laptop?",
     answer:
-      "Yes. Enter a height greater than your width (e.g., 1080x1920 for 9:16) and use the Contain fit mode if your source is landscape video.",
-  },
-  {
-    question: "Does resizing change the video duration?",
-    answer:
-      "No. Resizing only affects the visual dimensions of the video frame. The duration and audio remain unchanged.",
-  },
-  {
-    question: "What formats does the resizer accept and output?",
-    answer:
-      "It accepts all major video formats (MP4, MOV, WebM, MKV) and outputs an MP4 file.",
-  },
-  {
-    question: "Is there a minimum or maximum resolution I can resize to?",
-    answer:
-      "You can enter any width and height value above 1 pixel. For practical purposes, most browsers handle resolutions up to 4K (3840x2160) comfortably.",
-  },
-  {
-    question: "Does this tool process my video on a server?",
-    answer:
-      "No. All video resizing happens in your browser. Your files are never uploaded or shared externally.",
+      "To reduce video file size, this browser application must completely deconstruct your original file, recalculate the mathematical pixel values for every single frame to create the smaller size, and then bind it back together into a brand new MP4 file. This demands heavy processing power, so keeping your browser tab focused ensures your operating system allocates maximum power to the task.",
   },
 ];
 
@@ -80,10 +71,15 @@ const faqSchema = {
 export default function ResizeVideoDimensionsPage() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [videoDimensions, setVideoDimensions] = useState({ width: 0, height: 0 });
+  const [videoDimensions, setVideoDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
   const [newWidth, setNewWidth] = useState<number>(0);
   const [newHeight, setNewHeight] = useState<number>(0);
-  const [fitMode, setFitMode] = useState<'fill' | 'contain' | 'cover'>('contain');
+  const [fitMode, setFitMode] = useState<"fill" | "contain" | "cover">(
+    "contain",
+  );
   const [maintainAspectRatio, setMaintainAspectRatio] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -134,10 +130,10 @@ export default function ResizeVideoDimensionsPage() {
 
   const handlePresetClick = (preset: string) => {
     const presets: Record<string, { width: number; height: number }> = {
-      '4K': { width: 3840, height: 2160 },
-      '1080p': { width: 1920, height: 1080 },
-      '720p': { width: 1280, height: 720 },
-      '480p': { width: 854, height: 480 },
+      "4K": { width: 3840, height: 2160 },
+      "1080p": { width: 1920, height: 1080 },
+      "720p": { width: 1280, height: 720 },
+      "480p": { width: 854, height: 480 },
     };
     const dimensions = presets[preset];
     if (dimensions) {
@@ -148,7 +144,7 @@ export default function ResizeVideoDimensionsPage() {
 
   const handleResize = async () => {
     if (!videoFile || !newWidth || !newHeight) {
-      setError('Please select a video and specify dimensions');
+      setError("Please select a video and specify dimensions");
       return;
     }
 
@@ -185,16 +181,16 @@ export default function ResizeVideoDimensionsPage() {
 
       const resizedBuffer = output.target.buffer;
       if (!resizedBuffer) {
-        throw new Error('Failed to get resized video buffer');
+        throw new Error("Failed to get resized video buffer");
       }
-      const resizedBlob = new Blob([resizedBuffer], { type: 'video/mp4' });
+      const resizedBlob = new Blob([resizedBuffer], { type: "video/mp4" });
       const resizedUrl = URL.createObjectURL(resizedBlob);
       setOutputUrl(resizedUrl);
       setProgress(100);
 
       input.dispose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to resize video');
+      setError(err instanceof Error ? err.message : "Failed to resize video");
     } finally {
       setIsProcessing(false);
     }
@@ -202,19 +198,35 @@ export default function ResizeVideoDimensionsPage() {
 
   const handleDownload = () => {
     if (!outputUrl) return;
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = outputUrl;
-    a.download = `resized-${videoFile?.name || 'video.mp4'}`;
+    a.download = `resized-${videoFile?.name || "video.mp4"}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
   };
 
-  const presets = ['4K', '1080p', '720p', '480p'];
-  const fitModes: { mode: 'fill' | 'contain' | 'cover'; label: string; description: string }[] = [
-    { mode: 'fill', label: 'Fill', description: 'Stretches video to fill dimensions (may distort)' },
-    { mode: 'contain', label: 'Contain', description: 'Fits video within dimensions (may add black bars)' },
-    { mode: 'cover', label: 'Cover', description: 'Crops video to cover dimensions (may cut edges)' },
+  const presets = ["4K", "1080p", "720p", "480p"];
+  const fitModes: {
+    mode: "fill" | "contain" | "cover";
+    label: string;
+    description: string;
+  }[] = [
+    {
+      mode: "fill",
+      label: "Fill",
+      description: "Stretches video to fill dimensions (may distort)",
+    },
+    {
+      mode: "contain",
+      label: "Contain",
+      description: "Fits video within dimensions (may add black bars)",
+    },
+    {
+      mode: "cover",
+      label: "Cover",
+      description: "Crops video to cover dimensions (may cut edges)",
+    },
   ];
 
   const relatedTools = [
@@ -309,7 +321,9 @@ export default function ResizeVideoDimensionsPage() {
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Change your video's width and height to any standard resolution or custom dimensions. Choose how your video fits the new frame with fill, contain, or cover modes — all in your browser.
+                Change your video's width and height to any standard resolution
+                or custom dimensions. Choose how your video fits the new frame
+                with fill, contain, or cover modes — all in your browser.
               </p>
             </div>
           </div>
@@ -321,7 +335,9 @@ export default function ResizeVideoDimensionsPage() {
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 blur-xl opacity-50" />
             <div className="relative rounded-3xl border bg-card/50 backdrop-blur-sm shadow-2xl">
               <div className="p-6">
-                <h2 className="text-xl font-bold mb-6">Resize Video Dimensions</h2>
+                <h2 className="text-xl font-bold mb-6">
+                  Resize Video Dimensions
+                </h2>
 
                 {/* File Upload */}
                 <Card className="mb-6">
@@ -360,11 +376,18 @@ export default function ResizeVideoDimensionsPage() {
                         {videoDimensions.width > 0 && (
                           <div className="mt-4 p-3 bg-muted rounded-md space-y-2">
                             <p className="text-sm text-muted-foreground">
-                              Original Dimensions: <span className="text-foreground font-medium">{videoDimensions.width} x {videoDimensions.height}</span>
+                              Original Dimensions:{" "}
+                              <span className="text-foreground font-medium">
+                                {videoDimensions.width} x{" "}
+                                {videoDimensions.height}
+                              </span>
                             </p>
                             {newWidth > 0 && newHeight > 0 && (
                               <p className="text-sm text-muted-foreground">
-                                New Dimensions: <span className="text-green-600 dark:text-green-500 font-medium">{newWidth} x {newHeight}</span>
+                                New Dimensions:{" "}
+                                <span className="text-green-600 dark:text-green-500 font-medium">
+                                  {newWidth} x {newHeight}
+                                </span>
                               </p>
                             )}
                           </div>
@@ -375,7 +398,9 @@ export default function ResizeVideoDimensionsPage() {
                     {/* Resize Settings */}
                     <Card>
                       <CardContent className="pt-6">
-                        <h2 className="text-lg font-semibold mb-4">Resize Settings</h2>
+                        <h2 className="text-lg font-semibold mb-4">
+                          Resize Settings
+                        </h2>
                         <div className="space-y-4">
                           {/* Preset Buttons */}
                           <div>
@@ -400,8 +425,12 @@ export default function ResizeVideoDimensionsPage() {
                               <Label className="mb-1 block">Width (px)</Label>
                               <input
                                 type="number"
-                                value={newWidth || ''}
-                                onChange={(e) => handleWidthChange(parseInt(e.target.value) || 0)}
+                                value={newWidth || ""}
+                                onChange={(e) =>
+                                  handleWidthChange(
+                                    parseInt(e.target.value) || 0,
+                                  )
+                                }
                                 min={1}
                                 className="w-full bg-background border border-input rounded-md px-3 py-2 text-sm"
                               />
@@ -410,8 +439,12 @@ export default function ResizeVideoDimensionsPage() {
                               <Label className="mb-1 block">Height (px)</Label>
                               <input
                                 type="number"
-                                value={newHeight || ''}
-                                onChange={(e) => handleHeightChange(parseInt(e.target.value) || 0)}
+                                value={newHeight || ""}
+                                onChange={(e) =>
+                                  handleHeightChange(
+                                    parseInt(e.target.value) || 0,
+                                  )
+                                }
                                 min={1}
                                 className="w-full bg-background border border-input rounded-md px-3 py-2 text-sm"
                               />
@@ -437,7 +470,9 @@ export default function ResizeVideoDimensionsPage() {
                               {fitModes.map((fit) => (
                                 <Button
                                   key={fit.mode}
-                                  variant={fitMode === fit.mode ? 'default' : 'outline'}
+                                  variant={
+                                    fitMode === fit.mode ? "default" : "outline"
+                                  }
                                   onClick={() => setFitMode(fit.mode)}
                                   className="flex-1 text-sm"
                                 >
@@ -446,7 +481,10 @@ export default function ResizeVideoDimensionsPage() {
                               ))}
                             </div>
                             <p className="text-xs text-muted-foreground mt-1">
-                              {fitModes.find(f => f.mode === fitMode)?.description}
+                              {
+                                fitModes.find((f) => f.mode === fitMode)
+                                  ?.description
+                              }
                             </p>
                           </div>
 
@@ -455,7 +493,7 @@ export default function ResizeVideoDimensionsPage() {
                             disabled={isProcessing || !newWidth || !newHeight}
                             className="w-full"
                           >
-                            {isProcessing ? 'Processing...' : 'Resize Video'}
+                            {isProcessing ? "Processing..." : "Resize Video"}
                           </Button>
 
                           {/* Progress Bar */}
@@ -477,14 +515,19 @@ export default function ResizeVideoDimensionsPage() {
                           {outputUrl && (
                             <div className="mt-4 space-y-4">
                               <div>
-                                <h3 className="text-sm font-semibold mb-2">Result</h3>
+                                <h3 className="text-sm font-semibold mb-2">
+                                  Result
+                                </h3>
                                 <video
                                   src={outputUrl}
                                   controls
                                   className="w-full rounded-md bg-black aspect-video mb-3"
                                 />
                               </div>
-                              <Button onClick={handleDownload} className="w-full">
+                              <Button
+                                onClick={handleDownload}
+                                className="w-full"
+                              >
                                 Download Resized Video
                               </Button>
                             </div>
@@ -504,13 +547,17 @@ export default function ResizeVideoDimensionsPage() {
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What the Video Dimensions Resizer Does
+                What it Does
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The Video Dimensions Resizer lets you scale any video to a new width and height. You can choose from common presets like 4K (3840x2160), 1080p (1920x1080), 720p (1280x720), and 480p, or enter completely custom pixel dimensions.
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                Three fit modes give you control over how your video adapts to the new frame: Fill stretches the video to exactly match (may distort), Contain fits the entire video within the frame with black bars if needed, and Cover fills the frame by cropping the edges. A maintain aspect ratio option automatically calculates the correct height when you change width, and vice versa.
+                When a social media platform rejects your upload because the
+                resolution is too high or low, you can completely resize video
+                free online directly from your browser. This tool physically
+                changes the vertical and horizontal pixel measurements of your
+                file to shrink massive 4K recordings into manageable web clips,
+                or adapt landscape footage into vertical reels. Because all
+                rendering happens locally on your own hardware, you do not have
+                to wait for large files to upload to a remote server.
               </p>
             </CardContent>
           </Card>
@@ -519,61 +566,188 @@ export default function ResizeVideoDimensionsPage() {
         {/* How to Use Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use the Tool</h2>
-            <p className="mt-4 text-muted-foreground">
-              Resize your video in 6 simple steps
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
           </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Define the new pixel counts
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                After pulling a video clip directly into the browser tool, look
+                at the displayed original resolution for context before applying
+                a smaller scaling preset like 720p or 480p. If you are targeting
+                a very specific digital billboard or display screen, leave the
+                preset section alone and manually type the precise pixel width
+                and height you require into the custom dimension boxes.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Manage the aspect framing
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                If the new width and height you typed do not neatly match the
+                original rectangular shape of your video, you must choose a fit
+                mode to tell the encoder what to do. Choose "Contain" if you
+                want to protect the entire image by adding black borders around
+                it, or choose "Cover" to aggressively zoom the footage to fill
+                the dead space, clipping off the edges.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Queue the conversion engine
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Click the resize button to engage your processor, which will
+                immediately begin mapping the old pixels into your new requested
+                boundary dimensions frame by frame. Since reducing a 4K movie
+                into a standard MP4 file requires intensive computation, do not
+                close the browser tab until the progress hits 100% and hands you
+                the final download link.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-6">
-            {[
-              {
-                step: "01",
-                title: "Select Video",
-                description: "Select your video file using the upload button",
-              },
-              {
-                step: "02",
-                title: "View Dimensions",
-                description: "Your video loads with original dimensions displayed",
-              },
-              {
-                step: "03",
-                title: "Choose Preset",
-                description: "Click a Quick Preset or manually enter custom dimensions",
-              },
-              {
-                step: "04",
-                title: "Set Fit Mode",
-                description: "Toggle Maintain Aspect Ratio and select Fit Mode",
-              },
-              {
-                step: "05",
-                title: "Process",
-                description: "Click 'Resize Video' to process your video",
-              },
-              {
-                step: "06",
-                title: "Download",
-                description: "Download the resized output when complete",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {index < 5 && (
-                  <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-                )}
-                <div className="relative text-center">
-                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                    <span className="text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                  <p className="relative mt-2 text-sm text-muted-foreground">
-                    {item.description}
+        {/* Use Cases Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Bypassing platform upload restrictions
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  When trying to post a high-end 4K drone recording to a rigid
+                  forum that strictly enforces a maximum 1080p limit, users are
+                  immediately stopped. Slapping the 1080p preset cleanly scales
+                  the massive file down into the allowed threshold, letting you
+                  upload to older platforms without encountering frustrating
+                  error messages.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Conforming mixed smartphone footage
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Video editors often receive a terrible mix of 720p, 1080p, and
+                  4K random clips when crowdsourcing fan footage for a music
+                  video. Utilizing manual width and height inputs forces every
+                  single clip into the exact same 1920x1080 box, preventing
+                  messy timeline errors in professional video editing software.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Converting landscape movies into Reels
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Social media managers promoting a standard horizontal YouTube
+                  video must aggressively resize the file to fit inside an
+                  upright smartphone screen. Swapping the dimensions to
+                  1080x1920 and using the Cover fit mode instantly slices the
+                  sides off the video, transforming it into a perfect,
+                  screen-filling vertical hook.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Drastically shrinking final file sizes
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Real estate agents sending giant property walkthrough videos
+                  over basic email attachments frequently hit server rejection
+                  limits due to massive Mb file sizes. Pulling the footage
+                  completely down to the 480p preset destroys the heavy HD data
+                  blocks, creating a blurry but tiny file that easily clears
+                  strict email limits.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Designing custom website background loops
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Web developers building a uniquely slim hero banner on a
+                  landing page cannot use a standard 16:9 video because it will
+                  overlap the lower content. Turning off aspect ratio locks and
+                  typing in a custom 1920x400 dimension mathematically flattens
+                  the video into an ultra-wide, panoramic slit that sits
+                  perfectly under the navigation bar.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Target Height and Width</h3>
+                  <p className="text-muted-foreground mt-2">
+                    These numbers dictate the exact pixel boundaries of the
+                    final exported file. Standard widescreen videos are usually
+                    1920 pixels wide and 1080 pixels tall, but if you need to
+                    create a perfectly square video block for a specific profile
+                    picture avatar, you would type identical numbers into both
+                    boxes.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Maintain Aspect Ratio Toggle
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    This safety mechanism binds the width and height boxes
+                    together so they maintain their original geometric
+                    relationship. Keeping it enabled prevents your video from
+                    looking accidentally stretched out or severely squished flat
+                    when you try to change just one measurement by mistake.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Fit Mode Selector</h3>
+                  <p className="text-muted-foreground mt-2">
+                    When squeezing a rectangular video into a square box, the
+                    application needs permission on how to handle the mismatch.
+                    Selecting "Contain" prioritizes keeping everything visible
+                    by heavily bordering the top and bottom with thick black
+                    bars, while selecting "Fill" will ruthlessly stretch the
+                    image to fit the box, warping faces and circles.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs Section */}
@@ -582,9 +756,6 @@ export default function ResizeVideoDimensionsPage() {
             <h2 className="text-3xl font-bold tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Everything you need to know about resizing videos
-            </p>
           </div>
           <Faqs faqs={faqData} />
         </section>
@@ -592,7 +763,9 @@ export default function ResizeVideoDimensionsPage() {
         {/* Related Tools Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">More Video Tools</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              More Video Tools
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Explore our other free video editing tools
             </p>

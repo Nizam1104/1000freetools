@@ -23,29 +23,40 @@ export const metadata: Metadata = {
 export default function ChangeImageDimensionsPage() {
   const faqs = [
     {
-      question: "Is this image resizer completely free?",
+      question:
+        "Is this photo dimension resizer completely free to use without watermarks?",
       answer:
-        "Yes. Our image resizing tool is entirely free to use. You encounter no hidden fees or mandatory registrations when updating your photos.",
+        "Yes, our robust image resizing tool is entirely free for limitless use. You encounter literally no hidden fees, mandatory registrations, or ugly promotional watermarks forcefully applied to your final downloaded graphics.",
     },
     {
-      question: "Will the image distort when I change dimensions?",
+      question:
+        "Will the photograph drastically distort when I change the dimensions?",
       answer:
-        "You avoid distortion by keeping the aspect ratio locked. If you explicitly unlock the ratio and type custom disproportionate widths and heights, the image stretches accordingly.",
+        "You easily avoid all visual distortion by keeping the aspect ratio lock engaged. If you explicitly unlock the ratio sequence and type forcefully disproportionate width and height numbers, the image will stretch awkwardly.",
     },
     {
-      question: "What image formats are accepted?",
+      question:
+        "What specific digital image formats are accepted by the resizer?",
       answer:
-        "We support common formats such as JPG, PNG, and WebP. You process these files seamlessly directly on your device.",
+        "The application natively handles standard graphic formats including high-resolution JPG, transparent PNG, and modern WebP. You execute dimensional processing on these distinct file extensions seamlessly.",
     },
     {
-      question: "Does the tool upload my images to a server?",
+      question:
+        "Does the dimension modifier tool forcibly upload my images to a server?",
       answer:
-        "No. The application processes your files entirely locally within your web browser. Your private data remains secure on your own machine.",
+        "No. The dedicated application processes your heavy files entirely locally within your active web browser memory. Your highly private photography remains completely secure and isolated on your personal hard drive.",
     },
     {
-      question: "Can I increase the size of a small image?",
+      question:
+        "Can I artificially increase the physical size of a tiny thumbnail image?",
       answer:
-        "Yes, you can scale images up. However, increasing pixel dimensions significantly beyond the original size results in a softer or pixelated final appearance.",
+        "Yes, you can aggressively scale small images upward. However, increasing the raw pixel dimensions drastically beyond the source file's original mathematical limits will inherently result in a softer or noticeably pixelated final appearance.",
+    },
+    {
+      question:
+        "Is there a strict limit on how many images I can resize consecutively?",
+      answer:
+        "There are zero artificial usage caps programmed into the platform. Because the dimensional calculations occur purely on your local machine, you can freely resize hundreds of completely separate files continuously all day.",
     },
   ];
 
@@ -86,98 +97,134 @@ export default function ChangeImageDimensionsPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Control Your Digital Dimensions
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Managing the physical width and height of digital images represents
-            a constant requirement for modern internet users. When you develop a
-            website or post content to social networks, you constantly face
-            strict dimension requirements. Uploading a massive original
-            photograph often breaks a carefully designed layout or forces the
-            platform to heavily compress your file. Modifying the dimensions
-            yourself ensures your graphics display perfectly for every specific
-            use case.
-          </p>
-          <p className="mb-4">
-            Large image files consume significant amounts of storage space and
-            bandwidth. When you insert a huge picture into a presentation
-            document or attach it to an email, you run into file size limits
-            rapidly. Scaling down the dimensions directly reduces the overall
-            data footprint of the image. This optimization leads to faster
-            upload times and a smoother experience for the people receiving or
-            viewing your content.
-          </p>
-          <p className="mb-4">
-            Our platform provides the exact controls necessary to handle these
-            resizing tasks immediately. You manage the precise pixel counts for
-            your files without relying on heavy desktop software packages. More
-            importantly, you perform all these scaling operations locally. The
-            browser engine processes the data on your machine. This local
-            architecture guarantees your personal photos never leak onto
-            unauthorized remote servers.
+            Uploading an oversized photograph to a professional portfolio often
+            breaks the entire website layout or drastically tanks the loading
+            speed. This fast utility allows you to confidently resize image
+            dimensions directly within your internet browser. It calculates and
+            redraws the exact pixel width and height of any JPG, PNG, or WebP
+            file instantaneously. By leveraging secure, client-side math, it
+            guarantees perfect aspect ratios and zero distortion without ever
+            uploading your private pictures to a remote processing server.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            We built this utility to streamline the resizing process. You start
-            by identifying the upload section clearly visible on the screen. You
-            click the box to open your system file browser or drag the target
-            file directly over the drop zone. The application instantly loads
-            your picture and displays its original dimensions on the interface.
+            <strong>1. Select your target image</strong>
+            <br />
+            Simply pull a massive photograph directly from your desktop and drop
+            it into the designated canvas box. The underlying software instantly
+            maps the file locally, displaying your original massive pixel width
+            and height clearly on the interactive dashboard.
           </p>
           <p className="mb-4">
-            With the image loaded, you look at the configuration panel. You see
-            separate input fields for width and height measured in pixels. You
-            type your desired new target numbers into these boxes. By default,
-            the interface automatically calculates corresponding values to
-            maintain the original aspect ratio. This prevents your photo from
-            stretching or squashing unnaturally. If you specifically need
-            asymmetrical dimensions, you disable the ratio lock and type your
-            independent values.
+            <strong>2. Define exact new dimensions</strong>
+            <br />
+            Navigate to the prominent input boxes and type your desired new
+            width. If the aspect ratio lock remains secured, the application
+            automatically computes the mathematically perfect height to prevent
+            your subjects from stretching or looking horribly squished.
           </p>
           <p className="mb-4">
-            As you update the numbers, the internal engine registers your
-            changes. You review the final settings to ensure accuracy. When you
-            are satisfied with the new dimensions, you click the bold download
-            button. The browser immediately generates the resized file and
-            places it directly into your local storage folder. The entire
-            operation requires only a few seconds to complete.
+            <strong>3. Download the optimized sizing</strong>
+            <br />
+            Verify the updated dimensions on the live preview screen, then
+            simply touch the prominent download button. The scripting engine
+            builds the correctly sized file dynamically and saves the flawlessly
+            proportioned result directly into your local downloads folder.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            This tool excels at fast, client-side dimension modification. The
-            core function interpolates image pixels to either increase or
-            decrease the physical width and height of a digital file. The web
-            application handles standard image formats seamlessly, including
-            widespread types like JPG and PNG. The processing logic accurately
-            redraws the image based strictly on the numerical pixel values you
-            provide.
+            <strong>
+              Prepping massive hero images for fast website loading
+            </strong>
+            <br />
+            Inserting a 6000-pixel digital camera shot directly into a website
+            header destroys your crucial SEO speed metrics. Forcing the picture
+            down to a manageable 1920-pixel width permanently fixes the loading
+            bottleneck while remaining beautifully crisp on standard user
+            monitors.
           </p>
           <p className="mb-4">
-            The prominent aspect ratio lock feature prevents common formatting
-            errors. Maintaining the ratio guarantees your subjects retain their
-            natural appearance regardless of the scale. This feature alone saves
-            users significant frustration when preparing images for professional
-            profiles or portfolio sites. Additionally, you receive immediate
-            feedback on the new file size and dimensions before you even execute
-            the download command.
+            <strong>
+              Meeting strict passport and visa portal requirements
+            </strong>
+            <br />
+            Government immigration portals frequently reject user uploads
+            aggressively if the uploaded headshot exceeds highly specific pixel
+            dimensions. Constraining the physical width and height precisely to
+            their mandated limits guarantees your application submission
+            processes without triggering frustrating generic software errors.
           </p>
           <p className="mb-4">
-            Because this application runs natively in your browser environment,
-            you skip the mandatory waiting periods associated with cloud
-            processing queues. You scale high-resolution assets smoothly
-            utilizing your own system memory. The interface remains clean and
-            fully focused on the sole task of scaling the canvas correctly. We
-            provide a highly efficient utility built for speed and privacy
-            entirely free of charge.
+            <strong>
+              Scaling digital artwork for uniform social media feeds
+            </strong>
+            <br />
+            Instagram aggressively crops unpredictable rectangular artwork,
+            utterly ruining carefully composed borders. Resizing your distinct
+            illustrations beforehand into strict 1080x1080 or 1080x1350 pixel
+            squares forces the social platform to display the entire piece
+            exactly as the artist intended initially.
+          </p>
+          <p className="mb-4">
+            <strong>
+              Reducing physical footprint for basic email attachments
+            </strong>
+            <br />
+            Attempting to attach four original smartphone photographs frequently
+            bounces the email entirely due to massive server limitations.
+            Shrinking the overall dimensions significantly chops away
+            unnecessary raw data, allowing the entire album to fly through the
+            corporate email firewall cleanly and effortlessly.
+          </p>
+          <p className="mb-4">
+            <strong>
+              Fitting custom wallpapers to obscure dual-monitor setups
+            </strong>
+            <br />
+            Downloading a standard wallpaper rarely fits correctly across two
+            different sized screens running simultaneously. Unlocking the aspect
+            ratio and forcefully typing the exact combined width of both
+            monitors produces a perfect, uninterrupted background graphic
+            spanning the entire complex workspace setup.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Width and Height Inputs</strong>
+            <br />
+            These are the absolute pixel values denoting how much physical
+            screen real estate the digital file commands. Smaller numbers equal
+            a lighter, faster-loading file, while larger numbers retain critical
+            microscopic details suitable for high-end professional printing
+            operations.
+          </p>
+          <p className="mb-4">
+            <strong>Aspect Ratio Lock Toggle</strong>
+            <br />
+            This critical safety switch mathematically links the width and
+            height together flawlessly. Disabling it allows you to stretch a
+            square into a long rectangle, which frequently distorts recognizable
+            human faces or bends perfectly straight architectural lines
+            unnaturally.
+          </p>
+          <p className="mb-4">
+            <strong>Live Visual Preview</strong>
+            <br />
+            This reactive area updates the perceived sharpness and framing
+            immediately based directly upon the numbers you type. It serves as
+            your primary defense against accidentally creating a heavily
+            pixelated, unusable mess before committing to the final local
+            download.
           </p>
         </section>
 

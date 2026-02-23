@@ -23,29 +23,36 @@ export const metadata: Metadata = {
 export default function SharpenImagePage() {
   const faqs = [
     {
-      question: "Is this image sharpening tool totally free?",
+      question: "Is this image sharpening tool totally free to use online?",
       answer:
-        "Yes. You adjust the clarity and sharpness of your photos without paying any fees or subscribing to a premium service tier.",
+        "Yes, you can adjust the clarity and sharpness of your photos without paying any fees or subscribing to a premium service tier. Our platform is completely free and completely unmetered.",
     },
     {
-      question: "Do you save my uploaded pictures?",
+      question: "Do you save or collect my private uploaded pictures?",
       answer:
-        "No. The application handles all edge-enhancement calculations locally using your machine's processing power. Your files stay strictly on your device.",
+        "No. The application handles all complex edge-enhancement calculations locally using your specific machine's processing power. Your personal files stay strictly on your device and are never uploaded.",
     },
     {
-      question: "Can I fix severely out-of-focus images completely?",
+      question: "Can I fix severely out-of-focus or completely blurry images?",
       answer:
-        "The tool significantly improves soft edges and slight blur combinations. However, heavily destroyed focus or extreme motion blur cannot be miraculously recreated as new data.",
+        "The tool significantly improves soft edges and slight motion blur combinations flawlessly. However, heavily destroyed, entirely out-of-focus photography cannot be miraculously recreated because the original optical data simply never existed.",
     },
     {
-      question: "Will sharpening increase the file size significantly?",
+      question:
+        "Will sharpening increase the final downloaded file size significantly?",
       answer:
-        "Sharpening generally increases local contrast, which marginally affects the ultimate compressed file size. The overall increase usually remains extremely minimal.",
+        "Sharpening generally increases the local contrast around physical edges, which marginally affects the ultimate compressed file size. However, the overall megabyte increase usually remains extremely minimal and rarely impacts storage.",
     },
     {
-      question: "Is there a limit on my daily photo editing?",
+      question:
+        "Is there a strict limit on my daily photo editing or processing?",
       answer:
-        "No. You load and sharpen hundreds of independent visual files consecutively. We do not restrict your workflow based on daily bandwidth constraints.",
+        "No. You can securely load and sharpen hundreds of independent visual files consecutively throughout the day. We absolutely do not restrict your workflow based on artificial daily bandwidth constraints.",
+    },
+    {
+      question: "Does the sharpening process work on transparent PNG files?",
+      answer:
+        "Yes, the analytical edge-detection respects overall image transparency. It will cleanly sharpen the solid subjects within your PNG without generating ugly white artifact borders around the transparent background.",
     },
   ];
 
@@ -88,110 +95,121 @@ export default function SharpenImagePage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Restore Vital Details in Soft Pictures
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Capturing the perfect fleeting moment frequently results in
-            technically flawed photographs. A slight handshake during exposure
-            or a sudden subject movement creates frustrating motion blur.
-            Furthermore, older digital camera lenses or heavy digital
-            compression naturally soften fine structural details over time.
-            Discarding a valuable family picture or a unique reference shot due
-            to minor softness wastes your historical archives. Deploying an
-            effective sharpening algorithm instantly rescues these soft files,
-            pulling hidden structural clarity back into immediate focus.
-          </p>
-          <p className="mb-4">
-            High-contrast borders dictate how human eyes perceive absolute
-            resolution. When you scale an image down for social media or stretch
-            it across a presentation, the resizing process interpolates visual
-            data. This interpolation routinely destroys distinct contrast
-            borders, leaving your graphic appearing dull and fuzzy. Modifying
-            these structural borders through targeted artificial contrast
-            restores the perceived definition rapidly. A sharpened image appears
-            cleaner, significantly more professional, and demands increased
-            visual attention from your targeted audience.
-          </p>
-          <p className="mb-4">
-            Protecting unreleased materials or personal portraits remains a
-            priority when correcting visual defects. Cloud-based enhancement
-            services routinely upload your defective files onto remote servers,
-            exposing your private property to potentially unsecured networks. We
-            formulated this web tool expressly to operate inside a secure local
-            environment. When you command the software to increase edge
-            contrast, your local processor performs every mathematical
-            iteration. Your photos never transit across public networks during
-            the recovery phase.
+            A slight camera shake or missed autofocus frequently ruins an
+            otherwise perfect, once-in-a-lifetime photograph. This web-based
+            utility allows you to instantly sharpen image online directly
+            through your standard internet browser. It analyzes the specific
+            edge pixels inside your JPG, PNG, or WebP files and aggressively
+            restores the lost crispness using intelligent, client-side
+            algorithms. You immediately enhance fine details and rescue soft
+            pictures without downloading bloated desktop editing software or
+            exposing your private galleries to remote internet servers.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            Initiating the enhancement procedure requires zero technical
-            expertise. You locate the central workspace box dominating the
-            browser screen interface. You select your flawed, blurry file
-            directly from your system directory or drop it explicitly onto the
-            target area. The native javascript infrastructure processes your
-            JPG, WebP, or PNG file instantly. A pristine, high-resolution
-            preview displays on the interactive canvas.
+            <strong>1. Load the blurry photograph</strong>
+            <br />
+            Drag your soft or slightly out-of-focus picture directly onto the
+            primary workspace canvas. The local Javascript engine instantly
+            parses the raw optical data from your JPG, WebP, or PNG file and
+            renders a large, pristine preview natively inside your window.
           </p>
           <p className="mb-4">
-            Controlling the sharpening intensity uses straightforward slider
-            manipulation. You adjust the master intensity control slowly across
-            the sliding track. Pushing the slider significantly increases the
-            local contrast generated across detected visual boundaries. The live
-            preview updates instantaneously, demonstrating precisely how the
-            algorithm impacts the structural clarity of the subject matter. You
-            experiment smoothly, finding the exact balance point between crisp
-            definition and artificial artifact generation.
+            <strong>2. Fine-tune the structural intensity</strong>
+            <br />
+            Grab the prominent slider handle and slowly pull it across the
+            control track. Watch the live preview update instantaneously to
+            demonstrate precisely how the algorithm impacts the structural
+            clarity. Stop when you find the perfect balance point before
+            artificial halos appear.
           </p>
           <p className="mb-4">
-            Confirming your adjustment represents the final simple step. Once
-            the preview displays satisfactory edge crispness, you locate the
-            download command button below the active canvas. A single click
-            instructs the browser to construct a finalized, permanently
-            sharpened asset matching your parameters perfectly. The platform
-            safely deposits the recovered photograph directly into your
-            localized system downloads folder rapidly.
+            <strong>3. Evaluate and instantly export</strong>
+            <br />
+            Verify the crispy restored edges on the active visual canvas. Once
+            you are completely satisfied with the optical recovery, click the
+            download button below. The browser securely compiles a permanently
+            enhanced file directly into your standard downloads folder.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            This specialized visual enhancer relies heavily on an analytical
-            edge-detection mechanism. The background mathematics evaluate
-            adjacent pixels across the entire imported file array. When the
-            system detects a color or luminosity transition indicating a
-            physical border, it artificially tightens the contrast differential
-            explicitly along that exact coordinate line. This algorithmic local
-            contrast enhancement creates an optical illusion of higher objective
-            resolution without artificially inflating the pixel count.
+            <strong>Rescuing soft smartphone pet photography</strong>
+            <br />
+            Dogs and cats rarely sit perfectly still when you attempt to capture
+            a quick portrait. Pushing the slightly blurred, shaky smartphone
+            snapshot through the sharpening matrix instantly tightens the soft
+            fur details and restores the sharp, glassy reflections in the
+            animal's eyes.
           </p>
           <p className="mb-4">
-            Real-time visual feedback constitutes a primary feature. Correcting
-            a soft picture often requires subtle manipulation; over-sharpening
-            produces ugly halos and highlights digital sensor noise
-            aggressively. Our instant processing interface allows you to dial
-            the intensity variable perfectly. You avoid destructive
-            over-processing by referencing the immediate canvas updates before
-            committing to the final destructive export path. You maintain
-            artistic control strictly aligned with professional editing
-            standards.
+            <strong>
+              Restoring definition to heavily compressed web graphics
+            </strong>
+            <br />
+            Downloading a company logo or promotional graphic from social media
+            often yields a muddy, intensely compressed file. Running the
+            degraded graphic through the edge-enhancement algorithm artificially
+            tightens the soft typography, making the text legible and
+            professional again.
           </p>
           <p className="mb-4">
-            The underlying system architecture ignores file size constraints
-            natively by keeping operations client-side. You load extremely heavy
-            digital camera raw exports converted to high-resolution JPGs without
-            timing out network connections. This local-heavy architecture
-            ensures your processing speeds directly correlate with your personal
-            machine capabilities, completely unhindered by crowded server
-            bottlenecks. We deliver this powerful recovery capability absolutely
-            free of mandatory login portals.
+            <strong>Enhancing detailed macro product photography</strong>
+            <br />
+            When photographing small intricate jewelry for an ecommerce website,
+            capturing the entire depth-of-field cleanly is virtually impossible.
+            Applying targeted digital sharpening firmly emphasizes the subtle
+            metallic scratches and delicate gemstone facets that your weak
+            camera lens naturally softened.
+          </p>
+          <p className="mb-4">
+            <strong>Improving clarity on vintage digitized film scans</strong>
+            <br />
+            Scanning older 35mm physical film negatives frequently produces a
+            flat, chemically soft digital output lacking modern punch. Adjusting
+            the sharpening intensity gently replicates the crisp micro-contrast
+            found in modern lenses without destroying the beautiful, authentic
+            analog film grain underneath.
+          </p>
+          <p className="mb-4">
+            <strong>
+              Preparing large landscape prints for physical framing
+            </strong>
+            <br />
+            Printing massive scenic photographs inherently softens the overall
+            visual impact of distant mountains or tree lines. Strategically
+            over-sharpening the high-resolution file slightly before sending it
+            to the commercial printer guarantees the final physical canvas
+            retains incredible, biting sharpness on your living room wall.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Master Intensity Slider</strong>
+            <br />
+            This primary graphical interface directly controls the mathematical
+            force of the core sharpening algorithm. Pushing it higher
+            aggressively tightens localized contrast lines, but pushing it too
+            intensely will generate unnatural, glowing halos completely ruining
+            the organic aesthetic of a human face.
+          </p>
+          <p className="mb-4">
+            <strong>Real-Time Preview Canvas</strong>
+            <br />
+            This incredibly crucial window allows you to perform critical visual
+            checks instantaneously before committing to a destructive export.
+            Because the application processes locally without network lag, you
+            avoid the frustrating guesswork routinely associated with slow,
+            cloud-based automatic enhancement tools.
           </p>
         </section>
 

@@ -23,29 +23,37 @@ export const metadata: Metadata = {
 export default function ImageFiltersPage() {
   const faqs = [
     {
-      question: "Are these photo filters free to use?",
+      question:
+        "Are these photo filters online completely free to use without limits?",
       answer:
-        "Yes. Every filter in our library is available completely free of charge. You apply as many diverse effects as you want without seeing a paywall.",
+        "Yes, our entire library of professional photo filters is completely free and unmetered. You can process an unlimited number of pictures and experiment with various color grades without ever hitting a paywall.",
     },
     {
-      question: "Will applying filters ruin my original file?",
+      question:
+        "Will applying the filter effects permanently alter my original image file?",
       answer:
-        "No. The application creates a temporary preview of the effect. Your original image file remains completely unchanged on your device until you choose to download the new version.",
+        "No. Your original photo remains safely untouched on your internal storage drive. The application only creates a newly generated file featuring the stylistic changes when you click the download button.",
     },
     {
-      question: "Is there a limit to how many photos I can edit?",
+      question: "Are my personal pictures securely processed?",
       answer:
-        "There are no usage limits. You process dozens of photos consecutively through our filters without hitting strict daily caps or requiring forced registration.",
+        "Yes. Unlike other editing apps that upload your data to remote clouds, our sophisticated tool executes the filter mathematics strictly inside your local browser memory, guaranteeing total privacy for sensitive snapshots.",
     },
     {
-      question: "Does this require a fast internet connection?",
+      question:
+        "Why do some vintage filters make my photo look slightly blurry or grainy?",
       answer:
-        "No. Once the web page loads completely, all filtering operations happen locally. You apply the effects offline without depending on quick internet upload speeds.",
+        "Vintage and retro presets intentionally inject artificial film grain, simulated noise, and slight optical softness to accurately recreate the aesthetic characteristics of classic analog chemical photography.",
     },
     {
-      question: "Can I use the edited photos commercially?",
+      question: "Can I use these filtered images for my commercial business?",
       answer:
-        "Yes. We grant you complete ownership over your generated result. You use the filtered images for professional advertising, social media campaigns, or personal blogs without giving attribution.",
+        "Yes, you retain full ownership and copyright over the final rendered results. You can legally use your beautifully styled photos for corporate marketing, social media campaigns, or commercial products without providing any attribution.",
+    },
+    {
+      question: "Do I need a fast internet connection to load the effects?",
+      answer:
+        "No, the internet is only required to load the initial web page outline. Because all image processing happens via client-side scripts, you can quickly preview and generate complex effects entirely offline.",
     },
   ];
 
@@ -86,101 +94,111 @@ export default function ImageFiltersPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Elevate Your Visual Aesthetic Rapidly
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Creating a consistent visual style across your social media channels
-            or business website requires effort. Raw photos captured by digital
-            cameras often lack the specific mood or atmosphere you intend to
-            convey. Professional photographers use complex color grading
-            techniques in premium software to achieve specific aesthetic looks.
-            Photo filters democratize this process. They allow anyone to apply
-            sophisticated color mathematics to an image instantly without
-            undertaking formal training.
-          </p>
-          <p className="mb-4">
-            A well-chosen filter adds emotional weight to an otherwise standard
-            snapshot. For example, converting a vibrant color photo into classic
-            black and white focuses the viewer heavily on textures and lighting
-            patterns. Applying a warm vintage fade creates immediate nostalgic
-            value. By choosing targeted visual effects, you tell a stronger
-            story through your daily photography. Our digital tool provides
-            direct access to these atmospheric styles through a streamlined web
-            interface.
-          </p>
-          <p className="mb-4">
-            Privacy issues frequently arise when people upload personal pictures
-            to social networks just to utilize their specific effects. We
-            eliminate this privacy hazard entirely. Our filtering tool runs its
-            mathematical color algorithms completely locally on your hardware.
-            You apply beautiful graphical treatments to private family photos or
-            unreleased product images securely. No secondary servers ever access
-            your original optical data during the transformation process.
+            A flat, unedited snapshot often fails to capture the desired mood
+            for your social media feed. This tool lets you immediately apply
+            stunning photo filters online directly within your web browser. It
+            transforms standard pictures using predefined color grades like
+            vintage film, high-contrast monochrome, or vibrant pop tones without
+            requiring hefty software installations. Utilizing modern client-side
+            processing, every visual adjustment renders instantaneously and
+            securely on your own device.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            We prioritize operational speed directly in our user interface. To
-            start enhancing your image, you interact with the primary upload
-            section. You pull a raw file from your local storage and drop it
-            directly onto the designated browser region. The tool rapidly
-            decodes standard formats like JPG and PNG, displaying the
-            full-resolution picture onto your digital canvas immediately.
+            <strong>1. Load the target image</strong>
+            <br />
+            Simply select your JPG or PNG file from your computer or drag it
+            into the marked upload area. Loading happens immediately in your
+            browser cache, maintaining the full resolution and preventing slow
+            internet upload speeds.
           </p>
           <p className="mb-4">
-            Once your photo loads successfully, you explore the diverse filter
-            gallery. The options display clearly via categorized buttons or
-            visual thumbnails. You click heavily on different styles ranging
-            from high-contrast cinematic looks to soft pastel wash effects.
-            Because the underlying processing happens on your local device
-            memory, you experience zero delay between your click and the visual
-            update. You test a dozen different aesthetics rapidly.
+            <strong>2. Apply a visual style</strong>
+            <br />
+            Click through the categorized filter thumbnails located below or
+            beside your preview canvas. As you select different styles like
+            'Sepia' or 'Cinematic', the live preview updates instantly, allowing
+            you to quickly determine which aesthetic matches your emotional
+            intent.
           </p>
           <p className="mb-4">
-            When you find the perfect atmospheric match, you prepare to finalize
-            your work. You click the download button presented clearly on the
-            screen. The browser takes the active mathematical layer and
-            permanently binds it to your pixel data. It then saves the freshly
-            styled file directly back to your default downloads folder. The
-            final output matches the exact resolution of your initial upload
-            completely intact.
+            <strong>3. Save the styling</strong>
+            <br />
+            Once you settle on the perfect atmospheric look, click the prominent
+            download button. The system generates a fresh file burning the
+            filter into the pixel data, ensuring your original upload remains
+            pristine and untouched.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            Our functional tool specializes in translating complex matrix
-            mathematics into accessible visual modifiers. True digital filters
-            manipulate the red, green, and blue values of every single pixel
-            simultaneously. The platform achieves this manipulation rapidly
-            through optimized JavaScript execution running right inside your web
-            viewing software. You receive professional-quality rendering without
-            executing a costly installation routine on your primary operating
-            system.
+            <strong>Creating a cohesive Instagram grid</strong>
+            <br />
+            Running a brand account requires a unified visual identity so
+            followers recognize your posts instantly. Applying the exact same
+            warm, faded filter to every uploaded product shot guarantees a
+            beautifully consistent aesthetic across your entire social profile.
           </p>
           <p className="mb-4">
-            The varied collection of preset adjustments represents a major core
-            feature. We provide instant access to highly sought-after styles.
-            You convert images to high-definition grayscale, boost saturation
-            for pop-art aesthetics, or apply sepia tones for accurate historical
-            recreation styling. The live preview mechanic ensures you see the
-            exact representation of these intense color shifts prior to
-            committing to a final hard drive save.
+            <strong>
+              Transforming distracting backgrounds using monochrome
+            </strong>
+            <br />
+            If you snap an amazing portrait but the background features
+            clashing, ugly neon colors, the focus is ruined. Selecting a strong
+            black and white filter removes the distracting color information
+            entirely, forcing the viewer's eye back to the subject's expression.
           </p>
           <p className="mb-4">
-            Furthermore, the performance of the local processing engine remains
-            consistently reliable regardless of your file dimensions. The engine
-            scales appropriately to handle high-resolution files smoothly
-            without forcing memory errors. We deliver immediate aesthetic
-            upgrades for modern marketing material or casual portraits in an
-            entirely free, unmetered environment. You upgrade your entire
-            digital archive completely on your own schedule.
+            <strong>Simulating retro photography for event marketing</strong>
+            <br />
+            When promoting a 90s-themed party or a vintage clothing sale, modern
+            crisp digital photos feel out of place. Activating a grainy,
+            low-contrast vintage preset instantly gives your promotional flyers
+            authentic nostalgic credibility.
+          </p>
+          <p className="mb-4">
+            <strong>Enhancing sunset landscape photography</strong>
+            <br />
+            Smartphone cameras often struggle to capture the true intensity of a
+            sunset, resulting in muted oranges and grays. Choosing a vibrant,
+            high-saturation color grade pushes those warm colors artificially,
+            restoring the magical feeling you experienced in person.
+          </p>
+          <p className="mb-4">
+            <strong>Rescuing dimly lit interior real estate photos</strong>
+            <br />
+            Taking photos inside apartments usually yields yellowed, dark
+            results from poor lightbulbs. Using a cool, brightened filter helps
+            neutralize the ugly yellow tint and makes the room appear larger,
+            cleaner, and strictly modern for potential buyers.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Filter Menu Selections</strong>
+            <br />
+            These are pre-programmed bundles of adjustments that shift the
+            mathematical RGB values of your image. Rather than guessing with
+            manual sliders, you simply click the labeled button that represents
+            the mood you wish to achieve.
+          </p>
+          <p className="mb-4">
+            <strong>Real-time Preview Canvas</strong>
+            <br />
+            This primary visual area displays your image actively responding to
+            your filter choice. It is crucial to review this area closely
+            because an effect that looks amazing on a landscape might look
+            terrible on a human face.
           </p>
         </section>
 

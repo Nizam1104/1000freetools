@@ -1,65 +1,55 @@
 "use client";
 
-import { useState } from 'react';
-import { Conversion, Input, Output, Mp3OutputFormat, BufferTarget, BlobSource, ALL_FORMATS } from 'mediabunny';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Progress } from '@/components/ui/progress';
+import { useState, useEffect } from "react";
+import {
+  Conversion,
+  Input,
+  Output,
+  Mp3OutputFormat,
+  BufferTarget,
+  BlobSource,
+  ALL_FORMATS,
+  canEncodeAudio,
+} from "mediabunny";
+import { registerMp3Encoder } from "@mediabunny/mp3-encoder";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
 import Faqs from "@/components/utils/Faqs";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Script from "next/script";
 
 const faqData = [
   {
-    question: "What audio formats can I extract from video?",
+    question: "Does extracting the audio track lower its original quality?",
     answer:
-      "This tool supports extracting audio as MP3, AAC, or WAV format. MP3 is the most universally compatible format, AAC offers better quality at similar bitrates, and WAV provides lossless uncompressed audio.",
+      "No, you can choose to extract audio from video online without losing any fidelity. If you select the WAV output format or set the bitrate to 320 Kbps, the resulting sound file will retain all the clarity and detail of the source video's original audio track.",
   },
   {
-    question: "Does this tool preserve the original audio quality?",
+    question: "How long does it typically take to process a full movie?",
     answer:
-      "Yes. The tool extracts the audio stream from your video and re-encodes it at your chosen bitrate. For the best quality, select 320 Kbps for MP3/AAC or use WAV for lossless output.",
+      "Because the tool relies entirely on the processing power of your specific device, the exact time varies based on your hardware and the video length. However, since the video track is simply discarded rather than re-encoded, the audio extraction is generally incredibly fast and avoids long upload times.",
   },
   {
-    question: "Can I extract audio from any video format?",
+    question: "Can anyone access the videos or audio files I process here?",
     answer:
-      "The tool accepts all major video formats including MP4, MOV, WebM, MKV, AVI, and more. The audio is extracted and saved in your chosen format (MP3, AAC, or WAV).",
+      "Your files remain completely secure because the entire extraction process runs locally within your own web browser. The tool never sends your original video or the extracted audio to an external server, ensuring nobody else can ever see or hear your media.",
   },
   {
-    question: "How long does audio extraction take?",
+    question: "Why would I choose AAC over the more popular MP3 format?",
     answer:
-      "Processing time depends on video length and your device's performance. Most short videos (under 5 minutes) extract in under a minute. Longer videos may take several minutes.",
+      "AAC generally provides slightly cleaner sound and better detail than MP3 when compared at identical bitrates. If you are extracting music and want to save device storage space without sacrificing too much audio definition, AAC is structurally a more efficient choice.",
   },
   {
-    question: "What bitrate should I choose for my audio?",
+    question: "What happens if the original video doesn't actually have audio?",
     answer:
-      "For speech/podcasts, 128 Kbps is sufficient. For music, 192-256 Kbps provides good quality. For professional use or archival, 320 Kbps or WAV is recommended.",
+      "The tool will attempt to process the file but will fail to produce a usable audio track, as there is no sound data to extract. You should ensure your source video actually contains audible content in the preview player before starting the extraction step.",
   },
   {
-    question: "Is my video uploaded to a server?",
+    question: "Can I use this to get individual stems or tracks from a song?",
     answer:
-      "No. All processing happens entirely in your browser using local resources. Your video and extracted audio never leave your device.",
-  },
-  {
-    question: "Can I extract audio from YouTube videos?",
-    answer:
-      "This tool processes video files you upload from your device. To use it with YouTube content, you would first need to download the video file legally, then use this tool to extract the audio.",
-  },
-  {
-    question: "Does the extracted audio include the full video duration?",
-    answer:
-      "Yes. The extracted audio contains the complete audio track from your video, from start to finish, with no trimming or cutting applied.",
-  },
-  {
-    question: "What's the difference between MP3, AAC, and WAV?",
-    answer:
-      "MP3 is a widely compatible compressed format. AAC is a more efficient compressed format with better quality at similar bitrates. WAV is uncompressed, providing the highest quality but largest file sizes.",
-  },
-  {
-    question: "Can I edit the extracted audio?",
-    answer:
-      "This tool only extracts audio. For editing (trimming, mixing, effects), you would need a dedicated audio editing software like Audacity, Adobe Audition, or similar tools.",
+      "This tool pulls the single, mixed audio track directly from the video container and cannot separate individual instruments or vocals from that single mix. If the video only contains one flattened audio track, that combined audio is exactly what you will get in the final file.",
   },
 ];
 
@@ -79,12 +69,22 @@ const faqSchema = {
 export default function ExtractAudioFromVideoPage() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [audioFormat, setAudioFormat] = useState<'mp3' | 'aac' | 'wav'>('mp3');
+  const [audioFormat, setAudioFormat] = useState<"mp3" | "aac" | "wav">("mp3");
   const [audioBitrate, setAudioBitrate] = useState<number>(192000);
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [outputUrl, setOutputUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Register MP3 encoder if not natively supported
+  useEffect(() => {
+    const initMp3Encoder = async () => {
+      if (!(await canEncodeAudio("mp3"))) {
+        registerMp3Encoder();
+      }
+    };
+    initMp3Encoder();
+  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -99,7 +99,7 @@ export default function ExtractAudioFromVideoPage() {
 
   const handleExtract = async () => {
     if (!videoFile) {
-      setError('Please select a video file');
+      setError("Please select a video file");
       return;
     }
 
@@ -114,10 +114,15 @@ export default function ExtractAudioFromVideoPage() {
       });
 
       let outputFormat;
-      if (audioFormat === 'mp3') {
+      if (audioFormat === "mp3") {
         outputFormat = new Mp3OutputFormat();
+      } else if (audioFormat === "wav") {
+        const { WavOutputFormat } = await import("mediabunny");
+        outputFormat = new WavOutputFormat();
       } else {
-        outputFormat = new Mp3OutputFormat();
+        // AAC - use MP4 container with AAC codec
+        const { Mp4OutputFormat } = await import("mediabunny");
+        outputFormat = new Mp4OutputFormat();
       }
 
       const output = new Output({
@@ -128,6 +133,9 @@ export default function ExtractAudioFromVideoPage() {
       const conversion = await Conversion.init({
         input,
         output,
+        video: {
+          discard: true,
+        },
         audio: {
           bitrate: audioBitrate,
         },
@@ -141,10 +149,15 @@ export default function ExtractAudioFromVideoPage() {
 
       const audioBuffer = output.target.buffer;
       if (!audioBuffer) {
-        throw new Error('Failed to get audio buffer');
+        throw new Error("Failed to get audio buffer");
       }
 
-      const mimeType = audioFormat === 'wav' ? 'audio/wav' : audioFormat === 'aac' ? 'audio/aac' : 'audio/mpeg';
+      const mimeType =
+        audioFormat === "wav"
+          ? "audio/wav"
+          : audioFormat === "aac"
+            ? "audio/mp4"
+            : "audio/mpeg";
       const audioBlob = new Blob([audioBuffer], { type: mimeType });
       const audioUrl = URL.createObjectURL(audioBlob);
       setOutputUrl(audioUrl);
@@ -152,7 +165,7 @@ export default function ExtractAudioFromVideoPage() {
 
       input.dispose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to extract audio');
+      setError(err instanceof Error ? err.message : "Failed to extract audio");
     } finally {
       setIsProcessing(false);
     }
@@ -160,9 +173,11 @@ export default function ExtractAudioFromVideoPage() {
 
   const handleDownload = () => {
     if (!outputUrl) return;
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = outputUrl;
-    a.download = `audio-${videoFile?.name?.split('.')[0] || 'audio'}.${audioFormat}`;
+    const extension =
+      audioFormat === "wav" ? "wav" : audioFormat === "aac" ? "m4a" : "mp3";
+    a.download = `audio-${videoFile?.name?.split(".")[0] || "audio"}.${extension}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -271,7 +286,9 @@ export default function ExtractAudioFromVideoPage() {
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Extract audio tracks from any video file instantly in your browser. Choose MP3, AAC, or WAV format with customizable bitrate. No uploads, fast processing, completely free.
+                Extract audio tracks from any video file instantly in your
+                browser. Choose MP3, AAC, or WAV format with customizable
+                bitrate. No uploads, fast processing, completely free.
               </p>
             </div>
           </div>
@@ -283,7 +300,9 @@ export default function ExtractAudioFromVideoPage() {
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 blur-xl opacity-50" />
             <div className="relative rounded-3xl border bg-card/50 backdrop-blur-sm shadow-2xl">
               <div className="p-6">
-                <h2 className="text-xl font-bold mb-6">Extract Audio from Video</h2>
+                <h2 className="text-xl font-bold mb-6">
+                  Extract Audio from Video
+                </h2>
 
                 {/* File Upload */}
                 <Card className="mb-6">
@@ -311,7 +330,9 @@ export default function ExtractAudioFromVideoPage() {
                       <div className="space-y-6">
                         {/* Video Preview */}
                         <div>
-                          <h2 className="text-lg font-semibold mb-4">Preview</h2>
+                          <h2 className="text-lg font-semibold mb-4">
+                            Preview
+                          </h2>
                           <video
                             src={videoUrl}
                             controls
@@ -321,48 +342,72 @@ export default function ExtractAudioFromVideoPage() {
 
                         {/* Audio Settings */}
                         <div className="space-y-4">
-                          <h2 className="text-lg font-semibold">Audio Settings</h2>
+                          <h2 className="text-lg font-semibold">
+                            Audio Settings
+                          </h2>
 
                           <div>
                             <Label className="mb-2 block">Audio Format</Label>
                             <div className="flex gap-2">
-                              {(['mp3', 'aac', 'wav'] as const).map((format) => (
-                                <Button
-                                  key={format}
-                                  variant={audioFormat === format ? 'default' : 'outline'}
-                                  onClick={() => setAudioFormat(format)}
-                                  className="flex-1"
-                                >
-                                  {format.toUpperCase()}
-                                </Button>
-                              ))}
+                              {(["mp3", "aac", "wav"] as const).map(
+                                (format) => (
+                                  <Button
+                                    key={format}
+                                    variant={
+                                      audioFormat === format
+                                        ? "default"
+                                        : "outline"
+                                    }
+                                    onClick={() => setAudioFormat(format)}
+                                    className="flex-1"
+                                  >
+                                    {format.toUpperCase()}
+                                  </Button>
+                                ),
+                              )}
                             </div>
                           </div>
 
                           <div>
                             <Label className="mb-2 block">Audio Bitrate</Label>
                             <div className="flex flex-wrap gap-2 mb-2">
-                              {[128000, 192000, 256000, 320000].map((bitrate) => (
-                                <Button
-                                  key={bitrate}
-                                  variant={audioBitrate === bitrate ? 'default' : 'outline'}
-                                  onClick={() => setAudioBitrate(bitrate)}
-                                  className="text-sm"
-                                >
-                                  {formatBitrate(bitrate)}
-                                </Button>
-                              ))}
+                              {[128000, 192000, 256000, 320000].map(
+                                (bitrate) => (
+                                  <Button
+                                    key={bitrate}
+                                    variant={
+                                      audioBitrate === bitrate
+                                        ? "default"
+                                        : "outline"
+                                    }
+                                    onClick={() => setAudioBitrate(bitrate)}
+                                    className="text-sm"
+                                  >
+                                    {formatBitrate(bitrate)}
+                                  </Button>
+                                ),
+                              )}
                             </div>
                           </div>
 
                           {/* Action Buttons */}
                           <div className="flex flex-col gap-4 pt-4">
                             <div className="flex gap-2">
-                              <Button variant="outline" onClick={handleReset} className="flex-1">
+                              <Button
+                                variant="outline"
+                                onClick={handleReset}
+                                className="flex-1"
+                              >
                                 Reset
                               </Button>
-                              <Button onClick={handleExtract} disabled={isProcessing} className="flex-1">
-                                {isProcessing ? 'Processing...' : 'Extract Audio'}
+                              <Button
+                                onClick={handleExtract}
+                                disabled={isProcessing}
+                                className="flex-1"
+                              >
+                                {isProcessing
+                                  ? "Processing..."
+                                  : "Extract Audio"}
                               </Button>
                             </div>
 
@@ -388,13 +433,19 @@ export default function ExtractAudioFromVideoPage() {
                               <div className="p-4 bg-muted rounded-md">
                                 <div className="flex items-center gap-2 mb-2">
                                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                  <span className="text-sm font-medium text-green-600 dark:text-green-500">Extraction Complete</span>
+                                  <span className="text-sm font-medium text-green-600 dark:text-green-500">
+                                    Extraction Complete
+                                  </span>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
-                                  Audio extracted successfully in {audioFormat.toUpperCase()} format.
+                                  Audio extracted successfully in{" "}
+                                  {audioFormat.toUpperCase()} format.
                                 </p>
                               </div>
-                              <Button onClick={handleDownload} className="w-full">
+                              <Button
+                                onClick={handleDownload}
+                                className="w-full"
+                              >
                                 Download Audio
                               </Button>
                             </div>
@@ -414,13 +465,16 @@ export default function ExtractAudioFromVideoPage() {
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What the Audio Extractor Does
+                What it Does
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The Audio Extractor from Video lets you pull the audio track from any video file and save it as a standalone audio file. Choose from three popular formats: MP3 for universal compatibility, AAC for better quality at similar bitrates, or WAV for lossless uncompressed audio.
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                Select your preferred audio bitrate from 128 Kbps (suitable for speech) up to 320 Kbps (high-quality music). The tool processes everything in your browser — no uploads to external servers, keeping your files completely private.
+                When you have a great video but only need the sound, you can
+                extract audio from video online to save space and make listening
+                easier. The tool strips away the video track completely and
+                converts the remaining audio into a standalone MP3, AAC, or WAV
+                file. Everything processes directly in your browser without
+                uploading to a server, keeping your original media totally
+                private while extracting exactly what you need.
               </p>
             </CardContent>
           </Card>
@@ -429,56 +483,159 @@ export default function ExtractAudioFromVideoPage() {
         {/* How to Use Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use the Tool</h2>
-            <p className="mt-4 text-muted-foreground">
-              Extract audio from your video in 5 simple steps
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
           </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Choose your video
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Select the video file you want to process from your device using
+                the upload button. The file loads instantly into the preview
+                player because it never leaves your computer, ensuring fast
+                performance and total privacy. You can verify you have the right
+                clip before moving forward.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Set format and bitrate
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Choose your preferred audio format based on your needs, whether
+                that is MP3 for universal playback or WAV for uncompressed
+                quality. Next, adjust the audio bitrate anywhere from 128 Kbps
+                to 320 Kbps, keeping in mind that higher bitrates sound better
+                but create slightly larger files. This gives you exact control
+                over the audio fidelity.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Extract and save
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Click the extract button to begin separating the audio track
+                from the video stream locally. Once the progress bar reaches
+                completion, you will see a success message and a download button
+                to save the new audio file straight to your device.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-5">
-            {[
-              {
-                step: "01",
-                title: "Select Video",
-                description: "Click to upload your video file",
-              },
-              {
-                step: "02",
-                title: "Preview",
-                description: "Your video loads with a preview player",
-              },
-              {
-                step: "03",
-                title: "Choose Format",
-                description: "Select MP3, AAC, or WAV output format",
-              },
-              {
-                step: "04",
-                title: "Set Bitrate",
-                description: "Choose audio quality from 128 to 320 Kbps",
-              },
-              {
-                step: "05",
-                title: "Download",
-                description: "Extract and download your audio file",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {index < 4 && (
-                  <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-                )}
-                <div className="relative text-center">
-                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                    <span className="text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                  <p className="relative mt-2 text-sm text-muted-foreground">
-                    {item.description}
+        {/* Use Cases Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Saving podcast episodes</h3>
+                <p className="text-sm text-muted-foreground">
+                  If you have downloaded a lengthy video podcast but prefer
+                  listening while commuting, extracting the audio track gives
+                  you a much smaller file to organize on your phone. You save
+                  storage space and battery life by dropping the unnecessary
+                  video stream.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Isolating background music</h3>
+                <p className="text-sm text-muted-foreground">
+                  When you find a royalty-free video with a great backing track
+                  that you want to reuse, isolating just the audio gives you a
+                  clean sound file. You can easily drag the resulting MP3 or WAV
+                  directly into your own video editing timeline.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Creating audio study notes</h3>
+                <p className="text-sm text-muted-foreground">
+                  Students recording long lecture videos often find that they
+                  only really need to listen to the professor's voice to review
+                  the material. Converting the lecture to an audio file makes it
+                  easier to review the notes while doing chores or exercising.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Extracting voiceovers for translation
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  If you need to transcribe or translate what someone is saying
+                  in a video, having the audio track separated makes the process
+                  simpler. You can load just the dialogue into transcription
+                  software without loading a heavy video file alongside it.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Archiving live music recordings
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  When you record a live concert on your phone, the video is
+                  often shaky or dark, but the music is what truly matters.
+                  Extracting the music into a high-quality WAV file lets you
+                  preserve the performance and add it to your normal music
+                  library.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Audio Format Selection</h3>
+                  <p className="text-muted-foreground mt-2">
+                    This setting determines exactly what kind of file you get at
+                    the end of the process. MP3 is compatible with practically
+                    every device on earth, AAC offers slightly clearer sound at
+                    the same file size, and WAV provides completely uncompressed
+                    audio for professional editing.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Audio Bitrate</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The bitrate controls the audio quality and file size of
+                    compressed formats like MP3 and AAC by changing how much
+                    data is used per second of audio. 128 Kbps is perfectly fine
+                    for basic speech, 192 Kbps is great for standard music
+                    listening, and 320 Kbps should be used when you want the
+                    highest quality possible.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs Section */}
@@ -487,9 +644,6 @@ export default function ExtractAudioFromVideoPage() {
             <h2 className="text-3xl font-bold tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Everything you need to know about audio extraction
-            </p>
           </div>
           <Faqs faqs={faqData} />
         </section>
@@ -497,7 +651,9 @@ export default function ExtractAudioFromVideoPage() {
         {/* Related Tools Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">More Video Tools</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              More Video Tools
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Explore our other free video editing tools
             </p>

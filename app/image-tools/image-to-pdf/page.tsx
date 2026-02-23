@@ -55,29 +55,39 @@ export default function ImageToPdfPage() {
 
   const faqs = [
     {
-      question: "Is this image to PDF tool actually free?",
+      question:
+        "Is this free image to PDF converter actually free to use offline?",
       answer:
-        "Yes. Converting your images into PDF documents costs absolutely nothing. You do not hit hidden paywalls or subscription prompts during the process.",
+        "Yes, generating your compiled PDF documents costs absolutely nothing. Once the web application interface loads in your browser window, you can process high volumes entirely offline without hitting hidden paywalls or subscription prompts.",
     },
     {
-      question: "Will the PDF compilation ruin my image quality?",
+      question:
+        "Will the compiled PDF compilation ruin my original image quality?",
       answer:
-        "The converter engine embeds your original images into the PDF structure intact. The visual fidelity of your uploaded photos remains perfectly preserved.",
+        "No. The conversion engine fundamentally embeds your exact original images directly into the PDF framework intact. The visual fidelity, contrast, and resolution of your uploaded photography remains perfectly preserved without forceful compression algorithms.",
     },
     {
-      question: "Do you store the generated PDF on your server?",
+      question:
+        "Do you store the generated PDF portfolios on an internet server?",
       answer:
-        "No. The entire conversion from image to PDF executes locally inside your active browser tab. Your files remain completely secure on your personal device.",
+        "Absolutely not. The entire conversion execution runs strictly locally using your active tab memory. Your highly sensitive ID scans or private family files remain completely secure on your personal device and are never broadcasted externally.",
     },
     {
-      question: "Can I combine multiple pictures into one specific file?",
+      question:
+        "Can I combine multiple distinct pictures into one specific PDF file?",
       answer:
-        "Yes. You simply drag multiple photos onto the canvas simultaneously. The interface allows you to sort them before generating a single multi-page PDF.",
+        "Yes, you simply drag multiple photos onto the canvas area simultaneously. The interface allows you to select the 'Single PDF' mode, enabling you to sort the hierarchy before generating one multi-page compiled document.",
     },
     {
-      question: "What image formats can I upload?",
+      question: "What specific image formats can I upload to the application?",
       answer:
-        "The platform accepts a wide variety including standard JPG, transparent PNG, WebP, and BMP. You mix these different types effortlessly within the same document.",
+        "The interface accepts a wide array of graphic types natively, including standard JPG, transparent PNG, WebP, GIF, and BMP files. You can effortlessly mix and match these fundamentally different formats securely within the very same document presentation.",
+    },
+    {
+      question:
+        "How do I ensure the images completely fill the PDF page borders?",
+      answer:
+        "In the primary settings window, you can designate formatting parameters. Selecting specific uniform layouts like A4 sheets and setting the orientation perfectly matches standard printing paper sizes, resulting in a remarkably professional corporate output.",
     },
   ];
 
@@ -496,110 +506,126 @@ export default function ImageToPdfPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            Organize Your Visual Files Effectively
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
           <p className="mb-4">
-            Managing numerous individual image files creates significant
-            friction during digital communication. When you attempt to email
-            twenty separate photographs to a colleague or client, you frequently
-            encounter strict attachment size limits. Furthermore, the recipient
-            must open each optical file individually, completely ruining the
-            intended viewing sequence. Converting multiple related images into a
-            single, cohesive PDF document eliminates this specific workflow
-            bottleneck entirely. You guarantee that your audience views your
-            visual data exactly as you designed it.
-          </p>
-          <p className="mb-4">
-            PDFs operate fundamentally differently than standard graphical data
-            formats. This specific structure provides universal compatibility
-            across virtually every modern device architecture. You confidently
-            send a PDF portfolio containing high-definition JPGs and PNGs to a
-            smartphone, a tablet, or an older desktop computer. The file renders
-            consistently across all operating systems without requiring
-            specialized viewing software. This ensures your professional
-            presentations or personal photo collections always display perfectly
-            intact.
-          </p>
-          <p className="mb-4">
-            Data security represents another major advantage when utilizing a
-            specialized local processing application. Unlike traditional
-            cloud-based generation services, our platform executes the entire
-            compilation routine explicitly within your local browser
-            environment. You convert highly sensitive identity documents,
-            confidential corporate sketches, or private family pictures into
-            standardized PDFs without exposing them to remote internet servers.
-            You retain absolute control over your digital properties throughout
-            the entire conversion cycle.
+            Attempting to submit multiple individual JPG photos to official
+            application portals or sending messy email attachments often results
+            in chaotic formatting errors. This free image to PDF converter
+            allows you to seamlessly merge various photos into a single,
+            cohesive PDF document securely inside your browser. It solves
+            formatting headaches by packing mismatched file types into a
+            universally readable structure utilizing secure local processing.
+            You guarantee exact display sizes and flawless layouts without
+            installing expensive desktop office suites or uploading sensitive
+            identity scans online.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use the Tool</h2>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
           <p className="mb-4">
-            The compilation process begins cleanly at the central upload
-            interface. You locate the designated drop zone prominently displayed
-            on the primary canvas. You select multiple distinct images from your
-            internal storage and pull them directly onto the browser window. Our
-            client-side algorithm instantly parses the metadata from standard
-            inputs like JPG, PNG, and WebP. The interface subsequently populates
-            a clean visual array displaying your individual file cards.
+            <strong>1. Upload your image assets</strong>
+            <br />
+            Simply drag the desired JPG, PNG, or WebP files from your desktop
+            onto the designated dashed canvas. Our algorithms instantly generate
+            visual thumbnails horizontally, verifying that your private graphics
+            have loaded cleanly into local memory.
           </p>
           <p className="mb-4">
-            Properly ordering your files ensures a coherent final document. You
-            examine the loaded thumbnails and reorganize them logically within
-            the provided grid structure. Next, you navigate toward the specific
-            configuration panel. Here, you dictate the final document layout.
-            You choose either a unified single-file export or individual
-            distinct PDF generations. You also designate essential formatting
-            parameters including target page size (like precise dimensions for
-            standard A4 or Letter sheets) and explicit layout orientation.
+            <strong>2. Configure your PDF layout</strong>
+            <br />
+            Adjust the exact document blueprint using the intuitive settings
+            panel directly above the image grid. Toggle the master switch to
+            compile one massive multi-page PDF or process separate distinct file
+            downloads, then designate the specific paper dimensions like A4 or
+            Letter sizes.
           </p>
           <p className="mb-4">
-            After finalizing the structural variables, you execute the creation
-            command by clicking the primary conversion button. The engine
-            accesses your local memory and rapidly anchors every individual
-            image onto a separate discrete PDF page. Tracking the generation
-            speed occurs visually via the integrated progress bar. Upon hitting
-            the conclusion milestone, the platform presents immediate download
-            links. You save the finalized PDF document immediately back to your
-            local hardware.
+            <strong>3. Execute and securely download</strong>
+            <br />
+            Click the big convert button after eliminating unneeded photos via
+            the tiny 'X' marks. The progress bar completes incredibly quickly
+            via Javascript execution, instantly revealing secure download links
+            or a convenient ZIP archive containing the finalized corporate-ready
+            document.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">
-            What the Tool Does and Features
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
           <p className="mb-4">
-            This advanced assembly platform functions primarily as a localized
-            document compiler. Instead of simply compressing pixels, the
-            application engine builds a robust PDF container file dynamically.
-            It translates the raw binary data from your uploaded photos and
-            embeds them flawlessly into the new structure. This sophisticated
-            client-side execution means you generate professional documents at
-            extremely high speeds, completely bypassing the massive lag times
-            typically associated with uploading heavy graphics to a remote data
-            center.
+            <strong>Submitting secure identity verification documents</strong>
+            <br />
+            Immigration systems strictly require applicants to upload perfectly
+            collated passport scans and utility bills as a single digital
+            bundle. Dragging your disparate smartphone photography into this
+            utility safely outputs one compliant PDF file while avoiding
+            dangerous cloud-based data harvesting servers.
           </p>
           <p className="mb-4">
-            The diverse configuration options present powerful advantages for
-            specific professional use cases. You select accurate page
-            constraints that perfectly match physical printing dimensions. The
-            intelligent software automatically scales your varied pictures
-            conditionally to fit the targeted dimensions without accidentally
-            distorting the core visual aspect ratios. You maintain professional
-            standards while rapidly formatting casual smartphone snaps
-            identically alongside high-resolution digital camera exports.
+            <strong>Assembling impressive creative design portfolios</strong>
+            <br />
+            Sending a prospective employer 15 random loose graphical JPGs
+            practically guarantees confusion and rejection. Utilizing the
+            unified Single PDF generation mode sequences your artwork formally,
+            producing an elegant scrolling presentation optimized for quick
+            corporate evaluations.
           </p>
           <p className="mb-4">
-            We expressly designed this streamlined operation to handle
-            significant workloads safely. You add substantial quantities of
-            files simultaneously without overwhelming your device resources or
-            triggering browser crashes. We provide this completely unregulated
-            access explicitly free of charge. You avoid restrictive paywalls or
-            required email registrations while building secure, portable PDF
-            portfolios reliably and endlessly.
+            <strong>Digitizing heavy printed taxation receipts</strong>
+            <br />
+            Freelancers often photograph hundreds of disjointed physical dining
+            receipts for critical quarterly reporting purposes. Ingesting these
+            files into the bulk editor translates the mess into one cleanly
+            ordered, printable chronological ledger document tailored exactly
+            for rigorous accounting audits.
+          </p>
+          <p className="mb-4">
+            <strong>Distributing educational storyboard materials</strong>
+            <br />
+            Teachers routinely need to disseminate sequential comic strip pages
+            or physical textbook scans for remote learning assignments. The tool
+            organizes these confusing isolated frames onto uniformly scaled A4
+            layouts, preventing young students from opening lessons completely
+            out of physical order.
+          </p>
+          <p className="mb-4">
+            <strong>Standardizing client architectural sketches</strong>
+            <br />
+            Contractors receiving unpredictable bundles of blueprints via email
+            struggle to reference the chaotic file extensions swiftly on mobile
+            hardware. Converting every obscure format uniformly into individual
+            PDF blueprints enables perfect cross-platform viewing compatibility
+            natively on construction site tablets.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Target Conversion Mode</strong>
+            <br />
+            This dictation toggle controls the primary architecture entirely.
+            Choose "Single PDF" to stitch hundreds of photos securely into one
+            giant scrolling magazine file, whereas "Individual PDFs" outputs a
+            completely isolated 1-page PDF file for every single photo uploaded.
+          </p>
+          <p className="mb-4">
+            <strong>Designated Page Size</strong>
+            <br />
+            This structural option strictly defines the mathematical bounding
+            constraints of the final PDF generation. You should explicitly pick
+            A4 or Letter sizes if the recipient intends to physically print out
+            the document on standard commercial office hardware.
+          </p>
+          <p className="mb-4">
+            <strong>Physical Layout Orientation</strong>
+            <br />
+            This determines if the rectangular PDF canvas reads vertically or
+            horizontally. Select Portrait when packaging standard upright
+            document snapshots or human headshots, but actively toggle Landscape
+            specifically when showcasing wide scenic photography or sweeping
+            panoramic data charts.
           </p>
         </section>
 

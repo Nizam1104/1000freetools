@@ -36,44 +36,35 @@ const moreTools = [
 export default function ImageCompressorPage() {
   const faqsData = [
     {
-      question: "How does image compression work?",
+      question:
+        "Will using a tool to compress images online ruin my photo quality?",
       answer:
-        "Image compression reduces file size by removing redundant data or optimizing how information is stored. Lossless compression preserves all original data, while lossy compression achieves smaller files by discarding some information that's less noticeable to the human eye.",
+        "It depends entirely on the settings you choose. If you select lossless compression, the quality remains mathematically identical to the original. For standard lossy compression at 80-90% quality, the visual difference is virtually unnoticeable to the human eye, but the file size reduction is massive.",
     },
     {
-      question: "Will compression affect image quality?",
+      question: "Are my personal pictures uploaded to a remote server?",
       answer:
-        "It depends on your settings. Lossless compression maintains perfect quality. Lossy compression at 80-90% quality typically produces excellent results with significant file size reduction. Lower quality settings will show more visible differences.",
+        "No, all compression tasks happen directly within your own web browser using your device's memory. Your personal photos are never uploaded or stored on an external database, which guarantees absolute privacy for your sensitive or proprietary images.",
     },
     {
-      question: "What formats are supported?",
+      question: "How many images can I compress at the same time?",
       answer:
-        "We support JPEG, PNG, WebP, AVIF, QOI, JXL, and WebP2. You can also convert between formats - for example, converting a PNG to WebP often results in smaller files.",
+        "You can securely upload and process up to 50 images simultaneously using our bulk processing feature. The tool will process them in a queue using your local hardware, and you can download them all at once in a single, organized ZIP file.",
     },
     {
-      question: "How many images can I process at once?",
+      question: "Which image format will give me the smallest file size?",
       answer:
-        "You can compress up to 50 images simultaneously using the bulk processing mode. There are no daily limits or signup requirements.",
+        "AVIF and WebP generally offer the best compression ratios for modern web use, creating significantly smaller files than traditional formats. However, if you need guaranteed compatibility across very old systems or specific offline software, standard JPEG is still highly recommended.",
     },
     {
-      question: "Is my data secure?",
+      question: "Can I also change the image dimensions while compressing?",
       answer:
-        "Yes. All compression happens directly in your browser. Your images are never uploaded to our servers, ensuring complete privacy. When you close the tab, all data is immediately cleared.",
+        "Yes, the advanced settings panel includes a resizing feature. You can input a maximum width or height, and the software will proportionally scale down the image resolution before applying the final compression algorithm.",
     },
     {
-      question: "Which format should I choose?",
+      question: "Is there a maximum file size limit for uploads?",
       answer:
-        "JPEG works well for photos and is universally supported. WebP offers better compression with wide browser support. AVIF provides the best compression but has slightly less browser support. PNG is best for images with transparency or text.",
-    },
-    {
-      question: "Can I resize images while compressing?",
-      answer:
-        "Yes. In the advanced options, you can set maximum width and height dimensions. The tool will resize images proportionally while maintaining aspect ratio.",
-    },
-    {
-      question: "Why use this over other tools?",
-      answer:
-        "This tool runs entirely in your browser for privacy, supports modern formats like AVIF and WebP2, offers both single and batch processing, and provides advanced options for fine-tuning compression settings. Plus, it's completely free with no restrictions.",
+        "Because the application runs on your local client-side hardware rather than our servers, we do not enforce any strict file size limits. You can process heavy, high-megapixel files as long as your computer has enough available RAM to load them.",
     },
   ];
 
@@ -117,134 +108,133 @@ export default function ImageCompressorPage() {
 
         <ImageCompressor />
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">
-          Why Compress Images?
-        </h2>
-        <p className="mb-4 text-foreground">
-          Large image files slow down websites, consume storage space, and take
-          longer to upload or share. Compression helps you:
-        </p>
-        <ul className="list-disc pl-6 mb-6 space-y-2 text-foreground">
-          <li>Improve website loading speed and SEO rankings</li>
-          <li>
-            Save storage space - reduce file sizes by 50-80% while maintaining
-            visual quality
-          </li>
-          <li>Share files faster via email, messaging, or cloud storage</li>
-          <li>Reduce bandwidth usage on mobile devices</li>
-        </ul>
+        <section>
+          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
+          <p className="mb-4">
+            Huge raw photos take up too much storage space and make websites
+            load incredibly slowly. This tool allows you to compress images
+            online directly within your web browser without relying on cloud
+            processing. It dramatically reduces your file sizes while
+            maintaining excellent visual quality so you can email attachments
+            easily and hit necessary upload limits. The local processor supports
+            bulk compression of up to 50 files simultaneously in formats like
+            JPEG, PNG, WebP, and AVIF.
+          </p>
+        </section>
 
-        <div>
-          <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">
-            Before and After Comparison
+        <section>
+          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
+          <p className="mb-4">
+            <strong>1. Upload single or multiple files</strong>
+            <br />
+            Select files from your computer or drag an entire folder of up to 50
+            images into the drop zone. The system imports them instantly into
+            your browser memory, bypassing slow internet upload speeds
+            completely.
+          </p>
+          <p className="mb-4">
+            <strong>2. Adjust the compression strength</strong>
+            <br />
+            Use the quality slider to find the perfect balance between file size
+            and visualization. A setting around 80-85% usually drops the file
+            size massively while keeping the image crisp enough for web display.
+          </p>
+          <p className="mb-4">
+            <strong>3. Compare and download</strong>
+            <br />
+            Review the live preview showing the original vs compressed version
+            and check the final estimated file size. Once satisfied, click
+            download to save the optimized file, or hit download all to get a
+            ZIP folder in bulk mode.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
+          <p className="mb-4">
+            <strong>Speeding up WordPress website loading times</strong>
+            <br />
+            Heavy hero graphics block the browser from rendering your content
+            quickly, hurting your SEO rankings. Compressing these large banners
+            into modern WebP formats ensures your webpage passes technical speed
+            audits without looking blurry.
+          </p>
+          <p className="mb-4">
+            <strong>Bypassing email attachment size limits</strong>
+            <br />
+            Standard email clients restrict attachments to 25MB, which prevents
+            you from sending multiple raw event photos. Running the batch
+            through this optimizer drastically shrinks the footprint, letting
+            you attach entire albums to a single email.
+          </p>
+          <p className="mb-4">
+            <strong>Saving smartphone and hard drive storage</strong>
+            <br />
+            Photographers frequently run out of local disk space due to massive
+            high-resolution catalogs. Archiving older portfolios using subtle
+            lossy compression frees up gigabytes of drive space without
+            destroying the historical visual record.
+          </p>
+          <p className="mb-4">
+            <strong>Optimizing app assets for faster downloads</strong>
+            <br />
+            Mobile developers need their application bundles to be as small as
+            possible to encourage user downloads. You use this tool to crunch
+            heavy UI graphics and background elements down to their minimum
+            viable size using AVIF encoding.
+          </p>
+          <p className="mb-4">
+            <strong>Meeting strict document portal requirements</strong>
+            <br />
+            Government or immigration portals consistently reject passport scans
+            or ID photos that exceed 2MB. Dragging the scan into the interface
+            allows you to dial the quality slider down until it perfectly meets
+            the strict size requirement.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
+          <p className="mb-4">
+            <strong>Quality Slider (0-100)</strong>
+            <br />
+            This dictates how aggressively the algorithm removes data from your
+            picture. A value of 100 applies zero lossy compression, while values
+            below 70 will introduce noticeable pixelation. 85 is the recommended
+            value for most standard web applications.
+          </p>
+          <p className="mb-4">
+            <strong>Output Format Selector</strong>
+            <br />
+            This dropdown changes the file type of your final downloaded
+            graphic. Stick with JPEG for standard compatibility, switch to PNG
+            if you need to preserve transparent backgrounds, or choose WebP for
+            the best size-to-quality ratio on modern browsers.
+          </p>
+          <p className="mb-4">
+            <strong>Resize Dimensions (Advanced)</strong>
+            <br />
+            This allows you to scale down the actual pixel width and height of
+            the image before compressing it. Halving the dimensions of a massive
+            4K photo will result in an astronomically smaller text file size
+            than compression alone.
+          </p>
+          <p className="mb-4">
+            <strong>Bulk Mode Toggle</strong>
+            <br />
+            This switches the interface from a detailed single-image preview
+            into a list-based queue manager. Use this when you have an entire
+            folder of graphics that all need the exact same optimization
+            settings applied simultaneously.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-6">
+            Frequently Asked Questions
           </h2>
-          <p className="mb-4 text-foreground">
-            Here's a real example showing the original 4MB image compared to the
-            compressed 700KB version. Notice how visual quality remains high
-            while file size drops significantly.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 mb-4">
-            <div className="flex-1">
-              <NextImage
-                src="https://cdn.1000freetools.com/static-assets/on-page-images/image-compressor-original-image.png"
-                alt="Original 4MB image"
-                width={400}
-                height={300}
-              />
-              <p className="text-sm mt-2 text-foreground">Original: 4MB</p>
-            </div>
-            <div className="flex-1">
-              <NextImage
-                src="https://cdn.1000freetools.com/static-assets/on-page-images/image-compressor-after-image.png"
-                alt="Compressed 700KB image"
-                width={400}
-                height={300}
-              />
-              <p className="text-sm mt-2 text-foreground">
-                Compressed: 700KB (82% smaller)
-              </p>
-            </div>
-          </div>
-          <p className="text-sm text-foreground">
-            Photo by{" "}
-            <a
-              href="https://unsplash.com/@jpsmedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-              className="text-primary hover:underline"
-            >
-              Jack Stapleton
-            </a>{" "}
-            on{" "}
-            <a
-              href="https://unsplash.com/photos/two-black-cars-parked-on-a-street-t2BHviYqB1g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-              className="text-primary hover:underline"
-            >
-              Unsplash
-            </a>
-          </p>
-        </div>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">
-          How to Use
-        </h2>
-        <ol className="list-decimal pl-6 mb-6 space-y-2 text-foreground">
-          <li>
-            Upload your image(s) by dragging and dropping or clicking to browse
-          </li>
-          <li>
-            Adjust the quality slider (80-90% recommended for most uses) and
-            select your preferred output format
-          </li>
-          <li>Click "Compress Image" and download the result</li>
-        </ol>
-        <p className="mb-6 text-foreground">
-          For batch processing, switch to "Bulk Processing" mode to handle
-          multiple images at once. You can download files individually or as a
-          ZIP archive.
-        </p>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">
-          Key Features
-        </h2>
-        <ul className="list-disc pl-6 mb-6 space-y-2 text-foreground">
-          <li>Single or batch processing (up to 50 images)</li>
-          <li>Multiple format support: JPEG, PNG, WebP, AVIF, and more</li>
-          <li>Adjustable quality settings and advanced options</li>
-          <li>Optional image resizing while compressing</li>
-          <li>Client-side processing - your images never leave your device</li>
-          <li>No file size limits, registration, or usage restrictions</li>
-        </ul>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">
-          Choosing the Right Format
-        </h2>
-        <p className="mb-4 text-foreground">
-          Different formats work better for different use cases:
-        </p>
-        <ul className="list-disc pl-6 mb-6 space-y-2 text-foreground">
-          <li>
-            <strong className="text-foreground">JPEG</strong> - Best for
-            photographs. Universally supported but doesn't handle transparency
-          </li>
-          <li>
-            <strong className="text-foreground">PNG</strong> - Ideal for images
-            with transparency, text, or sharp edges. Larger file sizes than JPEG
-          </li>
-          <li>
-            <strong className="text-foreground">WebP</strong> - Modern format
-            with excellent compression and quality. Supported by all current
-            browsers
-          </li>
-          <li>
-            <strong className="text-foreground">AVIF</strong> - Newest format
-            offering superior compression. Growing browser support
-          </li>
-        </ul>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">
-          Frequently Asked Questions
-        </h2>
-
-        <Faqs faqs={faqsData} />
+          <Faqs faqs={faqsData} />
+        </section>
 
         <section className="mt-8">
           <ToolLinkCards tools={moreTools} />

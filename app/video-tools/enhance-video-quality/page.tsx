@@ -1,67 +1,58 @@
 "use client";
 
-import { useState, useRef } from 'react';
-import { Conversion, Input, Output, Mp4OutputFormat, BufferTarget, BlobSource, ALL_FORMATS } from 'mediabunny';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { Switch } from '@/components/ui/switch';
-import { Progress } from '@/components/ui/progress';
+import { useState, useRef } from "react";
+import {
+  Conversion,
+  Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
+  BlobSource,
+  ALL_FORMATS,
+} from "mediabunny";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
+import { Progress } from "@/components/ui/progress";
 import Faqs from "@/components/utils/Faqs";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Script from "next/script";
 
 const faqData = [
   {
-    question: "Can this tool genuinely improve video quality?",
+    question:
+      "How does the tool enhance video quality online free without an account?",
     answer:
-      "Yes, within limits. It can sharpen soft footage, reduce visible grain with denoising, boost contrast and color vibrancy, and upscale to larger dimensions. It does not use AI frame generation, so it cannot add detail that wasn't in the original.",
+      "This tool allows you to enhance video quality online free directly within your browser window using web assembly technology. Because the processing uses your local device hardware, there are no server costs to pass on, allowing unlimited free usage without requiring you to create an account or provide payment information.",
   },
   {
-    question: "What does increasing the bitrate do?",
+    question:
+      "Can I take a blurry 480p file and upscale the video to 4K resolution?",
     answer:
-      "Bitrate controls how much data is used to encode each second of video. A higher bitrate preserves more visual detail and reduces compression artifacts, resulting in a sharper, cleaner output.",
+      "While you can technically force the output resolution to scale up to 3840x2160, you cannot invent new visual data that did not exist in the original 480p file. The upscaler will enlarge the image and the sharpening filter can crisp up the edges, but the result will likely look artificially smoothed rather than possessing true 4K cinematic detail.",
   },
   {
-    question: "What resolution should I upscale to?",
+    question: "What exactly does the video bitrate slider change?",
     answer:
-      "It depends on your target platform. For YouTube, 1080p (1920x1080) is the standard. For premium content or large screens, 4K (3840x2160) is ideal. Upscaling always works best when moving to the next standard tier above your source resolution.",
+      "The video bitrate determines how many megabits of data are allocated to render each second of your footage. Moving the slider to a higher value prevents blocky compression artifacts and color banding, but will significantly increase the final physical file size sitting on your hard drive.",
   },
   {
-    question: "What is the HDR effect?",
+    question: "Why should I use the denoise filter on my low light clips?",
     answer:
-      "The HDR (High Dynamic Range) effect is a preset that slightly increases contrast, saturation, and brightness to simulate the richer color range of HDR displays. It works best on well-lit footage with good dynamic range.",
+      "Shooting in low light often forces camera sensors to guess pixel values, resulting in an ugly, moving static effect called visual noise. The denoise slider deliberately applies selective smoothing algorithms that blend these noisy artifacts together, resulting in a cleaner and less chaotic image.",
   },
   {
-    question: "How much sharpness should I apply?",
+    question: "Is there a limit to how large a file I can enhance?",
     answer:
-      "Use sharpness sparingly — 20–40% is usually sufficient to add crispness. Too much sharpening creates haloing artifacts around edges, which can look unnatural.",
+      "There are no strict file size limits coded into the tool, but the practical limit relies entirely on your personal computer's available RAM. If you attempt to process a massive 10GB raw video file on a standard laptop, your browser tab will likely crash before the local rendering engine can finish the job.",
   },
   {
-    question: "What does the denoise filter do?",
+    question:
+      "Will dragging the brightness slider reveal details hidden in pitch black shadows?",
     answer:
-      "Denoising applies a subtle blur to reduce grain and visual noise, which is common in low-light footage. Be careful not to overdo it — high denoise values soften fine details like hair or texture.",
-  },
-  {
-    question: "Will enhancing a video make the file larger?",
-    answer:
-      "Yes, typically. Higher bitrate settings and larger output dimensions both increase file size. The tool gives you control over the bitrate so you can balance quality against file size.",
-  },
-  {
-    question: "Is my video uploaded to a server for processing?",
-    answer:
-      "No. All enhancement processing runs locally in your web browser. Your video is never sent to any external server.",
-  },
-  {
-    question: "Can I enhance video brightness for dark footage?",
-    answer:
-      "Yes. Use the Brightness slider to lift the overall luminance of dark footage, and adjust Contrast to add definition back to shadows and highlights.",
-  },
-  {
-    question: "What video formats can I enhance?",
-    answer:
-      "The tool accepts all major video formats (MP4, MOV, WebM, MKV, AVI, etc.) and outputs an enhanced MP4 file.",
+      "If the camera sensor recorded true black pixels with no underlying data to distinguish objects, dragging the brightness slider up will only turn those black areas into muddy grey areas. You can successfully brighten dark footage to improve visibility, but you cannot recover details that were completely crushed during filming.",
   },
 ];
 
@@ -95,21 +86,25 @@ type EnhancementOptions = {
 export default function EnhanceVideoQualityPage() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [videoDimensions, setVideoDimensions] = useState({ width: 0, height: 0 });
-  const [videoDuration, setVideoDuration] = useState(0);
-  const [enhancementOptions, setEnhancementOptions] = useState<EnhancementOptions>({
-    upscale: false,
-    targetResolution: '1080p',
-    customWidth: 0,
-    customHeight: 0,
-    bitrate: 5000000,
-    sharpness: 0,
-    denoise: 0,
-    brightness: 0,
-    contrast: 1,
-    saturation: 1,
-    hdr: false,
+  const [videoDimensions, setVideoDimensions] = useState({
+    width: 0,
+    height: 0,
   });
+  const [videoDuration, setVideoDuration] = useState(0);
+  const [enhancementOptions, setEnhancementOptions] =
+    useState<EnhancementOptions>({
+      upscale: false,
+      targetResolution: "1080p",
+      customWidth: 0,
+      customHeight: 0,
+      bitrate: 5000000,
+      sharpness: 0,
+      denoise: 0,
+      brightness: 0,
+      contrast: 1,
+      saturation: 1,
+      hdr: false,
+    });
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [outputUrl, setOutputUrl] = useState<string | null>(null);
@@ -133,7 +128,10 @@ export default function EnhanceVideoQualityPage() {
   const handleVideoLoaded = () => {
     if (videoRef.current) {
       const video = videoRef.current;
-      setVideoDimensions({ width: video.videoWidth, height: video.videoHeight });
+      setVideoDimensions({
+        width: video.videoWidth,
+        height: video.videoHeight,
+      });
       setVideoDuration(video.duration);
       setEnhancementOptions((prev) => ({
         ...prev,
@@ -145,12 +143,15 @@ export default function EnhanceVideoQualityPage() {
 
   const handleResolutionChange = (resolution: string) => {
     const resolutions: Record<string, { width: number; height: number }> = {
-      '4K': { width: 3840, height: 2160 },
-      '1440p': { width: 2560, height: 1440 },
-      '1080p': { width: 1920, height: 1080 },
-      '720p': { width: 1280, height: 720 },
-      '480p': { width: 854, height: 480 },
-      'Original': { width: videoDimensions.width, height: videoDimensions.height },
+      "4K": { width: 3840, height: 2160 },
+      "1440p": { width: 2560, height: 1440 },
+      "1080p": { width: 1920, height: 1080 },
+      "720p": { width: 1280, height: 720 },
+      "480p": { width: 854, height: 480 },
+      Original: {
+        width: videoDimensions.width,
+        height: videoDimensions.height,
+      },
     };
     const dimensions = resolutions[resolution];
     if (dimensions) {
@@ -163,18 +164,25 @@ export default function EnhanceVideoQualityPage() {
     }
   };
 
-  const handleEnhancementChange = (key: keyof EnhancementOptions, value: number | boolean | string) => {
+  const handleEnhancementChange = (
+    key: keyof EnhancementOptions,
+    value: number | boolean | string,
+  ) => {
     setEnhancementOptions((prev) => ({ ...prev, [key]: value }));
   };
 
   const applyImageProcessing = (
     sample: any,
     width: number,
-    height: number
+    height: number,
   ): OffscreenCanvas => {
-    if (!canvasRef.current || canvasRef.current.width !== width || canvasRef.current.height !== height) {
+    if (
+      !canvasRef.current ||
+      canvasRef.current.width !== width ||
+      canvasRef.current.height !== height
+    ) {
       canvasRef.current = new OffscreenCanvas(width, height);
-      ctxRef.current = canvasRef.current.getContext('2d');
+      ctxRef.current = canvasRef.current.getContext("2d");
     }
 
     const ctx = ctxRef.current!;
@@ -182,7 +190,8 @@ export default function EnhanceVideoQualityPage() {
 
     ctx.clearRect(0, 0, width, height);
 
-    const { sharpness, brightness, contrast, saturation, denoise } = enhancementOptions;
+    const { sharpness, brightness, contrast, saturation, denoise } =
+      enhancementOptions;
 
     let filterString = `brightness(${1 + brightness})`;
     filterString += ` contrast(${contrast})`;
@@ -198,7 +207,12 @@ export default function EnhanceVideoQualityPage() {
 
     if (sharpness > 0) {
       const imageData = ctx.getImageData(0, 0, width, height);
-      const sharpenedData = applySharpnessFilter(imageData, width, height, sharpness);
+      const sharpenedData = applySharpnessFilter(
+        imageData,
+        width,
+        height,
+        sharpness,
+      );
       ctx.putImageData(sharpenedData, 0, 0);
     }
 
@@ -209,7 +223,7 @@ export default function EnhanceVideoQualityPage() {
     imageData: ImageData,
     width: number,
     height: number,
-    amount: number
+    amount: number,
   ): ImageData => {
     const data = imageData.data;
     const output = new Uint8ClampedArray(data.length);
@@ -248,7 +262,7 @@ export default function EnhanceVideoQualityPage() {
     }
 
     for (let y = 0; y < height; y++) {
-      const leftIdx = (y * width) * 4;
+      const leftIdx = y * width * 4;
       output[leftIdx] = data[leftIdx];
       output[leftIdx + 1] = data[leftIdx + 1];
       output[leftIdx + 2] = data[leftIdx + 2];
@@ -266,7 +280,7 @@ export default function EnhanceVideoQualityPage() {
 
   const handleEnhance = async () => {
     if (!videoFile) {
-      setError('Please select a video file');
+      setError("Please select a video file");
       return;
     }
 
@@ -305,9 +319,9 @@ export default function EnhanceVideoQualityPage() {
         video: {
           width: targetWidth,
           height: targetHeight,
-          fit: 'contain',
+          fit: "contain",
           bitrate: enhancementOptions.bitrate,
-          hardwareAcceleration: 'prefer-hardware',
+          hardwareAcceleration: "prefer-hardware",
           ...(needsProcessing && {
             process: async (sample) => {
               return applyImageProcessing(sample, targetWidth, targetHeight);
@@ -324,18 +338,20 @@ export default function EnhanceVideoQualityPage() {
 
       const enhancedBuffer = output.target.buffer;
       if (!enhancedBuffer) {
-        throw new Error('Failed to get enhanced video buffer');
+        throw new Error("Failed to get enhanced video buffer");
       }
 
-      const enhancedBlob = new Blob([enhancedBuffer], { type: 'video/mp4' });
+      const enhancedBlob = new Blob([enhancedBuffer], { type: "video/mp4" });
       const enhancedUrl = URL.createObjectURL(enhancedBlob);
       setOutputUrl(enhancedUrl);
       setProgress(100);
 
       input.dispose();
     } catch (err) {
-      console.error('Enhancement error:', err);
-      setError(err instanceof Error ? err.message : 'Failed to enhance video quality');
+      console.error("Enhancement error:", err);
+      setError(
+        err instanceof Error ? err.message : "Failed to enhance video quality",
+      );
     } finally {
       setIsProcessing(false);
     }
@@ -343,7 +359,7 @@ export default function EnhanceVideoQualityPage() {
 
   const handleDownload = () => {
     if (!outputUrl || !videoFile) return;
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = outputUrl;
     a.download = `enhanced-${videoFile.name}`;
     document.body.appendChild(a);
@@ -361,11 +377,11 @@ export default function EnhanceVideoQualityPage() {
   const calculateRecommendedBitrate = (): number => {
     const resolution = enhancementOptions.targetResolution;
     const bitrates: Record<string, number> = {
-      '4K': 20000000,
-      '1440p': 12000000,
-      '1080p': 5000000,
-      '720p': 2500000,
-      '480p': 1000000,
+      "4K": 20000000,
+      "1440p": 12000000,
+      "1080p": 5000000,
+      "720p": 2500000,
+      "480p": 1000000,
     };
     return bitrates[resolution] || 5000000;
   };
@@ -377,7 +393,7 @@ export default function EnhanceVideoQualityPage() {
     }));
   };
 
-  const resolutions = ['4K', '1440p', '1080p', '720p', '480p', 'Original'];
+  const resolutions = ["4K", "1440p", "1080p", "720p", "480p", "Original"];
 
   const relatedTools = [
     {
@@ -471,7 +487,9 @@ export default function EnhanceVideoQualityPage() {
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Give your videos a professional quality boost. Upscale to 1080p or 4K, apply sharpening, reduce noise, and fine-tune color directly in your browser — completely free.
+                Give your videos a professional quality boost. Upscale to 1080p
+                or 4K, apply sharpening, reduce noise, and fine-tune color
+                directly in your browser — completely free.
               </p>
             </div>
           </div>
@@ -483,7 +501,9 @@ export default function EnhanceVideoQualityPage() {
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 blur-xl opacity-50" />
             <div className="relative rounded-3xl border bg-card/50 backdrop-blur-sm shadow-2xl">
               <div className="p-6">
-                <h2 className="text-xl font-bold mb-6">Enhance Video Quality</h2>
+                <h2 className="text-xl font-bold mb-6">
+                  Enhance Video Quality
+                </h2>
 
                 {/* File Upload */}
                 <Card className="mb-6">
@@ -511,7 +531,9 @@ export default function EnhanceVideoQualityPage() {
                     <div className="lg:col-span-1 space-y-6">
                       <Card>
                         <CardContent className="pt-6">
-                          <h2 className="text-lg font-semibold mb-4">Preview</h2>
+                          <h2 className="text-lg font-semibold mb-4">
+                            Preview
+                          </h2>
                           <video
                             ref={videoRef}
                             src={videoUrl}
@@ -523,12 +545,21 @@ export default function EnhanceVideoQualityPage() {
                           {videoDimensions.width > 0 && (
                             <div className="mt-4 space-y-2 text-sm">
                               <div className="flex justify-between">
-                                <span className="text-muted-foreground">Resolution:</span>
-                                <span className="font-medium">{videoDimensions.width} x {videoDimensions.height}</span>
+                                <span className="text-muted-foreground">
+                                  Resolution:
+                                </span>
+                                <span className="font-medium">
+                                  {videoDimensions.width} x{" "}
+                                  {videoDimensions.height}
+                                </span>
                               </div>
                               <div className="flex justify-between">
-                                <span className="text-muted-foreground">Duration:</span>
-                                <span className="font-medium">{videoDuration.toFixed(2)}s</span>
+                                <span className="text-muted-foreground">
+                                  Duration:
+                                </span>
+                                <span className="font-medium">
+                                  {videoDuration.toFixed(2)}s
+                                </span>
                               </div>
                             </div>
                           )}
@@ -538,7 +569,9 @@ export default function EnhanceVideoQualityPage() {
                       {outputUrl && (
                         <Card>
                           <CardContent className="pt-6">
-                            <h3 className="text-sm font-semibold mb-3 text-green-600 dark:text-green-500">✓ Enhancement Complete</h3>
+                            <h3 className="text-sm font-semibold mb-3 text-green-600 dark:text-green-500">
+                              ✓ Enhancement Complete
+                            </h3>
                             <video
                               src={outputUrl}
                               controls
@@ -556,19 +589,33 @@ export default function EnhanceVideoQualityPage() {
                     <div className="lg:col-span-2">
                       <Card>
                         <CardContent className="pt-6">
-                          <h2 className="text-lg font-semibold mb-6">Enhancement Settings</h2>
+                          <h2 className="text-lg font-semibold mb-6">
+                            Enhancement Settings
+                          </h2>
 
                           <div className="space-y-6">
                             {/* Upscaling Section */}
                             <div className="space-y-4 p-4 bg-muted/50 rounded-lg">
                               <div className="flex items-center justify-between">
-                                <h3 className="font-medium">Resolution Upscaling</h3>
+                                <h3 className="font-medium">
+                                  Resolution Upscaling
+                                </h3>
                                 <div className="flex items-center gap-2">
-                                  <Label htmlFor="upscale-toggle" className="text-sm">Enable</Label>
+                                  <Label
+                                    htmlFor="upscale-toggle"
+                                    className="text-sm"
+                                  >
+                                    Enable
+                                  </Label>
                                   <Switch
                                     id="upscale-toggle"
                                     checked={enhancementOptions.upscale}
-                                    onCheckedChange={(checked) => handleEnhancementChange('upscale', checked)}
+                                    onCheckedChange={(checked) =>
+                                      handleEnhancementChange(
+                                        "upscale",
+                                        checked,
+                                      )
+                                    }
                                   />
                                 </div>
                               </div>
@@ -576,13 +623,22 @@ export default function EnhanceVideoQualityPage() {
                               {enhancementOptions.upscale && (
                                 <div className="space-y-4">
                                   <div>
-                                    <Label className="mb-2 block">Target Resolution</Label>
+                                    <Label className="mb-2 block">
+                                      Target Resolution
+                                    </Label>
                                     <div className="flex flex-wrap gap-2">
                                       {resolutions.map((res) => (
                                         <Button
                                           key={res}
-                                          variant={enhancementOptions.targetResolution === res ? 'default' : 'outline'}
-                                          onClick={() => handleResolutionChange(res)}
+                                          variant={
+                                            enhancementOptions.targetResolution ===
+                                            res
+                                              ? "default"
+                                              : "outline"
+                                          }
+                                          onClick={() =>
+                                            handleResolutionChange(res)
+                                          }
                                           className="text-sm"
                                         >
                                           {res}
@@ -593,21 +649,39 @@ export default function EnhanceVideoQualityPage() {
 
                                   <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                      <Label className="mb-1 block">Custom Width (px)</Label>
+                                      <Label className="mb-1 block">
+                                        Custom Width (px)
+                                      </Label>
                                       <input
                                         type="number"
-                                        value={enhancementOptions.customWidth || ''}
-                                        onChange={(e) => handleEnhancementChange('customWidth', parseInt(e.target.value) || 0)}
+                                        value={
+                                          enhancementOptions.customWidth || ""
+                                        }
+                                        onChange={(e) =>
+                                          handleEnhancementChange(
+                                            "customWidth",
+                                            parseInt(e.target.value) || 0,
+                                          )
+                                        }
                                         min={1}
                                         className="w-full bg-background border border-input rounded-md px-3 py-2 text-sm"
                                       />
                                     </div>
                                     <div>
-                                      <Label className="mb-1 block">Custom Height (px)</Label>
+                                      <Label className="mb-1 block">
+                                        Custom Height (px)
+                                      </Label>
                                       <input
                                         type="number"
-                                        value={enhancementOptions.customHeight || ''}
-                                        onChange={(e) => handleEnhancementChange('customHeight', parseInt(e.target.value) || 0)}
+                                        value={
+                                          enhancementOptions.customHeight || ""
+                                        }
+                                        onChange={(e) =>
+                                          handleEnhancementChange(
+                                            "customHeight",
+                                            parseInt(e.target.value) || 0,
+                                          )
+                                        }
                                         min={1}
                                         className="w-full bg-background border border-input rounded-md px-3 py-2 text-sm"
                                       />
@@ -620,8 +694,14 @@ export default function EnhanceVideoQualityPage() {
                             {/* Bitrate Section */}
                             <div className="space-y-3 p-4 bg-muted/50 rounded-lg">
                               <div className="flex items-center justify-between">
-                                <h3 className="font-medium">Bitrate (Quality)</h3>
-                                <Button variant="link" className="text-xs h-auto p-0" onClick={handleApplyRecommendedBitrate}>
+                                <h3 className="font-medium">
+                                  Bitrate (Quality)
+                                </h3>
+                                <Button
+                                  variant="link"
+                                  className="text-xs h-auto p-0"
+                                  onClick={handleApplyRecommendedBitrate}
+                                >
                                   Use Recommended
                                 </Button>
                               </div>
@@ -631,12 +711,20 @@ export default function EnhanceVideoQualityPage() {
                                   min={500000}
                                   max={50000000}
                                   step={100000}
-                                  onValueChange={([value]) => handleEnhancementChange('bitrate', value)}
+                                  onValueChange={([value]) =>
+                                    handleEnhancementChange("bitrate", value)
+                                  }
                                 />
                                 <div className="flex justify-between text-sm">
-                                  <span className="text-muted-foreground">500 Kbps</span>
-                                  <span className="font-medium">{formatBitrate(enhancementOptions.bitrate)}</span>
-                                  <span className="text-muted-foreground">50 Mbps</span>
+                                  <span className="text-muted-foreground">
+                                    500 Kbps
+                                  </span>
+                                  <span className="font-medium">
+                                    {formatBitrate(enhancementOptions.bitrate)}
+                                  </span>
+                                  <span className="text-muted-foreground">
+                                    50 Mbps
+                                  </span>
                                 </div>
                               </div>
                             </div>
@@ -649,70 +737,114 @@ export default function EnhanceVideoQualityPage() {
                                 <div>
                                   <div className="flex justify-between mb-2">
                                     <Label>Sharpness</Label>
-                                    <span className="text-sm text-muted-foreground">{(enhancementOptions.sharpness * 100).toFixed(0)}%</span>
+                                    <span className="text-sm text-muted-foreground">
+                                      {(
+                                        enhancementOptions.sharpness * 100
+                                      ).toFixed(0)}
+                                      %
+                                    </span>
                                   </div>
                                   <Slider
                                     value={[enhancementOptions.sharpness]}
                                     min={0}
                                     max={1}
                                     step={0.05}
-                                    onValueChange={([value]) => handleEnhancementChange('sharpness', value)}
+                                    onValueChange={([value]) =>
+                                      handleEnhancementChange(
+                                        "sharpness",
+                                        value,
+                                      )
+                                    }
                                   />
                                 </div>
 
                                 <div>
                                   <div className="flex justify-between mb-2">
                                     <Label>Denoise</Label>
-                                    <span className="text-sm text-muted-foreground">{(enhancementOptions.denoise * 100).toFixed(0)}%</span>
+                                    <span className="text-sm text-muted-foreground">
+                                      {(
+                                        enhancementOptions.denoise * 100
+                                      ).toFixed(0)}
+                                      %
+                                    </span>
                                   </div>
                                   <Slider
                                     value={[enhancementOptions.denoise]}
                                     min={0}
                                     max={1}
                                     step={0.05}
-                                    onValueChange={([value]) => handleEnhancementChange('denoise', value)}
+                                    onValueChange={([value]) =>
+                                      handleEnhancementChange("denoise", value)
+                                    }
                                   />
                                 </div>
 
                                 <div>
                                   <div className="flex justify-between mb-2">
                                     <Label>Brightness</Label>
-                                    <span className="text-sm text-muted-foreground">{(enhancementOptions.brightness * 100).toFixed(0)}%</span>
+                                    <span className="text-sm text-muted-foreground">
+                                      {(
+                                        enhancementOptions.brightness * 100
+                                      ).toFixed(0)}
+                                      %
+                                    </span>
                                   </div>
                                   <Slider
                                     value={[enhancementOptions.brightness]}
                                     min={-0.5}
                                     max={0.5}
                                     step={0.05}
-                                    onValueChange={([value]) => handleEnhancementChange('brightness', value)}
+                                    onValueChange={([value]) =>
+                                      handleEnhancementChange(
+                                        "brightness",
+                                        value,
+                                      )
+                                    }
                                   />
                                 </div>
 
                                 <div>
                                   <div className="flex justify-between mb-2">
                                     <Label>Contrast</Label>
-                                    <span className="text-sm text-muted-foreground">{(enhancementOptions.contrast * 100).toFixed(0)}%</span>
+                                    <span className="text-sm text-muted-foreground">
+                                      {(
+                                        enhancementOptions.contrast * 100
+                                      ).toFixed(0)}
+                                      %
+                                    </span>
                                   </div>
                                   <Slider
                                     value={[enhancementOptions.contrast]}
                                     min={0.5}
                                     max={2}
                                     step={0.05}
-                                    onValueChange={([value]) => handleEnhancementChange('contrast', value)}
+                                    onValueChange={([value]) =>
+                                      handleEnhancementChange("contrast", value)
+                                    }
                                   />
                                 </div>
 
                                 <div>
                                   <div className="flex justify-between mb-2">
                                     <Label>Saturation</Label>
-                                    <span className="text-sm text-muted-foreground">{(enhancementOptions.saturation * 100).toFixed(0)}%</span>
+                                    <span className="text-sm text-muted-foreground">
+                                      {(
+                                        enhancementOptions.saturation * 100
+                                      ).toFixed(0)}
+                                      %
+                                    </span>
                                   </div>
                                   <Slider
                                     value={[enhancementOptions.saturation]}
                                     min={0}
                                     max={2}
                                     step={0.05}
-                                    onValueChange={([value]) => handleEnhancementChange('saturation', value)}
+                                    onValueChange={([value]) =>
+                                      handleEnhancementChange(
+                                        "saturation",
+                                        value,
+                                      )
+                                    }
                                   />
                                 </div>
                               </div>
@@ -723,16 +855,25 @@ export default function EnhanceVideoQualityPage() {
                               <div className="flex items-center justify-between">
                                 <div>
                                   <h3 className="font-medium">HDR Effect</h3>
-                                  <p className="text-xs text-muted-foreground mt-1">Enhance dynamic range for better highlights and shadows</p>
+                                  <p className="text-xs text-muted-foreground mt-1">
+                                    Enhance dynamic range for better highlights
+                                    and shadows
+                                  </p>
                                 </div>
                                 <Switch
                                   checked={enhancementOptions.hdr}
                                   onCheckedChange={(checked) => {
-                                    handleEnhancementChange('hdr', checked);
+                                    handleEnhancementChange("hdr", checked);
                                     if (checked) {
-                                      handleEnhancementChange('contrast', 1.2);
-                                      handleEnhancementChange('saturation', 1.3);
-                                      handleEnhancementChange('brightness', 0.1);
+                                      handleEnhancementChange("contrast", 1.2);
+                                      handleEnhancementChange(
+                                        "saturation",
+                                        1.3,
+                                      );
+                                      handleEnhancementChange(
+                                        "brightness",
+                                        0.1,
+                                      );
                                     }
                                   }}
                                 />
@@ -741,8 +882,14 @@ export default function EnhanceVideoQualityPage() {
 
                             {/* Process Button */}
                             <div className="space-y-4">
-                              <Button onClick={handleEnhance} disabled={isProcessing} className="w-full">
-                                {isProcessing ? 'Processing...' : 'Enhance Video Quality'}
+                              <Button
+                                onClick={handleEnhance}
+                                disabled={isProcessing}
+                                className="w-full"
+                              >
+                                {isProcessing
+                                  ? "Processing..."
+                                  : "Enhance Video Quality"}
                               </Button>
 
                               {/* Progress Bar */}
@@ -777,13 +924,18 @@ export default function EnhanceVideoQualityPage() {
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What the Video Quality Enhancer Does
+                What it Does
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The Video Quality Enhancer provides a suite of image processing tools to improve the visual quality of any video file. You can upscale video resolution to standard targets like 720p, 1080p, 1440p, or 4K, increase the output bitrate for sharper encoding, apply a sharpness filter to crisp up soft footage, use a denoise pass to smooth out grain, and adjust brightness, contrast, and saturation.
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                An HDR effect preset automatically boosts contrast and saturation for a richer, more dynamic look. All processing runs in your browser — nothing is uploaded to external servers.
+                When you are dealing with dark, blurry, or low-resolution
+                footage, you can enhance video quality online free to repair its
+                visual fidelity directly in your browser. This application
+                bundles an upscaler, noise reducer, and color correction suite
+                into a single interface that processes entirely on your local
+                machine. Because it does not upload files to complex cloud
+                rendering servers, it provides absolute privacy and eliminates
+                the long download times typical of large video file
+                manipulation.
               </p>
             </CardContent>
           </Card>
@@ -792,61 +944,185 @@ export default function EnhanceVideoQualityPage() {
         {/* How to Use Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use the Tool</h2>
-            <p className="mt-4 text-muted-foreground">
-              Enhance your video quality in 6 simple steps
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
           </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Establish target quality targets
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                After dragging your video file into the application area, toggle
+                the upscaler and select a target resolution such as 1080p or 4K.
+                Use the bitrate slider to instruct the local rendering engine
+                how much data it is allowed to use per second, keeping in mind
+                that high bitrates look cleaner but result in significantly
+                larger final files.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Adjust correction filters
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Move through the individual enhancement sliders to correct
+                specific flaws occurring in the imported footage. You can pull
+                the denoise slider to smooth out ugly film grain, boost the
+                sharpness slider to clarify soft edges, or simply click the HDR
+                switch to automatically push the contrast and color saturation
+                into a more cinematic appearance.
+              </p>
+            </div>
+            <div className="relative text-center">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="relative font-semibold text-xl">
+                Render the final master
+              </h3>
+              <p className="relative mt-2 text-sm text-muted-foreground text-left">
+                Click the enhancement button to command your hardware to begin
+                calculating the new pixel array for every frame of the video.
+                Because applying multiple heavy filters requires intense
+                processing power, keep your browser tab active until the
+                progress indicator hits 100%, and then download the vastly
+                improved MP4 straight to your device.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-6">
-            {[
-              {
-                step: "01",
-                title: "Upload Video",
-                description: "Upload your video using drag-and-drop or browse button",
-              },
-              {
-                step: "02",
-                title: "Enable Upscaling",
-                description: "Enable resolution upscaling and select target resolution if needed",
-              },
-              {
-                step: "03",
-                title: "Set Bitrate",
-                description: "Adjust bitrate slider for desired output quality",
-              },
-              {
-                step: "04",
-                title: "Apply Enhancements",
-                description: "Adjust sharpness, denoise, brightness, contrast, and saturation",
-              },
-              {
-                step: "05",
-                title: "Process",
-                description: "Click 'Enhance Video Quality' to process your video",
-              },
-              {
-                step: "06",
-                title: "Download",
-                description: "Download your improved video when processing completes",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {index < 5 && (
-                  <div className="absolute left-1/2 top-16 hidden h-0.5 w-full -translate-x-1/2 bg-gradient-to-r from-primary/20 to-primary/5 sm:block" />
-                )}
-                <div className="relative text-center">
-                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
-                    <span className="text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="relative font-semibold text-xl">{item.title}</h3>
-                  <p className="relative mt-2 text-sm text-muted-foreground">
-                    {item.description}
+        {/* Use Cases Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Modernizing old family home videos
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Archivists pulling video clips off dusty DVDs often discover
+                  soft, unappealing 480p footage that looks terrible on modern
+                  televisions. Using the upscaler to push the resolution to
+                  1080p and applying a mild sharpness filter makes old family
+                  memories look far more watchable on large screens.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Rescuing dark smartphone night out footage
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Mobile phones heavily compress video shot inside dim
+                  restaurants, resulting in clips plagued by chunky visual noise
+                  and muddy shadows. Pushing the brightness slider up while
+                  heavily applying the denoise filter smooths away the harsh
+                  camera struggle, revealing the people hidden in the dark.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Punching up dull corporate talking heads
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  When marketing teams receive poorly lit webcam recordings from
+                  executives sitting in flat grey offices, the footage can bore
+                  viewers. Enabling the HDR switch alongside a saturation boost
+                  injects artificial vibrancy into the corporate presentation,
+                  making the speaker look much healthier and engaged.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Overcoming aggressive social media compression
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Downloading a viral clip that has been re-uploaded to multiple
+                  chaotic social networks often yields a horribly pixelated
+                  final file. Pushing the maximum output bitrate high forces the
+                  local encoder to smooth over structural artifact gaps,
+                  patching together a solid looking file ready for safe
+                  republishing.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Preparing basic assets for heavy editing
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Video editors receiving rough cell phone clips to place into
+                  professional YouTube documentaries must ensure all sources
+                  match a baseline visual standard. Upscaling and correcting
+                  colors locally ensures the humble stock footage won't
+                  completely shatter the production value of the larger project
+                  file.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Settings Explained Section */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Settings Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Target Bitrate</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Bitrate measures the exact megabit data allowance given to
+                    each passing second of your rendered video clip. Keeping the
+                    slider around 8Mbps provides excellent web quality, dragging
+                    it to 25Mbps provides a flawless raw archival copy, and
+                    dragging it to 2Mbps forces aggressive compression to save
+                    maximum hard drive space.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Denoise Percentage</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The denoise tool intelligently blurs chaotic pixels
+                    specifically associated with poor sensor lighting without
+                    heavily damaging intended details. A value around 30%
+                    handles minor smartphone grain, but dragging the slider
+                    beyond 70% will cause your actors to look like they are made
+                    out of strangely smooth plastic.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Sharpness Percentage</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The sharpening filter detects stark transitions between
+                    light and dark objects in your footage and aggressively
+                    hardens the contrast along those dividing lines. Applying a
+                    conservative 20% value successfully crisps up a soft focus
+                    lens, while setting it to 100% will create an ugly glowing
+                    white aura around every single object.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* FAQs Section */}
@@ -855,9 +1131,6 @@ export default function EnhanceVideoQualityPage() {
             <h2 className="text-3xl font-bold tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Everything you need to know about enhancing video quality
-            </p>
           </div>
           <Faqs faqs={faqData} />
         </section>
@@ -865,7 +1138,9 @@ export default function EnhanceVideoQualityPage() {
         {/* Related Tools Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">More Video Tools</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              More Video Tools
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Explore our other free video editing tools
             </p>
