@@ -1,0 +1,6 @@
+export { AdjustmentsTab } from './AdjustmentsTab'
+export { FiltersTab } from './FiltersTab'
+export { BackgroundTab } from './BackgroundTab'
+export { RetouchTab } from './RetouchTab'
+export { DrawTab } from './DrawTab'
+export { ExportTab } from './ExportTab'

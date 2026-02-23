@@ -19,7 +19,13 @@ interface WorkerConfig {
   type?: "module" | "classic";
 }
 
-type WorkerType = "imageCompressor" | "fileZipper" | "mockDataGenerator"
+type WorkerType =
+  | "imageCompressor"
+  | "fileZipper"
+  | "mockDataGenerator"
+  | "imageFormatConverter"
+  | "imageEditor"
+  | "fileZipping";
 
 class WorkerManager {
   private workers: Map<WorkerType, WorkerInstance> = new Map();
@@ -310,7 +316,37 @@ export const releaseFileZipperWorker = () =>
   workerManager.releaseWorker("fileZipper");
 
 export const getMockDataWorker = () =>
-  workerManager.getWorker('mockDataGenerator', { workerPath: '/workers/mockDataWorker.bundle.js', type: 'classic' })
+  workerManager.getWorker("mockDataGenerator", {
+    workerPath: "/workers/mockDataWorker.bundle.js",
+    type: "classic",
+  });
 
 export const releaseMockDataWorker = () =>
-  workerManager.releaseWorker('mockDataGenerator')
+  workerManager.releaseWorker("mockDataGenerator");
+
+// Image Format Converter Worker
+export const getImageFormatConverterWorker = () =>
+  workerManager.getWorker("imageFormatConverter", {
+    workerPath: "/workers/image-tools/imageFormatConverterWorker.js",
+  });
+
+export const releaseImageFormatConverterWorker = () =>
+  workerManager.releaseWorker("imageFormatConverter");
+
+// Image Editor Worker
+export const getImageEditorWorker = () =>
+  workerManager.getWorker("imageEditor", {
+    workerPath: "/workers/image-tools/imageEditorWorker.js",
+  });
+
+export const releaseImageEditorWorker = () =>
+  workerManager.releaseWorker("imageEditor");
+
+// File Zipping Worker
+export const getFileZippingWorker = () =>
+  workerManager.getWorker("fileZipping", {
+    workerPath: "/workers/file-zipping-worker.js",
+  });
+
+export const releaseFileZippingWorker = () =>
+  workerManager.releaseWorker("fileZipping");
