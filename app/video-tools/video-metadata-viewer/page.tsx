@@ -23,33 +23,29 @@ import ToolLinkCards from "@/components/utils/ToolLinkCards";
 const faqData = [
   {
     question:
-      "How do I check a video file's true internal resolution and framerate?",
+      "How do I check the real resolution and frame rate of a video file?",
     answer:
-      'You simply drag the mysterious video file onto the dashboard surface to instantly rip open its structure. The viewer immediately scans the deeply embedded hex data, accurately revealing whether that supposedly "4K" file is actually a tiny 720p 30fps track deceptively stretched upward.',
+      "Open the file picker or drop your video onto the tool. The analyzer reads the file headers in your browser and displays the width, height, frame rate, codec, and bitrate within a second. No software download is needed and the file is never sent to a server.",
   },
   {
-    question:
-      "Does this metadata viewer upload my massive unreleased movie to your server?",
+    question: "Does this tool upload my video to read the metadata?",
     answer:
-      "Absolutely not. Because the analyzer leverages specific client-side Web APIs, it purely reads the file headers from your local computer's memory. Your gigabyte-scale video never touches a cloud firewall, ensuring complete, impenetrable security for proprietary media.",
+      "No. The analyzer uses browser File APIs to read the file headers from your local device. The video data is processed in your browser's memory and never transferred over your network connection. This means even multi-gigabyte files produce results almost instantly.",
   },
   {
-    question:
-      "Can I find out exactly what secret codec my video is actually using?",
+    question: "What codec information does this tool show?",
     answer:
-      'Yes. Far beyond a generic ".MP4" extension, this tool digs into the specific mathematical architecture utilized, instantly reporting if your video is using a standard H.264 engine, an advanced H.265 (HEVC), or a powerful new VP9 algorithm.',
+      "The tool reports the codec identifier for both the video and audio tracks. For video, common values are avc1 for H.264, hev1 for H.265, and vp09 for VP9. For audio, common values are mp4a for AAC and ac-3 for Dolby AC3. Knowing the codec helps you identify whether a file will play on a specific device or whether it needs to be transcoded.",
   },
   {
-    question:
-      "Why does my supposedly identical video file play badly on certain Apple devices?",
+    question: "Why does my video play on one device but not another?",
     answer:
-      "Your metadata likely contains an invisible audio codec discrepancy. While both files might structurally appear as MP4s, the inspector could successfully reveal one file utilizes a universal AAC audio format, while the other secretly relies on an older AC3 codec that specific Apple mobile processors explicitly refuse to play.",
+      "The codec identifier in the metadata usually explains this. A file using an H.265 video track or an AC3 audio track will not play on devices that lack a hardware or software decoder for those formats. The metadata viewer shows you the exact codec string, which tells you which format to convert the file to so it plays on the target device.",
   },
   {
-    question:
-      "Can I use this inspector tool to see the metadata of an MP3 audio file?",
+    question: "Can I read metadata from audio files like MP3 and WAV?",
     answer:
-      "Yes, it fully supports deep audio inspection. Injecting an MP3 or WAV file into the scanner accurately uncovers the core acoustic architecture, exposing the exact audio bitrate, the distinct sample rate (like 44.1kHz), and the total number of stereo or mono channels.",
+      "Yes. The tool supports audio files as well as video files. For an MP3 or AAC file, it reports the audio codec, bitrate, sample rate, and number of channels. For a WAV file, it reports the sample rate and bit depth. This is useful for checking audio quality before editing or distribution.",
   },
 ];
 
@@ -145,9 +141,10 @@ export default function ShowVideoAudioMetadata() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              View detailed metadata from video and audio files instantly. No
-              uploads, no software, no waiting — everything happens in your
-              browser.
+              Read codec, resolution, frame rate, bitrate, sample rate, and
+              channel count directly from any video or audio file. Results
+              appear in under a second. No uploads, no software, and no account
+              required.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -186,15 +183,15 @@ export default function ShowVideoAudioMetadata() {
               What it Does
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              When a shady freelancer delivers an MP4 file that suspiciously
-              stutters on your computer, you must instantly verify its internal
-              architecture. This powerful browser utility forcibly rips open the
-              video file's hidden structural layer, completely ignoring the
-              visual images perfectly to scan deeply embedded text codes. By
-              analyzing this invisible matrix locally on your hard drive, it
-              reveals the absolute truth regarding exact framerates, concealed
-              audio codecs, and specific compression bitrates without waiting
-              hours for massive files to upload to an external cloud server.
+              This tool reads the header data embedded in your video or audio
+              file and displays the technical properties stored there. Those
+              properties include the video codec, resolution, frame rate,
+              bitrate, duration, audio codec, sample rate, and channel count.
+              Understanding these values helps you diagnose playback problems,
+              verify delivery specifications before submitting to a broadcaster
+              or platform, and decide which settings to use when converting a
+              file. All reading happens in your browser so no data leaves your
+              device.
             </p>
           </CardContent>
         </Card>
@@ -210,15 +207,12 @@ export default function ShowVideoAudioMetadata() {
             <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
               <span className="text-2xl font-bold">1</span>
             </div>
-            <h3 className="relative font-semibold text-xl">
-              Deposit the mysterious file
-            </h3>
+            <h3 className="relative font-semibold text-xl">Load your file</h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              Directly drag the problematic MP4, MKV, or audio track straight
-              onto the digital scanner. Your browser immediately creates a
-              secure, offline bridge to your system's temporary memory,
-              guaranteeing that huge mult-gigabyte movie files never
-              accidentally trigger a slow Wi-Fi upload block.
+              Open the file picker or drag your video or audio file onto the
+              tool. The analyzer accepts MP4, MOV, MKV, WebM, MP3, WAV, AAC, and
+              other common formats. The file is read from your local drive and
+              never uploaded to a server.
             </p>
           </div>
           <div className="relative text-center">
@@ -226,14 +220,14 @@ export default function ShowVideoAudioMetadata() {
               <span className="text-2xl font-bold">2</span>
             </div>
             <h3 className="relative font-semibold text-xl">
-              Let the engine rip
+              Review the results
             </h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              The internal WebAssembly parser brutally hacks through the outer
-              video container almost instantly. Instead of attempting to play
-              the actual movie, it aggressively hunts down the specialized
-              header strings injected heavily into the very first few blocks of
-              binary data.
+              The tool reads the file headers and displays the metadata within a
+              second. Review the codec identifiers, resolution, frame rate,
+              bitrate, and audio properties. If a value looks wrong or
+              unexpected, that is often the cause of a playback or compatibility
+              problem.
             </p>
           </div>
           <div className="relative text-center">
@@ -241,14 +235,14 @@ export default function ShowVideoAudioMetadata() {
               <span className="text-2xl font-bold">3</span>
             </div>
             <h3 className="relative font-semibold text-xl">
-              Extract the hard data
+              Use the data to take action
             </h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              In under a second, the interface accurately updates to expose the
-              naked parameters. Clearly review the rigid frame dimensions,
-              double-check the exact audio sample rate, or meticulously verify
-              the specific digital codec signature to mathematically prove
-              exactly why the file refuses to play correctly.
+              Use the codec name to find a compatible converter. Use the
+              resolution to confirm the file meets a platform's upload
+              requirement. Use the bitrate to estimate whether the file is
+              over-compressed. The metadata gives you the specific facts you
+              need to decide the next step.
             </p>
           </div>
         </div>
@@ -262,74 +256,68 @@ export default function ShowVideoAudioMetadata() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
-              <h3 className="font-bold mb-2">Exposing fake 4K video</h3>
+              <h3 className="font-bold mb-2">
+                Verifying the actual resolution of delivered footage
+              </h3>
               <p className="text-sm text-muted-foreground">
-                Video editors receiving raw footage often suspect the cameraman
-                secretly shot in blurry 1080p and deceptively upscaled the
-                timeline export. Directly scanning the raw video file’s metadata
-                instantly reveals its true structural dimensions, completely
-                verifying the underlying resolution without needing to install
-                complicated desktop analysis programs.
+                A client delivers a file labeled as 4K. The metadata viewer
+                shows the resolution is 1920x1080 with upscale flags in the
+                container. You can confirm the discrepancy before accepting the
+                delivery and request the correct source files without needing to
+                play the whole video first.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Diagnosing playback errors</h3>
+              <p className="text-sm text-muted-foreground">
+                A video file plays picture but produces no sound on a specific
+                device. The metadata viewer shows the audio track uses AC3
+                encoding rather than AAC. Most browsers and mobile devices do
+                not have an AC3 decoder, so the audio track is silently dropped.
+                Converting the audio to AAC resolves the problem.
               </p>
             </CardContent>
           </Card>
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
               <h3 className="font-bold mb-2">
-                Troubleshooting playback errors
+                Confirming broadcast delivery specs
               </h3>
               <p className="text-sm text-muted-foreground">
-                Digital archivists dealing with a massive hard drive of ancient
-                AVIs frequently encounter files that play clean video but
-                absolutely zero audio. Utilizing the metadata scanner reliably
-                proves that the video features a highly obscure, unsupported
-                internal audio codec, giving them the exact technical
-                information needed to transcode perfectly.
+                Television and streaming platform deliveries require specific
+                frame rates, bitrates, and codec identifiers. Before submitting
+                a finished file, check the metadata to confirm the frame rate is
+                exactly 23.976fps, the bitrate falls within the required range,
+                and the video codec matches the specification sheet.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Auditing an audio archive</h3>
+              <p className="text-sm text-muted-foreground">
+                A batch of old podcast episodes needs to be re-uploaded at a
+                consistent quality level. Check each file's bitrate and sample
+                rate using the viewer. Files encoded below 128kbps or at 22kHz
+                sample rate can be identified quickly so you know which ones
+                need to be sourced from the original recordings rather than
+                re-encoded from the existing compressed files.
               </p>
             </CardContent>
           </Card>
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
               <h3 className="font-bold mb-2">
-                Verifying rigid broadcast limits
+                Checking codec compatibility before embedding
               </h3>
               <p className="text-sm text-muted-foreground">
-                Television directors preparing to heavily distribute a
-                commercial spot are bound by intensely strict network delivery
-                specifications. Passing the final render file through the
-                inspector strongly guarantees the frame rate is locked at
-                exactly 23.976fps and the bitrate hits the required density,
-                totally avoiding a catastrophic rejection.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-muted/50 border-muted">
-            <CardContent className="p-6">
-              <h3 className="font-bold mb-2">
-                Auditing massive podcast archives
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Audio engineers attempting to remaster an enormous backlog of
-                five-year-old MP3 podcast episodes desperately need to
-                understand their core audio quality baseline. Dropping the files
-                into the scanner instantly reveals the bitrate density and the
-                channel frequency without opening a heavy audio editing
-                application.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-muted/50 border-muted">
-            <CardContent className="p-6">
-              <h3 className="font-bold mb-2">
-                Preventing Apple ecosystem failures
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Designers trying to strictly optimize a web banner video heavily
-                target the VP9 codec for massive file size savings, but fear
-                alienating Safari users. Scanning the final WebM file securely
-                verifies its internal structure, confirming if the file
-                genuinely requires a secondary MP4 fallback loop to successfully
-                play on older iPhones.
+                WebM files using VP9 video save bandwidth on most browsers but
+                do not play in Safari. Before embedding a video on a website,
+                check the codec identifier in the metadata. If it shows vp09,
+                you need to provide an H.264 MP4 fallback so Safari users see
+                the video rather than a blank player.
               </p>
             </CardContent>
           </Card>
@@ -345,36 +333,38 @@ export default function ShowVideoAudioMetadata() {
             </h2>
             <div className="space-y-6">
               <div>
-                <h3 className="font-bold text-lg">Codec Designation</h3>
+                <h3 className="font-bold text-lg">Codec Identifier</h3>
                 <p className="text-muted-foreground mt-2">
-                  The codec is the extremely complex mathematical formula
-                  heavily utilized to compress the raw visual information into a
-                  manageable size. Identifying complex strings like "avc1"
-                  firmly indicates you are using the highly compatible H.264
-                  video compression standard, whereas finding "vp09" proves your
-                  video requires significant modern processing.
+                  The codec identifier tells you the specific algorithm used to
+                  compress and store the video or audio data. Common video codec
+                  identifiers include avc1 for H.264, hev1 or hvc1 for H.265,
+                  and vp09 for VP9. Common audio identifiers include mp4a for
+                  AAC and ac-3 for Dolby. Knowing the codec lets you find the
+                  right converter or decoder when a file will not play on a
+                  specific device.
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-lg">Bitrate Density</h3>
+                <h3 className="font-bold text-lg">Bitrate</h3>
                 <p className="text-muted-foreground mt-2">
-                  This precise metric heavily dictates exactly how much gigabyte
-                  data is physically shoved through the processor every single
-                  second. A shockingly low bitrate mathematically guarantees
-                  your video will instantly dissolve into ugly pixelated blocks
-                  during fast motion, while an intensely high number explains
-                  why your short clip requires massive storage capacity.
+                  Bitrate measures how much data is used per second of video or
+                  audio, usually expressed in kilobits per second (kbps) or
+                  megabits per second (Mbps). A higher bitrate means more data
+                  per second, which generally preserves more image or sound
+                  detail. A very low bitrate explains visible blockiness during
+                  fast motion or heavy compression artifacts in still frames.
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-lg">Resolution Framework</h3>
+                <h3 className="font-bold text-lg">Resolution and Frame Rate</h3>
                 <p className="text-muted-foreground mt-2">
-                  The specific grid coordinates, like 1920x1080, entirely
-                  dictate the literal physical volume of pixels forcibly
-                  arranged in horizontal and vertical lines. Knowing your true
-                  resolution strongly guarantees you perfectly match the video
-                  editing sequence settings inside Premiere Pro or strictly meet
-                  harsh YouTube upload requirements.
+                  Resolution is the pixel grid size, expressed as width by
+                  height. Common values are 1920x1080 for Full HD and 3840x2160
+                  for 4K. Frame rate is the number of still images shown per
+                  second, expressed in frames per second (fps). Common values
+                  are 24fps for film, 30fps for broadcast, and 60fps for sports
+                  and gaming. These two values together define the format of the
+                  video track.
                 </p>
               </div>
             </div>

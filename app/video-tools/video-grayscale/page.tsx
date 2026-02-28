@@ -20,39 +20,34 @@ import Script from "next/script";
 
 const faqData = [
   {
-    question:
-      "Do I need to download video editing software to make my clip black and white?",
+    question: "How do I convert a video to black and white without software?",
     answer:
-      "No. You can run a full grayscale conversion directly inside your Chrome or Safari browser window. Because this tool utilizes local memory processing, you bypass terrible cloud upload times and instantly strip color from your footage without downloading an executable desktop program like Premiere Pro.",
+      "Open the file picker and select your video. Click Convert to Grayscale and wait for the progress bar to reach 100%. The encoder applies a grayscale filter to every frame in your browser using your device's CPU. When it finishes, click Download to save the black and white MP4. No software installation is required and nothing is uploaded to a server.",
   },
   {
-    question:
-      "Will making my video black and white reduce its actual file size?",
+    question: "Does converting to grayscale reduce the file size?",
     answer:
-      "Surprisingly, no not immediately. A grayscale filter artificially drains color, but it doesn't change the underlying structural MP4 mathematics. The video still maintains a digital slot for color data, even if that slot is visually empty, so your file size will remain largely identical.",
+      "Not directly. Grayscale conversion removes color channel data from the visual output but the MP4 container still stores the three color channels at zero saturation internally. The output file size will be close to the same as the original. If you also need a smaller file, run the output through a video compressor after the grayscale conversion.",
   },
   {
-    question:
-      "How long does a local browser grayscale conversion actually take?",
+    question: "How long does grayscale conversion take?",
     answer:
-      "Because this system does not rely on a distant cloud server, your rendering speed is entirely dictated by your own physical processor. A heavy 4K file on an old laptop could take 20 minutes to re-encode, while a short 1080p clip on a modern gaming PC might take exactly five seconds.",
+      "Processing speed depends on your device's processor and the length of your video. A two-minute 1080p clip takes about one to three minutes on a mid-range laptop. A longer 4K recording can take ten minutes or more. Keep the browser tab active and avoid running other heavy tasks while the encoder works.",
   },
   {
-    question:
-      "Are there ugly watermarks burned into the center of my final footage?",
+    question: "Does the output video have a watermark on it?",
     answer:
-      "Zero watermarks. This utility acts as a direct, private conversion tool running heavily on your local computer hardware. Since we avoid paying massive cloud computing fees, we don't have to ruin your output footage with transparent logos to force a subscription upgrade.",
+      "No watermark is added to the output. All processing runs on your device using your own CPU. There is no cloud server cost involved, so no subscription or payment is required to remove a watermark.",
   },
   {
-    question: "Does converting to grayscale violently destroy my audio track?",
+    question: "Does the grayscale filter affect the audio track?",
     answer:
-      "Not at all. The processing algorithm is strictly configured to exclusively target visual color pixel arrays. Your original dialogue, background music, and overall stereo audio waveform absolutely remain completely untouched and perfectly embedded in the final MP4.",
+      "No. The encoder targets only the video frames. The audio data is copied from the source file into the output MP4 unchanged. Your dialogue, music, and any other audio recorded with the video will play back at the same quality in the grayscale output.",
   },
   {
-    question:
-      "Are the black and white filters permanently baked into the video?",
+    question: "Is the grayscale effect reversible?",
     answer:
-      "Yes, this acts as a deeply destructive encoder. Rather than adding a flimsy, temporary Instagram filter on top of the clip, it structurally redraws the internal color identity of every single frame, ensuring the black and white aesthetic is violently locked in forever, no matter where you upload it next.",
+      "No. The encoder rewrites the color information in every frame of the output file. The resulting MP4 contains grayscale pixel data at the file level, not a filter layer that can be switched off. Your original file is not modified. If you need the color version again, use your original source file.",
   },
 ];
 
@@ -278,14 +273,15 @@ export default function VideoGrayscalePage() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-                Video Grayscale Converter – Convert Video to Black & White
-                Online
+                Convert Video to Black and White Online Free
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Transform any color video into a timeless black-and-white film
-                with one click. Full grayscale conversion with no quality loss,
-                no watermarks, and no software to install.
+                Remove all color from your video and produce a clean grayscale
+                MP4 in your browser. The encoder rewrites every frame using
+                luminance values only, with no quality loss and no watermarks.
+                Your original file stays untouched until you download the
+                output.
               </p>
             </div>
           </div>
@@ -482,15 +478,15 @@ export default function VideoGrayscalePage() {
                 What it Does
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                When you need to force a serious, moody tone into a colorful
-                clip, you can convert video to grayscale online for free. This
-                web application bypasses massive professional software suites
-                entirely, reading your MP4 file locally in the browser and
-                mathematically stripping out every ounce of RGB saturation. It
-                brutally forces the entire visual spectrum down to pure black,
-                white, and neutral grays, effectively generating permanent,
-                cinematic monochrome footage without destroying the underlying
-                resolution or audio fidelity.
+                This tool applies a grayscale filter to every frame of your
+                video and encodes the result into a new MP4 file. The filter
+                works by reading each pixel's individual red, green, and blue
+                values and replacing them all with a single luminance value that
+                represents how bright that point in the image is. The result is
+                a video that uses only shades of gray from black to white, with
+                no hue information remaining. All processing runs in your
+                browser using your device's CPU, so no file is uploaded to any
+                server. Your original video is not modified.
               </p>
             </CardContent>
           </Card>
@@ -507,14 +503,13 @@ export default function VideoGrayscalePage() {
                 <span className="text-2xl font-bold">1</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Import the colorful file
+                Select your video
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Drop your raw, over-saturated video right onto the dashboard
-                surface to immediately mount the footage into your computer's
-                temporary memory. The system mounts an "Original" preview player
-                immediately, granting you a clear baseline reference before you
-                utterly destroy the color spectrum.
+                Open the file picker and load your video. The preview panel
+                shows the original color footage so you can confirm the file
+                loaded correctly. You can return to this Original view after
+                processing to compare it side by side with the grayscale output.
               </p>
             </div>
             <div className="relative text-center">
@@ -522,15 +517,14 @@ export default function VideoGrayscalePage() {
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Execute the grayscale conversion
+                Start the conversion
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Smash the "Convert to Grayscale" trigger to unleash your local
-                CPU on the file. Because this does not upload to a distant
-                server, you must physically wait while your processor
-                systematically recalculates the luminance values and
-                mathematically drains the specific color data out of every
-                single frame.
+                Click Convert to Grayscale. The encoder reads each frame,
+                calculates a luminance value for every pixel, and writes the
+                result into a new MP4. Keep the browser tab open. The progress
+                bar updates as the encoder works through the video from the
+                first frame to the last.
               </p>
             </div>
             <div className="relative text-center">
@@ -538,14 +532,13 @@ export default function VideoGrayscalePage() {
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Compare and download
+                Preview and download
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Once the progress line slams 100%, immediately flip back and
-                forth between the "Original" and "Grayscale" preview buttons to
-                verify the drastic visual tone shift. If you are satisfied with
-                the stark visual contrast, hit download to pull the newly
-                rendered MP4 down to your local storage drive forever.
+                When the progress bar reaches 100%, click the Grayscale button
+                in the preview panel to watch the converted video. Toggle
+                between the Original and Grayscale views to confirm the result.
+                Click Download to save the black and white MP4 to your device.
               </p>
             </div>
           </div>
@@ -560,75 +553,70 @@ export default function VideoGrayscalePage() {
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Simulating old documentary footage
+                  Blending modern footage with archive material
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Historical vloggers compiling video essays frequently need to
-                  insert modern smartphone footage seamlessly next to 1940s
-                  archive film. Aggressively processing their vibrant 4K clips
-                  completely drains the color, instantly grounding the new
-                  footage inside an old, grim, heavily authentic monochrome
-                  aesthetic.
+                  Documentary makers inserting new interviews next to 1940s
+                  archival footage need the new clips to match the period look.
+                  Converting the modern footage to grayscale lets both clips sit
+                  in the same tonal range on the timeline without a visually
+                  jarring color difference.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Sanitizing corporate surveillance video
+                  Fixing unworkable mixed lighting
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Security analysts reviewing bizarre security camera footage
-                  often get severely distracted by bright neon clothing or
-                  flashy background lights. Running the raw file through a
-                  violent grayscale purge flattens the visual field, brutally
-                  removing distracting hues so the examiner can focus strictly
-                  on pure shapes and mechanical movement.
+                  Footage shot in a location with mixed light sources, such as
+                  warm tungsten lights on one side and cool daylight on the
+                  other, often produces a color shift that is difficult to
+                  grade. Removing color entirely eliminates the problem and
+                  produces a clean, consistent look across the entire clip.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Generating horror trailer flashbacks
+                  Setting a serious or cinematic tone
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Indie horror directors explicitly require jarring, unsettling
-                  transitions right before a jump scare to violently detach the
-                  viewer from reality. Ripping the color entirely out of a scene
-                  instantly triggers an eerie, sterile, almost dead visual tone
-                  that flawlessly signals an impending psychological nightmare
-                  to the entire audience.
+                  Color carries emotional warmth. Removing it shifts the mood of
+                  a video toward something more formal, stark, or timeless.
+                  Filmmakers use grayscale for memorial content, dramatic
+                  flashback sequences, and opening credits where a neutral,
+                  high-contrast look reinforces the subject matter.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Crafting edgy punk music videos
+                  Creating high-contrast photo or art video
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Underground musicians shooting aggressive performance clips
-                  hate the cheerful look of normal digital video. Rapidly
-                  smashing the entire video into stark black and white heavily
-                  amplifies harsh shadows and stark lighting, artificially
-                  injecting an aggressive, lo-fi punk rock identity permanently
-                  into the final master.
+                  Musicians and visual artists who want a raw, stripped-down
+                  aesthetic use grayscale to bring out the contrast between
+                  light and shadow. Without color to draw the eye, shapes,
+                  edges, and lighting patterns become the dominant visual
+                  elements in the frame.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Solving terrible mixed lighting
+                  Preparing video for print or export
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Amateur filmmakers shooting in a desperate location that
-                  contains terrible blue LED light and nasty yellow incandescent
-                  bulbs simultaneously often end up with an unfixable, ugly
-                  color grade. Abandoning the color entirely and forcefully
-                  converting to grayscale masks the disastrous lighting mixture
-                  completely under a blanket of smooth gray tones.
+                  Some digital signage screens, e-ink displays, and print
+                  workflows only support monochrome output. Converting the
+                  source video to grayscale before export ensures you review the
+                  actual monochrome appearance rather than relying on the
+                  display or print driver to approximate it.
                 </p>
               </CardContent>
             </Card>
@@ -645,39 +633,44 @@ export default function VideoGrayscalePage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="font-bold text-lg">
-                    The Grayscale 100% Filter
+                    How the Grayscale Filter Works
                   </h3>
                   <p className="text-muted-foreground mt-2">
-                    This brutal algorithmic filter aggressively isolates the
-                    independent Red, Green, and Blue sub-pixel data embedded
-                    deeply in the footage. It systematically commands the
-                    encoder to average out the individual color intensity
-                    values, violently converting every single pixel into an
-                    equivalent shade of neutral gray based purely on native
-                    luminance.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Offscreen Canvas Engine</h3>
-                  <p className="text-muted-foreground mt-2">
-                    To prevent your internet browser from instantly hanging and
-                    crashing under heavy video crunching, the system triggers a
-                    background "Offscreen Canvas." It silently draws and alters
-                    millions of pixels invisibly behind the active window,
-                    protecting your main web session from intense computer
-                    processing stutter.
+                    The grayscale filter reads the red, green, and blue values
+                    for every pixel in every frame. It calculates a single
+                    luminance value using a weighted average based on how the
+                    human eye perceives brightness across the three channels.
+                    That single value then replaces the red, green, and blue
+                    channels equally, removing all hue information and leaving
+                    only brightness data. The result is a true grayscale image
+                    where the tonal range mirrors the original lighting in the
+                    scene.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">
-                    Permanent Destructive Export
+                    OffscreenCanvas Processing
                   </h3>
                   <p className="text-muted-foreground mt-2">
-                    The system relies heavily on the `Mp4OutputFormat` module to
-                    completely rewrite the video. It essentially feeds your old
-                    MP4 into the shredder and actively burns the newly generated
-                    black and white frames into an entirely fresh file, proving
-                    this is not just a cheap, reversible aesthetic overlay.
+                    This tool uses the browser's OffscreenCanvas API to process
+                    video frames without blocking the browser's main thread. The
+                    encoding work happens in a background process, which keeps
+                    the interface responsive during conversion. This also means
+                    the tool can handle longer videos without the browser
+                    appearing to freeze or hang.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Permanent Pixel-Level Encoding
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    The output is a new MP4 where the grayscale data is written
+                    at the pixel level. This is not a CSS filter or a preview
+                    overlay. The color data is absent from the output file
+                    itself, not just hidden. This means the file will appear in
+                    grayscale in every player, editor, and platform without any
+                    further settings required.
                   </p>
                 </div>
               </div>

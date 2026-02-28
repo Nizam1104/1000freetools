@@ -22,38 +22,36 @@ import Script from "next/script";
 const faqData = [
   {
     question:
-      "Do I need to buy expensive software to add a simple watermark to my video?",
+      "Do I need video editing software to add a watermark to my video?",
     answer:
-      "No. You can violently burn custom PNG logos or text graphics directly over your video timeline inside the browser. Because this system leverages local computer hardware rendering, it entirely bypasses the need for massive, heavily bloated desktop applications like Premiere Pro or Final Cut.",
+      "No. You can add a watermark or image overlay directly in your browser without installing any software. Upload your video, upload a PNG overlay image, position it where you want, adjust the opacity, and click the Process button. The overlay is permanently encoded into the output file.",
   },
   {
-    question: "Why should I use a transparent PNG for my video watermark?",
+    question: "Why should I use a PNG file for my overlay instead of a JPEG?",
     answer:
-      "If you upload a standard, solid JPEG file, it aggressively dumps a rigid, ugly white square completely over your footage. Using a PNG file with a pre-built invisible alpha-channel fundamentally guarantees the video perfectly shows through the empty space around your actual logo design.",
-  },
-  {
-    question:
-      "Can I aggressively fade out a massive logo so it doesn't distract the viewer?",
-    answer:
-      "Yes. By sliding the dedicated opacity control directly downwards to 20%, you mathematically crush the pixel density of the overlay. This effectively creates a highly subtle, ghosted watermark that successfully protects your footage without entirely destroying the core viewing experience.",
+      "PNG files support an alpha channel, which controls which parts of the image are transparent. If you use a logo saved as PNG with a transparent background, only the logo itself appears over the video. If you use a JPEG, the image has no transparency support and will appear as a solid rectangle covering the video.",
   },
   {
     question:
-      "Will the system completely delete my audio track when saving the watermark?",
+      "Can I reduce the opacity of the overlay so it appears as a subtle watermark?",
     answer:
-      "Absolutely not. The complex WebAssembly processing engine specifically targets and rewrites the visual pixel arrays. It carefully copies your original audio waveform and rigidly pastes it back into the final MP4 container entirely untouched.",
+      "Yes. Each overlay has an opacity slider that ranges from 0 to 100 percent. Setting it to around 20 to 30 percent produces a ghost watermark that is visible but does not obscure the video content beneath. Setting it to 100 percent makes the overlay fully opaque.",
+  },
+  {
+    question: "Will the audio track be affected when I add a watermark?",
+    answer:
+      "No. The encoder only modifies the video track. The original audio waveform is copied directly into the output file without any changes. You will not notice any difference in audio quality, volume, or sync between the original and output files.",
   },
   {
     question:
-      "How do I forcibly pop a graphic up for exactly two seconds during the video?",
+      "How do I make an overlay appear only during a specific part of the video?",
     answer:
-      "You must explicitly use the precision Timing controls. By strictly setting the exact Start Timeline and End Timeline numbers, you mathematically command the rendering engine to abruptly materialize the overlay graphic and violently cut it off the moment the exact timecode expires.",
+      "Each overlay has Start Time and End Time fields measured in seconds. Setting Start Time to 5 and End Time to 10 makes the overlay appear from 5 seconds to 10 seconds into the video. Outside of that time range, the overlay will not render into the video frames.",
   },
   {
-    question:
-      "Does this free tool secretly inject its own ugly watermark onto my footage?",
+    question: "Does this tool add its own watermark to the output file?",
     answer:
-      "Zero secret logos. This acts as a brutally secure local utility utilizing your own private computer processor to do the heavy rendering. Since we avoid paying massive cloud-video encoding costs, we absolutely do not force you to violently purchase a subscription to remove a hidden branding lock.",
+      "No. The tool runs locally in your browser using your device's hardware. There are no subscription fees and no branding added to the output. The only content in the output file is your video and the overlays you configured.",
   },
 ];
 
@@ -1206,15 +1204,15 @@ export default function VideoOverlaysPage() {
                 What it Does
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                When you urgently need to securely brand unreleased footage or
-                violently slap a copyright warning over a clip, you can add
-                watermarks to video online natively in the browser. This secure
-                environment brutally bypasses massive cloud upload times,
-                aggressively mounting your 4K or 1080p MP4 file entirely
-                offline. You can upload custom PNG graphics, fiercely command
-                exact positioning coordinates, dial down the opacity density,
-                and mathematically set precision timecodes to permanently lock
-                digital overlays straight into the final encoded pixel data.
+                This tool permanently encodes one or more image overlays into
+                your video. You upload a PNG image, position it on the video
+                canvas, set the opacity, and optionally define the time range
+                during which the overlay appears. When you click Process, the
+                encoder reads each frame and draws the overlay image at the
+                configured position and opacity. The output is a new MP4 file
+                with the overlay permanently baked into the pixel data. The
+                original video file is not modified. All processing happens in
+                your browser so nothing is uploaded to a server.
               </p>
             </CardContent>
           </Card>
@@ -1231,14 +1229,13 @@ export default function VideoOverlaysPage() {
                 <span className="text-2xl font-bold">1</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Deposit the raw video
+                Load your video
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Drop your incredibly heavy MP4 file directly into the local
-                workspace. The advanced canvas system immediately builds a
-                secure temporary bridge to your memory architecture, completely
-                preventing massive files from attempting a catastrophic Wi-Fi
-                upload.
+                Click the video upload button or drag your MP4 file into the
+                tool. The video loads into the canvas preview so you can see
+                where overlays will appear. The file is never uploaded to a
+                server.
               </p>
             </div>
             <div className="relative text-center">
@@ -1246,14 +1243,13 @@ export default function VideoOverlaysPage() {
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Inject the graphic overlay
+                Add and position your overlay
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Upload your transparent PNG logo or severe copyright warning.
-                You must violently drag the overlay across the visual timeline,
-                tightly grab the corners to crush the pixel dimensions, and
-                actively adjust the opacity bar to create a subtle ghosting
-                effect.
+                Click Add Overlay Images to upload a PNG file. The overlay
+                appears in the canvas. Click and drag to move it. Drag the
+                corner handles to resize it. Use the opacity slider to control
+                how transparent the overlay appears.
               </p>
             </div>
             <div className="relative text-center">
@@ -1261,14 +1257,13 @@ export default function VideoOverlaysPage() {
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Burn the composite render
+                Process and download
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Smash the Process button to command your local CPU. The internal
-                core physically decodes every individual video frame, heavily
-                stamps the overlay graphics directly into the new visual matrix,
-                and permanently exports the completed MP4 straight down to your
-                local storage.
+                Click the Process button. The encoder reads every frame of your
+                video and draws the overlay at the defined position and time
+                range. When it finishes, download the output MP4, which contains
+                the overlay permanently encoded into the pixel data.
               </p>
             </div>
           </div>
@@ -1283,71 +1278,68 @@ export default function VideoOverlaysPage() {
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Protecting unreleased client footage
+                  Protecting client review footage
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Freelance editors furiously sending rough cuts to
-                  untrustworthy clients desperately need payment security.
-                  Violently burning a massive, semi-transparent "UNPAID REVIEW"
-                  warning straight across the center of the timeline
-                  fundamentally destroys any chance the client can secretly
-                  steal and use the work.
+                  Freelance editors sending a rough cut to a client can add a
+                  semi-transparent "Review Only" text overlay across the center
+                  of the frame. This makes the content clear enough to review
+                  but prevents the client from using the file commercially
+                  before payment is confirmed.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Branding corporate training materials
+                  Adding a logo to corporate training videos
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  HR departments mass-producing terrible orientation videos
-                  rigidly require the company icon in every shot. Quickly
-                  dropping the corporate PNG into the bottom corner securely
-                  locks the branding identity permanently into the video
-                  structure without opening a complicated Adobe application.
+                  Companies that produce training videos in-house often need to
+                  add a company logo to every clip before distribution.
+                  Uploading the logo PNG and placing it in the bottom corner of
+                  the canvas permanently brands each video without opening a
+                  video editing application.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Timestamping legal security files
+                  Adding a timestamp or date to security footage
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Legal investigators compiling private dashcam or security
-                  camera footage aggressively require hard data burned on
-                  screen. Injecting a stark white timeline graphic precisely
-                  over the exact incident fiercely forces the visual proof
-                  permanently into the MP4 file.
+                  Investigators or property managers who need to present dashcam
+                  or camera footage as evidence can overlay a timestamp image
+                  onto the clip. The overlaid timestamp becomes part of the
+                  pixel data in each frame rather than a detachable metadata
+                  tag.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Watermarking viral social media rips
+                  Adding a handle to social media video clips
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Meme aggregators desperately trying to claim ownership of
-                  stolen internet videos aggressively slap their massive
-                  Instagram handle directly onto the footage. Severely fusing
-                  the username PNG into the clip heavily ensures their brand
-                  travels with the file indefinitely.
+                  Content creators who share short video clips across platforms
+                  can add their username or channel handle as a subtle overlay
+                  in a corner of the frame. This ensures the branding remains
+                  visible even if someone downloads and re-shares the clip.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Faking a television broadcast bug
+                  Recreating a broadcast graphic for a retro effect
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Amateur filmmakers shooting fake 1990s news reports absolutely
-                  require authentic on-screen graphics. Pinning a highly opaque,
-                  retro-designed news station logo accurately in the top right
-                  corner entirely sells the illusion that the raw MP4 is
-                  legitimately ripped from an ancient TV broadcast.
+                  Filmmakers making short films or parody videos that simulate
+                  old news broadcasts can overlay a retro-styled station logo
+                  image in the corner. Using a high opacity setting makes the
+                  graphic look like it is part of the original footage.
                 </p>
               </CardContent>
             </Card>
@@ -1363,42 +1355,40 @@ export default function VideoOverlaysPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-lg">
-                    Absolute Alpha Compositing
-                  </h3>
+                  <h3 className="font-bold text-lg">Alpha Compositing</h3>
                   <p className="text-muted-foreground mt-2">
-                    When you stack a transparent image over video, the browser
-                    forcefully calculates the underlying visual math instantly.
-                    It aggressively merges the distinct background pixel data
-                    directly through the empty zones of your PNG file, proving
-                    this is an exact frame-by-frame destruction process, not a
-                    cheap CSS trick.
+                    When the encoder draws a PNG overlay onto a video frame, it
+                    reads the alpha value of each pixel in the overlay image.
+                    Fully transparent pixels (alpha 0) let the video frame show
+                    through completely. Fully opaque pixels (alpha 255) replace
+                    the video pixel entirely. The Opacity slider multiplies all
+                    alpha values by a factor between 0 and 1, which lets you
+                    control overall transparency independently of the image's
+                    own alpha channel.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Start Time and End Time</h3>
+                  <p className="text-muted-foreground mt-2">
+                    These fields control which portion of the video the overlay
+                    appears in. Setting Start Time to 0 and End Time to the full
+                    video duration makes the overlay appear throughout the
+                    entire video. Setting a narrower range makes the overlay
+                    appear only during that window. Frames outside the range are
+                    encoded without the overlay.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">
-                    Hardware-Accelerated Timeline Logic
+                    Background Processing with OffscreenCanvas
                   </h3>
                   <p className="text-muted-foreground mt-2">
-                    Instead of violently attempting to render massive video
-                    files blindly, the engine strictly watches your highly
-                    specific Start Time and End Time commands. When the exact
-                    second triggers, it abruptly drops the overlay mathematics
-                    into the processing chain, efficiently minimizing heavy
-                    rendering strain.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    Web Worker Core Separation
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    To entirely prevent the heavy visual rendering from crashing
-                    your active scrolling tab, the system brutally throws the
-                    raw calculations into a massive background Web Worker
-                    thread. This ensures zero window freezing while the
-                    processor violently reconstructs millions of pixels behind
-                    the scenes.
+                    The overlay compositing runs inside a Web Worker thread
+                    using the OffscreenCanvas API. This keeps the compositing
+                    work off the main browser thread, which means the page stays
+                    responsive and responsive while the encoder processes each
+                    frame. Long videos with complex overlays can take several
+                    minutes depending on your device's CPU speed.
                   </p>
                 </div>
               </div>

@@ -20,36 +20,36 @@ import Script from "next/script";
 
 const faqData = [
   {
-    question: "How can I rotate video online free without watermarks?",
+    question: "How do I permanently fix a sideways video without watermarks?",
     answer:
-      "You can easily rotate video online free right now without paying anything or downloading a shady application to your hard drive. Because this tool runs entirely through your internet browser window using local processing, we don't have to charge server fees or insert ugly watermarks over your final exported clip.",
+      "Load your video into the tool, select the 90-degree clockwise or counter-clockwise option, and click Rotate Video. The encoder rewrites every frame in the new orientation and produces a standard MP4 file. The rotation is burned into the pixel data, not stored as a metadata tag, so the file plays correctly on every platform. No watermarks are added because all processing happens on your device at no cost.",
   },
   {
-    question:
-      "Why did my smartphone footage record sideways in the first place?",
+    question: "Why did my phone record the video sideways to begin with?",
     answer:
-      "When you quickly flip your smartphone from portrait to landscape mode, the internal gyroscope sometimes fails to log the change before you press the record button. While the phone might add hidden metadata telling its own native gallery app to flip the footage during playback, uploading that raw file to other websites causes them to ignore the metadata and play the video sideways.",
+      "Smartphones record video based on the position of the device at the moment you start recording. If the gyroscope detected landscape mode, the video data is stored horizontally. Some phones attach a metadata rotation tag that tells compatible apps to display it upright, but many websites, video editors, and social platforms ignore that tag and play the raw data orientation instead.",
   },
   {
     question:
       "What is the difference between rotating 90 degrees and 270 degrees?",
     answer:
-      "Rotating a video 90 degrees clockwise will tilt the top edge of your phone footage down toward the right hand side. Rotating 270 degrees clockwise actually achieves the exact same result as rotating the video 90 degrees counter-clockwise, meaning the top edge falls toward the left hand side.",
+      "Rotating 90 degrees clockwise spins the video one quarter turn to the right. The top edge of the original image becomes the right edge of the output. Rotating 270 degrees clockwise produces the opposite result, which is the same as rotating 90 degrees counter-clockwise. The top edge of the original image becomes the left edge of the output.",
   },
   {
-    question: "Will rotating a 16:9 widescreen video change its dimensions?",
+    question: "Does rotating a 1920x1080 video change its file dimensions?",
     answer:
-      "Yes, aggressively turning a horizontal 1920x1080 clip by 90 degrees effectively stands the rectangle up on its end. The processing engine swaps the mathematical dimensions, meaning your final exported video size will become a vertical 1080x1920 format.",
+      "Yes. When you rotate a 1920x1080 video by 90 degrees, the output dimensions become 1080x1920 because the width and height swap. The encoder recalculates the pixel grid to fit the new orientation. A 180-degree rotation keeps the same 1920x1080 dimensions because the image flips upside down without swapping the sides.",
   },
   {
-    question: "Can I use this tool to flip a video backwards like a mirror?",
+    question: "Can this tool flip a video as a mirror image?",
     answer:
-      "No, this specific rotation engine only spins the two-dimensional plane of the video in a circle using 90-degree increments. Creating a mirror image effect requires a dedicated horizontal or vertical flipping tool to invert the left and right side pixels.",
+      "No. This tool rotates video in 90-degree increments around the center axis. A mirror flip inverts pixels horizontally or vertically, which is a different operation. You would need a video editor that supports horizontal or vertical flip to achieve a mirror image effect.",
   },
   {
-    question: "Are these rotation changes actually permanent?",
+    question:
+      "Is this rotation permanent or does it only apply during playback?",
     answer:
-      "Yes, unlike basic playback software that simply applies a temporary visual rotation tag on top of the file, this application forces a hard encode. It completely rewrites every single moving pixel in the footage into the new rotated position, ensuring the video will play correctly on every screen, television, and social media platform in the world.",
+      "The rotation is permanent. The encoder reads every frame, rotates the pixel grid to the new orientation, and writes the result into a new MP4 file. This is different from apps that add a rotation metadata tag. A metadata tag only works if the player reads and respects it. This tool changes the actual pixel data, so the video displays correctly in every player and platform regardless of metadata support.",
   },
 ];
 
@@ -257,13 +257,14 @@ export default function RotateVideoPage() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-                Video Rotator – Rotate Videos 90°, 180° or 270° Online for Free
+                Rotate Video Online Free – Fix Sideways and Upside-Down Videos
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Fix sideways or upside-down videos instantly. Rotate your
-                footage clockwise or counter-clockwise in exact 90-degree
-                increments — no apps, no watermarks, no uploads to servers.
+                Permanently fix video orientation by rotating 90, 180, or 270
+                degrees. The rotation is written into the pixel data, not just
+                the metadata. Your video will play correctly on every device,
+                app, and platform. No uploads, no watermarks, and no software.
               </p>
             </div>
           </div>
@@ -434,15 +435,15 @@ export default function RotateVideoPage() {
                 What it Does
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                When you accidentally hold your smartphone the wrong way and
-                record an incredibly vital moment permanently sideways, you can
-                rotate video online free to fix the orientation. Instead of
-                simply slapping a metadata tag onto the file that many players
-                ignore, this tool mathematically rebuilds the underlying pixel
-                structure of your clip and permanently locks it into the correct
-                upright position. Because it functions completely inside your
-                active web browser window, you never have to waste bandwidth
-                uploading bulky files to a remote cloud server.
+                This tool permanently rotates the pixel data inside your video
+                file. Most phones and cameras store video in a fixed orientation
+                and use a metadata rotation tag to tell compatible players how
+                to display it. Many platforms and video editors ignore that tag
+                and play the raw data, causing the video to appear sideways or
+                upside down. This encoder reads every frame, rotates the actual
+                pixel grid by the angle you choose, and writes a new MP4 where
+                the orientation is correct at the data level. The entire process
+                runs in your browser so no file is uploaded to any server.
               </p>
             </CardContent>
           </Card>
@@ -459,15 +460,15 @@ export default function RotateVideoPage() {
                 <span className="text-2xl font-bold">1</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Insert the broken footage
+                Load the video file
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Drop your target MP4 or MOV file directly into the application
-                space to safely load it into your local browser cache. The
-                application will instantly display the video exactly as the raw
-                file data dictates, ignoring any deceptive orientation metadata
-                tags your phone might have maliciously attached to confuse other
-                media players.
+                Open the file picker and select your MP4, MOV, or other video
+                file. The player shows the video in its raw data orientation. If
+                your phone recorded it sideways and added a metadata rotation
+                tag, the player may show it correctly here, but many platforms
+                will ignore that tag. The encoder fixes the actual pixel data
+                regardless.
               </p>
             </div>
             <div className="relative text-center">
@@ -475,15 +476,14 @@ export default function RotateVideoPage() {
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Select the rotation increment
+                Pick the rotation angle
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Locate the rotation setting buttons and pick the 90-degree
-                increment that actively spins your footage until gravity points
-                the correct direction. The user interface does not provide a
-                visual live preview of the spin, so you must mentally picture
-                whether you need a quick 90-degree twist or a full 180-degree
-                flip.
+                Select 90 degrees clockwise to rotate the video one quarter turn
+                to the right. Select 180 degrees to flip the video upside down.
+                Select 270 degrees clockwise, which is the same as 90 degrees
+                counter-clockwise, to rotate one quarter turn to the left. If
+                you are unsure, try 90 degrees first and re-process if needed.
               </p>
             </div>
             <div className="relative text-center">
@@ -491,15 +491,14 @@ export default function RotateVideoPage() {
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Engage the local encoder
+                Process and save the file
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Press the primary rotation button to order your local machine to
-                begin rendering a permanent version of your file using standard
-                MP4 formatting. Wait patiently without closing the browser tab
-                as the processor painstakingly writes every single frame into
-                its new orientation, and then export the finalized file
-                immediately to your desktop.
+                Click the Rotate Video button and wait for the progress bar to
+                reach 100%. The encoder processes each frame and writes the
+                rotated pixels into a new MP4. Keep the tab open during
+                processing. When it finishes, click the download button to save
+                the corrected file to your device.
               </p>
             </div>
           </div>
@@ -514,73 +513,73 @@ export default function RotateVideoPage() {
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Rescuing sideways smartphone clips
+                  Fixing sideways smartphone recordings
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Everyday users often begin filming an incredible event while
-                  holding their phone vertically, then quickly rotate it
-                  horizontally mid-recording. Applying a hard 90-degree
-                  clockwise encode permanently spins the painfully crooked final
-                  footage so viewers don't have to tilt their physical monitors
-                  to watch the action.
+                  You start recording in portrait mode, rotate the phone to
+                  landscape, and stop. The resulting video often has the wrong
+                  orientation when you upload it to a website. Select 90 degrees
+                  clockwise and process the file. The output plays correctly in
+                  every browser and social media player without the viewer
+                  needing to tilt their screen.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Flipping upside-down action cameras
+                  Correcting upside-down action camera footage
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Cyclists occasionally have to mount bulky action cameras
-                  entirely upside-down underneath their handlebars to fit
-                  limited mounting space. Triggering the 180-degree rotation
-                  flips the resulting high-speed footage completely right-side
-                  up so the sky finally appears at the top of the video.
+                  Some handlebar and helmet mounts require mounting a camera
+                  upside down to get the right angle. The recorded video appears
+                  flipped. Select 180 degrees to correct it. The encoder rotates
+                  every frame and the output shows the road or scene in the
+                  correct upright position.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Erasing false rotation metadata tags
+                  Removing problematic metadata rotation tags
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Some Android phones attempt to be helpful by slapping a
-                  digital "turn 90 degrees" sticker onto a video file, which
-                  confuses desktop editing software. Passing the clip through a
-                  tough local re-encoder burns the physical orientation into the
-                  actual pixels, stripping the confusing metadata away forever.
+                  Some cameras embed a rotation tag in the video metadata rather
+                  than storing the image in the correct orientation. Video
+                  editors like DaVinci Resolve or Premiere Pro may ignore this
+                  tag and import the footage sideways. Running it through this
+                  tool encodes the correct orientation into the pixel data and
+                  removes the dependency on the metadata tag.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Generating creative advertising assets
+                  Preparing video for vertical digital signage
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Marketers handling long tracking shots of towering skyscrapers
-                  occasionally want the video to playfully slide horizontally
-                  across the viewer's screen for effect. Knocking the building
-                  onto its side with a 90-degree spin creates an interesting,
-                  disorienting scrolling effect perfect for social media
-                  timelines.
+                  Retail displays and kiosk screens are often mounted vertically
+                  in portrait orientation. If your promotional video is a
+                  standard 1920x1080 horizontal clip, select 90 degrees to
+                  rotate it. The output becomes 1080x1920, which fills the kiosk
+                  screen without black bars on the sides.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Conforming digital sign packages
+                  Pre-processing clips for a video editor
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Store owners deploying looping promotional videos to tall,
-                  upright mall kiosks must ensure their horizontal MP4 files
-                  properly fit the hardware. Throwing a quick 90-degree twist on
-                  the landscape advertisement instantly changes the aspect ratio
-                  to a 9:16 vertical pillar that perfectly matches the TV
-                  screen.
+                  When building a timeline in a video editor, mixing clips with
+                  different orientations creates layout problems. Rotate each
+                  sideways clip before importing so every file enters the editor
+                  with consistent horizontal orientation. This lets you set one
+                  sequence resolution and avoid per-clip transform corrections
+                  inside the editor.
                 </p>
               </CardContent>
             </Card>
@@ -596,33 +595,35 @@ export default function RotateVideoPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-lg">90° Clockwise</h3>
+                  <h3 className="font-bold text-lg">90 Degrees Clockwise</h3>
                   <p className="text-muted-foreground mt-2">
-                    This setting forcefully turns the entire video one quarter
-                    of a circle to the right. Use this common command when your
-                    landscape footage loads upright as a skinny tower,
-                    completely fixing the mistake while simultaneously reversing
-                    the width and height dimensions.
+                    This rotates the video one quarter turn to the right. The
+                    top edge of the original image becomes the right edge of the
+                    output. The output dimensions swap: a 1920x1080 source
+                    produces a 1080x1920 output. Use this when a video recorded
+                    in landscape plays as a tall vertical strip.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">180° Inversion</h3>
+                  <h3 className="font-bold text-lg">180 Degrees</h3>
                   <p className="text-muted-foreground mt-2">
-                    This command tells the engine to flip the entire video frame
-                    completely upside down. It leaves the foundational aspect
-                    ratio and width pixel dimensions completely unchanged,
-                    making it the perfect tool for correcting video recorded
-                    holding a phone carelessly backwards.
+                    This rotates the video half a turn and flips the image
+                    upside down. The top edge becomes the bottom edge and the
+                    left edge becomes the right edge. The output dimensions
+                    remain the same as the source. Use this when an action
+                    camera mounted upside down records the sky at the bottom of
+                    the frame.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">270° Clockwise</h3>
+                  <h3 className="font-bold text-lg">270 Degrees Clockwise</h3>
                   <p className="text-muted-foreground mt-2">
-                    This option rotates the video three quarters of a circle to
-                    the right, which acts exactly like turning the footage one
-                    single quarter to the left. If a 90-degree clockwise turn
-                    results in your footage laying face down in the dirt, click
-                    this setting instead.
+                    This rotates three quarter turns to the right, which is
+                    equivalent to one quarter turn to the left. The top edge of
+                    the original image becomes the left edge of the output.
+                    Output dimensions swap from the source. Use this when 90
+                    degrees clockwise produces the wrong result and you need the
+                    rotation in the opposite direction.
                   </p>
                 </div>
               </div>

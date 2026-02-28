@@ -1,0 +1,1754 @@
+[
+  {
+    "name": "Ocean Breeze",
+    "colors": ["#006BA6", "#0496FF", "#FFBC42", "#D81159", "#8F2D56"]
+  },
+  {
+    "name": "Sunset Vibes",
+    "colors": ["#264653", "#2A9D8F", "#E9C46A", "#F4A261", "#E76F51"]
+  },
+  {
+    "name": "Forest Dawn",
+    "colors": ["#582F0E", "#7F4F24", "#936639", "#A68A64", "#B6AD90"]
+  },
+  {
+    "name": "Coral Reef",
+    "colors": ["#F94144", "#F3722C", "#F8961E", "#F9844A", "#F9C74F"]
+  },
+  {
+    "name": "Lavender Fields",
+    "colors": ["#E0BBE4", "#957DAD", "#D291BC", "#FEC8D8", "#FFDFD3"]
+  },
+  {
+    "name": "Midnight City",
+    "colors": ["#0B132B", "#1C2541", "#3A506B", "#5BC0BE", "#6FFFE9"]
+  },
+  {
+    "name": "Desert Sand",
+    "colors": ["#EDAE49", "#D1495B", "#00798C", "#30638E", "#003D5B"]
+  },
+  {
+    "name": "Cherry Blossom",
+    "colors": ["#FFB7C5", "#FF9AA2", "#FFC4D6", "#FFD4E5", "#FFF0F5"]
+  },
+  {
+    "name": "Tropical Paradise",
+    "colors": ["#05668D", "#028090", "#00A896", "#02C39A", "#F0F3BD"]
+  },
+  {
+    "name": "Autumn Harvest",
+    "colors": ["#5F0F40", "#9A031E", "#FB8B24", "#E36414", "#0F4C5C"]
+  },
+  {
+    "name": "Mint Fresh",
+    "colors": ["#B8F2E6", "#AED9E0", "#FFA69E", "#FAF3DD", "#5E6472"]
+  },
+  {
+    "name": "Royal Purple",
+    "colors": ["#240046", "#3C096C", "#5A189A", "#7209B7", "#9D4EDD"]
+  },
+  {
+    "name": "Citrus Burst",
+    "colors": ["#F72585", "#B5179E", "#7209B7", "#560BAD", "#480CA8"]
+  },
+  {
+    "name": "Nordic Winter",
+    "colors": ["#ECEFF4", "#E5E9F0", "#D8DEE9", "#4C566A", "#2E3440"]
+  },
+  {
+    "name": "Peachy Keen",
+    "colors": ["#FFE5D9", "#FFCAD4", "#F4ACB7", "#9D8189", "#5E6472"]
+  },
+  {
+    "name": "Electric Dreams",
+    "colors": ["#FF006E", "#FB5607", "#FFBE0B", "#8338EC", "#3A86FF"]
+  },
+  {
+    "name": "Earth Tones",
+    "colors": ["#774936", "#9C6644", "#B08968", "#DDB892", "#E6CCB2"]
+  },
+  {
+    "name": "Berry Smoothie",
+    "colors": ["#540D6E", "#EE4266", "#FFD23F", "#3BCEAC", "#0EAD69"]
+  },
+  {
+    "name": "Cool Blues",
+    "colors": ["#D9ED92", "#B5E48C", "#99D98C", "#76C893", "#52B69A"]
+  },
+  {
+    "name": "Warm Sunset",
+    "colors": ["#FFADAD", "#FFD6A5", "#FDFFB6", "#CAFFBF", "#9BF6FF"]
+  },
+  {
+    "name": "Monochrome Pink",
+    "colors": ["#FFC8DD", "#FFAFCC", "#BDE0FE", "#A2D2FF", "#CDB4DB"]
+  },
+  {
+    "name": "Spring Garden",
+    "colors": ["#BEFFF7", "#A3FFF4", "#82FFF1", "#4DFBED", "#00F5D4"]
+  },
+  {
+    "name": "Candy Shop",
+    "colors": ["#F72585", "#7209B7", "#3A0CA3", "#4361EE", "#4CC9F0"]
+  },
+  {
+    "name": "Coffee House",
+    "colors": ["#390099", "#9E0059", "#FF0054", "#FF5400", "#FFBD00"]
+  },
+  {
+    "name": "Neon Nights",
+    "colors": ["#FF006E", "#8338EC", "#3A86FF", "#06FFA5", "#FFBE0B"]
+  },
+  {
+    "name": "Pastel Rainbow",
+    "colors": ["#A0C4FF", "#BDB2FF", "#FFC6FF", "#FFFFB5", "#CAFFBF"]
+  },
+  {
+    "name": "Ocean Depths",
+    "colors": ["#03045E", "#023E8A", "#0077B6", "#0096C7", "#00B4D8"]
+  },
+  {
+    "name": "Flamingo Pink",
+    "colors": ["#F72585", "#B5179E", "#7209B7", "#560BAD", "#480CA8"]
+  },
+  {
+    "name": "Sage & Cream",
+    "colors": ["#FFEDD8", "#F3D5B5", "#E7BC91", "#D4A276", "#BC8A5F"]
+  },
+  {
+    "name": "Mountain Mist",
+    "colors": ["#CCD5AE", "#E9EDC9", "#FEFAE0", "#FAEDCD", "#D4A373"]
+  },
+  {
+    "name": "Cyber Punk",
+    "colors": ["#FF10F0", "#FF006E", "#FFBE0B", "#8338EC", "#3A86FF"]
+  },
+  {
+    "name": "Burgundy Wine",
+    "colors": ["#641220", "#6E1423", "#85182A", "#A11D33", "#A71E34"]
+  },
+  {
+    "name": "Soft Pastels",
+    "colors": ["#FFDDD2", "#E29578", "#006D77", "#83C5BE", "#EDF6F9"]
+  },
+  {
+    "name": "Golden Hour",
+    "colors": ["#FF9505", "#FF5964", "#38618C", "#35A7FF", "#FFBD00"]
+  },
+  {
+    "name": "Blush & Blue",
+    "colors": ["#EF476F", "#FFD166", "#06D6A0", "#118AB2", "#073B4C"]
+  },
+  {
+    "name": "Emerald City",
+    "colors": ["#081C15", "#1B4332", "#2D6A4F", "#40916C", "#52B788"]
+  },
+  {
+    "name": "Raspberry Sorbet",
+    "colors": ["#F72585", "#F72585", "#B5179E", "#7209B7", "#560BAD"]
+  },
+  {
+    "name": "Teal & Coral",
+    "colors": ["#16697A", "#489FB5", "#82C0CC", "#EDE7E3", "#FFA62B"]
+  },
+  {
+    "name": "Vintage Rose",
+    "colors": ["#DDA15E", "#BC6C25", "#6A040F", "#9D0208", "#D00000"]
+  },
+  {
+    "name": "Arctic Ice",
+    "colors": ["#E0FBFC", "#C2DFE3", "#9DB4C0", "#5C6B73", "#253237"]
+  },
+  {
+    "name": "Tangerine Dream",
+    "colors": ["#FFBE0B", "#FB5607", "#FF006E", "#8338EC", "#3A86FF"]
+  },
+  {
+    "name": "Purple Haze",
+    "colors": ["#231942", "#5E548E", "#9F86C0", "#BE95C4", "#E0B1CB"]
+  },
+  {
+    "name": "Lemon Drop",
+    "colors": ["#FFFF3F", "#FFF07C", "#FFE066", "#FFD93D", "#FCB900"]
+  },
+  {
+    "name": "Rose Gold",
+    "colors": ["#F4C2C2", "#D4A5A5", "#B08968", "#9C6644", "#774936"]
+  },
+  {
+    "name": "Seafoam Green",
+    "colors": ["#D8F3DC", "#B7E4C7", "#95D5B2", "#74C69D", "#52B788"]
+  },
+  {
+    "name": "Plum Perfect",
+    "colors": ["#6A4C93", "#8B5A8D", "#C06C84", "#F67280", "#F8B195"]
+  },
+  {
+    "name": "Navy & Gold",
+    "colors": ["#03045E", "#0077B6", "#00B4D8", "#90E0EF", "#CAF0F8"]
+  },
+  {
+    "name": "Terracotta",
+    "colors": ["#E07A5F", "#3D405B", "#81B29A", "#F2CC8F", "#F4F1DE"]
+  },
+  {
+    "name": "Peacock Blue",
+    "colors": ["#006466", "#065A60", "#0B525B", "#144552", "#1B3A4B"]
+  },
+  {
+    "name": "Strawberry Cream",
+    "colors": ["#FFE5E5", "#FFC2C2", "#FF9999", "#FF7070", "#FF4747"]
+  },
+  {
+    "name": "Mint Chocolate",
+    "colors": ["#293241", "#3D5A80", "#98C1D9", "#E0FBFC", "#EE6C4D"]
+  },
+  {
+    "name": "Sunset Beach",
+    "colors": ["#F1FAEE", "#A8DADC", "#457B9D", "#1D3557", "#E63946"]
+  },
+  {
+    "name": "Pink Lemonade",
+    "colors": ["#FFD6FF", "#E7C6FF", "#C8B6FF", "#B8C0FF", "#BBD0FF"]
+  },
+  {
+    "name": "Forest Green",
+    "colors": ["#2B2D42", "#8D99AE", "#EDF2F4", "#EF233C", "#D90429"]
+  },
+  {
+    "name": "Butter Yellow",
+    "colors": ["#FFF4E6", "#FFE8CC", "#FFD8A8", "#FDCB6E", "#FFA502"]
+  },
+  {
+    "name": "Indigo Night",
+    "colors": ["#10002B", "#240046", "#3C096C", "#5A189A", "#7209B7"]
+  },
+  {
+    "name": "Coral & Teal",
+    "colors": ["#014F86", "#2C7DA0", "#61A5C2", "#89C2D9", "#A9D6E5"]
+  },
+  {
+    "name": "Mauve Magic",
+    "colors": ["#8E7DBE", "#9F86C0", "#BE95C4", "#E0B1CB", "#F2D0D9"]
+  },
+  {
+    "name": "Olive Branch",
+    "colors": ["#606C38", "#283618", "#FEFAE0", "#DDA15E", "#BC6C25"]
+  },
+  {
+    "name": "Bubblegum Pop",
+    "colors": ["#FF006E", "#FF4D80", "#FF7A9A", "#FFA7B4", "#FFD4CE"]
+  },
+  {
+    "name": "Steel Blue",
+    "colors": ["#264653", "#287271", "#2A9D8F", "#8AB17D", "#E9C46A"]
+  },
+  {
+    "name": "Cherry Red",
+    "colors": ["#590D22", "#800F2F", "#A4133C", "#C9184A", "#FF4D6D"]
+  },
+  {
+    "name": "Sage Wisdom",
+    "colors": ["#6A994E", "#A7C957", "#F2E8CF", "#BC4749", "#386641"]
+  },
+  {
+    "name": "Blueberry",
+    "colors": ["#54478C", "#2C699A", "#048BA8", "#0DB39E", "#16DB93"]
+  },
+  {
+    "name": "Honey Gold",
+    "colors": ["#F6BD60", "#F7EDE2", "#F5CAC3", "#84A59D", "#F28482"]
+  },
+  {
+    "name": "Lilac Dreams",
+    "colors": ["#E0BBE4", "#957DAD", "#D291BC", "#FEC8D8", "#FFDFD3"]
+  },
+  {
+    "name": "Jungle Fever",
+    "colors": ["#335C67", "#FFF3B0", "#E09F3E", "#9E2A2B", "#540B0E"]
+  },
+  {
+    "name": "Cotton Candy",
+    "colors": ["#FFC8DD", "#FFAFCC", "#BDE0FE", "#A2D2FF", "#CDB4DB"]
+  },
+  {
+    "name": "Crimson Tide",
+    "colors": ["#641220", "#6E1423", "#85182A", "#A11D33", "#A71E34"]
+  },
+  {
+    "name": "Lime Green",
+    "colors": ["#CCFF00", "#AAFF00", "#88FF00", "#66FF00", "#44FF00"]
+  },
+  {
+    "name": "Mocha Brown",
+    "colors": ["#231F20", "#BB9457", "#EFEFEF", "#FFFFFF", "#C4C4C4"]
+  },
+  {
+    "name": "Aquamarine",
+    "colors": ["#007EA7", "#003249", "#00A8E8", "#00171F", "#003459"]
+  },
+  {
+    "name": "Peach Fuzz",
+    "colors": ["#FFBE98", "#FF9A76", "#FF7F51", "#FF6B35", "#F24236"]
+  },
+  {
+    "name": "Midnight Blue",
+    "colors": ["#011627", "#2EC4B6", "#E71D36", "#FF9F1C", "#FDFFFC"]
+  },
+  {
+    "name": "Pumpkin Spice",
+    "colors": ["#FF6700", "#FF8500", "#FFA500", "#FFC500", "#FFE500"]
+  },
+  {
+    "name": "Sky Blue",
+    "colors": ["#87CEEB", "#87CEFA", "#00BFFF", "#1E90FF", "#4169E1"]
+  },
+  {
+    "name": "Rose Quartz",
+    "colors": ["#F7CAC9", "#EFC3E6", "#C5A3C5", "#9C89B8", "#6D597A"]
+  },
+  {
+    "name": "Lime Citrus",
+    "colors": ["#D4F1F4", "#75E6DA", "#189AB4", "#05445E", "#042A2B"]
+  },
+  {
+    "name": "Grape Soda",
+    "colors": ["#4A148C", "#6A1B9A", "#7B1FA2", "#8E24AA", "#9C27B0"]
+  },
+  {
+    "name": "Coconut Cream",
+    "colors": ["#FFFBF0", "#F5F5DC", "#FFF8DC", "#FAEBD7", "#FFE4C4"]
+  },
+  {
+    "name": "Ruby Red",
+    "colors": ["#9B2226", "#AE2012", "#BB3E03", "#CA6702", "#EE9B00"]
+  },
+  {
+    "name": "Turquoise Bay",
+    "colors": ["#264653", "#2A9D8F", "#E9C46A", "#F4A261", "#E76F51"]
+  },
+  {
+    "name": "Blush Rose",
+    "colors": ["#FEE1E8", "#FED1D8", "#FEC1C8", "#FEB1B8", "#FEA1A8"]
+  },
+  {
+    "name": "Evergreen",
+    "colors": ["#1A535C", "#4ECDC4", "#F7FFF7", "#FF6B6B", "#FFE66D"]
+  },
+  {
+    "name": "Pearl White",
+    "colors": ["#FFFFFF", "#FAFAFA", "#F5F5F5", "#F0F0F0", "#EBEBEB"]
+  },
+  {
+    "name": "Tangerine",
+    "colors": ["#FF7F50", "#FF6347", "#FF4500", "#FF8C00", "#FFA500"]
+  },
+  {
+    "name": "Slate Gray",
+    "colors": ["#708090", "#778899", "#A9A9A9", "#C0C0C0", "#D3D3D3"]
+  },
+  {
+    "name": "Watermelon",
+    "colors": ["#FF6B6B", "#FE5F55", "#F25F5C", "#EE6352", "#F27059"]
+  },
+  {
+    "name": "Iris Purple",
+    "colors": ["#5A189A", "#7209B7", "#9D4EDD", "#C77DFF", "#E0AAFF"]
+  },
+  {
+    "name": "Pistachio",
+    "colors": ["#93E1D8", "#93E1D8", "#FFA69E", "#FAF3DD", "#AA4465"]
+  },
+  {
+    "name": "Denim Blue",
+    "colors": ["#082B4F", "#1C4E80", "#3F7CAC", "#6DAEDB", "#A9D2F3"]
+  },
+  {
+    "name": "Apricot",
+    "colors": ["#FBCEB1", "#FFB347", "#FDA172", "#FF8C42", "#FF7518"]
+  },
+  {
+    "name": "Charcoal",
+    "colors": ["#36454F", "#464646", "#4F4F4F", "#696969", "#808080"]
+  },
+  {
+    "name": "Lemon Lime",
+    "colors": ["#E4FF1A", "#D7FF00", "#CCFF00", "#C4FF00", "#BCFF00"]
+  },
+  {
+    "name": "Periwinkle",
+    "colors": ["#CCCCFF", "#C5CBE1", "#AFB9D7", "#9AA8CD", "#8497B0"]
+  },
+  {
+    "name": "Flamingo",
+    "colors": ["#FC8EAC", "#F78FA7", "#F28FA3", "#ED8F9E", "#E88F99"]
+  },
+  {
+    "name": "Jade Green",
+    "colors": ["#00A86B", "#00A572", "#009B6B", "#008E63", "#00875C"]
+  },
+  {
+    "name": "Cherry Bombe",
+    "colors": ["#890620", "#A91B2E", "#C9283E", "#E63946", "#FF4D5A"]
+  },
+  {
+    "name": "Champagne",
+    "colors": ["#F7E7CE", "#FAEAB9", "#F5DEB3", "#EDD9A3", "#E4D192"]
+  },
+  {
+    "name": "Peachy Orange",
+    "colors": ["#FFDAB9", "#FFCBA4", "#FFBC8F", "#FFAD7A", "#FF9E65"]
+  },
+  {
+    "name": "Sapphire Blue",
+    "colors": ["#0F52BA", "#0E4C92", "#0C4572", "#0A3D61", "#083651"]
+  },
+  {
+    "name": "Soft Pink",
+    "colors": ["#FFE4E1", "#FFC0CB", "#FFB6C1", "#FFA6C1", "#FF96BB"]
+  },
+  {
+    "name": "Forest Path",
+    "colors": ["#2D5016", "#3E6B23", "#558B2F", "#6D9E3F", "#86B24B"]
+  },
+  {
+    "name": "Caramel",
+    "colors": ["#AF6E4D", "#B17854", "#B3825C", "#B58C63", "#B7966B"]
+  },
+  {
+    "name": "Powder Blue",
+    "colors": ["#B0E0E6", "#ADD8E6", "#AFCFEF", "#B0C4DE", "#B0BEC5"]
+  },
+  {
+    "name": "Mango",
+    "colors": ["#FFA500", "#FF9F00", "#FF9900", "#FF9400", "#FF8E00"]
+  },
+  {
+    "name": "Wisteria",
+    "colors": ["#C9A0DC", "#C4A3D8", "#BFA5D4", "#BAA8D0", "#B5ABCC"]
+  },
+  {
+    "name": "Burnt Orange",
+    "colors": ["#CC5500", "#D45D00", "#DB6500", "#E36D00", "#EA7500"]
+  },
+  {
+    "name": "Mint Julep",
+    "colors": ["#98FF98", "#90EE90", "#8FBC8F", "#7CFC00", "#7FFF00"]
+  },
+  {
+    "name": "Raspberry",
+    "colors": ["#E30B5C", "#E0115F", "#DC143C", "#D50032", "#D21F3C"]
+  },
+  {
+    "name": "Storm Gray",
+    "colors": ["#4A5568", "#525F7F", "#5A6A85", "#63748C", "#6B7F93"]
+  },
+  {
+    "name": "Lemon Chiffon",
+    "colors": ["#FFFACD", "#FFF9C4", "#FFF8DC", "#FFF7E6", "#FFF6F0"]
+  },
+  {
+    "name": "Amethyst",
+    "colors": ["#9966CC", "#A370C9", "#AC7AC6", "#B684C3", "#BF8EC0"]
+  },
+  {
+    "name": "Pumpkin",
+    "colors": ["#FF7518", "#FF7F00", "#FF8C00", "#FF9500", "#FF9E00"]
+  },
+  {
+    "name": "Sea Glass",
+    "colors": ["#B4DDD3", "#A5D6C4", "#96CFB5", "#87C8A6", "#78C197"]
+  },
+  {
+    "name": "Brick Red",
+    "colors": ["#CB4154", "#D14F63", "#D75D72", "#DD6B81", "#E37990"]
+  },
+  {
+    "name": "Vanilla",
+    "colors": ["#F3E5AB", "#F3E3A3", "#F3E19B", "#F3DF93", "#F3DD8B"]
+  },
+  {
+    "name": "Cerulean",
+    "colors": ["#007BA7", "#0087C1", "#0093DB", "#009FF5", "#00ABFF"]
+  },
+  {
+    "name": "Fuchsia",
+    "colors": ["#FF00FF", "#F400FF", "#E800FF", "#DD00FF", "#D100FF"]
+  },
+  {
+    "name": "Olive Green",
+    "colors": ["#808000", "#8B8B00", "#969600", "#A1A100", "#ACAC00"]
+  },
+  {
+    "name": "Salmon",
+    "colors": ["#FA8072", "#FF8C7A", "#FF9882", "#FFA48A", "#FFB092"]
+  },
+  {
+    "name": "Graphite",
+    "colors": ["#383838", "#404040", "#484848", "#505050", "#585858"]
+  },
+  {
+    "name": "Lemon Yellow",
+    "colors": ["#FFF44F", "#FFF554", "#FFF659", "#FFF75E", "#FFF863"]
+  },
+  {
+    "name": "Orchid",
+    "colors": ["#DA70D6", "#DC7DD8", "#DE8ADA", "#E097DC", "#E2A4DE"]
+  },
+  {
+    "name": "Cinnamon",
+    "colors": ["#D2691E", "#D97428", "#E07F32", "#E78A3C", "#EE9546"]
+  },
+  {
+    "name": "Frost",
+    "colors": ["#E0F2F7", "#D6EEF5", "#CCEAF3", "#C2E6F1", "#B8E2EF"]
+  },
+  {
+    "name": "Tomato Red",
+    "colors": ["#FF6347", "#FF6F54", "#FF7B61", "#FF876E", "#FF937B"]
+  },
+  {
+    "name": "Lavender Mist",
+    "colors": ["#E6E6FA", "#E3E3FA", "#E0E0FA", "#DDDDFA", "#DADAFA"]
+  },
+  {
+    "name": "Copper",
+    "colors": ["#B87333", "#BF7E3F", "#C6894B", "#CD9457", "#D49F63"]
+  },
+  {
+    "name": "Azure",
+    "colors": ["#007FFF", "#1A8CFF", "#3399FF", "#4DA6FF", "#66B3FF"]
+  },
+  {
+    "name": "Magenta",
+    "colors": ["#FF00FF", "#FF1AFF", "#FF33FF", "#FF4DFF", "#FF66FF"]
+  },
+  {
+    "name": "Khaki",
+    "colors": ["#C3B091", "#C9B899", "#CFC0A1", "#D5C8A9", "#DBD0B1"]
+  },
+  {
+    "name": "Coral Pink",
+    "colors": ["#F88379", "#F98D84", "#FA978F", "#FBA19A", "#FCABA5"]
+  },
+  {
+    "name": "Gunmetal",
+    "colors": ["#2A3439", "#34404A", "#3E4C5B", "#48586C", "#52647D"]
+  },
+  {
+    "name": "Golden Yellow",
+    "colors": ["#FFDF00", "#FFE21A", "#FFE533", "#FFE84D", "#FFEB66"]
+  },
+  {
+    "name": "Heather",
+    "colors": ["#B5A1C5", "#B9A9C9", "#BDB1CD", "#C1B9D1", "#C5C1D5"]
+  },
+  {
+    "name": "Russet",
+    "colors": ["#80461B", "#8D5327", "#9A6033", "#A76D3F", "#B47A4B"]
+  },
+  {
+    "name": "Ice Blue",
+    "colors": ["#D6F4F4", "#DCF5F5", "#E2F6F6", "#E8F7F7", "#EEF8F8"]
+  },
+  {
+    "name": "Crimson",
+    "colors": ["#DC143C", "#E02948", "#E43E54", "#E85360", "#EC686C"]
+  },
+  {
+    "name": "Lilac Blossom",
+    "colors": ["#C8A2C8", "#CCAACB", "#D0B2CE", "#D4BAD1", "#D8C2D4"]
+  },
+  {
+    "name": "Bronze",
+    "colors": ["#CD7F32", "#D48C3F", "#DB994C", "#E2A659", "#E9B366"]
+  },
+  {
+    "name": "Cobalt Blue",
+    "colors": ["#0047AB", "#1A5AB8", "#336DC5", "#4D80D2", "#6693DF"]
+  },
+  {
+    "name": "Hot Pink",
+    "colors": ["#FF69B4", "#FF76BA", "#FF83C0", "#FF90C6", "#FF9DCC"]
+  },
+  {
+    "name": "Moss Green",
+    "colors": ["#8A9A5B", "#92A367", "#9AAC73", "#A2B57F", "#AABE8B"]
+  },
+  {
+    "name": "Tangerine Orange",
+    "colors": ["#FF9966", "#FFA073", "#FFA780", "#FFAE8D", "#FFB59A"]
+  },
+  {
+    "name": "Midnight",
+    "colors": ["#191970", "#2D2D7C", "#414188", "#555594", "#6969A0"]
+  },
+  {
+    "name": "Sunshine",
+    "colors": ["#FFFD37", "#FFFD4B", "#FFFD5F", "#FFFD73", "#FFFD87"]
+  },
+  {
+    "name": "Plum Purple",
+    "colors": ["#8E4585", "#995191", "#A45D9D", "#AF69A9", "#BA75B5"]
+  },
+  {
+    "name": "Ginger",
+    "colors": ["#B06500", "#BA7214", "#C47F28", "#CE8C3C", "#D89950"]
+  },
+  {
+    "name": "Arctic",
+    "colors": ["#E8F4F8", "#ECF5F9", "#F0F6FA", "#F4F7FB", "#F8F8FC"]
+  },
+  {
+    "name": "Burgundy",
+    "colors": ["#800020", "#8D1A2D", "#9A333A", "#A74D47", "#B46654"]
+  },
+  {
+    "name": "Lilac Purple",
+    "colors": ["#C8A2C8", "#CDAACB", "#D2B2CE", "#D7BAD1", "#DCC2D4"]
+  },
+  {
+    "name": "Amber",
+    "colors": ["#FFBF00", "#FFC51A", "#FFCB33", "#FFD14D", "#FFD766"]
+  },
+  {
+    "name": "Sky",
+    "colors": ["#87CEEB", "#92D3ED", "#9DD8EF", "#A8DDF1", "#B3E2F3"]
+  },
+  {
+    "name": "Berry",
+    "colors": ["#8E354A", "#99425A", "#A44F6A", "#AF5C7A", "#BA698A"]
+  },
+  {
+    "name": "Mustard",
+    "colors": ["#FFDB58", "#FFDE65", "#FFE172", "#FFE47F", "#FFE78C"]
+  },
+  {
+    "name": "Seafoam",
+    "colors": ["#93E9BE", "#9FEBC5", "#ABEDCC", "#B7EFD3", "#C3F1DA"]
+  },
+  {
+    "name": "Wine",
+    "colors": ["#722F37", "#7F3C44", "#8C4951", "#99565E", "#A6636B"]
+  },
+  {
+    "name": "Buttercream",
+    "colors": ["#FFFACD", "#FFFBD4", "#FFFCDB", "#FFFDE2", "#FFFEE9"]
+  },
+  {
+    "name": "Turquoise",
+    "colors": ["#40E0D0", "#53E3D4", "#66E6D8", "#79E9DC", "#8CECE0"]
+  },
+  {
+    "name": "Maroon",
+    "colors": ["#800000", "#8D1A1A", "#9A3333", "#A74D4D", "#B46666"]
+  },
+  {
+    "name": "Cream",
+    "colors": ["#FFFDD0", "#FFFDD7", "#FFFEDE", "#FFFEE5", "#FFFEEC"]
+  },
+  {
+    "name": "Teal Blue",
+    "colors": ["#008080", "#1A8D8D", "#339A9A", "#4DA7A7", "#66B4B4"]
+  },
+  {
+    "name": "Violet",
+    "colors": ["#8F00FF", "#9A1AFF", "#A533FF", "#B04DFF", "#BB66FF"]
+  },
+  {
+    "name": "Camel",
+    "colors": ["#C19A6B", "#C7A378", "#CDAC85", "#D3B592", "#D9BE9F"]
+  },
+  {
+    "name": "Sky Pink",
+    "colors": ["#FFB3D9", "#FFBADE", "#FFC1E3", "#FFC8E8", "#FFCFED"]
+  },
+  {
+    "name": "Pine",
+    "colors": ["#01796F", "#1A867D", "#33938B", "#4DA099", "#66ADA7"]
+  },
+  {
+    "name": "Scarlet",
+    "colors": ["#FF2400", "#FF3A1A", "#FF5033", "#FF664D", "#FF7C66"]
+  },
+  {
+    "name": "Opal",
+    "colors": ["#A8C3BC", "#B0CBC5", "#B8D3CE", "#C0DBD7", "#C8E3E0"]
+  },
+  {
+    "name": "Mahogany",
+    "colors": ["#C04000", "#CA5414", "#D46828", "#DE7C3C", "#E89050"]
+  },
+  {
+    "name": "Polar",
+    "colors": ["#EBF5FB", "#EFF6FC", "#F3F7FD", "#F7F8FE", "#FBF9FF"]
+  },
+  {
+    "name": "Ruby",
+    "colors": ["#E0115F", "#E72872", "#EE3F85", "#F55698", "#FC6DAB"]
+  },
+  {
+    "name": "Ivory",
+    "colors": ["#FFFFF0", "#FFFFF4", "#FFFFF8", "#FFFFFC", "#FFFFFF"]
+  },
+  {
+    "name": "Aqua",
+    "colors": ["#00FFFF", "#1AFFFF", "#33FFFF", "#4DFFFF", "#66FFFF"]
+  },
+  {
+    "name": "Garnet",
+    "colors": ["#733635", "#804342", "#8D504F", "#9A5D5C", "#A76A69"]
+  },
+  {
+    "name": "Bone",
+    "colors": ["#E3DAC9", "#E7DED0", "#EBE2D7", "#EFE6DE", "#F3EAE5"]
+  },
+  {
+    "name": "Mint Cream",
+    "colors": ["#F5FFFA", "#F7FFFB", "#F9FFFC", "#FBFFFD", "#FDFFFF"]
+  },
+  {
+    "name": "Steel",
+    "colors": ["#4682B4", "#598FBB", "#6C9CC2", "#7FA9C9", "#92B6D0"]
+  },
+  {
+    "name": "Cerise",
+    "colors": ["#DE3163", "#E24470", "#E6577D", "#EA6A8A", "#EE7D97"]
+  },
+  {
+    "name": "Sand",
+    "colors": ["#C2B280", "#C8B98D", "#CEC09A", "#D4C7A7", "#DACEB4"]
+  },
+  {
+    "name": "Neon Blue",
+    "colors": ["#1B03A3", "#2E1AB8", "#4131CD", "#5448E2", "#675FF7"]
+  },
+  {
+    "name": "Taupe",
+    "colors": ["#483C32", "#55493F", "#62564C", "#6F6359", "#7C7066"]
+  },
+  {
+    "name": "Spring Green",
+    "colors": ["#00FF7F", "#1AFF8C", "#33FF99", "#4DFFA6", "#66FFB3"]
+  },
+  {
+    "name": "Deep Purple",
+    "colors": ["#673AB7", "#7547BE", "#8354C5", "#9161CC", "#9F6ED3"]
+  },
+  {
+    "name": "Wheat",
+    "colors": ["#F5DEB3", "#F7E2BA", "#F9E6C1", "#FBEAC8", "#FDEECF"]
+  },
+  {
+    "name": "Electric Blue",
+    "colors": ["#7DF9FF", "#8CFAFF", "#9BFBFF", "#AAFCFF", "#B9FDFF"]
+  },
+  {
+    "name": "Eggplant",
+    "colors": ["#614051", "#6E4D5E", "#7B5A6B", "#886778", "#957485"]
+  },
+  {
+    "name": "Pearl",
+    "colors": ["#EAE6CA", "#EDEACF", "#F0EED4", "#F3F2D9", "#F6F6DE"]
+  },
+  {
+    "name": "Lime",
+    "colors": ["#BFFF00", "#C5FF1A", "#CBFF33", "#D1FF4D", "#D7FF66"]
+  },
+  {
+    "name": "Mulberry",
+    "colors": ["#C54B8C", "#CB5899", "#D165A6", "#D772B3", "#DD7FC0"]
+  },
+  {
+    "name": "Ecru",
+    "colors": ["#C2B280", "#C8B98D", "#CEC09A", "#D4C7A7", "#DACEB4"]
+  },
+  {
+    "name": "Cyan",
+    "colors": ["#00FFFF", "#1AFFFF", "#33FFFF", "#4DFFFF", "#66FFFF"]
+  },
+  {
+    "name": "Claret",
+    "colors": ["#7F1734", "#8C2E41", "#99454E", "#A65C5B", "#B37368"]
+  },
+  {
+    "name": "Linen",
+    "colors": ["#FAF0E6", "#FBF2E9", "#FCF4EC", "#FDF6EF", "#FEF8F2"]
+  },
+  {
+    "name": "Chartreuse",
+    "colors": ["#7FFF00", "#8CFF1A", "#99FF33", "#A6FF4D", "#B3FF66"]
+  },
+  {
+    "name": "Aubergine",
+    "colors": ["#3B2F2F", "#483C3C", "#554949", "#625656", "#6F6363"]
+  },
+  {
+    "name": "Beige",
+    "colors": ["#F5F5DC", "#F7F7E0", "#F9F9E4", "#FBFBE8", "#FDFDEC"]
+  },
+  {
+    "name": "Neon Green",
+    "colors": ["#39FF14", "#4DFF28", "#61FF3C", "#75FF50", "#89FF64"]
+  },
+  {
+    "name": "Wine Red",
+    "colors": ["#722F37", "#7F3C44", "#8C4951", "#99565E", "#A6636B"]
+  },
+  {
+    "name": "Alabaster",
+    "colors": ["#EDEAE0", "#F0EDE5", "#F3F0EA", "#F6F3EF", "#F9F6F4"]
+  },
+  {
+    "name": "Emerald",
+    "colors": ["#50C878", "#63CD85", "#76D292", "#89D79F", "#9CDCAC"]
+  },
+  {
+    "name": "Raspberry Rose",
+    "colors": ["#B3446C", "#BA5179", "#C15E86", "#C86B93", "#CF78A0"]
+  },
+  {
+    "name": "Almond",
+    "colors": ["#EFDECD", "#F1E2D2", "#F3E6D7", "#F5EADC", "#F7EEE1"]
+  },
+  {
+    "name": "Teal Green",
+    "colors": ["#00827F", "#1A8F8C", "#339C99", "#4DA9A6", "#66B6B3"]
+  },
+  {
+    "name": "Magenta Pink",
+    "colors": ["#FF00FF", "#FF1AFF", "#FF33FF", "#FF4DFF", "#FF66FF"]
+  },
+  {
+    "name": "Coconut",
+    "colors": ["#FEFEFA", "#FEFEF8", "#FEFEF6", "#FEFEF4", "#FEFEF2"]
+  },
+  {
+    "name": "Forest Blue",
+    "colors": ["#1F4788", "#325495", "#4561A2", "#586EAF", "#6B7BBC"]
+  },
+  {
+    "name": "Coral Red",
+    "colors": ["#FF4040", "#FF5353", "#FF6666", "#FF7979", "#FF8C8C"]
+  },
+  {
+    "name": "Seashell",
+    "colors": ["#FFF5EE", "#FFF7F1", "#FFF9F4", "#FFFBF7", "#FFFDF"]
+  },
+  {
+    "name": "Kelly Green",
+    "colors": ["#4CBB17", "#5FC224", "#72C931", "#85D03E", "#98D74B"]
+  },
+  {
+    "name": "Plum Wine",
+    "colors": ["#5F4B8B", "#6C5898", "#7965A5", "#8672B2", "#937FBF"]
+  },
+  {
+    "name": "Champagne Gold",
+    "colors": ["#F7E7CE", "#F9EBD4", "#FBEFDA", "#FDF3E0", "#FFF7E6"]
+  },
+  {
+    "name": "Ocean Blue",
+    "colors": ["#4F42B5", "#5C4FBC", "#695CC3", "#7669CA", "#8376D1"]
+  },
+  {
+    "name": "Rose Pink",
+    "colors": ["#FF66CC", "#FF73D1", "#FF80D6", "#FF8DDB", "#FF9AE0"]
+  },
+  {
+    "name": "Eggshell",
+    "colors": ["#F0EAD6", "#F2ECDB", "#F4EEE0", "#F6F0E5", "#F8F2EA"]
+  },
+  {
+    "name": "Jungle Green",
+    "colors": ["#29AB87", "#3CB594", "#4FBFA1", "#62C9AE", "#75D3BB"]
+  },
+  {
+    "name": "Magenta Red",
+    "colors": ["#C71585", "#CE2892", "#D53B9F", "#DC4EAC", "#E361B9"]
+  },
+  {
+    "name": "Porcelain",
+    "colors": ["#F4F0EC", "#F6F2EF", "#F8F4F2", "#FAF6F5", "#FCF8F8"]
+  },
+  {
+    "name": "Lime Punch",
+    "colors": ["#D0F037", "#D4F24B", "#D8F45F", "#DCF673", "#E0F887"]
+  },
+  {
+    "name": "Boysenberry",
+    "colors": ["#873260", "#943F6D", "#A14C7A", "#AE5987", "#BB6694"]
+  },
+  {
+    "name": "Cashew",
+    "colors": ["#D1C7B7", "#D5CBBC", "#D9CFC1", "#DDD3C6", "#E1D7CB"]
+  },
+  {
+    "name": "Caribbean",
+    "colors": ["#00CC99", "#1AD1A3", "#33D6AD", "#4DDBB7", "#66E0C1"]
+  },
+  {
+    "name": "Berry Red",
+    "colors": ["#8E354A", "#9B4257", "#A84F64", "#B55C71", "#C2697E"]
+  },
+  {
+    "name": "Parchment",
+    "colors": ["#F1E9D2", "#F3ECD7", "#F5EFDC", "#F7F2E1", "#F9F5E6"]
+  },
+  {
+    "name": "Neon Pink",
+    "colors": ["#FF10F0", "#FF24F2", "#FF38F4", "#FF4CF6", "#FF60F8"]
+  },
+  {
+    "name": "Cranberry",
+    "colors": ["#9F1D35", "#AC3042", "#B9434F", "#C6565C", "#D36969"]
+  },
+  {
+    "name": "Vanilla Cream",
+    "colors": ["#FFF5E1", "#FFF7E6", "#FFF9EB", "#FFFBF0", "#FFFDF5"]
+  },
+  {
+    "name": "Teal Dark",
+    "colors": ["#014D4E", "#1A5A5B", "#336768", "#4D7475", "#668182"]
+  },
+  {
+    "name": "Fuchsia Pink",
+    "colors": ["#FF77FF", "#FF84FF", "#FF91FF", "#FF9EFF", "#FFABFF"]
+  },
+  {
+    "name": "Oyster",
+    "colors": ["#DAD2BC", "#DDD6C1", "#E0DAC6", "#E3DECB", "#E6E2D0"]
+  },
+  {
+    "name": "Shamrock",
+    "colors": ["#009E60", "#1AAB6D", "#33B87A", "#4DC587", "#66D294"]
+  },
+  {
+    "name": "Bordeaux",
+    "colors": ["#6D071A", "#7A1E27", "#873534", "#944C41", "#A1634E"]
+  },
+  {
+    "name": "Cotton",
+    "colors": ["#FBFBF9", "#FCFCFA", "#FDFDFB", "#FEFEFC", "#FFFFFE"]
+  },
+  {
+    "name": "Pistachio Green",
+    "colors": ["#93C572", "#9DCB7F", "#A7D18C", "#B1D799", "#BBDDA6"]
+  },
+  {
+    "name": "Mauve Rose",
+    "colors": ["#E0B0C0", "#E4BAC7", "#E8C4CE", "#ECCED5", "#F0D8DC"]
+  },
+  {
+    "name": "Biscuit",
+    "colors": ["#EDC9A3", "#EFD0AD", "#F1D7B7", "#F3DEC1", "#F5E5CB"]
+  },
+  {
+    "name": "Sea Blue",
+    "colors": ["#006994", "#1A76A1", "#3383AE", "#4D90BB", "#669DC8"]
+  },
+  {
+    "name": "Hot Magenta",
+    "colors": ["#FF1DCE", "#FF34D2", "#FF4BD6", "#FF62DA", "#FF79DE"]
+  },
+  {
+    "name": "Smoke",
+    "colors": ["#738276", "#808F83", "#8D9C90", "#9AA99D", "#A7B6AA"]
+  },
+  {
+    "name": "Apple Green",
+    "colors": ["#8DB600", "#9ABD1A", "#A7C433", "#B4CB4D", "#C1D266"]
+  },
+  {
+    "name": "Plum Red",
+    "colors": ["#843B62", "#91486F", "#9E557C", "#AB6289", "#B86F96"]
+  },
+  {
+    "name": "Blossom",
+    "colors": ["#FADADD", "#FBDFE1", "#FCE4E5", "#FDE9E9", "#FEEEED"]
+  },
+  {
+    "name": "Jungle",
+    "colors": ["#1A4D2E", "#2D5A41", "#406754", "#537467", "#66817A"]
+  },
+  {
+    "name": "Pomegranate",
+    "colors": ["#C93C20", "#D04F2D", "#D7623A", "#DE7547", "#E58854"]
+  },
+  {
+    "name": "Silk",
+    "colors": ["#F5F3E8", "#F7F5ED", "#F9F7F2", "#FBF9F7", "#FDFBFC"]
+  },
+  {
+    "name": "Grass Green",
+    "colors": ["#7CFC00", "#89FC1A", "#96FC33", "#A3FC4D", "#B0FC66"]
+  },
+  {
+    "name": "Orchid Pink",
+    "colors": ["#F28DCD", "#F49AD1", "#F6A7D5", "#F8B4D9", "#FAC1DD"]
+  },
+  {
+    "name": "Latte",
+    "colors": ["#C9A882", "#CFB08F", "#D5B89C", "#DBC0A9", "#E1C8B6"]
+  },
+  {
+    "name": "Pacific Blue",
+    "colors": ["#1CA9C9", "#2FB3CE", "#42BDD3", "#55C7D8", "#68D1DD"]
+  },
+  {
+    "name": "Magenta Purple",
+    "colors": ["#AA00FF", "#B41AFF", "#BE33FF", "#C84DFF", "#D266FF"]
+  },
+  {
+    "name": "Pebble",
+    "colors": ["#B5B5A0", "#BCBCA9", "#C3C3B2", "#CACABB", "#D1D1C4"]
+  },
+  {
+    "name": "Clover",
+    "colors": ["#008751", "#1A945E", "#33A16B", "#4DAE78", "#66BB85"]
+  },
+  {
+    "name": "Cherry Pink",
+    "colors": ["#FFB3DE", "#FFBADF", "#FFC1E0", "#FFC8E1", "#FFCFE2"]
+  },
+  {
+    "name": "Mushroom",
+    "colors": ["#C4A69D", "#CAAEAD", "#D0B6BD", "#D6BECD", "#DCC6DD"]
+  },
+  {
+    "name": "Neon Yellow",
+    "colors": ["#FFFF00", "#FFFF1A", "#FFFF33", "#FFFF4D", "#FFFF66"]
+  },
+  {
+    "name": "Plum Blossom",
+    "colors": ["#8B7FA8", "#988CB0", "#A599B8", "#B2A6C0", "#BFB3C8"]
+  },
+  {
+    "name": "Butterscotch",
+    "colors": ["#E09540", "#E4A253", "#E8AF66", "#ECBC79", "#F0C98C"]
+  },
+  {
+    "name": "Glacier",
+    "colors": ["#CEE5F2", "#D4E9F4", "#DAEDF6", "#E0F1F8", "#E6F5FA"]
+  },
+  {
+    "name": "Leaf Green",
+    "colors": ["#5F9F3D", "#6CAC4A", "#79B957", "#86C664", "#93D371"]
+  },
+  {
+    "name": "Raspberry Pink",
+    "colors": ["#E25098", "#E65DA5", "#EA6AB2", "#EE77BF", "#F284CC"]
+  },
+  {
+    "name": "Dune",
+    "colors": ["#C7B299", "#CDBAA6", "#D3C2B3", "#D9CAC0", "#DFD2CD"]
+  },
+  {
+    "name": "Electric Green",
+    "colors": ["#00FF00", "#1AFF1A", "#33FF33", "#4DFF4D", "#66FF66"]
+  },
+  {
+    "name": "Wine Purple",
+    "colors": ["#5D3754", "#6A4461", "#77516E", "#845E7B", "#916B88"]
+  },
+  {
+    "name": "Rice",
+    "colors": ["#EFEBE0", "#F1EDE5", "#F3EFEA", "#F5F1EF", "#F7F3F4"]
+  },
+  {
+    "name": "Jade",
+    "colors": ["#00A86B", "#1AB378", "#33BE85", "#4DC992", "#66D49F"]
+  },
+  {
+    "name": "Berry Purple",
+    "colors": ["#7B2869", "#883576", "#954283", "#A24F90", "#AF5C9D"]
+  },
+  {
+    "name": "Bisque",
+    "colors": ["#FFE4C4", "#FFE8CB", "#FFECD2", "#FFF0D9", "#FFF4E0"]
+  },
+  {
+    "name": "Bright Blue",
+    "colors": ["#0066FF", "#1A73FF", "#3380FF", "#4D8DFF", "#669AFF"]
+  },
+  {
+    "name": "Merlot",
+    "colors": ["#541F29", "#612C36", "#6E3943", "#7B4650", "#88535D"]
+  },
+  {
+    "name": "Powder",
+    "colors": ["#F5F5F5", "#F7F7F7", "#F9F9F9", "#FBFBFB", "#FDFDFD"]
+  },
+  {
+    "name": "Spring Bud",
+    "colors": ["#A7FC00", "#B1FC1A", "#BBFC33", "#C5FC4D", "#CFFC66"]
+  },
+  {
+    "name": "Dusty Rose",
+    "colors": ["#DCAE96", "#E0B6A3", "#E4BEB0", "#E8C6BD", "#ECCECA"]
+  },
+  {
+    "name": "Caramel Latte",
+    "colors": ["#B8825D", "#BF8F6A", "#C69C77", "#CDA984", "#D4B691"]
+  },
+  {
+    "name": "Deep Teal",
+    "colors": ["#003D3C", "#1A4A49", "#335756", "#4D6463", "#667170"]
+  },
+  {
+    "name": "Pink Rose",
+    "colors": ["#FF007F", "#FF1A8C", "#FF3399", "#FF4DA6", "#FF66B3"]
+  },
+  {
+    "name": "Stone",
+    "colors": ["#928E85", "#9F9B92", "#ACA89F", "#B9B5AC", "#C6C2B9"]
+  },
+  {
+    "name": "Bright Green",
+    "colors": ["#66FF00", "#73FF1A", "#80FF33", "#8DFF4D", "#9AFF66"]
+  },
+  {
+    "name": "Iris Blue",
+    "colors": ["#5A4FCF", "#675CD6", "#7469DD", "#8176E4", "#8E83EB"]
+  },
+  {
+    "name": "Hazelnut",
+    "colors": ["#A67B5B", "#AD8868", "#B49575", "#BBA282", "#C2AF8F"]
+  },
+  {
+    "name": "Bright Cyan",
+    "colors": ["#00E5FF", "#1AE8FF", "#33EBFF", "#4DEEFF", "#66F1FF"]
+  },
+  {
+    "name": "Deep Rose",
+    "colors": ["#C74375", "#CE5082", "#D55D8F", "#DC6A9C", "#E377A9"]
+  },
+  {
+    "name": "Fog",
+    "colors": ["#E6E6E6", "#E9E9E9", "#ECECEC", "#EFEFEF", "#F2F2F2"]
+  },
+  {
+    "name": "Neon Lime",
+    "colors": ["#CCFF00", "#D1FF1A", "#D6FF33", "#DBFF4D", "#E0FF66"]
+  },
+  {
+    "name": "Victorian",
+    "colors": ["#513B56", "#5E4863", "#6B5570", "#78627D", "#856F8A"]
+  },
+  {
+    "name": "Meringue",
+    "colors": ["#F6F3EB", "#F8F5EF", "#FAF7F3", "#FCF9F7", "#FEFBFB"]
+  },
+  {
+    "name": "Clover Green",
+    "colors": ["#009B3A", "#1AA847", "#33B554", "#4DC261", "#66CF6E"]
+  },
+  {
+    "name": "Shocking Pink",
+    "colors": ["#FC0FC0", "#FC22C5", "#FC35CA", "#FC48CF", "#FC5BD4"]
+  },
+  {
+    "name": "Dove Gray",
+    "colors": ["#6D6E71", "#7A7B7E", "#87888B", "#949598", "#A1A2A5"]
+  },
+  {
+    "name": "Bright Yellow",
+    "colors": ["#FFEA00", "#FFEC1A", "#FFEE33", "#FFF04D", "#FFF266"]
+  },
+  {
+    "name": "Eggplant Purple",
+    "colors": ["#311432", "#3E213F", "#4B2E4C", "#583B59", "#654866"]
+  },
+  {
+    "name": "Porcelain White",
+    "colors": ["#FCFCFC", "#FDFDFD", "#FEFEFE", "#FEFEFE", "#FFFFFF"]
+  },
+  {
+    "name": "Turquoise Green",
+    "colors": ["#00CED1", "#1AD3D4", "#33D8D7", "#4DDDDA", "#66E2DD"]
+  },
+  {
+    "name": "Deep Pink",
+    "colors": ["#FF1493", "#FF27A0", "#FF3AAD", "#FF4DBA", "#FF60C7"]
+  },
+  {
+    "name": "Ash",
+    "colors": ["#B2BEB5", "#B9C5BC", "#C0CCC3", "#C7D3CA", "#CEDAD1"]
+  },
+  {
+    "name": "Chartreuse Green",
+    "colors": ["#7FFF00", "#8CFF1A", "#99FF33", "#A6FF4D", "#B3FF66"]
+  },
+  {
+    "name": "Mauve Purple",
+    "colors": ["#6F5E76", "#7C6B83", "#897890", "#96859D", "#A392AA"]
+  },
+  {
+    "name": "Coconut White",
+    "colors": ["#FFFEF9", "#FFFEFA", "#FFFEFB", "#FFFEFC", "#FFFEFD"]
+  },
+  {
+    "name": "Tropical Blue",
+    "colors": ["#00B4D8", "#1ABFDC", "#33CAE0", "#4DD5E4", "#66E0E8"]
+  },
+  {
+    "name": "Rose Red",
+    "colors": ["#C21E56", "#C93163", "#D04470", "#D7577D", "#DE6A8A"]
+  },
+  {
+    "name": "Cloud",
+    "colors": ["#E8E8E8", "#EBEBEB", "#EEEEEE", "#F1F1F1", "#F4F4F4"]
+  },
+  {
+    "name": "Lime Zest",
+    "colors": ["#C0FF00", "#C7FF1A", "#CEFF33", "#D5FF4D", "#DCFF66"]
+  },
+  {
+    "name": "Amethyst Purple",
+    "colors": ["#6E3F8E", "#7B4C9B", "#8859A8", "#9566B5", "#A273C2"]
+  },
+  {
+    "name": "Cream White",
+    "colors": ["#FFFACD", "#FFFBD4", "#FFFCDB", "#FFFDE2", "#FFFEE9"]
+  },
+  {
+    "name": "Bright Teal",
+    "colors": ["#00CED1", "#1AD3D4", "#33D8D7", "#4DDDDA", "#66E2DD"]
+  },
+  {
+    "name": "Magenta Rose",
+    "colors": ["#FF00AA", "#FF1AB4", "#FF33BE", "#FF4DC8", "#FF66D2"]
+  },
+  {
+    "name": "Silver Gray",
+    "colors": ["#C0C0C0", "#C7C7C7", "#CECECE", "#D5D5D5", "#DCDCDC"]
+  },
+  {
+    "name": "Lime Light",
+    "colors": ["#E6FF00", "#E9FF1A", "#ECFF33", "#EFFF4D", "#F2FF66"]
+  },
+  {
+    "name": "Purple Heart",
+    "colors": ["#69359C", "#7642A9", "#834FB6", "#905CC3", "#9D69D0"]
+  },
+  {
+    "name": "Pearl Cream",
+    "colors": ["#FFF9E6", "#FFFAEB", "#FFFBF0", "#FFFCF5", "#FFFDFA"]
+  },
+  {
+    "name": "Caribbean Blue",
+    "colors": ["#00B5A5", "#1AC0AF", "#33CBB9", "#4DD6C3", "#66E1CD"]
+  },
+  {
+    "name": "Fuchsia Rose",
+    "colors": ["#FF1AC6", "#FF2DCB", "#FF40D0", "#FF53D5", "#FF66DA"]
+  },
+  {
+    "name": "Platinum",
+    "colors": ["#E5E4E2", "#E9E8E6", "#EDECEB", "#F1F0EF", "#F5F4F3"]
+  },
+  {
+    "name": "Acid Green",
+    "colors": ["#B0BF1A", "#B7C627", "#BECD34", "#C5D441", "#CCDB4E"]
+  },
+  {
+    "name": "Deep Violet",
+    "colors": ["#330072", "#401A7F", "#4D338C", "#5A4D99", "#6766A6"]
+  },
+  {
+    "name": "Ivory White",
+    "colors": ["#FFFFF0", "#FFFFF4", "#FFFFF8", "#FFFFFC", "#FFFFFF"]
+  },
+  {
+    "name": "Aqua Blue",
+    "colors": ["#00FFFF", "#1AFFFF", "#33FFFF", "#4DFFFF", "#66FFFF"]
+  },
+  {
+    "name": "Rose Wine",
+    "colors": ["#8E3A59", "#9B4766", "#A85473", "#B56180", "#C26E8D"]
+  },
+  {
+    "name": "Milk White",
+    "colors": ["#FDFFF5", "#FEFFF7", "#FEFFF9", "#FFFFB", "#FFFFFD"]
+  },
+  {
+    "name": "Peacock Teal",
+    "colors": ["#00A693", "#1AB3A0", "#33C0AD", "#4DCDBA", "#66DAC7"]
+  },
+  {
+    "name": "Deep Magenta",
+    "colors": ["#8B008B", "#981A98", "#A533A5", "#B24DB2", "#BF66BF"]
+  },
+  {
+    "name": "Snow",
+    "colors": ["#FFFAFA", "#FFFBFB", "#FFFCFC", "#FFFDFD", "#FFFEFE"]
+  },
+  {
+    "name": "Bright Lime",
+    "colors": ["#A0FF00", "#ADFF1A", "#BAFF33", "#C7FF4D", "#D4FF66"]
+  },
+  {
+    "name": "Violet Purple",
+    "colors": ["#7F00FF", "#8C1AFF", "#9933FF", "#A64DFF", "#B366FF"]
+  },
+  {
+    "name": "Eggshell White",
+    "colors": ["#F0EAD6", "#F2ECDB", "#F4EEE0", "#F6F0E5", "#F8F2EA"]
+  },
+  {
+    "name": "Tropical Teal",
+    "colors": ["#00A09B", "#1AADA8", "#33BAB5", "#4DC7C2", "#66D4CF"]
+  },
+  {
+    "name": "Pink Magenta",
+    "colors": ["#FF1AC6", "#FF34CE", "#FF4ED6", "#FF68DE", "#FF82E6"]
+  },
+  {
+    "name": "Concrete",
+    "colors": ["#95918C", "#A29E99", "#AFABA6", "#BCB8B3", "#C9C5C0"]
+  },
+  {
+    "name": "Yellow Green",
+    "colors": ["#9ACD32", "#A7D33F", "#B4D94C", "#C1DF59", "#CEE566"]
+  },
+  {
+    "name": "Imperial Purple",
+    "colors": ["#5B1865", "#682572", "#75327F", "#823F8C", "#8F4C99"]
+  },
+  {
+    "name": "Antique White",
+    "colors": ["#FAEBD7", "#FBEEDD", "#FCF1E3", "#FDF4E9", "#FEF7EF"]
+  },
+  {
+    "name": "Neon Teal",
+    "colors": ["#00FFF0", "#1AFFF2", "#33FFF4", "#4DFFF6", "#66FFF8"]
+  },
+  {
+    "name": "Raspberry Magenta",
+    "colors": ["#D9006C", "#E01A79", "#E73386", "#EE4D93", "#F566A0"]
+  },
+  {
+    "name": "Shadow",
+    "colors": ["#8A8A8A", "#979797", "#A4A4A4", "#B1B1B1", "#BEBEBE"]
+  },
+  {
+    "name": "Bright Chartreuse",
+    "colors": ["#80FF00", "#8DFF1A", "#9AFF33", "#A7FF4D", "#B4FF66"]
+  },
+  {
+    "name": "Plum Violet",
+    "colors": ["#663399", "#7340A6", "#804DB3", "#8D5AC0", "#9A67CD"]
+  },
+  {
+    "name": "Linen White",
+    "colors": ["#FAF0E6", "#FBF2E9", "#FCF4EC", "#FDF6EF", "#FEF8F2"]
+  },
+  {
+    "name": "Deep Aqua",
+    "colors": ["#008B8B", "#1A9898", "#33A5A5", "#4DB2B2", "#66BFBF"]
+  },
+  {
+    "name": "Hot Pink Rose",
+    "colors": ["#FF1493", "#FF27A0", "#FF3AAD", "#FF4DBA", "#FF60C7"]
+  },
+  {
+    "name": "Charcoal Gray",
+    "colors": ["#36454F", "#43525C", "#505F69", "#5D6C76", "#6A7983"]
+  },
+  {
+    "name": "Lemon Shade",
+    "colors": ["#E4FF1A", "#E7FF2D", "#EAFF40", "#EDFF53", "#F0FF66"]
+  },
+  {
+    "name": "Byzantine Purple",
+    "colors": ["#702963", "#7D3670", "#8A437D", "#97508A", "#A45D97"]
+  },
+  {
+    "name": "Seashell White",
+    "colors": ["#FFF5EE", "#FFF7F1", "#FFF9F4", "#FFFBF7", "#FFFDF"]
+  },
+  {
+    "name": "Cyan Blue",
+    "colors": ["#00FFFF", "#1AFFFF", "#33FFFF", "#4DFFFF", "#66FFFF"]
+  },
+  {
+    "name": "Deep Fuchsia",
+    "colors": ["#C154C1", "#C861C8", "#CF6ECF", "#D67BD6", "#DD88DD"]
+  },
+  {
+    "name": "Alabaster White",
+    "colors": ["#EDEAE0", "#F0EDE5", "#F3F0EA", "#F6F3EF", "#F9F6F4"]
+  },
+  {
+    "name": "Bright Aqua",
+    "colors": ["#00FFEF", "#1AFFF1", "#33FFF3", "#4DFFF5", "#66FFF7"]
+  },
+  {
+    "name": "Crimson Rose",
+    "colors": ["#DC143C", "#E02948", "#E43E54", "#E85360", "#EC686C"]
+  },
+  {
+    "name": "Smoke Gray",
+    "colors": ["#738276", "#808F83", "#8D9C90", "#9AA99D", "#A7B6AA"]
+  },
+  {
+    "name": "Electric Lime",
+    "colors": ["#CCFF00", "#D1FF1A", "#D6FF33", "#DBFF4D", "#E0FF66"]
+  },
+  {
+    "name": "Royal Violet",
+    "colors": ["#4B0082", "#581A8F", "#65339C", "#724DA9", "#7F66B6"]
+  },
+  {
+    "name": "Magnolia",
+    "colors": ["#F8F4FF", "#F9F6FF", "#FAF8FF", "#FBFAFF", "#FCFCFF"]
+  },
+  {
+    "name": "Jade Teal",
+    "colors": ["#00A86B", "#1AB378", "#33BE85", "#4DC992", "#66D49F"]
+  },
+  {
+    "name": "Cerise Pink",
+    "colors": ["#DE3163", "#E24470", "#E6577D", "#EA6A8A", "#EE7D97"]
+  },
+  {
+    "name": "Mist Gray",
+    "colors": ["#C4C4BC", "#CBCBC4", "#D2D2CC", "#D9D9D4", "#E0E0DC"]
+  },
+  {
+    "name": "Spring Lime",
+    "colors": ["#CCFF00", "#D3FF1A", "#DAFF33", "#E1FF4D", "#E8FF66"]
+  },
+  {
+    "name": "Deep Indigo",
+    "colors": ["#2E0854", "#3B1A61", "#482D6E", "#55407B", "#625388"]
+  },
+  {
+    "name": "Cotton White",
+    "colors": ["#FBFBF9", "#FCFCFA", "#FDFDFB", "#FEFEFC", "#FFFFFE"]
+  },
+  {
+    "name": "Bright Turquoise",
+    "colors": ["#00CED1", "#1AD5D4", "#33DCD7", "#4DE3DA", "#66EADD"]
+  },
+  {
+    "name": "Pink Raspberry",
+    "colors": ["#E30B5C", "#E71E69", "#EB3176", "#EF4483", "#F35790"]
+  },
+  {
+    "name": "Pewter",
+    "colors": ["#96A8A1", "#A3B0AD", "#B0B8B9", "#BDC0C5", "#CAC8D1"]
+  },
+  {
+    "name": "Neon Yellow Green",
+    "colors": ["#D4FF00", "#D9FF1A", "#DEFF33", "#E3FF4D", "#E8FF66"]
+  },
+  {
+    "name": "Lavender Purple",
+    "colors": ["#967BB6", "#A388BD", "#B095C4", "#BDA2CB", "#CAAFD2"]
+  },
+  {
+    "name": "Bone White",
+    "colors": ["#E3DAC9", "#E7DED0", "#EBE2D7", "#EFE6DE", "#F3EAE5"]
+  },
+  {
+    "name": "Aqua Marine",
+    "colors": ["#00FFAA", "#1AFFB4", "#33FFBE", "#4DFFC8", "#66FFD2"]
+  },
+  {
+    "name": "Burgundy Red",
+    "colors": ["#800020", "#8D1A2D", "#9A333A", "#A74D47", "#B46654"]
+  },
+  {
+    "name": "Nickel",
+    "colors": ["#727472", "#7F817F", "#8C8E8C", "#999B99", "#A6A8A6"]
+  },
+  {
+    "name": "Lime Yellow",
+    "colors": ["#E4FF00", "#E8FF1A", "#ECFF33", "#F0FF4D", "#F4FF66"]
+  },
+  {
+    "name": "Purple Plum",
+    "colors": ["#5F3C6D", "#6C497A", "#795687", "#866394", "#9370A1"]
+  },
+  {
+    "name": "Silk White",
+    "colors": ["#F5F3E8", "#F7F5ED", "#F9F7F2", "#FBF9F7", "#FDFBFC"]
+  },
+  {
+    "name": "Bright Cyan Blue",
+    "colors": ["#00E5FF", "#1AE9FF", "#33EDFF", "#4DF1FF", "#66F5FF"]
+  },
+  {
+    "name": "Ruby Rose",
+    "colors": ["#E0115F", "#E4246C", "#E83779", "#EC4A86", "#F05D93"]
+  },
+  {
+    "name": "Tin",
+    "colors": ["#7C7C7C", "#898989", "#969696", "#A3A3A3", "#B0B0B0"]
+  },
+  {
+    "name": "Bright Lime Green",
+    "colors": ["#A0FF00", "#ADFF1A", "#BAFF33", "#C7FF4D", "#D4FF66"]
+  },
+  {
+    "name": "Iris Violet",
+    "colors": ["#5A4FCF", "#675CD6", "#7469DD", "#8176E4", "#8E83EB"]
+  },
+  {
+    "name": "Cream Silk",
+    "colors": ["#FFFACD", "#FFFBD4", "#FFFCDB", "#FFFDE2", "#FFFEE9"]
+  },
+  {
+    "name": "Caribbean Teal",
+    "colors": ["#00CCA3", "#1AD3AD", "#33DAB7", "#4DE1C1", "#66E8CB"]
+  },
+  {
+    "name": "Pink Fuchsia",
+    "colors": ["#FF00AA", "#FF1AB7", "#FF33C4", "#FF4DD1", "#FF66DE"]
+  },
+  {
+    "name": "Platinum Gray",
+    "colors": ["#E5E4E2", "#E9E8E6", "#EDECEB", "#F1F0EF", "#F5F4F3"]
+  },
+  {
+    "name": "Lime Bright",
+    "colors": ["#B0FF00", "#BDFF1A", "#CAFF33", "#D7FF4D", "#E4FF66"]
+  },
+  {
+    "name": "Deep Purple Violet",
+    "colors": ["#330072", "#471A7F", "#5B338C", "#6F4D99", "#8366A6"]
+  },
+  {
+    "name": "Porcelain Cream",
+    "colors": ["#F4F0EC", "#F6F2EF", "#F8F4F2", "#FAF6F5", "#FCF8F8"]
+  },
+  {
+    "name": "Teal Aqua",
+    "colors": ["#008B8B", "#1A9F9F", "#33B3B3", "#4DC7C7", "#66DBDB"]
+  },
+  {
+    "name": "Magenta Fuchsia",
+    "colors": ["#FF00CC", "#FF1AD1", "#FF33D6", "#FF4DDB", "#FF66E0"]
+  },
+  {
+    "name": "Granite",
+    "colors": ["#676767", "#747474", "#818181", "#8E8E8E", "#9B9B9B"]
+  },
+  {
+    "name": "Chartreuse Yellow",
+    "colors": ["#8CFF00", "#99FF1A", "#A6FF33", "#B3FF4D", "#C0FF66"]
+  },
+  {
+    "name": "Violet Iris",
+    "colors": ["#8366FF", "#9073FF", "#9D80FF", "#AA8DFF", "#B79AFF"]
+  },
+  {
+    "name": "Vanilla White",
+    "colors": ["#F3E5AB", "#F5E8B5", "#F7EBBF", "#F9EEC9", "#FBF1D3"]
+  },
+  {
+    "name": "Turquoise Aqua",
+    "colors": ["#40E0D0", "#53E4D5", "#66E8DA", "#79ECDF", "#8CF0E4"]
+  },
+  {
+    "name": "Rose Magenta",
+    "colors": ["#FF1493", "#FF27A0", "#FF3AAD", "#FF4DBA", "#FF60C7"]
+  },
+  {
+    "name": "Silver",
+    "colors": ["#C0C0C0", "#C7C7C7", "#CECECE", "#D5D5D5", "#DCDCDC"]
+  },
+  {
+    "name": "Yellow Lime",
+    "colors": ["#F0FF00", "#F2FF1A", "#F4FF33", "#F6FF4D", "#F8FF66"]
+  },
+  {
+    "name": "Purple Iris",
+    "colors": ["#5D3FD3", "#6A4CDA", "#7759E1", "#8466E8", "#9173EF"]
+  },
+  {
+    "name": "Eggshell Cream",
+    "colors": ["#F0EAD6", "#F2ECDB", "#F4EEE0", "#F6F0E5", "#F8F2EA"]
+  },
+  {
+    "name": "Cyan Aqua",
+    "colors": ["#00FFFF", "#1AFFFF", "#33FFFF", "#4DFFFF", "#66FFFF"]
+  },
+  {
+    "name": "Deep Pink Rose",
+    "colors": ["#FF1493", "#FF27A0", "#FF3AAD", "#FF4DBA", "#FF60C7"]
+  },
+  {
+    "name": "Steel Gray",
+    "colors": ["#4682B4", "#598FBB", "#6C9CC2", "#7FA9C9", "#92B6D0"]
+  },
+  {
+    "name": "Bright Yellow Lime",
+    "colors": ["#E8FF00", "#EAFF1A", "#ECFF33", "#EEFF4D", "#F0FF66"]
+  },
+  {
+    "name": "Imperial Violet",
+    "colors": ["#5B1865", "#682572", "#75327F", "#823F8C", "#8F4C99"]
+  },
+  {
+    "name": "Pearl Ivory",
+    "colors": ["#FFFFF0", "#FFFFF4", "#FFFFF8", "#FFFFFC", "#FFFFFF"]
+  },
+  {
+    "name": "Bright Aqua Teal",
+    "colors": ["#00F5FF", "#1AF7FF", "#33F9FF", "#4DFBFF", "#66FDFF"]
+  },
+  {
+    "name": "Fuchsia Magenta",
+    "colors": ["#FF00FF", "#FF1AFF", "#FF33FF", "#FF4DFF", "#FF66FF"]
+  },
+  {
+    "name": "Ash Gray",
+    "colors": ["#B2BEB5", "#B9C5BC", "#C0CCC3", "#C7D3CA", "#CEDAD1"]
+  },
+  {
+    "name": "Lime Neon",
+    "colors": ["#CCFF00", "#D1FF1A", "#D6FF33", "#DBFF4D", "#E0FF66"]
+  },
+  {
+    "name": "Deep Violet Purple",
+    "colors": ["#330072", "#401A7F", "#4D338C", "#5A4D99", "#6766A6"]
+  },
+  {
+    "name": "Ivory Cream",
+    "colors": ["#FFFFF0", "#FFFFF4", "#FFFFF8", "#FFFFFC", "#FFFFFF"]
+  },
+  {
+    "name": "Ocean Teal",
+    "colors": ["#006B7D", "#1A788A", "#338597", "#4D92A4", "#669FB1"]
+  },
+  {
+    "name": "Hot Pink Magenta",
+    "colors": ["#FF1493", "#FF27A0", "#FF3AAD", "#FF4DBA", "#FF60C7"]
+  },
+  {
+    "name": "Smoke White",
+    "colors": ["#F5F5F5", "#F7F7F7", "#F9F9F9", "#FBFBFB", "#FDFDFD"]
+  },
+  {
+    "name": "Electric Yellow",
+    "colors": ["#FFFF00", "#FFFF1A", "#FFFF33", "#FFFF4D", "#FFFF66"]
+  },
+  {
+    "name": "Plum Purple Violet",
+    "colors": ["#663399", "#7340A6", "#804DB3", "#8D5AC0", "#9A67CD"]
+  },
+  {
+    "name": "Antique Cream",
+    "colors": ["#FAEBD7", "#FBEEDD", "#FCF1E3", "#FDF4E9", "#FEF7EF"]
+  },
+  {
+    "name": "Bright Teal Aqua",
+    "colors": ["#00CED1", "#1AD3D4", "#33D8D7", "#4DDDDA", "#66E2DD"]
+  },
+  {
+    "name": "Deep Rose Pink",
+    "colors": ["#C74375", "#CE5082", "#D55D8F", "#DC6A9C", "#E377A9"]
+  },
+  {
+    "name": "Fog White",
+    "colors": ["#E6E6E6", "#E9E9E9", "#ECECEC", "#EFEFEF", "#F2F2F2"]
+  },
+  {
+    "name": "Neon Lime Green",
+    "colors": ["#CCFF00", "#D1FF1A", "#D6FF33", "#DBFF4D", "#E0FF66"]
+  },
+  {
+    "name": "Violet Byzantine",
+    "colors": ["#702963", "#7D3670", "#8A437D", "#97508A", "#A45D97"]
+  },
+  {
+    "name": "Pure White",
+    "colors": ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"]
+  },
+  {
+    "name": "Deep Aqua Blue",
+    "colors": ["#008B8B", "#1A9898", "#33A5A5", "#4DB2B2", "#66BFBF"]
+  },
+  {
+    "name": "Pink Hot Magenta",
+    "colors": ["#FF1493", "#FF27A0", "#FF3AAD", "#FF4DBA", "#FF60C7"]
+  },
+  {
+    "name": "Charcoal Black",
+    "colors": ["#36454F", "#43525C", "#505F69", "#5D6C76", "#6A7983"]
+  },
+  {
+    "name": "Yellow Bright",
+    "colors": ["#FFFF00", "#FFFF1A", "#FFFF33", "#FFFF4D", "#FFFF66"]
+  },
+  {
+    "name": "Amethyst Violet",
+    "colors": ["#9966CC", "#A673D1", "#B380D6", "#C08DDB", "#CD9AE0"]
+  },
+  {
+    "name": "Linen Cream",
+    "colors": ["#FAF0E6", "#FBF2E9", "#FCF4EC", "#FDF6EF", "#FEF8F2"]
+  },
+  {
+    "name": "Aqua Bright",
+    "colors": ["#00FFFF", "#1AFFFF", "#33FFFF", "#4DFFFF", "#66FFFF"]
+  },
+  {
+    "name": "Crimson Red Rose",
+    "colors": ["#DC143C", "#E02948", "#E43E54", "#E85360", "#EC686C"]
+  },
+  {
+    "name": "Cloud White",
+    "colors": ["#E8E8E8", "#EBEBEB", "#EEEEEE", "#F1F1F1", "#F4F4F4"]
+  },
+  {
+    "name": "Spring Green Bright",
+    "colors": ["#00FF7F", "#1AFF8C", "#33FF99", "#4DFFA6", "#66FFB3"]
+  },
+  {
+    "name": "Deep Purple Royal",
+    "colors": ["#240046", "#37195A", "#4A336E", "#5D4C82", "#706696"]
+  },
+  {
+    "name": "Seashell Cream",
+    "colors": ["#FFF5EE", "#FFF7F1", "#FFF9F4", "#FFFBF7", "#FFFDFA"]
+  },
+  {
+    "name": "Teal Bright",
+    "colors": ["#00CED1", "#1AD3D4", "#33D8D7", "#4DDDDA", "#66E2DD"]
+  },
+  {
+    "name": "Magenta Pink Rose",
+    "colors": ["#FF00AA", "#FF1AB7", "#FF33C4", "#FF4DD1", "#FF66DE"]
+  },
+  {
+    "name": "Silver White",
+    "colors": ["#C0C0C0", "#C7C7C7", "#CECECE", "#D5D5D5", "#DCDCDC"]
+  },
+  {
+    "name": "Lime Electric",
+    "colors": ["#CCFF00", "#D1FF1A", "#D6FF33", "#DBFF4D", "#E0FF66"]
+  },
+  {
+    "name": "Purple Deep Violet",
+    "colors": ["#330072", "#401A7F", "#4D338C", "#5A4D99", "#6766A6"]
+  },
+  {
+    "name": "Cream Pure",
+    "colors": ["#FFFFF0", "#FFFFF4", "#FFFFF8", "#FFFFFC", "#FFFFFF"]
+  },
+  {
+    "name": "Cyan Bright Blue",
+    "colors": ["#00FFFF", "#1AFFFF", "#33FFFF", "#4DFFFF", "#66FFFF"]
+  },
+  {
+    "name": "Rose Deep Pink",
+    "colors": ["#C74375", "#CE5082", "#D55D8F", "#DC6A9C", "#E377A9"]
+  },
+  {
+    "name": "Mist White",
+    "colors": ["#E6E6E6", "#E9E9E9", "#ECECEC", "#EFEFEF", "#F2F2F2"]
+  }
+]

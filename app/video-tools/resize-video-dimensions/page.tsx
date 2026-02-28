@@ -21,37 +21,37 @@ import Script from "next/script";
 
 const faqData = [
   {
-    question: "How can I resize video free online without losing quality?",
+    question:
+      "How do I resize a video to 1080p or 720p without uploading it anywhere?",
     answer:
-      "You can resize video free online right inside your browser window without paying any premium fees. Since your device processes the actual video shrinking locally, it bypasses cloud server requirements, keeping the tool free while ensuring your original file quality isn't compromised by forced server-side compression blocks.",
-  },
-  {
-    question: "What exactly do the Fill, Contain, and Cover scaling modes do?",
-    answer:
-      "If your target resolution doesn't match your original video shape, you have three options. Fill forcefully stretches the image to fit the new box, potentially warping objects. Contain safely shrinks the video until it fits, generating harmless black bars in the leftover empty space. Cover forcefully zooms the video in until it fills the entire frame, actively cropping away footage that spills outside the boundaries.",
+      "Select your video using the file picker and pick the 1080p or 720p preset button. The encoder runs entirely in your browser using your own CPU, so the file never leaves your device. Your video gets remapped to the new pixel grid frame by frame and downloads directly to your computer when done.",
   },
   {
     question:
-      "Will typing in a huge 4K pixel size actually make my clip look better?",
+      "What is the difference between Contain, Cover, and Fill fit modes?",
     answer:
-      "No, stretching a small video into a massive 3840x2160 pixel box does not magically invent high-definition details that were never captured by your camera. It simply pulls the existing pixels further apart, which often makes low-resolution footage look considerably softer or chunkier.",
+      "Contain shrinks the video to fit inside your target box while keeping the full image visible. Any empty space gets filled with black bars. Cover zooms the video until it fills the entire frame, which crops the edges. Fill ignores the original proportions and stretches the image to match your exact width and height, which can distort faces and objects.",
+  },
+  {
+    question: "Does typing a larger resolution make the video look sharper?",
+    answer:
+      "No. Upscaling does not add detail that was never recorded. If you take a 480p clip and resize it to 4K, the encoder spreads the same limited pixels across a much larger canvas, which makes the image look blurrier. Downscaling from a higher resolution to a lower one does work well because you are discarding data rather than inventing it.",
   },
   {
     question:
-      "Why does the height number change automatically when I type a new width?",
+      "Why does the height field update automatically when I change the width?",
     answer:
-      "When 'Maintain Aspect Ratio' is turned on, the calculator mechanically locks the proportional relationship between the width and the height. If you cut the total width exactly in half, the tool instantly cuts the height exactly in half to prevent your video subject from looking squished or stretched.",
+      "The Maintain Aspect Ratio toggle is on by default. It calculates the exact ratio between your video's original width and height, then applies that same ratio to whichever dimension you type. This prevents the video from appearing stretched or squashed when you only change one side.",
   },
   {
-    question: "Can anyone else download the private footage I upload here?",
+    question: "Is my video uploaded to a server when I use this tool?",
     answer:
-      "Nobody else can download or even view your video because it never leaves your physical hard drive. The application's encoding engine downloads directly to your device memory and executes the resizing locally, guaranteeing complete privacy for sensitive or unreleased recordings.",
+      "Your video is never uploaded. The resizing engine runs inside your browser using WebAssembly. It reads your file from your local drive, processes it frame by frame in your device's memory, and writes the output back to your drive. No data travels over your network connection during this process.",
   },
   {
-    question:
-      "Why does converting a 1080p clip down to 720p take so long on my laptop?",
+    question: "How long does it take to resize a long 4K video?",
     answer:
-      "To reduce video file size, this browser application must completely deconstruct your original file, recalculate the mathematical pixel values for every single frame to create the smaller size, and then bind it back together into a brand new MP4 file. This demands heavy processing power, so keeping your browser tab focused ensures your operating system allocates maximum power to the task.",
+      "Processing time depends on your device's CPU speed and the length of your video. A 4K video that is three minutes long can take several minutes on an average laptop because the encoder must recalculate pixel values for thousands of frames. Keep the browser tab active and avoid other heavy tasks to give the encoder as much CPU bandwidth as possible.",
   },
 ];
 
@@ -317,13 +317,13 @@ export default function ResizeVideoDimensionsPage() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-                Video Dimensions Resizer – Scale Video to Any Resolution Online
+                Resize Video Online Free – Change Video Resolution to Any Size
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Change your video's width and height to any standard resolution
-                or custom dimensions. Choose how your video fits the new frame
-                with fill, contain, or cover modes — all in your browser.
+                Change your video to 4K, 1080p, 720p, 480p, or any custom pixel
+                size directly in your browser. Pick a fit mode to control how
+                the image fills the new frame. No uploads, no software, no cost.
               </p>
             </div>
           </div>
@@ -550,14 +550,15 @@ export default function ResizeVideoDimensionsPage() {
                 What it Does
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                When a social media platform rejects your upload because the
-                resolution is too high or low, you can completely resize video
-                free online directly from your browser. This tool physically
-                changes the vertical and horizontal pixel measurements of your
-                file to shrink massive 4K recordings into manageable web clips,
-                or adapt landscape footage into vertical reels. Because all
-                rendering happens locally on your own hardware, you do not have
-                to wait for large files to upload to a remote server.
+                This tool changes the pixel dimensions of your video file to a
+                new width and height you specify. It reads your original video
+                frame by frame, calculates new pixel positions for each frame
+                based on your target resolution, and writes a fresh MP4 output
+                at the new size. You can scale down a 4K drone recording to
+                1080p for faster web delivery, or resize a landscape clip to
+                square dimensions for an Instagram post. The entire process runs
+                locally in your browser, so you get results without uploading
+                your file to any cloud server.
               </p>
             </CardContent>
           </Card>
@@ -574,15 +575,14 @@ export default function ResizeVideoDimensionsPage() {
                 <span className="text-2xl font-bold">1</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Define the new pixel counts
+                Load your video and set a target size
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                After pulling a video clip directly into the browser tool, look
-                at the displayed original resolution for context before applying
-                a smaller scaling preset like 720p or 480p. If you are targeting
-                a very specific digital billboard or display screen, leave the
-                preset section alone and manually type the precise pixel width
-                and height you require into the custom dimension boxes.
+                Open the file picker and select your video. The tool reads its
+                original resolution and fills in the width and height fields
+                automatically. Click a preset button like 1080p or 720p to set a
+                standard size, or type custom pixel values into the width and
+                height fields for a specific display or platform requirement.
               </p>
             </div>
             <div className="relative text-center">
@@ -590,15 +590,14 @@ export default function ResizeVideoDimensionsPage() {
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Manage the aspect framing
+                Choose a fit mode for the new frame
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                If the new width and height you typed do not neatly match the
-                original rectangular shape of your video, you must choose a fit
-                mode to tell the encoder what to do. Choose "Contain" if you
-                want to protect the entire image by adding black borders around
-                it, or choose "Cover" to aggressively zoom the footage to fill
-                the dead space, clipping off the edges.
+                If your target dimensions have a different aspect ratio than
+                your original video, pick a fit mode. Contain keeps the full
+                image and adds black bars to fill empty space. Cover fills the
+                frame completely and trims the edges. Fill stretches the image
+                to match both dimensions exactly, which can distort the content.
               </p>
             </div>
             <div className="relative text-center">
@@ -606,15 +605,14 @@ export default function ResizeVideoDimensionsPage() {
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Queue the conversion engine
+                Resize and download the output
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the resize button to engage your processor, which will
-                immediately begin mapping the old pixels into your new requested
-                boundary dimensions frame by frame. Since reducing a 4K movie
-                into a standard MP4 file requires intensive computation, do not
-                close the browser tab until the progress hits 100% and hands you
-                the final download link.
+                Click the Resize Video button and keep the browser tab open
+                while the encoder works through your video frame by frame. The
+                progress bar updates as each frame is remapped to the new pixel
+                grid. When it reaches 100%, a download button appears and you
+                save the new MP4 directly to your device.
               </p>
             </div>
           </div>
@@ -629,74 +627,71 @@ export default function ResizeVideoDimensionsPage() {
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Bypassing platform upload restrictions
+                  Meeting platform resolution limits
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  When trying to post a high-end 4K drone recording to a rigid
-                  forum that strictly enforces a maximum 1080p limit, users are
-                  immediately stopped. Slapping the 1080p preset cleanly scales
-                  the massive file down into the allowed threshold, letting you
-                  upload to older platforms without encountering frustrating
-                  error messages.
+                  Some community forums and older video platforms cap uploads at
+                  720p or 1080p. If you filmed in 4K, select the matching preset
+                  to scale the clip down to the required ceiling before you
+                  upload. The encoder remaps every frame to the smaller grid and
+                  produces a file that passes the platform check.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Conforming mixed smartphone footage
+                  Standardizing clips from multiple cameras
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Video editors often receive a terrible mix of 720p, 1080p, and
-                  4K random clips when crowdsourcing fan footage for a music
-                  video. Utilizing manual width and height inputs forces every
-                  single clip into the exact same 1920x1080 box, preventing
-                  messy timeline errors in professional video editing software.
+                  When you receive footage from different phones and cameras for
+                  a project, each clip often has a different resolution. Type
+                  1920x1080 into the custom fields and process each clip
+                  individually. Every file comes out at the same pixel size,
+                  which prevents resolution mismatch errors when you bring them
+                  into a video editor.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Converting landscape movies into Reels
+                  Reformatting landscape video to vertical
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Social media managers promoting a standard horizontal YouTube
-                  video must aggressively resize the file to fit inside an
-                  upright smartphone screen. Swapping the dimensions to
-                  1080x1920 and using the Cover fit mode instantly slices the
-                  sides off the video, transforming it into a perfect,
-                  screen-filling vertical hook.
+                  YouTube videos filmed in 16:9 do not fit Instagram Reels or
+                  TikTok without reformatting. Set the width to 1080 and the
+                  height to 1920, then select Cover mode. The encoder zooms the
+                  video until it fills the vertical frame and trims the left and
+                  right edges, producing a full-screen vertical clip.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Drastically shrinking final file sizes
+                  Reducing file size for email delivery
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Real estate agents sending giant property walkthrough videos
-                  over basic email attachments frequently hit server rejection
-                  limits due to massive Mb file sizes. Pulling the footage
-                  completely down to the 480p preset destroys the heavy HD data
-                  blocks, creating a blurry but tiny file that easily clears
-                  strict email limits.
+                  Email attachments typically have a size cap between 10MB and
+                  25MB. A one-minute 1080p recording can exceed 100MB. Resizing
+                  it to 480p cuts the pixel count by more than 75%, which
+                  reduces file size enough for most email clients to accept the
+                  attachment without a cloud link workaround.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Designing custom website background loops
+                  Creating narrow banner video for websites
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Web developers building a uniquely slim hero banner on a
-                  landing page cannot use a standard 16:9 video because it will
-                  overlap the lower content. Turning off aspect ratio locks and
-                  typing in a custom 1920x400 dimension mathematically flattens
-                  the video into an ultra-wide, panoramic slit that sits
-                  perfectly under the navigation bar.
+                  Hero banners on landing pages often use a custom aspect ratio
+                  like 1920x400. Turn off the aspect ratio lock and type your
+                  banner dimensions into the width and height fields. The Fill
+                  mode stretches the video to match both dimensions so it covers
+                  the banner area without black bars on any side.
                 </p>
               </CardContent>
             </Card>
@@ -712,37 +707,37 @@ export default function ResizeVideoDimensionsPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-lg">Target Height and Width</h3>
+                  <h3 className="font-bold text-lg">Width and Height Fields</h3>
                   <p className="text-muted-foreground mt-2">
-                    These numbers dictate the exact pixel boundaries of the
-                    final exported file. Standard widescreen videos are usually
-                    1920 pixels wide and 1080 pixels tall, but if you need to
-                    create a perfectly square video block for a specific profile
-                    picture avatar, you would type identical numbers into both
-                    boxes.
+                    These two fields define the exact output pixel dimensions.
+                    Standard HD video is 1920 pixels wide by 1080 pixels tall.
+                    Standard 4K is 3840 by 2160. You can also type any custom
+                    number here, such as 1080x1080 for a square post or
+                    1080x1920 for a vertical reel. The preset buttons fill these
+                    fields automatically for common sizes.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">
-                    Maintain Aspect Ratio Toggle
-                  </h3>
+                  <h3 className="font-bold text-lg">Maintain Aspect Ratio</h3>
                   <p className="text-muted-foreground mt-2">
-                    This safety mechanism binds the width and height boxes
-                    together so they maintain their original geometric
-                    relationship. Keeping it enabled prevents your video from
-                    looking accidentally stretched out or severely squished flat
-                    when you try to change just one measurement by mistake.
+                    When this toggle is on, changing the width recalculates the
+                    height to preserve the original proportions, and vice versa.
+                    This prevents the video from looking squashed or stretched.
+                    Turn it off when you intentionally want to force a specific
+                    aspect ratio that does not match the source, such as
+                    converting a 16:9 clip to square format.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">Fit Mode Selector</h3>
+                  <h3 className="font-bold text-lg">Fit Mode</h3>
                   <p className="text-muted-foreground mt-2">
-                    When squeezing a rectangular video into a square box, the
-                    application needs permission on how to handle the mismatch.
-                    Selecting "Contain" prioritizes keeping everything visible
-                    by heavily bordering the top and bottom with thick black
-                    bars, while selecting "Fill" will ruthlessly stretch the
-                    image to fit the box, warping faces and circles.
+                    Contain scales the video down so the entire image fits
+                    inside your target dimensions. Gaps appear as black bars.
+                    Cover scales the video up until it fills the frame
+                    completely, trimming any content that extends outside the
+                    boundary. Fill ignores the original ratio and forces the
+                    image to exactly match both your width and height values,
+                    which stretches the content.
                   </p>
                 </div>
               </div>

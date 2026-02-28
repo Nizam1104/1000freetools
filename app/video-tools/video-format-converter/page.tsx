@@ -6,40 +6,34 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const faqData = [
   {
-    question:
-      "Do I need to download a sketchy desktop application to convert my MP4 file?",
+    question: "Can I convert an MKV file to MP4 without re-encoding the video?",
     answer:
-      "No. You can run a full video format conversion directly through your Chrome or Safari browser window. Because this tool utilizes local memory processing, it effectively turns your web browser into a secure, offline conversion engine without requiring you to install random executable files.",
+      "Yes, in many cases. When the video track inside the MKV already uses a codec that MP4 supports, such as H.264, the converter performs a transmux operation. It moves the existing video and audio data into the new container without re-encoding, which completes in seconds and produces no quality loss.",
   },
   {
-    question:
-      "Why did my WebM file instantly convert to MP4 in one second flat?",
+    question: "How long does it take to convert a large video file?",
     answer:
-      "You likely triggered a raw transmuxing phase. If the internal video codec matches the new wrapper container you selected, the engine simply copies the raw audio and video streams and pastes them into the new format instead of slowly re-rendering every single frame.",
+      "If the codecs are compatible and only the container changes, conversion is nearly instant regardless of file size. If the video needs to be re-encoded into a different codec, the time depends on the length and resolution of the video and your device's CPU speed. A 10-minute 1080p video may take several minutes to re-encode on a standard laptop.",
   },
   {
-    question:
-      "How do I extract just the background music from a YouTube recorded video?",
+    question: "Does this tool support converting video to MP3 or WAV?",
     answer:
-      "Simply drop your video file into the converter and select MP3 or WAV from the Output Format dropdown menu. The processing engine will violently strip away the visual data track while completely preserving the original audio stream quality.",
+      "Yes. Selecting an audio output format such as MP3 or WAV extracts the audio track from the video and discards the video data. MP3 uses compressed audio and produces smaller files. WAV produces an uncompressed audio file with no quality loss, which is useful for audio editing workflows.",
   },
   {
-    question:
-      "Why does converting a video to AV1 codec drastically crash my laptop performance?",
+    question: "Will converting a video reduce its quality?",
     answer:
-      "AV1 is an incredibly dense, highly advanced compression algorithm specifically designed to crush massive 4K files into tiny digital packages. Because the mathematics required are so wildly complex, older computer CPUs will effectively max out to 100% capacity trying to compile the data.",
+      "A transmux operation produces no quality loss because the pixel data is not re-encoded. A re-encode operation applies a new compression pass, which can introduce a small quality reduction depending on the target codec and bitrate settings. If preserving the original quality is important, avoid re-encoding when possible.",
   },
   {
-    question:
-      "Can anyone on the internet view the private videos I am converting?",
+    question: "Can anyone else see the video files I convert with this tool?",
     answer:
-      "Absolutely not. This completely sandboxed architecture guarantees your private footage never leaves your physical hardware. Your raw MP4 files are never uploaded to our servers, ensuring no external party can intercept your data.",
+      "No. The file is read from your local drive and processed inside your browser's memory. It is never uploaded to a server. No third party has access to your video at any point during or after conversion.",
   },
   {
-    question:
-      "Is there a maximum Gb file size cap enforced by the conversion server?",
+    question: "Is there a maximum file size I can convert?",
     answer:
-      "Because we literally do not have a server crunching your files, we enforce absolutely zero arbitrary limits. However, your internet browser itself has a rigid internal RAM wall, meaning attempting to convert a massive 15GB raw ProRes file might force Google Chrome to crash.",
+      "The tool runs entirely in your browser and does not upload files to a server. The practical limit is your device's available RAM. Most devices handle files up to a few gigabytes without issues. Very large files such as raw 4K footage above 10 GB may run out of available browser memory before conversion completes.",
   },
 ];
 
@@ -138,11 +132,12 @@ export default function VideoFormatsConversionPage() {
         {/* Hero Section */}
         <section className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Free Online Video Converter – Convert MP4, WebM, MKV, MOV & More
+            Free Online Video Converter — Convert MP4, MKV, MOV, WebM and More
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Convert video and audio files instantly in your browser — no
-            uploads, completely free. Supports MP4, WebM, MOV, MP3, and more.
+            Convert video and audio files between formats directly in your
+            browser. No uploads, no account, and no file size limits imposed by
+            a server. Supports MP4, WebM, MKV, MOV, MP3, WAV, and more.
           </p>
         </section>
 
@@ -159,16 +154,16 @@ export default function VideoFormatsConversionPage() {
                 What it Does
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                When you try to play an obscure MKV movie file on your smart TV
-                and receive an aggressive "Unsupported Format" error, you must
-                convert the video to MP4 online to fix the problem. This browser
-                architecture acts as a local digital translator, ripping open
-                incompatible video containers and seamlessly repacking the raw
-                visual data into a universally accepted format. Built entirely
-                to run on your own CPU, this bypasses horrible cloud upload
-                limits, allowing you to quickly smash massive WebM, MOV, or AVI
-                files down to playable formats without paying exorbitant
-                subscription fees.
+                This tool changes the format of your video or audio file. You
+                can change the container, such as MKV to MP4, or extract the
+                audio track as MP3 or WAV. When the internal codecs are already
+                compatible, the tool performs a transmux, copying the data into
+                the new container without re-encoding. This completes quickly
+                and produces no quality loss. When the codecs are not
+                compatible, the tool re-encodes the video, which takes longer
+                but produces a file that works in the target format. All
+                conversion runs locally in your browser so your file is never
+                uploaded to a server.
               </p>
             </CardContent>
           </Card>
@@ -184,15 +179,12 @@ export default function VideoFormatsConversionPage() {
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Import your target file
-              </h3>
+              <h3 className="relative font-semibold text-xl">Load your file</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Push your corrupted or unsupported video directly into the
-                browser dashboard. The internal system immediately inspects the
-                hidden internal metadata, officially logging whether your clip
-                is wrapped in an MP4, MOV, or obscure WebM container before
-                establishing a baseline starting point.
+                Click the upload area or drag your video file into the tool. The
+                converter reads the file from your local drive and never sends
+                it to a server. Most common video formats are accepted,
+                including MP4, MKV, MOV, WebM, and AVI.
               </p>
             </div>
             <div className="relative text-center">
@@ -200,14 +192,13 @@ export default function VideoFormatsConversionPage() {
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Select a new destination
+                Choose the output format
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Open the output dropdown to command the processor what specific
-                architecture it should build. If you want maximum compatibility
-                across vintage devices, select the MP4 wrapper powered by an
-                H.264 video codec. For audio extraction, choose the specific MP3
-                or WAV format.
+                Select the target format from the dropdown. For maximum device
+                compatibility, choose MP4. For web embedding, choose WebM. To
+                extract only the audio, choose MP3 or WAV depending on whether
+                you need compressed or uncompressed audio.
               </p>
             </div>
             <div className="relative text-center">
@@ -215,14 +206,13 @@ export default function VideoFormatsConversionPage() {
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Execute the conversion
+                Convert and download
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Hit the convert button to unleash your CPU power on the raw
-                data. If the engine determines the codecs align perfectly, it
-                performs a blazing-fast transmux copy. If the pixels must be
-                entirely redrawn, you must monitor the progress bar until the
-                heavy lifting finishes, eventually prompting the final download.
+                Click the Convert button. If the codecs are compatible, the
+                conversion finishes in seconds. If re-encoding is required, a
+                progress bar shows the current status. When it completes,
+                download the converted file to your drive.
               </p>
             </div>
           </div>
@@ -237,69 +227,67 @@ export default function VideoFormatsConversionPage() {
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Fixing smart TV playback issues
+                  Making an MKV file play on a smart TV or media player
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Home theater enthusiasts frequently transfer high-fidelity MKV
-                  movie rips onto a USB stick, only to discover their older LG
-                  or Samsung television refuses to read the container.
-                  Processing the heavy MKV rapidly into a standard MP4
-                  completely resolves the agonizing black-screen error without
-                  sacrificing a single pixel of visual quality.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Extracting podcast audio</h3>
-                <p className="text-sm text-muted-foreground">
-                  Digital media fans regularly encounter fantastic 3-hour long
-                  video interviews on YouTube that contain excellent dialogue
-                  but unnecessary static visuals. Injecting the downloaded video
-                  file into the converter and forcing an MP3 output violently
-                  rips away the gigabytes of heavy video data, leaving behind a
-                  lightweight audio track perfect for a morning commute.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Prepping web animations</h3>
-                <p className="text-sm text-muted-foreground">
-                  Web developers crafting high-speed landing pages despise
-                  standard MP4 background loops because they severely hurt SEO
-                  loading speeds. Forcibly re-encoding that heavy video directly
-                  into a streamlined WebM file natively utilizing the modern VP9
-                  algorithm ensures the banner loads almost instantaneously for
-                  mobile traffic.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Sanitizing Apple recordings</h3>
-                <p className="text-sm text-muted-foreground">
-                  Android owners or Windows desktop users often struggle to open
-                  native MOV files furiously texted to them by iPhone users.
-                  Dragging that frustrating proprietary Apple container through
-                  the converter immediately unpacks the strange format and
-                  neutralizes it back into a standard MP4 file capable of
-                  playing on any cheap Android device.
+                  Many older TVs and media players do not support the MKV
+                  container. Converting the file to MP4 while keeping the same
+                  H.264 video track is a transmux operation, which takes seconds
+                  and produces a file that plays on virtually all devices.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Bypassing outdated application logic
+                  Extracting audio from a long video interview
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Students submitting massive final video assignments to
-                  incredibly old university blackboard portals often watch the
-                  system reject their state-of-the-art WebM renders. Smashing
-                  that file backwards into a dinosaur-era AVI or basic MP4
-                  container guarantees the inflexible academic software accepts
-                  the submission properly.
+                  A 3-hour video interview can be several gigabytes in size. If
+                  you only need the audio, converting it to MP3 strips the video
+                  frames and produces a compressed audio file that is a fraction
+                  of the original size and easy to listen to offline.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Optimizing a background video for a website
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  MP4 files are widely supported but WebM with VP9 codec often
+                  produces smaller files at the same quality on modern browsers.
+                  Converting a landing page background video from MP4 to WebM
+                  can reduce load time for users on slower mobile connections.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Opening a MOV file on a Windows device
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  MOV files from iPhones and Macs sometimes fail to open on
+                  Windows without the QuickTime codec. Converting the MOV to MP4
+                  produces a file that the Windows default media player and most
+                  other Windows applications can open without additional
+                  software.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">
+                  Submitting a video in a format accepted by an upload portal
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Online submission portals for education or corporate platforms
+                  sometimes only accept specific file formats such as MP4 or
+                  AVI. Converting from WebM or MOV to the accepted format lets
+                  you submit without contacting support or using additional
+                  conversion software.
                 </p>
               </CardContent>
             </Card>
@@ -315,36 +303,39 @@ export default function VideoFormatsConversionPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-lg">Container Architecture</h3>
+                  <h3 className="font-bold text-lg">Output Format</h3>
                   <p className="text-muted-foreground mt-2">
-                    The exact wrapper you choose (MP4, MKV, MOV) actively
-                    dictates where your file can actually be opened.
-                    Standardizing your workflow by choosing MP4 mathematically
-                    guarantees your audience doesn't need to download VLC media
-                    player just to witness your footage.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Audio Extraction Output</h3>
-                  <p className="text-muted-foreground mt-2">
-                    Choosing an audio designation like MP3 or WAV commands the
-                    processor to actively ignore all color and movement data.
-                    Choosing MP3 provides excellent storage compression, whereas
-                    selecting WAV forces the engine to export an utterly
-                    massive, uncompressed sonic waveform for professional music
-                    editing.
+                    The output format determines the container file that wraps
+                    your video and audio tracks. MP4 is compatible with the
+                    widest range of devices. WebM works well for browser-based
+                    video with smaller file sizes. MKV supports multiple audio
+                    and subtitle tracks but has limited device support. MOV is
+                    the native format for Apple devices.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">
-                    Underlying Action (Transmux vs Encode)
+                    Audio Output: MP3 vs WAV
                   </h3>
                   <p className="text-muted-foreground mt-2">
-                    When converting MKV to MP4 using identical internal codecs,
-                    the engine performs a "Transmux"—physically copying the raw
-                    data over in seconds. If you switch from H.264 to AV1, it
-                    performs a brutal "Encode," demanding extreme CPU resources
-                    to fundamentally rewrite billions of unique pixels.
+                    Selecting MP3 extracts the audio and compresses it. The
+                    compression reduces file size but introduces a small
+                    reduction in audio quality compared to the original. WAV
+                    extracts the audio without compression, which preserves the
+                    original quality but produces a much larger file. WAV is
+                    recommended when you plan to edit the audio further. MP3 is
+                    recommended when you want a smaller file for listening.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Transmux vs. Re-encode</h3>
+                  <p className="text-muted-foreground mt-2">
+                    A transmux operation copies the existing video and audio
+                    data into a new container without re-encoding. This
+                    completes in seconds and produces no quality loss. A
+                    re-encode operation compresses the video data using a new
+                    codec, which takes longer but is required when the source
+                    and target codecs are different.
                   </p>
                 </div>
               </div>

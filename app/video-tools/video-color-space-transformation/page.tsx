@@ -21,37 +21,35 @@ import Script from "next/script";
 
 const faqData = [
   {
-    question: "Do I need color grading software to fix a dark video online?",
-    answer:
-      "No, you don't need to purchase or download confusing timeline software like Premiere Pro. You can adjust video brightness online free right in your browser using this precise slider tool. Because the processing maps directly to your device memory, you can rescue underexposed footage without waiting for massive file uploads.",
-  },
-  {
-    question: "What exactly does the Hue Rotate slider actually do?",
-    answer:
-      "The Hue Rotation algorithm grabs every single pixel in your video and forcefully slides its color identity across the visual spectrum wheel. If you type in 180 degrees, it perfectly flips your footage into its complete color opposite, successfully turning a red car blue, and a blue sky orange.",
-  },
-  {
-    question: "How do I make my digital video look like an old vintage film?",
-    answer:
-      "To simulate a classic retro aesthetic, drag the Sepia slider to 1.0 to flood the frame with warm, brownish-yellow tones. To mimic the washed-out chemical fading of old film stock, pull the Saturation slider down to 0.7 to suck out the vibrant colors, and gently reduce the Contrast to 0.9 to flatten the harsh black shadows.",
-  },
-  {
     question:
-      "Will dragging the brightness slider to maximum ruin my footage quality?",
+      "Do I need video editing software to fix the brightness or colors in my video?",
     answer:
-      "Yes, aggressively pushing the brightness slider to 2.0 forces the system to artificially blast fake white light into every pixel. Dark shadows will transform into ugly, noisy gray blocks, and bright areas will completely 'blow out' into pure, detail-free white screens.",
+      "No. You can adjust brightness, contrast, saturation, hue, sepia, and invert directly in your browser using the sliders on this page. Set your values, click Apply Transform, and the encoder rewrites every frame with the new color data. Download the result when the progress bar finishes. No software download or login required.",
   },
   {
-    question:
-      "Why does the 'Original' and 'Transformed' preview button look the exact same?",
+    question: "What does the Hue Rotate slider actually do?",
     answer:
-      "The preview window relies on the browser's native processing engine to display changes. First ensure you have actually clicked the 'Apply Transform' button and waited for the progress bar to reach 100%. The system must physically re-encode the MP4 before it can generate the Transformed preview file to compare against the Original.",
+      "Hue Rotate shifts every color in the video along the 360-degree color wheel by the number of degrees you set. At 180 degrees, every color flips to its direct complement: red becomes cyan, green becomes magenta, and blue becomes orange. Lower values create subtle color shifts. This is useful for creative effects or for correcting footage with a strong color cast that other adjustments cannot fix.",
   },
   {
-    question:
-      "Are these color space changes permanently burned into the mp4 file?",
+    question: "How do I make my video look like vintage film?",
     answer:
-      "Absolutely. Instead of just adding a temporary color filter layer that might disappear when uploaded to Instagram or TikTok, this tool acts as a destructive encoder. It permanently rewrites the core mathematical color values of every single frame, ensuring the changes stick forever on any platform.",
+      "Set the Sepia slider to around 0.8 to add warm brownish tones to the entire frame. Reduce Contrast to 0.85 to flatten the shadows slightly and reduce Saturation to 0.7 to pull out the vivid colors. These three adjustments together simulate the faded, warm look of old photographic film stock.",
+  },
+  {
+    question: "Will pushing the Brightness slider to maximum damage my video?",
+    answer:
+      "At values above 1.5 or 2.0, the encoder pushes pixel luminance past the maximum white point. Highlights clip to solid white and lose all detail. Increasing brightness past what your source footage supports creates these blown-out regions, so use the slider gradually. A value of 1.1 or 1.2 is usually enough to lift a dark clip without losing highlight data.",
+  },
+  {
+    question: "Why does the Transformed preview look the same as the Original?",
+    answer:
+      "The Transformed preview only becomes available after you click Apply Transform and the progress bar reaches 100%. The encoder must process and write the entire new video before the preview file exists. Once processing finishes, click the Transformed button in the preview panel to see the result.",
+  },
+  {
+    question: "Are the color changes permanently saved into the video file?",
+    answer:
+      "Yes. The encoder rewrites the color math for every pixel in every frame and outputs a new MP4. This is not a filter layer that can be toggled off. The color values are baked into the output file, so the changes persist on every platform, in every player, and through any further editing or uploading.",
   },
 ];
 
@@ -312,15 +310,15 @@ export default function VideoColorSpaceTransformationPage() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-                Video Color Space Transformer – Adjust Video Colors Online for
-                Free
+                Adjust Video Colors Online Free – Brightness, Contrast and More
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-                Precisely control the visual look of your video with full color
-                adjustment tools. Dial in brightness, contrast, saturation, hue
-                rotation, sepia, and invert effects — all processed locally in
-                your browser.
+                Fix dark footage, boost flat colors, add a sepia tone, or shift
+                hue across the spectrum. Six precision sliders let you control
+                brightness, contrast, saturation, hue, sepia, and invert. All
+                changes are permanently encoded into the output MP4 in your
+                browser.
               </p>
             </div>
           </div>
@@ -615,15 +613,16 @@ export default function VideoColorSpaceTransformationPage() {
                 What it Does
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                When you accidentally record crucial footage in a dim room or
-                under terrible fluorescent office lights, you can adjust video
-                colors online to rescue the clip. This utility acts as a direct
-                line into the raw visual data of your MP4 file, allowing you to
-                manipulate six specific atmospheric variables including
-                brightness, saturation, and contrast. Instead of applying a
-                flimsy, peel-off filter, the application uses local browser
-                processing to physically burn the new color values deep into
-                every single frame permanently.
+                This tool applies color adjustments to every frame of your video
+                and writes the results into a new MP4 file. You control six
+                parameters: Brightness raises or lowers overall light levels.
+                Contrast expands or compresses the range between shadows and
+                highlights. Saturation increases or removes color intensity. Hue
+                Rotate slides every color around the spectrum wheel. Sepia adds
+                warm brownish tones. Invert flips every color to its opposite.
+                All processing runs in your browser using your device's CPU, so
+                the file is never uploaded to a server and your original stays
+                untouched until you download the output.
               </p>
             </CardContent>
           </Card>
@@ -640,14 +639,13 @@ export default function VideoColorSpaceTransformationPage() {
                 <span className="text-2xl font-bold">1</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Upload your target video
+                Load your video
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Drop your dark, washed-out, or poorly white-balanced MP4 file
-                into the browser processing grid inside the app. The interface
-                will immediately mount your original, unaltered footage into the
-                left-hand preview window, ensuring you have a true baseline
-                reading before you begin manipulating the visual data.
+                Open the file picker and select your video. The player shows the
+                original file in the preview panel. Review the current color
+                quality before adjusting. You can return to this Original view
+                at any time to compare against the processed version.
               </p>
             </div>
             <div className="relative text-center">
@@ -655,15 +653,14 @@ export default function VideoColorSpaceTransformationPage() {
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Slide the visual adjustments
+                Adjust the sliders
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Grab the variable sliders and push or pull them to alter the
-                footage. If the clip is too dark, slowly drag the brightness
-                slider above 1.0. If the colors look flat and gray, boost the
-                saturation to 1.3 to inject heavy vibrancy back into the pixels.
-                If you make a disastrous mistake, click "Reset to Defaults" to
-                restart.
+                Move each slider to the value you want. If the video is too
+                dark, set Brightness above 1.0. If colors look washed out, set
+                Saturation above 1.0. If the image looks flat, increase Contrast
+                above 1.0. Use "Reset to Defaults" to return all sliders to
+                their starting positions if the result is not what you expected.
               </p>
             </div>
             <div className="relative text-center">
@@ -671,14 +668,14 @@ export default function VideoColorSpaceTransformationPage() {
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Render the final MP4
+                Apply and download
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the Apply Transform button to command your computer
-                processor to start physically rewriting the math behind millions
-                of colored pixels. Once the progress bar hits 100%, hit the
-                "Transformed" preview button to verify the new permanent color
-                grade, and click download to claim the hard file.
+                Click Apply Transform. The encoder processes each frame with
+                your chosen values and writes them into a new MP4. When the
+                progress bar reaches 100%, click the Transformed button to
+                preview the result. If you are satisfied, click Download to save
+                the output file to your device.
               </p>
             </div>
           </div>
@@ -693,72 +690,70 @@ export default function VideoColorSpaceTransformationPage() {
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Rescuing dark smartphone footage
+                  Recovering underexposed footage
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Everyday users often capture incredible concert moments or
-                  birthday parties, only to discover the dim room lighting
-                  ruined the shot. Sliding the brightness controller from 1.0 up
-                  to 1.4 artificially floods the dark clip with light, revealing
-                  faces, text, and details that were completely swallowed by
-                  black shadows.
+                  A clip recorded in a dim room or against backlight often comes
+                  out too dark to share. Set Brightness to 1.3 and Contrast to
+                  1.1. The encoder raises the luminance level across every frame
+                  and separates the shadows from the midtones, making faces and
+                  details visible without a full re-shoot.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Punching up dull marketing clips
+                  Boosting flat marketing footage
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Social media marketers filming real estate walkthroughs on
-                  cloudy days often end up with dreary, uninviting gray footage.
-                  Aggressively bumping the saturation to 1.3 and the contrast to
-                  1.2 violently forces the dull, flat colors to pop, making the
-                  green grass and blue skies look incredibly vibrant to
-                  potential buyers.
+                  Video filmed on a cloudy day or through a window often looks
+                  dull and gray. Set Saturation to 1.3 and Contrast to 1.15. The
+                  encoder increases color richness and deepens the difference
+                  between light and dark areas, making product colors and
+                  outdoor scenes look more vivid and inviting.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Crafting retro sepia flashbacks
+                  Creating a sepia or vintage look
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Indie filmmakers shooting a sudden flashback scene or a dusty
-                  western sequence need to detach the viewer from modern
-                  reality. Ramping the Sepia slider up to 1.0 instantly slathers
-                  the entire frame in a gritty, yellowish-brown crust, instantly
-                  mimicking the chemical wash of 19th-century photography.
+                  Set Sepia to 0.8 and reduce Saturation to 0.6. This
+                  combination floods the frame with warm brown tones and removes
+                  most of the original color, simulating old film chemistry.
+                  Reduce Contrast slightly to 0.9 to soften the shadows and
+                  complete the vintage aesthetic.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Generating horror movie negatives
+                  Building an inverted horror effect
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Creative editors crafting terrifying horror sizzle reels or
-                  jarring glitch-art transitions often need highly unnatural
-                  aesthetics. Smashing the Invert slider to maximum flips every
-                  single color to its absolute opposite, turning bright white
-                  skin into demonic pitch black, and dark shadows into screaming
-                  white light.
+                  Set Invert to 1.0 to flip every color value to its direct
+                  opposite. White areas become black and dark shadows appear
+                  bright. This creates an unsettling negative-film look used in
+                  trailers, horror cuts, and experimental music videos where a
+                  jarring visual break is needed.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Matching multi-camera colors</h3>
+                <h3 className="font-bold mb-2">
+                  Matching footage from two different cameras
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Podcast producers filming with a high-end Sony camera and a
-                  cheap webcam at the same time will notice the webcam footage
-                  looks sickly and pale. By carefully dialing up the warmth and
-                  saturation on just the webcam file, they can forcefully bridge
-                  the visual gap and make the two distinct cameras look
-                  identical in the final edit.
+                  When you cut between a high-end camera and a phone or webcam,
+                  color temperature differences are visible. Process the weaker
+                  camera's footage with small Brightness, Contrast, and
+                  Saturation adjustments until the colors match. This closes the
+                  visual gap without needing dedicated color grading software.
                 </p>
               </CardContent>
             </Card>
@@ -774,39 +769,37 @@ export default function VideoColorSpaceTransformationPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-lg">
-                    Brightness & Contrast Control
-                  </h3>
+                  <h3 className="font-bold text-lg">Brightness and Contrast</h3>
                   <p className="text-muted-foreground mt-2">
-                    The Brightness variable strictly controls the overall
-                    luminance energy in the frame, allowing you to lift a
-                    pitch-black video out of darkness by exceeding 1.0. Contrast
-                    dictates the mathematical distance between your brightest
-                    whites and darkest blacks; lowering it makes the video look
-                    foggy, while raising it makes the image look sharp, glossy,
-                    and dramatic.
+                    Brightness shifts the overall luminance of the frame up or
+                    down. A value of 1.0 is neutral. Values above 1.0 lift the
+                    entire image toward white. Values below 1.0 push it toward
+                    black. Contrast controls the gap between the brightest and
+                    darkest parts of the frame. Increasing contrast above 1.0
+                    makes highlights brighter and shadows darker. Reducing it
+                    below 1.0 compresses the range and makes the image look flat
+                    or hazy.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">Saturation Slider</h3>
+                  <h3 className="font-bold text-lg">Saturation</h3>
                   <p className="text-muted-foreground mt-2">
-                    Saturation is the volume knob for your colors. Driving the
-                    slider above 1.0 injects heavy artificial dyes into the
-                    pixels, turning normal red into a blinding laser red.
-                    Pulling the slider below 1.0 slowly drains the life out of
-                    the frame until the video is reduced to a stark,
-                    black-and-white grayscale wasteland at 0.0.
+                    Saturation controls the intensity of the colors in the
+                    frame. A value of 1.0 is neutral and preserves the original
+                    colors. Values above 1.0 make colors more vivid. Values
+                    below 1.0 reduce color intensity. At 0.0, the encoder
+                    removes all color and produces a grayscale image.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">Hue Rotate Mechanism</h3>
+                  <h3 className="font-bold text-lg">Hue Rotate</h3>
                   <p className="text-muted-foreground mt-2">
-                    This bizarre tool selects every color value and shifts it
-                    across the 360-degree color wheel. A 90-degree shift
-                    radically alters the fundamental reality of the footage,
-                    turning green grass purple, orange construction cones pink,
-                    and blue oceans green. It is generally used for psychedelic
-                    music videos rather than standard color correction.
+                    This slider shifts all colors in the video by the number of
+                    degrees you set, measured on the 360-degree color wheel. At
+                    90 degrees, greens shift toward blue-purple tones. At 180
+                    degrees, every color becomes its direct opposite. This
+                    control is useful for creative color effects or for
+                    correcting footage with a dominant color cast.
                   </p>
                 </div>
               </div>

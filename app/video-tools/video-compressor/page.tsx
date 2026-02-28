@@ -32,34 +32,34 @@ import {
 
 const faqData = [
   {
-    question: "How can I compress video online free without watermarks?",
+    question: "How can I compress a video online for free without watermarks?",
     answer:
-      "You can compress video free online using this local browser tool. It immediately crunches your large video files using your own device hardware, allowing you to bypass strict cloud upload server limits and avoid ugly premium watermarks.",
+      "Open the tool, upload your video, set a lower bitrate using the slider, and click Compress. The tool runs entirely in your browser using your own device hardware. There are no watermarks, no account required, and the file never leaves your device.",
   },
   {
-    question: "What exactly does the Bitrate slider actually control?",
+    question: "What does the bitrate slider control?",
     answer:
-      "Bitrate dictates how much digital data is allocated to every single second of your video. Pulling the bitrate down aggressively starves the video of data, which drastically shrinks the total file size but eventually causes the footage to look blurry or pixelated.",
+      "Bitrate is the amount of data used per second of video, measured in megabits per second (Mbps). Reducing the bitrate lowers the file size. At very low bitrates, the encoder starts merging nearby pixel values, which causes visible blockiness or blurring in fast-moving scenes. For web sharing, a bitrate between 1 and 4 Mbps is usually a good balance.",
   },
   {
-    question: "Why does the compression take so long on my older laptop?",
+    question: "Why does compression take a long time on my computer?",
     answer:
-      "To reduce video file size, your computer must systematically deconstruct your entire video, recalculate massive amounts of pixel math to create smaller data chunks, and then rebuild the MP4. This heavily taxes your CPU, so older laptops will naturally decode and re-encode frames slower than modern gaming PCs.",
+      "Compression requires your device to decode every frame of the original video and then re-encode it at the new bitrate. This is CPU-intensive work. Older processors take longer than newer ones. Closing other applications during compression gives your processor more resources to work with and can reduce the time significantly.",
   },
   {
-    question: "Is there a maximum Mb file size limit I can upload?",
+    question: "Is there a maximum file size I can compress?",
     answer:
-      "Because this application never uploads your files to a distant cloud server, there is no hard cap. However, your local internet browser does have a strict internal RAM limitation, meaning if you try to process an absolutely massive 10GB raw movie file, the browser tab itself might crash.",
+      "There is no server-side file size limit because the tool runs entirely in your browser. The practical limit is your device's available RAM. A standard laptop can typically handle files up to several gigabytes. Very large files, such as raw 4K footage above 10GB, may cause the browser tab to run out of memory before finishing.",
   },
   {
-    question: "Can anyone else view the private videos I compress here?",
+    question: "Can anyone else see the videos I compress with this tool?",
     answer:
-      "No. The entire compression sequence executes securely inside the sandboxed environment of your internet browser. Your videos never leave your local hard drive, meaning they are completely invisible to external servers or other users.",
+      "No. The file is read from your local drive and processed inside your browser's memory. It is never uploaded to a server. No third party, including us, has access to your video at any point during or after compression.",
   },
   {
-    question: "Which video codec is better for minimizing file size?",
+    question: "Which codec produces smaller files: VP9 or H.264?",
     answer:
-      "VP9 generally offers a vastly superior compression ratio, meaning it creates significantly smaller files that look just as good. However, if you are attempting to text the final video to someone with a very old smartphone, selecting H.264 (AVC1) guarantees they will actually be able to play the MP4.",
+      "VP9 generally produces smaller files at the same visual quality compared to H.264, because it uses a more efficient compression algorithm. However, H.264 plays on a wider range of devices, including older phones and TVs. If your target device supports VP9, use it for a smaller file. If you are unsure, H.264 is the safer choice.",
   },
 ];
 
@@ -327,12 +327,12 @@ export default function VideoCompressionPage() {
       />
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold mb-4">
-          Video Compressor - Reduce Video File Size Online Free
+          Compress Video Online Free — Reduce File Size Without Uploading
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Free online video compressor to reduce file size without losing
-          quality. Compress MP4, WebM videos instantly in your browser. No
-          upload limits, works offline.
+          Reduce your video file size directly in your browser. Set a target
+          bitrate, choose a codec, and download the compressed file. No uploads,
+          no watermarks, and no account required.
         </p>
       </div>
 
@@ -642,14 +642,16 @@ export default function VideoCompressionPage() {
               What it Does
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              When a bloated 4K video file refuses to attach to an email due to
-              strict data limits, you can easily compress video online free.
-              This browser application physically crushes heavy, unoptimized
-              video segments into a sleek, streamlined MP4 format to
-              dramatically reduce video file size. It operates completely
-              locally on your hardware, completely bypassing web upload speed
-              bottlenecks so you never have to sit watching a progress bar
-              painfully upload a massive 5GB file to an unfamiliar cloud server.
+              This tool re-encodes your video at a lower bitrate to reduce the
+              file size. You set the target bitrate using the slider, and the
+              encoder rewrites every frame to fit within that data budget. A
+              lower bitrate means a smaller file and some reduction in visual
+              detail, particularly in fast-moving scenes. A higher bitrate
+              preserves more detail but produces a larger file. The tool also
+              lets you change the output codec and resolution, which gives you
+              additional control over the final file size. All processing
+              happens in your browser so your video data never leaves your
+              device.
             </p>
           </CardContent>
         </Card>
@@ -666,29 +668,25 @@ export default function VideoCompressionPage() {
               <span className="text-2xl font-bold">1</span>
             </div>
             <h3 className="relative font-semibold text-xl">
-              Deposit your heavy footage
+              Upload your video
             </h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              Drop the gigantic MP4, MOV, or WEBM file directly onto the
-              dashboard to load it into your local memory. The tool immediately
-              scans the structural metadata to reveal the original file size,
-              providing a clear starting point so you understand exactly how
-              much heavy data needs to be stripped out.
+              Click the upload area or drag your MP4, MOV, or WebM file into the
+              tool. The original file size is displayed immediately so you have
+              a clear baseline before making any changes. The file is read from
+              your local drive and never sent to a server.
             </p>
           </div>
           <div className="relative text-center">
             <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
               <span className="text-2xl font-bold">2</span>
             </div>
-            <h3 className="relative font-semibold text-xl">
-              Starve the bitrate slider
-            </h3>
+            <h3 className="relative font-semibold text-xl">Set the bitrate</h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              Drag the bitrate controller downwards to drastically slash the
-              amount of data fed to the video output. The live estimator will
-              predict exactly how tiny your final file will be. For maximum
-              crushing power, expand the advanced options to select the VP9
-              format and manually shrink the rigid pixel dimensions.
+              Move the bitrate slider to choose how much data to allocate per
+              second of video. The estimated output file size updates as you
+              drag. If you want a smaller file, open the advanced options to
+              also change the codec to VP9 or reduce the resolution.
             </p>
           </div>
           <div className="relative text-center">
@@ -696,14 +694,13 @@ export default function VideoCompressionPage() {
               <span className="text-2xl font-bold">3</span>
             </div>
             <h3 className="relative font-semibold text-xl">
-              Execute local compression
+              Compress and download
             </h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              Hit the compress button to force your processor to break the heavy
-              video down and re-wrap it tightly. Stay anchored to the browser
-              tab until the progress hits 100%, review the final calculated
-              percentage of data saved, and download your remarkably compact new
-              file to your drive.
+              Click the Compress button. The tool processes every frame in your
+              browser and shows a progress bar as it works. When it finishes,
+              the compressed file size and the percentage saved are shown. Click
+              the download button to save the output to your drive.
             </p>
           </div>
         </div>
@@ -718,74 +715,70 @@ export default function VideoCompressionPage() {
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
               <h3 className="font-bold mb-2">
-                Bypassing email attachment blocks
+                Fitting a video inside an email attachment limit
               </h3>
               <p className="text-sm text-muted-foreground">
-                Office workers frantically trying to send a vital 500MB software
-                tutorial to a remote client will predictably bounce off a rigid
-                25MB email server restriction. Slashing the bitrate down
-                entirely crushes the heavy HD data into a messy but totally
-                passable 20MB file that securely slides through the strictest
-                firewalls.
+                Most email services cap attachments at 10 to 25 MB. A 2-minute
+                tutorial recorded at 1080p can produce a file well above that
+                limit. Compressing the video to around 2 Mbps reduces a typical
+                500 MB file to under 20 MB for a 2-minute clip, which fits
+                within the limit while keeping the content clear.
               </p>
             </CardContent>
           </Card>
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
               <h3 className="font-bold mb-2">
-                Optimizing website hero banners
+                Reducing load time for website background videos
               </h3>
               <p className="text-sm text-muted-foreground">
-                Web designers embedding a gorgeous looping video banner often
-                accidentally cripple loading speeds for mobile users. Swapping
-                to the VP9 codec and aggressively downsizing the resolution to
-                720p drastically reduces the web payload, guaranteeing the heavy
-                background plays instantly without buffer freezing.
+                A looping background video for a landing page should be well
+                under 5 MB to avoid slowing page load on mobile connections.
+                Switching to VP9 and reducing the resolution to 720p can reduce
+                a 30-second clip from 40 MB down to around 3 to 5 MB while
+                keeping the visual quality good enough for background use.
               </p>
             </CardContent>
           </Card>
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
               <h3 className="font-bold mb-2">
-                Clearing overflowing smartphone storage
+                Freeing storage space on a phone
               </h3>
               <p className="text-sm text-muted-foreground">
-                Parents documenting entire piano recitals in 4K frequently
-                trigger critical "Phone Storage Full" errors mid-performance.
-                Passing old, monolithic recordings through the compressor
-                effectively shrinks their data footprint by 80%, instantly
-                reclaiming gigabytes of precious hard drive space without
-                entirely deleting the memories.
+                A 10-minute 4K video recorded on a phone can be 3 to 5 GB. If
+                you want to keep a watchable copy without using that much
+                storage, compressing it to 1080p at 4 Mbps reduces the file to
+                around 300 MB while keeping the content easy to watch on a
+                screen.
               </p>
             </CardContent>
           </Card>
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
               <h3 className="font-bold mb-2">
-                Speeding up unstable cloud uploads
+                Preparing a smaller file for a slow upload connection
               </h3>
               <p className="text-sm text-muted-foreground">
-                Freelance videographers trapped at a cheap hotel with a
-                painfully slow Wi-Fi connection cannot afford to spend eight
-                hours uploading raw footage. Brutally compressing the daily
-                review dailies down into a lightweight MP4 effectively
-                guarantees they can successfully upload the draft within 15
-                minutes.
+                Uploading a 2 GB raw video over a slow hotel or public Wi-Fi
+                connection can take hours. Compressing the file to a draft
+                quality at a lower bitrate before uploading can reduce the file
+                to a few hundred megabytes, which uploads in minutes and lets
+                the recipient review the cut before you send the final version.
               </p>
             </CardContent>
           </Card>
           <Card className="bg-muted/50 border-muted">
             <CardContent className="p-6">
               <h3 className="font-bold mb-2">
-                Circumventing Discord Nitro limits
+                Meeting platform upload size limits
               </h3>
               <p className="text-sm text-muted-foreground">
-                Gamers attempting to drop a massive 45-minute multiplayer
-                victory recording into a Discord chat instantly face the
-                infamous free-tier upload block. Dialing down the bitrate and
-                switching the audio format brutally forces the sprawling
-                gameplay video nicely under the limit, saving them from paying a
-                monthly premium subscription.
+                Discord's free tier limits file uploads to 25 MB. Some Slack
+                workspaces cap uploads at 1 GB. Compressing a short clip to fit
+                within the specific platform limit means you can share it
+                directly in chat without a third-party link or a paid
+                subscription.
               </p>
             </CardContent>
           </Card>
@@ -803,34 +796,41 @@ export default function VideoCompressionPage() {
               <div>
                 <h3 className="font-bold text-lg">Target Bitrate</h3>
                 <p className="text-muted-foreground mt-2">
-                  Bitrate is the lifeblood of your video quality, dictating the
-                  total mega-bits of visual data permitted per second. If you
-                  slash the bitrate down to a tiny number, the encoder becomes
-                  starved for data and is forced to blend pixels together,
-                  destroying crisp details to successfully create a very small
-                  file size.
+                  Bitrate controls how much data the encoder allocates per
+                  second of video, measured in Mbps. Higher bitrates preserve
+                  more detail but produce larger files. Lower bitrates produce
+                  smaller files but may show visible compression artifacts in
+                  fast-moving scenes. For social media sharing, 2 to 4 Mbps at
+                  1080p is generally a good starting point. For email
+                  attachments, 1 Mbps or lower is often needed.
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-lg">Format (MP4 vs. WEBM)</h3>
+                <h3 className="font-bold text-lg">
+                  Output Format: MP4 vs WebM
+                </h3>
                 <p className="text-muted-foreground mt-2">
-                  This dictates the rigid digital wrapper holding your footage.
-                  MP4 is universally accepted, ensuring your compressed file
-                  will flawlessly play on an ancient iPhone or an old
-                  television. Conversely, WEBM is highly specialized for modern
-                  internet browsers, often producing smaller file loops but
-                  frequently failing to play on basic desktop media software.
+                  MP4 plays on virtually every device, including older phones
+                  and TVs. WebM is a browser-optimized container that works well
+                  for embedding video on websites but is not supported by all
+                  media players. If you are sharing the file with other people
+                  on different devices, MP4 is the safer choice. If you are
+                  embedding video on a website, WebM with VP9 typically produces
+                  a smaller file.
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-lg">Advanced Codec Selection</h3>
+                <h3 className="font-bold text-lg">
+                  Codec: H.264 vs VP9 vs VP8
+                </h3>
                 <p className="text-muted-foreground mt-2">
-                  The codec instructs the processor exactly how to demolish and
-                  mathematically repack the pixels. H.264 is the incredibly
-                  reliable industry standard that simply works everywhere. VP9
-                  acts as a remarkably powerful modern algorithm that can
-                  squeeze details tighter and smaller than H.264, but requires
-                  significantly more processing power to encode.
+                  H.264 (avc1) is the most widely compatible codec and plays on
+                  essentially all devices made in the last 15 years. VP9 is a
+                  more efficient codec that produces smaller files at the same
+                  visual quality but requires more time to encode and is not
+                  supported by some older media players. VP8 is an older Google
+                  codec that is less efficient than VP9 and is rarely the best
+                  choice for new files.
                 </p>
               </div>
             </div>

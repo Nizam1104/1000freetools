@@ -4,32 +4,29 @@ import Faqs from "@/components/utils/Faqs";
 const faqData = [
   {
     question:
-      "Do I have to wait for my 2GB movie file to upload before I can watch it?",
+      "Do I need to wait for a large video file to upload before I can watch it?",
     answer:
-      "No. The system connects your raw MKV or MP4 directly through a secure local memory bridge. The video stream fundamentally never leaves your machine. This guarantees zero buffering, absolutely no uploading phases, and instantly bypasses terrible home Wi-Fi speeds.",
+      "No. The player accesses the file directly from your local drive using a browser object URL. The video never leaves your device. Playback starts immediately, the same way a desktop media player would open the file.",
   },
   {
-    question:
-      "Why does my MKV file perfectly play the video but absolutely refuse to output audio?",
+    question: "Why does an MKV file play the video but produce no audio?",
     answer:
-      "The browser's internal playback engine explicitly rejects unsupported proprietary audio codecs like AC3. Even if the MKV structure heavily supports the visual track, if the underlying audio stream requires a restricted commercial license, Chrome and Safari will completely mute it.",
+      "This usually means the audio track uses a codec the browser does not support, such as AC3 (Dolby) or DTS. Browsers natively support AAC and Ogg Vorbis audio. If your MKV has an AC3 audio track, the video will play but the audio will be silent. Converting the audio track to AAC using the Video Format Converter resolves the issue.",
   },
   {
-    question: "Can I illegally embed custom subtitles into a pirated movie?",
+    question: "How do I add subtitles to a video in this player?",
     answer:
-      "You can successfully load independent .srt or .vtt subtitle files directly over the active video timeline. The WebVTT parsing engine violently injects the raw text track onto the visual layer without permanently burning the text into the actual video file.",
+      "Open your video first, then use the subtitle upload button to load an .srt or .vtt file. The player converts the .srt timestamps to WebVTT format, which browsers display as an on-screen text track. The subtitle file is not permanently embedded into the video file.",
   },
   {
-    question:
-      "Will playing a massive 4K video instantly crash my older laptop processor?",
+    question: "Will playing a large 4K video slow down or crash my device?",
     answer:
-      "Because the application runs native hardware acceleration directly through the browser architecture, it efficiently delegates heavy h.264 rendering tasks to your internal GPU. This heavily protects your CPU from aggressively spiking to 100% and crashing.",
+      "Modern browsers use hardware-accelerated decoding, which passes the video decode work to the GPU rather than the CPU. This means most devices can play 4K H.264 or H.265 video without significant CPU load. Very old GPUs or integrated graphics on low-power laptops may struggle with 4K 60fps files.",
   },
   {
-    question:
-      "Can a sketchy employer or internet provider secretly spy on what video I'm playing?",
+    question: "Can an employer or ISP see which video files I am playing?",
     answer:
-      "Absolutely not. Because the playback loop is completely sandboxed on your internal local drive, no network requests are ever triggered to a cloud server. Your private video metadata entirely remains hidden from any external traffic sniffers.",
+      "No. The file is read from your local drive and never transmitted over your network. No network request is made when you play a video. Your ISP and any network monitoring tools cannot detect which file you are viewing.",
   },
 ];
 
@@ -124,11 +121,10 @@ export default function VideoPlayerPage() {
           Free Online Video Player — Play Any Video or Audio File Instantly
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          Drop in a video or audio file and hit play — no software to install,
-          no account to create, and nothing ever leaves your device. Whether you
-          need a quick MP4 player online or want to watch an MKV with subtitles,
-          this tool works entirely inside your browser. It's fast, private, and
-          completely free.
+          Open any video or audio file and play it directly in your browser. No
+          software to install, no account to create, and your file never leaves
+          your device. Supports MP4, WebM, MKV, MOV, MP3, WAV, and other common
+          formats, along with external subtitle files.
         </p>
       </div>
 
@@ -141,15 +137,14 @@ export default function VideoPlayerPage() {
             What it Does
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-            When you aggressively download a strange MKV file that your desktop
-            computer refuses to open, this tool forces it to play instantly.
-            Acting as a brutally efficient offline environment, the system
-            utilizes advanced Chrome and Safari APIs to parse raw video
-            architecture straight from your hard drive memory. It entirely
-            bypasses expensive, bloated media applications like VLC, decoding
-            heavy visual tracks and injecting raw subtitle files seamlessly into
-            the browser timeline without triggering a catastrophic internet
-            upload.
+            This player opens video and audio files from your local drive and
+            plays them inside your browser window. It uses the browser's
+            built-in media decoder, which supports hardware acceleration on most
+            devices. You can load an external subtitle file in .srt or .vtt
+            format, and the player will display the subtitles as a text track
+            over the video. Because all files stay on your device, you can use
+            this player for private, unreleased, or confidential footage without
+            any risk of the file being transmitted to a server.
           </p>
         </div>
       </section>
@@ -167,13 +162,13 @@ export default function VideoPlayerPage() {
               <span className="text-2xl font-bold">1</span>
             </div>
             <h3 className="relative font-semibold text-xl text-gray-900 dark:text-gray-100">
-              Inject the media file
+              Open your file
             </h3>
             <p className="relative mt-2 text-sm text-gray-600 dark:text-gray-400 text-left">
-              Aggressively drag the unplayable MP4, WebM, or raw audio track
-              right onto the viewing portal. The application instantaneously
-              builds a secure digital bridge to your local memory, completely
-              bypassing any agonizing cloud upload screens.
+              Click the file picker or drag your video or audio file onto the
+              player area. The player accepts MP4, WebM, MKV, MOV, AVI, MP3,
+              WAV, and other common formats. The file is read from your local
+              drive and never uploaded.
             </p>
           </div>
           <div className="relative text-center">
@@ -181,13 +176,13 @@ export default function VideoPlayerPage() {
               <span className="text-2xl font-bold">2</span>
             </div>
             <h3 className="relative font-semibold text-xl text-gray-900 dark:text-gray-100">
-              Force the external subs
+              Add subtitles if needed
             </h3>
             <p className="relative mt-2 text-sm text-gray-600 dark:text-gray-400 text-left">
-              If the dialogue is heavily obscured, violently slap an unformatted
-              .srt text file into the secondary upload slot. The background
-              engine rapidly converts the raw script structure into a native
-              WebVTT format and securely locks the timestamps.
+              If you have a separate .srt or .vtt subtitle file, open the
+              subtitle upload button and load it. The player displays the
+              subtitles as an on-screen text track without permanently modifying
+              the video file.
             </p>
           </div>
           <div className="relative text-center">
@@ -195,13 +190,13 @@ export default function VideoPlayerPage() {
               <span className="text-2xl font-bold">3</span>
             </div>
             <h3 className="relative font-semibold text-xl text-gray-900 dark:text-gray-100">
-              Command the playback
+              Control playback
             </h3>
             <p className="relative mt-2 text-sm text-gray-600 dark:text-gray-400 text-left">
-              Seize total control of the hardware timeline. Instantly toggle
-              between multiple audio languages silently buried in the file
-              architecture, maximize the viewport to full screen resolution, and
-              radically bypass slow buffering zones entirely.
+              Use the player controls to play, pause, skip, and adjust volume.
+              Toggle full-screen mode for a larger view. If the video has
+              multiple audio tracks, use the audio track selector to switch
+              between them.
             </p>
           </div>
         </div>
@@ -217,62 +212,59 @@ export default function VideoPlayerPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Reviewing highly confidential edits
+              Reviewing confidential footage without uploading it
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Freelance editors handling unreleased corporate commercials
-              desperately need to verify rendering timelines without violating
-              non-disclosure agreements. Playing the secure file natively inside
-              the browser strictly proves the rough cut is utterly safe from
-              accidental digital leaks on open cloud networks.
+              Editors working on unreleased client projects or footage covered
+              by an NDA need to review files without risking a cloud upload.
+              This player reads the file locally so the footage never leaves the
+              device, which means it cannot be intercepted on the network.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Decoding bizarre anime formats
+              Playing MKV files with external subtitle tracks
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Otaku fans aggressively pirating obscure Japanese animation
-              constantly acquire weirdly wrapped MKV files stuffed with
-              disconnected SRT translation files. Dropping both elements into
-              the system fuses the dialogue over the timeline instantly without
-              installing shady third-party codec packs.
+              MKV files are commonly distributed with separate .srt subtitle
+              files. Most operating systems do not open MKV files without
+              installing a third-party player. This tool plays MKV directly in
+              the browser and lets you load the .srt file alongside it without
+              installing any software.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Screening massive 4K raw drone footage
+              Screening large video files without waiting for a download
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Aerial videographers rushing to verify a massive 3GB MP4 shot on
-              an old laptop routinely face terrible buffering in generic apps.
-              Utilizing the browser’s highly optimized hardware decoding
-              forcefully forces the 4K timeline to play completely smoothly by
-              bypassing heavy software constraints.
+              A videographer who has just transferred 3 GB of drone footage from
+              an SD card can open the files immediately in this player to check
+              focus, exposure, and content before deciding which clips to
+              process. No upload or conversion is needed to start reviewing.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Auditing separated podcast tracks
+              Checking audio quality in a WAV or MP3 file
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Audio engineers deeply investigating strange static on a massive
-              two-hour WAV recording despise opening a sluggish editing
-              interface like Logic Pro. Instantly mounting the raw audio file
-              into the web portal mathematically bypasses loading screens and
-              grants immediate scrub access to locate the bad frequency.
+              An audio engineer can open a long WAV recording directly in the
+              browser player and scrub through the timeline to locate a problem,
+              such as clipping or static, without opening a full DAW application
+              like Audacity or Logic Pro.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Rescuing locked mobile formats
+              Opening MOV files on a Windows device
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Windows users occasionally receive older Apple QuickTime .MOV
-              files that totally freeze their entire desktop when
-              double-clicked. Passing the ancient file structure perfectly into
-              the Chrome playback engine brutally overpowers the compatibility
-              errors and forcibly renders the visual footage cleanly on a PC.
+              MOV files recorded on an iPhone or Mac sometimes fail to open on
+              Windows because the default media player does not include Apple's
+              QuickTime codec pack. Modern browsers support the H.264 video
+              track inside MOV files natively, so this player can open them
+              without any additional codec installation.
             </p>
           </div>
         </div>
@@ -287,41 +279,39 @@ export default function VideoPlayerPage() {
           <div className="space-y-6 text-left">
             <div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100">
-                The Local Object URL Array
+                Local Object URL
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
-                To entirely circumvent catastrophic upload times, the browser
-                leverages a secure `URL.createObjectURL` protocol. It
-                aggressively hacks a temporary memory pathway straight to the
-                physical file resting on your drive, successfully tricking the
-                video tag into streaming the data exactly like a legitimate
-                website server.
+                When you open a file, the browser creates a temporary local URL
+                using the URL.createObjectURL API. This URL points to the file
+                in your device's memory. The video element streams the file
+                through this local URL exactly like it would stream a remote
+                URL, but no data is ever sent over the network.
               </p>
             </div>
             <div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100">
-                WebVTT Subtitle Transmuxing
+                Subtitle Conversion: SRT to WebVTT
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
-                Browsers absolutely reject older text formats like .srt files.
-                By aggressively running a background parsing algorithm, the
-                system brutally rips open the unformatted timestamp structures,
-                heavily rewrites the coordinates into compliant WebVTT code
-                blocks, and securely binds the raw text strings over the visual
-                stream.
+                Browsers only support the WebVTT subtitle format natively. When
+                you load an .srt file, the player reads the timestamp and text
+                blocks and converts them to the WebVTT format in memory. The
+                result is linked to the video as a text track and displayed
+                during playback. The original .srt file is not modified.
               </p>
             </div>
             <div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100">
-                Hardware Render Decoding
+                Hardware-Accelerated Decoding
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
-                Rather than heavily destroying your slow CPU with brutal math
-                calculations, the interface fully relies on Google Chrome's
-                native decoding layers. These specifically bypass software
-                processing entirely and directly pipe massive 4K h.264 data
-                right into your system's dedicated graphics processing unit for
-                violent frame delivery.
+                Modern browsers delegate video decoding to the GPU when the
+                codec is supported in hardware. H.264 and H.265 decoding is
+                hardware-accelerated on most devices, which means the CPU stays
+                free and the video plays smoothly even on lower-power machines.
+                VP9 hardware decoding is available on most recent devices but
+                not all older hardware.
               </p>
             </div>
           </div>

@@ -22,40 +22,36 @@ import Script from "next/script";
 
 const faqData = [
   {
-    question:
-      "Do I need Adobe Premiere to fade the transparency of an MP4 file?",
+    question: "What does changing the opacity of a video actually do?",
     answer:
-      "No. You can run an entire timeline opacity shift right inside Google Chrome. Because this tool acts as a brutally stripped-down compositing engine, it violently isolates the video layer and mathematically halves the pixel density, bypassing a gigabyte software download entirely.",
+      "Opacity controls how transparent the video appears at the pixel level. At 100 percent opacity the video looks fully solid. At 50 percent the video appears translucent, with the background color showing through. At 0 percent the video is completely invisible and you see only the background color. This tool bakes the chosen opacity value directly into each frame of the output file.",
   },
   {
     question:
-      "Why does my supposedly transparent video completely block out the layer beneath it on my website?",
+      "Why does the output file show a solid background color instead of true transparency?",
     answer:
-      "Standard .MP4 video structural containers explicitly rip out and delete true alpha channel mathematics. Even if you aggressively lowered the opacity here, the encoder is forced to fiercely bake a completely flat background color (like rigid black) behind the ghosted footage.",
+      "Standard MP4 and WebM video formats do not support alpha channel transparency the way PNG images do. Because the format cannot store true transparency, the tool bakes a solid background color behind the semi-transparent video so that the visual result is preserved correctly when the file is played back in any media player.",
   },
   {
     question:
-      "How do I force a true invisible background without an ugly black box?",
+      "What is the best background color to choose for green screen preparation?",
     answer:
-      "You absolutely must rely on totally different container architecture. You have to severely encode the footage into a massive WebM VP9 file or an Apple ProRes 4444 sequence. Unfortunately, standard web MP4 streams natively refuse to hold blank alpha space invisibly.",
+      "If you plan to use the output in a compositing application that supports chroma key, set the background color to a solid green (hex #00FF00) or blue (hex #0000FF) that does not appear in the main video content. This gives you a clean keying target in the final footage.",
   },
   {
-    question:
-      "Is there an ugly watermark smeared over the center of the video?",
+    question: "Can I use this tool to make a video darker or lighter?",
     answer:
-      "Zero limits and zero watermarks. Since the system heavily exploits your own physical graphics card processor instead of incredibly expensive cloud renderer servers, we absolutely do not force you to violently purchase a subscription to remove a logo.",
+      "Yes, but indirectly. Setting the background to white and reducing opacity mixes white into each pixel, making the video appear brighter. Setting the background to black and reducing opacity makes the video appear darker. However, the Video Color Space Transformation tool gives you more direct control over brightness.",
   },
   {
-    question:
-      "Will shifting the opacity bar severely crash my audio dialogue volume?",
+    question: "Will the audio track be preserved in the output file?",
     answer:
-      "Absolutely not. The mathematical transparency algorithm exclusively targets rigid RGB color grids inside the visual frames. It brutally passes the original, heavy audio waveform structure entirely untouched into the output MP4.",
+      "Yes. The encoder only processes the video frames. The original audio track is copied into the output file without modification. Volume, timing, and audio quality remain exactly the same as in the source video.",
   },
   {
-    question:
-      "Does the output MP4 file completely replace my original computer file automatically?",
+    question: "Does the output file overwrite my original video?",
     answer:
-      "No. This tool acts as a highly protective non-destructive bridge. It radically draws temporary pixels inside your browser window, completely safeguarding your original, heavy source footage from accidental corruption until you actively command a new download.",
+      "No. The tool generates a new output file in your browser's memory. Your original video file on your device is never modified. You download the output file separately using the Download button.",
   },
 ];
 
@@ -581,16 +577,15 @@ export default function VideoTransparencyMakerPage() {
                 What it Does
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                When you aggressively need to fake a faded, ghost-like overlay
-                effect without installing professional editing software, you can
-                severely crush the transparency of an MP4 file locally in your
-                web browser. This tool completely bypasses agonizing video
-                upload wait times, grabbing your file and utilizing a heavy
-                mathematical alpha-channel algorithm to forcefully fade the
-                rigid pixels. Because standard HD video violently refuses to
-                hold entirely empty space, the engine bakes a solid, unmoving
-                custom color background directly behind your newly ghosted
-                footage to securely stabilize the digital render.
+                This tool adjusts the opacity of each video frame and bakes a
+                solid background color behind the transparent footage. You set
+                the opacity level using the slider, choose a background color,
+                and click Apply Transparency. The encoder reads every frame,
+                reduces the alpha value of each pixel to the chosen opacity
+                level, and composites the result against the background color.
+                Because standard MP4 files do not support true transparency, the
+                background color fill ensures the output plays correctly in all
+                media players. All processing runs locally in your browser.
               </p>
             </CardContent>
           </Card>
@@ -607,13 +602,12 @@ export default function VideoTransparencyMakerPage() {
                 <span className="text-2xl font-bold">1</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Deposit the heavy video
+                Upload your video
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Brutally drag and drop your raw, fully opaque MP4 file straight
-                onto the interface. The browser immediately mounts the video
-                into a secure offline cache, totally preventing large gigabyte
-                files from heavily crashing your computer's internet connection.
+                Click the file picker and select the video you want to process.
+                The video loads into the preview area. The file stays on your
+                device and is never uploaded to a server.
               </p>
             </div>
             <div className="relative text-center">
@@ -621,14 +615,13 @@ export default function VideoTransparencyMakerPage() {
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Crush the pixel opacity
+                Set opacity and background color
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Aggressively slide the digital transparency bar heavily downward
-                to manually drain the visual solidity from the entire timeline.
-                You must absolutely lock in a specific, rigid hex color below
-                the footage to mathematically replace the now severely missing
-                pixel data.
+                Move the Opacity slider to control how transparent the video
+                appears. Use the color picker to choose the background color
+                that will show behind the semi-transparent video. At full
+                opacity the background has no effect on the visual result.
               </p>
             </div>
             <div className="relative text-center">
@@ -636,14 +629,13 @@ export default function VideoTransparencyMakerPage() {
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="relative font-semibold text-xl">
-                Burn the composite file
+                Apply and download
               </h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Trigger the local CPU encoder to viciously calculate the new
-                layered matrix. The offscreen canvas completely rips apart every
-                frame, permanently fusing your semi-invisible ghost track
-                securely onto the colored background before heavily pushing the
-                new download to your drive.
+                Click Apply Transparency. The encoder processes each frame in
+                your browser and shows a progress bar as it works. When it
+                finishes, preview the result using the Transparent tab. Click
+                Download to save the output file to your drive.
               </p>
             </div>
           </div>
@@ -658,72 +650,70 @@ export default function VideoTransparencyMakerPage() {
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Simulating psychological movie flashbacks
+                  Creating a fade overlay effect for a film flashback
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Indie horror directors heavily rely on unnerving visual cues
-                  to violently detach the viewer from safety. Crushing a
-                  character's memory sequence to an aggressive 30% transparency
-                  completely washes out the reality, securely masking the
-                  disturbing footage into a faded, terrifying dream state.
+                  Indie filmmakers who want a memory or flashback scene to look
+                  visually distinct from the main footage can reduce the opacity
+                  to 40 to 50 percent and set the background to white. This
+                  gives the clip a washed-out, overexposed look that
+                  communicates the passage of time without post-production
+                  software.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Baking faux green screen elements
+                  Preparing a VFX element with a solid color background
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Hobbyist visual effects artists frequently need to temporarily
-                  review an explosion element before fiercely throwing it into
-                  Adobe Premiere. Dropping the opacity and strictly locking a
-                  bright neon green background visually proves the fire element
-                  accurately separates from the massive tracking plate behind
-                  it.
+                  When testing how a motion graphic or particle effect will
+                  composite over a video, setting the background to the target
+                  color and reducing the opacity previews how the element will
+                  blend. This helps verify edge quality and timing before
+                  importing the clip into a compositing application.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Washing out corporate background loops
+                  Softening a busy background video for a website
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Web developers desperately struggling to forcibly paste stark
-                  white typography over a chaotic stock video background face
-                  severe readability failures. Dialing the video transparency
-                  violently down against a strict pitch-black canvas heavily
-                  mutes the harsh distractions, fully returning power to the
-                  HTML text.
+                  A website with a looping background video and text content on
+                  top can use a reduced opacity video over a light or dark
+                  background to make the text easier to read. The background
+                  color fills in the reduced-opacity areas, softening the visual
+                  noise from the video.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Faking a broken CCTV monitor feed
+                  Adding a visual degradation effect to game UI footage
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Game animators rigorously designing security camera interfaces
-                  desperately require the footage to look sickly and degraded.
-                  Ripping the density to an unhealthy, semi-invisible 40%
-                  perfectly mimics an ancient, dying CRT monitor violently
-                  struggling to strictly maintain a stable video signal.
+                  Game designers creating in-engine cutscenes or UI elements
+                  that include corrupted or degraded screens can use reduced
+                  opacity over a dark background to simulate aging CRT monitors
+                  or low-power display panels with faded output.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-muted/50 border-muted">
               <CardContent className="p-6">
                 <h3 className="font-bold mb-2">
-                  Generating stylistic music video transitions
+                  Creating a stylized split-tone music video look
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Underground DJs creating strange audio-visualizers absolutely
-                  hate rigid cuts between scenes. Severely burning one clip into
-                  a 50% ghost layer on a deep red background heavily injects a
-                  hypnotic, drug-like latency effect securely into the final
-                  master track.
+                  Music video directors who want a single-color tint over live
+                  footage can set the opacity to around 50 percent, choose a
+                  bold background color such as deep red or blue, and export the
+                  result. The color blends with the original pixel values to
+                  create a stylized tinted look.
                 </p>
               </CardContent>
             </Card>
@@ -739,40 +729,39 @@ export default function VideoTransparencyMakerPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-lg">The Opacity Alpha Grid</h3>
+                  <h3 className="font-bold text-lg">Opacity Slider</h3>
                   <p className="text-muted-foreground mt-2">
-                    Every single native pixel tightly holds an invisible
-                    mathematical "alpha" layer that heavily controls visibility.
-                    Violently overriding this parameter mathematically commands
-                    the web browser to systematically ignore large percentages
-                    of the color data, physically forcing the image to instantly
-                    vanish into thin air.
+                    The Opacity slider sets the global alpha multiplier applied
+                    to every pixel in the video. A value of 1.0 leaves the video
+                    unchanged. A value of 0.5 makes every pixel 50 percent
+                    transparent, allowing the background color to show through
+                    equally. A value of 0.0 makes the video completely invisible
+                    and the output shows only the background color.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Background Color</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Because MP4 files cannot hold true transparency, the encoder
+                    composites each semi-transparent frame over a solid
+                    background color. This color fills the areas where the video
+                    would otherwise be transparent. Choosing white produces a
+                    washed-out look. Choosing black darkens the footage.
+                    Choosing green gives you a keying target for compositing
+                    workflows.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">
-                    Rigid Solid Composite Baking
+                    OffscreenCanvas Processing
                   </h3>
                   <p className="text-muted-foreground mt-2">
-                    Because a standard web MP4 heavily rejects holding literal
-                    blank space in the file structure, the engine aggressively
-                    slides a solid digital canvas right underneath. The
-                    processor then inextricably fuses the ghosted video entirely
-                    onto the rigid background color so the final video doesn't
-                    just display a chaotic black void.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    The WebGL Processing Bypass
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    Instead of uploading raw data and brutally crashing a weak
-                    cloud server during a massive render job, the tool
-                    maliciously leverages `OffscreenCanvas` hooks. It forces
-                    your physical phone or laptop processor to violently cycle
-                    through millions of pixels in total secrecy, effectively
-                    acting as an incredibly secure localized super-computer.
+                    Each video frame is decoded and drawn to an OffscreenCanvas
+                    at the specified opacity using the Canvas 2D globalAlpha
+                    property. The canvas context composites the frame over the
+                    chosen background color and returns the resulting pixel data
+                    to the encoder. This runs off the main browser thread to
+                    keep the page responsive during processing.
                   </p>
                 </div>
               </div>
