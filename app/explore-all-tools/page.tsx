@@ -193,6 +193,401 @@ const toolsByCategory = [
     ],
   },
   {
+    categoryName: "JSON Tools",
+    tools: [
+      {
+        name: "JSON Formatter / Beautifier",
+        description: "Formats raw JSON into a readable, indented structure with configurable spacing, collapsible nodes, and copy/download support.",
+        href: "/json-tools/json-formatter-beautifier",
+      },
+      {
+        name: "JSON Minifier",
+        description: "Removes whitespace, line breaks, and unnecessary characters to reduce JSON size while preserving validity.",
+        href: "/json-tools/json-minifier",
+      },
+      {
+        name: "JSON Validator",
+        description: "Validates JSON syntax, highlights errors with line and column numbers, and explains parsing issues.",
+        href: "/json-tools/json-validator",
+      },
+      {
+        name: "JSON Viewer",
+        description: "Displays JSON in a tree view with expand/collapse, search, and raw view toggle.",
+        href: "/json-tools/json-viewer",
+      },
+      {
+        name: "JSON Pretty Print",
+        description: "Converts compact JSON into human-readable formatted output with customizable indentation.",
+        href: "/json-tools/json-pretty-print",
+      },
+      {
+        name: "JSON Linter",
+        description: "Detects syntax errors, duplicate keys, trailing commas, and structural issues in JSON.",
+        href: "/json-tools/json-linter",
+      },
+      {
+        name: "JSON Sorter",
+        description: "Sorts JSON object keys alphabetically (A–Z or Z–A) recursively while keeping values intact.",
+        href: "/json-tools/json-sorter",
+      },
+      {
+        name: "JSON Key Extractor",
+        description: "Extracts all unique keys from a JSON object or array and outputs them as a list.",
+        href: "/json-tools/json-key-extractor",
+      },
+      {
+        name: "JSON Value Search / Filter",
+        description: "Searches JSON by key or value and filters matching nodes with highlight support.",
+        href: "/json-tools/json-value-search",
+      },
+      {
+        name: "JSON Size Calculator",
+        description: "Calculates the size of JSON data in bytes, KB, and MB, with minified vs formatted comparison.",
+        href: "/json-tools/json-size-calculator",
+      },
+      {
+        name: "JSON to CSV Converter",
+        description: "Converts JSON arrays into CSV format with header detection and delimiter options.",
+        href: "/json-tools/json-to-csv",
+      },
+      {
+        name: "CSV to JSON Converter",
+        description: "Parses CSV files or text and converts them into structured JSON objects or arrays.",
+        href: "/json-tools/csv-to-json",
+      },
+      {
+        name: "JSON to XML Converter",
+        description: "Transforms JSON into equivalent XML structure with configurable root and attribute handling.",
+        href: "/json-tools/json-to-xml",
+      },
+      {
+        name: "XML to JSON Converter",
+        description: "Parses XML input and converts it into JSON while preserving hierarchy.",
+        href: "/json-tools/xml-to-json",
+      },
+      {
+        name: "JSON to YAML Converter",
+        description: "Converts JSON into YAML format with clean indentation and readable syntax.",
+        href: "/json-tools/json-to-yaml",
+      },
+      {
+        name: "YAML to JSON Converter",
+        description: "Parses YAML input and converts it into valid JSON.",
+        href: "/json-tools/yaml-to-json",
+      },
+      {
+        name: "JSON to TSV Converter",
+        description: "Converts JSON arrays into tab-separated values for spreadsheet usage.",
+        href: "/json-tools/json-to-tsv",
+      },
+      {
+        name: "JSON to Excel Converter",
+        description: "Exports JSON data into XLSX format using client-side spreadsheet generation.",
+        href: "/json-tools/json-to-excel",
+      },
+      {
+        name: "JSON to Markdown Table",
+        description: "Converts JSON arrays into Markdown table format with headers and alignment.",
+        href: "/json-tools/json-to-markdown-table",
+      },
+      {
+        name: "JSON to Text Converter",
+        description: "Flattens JSON into readable plain text key-value pairs.",
+        href: "/json-tools/json-to-text",
+      },
+      {
+        name: "JSON to JavaScript Object",
+        description: "Converts JSON into JavaScript object notation with proper formatting.",
+        href: "/json-tools/json-to-javascript",
+      },
+      {
+        name: "JSON to TypeScript Interface",
+        description: "Generates TypeScript interfaces from JSON including optional fields and nested types.",
+        href: "/json-tools/json-to-typescript",
+      },
+      {
+        name: "JSON to Python Dict",
+        description: "Converts JSON into Python dictionary syntax.",
+        href: "/json-tools/json-to-python",
+      },
+      {
+        name: "JSON to Java POJO",
+        description: "Generates Java POJO classes with fields, getters, and setters from JSON.",
+        href: "/json-tools/json-to-java",
+      },
+      {
+        name: "JSON to C# Class",
+        description: "Generates C# model classes from JSON with proper data types.",
+        href: "/json-tools/json-to-csharp",
+      },
+      {
+        name: "JSON to Go Struct",
+        description: "Generates Go structs with json tags from JSON input.",
+        href: "/json-tools/json-to-go",
+      },
+      {
+        name: "JSON to PHP Array",
+        description: "Converts JSON into PHP associative array syntax.",
+        href: "/json-tools/json-to-php",
+      },
+      {
+        name: "JSON to Kotlin Data Class",
+        description: "Generates Kotlin data classes with nullable and non-nullable fields.",
+        href: "/json-tools/json-to-kotlin",
+      },
+      {
+        name: "JSON to Swift Struct",
+        description: "Generates Swift structs conforming to Codable from JSON.",
+        href: "/json-tools/json-to-swift",
+      },
+      {
+        name: "JSON Schema Generator",
+        description: "Automatically generates JSON Schema definitions from sample JSON data.",
+        href: "/json-tools/json-schema-example-generator",
+      },
+      {
+        name: "JSON Schema Validator",
+        description: "Validates JSON data against a provided JSON Schema and reports errors.",
+        href: "/json-tools/json-schema-validator",
+      },
+      {
+        name: "JSON Diff Tool",
+        description: "Compares two JSON objects and highlights added, removed, and changed fields.",
+        href: "/json-tools/json-diff",
+      },
+      {
+        name: "JSON Merge Tool",
+        description: "Merges multiple JSON objects using configurable merge strategies.",
+        href: "/json-tools/json-merge",
+      },
+      {
+        name: "JSON Patch Generator",
+        description: "Generates JSON Patch operations to transform one JSON into another.",
+        href: "/json-tools/json-patch-generator",
+      },
+      {
+        name: "JSON Flatten Tool",
+        description: "Flattens nested JSON into dot-notation key-value pairs.",
+        href: "/json-tools/json-flatten",
+      },
+      {
+        name: "JSON Unflatten Tool",
+        description: "Converts flattened dot-notation JSON back into nested structure.",
+        href: "/json-tools/json-unflatten",
+      },
+      {
+        name: "JSON Key Frequency Analyzer",
+        description: "Analyzes how often each key appears in a JSON dataset.",
+        href: "/json-tools/json-key-frequency",
+      },
+      {
+        name: "JSON Depth Analyzer",
+        description: "Calculates maximum nesting depth of a JSON structure.",
+        href: "/json-tools/json-depth-analyzer",
+      },
+      {
+        name: "JSON Array/Object Counter",
+        description: "Counts arrays, objects, keys, and values inside JSON data.",
+        href: "/json-tools/json-array-object-counter",
+      },
+      {
+        name: "JSON Duplicate Key Finder",
+        description: "Detects duplicate keys within JSON objects that may cause data loss.",
+        href: "/json-tools/json-duplicate-key-finder",
+      },
+      {
+        name: "JSON Empty Field Finder",
+        description: "Identifies null, empty string, or missing values in JSON data.",
+        href: "/json-tools/json-empty-field-finder",
+      },
+      {
+        name: "JSONPath Query Tool",
+        description: "Runs JSONPath queries against JSON data and displays matching results.",
+        href: "/json-tools/jsonpath-query",
+      },
+      {
+        name: "JMESPath Query Tool",
+        description: "Executes JMESPath expressions on JSON for advanced querying.",
+        href: "/json-tools/jmespath-query",
+      },
+      {
+        name: "JSON Filter Tool",
+        description: "Filters JSON arrays based on conditions like equals, contains, or range.",
+        href: "/json-tools/json-filter",
+      },
+      {
+        name: "JSON Map Reduce Tool",
+        description: "Applies map and reduce style transformations on JSON arrays.",
+        href: "/json-tools/json-map-reduce",
+      },
+      {
+        name: "JSON Transformer",
+        description: "Transforms JSON structure using user-defined rules and mappings.",
+        href: "/json-tools/json-transformer",
+      },
+      {
+        name: "JSON Rename Keys Tool",
+        description: "Renames selected JSON keys across nested structures.",
+        href: "/json-tools/json-rename-keys",
+      },
+      {
+        name: "JSON Remove Keys Tool",
+        description: "Removes specified keys from JSON objects recursively.",
+        href: "/json-tools/json-remove-keys",
+      },
+      {
+        name: "JSON Extract Sub-JSON Tool",
+        description: "Extracts a specific nested portion of JSON based on a key path.",
+        href: "/json-tools/json-extract-subjson",
+      },
+      {
+        name: "JSON Escape Unescape Tool",
+        description: "Escapes or unescapes special characters in JSON strings.",
+        href: "/json-tools/json-escape-unescape",
+      },
+      {
+        name: "JSON Encode Decode Tool",
+        description: "Encodes and decodes JSON strings safely for transport or storage.",
+        href: "/json-tools/json-encode-decode",
+      },
+      {
+        name: "JSON Stringify Parse Playground",
+        description: "Interactive playground to experiment with JSON.stringify and JSON.parse options.",
+        href: "/json-tools/json-stringify-parse",
+      },
+      {
+        name: "JSON Base64 Encode Decode",
+        description: "Encodes JSON to Base64 and decodes Base64 back to JSON.",
+        href: "/json-tools/json-base64",
+      },
+      {
+        name: "JSON JWT Decoder",
+        description: "Decodes JWT payloads and headers into readable JSON without verification.",
+        href: "/json-tools/json-jwt-decoder",
+      },
+      {
+        name: "JSON Sensitive Data Masker",
+        description: "Masks sensitive fields like emails, tokens, or passwords in JSON data.",
+        href: "/json-tools/json-sensitive-data-maser",
+      },
+      {
+        name: "JSON Obfuscator",
+        description: "Minifies and obfuscates JSON keys and values for safer sharing.",
+        href: "/json-tools/json-obfuscator",
+      },
+      {
+        name: "JSON Array Generator",
+        description: "Generates JSON arrays with configurable length and value types.",
+        href: "/json-tools/json-array-generator",
+      },
+      {
+        name: "JSON Random Object Generator",
+        description: "Generates random JSON objects for testing and demos.",
+        href: "/json-tools/json-random-object",
+      },
+      {
+        name: "JSON API Response Generator",
+        description: "Generates mock API-style JSON responses with status, data, and pagination.",
+        href: "/json-tools/json-api-response-generator",
+      },
+      {
+        name: "JSON Pagination Generator",
+        description: "Wraps JSON data with pagination metadata like page, limit, and total.",
+        href: "/json-tools/json-pagination-generator",
+      },
+      {
+        name: "JSON Nested Structure Generator",
+        description: "Generates deeply nested JSON structures for stress testing.",
+        href: "/json-tools/json-nested-structure",
+      },
+      {
+        name: "JSON Enum Generator",
+        description: "Generates JSON enums and allowed value lists.",
+        href: "/json-tools/json-enum-generator",
+      },
+      {
+        name: "JSON Date Time Generator",
+        description: "Generates ISO, UTC, and custom formatted date-time values in JSON.",
+        href: "/json-tools/json-datetime-generator",
+      },
+      {
+        name: "JSON API Formatter",
+        description: "Formats JSON API responses to a consistent and readable structure.",
+        href: "/json-tools/json-api-formatter",
+      },
+      {
+        name: "JSON API Error Formatter",
+        description: "Generates standardized JSON error responses for APIs.",
+        href: "/json-tools/json-api-error-formatter",
+      },
+      {
+        name: "JSON Config File Validator",
+        description: "Validates JSON configuration files and checks required keys.",
+        href: "/json-tools/json-config-validator",
+      },
+      {
+        name: "JSON Env Converter",
+        description: "Converts JSON configuration into .env key-value format.",
+        href: "/json-tools/json-env-converter",
+      },
+      {
+        name: "JSON to Fetch Code Generator",
+        description: "Generates JavaScript fetch API code from JSON request definitions.",
+        href: "/json-tools/json-fetch-code-generator",
+      },
+      {
+        name: "JSON to Axios Code Generator",
+        description: "Generates Axios request code snippets from JSON input.",
+        href: "/json-tools/json-axios-code-generator",
+      },
+      {
+        name: "JSON to GraphQL Input Generator",
+        description: "Converts JSON objects into GraphQL input syntax.",
+        href: "/json-tools/json-to-graphql",
+      },
+      {
+        name: "JSON to SQL Insert Generator",
+        description: "Generates SQL INSERT statements from JSON arrays.",
+        href: "/json-tools/json-to-sql-insert",
+      },
+      {
+        name: "JSON to MongoDB Converter",
+        description: "Converts JSON into MongoDB-compatible document structure.",
+        href: "/json-tools/json-to-mongodb",
+      },
+      {
+        name: "JSON Explainer",
+        description: "Explains JSON structure in simple human-readable language.",
+        href: "/json-tools/json-explainer",
+      },
+      {
+        name: "JSON Error Explanation Tool",
+        description: "Explains JSON parsing errors and how to fix them.",
+        href: "/json-tools/json-error-explanation",
+      },
+      {
+        name: "JSON Structure Visualizer",
+        description: "Visualizes JSON hierarchy as a tree or graph.",
+        href: "/json-tools/json-structure-visualizer",
+      },
+      {
+        name: "JSON Playground",
+        description: "Live editor to modify JSON and instantly see formatted output.",
+        href: "/json-tools/json-playground",
+      },
+      {
+        name: "JSON Step by Step Parser",
+        description: "Shows how JSON is parsed token by token for learning purposes.",
+        href: "/json-tools/json-step-by-step-parser",
+      },
+      {
+        name: "JSON Schema Example Generator",
+        description: "Generates example JSON data from a given JSON Schema.",
+        href: "/json-tools/json-schema-example-generator",
+      },
+    ],
+  },
+  {
     categoryName: "Color Tools",
     tools: [
       {
