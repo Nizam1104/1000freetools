@@ -260,9 +260,9 @@ export default function AdvancedColorPickerPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Advanced Color Picker</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">Advanced Color Picker with RGB, HSL & HSV Sliders</h1>
           <p className="text-muted-foreground">
-            Professional color picker with color wheel, RGB, HSL, HSV sliders, and alpha control
+            Professional color picker featuring a full color wheel, RGB, HSL, and HSV sliders, alpha transparency control, and a live preview — all in one tool.
           </p>
         </div>
 

@@ -77,9 +77,9 @@ export default function HslToHsvConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">HSL to HSV Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">HSL to HSV Color Converter</h1>
           <p className="text-muted-foreground">
-            Convert HSL color values into HSV format
+            Convert HSL (Hue, Saturation, Lightness) color values to HSV (Hue, Saturation, Value) format. Useful for designers working across different color models.
           </p>
         </div>
 

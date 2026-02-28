@@ -107,9 +107,9 @@ export default function ColorTemperatureToRgbConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Color Temperature to RGB</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">Color Temperature to RGB Converter</h1>
           <p className="text-muted-foreground">
-            Convert color temperature in Kelvin to RGB values
+            Convert color temperature in Kelvin to RGB values. Ideal for lighting designers, photographers, and developers working with warm or cool light sources.
           </p>
         </div>
 

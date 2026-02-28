@@ -89,9 +89,9 @@ export default function RgbToCmykConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">RGB to CMYK Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">RGB to CMYK Color Converter</h1>
           <p className="text-muted-foreground">
-            Convert RGB color values into CMYK format for print
+            Convert RGB color values to CMYK format for print design. Translate your screen colors into the cyan, magenta, yellow, and black values used in printing.
           </p>
         </div>
 

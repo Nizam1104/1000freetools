@@ -397,7 +397,7 @@ export default function CustomColorPaletteGeneratorPage() {
             Custom Color Palette Generator
           </h1>
           <p className="text-slate-600 dark:text-slate-400">
-            Create beautiful, harmonious color palettes for your projects
+            Create beautiful, harmonious color palettes for your projects.
           </p>
         </div>
 

@@ -70,9 +70,9 @@ export default function HexToCmykConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Hex to CMYK Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">HEX to CMYK Color Converter</h1>
           <p className="text-muted-foreground">
-            Convert HEX color values into CMYK format for print
+            Convert HEX color codes to CMYK values for print-ready design. Enter a hex code and get the corresponding CMYK breakdown instantly.
           </p>
         </div>
 

@@ -262,9 +262,9 @@ export default function CssColorNameConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">CSS Color Name Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">CSS Color Name to HEX, RGB & HSL Converter</h1>
           <p className="text-muted-foreground">
-            Convert CSS color names to HEX, RGB, and HSL values
+            Convert any CSS color name like 'tomato' or 'steelblue' to its HEX, RGB, and HSL equivalents. Quickly look up and translate named CSS colors.
           </p>
         </div>
 

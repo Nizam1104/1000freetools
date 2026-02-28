@@ -175,7 +175,7 @@ export default function ColorPalettesPage() {
             Color Palette Explorer
           </h1>
           <p className="text-slate-600 dark:text-slate-400">
-            Discover beautiful color palettes and generate your own
+            Discover beautiful color palettes and generate your own.
           </p>
         </div>
 

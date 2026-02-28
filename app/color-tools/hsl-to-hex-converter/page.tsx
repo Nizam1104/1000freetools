@@ -76,9 +76,9 @@ export default function HslToHexConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">HSL to Hex Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">HSL to HEX Color Converter</h1>
           <p className="text-muted-foreground">
-            Convert HSL color values into HEX format
+            Convert HSL color values to HEX format easily. Enter hue, saturation, and lightness values and get the equivalent hex color code.
           </p>
         </div>
 

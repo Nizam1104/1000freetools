@@ -72,9 +72,9 @@ export default function RgbToHexConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">RGB to Hex Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">RGB to HEX Color Converter</h1>
           <p className="text-muted-foreground">
-            Convert RGB color values to HEX format
+            Convert RGB color values to HEX format in one click. Enter your red, green, and blue values and get the corresponding hex code ready to use.
           </p>
         </div>
 

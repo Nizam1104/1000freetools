@@ -214,9 +214,9 @@ export default function ColorPickerPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Color Picker</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">Free Online Color Picker</h1>
           <p className="text-muted-foreground">
-            Pick, customize, and export colors in multiple formats
+            Pick any color using an interactive palette or enter HEX, RGB, or HSL values. Copy your color code instantly for use in any design or development project.
           </p>
         </div>
 

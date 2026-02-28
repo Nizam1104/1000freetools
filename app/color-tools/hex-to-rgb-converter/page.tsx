@@ -53,9 +53,9 @@ export default function HexToRgbConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Hex to RGB Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">HEX to RGB Color Converter</h1>
           <p className="text-muted-foreground">
-            Convert HEX color codes to RGB values instantly
+            Convert HEX color codes to RGB values instantly. Simply enter any hex code and get the exact red, green, and blue values for your CSS or design work.
           </p>
         </div>
 

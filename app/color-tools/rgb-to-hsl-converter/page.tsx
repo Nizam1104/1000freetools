@@ -100,9 +100,9 @@ export default function RgbToHslConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">RGB to HSL Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">RGB to HSL Color Converter</h1>
           <p className="text-muted-foreground">
-            Convert RGB color values into HSL format
+            Convert RGB color values to HSL format instantly. Get the hue, saturation, and lightness representation of any RGB color for use in modern CSS.
           </p>
         </div>
 
