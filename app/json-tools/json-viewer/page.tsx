@@ -1,0 +1,410 @@
+"use client";
+
+import { useState, useCallback, useMemo } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { 
+  Check, 
+  ChevronRight, 
+  ChevronDown, 
+  Copy, 
+  Download, 
+  FileJson, 
+  RotateCcw, 
+  Trash2,
+  Search,
+  Eye,
+  Code
+} from "lucide-react";
+import { toast } from "sonner";
+
+type JsonValue = string | number | boolean | null | JsonObject | JsonArray;
+interface JsonObject { [key: string]: JsonValue }
+interface JsonArray extends Array<JsonValue> {}
+
+interface TreeNode {
+  key: string;
+  value: JsonValue;
+  path: string;
+  level: number;
+  type: "object" | "array" | "string" | "number" | "boolean" | "null";
+}
+
+export default function JsonViewerPage() {
+  const [input, setInput] = useState("");
+  const [parsedData, setParsedData] = useState<JsonValue | null>(null);
+  const [expandedPaths, setExpandedPaths] = useState<Set<string>>(new Set());
+  const [searchQuery, setSearchQuery] = useState("");
+  const [viewMode, setViewMode] = useState<"tree" | "raw">("tree");
+  const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const parseJson = useCallback(() => {
+    if (!input.trim()) {
+      setError("Please enter JSON to view");
+      setParsedData(null);
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(input);
+      setParsedData(parsed);
+      setError(null);
+      
+      // Auto-expand first level
+      const newExpanded = new Set<string>();
+      if (typeof parsed === "object" && parsed !== null) {
+        if (Array.isArray(parsed)) {
+          newExpanded.add("root");
+        } else {
+          newExpanded.add("root");
+        }
+      }
+      setExpandedPaths(newExpanded);
+      toast.success("JSON loaded successfully!");
+    } catch (e) {
+      setError(`Invalid JSON: ${(e as Error).message}`);
+      setParsedData(null);
+    }
+  }, [input]);
+
+  const toggleExpand = (path: string) => {
+    const newExpanded = new Set(expandedPaths);
+    if (newExpanded.has(path)) {
+      newExpanded.delete(path);
+    } else {
+      newExpanded.add(path);
+    }
+    setExpandedPaths(newExpanded);
+  };
+
+  const expandAll = () => {
+    if (!parsedData) return;
+    const allPaths = new Set<string>();
+    
+    const collectPaths = (value: JsonValue, path: string) => {
+      if (typeof value === "object" && value !== null) {
+        allPaths.add(path);
+        if (Array.isArray(value)) {
+          value.forEach((item, index) => collectPaths(item, `${path}[${index}]`));
+        } else {
+          Object.entries(value).forEach(([key, val]) => collectPaths(val, `${path}.${key}`));
+        }
+      }
+    };
+    
+    collectPaths(parsedData, "root");
+    setExpandedPaths(allPaths);
+  };
+
+  const collapseAll = () => {
+    setExpandedPaths(new Set());
+  };
+
+  const copyToClipboard = async () => {
+    if (!input) return;
+    try {
+      await navigator.clipboard.writeText(input);
+      setCopied(true);
+      toast.success("Copied to clipboard!");
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      toast.error("Failed to copy");
+    }
+  };
+
+  const downloadJson = () => {
+    if (!input) return;
+    const blob = new Blob([input], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "data.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast.success("Downloaded as data.json");
+  };
+
+  const clearAll = () => {
+    setInput("");
+    setParsedData(null);
+    setError(null);
+    setExpandedPaths(new Set());
+    setSearchQuery("");
+  };
+
+  const loadSample = () => {
+    const sample = JSON.stringify({
+      name: "Example Project",
+      version: "1.0.0",
+      features: ["fast", "simple", "reliable"],
+      config: {
+        debug: true,
+        maxItems: 100,
+        settings: {
+          theme: "dark",
+          language: "en"
+        }
+      },
+      metadata: null
+    }, null, 2);
+    setInput(sample);
+  };
+
+  const getValueType = (value: JsonValue): TreeNode["type"] => {
+    if (value === null) return "null";
+    if (Array.isArray(value)) return "array";
+    return typeof value as TreeNode["type"];
+  };
+
+  const matchesSearch = useCallback((key: string, value: JsonValue): boolean => {
+    if (!searchQuery) return true;
+    const query = searchQuery.toLowerCase();
+    if (key.toLowerCase().includes(query)) return true;
+    if (String(value).toLowerCase().includes(query)) return true;
+    return false;
+  }, [searchQuery]);
+
+  const TreeNodeComponent: React.FC<{
+    node: TreeNode;
+    isLast: boolean;
+  }> = ({ node, isLast }) => {
+    const isExpandable = node.type === "object" || node.type === "array";
+    const isExpanded = expandedPaths.has(node.path);
+    const hasMatch = matchesSearch(node.key, node.value);
+
+    if (!hasMatch && searchQuery && !isExpandable) {
+      return null;
+    }
+
+    const renderValue = (value: JsonValue) => {
+      if (value === null) return <span className="text-muted-foreground">null</span>;
+      if (typeof value === "string") return <span className="text-green-600 dark:text-green-400">"{value}"</span>;
+      if (typeof value === "number") return <span className="text-blue-600 dark:text-blue-400">{value}</span>;
+      if (typeof value === "boolean") return <span className="text-purple-600 dark:text-purple-400">{value.toString()}</span>;
+      return null;
+    };
+
+    return (
+      <div className="font-mono text-sm">
+        <div 
+          className={`flex items-center gap-1 py-1 hover:bg-muted/50 rounded px-2 cursor-pointer ${!hasMatch && searchQuery ? 'opacity-30' : ''}`}
+          onClick={() => isExpandable && toggleExpand(node.path)}
+        >
+          {isExpandable && (
+            <span className="w-4 h-4 flex items-center justify-center">
+              {isExpanded ? (
+                <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              ) : (
+                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+              )}
+            </span>
+          )}
+          {!isExpandable && <span className="w-4" />}
+          
+          {node.key !== "" && (
+            <span>
+              <span className="text-amber-600 dark:text-amber-400">"{node.key}"</span>
+              <span className="text-muted-foreground">: </span>
+            </span>
+          )}
+          
+          {isExpandable ? (
+            <span className="text-muted-foreground">
+              {node.type === "array" ? `Array[${(node.value as JsonArray).length}]` : `Object{${Object.keys(node.value as JsonObject).length}}`}
+            </span>
+          ) : (
+            renderValue(node.value)
+          )}
+          
+          {!isLast && <span className="text-muted-foreground">,</span>}
+        </div>
+        
+        {isExpandable && isExpanded && (
+          <div className="ml-6 border-l border-border pl-2">
+            {node.type === "array" ? (
+              (node.value as JsonArray).map((item, index) => (
+                <TreeNodeComponent
+                  key={`${node.path}[${index}]`}
+                  node={{
+                    key: String(index),
+                    value: item,
+                    path: `${node.path}[${index}]`,
+                    level: node.level + 1,
+                    type: getValueType(item),
+                  }}
+                  isLast={index === (node.value as JsonArray).length - 1}
+                />
+              ))
+            ) : (
+              Object.entries(node.value as JsonObject).map(([key, value], index, arr) => (
+                <TreeNodeComponent
+                  key={`${node.path}.${key}`}
+                  node={{
+                    key,
+                    value,
+                    path: `${node.path}.${key}`,
+                    level: node.level + 1,
+                    type: getValueType(value),
+                  }}
+                  isLast={index === arr.length - 1}
+                />
+              ))
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const treeContent = useMemo(() => {
+    if (!parsedData) return null;
+    return (
+      <TreeNodeComponent
+        node={{
+          key: "",
+          value: parsedData,
+          path: "root",
+          level: 0,
+          type: getValueType(parsedData),
+        }}
+        isLast={true}
+      />
+    );
+  }, [parsedData, expandedPaths, searchQuery]);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Viewer – Interactive Tree View Online</h1>
+          <p className="text-muted-foreground">
+            View JSON data in a clean interactive tree with expand/collapse, search, and raw toggle. Our free JSON Viewer makes exploring complex JSON structures effortless.
+          </p>
+        </div>
+
+        {/* Controls */}
+        <Card className="mb-6">
+          <CardContent className="p-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex-1 min-w-[200px]">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search keys or values..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-9 h-9"
+                    disabled={!parsedData}
+                  />
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <Button variant="outline" size="sm" onClick={loadSample}>
+                  <FileJson className="h-4 w-4 mr-2" />
+                  Sample
+                </Button>
+                <Button variant="outline" size="sm" onClick={clearAll}>
+                  <Trash2 className="h-4 w-4 mr-2" />
+                  Clear
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Main Content */}
+        <div className="grid gap-6">
+          {/* Input */}
+          <Card>
+            <CardContent className="p-4">
+              <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+                Input JSON
+              </Label>
+              <Textarea
+                id="input"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder='Paste your JSON here...'
+                className="min-h-[200px] font-mono text-sm resize-none"
+              />
+              <div className="flex items-center gap-2 mt-4">
+                <Button onClick={parseJson}>
+                  <RotateCcw className="h-4 w-4 mr-2" />
+                  Load JSON
+                </Button>
+                {error && (
+                  <span className="text-destructive text-sm">{error}</span>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Viewer */}
+          {parsedData && (
+            <Card>
+              <CardContent className="p-4">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant={viewMode === "tree" ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setViewMode("tree")}
+                    >
+                      <Eye className="h-4 w-4 mr-2" />
+                      Tree View
+                    </Button>
+                    <Button
+                      variant={viewMode === "raw" ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setViewMode("raw")}
+                    >
+                      <Code className="h-4 w-4 mr-2" />
+                      Raw View
+                    </Button>
+                  </div>
+                  
+                  <div className="flex items-center gap-2">
+                    {viewMode === "tree" && (
+                      <>
+                        <Button variant="outline" size="sm" onClick={expandAll}>
+                          Expand All
+                        </Button>
+                        <Button variant="outline" size="sm" onClick={collapseAll}>
+                          Collapse All
+                        </Button>
+                      </>
+                    )}
+                    <Button variant="ghost" size="sm" onClick={copyToClipboard}>
+                      {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                    </Button>
+                    <Button variant="ghost" size="sm" onClick={downloadJson}>
+                      <Download className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="bg-muted/50 rounded-md p-4 max-h-[500px] overflow-auto">
+                  {viewMode === "tree" ? (
+                    treeContent
+                  ) : (
+                    <pre className="font-mono text-sm whitespace-pre-wrap break-all">
+                      {JSON.stringify(parsedData, null, 2)}
+                    </pre>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
