@@ -1,0 +1,695 @@
+[
+  {
+    "converterUnit": "Length",
+    "description": "Converts between units of length such as meters, feet, inches, kilometers, miles, etc.",
+    "h1": "Length Converter",
+    "p": "Instantly convert between all units of length and distance — meters, feet, inches, kilometers, miles, yards, and more. Free online length converter for everyday and scientific use."
+  },
+  {
+    "converterUnit": "Weight and Mass",
+    "description": "Converts between units of weight and mass such as kilograms, pounds, ounces, grams, tons, etc.",
+    "h1": "Weight and Mass Converter",
+    "p": "Convert weight and mass units instantly — kilograms, pounds, grams, ounces, tons, and more. Accurate and easy-to-use online weight converter for cooking, shipping, and science."
+  },
+  {
+    "converterUnit": "Volume",
+    "description": "Converts between units of volume such as liters, gallons, milliliters, cubic meters, etc.",
+    "h1": "Volume Converter",
+    "p": "Convert volume units effortlessly — liters, gallons, milliliters, cubic feet, fluid ounces, and more. Perfect for cooking, engineering, and everyday volume conversions."
+  },
+  {
+    "converterUnit": "Temperature",
+    "description": "Converts between temperature scales such as Celsius, Fahrenheit, and Kelvin.",
+    "h1": "Temperature Converter",
+    "p": "Convert temperatures between Celsius, Fahrenheit, Kelvin, and Rankine instantly. Use our free online temperature converter for weather, cooking, and scientific calculations."
+  },
+  {
+    "converterUnit": "Area",
+    "description": "Converts between units of area such as square meters, acres, hectares, square feet, etc.",
+    "h1": "Area Converter",
+    "p": "Convert area units quickly and accurately — square meters, acres, hectares, square feet, square kilometers, and more. Ideal for real estate, land measurement, and construction."
+  },
+  {
+    "converterUnit": "Pressure",
+    "description": "Converts between units of pressure such as pascals, bar, psi, atm, etc.",
+    "h1": "Pressure Converter",
+    "p": "Convert pressure units including pascals, bar, PSI, atmospheres, torr, and more. Free online pressure converter for engineering, science, and industrial applications."
+  },
+  {
+    "converterUnit": "Energy",
+    "description": "Converts between units of energy such as joules, calories, BTU, kilowatt-hours, etc.",
+    "h1": "Energy Converter",
+    "p": "Convert energy units instantly — joules, calories, kilowatt-hours, BTU, electronvolts, and more. Use our free energy converter for physics, nutrition, and engineering needs."
+  },
+  {
+    "converterUnit": "Power",
+    "description": "Converts between units of power such as watts, horsepower, kilowatts, etc.",
+    "h1": "Power Converter",
+    "p": "Convert power units including watts, kilowatts, horsepower, megawatts, and more. Accurate online power converter for mechanical, electrical, and engineering calculations."
+  },
+  {
+    "converterUnit": "Force",
+    "description": "Converts between units of force such as newtons, pound-force, kilogram-force, etc.",
+    "h1": "Force Converter",
+    "p": "Convert force units including newtons, pound-force, kilogram-force, dynes, and more. Free online force converter for physics, engineering, and scientific applications."
+  },
+  {
+    "converterUnit": "Time",
+    "description": "Converts between units of time such as seconds, minutes, hours, days, weeks, years, etc.",
+    "h1": "Time Converter",
+    "p": "Convert time units instantly — seconds, minutes, hours, days, weeks, months, and years. Simple and accurate online time unit converter for everyday and scientific use."
+  },
+  {
+    "converterUnit": "Speed",
+    "description": "Converts between units of speed such as km/h, mph, m/s, knots, etc.",
+    "h1": "Speed Converter",
+    "p": "Convert speed and velocity units instantly — km/h, mph, m/s, knots, and more. Free online speed converter for travel, sports, physics, and engineering."
+  },
+  {
+    "converterUnit": "Angle",
+    "description": "Converts between units of angle such as degrees, radians, gradians, etc.",
+    "h1": "Angle Converter",
+    "p": "Convert angle units including degrees, radians, gradians, arcminutes, arcseconds, and more. Accurate online angle converter for geometry, trigonometry, and engineering."
+  },
+  {
+    "converterUnit": "Fuel Consumption",
+    "description": "Converts between units of fuel consumption such as MPG, L/100km, km/L, etc.",
+    "h1": "Fuel Consumption Converter",
+    "p": "Convert fuel consumption and efficiency units — MPG, L/100km, km/L, and more. Free online fuel economy converter for cars, trucks, and fleet management."
+  },
+  {
+    "converterUnit": "Data Storage",
+    "description": "Converts between units of digital data storage such as bytes, kilobytes, megabytes, gigabytes, terabytes, etc.",
+    "h1": "Data Storage Converter",
+    "p": "Convert digital storage units — bytes, kilobytes, megabytes, gigabytes, terabytes, and beyond. Free online data storage converter for computing, cloud storage, and IT professionals."
+  },
+  {
+    "converterUnit": "Volume - Dry",
+    "description": "Converts between units of dry volume such as dry pints, dry gallons, bushels, pecks, etc.",
+    "h1": "Dry Volume Converter",
+    "p": "Convert dry volume units including dry pints, dry gallons, bushels, pecks, and more. Accurate online dry measure converter for agriculture, cooking, and commodity trading."
+  },
+  {
+    "converterUnit": "Velocity - Angular",
+    "description": "Converts between units of angular velocity such as radians per second, degrees per second, RPM, etc.",
+    "h1": "Angular Velocity Converter",
+    "p": "Convert angular velocity units — radians per second, degrees per second, RPM, and more. Free online angular velocity converter for physics, mechanics, and engineering."
+  },
+  {
+    "converterUnit": "Acceleration",
+    "description": "Converts between units of linear acceleration such as m/s², g-force, ft/s², etc.",
+    "h1": "Acceleration Converter",
+    "p": "Convert acceleration units including m/s², g-force, ft/s², Gal, and more. Accurate online acceleration converter for physics, aerospace, and mechanical engineering."
+  },
+  {
+    "converterUnit": "Acceleration - Angular",
+    "description": "Converts between units of angular acceleration such as radians per second squared, revolutions per minute squared, etc.",
+    "h1": "Angular Acceleration Converter",
+    "p": "Convert angular acceleration units including rad/s², deg/s², and rev/min². Free online angular acceleration converter for rotational dynamics and mechanical engineering."
+  },
+  {
+    "converterUnit": "Density",
+    "description": "Converts between units of density such as kg/m³, g/cm³, lb/ft³, etc.",
+    "h1": "Density Converter",
+    "p": "Convert density units instantly — kg/m³, g/cm³, lb/ft³, lb/in³, and more. Free online density converter for material science, chemistry, and engineering."
+  },
+  {
+    "converterUnit": "Specific Volume",
+    "description": "Converts between units of specific volume such as m³/kg, L/kg, ft³/lb, etc.",
+    "h1": "Specific Volume Converter",
+    "p": "Convert specific volume units including m³/kg, L/kg, ft³/lb, and more. Accurate online specific volume converter for thermodynamics and fluid mechanics."
+  },
+  {
+    "converterUnit": "Moment of Inertia",
+    "description": "Converts between units of moment of inertia such as kg·m², g·cm², lb·ft², etc.",
+    "h1": "Moment of Inertia Converter",
+    "p": "Convert moment of inertia units — kg·m², g·cm², lb·ft², and more. Free online moment of inertia converter for mechanical engineering and rotational dynamics."
+  },
+  {
+    "converterUnit": "Moment of Force",
+    "description": "Converts between units of moment of force such as newton-meters, pound-feet, kilogram-force meters, etc.",
+    "h1": "Moment of Force Converter",
+    "p": "Convert moment of force units including N·m, lbf·ft, kgf·m, and more. Free online bending moment converter for structural and mechanical engineering calculations."
+  },
+  {
+    "converterUnit": "Torque",
+    "description": "Converts between units of torque such as newton-meters, pound-feet, kilogram-force centimeters, etc.",
+    "h1": "Torque Converter",
+    "p": "Convert torque units instantly — newton-meters, pound-feet, kilogram-force centimeters, and more. Accurate online torque converter for automotive, mechanical, and industrial engineering."
+  },
+
+  {
+    "converterUnit": "Fuel Efficiency - Mass",
+    "description": "Converts between units of fuel efficiency by mass such as km/kg, miles/lb, etc.",
+    "h1": "Fuel Efficiency by Mass Converter",
+    "p": "Convert fuel efficiency by mass units — km/kg, miles/lb, and more. Free online mass-based fuel efficiency converter for rocket propulsion and alternative fuel vehicles."
+  },
+  {
+    "converterUnit": "Fuel Efficiency - Volume",
+    "description": "Converts between volumetric fuel efficiency units such as L/100km, MPG, km/L, etc.",
+    "h1": "Fuel Efficiency by Volume Converter",
+    "p": "Convert volumetric fuel efficiency units — L/100km, MPG, km/L, and more. Accurate online fuel economy converter for vehicles, fleet management, and emissions calculations."
+  },
+  {
+    "converterUnit": "Temperature Interval",
+    "description": "Converts between temperature interval or difference units such as Celsius interval, Fahrenheit interval, Kelvin interval, etc.",
+    "h1": "Temperature Interval Converter",
+    "p": "Convert temperature interval and difference units between Celsius, Fahrenheit, Kelvin, and Rankine scales. Free online temperature difference converter for thermodynamics and HVAC."
+  },
+  {
+    "converterUnit": "Thermal Expansion",
+    "description": "Converts between units of thermal expansion coefficients such as per Celsius, per Fahrenheit, per Kelvin, etc.",
+    "h1": "Thermal Expansion Converter",
+    "p": "Convert thermal expansion coefficient units — per Kelvin, per Celsius, per Fahrenheit, and more. Free online thermal expansion converter for materials science and engineering."
+  },
+  {
+    "converterUnit": "Thermal Resistance",
+    "description": "Converts between units of thermal resistance such as K/W, °C/W, °F·h/BTU, etc.",
+    "h1": "Thermal Resistance Converter",
+    "p": "Convert thermal resistance units including K/W, °C/W, and °F·h/BTU. Accurate online thermal resistance converter for HVAC, insulation, and electronics cooling design."
+  },
+  {
+    "converterUnit": "Thermal Conductivity",
+    "description": "Converts between units of thermal conductivity such as W/(m·K), BTU/(h·ft·°F), cal/(s·cm·°C), etc.",
+    "h1": "Thermal Conductivity Converter",
+    "p": "Convert thermal conductivity units — W/(m·K), BTU/(h·ft·°F), cal/(s·cm·°C), and more. Free online thermal conductivity converter for insulation, materials, and heat transfer engineering."
+  },
+  {
+    "converterUnit": "Specific Heat Capacity",
+    "description": "Converts between units of specific heat capacity such as J/(kg·K), BTU/(lb·°F), cal/(g·°C), etc.",
+    "h1": "Specific Heat Capacity Converter",
+    "p": "Convert specific heat capacity units — J/(kg·K), BTU/(lb·°F), cal/(g·°C), and more. Accurate online specific heat converter for thermodynamics, chemistry, and material science."
+  },
+  {
+    "converterUnit": "Heat Density",
+    "description": "Converts between units of heat density such as J/m³, BTU/ft³, cal/cm³, etc.",
+    "h1": "Heat Density Converter",
+    "p": "Convert heat density units including J/m³, BTU/ft³, and cal/cm³. Free online heat density converter for combustion engineering, fuel analysis, and thermodynamic systems."
+  },
+  {
+    "converterUnit": "Heat Flux Density",
+    "description": "Converts between units of heat flux density such as W/m², BTU/(h·ft²), cal/(s·cm²), etc.",
+    "h1": "Heat Flux Density Converter",
+    "p": "Convert heat flux density units — W/m², BTU/(h·ft²), cal/(s·cm²), and more. Free online heat flux converter for thermal engineering, solar energy, and building insulation."
+  },
+  {
+    "converterUnit": "Heat Transfer Coefficient",
+    "description": "Converts between units of heat transfer coefficient such as W/(m²·K), BTU/(h·ft²·°F), etc.",
+    "h1": "Heat Transfer Coefficient Converter",
+    "p": "Convert heat transfer coefficient units — W/(m²·K), BTU/(h·ft²·°F), and more. Accurate online converter for convection, conduction, and HVAC engineering calculations."
+  },
+
+  {
+    "converterUnit": "Flow",
+    "description": "Converts between units of volumetric flow rate such as m³/s, L/min, gallons per minute, CFM, etc.",
+    "h1": "Volumetric Flow Rate Converter",
+    "p": "Convert volumetric flow rate units — m³/s, liters per minute, gallons per minute, CFM, and more. Free online flow rate converter for plumbing, HVAC, and fluid engineering."
+  },
+  {
+    "converterUnit": "Flow - Mass",
+    "description": "Converts between units of mass flow rate such as kg/s, lb/min, g/h, etc.",
+    "h1": "Mass Flow Rate Converter",
+    "p": "Convert mass flow rate units — kg/s, lb/min, g/h, and more. Accurate online mass flow converter for chemical processing, aerospace, and industrial fluid systems."
+  },
+  {
+    "converterUnit": "Flow - Molar",
+    "description": "Converts between units of molar flow rate such as mol/s, kmol/h, lbmol/min, etc.",
+    "h1": "Molar Flow Rate Converter",
+    "p": "Convert molar flow rate units — mol/s, kmol/h, lbmol/min, and more. Free online molar flow converter for chemical engineering, reaction kinetics, and process design."
+  },
+  {
+    "converterUnit": "Mass Flux Density",
+    "description": "Converts between units of mass flux density such as kg/(m²·s), lb/(ft²·s), g/(cm²·s), etc.",
+    "h1": "Mass Flux Density Converter",
+    "p": "Convert mass flux density units — kg/(m²·s), lb/(ft²·s), and more. Free online mass flux converter for chemical engineering, filtration, and membrane technology."
+  },
+  {
+    "converterUnit": "Concentration - Molar",
+    "description": "Converts between units of molar concentration such as mol/L, mmol/L, mol/m³, etc.",
+    "h1": "Molar Concentration Converter",
+    "p": "Convert molar concentration units — mol/L, mmol/L, mol/m³, and more. Free online molarity converter for chemistry, biochemistry, and laboratory solution preparation."
+  },
+  {
+    "converterUnit": "Concentration - Solution",
+    "description": "Converts between units of solution concentration such as ppm, ppb, mg/L, %, g/L, etc.",
+    "h1": "Solution Concentration Converter",
+    "p": "Convert solution concentration units — ppm, ppb, mg/L, percent, g/L, and more. Accurate online concentration converter for chemistry, water treatment, and environmental testing."
+  },
+  {
+    "converterUnit": "Viscosity - Dynamic",
+    "description": "Converts between units of dynamic viscosity such as Pa·s, cP, poise, lb/(ft·s), etc.",
+    "h1": "Dynamic Viscosity Converter",
+    "p": "Convert dynamic viscosity units — Pa·s, centipoise, poise, lb/(ft·s), and more. Free online dynamic viscosity converter for fluid mechanics, lubrication, and chemical engineering."
+  },
+  {
+    "converterUnit": "Viscosity - Kinematic",
+    "description": "Converts between units of kinematic viscosity such as m²/s, cSt, stokes, ft²/s, etc.",
+    "h1": "Kinematic Viscosity Converter",
+    "p": "Convert kinematic viscosity units — m²/s, centistokes, stokes, ft²/s, and more. Accurate online kinematic viscosity converter for fluid dynamics, oil analysis, and hydraulic systems."
+  },
+  {
+    "converterUnit": "Surface Tension",
+    "description": "Converts between units of surface tension such as N/m, mN/m, dyn/cm, lbf/ft, etc.",
+    "h1": "Surface Tension Converter",
+    "p": "Convert surface tension units — N/m, mN/m, dyne/cm, lbf/ft, and more. Free online surface tension converter for chemistry, materials science, and fluid interface studies."
+  },
+  {
+    "converterUnit": "Permeability",
+    "description": "Converts between units of permeability such as darcy, millidarcy, m², cm²/s, etc.",
+    "h1": "Permeability Converter",
+    "p": "Convert permeability units including darcy, millidarcy, m², and more. Free online permeability converter for petroleum engineering, hydrogeology, and porous media analysis."
+  },
+
+  {
+    "converterUnit": "Luminance",
+    "description": "Converts between units of luminance such as candela/m², nit, foot-lambert, stilb, etc.",
+    "h1": "Luminance Converter",
+    "p": "Convert luminance units — cd/m² (nits), foot-lamberts, stilb, and more. Free online luminance converter for display technology, photography, and lighting design."
+  },
+  {
+    "converterUnit": "Luminous Intensity",
+    "description": "Converts between units of luminous intensity such as candela, millicandela, candlepower, etc.",
+    "h1": "Luminous Intensity Converter",
+    "p": "Convert luminous intensity units — candela, millicandela, candlepower, and more. Accurate online luminous intensity converter for photometry, LED design, and lighting engineering."
+  },
+  {
+    "converterUnit": "Illumination",
+    "description": "Converts between units of illuminance such as lux, foot-candle, phot, nox, etc.",
+    "h1": "Illuminance Converter",
+    "p": "Convert illuminance units — lux, foot-candles, phot, nox, and more. Free online illumination converter for lighting design, photography, and workplace safety compliance."
+  },
+  {
+    "converterUnit": "Digital Image Resolution",
+    "description": "Converts between digital image resolution units such as DPI, PPI, dots/cm, pixels/mm, etc.",
+    "h1": "Digital Image Resolution Converter",
+    "p": "Convert digital image resolution units — DPI, PPI, dots/cm, pixels/mm, and more. Free online resolution converter for photography, printing, and graphic design."
+  },
+  {
+    "converterUnit": "Frequency",
+    "description": "Converts between units of frequency such as hertz, kilohertz, megahertz, gigahertz, RPM, etc.",
+    "h1": "Frequency Converter",
+    "p": "Convert frequency units — hertz, kilohertz, megahertz, gigahertz, RPM, and more. Free online frequency converter for electronics, audio engineering, and signal processing."
+  },
+  {
+    "converterUnit": "Wavelength",
+    "description": "Converts between wavelength and frequency for electromagnetic waves across the spectrum.",
+    "h1": "Wavelength Converter",
+    "p": "Convert wavelength units and calculate frequency across the electromagnetic spectrum — nanometers, micrometers, angstroms, and more. Free online wavelength converter for optics and physics."
+  },
+
+  {
+    "converterUnit": "Charge",
+    "description": "Converts between units of electric charge such as coulombs, millicoulombs, microcoulombs, ampere-hours, etc.",
+    "h1": "Electric Charge Converter",
+    "p": "Convert electric charge units — coulombs, millicoulombs, microcoulombs, ampere-hours, and more. Free online electric charge converter for electronics, electrochemistry, and physics."
+  },
+  {
+    "converterUnit": "Linear Charge Density",
+    "description": "Converts between units of linear charge density such as C/m, mC/mm, μC/cm, etc.",
+    "h1": "Linear Charge Density Converter",
+    "p": "Convert linear charge density units — C/m, mC/mm, μC/cm, and more. Free online linear charge density converter for electrostatics and electrical engineering."
+  },
+  {
+    "converterUnit": "Surface Charge Density",
+    "description": "Converts between units of surface charge density such as C/m², mC/cm², μC/mm², etc.",
+    "h1": "Surface Charge Density Converter",
+    "p": "Convert surface charge density units — C/m², mC/cm², μC/mm², and more. Accurate online surface charge density converter for capacitor design and electrostatics."
+  },
+  {
+    "converterUnit": "Volume Charge Density",
+    "description": "Converts between units of volume charge density such as C/m³, mC/cm³, μC/mm³, etc.",
+    "h1": "Volume Charge Density Converter",
+    "p": "Convert volume charge density units — C/m³, mC/cm³, μC/mm³, and more. Free online volume charge density converter for electrostatics, plasma physics, and electrical engineering."
+  },
+  {
+    "converterUnit": "Current",
+    "description": "Converts between units of electric current such as amperes, milliamperes, microamperes, kiloamperes, etc.",
+    "h1": "Electric Current Converter",
+    "p": "Convert electric current units — amperes, milliamperes, microamperes, kiloamperes, and more. Free online current converter for electronics, electrical engineering, and circuit design."
+  },
+  {
+    "converterUnit": "Linear Current Density",
+    "description": "Converts between units of linear current density such as A/m, mA/cm, kA/m, etc.",
+    "h1": "Linear Current Density Converter",
+    "p": "Convert linear current density units — A/m, mA/cm, kA/m, and more. Free online linear current density converter for electromagnetics and electrical engineering."
+  },
+  {
+    "converterUnit": "Surface Current Density",
+    "description": "Converts between units of surface current density such as A/m², mA/cm², kA/m², etc.",
+    "h1": "Surface Current Density Converter",
+    "p": "Convert surface current density units — A/m², mA/cm², kA/m², and more. Accurate online surface current density converter for electromagnetic field analysis and power systems."
+  },
+  {
+    "converterUnit": "Electric Field Strength",
+    "description": "Converts between units of electric field strength such as V/m, kV/m, mV/cm, N/C, etc.",
+    "h1": "Electric Field Strength Converter",
+    "p": "Convert electric field strength units — V/m, kV/m, N/C, and more. Free online electric field converter for electrostatics, antenna design, and electromagnetic compatibility."
+  },
+  {
+    "converterUnit": "Electric Potential",
+    "description": "Converts between units of electric potential such as volts, millivolts, kilovolts, megavolts, etc.",
+    "h1": "Electric Potential Converter",
+    "p": "Convert electric potential and voltage units — volts, millivolts, kilovolts, megavolts, and more. Free online voltage converter for electronics, power systems, and electrical engineering."
+  },
+  {
+    "converterUnit": "Electric Resistance",
+    "description": "Converts between units of electric resistance such as ohms, kilohms, megaohms, milliohms, etc.",
+    "h1": "Electric Resistance Converter",
+    "p": "Convert electric resistance units — ohms, kilohms, megaohms, milliohms, and more. Free online resistance converter for circuit design, electronics, and electrical engineering."
+  },
+  {
+    "converterUnit": "Electric Resistivity",
+    "description": "Converts between units of electrical resistivity such as Ω·m, Ω·cm, μΩ·in, etc.",
+    "h1": "Electric Resistivity Converter",
+    "p": "Convert electrical resistivity units — Ω·m, Ω·cm, μΩ·in, and more. Accurate online resistivity converter for material science, semiconductor design, and conductor selection."
+  },
+  {
+    "converterUnit": "Electric Conductance",
+    "description": "Converts between units of electric conductance such as siemens, millisiemens, microsiemens, mhos, etc.",
+    "h1": "Electric Conductance Converter",
+    "p": "Convert electric conductance units — siemens, millisiemens, microsiemens, mho, and more. Free online conductance converter for electronics, electrochemistry, and electrical circuit analysis."
+  },
+  {
+    "converterUnit": "Electric Conductivity",
+    "description": "Converts between units of electrical conductivity such as S/m, mS/cm, μS/cm, etc.",
+    "h1": "Electric Conductivity Converter",
+    "p": "Convert electrical conductivity units — S/m, mS/cm, μS/cm, and more. Free online conductivity converter for water quality testing, material science, and electrochemistry."
+  },
+  {
+    "converterUnit": "Electrostatic Capacitance",
+    "description": "Converts between units of electrical capacitance such as farads, microfarads, nanofarads, picofarads, etc.",
+    "h1": "Capacitance Converter",
+    "p": "Convert capacitance units — farads, microfarads, nanofarads, picofarads, and more. Free online capacitance converter for electronics, circuit design, and electrical engineering."
+  },
+  {
+    "converterUnit": "Inductance",
+    "description": "Converts between units of electrical inductance such as henries, millihenries, microhenries, nanohenries, etc.",
+    "h1": "Inductance Converter",
+    "p": "Convert inductance units — henries, millihenries, microhenries, nanohenries, and more. Free online inductance converter for electronics, RF engineering, and coil and transformer design."
+  },
+
+  {
+    "converterUnit": "Magnetomotive Force",
+    "description": "Converts between units of magnetomotive force such as ampere-turns, gilberts, kiloampere-turns, etc.",
+    "h1": "Magnetomotive Force Converter",
+    "p": "Convert magnetomotive force units — ampere-turns, gilberts, kiloampere-turns, and more. Free online MMF converter for magnetic circuit design and electromagnetic engineering."
+  },
+  {
+    "converterUnit": "Magnetic Field Strength",
+    "description": "Converts between units of magnetic field strength such as A/m, oersted, kA/m, etc.",
+    "h1": "Magnetic Field Strength Converter",
+    "p": "Convert magnetic field strength units — A/m, oersteds, kA/m, and more. Accurate online H-field converter for electromagnetics, motor design, and magnetic material characterization."
+  },
+  {
+    "converterUnit": "Magnetic Flux",
+    "description": "Converts between units of magnetic flux such as webers, milliwebers, maxwells, volt-seconds, etc.",
+    "h1": "Magnetic Flux Converter",
+    "p": "Convert magnetic flux units — webers, milliwebers, maxwells, and more. Free online magnetic flux converter for transformer design, motor engineering, and electromagnetic analysis."
+  },
+  {
+    "converterUnit": "Magnetic Flux Density",
+    "description": "Converts between units of magnetic flux density such as tesla, millitesla, gauss, microtesla, etc.",
+    "h1": "Magnetic Flux Density Converter",
+    "p": "Convert magnetic flux density units — tesla, millitesla, gauss, microtesla, and more. Free online B-field converter for MRI, motor design, and electromagnetic engineering."
+  },
+
+  {
+    "converterUnit": "Rebar Weight Calculator",
+    "description": "Calculates the weight of steel rebar based on diameter, length, and quantity for construction projects.",
+    "h1": "Rebar Weight Calculator",
+    "p": "Calculate the total weight of steel rebar for your construction project. Enter bar diameter, length, and quantity to get accurate rebar weight in kg or lbs. Free online rebar weight calculator."
+  },
+  {
+    "converterUnit": "Concrete Volume Converter",
+    "description": "Calculates and converts concrete volume for slabs, columns, beams, and footings.",
+    "h1": "Concrete Volume Calculator & Converter",
+    "p": "Calculate concrete volume for slabs, columns, beams, and footings — and convert between cubic meters, cubic feet, and cubic yards. Free online concrete volume calculator for construction projects."
+  },
+  {
+    "converterUnit": "Concrete Mix Ratio Converter",
+    "description": "Converts concrete mix ratios (cement:sand:aggregate) and calculates material quantities for different mix designs.",
+    "h1": "Concrete Mix Ratio Calculator",
+    "p": "Convert concrete mix ratios and calculate exact cement, sand, and aggregate quantities for any volume. Free online concrete mix calculator for M10, M15, M20, M25, and custom mix designs."
+  },
+  {
+    "converterUnit": "Brick Calculator",
+    "description": "Calculates the number of bricks needed for a wall based on wall dimensions and brick size.",
+    "h1": "Brick Calculator",
+    "p": "Calculate how many bricks you need for any wall or project. Enter wall dimensions and brick size to get an accurate brick count with mortar allowance. Free online brick quantity estimator."
+  },
+  {
+    "converterUnit": "Tile Calculator",
+    "description": "Calculates the number of tiles needed to cover a floor or wall area based on tile size and room dimensions.",
+    "h1": "Tile Calculator",
+    "p": "Calculate how many tiles you need for any floor or wall area. Enter room and tile dimensions to get an accurate tile count with waste factor included. Free online tile quantity calculator."
+  },
+  {
+    "converterUnit": "Cement-Sand-Aggregate Converter",
+    "description": "Calculates quantities of cement, sand, and aggregate required for a given concrete volume and mix ratio.",
+    "h1": "Cement, Sand & Aggregate Calculator",
+    "p": "Calculate exact quantities of cement, sand, and aggregate needed for your concrete mix. Enter volume and mix ratio to get material amounts in kg, bags, and cubic meters. Free construction material calculator."
+  },
+  {
+    "converterUnit": "Lumber Board Feet Converter",
+    "description": "Calculates board feet of lumber based on thickness, width, and length of wood pieces.",
+    "h1": "Lumber Board Feet Calculator",
+    "p": "Calculate board feet of lumber instantly. Enter thickness, width, and length to get total board footage for any wood project. Free online lumber board feet converter for construction and carpentry."
+  },
+  {
+    "converterUnit": "Floor Area Converter",
+    "description": "Converts floor area measurements between square feet, square meters, square yards, and other area units.",
+    "h1": "Floor Area Converter",
+    "p": "Convert floor area between square meters, square feet, square yards, and more. Free online floor area converter for real estate, interior design, and construction planning."
+  },
+  {
+    "converterUnit": "Roofing Sheet Coverage Converter",
+    "description": "Calculates the number of roofing sheets required to cover a given roof area based on sheet dimensions and overlap.",
+    "h1": "Roofing Sheet Coverage Calculator",
+    "p": "Calculate how many roofing sheets you need for your roof area. Enter roof dimensions, sheet size, and overlap to get an accurate sheet count. Free online roofing coverage calculator."
+  },
+
+  {
+    "converterUnit": "Cups to Grams",
+    "description": "Converts cooking measurements from cups to grams for common ingredients like flour, sugar, butter, rice, etc.",
+    "h1": "Cups to Grams Converter",
+    "p": "Convert cups to grams for flour, sugar, butter, rice, oats, and 50+ ingredients. Get accurate weight measurements for any recipe with our free online cups to grams converter."
+  },
+  {
+    "converterUnit": "Cups to ml",
+    "description": "Converts cooking measurements from cups to milliliters and other liquid volume units.",
+    "h1": "Cups to ml Converter",
+    "p": "Convert cups to milliliters, tablespoons, fluid ounces, and liters instantly. Free online cups to ml converter for accurate liquid measurements in any recipe or cooking project."
+  },
+  {
+    "converterUnit": "Oven Temperature Converter",
+    "description": "Converts oven temperatures between Celsius, Fahrenheit, and gas marks for baking and cooking.",
+    "h1": "Oven Temperature Converter",
+    "p": "Convert oven temperatures between Celsius, Fahrenheit, and gas marks instantly. Free online oven temperature converter for baking — perfect for following recipes from any country."
+  },
+  {
+    "converterUnit": "Baking Pan Size Converter",
+    "description": "Converts between different baking pan sizes and calculates volume equivalents to adjust recipes.",
+    "h1": "Baking Pan Size Converter",
+    "p": "Convert between baking pan sizes and find equivalent pan volumes to scale any recipe. Free online baking pan converter for round, square, rectangular, and springform tins."
+  },
+  {
+    "converterUnit": "Ingredient Density Converter",
+    "description": "Converts between volume and weight for cooking ingredients using their specific densities.",
+    "h1": "Ingredient Density Converter",
+    "p": "Convert between volume and weight for common cooking ingredients using accurate density values. Free online ingredient converter for baking, cooking, and precise recipe scaling."
+  },
+  {
+    "converterUnit": "Sourdough Hydration Converter",
+    "description": "Calculates sourdough bread hydration percentage and converts between flour and water ratios for different hydration levels.",
+    "h1": "Sourdough Hydration Calculator",
+    "p": "Calculate sourdough hydration percentage and convert between flour and water ratios instantly. Free online sourdough hydration converter for perfect bread dough consistency every time."
+  },
+  {
+    "converterUnit": "Image DPI Converter",
+    "description": "Converts image resolution between DPI values and calculates print dimensions based on pixel count.",
+    "h1": "Image DPI Converter",
+    "p": "Convert image DPI and calculate print size from pixel dimensions. Free online image DPI converter for photographers, designers, and print-ready file preparation."
+  },
+  {
+    "converterUnit": "Video Frame Rate Converter",
+    "description": "Converts video frame rates between fps values such as 24fps, 30fps, 60fps and calculates frame counts.",
+    "h1": "Video Frame Rate Converter",
+    "p": "Convert video frame rates between 24fps, 30fps, 60fps, 120fps, and more. Calculate total frames for any video duration. Free online frame rate converter for video editors and filmmakers."
+  },
+  {
+    "converterUnit": "Audio Bitrate Converter",
+    "description": "Converts audio bitrate units and estimates file size based on bitrate and duration.",
+    "h1": "Audio Bitrate Converter",
+    "p": "Convert audio bitrate units and calculate file size from bitrate and duration. Free online audio bitrate converter for music production, podcasting, and streaming optimization."
+  },
+  {
+    "converterUnit": "Unix Timestamp Converter",
+    "description": "Converts Unix timestamps to human-readable dates and times, and vice versa.",
+    "h1": "Unix Timestamp Converter",
+    "p": "Convert Unix timestamps to readable dates and times — and back again. Free online epoch time converter for developers, database administrators, and system engineers."
+  },
+
+  {
+    "converterUnit": "Time Duration Calculator",
+    "description": "Calculates the duration between two times or adds/subtracts time intervals from a given time.",
+    "h1": "Time Duration Calculator",
+    "p": "Calculate the exact duration between two times or add and subtract time intervals easily. Free online time duration calculator for work hours, project planning, and scheduling."
+  },
+  {
+    "converterUnit": "Age Calculator",
+    "description": "Calculates exact age in years, months, and days from a birth date to today or a specified date.",
+    "h1": "Age Calculator",
+    "p": "Calculate your exact age in years, months, and days from your date of birth. Free online age calculator — also find the age on any past or future date."
+  },
+  {
+    "converterUnit": "Date Difference Calculator",
+    "description": "Calculates the number of days, weeks, months, or years between two calendar dates.",
+    "h1": "Date Difference Calculator",
+    "p": "Calculate the exact number of days, weeks, months, and years between any two dates. Free online date difference calculator for deadlines, anniversaries, and event planning."
+  },
+
+  {
+    "converterUnit": "Light Years to Parsecs",
+    "description": "Converts astronomical distances between light-years, parsecs, AU, kilometers, and miles.",
+    "h1": "Light-Years to Parsecs Converter",
+    "p": "Convert astronomical distances between light-years, parsecs, astronomical units, and kilometers. Free online space distance converter for astronomy, astrophysics, and science education."
+  },
+  {
+    "converterUnit": "Astronomical Unit Converter",
+    "description": "Converts distances between astronomical units (AU), light-years, parsecs, kilometers, and miles.",
+    "h1": "Astronomical Unit (AU) Converter",
+    "p": "Convert astronomical units to light-years, parsecs, kilometers, miles, and more. Free online AU converter for planetary science, astronomy, and space exploration calculations."
+  },
+  {
+    "converterUnit": "Apparent Magnitude Converter",
+    "description": "Converts between apparent magnitude, absolute magnitude, and luminosity for stars and celestial objects.",
+    "h1": "Apparent Magnitude Converter",
+    "p": "Convert between apparent magnitude, absolute magnitude, and stellar luminosity. Free online magnitude converter for amateur astronomers, astrophysics students, and stargazers."
+  },
+  {
+    "converterUnit": "Planet Weight Converter",
+    "description": "Calculates your weight on different planets and moons based on their surface gravity.",
+    "h1": "Planet Weight Calculator",
+    "p": "Find out how much you would weigh on Mars, Jupiter, the Moon, and other planets. Free online planet weight calculator based on surface gravity for astronomy and science education."
+  },
+
+  {
+    "converterUnit": "Radiation Dose Converter",
+    "description": "Converts between units of radiation absorbed dose such as gray, rad, sievert, rem, etc.",
+    "h1": "Radiation Dose Converter",
+    "p": "Convert radiation dose units — gray, rad, sievert, rem, and more. Free online radiation dose converter for medical physics, radiology, nuclear safety, and health physics."
+  },
+  {
+    "converterUnit": "Radioactivity Converter",
+    "description": "Converts between units of radioactivity such as becquerel, curie, millicurie, rutherford, etc.",
+    "h1": "Radioactivity Converter",
+    "p": "Convert radioactivity units — becquerels, curies, millicuries, rutherfords, and more. Free online radioactivity converter for nuclear medicine, radiation safety, and physics."
+  },
+  {
+    "converterUnit": "Exposure Dose Converter",
+    "description": "Converts between units of radiation exposure dose such as roentgen, coulomb/kg, milliroentgen, etc.",
+    "h1": "Radiation Exposure Dose Converter",
+    "p": "Convert radiation exposure dose units — roentgens, coulombs/kg, milliroentgens, and more. Free online exposure dose converter for radiology, health physics, and radiation protection."
+  },
+
+  {
+    "converterUnit": "Sound Pressure (Pa to dB)",
+    "description": "Converts sound pressure between pascals (Pa) and decibels (dB SPL) and calculates sound levels.",
+    "h1": "Sound Pressure Converter — Pa to dB",
+    "p": "Convert sound pressure between pascals and decibels (dB SPL) instantly. Free online sound pressure converter for acoustics, audio engineering, and noise measurement."
+  },
+  {
+    "converterUnit": "Frequency to Musical Note Converter",
+    "description": "Converts audio frequencies in Hz to musical note names and octaves, and vice versa.",
+    "h1": "Frequency to Musical Note Converter",
+    "p": "Convert any frequency in Hz to its corresponding musical note and octave — and back again. Free online pitch frequency converter for musicians, audio engineers, and music theory students."
+  },
+
+  {
+    "converterUnit": "Wind Speed Converter",
+    "description": "Converts wind speed between km/h, mph, knots, m/s, and Beaufort scale values.",
+    "h1": "Wind Speed Converter",
+    "p": "Convert wind speed between km/h, mph, knots, m/s, and Beaufort scale. Free online wind speed converter for meteorology, sailing, aviation, and weather analysis."
+  },
+  {
+    "converterUnit": "Rainfall Converter",
+    "description": "Converts rainfall measurements between millimeters, inches, liters per square meter, and other units.",
+    "h1": "Rainfall Converter",
+    "p": "Convert rainfall measurements between millimeters, inches, liters per square meter, and more. Free online precipitation converter for meteorology, hydrology, and agriculture."
+  },
+  {
+    "converterUnit": "Humidity Ratio Converter",
+    "description": "Converts between relative humidity, absolute humidity, specific humidity, and dew point values.",
+    "h1": "Humidity Ratio Converter",
+    "p": "Convert between relative humidity, absolute humidity, specific humidity, and humidity ratio. Free online humidity converter for HVAC, meteorology, and building climate control."
+  },
+  {
+    "converterUnit": "Dew Point Calculator",
+    "description": "Calculates dew point temperature from relative humidity and air temperature values.",
+    "h1": "Dew Point Calculator",
+    "p": "Calculate dew point temperature from relative humidity and air temperature instantly. Free online dew point calculator for weather forecasting, HVAC design, and condensation analysis."
+  },
+
+  {
+    "converterUnit": "Fabric GSM Converter",
+    "description": "Converts fabric weight between GSM (grams per square meter) and other textile weight units.",
+    "h1": "Fabric GSM Converter",
+    "p": "Convert fabric weight between GSM, oz/yd², and other textile units. Free online fabric GSM converter for fashion designers, garment manufacturers, and textile buyers."
+  },
+  {
+    "converterUnit": "Thread Count Converter",
+    "description": "Converts thread count values between different measurement standards used for bed linen and fabrics.",
+    "h1": "Thread Count Converter",
+    "p": "Convert and compare thread count values across different measurement standards for bed sheets and fabrics. Free online thread count converter for textile buyers and bedding shoppers."
+  },
+  {
+    "converterUnit": "Clothing Size Converter",
+    "description": "Converts clothing sizes between US, UK, EU, and Asian sizing standards for men, women, and children.",
+    "h1": "Clothing Size Converter",
+    "p": "Convert clothing sizes between US, UK, EU, and Asian standards for men, women, and kids. Free online clothes size converter for international shopping and fashion retail."
+  },
+
+  {
+    "converterUnit": "BMI Calculator",
+    "description": "Calculates Body Mass Index (BMI) from height and weight and classifies the result into health categories.",
+    "h1": "BMI Calculator — Body Mass Index",
+    "p": "Calculate your Body Mass Index (BMI) from height and weight. Find out if you're underweight, normal weight, overweight, or obese. Free online BMI calculator for adults and children."
+  },
+  {
+    "converterUnit": "Calorie Burn Rate Converter",
+    "description": "Estimates calories burned per hour for various physical activities based on body weight and activity type.",
+    "h1": "Calorie Burn Rate Calculator",
+    "p": "Estimate calories burned per hour for running, cycling, swimming, walking, and more. Free online calorie burn rate converter based on activity type and body weight."
+  },
+  {
+    "converterUnit": "Running Pace to Speed Converter",
+    "description": "Converts running pace (min/km or min/mile) to speed (km/h or mph) and vice versa.",
+    "h1": "Running Pace to Speed Converter",
+    "p": "Convert running pace (min/km or min/mile) to speed (km/h or mph) instantly. Free online running pace converter for athletes, marathon runners, and fitness tracking."
+  },
+
+  {
+    "converterUnit": "Height Converter",
+    "description": "Converts height between feet and inches, centimeters, and meters for everyday use.",
+    "h1": "Height Converter — cm to ft & in",
+    "p": "Convert height between centimeters, feet and inches, and meters. Free online height converter — instantly see your height in any unit, perfect for profiles, travel, and fitness."
+  },
+  {
+    "converterUnit": "Shoe Size Converter",
+    "description": "Converts shoe sizes between US, UK, EU, and other international sizing standards for men, women, and children.",
+    "h1": "Shoe Size Converter",
+    "p": "Convert shoe sizes between US, UK, EU, and international standards for men, women, and kids. Free online shoe size converter for global shopping and footwear retail."
+  },
+  {
+    "converterUnit": "Ring Size Converter",
+    "description": "Converts ring sizes between US, UK, EU, and other international ring sizing standards.",
+    "h1": "Ring Size Converter",
+    "p": "Convert ring sizes between US, UK, EU, French, Swiss, and Japanese standards. Free online ring size converter for jewelry shopping, gifting, and custom ring orders worldwide."
+  },
+  {
+    "converterUnit": "Horsepower to Animals Converter",
+    "description": "Converts horsepower into fun equivalents like the number of horses, hamsters, or other animals needed to match the power.",
+    "h1": "Horsepower to Animals Converter",
+    "p": "How many horses is your car's engine worth? Convert horsepower to fun animal equivalents — horses, hamsters, elephants, and more. A lighthearted power converter for curious minds."
+  }
+]
