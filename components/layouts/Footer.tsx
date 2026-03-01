@@ -836,6 +836,463 @@ const toolsByCategory = [
       },
     ],
   },
+  {
+    categoryName: "Unit Converters",
+    tools: [
+      {
+        name: "Length Converter",
+        href: "/unit-converters/length",
+      },
+      {
+        name: "Weight and Mass Converter",
+        href: "/unit-converters/weight-and-mass",
+      },
+      {
+        name: "Volume Converter",
+        href: "/unit-converters/volume",
+      },
+      {
+        name: "Temperature Converter",
+        href: "/unit-converters/temperature",
+      },
+      {
+        name: "Area Converter",
+        href: "/unit-converters/area",
+      },
+      {
+        name: "Pressure Converter",
+        href: "/unit-converters/pressure",
+      },
+      {
+        name: "Energy Converter",
+        href: "/unit-converters/energy",
+      },
+      {
+        name: "Power Converter",
+        href: "/unit-converters/power",
+      },
+      {
+        name: "Force Converter",
+        href: "/unit-converters/force",
+      },
+      {
+        name: "Time Converter",
+        href: "/unit-converters/time",
+      },
+      {
+        name: "Speed Converter",
+        href: "/unit-converters/speed",
+      },
+      {
+        name: "Angle Converter",
+        href: "/unit-converters/angle",
+      },
+      {
+        name: "Fuel Consumption Converter",
+        href: "/unit-converters/fuel-consumption",
+      },
+      {
+        name: "Data Storage Converter",
+        href: "/unit-converters/data-storage",
+      },
+      {
+        name: "Dry Volume Converter",
+        href: "/unit-converters/volume-dry",
+      },
+      {
+        name: "Angular Velocity Converter",
+        href: "/unit-converters/velocity-angular",
+      },
+      {
+        name: "Acceleration Converter",
+        href: "/unit-converters/acceleration",
+      },
+      {
+        name: "Angular Acceleration Converter",
+        href: "/unit-converters/acceleration-angular",
+      },
+      {
+        name: "Density Converter",
+        href: "/unit-converters/density",
+      },
+      {
+        name: "Specific Volume Converter",
+        href: "/unit-converters/specific-volume",
+      },
+      {
+        name: "Moment of Inertia Converter",
+        href: "/unit-converters/moment-of-inertia",
+      },
+      {
+        name: "Moment of Force Converter",
+        href: "/unit-converters/moment-of-force",
+      },
+      {
+        name: "Torque Converter",
+        href: "/unit-converters/torque",
+      },
+      {
+        name: "Fuel Efficiency by Mass Converter",
+        href: "/unit-converters/fuel-efficiency-mass",
+      },
+      {
+        name: "Fuel Efficiency by Volume Converter",
+        href: "/unit-converters/fuel-efficiency-volume",
+      },
+      {
+        name: "Temperature Interval Converter",
+        href: "/unit-converters/temperature-interval",
+      },
+      {
+        name: "Thermal Expansion Converter",
+        href: "/unit-converters/thermal-expansion",
+      },
+      {
+        name: "Thermal Resistance Converter",
+        href: "/unit-converters/thermal-resistance",
+      },
+      {
+        name: "Thermal Conductivity Converter",
+        href: "/unit-converters/thermal-conductivity",
+      },
+      {
+        name: "Specific Heat Capacity Converter",
+        href: "/unit-converters/specific-heat-capacity",
+      },
+      {
+        name: "Heat Density Converter",
+        href: "/unit-converters/heat-density",
+      },
+      {
+        name: "Heat Flux Density Converter",
+        href: "/unit-converters/heat-flux-density",
+      },
+      {
+        name: "Heat Transfer Coefficient Converter",
+        href: "/unit-converters/heat-transfer-coefficient",
+      },
+      {
+        name: "Volumetric Flow Rate Converter",
+        href: "/unit-converters/flow",
+      },
+      {
+        name: "Mass Flow Rate Converter",
+        href: "/unit-converters/flow-mass",
+      },
+      {
+        name: "Molar Flow Rate Converter",
+        href: "/unit-converters/flow-molar",
+      },
+      {
+        name: "Mass Flux Density Converter",
+        href: "/unit-converters/mass-flux-density",
+      },
+      {
+        name: "Molar Concentration Converter",
+        href: "/unit-converters/concentration-molar",
+      },
+      {
+        name: "Solution Concentration Converter",
+        href: "/unit-converters/concentration-solution",
+      },
+      {
+        name: "Dynamic Viscosity Converter",
+        href: "/unit-converters/viscosity-dynamic",
+      },
+      {
+        name: "Kinematic Viscosity Converter",
+        href: "/unit-converters/viscosity-kinematic",
+      },
+      {
+        name: "Surface Tension Converter",
+        href: "/unit-converters/surface-tension",
+      },
+      {
+        name: "Permeability Converter",
+        href: "/unit-converters/permeability",
+      },
+      {
+        name: "Luminance Converter",
+        href: "/unit-converters/luminance",
+      },
+      {
+        name: "Luminous Intensity Converter",
+        href: "/unit-converters/luminous-intensity",
+      },
+      {
+        name: "Illuminance Converter",
+        href: "/unit-converters/illumination",
+      },
+      {
+        name: "Digital Image Resolution Converter",
+        href: "/unit-converters/digital-image-resolution",
+      },
+      {
+        name: "Frequency Converter",
+        href: "/unit-converters/frequency",
+      },
+      {
+        name: "Wavelength Converter",
+        href: "/unit-converters/wavelength",
+      },
+      {
+        name: "Electric Charge Converter",
+        href: "/unit-converters/charge",
+      },
+      {
+        name: "Linear Charge Density Converter",
+        href: "/unit-converters/linear-charge-density",
+      },
+      {
+        name: "Surface Charge Density Converter",
+        href: "/unit-converters/surface-charge-density",
+      },
+      {
+        name: "Volume Charge Density Converter",
+        href: "/unit-converters/volume-charge-density",
+      },
+      {
+        name: "Electric Current Converter",
+        href: "/unit-converters/current",
+      },
+      {
+        name: "Linear Current Density Converter",
+        href: "/unit-converters/linear-current-density",
+      },
+      {
+        name: "Surface Current Density Converter",
+        href: "/unit-converters/surface-current-density",
+      },
+      {
+        name: "Electric Field Strength Converter",
+        href: "/unit-converters/electric-field-strength",
+      },
+      {
+        name: "Electric Potential Converter",
+        href: "/unit-converters/electric-potential",
+      },
+      {
+        name: "Electric Resistance Converter",
+        href: "/unit-converters/electric-resistance",
+      },
+      {
+        name: "Electric Resistivity Converter",
+        href: "/unit-converters/electric-resistivity",
+      },
+      {
+        name: "Electric Conductance Converter",
+        href: "/unit-converters/electric-conductance",
+      },
+      {
+        name: "Electric Conductivity Converter",
+        href: "/unit-converters/electric-conductivity",
+      },
+      {
+        name: "Capacitance Converter",
+        href: "/unit-converters/electrostatic-capacitance",
+      },
+      {
+        name: "Inductance Converter",
+        href: "/unit-converters/inductance",
+      },
+      {
+        name: "Magnetomotive Force Converter",
+        href: "/unit-converters/magnetomotive-force",
+      },
+      {
+        name: "Magnetic Field Strength Converter",
+        href: "/unit-converters/magnetic-field-strength",
+      },
+      {
+        name: "Magnetic Flux Converter",
+        href: "/unit-converters/magnetic-flux",
+      },
+      {
+        name: "Magnetic Flux Density Converter",
+        href: "/unit-converters/magnetic-flux-density",
+      },
+      {
+        name: "Rebar Weight Calculator",
+        href: "/unit-converters/rebar-weight-calculator",
+      },
+      {
+        name: "Concrete Volume Calculator & Converter",
+        href: "/unit-converters/concrete-volume-converter",
+      },
+      {
+        name: "Concrete Mix Ratio Calculator",
+        href: "/unit-converters/concrete-mix-ratio-converter",
+      },
+      {
+        name: "Brick Calculator",
+        href: "/unit-converters/brick-calculator",
+      },
+      {
+        name: "Tile Calculator",
+        href: "/unit-converters/tile-calculator",
+      },
+      {
+        name: "Cement, Sand & Aggregate Calculator",
+        href: "/unit-converters/cement-sand-aggregate-converter",
+      },
+      {
+        name: "Lumber Board Feet Calculator",
+        href: "/unit-converters/lumber-board-feet-converter",
+      },
+      {
+        name: "Floor Area Converter",
+        href: "/unit-converters/floor-area-converter",
+      },
+      {
+        name: "Roofing Sheet Coverage Calculator",
+        href: "/unit-converters/roofing-sheet-coverage-converter",
+      },
+      {
+        name: "Cups to Grams Converter",
+        href: "/unit-converters/cups-to-grams",
+      },
+      {
+        name: "Cups to ml Converter",
+        href: "/unit-converters/cups-to-ml",
+      },
+      {
+        name: "Oven Temperature Converter",
+        href: "/unit-converters/oven-temperature-converter",
+      },
+      {
+        name: "Baking Pan Size Converter",
+        href: "/unit-converters/baking-pan-size-converter",
+      },
+      {
+        name: "Ingredient Density Converter",
+        href: "/unit-converters/ingredient-density-converter",
+      },
+      {
+        name: "Sourdough Hydration Calculator",
+        href: "/unit-converters/sourdough-hydration-converter",
+      },
+      {
+        name: "Image DPI Converter",
+        href: "/unit-converters/image-dpi-converter",
+      },
+      {
+        name: "Video Frame Rate Converter",
+        href: "/unit-converters/video-frame-rate-converter",
+      },
+      {
+        name: "Audio Bitrate Converter",
+        href: "/unit-converters/audio-bitrate-converter",
+      },
+      {
+        name: "Unix Timestamp Converter",
+        href: "/unit-converters/unix-timestamp-converter",
+      },
+      {
+        name: "Time Duration Calculator",
+        href: "/unit-converters/time-duration-calculator",
+      },
+      {
+        name: "Age Calculator",
+        href: "/unit-converters/age-calculator",
+      },
+      {
+        name: "Date Difference Calculator",
+        href: "/unit-converters/date-difference-calculator",
+      },
+      {
+        name: "Light-Years to Parsecs Converter",
+        href: "/unit-converters/light-years-to-parsecs",
+      },
+      {
+        name: "Astronomical Unit (AU) Converter",
+        href: "/unit-converters/astronomical-unit-converter",
+      },
+      {
+        name: "Apparent Magnitude Converter",
+        href: "/unit-converters/apparent-magnitude-converter",
+      },
+      {
+        name: "Planet Weight Calculator",
+        href: "/unit-converters/planet-weight-converter",
+      },
+      {
+        name: "Radiation Dose Converter",
+        href: "/unit-converters/radiation-dose-converter",
+      },
+      {
+        name: "Radioactivity Converter",
+        href: "/unit-converters/radioactivity-converter",
+      },
+      {
+        name: "Radiation Exposure Dose Converter",
+        href: "/unit-converters/exposure-dose-converter",
+      },
+      {
+        name: "Sound Pressure Converter — Pa to dB",
+        href: "/unit-converters/sound-pressure-pa-to-db",
+      },
+      {
+        name: "Frequency to Musical Note Converter",
+        href: "/unit-converters/frequency-to-musical-note-converter",
+      },
+      {
+        name: "Wind Speed Converter",
+        href: "/unit-converters/wind-speed-converter",
+      },
+      {
+        name: "Rainfall Converter",
+        href: "/unit-converters/rainfall-converter",
+      },
+      {
+        name: "Humidity Ratio Converter",
+        href: "/unit-converters/humidity-ratio-converter",
+      },
+      {
+        name: "Dew Point Calculator",
+        href: "/unit-converters/dew-point-calculator",
+      },
+      {
+        name: "Fabric GSM Converter",
+        href: "/unit-converters/fabric-gsm-converter",
+      },
+      {
+        name: "Thread Count Converter",
+        href: "/unit-converters/thread-count-converter",
+      },
+      {
+        name: "Clothing Size Converter",
+        href: "/unit-converters/clothing-size-converter",
+      },
+      {
+        name: "BMI Calculator — Body Mass Index",
+        href: "/unit-converters/bmi-calculator",
+      },
+      {
+        name: "Calorie Burn Rate Calculator",
+        href: "/unit-converters/calorie-burn-rate-converter",
+      },
+      {
+        name: "Running Pace to Speed Converter",
+        href: "/unit-converters/running-pace-to-speed-converter",
+      },
+      {
+        name: "Height Converter — cm to ft & In",
+        href: "/unit-converters/height-converter",
+      },
+      {
+        name: "Shoe Size Converter",
+        href: "/unit-converters/shoe-size-converter",
+      },
+      {
+        name: "Ring Size Converter",
+        href: "/unit-converters/ring-size-converter",
+      },
+      {
+        name: "Horsepower to Animals Converter",
+        href: "/unit-converters/horsepower-to-animals-converter",
+      },
+    ],
+  },
 ];
 
 export default function Footer() {
