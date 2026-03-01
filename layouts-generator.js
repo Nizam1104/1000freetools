@@ -457,7 +457,7 @@ const toolMetadata = {
 };
 
 const generateLayout = (toolName, { h1, p }) => {
-  const canonical = `https://1000freetools.com/json-tools/${toolName}`;
+  const canonical = `https://1000freetools.com/unit-converters/${toolName}`;
 
   return `import type { Metadata } from "next";
 
