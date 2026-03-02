@@ -14,7 +14,7 @@ export default function WorkoutRestTimer() {
   const [isTiming, setIsTiming] = useState(false);
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [results, setResults] = useState<{
-    recommendedRest: number;
+    rest: number;
     explanation: string;
   } | null>(null);
 
@@ -114,17 +114,17 @@ export default function WorkoutRestTimer() {
               <div className="p-4 bg-muted rounded-md space-y-4">
                 <div>
                   <p className="text-sm text-muted-foreground">Recommended Rest</p>
-                  <p className="text-4xl font-bold">{formatTime(results.recommendedRest)}</p>
+                  <p className="text-4xl font-bold">{formatTime(results.rest)}</p>
                   <p className="text-sm text-muted-foreground mt-2">{results.explanation}</p>
                 </div>
 
                 <div className="flex gap-2">
-                  <Button onClick={() => startTimer(results.recommendedRest)}>
+                  <Button onClick={() => startTimer(results.rest)}>
                     Start Timer
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => startTimer(results.recommendedRest)}
+                    onClick={() => startTimer(results.rest)}
                     disabled={isTiming}
                   >
                     Restart

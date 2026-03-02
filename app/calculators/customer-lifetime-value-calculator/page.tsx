@@ -1,0 +1,272 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Info, TrendingUp, Users, DollarSign } from "lucide-react";
+
+interface CLVResult {
+  clv: number;
+  grossMargin: number;
+  monthsToProfit: number;
+  recommendedCAC: number;
+}
+
+export default function CustomerLifetimeValueCalculatorPage() {
+  const [avgPurchaseValue, setAvgPurchaseValue] = useState<string>("");
+  const [purchaseFrequency, setPurchaseFrequency] = useState<string>("");
+  const [customerLifespan, setCustomerLifespan] = useState<string>("");
+  const [grossMargin, setGrossMargin] = useState<string>("50");
+  const [frequencyUnit, setFrequencyUnit] = useState<"monthly" | "quarterly" | "annually">("monthly");
+  const [lifespanUnit, setLifespanUnit] = useState<"months" | "years">("years");
+  const [result, setResult] = useState<CLVResult | null>(null);
+
+  const calculateCLV = () => {
+    const avgValue = parseFloat(avgPurchaseValue);
+    const frequency = parseFloat(purchaseFrequency);
+    const lifespan = parseFloat(customerLifespan);
+    const margin = parseFloat(grossMargin) || 50;
+
+    if (isNaN(avgValue) || isNaN(frequency) || isNaN(lifespan) || avgValue === 0) {
+      return;
+    }
+
+    let annualFrequency: number;
+    switch (frequencyUnit) {
+      case "monthly":
+        annualFrequency = frequency * 12;
+        break;
+      case "quarterly":
+        annualFrequency = frequency * 4;
+        break;
+      default:
+        annualFrequency = frequency;
+    }
+
+    const annualRevenue = avgValue * annualFrequency;
+
+    let lifespanInYears: number;
+    if (lifespanUnit === "months") {
+      lifespanInYears = lifespan / 12;
+    } else {
+      lifespanInYears = lifespan;
+    }
+
+    const clv = annualRevenue * lifespanInYears * (margin / 100);
+    const grossCLV = annualRevenue * lifespanInYears;
+    const monthsToProfit = Math.ceil((avgValue * (margin / 100)) > 0 ? 1 : 12);
+    const recommendedCAC = clv * 0.33;
+
+    setResult({
+      clv: Math.round(clv * 100) / 100,
+      grossMargin: Math.round(grossCLV * 100) / 100,
+      monthsToProfit,
+      recommendedCAC: Math.round(recommendedCAC * 100) / 100,
+    });
+  };
+
+  const reset = () => {
+    setAvgPurchaseValue("");
+    setPurchaseFrequency("");
+    setCustomerLifespan("");
+    setGrossMargin("50");
+    setResult(null);
+  };
+
+  useEffect(() => {
+    calculateCLV();
+  }, [avgPurchaseValue, purchaseFrequency, customerLifespan, grossMargin, frequencyUnit, lifespanUnit]);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8 max-w-5xl">
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">Customer Lifetime Value (CLV) Calculator – Measure Customer Worth</h1>
+          <p className="text-muted-foreground">
+            Calculate the total value a customer brings to your business with our Customer Lifetime Value Calculator. Essential for determining marketing budgets, customer acquisition costs, and business growth strategies.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-6 mb-6">
+          <Card className="lg:col-span-2">
+            <CardContent className="p-6 space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Customer Metrics</h3>
+                <div className="grid sm:grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="avgValue">Avg Purchase Value ($)</Label>
+                    <Input
+                      id="avgValue"
+                      type="number"
+                      placeholder="e.g., 50"
+                      value={avgPurchaseValue}
+                      onChange={(e) => setAvgPurchaseValue(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="frequency">Purchase Frequency</Label>
+                    <div className="flex gap-2">
+                      <Input
+                        id="frequency"
+                        type="number"
+                        placeholder="e.g., 2"
+                        value={purchaseFrequency}
+                        onChange={(e) => setPurchaseFrequency(e.target.value)}
+                        className="flex-1"
+                      />
+                      <select
+                        value={frequencyUnit}
+                        onChange={(e) => setFrequencyUnit(e.target.value as "monthly" | "quarterly" | "annually")}
+                        className="h-10 px-2 border rounded-md bg-background text-sm"
+                      >
+                        <option value="monthly">/month</option>
+                        <option value="quarterly">/quarter</option>
+                        <option value="annually">/year</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="lifespan">Customer Lifespan</Label>
+                    <div className="flex gap-2">
+                      <Input
+                        id="lifespan"
+                        type="number"
+                        placeholder="e.g., 3"
+                        value={customerLifespan}
+                        onChange={(e) => setCustomerLifespan(e.target.value)}
+                        className="flex-1"
+                      />
+                      <select
+                        value={lifespanUnit}
+                        onChange={(e) => setLifespanUnit(e.target.value as "months" | "years")}
+                        className="h-10 px-2 border rounded-md bg-background text-sm"
+                      >
+                        <option value="years">years</option>
+                        <option value="months">months</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="margin">Gross Margin (%)</Label>
+                <Input
+                  id="margin"
+                  type="number"
+                  placeholder="e.g., 50"
+                  value={grossMargin}
+                  onChange={(e) => setGrossMargin(e.target.value)}
+                />
+                <p className="text-xs text-muted-foreground">
+                  Typical margins: Retail 30-50%, SaaS 70-90%, Services 50-80%
+                </p>
+              </div>
+
+              <Alert>
+                <Info className="h-4 w-4" />
+                <AlertDescription className="text-sm">
+                  CLV helps determine how much you can spend on customer acquisition while remaining profitable.
+                </AlertDescription>
+              </Alert>
+
+              <div className="flex gap-2 pt-4">
+                <Button onClick={calculateCLV} className="flex-1">
+                  Calculate CLV
+                </Button>
+                <Button variant="outline" onClick={reset}>
+                  Reset
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Results</h3>
+              {result ? (
+                <div className="space-y-4">
+                  <div className="p-4 bg-primary/10 rounded-lg">
+                    <p className="text-sm text-muted-foreground">Customer Lifetime Value</p>
+                    <p className="text-4xl font-bold text-primary">${result.clv}</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 bg-muted rounded-lg">
+                      <p className="text-xs text-muted-foreground flex items-center gap-1">
+                        <DollarSign className="h-3 w-3" />
+                        Gross Revenue
+                      </p>
+                      <p className="text-lg font-bold">${result.grossMargin}</p>
+                    </div>
+                    <div className="p-3 bg-muted rounded-lg">
+                      <p className="text-xs text-muted-foreground flex items-center gap-1">
+                        <TrendingUp className="h-3 w-3" />
+                        Max CAC (33%)
+                      </p>
+                      <p className="text-lg font-bold">${result.recommendedCAC}</p>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-green-500/10 rounded-lg">
+                    <p className="text-xs text-muted-foreground">Break-even Timeline</p>
+                    <p className="text-lg font-bold text-green-500">~{result.monthsToProfit} month(s)</p>
+                  </div>
+
+                  <div className="text-xs text-muted-foreground pt-4 border-t">
+                    <p><strong>Formula:</strong></p>
+                    <p className="font-mono text-xs mt-1">CLV = Avg Value × Frequency × Lifespan × Margin%</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <Users className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                  <p>Enter customer metrics to calculate CLV</p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">Understanding CLV</h3>
+            <div className="grid md:grid-cols-3 gap-6 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-semibold mb-2">Why CLV Matters</h4>
+                <ul className="space-y-2">
+                  <li>• Determines sustainable CAC</li>
+                  <li>• Guides marketing budget decisions</li>
+                  <li>• Identifies valuable customer segments</li>
+                  <li>• Measures retention effectiveness</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">CAC Guidelines</h4>
+                <ul className="space-y-2">
+                  <li>• <strong>Ideal:</strong> CAC &lt; 33% of CLV</li>
+                  <li>• <strong>Acceptable:</strong> CAC &lt; 50% of CLV</li>
+                  <li>• <strong>Warning:</strong> CAC &gt; 50% of CLV</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">Improving CLV</h4>
+                <ul className="space-y-2">
+                  <li>• Increase purchase frequency</li>
+                  <li>• Raise average order value</li>
+                  <li>• Extend customer lifespan</li>
+                  <li>• Improve retention rates</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}

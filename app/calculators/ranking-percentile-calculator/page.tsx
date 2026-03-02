@@ -1,0 +1,198 @@
+"use client";
+
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+export default function RankingPercentileCalculatorPage() {
+  const [rank, setRank] = useState<string>("");
+  const [totalStudents, setTotalStudents] = useState<string>("");
+  const [result, setResult] = useState<{
+    percentile: number;
+    percentage: number;
+    status: string;
+    topPercent: number;
+  } | null>(null);
+
+  const calculate = () => {
+    const rankNum = parseInt(rank);
+    const totalNum = parseInt(totalStudents);
+
+    if (isNaN(rankNum) || isNaN(totalNum) || rankNum <= 0 || totalNum <= 0 || rankNum > totalNum) return;
+
+    // Percentile formula: ((Total - Rank) / Total) × 100
+    // This gives the percentage of students you scored better than
+    const percentile = ((totalNum - rankNum) / totalNum) * 100;
+    const roundedPercentile = Math.round(percentile * 100) / 100;
+
+    // Percentage (your position as a percentage)
+    const percentage = (rankNum / totalNum) * 100;
+    const roundedPercentage = Math.round(percentage * 100) / 100;
+
+    // Top X%
+    const topPercent = roundedPercentage;
+
+    // Status based on percentile
+    let status = "";
+    if (roundedPercentile >= 99) status = "Exceptional - Top 1%";
+    else if (roundedPercentile >= 95) status = "Outstanding - Top 5%";
+    else if (roundedPercentile >= 90) status = "Excellent - Top 10%";
+    else if (roundedPercentile >= 80) status = "Very Good - Top 20%";
+    else if (roundedPercentile >= 70) status = "Good - Top 30%";
+    else if (roundedPercentile >= 50) status = "Above Average";
+    else if (roundedPercentile >= 30) status = "Average";
+    else status = "Below Average";
+
+    setResult({
+      percentile: roundedPercentile,
+      percentage: roundedPercentage,
+      status,
+      topPercent: roundedPercentage,
+    });
+  };
+
+  const reset = () => {
+    setRank("");
+    setTotalStudents("");
+    setResult(null);
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Ranking Percentile Calculator – Find Your Percentile Rank in Class or Exam
+          </h1>
+          <p className="text-muted-foreground">
+            Find out where you stand among your peers with our Ranking Percentile Calculator.
+            Enter your rank and total number of students to instantly calculate your percentile —
+            useful for competitive exams, university admissions, and class rankings.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardContent className="p-6 space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="rank">Your Rank</Label>
+                <Input
+                  id="rank"
+                  type="number"
+                  placeholder="e.g., 15"
+                  value={rank}
+                  onChange={(e) => setRank(e.target.value)}
+                />
+                <p className="text-xs text-muted-foreground">
+                  1 = highest rank (top of class)
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="total">Total Students</Label>
+                <Input
+                  id="total"
+                  type="number"
+                  placeholder="e.g., 200"
+                  value={totalStudents}
+                  onChange={(e) => setTotalStudents(e.target.value)}
+                />
+              </div>
+
+              <div className="flex gap-2 pt-4">
+                <Button onClick={calculate} className="flex-1">
+                  Calculate
+                </Button>
+                <Button variant="outline" onClick={reset}>
+                  Reset
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Ranking Results</h3>
+              {result ? (
+                <div className="space-y-4">
+                  <div className="p-4 bg-primary/10 rounded-lg">
+                    <p className="text-sm text-muted-foreground">Percentile Rank</p>
+                    <p className="text-4xl font-bold text-primary">{result.percentile}th Percentile</p>
+                    <p className="text-sm text-muted-foreground mt-1">{result.status}</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-4 bg-muted rounded-lg">
+                      <p className="text-sm text-muted-foreground">Position</p>
+                      <p className="text-2xl font-bold">Top {result.topPercent}%</p>
+                    </div>
+                    <div className="p-4 bg-muted rounded-lg">
+                      <p className="text-sm text-muted-foreground">Rank</p>
+                      <p className="text-2xl font-bold">#{rank}</p>
+                      <p className="text-xs text-muted-foreground">of {totalStudents}</p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-muted rounded-lg">
+                    <p className="text-sm text-muted-foreground">Interpretation</p>
+                    <p className="text-lg mt-1">
+                      You scored better than <span className="font-bold text-primary">{result.percentile}%</span> of students
+                    </p>
+                  </div>
+
+                  <div className="border-t pt-4">
+                    <h4 className="font-semibold mb-2 text-sm">Percentile Reference</h4>
+                    <div className="space-y-1 text-sm">
+                      <div className="flex justify-between">
+                        <span>99th percentile</span>
+                        <span>Top 1%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>95th percentile</span>
+                        <span>Top 5%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>90th percentile</span>
+                        <span>Top 10%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>75th percentile</span>
+                        <span>Top 25%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>50th percentile</span>
+                        <span>Median (Top 50%)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>Enter your rank and click Calculate to see results</p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h3 className="text-lg font-semibold mb-3">Understanding Percentiles</h3>
+          <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
+            <div>Percentile = ((Total Students - Your Rank) ÷ Total Students) × 100</div>
+          </div>
+          <p className="text-muted-foreground text-sm mt-3">
+            <strong>Example:</strong> Rank 15 out of 200 students<br />
+            Percentile = ((200 - 15) / 200) × 100 = 92.5th percentile<br />
+            This means you scored better than 92.5% of students.
+          </p>
+          <p className="text-muted-foreground text-sm mt-2">
+            <strong>Note:</strong> A higher percentile is better. 99th percentile means you're in
+            the top 1% of all students.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
