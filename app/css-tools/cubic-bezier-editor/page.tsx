@@ -284,6 +284,90 @@ export default function CubicBezierEditorPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What Is Cubic Bezier?</h2>
+          <p className="text-muted-foreground mb-4">
+            Cubic bezier curves define custom easing functions for CSS transitions and animations. 
+            Instead of linear or ease, you create your own acceleration curve.
+          </p>
+          <p className="text-muted-foreground">
+            The curve has four values: two control points that shape the curve. This editor lets 
+            you drag the points and see the result in real-time.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Understanding the Values</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <code className="block p-4 bg-muted rounded-lg text-sm font-mono mb-4">
+                cubic-bezier(x1, y1, x2, y2)
+              </code>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <span className="font-mono bg-muted px-2 rounded">x1, x2</span>
+                  <span>Control point horizontal positions. Usually stay between 0 and 1.</span>
+                </div>
+                <div className="flex gap-3">
+                  <span className="font-mono bg-muted px-2 rounded">y1, y2</span>
+                  <span>Control point vertical positions. Can go outside 0-1 for bounce effects.</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Easing Functions</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Ease (default)</h3>
+                <code className="block p-2 bg-muted rounded text-sm font-mono mb-2">cubic-bezier(0.25, 0.1, 0.25, 1)</code>
+                <p className="text-sm text-muted-foreground">Starts slow, speeds up, slows down at the end.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Ease-in-out</h3>
+                <code className="block p-2 bg-muted rounded text-sm font-mono mb-2">cubic-bezier(0.42, 0, 0.58, 1)</code>
+                <p className="text-sm text-muted-foreground">Symmetric slow start and end. Smooth and professional.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Ease-out</h3>
+                <code className="block p-2 bg-muted rounded text-sm font-mono mb-2">cubic-bezier(0, 0, 0.58, 1)</code>
+                <p className="text-sm text-muted-foreground">Starts fast, slows down at the end. Good for entering elements.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Custom bounce</h3>
+                <code className="block p-2 bg-muted rounded text-sm font-mono mb-2">cubic-bezier(0.68, -0.55, 0.265, 1.55)</code>
+                <p className="text-sm text-muted-foreground">Overshoots and bounces back. Playful but use sparingly.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Tips</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Keep x values between 0-1:</strong> Outside values can cause the animation to go backwards</li>
+                <li><strong>Use y values for character:</strong> Negative y1 creates delay, y2 over 1 creates overshoot</li>
+                <li><strong>Test with UI elements:</strong> What looks good on a graph might feel wrong in motion</li>
+                <li><strong>Match your brand:</strong> Snappy curves for energetic brands, smooth curves for professional</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
     </div>
   );
 }

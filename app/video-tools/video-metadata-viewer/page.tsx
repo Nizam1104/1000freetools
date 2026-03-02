@@ -395,7 +395,7 @@ export default function ShowVideoAudioMetadata() {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             name: "Free Online Video & Audio Metadata Viewer",
-            url: "https://1000freetools.com/video-tools/show-video-audio-metadata",
+            url: "https://1000freetools.com/video-tools/video-metadata-viewer",
             description:
               "Free online tool to view detailed metadata from video and audio files. Check codec, resolution, bitrate, frame rate, and more — all in your browser with no uploads required.",
             applicationCategory: "MultimediaApplication",

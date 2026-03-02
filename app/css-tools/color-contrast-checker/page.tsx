@@ -379,15 +379,22 @@ export default function ColorContrastCheckerPage() {
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Understanding WCAG Contrast Requirements</h2>
-          <div className="prose prose-sm max-w-none text-muted-foreground">
-            <p className="mb-4">
-              The Web Content Accessibility Guidelines (WCAG) define minimum contrast requirements to ensure 
-              text is readable for all users, including those with visual impairments.
-            </p>
-          </div>
+          <h2 className="text-2xl font-semibold mb-4">Why Contrast Matters</h2>
+          <p className="text-muted-foreground mb-4">
+            Low contrast text is hard to read for everyone, and impossible for some
+            users with visual impairments. WCAG (Web Content Accessibility Guidelines)
+            sets minimum contrast ratios to ensure text is readable.
+          </p>
+          <p className="text-muted-foreground">
+            This checker calculates the contrast ratio between your foreground and
+            background colors, then tells you if they pass WCAG AA and AAA standards
+            for normal and large text.
+          </p>
+        </section>
 
-          <div className="grid gap-4 md:grid-cols-2 mt-6">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">WCAG Requirements</h2>
+          <div className="grid gap-4 md:grid-cols-2">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Level AA (Minimum)</CardTitle>
@@ -401,16 +408,14 @@ export default function ColorContrastCheckerPage() {
                   <span>Large text (18pt+):</span>
                   <span className="font-semibold">3:1</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Large bold text (14pt+):</span>
-                  <span className="font-semibold">3:1</span>
-                </div>
+                <p className="text-muted-foreground mt-2">
+                  Required for most websites.
+                </p>
               </CardContent>
             </Card>
-
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Level AAA ( Enhanced)</CardTitle>
+                <CardTitle className="text-lg">Level AAA (Enhanced)</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <div className="flex justify-between">
@@ -421,10 +426,9 @@ export default function ColorContrastCheckerPage() {
                   <span>Large text (18pt+):</span>
                   <span className="font-semibold">4.5:1</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Large bold text (14pt+):</span>
-                  <span className="font-semibold">4.5:1</span>
-                </div>
+                <p className="text-muted-foreground mt-2">
+                  Best practice for public content.
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -432,19 +436,94 @@ export default function ColorContrastCheckerPage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Tips for Better Contrast</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[
-              { title: "Dark on Light", desc: "Use dark text on light backgrounds for maximum readability." },
-              { title: "Avoid Pure Black", desc: "Use #1a1a1a or #333 instead of #000 for reduced eye strain." },
-              { title: "Test in Grayscale", desc: "If it works in grayscale, it'll work for colorblind users." },
-            ].map((tip) => (
-              <Card key={tip.title}>
-                <CardContent className="pt-6">
-                  <h3 className="font-semibold mb-2">{tip.title}</h3>
-                  <p className="text-sm text-muted-foreground">{tip.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Dark text on light backgrounds</h3>
+                <p className="text-sm text-muted-foreground">
+                  Safest choice for readability. Near-black (#1a1a1a) on near-white
+                  (#fafafa) passes all requirements with room to spare.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Avoid pure black on pure white</h3>
+                <p className="text-sm text-muted-foreground">
+                  #000 on #fff has maximum contrast but causes eye strain. Use #1a1a1a
+                  or #333 for reduced glare while still passing AAA.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Test in grayscale</h3>
+                <p className="text-sm text-muted-foreground">
+                  If your design works in black and white, it'll work for colorblind
+                  users. Remove color and check if text is still readable.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">4</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Don't rely on color alone</h3>
+                <p className="text-sm text-muted-foreground">
+                  Links should have underlines or other indicators. Error states need
+                  icons or text, not just red coloring.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">What counts as "large text"?</h3>
+                <p className="text-sm text-muted-foreground">
+                  18pt (24px) or larger, or 14pt (18.5px) bold. Headings usually
+                  qualify, body text doesn't. UI components like buttons have their
+                  own considerations.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">
+                  Do disabled elements need contrast?
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  WCAG 2.1 doesn't require contrast for disabled elements, but WCAG
+                  2.2 adds requirements. Best practice is to ensure they're still
+                  readable.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">
+                  What about logos and incidental text?
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Logos, decorative text, and inactive UI components are exempt. But
+                  if the text conveys information, it should be readable.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

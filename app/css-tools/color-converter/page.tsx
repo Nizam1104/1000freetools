@@ -414,42 +414,185 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
+          <h2 className="text-2xl font-semibold mb-4">Why Color Formats Matter</h2>
+          <p className="text-muted-foreground mb-4">
+            Different tools and contexts need different color formats. Designers think in HSL. 
+            Developers copy hex codes from Figma. Print designers need CMYK. Modern CSS supports 
+            OKLCH for perceptually uniform color spaces.
+          </p>
+          <p className="text-muted-foreground">
+            This converter shows you all formats at once. Change one value and everything updates. 
+            No mental math, no switching between tabs.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-2xl font-semibold mb-4">Color Format Reference</h2>
           <div className="grid gap-4 md:grid-cols-2">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">HEX (Hexadecimal)</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                <p>Six-digit hexadecimal representation of RGB values. Most common in web design and CSS.</p>
-                <code className="block mt-2 bg-muted p-2 rounded">#RRGGBB</code>
+              <CardContent className="space-y-2">
+                <code className="block p-2 bg-muted rounded text-sm font-mono">#6366f1</code>
+                <p className="text-sm text-muted-foreground">
+                  Six-digit code representing red, green, and blue values. The standard for web design. 
+                  Short form (#63f) works when pairs repeat (#6633ff).
+                </p>
               </CardContent>
             </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">RGB (Red Green Blue)</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                <p>Additive color model used by screens. Values range from 0-255 for each channel.</p>
-                <code className="block mt-2 bg-muted p-2 rounded">rgb(255, 0, 0)</code>
+              <CardContent className="space-y-2">
+                <code className="block p-2 bg-muted rounded text-sm font-mono">rgb(99, 102, 241)</code>
+                <p className="text-sm text-muted-foreground">
+                  Additive color model - screens mix red, green, and blue light. Each channel ranges 
+                  from 0 to 255. Add alpha for transparency: <code className="bg-muted px-1">rgba(99, 102, 241, 0.5)</code>
+                </p>
               </CardContent>
             </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">HSL (Hue Saturation Lightness)</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                <p>More intuitive than RGB. Hue is degrees (0-360), saturation and lightness are percentages.</p>
-                <code className="block mt-2 bg-muted p-2 rounded">hsl(360, 100%, 50%)</code>
+              <CardContent className="space-y-2">
+                <code className="block p-2 bg-muted rounded text-sm font-mono">hsl(239, 84%, 67%)</code>
+                <p className="text-sm text-muted-foreground">
+                  More intuitive than RGB. Hue is the color (0-360 degrees), saturation is intensity 
+                  (0-100%), lightness is brightness (0-100%). Easier to adjust mentally.
+                </p>
               </CardContent>
             </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">OKLCH (Perceptual Color)</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                <p>Modern color space designed for perceptual uniformity. Best for smooth color transitions.</p>
-                <code className="block mt-2 bg-muted p-2 rounded">oklch(0.5, 0.2, 280)</code>
+              <CardContent className="space-y-2">
+                <code className="block p-2 bg-muted rounded text-sm font-mono">oklch(0.55, 0.2, 280)</code>
+                <p className="text-sm text-muted-foreground">
+                  Modern color space designed for perceptual uniformity. Equal changes in values 
+                  produce equal perceived changes. Best for smooth transitions and accessible palettes.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">HSV (Hue Saturation Value)</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <code className="block p-2 bg-muted rounded text-sm font-mono">hsv(239, 59%, 95%)</code>
+                <p className="text-sm text-muted-foreground">
+                  Similar to HSL but "value" represents brightness differently. Common in color 
+                  pickers and design tools. Value is the maximum RGB component.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">CMYK (Cyan Magenta Yellow Key)</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <code className="block p-2 bg-muted rounded text-sm font-mono">cmyk(59%, 58%, 0%, 5%)</code>
+                <p className="text-sm text-muted-foreground">
+                  Subtractive color model for print. Ink absorbs light - more color means darker 
+                  results. The "key" (black) channel adds depth and saves on colored ink.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">When to Use Each Format</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">HEX for quick styling</h3>
+                <p className="text-sm text-muted-foreground">
+                  Short, copy-paste friendly, universally supported. Use for solid colors in CSS 
+                  and when sharing colors with other developers.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">HSL for adjustments</h3>
+                <p className="text-sm text-muted-foreground">
+                  Need a darker version? Reduce lightness. Want it less saturated? Lower the 
+                  saturation. Much easier than guessing hex values.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">RGB/RGBA for transparency</h3>
+                <p className="text-sm text-muted-foreground">
+                  When you need alpha channels and older browser support. RGBA works everywhere, 
+                  unlike the newer hex-with-alpha syntax.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">4</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">OKLCH for modern projects</h3>
+                <p className="text-sm text-muted-foreground">
+                  If you're building something new and don't need legacy support, OKLCH produces 
+                  more natural color scales and gradients.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Why do colors look different on different screens?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Monitor calibration, color profiles, and display technology all affect how colors 
+                  appear. sRGB is the web standard, but wide-gamut displays show more saturated colors. 
+                  Always test on multiple devices.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">What's the deal with OKLCH?</h3>
+                <p className="text-sm text-muted-foreground">
+                  OKLCH is based on human color perception, not how screens emit light. Two colors 
+                  with the same L value appear equally light to human eyes. This makes it ideal for 
+                  generating accessible color scales.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Can I convert CMYK back to RGB perfectly?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Not exactly. CMYK has a smaller color gamut than RGB. Some vibrant screen colors 
+                  can't be reproduced in print. The conversion is an approximation.
+                </p>
               </CardContent>
             </Card>
           </div>

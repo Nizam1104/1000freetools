@@ -638,6 +638,213 @@ export default function CSSPlaygroundPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What Is CSS Playground?</h2>
+          <p className="text-muted-foreground mb-4">
+            CSS Playground is a visual CSS generator that lets you build styles without writing code from scratch.
+            Adjust sliders, pick colors, and toggle options to see your changes in real-time.
+          </p>
+          <p className="text-muted-foreground">
+            It's perfect for learning CSS properties, prototyping designs quickly, or generating boilerplate
+            code you can customize later. No CSS knowledge required, but helpful for understanding what each
+            property does.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What You Can Build</h2>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Buttons</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Create custom buttons with hover effects, rounded corners, and shadows. Export the CSS
+                and reuse across your project.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Cards</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Design content cards with proper padding, borders, and background colors. Great for
+                product displays and blog posts.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Badges</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Build status badges, labels, and tags with custom colors and rounded corners.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Containers</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Set up reusable container styles with proper spacing, max-width, and background treatments.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Typography</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Experiment with font sizes, weights, line heights, and letter spacing to find the
+                perfect text styles.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Boxes & Frames</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Create decorative boxes, frames, and dividers with custom borders and shadows.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Understanding CSS Properties</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Box Model</h3>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Every element is a box with content, padding, border, and margin. This playground
+                  lets you adjust each layer visually.
+                </p>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono">
+                  {`/* Box structure */
+content → padding → border → margin`}
+                </code>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Typography</h3>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Font properties control how text looks. Font-size sets the size, font-weight
+                  controls thickness, and line-height affects readability.
+                </p>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono">
+                  {`font-size: 16px;
+font-weight: 600;
+line-height: 1.5;`}
+                </code>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Display & Position</h3>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Display controls how elements flow (block, inline, flex, grid). Position determines
+                  how they're placed (static, relative, absolute, fixed, sticky).
+                </p>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono">
+                  {`display: flex;
+position: relative;`}
+                </code>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Tips for Better CSS</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Start with defaults</h3>
+                <p className="text-sm text-muted-foreground">
+                  Use the preset template as a starting point. Adjust one property at a time to see
+                  its effect clearly.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Use semantic class names</h3>
+                <p className="text-sm text-muted-foreground">
+                  Instead of <code className="bg-muted px-1 rounded">.blue-box</code>, use
+                  <code className="bg-muted px-1 rounded">.card</code> or <code className="bg-muted px-1 rounded">.button</code>.
+                  Names should describe what it is, not what it looks like.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Keep it DRY</h3>
+                <p className="text-sm text-muted-foreground">
+                  Don't repeat yourself. If multiple elements share styles, group them with a common
+                  class or use CSS custom properties (variables).
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">4</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Test on different sizes</h3>
+                <p className="text-sm text-muted-foreground">
+                  Resize your browser to check responsive behavior. Use relative units (%, em, rem)
+                  for flexible layouts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Do I need to know CSS to use this?</h3>
+                <p className="text-sm text-muted-foreground">
+                  No. The playground generates CSS for you. But it's a great way to learn - tweak
+                  settings and see what changes in the preview.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Can I save my designs?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Copy the generated CSS and save it in your project files. For future sessions,
+                  bookmark the page with your settings in the URL (if supported) or take a screenshot.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Is the CSS production-ready?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes, the generated CSS is clean and standard. Review it before deploying - you may
+                  want to add vendor prefixes or adjust for your specific use case.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

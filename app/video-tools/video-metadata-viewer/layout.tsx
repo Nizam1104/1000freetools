@@ -5,8 +5,7 @@ export const metadata: Metadata = {
   description:
     "Instantly view video and audio metadata in your browser — codec, bitrate, resolution, frame rate, and more. Free, private, no file uploads needed.",
   alternates: {
-    canonical:
-      "https://1000freetools.com/video-tools/show-video-audio-metadata",
+    canonical: "https://1000freetools.com/video-tools/video-metadata-viewer",
   },
 };
 

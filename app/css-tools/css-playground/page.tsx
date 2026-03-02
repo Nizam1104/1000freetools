@@ -221,6 +221,229 @@ export default function CSSPlaygroundPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What Is CSS Playground?</h2>
+          <p className="text-muted-foreground mb-4">
+            CSS Playground is a live HTML and CSS editor with instant preview. Write HTML and CSS
+            in separate panels and see the result update as you type - no page refresh needed.
+          </p>
+          <p className="text-muted-foreground">
+            It's useful for testing CSS snippets, learning how HTML and CSS work together, or
+            prototyping components before adding them to your project. Think of it as a sandbox
+            for web development.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">How To Use It</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Write HTML in the left panel</h3>
+                <p className="text-sm text-muted-foreground">
+                  Start with standard HTML tags like <code className="bg-muted px-1 rounded">&lt;div&gt;</code>,
+                  <code className="bg-muted px-1 rounded">&lt;h1&gt;</code>, <code className="bg-muted px-1 rounded">&lt;p&gt;</code>.
+                  Add classes to target elements with CSS.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Add CSS in the CSS panel</h3>
+                <p className="text-sm text-muted-foreground">
+                  Write CSS rules targeting your HTML classes or elements. The preview updates
+                  automatically - no need to save or refresh.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Copy your code</h3>
+                <p className="text-sm text-muted-foreground">
+                  Use the Copy buttons to grab HTML, CSS, or the full combined HTML file. Paste
+                  directly into your project.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What You Can Build</h2>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Components</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Buttons, cards, forms, navigation bars, modals, and other UI components. Test
+                different styles before committing.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Layouts</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Experiment with flexbox, grid, and positioning. See how elements flow and adjust
+                spacing in real-time.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Animations</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Create and test CSS animations and transitions. Fine-tune timing functions and
+                keyframes visually.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Email Templates</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Build HTML email layouts with inline styles. Test how different email clients
+                might render your code.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Landing Pages</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Prototype entire page sections quickly. Get the structure right before integrating
+                with your backend.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Learning & Testing</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Try new CSS properties, debug issues, or learn by modifying existing code. Perfect
+                for beginners and experts alike.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Tips for Better Results</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Use classes, not IDs</h3>
+                <p className="text-sm text-muted-foreground">
+                  Classes are reusable and easier to override. IDs should be reserved for unique
+                  elements and JavaScript hooks.
+                </p>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mt-2">
+                  {`/* Good */
+.card { }
+.button { }
+
+/* Avoid for styling */
+#main-card { }`}
+                </code>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Keep CSS organized</h3>
+                <p className="text-sm text-muted-foreground">
+                  Group related styles together. Comment your code if it's complex. Future you
+                  (and your teammates) will thank you.
+                </p>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mt-2">
+                  {`/* Layout */
+.container { }
+.grid { }
+
+/* Typography */
+.heading { }
+.body-text { }
+
+/* Components */
+.button { }
+.card { }`}
+                </code>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Test responsive behavior</h3>
+                <p className="text-sm text-muted-foreground">
+                  Resize your browser window to check how layouts adapt. Use media queries to
+                  adjust styles for different screen sizes.
+                </p>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mt-2">
+                  {`@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}`}
+                </code>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Does my code save automatically?</h3>
+                <p className="text-sm text-muted-foreground">
+                  No, the playground runs in your browser. Copy your code before closing the tab,
+                  or use your browser's local storage if available.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Can I use JavaScript?</h3>
+                <p className="text-sm text-muted-foreground">
+                  This playground focuses on HTML and CSS only. For JavaScript testing, use a
+                  dedicated code playground like CodePen or JSFiddle.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Why does my preview look different from my site?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Different sites have different base styles, resets, and browser defaults. The
+                  playground uses minimal defaults. Copy your CSS into your actual project for
+                  accurate results.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Is this tool free?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes, completely free to use. No sign-up required. Share it with anyone who needs
+                  to test HTML and CSS quickly.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

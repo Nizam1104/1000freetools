@@ -285,6 +285,69 @@ export default function TextShadowGeneratorPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Text Shadow Basics</h2>
+          <p className="text-muted-foreground mb-4">
+            Text-shadow adds depth or effects to text. Unlike box-shadow, it doesn't support spread 
+            or inset. The syntax is: offset-x, offset-y, blur, color.
+          </p>
+          <p className="text-muted-foreground">
+            Use text shadow sparingly. It's easy to make text harder to read. Subtle shadows work 
+            better than obvious ones.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">When Text Shadow Helps</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Text on images</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                A subtle shadow (1-2px blur, low opacity) improves readability when text overlays 
+                variable backgrounds.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Retro/glow effects</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Stack multiple shadows with the same color for a neon glow. Works well for dark 
+                mode headers.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">3D text</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Layer shadows with increasing offsets to create depth. Combine with bold fonts 
+                for best results.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Accessibility</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Light text on dark backgrounds sometimes needs a subtle shadow to maintain contrast 
+                at small sizes.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Tips</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Less is more:</strong> 1px offset, 1-2px blur is usually enough.</li>
+                <li><strong>Match your light source:</strong> If UI shadows go down-right, text should too.</li>
+                <li><strong>Use currentColor:</strong> <code className="bg-muted px-1 rounded">text-shadow: 1px 1px 2px currentColor;</code> inherits the text color.</li>
+                <li><strong>Avoid on body text:</strong> Reserve shadows for headings and large text.</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
     </div>
   );
 }

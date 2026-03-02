@@ -232,6 +232,85 @@ export default function AspectRatioCalculatorPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What Aspect Ratio Is</h2>
+          <p className="text-muted-foreground mb-4">
+            Aspect ratio is the proportional relationship between width and height. 
+            It's expressed as two numbers separated by a colon (16:9, 4:3, 1:1).
+          </p>
+          <p className="text-muted-foreground">
+            In CSS, aspect ratio ensures elements maintain their proportions regardless of screen size. 
+            This is crucial for responsive images, videos, and containers that need to scale uniformly.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Aspect Ratios</h2>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader><CardTitle className="text-lg">16:9 (Widescreen)</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Standard for videos, YouTube, modern displays. Most common ratio for web content.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">4:3 (Standard)</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Old TV format, iPad, some monitors. Still common for presentations and documents.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">1:1 (Square)</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Instagram posts, profile pictures, product thumbnails. Perfect for grid layouts.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">21:9 (Ultrawide)</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Cinematic format, ultrawide monitors. Great for immersive hero sections.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">3:2 (Photo)</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Classic photo format, Micro Four Thirds cameras. Common in photography portfolios.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">9:16 (Vertical)</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Stories format (Instagram, TikTok, Snapchat). Mobile-first vertical content.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">CSS Aspect Ratio</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <p className="text-muted-foreground mb-4">
+                Modern CSS has a dedicated <code className="bg-muted px-1 rounded">aspect-ratio</code> property:
+              </p>
+              <code className="block p-4 bg-muted rounded-lg text-sm font-mono mb-4">
+{`.video-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+}`}
+              </code>
+              <p className="text-sm text-muted-foreground">
+                The old padding hack (using padding-top percentage) still works if you need older 
+                browser support, but the native property is cleaner and easier to maintain.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
     </div>
   );
 }

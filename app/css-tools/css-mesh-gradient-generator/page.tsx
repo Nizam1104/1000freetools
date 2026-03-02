@@ -319,18 +319,17 @@ ${gradients};
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">About Mesh Gradients</h2>
-          <div className="prose prose-sm max-w-none text-muted-foreground">
-            <p className="mb-4">
-              Mesh gradients are multi-point gradient blends that create smooth, organic color transitions.
-              Unlike traditional linear or radial gradients, mesh gradients use multiple overlapping radial
-              gradients to create complex, fluid color patterns.
-            </p>
-            <p>
-              Popular in modern web design, mesh gradients add depth and visual interest to backgrounds,
-              hero sections, and UI elements. They're fully CSS-based, making them lightweight and scalable.
-            </p>
-          </div>
+          <h2 className="text-2xl font-semibold mb-4">What Are Mesh Gradients?</h2>
+          <p className="text-muted-foreground mb-4">
+            Mesh gradients blend multiple colors across a surface using overlapping
+            radial gradients. Unlike linear gradients that go from A to B in a
+            straight line, mesh gradients create organic, fluid color patterns.
+          </p>
+          <p className="text-muted-foreground">
+            They're popular in modern web design for hero backgrounds, cards, and
+            anywhere you want visual interest without images. The entire effect is
+            pure CSS - no images to load.
+          </p>
         </section>
 
         <section>
@@ -338,14 +337,15 @@ ${gradients};
           <Card>
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4">
-                Each gradient point creates a radial gradient that fades from a solid color to transparent.
-                Multiple points are layered and blended together using CSS blur filter for smooth transitions.
+                Each point creates a radial gradient that fades from solid color to
+                transparent. Multiple points layer on top of each other. A blur filter
+                blends them together for smooth transitions.
               </p>
               <code className="block p-4 bg-muted rounded-lg text-sm font-mono">
-                {`background: 
-  radial-gradient(50% at 20% 20%, #ff6b6b, transparent),
-  radial-gradient(50% at 80% 30%, #4ecdc4, transparent),
-  radial-gradient(50% at 70% 80%, #45b7d1, transparent);
+                {`background:
+  radial-gradient(50% at 20% 30%, #ff6b6b, transparent),
+  radial-gradient(50% at 80% 20%, #4ecdc4, transparent),
+  radial-gradient(50% at 60% 80%, #45b7d1, transparent);
 filter: blur(80px);`}
               </code>
             </CardContent>
@@ -360,7 +360,8 @@ filter: blur(80px);`}
                 <CardTitle className="text-lg">Color Harmony</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Use analogous or complementary colors for cohesive blends. Avoid too many competing hues.
+                Use analogous colors (next to each other on the wheel) for smooth
+                blends, or complementary colors for more dynamic contrast.
               </CardContent>
             </Card>
             <Card>
@@ -368,15 +369,17 @@ filter: blur(80px);`}
                 <CardTitle className="text-lg">Point Placement</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Distribute points evenly across the canvas. Cluster points for more intense color mixing.
+                Distribute points across the canvas. Cluster points for intense color
+                mixing in specific areas.
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Blur Balance</CardTitle>
+                <CardTitle className="text-lg">Blur Amount</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Higher blur creates smoother blends. Lower blur keeps more defined color boundaries.
+                Higher blur (80-120px) creates smooth, dreamy blends. Lower blur
+                (40-60px) keeps more defined color boundaries.
               </CardContent>
             </Card>
           </div>

@@ -209,6 +209,71 @@ border: ${borderWidth}px solid ${borderRgba};`;
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What Is Glassmorphism?</h2>
+          <p className="text-muted-foreground mb-4">
+            Glassmorphism creates a frosted glass effect using backdrop blur and semi-transparent 
+            backgrounds. It became popular with macOS Big Sur and Windows 11 design languages.
+          </p>
+          <p className="text-muted-foreground">
+            The effect works by blurring what's behind an element, creating depth and visual 
+            hierarchy without heavy shadows.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Key Properties</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Backdrop Filter</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">backdrop-filter: blur(10px);</code>
+                <p className="text-sm text-muted-foreground">
+                  Blurs the background behind the element. Requires a semi-transparent background 
+                  to see the effect.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Semi-transparent Background</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">background: rgba(255, 255, 255, 0.2);</code>
+                <p className="text-sm text-muted-foreground">
+                  Low opacity background (10-30%) lets the blur show through. White for light 
+                  glass, dark for night mode.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Subtle Border</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">border: 1px solid rgba(255, 255, 255, 0.3);</code>
+                <p className="text-sm text-muted-foreground">
+                  A faint border defines the edge of the glass. Use white with low opacity for 
+                  the light-catching effect.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">When to Use Glassmorphism</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Over images:</strong> Works best on colorful, detailed backgrounds where blur is visible</li>
+                <li><strong>Overlay panels:</strong> Sidebars, modals, and floating cards benefit from the depth</li>
+                <li><strong>Navigation bars:</strong> Sticky headers with glass effect stay visible without blocking content</li>
+                <li><strong>Avoid on solid colors:</strong> The effect disappears on plain backgrounds</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
     </div>
   );
 }

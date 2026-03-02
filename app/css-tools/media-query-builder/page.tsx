@@ -250,6 +250,81 @@ export default function MediaQueryBuilderPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Media Queries Explained</h2>
+          <p className="text-muted-foreground mb-4">
+            Media queries apply CSS rules based on device characteristics. They're the foundation 
+            of responsive design - letting you adapt layouts for phones, tablets, and desktops.
+          </p>
+          <p className="text-muted-foreground">
+            This builder creates the CSS for you. Pick your breakpoints and features, then copy 
+            the generated code.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Breakpoint Strategy</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <p className="text-muted-foreground mb-4">
+                Instead of targeting specific devices, design for content. Add breakpoints where 
+                your layout breaks, not where new iPhones launch.
+              </p>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between p-2 bg-muted rounded">
+                  <span>Content gets cramped:</span>
+                  <code className="font-mono">Add a breakpoint</code>
+                </div>
+                <div className="flex justify-between p-2 bg-muted rounded">
+                  <span>Lines of text too long:</span>
+                  <code className="font-mono">Add a max-width constraint</code>
+                </div>
+                <div className="flex justify-between p-2 bg-muted rounded">
+                  <span>Too much white space:</span>
+                  <code className="font-mono">Expand the layout</code>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Media Query Features</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Width-based</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">(min-width: 768px)</code> - Most common. 
+                Triggers when viewport is at least 768px wide. Use for mobile-first responsive design.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Height-based</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">(min-height: 600px)</code> - Useful for 
+                full-screen layouts or when vertical space matters more than width.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Orientation</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">(orientation: landscape)</code> - Detects 
+                device rotation. Handy for video players or full-screen experiences.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Prefers-color-scheme</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">(prefers-color-scheme: dark)</code> - 
+                Respects user's system dark mode preference. Essential for modern sites.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

@@ -389,16 +389,48 @@ export default function ClipPathMakerPage() {
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">About CSS Clip-path</h2>
-          <div className="prose prose-sm max-w-none text-muted-foreground">
-            <p className="mb-4">
-              The CSS <code>clip-path</code> property allows you to create complex shapes by clipping an element to a defined region.
-              It's a powerful tool for creating visually interesting designs without using images or SVGs.
-            </p>
-            <p>
-              Clip-path supports multiple shape functions: <strong>polygon()</strong> for custom shapes, <strong>circle()</strong> and{" "}
-              <strong>ellipse()</strong> for round shapes, and <strong>inset()</strong> for rectangular clips with optional rounded corners.
-            </p>
+          <h2 className="text-2xl font-semibold mb-4">What Clip-Path Does</h2>
+          <p className="text-muted-foreground mb-4">
+            Clip-path cuts elements into shapes. Instead of rectangular divs, you can create triangles, 
+            polygons, circles, or any custom shape. The clipped area becomes transparent.
+          </p>
+          <p className="text-muted-foreground">
+            This maker lets you drag points to create custom polygons, then copies the CSS. 
+            No need to manually calculate coordinates.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Clip-Path Shapes</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Circle</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">clip-path: circle(50% at 50% 50%);</code>
+                <p className="text-sm text-muted-foreground">Perfect circle centered in the element.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Ellipse</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">clip-path: ellipse(50% 30% at 50% 50%);</code>
+                <p className="text-sm text-muted-foreground">Oval shape - first value is horizontal radius, second is vertical.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Polygon (Triangle)</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">clip-path: polygon(50% 0%, 0% 100%, 100% 100%);</code>
+                <p className="text-sm text-muted-foreground">Upward-pointing triangle.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Polygon (Arrow)</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 30% 50%);</code>
+                <p className="text-sm text-muted-foreground">Right-pointing arrow shape.</p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -406,9 +438,10 @@ export default function ClipPathMakerPage() {
           <h2 className="text-2xl font-semibold mb-4">Browser Support</h2>
           <Card>
             <CardContent className="pt-6">
-              <p className="text-muted-foreground">
-                Clip-path is well-supported in all modern browsers including Chrome, Firefox, Safari, and Edge.
-                For older browser support, consider providing fallback styles.
+              <p className="text-sm text-muted-foreground">
+                Clip-path has good support in modern browsers (Chrome, Firefox, Safari, Edge). 
+                Internet Explorer doesn't support it - use SVG clips as a fallback if you need 
+                legacy support.
               </p>
             </CardContent>
           </Card>

@@ -431,45 +431,124 @@ export default function ColorPaletteGeneratorPage() {
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">
-            Understanding Color Harmonies
-          </h2>
+          <h2 className="text-2xl font-semibold mb-4">Color Harmony, Explained</h2>
+          <p className="text-muted-foreground mb-4">
+            Color harmonies are combinations of colors that work well together.
+            They're based on positions on the color wheel. This generator calculates
+            harmonies automatically - pick a base color and choose a harmony type.
+          </p>
+          <p className="text-muted-foreground">
+            You can also upload an image to extract its dominant colors. Useful for
+            matching designs to photos or creating palettes from inspiration images.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Harmony Types</h2>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: "Monochromatic",
-                desc: "Uses variations in lightness and saturation of a single color. Creates a clean, elegant look.",
-              },
-              {
-                name: "Complementary",
-                desc: "Uses colors opposite each other on the color wheel. Creates high contrast and vibrant designs.",
-              },
-              {
-                name: "Analogous",
-                desc: "Uses colors next to each other on the color wheel. Creates harmonious, serene designs.",
-              },
-              {
-                name: "Triadic",
-                desc: "Uses three colors equally spaced on the color wheel. Creates vibrant, balanced designs.",
-              },
-              {
-                name: "Split Complementary",
-                desc: "Uses a base color and the two colors adjacent to its complement. Less tension than complementary.",
-              },
-              {
-                name: "Tetradic",
-                desc: "Uses four colors arranged in two complementary pairs. Rich and varied color schemes.",
-              },
-            ].map((harmony) => (
-              <Card key={harmony.name}>
-                <CardContent className="pt-6">
-                  <h3 className="font-semibold mb-2">{harmony.name}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {harmony.desc}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Monochromatic</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Variations of a single hue. Different lightness and saturation levels.
+                Clean, elegant, and hard to mess up.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Complementary</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Colors opposite each other on the wheel. High contrast, vibrant. Use
+                one as dominant, the other as accent.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Analogous</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Colors next to each other on the wheel. Harmonious and serene. Common
+                in nature - think sunsets and forests.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Triadic</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Three colors equally spaced around the wheel. Vibrant but balanced.
+                Let one dominate, use others sparingly.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Split Complementary</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Base color plus the two colors adjacent to its complement. Less
+                tension than direct complementary, still interesting.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Tetradic</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Four colors in two complementary pairs. Rich and varied. Tricky to
+                balance - let one color dominate.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Exporting Your Palette</h2>
+          <p className="text-muted-foreground mb-4">
+            Once you have colors you like, export them in the format your project
+            needs:
+          </p>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">CSS Variables</h3>
+                <p className="text-sm text-muted-foreground">
+                  Ready to paste into your stylesheet.{" "}
+                  <code className="bg-muted px-1 rounded">--color-1: #hex;</code>
+                  format works with any CSS setup.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Tailwind Config</h3>
+                <p className="text-sm text-muted-foreground">
+                  Formatted for tailwind.config.js. Add to the colors object and use
+                  with
+                  <code className="bg-muted px-1 rounded">text-palette1</code>,{" "}
+                  <code className="bg-muted px-1 rounded">bg-palette2</code>, etc.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">JSON</h3>
+                <p className="text-sm text-muted-foreground">
+                  Array of hex values. Import into design tools, share with team, or
+                  use with design token systems.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </div>

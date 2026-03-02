@@ -359,89 +359,183 @@ export default function GradientGeneratorPage() {
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">About CSS Gradients</h2>
-          <div className="prose prose-sm max-w-none text-muted-foreground">
-            <p className="mb-4">
-              CSS gradients are smooth transitions between two or more colors. They're powerful tools for creating 
-              visually appealing backgrounds, buttons, cards, and other UI elements without relying on images.
-            </p>
-            <p>
-              There are three main types of CSS gradients: <strong>linear</strong> (colors transition along a line), 
-              <strong> radial</strong> (colors radiate from a center point), and <strong>conic</strong> 
-              (colors rotate around a center point). Each type offers unique visual effects for different design needs.
-            </p>
+          <h2 className="text-2xl font-semibold mb-4">What This Tool Does</h2>
+          <p className="text-muted-foreground mb-4">
+            CSS gradients replace background images with code. You pick colors, adjust the angle or shape, 
+            and get the CSS to paste into your stylesheet. No Photoshop, no export, no 500KB PNGs.
+          </p>
+          <p className="text-muted-foreground">
+            This generator covers all three gradient types: linear (straight transitions), radial (circular 
+            spread from a center point), and conic (rotating around a center, like a pie chart). Each has 
+            its use - linear for buttons and cards, radial for spotlights and depth, conic for charts and 
+            color wheels.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">When Gradients Actually Help</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Call-to-action buttons</h3>
+                <p className="text-sm text-muted-foreground">
+                  A subtle gradient makes buttons pop without looking gimmicky. Try a 2-3% lightness 
+                  shift at a 45-degree angle.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Hero section backgrounds</h3>
+                <p className="text-sm text-muted-foreground">
+                  Gradients create visual interest without the performance hit of large images. 
+                  Layer multiple gradients for complexity.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Loading states and progress bars</h3>
+                <p className="text-sm text-muted-foreground">
+                  Animated gradients signal activity. Use conic gradients for circular loaders, 
+                  linear for progress bars.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Card and section dividers</h3>
+                <p className="text-sm text-muted-foreground">
+                  A soft gradient background separates content areas more elegantly than hard borders 
+                  or solid colors.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Gradient Types Explained</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Linear Gradient</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                Colors transition along a straight line defined by an angle. Perfect for backgrounds, buttons, and progress bars.
-                <div className="mt-3 p-2 bg-muted rounded font-mono text-xs">
-                  linear-gradient(90deg, red, blue)
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Radial Gradient</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                Colors radiate outward from a center point. Great for creating depth, spotlights, and circular designs.
-                <div className="mt-3 p-2 bg-muted rounded font-mono text-xs">
-                  radial-gradient(circle, red, blue)
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Conic Gradient</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                Colors rotate around a center point like a clock. Ideal for pie charts, color wheels, and radial menus.
-                <div className="mt-3 p-2 bg-muted rounded font-mono text-xs">
-                  conic-gradient(from 0deg, red, blue)
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-semibold mb-4">Gradient Syntax, Explained</h2>
           <div className="space-y-4">
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">What are CSS color stops?</h3>
-                <p className="text-muted-foreground">
-                  Color stops define the colors and their positions in a gradient. Each stop has a color value and 
-                  a position percentage (0-100%). The gradient smoothly transitions between these stops.
+                <h3 className="font-semibold mb-2">Linear gradients</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-3">
+                  linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+                </code>
+                <p className="text-sm text-muted-foreground">
+                  The angle controls direction. 0deg goes up, 90deg goes right, 180deg goes down. 
+                  Color stops define where each color hits 100% opacity.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Radial gradients</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-3">
+                  radial-gradient(circle, #667eea 0%, #764ba2 100%)
+                </code>
+                <p className="text-sm text-muted-foreground">
+                  Shape can be "circle" or "ellipse". The gradient spreads from the center outward. 
+                  You can also set a specific center point with "at 50% 50%".
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Conic gradients</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-3">
+                  conic-gradient(from 0deg, #667eea 0%, #764ba2 50%, #667eea 100%)
+                </code>
+                <p className="text-sm text-muted-foreground">
+                  Conic gradients rotate around a center. "from 0deg" starts at the top. 
+                  Great for pie charts - each slice is a color stop with specific start and end positions.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">How many color stops should I use?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Two to four colors usually works best. More than that and gradients start looking muddy. 
+                  If you need complex blends, consider layering multiple gradients instead of adding more stops.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Can I use transparency in gradients?</h3>
-                <p className="text-muted-foreground">
-                  Yes! Use RGBA or HSLA color values with alpha channels. For example: 
-                  <code className="ml-1 bg-muted px-1 rounded">rgba(255, 0, 0, 0.5)</code> creates a semi-transparent red.
+                <h3 className="font-semibold mb-2">Can I use transparency?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes - use rgba() or hsla() values. Transparent gradients work well for overlays. 
+                  Example: <code className="bg-muted px-1 rounded">rgba(0, 0, 0, 0.4)</code> for a dark overlay.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Are CSS gradients performant?</h3>
-                <p className="text-muted-foreground">
-                  Yes, CSS gradients are GPU-accelerated and very performant. They're often faster than using images 
-                  because they're rendered directly by the browser without network requests.
+                <h3 className="font-semibold mb-2">Do gradients affect performance?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Not noticeably. Gradients are GPU-accelerated and render faster than loading images. 
+                  The only concern is animating gradients, which can trigger repaints.
                 </p>
               </CardContent>
             </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Why does my gradient look banded?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Color banding happens when there aren't enough intermediate colors. Add a tiny amount 
+                  of noise with a pseudo-element, or use more color stops to smooth the transition.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Tips That Actually Help</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Subtle beats obvious</h3>
+                <p className="text-sm text-muted-foreground">
+                  A 5% lightness shift looks professional. Rainbow gradients look like 2005 called.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Match your brand colors</h3>
+                <p className="text-sm text-muted-foreground">
+                  Use your primary color as the base, then shift hue slightly for the second stop.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Test in grayscale</h3>
+                <p className="text-sm text-muted-foreground">
+                  If the gradient disappears in grayscale, the colors are too similar in lightness.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </div>

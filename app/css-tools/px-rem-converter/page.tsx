@@ -235,6 +235,105 @@ export default function PxRemConverterPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Why Use REM Units?</h2>
+          <p className="text-muted-foreground mb-4">
+            REM units are relative to the root font size (html element). This makes your entire 
+            design scalable - change one value and everything adjusts proportionally.
+          </p>
+          <p className="text-muted-foreground">
+            More importantly, REM respects user preferences. If someone sets their browser to 
+            larger text, REM-based designs scale up. Pixel-based designs don't.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">The Conversion</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <p className="text-muted-foreground mb-4">
+                The formula is simple: <code className="bg-muted px-1 rounded">rem = pixels / rootSize</code>. 
+                With the default 16px root, 24px becomes 1.5rem.
+              </p>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div>
+                  <h3 className="font-semibold mb-2">Common conversions (16px root)</h3>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li><code className="bg-muted px-1">12px</code> → <code className="bg-muted px-1">0.75rem</code></li>
+                    <li><code className="bg-muted px-1">14px</code> → <code className="bg-muted px-1">0.875rem</code></li>
+                    <li><code className="bg-muted px-1">16px</code> → <code className="bg-muted px-1">1rem</code></li>
+                    <li><code className="bg-muted px-1">18px</code> → <code className="bg-muted px-1">1.125rem</code></li>
+                    <li><code className="bg-muted px-1">20px</code> → <code className="bg-muted px-1">1.25rem</code></li>
+                    <li><code className="bg-muted px-1">24px</code> → <code className="bg-muted px-1">1.5rem</code></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">When to use REM</h3>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>✓ Font sizes</li>
+                    <li>✓ Padding and margin</li>
+                    <li>✓ Gap values</li>
+                    <li>✓ Component dimensions</li>
+                    <li>✗ Border radius (use px)</li>
+                    <li>✗ Box shadow (use px)</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Setting Your Root Size</h2>
+          <p className="text-muted-foreground mb-4">
+            Most browsers default to 16px, but you can set it explicitly for consistency:
+          </p>
+          <code className="block p-4 bg-muted rounded-lg text-sm font-mono">
+            html {`{ font-size: 16px; }`}
+          </code>
+          <p className="text-muted-foreground mt-4">
+            Some teams use 62.5% (10px) to make mental math easier - then 14px becomes 1.4rem 
+            instead of 0.875rem. This works but breaks native browser scaling.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">REM vs EM?</h3>
+                <p className="text-sm text-muted-foreground">
+                  EM is relative to the parent element's font size, which can compound unexpectedly. 
+                  REM is always relative to root. Use REM for consistency, EM when you specifically 
+                  want inheritance.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">What about responsive design?</h3>
+                <p className="text-sm text-muted-foreground">
+                  REM scales automatically when you change the root size with media queries. 
+                  Combine with fluid typography techniques for fully responsive designs.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Do I need to convert everything?</h3>
+                <p className="text-sm text-muted-foreground">
+                  No. Use REM for user-facing sizes (fonts, spacing). Keep pixels for decorative 
+                  elements (borders, shadows, icons) where exact sizing matters.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

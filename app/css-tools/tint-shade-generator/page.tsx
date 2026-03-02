@@ -324,36 +324,55 @@ export default function TintShadeGeneratorPage() {
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Understanding Tints, Shades, and Tones</h2>
-          <div className="grid gap-4 md:grid-cols-3">
+          <h2 className="text-2xl font-semibold mb-4">Tints, Shades, and Tones</h2>
+          <p className="text-muted-foreground mb-4">
+            These three terms describe how you modify a base color. Understanding the difference 
+            helps you create cohesive color systems.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3 mt-4">
             <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Tints</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle className="text-lg">Tints</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Created by adding white to a base color. Tints make colors lighter and are perfect for creating 
-                subtle backgrounds, hover states, and highlighting elements without overwhelming the design.
+                Base color + white. Lighter versions. Use for backgrounds, hover states, 
+                and subtle highlights.
               </CardContent>
             </Card>
             <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Shades</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle className="text-lg">Shades</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Created by adding black to a base color. Shades make colors darker and are useful for text colors, 
-                borders, shadows, and creating depth in your designs.
+                Base color + black. Darker versions. Use for text, borders, shadows, 
+                and depth.
               </CardContent>
             </Card>
             <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Tones</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle className="text-lg">Tones</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Created by adding gray (reducing saturation) to a base color. Tones create muted, sophisticated 
-                colors that work well for professional designs and reducing visual fatigue.
+                Base color + gray. Muted versions. Use for sophisticated, professional 
+                designs with reduced saturation.
               </CardContent>
             </Card>
           </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Building Color Scales</h2>
+          <p className="text-muted-foreground mb-4">
+            Design systems use color scales - typically 10 steps from lightest to darkest. 
+            This generator creates scales you can use directly in CSS variables or design tokens.
+          </p>
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-2">Example scale structure</h3>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex justify-between"><span>50 (lightest tint):</span><code>Backgrounds, subtle borders</code></div>
+                <div className="flex justify-between"><span>100-200 (light tints):</span><code>Hover states, highlights</code></div>
+                <div className="flex justify-between"><span>300-400 (mid tints):</span><code>Secondary elements</code></div>
+                <div className="flex justify-between"><span>500 (base color):</span><code>Primary actions, brand</code></div>
+                <div className="flex justify-between"><span>600-700 (mid shades):</span><code>Hover states, emphasis</code></div>
+                <div className="flex justify-between"><span>800-900 (dark shades):</span><code>Text, headings</code></div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
       </div>
     </div>

@@ -308,6 +308,69 @@ export default function CssLoaderGeneratorPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">CSS Loaders Without Images</h2>
+          <p className="text-muted-foreground mb-4">
+            CSS loaders are pure CSS animations that show while content loads. No GIFs, no SVGs, 
+            no JavaScript libraries - just CSS keyframes and transforms.
+          </p>
+          <p className="text-muted-foreground">
+            This generator creates common loader patterns: spinners, dots, bars, and pulses. 
+            Customize the colors and speed, then copy the CSS.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Loader Types</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Spinner</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Classic rotating circle. Uses border with one side transparent, spinning with 
+                keyframes. Works everywhere.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Dots</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Three bouncing dots. Each dot animates with a delay for the wave effect. 
+                Common for "loading..." states.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Bars</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Vertical bars that scale up and down. Stagger the animation delay for 
+                the wave effect.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">Pulse</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Expanding and fading circles. Creates a subtle "breathing" effect. Good 
+                for background loading states.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Best Practices</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Keep it subtle:</strong> Loaders should indicate activity, not distract from content</li>
+                <li><strong>Match your brand:</strong> Use your brand colors, not default blue</li>
+                <li><strong>Consider size:</strong> 24-48px works for most contexts. Larger for full-page loaders</li>
+                <li><strong>Don't over-animate:</strong> One loader per page is enough. Multiple spinning things feel chaotic</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
     </div>
   );
 }

@@ -22,15 +22,33 @@ interface ShadowLayer {
 
 export default function BoxShadowGeneratorPage() {
   const [shadowLayers, setShadowLayers] = useState<ShadowLayer[]>([
-    { id: "1", offsetX: 0, offsetY: 4, blur: 6, spread: -1, color: "rgba(0, 0, 0, 0.1)", inset: false },
-    { id: "2", offsetX: 0, offsetY: 2, blur: 4, spread: -1, color: "rgba(0, 0, 0, 0.06)", inset: false },
+    {
+      id: "1",
+      offsetX: 0,
+      offsetY: 4,
+      blur: 6,
+      spread: -1,
+      color: "rgba(0, 0, 0, 0.1)",
+      inset: false,
+    },
+    {
+      id: "2",
+      offsetX: 0,
+      offsetY: 2,
+      blur: 4,
+      spread: -1,
+      color: "rgba(0, 0, 0, 0.06)",
+      inset: false,
+    },
   ]);
 
   const generateShadow = useCallback(() => {
-    return shadowLayers.map((layer) => {
-      const insetStr = layer.inset ? "inset " : "";
-      return `${insetStr}${layer.offsetX}px ${layer.offsetY}px ${layer.blur}px ${layer.spread}px ${layer.color}`;
-    }).join(", ");
+    return shadowLayers
+      .map((layer) => {
+        const insetStr = layer.inset ? "inset " : "";
+        return `${insetStr}${layer.offsetX}px ${layer.offsetY}px ${layer.blur}px ${layer.spread}px ${layer.color}`;
+      })
+      .join(", ");
   }, [shadowLayers]);
 
   const addLayer = () => {
@@ -55,9 +73,11 @@ export default function BoxShadowGeneratorPage() {
   };
 
   const updateLayer = (id: string, updates: Partial<ShadowLayer>) => {
-    setShadowLayers(shadowLayers.map((layer) =>
-      layer.id === id ? { ...layer, ...updates } : layer
-    ));
+    setShadowLayers(
+      shadowLayers.map((layer) =>
+        layer.id === id ? { ...layer, ...updates } : layer,
+      ),
+    );
   };
 
   const copyToClipboard = async (text: string, label: string) => {
@@ -71,8 +91,24 @@ export default function BoxShadowGeneratorPage() {
 
   const resetShadows = () => {
     setShadowLayers([
-      { id: "1", offsetX: 0, offsetY: 4, blur: 6, spread: -1, color: "rgba(0, 0, 0, 0.1)", inset: false },
-      { id: "2", offsetX: 0, offsetY: 2, blur: 4, spread: -1, color: "rgba(0, 0, 0, 0.06)", inset: false },
+      {
+        id: "1",
+        offsetX: 0,
+        offsetY: 4,
+        blur: 6,
+        spread: -1,
+        color: "rgba(0, 0, 0, 0.1)",
+        inset: false,
+      },
+      {
+        id: "2",
+        offsetX: 0,
+        offsetY: 2,
+        blur: 4,
+        spread: -1,
+        color: "rgba(0, 0, 0, 0.06)",
+        inset: false,
+      },
     ]);
   };
 
@@ -82,34 +118,98 @@ export default function BoxShadowGeneratorPage() {
     {
       name: "Soft",
       shadows: [
-        { id: "1", offsetX: 0, offsetY: 1, blur: 3, spread: 0, color: "rgba(0, 0, 0, 0.1)", inset: false },
+        {
+          id: "1",
+          offsetX: 0,
+          offsetY: 1,
+          blur: 3,
+          spread: 0,
+          color: "rgba(0, 0, 0, 0.1)",
+          inset: false,
+        },
       ] as ShadowLayer[],
     },
     {
       name: "Medium",
       shadows: [
-        { id: "1", offsetX: 0, offsetY: 4, blur: 6, spread: -1, color: "rgba(0, 0, 0, 0.1)", inset: false },
-        { id: "2", offsetX: 0, offsetY: 2, blur: 4, spread: -1, color: "rgba(0, 0, 0, 0.06)", inset: false },
+        {
+          id: "1",
+          offsetX: 0,
+          offsetY: 4,
+          blur: 6,
+          spread: -1,
+          color: "rgba(0, 0, 0, 0.1)",
+          inset: false,
+        },
+        {
+          id: "2",
+          offsetX: 0,
+          offsetY: 2,
+          blur: 4,
+          spread: -1,
+          color: "rgba(0, 0, 0, 0.06)",
+          inset: false,
+        },
       ] as ShadowLayer[],
     },
     {
       name: "Large",
       shadows: [
-        { id: "1", offsetX: 0, offsetY: 10, blur: 15, spread: -3, color: "rgba(0, 0, 0, 0.1)", inset: false },
-        { id: "2", offsetX: 0, offsetY: 4, blur: 6, spread: -2, color: "rgba(0, 0, 0, 0.05)", inset: false },
+        {
+          id: "1",
+          offsetX: 0,
+          offsetY: 10,
+          blur: 15,
+          spread: -3,
+          color: "rgba(0, 0, 0, 0.1)",
+          inset: false,
+        },
+        {
+          id: "2",
+          offsetX: 0,
+          offsetY: 4,
+          blur: 6,
+          spread: -2,
+          color: "rgba(0, 0, 0, 0.05)",
+          inset: false,
+        },
       ] as ShadowLayer[],
     },
     {
       name: "Inner",
       shadows: [
-        { id: "1", offsetX: 0, offsetY: 2, blur: 4, spread: 0, color: "rgba(0, 0, 0, 0.06)", inset: true },
+        {
+          id: "1",
+          offsetX: 0,
+          offsetY: 2,
+          blur: 4,
+          spread: 0,
+          color: "rgba(0, 0, 0, 0.06)",
+          inset: true,
+        },
       ] as ShadowLayer[],
     },
     {
       name: "Floating",
       shadows: [
-        { id: "1", offsetX: 0, offsetY: 20, blur: 25, spread: -5, color: "rgba(0, 0, 0, 0.1)", inset: false },
-        { id: "2", offsetX: 0, offsetY: 8, blur: 10, spread: -3, color: "rgba(0, 0, 0, 0.04)", inset: false },
+        {
+          id: "1",
+          offsetX: 0,
+          offsetY: 20,
+          blur: 25,
+          spread: -5,
+          color: "rgba(0, 0, 0, 0.1)",
+          inset: false,
+        },
+        {
+          id: "2",
+          offsetX: 0,
+          offsetY: 8,
+          blur: 10,
+          spread: -3,
+          color: "rgba(0, 0, 0, 0.04)",
+          inset: false,
+        },
       ] as ShadowLayer[],
     },
   ];
@@ -119,7 +219,8 @@ export default function BoxShadowGeneratorPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Box Shadow Generator</h1>
         <p className="text-muted-foreground">
-          Create beautiful CSS box shadows with multiple layers, inset support, and live preview.
+          Create beautiful CSS box shadows with multiple layers, inset support,
+          and live preview.
         </p>
       </div>
 
@@ -149,7 +250,9 @@ export default function BoxShadowGeneratorPage() {
                         <Label className="text-xs">Inset</Label>
                         <Switch
                           checked={layer.inset}
-                          onCheckedChange={(checked) => updateLayer(layer.id, { inset: checked })}
+                          onCheckedChange={(checked) =>
+                            updateLayer(layer.id, { inset: checked })
+                          }
                         />
                         <Button
                           variant="ghost"
@@ -164,20 +267,28 @@ export default function BoxShadowGeneratorPage() {
 
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <Label className="text-xs">Offset X: {layer.offsetX}px</Label>
+                        <Label className="text-xs">
+                          Offset X: {layer.offsetX}px
+                        </Label>
                         <Slider
                           value={[layer.offsetX]}
-                          onValueChange={([v]) => updateLayer(layer.id, { offsetX: v })}
+                          onValueChange={([v]) =>
+                            updateLayer(layer.id, { offsetX: v })
+                          }
                           min={-50}
                           max={50}
                           step={1}
                         />
                       </div>
                       <div>
-                        <Label className="text-xs">Offset Y: {layer.offsetY}px</Label>
+                        <Label className="text-xs">
+                          Offset Y: {layer.offsetY}px
+                        </Label>
                         <Slider
                           value={[layer.offsetY]}
-                          onValueChange={([v]) => updateLayer(layer.id, { offsetY: v })}
+                          onValueChange={([v]) =>
+                            updateLayer(layer.id, { offsetY: v })
+                          }
                           min={-50}
                           max={50}
                           step={1}
@@ -187,17 +298,23 @@ export default function BoxShadowGeneratorPage() {
                         <Label className="text-xs">Blur: {layer.blur}px</Label>
                         <Slider
                           value={[layer.blur]}
-                          onValueChange={([v]) => updateLayer(layer.id, { blur: v })}
+                          onValueChange={([v]) =>
+                            updateLayer(layer.id, { blur: v })
+                          }
                           min={0}
                           max={100}
                           step={1}
                         />
                       </div>
                       <div>
-                        <Label className="text-xs">Spread: {layer.spread}px</Label>
+                        <Label className="text-xs">
+                          Spread: {layer.spread}px
+                        </Label>
                         <Slider
                           value={[layer.spread]}
-                          onValueChange={([v]) => updateLayer(layer.id, { spread: v })}
+                          onValueChange={([v]) =>
+                            updateLayer(layer.id, { spread: v })
+                          }
                           min={-50}
                           max={50}
                           step={1}
@@ -210,12 +327,18 @@ export default function BoxShadowGeneratorPage() {
                       <div className="flex gap-2 mt-2">
                         <Input
                           type="color"
-                          value={layer.color.startsWith("#") ? layer.color : "#000000"}
+                          value={
+                            layer.color.startsWith("#")
+                              ? layer.color
+                              : "#000000"
+                          }
                           onChange={(e) => {
                             const hex = e.target.value;
                             const rgb = hexToRgb(hex);
                             if (rgb) {
-                              updateLayer(layer.id, { color: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.15)` });
+                              updateLayer(layer.id, {
+                                color: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.15)`,
+                              });
                             }
                           }}
                           className="w-12 h-9 p-1"
@@ -223,7 +346,9 @@ export default function BoxShadowGeneratorPage() {
                         <Input
                           type="text"
                           value={layer.color}
-                          onChange={(e) => updateLayer(layer.id, { color: e.target.value })}
+                          onChange={(e) =>
+                            updateLayer(layer.id, { color: e.target.value })
+                          }
                           className="font-mono text-sm flex-1"
                           placeholder="rgba(0, 0, 0, 0.1)"
                         />
@@ -244,7 +369,14 @@ export default function BoxShadowGeneratorPage() {
                 <Button
                   key={preset.name}
                   variant="outline"
-                  onClick={() => setShadowLayers(preset.shadows.map((s, i) => ({ ...s, id: Date.now().toString() + i })))}
+                  onClick={() =>
+                    setShadowLayers(
+                      preset.shadows.map((s, i) => ({
+                        ...s,
+                        id: Date.now().toString() + i,
+                      })),
+                    )
+                  }
                 >
                   {preset.name}
                 </Button>
@@ -299,7 +431,12 @@ export default function BoxShadowGeneratorPage() {
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={() => copyToClipboard(`.shadow { box-shadow: ${shadowCSS}; }`, "Complete CSS")}
+                    onClick={() =>
+                      copyToClipboard(
+                        `.shadow { box-shadow: ${shadowCSS}; }`,
+                        "Complete CSS",
+                      )
+                    }
                   >
                     <Copy className="w-4 h-4" />
                   </Button>
@@ -315,14 +452,22 @@ export default function BoxShadowGeneratorPage() {
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={() => copyToClipboard(`shadow-[${shadowCSS.replace(/ /g, "_")}]`, "Tailwind")}
+                    onClick={() =>
+                      copyToClipboard(
+                        `shadow-[${shadowCSS.replace(/ /g, "_")}]`,
+                        "Tailwind",
+                      )
+                    }
                   >
                     <Copy className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
 
-              <Button className="w-full" onClick={() => copyToClipboard(shadowCSS, "Box Shadow")}>
+              <Button
+                className="w-full"
+                onClick={() => copyToClipboard(shadowCSS, "Box Shadow")}
+              >
                 <Copy className="w-4 h-4 mr-2" />
                 Copy CSS
               </Button>
@@ -334,14 +479,31 @@ export default function BoxShadowGeneratorPage() {
       {/* SEO Content */}
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Understanding Box Shadow Properties</h2>
+          <h2 className="text-2xl font-semibold mb-4">What Box Shadow Does</h2>
+          <p className="text-muted-foreground mb-4">
+            Box shadow adds depth to elements without images. You can stack
+            multiple shadows, push them in any direction, blur the edges, and
+            even create inner shadows for inset effects.
+          </p>
+          <p className="text-muted-foreground">
+            The syntax looks intimidating at first - offset-x, offset-y, blur,
+            spread, color, inset - but each property does one thing. This
+            generator shows you what each value actually does before you copy
+            the CSS.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Box Shadow Properties</h2>
           <div className="grid gap-4 md:grid-cols-2">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Offset X & Y</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <p>Horizontal (X) and vertical (Y) distance of the shadow from the element. Positive values place the shadow to the right and bottom; negative values to the left and top.</p>
+                Horizontal and vertical distance from the element. Positive X
+                pushes right, positive Y pushes down. Negative values go left
+                and up.
               </CardContent>
             </Card>
             <Card>
@@ -349,7 +511,9 @@ export default function BoxShadowGeneratorPage() {
                 <CardTitle className="text-lg">Blur Radius</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <p>How much the shadow is blurred. Larger values create softer, more diffused shadows. Zero creates a sharp-edged shadow.</p>
+                How soft the shadow edges are. Zero creates a hard edge. Higher
+                values create softer, more diffused shadows that look more
+                natural.
               </CardContent>
             </Card>
             <Card>
@@ -357,7 +521,9 @@ export default function BoxShadowGeneratorPage() {
                 <CardTitle className="text-lg">Spread Radius</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <p>Makes the shadow larger or smaller. Positive values expand the shadow; negative values shrink it.</p>
+                Expands or shrinks the shadow size. Positive makes it larger,
+                negative makes it smaller. Often used with blur for layered
+                shadow effects.
               </CardContent>
             </Card>
             <Card>
@@ -365,10 +531,219 @@ export default function BoxShadowGeneratorPage() {
                 <CardTitle className="text-lg">Inset</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <p>Changes the shadow from an outer shadow (default) to an inner shadow, creating the appearance of the element being pressed in.</p>
+                Changes from outer shadow to inner shadow. Creates the
+                appearance of elements being pressed in or having inner depth.
               </CardContent>
             </Card>
           </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">
+            When to Use Box Shadow
+          </h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Card elevation</h3>
+                <p className="text-sm text-muted-foreground">
+                  Subtle shadows make cards appear to float above the
+                  background. Use low opacity (0.05-0.15) with moderate blur for
+                  a natural look.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Button states</h3>
+                <p className="text-sm text-muted-foreground">
+                  Increase shadow on hover to simulate lifting. Decrease or use
+                  inset shadow for pressed states.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Focus rings</h3>
+                <p className="text-sm text-muted-foreground">
+                  Colored shadows create visible focus indicators without
+                  affecting layout. Better than outlines for custom designs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">
+            Tips for Natural Shadows
+          </h2>
+          <Card>
+            <CardContent className="pt-6">
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>
+                  <strong>Use multiple layers:</strong> Stack 2-3 shadows with
+                  different blur values for realistic depth.
+                </li>
+                <li>
+                  <strong>Keep opacity low:</strong> Real shadows are subtle.
+                  Start at 0.1 and adjust from there.
+                </li>
+                <li>
+                  <strong>Match your light source:</strong> If shadows go
+                  down-right, keep all elements consistent.
+                </li>
+                <li>
+                  <strong>Colored shadows:</strong> Use your brand color at very
+                  low opacity for a modern touch.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">What Box Shadow Does</h2>
+          <p className="text-muted-foreground mb-4">
+            Box shadow adds depth to elements without images. You can stack
+            multiple shadows, push them in any direction, blur the edges, and
+            even create inner shadows for inset effects.
+          </p>
+          <p className="text-muted-foreground">
+            The syntax looks intimidating at first - offset-x, offset-y, blur,
+            spread, color, inset - but each property does one thing. This
+            generator shows you what each value actually does before you copy
+            the CSS.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Box Shadow Properties</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Offset X & Y</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Horizontal and vertical distance from the element. Positive X
+                pushes right, positive Y pushes down. Negative values go left
+                and up.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Blur Radius</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                How soft the shadow edges are. Zero creates a hard edge. Higher
+                values create softer, more diffused shadows that look more
+                natural.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Spread Radius</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Expands or shrinks the shadow size. Positive makes it larger,
+                negative makes it smaller. Often used with blur for layered
+                shadow effects.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Inset</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Changes from outer shadow to inner shadow. Creates the
+                appearance of elements being pressed in or having inner depth.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">
+            When to Use Box Shadow
+          </h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Card elevation</h3>
+                <p className="text-sm text-muted-foreground">
+                  Subtle shadows make cards appear to float above the
+                  background. Use low opacity (0.05-0.15) with moderate blur for
+                  a natural look.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Button states</h3>
+                <p className="text-sm text-muted-foreground">
+                  Increase shadow on hover to simulate lifting. Decrease or use
+                  inset shadow for pressed states.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Focus rings</h3>
+                <p className="text-sm text-muted-foreground">
+                  Colored shadows create visible focus indicators without
+                  affecting layout. Better than outlines for custom designs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">
+            Tips for Natural Shadows
+          </h2>
+          <Card>
+            <CardContent className="pt-6">
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>
+                  <strong>Use multiple layers:</strong> Stack 2-3 shadows with
+                  different blur values for realistic depth.
+                </li>
+                <li>
+                  <strong>Keep opacity low:</strong> Real shadows are subtle.
+                  Start at 0.1 and adjust from there.
+                </li>
+                <li>
+                  <strong>Match your light source:</strong> If shadows go
+                  down-right, keep all elements consistent.
+                </li>
+                <li>
+                  <strong>Colored shadows:</strong> Use your brand color at very
+                  low opacity for a modern touch.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </section>
       </div>
     </div>

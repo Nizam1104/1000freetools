@@ -241,6 +241,129 @@ gap: ${gap}px;`;
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Flexbox Without the Confusion</h2>
+          <p className="text-muted-foreground mb-4">
+            Flexbox arranges items in a single dimension - either a row or a column. It's perfect for 
+            navigation bars, button groups, card layouts, and anything that needs to distribute space 
+            or align items.
+          </p>
+          <p className="text-muted-foreground">
+            The confusion usually comes from mixing up parent properties (flex-direction, justify-content) 
+            with child properties (flex-grow, flex-shrink). This playground separates them so you can 
+            see what each one does.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Parent Properties</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader><CardTitle className="text-lg">flex-direction</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">row</code> | <code className="bg-muted px-1 rounded">row-reverse</code> | 
+                <code className="bg-muted px-1 rounded">column</code> | <code className="bg-muted px-1 rounded">column-reverse</code>
+                <p className="mt-2">Controls the main axis. Row is horizontal, column is vertical.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">justify-content</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">flex-start</code> | <code className="bg-muted px-1 rounded">center</code> | 
+                <code className="bg-muted px-1 rounded">flex-end</code> | <code className="bg-muted px-1 rounded">space-between</code> | 
+                <code className="bg-muted px-1 rounded">space-around</code>
+                <p className="mt-2">Distributes items along the main axis.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">align-items</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">stretch</code> | <code className="bg-muted px-1 rounded">flex-start</code> | 
+                <code className="bg-muted px-1 rounded">center</code> | <code className="bg-muted px-1 rounded">flex-end</code> | 
+                <code className="bg-muted px-1 rounded">baseline</code>
+                <p className="mt-2">Aligns items along the cross axis (perpendicular to main axis).</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">gap</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Space between flex items. Replaces margin hacks. Use one value for uniform spacing
+                or two for row-gap and column-gap.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Child Properties</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <code className="font-semibold">flex-grow</code>
+                  <p>
+                    How much an item expands to fill available space. 0 means don't
+                    grow, 1 means grow proportionally.
+                  </p>
+                </div>
+                <div>
+                  <code className="font-semibold">flex-shrink</code>
+                  <p>
+                    How much an item shrinks when space is limited. 1 is proportional
+                    shrinking, 0 prevents shrinking.
+                  </p>
+                </div>
+                <div>
+                  <code className="font-semibold">flex-basis</code>
+                  <p>
+                    Initial size before growing or shrinking.{" "}
+                    <code className="bg-muted px-1 rounded">auto</code> uses content
+                    size, <code className="bg-muted px-1 rounded">0</code> ignores
+                    content.
+                  </p>
+                </div>
+                <div>
+                  <code className="font-semibold">align-self</code>
+                  <p>
+                    Overrides parent's align-items for a single item. Useful for
+                    one-off alignment.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Flexbox Patterns</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Centered content</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono">display: flex; justify-content: center; align-items: center;</code>
+                <p className="text-sm text-muted-foreground mt-2">Perfect centering in both directions.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Space-between navigation</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono">display: flex; justify-content: space-between; align-items: center;</code>
+                <p className="text-sm text-muted-foreground mt-2">Logo on left, nav items on right.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Equal-width columns</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono">display: flex; gap: 1rem; &gt; * {`{ flex: 1; }`}</code>
+                <p className="text-sm text-muted-foreground mt-2">All children get equal width.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

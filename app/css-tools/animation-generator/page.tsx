@@ -317,6 +317,152 @@ export default function CssAnimationGeneratorPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">CSS Animation Basics</h2>
+          <p className="text-muted-foreground mb-4">
+            CSS animations have two parts: the <code className="bg-muted px-1 rounded">@keyframes</code> rule 
+            that defines what happens, and the <code className="bg-muted px-1 rounded">animation</code> property 
+            that applies it to an element.
+          </p>
+          <p className="text-muted-foreground">
+            This generator builds both. Define your animation name, set the timing, and get the 
+            complete CSS to copy.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Animation Properties</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader><CardTitle className="text-lg">duration</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                How long one cycle takes. <code className="bg-muted px-1 rounded">0.5s</code> is fast, 
+                <code className="bg-muted px-1 rounded">2s</code> is slow. Most UI animations work well 
+                between 0.2s and 0.5s.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">timing-function</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Controls acceleration. <code className="bg-muted px-1 rounded">ease</code> starts slow, 
+                speeds up, slows down. <code className="bg-muted px-1 rounded">linear</code> is constant. 
+                <code className="bg-muted px-1 rounded">ease-in-out</code> is smoother.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">iteration-count</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                How many times to repeat. <code className="bg-muted px-1 rounded">infinite</code> loops 
+                forever. Use specific numbers for one-off animations.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">direction</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                <code className="bg-muted px-1 rounded">normal</code> runs forward, 
+                <code className="bg-muted px-1 rounded">reverse</code> backward, 
+                <code className="bg-muted px-1 rounded">alternate</code> goes back and forth.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">fill-mode</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                What happens before/after animation. <code className="bg-muted px-1 rounded">forwards</code> 
+                keeps the final state. <code className="bg-muted px-1 rounded">backwards</code> applies 
+                the first keyframe during delay.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">delay</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Wait time before animation starts. Useful for staggering multiple elements or 
+                creating sequences.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Animation vs transition?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Transitions interpolate between two states (hover, focus). Animations run
+                  independently and can have multiple keyframes. Use transitions for simple state
+                  changes, animations for complex sequences.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">How do I stop an animation?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Use <code className="bg-muted px-1 rounded">animation-play-state: paused</code> to
+                  pause, or remove the animation property entirely. For JavaScript control, toggle a
+                  class that applies the animation.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Can I animate multiple properties?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes, keyframes can change any animatable property. Combine transforms, opacity,
+                  colors, shadows - whatever you need.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Performance Tips</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Animate transform and opacity</h3>
+                <p className="text-sm text-muted-foreground">
+                  These are GPU-accelerated and don't trigger layout. Avoid animating width,
+                  height, top, left - they're expensive.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Keep it subtle</h3>
+                <p className="text-sm text-muted-foreground">
+                  UI animations should enhance, not distract. 200-500ms is usually enough. 
+                  Save the flashy stuff for marketing pages.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Respect reduced motion</h3>
+                <p className="text-sm text-muted-foreground">
+                  Some users get motion sickness from animations. Use 
+                  <code className="bg-muted px-1 rounded">@media (prefers-reduced-motion)</code> to 
+                  disable or simplify animations for affected users.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

@@ -148,33 +148,142 @@ export default function CssToolsPage() {
         ))}
       </div>
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold mb-6">Why Use CSS Tools?</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          <Card>
-            <CardContent className="pt-6">
-              <h3 className="font-semibold mb-2">⚡ Faster Development</h3>
-              <p className="text-sm text-muted-foreground">
-                Generate production-ready CSS code instantly without manual calculations or trial-and-error.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="pt-6">
-              <h3 className="font-semibold mb-2">👁️ Visual Preview</h3>
-              <p className="text-sm text-muted-foreground">
-                See changes in real-time with live previews before copying the final CSS code.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="pt-6">
-              <h3 className="font-semibold mb-2">🎨 Creative Exploration</h3>
-              <p className="text-sm text-muted-foreground">
-                Experiment with different values and effects to discover new design possibilities.
-              </p>
-            </CardContent>
-          </Card>
+      <section className="mt-12 space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">About These CSS Tools</h2>
+          <p className="text-muted-foreground mb-4">
+            I built this collection after wasting too many hours tweaking box-shadow values by hand and 
+            refreshing CSS gradient generators that wanted me to sign up for a newsletter. Every tool here 
+            does one thing: generates the CSS you need, shows you what it looks like, and gets out of the way.
+          </p>
+          <p className="text-muted-foreground">
+            No accounts. No tracking. Just copy the code and move on with your day.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">When You'd Actually Use These</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">You're stuck on a specific CSS problem</h3>
+                <p className="text-sm text-muted-foreground">
+                  Need a neumorphic button that doesn't look terrible? Want to see what 17px border-radius 
+                  actually does? These tools skip the theory and show you the code.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">You're learning CSS layouts</h3>
+                <p className="text-sm text-muted-foreground">
+                  Grid and flexbox make sense until you need them. The visual builders here let you 
+                  poke at values and see what breaks before you paste it into production.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">You need accessible color combinations</h3>
+                <p className="text-sm text-muted-foreground">
+                  The contrast checker runs WCAG math so you don't have to. Plug in your colors, 
+                  see if they pass, adjust until they do.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">You're building a design system</h3>
+                <p className="text-sm text-muted-foreground">
+                  Spacing scales, fluid typography, color palettes - these generators output 
+                  consistent values you can drop into tokens or CSS variables.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">What Makes These Different</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">No bloat</h3>
+                <p className="text-sm text-muted-foreground">
+                  These aren't full IDEs pretending to be tools. Each one does a single job and loads fast.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Code you can actually use</h3>
+                <p className="text-sm text-muted-foreground">
+                  The output isn't some abstract example. You get the exact CSS property, a complete class, 
+                  and Tailwind equivalents where it makes sense.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Built for how you work</h3>
+                <p className="text-sm text-muted-foreground">
+                  Tweak values, watch the preview update, copy, paste. If you need to come back later, 
+                  the URL preserves your settings for most tools.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Are these really free?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes. No paywall, no premium tier, no "upgrade for more gradients." If you find them 
+                  useful, that's payment enough.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Can I use the generated CSS in commercial projects?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Absolutely. The CSS is yours. Use it in client work, side projects, whatever. 
+                  No attribution required.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Do these work offline?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Once the page loads, yes. Everything runs in your browser - no server calls, 
+                  no API requests. Your settings stay local.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Something broken or missing a feature?</h3>
+                <p className="text-sm text-muted-foreground">
+                  These tools are actively maintained. If a generator doesn't cover your use case 
+                  or you spot a bug, it's worth reporting.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>

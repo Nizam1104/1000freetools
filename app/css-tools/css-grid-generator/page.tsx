@@ -241,6 +241,93 @@ gap: ${gap}px;`;
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">CSS Grid in Plain English</h2>
+          <p className="text-muted-foreground mb-4">
+            CSS Grid creates two-dimensional layouts with rows and columns. You define the grid structure 
+            on a parent container, then place child elements into grid cells. It's the most powerful 
+            layout system CSS offers.
+          </p>
+          <p className="text-muted-foreground">
+            This generator builds the basic grid structure. Adjust columns, rows, and gap, then copy 
+            the CSS. The visual preview shows exactly what you're getting.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Key Grid Properties</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader><CardTitle className="text-lg">grid-template-columns</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Defines column widths. Use <code className="bg-muted px-1 rounded">repeat(3, 1fr)</code> for 
+                three equal columns, or <code className="bg-muted px-1 rounded">200px 1fr 2fr</code> for 
+                mixed widths.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">grid-template-rows</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Defines row heights. Same syntax as columns. Often set to <code className="bg-muted px-1 rounded">auto</code> to 
+                let content determine height.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">gap</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Space between grid cells. Replaces the old margin hack. Use one value for uniform gap, 
+                or two for row-gap and column-gap.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle className="text-lg">fr units</CardTitle></CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Fraction units distribute available space. <code className="bg-muted px-1 rounded">1fr 2fr</code> means 
+                the second column gets twice the space of the first.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Useful Grid Patterns</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Responsive auto-fit</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</code>
+                <p className="text-sm text-muted-foreground">
+                  Creates as many columns as fit, each at least 250px wide. Automatically adjusts to 
+                  screen size without media queries.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Holy grail layout</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">grid-template-columns: 200px 1fr 200px;</code>
+                <p className="text-sm text-muted-foreground">
+                  Classic three-column layout with fixed sidebars and flexible content area. Stack 
+                  vertically on mobile with a media query.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">12-column grid</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">grid-template-columns: repeat(12, 1fr);</code>
+                <p className="text-sm text-muted-foreground">
+                  Flexible foundation for complex layouts. Place items across multiple columns using 
+                  grid-column spans.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

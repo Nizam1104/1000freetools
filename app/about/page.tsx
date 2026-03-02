@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us - 1000 Free Tools",
-  description: "Truly free online tools with no sign-ups, no limits, and no paywalls. Fast, privacy-first utilities that actually work.",
+  title: "About - 1000 Free Tools",
+  description: "Free online tools with no sign-ups or paywalls. Privacy-first utilities that run in your browser.",
   keywords: ["free online tools", "web utilities", "no signup tools", "privacy-first tools"],
   alternates: {
     canonical: "https://1000freetools.com/about",
@@ -17,49 +17,49 @@ export default function AboutPage() {
 
       <div className="prose prose-lg max-w-none">
         <p className="text-xl text-gray-600 mb-8">
-          Free online tools that actually work—no sign-ups, no limits, no paywalls.
+          We got tired of "free" tools that ask for your email after two clicks.
         </p>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
+          <h2 className="text-2xl font-semibold mb-4">Why we built this</h2>
           <p>
-            We built 1000FreeTools because too many "free" online tools come with hidden costs,
-            annoying sign-up walls, and feature limitations. We believe powerful utilities should
-            be accessible to everyone—instantly and completely free.
+            You know the drill: find a tool that looks promising, upload your file, 
+            and then hit a paywall or sign-up form. We built 1000FreeTools because 
+            simple utilities should just work. No accounts. No credit cards. No tricks.
           </p>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">What Makes Us Different</h2>
+          <h2 className="text-2xl font-semibold mb-4">How it works</h2>
           <ul className="space-y-2">
-            <li>✅ <strong>No sign-ups required</strong> — Use tools instantly</li>
-            <li>✅ <strong>No hidden limits</strong> — Full functionality, always free</li>
-            <li>✅ <strong>Privacy-first</strong> — Your data stays on your device</li>
-            <li>✅ <strong>Lightning fast</strong> — Optimized for performance</li>
-            <li>✅ <strong>Mobile-friendly</strong> — Works on any device</li>
+            <li>No sign-ups — pick a tool and use it</li>
+            <li>No usage limits — compress ten images or ten thousand</li>
+            <li>Your files stay on your device — most tools run entirely in your browser</li>
+            <li>Fast — no waiting on servers for most operations</li>
+            <li>Works on phones and desktops</li>
           </ul>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Available Tools</h2>
+          <h2 className="text-2xl font-semibold mb-4">What's here</h2>
           <p>
-            Our collection includes image tools (compressor, background remover), text utilities,
-            developer tools, calculators, and productivity helpers. We're adding new tools regularly,
-            focusing on quality over quantity.
+            Image tools like compression and background removal, text utilities, 
+            developer helpers, calculators, and misc productivity stuff. We add new 
+            tools when we find gaps. We'd rather ship five good ones than fifty 
+            mediocre ones.
           </p>
           <p className="mt-4">
             <Link href="/explore-all-tools" className="text-blue-600 hover:underline">
-              Browse all free tools →
+              See all tools →
             </Link>
           </p>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Philosophy</h2>
+          <h2 className="text-2xl font-semibold mb-4">Our approach</h2>
           <p>
-            We build tools people actually need for everyday tasks. Each utility is designed to
-            do one job exceptionally well—no bloat, no complexity. We're starting small and growing
-            thoughtfully, ensuring every tool we release is genuinely useful and well-crafted.
+            Each tool does one thing. If it needs your data, it stays on your device 
+            unless we say otherwise. We're building this slowly and fixing things as we go.
           </p>
         </section>
 
@@ -69,28 +69,28 @@ export default function AboutPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-semibold text-lg mb-2">Are these tools really free?</h3>
-              <p>Yes. All tools are completely free with no hidden charges or premium tiers.</p>
+              <p>Yes. There's no premium tier. There's no plan to add one.</p>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-2">Do I need to create an account?</h3>
-              <p>No sign-up required. Just visit and use any tool instantly.</p>
+              <p>No. You land on the page and the tool is there.</p>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-2">Is my data safe?</h3>
               <p>
-                Yes. Most tools process data directly in your browser. We don't upload or store
-                your files unless explicitly stated.
+                Most tools process everything in your browser — your files don't get 
+                uploaded anywhere. If a tool needs server processing, we say so upfront.
               </p>
             </div>
           </div>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+          <h2 className="text-2xl font-semibold mb-4">Contact</h2>
           <p>
-            Have a tool suggestion or found an issue? Contact us at{" "}
+            Found a bug or have a tool request? Email us at{" "}
             <a href="mailto:contact@1000freetools.com" className="text-blue-600 hover:underline">
               contact@1000freetools.com
             </a>
@@ -99,9 +99,8 @@ export default function AboutPage() {
 
         <div className="bg-gray-50 p-6 rounded-lg mt-12">
           <p className="text-center text-gray-700">
-            Join thousands using 1000FreeTools for their daily online needs.{" "}
             <a href="/" className="text-blue-600 font-semibold hover:underline">
-              Start using our free tools →
+              Go to the tools →
             </a>
           </p>
         </div>

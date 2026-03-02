@@ -454,6 +454,175 @@ const toolMetadata = {
     h1: "Horsepower to Animals Converter",
     p: "How many horses is your car's engine worth? Convert horsepower to fun animal equivalents — horses, hamsters, elephants, and more. A lighthearted power converter for curious minds.",
   },
+  // CSS Tools
+  "animation-generator": {
+    h1: "CSS Animation Generator",
+    p: "Create CSS keyframe animations with live preview. Generate smooth, performant animations for web projects with customizable easing, duration, and iteration. Free online CSS animation builder.",
+  },
+  "aspect-ratio-calculator": {
+    h1: "Aspect Ratio Calculator",
+    p: "Calculate equivalent aspect ratios and generate CSS snippets for responsive design. Free online aspect ratio calculator for images, videos, and layouts.",
+  },
+  "background-noise-generator": {
+    h1: "CSS Background Noise Generator",
+    p: "Generate subtle noise and grain textures using CSS and SVG filters. Add depth and texture to backgrounds with this free online CSS noise generator.",
+  },
+  "border-radius-generator": {
+    h1: "CSS Border Radius Generator",
+    p: "Create asymmetric border-radius values with live preview. Generate organic, smooth corner shapes for modern UI design. Free online border radius tool.",
+  },
+  "box-shadow-generator": {
+    h1: "CSS Box Shadow Generator",
+    p: "Create multi-layer box shadows with blur, spread, and inset options. Generate beautiful shadows for buttons, cards, and UI elements. Free online CSS shadow tool.",
+  },
+  "clip-path-maker": {
+    h1: "CSS Clip Path Maker",
+    p: "Draw custom clip-path shapes — polygons, circles, ellipses — with visual editor. Generate CSS clip-path code instantly. Free online clip path generator.",
+  },
+  "color-contrast-checker": {
+    h1: "Color Contrast Checker",
+    p: "Test color combinations for WCAG AA and AAA accessibility compliance. Ensure readable text and UI colors. Free online color contrast checker for web designers.",
+  },
+  "color-converter": {
+    h1: "CSS Color Converter",
+    p: "Convert colors between HEX, RGB, HSL, HSV, OKLCH, and more. Get CSS-ready color values instantly. Free online CSS color converter for designers and developers.",
+  },
+  "color-palette-generator": {
+    h1: "CSS Color Palette Generator",
+    p: "Generate harmonious color palettes from images or color theory rules. Export CSS variables and Tailwind config. Free online color palette generator for web design.",
+  },
+  "css-button-generator": {
+    h1: "CSS Button Generator",
+    p: "Design beautiful buttons with hover effects, gradients, and shadows. Generate production-ready CSS button styles. Free online CSS button maker.",
+  },
+  "css-calc-builder": {
+    h1: "CSS calc() Builder",
+    p: "Build complex CSS calc() expressions visually. Create responsive calculations for widths, heights, margins, and more. Free online CSS calc builder.",
+  },
+  "css-counter-generator": {
+    h1: "CSS Counter Generator",
+    p: "Create custom counters for ordered and unordered lists. Generate CSS counter-reset and counter-increment code. Free online CSS counter tool.",
+  },
+  "css-filter-generator": {
+    h1: "CSS Filter Generator",
+    p: "Apply blur, brightness, contrast, hue-rotate, and more filters visually. Generate CSS filter code instantly. Free online CSS filter generator.",
+  },
+  "css-font-face-generator": {
+    h1: "CSS @font-face Generator",
+    p: "Upload custom fonts and generate @font-face CSS with all formats. Get cross-browser font embedding code. Free online font-face generator.",
+  },
+  "css-grid-generator": {
+    h1: "CSS Grid Generator",
+    p: "Create CSS Grid layouts visually. Generate grid-template-areas, gap, and responsive breakpoints. Free online CSS Grid layout builder.",
+  },
+  "css-loader-generator": {
+    h1: "CSS Loader Generator",
+    p: "Create pure CSS loading spinners, dots, and bars. Customize size, color, and animation speed. Free online CSS loader generator.",
+  },
+  "css-mesh-gradient-generator": {
+    h1: "CSS Mesh Gradient Generator",
+    p: "Create stunning multi-point mesh gradients with smooth color transitions. Generate CSS and SVG mesh gradients. Free online mesh gradient tool.",
+  },
+  "css-minifier": {
+    h1: "CSS Minifier & Beautifier",
+    p: "Minify CSS to reduce file size or beautify/format compressed CSS. Free online CSS minifier and prettifier for web developers.",
+  },
+  "css-pattern-generator": {
+    h1: "CSS Pattern Generator",
+    p: "Generate repeating patterns — stripes, dots, checkerboard, waves — using CSS and SVG. Free online CSS pattern generator for backgrounds.",
+  },
+  "css-playground": {
+    h1: "CSS Playground",
+    p: "Experiment with CSS properties in a live sandbox environment. Test styles, see instant results, and learn CSS interactively. Free online CSS playground.",
+  },
+  "css-shape-generator": {
+    h1: "CSS Shape Generator",
+    p: "Create triangles, arrows, speech bubbles, and more using pure CSS. Generate shape code instantly. Free online CSS shape maker.",
+  },
+  "css-spacing-scale-generator": {
+    h1: "CSS Spacing Scale Generator",
+    p: "Generate consistent spacing and size scales for design tokens. Create 4px, 8px, 16px base scales. Free online spacing scale generator.",
+  },
+  "css-specificity-calculator": {
+    h1: "CSS Specificity Calculator",
+    p: "Calculate CSS selector specificity scores instantly. Understand cascade priority and debug style conflicts. Free online specificity calculator.",
+  },
+  "css-transition-previewer": {
+    h1: "CSS Transition Previewer",
+    p: "Preview and compare CSS transition easing functions. Test built-in and custom cubic-bezier curves. Free online transition previewer.",
+  },
+  "css-variable-extractor": {
+    h1: "CSS Variable Extractor",
+    p: "Extract custom properties (CSS variables) from existing CSS code. Auto-generate :root declarations. Free online CSS variable extractor.",
+  },
+  "cubic-bezier-editor": {
+    h1: "Cubic Bezier Editor",
+    p: "Visually create custom cubic-bezier easing functions. Generate smooth, natural animations. Free online cubic-bezier editor for CSS transitions.",
+  },
+  "dark-mode-css-generator": {
+    h1: "Dark Mode CSS Generator",
+    p: "Generate prefers-color-scheme dark mode CSS from your color palette. Create accessible dark themes instantly. Free online dark mode CSS generator.",
+  },
+  "flexbox-playground": {
+    h1: "Flexbox Playground",
+    p: "Experiment with Flexbox properties interactively. Generate flex container and item CSS with live preview. Free online Flexbox learning tool.",
+  },
+  "fluid-space-calculator": {
+    h1: "Fluid Space Calculator",
+    p: "Generate clamp()-based responsive spacing that scales with viewport. Create fluid design systems. Free online fluid space calculator.",
+  },
+  "fluid-typography-calculator": {
+    h1: "Fluid Typography Calculator",
+    p: "Create responsive font sizes using CSS clamp() for smooth scaling between breakpoints. Free online fluid typography generator.",
+  },
+  "glassmorphism-generator": {
+    h1: "Glassmorphism Generator",
+    p: "Create glassmorphism effects with backdrop-filter, blur, and transparency. Generate modern frosted glass CSS. Free online glassmorphism generator.",
+  },
+  "google-fonts-pairing-tool": {
+    h1: "Google Fonts Pairing Tool",
+    p: "Discover and preview harmonious Google Fonts combinations. Find perfect heading and body pairings. Free online font pairing tool.",
+  },
+  "gradient-generator": {
+    h1: "CSS Gradient Generator",
+    p: "Create linear, radial, and conic gradients with live preview. Generate CSS gradient code for backgrounds and UI. Free online gradient maker.",
+  },
+  "letter-spacing-line-height-visualizer": {
+    h1: "Letter Spacing & Line Height Visualizer",
+    p: "Adjust and preview letter-spacing and line-height values for perfect typography rhythm. Free online type visualizer.",
+  },
+  "media-query-builder": {
+    h1: "Media Query Builder",
+    p: "Generate responsive CSS media queries visually. Pick breakpoints for mobile, tablet, and desktop. Free online media query generator.",
+  },
+  "neumorphism-generator": {
+    h1: "Neumorphism Generator",
+    p: "Create soft UI neumorphic effects with subtle shadows and highlights. Generate modern soft design CSS. Free online neumorphism generator.",
+  },
+  "print-css-helper": {
+    h1: "Print CSS Helper",
+    p: "Generate @print media query boilerplate for printer-friendly stylesheets. Free online print CSS generator.",
+  },
+  "px-rem-converter": {
+    h1: "PX to REM Converter",
+    p: "Convert pixels to REM and EM units with configurable root font size. Generate accessible, scalable CSS. Free online px to rem converter.",
+  },
+  "scroll-snap-builder": {
+    h1: "Scroll Snap Builder",
+    p: "Configure CSS scroll-snap properties for smooth scrolling sections. Generate scroll-snap-type and alignment code. Free online scroll snap generator.",
+  },
+  "text-shadow-generator": {
+    h1: "CSS Text Shadow Generator",
+    p: "Create multi-layer text shadows with blur, spread, and color. Generate beautiful text effects. Free online CSS text shadow generator.",
+  },
+  "tint-shade-generator": {
+    h1: "Tint & Shade Generator",
+    p: "Generate tints (lighter) and shades (darker) of any color across multiple steps. Build color scales for design systems. Free online tint shade tool.",
+  },
+  "viewport-unit-converter": {
+    h1: "Viewport Unit Converter",
+    p: "Convert between vw, vh, vmin, vmax, and px units. Generate responsive viewport-based CSS. Free online viewport unit converter.",
+  },
 };
 
 // Data from pasted_text_1.txt
@@ -571,6 +740,49 @@ const converters = {
   "shoe-size-converter": { id: 111 },
   "ring-size-converter": { id: 112 },
   "horsepower-to-animals-converter": { id: 113 },
+  // CSS Tools
+  "animation-generator": { id: 114 },
+  "aspect-ratio-calculator": { id: 115 },
+  "background-noise-generator": { id: 116 },
+  "border-radius-generator": { id: 117 },
+  "box-shadow-generator": { id: 118 },
+  "clip-path-maker": { id: 119 },
+  "color-contrast-checker": { id: 120 },
+  "color-converter": { id: 121 },
+  "color-palette-generator": { id: 122 },
+  "css-button-generator": { id: 123 },
+  "css-calc-builder": { id: 124 },
+  "css-counter-generator": { id: 125 },
+  "css-filter-generator": { id: 126 },
+  "css-font-face-generator": { id: 127 },
+  "css-grid-generator": { id: 128 },
+  "css-loader-generator": { id: 129 },
+  "css-mesh-gradient-generator": { id: 130 },
+  "css-minifier": { id: 131 },
+  "css-pattern-generator": { id: 132 },
+  "css-playground": { id: 133 },
+  "css-shape-generator": { id: 134 },
+  "css-spacing-scale-generator": { id: 135 },
+  "css-specificity-calculator": { id: 136 },
+  "css-transition-previewer": { id: 137 },
+  "css-variable-extractor": { id: 138 },
+  "cubic-bezier-editor": { id: 139 },
+  "dark-mode-css-generator": { id: 140 },
+  "flexbox-playground": { id: 141 },
+  "fluid-space-calculator": { id: 142 },
+  "fluid-typography-calculator": { id: 143 },
+  "glassmorphism-generator": { id: 144 },
+  "google-fonts-pairing-tool": { id: 145 },
+  "gradient-generator": { id: 146 },
+  "letter-spacing-line-height-visualizer": { id: 147 },
+  "media-query-builder": { id: 148 },
+  "neumorphism-generator": { id: 149 },
+  "print-css-helper": { id: 150 },
+  "px-rem-converter": { id: 151 },
+  "scroll-snap-builder": { id: 152 },
+  "text-shadow-generator": { id: 153 },
+  "tint-shade-generator": { id: 154 },
+  "viewport-unit-converter": { id: 155 },
 };
 
 const links = {
@@ -1139,6 +1351,216 @@ const links = {
     8, 9, 22, 23, 7, 6, 17, 16, 18, 11, 1, 2, 10, 5, 3, 12, 21, 94, 91, 92, 40,
     41, 42, 19, 37, 32, 33, 55, 57, 35,
   ],
+  // 114: Animation Generator
+  114: [
+    139, 137, 146, 129, 123, 144, 149, 117, 118, 153, 126, 132, 134, 128, 141,
+    119, 147, 143, 142, 135, 124, 151, 148, 152, 155, 131, 138, 136, 125, 150,
+  ],
+  // 115: Aspect Ratio Calculator
+  115: [
+    124, 151, 142, 143, 155, 128, 141, 148, 5, 1, 76, 77, 84, 47, 117, 118,
+    119, 134, 135, 136, 131, 138, 126, 146, 130, 132, 123, 129, 144, 149,
+  ],
+  // 116: Background Noise Generator
+  116: [
+    146, 130, 132, 144, 149, 118, 117, 126, 154, 121, 122, 153, 134, 131, 138,
+    136, 125, 150, 148, 152, 155, 124, 142, 143, 135, 151, 128, 141, 119, 123,
+  ],
+  // 117: Border Radius Generator
+  117: [
+    118, 144, 149, 123, 146, 130, 132, 116, 119, 134, 153, 126, 121, 122, 154,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 118: Box Shadow Generator
+  118: [
+    117, 144, 149, 123, 146, 130, 132, 116, 119, 134, 153, 126, 121, 122, 154,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 119: Clip Path Maker
+  119: [
+    134, 117, 118, 146, 130, 132, 144, 149, 123, 126, 153, 121, 122, 154, 137,
+    139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131, 138,
+  ],
+  // 120: Color Contrast Checker
+  120: [
+    121, 122, 154, 146, 130, 140, 145, 147, 126, 123, 117, 118, 144, 149, 132,
+    116, 153, 134, 119, 137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155,
+  ],
+  // 121: Color Converter
+  121: [
+    122, 120, 154, 146, 130, 140, 145, 147, 126, 123, 117, 118, 144, 149, 132,
+    116, 153, 134, 119, 137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155,
+  ],
+  // 122: Color Palette Generator
+  122: [
+    121, 120, 154, 146, 130, 140, 145, 147, 126, 123, 117, 118, 144, 149, 132,
+    116, 153, 134, 119, 137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155,
+  ],
+  // 123: CSS Button Generator
+  123: [
+    118, 144, 149, 117, 146, 130, 132, 116, 126, 121, 122, 154, 153, 134, 119,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 124: CSS Calc Builder
+  124: [
+    151, 142, 143, 155, 135, 148, 128, 141, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 125: CSS Counter Generator
+  125: [
+    148, 128, 141, 131, 138, 136, 124, 151, 142, 143, 155, 150, 152, 135, 126,
+    146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139, 119, 134,
+  ],
+  // 126: CSS Filter Generator
+  126: [
+    114, 139, 137, 146, 130, 132, 129, 123, 117, 118, 144, 149, 116, 153, 134,
+    119, 121, 122, 154, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 127: CSS Font-face Generator
+  127: [
+    145, 147, 143, 142, 135, 151, 155, 148, 128, 141, 131, 138, 136, 125, 150,
+    152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139,
+  ],
+  // 128: CSS Grid Generator
+  128: [
+    141, 148, 135, 142, 143, 151, 155, 124, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 129: CSS Loader Generator
+  129: [
+    114, 139, 137, 146, 130, 132, 126, 123, 117, 118, 144, 149, 116, 153, 134,
+    119, 121, 122, 154, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 130: CSS Mesh Gradient Generator
+  130: [
+    146, 132, 116, 144, 149, 117, 118, 123, 126, 121, 122, 154, 153, 134, 119,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 131: CSS Minifier
+  131: [
+    138, 136, 125, 150, 152, 124, 151, 142, 143, 155, 135, 148, 128, 141, 126,
+    146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139, 119, 134,
+  ],
+  // 132: CSS Pattern Generator
+  132: [
+    146, 130, 116, 144, 149, 117, 118, 123, 126, 121, 122, 154, 153, 134, 119,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 133: CSS Playground
+  133: [
+    141, 128, 148, 135, 142, 143, 151, 155, 124, 115, 5, 1, 76, 77, 131, 138,
+    136, 125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123,
+  ],
+  // 134: CSS Shape Generator
+  134: [
+    119, 117, 118, 146, 130, 132, 144, 149, 123, 126, 153, 121, 122, 154, 137,
+    139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131, 138,
+  ],
+  // 135: CSS Spacing Scale Generator
+  135: [
+    142, 143, 151, 155, 124, 148, 128, 141, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 136: CSS Specificity Calculator
+  136: [
+    138, 131, 125, 150, 152, 124, 151, 142, 143, 155, 135, 148, 128, 141, 126,
+    146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139, 119, 134,
+  ],
+  // 137: CSS Transition Previewer
+  137: [
+    139, 114, 146, 130, 132, 129, 126, 123, 117, 118, 144, 149, 116, 153, 134,
+    119, 121, 122, 154, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 138: CSS Variable Extractor
+  138: [
+    136, 131, 125, 150, 152, 124, 151, 142, 143, 155, 135, 148, 128, 141, 126,
+    146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139, 119, 134,
+  ],
+  // 139: Cubic Bezier Editor
+  139: [
+    137, 114, 146, 130, 132, 129, 126, 123, 117, 118, 144, 149, 116, 153, 134,
+    119, 121, 122, 154, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 140: Dark Mode CSS Generator
+  140: [
+    146, 130, 144, 149, 117, 118, 123, 126, 121, 122, 154, 132, 116, 153, 134,
+    119, 137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152,
+  ],
+  // 141: Flexbox Playground
+  141: [
+    128, 148, 135, 142, 143, 151, 155, 124, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 142: Fluid Space Calculator
+  142: [
+    143, 135, 151, 155, 124, 148, 128, 141, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 143: Fluid Typography Calculator
+  143: [
+    142, 135, 151, 155, 124, 148, 128, 141, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 144: Glassmorphism Generator
+  144: [
+    149, 118, 117, 123, 146, 130, 132, 116, 126, 121, 122, 154, 153, 134, 119,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 145: Google Fonts Pairing Tool
+  145: [
+    147, 127, 143, 142, 135, 151, 155, 148, 128, 141, 131, 138, 136, 125, 150,
+    152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139,
+  ],
+  // 146: Gradient Generator
+  146: [
+    130, 132, 116, 144, 149, 117, 118, 123, 126, 121, 122, 154, 153, 134, 119,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 147: Letter Spacing Line Height Visualizer
+  147: [
+    145, 127, 143, 142, 135, 151, 155, 148, 128, 141, 131, 138, 136, 125, 150,
+    152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139,
+  ],
+  // 148: Media Query Builder
+  148: [
+    142, 143, 135, 151, 155, 124, 128, 141, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 149: Neumorphism Generator
+  149: [
+    144, 118, 117, 123, 146, 130, 132, 116, 126, 121, 122, 154, 153, 134, 119,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 150: Print CSS Helper
+  150: [
+    148, 125, 138, 136, 131, 124, 151, 142, 143, 155, 135, 148, 128, 141, 126,
+    146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 114, 137, 139, 119, 134,
+  ],
+  // 151: PX to REM Converter
+  151: [
+    124, 142, 143, 155, 135, 148, 128, 141, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
+  // 152: Scroll Snap Builder
+  152: [
+    114, 139, 137, 148, 128, 141, 135, 142, 143, 151, 155, 124, 131, 138, 136,
+    125, 150, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129, 119, 134,
+  ],
+  // 153: Text Shadow Generator
+  153: [
+    118, 117, 144, 149, 123, 146, 130, 132, 116, 126, 121, 122, 154, 134, 119,
+    137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155, 124, 148, 152, 131,
+  ],
+  // 154: Tint Shade Generator
+  154: [
+    122, 121, 120, 146, 130, 140, 145, 147, 126, 123, 117, 118, 144, 149, 132,
+    116, 153, 134, 119, 137, 139, 114, 129, 128, 141, 135, 142, 143, 151, 155,
+  ],
+  // 155: Viewport Unit Converter
+  155: [
+    151, 124, 142, 143, 135, 148, 128, 141, 115, 5, 1, 76, 77, 131, 138, 136,
+    125, 150, 152, 126, 146, 130, 132, 116, 117, 118, 144, 149, 123, 129,
+  ],
 };
 
 // Create a reverse mapping from ID to slug for easy lookup
@@ -1147,8 +1569,8 @@ for (const slug in converters) {
   idToSlug[converters[slug].id] = slug;
 }
 
-const generateLayout = (toolName, { h1, p }) => {
-  const canonical = `https://1000freetools.com/unit-converters/${toolName}`;
+const generateLayout = (toolName, { h1, p }, category = "unit-converters") => {
+  const canonical = `https://1000freetools.com/${category}/${toolName}`;
 
   // Get the ID of the current tool
   const currentToolId = converters[toolName]?.id;
@@ -1165,7 +1587,7 @@ const generateLayout = (toolName, { h1, p }) => {
   const otherTools = linkedToolSlugs.map((slug) => ({
     name: toolMetadata[slug].h1,
     description: toolMetadata[slug].p,
-    href: `/unit-converters/${slug}`,
+    href: `/${category}/${slug}`,
   }));
 
   const toolsJson = JSON.stringify(otherTools, null, 2);
@@ -1197,13 +1619,60 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 `;
 };
 
+// CSS Tools slugs
+const cssToolSlugs = [
+  "animation-generator",
+  "aspect-ratio-calculator",
+  "background-noise-generator",
+  "border-radius-generator",
+  "box-shadow-generator",
+  "clip-path-maker",
+  "color-contrast-checker",
+  "color-converter",
+  "color-palette-generator",
+  "css-button-generator",
+  "css-calc-builder",
+  "css-counter-generator",
+  "css-filter-generator",
+  "css-font-face-generator",
+  "css-grid-generator",
+  "css-loader-generator",
+  "css-mesh-gradient-generator",
+  "css-minifier",
+  "css-pattern-generator",
+  "css-playground",
+  "css-shape-generator",
+  "css-spacing-scale-generator",
+  "css-specificity-calculator",
+  "css-transition-previewer",
+  "css-variable-extractor",
+  "cubic-bezier-editor",
+  "dark-mode-css-generator",
+  "flexbox-playground",
+  "fluid-space-calculator",
+  "fluid-typography-calculator",
+  "glassmorphism-generator",
+  "google-fonts-pairing-tool",
+  "gradient-generator",
+  "letter-spacing-line-height-visualizer",
+  "media-query-builder",
+  "neumorphism-generator",
+  "print-css-helper",
+  "px-rem-converter",
+  "scroll-snap-builder",
+  "text-shadow-generator",
+  "tint-shade-generator",
+  "viewport-unit-converter",
+];
+
 // The rest of the file generation loop remains the same
 for (const [toolName, meta] of Object.entries(toolMetadata)) {
-  const dir = path.join("app", "unit-converters", toolName);
+  const category = cssToolSlugs.includes(toolName) ? "css-tools" : "unit-converters";
+  const dir = path.join("app", category, toolName);
   const filePath = path.join(dir, "layout.tsx");
 
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(filePath, generateLayout(toolName, meta), "utf-8");
+  fs.writeFileSync(filePath, generateLayout(toolName, meta, category), "utf-8");
 
   console.log(`✅ Created: ${filePath}`);
 }

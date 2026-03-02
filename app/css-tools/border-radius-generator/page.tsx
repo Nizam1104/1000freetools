@@ -293,6 +293,82 @@ border-bottom-left-radius: ${bottomLeft}px;`}
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-12 space-y-8">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Understanding Border Radius</h2>
+          <p className="text-muted-foreground mb-4">
+            Border radius rounds element corners. You can use one value for all corners, or different 
+            values for each. The property accepts pixels, percentages, or even elliptical values for 
+            asymmetric curves.
+          </p>
+          <p className="text-muted-foreground">
+            This generator lets you adjust each corner independently and see the result before 
+            copying the CSS. Toggle uniform mode when you want all corners the same.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Border Radius Syntax</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Single value (all corners)</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">border-radius: 8px;</code>
+                <p className="text-sm text-muted-foreground">Applies 8px radius to all four corners.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Four values (clockwise from top-left)</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">border-radius: 10px 20px 10px 20px;</code>
+                <p className="text-sm text-muted-foreground">Top-left, top-right, bottom-right, bottom-left.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Elliptical corners</h3>
+                <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">border-radius: 10px / 20px;</code>
+                <p className="text-sm text-muted-foreground">Different horizontal and vertical radii for oval corners.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Common Questions</h2>
+          <div className="space-y-4">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">What value makes a perfect circle?</h3>
+                <p className="text-sm text-muted-foreground">
+                  For a square element, use <code className="bg-muted px-1 rounded">border-radius: 50%</code> or 
+                  any value ≥ half the element's width. For rectangles, elliptical values create pill shapes.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Can I animate border radius?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes, border-radius is animatable. Transitions work smoothly between different values. 
+                  Performance is good on modern browsers.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">Why do my rounded corners look jagged?</h3>
+                <p className="text-sm text-muted-foreground">
+                  This is usually an anti-aliasing issue. Try adding a 1px transparent border or using 
+                  <code className="bg-muted px-1 rounded">outline: 1px solid transparent</code> to smooth edges.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
