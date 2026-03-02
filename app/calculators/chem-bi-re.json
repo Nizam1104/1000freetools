@@ -1,0 +1,200 @@
+[
+    {
+        "calculatorName": "Molarity Calculator",
+        "description": "Calculates the molarity (moles of solute per liter of solution) given moles and volume, or finds missing variables.",
+        "h1": "Molarity Calculator – Calculate Molar Concentration Instantly",
+        "p": "Use our free molarity calculator to find the molar concentration of a solution. Enter moles of solute and volume of solution to get accurate results in seconds. Perfect for chemistry students, lab technicians, and researchers."
+    },
+    {
+        "calculatorName": "Molality Calculator",
+        "description": "Calculates molality (moles of solute per kilogram of solvent) for a given solution.",
+        "h1": "Molality Calculator – Find Molality of Any Solution",
+        "p": "Calculate the molality of a solution quickly with our free molality calculator. Enter moles of solute and mass of solvent in kilograms to get accurate molality values. Ideal for chemistry coursework and laboratory applications."
+    },
+    {
+        "calculatorName": "pH Calculator",
+        "description": "Calculates the pH of a solution from hydrogen ion concentration, or vice versa.",
+        "h1": "pH Calculator – Calculate pH from H⁺ Concentration",
+        "p": "Determine the pH of any solution instantly with our pH calculator. Input the hydrogen ion concentration [H⁺] or pH value to convert between them. Great for chemistry students, teachers, and lab professionals."
+    },
+    {
+        "calculatorName": "pOH Calculator",
+        "description": "Calculates pOH from hydroxide ion concentration and converts between pH and pOH.",
+        "h1": "pOH Calculator – Calculate pOH and Convert to pH",
+        "p": "Use our pOH calculator to find the pOH of a solution from [OH⁻] concentration, or easily convert between pH and pOH. Essential tool for acid-base chemistry problems and laboratory work."
+    },
+    {
+        "calculatorName": "Henderson-Hasselbalch Calculator",
+        "description": "Calculates the pH of a buffer solution using the Henderson-Hasselbalch equation given pKa, acid, and conjugate base concentrations.",
+        "h1": "Henderson-Hasselbalch Calculator – Buffer pH Made Easy",
+        "p": "Calculate the pH of buffer solutions using the Henderson-Hasselbalch equation. Enter pKa, acid concentration, and conjugate base concentration to get precise buffer pH values. Ideal for biochemistry, pharmacology, and analytical chemistry."
+    },
+    {
+        "calculatorName": "Dilution Calculator",
+        "description": "Calculates the final concentration or volume after diluting a solution using the C1V1 = C2V2 formula.",
+        "h1": "Dilution Calculator – C1V1 = C2V2 Solution Dilution Tool",
+        "p": "Quickly calculate solution dilutions with our free dilution calculator. Using the C1V1 = C2V2 formula, find any unknown concentration or volume in seconds. Perfect for lab preparation, microbiology, and chemistry experiments."
+    },
+    {
+        "calculatorName": "Stoichiometry Calculator",
+        "description": "Calculates reactant and product quantities in a chemical reaction based on a balanced equation and given amounts.",
+        "h1": "Stoichiometry Calculator – Balance Chemical Reactions Instantly",
+        "p": "Solve stoichiometry problems effortlessly with our stoichiometry calculator. Input your balanced chemical equation and known quantities to find moles, grams, or molecules of reactants and products. A must-have tool for chemistry students."
+    },
+    {
+        "calculatorName": "Ideal Gas Calculator",
+        "description": "Calculates pressure, volume, temperature, or moles of an ideal gas using the ideal gas law (PV = nRT).",
+        "h1": "Ideal Gas Law Calculator – Solve PV = nRT Equations",
+        "p": "Apply the ideal gas law with ease using our PV = nRT calculator. Solve for pressure, volume, temperature, or number of moles by entering the known variables. Essential for chemistry and physics students and professionals."
+    },
+    {
+        "calculatorName": "Empirical Formula Calculator",
+        "description": "Determines the empirical formula of a compound from elemental percent composition or mass data.",
+        "h1": "Empirical Formula Calculator – Find Empirical Formula from Percent Composition",
+        "p": "Find the empirical formula of any compound using our free empirical formula calculator. Enter percent composition or mass of each element to instantly get the simplest whole-number ratio. Great for general and organic chemistry students."
+    },
+    {
+        "calculatorName": "Molecular Mass Calculator",
+        "description": "Calculates the molecular (molar) mass of a chemical compound from its formula.",
+        "h1": "Molecular Mass Calculator – Calculate Molar Mass of Any Compound",
+        "p": "Calculate the molecular mass of any chemical compound by entering its formula. Our molecular mass calculator uses atomic weights to deliver accurate molar mass in g/mol instantly. Useful for chemistry students and lab professionals."
+    },
+    {
+        "calculatorName": "Percent Composition Calculator",
+        "description": "Calculates the percent by mass of each element in a chemical compound.",
+        "h1": "Percent Composition Calculator – Find Mass Percent of Elements",
+        "p": "Determine the percent composition by mass of each element in a compound with our free percent composition calculator. Enter the chemical formula and get accurate elemental percentages instantly. Perfect for chemistry coursework and analysis."
+    },
+    {
+        "calculatorName": "Concentration Calculator",
+        "description": "Calculates concentration of a solution in various units (molarity, percent, ppm) from mass, volume, and molecular weight.",
+        "h1": "Concentration Calculator – Convert Solution Concentration Units",
+        "p": "Calculate solution concentration in molarity, percent composition, ppm, or ppb with our versatile concentration calculator. Ideal for chemists, lab technicians, and students working with solution preparation and analysis."
+    },
+    {
+        "calculatorName": "Titration Calculator",
+        "description": "Calculates the unknown concentration of an acid or base using titration data (volume and concentration of titrant).",
+        "h1": "Titration Calculator – Find Unknown Concentration from Titration Data",
+        "p": "Solve titration problems quickly with our titration calculator. Enter the volume and concentration of your titrant and analyte to find the unknown concentration of an acid or base. Essential for analytical chemistry labs."
+    },
+    {
+        "calculatorName": "Reaction Yield Calculator",
+        "description": "Calculates theoretical yield, actual yield, and percent yield for a chemical reaction.",
+        "h1": "Reaction Yield Calculator – Calculate Theoretical and Percent Yield",
+        "p": "Calculate the theoretical yield, actual yield, and percent yield of any chemical reaction with our free yield calculator. Understand your reaction efficiency and optimize lab results. Ideal for chemistry students and researchers."
+    },
+    {
+        "calculatorName": "Electrochemical Cell Potential Calculator",
+        "description": "Calculates the standard cell potential (EMF) of an electrochemical cell using standard reduction potentials.",
+        "h1": "Electrochemical Cell Potential Calculator – Calculate EMF of Galvanic Cells",
+        "p": "Find the standard cell potential (EMF) of galvanic or electrolytic cells using our electrochemical calculator. Enter reduction potentials for cathode and anode to get the cell voltage. Perfect for electrochemistry and physical chemistry students."
+    },
+    {
+        "calculatorName": "pKa/pKb Calculator",
+        "description": "Calculates pKa from Ka, pKb from Kb, and interconverts pKa and pKb using pKa + pKb = 14.",
+        "h1": "pKa and pKb Calculator – Convert Ka, Kb, pKa, and pKb",
+        "p": "Convert between Ka, Kb, pKa, and pKb values effortlessly with our pKa/pKb calculator. Use the relationship pKa + pKb = 14 to find acid and base dissociation constants. Essential for acid-base chemistry and biochemistry."
+    },
+    {
+        "calculatorName": "Moles-to-Volume Converter (Gas)",
+        "description": "Converts moles of a gas to volume at STP or given conditions using the ideal gas law.",
+        "h1": "Moles to Volume Calculator for Gas – STP and Custom Conditions",
+        "p": "Convert moles of gas to liters at STP or any temperature and pressure with our moles-to-volume gas calculator. Uses the ideal gas law for accurate results. Great for chemistry students and lab professionals."
+    },
+    {
+        "calculatorName": "Vapor Pressure Calculator",
+        "description": "Calculates vapor pressure of a liquid at a given temperature using the Antoine or Clausius-Clapeyron equation.",
+        "h1": "Vapor Pressure Calculator – Calculate Vapor Pressure at Any Temperature",
+        "p": "Determine the vapor pressure of a substance at any temperature using our vapor pressure calculator. Based on the Clausius-Clapeyron and Antoine equations, it's ideal for physical chemistry, thermodynamics, and engineering applications."
+    },
+    {
+        "calculatorName": "Solubility Product (Ksp) Calculator",
+        "description": "Calculates the Ksp from ion concentrations at equilibrium, or finds ion concentration from Ksp.",
+        "h1": "Ksp Calculator – Solubility Product Constant Made Simple",
+        "p": "Calculate the solubility product constant (Ksp) or find ion concentrations at equilibrium with our Ksp calculator. Essential for understanding sparingly soluble salts and equilibrium chemistry. Perfect for general and analytical chemistry."
+    },
+    {
+        "calculatorName": "Reaction Rate Constant Calculator",
+        "description": "Calculates the rate constant (k) for a chemical reaction using the Arrhenius equation or from rate law data.",
+        "h1": "Reaction Rate Constant Calculator – Find k Using Arrhenius Equation",
+        "p": "Calculate the reaction rate constant (k) using the Arrhenius equation or experimental rate law data with our free calculator. Input activation energy and temperature to find k instantly. Ideal for kinetics and physical chemistry students."
+    },
+    {
+        "calculatorName": "Punnett Square Calculator",
+        "description": "Generates a Punnett square for monohybrid or dihybrid crosses and calculates genotype and phenotype probabilities.",
+        "h1": "Punnett Square Calculator – Predict Genetic Cross Outcomes",
+        "p": "Generate Punnett squares for monohybrid and dihybrid genetic crosses with our free calculator. Calculate genotype and phenotype ratios and probabilities instantly. Perfect for biology students, genetics courses, and science teachers."
+    },
+    {
+        "calculatorName": "DNA Base Count",
+        "description": "Counts the number of each nucleotide base (A, T, G, C) in a given DNA sequence and calculates GC content.",
+        "h1": "DNA Base Count Calculator – Count Nucleotides and GC Content",
+        "p": "Analyze any DNA sequence with our DNA base count calculator. Count adenine, thymine, guanine, and cytosine bases and calculate GC content percentage instantly. Useful for molecular biology, genetics, and bioinformatics students."
+    },
+    {
+        "calculatorName": "Dilution Factor Calculator",
+        "description": "Calculates the dilution factor and resulting concentration when a sample is diluted in a series of steps.",
+        "h1": "Dilution Factor Calculator – Serial and Simple Dilution Tool",
+        "p": "Calculate dilution factors for simple and serial dilutions with our free calculator. Determine the final concentration after one or multiple dilution steps. Essential for microbiology, cell biology, and clinical laboratory work."
+    },
+    {
+        "calculatorName": "Cell Culture Doubling Calculator",
+        "description": "Calculates cell population doubling time and expected cell count over time based on growth rate.",
+        "h1": "Cell Culture Doubling Time Calculator – Estimate Cell Growth",
+        "p": "Calculate the doubling time of cell cultures and predict future cell counts with our cell culture doubling calculator. Enter initial cell count, final count, and elapsed time for accurate growth analysis. Ideal for cell biology and biotech researchers."
+    },
+    {
+        "calculatorName": "Bacterial Growth Calculator",
+        "description": "Calculates bacterial population size at any time point given initial count, growth rate, and elapsed time.",
+        "h1": "Bacterial Growth Calculator – Model Microbial Population Growth",
+        "p": "Model bacterial population growth using exponential growth equations with our bacterial growth calculator. Input initial population, growth rate, and time to predict colony size. Perfect for microbiology, food science, and infectious disease studies."
+    },
+    {
+        "calculatorName": "WBC Count Calculator",
+        "description": "Calculates the total white blood cell count from a hemocytometer count and dilution factor.",
+        "h1": "WBC Count Calculator – Calculate White Blood Cell Count",
+        "p": "Calculate total white blood cell (WBC) count from hemocytometer readings and dilution factors with our free WBC calculator. Essential for hematology, clinical lab work, and medical students learning complete blood count analysis."
+    },
+    {
+        "calculatorName": "RBC Count Calculator",
+        "description": "Calculates the total red blood cell count from hemocytometer data and appropriate dilution factors.",
+        "h1": "RBC Count Calculator – Calculate Red Blood Cell Count",
+        "p": "Determine accurate red blood cell (RBC) counts from hemocytometer readings using our RBC calculator. Factor in dilution for precise results. Ideal for hematology labs, medical students, and clinical pathology professionals."
+    },
+    {
+        "calculatorName": "Rent per Square Foot Calculator",
+        "description": "Calculates the rent per square foot for a property based on monthly rent and total area.",
+        "h1": "Rent per Square Foot Calculator – Compare Property Rental Rates",
+        "p": "Calculate rent per square foot for any property with our free calculator. Compare rental rates across different properties to make informed leasing decisions. Essential for tenants, landlords, commercial real estate professionals, and property managers."
+    },
+    {
+        "calculatorName": "House Construction Cost Estimator",
+        "description": "Estimates the total cost of building a house based on area, location, construction type, and material quality.",
+        "h1": "House Construction Cost Estimator – Estimate Home Building Costs",
+        "p": "Estimate the total cost of building a house based on area, construction type, and material quality with our free construction cost estimator. Plan your budget accurately before breaking ground. Ideal for homeowners, builders, and real estate developers."
+    },
+    {
+        "calculatorName": "Land Area Converter",
+        "description": "Converts land area between units like acres, hectares, square meters, square feet, bigha, and more.",
+        "h1": "Land Area Converter – Convert Acres, Hectares, Sq Ft, and Bigha",
+        "p": "Convert land area between acres, hectares, square meters, square feet, bigha, and other units with our free land area converter. Perfect for real estate buyers, sellers, farmers, and property developers needing accurate area conversions."
+    },
+    {
+        "calculatorName": "Carpet Area Calculator",
+        "description": "Calculates the carpet area of a property from the built-up or super built-up area using standard deduction ratios.",
+        "h1": "Carpet Area Calculator – Calculate Carpet Area from Built-Up Area",
+        "p": "Calculate the carpet area of a flat or house from built-up or super built-up area using standard ratios with our free carpet area calculator. Understand exactly how much usable space you're getting. Essential for home buyers in India."
+    },
+    {
+        "calculatorName": "EMI for Home Loan Calculator",
+        "description": "Calculates monthly EMI, total interest payable, and total repayment amount for a home loan.",
+        "h1": "Home Loan EMI Calculator – Calculate Monthly EMI and Interest",
+        "p": "Calculate your monthly home loan EMI, total interest, and repayment schedule with our free home loan EMI calculator. Enter loan amount, interest rate, and tenure for instant results. Essential for home buyers comparing mortgage options."
+    },
+    {
+        "calculatorName": "Rental ROI Calculator",
+        "description": "Calculates the return on investment (ROI) for a rental property based on purchase price, rent, expenses, and financing.",
+        "h1": "Rental ROI Calculator – Calculate Return on Investment for Rental Properties",
+        "p": "Evaluate the profitability of rental properties with our free rental ROI calculator. Factor in purchase price, monthly rent, expenses, and loan costs to calculate annual return on investment. Essential for real estate investors and landlords."
+    }
+]

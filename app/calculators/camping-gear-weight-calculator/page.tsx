@@ -1,0 +1,324 @@
+"use client";
+
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+interface CampingGearResult {
+  items: Array<{ name: string; weight: number }>;
+  totalWeight: number;
+  baseWeight: number;
+  wornWeight: number;
+  consumables: number;
+  packWeightCategory: string;
+  recommendations: string[];
+}
+
+export default function CampingGearWeightCalculatorPage() {
+  const [items, setItems] = useState<Array<{ name: string; weight: string; category: string }>>([
+    { name: "Tent", weight: "", category: "shelter" },
+    { name: "Sleeping Bag", weight: "", category: "sleep" },
+    { name: "Backpack", weight: "", category: "pack" },
+  ]);
+  const [wornWeight, setWornWeight] = useState<string>("");
+  const [result, setResult] = useState<CampingGearResult | null>(null);
+
+  const addItem = () => {
+    setItems([...items, { name: `Item ${items.length + 1}`, weight: "", category: "other" }]);
+  };
+
+  const removeItem = (index: number) => {
+    setItems(items.filter((_, i) => i !== index));
+  };
+
+  const updateItem = (index: number, field: string, value: string) => {
+    const newItems = [...items];
+    newItems[index] = { ...newItems[index], [field]: value };
+    setItems(newItems);
+  };
+
+  const calculate = () => {
+    const wornWeightNum = parseFloat(wornWeight) || 0;
+    let totalWeight = 0;
+    let baseWeight = 0;
+    const processedItems: Array<{ name: string; weight: number }> = [];
+
+    for (const item of items) {
+      const weight = parseFloat(item.weight) || 0;
+      if (weight === 0) continue;
+
+      totalWeight += weight;
+      
+      // Base weight excludes consumables and worn items
+      if (item.category !== "consumable" && item.category !== "worn") {
+        baseWeight += weight;
+      }
+
+      processedItems.push({
+        name: item.name,
+        weight,
+      });
+    }
+
+    // Add worn weight
+    totalWeight += wornWeightNum;
+
+    // Pack weight category
+    let packWeightCategory = "";
+    if (baseWeight < 4.5) {
+      packWeightCategory = "🏆 Ultralight (<10 lbs base)";
+    } else if (baseWeight < 9) {
+      packWeightCategory = "✅ Lightweight (10-20 lbs base)";
+    } else if (baseWeight < 13.5) {
+      packWeightCategory = "⚖️ Traditional (20-30 lbs base)";
+    } else {
+      packWeightCategory = "⚠️ Heavy (>30 lbs base)";
+    }
+
+    // Recommendations
+    const recommendations: string[] = [];
+    recommendations.push(`🎒 Total pack weight: ${(totalWeight).toFixed(2)} kg (${(totalWeight * 2.205).toFixed(1)} lbs)`);
+    recommendations.push(`📦 Base weight: ${(baseWeight).toFixed(2)} kg (${(baseWeight * 2.205).toFixed(1)} lbs)`);
+    recommendations.push(`👕 Worn weight: ${wornWeightNum.toFixed(2)} kg (${(wornWeightNum * 2.205).toFixed(1)} lbs)`);
+
+    if (baseWeight > 9) {
+      recommendations.push("⚠️ Consider ultralight alternatives for big three (tent, bag, pack)");
+      recommendations.push("🔪 Look for multi-use items to reduce gear count");
+    }
+
+    if (baseWeight < 4.5) {
+      recommendations.push("🏆 Excellent ultralight setup!");
+    }
+
+    recommendations.push("📊 Aim for base weight under 10 lbs for comfortable hiking");
+    recommendations.push("⚖️ Every gram counts on long trips");
+
+    setResult({
+      items: processedItems,
+      totalWeight,
+      baseWeight: parseFloat(baseWeight.toFixed(2)),
+      wornWeight: wornWeightNum,
+      consumables: 0,
+      packWeightCategory,
+      recommendations,
+    });
+  };
+
+  const reset = () => {
+    setItems([
+      { name: "Tent", weight: "", category: "shelter" },
+      { name: "Sleeping Bag", weight: "", category: "sleep" },
+      { name: "Backpack", weight: "", category: "pack" },
+    ]);
+    setWornWeight("");
+    setResult(null);
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8 max-w-5xl">
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Camping Gear Weight Calculator – Plan Your Pack Weight for Any Trip
+          </h1>
+          <p className="text-muted-foreground">
+            Pack smart with our Camping Gear Weight Calculator. List all your gear items
+            with individual weights to calculate total pack weight and identify heavy items —
+            helping backpackers and campers stay within comfortable carry limits.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-6">
+          <Card>
+            <CardContent className="p-6 space-y-4">
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <Label>Gear Items</Label>
+                  <Button type="button" variant="outline" size="sm" onClick={addItem}>
+                    + Add Item
+                  </Button>
+                </div>
+
+                <div className="space-y-3 max-h-80 overflow-y-auto">
+                  {items.map((item, index) => (
+                    <div key={index} className="p-3 border rounded-lg space-y-2">
+                      <div className="flex justify-between items-center">
+                        <Input
+                          value={item.name}
+                          onChange={(e) => updateItem(index, "name", e.target.value)}
+                          className="w-32"
+                          placeholder="Item name"
+                        />
+                        {items.length > 1 && (
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => removeItem(index)}
+                          >
+                            Remove
+                          </Button>
+                        )}
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="space-y-1">
+                          <Label className="text-xs">Weight (kg)</Label>
+                          <Input
+                            type="number"
+                            step="0.01"
+                            value={item.weight}
+                            onChange={(e) => updateItem(index, "weight", e.target.value)}
+                            placeholder="0.5"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <Label className="text-xs">Category</Label>
+                          <select
+                            value={item.category}
+                            onChange={(e) => updateItem(index, "category", e.target.value)}
+                            className="w-full p-2 border rounded-md bg-background text-sm"
+                          >
+                            <option value="shelter">Shelter</option>
+                            <option value="sleep">Sleep System</option>
+                            <option value="pack">Pack</option>
+                            <option value="cooking">Cooking</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="consumable">Consumable</option>
+                            <option value="worn">Worn (not in pack)</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="worn-weight">Worn Weight (clothes, shoes, etc.)</Label>
+                <Input
+                  id="worn-weight"
+                  type="number"
+                  step="0.1"
+                  value={wornWeight}
+                  onChange={(e) => setWornWeight(e.target.value)}
+                  placeholder="e.g., 1.5"
+                />
+                <p className="text-xs text-muted-foreground">
+                  Items worn on body, not in pack
+                </p>
+              </div>
+
+              <div className="flex gap-2 pt-4">
+                <Button onClick={calculate} className="flex-1">
+                  Calculate
+                </Button>
+                <Button variant="outline" onClick={reset}>
+                  Reset
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Pack Weight Analysis</h3>
+              {result ? (
+                <div className="space-y-4">
+                  <div className={`p-4 rounded-lg text-center ${
+                    result.baseWeight < 4.5 ? "bg-green-100 dark:bg-green-900/20" :
+                    result.baseWeight < 9 ? "bg-blue-100 dark:bg-blue-900/20" :
+                    result.baseWeight < 13.5 ? "bg-amber-100 dark:bg-amber-900/20" :
+                    "bg-red-100 dark:bg-red-900/20"
+                  }`}>
+                    <p className="text-sm text-muted-foreground">Pack Weight Category</p>
+                    <p className="text-lg font-bold mt-1">{result.packWeightCategory}</p>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="p-3 bg-muted rounded-lg text-center">
+                      <p className="text-xs text-muted-foreground">Total</p>
+                      <p className="text-lg font-bold">{result.totalWeight.toFixed(2)} kg</p>
+                      <p className="text-xs text-muted-foreground">{(result.totalWeight * 2.205).toFixed(1)} lbs</p>
+                    </div>
+                    <div className="p-3 bg-muted rounded-lg text-center">
+                      <p className="text-xs text-muted-foreground">Base</p>
+                      <p className="text-lg font-bold">{result.baseWeight.toFixed(2)} kg</p>
+                      <p className="text-xs text-muted-foreground">{(result.baseWeight * 2.205).toFixed(1)} lbs</p>
+                    </div>
+                    <div className="p-3 bg-muted rounded-lg text-center">
+                      <p className="text-xs text-muted-foreground">Worn</p>
+                      <p className="text-lg font-bold">{result.wornWeight.toFixed(2)} kg</p>
+                      <p className="text-xs text-muted-foreground">{(result.wornWeight * 2.205).toFixed(1)} lbs</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2 text-sm">Gear List</h4>
+                    <div className="space-y-1 max-h-48 overflow-y-auto">
+                      {result.items.map((item, i) => (
+                        <div key={i} className="flex justify-between p-2 bg-muted/50 rounded text-sm">
+                          <span>{item.name}</span>
+                          <span className="font-mono">{item.weight.toFixed(2)} kg</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2 text-sm">Recommendations</h4>
+                    <ul className="space-y-1">
+                      {result.recommendations.map((rec, i) => (
+                        <li key={i} className="text-sm">{rec}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>Add your gear and click Calculate to see pack weight</p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Pack Weight Guidelines
+              </h3>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <ul className="list-disc list-inside space-y-1 ml-4">
+                  <li>
+                    <strong>Base weight:</strong> Total pack weight minus consumables
+                  </li>
+                  <li>
+                    <strong>Ultralight:</strong> Base weight under 4.5 kg (10 lbs)
+                  </li>
+                  <li>
+                    <strong>Lightweight:</strong> Base weight under 9 kg (20 lbs)
+                  </li>
+                  <li>
+                    <strong>Big three:</strong> Tent, sleeping bag, and pack = ~60% of base weight
+                  </li>
+                  <li>
+                    <strong>Rule of thumb:</strong> Pack weight should not exceed 20% of body weight
+                  </li>
+                </ul>
+                <p>
+                  <strong>Tip:</strong> Focus on reducing the &quot;big three&quot; first for maximum
+                  weight savings. Then look at clothing, cooking gear, and miscellaneous items.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+}

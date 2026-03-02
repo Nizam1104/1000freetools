@@ -44,3 +44,10 @@ const res = await fetch("https://api.indexnow.org/indexnow", {
 
 const text = await res.text();
 console.log(res.status, text);
+
+const calculate = () => {
+  const val1 = parseFloat(input1);
+  const val2 = parseFloat(input2);
+  if (isNaN(val1) || isNaN(val2)) return;
+  setResult(val1 + val2);
+};
