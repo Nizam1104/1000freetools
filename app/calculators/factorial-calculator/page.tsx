@@ -29,15 +29,15 @@ export default function FactorialCalculator() {
       setResult({ factorial: "1", steps: `${num}! = 1` });
       return;
     }
-    
-    let factorial = 1n;
+
+    let factorial = BigInt(1);
     const steps: string[] = [];
-    
+
     for (let i = 1; i <= num; i++) {
       factorial *= BigInt(i);
       steps.push(i.toString());
     }
-    
+
     setResult({
       factorial: factorial.toString(),
       steps: `${num}! = ${steps.join(" × ")} = ${factorial.toString()}`

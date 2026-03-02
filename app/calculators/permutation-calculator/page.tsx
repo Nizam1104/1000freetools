@@ -11,7 +11,7 @@ export default function PermutationCalculator() {
   const [result, setResult] = useState<{ permutations: string; formula: string } | null>(null);
 
   const factorial = (num: number): bigint => {
-    let result = 1n;
+    let result = BigInt(1);
     for (let i = 2; i <= num; i++) {
       result *= BigInt(i);
     }

@@ -1,0 +1,380 @@
+{
+    "calculatorName": "ASCII ↔ Text Converter",
+    "description": "Converts ASCII codes to characters and text to ASCII decimal or hex codes.",
+    "h1": "ASCII to Text Converter – Convert ASCII Codes and Characters",
+    "p": "Convert text to ASCII codes and ASCII codes back to characters with our free ASCII converter. Supports decimal and hexadecimal ASCII values. Useful for programmers, developers, and students learning about character encoding."
+},
+{
+    "calculatorName": "Base64 Encode/Decode",
+    "description": "Encodes text or data to Base64 format and decodes Base64 strings back to plain text.",
+    "h1": "Base64 Encoder and Decoder – Encode and Decode Base64 Online",
+    "p": "Encode text to Base64 or decode Base64 strings back to plain text with our free online tool. Supports standard and URL-safe Base64 encoding. Essential for developers working with APIs, email encoding, and data serialization."
+},
+{
+    "calculatorName": "URL Encode/Decode",
+    "description": "Encodes special characters in a URL using percent-encoding and decodes encoded URLs to readable text.",
+    "h1": "URL Encoder and Decoder – Encode and Decode URLs Online",
+    "p": "Encode or decode URLs instantly with our free URL encoder/decoder. Convert special characters to percent-encoded format and back for safe web transmission. Perfect for web developers, SEO professionals, and API integration."
+},
+{
+    "calculatorName": "HTML Encode/Decode",
+    "description": "Converts HTML special characters to their entity equivalents and decodes HTML entities back to characters.",
+    "h1": "HTML Encoder and Decoder – Convert HTML Entities Online",
+    "p": "Encode HTML special characters like <, >, &, and \" to safe HTML entities and decode them back with our free HTML encoder/decoder. Prevent XSS vulnerabilities and ensure safe HTML rendering. Ideal for web developers and content managers."
+},
+{
+    "calculatorName": "JWT Decoder",
+    "description": "Decodes JSON Web Tokens (JWTs) to display header, payload, and signature components in a readable format.",
+    "h1": "JWT Decoder – Decode JSON Web Tokens Online",
+    "p": "Decode and inspect JSON Web Tokens (JWTs) instantly with our free JWT decoder. View the header, payload, and signature in a human-readable format without any backend needed. Essential for developers working with authentication and authorization."
+},
+{
+    "calculatorName": "Hash Generator (MD5, SHA)",
+    "description": "Generates cryptographic hash values for input text using MD5, SHA-1, SHA-256, SHA-512, and other algorithms.",
+    "h1": "Hash Generator – Generate MD5, SHA-1, SHA-256 Hashes Online",
+    "p": "Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from any text or string with our free hash generator. Verify data integrity and test hashing functions instantly. Essential for developers, security professionals, and data engineers."
+},
+{
+    "calculatorName": "UUID Generator",
+    "description": "Generates universally unique identifiers (UUIDs/GUIDs) in v1, v4, and other formats.",
+    "h1": "UUID Generator – Generate Random UUIDs and GUIDs Online",
+    "p": "Generate random UUIDs (v4) or time-based UUIDs (v1) instantly with our free UUID generator. Create single or bulk UUIDs in standard format for databases, APIs, and distributed systems. Perfect for developers and software engineers."
+},
+{
+    "calculatorName": "Regex Tester",
+    "description": "Tests regular expressions against input text and highlights matches, groups, and flags in real time.",
+    "h1": "Regex Tester – Test Regular Expressions Online in Real Time",
+    "p": "Test and debug regular expressions in real time with our free regex tester. Highlight matches, groups, and named captures instantly. Supports JavaScript, Python, and PCRE regex syntax. Essential for developers and data analysts."
+},
+{
+    "calculatorName": "Lorem Ipsum Generator",
+    "description": "Generates placeholder Lorem Ipsum text in paragraphs, sentences, or words for use in design and development mockups.",
+    "h1": "Lorem Ipsum Generator – Generate Placeholder Text Instantly",
+    "p": "Generate Lorem Ipsum placeholder text in paragraphs, sentences, or word count with our free generator. Customize length and format for UI mockups, design prototypes, and website templates. The go-to tool for designers and developers."
+},
+{
+    "calculatorName": "JSON Formatter",
+    "description": "Formats, beautifies, and minifies JSON data, and validates JSON syntax with error highlighting.",
+    "h1": "JSON Formatter and Validator – Beautify and Minify JSON Online",
+    "p": "Format, beautify, and validate JSON data instantly with our free JSON formatter. Minify JSON for production or pretty-print it for readability. Highlights syntax errors in real time. Indispensable for developers and API testers."
+},
+{
+    "calculatorName": "JSON to CSV Converter",
+    "description": "Converts JSON data arrays to CSV format for use in spreadsheets and data analysis tools.",
+    "h1": "JSON to CSV Converter – Convert JSON Data to CSV Online",
+    "p": "Convert JSON arrays and objects to CSV format instantly with our free JSON-to-CSV converter. Download ready-to-use CSV files for Excel, Google Sheets, or data pipelines. Perfect for developers, data analysts, and business users."
+},
+{
+    "calculatorName": "CSV to JSON Converter",
+    "description": "Converts CSV data to JSON format for use in APIs, JavaScript applications, and databases.",
+    "h1": "CSV to JSON Converter – Transform CSV Files to JSON Online",
+    "p": "Convert CSV data to structured JSON instantly with our free CSV-to-JSON converter. Parse CSV files and transform them into arrays of objects for use in APIs and web applications. Essential for data engineers and backend developers."
+},
+{
+    "calculatorName": "XML to JSON Converter",
+    "description": "Converts XML documents to JSON format for easier use in modern web applications and APIs.",
+    "h1": "XML to JSON Converter – Transform XML to JSON Online",
+    "p": "Convert XML to JSON format instantly with our free XML-to-JSON converter. Transform legacy XML data into modern JSON for APIs, JavaScript apps, and NoSQL databases. Useful for developers migrating from XML-based systems."
+},
+{
+    "calculatorName": "JSON to YAML Converter",
+    "description": "Converts JSON data to YAML format for configuration files and human-readable data serialization.",
+    "h1": "JSON to YAML Converter – Convert JSON to YAML Online",
+    "p": "Transform JSON data to YAML format instantly with our free JSON-to-YAML converter. Get clean, human-readable YAML output perfect for Kubernetes configs, Docker Compose files, and CI/CD pipelines. Essential for DevOps engineers and developers."
+},
+{
+    "calculatorName": "Color Converter (RGB/HEX/HSL)",
+    "description": "Converts color values between RGB, HEX, HSL, and HSV color formats.",
+    "h1": "Color Converter – Convert RGB, HEX, and HSL Color Codes",
+    "p": "Convert colors between RGB, HEX, HSL, and HSV formats instantly with our free color converter. Get accurate color codes for web design, CSS, graphic design, and UI development. The essential tool for designers and front-end developers."
+},
+{
+    "calculatorName": "Diff Checker",
+    "description": "Compares two blocks of text line by line and highlights the differences between them.",
+    "h1": "Diff Checker – Compare Two Texts and Find Differences Online",
+    "p": "Compare two texts, code snippets, or documents side by side with our free diff checker. Highlights additions, deletions, and changes line by line. Perfect for developers reviewing code changes, writers editing drafts, and content teams."
+},
+{
+    "calculatorName": "Random Password Generator",
+    "description": "Generates strong, random passwords of customizable length with options for uppercase, lowercase, numbers, and symbols.",
+    "h1": "Random Password Generator – Create Strong Secure Passwords",
+    "p": "Generate strong, secure, random passwords instantly with our free password generator. Customize length and character types including uppercase, lowercase, numbers, and symbols. Improve your online security and protect your accounts."
+},
+{
+    "calculatorName": "Random String Generator",
+    "description": "Generates random alphanumeric or custom character strings of specified length for testing and development.",
+    "h1": "Random String Generator – Generate Custom Random Strings Online",
+    "p": "Generate random strings of any length and character set with our free random string generator. Ideal for creating test data, tokens, API keys, and unique identifiers. A handy tool for developers and QA engineers."
+},
+{
+    "calculatorName": "QR Code Generator",
+    "description": "Generates QR codes from URLs, text, contact info, and other data for instant scanning.",
+    "h1": "QR Code Generator – Create QR Codes for Free Online",
+    "p": "Generate custom QR codes from URLs, text, phone numbers, or any data with our free QR code generator. Download high-resolution QR codes for print and digital use. Perfect for marketers, businesses, and event organizers."
+},
+{
+    "calculatorName": "IP Subnet Calculator",
+    "description": "Calculates subnet mask, network address, broadcast address, and host range from an IP and CIDR prefix.",
+    "h1": "IP Subnet Calculator – Calculate Subnet Mask and Host Range",
+    "p": "Calculate subnet masks, network addresses, broadcast addresses, and usable host ranges for any IP with our IP subnet calculator. Supports IPv4 and CIDR notation. Essential for network engineers, sysadmins, and IT professionals."
+},
+{
+    "calculatorName": "CIDR Converter",
+    "description": "Converts CIDR notation to subnet mask and vice versa, and displays network information.",
+    "h1": "CIDR Converter – Convert CIDR Notation to Subnet Mask",
+    "p": "Convert CIDR notation to subnet mask, wildcard mask, and binary format with our free CIDR converter. Quickly understand network prefixes and IP ranges. Ideal for network administrators and cloud infrastructure engineers."
+},
+{
+    "calculatorName": "Network Range Calculator",
+    "description": "Calculates the first and last IP addresses, total hosts, and usable hosts in a network range.",
+    "h1": "Network Range Calculator – Find IP Range and Usable Hosts",
+    "p": "Find the full IP address range, first host, last host, and total usable hosts for any network with our network range calculator. Input IP address and subnet mask or CIDR for instant results. A must-have for network engineers."
+},
+{
+    "calculatorName": "Cron Expression Generator",
+    "description": "Builds and validates cron expressions by selecting schedule parameters, with human-readable output.",
+    "h1": "Cron Expression Generator – Build and Validate Cron Jobs Online",
+    "p": "Generate and validate cron expressions visually with our free cron expression generator. Select minute, hour, day, month, and weekday settings and get the cron syntax instantly. Perfect for developers scheduling tasks and jobs."
+},
+{
+    "calculatorName": "UUID Validator",
+    "description": "Validates whether a given string is a properly formatted UUID and identifies its version.",
+    "h1": "UUID Validator – Validate and Identify UUID Format and Version",
+    "p": "Validate any UUID string and identify its version (v1, v4, etc.) instantly with our free UUID validator. Ensure UUIDs are correctly formatted before using them in databases or APIs. Helpful for developers and QA engineers."
+},
+{
+    "calculatorName": "Base Converter (Any Base)",
+    "description": "Converts numbers between any two bases from base 2 to base 36.",
+    "h1": "Number Base Converter – Convert Between Any Number Bases",
+    "p": "Convert numbers between any bases from binary (base 2) to hexatridecimal (base 36) with our free base converter. Supports bases 2 through 36 for flexible number system conversion. Ideal for computer science students and programmers."
+},
+{
+    "calculatorName": "Image to Base64 Converter",
+    "description": "Converts image files to Base64-encoded strings for embedding in HTML, CSS, or APIs.",
+    "h1": "Image to Base64 Converter – Encode Images to Base64 Online",
+    "p": "Convert images to Base64-encoded strings instantly with our free image-to-Base64 converter. Embed images directly in HTML, CSS, JSON, or API payloads without hosting. Essential for front-end developers and web designers."
+},
+{
+    "calculatorName": "File Size Estimator",
+    "description": "Estimates the file size of text, images, audio, or video based on input parameters like resolution, bitrate, and duration.",
+    "h1": "File Size Estimator – Estimate File Size for Any Format",
+    "p": "Estimate the file size of text documents, images, audio, and video files with our free file size estimator. Input resolution, bitrate, or character count for accurate size predictions. Useful for developers, designers, and content creators."
+},
+{
+    "calculatorName": "Download Time Calculator",
+    "description": "Calculates the time required to download a file given its size and available internet connection speed.",
+    "h1": "Download Time Calculator – Estimate File Download Time",
+    "p": "Calculate how long it will take to download any file based on file size and internet speed with our free download time calculator. Supports Mbps, Kbps, and Gbps speeds. Perfect for comparing connection speeds and planning large file transfers."
+},
+{
+    "calculatorName": "Bandwidth Calculator",
+    "description": "Calculates required bandwidth for streaming, file transfers, or network usage based on data and time.",
+    "h1": "Bandwidth Calculator – Calculate Network Bandwidth Requirements",
+    "p": "Calculate the bandwidth needed to transfer files or stream content within a given timeframe using our free bandwidth calculator. Convert between Mbps, GB, and time units for network planning. Ideal for IT professionals and network engineers."
+},
+{
+    "calculatorName": "Escape Character Converter",
+    "description": "Converts escape sequences in strings (\\n, \\t, \\r, etc.) to their literal characters and vice versa.",
+    "h1": "Escape Character Converter – Encode and Decode Escape Sequences",
+    "p": "Convert escape sequences like \\n, \\t, and \\r to their actual characters and back with our free escape character converter. Debug string encoding issues in code instantly. Helpful for developers working with strings, JSON, and log data."
+},
+{
+    "calculatorName": "SQL Formatter",
+    "description": "Formats and beautifies SQL queries for improved readability, with support for major SQL dialects.",
+    "h1": "SQL Formatter – Beautify and Format SQL Queries Online",
+    "p": "Format and beautify SQL queries instantly with our free SQL formatter. Supports MySQL, PostgreSQL, SQLite, and T-SQL syntax. Improve code readability and debugging efficiency. Essential for database developers and SQL analysts."
+},
+{
+    "calculatorName": "API Pagination Calculator",
+    "description": "Calculates the total pages, current page offset, and item ranges for paginated API responses.",
+    "h1": "API Pagination Calculator – Calculate Pages and Offsets for APIs",
+    "p": "Calculate pagination parameters like total pages, offsets, and item ranges for REST API responses with our free pagination calculator. Input total items and page size for instant results. Useful for backend developers and API designers."
+},
+{
+    "calculatorName": "Semantic Version Bump Calculator",
+    "description": "Calculates the next semantic version (semver) by bumping major, minor, or patch version numbers.",
+    "h1": "Semantic Version Bump Calculator – Increment SemVer Versions",
+    "p": "Automatically calculate the next semantic version by bumping major, minor, or patch numbers with our semver calculator. Follows SemVer 2.0.0 rules for accurate versioning. Essential for software developers and DevOps teams managing releases."
+},
+{
+    "calculatorName": "Regex Auto-Generator",
+    "description": "Generates regular expression patterns from sample input strings and desired match criteria.",
+    "h1": "Regex Auto-Generator – Generate Regex Patterns from Examples",
+    "p": "Automatically generate regular expressions from your sample input data with our AI-powered regex auto-generator. Describe what you want to match and get a working regex pattern instantly. Perfect for developers and data scientists."
+},
+{
+    "calculatorName": "Token Count Calculator",
+    "description": "Estimates the number of tokens in a text string for use with LLM APIs like OpenAI and Anthropic.",
+    "h1": "Token Count Calculator – Count Tokens for LLM and AI APIs",
+    "p": "Estimate the token count of any text for LLM APIs like GPT-4 and Claude with our free token counter. Plan API costs, manage context windows, and optimize prompts. Indispensable for AI developers and prompt engineers."
+}
+
+
+{
+    "calculatorName": "Binary ↔ Decimal Converter",
+    "description": "Converts binary numbers to decimal and decimal numbers to binary instantly.",
+    "h1": "Binary to Decimal Converter – Convert Binary and Decimal Numbers",
+    "p": "Convert binary to decimal or decimal to binary instantly with our free binary-decimal converter. Supports integers and fractions for accurate results. Perfect for computer science students, programmers, and digital electronics engineers."
+},
+{
+    "calculatorName": "Hex ↔ Decimal Converter",
+    "description": "Converts hexadecimal numbers to decimal and decimal to hexadecimal.",
+    "h1": "Hex to Decimal Converter – Convert Hexadecimal and Decimal",
+    "p": "Quickly convert hexadecimal to decimal and decimal to hex with our free converter. Supports uppercase and lowercase hex values. Ideal for programmers, web developers, and computer science students working with number systems."
+},
+{
+    "calculatorName": "Octal ↔ Decimal Converter",
+    "description": "Converts octal numbers to decimal and decimal to octal.",
+    "h1": "Octal to Decimal Converter – Convert Octal and Decimal Numbers",
+    "p": "Convert between octal and decimal number systems instantly with our free octal-decimal converter. Enter any octal or decimal value for accurate real-time conversion. Great for computer science students and programmers."
+},
+{
+    "calculatorName": "Big-O Complexity Estimator",
+    "description": "Identifies or estimates the Big-O time and space complexity of algorithm descriptions or code snippets.",
+    "h1": "Big-O Complexity Estimator – Analyze Algorithm Time Complexity",
+    "p": "Estimate the Big-O time and space complexity of your algorithms with our Big-O complexity tool. Understand O(n), O(log n), O(n²), and more to optimize your code. Essential for computer science students and software engineers."
+},
+{
+    "calculatorName": "Bitrate to File Size Estimator",
+    "description": "Calculates the file size of audio or video content based on bitrate and duration.",
+    "h1": "Bitrate to File Size Calculator – Estimate Audio and Video File Size",
+    "p": "Calculate the expected file size of audio or video recordings based on bitrate and duration with our free bitrate-to-file-size calculator. Plan storage and streaming requirements accurately. Useful for content creators and media engineers."
+},
+{
+    "calculatorName": "SNR to ENOB Converter",
+    "description": "Converts Signal-to-Noise Ratio (SNR) to Effective Number of Bits (ENOB) for ADC performance analysis.",
+    "h1": "SNR to ENOB Converter – Convert Signal-to-Noise Ratio to ENOB",
+    "p": "Convert SNR (Signal-to-Noise Ratio) to ENOB (Effective Number of Bits) for analog-to-digital converter performance analysis with our free SNR-to-ENOB converter. Essential for electrical engineers and ADC design professionals."
+},
+{
+    "calculatorName": "Hash Collision Probability Estimator",
+    "description": "Estimates the probability of hash collisions given hash size and number of items, using the birthday paradox.",
+    "h1": "Hash Collision Probability Calculator – Estimate Collision Risk",
+    "p": "Estimate the probability of hash collisions using the birthday paradox with our free hash collision calculator. Input hash bit length and number of items to quantify collision risk. Essential for cryptography, data integrity, and system design."
+},
+{
+    "calculatorName": "Log Timestamp Formatter",
+    "description": "Converts Unix timestamps to human-readable dates and formats log timestamps between various formats.",
+    "h1": "Log Timestamp Formatter – Convert Unix Timestamps and Log Times",
+    "p": "Convert Unix timestamps to human-readable dates and reformat log timestamps between ISO 8601, RFC 2822, and other formats with our free log timestamp formatter. Indispensable for developers, DevOps engineers, and system administrators."
+},
+{
+    "calculatorName": "Memory Usage Calculator",
+    "description": "Estimates RAM usage for data structures, arrays, or objects based on data type, size, and count.",
+    "h1": "Memory Usage Calculator – Estimate RAM for Data Structures",
+    "p": "Calculate the memory footprint of arrays, objects, and data structures based on data type and element count with our memory usage calculator. Optimize application performance and avoid memory leaks. Useful for software developers and system architects."
+},
+{
+    "calculatorName": "Audio Bitrate Calculator",
+    "description": "Calculates audio file size from bitrate and duration, or determines required bitrate for a target file size.",
+    "h1": "Audio Bitrate Calculator – Calculate Audio File Size and Bitrate",
+    "p": "Calculate audio file sizes from bitrate and duration or find the bitrate needed to hit a target file size with our audio bitrate calculator. Supports MP3, AAC, FLAC, and more. Perfect for musicians, podcasters, and audio engineers."
+},
+{
+    "calculatorName": "Video Bitrate Calculator",
+    "description": "Calculates video file size from bitrate and duration, or determines required bitrate for a target file size.",
+    "h1": "Video Bitrate Calculator – Calculate Video File Size and Bitrate",
+    "p": "Calculate video file sizes from bitrate and duration or find the right bitrate for a target file size with our video bitrate calculator. Supports various resolutions and codecs. Essential for video editors, streamers, and content creators."
+},
+{
+    "calculatorName": "Word Counter",
+    "description": "Counts the total number of words in a block of text, with live updating as you type.",
+    "h1": "Word Counter – Count Words in Text Online for Free",
+    "p": "Count words in any text instantly with our free word counter. Get live word counts as you type for essays, articles, blog posts, and social media content. Ideal for writers, students, journalists, and content marketers."
+},
+{
+    "calculatorName": "Character Counter",
+    "description": "Counts the number of characters in text, with options to include or exclude spaces.",
+    "h1": "Character Counter – Count Characters Online with or without Spaces",
+    "p": "Count characters in text instantly with our free character counter. Track character limits for Twitter, SMS, meta descriptions, and other platforms. Toggle spaces on or off for precise counts. Essential for writers and social media managers."
+},
+{
+    "calculatorName": "Reading Time Calculator",
+    "description": "Estimates how long it will take an average reader to read a given piece of text.",
+    "h1": "Reading Time Calculator – Estimate How Long to Read Any Text",
+    "p": "Estimate the reading time of any text based on average reading speed with our free reading time calculator. Perfect for bloggers, content marketers, and publishers who want to set reader expectations. Supports custom words-per-minute settings."
+},
+{
+    "calculatorName": "Writing Time Calculator",
+    "description": "Estimates how long it takes to write a given word count based on average typing or writing speed.",
+    "h1": "Writing Time Calculator – Estimate Time to Write Any Word Count",
+    "p": "Estimate how long it will take to write an essay, article, or report based on your writing speed with our free writing time calculator. Plan your writing sessions more effectively. Useful for students, writers, and content professionals."
+},
+{
+    "calculatorName": "Keyword Density Calculator",
+    "description": "Analyzes text to calculate the frequency and density percentage of each keyword or phrase.",
+    "h1": "Keyword Density Calculator – Analyze Keyword Frequency in Text",
+    "p": "Analyze keyword frequency and density in any text with our free keyword density calculator. Optimize on-page SEO by ensuring keywords appear at the right percentage. Perfect for SEO professionals, bloggers, and digital marketers."
+},
+{
+    "calculatorName": "Case Converter",
+    "description": "Converts text between uppercase, lowercase, title case, sentence case, camelCase, snake_case, and more.",
+    "h1": "Case Converter – Convert Text to Uppercase, Lowercase, Title Case",
+    "p": "Convert text to uppercase, lowercase, title case, sentence case, camelCase, snake_case, and more with our free case converter. Transform text formatting instantly without manual editing. Useful for developers, writers, and content editors."
+},
+{
+    "calculatorName": "Sentence Counter",
+    "description": "Counts the total number of sentences in a block of text.",
+    "h1": "Sentence Counter – Count Sentences in Text Online",
+    "p": "Count the number of sentences in any text instantly with our free sentence counter. Useful for analyzing writing structure, calculating readability metrics, and meeting academic submission requirements. Great for students and writers."
+},
+{
+    "calculatorName": "Syllable Counter",
+    "description": "Counts the number of syllables in a word or entire text passage for readability and poetic analysis.",
+    "h1": "Syllable Counter – Count Syllables in Words and Text",
+    "p": "Count syllables in words or entire passages with our free syllable counter. Useful for readability analysis, haiku writing, poetry, and calculating Flesch-Kincaid scores. Perfect for writers, teachers, and linguistics students."
+},
+{
+    "calculatorName": "Flesch Reading Score Calculator",
+    "description": "Calculates the Flesch Reading Ease score and Flesch-Kincaid Grade Level for a given text.",
+    "h1": "Flesch Reading Score Calculator – Check Text Readability Online",
+    "p": "Measure the readability of your text with our Flesch Reading Ease and Flesch-Kincaid Grade Level calculator. Improve content accessibility for your target audience. Ideal for educators, content writers, UX writers, and publishers."
+},
+{
+    "calculatorName": "Text to Title Case Converter",
+    "description": "Converts any text to proper title case following standard capitalization rules.",
+    "h1": "Title Case Converter – Convert Text to Proper Title Case Online",
+    "p": "Convert any text to proper title case instantly with our free title case converter. Follows AP, APA, Chicago, and MLA capitalization rules. Perfect for writers, editors, bloggers, and students formatting headlines and headings."
+},
+{
+    "calculatorName": "Text Duplicate Remover",
+    "description": "Removes duplicate lines or words from a block of text and outputs only unique entries.",
+    "h1": "Duplicate Text Remover – Remove Duplicate Lines and Words Online",
+    "p": "Remove duplicate lines or words from any text with our free duplicate remover. Paste your list or content, and get clean, deduplicated output instantly. Great for data cleaning, list management, and content editing tasks."
+},
+{
+    "calculatorName": "Sort Text Lines",
+    "description": "Sorts lines of text alphabetically, numerically, or in reverse order.",
+    "h1": "Sort Text Lines Online – Alphabetical and Reverse Sort Tool",
+    "p": "Sort lines of text alphabetically, numerically, or in reverse order with our free text sorter. Paste your list or text block and get sorted output in one click. Perfect for organizing lists, data, and content quickly."
+},
+{
+    "calculatorName": "Text Compare",
+    "description": "Compares two text inputs and highlights differences at the word or character level.",
+    "h1": "Text Compare Tool – Find Differences Between Two Texts Online",
+    "p": "Compare two text blocks side by side and highlight word-level or character-level differences with our free text compare tool. Ideal for proofreading, editing, version comparison, and document review for writers and editors."
+},
+{
+    "calculatorName": "Palindrome Checker",
+    "description": "Checks whether a word, phrase, or number is a palindrome (reads the same forwards and backwards).",
+    "h1": "Palindrome Checker – Check if a Word or Phrase is a Palindrome",
+    "p": "Instantly check whether any word, phrase, or number is a palindrome with our free palindrome checker. Ignores spaces and punctuation for accurate results. Fun and educational tool for students, word game enthusiasts, and teachers."
+},
+{
+    "calculatorName": "Anagram Solver",
+    "description": "Finds all valid word anagrams from a given set of letters.",
+    "h1": "Anagram Solver – Find All Anagrams from Any Letters",
+    "p": "Unscramble letters and find all valid anagrams with our free anagram solver. Perfect for word games like Scrabble, Words with Friends, and crossword puzzles. Discover hidden words from any combination of letters instantly."
+},
+{
+    "calculatorName": "Scrabble Score Calculator",
+    "description": "Calculates the Scrabble point value of any word, with options for bonus squares.",
+    "h1": "Scrabble Score Calculator – Calculate Word Points in Scrabble",
+    "p": "Calculate the Scrabble point value of any word instantly with our free Scrabble score calculator. Includes letter multipliers and bonus square options. Perfect for Scrabble players looking to maximize their scores."
+},
+{
+    "calculatorName": "Word Difficulty Scorer",
+    "description": "Scores the difficulty level of words based on frequency, syllable count, and readability metrics.",
+    "h1": "Word Difficulty Scorer – Rate Word Complexity and Reading Level",
+    "p": "Score the difficulty of words based on syllable count, frequency, and readability metrics with our free word difficulty scorer. Useful for educators creating graded reading materials, linguists, and content writers targeting specific audiences."
+},
