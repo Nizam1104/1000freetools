@@ -2,7 +2,18 @@ UI GENERATION PROMPT
 Design a clean, ultra-simple, highly usable UI.
 Follow these rules strictly:
 1) STYLE & THEME
-Use only the color variables defined in app/global.css (e.g., bg-background, text-foreground, bg-card, etc.).
+Use only the color variables defined in `app/globals.css`. Reference them via Tailwind utility classes:
+   - `bg-background`, `text-foreground` — Main page background and text
+   - `bg-card`, `text-card-foreground` — Card surfaces
+   - `bg-primary`, `text-primary-foreground` — Primary actions/buttons
+   - `bg-secondary`, `text-secondary-foreground` — Secondary elements
+   - `bg-muted`, `text-muted-foreground` — Subtle/hint text
+   - `bg-accent`, `text-accent-foreground` — Accents/highlights
+   - `bg-destructive`, `text-destructive-foreground` — Errors/danger
+   - `border-border` — Borders and dividers
+   - `bg-input`, `bg-popover` — Form inputs and popovers
+   - `ring-ring` — Focus rings
+
 The UI must follow a minimalistic, distraction-free, tools-website aesthetic.
 Avoid gradients, heavy shadows, unnecessary artwork, illustrations, or animations.
 Keep spacing comfortable, balanced, and modern (Tailwind-style).
