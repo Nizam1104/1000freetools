@@ -134,6 +134,103 @@ export default function WireGaugeCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Wire Gauge</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Current & Length</h3>
+              <p className="text-sm text-muted-foreground">Input the current (amps) and wire run length for your circuit.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Set Voltage & Drop Limit</h3>
+              <p className="text-sm text-muted-foreground">Enter system voltage and maximum acceptable voltage drop percentage.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Recommended AWG</h3>
+              <p className="text-sm text-muted-foreground">See the recommended wire gauge with actual voltage drop results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Wire Gauge Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**AWG Selection**</h3>
+            <p className="text-sm text-muted-foreground">Recommends proper American Wire Gauge from 14 AWG to 4/0 AWG.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Material Options**</h3>
+            <p className="text-sm text-muted-foreground">Support for both copper and aluminum wire calculations.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Voltage Drop Analysis**</h3>
+            <p className="text-sm text-muted-foreground">Calculates actual voltage drop to ensure code compliance.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**NEC Guidelines**</h3>
+            <p className="text-sm text-muted-foreground">Uses standard 3% voltage drop recommendation for branch circuits.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What wire gauge do I need?</h3>
+            <p className="text-sm text-muted-foreground">Wire gauge depends on current, length, and voltage. Higher current and longer runs need thicker wire (lower AWG number). This calculator determines the proper size for your application.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is voltage drop?</h3>
+            <p className="text-sm text-muted-foreground">Voltage drop is the reduction in voltage as electricity travels through wire. NEC recommends max 3% drop for branch circuits, 5% total from service to load.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Copper vs aluminum wire?</h3>
+            <p className="text-sm text-muted-foreground">Copper conducts better and is more durable but costs more. Aluminum is cheaper but needs larger gauge for same current. Aluminum requires special connectors and anti-oxidant paste.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What does AWG mean?</h3>
+            <p className="text-sm text-muted-foreground">AWG (American Wire Gauge) is the standard wire sizing system. Counterintuitively, smaller numbers = thicker wire. 14 AWG is thinner than 10 AWG. 0000 (4/0) is very thick.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Why does wire length matter?</h3>
+            <p className="text-sm text-muted-foreground">Longer wires have more resistance, causing more voltage drop and heat. Double the length = double the resistance. Long runs need thicker wire to compensate.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/voltage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Voltage Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate voltage using Ohm&apos;s Law for electrical circuits.</p>
+          </a>
+          <a href="/calculators/power-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Power Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate electrical power from voltage, current, or resistance.</p>
+          </a>
+          <a href="/calculators/ohms-law-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Ohm&apos;s Law Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate voltage, current, resistance, and power relationships.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

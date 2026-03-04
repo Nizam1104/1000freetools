@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -208,13 +208,12 @@ export default function CricketEconomyRateCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Economy Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.economyRate < (result.format === "T20" ? 6 : result.format === "ODI" ? 4 : 2.5)
+                  <div className={`p-4 rounded-lg text-center ${result.economyRate < (result.format === "T20" ? 6 : result.format === "ODI" ? 4 : 2.5)
                       ? "bg-green-100 dark:bg-green-900/20"
                       : result.economyRate < (result.format === "T20" ? 7.5 : result.format === "ODI" ? 5 : 3.5)
-                      ? "bg-blue-100 dark:bg-blue-900/20"
-                      : "bg-amber-100 dark:bg-amber-900/20"
-                  }`}>
+                        ? "bg-blue-100 dark:bg-blue-900/20"
+                        : "bg-amber-100 dark:bg-amber-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Economy Rate</p>
                     <p className="text-5xl font-bold">{result.economyRate}</p>
                     <p className="text-sm mt-1">{result.rating}</p>
@@ -291,6 +290,193 @@ export default function CricketEconomyRateCalculatorPage() {
                   strike rate and average for complete bowler assessment. Death over
                   specialists typically have higher economy rates.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the Cricket Economy Rate Calculator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Enter Bowling Figures</h3>
+                    <p className="text-sm text-muted-foreground">Input the runs conceded, overs bowled, and any extra balls to calculate the bowler&apos;s economy rate accurately.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Select Match Format</h3>
+                    <p className="text-sm text-muted-foreground">Choose T20, ODI, or Test cricket to get format-specific benchmarks and performance ratings for accurate assessment.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Get Instant Analysis</h3>
+                    <p className="text-sm text-muted-foreground">Receive economy rate calculation with performance rating, format comparisons, and expert bowling recommendations.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Features of This Economy Rate Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Format-Specific Benchmarks</h3>
+                      <p className="text-sm text-muted-foreground">Get economy rate ratings tailored to T20, ODI, and Test cricket with appropriate performance standards for each format.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Precise Overs Calculation</h3>
+                      <p className="text-sm text-muted-foreground">Handles overs.balls notation correctly (e.g., 4.3 overs = 4 overs + 3 balls) for accurate economy rate computation.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Performance Rating System</h3>
+                      <p className="text-sm text-muted-foreground">Automatic rating from Excellent to Expensive based on format-specific thresholds for quick performance assessment.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Expert Recommendations</h3>
+                      <p className="text-sm text-muted-foreground">Receive actionable bowling tips based on your economy rate to improve performance in future matches.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Cricket Statistics Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free calculator for players, coaches, and fans to analyze bowling performance instantly.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Mobile-Friendly Interface</h3>
+                      <p className="text-sm text-muted-foreground">Calculate economy rates on any device during matches, practice sessions, or while watching cricket.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">Economy Rate Benchmarks by Format</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Format</th>
+                        <th className="text-left py-2">Excellent</th>
+                        <th className="text-left py-2">Good</th>
+                        <th className="text-left py-2">Average</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">T20</td>
+                        <td className="py-2 text-green-600">&lt; 6.0</td>
+                        <td className="py-2">7.0 - 7.5</td>
+                        <td className="py-2">7.5 - 9.0</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">ODI</td>
+                        <td className="py-2 text-green-600">&lt; 4.0</td>
+                        <td className="py-2">4.5 - 5.0</td>
+                        <td className="py-2">5.0 - 6.0</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">Test</td>
+                        <td className="py-2 text-green-600">&lt; 2.5</td>
+                        <td className="py-2">3.0 - 3.5</td>
+                        <td className="py-2">3.5 - 4.5</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">How is economy rate calculated in cricket?</h3>
+                  <p className="text-sm text-muted-foreground">Economy rate is calculated by dividing total runs conceded by the number of overs bowled. The formula is: Economy Rate = Runs Conceded ÷ Overs Bowled. For example, if a bowler concedes 35 runs in 4 overs, their economy rate is 8.75 runs per over.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is a good economy rate in T20 cricket?</h3>
+                  <p className="text-sm text-muted-foreground">In T20 cricket, an economy rate below 7.0 is considered good, while below 6.0 is excellent. Elite T20 bowlers like Rashid Khan and Jasprit Bumrah consistently maintain economy rates under 7.0. Death overs specialists may have higher economy rates (8-9) but are valued for wicket-taking ability.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Why is economy rate important for bowlers?</h3>
+                  <p className="text-sm text-muted-foreground">Economy rate measures a bowler&apos;s ability to restrict scoring, which is crucial in limited-overs cricket. A low economy rate builds pressure on batsmen, creates wicket-taking opportunities, and is essential for team success. In T20 especially, containing runs is as valuable as taking wickets.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How do you calculate overs with balls in cricket?</h3>
+                  <p className="text-sm text-muted-foreground">Cricket overs are written as overs.balls (e.g., 4.3 means 4 overs and 3 balls). To calculate economy rate, convert to decimal: 4.3 overs = 4 + (3/6) = 4.5 overs. Then divide runs by this decimal value. Our calculator handles this conversion automatically.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is the difference between economy rate and strike rate?</h3>
+                  <p className="text-sm text-muted-foreground">Economy rate measures runs conceded per over (lower is better), while strike rate measures balls per wicket taken (lower is better). Economy rate focuses on run containment, while strike rate focuses on wicket-taking frequency. Both metrics together provide a complete picture of bowling performance.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Cricket Tools</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/cricket-strike-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Cricket Strike Rate Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate batting strike rate to measure scoring speed and aggression in T20, ODI, and Test cricket.</p>
+                </a>
+                <a href="/calculators/batting-average-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Batting Average Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Compute batting average to evaluate a batsman&apos;s consistency and run-scoring ability across formats.</p>
+                </a>
+                <a href="/calculators/bowling-average-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Bowling Average Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate bowling average to assess a bowler&apos;s wicket-taking efficiency and overall performance.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

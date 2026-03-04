@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -38,7 +38,7 @@ export default function MoneySavingChallengeCalculatorPage() {
     // Calculate total using arithmetic sequence sum formula
     // Sum = n/2 × (2a + (n-1)d) where a=start, d=increment, n=weeks
     const totalSaved = (durationNum / 2) * (2 * startNum + (durationNum - 1) * incrementNum);
-    
+
     // Weekly average
     const weeklyAverage = totalSaved / durationNum;
 
@@ -48,7 +48,7 @@ export default function MoneySavingChallengeCalculatorPage() {
     // Generate milestones
     const milestones = [];
     const milestoneWeeks = [Math.floor(durationNum * 0.25), Math.floor(durationNum * 0.5), Math.floor(durationNum * 0.75), durationNum];
-    
+
     for (const week of milestoneWeeks) {
       const weekAmount = startNum + (week - 1) * incrementNum;
       const weekTotal = (week / 2) * (2 * startNum + (week - 1) * incrementNum);
@@ -262,27 +262,245 @@ export default function MoneySavingChallengeCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Saving Challenge Tips
+                How to Use This Savings Challenge Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Choose a challenge type</p>
+                    <p>Select the classic 52-week challenge, reverse challenge, penny-a-day, or create a custom plan.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set your parameters</p>
+                    <p>For custom challenges, enter starting amount, weekly increment, and duration in weeks.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate and track</p>
+                    <p>See your total savings, milestones, and weekly targets. Use this as motivation to stay on track.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Popular Savings Challenges Compared
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Challenge</th>
+                      <th className="text-left py-3 px-2 font-semibold">Duration</th>
+                      <th className="text-left py-3 px-2 font-semibold">Start</th>
+                      <th className="text-left py-3 px-2 font-semibold">End</th>
+                      <th className="text-left py-3 px-2 font-semibold">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">52-Week</td>
+                      <td className="py-3 px-2">52 weeks</td>
+                      <td className="py-3 px-2">$1</td>
+                      <td className="py-3 px-2">$52</td>
+                      <td className="py-3 px-2">$1,378</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Reverse 52-Week</td>
+                      <td className="py-3 px-2">52 weeks</td>
+                      <td className="py-3 px-2">$52</td>
+                      <td className="py-3 px-2">$1</td>
+                      <td className="py-3 px-2">$1,378</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Penny-a-Day</td>
+                      <td className="py-3 px-2">365 days</td>
+                      <td className="py-3 px-2">$0.01</td>
+                      <td className="py-3 px-2">$3.65</td>
+                      <td className="py-3 px-2">$667.95</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Quarter-a-Week</td>
+                      <td className="py-3 px-2">52 weeks</td>
+                      <td className="py-3 px-2">$0.25</td>
+                      <td className="py-3 px-2">$13</td>
+                      <td className="py-3 px-2">$344.50</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">$5-Week Challenge</td>
+                      <td className="py-3 px-2">52 weeks</td>
+                      <td className="py-3 px-2">$5</td>
+                      <td className="py-3 px-2">$260</td>
+                      <td className="py-3 px-2">$6,890</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Totals calculated using arithmetic sequence sum: Sum = n/2 × (first + last)
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                The Math Behind Savings Challenges
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  Savings challenges use arithmetic sequences. Each week you save a fixed amount more than the previous week. The total is calculated using the arithmetic series formula.
+                </p>
+                <div className="p-3 bg-muted/50 rounded font-mono text-xs space-y-2">
+                  <div><strong>Formula:</strong> Sum = n/2 × (2a + (n-1)d)</div>
+                  <div>Where: n = number of weeks, a = starting amount, d = weekly increment</div>
+                  <div className="pt-2 border-t"><strong>Example (52-week):</strong></div>
+                  <div>Sum = 52/2 × (2×1 + (52-1)×1)</div>
+                  <div>Sum = 26 × (2 + 51) = 26 × 53 = $1,378</div>
+                </div>
+                <p>
+                  The reverse challenge saves the same total but front-loads the difficult weeks. Many people prefer this because finishing with small amounts feels easier than ramping up.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Sticking to Your Challenge
               </h3>
               <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Auto-transfer:</strong> Set up automatic transfers to savings
-                  </li>
-                  <li>
-                    <strong>High-yield account:</strong> Earn interest while you save
-                  </li>
-                  <li>
-                    <strong>Track progress:</strong> Use a chart or app to stay motivated
-                  </li>
-                  <li>
-                    <strong>Windfalls:</strong> Add bonuses, tax refunds to accelerate
-                  </li>
-                </ul>
-                <p>
-                  <strong>Formula:</strong> Sum = n/2 × (2a + (n-1)d)
-                  <br />where a = start amount, d = increment, n = weeks
-                </p>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Automate transfers</p>
+                    <p>Set up automatic weekly transfers to a separate savings account. Out of sight, out of mind—and harder to spend.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Track your progress visually</p>
+                    <p>Print a tracker sheet and color in each week. Visual progress is surprisingly motivating.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Start small if needed</p>
+                    <p>The 52-week challenge can be intimidating. Try the quarter challenge first, or start with $0.50 increments instead of $1.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Have a goal for the money</p>
+                    <p>Save for something specific: emergency fund, vacation, holiday gifts. A purpose makes it easier to resist dipping in.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What if I miss a week?</h4>
+                  <p>
+                    Don't quit—just catch up. Add the missed amount to next week's deposit, or spread it over the remaining weeks. The goal is building a savings habit, not perfection.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I do the regular or reverse challenge?</h4>
+                  <p>
+                    Reverse is often easier psychologically. Starting with $52 feels manageable, and ending with $1 feels like a victory lap. Regular challenge builds momentum but ends with the hardest payments.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I combine challenges?</h4>
+                  <p>
+                    Absolutely. Do the penny challenge daily and a weekly challenge too. Just make sure your total weekly savings fits your budget.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Where should I keep the money?</h4>
+                  <p>
+                    Use a high-yield savings account separate from your checking. The slightly higher interest adds up, and separation reduces temptation to spend.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What if I can't afford the later weeks?</h4>
+                  <p>
+                    Scale down. Instead of $52 in week 52, do $25. Or restart at a lower increment. The best challenge is one you can actually complete.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/savings-goal-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Savings Goal Calculator</span>
+                  <p className="text-muted-foreground">Calculate how much to save monthly to reach a target</p>
+                </a>
+                <a
+                  href="/calculators/compound-interest-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Compound Interest Calculator</span>
+                  <p className="text-muted-foreground">See how your savings grow with compound interest</p>
+                </a>
+                <a
+                  href="/calculators/budget-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Budget Calculator</span>
+                  <p className="text-muted-foreground">Plan your monthly income and expenses</p>
+                </a>
               </div>
             </CardContent>
           </Card>

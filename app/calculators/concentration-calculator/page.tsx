@@ -242,6 +242,155 @@ export default function ConcentrationCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO Content Section */}
+      <div className="mt-12 space-y-12">
+        {/* How It Works */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Solution Concentration</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Concentration Unit</h3>
+                <p className="text-muted-foreground text-sm">Choose molarity, mass percent, ppm, or ppb based on your application needs.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Solution Data</h3>
+                <p className="text-muted-foreground text-sm">Input mass of solute, volume of solution, and molar mass (for molarity calculations).</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Concentration Result</h3>
+                <p className="text-muted-foreground text-sm">See your calculated concentration with a graph showing concentration vs volume relationship.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features & Benefits */}
+        <section className="bg-card rounded-lg border p-6">
+          <h2 className="text-2xl font-semibold mb-6">Why Calculate Solution Concentration?</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">🧪 Multiple Concentration Units</h3>
+              <p className="text-muted-foreground text-sm">Support for molarity (M), mass percent (%), parts per million (ppm), and parts per billion (ppb) for various applications.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">📊 Visual Concentration Graph</h3>
+              <p className="text-muted-foreground text-sm">See how concentration changes with volume for a fixed mass, helping understand dilution principles.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">🔬 Lab-Ready Calculations</h3>
+              <p className="text-muted-foreground text-sm">Perfect for chemistry students, lab technicians, and researchers preparing solutions accurately.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">📚 Educational Reference</h3>
+              <p className="text-muted-foreground text-sm">Includes formulas, unit conversion tables, and example calculations for learning and reference.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Reference Table */}
+        <section className="bg-card rounded-lg border p-6">
+          <h2 className="text-2xl font-semibold mb-6">Concentration Unit Conversion Table</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-3 px-4">Unit</th>
+                  <th className="text-left py-3 px-4">Equals</th>
+                  <th className="text-left py-3 px-4">Typical Range</th>
+                  <th className="text-left py-3 px-4">Application</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">1 M (Molar)</td>
+                  <td className="py-3 px-4">1 mol/L</td>
+                  <td className="py-3 px-4">0.001 - 10 M</td>
+                  <td className="py-3 px-4">Chemical reactions, titrations</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">1% (w/v)</td>
+                  <td className="py-3 px-4">10,000 ppm</td>
+                  <td className="py-3 px-4">0.01% - 50%</td>
+                  <td className="py-3 px-4">Commercial products, medical solutions</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">1 ppm</td>
+                  <td className="py-3 px-4">1 mg/L (water)</td>
+                  <td className="py-3 px-4">0.001 - 1000 ppm</td>
+                  <td className="py-3 px-4">Water quality, environmental testing</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">1 ppb</td>
+                  <td className="py-3 px-4">1 μg/L (water)</td>
+                  <td className="py-3 px-4">0.1 - 1000 ppb</td>
+                  <td className="py-3 px-4">Contaminant detection, ultra-trace analysis</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-medium">1 ppt</td>
+                  <td className="py-3 px-4">1 ng/L (water)</td>
+                  <td className="py-3 px-4">0.01 - 100 ppt</td>
+                  <td className="py-3 px-4">Pharmaceuticals, hormone detection</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Solution Concentration FAQs</h2>
+          <div className="space-y-4">
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">How do I calculate molarity?</h3>
+              <p className="text-muted-foreground text-sm">Molarity (M) = moles of solute / liters of solution. First convert mass to moles using molar mass, then divide by volume in liters.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">What's the difference between ppm and ppb?</h3>
+              <p className="text-muted-foreground text-sm">ppm (parts per million) is 1000× larger than ppb (parts per billion). 1 ppm = 1000 ppb. Use ppb for ultra-trace concentrations.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">How do I convert between concentration units?</h3>
+              <p className="text-muted-foreground text-sm">1% = 10,000 ppm = 10,000,000 ppb. For molarity, you need the solute's molar mass: M = (g/L) / (g/mol).</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">What is mass percent concentration?</h3>
+              <p className="text-muted-foreground text-sm">Mass percent = (mass of solute / mass of solution) × 100%. Common for commercial products like hydrogen peroxide (3%) and vinegar (5%).</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">How do I dilute a solution to a specific concentration?</h3>
+              <p className="text-muted-foreground text-sm">Use C₁V₁ = C₂V₂. For example, to make 100 mL of 0.1 M from 1 M stock: (1 M)(V₁) = (0.1 M)(100 mL), so V₁ = 10 mL stock + 90 mL water.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Tools */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Science & Math Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/concrete-mix-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Concrete Mix Ratio Calculator</h3>
+              <p className="text-muted-foreground text-sm">Calculate material ratios for construction mixtures and proportions.</p>
+            </a>
+            <a href="/calculators/combination-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Combination Calculator</h3>
+              <p className="text-muted-foreground text-sm">Calculate permutations and combinations for statistical analysis.</p>
+            </a>
+            <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
+              <p className="text-muted-foreground text-sm">Compare exponential growth calculations with different frequencies.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

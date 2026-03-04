@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -18,7 +18,7 @@ export default function JsonPlaygroundPage() {
   const processJson = useCallback(() => {
     try {
       const parsed = JSON.parse(input);
-      
+
       let output: string;
       if (sortKeys) {
         const sorted = JSON.parse(JSON.stringify(parsed, Object.keys(parsed).sort(), indent));
@@ -34,7 +34,7 @@ export default function JsonPlaygroundPage() {
       } else {
         output = JSON.stringify(parsed, null, indent);
       }
-      
+
       setResult(output);
       setIsValid(true);
       toast.success("JSON formatted");
@@ -193,14 +193,12 @@ export default function JsonPlaygroundPage() {
                   value={result || ""}
                   readOnly
                   placeholder="Formatted output will appear here..."
-                  className={`min-h-[500px] font-mono text-sm resize-none ${
-                    isValid === false ? "border-destructive" : ""
-                  }`}
+                  className={`min-h-[500px] font-mono text-sm resize-none ${isValid === false ? "border-destructive" : ""
+                    }`}
                 />
                 {isValid !== null && (
-                  <div className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-medium ${
-                    isValid ? "bg-green-500 text-white" : "bg-destructive text-white"
-                  }`}>
+                  <div className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-medium ${isValid ? "bg-green-500 text-white" : "bg-destructive text-white"
+                    }`}>
                     {isValid ? "Valid JSON" : "Invalid JSON"}
                   </div>
                 )}

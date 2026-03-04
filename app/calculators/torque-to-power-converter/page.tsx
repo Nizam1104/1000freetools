@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -195,6 +195,133 @@ export default function TorqueToPowerConverterPage() {
             <strong>Key insight:</strong> At 5252 RPM, torque (lb-ft) and horsepower are always equal.
             This is why dyno charts always cross at this point.
           </p>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Convert Torque to Power</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Torque Value</h3>
+                <p className="text-sm text-muted-foreground">Input your engine's torque measurement in Newton-meters (Nm) or pound-feet (lb-ft).</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Engine RPM</h3>
+                <p className="text-sm text-muted-foreground">Enter the engine speed at which you want to calculate power output.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Power Output</h3>
+                <p className="text-sm text-muted-foreground">Instantly receive horsepower (HP) or kilowatts (kW) with the formula used.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Torque to Power Converter</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Dual Unit Support</h3>
+              <p className="text-sm text-muted-foreground">Convert between metric (Nm, kW) and imperial (lb-ft, HP) units seamlessly for international compatibility.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Accurate Formulas</h3>
+              <p className="text-sm text-muted-foreground">Uses industry-standard equations: kW = (Nm × RPM) / 9549.3 and HP = (lb-ft × RPM) / 5252.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Dyno Chart Insight</h3>
+              <p className="text-sm text-muted-foreground">Understand why torque and horsepower curves intersect at 5252 RPM on dynamometer graphs.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Engine Tuning Reference</h3>
+              <p className="text-sm text-muted-foreground">Perfect for tuners, mechanics, and enthusiasts analyzing engine performance modifications.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Power Conversion Formulas</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">From</th>
+                  <th className="text-left py-2">To</th>
+                  <th className="text-left py-2">Formula</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Nm + RPM</td>
+                  <td className="py-2">kW</td>
+                  <td className="py-2 font-mono">kW = (Nm × RPM) / 9549.3</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Nm + RPM</td>
+                  <td className="py-2">HP</td>
+                  <td className="py-2 font-mono">HP = (Nm × RPM) / 7127</td>
+                </tr>
+                <tr>
+                  <td className="py-2">lb-ft + RPM</td>
+                  <td className="py-2">HP</td>
+                  <td className="py-2 font-mono">HP = (lb-ft × RPM) / 5252</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What is the formula to convert torque to horsepower?</h3>
+              <p className="text-sm text-muted-foreground">Horsepower = (Torque × RPM) / 5252 when using lb-ft. For Nm, use HP = (Nm × RPM) / 7127. This formula comes from the definition of horsepower as 550 foot-pounds per second.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Why do torque and horsepower cross at 5252 RPM?</h3>
+              <p className="text-sm text-muted-foreground">The number 5252 comes from the conversion factor between lb-ft/min and horsepower. At exactly 5252 RPM, the numerical values of torque (lb-ft) and horsepower are always equal, which is why dyno charts intersect at this point.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How do I convert Nm to lb-ft?</h3>
+              <p className="text-sm text-muted-foreground">Multiply Nm by 0.7376 to get lb-ft. For example, 400 Nm × 0.7376 = 295 lb-ft. Conversely, divide lb-ft by 0.7376 (or multiply by 1.356) to get Nm.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What's more important: torque or horsepower?</h3>
+              <p className="text-sm text-muted-foreground">Torque determines low-end pulling power and acceleration from a stop. Horsepower determines top speed and high-RPM performance. Both matter—torque gets you moving, horsepower keeps you accelerating.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How accurate is this torque to power calculation?</h3>
+              <p className="text-sm text-muted-foreground">This calculation provides theoretical power at the crank. Actual wheel horsepower will be 10-20% lower due to drivetrain losses. For precise measurements, use a chassis dynamometer.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Automotive Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/horsepower-to-kw-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Horsepower to kW Converter</h3>
+              <p className="text-sm text-muted-foreground">Convert engine power between HP and kilowatts instantly.</p>
+            </a>
+            <a href="/calculators/engine-displacement-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Engine Displacement Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate engine CC from bore, stroke, and cylinder count.</p>
+            </a>
+            <a href="/calculators/0-100-acceleration-estimator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">0-100 km/h Acceleration Estimator</h3>
+              <p className="text-sm text-muted-foreground">Estimate your car's acceleration time based on power and weight.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

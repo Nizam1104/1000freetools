@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -247,6 +247,141 @@ export default function EMIBreakupVisualizerPage() {
               )}
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">How EMI Breakup Calculation Works</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Loan Details</h3>
+              <p className="text-sm text-muted-foreground">Input your loan amount, annual interest rate, and loan tenure in years to begin the calculation.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">View Monthly EMI</h3>
+              <p className="text-sm text-muted-foreground">The calculator computes your fixed monthly payment using the reducing balance method formula.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">Analyze Principal vs Interest</h3>
+              <p className="text-sm text-muted-foreground">Explore the month-by-month breakdown showing how each EMI splits between principal and interest.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of EMI Breakup Visualizer</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Month-by-Month Breakdown
+              </h3>
+              <p className="text-sm text-muted-foreground">See exactly how much of each EMI goes toward principal repayment versus interest charges for any month.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Visual Amortization Chart
+              </h3>
+              <p className="text-sm text-muted-foreground">Interactive bar chart shows the shifting ratio of principal to interest over your loan term.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Total Interest Calculator
+              </h3>
+              <p className="text-sm text-muted-foreground">Understand the true cost of borrowing with clear display of total interest payable over the loan life.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Prepayment Planning Tool
+              </h3>
+              <p className="text-sm text-muted-foreground">Identify optimal months for prepayments when principal component is higher for maximum interest savings.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Compare Loan Options
+              </h3>
+              <p className="text-sm text-muted-foreground">Test different tenures and interest rates to find the most cost-effective loan structure.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-6 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-3">EMI Calculation Formula</h3>
+            <div className="bg-card p-4 rounded font-mono text-sm mb-4">
+              EMI = P × R × (1+R)^N / [(1+R)^N - 1]
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="font-semibold mb-2">Where:</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li><strong>P</strong> = Principal loan amount</li>
+                  <li><strong>R</strong> = Monthly interest rate (annual rate ÷ 12 ÷ 100)</li>
+                  <li><strong>N</strong> = Loan tenure in months</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-2">Example: $200,000 at 8.5% for 20 years</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>Monthly EMI: $1,735</li>
+                  <li>Total Interest: $216,400</li>
+                  <li>Total Payment: $416,400</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About EMI Breakup</h2>
+          <div className="space-y-4">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why does the interest component decrease over time?</h3>
+              <p className="text-sm text-muted-foreground">EMI uses the reducing balance method. As you pay down principal, interest is calculated on a lower outstanding balance, so more of each EMI goes toward principal in later years.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">When is the best time to make a prepayment?</h3>
+              <p className="text-sm text-muted-foreground">Early in the loan term when most of your EMI goes toward interest. Prepaying in the first few years saves significantly more interest than prepaying near the end.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How does loan tenure affect total interest?</h3>
+              <p className="text-sm text-muted-foreground">Longer tenures reduce monthly EMI but increase total interest paid. A 30-year loan can cost 2-3x more in total interest than a 15-year loan at the same rate.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is the reducing balance method?</h3>
+              <p className="text-sm text-muted-foreground">Interest is calculated monthly on the outstanding principal balance. As you repay principal, the balance reduces, and so does the interest component of subsequent EMIs.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Can I see the breakup for a specific month?</h3>
+              <p className="text-sm text-muted-foreground">Yes! Use the month selector to view the exact principal and interest breakdown for any month, along with opening and closing balances.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-12 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Related Loan Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/emi-for-home-loan-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Home Loan EMI Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate monthly EMI for home loans with visual charts showing principal vs interest distribution.</p>
+            </a>
+            <a href="/calculators/loan-amortization-visualizer" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Loan Amortization Schedule</h3>
+              <p className="text-sm text-muted-foreground">Generate a complete amortization table showing every payment throughout your loan term.</p>
+            </a>
+            <a href="/calculators/loan-prepayment-impact-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Loan Prepayment Calculator</h3>
+              <p className="text-sm text-muted-foreground">See how extra payments can reduce your loan tenure and total interest burden.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

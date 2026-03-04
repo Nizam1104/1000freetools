@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -96,23 +96,23 @@ export default function SaaSChurnRateCalculatorPage() {
             <CardContent className="p-6 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="startCustomers">Customers at Start of Period</Label>
-                <Input 
-                  id="startCustomers" 
-                  type="number" 
-                  placeholder="e.g., 1000" 
-                  value={startCustomers} 
-                  onChange={(e) => setStartCustomers(e.target.value)} 
+                <Input
+                  id="startCustomers"
+                  type="number"
+                  placeholder="e.g., 1000"
+                  value={startCustomers}
+                  onChange={(e) => setStartCustomers(e.target.value)}
                 />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="lostCustomers">Customers Lost During Period</Label>
-                <Input 
-                  id="lostCustomers" 
-                  type="number" 
-                  placeholder="e.g., 50" 
-                  value={lostCustomers} 
-                  onChange={(e) => setLostCustomers(e.target.value)} 
+                <Input
+                  id="lostCustomers"
+                  type="number"
+                  placeholder="e.g., 50"
+                  value={lostCustomers}
+                  onChange={(e) => setLostCustomers(e.target.value)}
                 />
               </div>
 
@@ -149,10 +149,9 @@ export default function SaaSChurnRateCalculatorPage() {
                   <div className="grid grid-cols-2 gap-2">
                     <div className="p-3 bg-primary/10 rounded-lg text-center">
                       <p className="text-xs text-muted-foreground">Churn Rate</p>
-                      <p className={`text-3xl font-bold ${
-                        result.churnRate < 5 ? "text-green-500" :
-                        result.churnRate < 10 ? "text-yellow-500" : "text-red-500"
-                      }`}>{result.churnRate}%</p>
+                      <p className={`text-3xl font-bold ${result.churnRate < 5 ? "text-green-500" :
+                          result.churnRate < 10 ? "text-yellow-500" : "text-red-500"
+                        }`}>{result.churnRate}%</p>
                     </div>
                     <div className="p-3 bg-primary/10 rounded-lg text-center">
                       <p className="text-xs text-muted-foreground">Retention Rate</p>

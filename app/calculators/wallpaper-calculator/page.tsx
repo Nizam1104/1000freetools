@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -77,7 +77,7 @@ export default function WallpaperCalculatorPage() {
 
     // Calculate rolls needed
     const rollArea = rLength * rWidth;
-    
+
     // Add waste factor for pattern matching (10-20% depending on pattern repeat)
     let wasteFactor = 0.10; // Base 10% waste
     if (patternRep > 0) {
@@ -305,6 +305,103 @@ export default function WallpaperCalculatorPage() {
             <strong>Standard EU roll:</strong> 10 m × 53 cm = 57 sq ft<br />
             <strong>Waste factor:</strong> 10% for no pattern, 15-25% for pattern matching
           </p>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Wallpaper Needed</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Measure Your Room</h3>
+                <p className="text-sm text-muted-foreground">Input room length, width, and ceiling height. Measure in feet or meters.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Openings</h3>
+                <p className="text-sm text-muted-foreground">Enter door and window dimensions to subtract areas that won&apos;t be papered.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Roll Count</h3>
+                <p className="text-sm text-muted-foreground">Enter roll specs and pattern repeat to get exact number of rolls needed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Wallpaper Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Pattern Repeat Support**</h3>
+              <p className="text-sm text-muted-foreground">Accounts for extra wallpaper needed when matching patterns across strips.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Door & Window Deduction**</h3>
+              <p className="text-sm text-muted-foreground">Automatically subtracts areas that won&apos;t be covered to avoid overbuying.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Waste Factor Calculation**</h3>
+              <p className="text-sm text-muted-foreground">Includes recommended waste percentage for trimming and mistakes.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Dual Unit Support**</h3>
+              <p className="text-sm text-muted-foreground">Works with both imperial (feet) and metric (meters) measurements.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I measure my room for wallpaper?</h3>
+              <p className="text-sm text-muted-foreground">Measure the perimeter (add length + width, multiply by 2) and multiply by ceiling height. This gives total wall area before subtracting doors and windows.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is pattern repeat?</h3>
+              <p className="text-sm text-muted-foreground">Pattern repeat is the vertical distance before the design repeats. Larger repeats require more wallpaper because you need to align the pattern between strips.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How much extra wallpaper should I buy?</h3>
+              <p className="text-sm text-muted-foreground">Add 10-15% for simple patterns, 15-25% for large pattern repeats. Always buy an extra roll for future repairs if possible.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What size is a standard wallpaper roll?</h3>
+              <p className="text-sm text-muted-foreground">US standard: 33 ft long × 20.5 in wide (56 sq ft). European standard: 10 m long × 53 cm wide (57 sq ft). Always check your specific roll dimensions.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Should I remove doors and windows from calculation?</h3>
+              <p className="text-sm text-muted-foreground">Yes, but professionals often don&apos;t subtract small windows. For DIY, subtract all openings but add extra for waste to be safe.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/paint-coverage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Paint Coverage Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate how much paint you need for your walls and ceilings.</p>
+            </a>
+            <a href="/calculators/flooring-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Flooring Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate flooring materials needed for any room size.</p>
+            </a>
+            <a href="/calculators/tile-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Tile Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate tiles needed for floors, walls, and backsplashes.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

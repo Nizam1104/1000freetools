@@ -2,7 +2,7 @@ import VideoFormatsConversion from "@/components/video-tools/VideoFormatsConvert
 import Faqs from "@/components/utils/Faqs";
 import Script from "next/script";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 
 const faqData = [
   {

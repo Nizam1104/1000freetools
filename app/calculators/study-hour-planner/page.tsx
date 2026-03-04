@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -86,7 +86,7 @@ export default function StudyHourPlannerPage() {
     for (let day = 1; day <= Math.min(daysNum, 14); day++) {
       let dayHours = 0;
       let attempts = 0;
-      
+
       while (dayHours < hoursPerDayNum && attempts < subjects.length * 2) {
         const subj = allocatedSubjects[subjectIndex.current % allocatedSubjects.length];
         if (subj.hours > 0) {
@@ -110,7 +110,7 @@ export default function StudyHourPlannerPage() {
     const recommendations: string[] = [];
     recommendations.push(`📚 Total study time: ${totalAvailableHours} hours over ${daysNum} days`);
     recommendations.push(`⏰ Daily commitment: ${hoursPerDayNum} hours`);
-    
+
     if (hoursPerDayNum < 2) {
       recommendations.push("⚠️ Less than 2 hours/day may not be enough for multiple subjects");
     } else if (hoursPerDayNum > 6) {

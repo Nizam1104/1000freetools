@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -155,6 +155,253 @@ export default function LumpSumVsSIPAnalyzerPage() {
                   <p>Enter values and click Compare to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Lump Sum vs SIP Analyzer
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your investment amounts</p>
+                    <p>Input the lump sum amount you could invest today and the monthly SIP amount you could afford. These can be independent values based on your situation.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set expected return and period</p>
+                    <p>Enter your expected annual return rate (historically 10-12% for equity mutual funds) and the investment period in years.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Compare the results</p>
+                    <p>See which option gives a higher corpus, the final values for both approaches, and the total amount invested through SIP.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Lump Sum vs SIP Comparison Examples
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Lump Sum</th>
+                      <th className="text-left py-3 px-2 font-semibold">Monthly SIP</th>
+                      <th className="text-left py-3 px-2 font-semibold">Period</th>
+                      <th className="text-left py-3 px-2 font-semibold">Return</th>
+                      <th className="text-left py-3 px-2 font-semibold">Lump Sum Value</th>
+                      <th className="text-left py-3 px-2 font-semibold">SIP Value</th>
+                      <th className="text-left py-3 px-2 font-semibold">Winner</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">$10,000</td>
+                      <td className="py-3 px-2">$500</td>
+                      <td className="py-3 px-2">10 years</td>
+                      <td className="py-3 px-2">12%</td>
+                      <td className="py-3 px-2">$31,058</td>
+                      <td className="py-3 px-2">$116,170</td>
+                      <td className="py-3 px-2">SIP</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">$50,000</td>
+                      <td className="py-3 px-2">$2,000</td>
+                      <td className="py-3 px-2">15 years</td>
+                      <td className="py-3 px-2">10%</td>
+                      <td className="py-3 px-2">$208,862</td>
+                      <td className="py-3 px-2">$836,071</td>
+                      <td className="py-3 px-2">SIP</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">$100,000</td>
+                      <td className="py-3 px-2">$0</td>
+                      <td className="py-3 px-2">20 years</td>
+                      <td className="py-3 px-2">10%</td>
+                      <td className="py-3 px-2">$672,750</td>
+                      <td className="py-3 px-2">$0</td>
+                      <td className="py-3 px-2">Lump Sum</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">$25,000</td>
+                      <td className="py-3 px-2">$1,000</td>
+                      <td className="py-3 px-2">5 years</td>
+                      <td className="py-3 px-2">8%</td>
+                      <td className="py-3 px-2">$36,733</td>
+                      <td className="py-3 px-2">$73,484</td>
+                      <td className="py-3 px-2">SIP</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: SIP values shown are for equivalent total investment periods. Lump sum benefits from longer compounding; SIP benefits from rupee cost averaging and disciplined investing.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Lump Sum and SIP Investing
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  Lump sum investing means putting all your money to work at once. This approach maximizes time in the market — every dollar starts compounding immediately. Historical data shows lump sum investing outperforms dollar-cost averaging about two-thirds of the time, simply because markets tend to rise over time.
+                </p>
+                <p>
+                  SIP (Systematic Investment Plan) spreads your investment across regular intervals. You buy more units when prices are low and fewer when prices are high. This rupee cost averaging reduces the impact of market volatility and removes the stress of timing the market.
+                </p>
+                <p>
+                  The choice depends on your situation. If you received a bonus, inheritance, or maturity amount all at once, lump sum investing could be optimal. If you're investing from regular income, SIP is more practical and builds discipline. Many investors use both approaches — lump sum for windfalls and SIP for ongoing savings.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Investment Strategy Tips
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Time in Market Beats Timing Market</p>
+                    <p>Waiting for the "perfect" entry point often means missing gains. Studies show that being invested consistently outperforms trying to time market dips. Start early and stay invested.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Increase SIP with Income Growth</p>
+                    <p>Step up your SIP by 10% every year when you get a raise. This small habit dramatically increases your corpus. A $500 monthly SIP that grows 10% annually at 12% return becomes 3x larger in 20 years compared to a flat SIP.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Don't Stop SIP During Market Falls</p>
+                    <p>Market downturns are when SIPs earn their keep. You accumulate more units at lower prices. Investors who paused SIPs during the 2008 crash or 2020 pandemic missed the recovery gains. Stay disciplined through volatility.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Match Investment to Goals</p>
+                    <p>Use lump sum for long-term goals (10+ years) where volatility smooths out. Prefer SIP for medium-term goals (3-7 years) to reduce timing risk. For goals under 3 years, consider debt instruments instead of equity.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Which is better: lump sum or SIP?</h4>
+                  <p>
+                    Lump sum typically generates higher returns because money stays invested longer. However, SIP reduces the risk of investing everything at a market peak. If you have a large amount available and a long time horizon, lump sum wins statistically. If you're investing from salary or worried about timing, SIP provides peace of mind.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I do both lump sum and SIP?</h4>
+                  <p>
+                    Absolutely. Many investors use a hybrid approach: invest a windfall as lump sum while continuing SIP from regular income. You could also split a large amount — invest 50% as lump sum and spread the rest over 6-12 months through STP (Systematic Transfer Plan) from a liquid fund.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What return rate should I assume?</h4>
+                  <p>
+                    For equity mutual funds, 10-12% annually is reasonable over 10+ year periods. Large-cap funds may return 9-11%, while mid-cap and small-cap funds could return 12-15% with higher volatility. Debt funds typically return 6-8%. Always use conservative estimates for planning.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How long should I continue my SIP?</h4>
+                  <p>
+                    Minimum 5 years for equity SIPs to ride out market cycles. Ideally 10+ years for significant wealth creation. There's no maximum — many investors continue SIPs throughout their earning years and only start withdrawals in retirement. The key is consistency, not timing.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What happens if I miss an SIP payment?</h4>
+                  <p>
+                    Missing one payment isn't catastrophic, but it breaks discipline. Most funds allow a 30-day grace period. If you miss consistently, the fund may cancel the SIP mandate. Set up auto-debit and maintain buffer in your bank account. If cash flow is tight, reduce the SIP amount rather than skipping payments.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/sip-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">SIP Calculator</span>
+                  <p className="text-muted-foreground">Calculate the future value of your monthly SIP investments with expected returns</p>
+                </a>
+                <a
+                  href="/calculators/compound-interest-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Compound Interest Calculator</span>
+                  <p className="text-muted-foreground">See how your investments grow with compound interest over time</p>
+                </a>
+                <a
+                  href="/calculators/inflation-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Inflation Calculator</span>
+                  <p className="text-muted-foreground">Calculate the real value of your money after adjusting for inflation</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -51,7 +51,7 @@ export default function JsonRenameKeysPage() {
 
     const rulesMap = new Map(rules.filter(r => r.oldKey.trim()).map(r => [r.oldKey, r.newKey]));
     const renamed = renameKeys(obj, rulesMap, recursive);
-    
+
     setResult(JSON.stringify(renamed, null, 2));
     toast.success(`Renamed ${rulesMap.size} key(s)`);
   }, [input, rules, recursive, renameKeys]);

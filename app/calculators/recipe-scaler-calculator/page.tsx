@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -264,6 +264,124 @@ export default function RecipeScalerCalculatorPage() {
                   <li>400°F = 200°C</li>
                 </ul>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* How It Works Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">How to Scale a Recipe</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Original Servings</h3>
+                <p className="text-sm text-muted-foreground">Input how many servings the recipe currently makes (e.g., 4 servings).</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Add Ingredients and Amounts</h3>
+                <p className="text-sm text-muted-foreground">List each ingredient with its original quantity and unit of measurement.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">Get Scaled Ingredients</h3>
+                <p className="text-sm text-muted-foreground">See all ingredient amounts automatically adjusted for your desired serving size.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Features of This Recipe Scaler</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Instant Proportional Scaling
+                </h3>
+                <p className="text-sm text-muted-foreground">All ingredients scale automatically using precise mathematical ratios for accurate results.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Fraction Display Support
+                </h3>
+                <p className="text-sm text-muted-foreground">Common cooking fractions like ¼, ⅓, ½, ⅔, and ¾ display naturally for easy measuring.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Flexible Ingredient List
+                </h3>
+                <p className="text-sm text-muted-foreground">Add or remove ingredients dynamically to match any recipe from simple to complex.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Cooking Conversion Reference
+                </h3>
+                <p className="text-sm text-muted-foreground">Built-in tables for volume, weight, and temperature conversions help when scaling requires unit changes.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Scale Factor Display
+                </h3>
+                <p className="text-sm text-muted-foreground">See the exact multiplier applied to your recipe for understanding and manual adjustments.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions About Recipe Scaling</h3>
+            <div className="space-y-4">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">How do you scale down a recipe?</h3>
+                <p className="text-sm text-muted-foreground">Divide each ingredient amount by the scaling factor. For example, to halve a recipe, divide all amounts by 2. This calculator does the math automatically when you enter your desired servings.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Can I scale baking recipes the same way?</h3>
+                <p className="text-sm text-muted-foreground">Most ingredients scale linearly, but leavening agents (baking powder, yeast), spices, and salt may need adjustment. Baking is chemistry, so extreme scaling can affect texture and rise.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">What happens to cooking time when scaling?</h3>
+                <p className="text-sm text-muted-foreground">Cooking time does not scale proportionally. Larger batches may need slightly longer cooking, while smaller batches cook faster. Check for doneness using visual cues and thermometers.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">How do you convert fractions when scaling?</h3>
+                <p className="text-sm text-muted-foreground">Multiply the fraction by your scale factor. For example, ½ cup × 1.5 = ¾ cup. This calculator displays common fractions automatically for easy measuring.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Is there a limit to how much I can scale a recipe?</h3>
+                <p className="text-sm text-muted-foreground">Scaling beyond 4x or below ¼x often produces unreliable results. Equipment limitations, heat distribution, and ingredient behavior change at extreme scales. For large batches, consider making multiple smaller batches.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Tools Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Related Cooking Calculators</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/kitchen-measurement-converter" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Kitchen Measurement Converter</h3>
+                <p className="text-sm text-muted-foreground">Convert between cups, tablespoons, grams, and other cooking measurements.</p>
+              </a>
+              <a href="/calculators/oven-temperature-converter" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Oven Temperature Converter</h3>
+                <p className="text-sm text-muted-foreground">Convert between Fahrenheit, Celsius, and gas mark temperatures for baking.</p>
+              </a>
+              <a href="/calculators/baking-time-adjustment-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Baking Time Adjustment Calculator</h3>
+                <p className="text-sm text-muted-foreground">Adjust baking times when changing pan sizes or recipe quantities.</p>
+              </a>
             </div>
           </CardContent>
         </Card>

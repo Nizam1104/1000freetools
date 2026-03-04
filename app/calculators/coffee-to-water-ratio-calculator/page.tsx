@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -314,6 +314,259 @@ export default function CoffeeToWaterRatioCalculatorPage() {
             </div>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Coffee to Water Ratio Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your brew method</p>
+                    <p>Choose from pour over, drip, French press, espresso, or cold brew. Each method has an optimal ratio pre-loaded based on industry standards.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your desired water amount</p>
+                    <p>Input how much coffee you want to make in milliliters, ounces, or cups. The calculator automatically converts between units.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Get your coffee measurement</p>
+                    <p>Results show grams of coffee needed, tablespoons for scoop measurement, and the strength level. Adjust the ratio manually if you prefer stronger or weaker coffee.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Coffee Strength Guide by Ratio
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Ratio</th>
+                      <th className="text-left py-3 px-2 font-semibold">Coffee (g)</th>
+                      <th className="text-left py-3 px-2 font-semibold">Water (ml)</th>
+                      <th className="text-left py-3 px-2 font-semibold">Strength</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1:12</td>
+                      <td className="py-3 px-2">25g</td>
+                      <td className="py-3 px-2">300ml</td>
+                      <td className="py-3 px-2"><span className="text-red-600 font-medium">Very Strong</span></td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1:14</td>
+                      <td className="py-3 px-2">21g</td>
+                      <td className="py-3 px-2">300ml</td>
+                      <td className="py-3 px-2"><span className="text-orange-600 font-medium">Strong</span></td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1:15</td>
+                      <td className="py-3 px-2">20g</td>
+                      <td className="py-3 px-2">300ml</td>
+                      <td className="py-3 px-2"><span className="text-blue-600 font-medium">Medium-Strong</span></td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1:16</td>
+                      <td className="py-3 px-2">19g</td>
+                      <td className="py-3 px-2">300ml</td>
+                      <td className="py-3 px-2"><span className="text-green-600 font-medium">Medium (Golden)</span></td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1:17</td>
+                      <td className="py-3 px-2">18g</td>
+                      <td className="py-3 px-2">300ml</td>
+                      <td className="py-3 px-2"><span className="text-blue-600 font-medium">Medium-Light</span></td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">1:18</td>
+                      <td className="py-3 px-2">17g</td>
+                      <td className="py-3 px-2">300ml</td>
+                      <td className="py-3 px-2"><span className="text-gray-600 font-medium">Light</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: The 1:16 ratio is considered the &quot;golden ratio&quot; by the Specialty Coffee Association. Adjust based on your taste preference and coffee origin.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Coffee Extraction
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What the Ratio Controls</h4>
+                  <p>
+                    The coffee to water ratio determines extraction strength, not extraction yield. A 1:12 ratio produces a stronger, more concentrated cup. A 1:18 ratio produces a lighter, more tea-like cup. The ratio doesn&apos;t change how much flavor is extracted from the grounds, just how diluted the final drink is.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Golden Ratio Explained</h4>
+                  <p>
+                    The Specialty Coffee Association recommends 55 grams of coffee per liter of water, which equals a 1:18 ratio. Many baristas prefer 1:15 to 1:17 for better balance. This range extracts enough soluble compounds for full flavor without excessive bitterness or sourness.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Espresso Uses Different Ratios</h4>
+                  <p>
+                    Espresso uses a 1:2 ratio because it&apos;s measured by output, not input. An 18 gram dose yielding 36 grams of liquid espresso is a 1:2 ratio. The high pressure and fine grind extract coffee much more efficiently than drip methods, requiring less water for the same strength.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Brewing Tips for Better Coffee
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Weigh your coffee and water</p>
+                    <p>Volume measurements vary with grind size and packing. A gram scale gives consistent results. Entry-level scales cost under 20 dollars and transform your brewing consistency.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Match grind size to method</p>
+                    <p>Espresso needs extra fine, pour over needs medium-fine, French press needs coarse. Wrong grind size causes over or under extraction regardless of ratio. Invest in a burr grinder for consistent particle size.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use proper water temperature</p>
+                    <p>Ideal brewing temperature is 195-205 F (90-96 C). Boiling water scorches coffee. Water that&apos;s too cool under extracts. Let boiling water rest 30 seconds before brewing, or use a temperature-controlled kettle.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-amber-600 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Adjust to taste</p>
+                    <p>Start with the recommended ratio for your method. If coffee tastes weak or sour, use more coffee (lower ratio number). If it tastes bitter or harsh, use less coffee (higher ratio number). Your preference matters more than any rule.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How much coffee per cup?</h4>
+                  <p>
+                    For a standard 6 oz (180 ml) cup at 1:16 ratio, use 11 grams of coffee. For a 12 oz (355 ml) mug, use 22 grams. A typical 10 cup drip maker holds 60 oz and needs about 60 grams of coffee at 1:16 ratio.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I measure coffee by volume or weight?</h4>
+                  <p>
+                    Weight is more accurate. One tablespoon of fine espresso grind weighs more than one tablespoon of coarse French press grind. If you must use volume, 1 tablespoon of medium ground coffee equals about 5 grams.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why does my coffee taste bitter?</h4>
+                  <p>
+                    Bitter coffee usually means over extraction. Try a coarser grind, shorter brew time, or lower water temperature. You can also use a higher ratio like 1:17 or 1:18 to dilute the strength slightly.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why does my coffee taste sour?</h4>
+                  <p>
+                    Sour coffee indicates under extraction. Use a finer grind, longer brew time, or hotter water. A lower ratio like 1:14 or 1:15 will also increase strength and mask some sourness.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Does cold brew use the same ratios?</h4>
+                  <p>
+                    Cold brew concentrate uses 1:8 ratio, then gets diluted 1:1 with water or milk for drinking. This equals 1:16 when served. Cold extraction is less efficient, so the higher initial concentration compensates.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/tea-brewing-strength-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Tea Brewing Strength Calculator</span>
+                  <p className="text-muted-foreground">Calculate optimal tea to water ratios for different tea types</p>
+                </a>
+                <a
+                  href="/calculators/caffeine-intake-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Caffeine Intake Calculator</span>
+                  <p className="text-muted-foreground">Track your daily caffeine consumption from coffee and other sources</p>
+                </a>
+                <a
+                  href="/calculators/water-intake-activity-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Water Intake Calculator</span>
+                  <p className="text-muted-foreground">Determine daily hydration needs based on activity level</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );

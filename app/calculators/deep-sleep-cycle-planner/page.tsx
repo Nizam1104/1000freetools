@@ -159,6 +159,259 @@ export default function DeepSleepCyclePlanner() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Deep Sleep Planner
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your desired wake time</p>
+                  <p>Select the time you need to wake up. The calculator works backward to find optimal bedtimes.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Or enter your bedtime to analyze</p>
+                  <p>If you already have a bedtime, enter it along with wake time to see your sleep cycle analysis.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Review recommended bedtimes and deep sleep windows</p>
+                  <p>The planner shows bedtimes for 3-6 sleep cycles and estimates your deep sleep potential for each option.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Sleep Cycle Reference Table
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Sleep Cycles</th>
+                    <th className="text-left py-3 px-2 font-semibold">Total Duration</th>
+                    <th className="text-left py-3 px-2 font-semibold">Deep Sleep Time</th>
+                    <th className="text-left py-3 px-2 font-semibold">Quality Rating</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">3 cycles</td>
+                    <td className="py-3 px-2">4.5 hours</td>
+                    <td className="py-3 px-2">~45 min</td>
+                    <td className="py-3 px-2">Minimum (not recommended)</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">4 cycles</td>
+                    <td className="py-3 px-2">6 hours</td>
+                    <td className="py-3 px-2">~60 min</td>
+                    <td className="py-3 px-2">Below average</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">5 cycles</td>
+                    <td className="py-3 px-2">7.5 hours</td>
+                    <td className="py-3 px-2">~75-90 min</td>
+                    <td className="py-3 px-2">Optimal for most adults</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">6 cycles</td>
+                    <td className="py-3 px-2">9 hours</td>
+                    <td className="py-3 px-2">~90-105 min</td>
+                    <td className="py-3 px-2">Excellent (teens, athletes)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">7+ cycles</td>
+                    <td className="py-3 px-2">10.5+ hours</td>
+                    <td className="py-3 px-2">Variable</td>
+                    <td className="py-3 px-2">May indicate sleep debt</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Each sleep cycle averages 90 minutes. Deep sleep comprises 15-25% of total sleep time in healthy adults.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Sleep Cycles
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">The 90-Minute Cycle</h4>
+                <p>
+                  Sleep happens in 90-minute cycles. Each cycle includes light sleep (N1, N2), deep sleep (N3), and REM sleep. You cycle through these stages 4-6 times per night. Waking between cycles — rather than during them — leaves you feeling refreshed.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Why Deep Sleep Matters</h4>
+                <p>
+                  Deep sleep (slow-wave sleep) is when your body repairs tissue, builds bone and muscle, and strengthens immunity. Growth hormone releases during deep sleep. Memory consolidation happens too. Missing deep sleep leaves you physically exhausted.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Deep Sleep Happens Early</h4>
+                <p>
+                  Most deep sleep occurs in the first 3-4 hours of the night. Later cycles contain more REM and light sleep. This is why going to bed earlier — not just sleeping longer — improves sleep quality.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Sleep Pressure and Timing</h4>
+                <p>
+                  Adenosine builds up during wakefulness, creating &quot;sleep pressure.&quot; Caffeine blocks adenosine receptors. Your circadian rhythm also affects sleep timing — most people feel sleepiest around 9-11 PM and 2-4 AM.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Tips for Better Deep Sleep
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Keep a Consistent Schedule</p>
+                  <p>Go to bed and wake up at the same time daily, even weekends. Regularity strengthens your circadian rhythm and improves deep sleep quality.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Exercise During the Day</p>
+                  <p>Moderate aerobic exercise increases deep sleep. Finish intense workouts 3+ hours before bed — elevated body temperature delays sleep onset.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Limit Alcohol Before Bed</p>
+                  <p>Alcohol helps you fall asleep faster but fragments sleep and suppresses deep sleep and REM. Avoid alcohol within 3-4 hours of bedtime.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Optimize Your Sleep Environment</p>
+                  <p>Keep your bedroom cool (65-68°F / 18-20°C), dark, and quiet. Use blackout curtains and white noise if needed. A cool room promotes deeper sleep.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How many sleep cycles do I need?</h4>
+                <p>
+                  Most adults need 5 cycles (7.5 hours) per night. Some function well on 4 cycles (6 hours), others need 6 cycles (9 hours). Teens and athletes often need more. Listen to how you feel upon waking.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Why do I wake up tired after 8 hours?</h4>
+                <p>
+                  You may be waking during deep sleep rather than between cycles. Try adjusting your bedtime by 15-30 minutes. Sleep quality matters more than duration — alcohol, stress, and irregular schedules reduce deep sleep.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can I catch up on deep sleep?</h4>
+                <p>
+                  Your body prioritizes deep sleep after deprivation — you&apos;ll get more deep sleep the next night. But chronic sleep debt has cumulative effects. Consistent adequate sleep is better than weekend catch-up.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Does age affect deep sleep?</h4>
+                <p>
+                  Yes. Deep sleep decreases with age. Children get the most deep sleep. Adults over 60 may get very little deep sleep and wake frequently. This is normal but still important to optimize what you get.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What&apos;s the best time to go to bed?</h4>
+                <p>
+                  For most people, 9-11 PM aligns with natural circadian rhythms. Earlier bedtimes (9-10 PM) maximize deep sleep since it concentrates in the first sleep cycles. Night owls may shift later but should maintain consistency.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/baby-sleep-schedule-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Baby Sleep Schedule Calculator</span>
+                <p className="text-muted-foreground">Create age-appropriate sleep schedules for infants and toddlers</p>
+              </a>
+              <a
+                href="/calculators/ideal-bedtime-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Ideal Bedtime Calculator</span>
+                <p className="text-muted-foreground">Find your perfect bedtime based on wake time and sleep needs</p>
+              </a>
+              <a
+                href="/calculators/sleep-debt-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Sleep Debt Calculator</span>
+                <p className="text-muted-foreground">Calculate accumulated sleep debt and recovery time needed</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -18,15 +18,15 @@ export default function JsonToJavaScriptPage() {
   const convertToJsonString = (value: unknown, indent: number, useTrailingCommas: boolean): string => {
     const indentStr = "  ".repeat(indent);
     const nextIndent = "  ".repeat(indent + 1);
-    
+
     if (value === null) {
       return "null";
     }
-    
+
     if (typeof value === "boolean" || typeof value === "number") {
       return String(value);
     }
-    
+
     if (typeof value === "string") {
       const quote = quoteStyle === "single" ? "'" : '"';
       const escaped = value
@@ -37,42 +37,42 @@ export default function JsonToJavaScriptPage() {
         .replace(/\t/g, "\\t");
       return `${quote}${escaped}${quote}`;
     }
-    
+
     if (Array.isArray(value)) {
       if (value.length === 0) {
         return "[]";
       }
-      
-      const items = value.map(item => 
+
+      const items = value.map(item =>
         `${nextIndent}${convertToJsonString(item, indent + 1, useTrailingCommas)}`
       );
-      
+
       if (useTrailingCommas) {
         items[items.length - 1] += ",";
       }
-      
+
       return `[\n${items.join("\n")}\n${indentStr}]`;
     }
-    
+
     if (typeof value === "object") {
       const entries = Object.entries(value);
-      
+
       if (entries.length === 0) {
         return "{}";
       }
-      
+
       const items = entries.map(([key, val]) => {
         const jsKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `"${key}"`;
         return `${nextIndent}${jsKey}: ${convertToJsonString(val, indent + 1, useTrailingCommas)}`;
       });
-      
+
       if (useTrailingCommas) {
         items[items.length - 1] += ",";
       }
-      
+
       return `{\n${items.join("\n")}\n${indentStr}}`;
     }
-    
+
     return String(value);
   };
 

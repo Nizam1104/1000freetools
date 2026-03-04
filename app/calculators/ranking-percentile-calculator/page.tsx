@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -192,6 +192,136 @@ export default function RankingPercentileCalculatorPage() {
             the top 1% of all students.
           </p>
         </div>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Percentile Reference Table
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Percentile</th>
+                    <th className="text-left py-3 px-2 font-semibold">Top %</th>
+                    <th className="text-left py-3 px-2 font-semibold">Interpretation</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">99th</td>
+                    <td className="py-3 px-2">Top 1%</td>
+                    <td className="py-3 px-2">Exceptional performance</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">95th</td>
+                    <td className="py-3 px-2">Top 5%</td>
+                    <td className="py-3 px-2">Outstanding performance</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">90th</td>
+                    <td className="py-3 px-2">Top 10%</td>
+                    <td className="py-3 px-2">Excellent performance</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">75th</td>
+                    <td className="py-3 px-2">Top 25%</td>
+                    <td className="py-3 px-2">Above average</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">50th</td>
+                    <td className="py-3 px-2">Top 50%</td>
+                    <td className="py-3 px-2">Median (middle)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">25th</td>
+                    <td className="py-3 px-2">Top 75%</td>
+                    <td className="py-3 px-2">Below average</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the difference between rank and percentile?</h4>
+                <p>
+                  Rank is your position (1st, 15th, 100th). Percentile shows what percentage you scored
+                  better than. Rank 15 out of 200 is the 92.5th percentile — you did better than 92.5% of students.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Is a higher percentile better?</h4>
+                <p>
+                  Yes. The 99th percentile means you scored better than 99% of test-takers. The 50th
+                  percentile is the median — half scored higher, half scored lower.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How is percentile used in college admissions?</h4>
+                <p>
+                  Colleges use percentiles to compare applicants from different schools. A 95th percentile
+                  SAT score means you outperformed 95% of all test-takers, regardless of your school's
+                  grading scale.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can percentile be above 99?</h4>
+                <p>
+                  Technically no — 99.99th percentile is the maximum. Some tests report "99+" for scores
+                  at the very top. This means you are in the top 1% but the test cannot distinguish finer
+                  differences at that level.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is a good percentile rank?</h4>
+                <p>
+                  It depends on your goal. For competitive programs, aim for 90th percentile or higher.
+                  For general purposes, 75th percentile or above is considered strong. The 50th percentile
+                  is average — half of test-takers score above this.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/gpa-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">GPA Calculator</span>
+                <p className="text-muted-foreground">Calculate your grade point average for high school or college</p>
+              </a>
+              <a
+                href="/calculators/final-grade-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Final Grade Calculator</span>
+                <p className="text-muted-foreground">Find out what score you need on your final exam</p>
+              </a>
+              <a
+                href="/calculators/class-rank-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Class Rank Calculator</span>
+                <p className="text-muted-foreground">Estimate your class rank based on GPA and class size</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

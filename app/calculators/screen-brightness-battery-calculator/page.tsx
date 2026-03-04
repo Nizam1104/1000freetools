@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -243,11 +243,10 @@ export default function ScreenBrightnessBatteryCalculatorPage() {
                             <div className="w-24 text-sm">{s.brightness}%</div>
                             <div className="w-32 bg-muted rounded-full h-2">
                               <div
-                                className={`h-2 rounded-full ${
-                                  s.brightness === result.brightnessPercent
+                                className={`h-2 rounded-full ${s.brightness === result.brightnessPercent
                                     ? "bg-primary"
                                     : "bg-muted-foreground/30"
-                                }`}
+                                  }`}
                                 style={{ width: `${(s.runtime / Math.max(...result.savings.map(x => x.runtime))) * 100}%` }}
                               />
                             </div>
@@ -278,34 +277,128 @@ export default function ScreenBrightnessBatteryCalculatorPage() {
           </Card>
         </div>
 
-        <div className="mt-8 space-y-6">
+        {/* How It Works Section */}
+        <div className="mt-8">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Battery Saving Tips
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Screen brightness:</strong> The #1 battery drain on most devices
-                  </li>
-                  <li>
-                    <strong>Auto-brightness:</strong> Lets device adjust based on ambient light
-                  </li>
-                  <li>
-                    <strong>Dark mode:</strong> Saves significant power on OLED screens
-                  </li>
-                  <li>
-                    <strong>Refresh rate:</strong> Lower Hz = better battery (60Hz vs 120Hz)
-                  </li>
-                  <li>
-                    <strong>Screen timeout:</strong> Shorter timeout saves power
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> Reducing brightness from 100% to 50% can extend
-                  battery life by 20-30% on most devices.
-                </p>
+              <h3 className="text-lg font-semibold mb-6">How the Calculator Works</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Enter Device Details</h4>
+                  <p className="text-sm text-muted-foreground">Select your device type and input the battery capacity in mAh from your specs.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Set Brightness Level</h4>
+                  <p className="text-sm text-muted-foreground">Adjust the brightness slider or enter a percentage to see power consumption.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">View Battery Impact</h4>
+                  <p className="text-sm text-muted-foreground">Get estimated runtime and compare different brightness levels instantly.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Key Features</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Multi-Device Support</h4>
+                    <p className="text-sm text-muted-foreground">Calculate for smartphones, tablets, and laptops with device-specific power profiles.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Runtime Comparison</h4>
+                    <p className="text-sm text-muted-foreground">See how battery life changes at 20%, 40%, 60%, 80%, and 100% brightness.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Power Breakdown</h4>
+                    <p className="text-sm text-muted-foreground">View base system drain vs. screen drain to understand total consumption.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Smart Recommendations</h4>
+                    <p className="text-sm text-muted-foreground">Get personalized tips based on your brightness level and device type.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How much does screen brightness affect battery life?</h4>
+                  <p className="text-sm text-muted-foreground">Screen brightness is typically the largest battery drain, consuming 30-50% of total power. Reducing from 100% to 50% can extend battery life by 20-30% on most devices.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Does dark mode save battery?</h4>
+                  <p className="text-sm text-muted-foreground">Yes, on OLED and AMOLED screens, dark mode can save significant battery because black pixels are turned off completely. LCD screens see minimal benefit.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What brightness level is best for battery?</h4>
+                  <p className="text-sm text-muted-foreground">40-60% brightness offers the best balance between visibility and battery life. Use auto-brightness to let your device optimize based on ambient light.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How do I find my battery capacity?</h4>
+                  <p className="text-sm text-muted-foreground">Check Settings &gt; Battery on phones, System Information on Macs, or search your device model + &quot;battery capacity mAh&quot; online.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What else drains battery besides screen?</h4>
+                  <p className="text-sm text-muted-foreground">Cellular signal, GPS, background apps, push notifications, and high refresh rate displays are major battery drains. Close unused apps and enable battery saver mode.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/battery-life-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Battery Life Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Estimate total battery runtime based on usage patterns and apps.</p>
+                </a>
+                <a href="/calculators/mobile-charging-time-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Mobile Charging Time Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Calculate how long it takes to fully charge your device.</p>
+                </a>
+                <a href="/calculators/power-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Power Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Calculate electrical power consumption for any device.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

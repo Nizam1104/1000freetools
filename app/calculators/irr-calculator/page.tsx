@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,18 +23,18 @@ export default function IRRCalculatorPage() {
     }
 
     const allFlows = [-initial, ...flows];
-    
+
     // Newton-Raphson method to find IRR
     let irr = 0.1; // Initial guess of 10%
     for (let i = 0; i < 100; i++) {
       let npv = 0;
       let derivative = 0;
-      
+
       for (let t = 0; t < allFlows.length; t++) {
         npv += allFlows[t] / Math.pow(1 + irr, t);
         derivative -= t * allFlows[t] / Math.pow(1 + irr, t + 1);
       }
-      
+
       const newIrr = irr - npv / derivative;
       if (Math.abs(newIrr - irr) < 0.0001) {
         irr = newIrr;

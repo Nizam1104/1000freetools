@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -259,12 +259,10 @@ export default function WeightDistributionCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className={`p-3 rounded-lg text-center ${
-                    result.isBalanced ? "bg-green-50 dark:bg-green-950/20" : "bg-amber-50 dark:bg-amber-950/20"
-                  }`}>
-                    <p className={`font-medium ${
-                      result.isBalanced ? "text-green-700 dark:text-green-300" : "text-amber-700 dark:text-amber-300"
+                  <div className={`p-3 rounded-lg text-center ${result.isBalanced ? "bg-green-50 dark:bg-green-950/20" : "bg-amber-50 dark:bg-amber-950/20"
                     }`}>
+                    <p className={`font-medium ${result.isBalanced ? "text-green-700 dark:text-green-300" : "text-amber-700 dark:text-amber-300"
+                      }`}>
                       {result.isBalanced ? "✓ Load is balanced" : "⚠ Load is off-center"}
                     </p>
                   </div>
@@ -322,6 +320,103 @@ export default function WeightDistributionCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Weight Distribution</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Total Weight</h3>
+                <p className="text-sm text-muted-foreground">Input the total weight of the load being supported.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Set Support Distance & Position</h3>
+                <p className="text-sm text-muted-foreground">Enter distance between supports and where the load is positioned.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Load Distribution</h3>
+                <p className="text-sm text-muted-foreground">See how weight is distributed between left and right supports.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Weight Distribution Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Lever Principle**</h3>
+              <p className="text-sm text-muted-foreground">Uses physics-based calculations to determine load on each support point.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Percentage Breakdown**</h3>
+              <p className="text-sm text-muted-foreground">Shows exact percentage of weight carried by each support.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Balance Indicator**</h3>
+              <p className="text-sm text-muted-foreground">Identifies if load is centered or biased toward one support.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Practical Recommendations**</h3>
+              <p className="text-sm text-muted-foreground">Provides actionable advice for load balancing and safety.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How is weight distribution calculated?</h3>
+              <p className="text-sm text-muted-foreground">Using the lever principle: Left support = W × (distance - position) / distance. Right support = W × position / distance. The closer the load to a support, the more weight it carries.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why is weight distribution important?</h3>
+              <p className="text-sm text-muted-foreground">Proper weight distribution prevents overloading supports, ensures stability, and prevents tipping. Critical for vehicles, trailers, shelves, and structural beams.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a balanced load?</h3>
+              <p className="text-sm text-muted-foreground">A balanced load has weight evenly distributed between supports (50/50 split). This occurs when the load is positioned exactly at the center point.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How does this apply to trailers?</h3>
+              <p className="text-sm text-muted-foreground">For trailers, proper tongue weight (10-15% of total) ensures stable towing. Too little causes sway; too much overloads the tow vehicle.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Can I use this for multiple loads?</h3>
+              <p className="text-sm text-muted-foreground">For multiple loads, calculate each separately and add the results, or find the combined center of gravity and use that as a single load position.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/beam-bending-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Beam Bending Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate beam deflection and stress under load.</p>
+            </a>
+            <a href="/calculators/force-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Force Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate force using Newton&apos;s laws for physics problems.</p>
+            </a>
+            <a href="/calculators/torque-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Torque Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate torque and rotational force for mechanical systems.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

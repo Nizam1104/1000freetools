@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -321,6 +321,82 @@ export default function RampSlopeCalculatorPage() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the ADA maximum slope for a wheelchair ramp?</h4>
+                <p>
+                  The ADA requires a maximum slope of 1:12, meaning 1 inch of rise for every 12 inches of run.
+                  This equals 8.33% grade or about 4.8 degrees. Steeper ramps are not permitted for new construction.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How long does my ramp need to be?</h4>
+                <p>
+                  For every inch of rise, you need at least 12 inches of ramp length. A 24-inch rise requires
+                  a minimum 288-inch (24-foot) ramp. Always measure the total vertical height from ground to landing.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">When are handrails required?</h4>
+                <p>
+                  Handrails are required on both sides when the slope exceeds 1:20 (5%). Since ADA ramps are
+                  typically 1:12, most ramps will need handrails. They must be 34-38 inches above the ramp surface.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Do I need landings on my ramp?</h4>
+                <p>
+                  Yes. A level landing is required at the top and bottom. Intermediate landings are needed every
+                  30 inches of rise. Landings must be at least 60 inches long and as wide as the ramp.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the minimum width for a ramp?</h4>
+                <p>
+                  The ADA requires a minimum clear width of 36 inches between handrails. Wider ramps (48-60 inches)
+                  allow two wheelchairs to pass. Check local building codes as some jurisdictions require more.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/slope-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Slope Calculator</span>
+                <p className="text-muted-foreground">Calculate slope percentage, angle, and gradient for any incline</p>
+              </a>
+              <a
+                href="/calculators/stair-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Stair Calculator</span>
+                <p className="text-muted-foreground">Design stairs with proper rise and run dimensions</p>
+              </a>
+              <a
+                href="/calculators/incline-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Incline Calculator</span>
+                <p className="text-muted-foreground">Calculate incline angles for treadmills and surfaces</p>
+              </a>
             </div>
           </CardContent>
         </Card>

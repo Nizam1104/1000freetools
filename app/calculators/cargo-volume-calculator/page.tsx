@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -109,7 +109,7 @@ export default function CargoVolumeCalculatorPage() {
 
     // Volumetric weight calculation (air freight: 1 CBM = 167 kg, sea freight: 1 CBM = 1000 kg)
     const volumetricWeight = freightType === "air" ? totalVolume * 167 : totalVolume * 1000;
-    
+
     // Chargeable weight is the greater of actual or volumetric weight
     const chargeableWeight = Math.max(totalWeight, volumetricWeight);
 
@@ -308,9 +308,8 @@ export default function CargoVolumeCalculatorPage() {
                       {result.containerFit.map((fit, i) => (
                         <div
                           key={i}
-                          className={`p-3 rounded-lg flex justify-between items-center ${
-                            fit.fits ? "bg-green-100 dark:bg-green-900/20" : "bg-red-100 dark:bg-red-900/20"
-                          }`}
+                          className={`p-3 rounded-lg flex justify-between items-center ${fit.fits ? "bg-green-100 dark:bg-green-900/20" : "bg-red-100 dark:bg-red-900/20"
+                            }`}
                         >
                           <span className="text-sm font-medium">{fit.container}</span>
                           <span className={`text-sm ${fit.fits ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}>
@@ -364,6 +363,143 @@ export default function CargoVolumeCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Cargo Volume</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Add Your Packages</h3>
+                  <p className="text-muted-foreground text-sm">Enter dimensions and quantities for each package type in your shipment.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Select Freight Type</h3>
+                  <p className="text-muted-foreground text-sm">Choose air, sea, or road freight to calculate the correct chargeable weight.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Shipping Analysis</h3>
+                  <p className="text-muted-foreground text-sm">See total volume, chargeable weight, and which containers your cargo fits.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Key Features of This Cargo Calculator</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">📦 Multi-Package Support</h3>
+                <p className="text-muted-foreground text-sm">Calculate volume for complex shipments with multiple package types and quantities in one go.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">✈️ All Freight Modes</h3>
+                <p className="text-muted-foreground text-sm">Supports air freight (1:6000), sea freight (1:1000), and road freight (1:3000) volumetric ratios.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🚢 Container Fit Analysis</h3>
+                <p className="text-muted-foreground text-sm">Automatically checks if your cargo fits in 20ft, 40ft, 40ft HC, and 45ft containers.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">💰 Chargeable Weight</h3>
+                <p className="text-muted-foreground text-sm">Calculates the billable weight carriers use for pricing (greater of actual or volumetric).</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Reference Table */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Freight Volumetric Weight Ratios</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4">Freight Type</th>
+                    <th className="text-left py-3 px-4">Volumetric Ratio</th>
+                    <th className="text-left py-3 px-4">1 CBM Equals</th>
+                    <th className="text-left py-3 px-4">Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">✈️ Air Freight</td>
+                    <td className="py-3 px-4">1:6000</td>
+                    <td className="py-3 px-4">167 kg</td>
+                    <td className="py-3 px-4">Urgent, high-value goods</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">🚢 Sea Freight (LCL)</td>
+                    <td className="py-3 px-4">1:1000</td>
+                    <td className="py-3 px-4">1000 kg (1 ton)</td>
+                    <td className="py-3 px-4">Large, non-urgent shipments</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">🚛 Road Freight</td>
+                    <td className="py-3 px-4">1:3000</td>
+                    <td className="py-3 px-4">333 kg</td>
+                    <td className="py-3 px-4">Domestic, regional transport</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Cargo Volume & Shipping FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I calculate CBM for shipping?</h3>
+                <p className="text-muted-foreground text-sm">CBM = Length × Width × Height (in meters). For cm: divide the result by 1,000,000. Multiply by quantity for total volume.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is chargeable weight in freight?</h3>
+                <p className="text-muted-foreground text-sm">Chargeable weight is the greater of actual weight or volumetric weight. Carriers use this to ensure fair pricing for both heavy and bulky items.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How many CBM in a 20ft container?</h3>
+                <p className="text-muted-foreground text-sm">A 20ft standard container has approximately 33.2 CBM internal volume. A 40ft container has about 67.7 CBM, and 40ft HC has 76.4 CBM.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Why is air freight more expensive per CBM?</h3>
+                <p className="text-muted-foreground text-sm">Air freight uses a 1:6000 ratio (167 kg/CBM) vs sea freight's 1:1000. This reflects the premium for speed and limited aircraft cargo space.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I optimize container loading?</h3>
+                <p className="text-muted-foreground text-sm">Use our Container Load Calculator to maximize space utilization. Stack efficiently, distribute weight evenly, and consider pallet configurations.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Shipping & Logistics Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/container-load-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Container Load Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate how many boxes fit in 20ft or 40ft shipping containers.</p>
+              </a>
+              <a href="/calculators/camping-gear-weight-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Camping Gear Weight Calculator</h3>
+                <p className="text-muted-foreground text-sm">Plan your pack weight for backpacking and outdoor adventures.</p>
+              </a>
+              <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
+                <p className="text-muted-foreground text-sm">Convert between different area measurements for real estate.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

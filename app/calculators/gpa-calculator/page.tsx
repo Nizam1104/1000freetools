@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 interface Course {
   id: number;
@@ -269,6 +277,243 @@ export default function GpaCalculatorPage() {
             B (3.0) in a 4-credit course = 12 points. 
             GPA = (12 + 12) / (3 + 4) = 24/7 = 3.43
           </p>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>How GPA Is Calculated</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
+                <div>Grade Points = Grade Point Value × Credit Hours</div>
+                <div>Total Points = Sum of all Grade Points</div>
+                <div>GPA = Total Points ÷ Total Credit Hours</div>
+              </div>
+              <p className="text-muted-foreground text-sm">
+                <strong>Example:</strong> A (4.0) in a 3-credit course = 12 points.
+                B (3.0) in a 4-credit course = 12 points.
+                GPA = (12 + 12) / (3 + 4) = 24/7 = 3.43
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Understanding GPA and Grade Scales</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What Is GPA</h4>
+                <p className="text-sm text-muted-foreground">
+                  GPA (Grade Point Average) is a number that summarizes your academic performance. Each letter grade has a point value (A=4.0, B=3.0, etc.). Multiply each grade's points by the course credits, add them up, and divide by total credits. A 4.0 GPA means all A's. A 2.0 GPA means all C's.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Weighted vs Unweighted GPA</h4>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Two common GPA types:
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-muted rounded-md">
+                    <p className="font-semibold text-sm mb-2">Unweighted GPA</p>
+                    <p className="text-xs text-muted-foreground">
+                      All courses use the same 4.0 scale. An A in regular math equals an A in AP calculus. Maximum is 4.0. Most colleges look at this for fair comparison.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted rounded-md">
+                    <p className="font-semibold text-sm mb-2">Weighted GPA</p>
+                    <p className="text-xs text-muted-foreground">
+                      Harder courses get extra points. An A in AP might be 5.0 instead of 4.0. Maximum can exceed 4.0 (often 5.0). Rewards students who take challenging courses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Why GPA Matters</h4>
+                <p className="text-sm text-muted-foreground">
+                  GPA affects college admissions, scholarship eligibility, and job prospects. Many scholarships require 3.0 or higher. Graduate programs often want 3.5+. Some employers screen resumes by GPA. But GPA isn't everything - experience and skills matter too.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>GPA Scale Reference Table</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Letter Grade</TableHead>
+                    <TableHead>Grade Points</TableHead>
+                    <TableHead>Percentage Range</TableHead>
+                    <TableHead>Description</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>A+</TableCell>
+                    <TableCell className="font-mono">4.0</TableCell>
+                    <TableCell className="font-mono">97-100%</TableCell>
+                    <TableCell>Excellent</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>A</TableCell>
+                    <TableCell className="font-mono">4.0</TableCell>
+                    <TableCell className="font-mono">93-96%</TableCell>
+                    <TableCell>Excellent</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>A-</TableCell>
+                    <TableCell className="font-mono">3.7</TableCell>
+                    <TableCell className="font-mono">90-92%</TableCell>
+                    <TableCell>Very Good</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>B+</TableCell>
+                    <TableCell className="font-mono">3.3</TableCell>
+                    <TableCell className="font-mono">87-89%</TableCell>
+                    <TableCell>Good</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>B</TableCell>
+                    <TableCell className="font-mono">3.0</TableCell>
+                    <TableCell className="font-mono">83-86%</TableCell>
+                    <TableCell>Good</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>B-</TableCell>
+                    <TableCell className="font-mono">2.7</TableCell>
+                    <TableCell className="font-mono">80-82%</TableCell>
+                    <TableCell>Above Average</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>C+</TableCell>
+                    <TableCell className="font-mono">2.3</TableCell>
+                    <TableCell className="font-mono">77-79%</TableCell>
+                    <TableCell>Average</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>C</TableCell>
+                    <TableCell className="font-mono">2.0</TableCell>
+                    <TableCell className="font-mono">73-76%</TableCell>
+                    <TableCell>Average</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>D</TableCell>
+                    <TableCell className="font-mono">1.0</TableCell>
+                    <TableCell className="font-mono">60-69%</TableCell>
+                    <TableCell>Passing</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>F</TableCell>
+                    <TableCell className="font-mono">0.0</TableCell>
+                    <TableCell className="font-mono">Below 60%</TableCell>
+                    <TableCell>Failing</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              <p className="text-xs text-muted-foreground mt-3">
+                Grade scales vary by school. Some use different cutoffs or include pluses/minuses. Check your school's specific grading policy.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Tips for Improving Your GPA</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="p-4 bg-muted rounded-md">
+                <h4 className="font-semibold text-sm mb-3">Focus on High-Credit Courses</h4>
+                <p className="text-xs text-muted-foreground">
+                  A 4-credit course affects your GPA twice as much as a 2-credit course. Prioritize studying for high-credit classes. An A in a 4-credit course adds 16 points; an A in a 1-credit course adds only 4 points.
+                </p>
+              </div>
+
+              <div className="p-4 bg-muted rounded-md">
+                <h4 className="font-semibold text-sm mb-3">Understand Grade Recovery</h4>
+                <p className="text-xs text-muted-foreground">
+                  Raising a low GPA takes time. If you have 60 credits at 2.5 GPA and earn 4.0 for the next 15 credits, your new GPA is only 2.8. It takes 60 credits of straight A's to raise a 2.5 to 3.25. Stay consistent.
+                </p>
+              </div>
+
+              <div className="p-4 bg-muted rounded-md">
+                <h4 className="font-semibold text-sm mb-3">Retake Failed Courses</h4>
+                <p className="text-xs text-muted-foreground">
+                  Many schools let you retake failed courses and replace the grade. An F (0 points) becoming a B (3 points) in a 3-credit course adds 9 points to your total. This is the fastest way to recover from a bad semester.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is a good GPA?</h4>
+                <p className="text-sm text-muted-foreground">
+                  A 3.0 (B average) is considered good. A 3.5+ makes you competitive for most colleges and scholarships. A 3.8+ is excellent and opens doors to top programs. But "good" depends on your goals - trade schools may care less about GPA than Ivy League colleges.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I calculate my semester GPA?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Add up grade points for just that semester's courses, then divide by semester credits. If you earned 30 points in 10 credits, your semester GPA is 3.0. This is separate from your cumulative GPA, which includes all semesters.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Does GPA matter after graduation?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Less and less over time. Your first job might ask for GPA. After 2-3 years of work experience, employers care more about your track record. Graduate schools still care about undergraduate GPA. But eventually, what you've done matters more than what grades you got.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Can I raise my GPA in one semester?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Yes, but how much depends on how many credits you've already completed. With 30 credits at 2.5 GPA, earning 4.0 in 15 new credits raises you to 3.0. With 90 credits at 2.5, the same 15 credits of A's only raises you to 2.7. Earlier is easier.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What if my school uses a different scale?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Some schools use 5.0, 10.0, or percentage scales. The calculation method is the same - multiply grade points by credits, divide by total credits. Just use your school's grade point values. Many international schools use 10-point scales where 8.0+ is excellent.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Tools</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/final-grade-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Final Grade Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate what you need on the final exam</p>
+                </a>
+                <a href="/calculators/grade-percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Grade Percentage Calculator</p>
+                  <p className="text-xs text-muted-foreground">Convert scores to letter grades</p>
+                </a>
+                <a href="/calculators/weighted-average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Weighted Average Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate weighted averages</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ import {
   Package,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Label } from "@/components/ui/label";
@@ -130,10 +130,10 @@ export default function ImageFormatConversionsPage() {
       const imageFiles = validateImageFile
         ? acceptedFiles.filter(validateImageFile)
         : acceptedFiles.filter((file) =>
-            SUPPORTED_INPUT_FORMATS.includes(
-              file.name.split(".").pop()?.toLowerCase() || "",
-            ),
-          );
+          SUPPORTED_INPUT_FORMATS.includes(
+            file.name.split(".").pop()?.toLowerCase() || "",
+          ),
+        );
 
       // Check if adding these files would exceed the limit
       const totalFilesAfterAdding = files.length + imageFiles.length;
@@ -218,11 +218,11 @@ export default function ImageFormatConversionsPage() {
           prev.map((f) =>
             f.id === imageFile.id
               ? {
-                  ...f,
-                  status: "completed",
-                  convertedFormat: selectedOutputFormat,
-                  convertedData: result.data,
-                }
+                ...f,
+                status: "completed",
+                convertedFormat: selectedOutputFormat,
+                convertedData: result.data,
+              }
               : f,
           ),
         );
@@ -237,10 +237,10 @@ export default function ImageFormatConversionsPage() {
         prev.map((f) =>
           f.id === imageFile.id
             ? {
-                ...f,
-                status: "error",
-                error: err instanceof Error ? err.message : "Conversion failed",
-              }
+              ...f,
+              status: "error",
+              error: err instanceof Error ? err.message : "Conversion failed",
+            }
             : f,
         ),
       );
@@ -357,11 +357,10 @@ export default function ImageFormatConversionsPage() {
             <CardContent className="p-4 sm:p-6">
               <div
                 {...getRootProps()}
-                className={`border-2 border-dashed rounded-lg p-6 sm:p-8 text-center cursor-pointer transition-all hover:border-primary/50 ${
-                  isDragActive
+                className={`border-2 border-dashed rounded-lg p-6 sm:p-8 text-center cursor-pointer transition-all hover:border-primary/50 ${isDragActive
                     ? "border-primary bg-primary/5 scale-[1.02]"
                     : "border-muted-foreground/25"
-                }`}
+                  }`}
               >
                 <input {...getInputProps()} />
                 <FileImage className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4 text-muted-foreground" />

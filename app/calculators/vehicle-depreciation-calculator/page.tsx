@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -41,11 +41,11 @@ export default function VehicleDepreciationCalculatorPage() {
     const mileageModifier = mileage > averageMileage ? 0.95 : 1.05;
 
     const conditionMod = conditionModifiers[condition];
-    
+
     // Calculate depreciation using declining balance method
     let currentValue = price;
     const yearlyDepreciation: number[] = [];
-    
+
     for (let i = 0; i < age; i++) {
       const yearDepreciation = currentValue * rate * conditionMod * mileageModifier;
       currentValue -= yearDepreciation;
@@ -178,7 +178,7 @@ export default function VehicleDepreciationCalculatorPage() {
                     <p className="text-sm text-muted-foreground">Current Estimated Value</p>
                     <p className="text-3xl font-bold text-primary">${result.currentValue.toLocaleString()}</p>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-4 bg-muted rounded-lg">
                       <p className="text-sm text-muted-foreground">Total Depreciation</p>
@@ -227,6 +227,149 @@ export default function VehicleDepreciationCalculatorPage() {
             <li><strong>High mileage (&gt;12k/yr):</strong> -5% value retention</li>
             <li><strong>Low mileage (&lt;12k/yr):</strong> +5% value retention</li>
           </ul>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Car Depreciation</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Purchase Details</h3>
+                <p className="text-sm text-muted-foreground">Input your vehicle's original purchase price and current age in years.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Mileage & Condition</h3>
+                <p className="text-sm text-muted-foreground">Enter annual mileage and select vehicle condition for accurate value adjustment.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">View Depreciation Breakdown</h3>
+                <p className="text-sm text-muted-foreground">See current value, total depreciation, and year-by-year value loss breakdown.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Vehicle Depreciation Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Declining Balance Method</h3>
+              <p className="text-sm text-muted-foreground">Uses realistic depreciation that decreases each year as the vehicle's value drops.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Condition Adjustments</h3>
+              <p className="text-sm text-muted-foreground">Accounts for excellent, good, fair, or poor condition impact on resale value.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Mileage Impact Analysis</h3>
+              <p className="text-sm text-muted-foreground">Adjusts depreciation based on annual mileage compared to the 12,000 mile average.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Year-by-Year Breakdown</h3>
+              <p className="text-sm text-muted-foreground">See exactly how much value your vehicle lost each year for detailed financial planning.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Vehicle Depreciation Rates by Type</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Vehicle Type</th>
+                  <th className="text-left py-2">Annual Rate</th>
+                  <th className="text-left py-2">5-Year Value</th>
+                  <th className="text-left py-2">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Luxury Cars</td>
+                  <td className="py-2">20-25%</td>
+                  <td className="py-2">30-40%</td>
+                  <td className="py-2">Highest depreciation</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Sedans</td>
+                  <td className="py-2">15-20%</td>
+                  <td className="py-2">40-50%</td>
+                  <td className="py-2">Average depreciation</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">SUVs/Crossovers</td>
+                  <td className="py-2">12-18%</td>
+                  <td className="py-2">45-55%</td>
+                  <td className="py-2">Popular, holds value well</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Trucks</td>
+                  <td className="py-2">10-15%</td>
+                  <td className="py-2">50-60%</td>
+                  <td className="py-2">Best value retention</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Electric Vehicles</td>
+                  <td className="py-2">15-25%</td>
+                  <td className="py-2">35-45%</td>
+                  <td className="py-2">Battery concerns affect value</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">How much does a car depreciate per year?</h3>
+              <p className="text-sm text-muted-foreground">Average cars depreciate 15-20% annually. New cars lose 20-30% in the first year alone. After 5 years, most vehicles retain only 40-50% of their original value, though trucks and some SUVs hold value better.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What vehicle depreciates the slowest?</h3>
+              <p className="text-sm text-muted-foreground">Trucks (especially Toyota Tacoma, Ford F-150) and body-on-frame SUVs depreciate slowest at 10-15% annually. Sports cars like Porsche 911 also hold value well. Luxury sedans depreciate fastest at 20-25% per year.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Does mileage affect car value?</h3>
+              <p className="text-sm text-muted-foreground">Yes, significantly. High mileage (over 12,000 miles/year) can reduce value by 5-10% compared to average. Low mileage vehicles command premium prices. Each 10,000 miles typically reduces value by $500-$1,000 depending on the vehicle.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">When is the best time to sell a car?</h3>
+              <p className="text-sm text-muted-foreground">Sell before major milestones: before 100,000 miles, before 5-7 years old, and before expensive maintenance (timing belt, transmission service). Spring and summer typically yield better prices than fall and winter.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How can I minimize car depreciation?</h3>
+              <p className="text-sm text-muted-foreground">Buy reliable brands (Toyota, Honda), keep mileage low, maintain excellent condition, keep service records, avoid modifications, and sell before major repairs are needed. Consider buying 2-3 year old to let someone else take the initial hit.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Auto Finance Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/car-loan-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Car Loan Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate monthly payments and total interest for auto loans.</p>
+            </a>
+            <a href="/calculators/car-loan-affordability-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
+              <p className="text-sm text-muted-foreground">Determine how much car you can afford based on your budget.</p>
+            </a>
+            <a href="/calculators/buy-vs-rent-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Buy vs Rent Calculator</h3>
+              <p className="text-sm text-muted-foreground">Compare leasing vs buying costs for your vehicle decision.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -132,6 +132,103 @@ export default function WorkingCapitalCalculatorPage() {
               )}
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Working Capital</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Current Assets</h3>
+                <p className="text-sm text-muted-foreground">Input total current assets (cash, receivables, inventory, etc.).</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Current Liabilities</h3>
+                <p className="text-sm text-muted-foreground">Input total current liabilities (payables, short-term debt, etc.).</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Financial Health Status</h3>
+                <p className="text-sm text-muted-foreground">See working capital amount, ratio, and liquidity assessment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Working Capital Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Working Capital Amount**</h3>
+              <p className="text-sm text-muted-foreground">Calculates net working capital (Current Assets - Current Liabilities).</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Working Capital Ratio**</h3>
+              <p className="text-sm text-muted-foreground">Computes current ratio for liquidity analysis and comparison.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Health Assessment**</h3>
+              <p className="text-sm text-muted-foreground">Provides interpretation of your working capital status.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Business Planning Tool**</h3>
+              <p className="text-sm text-muted-foreground">Essential for cash flow management and financial planning.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is working capital?</h3>
+              <p className="text-sm text-muted-foreground">Working capital = Current Assets - Current Liabilities. It represents the money available for day-to-day operations after paying short-term obligations.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a good working capital ratio?</h3>
+              <p className="text-sm text-muted-foreground">A ratio of 1.5-2.0 is generally healthy. Below 1.0 indicates potential liquidity problems. Above 2.0 may mean inefficient use of capital.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why is working capital important?</h3>
+              <p className="text-sm text-muted-foreground">Working capital funds daily operations, pays suppliers and employees, and handles unexpected expenses. Insufficient working capital can lead to business failure.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How can I improve working capital?</h3>
+              <p className="text-sm text-muted-foreground">Speed up collections, extend payment terms, reduce inventory, sell unused assets, or secure a line of credit.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What&apos;s the difference between working capital and cash flow?</h3>
+              <p className="text-sm text-muted-foreground">Working capital is a snapshot of current liquidity. Cash flow tracks money movement over time. Both are important for financial health.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/current-ratio-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Current Ratio Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate current ratio for liquidity analysis.</p>
+            </a>
+            <a href="/calculators/cash-flow-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Cash Flow Calculator</h3>
+              <p className="text-sm text-muted-foreground">Track cash inflows and outflows for business planning.</p>
+            </a>
+            <a href="/calculators/break-even-point-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Break-Even Point Calculator</h3>
+              <p className="text-sm text-muted-foreground">Find the sales volume needed to cover all costs.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

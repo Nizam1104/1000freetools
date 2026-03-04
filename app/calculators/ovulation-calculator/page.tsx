@@ -183,6 +183,271 @@ export default function OvulationCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Ovulation Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your last period date</p>
+                  <p>Select the first day of your last menstrual period (LMP) from the date picker.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Select your cycle length</p>
+                  <p>Choose your average cycle length. If unsure, 28 days is the statistical average.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Calculate your fertile window</p>
+                  <p>Click Calculate Ovulation to see your predicted ovulation date and 6-day fertile window.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Fertile Window by Cycle Length
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Cycle Length</th>
+                    <th className="text-left py-3 px-2 font-semibold">Ovulation Day</th>
+                    <th className="text-left py-3 px-2 font-semibold">Fertile Window</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">21 days</td>
+                    <td className="py-3 px-2">Day 7</td>
+                    <td className="py-3 px-2">Days 2-8</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">24 days</td>
+                    <td className="py-3 px-2">Day 10</td>
+                    <td className="py-3 px-2">Days 5-11</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">28 days</td>
+                    <td className="py-3 px-2">Day 14</td>
+                    <td className="py-3 px-2">Days 9-15</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">30 days</td>
+                    <td className="py-3 px-2">Day 16</td>
+                    <td className="py-3 px-2">Days 11-17</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">32 days</td>
+                    <td className="py-3 px-2">Day 18</td>
+                    <td className="py-3 px-2">Days 13-19</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">35 days</td>
+                    <td className="py-3 px-2">Day 21</td>
+                    <td className="py-3 px-2">Days 16-22</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Note: Day 1 is the first day of your period. Ovulation occurs about 14 days before the next period.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Ovulation and Fertility
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">When Does Ovulation Occur?</h4>
+                <p>
+                  Ovulation typically happens 14 days before your next period starts — not 14 days after
+                  your last period. This is why women with shorter cycles ovulate earlier and those with
+                  longer cycles ovulate later. The luteal phase (after ovulation) is relatively fixed at
+                  12-16 days for most women.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What Is the Fertile Window?</h4>
+                <p>
+                  The fertile window spans 6 days: the 5 days before ovulation plus ovulation day itself.
+                  Sperm can survive up to 5 days in fertile cervical mucus. The egg lives only 12-24 hours
+                  after release. Peak fertility is the 2-3 days immediately before ovulation.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Signs of Ovulation</h4>
+                <p>
+                  Physical signs include clear, stretchy cervical mucus (like egg whites), slight rise in
+                  basal body temperature after ovulation, mild pelvic pain (mittelschmerz), and increased
+                  libido. Ovulation predictor kits detect the LH surge that triggers ovulation 24-36 hours
+                  before release.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Tips for Conception
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Time intercourse correctly</p>
+                  <p>Have sex every 1-2 days during your fertile window, especially the 2 days before ovulation.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Track your cycles</p>
+                  <p>Use a calendar or app to record period dates. After 3-6 months, you will see your personal pattern.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Take prenatal vitamins</p>
+                  <p>Start folic acid (400-800 mcg daily) before conception to reduce neural tube defect risk.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Maintain healthy lifestyle</p>
+                  <p>Aim for healthy weight, limit caffeine and alcohol, avoid smoking, and manage stress levels.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How accurate is this ovulation calculator?</h4>
+                <p>
+                  For women with regular cycles, predictions are reasonably accurate. However, ovulation
+                  can vary by a few days month to month due to stress, illness, or lifestyle changes.
+                  Use this as a guide, not a guarantee. Combine with ovulation tests for better accuracy.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can I get pregnant outside my fertile window?</h4>
+                <p>
+                  It is unlikely but not impossible. Sperm survival is typically 3-5 days maximum. The
+                  egg survives only 12-24 hours. Pregnancy outside the calculated window usually means
+                  ovulation occurred earlier or later than predicted — cycles are not always perfectly
+                  regular.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What if my cycles are irregular?</h4>
+                <p>
+                  Irregular cycles make prediction harder. Track for several months to find your range.
+                  Consider ovulation predictor kits, basal body temperature charting, or cervical mucus
+                  monitoring. If cycles are consistently irregular, consult a healthcare provider.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How long does it take to conceive?</h4>
+                <p>
+                  For healthy couples in their 20s having regular unprotected sex, about 80% conceive
+                  within 6 months and 90% within a year. Fertility declines with age, especially after 35.
+                  Seek evaluation if not pregnant after 12 months (or 6 months if over 35).
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can stress affect ovulation?</h4>
+                <p>
+                  Yes. Significant stress can delay or prevent ovulation by affecting hormone signals
+                  from the brain. This is why ovulation may shift during stressful periods. Managing
+                  stress through exercise, sleep, and relaxation techniques may help regulate cycles.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/pregnancy-due-date-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Pregnancy Due Date Calculator</span>
+                <p className="text-muted-foreground">Estimate your baby's due date from last period or conception</p>
+              </a>
+              <a
+                href="/calculators/baby-age-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Baby Age Calculator</span>
+                <p className="text-muted-foreground">Calculate your baby's exact age in weeks and months</p>
+              </a>
+              <a
+                href="/calculators/period-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Period Calculator</span>
+                <p className="text-muted-foreground">Predict your next period and track menstrual cycles</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

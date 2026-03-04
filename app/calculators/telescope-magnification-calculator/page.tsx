@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -104,48 +104,48 @@ export default function TelescopeMagnificationCalculatorPage() {
             <CardContent className="p-6 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="scopeFL">Telescope Focal Length (mm)</Label>
-                <Input 
-                  id="scopeFL" 
-                  type="number" 
-                  placeholder="e.g., 1200" 
-                  value={telescopeFocalLength} 
-                  onChange={(e) => setTelescopeFocalLength(e.target.value)} 
+                <Input
+                  id="scopeFL"
+                  type="number"
+                  placeholder="e.g., 1200"
+                  value={telescopeFocalLength}
+                  onChange={(e) => setTelescopeFocalLength(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Found in telescope specs (e.g., 700mm, 1200mm)</p>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="aperture">Telescope Aperture (mm) - Optional</Label>
-                <Input 
-                  id="aperture" 
-                  type="number" 
-                  placeholder="e.g., 150" 
-                  value={telescopeAperture} 
-                  onChange={(e) => setTelescopeAperture(e.target.value)} 
+                <Input
+                  id="aperture"
+                  type="number"
+                  placeholder="e.g., 150"
+                  value={telescopeAperture}
+                  onChange={(e) => setTelescopeAperture(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Diameter of main lens/mirror</p>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="eyepieceFL">Eyepiece Focal Length (mm)</Label>
-                <Input 
-                  id="eyepieceFL" 
-                  type="number" 
-                  placeholder="e.g., 25" 
-                  value={eyepieceFocalLength} 
-                  onChange={(e) => setEyepieceFocalLength(e.target.value)} 
+                <Input
+                  id="eyepieceFL"
+                  type="number"
+                  placeholder="e.g., 25"
+                  value={eyepieceFocalLength}
+                  onChange={(e) => setEyepieceFocalLength(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Marked on eyepiece (e.g., 10mm, 25mm)</p>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="eyepieceFOV">Eyepiece Apparent FOV (°) - Optional</Label>
-                <Input 
-                  id="eyepieceFOV" 
-                  type="number" 
-                  placeholder="Default: 50° (Plössl)" 
-                  value={eyepieceFOV} 
-                  onChange={(e) => setEyepieceFOV(e.target.value)} 
+                <Input
+                  id="eyepieceFOV"
+                  type="number"
+                  placeholder="Default: 50° (Plössl)"
+                  value={eyepieceFOV}
+                  onChange={(e) => setEyepieceFOV(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Plössl: 50°, Wide: 68-82°, Ultra-wide: 100-120°</p>
               </div>
@@ -219,6 +219,171 @@ export default function TelescopeMagnificationCalculatorPage() {
                   <p>Enter telescope and eyepiece details to calculate</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How It Works
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Enter Telescope Specs</h4>
+                    <p className="text-xs text-muted-foreground">Input your telescope's focal length and aperture (diameter) from the manufacturer specifications.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Add Eyepiece Details</h4>
+                    <p className="text-xs text-muted-foreground">Enter eyepiece focal length (marked on eyepiece) and apparent field of view for complete analysis.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Get Optical Analysis</h4>
+                    <p className="text-xs text-muted-foreground">See magnification, exit pupil, true field of view, and whether your setup is within optimal range.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Telescope Magnification Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-semibold">Magnification</th>
+                      <th className="text-left py-2 px-3 font-semibold">Best For</th>
+                      <th className="text-left py-2 px-3 font-semibold">Exit Pupil</th>
+                      <th className="text-left py-2 px-3 font-semibold">Image Brightness</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">Low (20-50x)</td>
+                      <td className="py-2 px-3 text-xs">Deep sky, nebulae, large clusters</td>
+                      <td className="py-2 px-3 text-xs">4-7mm</td>
+                      <td className="py-2 px-3 text-xs">Bright</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">Medium (50-100x)</td>
+                      <td className="py-2 px-3 text-xs">Star clusters, larger planets</td>
+                      <td className="py-2 px-3 text-xs">2-4mm</td>
+                      <td className="py-2 px-3 text-xs">Good</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">High (100-200x)</td>
+                      <td className="py-2 px-3 text-xs">Moon, planets, double stars</td>
+                      <td className="py-2 px-3 text-xs">0.5-2mm</td>
+                      <td className="py-2 px-3 text-xs">Dimmer</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3 font-medium">Very High (200x+)</td>
+                      <td className="py-2 px-3 text-xs">Lunar detail, tight doubles</td>
+                      <td className="py-2 px-3 text-xs">&lt;0.5mm</td>
+                      <td className="py-2 px-3 text-xs">Very dim</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features & Benefits
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Complete Optical Analysis</h4>
+                  <p className="text-xs text-muted-foreground">Calculate magnification, exit pupil, true field of view, and surface brightness in one calculation.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Useful Magnification Range</h4>
+                  <p className="text-xs text-muted-foreground">See your telescope's minimum and maximum useful magnification based on aperture size.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Smart Assessment</h4>
+                  <p className="text-xs text-muted-foreground">Get instant feedback on whether your eyepiece combination produces optimal or problematic results.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Object Recommendations</h4>
+                  <p className="text-xs text-muted-foreground">Quick reference for which celestial objects work best at different magnification ranges.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I calculate telescope magnification?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Magnification = Telescope Focal Length ÷ Eyepiece Focal Length. For example, a 1200mm telescope with a 10mm eyepiece gives 120x magnification. Shorter eyepiece = higher magnification.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is the maximum useful magnification?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Maximum useful magnification is approximately 2x per mm of aperture (50x per inch). A 150mm telescope maxes out around 300x. Beyond this, images become dim and blurry regardless of eyepiece used.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is exit pupil and why does it matter?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Exit pupil = Aperture ÷ Magnification. It's the beam of light entering your eye. Ideal range is 2-5mm. Above 7mm wastes light (eye can't use it). Below 0.5mm produces very dim images.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What eyepiece should I buy first?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Start with a low-power wide-field eyepiece (25-32mm Plössl) for finding objects and large deep-sky targets. Then add a medium power (10-15mm) for general viewing. High power comes last.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Why can't I see clearly at high magnification?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Atmospheric turbulence (seeing) limits practical magnification to 200-250x most nights. Also check you're within your telescope's maximum useful magnification. Collimation and thermal equilibrium also affect image quality.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Related Tools</h3>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/focal-length-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Focal Length Calculator</p>
+                  <p className="text-xs text-muted-foreground">Lens and optics calculations</p>
+                </a>
+                <a href="/calculators/aperture-depth-of-field-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Aperture & Depth of Field Calculator</p>
+                  <p className="text-xs text-muted-foreground">Photography optics calculator</p>
+                </a>
+                <a href="/calculators/magnification-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Magnification Calculator</p>
+                  <p className="text-xs text-muted-foreground">General magnification tools</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -185,17 +185,17 @@ export default function CssColorNameConverterPage() {
   const hexToHsl = (hex: string): { h: number; s: number; l: number } | null => {
     const cleanHex = hex.replace("#", "").trim();
     if (!/^[0-9A-Fa-f]{6}$/.test(cleanHex)) return null;
-    
+
     let r = parseInt(cleanHex.substring(0, 2), 16) / 255;
     let g = parseInt(cleanHex.substring(2, 4), 16) / 255;
     let b = parseInt(cleanHex.substring(4, 6), 16) / 255;
-    
+
     const max = Math.max(r, g, b);
     const min = Math.min(r, g, b);
     let h = 0;
     let s = 0;
     const l = (max + min) / 2;
-    
+
     if (max !== min) {
       const d = max - min;
       s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
@@ -211,7 +211,7 @@ export default function CssColorNameConverterPage() {
           break;
       }
     }
-    
+
     return {
       h: Math.round(h * 360),
       s: Math.round(s * 100),

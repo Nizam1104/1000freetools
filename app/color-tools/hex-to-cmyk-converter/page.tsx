@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,21 +15,21 @@ export default function HexToCmykConverterPage() {
   const hexToCmyk = (hex: string): { c: number; m: number; y: number; k: number } | null => {
     const cleanHex = hex.replace("#", "").trim();
     if (!/^[0-9A-Fa-f]{6}$/.test(cleanHex)) return null;
-    
+
     const r = parseInt(cleanHex.substring(0, 2), 16) / 255;
     const g = parseInt(cleanHex.substring(2, 4), 16) / 255;
     const b = parseInt(cleanHex.substring(4, 6), 16) / 255;
-    
+
     const k = 1 - Math.max(r, g, b);
-    
+
     if (k === 1) {
       return { c: 0, m: 0, y: 0, k: 100 };
     }
-    
+
     const c = (1 - r - k) / (1 - k);
     const m = (1 - g - k) / (1 - k);
     const y = (1 - b - k) / (1 - k);
-    
+
     return {
       c: Math.round(c * 100),
       m: Math.round(m * 100),

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -25,11 +25,11 @@ export default function JsonErrorExplanationPage() {
       return;
     } catch (e) {
       const errorMsg = (e as Error).message;
-      
+
       // Parse error position
       const positionMatch = errorMsg.match(/position (\d+)/i);
       const position = positionMatch ? parseInt(positionMatch[1]) : 0;
-      
+
       // Calculate line and column
       const lines = input.substring(0, position).split("\n");
       const line = lines.length;

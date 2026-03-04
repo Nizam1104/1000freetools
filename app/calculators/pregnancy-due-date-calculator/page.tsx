@@ -230,6 +230,106 @@ export default function PregnancyDueDateCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>How to Calculate Your Due Date</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <p className="font-semibold mb-1">Choose your calculation method</p>
+              <p className="text-sm text-muted-foreground">Select either last menstrual period (LMP) or conception date as your starting point.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <p className="font-semibold mb-1">Enter the date and cycle length</p>
+              <p className="text-sm text-muted-foreground">Input your LMP or conception date. For LMP, also select your average cycle length.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <p className="font-semibold mb-1">Get your due date and timeline</p>
+              <p className="text-sm text-muted-foreground">Receive estimated due date, conception date, current week, and trimester breakdown.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Why Track Your Due Date</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">Prenatal care planning</p>
+              <p className="text-sm text-muted-foreground">Schedule important screenings and appointments at the right times.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Monitor baby's development</p>
+              <p className="text-sm text-muted-foreground">Track weekly milestones and growth expectations throughout pregnancy.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Prepare for arrival</p>
+              <p className="text-sm text-muted-foreground">Plan maternity leave, nursery setup, and baby preparations on schedule.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Cycle adjustment</p>
+              <p className="text-sm text-muted-foreground">Accounts for cycles longer or shorter than the standard 28 days.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Trimester awareness</p>
+              <p className="text-sm text-muted-foreground">Know which trimester you're in for symptom and milestone tracking.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">How is due date calculated from LMP?</p>
+              <p className="text-sm text-muted-foreground">Add 280 days (40 weeks) to the first day of your last period. This is Naegele's rule, the standard method used by healthcare providers.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Can I calculate due date from conception?</p>
+              <p className="text-sm text-muted-foreground">Yes, add 266 days (38 weeks) to the conception date. This is more accurate if you know when ovulation occurred.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How accurate are due dates?</p>
+              <p className="text-sm text-muted-foreground">Only 5% of babies arrive on their due date. Most are born within 2 weeks before or after. Ultrasound dating is most accurate in first trimester.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Does cycle length affect due date?</p>
+              <p className="text-sm text-muted-foreground">Yes, longer cycles mean later ovulation and a later due date. This calculator adjusts for cycles from 24-35 days.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">When should I take a pregnancy test?</p>
+              <p className="text-sm text-muted-foreground">Test about 14 days after conception or when your period is late. First morning urine gives the most accurate result.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Related Pregnancy Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Try our other pregnancy calculators: the <a href="/calculators/pregnancy-week-calculator" className="text-primary hover:underline">pregnancy week calculator</a> to track current progress, the <a href="/calculators/pregnancy-weight-gain-calculator" className="text-primary hover:underline">pregnancy weight gain calculator</a> for healthy guidelines, and the <a href="/calculators/ovulation-calculator" className="text-primary hover:underline">ovulation calculator</a> for conception planning.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

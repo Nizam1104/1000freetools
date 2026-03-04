@@ -152,6 +152,274 @@ export default function BloodAlcoholCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This BAC Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your gender and weight</p>
+                  <p>Select your gender and input your body weight. These affect how alcohol distributes in your body.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Input drinks and time elapsed</p>
+                  <p>Enter the number of standard drinks consumed and hours since your first drink.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">View your estimated BAC level</p>
+                  <p>Get your blood alcohol content estimate along with impairment level information.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              BAC Levels and Impairment Effects
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">BAC Range</th>
+                    <th className="text-left py-3 px-2 font-semibold">Impairment Level</th>
+                    <th className="text-left py-3 px-2 font-semibold">Effects</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">0.00%</td>
+                    <td className="py-3 px-2">Sober</td>
+                    <td className="py-3 px-2">No impairment</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">0.01-0.02%</td>
+                    <td className="py-3 px-2">Minimal</td>
+                    <td className="py-3 px-2">Relaxation, slight mood change</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">0.03-0.05%</td>
+                    <td className="py-3 px-2">Mild</td>
+                    <td className="py-3 px-2">Reduced inhibition, impaired judgment</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">0.06-0.07%</td>
+                    <td className="py-3 px-2">Impaired</td>
+                    <td className="py-3 px-2">Reduced coordination, slower reaction time</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">0.08-0.10%</td>
+                    <td className="py-3 px-2">Legally Intoxicated</td>
+                    <td className="py-3 px-2">Poor muscle coordination, impaired balance and speech</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">0.11-0.15%</td>
+                    <td className="py-3 px-2">Highly Impaired</td>
+                    <td className="py-3 px-2">Significant motor impairment, slurred speech</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">0.16-0.20%</td>
+                    <td className="py-3 px-2">Severely Impaired</td>
+                    <td className="py-3 px-2">Nausea, vomiting, dysphoria</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">0.25%+</td>
+                    <td className="py-3 px-2">Dangerous</td>
+                    <td className="py-3 px-2">Risk of alcohol poisoning, loss of consciousness</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Blood Alcohol Content
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What Is BAC?</h4>
+                <p>
+                  Blood Alcohol Content (BAC) measures the percentage of alcohol in your bloodstream. A BAC of 0.08%
+                  means 0.08 grams of alcohol per 100 milliliters of blood. This is the legal limit for driving in
+                  most U.S. states, though impairment begins at much lower levels.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How the Widmark Formula Works</h4>
+                <p>
+                  This calculator uses the Widmark formula, developed in the 1930s. It accounts for total alcohol
+                  consumed, body weight, gender (which affects water content), and time for metabolism. The formula
+                  estimates peak BAC, then subtracts alcohol metabolized over time at approximately 0.015% per hour.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Why Gender Matters</h4>
+                <p>
+                  Women typically have higher BAC than men after drinking the same amount. This is because women
+                  have less body water (about 55% vs 68% in men) and lower levels of alcohol dehydrogenase, the
+                  enzyme that breaks down alcohol in the stomach.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Tips for Responsible Drinking
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Never drink and drive</p>
+                  <p>Even one drink can impair driving. Plan a ride home before you start drinking.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Pace yourself</p>
+                  <p>Limit yourself to one standard drink per hour. Your liver can only process about one drink per hour.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Eat before and during drinking</p>
+                  <p>Food slows alcohol absorption. Avoid drinking on an empty stomach.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Know what counts as a standard drink</p>
+                  <p>12 oz beer (5%), 5 oz wine (12%), or 1.5 oz spirits (40%) each contain about 14g of pure alcohol.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How accurate is this BAC calculator?</h4>
+                <p>
+                  This calculator provides an estimate based on the Widmark formula. Actual BAC varies based on
+                  genetics, metabolism, food intake, medication, and other factors. Never rely on calculator results
+                  to determine if you are safe to drive.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How long does it take to sober up?</h4>
+                <p>
+                  Your body metabolizes alcohol at about 0.015% BAC per hour. If your BAC is 0.08%, it takes roughly
+                  5-6 hours to reach zero. Coffee, cold showers, and exercise do not speed up this process — only
+                  time works.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can I be under the limit but still impaired?</h4>
+                <p>
+                  Yes. Impairment begins with the first drink. Studies show reduced reaction time and judgment at
+                  0.02% BAC. The legal limit is not a safety threshold — it is a legal definition for prosecution.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What affects how quickly I get drunk?</h4>
+                <p>
+                  Body weight, gender, food intake, drinking speed, medication, fatigue, and genetics all affect
+                  BAC. Carbonated drinks may increase absorption rate. Drinking on an empty stomach leads to faster
+                  and higher peak BAC.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Is the legal BAC limit the same everywhere?</h4>
+                <p>
+                  No. Most U.S. states use 0.08% for regular drivers, but commercial drivers face a 0.04% limit.
+                  Some countries have lower limits (0.05% in much of Europe, 0.02% in parts of Asia). For drivers
+                  under 21, most U.S. states have zero tolerance laws (0.01-0.02%).
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/calorie-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Calorie Calculator</span>
+                <p className="text-muted-foreground">Calculate daily calorie needs based on age, weight, height, and activity level</p>
+              </a>
+              <a
+                href="/calculators/water-intake-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Water Intake Calculator</span>
+                <p className="text-muted-foreground">Determine your daily water intake needs based on weight and activity</p>
+              </a>
+              <a
+                href="/calculators/sleep-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Sleep Calculator</span>
+                <p className="text-muted-foreground">Calculate optimal bedtimes and wake times for better rest</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

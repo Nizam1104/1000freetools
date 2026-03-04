@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,10 +21,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 };
 
@@ -264,11 +264,10 @@ export default function ColorPaletteGeneratorPage() {
                     {PRESET_COLORS.map((color) => (
                       <button
                         key={color}
-                        className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${
-                          baseColor.toLowerCase() === color.toLowerCase()
+                        className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${baseColor.toLowerCase() === color.toLowerCase()
                             ? "border-primary ring-2 ring-primary ring-offset-2"
                             : "border-border"
-                        }`}
+                          }`}
                         style={{ backgroundColor: color }}
                         onClick={() => setBaseColor(color)}
                         title={color}
@@ -335,7 +334,7 @@ export default function ColorPaletteGeneratorPage() {
                 {/* Preview Cards */}
                 <div className="space-y-4">
                   <Label className="text-sm font-medium text-muted-foreground">Preview</Label>
-                  
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     {/* Light Theme Preview */}
                     <div className="rounded-lg border border-border overflow-hidden">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -59,7 +59,7 @@ export default function NoteFrequencyCalculatorPage() {
     // Find nearby notes
     const nearbyNotes = [];
     const semitoneOffsets = [-1, 0, 1];
-    
+
     for (const offset of semitoneOffsets) {
       const newSemitones = semitonesFromA4 + offset;
       const newFreq = refFreq * Math.pow(2, newSemitones / 12);
@@ -67,7 +67,7 @@ export default function NoteFrequencyCalculatorPage() {
       let newOctave = octaveNum;
       if (noteIndex + offset < 0) newOctave--;
       if (noteIndex + offset >= 12) newOctave++;
-      
+
       nearbyNotes.push({
         note: `${NOTES[newNoteIndex]}${newOctave}`,
         frequency: parseFloat(newFreq.toFixed(2)),
@@ -235,9 +235,8 @@ export default function NoteFrequencyCalculatorPage() {
                       {result.nearbyNotes.map((n, i) => (
                         <div
                           key={i}
-                          className={`flex justify-between p-2 rounded text-sm ${
-                            i === 1 ? "bg-primary/10" : "bg-muted/50"
-                          }`}
+                          className={`flex justify-between p-2 rounded text-sm ${i === 1 ? "bg-primary/10" : "bg-muted/50"
+                            }`}
                         >
                           <span className="font-medium">{n.note}</span>
                           <span className="font-mono">{n.frequency} Hz</span>
@@ -294,6 +293,120 @@ export default function NoteFrequencyCalculatorPage() {
                   <strong>Note:</strong> Some orchestras tune to 442 Hz or 444 Hz for a
                   brighter sound. Historical pitch varied widely (A = 415 Hz in Baroque era).
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">How to Calculate Note Frequency</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                  <h3 className="font-semibold mb-2">Select Your Note</h3>
+                  <p className="text-sm text-muted-foreground">Choose the note name (C, D, E, etc.) and octave number from the dropdown menus.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                  <h3 className="font-semibold mb-2">Set Reference Pitch</h3>
+                  <p className="text-sm text-muted-foreground">Use standard A4=440Hz or adjust for alternative tunings like 432Hz.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                  <h3 className="font-semibold mb-2">Get Instant Results</h3>
+                  <p className="text-sm text-muted-foreground">View the exact frequency in Hz, wavelength, MIDI number, and nearby notes.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Key Features of This Note Frequency Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Equal Temperament Formula
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Uses the standard f = A4 × 2^(n/12) formula for accurate frequency calculations across all octaves.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Custom Reference Frequency
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Adjust the A4 reference from standard 440Hz to 432Hz, 442Hz, or any custom tuning.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    MIDI Note Numbers
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Get the corresponding MIDI note number for digital audio workstation integration.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Wavelength Calculation
+                  </h3>
+                  <p className="text-sm text-muted-foreground">See the sound wavelength in meters based on the speed of sound at room temperature.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Nearby Notes Reference
+                  </h3>
+                  <p className="text-sm text-muted-foreground">View adjacent semitones with their frequencies and cent differences for tuning context.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Frequently Asked Questions About Note Frequencies</h2>
+              <div className="space-y-4">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What is the frequency of middle C?</h3>
+                  <p className="text-sm text-muted-foreground">Middle C (C4) has a frequency of approximately 261.63 Hz when A4 is tuned to 440 Hz. This is the C closest to the middle of a piano keyboard.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">Why is A4 set to 440 Hz?</h3>
+                  <p className="text-sm text-muted-foreground">A4=440Hz became the international standard in 1955 (ISO 16). Before that, tuning varied widely - Baroque orchestras often used A=415Hz, while some modern orchestras prefer 442Hz for a brighter sound.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How do you calculate frequency from note name?</h3>
+                  <p className="text-sm text-muted-foreground">Use the formula f = 440 × 2^(n/12), where n is the number of semitones from A4. For example, C5 is 9 semitones above A4, so f = 440 × 2^(9/12) ≈ 523.25 Hz.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What is 432 Hz tuning?</h3>
+                  <p className="text-sm text-muted-foreground">432 Hz tuning sets A4 to 432 Hz instead of 440 Hz. Proponents claim it sounds more natural, though this is debated. All other notes shift proportionally - C4 becomes about 256 Hz instead of 261.63 Hz.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How does octave affect frequency?</h3>
+                  <p className="text-sm text-muted-foreground">Each octave doubles the frequency. A4 is 440 Hz, A5 is 880 Hz, and A3 is 220 Hz. This 2:1 ratio is why notes an octave apart sound so similar - they share the same harmonic series.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Related Music and Audio Tools</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/frequency-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Frequency Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate frequency from wavelength, period, or angular velocity for any wave.</p>
+                </a>
+                <a href="/calculators/tempo-to-delay-time-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Tempo to Delay Time Converter</h3>
+                  <p className="text-sm text-muted-foreground">Convert BPM to milliseconds for audio delay effects and music production.</p>
+                </a>
+                <a href="/calculators/sound-speed-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Sound Speed Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate the speed of sound in different mediums and temperatures.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

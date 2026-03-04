@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -119,6 +119,269 @@ export default function NetProfitMarginCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Net Profit Margin Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter total revenue</p>
+                    <p>Input your company's total revenue or sales for the period you are analyzing.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Input net income</p>
+                    <p>Enter net income (profit after all expenses, taxes, and interest are deducted).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate and review results</p>
+                    <p>Click Calculate to see your net profit margin percentage and profit per dollar of revenue.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Net Profit Margin by Industry
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Industry</th>
+                      <th className="text-right py-3 px-2 font-semibold">Average Margin</th>
+                      <th className="text-left py-3 px-2 font-semibold">Classification</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Software/Technology</td>
+                      <td className="text-right py-3 px-2">15-25%</td>
+                      <td className="py-3 px-2">High margin</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Healthcare/Pharma</td>
+                      <td className="text-right py-3 px-2">10-20%</td>
+                      <td className="py-3 px-2">High margin</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Financial Services</td>
+                      <td className="text-right py-3 px-2">15-30%</td>
+                      <td className="py-3 px-2">High margin</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Retail</td>
+                      <td className="text-right py-3 px-2">2-5%</td>
+                      <td className="py-3 px-2">Low margin</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Restaurants/Food Service</td>
+                      <td className="text-right py-3 px-2">3-8%</td>
+                      <td className="py-3 px-2">Low margin</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Manufacturing</td>
+                      <td className="text-right py-3 px-2">5-12%</td>
+                      <td className="py-3 px-2">Moderate margin</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Margins vary widely within industries. Compare your business to similar-sized competitors.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Net Profit Margin
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is Net Profit Margin?</h4>
+                  <p>
+                    Net profit margin shows what percentage of revenue becomes actual profit after all expenses.
+                    It is the bottom line of your income statement. A 10% margin means you keep $0.10 of every
+                    dollar in sales as profit. This metric reveals overall business efficiency and pricing power.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Net Margin vs Gross Margin vs Operating Margin</h4>
+                  <p>
+                    Gross margin only considers cost of goods sold. Operating margin includes operating expenses
+                    but excludes interest and taxes. Net margin includes everything — COGS, operating expenses,
+                    interest, taxes, and one-time items. Net margin gives the complete profitability picture.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Net Profit Margin Matters</h4>
+                  <p>
+                    Investors use net margin to compare companies across industries. Lenders assess it for
+                    loan approval. Business owners track it to spot problems early. A declining margin signals
+                    rising costs or pricing pressure even if revenue grows. Healthy margins provide cushion
+                    for economic downturns and funds for reinvestment.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Improving Net Profit Margin
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Raise prices strategically</p>
+                    <p>Even small price increases flow directly to profit. Test price elasticity before broad changes.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Reduce cost of goods sold</p>
+                    <p>Negotiate with suppliers, find alternative materials, or improve production efficiency to lower COGS.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Cut unnecessary operating expenses</p>
+                    <p>Review subscriptions, utilities, and overhead. Automate repetitive tasks to reduce labor costs.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Focus on high-margin products</p>
+                    <p>Analyze profit by product line. Promote and expand high-margin offerings. Consider dropping low-margin items.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a good net profit margin?</h4>
+                  <p>
+                    It depends on your industry. Software companies often achieve 20%+ margins while grocery
+                    stores operate on 1-3%. As a general rule: below 5% is low, 5-10% is average, 10-20% is
+                    good, and above 20% is excellent. Compare your margin to industry benchmarks for context.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can net profit margin be negative?</h4>
+                  <p>
+                    Yes. Negative net margin means the business is losing money — expenses exceed revenue.
+                    Startups often have negative margins initially while building scale. Established businesses
+                    with sustained negative margins face serious problems and may not survive long-term.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How is net profit margin different from ROI?</h4>
+                  <p>
+                    Net profit margin measures profit as a percentage of sales. Return on investment (ROI)
+                    measures profit relative to capital invested. A business can have high margins but low
+                    ROI if it requires heavy capital investment. Both metrics together give a fuller picture.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why did my margin decrease when revenue increased?</h4>
+                  <p>
+                    This happens when costs grow faster than sales. Common causes include price discounting to
+                    drive volume, rising supplier costs, hiring too quickly, or one-time expenses. Analyze each
+                    expense category to identify where margins are eroding.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I focus on margin or revenue growth?</h4>
+                  <p>
+                    Both matter, but the balance depends on your stage. Early-stage companies often prioritize
+                    growth over margin to capture market share. Mature businesses should optimize for profitability.
+                    Ideally, pursue profitable growth — increasing revenue while maintaining or improving margins.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/gross-profit-margin-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Gross Profit Margin Calculator</span>
+                  <p className="text-muted-foreground">Calculate gross margin from revenue and cost of goods sold</p>
+                </a>
+                <a
+                  href="/calculators/operating-margin-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Operating Margin Calculator</span>
+                  <p className="text-muted-foreground">Find operating profit margin before interest and taxes</p>
+                </a>
+                <a
+                  href="/calculators/break-even-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Break-Even Calculator</span>
+                  <p className="text-muted-foreground">Determine the sales volume needed to cover all costs</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

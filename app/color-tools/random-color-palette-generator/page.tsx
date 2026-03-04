@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -22,17 +22,17 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 };
 
 const getContrastColor = (hex: string) => {
   const rgb = hexToRgb(hex);
   if (!rgb) return "#000000";
-  
+
   const luminance = (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
   return luminance > 0.5 ? "#000000" : "#ffffff";
 };
@@ -75,16 +75,16 @@ ${colors.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join("\n")}
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    
+
     canvas.width = 800;
     canvas.height = 400;
-    
+
     const colorWidth = canvas.width / colors.length;
     colors.forEach((color, i) => {
       ctx.fillStyle = color.hex;
       ctx.fillRect(i * colorWidth, 0, colorWidth, canvas.height);
     });
-    
+
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -99,7 +99,7 @@ ${colors.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join("\n")}
     });
     return;
   }
-  
+
   toast.success(`Palette downloaded as ${format.toUpperCase()}!`);
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -232,6 +232,155 @@ export default function CgpaCalculatorPage() {
             Semester 2: 3.8 GPA × 15 credits = 57 points<br />
             CGPA = (52.5 + 57) / (15 + 15) = 109.5 / 30 = 3.65
           </p>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Your CGPA</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Select Grading Scale</h3>
+                  <p className="text-muted-foreground text-sm">Choose between 4.0, 5.0, or 10.0 grading scale based on your university system.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Add Semester Details</h3>
+                  <p className="text-muted-foreground text-sm">Enter each semester's GPA and credit hours. Add as many semesters as needed.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Your CGPA</h3>
+                  <p className="text-muted-foreground text-sm">Instantly see your cumulative GPA with semester-by-semester breakdown.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Why Track Your CGPA?</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">📊 Academic Progress Tracking</h3>
+                <p className="text-muted-foreground text-sm">Monitor your overall academic performance across all semesters to stay on track for graduation goals.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🎓 Scholarship Eligibility</h3>
+                <p className="text-muted-foreground text-sm">Many scholarships require minimum CGPA. Track your standing to maintain financial aid eligibility.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">💼 Job Applications</h3>
+                <p className="text-muted-foreground text-sm">Employers often ask for CGPA. Know your exact number for resumes and application forms.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📈 Grade Improvement Planning</h3>
+                <p className="text-muted-foreground text-sm">See how future semester grades will impact your CGPA to set realistic improvement targets.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Reference Table */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">CGPA to Letter Grade Conversion (4.0 Scale)</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4">CGPA Range</th>
+                    <th className="text-left py-3 px-4">Letter Grade</th>
+                    <th className="text-left py-3 px-4">Percentage</th>
+                    <th className="text-left py-3 px-4">Classification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">3.7 - 4.0</td>
+                    <td className="py-3 px-4">A / A+</td>
+                    <td className="py-3 px-4">90-100%</td>
+                    <td className="py-3 px-4">First Class with Distinction</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">3.0 - 3.69</td>
+                    <td className="py-3 px-4">B+ / A-</td>
+                    <td className="py-3 px-4">80-89%</td>
+                    <td className="py-3 px-4">First Class</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">2.3 - 2.99</td>
+                    <td className="py-3 px-4">C+ / B</td>
+                    <td className="py-3 px-4">70-79%</td>
+                    <td className="py-3 px-4">Second Class Upper</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">2.0 - 2.29</td>
+                    <td className="py-3 px-4">C</td>
+                    <td className="py-3 px-4">60-69%</td>
+                    <td className="py-3 px-4">Second Class Lower</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">Below 2.0</td>
+                    <td className="py-3 px-4">D / F</td>
+                    <td className="py-3 px-4">Below 60%</td>
+                    <td className="py-3 px-4">Pass / Fail</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">CGPA Calculation FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How is CGPA calculated from semester GPA?</h3>
+                <p className="text-muted-foreground text-sm">CGPA = Total Grade Points ÷ Total Credits. For each semester: multiply GPA by credits to get points, sum all points, then divide by total credits.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What's the difference between GPA and CGPA?</h3>
+                <p className="text-muted-foreground text-sm">GPA (Grade Point Average) is for a single semester. CGPA (Cumulative GPA) is the overall average across all semesters of your degree.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I convert 10-point CGPA to 4-point scale?</h3>
+                <p className="text-muted-foreground text-sm">Rough conversion: divide 10-point CGPA by 2.5. For precise conversion, use your university's official conversion formula as it varies by institution.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What CGPA is considered good?</h3>
+                <p className="text-muted-foreground text-sm">On a 4.0 scale: 3.5+ is excellent, 3.0+ is good. On a 10-point scale: 8.5+ is excellent, 7.5+ is good. Requirements vary by field and goals.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Can I improve my CGPA in the final year?</h3>
+                <p className="text-muted-foreground text-sm">Yes, but it depends on credits remaining. With more credits left, you have more impact. Calculate target grades needed using this calculator.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Education & Finance Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
+                <p className="text-muted-foreground text-sm">Plan student loan repayments and understand investment growth for education savings.</p>
+              </a>
+              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
+                <p className="text-muted-foreground text-sm">Evaluate education ROI and student loan financing options.</p>
+              </a>
+              <a href="/calculators/car-loan-affordability-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
+                <p className="text-muted-foreground text-sm">Budget for transportation costs while managing student finances.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

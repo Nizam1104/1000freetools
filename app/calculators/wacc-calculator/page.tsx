@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -166,6 +166,103 @@ export default function WACCCalculatorPage() {
               )}
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate WACC</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Capital Structure</h3>
+                <p className="text-sm text-muted-foreground">Input the market value of equity and debt to determine your company&apos;s capital mix.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Input Cost Rates</h3>
+                <p className="text-sm text-muted-foreground">Enter cost of equity, cost of debt, and corporate tax rate for accurate calculation.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get WACC Results</h3>
+                <p className="text-sm text-muted-foreground">Click calculate to see your weighted average cost of capital with detailed breakdown.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This WACC Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Complete WACC Formula**</h3>
+              <p className="text-sm text-muted-foreground">Uses the standard formula: WACC = (E/V × Re) + (D/V × Rd × (1-T)) for accurate results.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Tax Shield Calculation**</h3>
+              <p className="text-sm text-muted-foreground">Automatically calculates the tax benefit of debt financing in your cost of capital.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Weight Breakdown**</h3>
+              <p className="text-sm text-muted-foreground">Shows equity and debt weights as percentages for capital structure analysis.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Investment Analysis Tool**</h3>
+              <p className="text-sm text-muted-foreground">Essential for NPV calculations, project evaluation, and corporate finance decisions.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is WACC?</h3>
+              <p className="text-sm text-muted-foreground">WACC (Weighted Average Cost of Capital) is the average rate a company expects to pay to finance its assets. It represents the minimum return a company must earn to satisfy all its investors.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How is WACC calculated?</h3>
+              <p className="text-sm text-muted-foreground">WACC = (E/V × Re) + (D/V × Rd × (1-T)), where E is equity value, D is debt value, V is total value, Re is cost of equity, Rd is cost of debt, and T is tax rate.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why is WACC important?</h3>
+              <p className="text-sm text-muted-foreground">WACC is used as the discount rate in NPV calculations, helps evaluate investment opportunities, and serves as a hurdle rate for capital budgeting decisions.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a good WACC?</h3>
+              <p className="text-sm text-muted-foreground">A lower WACC is generally better as it means cheaper financing. Typical WACC ranges from 5-15% depending on industry risk. Compare against your industry average.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How does debt affect WACC?</h3>
+              <p className="text-sm text-muted-foreground">Debt is usually cheaper than equity and provides a tax shield (interest is tax-deductible). However, too much debt increases financial risk and can raise both cost of debt and equity.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/npv-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">NPV Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate net present value of investments using WACC as discount rate.</p>
+            </a>
+            <a href="/calculators/cost-of-capital-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
+              <p className="text-sm text-muted-foreground">Determine the cost of equity and debt for your business financing.</p>
+            </a>
+            <a href="/calculators/irr-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">IRR Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate internal rate of return to compare against your WACC.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

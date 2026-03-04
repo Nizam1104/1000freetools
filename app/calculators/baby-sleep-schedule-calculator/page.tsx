@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -284,6 +284,316 @@ export default function BabySleepScheduleCalculatorPage() {
                   <strong>Tip:</strong> Establish a consistent bedtime routine starting
                   around 6-8 weeks. Watch for sleepy cues like eye rubbing and yawning.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Baby Sleep Schedule Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your baby&apos;s age in months</p>
+                    <p>Be as precise as possible. For a 5-month-old, enter &quot;5&quot;. For a 4.5-month-old, enter &quot;4.5&quot;.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set your baby&apos;s typical wake time</p>
+                    <p>This helps generate a realistic daily schedule. Most babies wake between 6-8 AM.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate and review the results</p>
+                    <p>You&apos;ll see total sleep hours, nap count, wake windows, bedtime range, and a sample daily schedule tailored to your baby&apos;s age.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Baby Sleep Patterns
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Newborn Sleep Cycles Are Shorter</h4>
+                  <p>
+                    Adults cycle through sleep stages every 90 minutes. Newborns cycle every 50-60 minutes.
+                    This means they wake more frequently — not because something&apos;s wrong, but because their
+                    brains are developing rapidly and their stomachs are small.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Day/Night Confusion in Newborns</h4>
+                  <p>
+                    Babies are born without a circadian rhythm. Many sleep longer during the day and stay
+                    awake at night. This typically resolves by 6-8 weeks as melatonin production kicks in
+                    and exposure to natural light helps set their internal clock.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Sleep Consolidates With Age</h4>
+                  <p>
+                    Newborns sleep in 2-4 hour chunks around the clock. By 4 months, many babies can sleep
+                    6-8 hours straight at night. By 6-9 months, 10-12 hour nights become common. Nap patterns
+                    also consolidate — from 4-5 naps down to 2, then eventually 1.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Active Sleep vs Quiet Sleep</h4>
+                  <p>
+                    Newborns spend about 50% of sleep in &quot;active sleep&quot; (similar to REM). You&apos;ll see
+                    twitching, grimacing, and irregular breathing. This is normal and important for brain
+                    development. &quot;Quiet sleep&quot; is deeper and more restful. As babies mature, the balance
+                    shifts toward more quiet sleep.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Baby Sleep Needs by Age
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Age Range</th>
+                      <th className="text-left py-3 px-2 font-semibold">Total Sleep</th>
+                      <th className="text-left py-3 px-2 font-semibold">Nap Pattern</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">0-3 months</td>
+                      <td className="py-3 px-2">14-17 hours</td>
+                      <td className="py-3 px-2">No set pattern (4-5 naps)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">4-6 months</td>
+                      <td className="py-3 px-2">12-15 hours</td>
+                      <td className="py-3 px-2">3-4 naps</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">6-9 months</td>
+                      <td className="py-3 px-2">12-15 hours</td>
+                      <td className="py-3 px-2">2-3 naps</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">9-12 months</td>
+                      <td className="py-3 px-2">12-14 hours</td>
+                      <td className="py-3 px-2">2 naps</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">1-2 years</td>
+                      <td className="py-3 px-2">11-14 hours</td>
+                      <td className="py-3 px-2">1-2 naps</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: These are averages. Some babies need slightly more or less sleep and still be perfectly healthy.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Common Sleep Challenges
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-1">Day/Night Reversal (Newborns)</h4>
+                  <p>
+                    Your baby sleeps all day and parties all night. This is normal for the first few weeks.
+                    Help reset their clock by exposing them to natural light during the day, keeping nights
+                    dark and boring, and gradually shifting bedtime earlier by 15 minutes every few days.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-1">Sleep Regression (4 Months, 8-10 Months)</h4>
+                  <p>
+                    Just when sleep was improving, everything falls apart. The 4-month regression happens
+                    because sleep cycles mature permanently. The 8-10 month regression often coincides with
+                    crawling, pulling up, and separation anxiety. It typically lasts 2-6 weeks.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-1">Teething Disruptions</h4>
+                  <p>
+                    Teeth don&apos;t cause chronic sleep problems, but active teething can disrupt sleep for a
+                    few nights. Offer a cold teether before bed. Pain relief medication may help during
+                    particularly rough stretches — check with your pediatrician.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-1">Separation Anxiety</h4>
+                  <p>
+                    Peaks around 8-10 months and again around 18 months. Your baby now understands you
+                    exist when you leave the room — and wants you back. Consistent bedtime routines and
+                    brief check-ins help. This phase passes.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Healthy Sleep Habits
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consistent Bedtime Routine</p>
+                    <p>Start around 6-8 weeks. Keep it simple: bath, book, bed. Same order, same time, every night. Predictability signals that sleep is coming.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Dark, Quiet Sleep Environment</p>
+                    <p>Use blackout curtains. White noise can mask household sounds. Keep the room cool (68-72°F / 20-22°C is ideal).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Put Down Drowsy But Awake</p>
+                    <p>This helps babies learn to fall asleep independently. If they always fall asleep while feeding or rocking, they&apos;ll expect that when they wake at night.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Safe Sleep Practices</p>
+                    <p>Always place baby on their back to sleep. Use a firm mattress with a fitted sheet. No loose bedding, pillows, or stuffed animals in the crib.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How much should my baby sleep?</h4>
+                  <p>
+                    It depends on age. Newborns (0-3 months) need 14-17 hours total. Infants (4-11 months)
+                    need 12-15 hours. Toddlers (1-2 years) need 11-14 hours. These include both nighttime
+                    sleep and naps. Some babies naturally need slightly more or less — watch for overtired
+                    cues like fussiness and rubbing eyes.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When do babies sleep through the night?</h4>
+                  <p>
+                    &quot;Sleeping through the night&quot; usually means a 6-8 hour stretch. Some babies manage this
+                    by 3-4 months, but many don&apos;t until 6-9 months. Even then, occasional night wakings are
+                    normal, especially during teething, illness, or developmental leaps.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is sleep regression?</h4>
+                  <p>
+                    Sleep regression is when a baby who was sleeping well suddenly starts waking frequently
+                    or fighting naps. The most common happen around 4 months (permanent sleep cycle changes),
+                    8-10 months (crawling, standing, separation anxiety), and 18 months (toddler independence).
+                    Regressions typically last 2-6 weeks.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should my baby nap during the day?</h4>
+                  <p>
+                    Yes. Naps are essential for babies and toddlers. Overtired babies actually sleep worse
+                    at night. Newborns nap 4-5 times per day. By 6-9 months, most babies take 2-3 naps. By
+                    15-18 months, most transition to one afternoon nap. Don&apos;t skip naps hoping for better
+                    nighttime sleep — it usually backfires.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I establish a bedtime routine?</h4>
+                  <p>
+                    Start simple and consistent. Pick 3-4 calming activities and do them in the same order
+                    every night. Example: bath, pajamas, book, feed, bed. Keep it under 30 minutes. Start
+                    around 6-8 weeks. The goal is to create associations that signal &quot;sleep time is coming.&quot;
+                    Consistency matters more than the specific activities.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/baby-age-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Baby Age Calculator</span>
+                  <p className="text-muted-foreground">Calculate your baby&apos;s exact age in weeks, months, and days</p>
+                </a>
+                <a
+                  href="/calculators/baby-feeding-chart-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Baby Feeding Chart Calculator</span>
+                  <p className="text-muted-foreground">Track feeding schedules and amounts based on baby&apos;s age and weight</p>
+                </a>
+                <a
+                  href="/calculators/ideal-bedtime-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Ideal Bedtime Calculator</span>
+                  <p className="text-muted-foreground">Find the perfect bedtime based on wake time and sleep needs</p>
+                </a>
               </div>
             </CardContent>
           </Card>

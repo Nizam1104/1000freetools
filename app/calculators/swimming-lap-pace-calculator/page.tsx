@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -227,12 +227,11 @@ export default function SwimmingLapPaceCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Swim Pace Results</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.pacePer100Seconds < 75 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.pacePer100Seconds < 90 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.pacePer100Seconds < 120 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.pacePer100Seconds < 75 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.pacePer100Seconds < 90 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.pacePer100Seconds < 120 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Pace per 100m</p>
                     <p className="text-5xl font-bold">{result.pacePer100}</p>
                     <p className="text-sm mt-1">{result.swimLevel}</p>
@@ -312,6 +311,177 @@ export default function SwimmingLapPaceCalculatorPage() {
                   <strong>Note:</strong> Pool times are typically faster than open water
                   by 5-15 seconds per 100m due to currents, waves, and navigation.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How It Works
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Enter Swim Distance & Time</h4>
+                    <p className="text-xs text-muted-foreground">Input the total distance you swam and the time it took. Select meters or yards based on your pool.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Select Pool Length</h4>
+                    <p className="text-xs text-muted-foreground">Choose your pool size (25m, 50m Olympic, or 25y short course) to calculate total laps completed.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Get Pace Analysis</h4>
+                    <p className="text-xs text-muted-foreground">See your pace per 100m, swim level assessment, projected times, and personalized training tips.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Swim Pace Classification
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-semibold">Level</th>
+                      <th className="text-left py-2 px-3 font-semibold">Pace per 100m</th>
+                      <th className="text-left py-2 px-3 font-semibold">Description</th>
+                      <th className="text-left py-2 px-3 font-semibold">Typical Swimmer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">🏆 Elite</td>
+                      <td className="py-2 px-3 font-mono text-xs">&lt; 1:00</td>
+                      <td className="py-2 px-3 text-xs">Olympic/competitive level</td>
+                      <td className="py-2 px-3 text-xs">Pro athletes</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">🥇 Advanced</td>
+                      <td className="py-2 px-3 font-mono text-xs">1:00-1:15</td>
+                      <td className="py-2 px-3 text-xs">Experienced competitive</td>
+                      <td className="py-2 px-3 text-xs">Club swimmers</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">🥈 Intermediate</td>
+                      <td className="py-2 px-3 font-mono text-xs">1:15-1:30</td>
+                      <td className="py-2 px-3 text-xs">Regular fitness swimmer</td>
+                      <td className="py-2 px-3 text-xs">Triathletes</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">🥉 Beginner</td>
+                      <td className="py-2 px-3 font-mono text-xs">1:30-2:00</td>
+                      <td className="py-2 px-3 text-xs">Building fitness</td>
+                      <td className="py-2 px-3 text-xs">Recreational</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3 font-medium">🏊 Novice</td>
+                      <td className="py-2 px-3 font-mono text-xs">&gt; 2:00</td>
+                      <td className="py-2 px-3 text-xs">Learning technique</td>
+                      <td className="py-2 px-3 text-xs">Beginners</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features & Benefits
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Pace Per 100m Calculation</h4>
+                  <p className="text-xs text-muted-foreground">Get your standardized pace per 100 meters – the universal metric for comparing swim performance.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Swim Level Assessment</h4>
+                  <p className="text-xs text-muted-foreground">Instant feedback on your swimming level from novice to elite, helping you set realistic goals.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Projected Times</h4>
+                  <p className="text-xs text-muted-foreground">See estimated times for common race distances (100m, 400m, 800m, 1500m) based on your current pace.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Training Recommendations</h4>
+                  <p className="text-xs text-muted-foreground">Personalized tips based on your pace, including technique focus areas and workout suggestions.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is a good swimming pace per 100m?</h4>
+                <p className="text-xs text-muted-foreground">
+                  For fitness swimmers, 1:30-2:00 per 100m is common. Competitive amateur swimmers aim for 1:15-1:30. Elite swimmers maintain under 1:00 per 100m. Your "good" pace depends on your experience level and goals.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I calculate my swimming pace?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Divide your total time in seconds by distance in meters, then multiply by 100. For example: 600m in 12 minutes = 720 seconds. Pace = (720/600) × 100 = 120 seconds = 2:00 per 100m.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Why is pool pace faster than open water?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Open water swimming is typically 5-15 seconds per 100m slower due to currents, waves, navigation (sighting), no wall push-offs, and wetsuit drag. Factor this in when training for triathlons.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How can I improve my swim pace?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Focus on technique first (body position, catch, rotation), then add interval training (e.g., 10×100m with rest), incorporate drills, and build aerobic base with longer steady swims. Consistency matters most.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What's the difference between LCM and SCY pools?</h4>
+                <p className="text-xs text-muted-foreground">
+                  LCM (Long Course Meters) is 50m – Olympic standard. SCY (Short Course Yards) is 25 yards – common in US colleges. SCM (Short Course Meters) is 25m – international standard. Times vary between courses due to turn frequency.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Related Tools</h3>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/swimming-calorie-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Swimming Calorie Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate calories burned swimming</p>
+                </a>
+                <a href="/calculators/running-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Running Pace Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate running pace & speed</p>
+                </a>
+                <a href="/calculators/marathon-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Marathon Pace Calculator</p>
+                  <p className="text-xs text-muted-foreground">Race pace predictor</p>
+                </a>
               </div>
             </CardContent>
           </Card>

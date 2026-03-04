@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -296,7 +296,7 @@ export default function ChordProgressionGeneratorPage() {
                           {prog.genre[0]}
                         </span>
                       </div>
-                      
+
                       <div className="flex flex-wrap gap-2">
                         {prog.chords.map((chord, j) => (
                           <div key={j} className="px-3 py-2 bg-primary text-primary-foreground rounded font-mono font-bold">
@@ -362,6 +362,259 @@ export default function ChordProgressionGeneratorPage() {
                   <strong>Tip:</strong> The I-V-vi-IV progression is used in thousands of
                   hit songs across all genres. Try it in different keys and tempos!
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Chord Progression Generator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your key and scale</p>
+                    <p>Choose from any of the 12 musical keys and select major, minor, or jazz scale. The progressions will be transposed to your selected key automatically.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Optionally filter by mood</p>
+                    <p>Select a mood like uplifting, emotional, or epic to narrow down progressions that match your song&apos;s vibe. Leave as &quot;Any&quot; to see all options.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Generate and explore results</p>
+                    <p>Each progression shows chord names, Roman numerals, mood description, genre tags, and real song examples. Use these as starting points for your own songs.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Common Chord Progressions Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Progression</th>
+                      <th className="text-left py-3 px-2 font-semibold">Roman Numerals</th>
+                      <th className="text-left py-3 px-2 font-semibold">Key of C</th>
+                      <th className="text-left py-3 px-2 font-semibold">Common Genres</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">I-V-vi-IV</td>
+                      <td className="py-3 px-2">I - V - vi - IV</td>
+                      <td className="py-3 px-2">C - G - Am - F</td>
+                      <td className="py-3 px-2">Pop, Rock, Country</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">vi-IV-I-V</td>
+                      <td className="py-3 px-2">vi - IV - I - V</td>
+                      <td className="py-3 px-2">Am - F - C - G</td>
+                      <td className="py-3 px-2">Pop, Ballad</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">I-vi-IV-V</td>
+                      <td className="py-3 px-2">I - vi - IV - V</td>
+                      <td className="py-3 px-2">C - Am - F - G</td>
+                      <td className="py-3 px-2">Doo-wop, Oldies</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">ii-V-I</td>
+                      <td className="py-3 px-2">ii7 - V7 - Imaj7</td>
+                      <td className="py-3 px-2">Dm7 - G7 - Cmaj7</td>
+                      <td className="py-3 px-2">Jazz, Bebop</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">i-VI-III-VII</td>
+                      <td className="py-3 px-2">i - VI - III - VII</td>
+                      <td className="py-3 px-2">Am - F - C - G</td>
+                      <td className="py-3 px-2">Pop, Electronic</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">I-IV-V</td>
+                      <td className="py-3 px-2">I - IV - V</td>
+                      <td className="py-3 px-2">C - F - G</td>
+                      <td className="py-3 px-2">Blues, Rock, Country</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: These progressions work in any key. The Roman numerals indicate chord function, which stays the same regardless of key.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Roman Numeral Notation
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Use Roman Numerals</h4>
+                  <p>
+                    Roman numerals show chord function independent of key. A I-V-vi-IV progression works the same way in C major (C-G-Am-F) as in G major (G-D-Em-C). This makes it easy to transpose songs and understand the underlying harmonic structure across different keys.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Uppercase vs Lowercase Numerals</h4>
+                  <p>
+                    Uppercase numerals (I, IV, V) represent major chords. Lowercase numerals (i, iv, v) represent minor chords. In major keys, I, IV, and V are major while ii, iii, and vi are minor. The vii chord is diminished (written as vii with a degree symbol).
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Chord Functions in Major Keys</h4>
+                  <p>
+                    The I chord (tonic) feels like home, the resting point. The V chord (dominant) creates tension that wants to resolve to I. The IV chord (subdominant) moves away from tonic. The vi chord (relative minor) shares notes with I and provides emotional contrast. Understanding these functions helps you write progressions that tell a musical story.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Songwriting Tips for Using Progressions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Vary rhythm and strumming patterns</p>
+                    <p>The same four chords can sound completely different with changed rhythms. Try arpeggios for verses and strumming for choruses. Syncopation adds energy and interest.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Add chord extensions and inversions</p>
+                    <p>Turn basic triads into seventh chords, add9, or sus4 chords for color. Use inversions to create smooth bass movement. A C/E (C major with E in bass) flows nicely into F major.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use different progressions for sections</p>
+                    <p>Verses often use more complex or ambiguous progressions. Choruses typically feature stronger, more resolved progressions with clear tonic emphasis. Bridges may modulate or use unexpected chords.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-amber-600 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Study songs you love</p>
+                    <p>Learn the chord progressions from your favorite songs. Notice patterns across genres. The I-V-vi-IV progression appears in thousands of hits from &quot;Let It Be&quot; to &quot;Don&apos;t Stop Believin&apos;.&quot; There&apos;s a reason these progressions work.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is the most popular chord progression?</h4>
+                  <p>
+                    The I-V-vi-IV progression (called the &quot;pop progression&quot; or &quot;axis progression&quot;) appears in countless hit songs across decades and genres. Examples include &quot;Let It Be,&quot; &quot;With or Without You,&quot; &quot;Don&apos;t Stop Believin&apos;,&quot; and &quot;Someone Like You.&quot; Its popularity comes from its emotional balance and strong resolution.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I transpose a progression to a different key?</h4>
+                  <p>
+                    Keep the Roman numerals the same and apply them to the new key. For example, I-V-vi-IV in C is C-G-Am-F. In G major, it becomes G-D-Em-C. Count the scale degrees: I is the 1st note, V is the 5th, vi is the 6th (minor), IV is the 4th.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I use minor progressions in major keys?</h4>
+                  <p>
+                    Yes. Modal interchange (borrowing chords from parallel modes) is common in songwriting. A major key song might use the minor iv chord for emotional effect. The Beatles&apos; &quot;In My Life&quot; uses a borrowed minor chord. Experiment with mixing major and minor sounds.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What makes a chord progression sound sad or happy?</h4>
+                  <p>
+                    Major progressions tend to sound brighter, minor progressions darker. But context matters. A vi-IV-I-V progression uses the same chords as I-V-vi-IV but starts on the minor chord, creating a more melancholic feel. Tempo, rhythm, and melody also shape emotional perception.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How many chords should a progression have?</h4>
+                  <p>
+                    Most pop and rock songs use 3-4 chords per section. Two-chord vamps work for some styles. Jazz progressions often have more chords with faster changes. Start simple. You can always add complexity later. Many classic songs use the same 4 chords throughout.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/guitar-chord-finder"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Guitar Chord Finder</span>
+                  <p className="text-muted-foreground">Look up guitar chord diagrams and fingerings for any chord</p>
+                </a>
+                <a
+                  href="/calculators/bpm-tap-tempo-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">BPM Tap Tempo Calculator</span>
+                  <p className="text-muted-foreground">Find the tempo of a song by tapping along to the beat</p>
+                </a>
+                <a
+                  href="/calculators/music-interval-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Music Interval Calculator</span>
+                  <p className="text-muted-foreground">Calculate musical intervals between notes and understand chord construction</p>
+                </a>
               </div>
             </CardContent>
           </Card>

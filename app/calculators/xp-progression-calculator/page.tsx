@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -67,7 +67,7 @@ export default function XPProgressionCalculatorPage() {
     // Generate milestones
     const milestones = [];
     const milestoneIntervals = [0.25, 0.5, 0.75, 1.0];
-    
+
     for (const interval of milestoneIntervals) {
       const milestoneXP = currentNum + (xpNeeded * interval);
       const milestoneHours = (milestoneXP - currentNum) / xpPerHourNum;
@@ -297,6 +297,138 @@ export default function XPProgressionCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate XP Progression Time</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Current & Target XP</h3>
+                <p className="text-sm text-muted-foreground">Input your current XP and the XP needed for your target level.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Set XP Rate & Session Length</h3>
+                <p className="text-sm text-muted-foreground">Enter your average XP per hour and typical gaming session duration.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Time Estimates</h3>
+                <p className="text-sm text-muted-foreground">See total hours needed, number of sessions, and progress milestones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This XP Progression Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Time Planning</h3>
+              <p className="text-sm text-muted-foreground">Know exactly how long it will take to reach your target level for better gaming schedule planning.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Session Tracking</h3>
+              <p className="text-sm text-muted-foreground">Calculate how many gaming sessions you need based on your typical play time.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Progress Milestones</h3>
+              <p className="text-sm text-muted-foreground">See XP checkpoints at 25%, 50%, 75%, and 100% to track your grinding progress.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Any Game Support</h3>
+              <p className="text-sm text-muted-foreground">Works with any RPG, MMO, or progression-based game with XP systems.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">XP Calculation Formulas</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Calculation</th>
+                  <th className="text-left py-2">Formula</th>
+                  <th className="text-left py-2">Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">XP Needed</td>
+                  <td className="py-2 font-mono">Target XP - Current XP</td>
+                  <td className="py-2">100,000 - 50,000 = 50,000 XP</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Hours Required</td>
+                  <td className="py-2 font-mono">XP Needed ÷ XP/Hour</td>
+                  <td className="py-2">50,000 ÷ 5,000 = 10 hours</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Sessions Needed</td>
+                  <td className="py-2 font-mono">Hours ÷ Session Length</td>
+                  <td className="py-2">10 hrs ÷ 2 hrs = 5 sessions</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Days (Continuous)</td>
+                  <td className="py-2 font-mono">Hours ÷ 24</td>
+                  <td className="py-2">10 hrs ÷ 24 = 0.42 days</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">How do I find my XP per hour rate?</h3>
+              <p className="text-sm text-muted-foreground">Track your XP gain over a timed session. Divide total XP earned by hours played. For accuracy, average multiple sessions. Example: 15,000 XP in 3 hours = 5,000 XP/hour.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What's the fastest way to gain XP?</h3>
+              <p className="text-sm text-muted-foreground">Focus on high-XP activities: main quests, dungeons with XP bonuses, events with multipliers, and group play bonuses. Check your game's wiki for optimal grinding spots.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Do rest bonuses affect XP calculations?</h3>
+              <p className="text-sm text-muted-foreground">Yes, many MMOs offer rested XP bonuses (50-200% extra) after logging out. Factor this into your XP/hour rate when planning grinding sessions.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How can I level up faster?</h3>
+              <p className="text-sm text-muted-foreground">Use XP potions/scrolls, play during double XP events, complete daily/weekly bonuses, join a guild for XP buffs, and focus on high-efficiency activities over low-reward tasks.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Is it healthy to grind for long periods?</h3>
+              <p className="text-sm text-muted-foreground">Take regular breaks to avoid burnout and health issues. Follow the 20-20-20 rule for eye strain, stay hydrated, stretch regularly, and maintain a balanced gaming schedule with other activities.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Gaming Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/gacha-pull-probability-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Gacha Pull Probability Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate your odds of getting desired characters or items.</p>
+            </a>
+            <a href="/calculators/loot-probability-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Loot Probability Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate drop rates and expected attempts for rare items.</p>
+            </a>
+            <a href="/calculators/screen-time-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Screen Time Calculator</h3>
+              <p className="text-sm text-muted-foreground">Track and manage your daily gaming and screen time.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

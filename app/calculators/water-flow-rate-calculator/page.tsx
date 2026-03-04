@@ -117,6 +117,103 @@ export default function WaterFlowRateCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Water Flow Rate</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Choose Calculation Method</h3>
+              <p className="text-sm text-muted-foreground">Select velocity method (pipe diameter + flow speed) or pressure method.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Pipe Parameters</h3>
+              <p className="text-sm text-muted-foreground">Input pipe diameter and either flow velocity or pressure difference.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Flow Rate Results</h3>
+              <p className="text-sm text-muted-foreground">See flow rate in cubic meters/second, liters/second, and gallons per minute.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Flow Rate Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**Dual Calculation Methods**</h3>
+            <p className="text-sm text-muted-foreground">Calculate from velocity (Q = A × v) or estimate from pressure using Torricelli&apos;s law.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Multiple Unit Outputs**</h3>
+            <p className="text-sm text-muted-foreground">Results shown in m³/s, L/s, and GPM for various engineering applications.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Cross-Sectional Area**</h3>
+            <p className="text-sm text-muted-foreground">Automatically calculates pipe area from diameter for flow computations.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Free Engineering Tool**</h3>
+            <p className="text-sm text-muted-foreground">Useful for plumbing, hydraulics, irrigation, and fluid mechanics calculations.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is flow rate?</h3>
+            <p className="text-sm text-muted-foreground">Flow rate (Q) is the volume of fluid passing through a pipe per unit time. It&apos;s calculated as Q = A × v, where A is cross-sectional area and v is flow velocity.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How do I measure pipe flow rate?</h3>
+            <p className="text-sm text-muted-foreground">Measure the pipe diameter to calculate area, then measure or estimate flow velocity. Multiply area by velocity to get volumetric flow rate.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What affects water flow rate in pipes?</h3>
+            <p className="text-sm text-muted-foreground">Pipe diameter, pressure difference, pipe length, roughness, and fluid viscosity all affect flow rate. Larger diameter and higher pressure increase flow.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How do I convert GPM to liters per second?</h3>
+            <p className="text-sm text-muted-foreground">1 GPM (gallon per minute) = 0.0631 liters per second. Multiply GPM by 0.0631 to convert, or divide L/s by 0.0631 to get GPM.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is a good flow rate for household plumbing?</h3>
+            <p className="text-sm text-muted-foreground">Typical household fixtures: faucets 1.5-2.2 GPM, showerheads 1.5-2.5 GPM, toilets 1.28-1.6 GPF. Main supply lines should deliver 8-12 GPM total.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/pipe-friction-loss-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Pipe Friction Loss Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate pressure drop due to friction in pipes.</p>
+          </a>
+          <a href="/calculators/water-requirement-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Water Requirement Calculator</h3>
+            <p className="text-sm text-muted-foreground">Estimate daily water needs for household or irrigation.</p>
+          </a>
+          <a href="/calculators/water-tank-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Water Tank Volume Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate water tank capacity in gallons or liters.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

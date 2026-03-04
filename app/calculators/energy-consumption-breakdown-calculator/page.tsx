@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -38,7 +38,7 @@ export default function EnergyConsumptionBreakdownCalculatorPage() {
 
   const calculate = () => {
     const rateNum = parseFloat(electricityRate) || 0.15;
-    
+
     const categories = [
       { name: "HVAC", watts: parseFloat(hvacWatts) || 0, hours: parseFloat(hvacHours) || 0 },
       { name: "Water Heater", watts: parseFloat(waterHeaterWatts) || 0, hours: parseFloat(waterHeaterHours) || 0 },
@@ -238,11 +238,10 @@ export default function EnergyConsumptionBreakdownCalculatorPage() {
                           </div>
                           <div className="w-full bg-muted rounded-full h-3">
                             <div
-                              className={`h-3 rounded-full ${
-                                item.percentage > 30 ? "bg-red-500" :
-                                item.percentage > 20 ? "bg-amber-500" :
-                                "bg-green-500"
-                              }`}
+                              className={`h-3 rounded-full ${item.percentage > 30 ? "bg-red-500" :
+                                  item.percentage > 20 ? "bg-amber-500" :
+                                    "bg-green-500"
+                                }`}
                               style={{ width: `${item.percentage}%` }}
                             />
                           </div>
@@ -311,6 +310,142 @@ export default function EnergyConsumptionBreakdownCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Energy Consumption Breakdown</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Appliance Data</h3>
+              <p className="text-sm text-muted-foreground">Input wattage and daily usage hours for each major energy consumer in your home.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Calculate kWh Usage</h3>
+              <p className="text-sm text-muted-foreground">The calculator converts watts and hours to kilowatt-hours for each category.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">View Breakdown Analysis</h3>
+              <p className="text-sm text-muted-foreground">See percentage breakdown, identify top energy users, and get personalized saving tips.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of Energy Consumption Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Category-by-Category Analysis
+              </h3>
+              <p className="text-sm text-muted-foreground">Break down energy usage by HVAC, water heating, lighting, appliances, and electronics.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Visual Progress Bars
+              </h3>
+              <p className="text-sm text-muted-foreground">Color-coded bars show which categories consume the most energy at a glance.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Cost Estimation
+              </h3>
+              <p className="text-sm text-muted-foreground">Calculate daily and monthly energy costs based on your local electricity rate.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Smart Recommendations
+              </h3>
+              <p className="text-sm text-muted-foreground">Get personalized energy-saving tips based on your specific usage patterns.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Top Users Identification
+              </h3>
+              <p className="text-sm text-muted-foreground">Instantly see your top 3 energy-consuming categories to prioritize efficiency upgrades.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-6 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-3">Energy Consumption Formula</h3>
+            <div className="bg-card p-4 rounded font-mono text-sm mb-4">
+              kWh = (Watts × Hours) / 1000<br />
+              Cost = kWh × Rate ($/kWh)
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="font-semibold mb-2">Example Calculation:</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>HVAC: 3500W × 8hrs = 28 kWh/day</li>
+                  <li>Water Heater: 4500W × 3hrs = 13.5 kWh/day</li>
+                  <li>Lighting: 500W × 6hrs = 3 kWh/day</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-2">At $0.15/kWh:</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>Daily Cost: $6.68</li>
+                  <li>Monthly Cost: ~$200</li>
+                  <li>Annual Cost: ~$2,440</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Energy Consumption</h2>
+          <div className="space-y-4">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What uses the most electricity in a typical home?</h3>
+              <p className="text-sm text-muted-foreground">HVAC systems (heating and cooling) typically account for 40-50% of home energy use, followed by water heating at 15-20%, and appliances at 15-20%.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How can I reduce my home energy consumption?</h3>
+              <p className="text-sm text-muted-foreground">Install a programmable thermostat, switch to LED bulbs, seal air leaks, upgrade to energy-efficient appliances, and use power strips to eliminate phantom loads.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a good electricity rate?</h3>
+              <p className="text-sm text-muted-foreground">The US average is about $0.15/kWh, but rates vary by state from $0.10 to $0.30/kWh. Check your utility bill for your exact rate.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I find the wattage of my appliances?</h3>
+              <p className="text-sm text-muted-foreground">Check the nameplate or label on the appliance, look in the user manual, or use a plug-in power meter to measure actual consumption.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Is it worth upgrading to energy-efficient appliances?</h3>
+              <p className="text-sm text-muted-foreground">Yes, ENERGY STAR appliances can use 10-50% less energy. The savings often pay back the upgrade cost within a few years through lower utility bills.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-12 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Related Energy & Utility Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/electricity-appliance-wattage-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Electricity Appliance Wattage Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate power consumption and costs for individual appliances.</p>
+            </a>
+            <a href="/calculators/solar-panel-requirement-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Solar Panel Requirement Calculator</h3>
+              <p className="text-sm text-muted-foreground">Determine how many solar panels you need based on your energy consumption.</p>
+            </a>
+            <a href="/calculators/heat-pump-cop-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Heat Pump COP Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate the coefficient of performance for heating and cooling systems.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -137,6 +137,103 @@ export default function UnitPriceCalculatorPage() {
               )}
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Unit Price</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Total Quantity</h3>
+                <p className="text-sm text-muted-foreground">Input the total amount of product - weight, volume, or count of items.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Input Total Cost</h3>
+                <p className="text-sm text-muted-foreground">Enter the total price you&apos;re paying for the entire quantity.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Compare Prices</h3>
+                <p className="text-sm text-muted-foreground">Get price per unit, per 100, and per 1,000 for easy comparison shopping.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Unit Price Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Multiple Unit Types**</h3>
+              <p className="text-sm text-muted-foreground">Support for pounds, kilograms, ounces, grams, liters, milliliters, pieces, and more.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Bulk Pricing**</h3>
+              <p className="text-sm text-muted-foreground">Shows price per 100 and per 1,000 units for wholesale and bulk purchase comparisons.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Smart Shopping Tool**</h3>
+              <p className="text-sm text-muted-foreground">Compare different package sizes to find the best value for your money.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Free & Instant**</h3>
+              <p className="text-sm text-muted-foreground">No registration needed. Calculate unit prices quickly while shopping.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is unit price?</h3>
+              <p className="text-sm text-muted-foreground">Unit price is the cost per single unit of measurement (per ounce, per pound, per item). It helps you compare products of different sizes to find the best value.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I calculate unit price?</h3>
+              <p className="text-sm text-muted-foreground">Divide the total price by the total quantity. For example, if a 16 oz jar costs $4, the unit price is $4 ÷ 16 = $0.25 per ounce.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why is unit price important for shopping?</h3>
+              <p className="text-sm text-muted-foreground">Unit price reveals the true cost comparison between different package sizes. A larger package isn&apos;t always cheaper per unit - unit price tells you for sure.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What&apos;s the difference between price per 100 and price per 1,000?</h3>
+              <p className="text-sm text-muted-foreground">These are convenient scales for different products. Price per 100 works well for medium quantities, while price per 1,000 is useful for bulk/wholesale items.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Can I use this for comparison shopping?</h3>
+              <p className="text-sm text-muted-foreground">Absolutely! Calculate unit prices for different brands and sizes, then compare. The lowest unit price gives you the best value (assuming similar quality).</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/discount-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Discount Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate sale prices and savings percentages for shopping deals.</p>
+            </a>
+            <a href="/calculators/percentage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Percentage Calculator</h3>
+              <p className="text-sm text-muted-foreground">Compute percentages for tips, taxes, and financial calculations.</p>
+            </a>
+            <a href="/calculators/sales-tax-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Sales Tax Calculator</h3>
+              <p className="text-sm text-muted-foreground">Add sales tax to purchases and find total cost before checkout.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

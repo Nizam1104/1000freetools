@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -32,7 +32,7 @@ export default function HeatIndexCalculatorPage() {
     }
 
     if (tempUnit === "celsius") {
-      tempF = (tempF * 9/5) + 32;
+      tempF = (tempF * 9 / 5) + 32;
     }
 
     let hi: number;
@@ -44,9 +44,9 @@ export default function HeatIndexCalculatorPage() {
       const R = rh;
 
       hi = -42.379 + 2.04901523 * T + 10.14333127 * R
-           - 0.22475541 * T * R - 0.00683783 * T * T
-           - 0.05481717 * R * R + 0.00122874 * T * T * R
-           + 0.00085282 * T * R * R - 0.00000199 * T * T * R * R;
+        - 0.22475541 * T * R - 0.00683783 * T * T
+        - 0.05481717 * R * R + 0.00122874 * T * T * R
+        + 0.00085282 * T * R * R - 0.00000199 * T * T * R * R;
 
       if (R < 13 && T >= 80 && T <= 112) {
         const adjustment = ((13 - R) / 4) * Math.sqrt((17 - Math.abs(T - 95)) / 17);
@@ -57,7 +57,7 @@ export default function HeatIndexCalculatorPage() {
       }
     }
 
-    const hiC = (hi - 32) * 5/9;
+    const hiC = (hi - 32) * 5 / 9;
 
     let category: string;
     let riskLevel: HeatIndexResult["riskLevel"];
@@ -300,6 +300,124 @@ export default function HeatIndexCalculatorPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* How It Works Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">How to Calculate Heat Index</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Air Temperature</h3>
+                <p className="text-sm text-muted-foreground">Input the current air temperature in Fahrenheit or Celsius.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Add Relative Humidity</h3>
+                <p className="text-sm text-muted-foreground">Enter the relative humidity percentage from your weather source or hygrometer.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">Get Heat Index Results</h3>
+                <p className="text-sm text-muted-foreground">See the "feels like" temperature with risk level and safety precautions.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Features of This Heat Index Calculator</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  NWS Formula Accuracy
+                </h3>
+                <p className="text-sm text-muted-foreground">Uses the official National Weather Service Rothfusz regression equation for precise heat index calculations.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Risk Level Classification
+                </h3>
+                <p className="text-sm text-muted-foreground">Automatically categorizes heat index into Caution, Extreme Caution, Danger, or Extreme Danger levels.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Safety Precautions Display
+                </h3>
+                <p className="text-sm text-muted-foreground">Shows specific health recommendations based on your calculated heat index level.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Dual Temperature Units
+                </h3>
+                <p className="text-sm text-muted-foreground">Support for both Fahrenheit and Celsius input with automatic conversion.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Comprehensive Safety Guide
+                </h3>
+                <p className="text-sm text-muted-foreground">Reference table explains health effects at different heat index levels for quick decision-making.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions About Heat Index</h3>
+            <div className="space-y-4">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">What is the difference between temperature and heat index?</h3>
+                <p className="text-sm text-muted-foreground">Temperature measures actual air heat. Heat index combines temperature and humidity to show how hot it feels to your body. High humidity prevents sweat evaporation, making it feel hotter than the thermometer reads.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">At what heat index is it dangerous?</h3>
+                <p className="text-sm text-muted-foreground">Heat index above 103°F (39°C) is considered dangerous. Above 125°F (52°C) is extreme danger where heat stroke becomes imminent. Limit outdoor activity and stay hydrated at these levels.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Why does humidity make it feel hotter?</h3>
+                <p className="text-sm text-muted-foreground">Your body cools itself through sweat evaporation. High humidity means air is already saturated with water vapor, slowing evaporation. This reduces your body ability to cool down, making you feel hotter.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Does heat index apply in the shade?</h3>
+                <p className="text-sm text-muted-foreground">Yes, heat index calculations assume shady conditions. Direct sunlight can increase the perceived temperature by up to 15°F (8°C) additional heat stress.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Who is most at risk from high heat index?</h3>
+                <p className="text-sm text-muted-foreground">Children, elderly adults, pregnant women, and people with heart or lung conditions are most vulnerable. Anyone doing strenuous outdoor work or exercise in high heat index conditions should take extra precautions.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Tools Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Related Weather Calculators</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/wind-chill-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Wind Chill Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate how cold it feels when wind combines with low temperatures.</p>
+              </a>
+              <a href="/calculators/dew-point-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Dew Point Calculator</h3>
+                <p className="text-sm text-muted-foreground">Find the temperature at which air becomes saturated and dew forms.</p>
+              </a>
+              <a href="/calculators/humidity-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Humidity Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate relative humidity, absolute humidity, and moisture content in air.</p>
+              </a>
             </div>
           </CardContent>
         </Card>

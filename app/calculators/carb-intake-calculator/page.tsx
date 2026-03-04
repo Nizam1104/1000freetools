@@ -224,6 +224,149 @@ export default function CarbIntakeCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO Content Section */}
+      <div className="mt-12 space-y-12">
+        {/* How It Works */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Your Daily Carb Intake</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Your Details</h3>
+                <p className="text-muted-foreground text-sm">Input your age, gender, height, weight, and activity level for personalized calculations.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Choose Your Diet Type</h3>
+                <p className="text-muted-foreground text-sm">Select low carb, moderate carb, or high carb based on your health goals and preferences.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Your Carb Target</h3>
+                <p className="text-muted-foreground text-sm">See your recommended daily carb intake in grams along with your total calorie needs.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features & Benefits */}
+        <section className="bg-card rounded-lg border p-6">
+          <h2 className="text-2xl font-semibold mb-6">Benefits of Tracking Carbohydrate Intake</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">⚖️ Balanced Nutrition</h3>
+              <p className="text-muted-foreground text-sm">Ensure you're getting the right amount of carbs for your activity level and health goals, whether losing weight or building muscle.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">🏃 Performance Optimization</h3>
+              <p className="text-muted-foreground text-sm">Athletes and active individuals can optimize carb intake for better energy and recovery during training.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">🩸 Blood Sugar Management</h3>
+              <p className="text-muted-foreground text-sm">People with diabetes or insulin resistance can use carb tracking to better manage blood glucose levels.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">🎯 Flexible Diet Approaches</h3>
+              <p className="text-muted-foreground text-sm">Supports various diet styles from keto (low carb) to endurance athlete (high carb) eating patterns.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Reference Table */}
+        <section className="bg-card rounded-lg border p-6">
+          <h2 className="text-2xl font-semibold mb-6">Carbohydrate Intake Guidelines by Diet Type</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-3 px-4">Diet Type</th>
+                  <th className="text-left py-3 px-4">% of Calories</th>
+                  <th className="text-left py-3 px-4">Grams/Day (2000 cal)</th>
+                  <th className="text-left py-3 px-4">Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">Ketogenic</td>
+                  <td className="py-3 px-4">5-10%</td>
+                  <td className="py-3 px-4">25-50g</td>
+                  <td className="py-3 px-4">Weight loss, metabolic health</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">Low Carb</td>
+                  <td className="py-3 px-4">10-26%</td>
+                  <td className="py-3 px-4">50-130g</td>
+                  <td className="py-3 px-4">Moderate weight loss</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">Moderate Carb</td>
+                  <td className="py-3 px-4">45-65%</td>
+                  <td className="py-3 px-4">225-325g</td>
+                  <td className="py-3 px-4">General health, maintenance</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-medium">High Carb</td>
+                  <td className="py-3 px-4">60-70%</td>
+                  <td className="py-3 px-4">300-350g+</td>
+                  <td className="py-3 px-4">Endurance athletes, bulking</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Carbohydrate Intake FAQs</h2>
+          <div className="space-y-4">
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">How many carbs should I eat per day?</h3>
+              <p className="text-muted-foreground text-sm">The Dietary Guidelines recommend 45-65% of calories from carbs. For a 2000-calorie diet, that's 225-325 grams. Low-carb diets range from 20-130 grams daily.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">What are good sources of carbohydrates?</h3>
+              <p className="text-muted-foreground text-sm">Choose complex carbs: whole grains, fruits, vegetables, legumes, and dairy. Limit refined carbs like white bread, sugary drinks, and processed snacks.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">Is low-carb better for weight loss?</h3>
+              <p className="text-muted-foreground text-sm">Low-carb diets can help with initial weight loss and appetite control. However, total calorie deficit matters most for long-term weight management.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">How do carbs affect blood sugar?</h3>
+              <p className="text-muted-foreground text-sm">Carbohydrates break down into glucose, raising blood sugar. Complex carbs with fiber cause slower, smaller increases compared to refined sugars.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">Can I build muscle on a low-carb diet?</h3>
+              <p className="text-muted-foreground text-sm">Yes, but it may be more challenging. Carbs fuel intense training and aid recovery. Consider timing carbs around workouts for best results.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Tools */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Health & Nutrition Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/calories-per-serving-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Calories Per Serving Calculator</h3>
+              <p className="text-muted-foreground text-sm">Calculate nutrition information for your homemade recipes and meal prep.</p>
+            </a>
+            <a href="/calculators/cat-calorie-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Cat Calorie Calculator</h3>
+              <p className="text-muted-foreground text-sm">Determine the right daily calorie intake for your feline companion.</p>
+            </a>
+            <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
+              <p className="text-muted-foreground text-sm">Measure your environmental impact from diet and lifestyle choices.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

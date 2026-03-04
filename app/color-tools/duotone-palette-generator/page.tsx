@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,10 +21,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 };
 
@@ -43,13 +43,13 @@ const rgbToHex = (r: number, g: number, b: number) => {
 const mixColors = (hex1: string, hex2: string, ratio: number): string => {
   const rgb1 = hexToRgb(hex1);
   const rgb2 = hexToRgb(hex2);
-  
+
   if (!rgb1 || !rgb2) return hex1;
-  
+
   const r = Math.round(rgb1.r * ratio + rgb2.r * (1 - ratio));
   const g = Math.round(rgb1.g * ratio + rgb2.g * (1 - ratio));
   const b = Math.round(rgb1.b * ratio + rgb2.b * (1 - ratio));
-  
+
   return rgbToHex(r, g, b);
 };
 
@@ -66,11 +66,11 @@ const generateDuotonePalette = (primary: string, secondary: string): DuotonePale
 const getContrastColor = (hex: string): string => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   if (!result) return "#000000";
-  
+
   const r = parseInt(result[1], 16);
   const g = parseInt(result[2], 16);
   const b = parseInt(result[3], 16);
-  
+
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.5 ? "#000000" : "#ffffff";
 };
@@ -130,16 +130,16 @@ const downloadPalette = (palette: DuotonePalette, format: string) => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    
+
     canvas.width = 800;
     canvas.height = 400;
-    
+
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     gradient.addColorStop(0, palette.primary);
     gradient.addColorStop(1, palette.secondary);
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
+
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -154,7 +154,7 @@ const downloadPalette = (palette: DuotonePalette, format: string) => {
     });
     return;
   }
-  
+
   toast.success(`Palette downloaded as ${format.toUpperCase()}!`);
 };
 
@@ -539,7 +539,7 @@ export default function DuotonePaletteGeneratorPage() {
                 <Label className="text-sm font-medium text-muted-foreground">
                   Gradient Preview
                 </Label>
-                
+
                 <div className="space-y-4">
                   {/* Main Gradient */}
                   <div
@@ -548,7 +548,7 @@ export default function DuotonePaletteGeneratorPage() {
                       background: `linear-gradient(135deg, ${palette.primary}, ${palette.secondary})`,
                     }}
                   />
-                  
+
                   {/* Gradient Variations */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div
@@ -583,7 +583,7 @@ export default function DuotonePaletteGeneratorPage() {
                 <Label className="text-sm font-medium text-muted-foreground">
                   Design Preview
                 </Label>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Card Preview */}
                   <div className="space-y-4">
@@ -652,7 +652,7 @@ export default function DuotonePaletteGeneratorPage() {
                           Gradient progress bar
                         </p>
                       </div>
-                      
+
                       {/* Badges */}
                       <div className="flex flex-wrap gap-2">
                         <span
@@ -674,7 +674,7 @@ export default function DuotonePaletteGeneratorPage() {
                           Mixed
                         </span>
                       </div>
-                      
+
                       {/* Avatar Stack */}
                       <div className="flex -space-x-2">
                         {[palette.primary, palette.mix2, palette.secondary].map((color, i) => (
@@ -752,11 +752,10 @@ export default function DuotonePaletteGeneratorPage() {
                 {PRESET_PRIMARY.map((color) => (
                   <button
                     key={color}
-                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${
-                      primaryColor.toLowerCase() === color.toLowerCase()
+                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${primaryColor.toLowerCase() === color.toLowerCase()
                         ? "border-primary ring-2 ring-primary ring-offset-2"
                         : "border-border"
-                    }`}
+                      }`}
                     style={{ backgroundColor: color }}
                     onClick={() => {
                       setPrimaryColor(color);
@@ -778,11 +777,10 @@ export default function DuotonePaletteGeneratorPage() {
                 {PRESET_SECONDARY.map((color) => (
                   <button
                     key={color}
-                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${
-                      secondaryColor.toLowerCase() === color.toLowerCase()
+                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${secondaryColor.toLowerCase() === color.toLowerCase()
                         ? "border-primary ring-2 ring-primary ring-offset-2"
                         : "border-border"
-                    }`}
+                      }`}
                     style={{ backgroundColor: color }}
                     onClick={() => {
                       setSecondaryColor(color);

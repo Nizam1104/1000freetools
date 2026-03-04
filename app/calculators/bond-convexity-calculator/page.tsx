@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -168,6 +168,260 @@ export default function BondConvexityCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Bond Convexity Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter bond details</p>
+                    <p>Input the face value, coupon rate, years to maturity, and yield to maturity.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select coupon frequency</p>
+                    <p>Choose how often the bond pays coupons: annual, semi-annual, quarterly, or monthly.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate convexity measures</p>
+                    <p>Get both standard convexity and effective convexity to assess interest rate risk.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Duration vs Convexity Comparison
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Measure</th>
+                      <th className="text-left py-3 px-2 font-semibold">What It Measures</th>
+                      <th className="text-left py-3 px-2 font-semibold">Limitation</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Duration</td>
+                      <td className="py-3 px-2">Linear price sensitivity to yield changes</td>
+                      <td className="py-3 px-2">Assumes straight-line relationship</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Modified Duration</td>
+                      <td className="py-3 px-2">Percentage price change per 1% yield change</td>
+                      <td className="py-3 px-2">Still linear approximation</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Convexity</td>
+                      <td className="py-3 px-2">Curvature of price-yield relationship</td>
+                      <td className="py-3 px-2">Second-order effect, smaller impact</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Effective Convexity</td>
+                      <td className="py-3 px-2">Convexity adjusted for yield compounding</td>
+                      <td className="py-3 px-2">More accurate for large rate changes</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Use duration and convexity together for accurate price change estimates.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Bond Convexity
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is Convexity?</h4>
+                  <p>
+                    Convexity measures how the duration of a bond changes as interest rates change. While
+                    duration provides a linear estimate of price sensitivity, convexity accounts for the
+                    curved (convex) relationship between bond prices and yields. This curvature becomes
+                    important for larger interest rate movements.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Convexity Matters</h4>
+                  <p>
+                    Bonds with higher convexity gain more when rates fall and lose less when rates rise,
+                    compared to what duration alone predicts. This asymmetry benefits investors. Convexity
+                    is especially important for bonds with embedded options or when interest rate volatility
+                    is high.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Positive vs Negative Convexity</h4>
+                  <p>
+                    Most plain vanilla bonds have positive convexity — price increases accelerate as yields
+                    fall. Callable bonds can exhibit negative convexity at low yields because the issuer is
+                    likely to call the bond, limiting price appreciation.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Using Convexity in Bond Analysis
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Combine with duration</p>
+                    <p>Use the formula: % Price Change ≈ -Duration × ΔYield + 0.5 × Convexity × (ΔYield)² for better estimates.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Prefer higher convexity when yields are volatile</p>
+                    <p>In uncertain rate environments, bonds with higher convexity provide better protection against adverse moves.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Understand convexity trade-offs</p>
+                    <p>Higher convexity bonds typically trade at a premium (lower yield). Decide if the protection is worth the cost.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Watch for negative convexity</p>
+                    <p>Mortgage-backed securities and callable bonds can have negative convexity, working against you when rates move.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a good convexity value?</h4>
+                  <p>
+                    Convexity values vary widely based on bond characteristics. Longer maturity and lower
+                    coupon bonds have higher convexity. A 10-year bond might have convexity around 100-150,
+                    while a 30-year bond could exceed 300. Compare convexity within similar bond categories.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How does coupon rate affect convexity?</h4>
+                  <p>
+                    Lower coupon bonds have higher convexity because more of their value comes from the
+                    distant principal payment. Zero-coupon bonds have the highest convexity for a given
+                    maturity. Higher coupons reduce convexity by bringing cash flows closer to present.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When should I use convexity instead of duration?</h4>
+                  <p>
+                    Use both together. Duration works well for small yield changes (under 50 basis points).
+                    For larger moves, convexity becomes important. If you expect significant rate volatility,
+                    convexity analysis is essential for accurate risk assessment.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What causes negative convexity?</h4>
+                  <p>
+                    Negative convexity occurs when bond prices increase less when rates fall than they
+                    decrease when rates rise. This happens with callable bonds (issuer calls when rates
+                    drop) and mortgage-backed securities (homeowners refinance when rates fall).
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How does maturity affect convexity?</h4>
+                  <p>
+                    Convexity increases with the square of maturity. Doubling maturity roughly quadruples
+                    convexity. Long-term bonds therefore have much higher convexity than short-term bonds,
+                    making them more sensitive to interest rate curvature effects.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/bond-yield-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Bond Yield Calculator</span>
+                  <p className="text-muted-foreground">Calculate current yield, yield to maturity, and yield to call for bonds</p>
+                </a>
+                <a
+                  href="/calculators/bond-price-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Bond Price Calculator</span>
+                  <p className="text-muted-foreground">Calculate bond price from yield or yield from price</p>
+                </a>
+                <a
+                  href="/calculators/bond-duration-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Bond Duration Calculator</span>
+                  <p className="text-muted-foreground">Calculate Macaulay and modified duration for interest rate sensitivity</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

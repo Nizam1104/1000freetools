@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -16,7 +16,7 @@ export default function JsonExtractSubjsonPage() {
 
   const getValueByPath = useCallback((obj: any, path: string): any => {
     if (!path || path === "$") return obj;
-    
+
     const parts = path.replace(/^\$/, "").split(/\.|\[|\]/).filter(p => p !== "");
     let current: any = obj;
 
@@ -24,14 +24,14 @@ export default function JsonExtractSubjsonPage() {
       if (current === null || current === undefined) {
         return undefined;
       }
-      
+
       if (part === "*") {
         if (Array.isArray(current)) {
           return current;
         }
         return Object.values(current);
       }
-      
+
       const index = parseInt(part, 10);
       if (!isNaN(index)) {
         current = current[index];
@@ -60,7 +60,7 @@ export default function JsonExtractSubjsonPage() {
     }
 
     const extracted = getValueByPath(obj, keyPath);
-    
+
     if (extracted === undefined) {
       toast.error(`Path "${keyPath}" not found in JSON`);
       return;

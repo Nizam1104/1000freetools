@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -205,12 +205,11 @@ export default function CocktailABVCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Cocktail Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.finalABV >= 25 ? "bg-red-100 dark:bg-red-900/20" :
-                    result.finalABV >= 15 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    result.finalABV >= 8 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    "bg-green-100 dark:bg-green-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.finalABV >= 25 ? "bg-red-100 dark:bg-red-900/20" :
+                      result.finalABV >= 15 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        result.finalABV >= 8 ? "bg-blue-100 dark:bg-blue-900/20" :
+                          "bg-green-100 dark:bg-green-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Final ABV</p>
                     <p className="text-5xl font-bold">{result.finalABV}%</p>
                     <p className="text-sm mt-1">{result.proof} proof</p>
@@ -289,6 +288,271 @@ export default function CocktailABVCalculatorPage() {
                   <strong>Note:</strong> Drink responsibly. One standard drink contains
                   approximately 14g of pure alcohol. Know your limits and never drink and drive.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Cocktail ABV Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Add your cocktail ingredients</p>
+                    <p>Click Add Ingredient for each component. Enter the name, volume in milliliters, and ABV percentage. Common spirits are 40 percent ABV, wine is 12-14 percent, and liqueurs range from 15-30 percent.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate</p>
+                    <p>The calculator sums the total volume and pure alcohol content, then divides to find the final ABV percentage of your mixed drink.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review the results</p>
+                    <p>See the final ABV, proof, drink strength assessment, total pure alcohol content, and equivalent standard drinks for responsible consumption.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Common Alcohol ABV Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Beverage Type</th>
+                      <th className="text-left py-3 px-2 font-semibold">Typical ABV</th>
+                      <th className="text-left py-3 px-2 font-semibold">Proof</th>
+                      <th className="text-left py-3 px-2 font-semibold">Standard Serve</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Vodka</td>
+                      <td className="py-3 px-2">40 percent</td>
+                      <td className="py-3 px-2">80 proof</td>
+                      <td className="py-3 px-2">45-60 ml</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Gin</td>
+                      <td className="py-3 px-2">40 percent</td>
+                      <td className="py-3 px-2">80 proof</td>
+                      <td className="py-3 px-2">45-60 ml</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Whiskey</td>
+                      <td className="py-3 px-2">40-50 percent</td>
+                      <td className="py-3 px-2">80-100 proof</td>
+                      <td className="py-3 px-2">45-60 ml</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Rum</td>
+                      <td className="py-3 px-2">40 percent</td>
+                      <td className="py-3 px-2">80 proof</td>
+                      <td className="py-3 px-2">45-60 ml</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Tequila</td>
+                      <td className="py-3 px-2">40 percent</td>
+                      <td className="py-3 px-2">80 proof</td>
+                      <td className="py-3 px-2">45-60 ml</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Wine</td>
+                      <td className="py-3 px-2">12-14 percent</td>
+                      <td className="py-3 px-2">24-28 proof</td>
+                      <td className="py-3 px-2">150 ml</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Beer</td>
+                      <td className="py-3 px-2">4-6 percent</td>
+                      <td className="py-3 px-2">8-12 proof</td>
+                      <td className="py-3 px-2">355 ml</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Liqueurs</td>
+                      <td className="py-3 px-2">15-30 percent</td>
+                      <td className="py-3 px-2">30-60 proof</td>
+                      <td className="py-3 px-2">30-45 ml</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: ABV varies by brand and style. Cask strength whiskeys can reach 60 percent ABV. Some liqueurs like Everclear reach 95 percent ABV.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How Cocktail ABV Is Calculated
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Dilution Formula</h4>
+                  <p>
+                    Final ABV equals total pure alcohol divided by total volume, multiplied by 100. For example, a cocktail with 60 ml of 40 percent vodka and 120 ml of mixer contains 24 ml pure alcohol in 180 ml total, giving 13.3 percent ABV.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Understanding Proof</h4>
+                  <p>
+                    Proof is simply ABV multiplied by 2 in the US system. A 40 percent ABV spirit is 80 proof. The term comes from an old test where gunpowder soaked in alcohol would ignite if the alcohol was &quot;proof&quot; of sufficient strength.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Standard Drink Equivalents</h4>
+                  <p>
+                    One standard drink contains about 14 grams of pure alcohol. Since alcohol has a density of 0.789 g/ml, this equals roughly 17.7 ml of pure alcohol. A cocktail with 35 ml of pure alcohol equals about 2 standard drinks.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Balanced Cocktails
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Know your target strength</p>
+                    <p>Session cocktails stay under 8 percent ABV. Standard cocktails range 10-18 percent. Spirit-forward drinks like Martinis and Manhattans reach 25-30 percent. Match strength to occasion and drinking duration.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Account for dilution from ice</p>
+                    <p>Shaking or stirring with ice adds 20-30 percent water volume. A stirred Martini might gain 30 ml of water. This lowers the final ABV slightly but is essential for proper taste and temperature.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Balance sweet and strong</p>
+                    <p>High-ABV cocktails benefit from adequate dilution and balance. A Negroni works at 24 percent ABV because Campari and vermouth provide bitterness and sweetness. Straight spirits over ice lack this balance.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-amber-600 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Track total alcohol intake</p>
+                    <p>Use the standard drink equivalent to monitor consumption. One drink per hour allows your liver to process alcohol efficiently. Know your limits and never drink and drive.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What ABV is considered a strong cocktail?</h4>
+                  <p>
+                    Cocktails above 20 percent ABV are considered strong. Martinis, Manhattans, and Negronis typically range 24-30 percent. Most mixed drinks with significant juice or soda stay under 15 percent. Beer and wine are 4-14 percent for comparison.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I make a lower-ABV cocktail?</h4>
+                  <p>
+                    Increase the proportion of non-alcoholic mixers. Use lower-ABV ingredients like vermouth, sherry, or amaro instead of straight spirits. Session cocktails use 30 ml of spirit with 90-120 ml of mixer for 6-10 percent ABV.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Does shaking change the ABV?</h4>
+                  <p>
+                    Shaking adds dilution from melted ice, which slightly lowers ABV. A shaken cocktail might be 2-4 percent lower ABV than the pre-dilution calculation. However, shaking also chills the drink and creates a pleasant texture that enhances the drinking experience.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a standard drink?</h4>
+                  <p>
+                    In the US, one standard drink contains 14 grams of pure alcohol. This equals 355 ml of 5 percent beer, 148 ml of 12 percent wine, or 44 ml of 40 percent spirits. Different countries define standard drinks differently.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How long does it take to metabolize alcohol?</h4>
+                  <p>
+                    The liver processes about one standard drink per hour on average. This rate varies by body weight, sex, food intake, and individual metabolism. Time is the only way to sober up. Coffee, cold showers, and exercise don&apos;t speed alcohol metabolism.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/beer-abv-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Beer ABV Calculator</span>
+                  <p className="text-muted-foreground">Calculate alcohol content of homemade beer from gravity readings</p>
+                </a>
+                <a
+                  href="/calculators/wine-abv-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Wine ABV Calculator</span>
+                  <p className="text-muted-foreground">Determine wine alcohol content from specific gravity measurements</p>
+                </a>
+                <a
+                  href="/calculators/blood-alcohol-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Blood Alcohol Calculator</span>
+                  <p className="text-muted-foreground">Estimate blood alcohol content based on drinks consumed</p>
+                </a>
               </div>
             </CardContent>
           </Card>

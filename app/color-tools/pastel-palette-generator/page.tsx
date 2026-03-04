@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -32,17 +32,17 @@ const generatePastelColor = (hueOffset: number = 0): PastelColor => {
   const saturation = 25 + Math.floor(Math.random() * 20);
   const lightness = 80 + Math.floor(Math.random() * 15);
   const hex = hslToHex(adjustedHue, saturation, lightness);
-  
+
   const names = ["Blush", "Mist", "Bloom", "Cloud", "Pearl", "Dawn", "Soft", "Whisper", "Frost", "Cream"];
   const name = names[Math.floor(Math.random() * names.length)];
-  
+
   return { hex, name: `${name} ${adjustedHue}` };
 };
 
 const generatePastelPalette = (size: number, harmony: string): PastelColor[] => {
   const colors: PastelColor[] = [];
   const baseHue = Math.floor(Math.random() * 360);
-  
+
   switch (harmony) {
     case "analogous":
       for (let i = 0; i < size; i++) {
@@ -69,18 +69,18 @@ const generatePastelPalette = (size: number, harmony: string): PastelColor[] => 
       }
       break;
   }
-  
+
   return colors;
 };
 
 const getContrastColor = (hex: string): string => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   if (!result) return "#000000";
-  
+
   const r = parseInt(result[1], 16);
   const g = parseInt(result[2], 16);
   const b = parseInt(result[3], 16);
-  
+
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.5 ? "#374151" : "#ffffff";
 };
@@ -127,16 +127,16 @@ ${colors.map((c, i) => `.pastel-${i + 1} { background-color: ${c.hex}; }`).join(
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    
+
     canvas.width = 800;
     canvas.height = 400;
-    
+
     const colorWidth = canvas.width / colors.length;
     colors.forEach((color, i) => {
       ctx.fillStyle = color.hex;
       ctx.fillRect(i * colorWidth, 0, colorWidth, canvas.height);
     });
-    
+
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -151,7 +151,7 @@ ${colors.map((c, i) => `.pastel-${i + 1} { background-color: ${c.hex}; }`).join(
     });
     return;
   }
-  
+
   toast.success(`Palette downloaded as ${format.toUpperCase()}!`);
 };
 
@@ -169,23 +169,23 @@ export default function PastelPaletteGeneratorPage() {
     const adjustedColors = newColors.map((color) => {
       const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color.hex);
       if (!result) return color;
-      
+
       const r = parseInt(result[1], 16);
       const g = parseInt(result[2], 16);
       const b = parseInt(result[3], 16);
-      
+
       // Blend towards white based on softness
       const blend = softness / 100;
       const newR = Math.round(r + (255 - r) * blend * 0.3);
       const newG = Math.round(g + (255 - g) * blend * 0.3);
       const newB = Math.round(b + (255 - b) * blend * 0.3);
-      
+
       return {
         ...color,
         hex: `#${newR.toString(16).padStart(2, "0")}${newG.toString(16).padStart(2, "0")}${newB.toString(16).padStart(2, "0")}`,
       };
     });
-    
+
     setColors(adjustedColors);
     toast.success("New pastel palette generated!");
   };
@@ -365,7 +365,7 @@ export default function PastelPaletteGeneratorPage() {
                 <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                   Preview
                 </Label>
-                
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   {/* Card Preview */}
                   <div className="rounded-lg border border-border overflow-hidden">

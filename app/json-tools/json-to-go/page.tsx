@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -25,27 +25,27 @@ export default function JsonToGoPage() {
     if (value === null) {
       return "interface{}";
     }
-    
+
     if (typeof value === "boolean") {
       return "bool";
     }
-    
+
     if (typeof value === "number") {
       return Number.isInteger(value) ? "int" : "float64";
     }
-    
+
     if (typeof value === "string") {
       return "string";
     }
-    
+
     if (Array.isArray(value)) {
       return "[]";
     }
-    
+
     if (typeof value === "object") {
       return "*";
     }
-    
+
     return "interface{}";
   };
 
@@ -61,7 +61,7 @@ export default function JsonToGoPage() {
 
     for (const [key, value] of entries) {
       const fieldName = toPascalCase(key);
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         const nestedName = `${name}${toPascalCase(key)}`;
         fields.push(`    ${fieldName} *${nestedName} \`json:"${key}"\``);
@@ -72,7 +72,7 @@ export default function JsonToGoPage() {
         nestedStructs.push(generateGoStruct(nestedName, value[0] as Record<string, unknown>, generated));
       } else {
         const type = getGoType(value);
-        const goType = Array.isArray(value) 
+        const goType = Array.isArray(value)
           ? `[]${getGoType(value[0] ?? null)}`
           : type;
         fields.push(`    ${fieldName} ${goType} \`json:"${key}"\``);
@@ -93,13 +93,13 @@ export default function JsonToGoPage() {
     try {
       const parsed = JSON.parse(input);
       let result = `package ${packageName}\n\n`;
-      
+
       if (Array.isArray(parsed) && parsed.length > 0) {
         result += generateGoStruct(structName, parsed[0] as Record<string, unknown>, new Set());
       } else if (typeof parsed === "object" && parsed !== null) {
         result += generateGoStruct(structName, parsed as Record<string, unknown>, new Set());
       }
-      
+
       setOutput(result);
       toast.success("Generated Go struct successfully!");
     } catch (e) {

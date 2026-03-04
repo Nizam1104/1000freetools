@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -25,7 +25,7 @@ export default function JsonDepthAnalyzerPage() {
 
     const keys = Object.keys(obj);
     if (keys.length === 0) return currentDepth + 1;
-    
+
     return Math.max(...keys.map(key => calculateDepth(obj[key], currentDepth + 1)));
   }, []);
 
@@ -69,7 +69,7 @@ export default function JsonDepthAnalyzerPage() {
 
     const depth = calculateDepth(obj);
     const deepest = findDeepestPath(obj);
-    
+
     setMaxDepth(depth);
     setDepthDetails(`Deepest path: ${deepest.path} (depth: ${deepest.depth})`);
     toast.success(`Maximum depth: ${depth}`);

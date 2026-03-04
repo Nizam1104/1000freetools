@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -167,11 +167,10 @@ export default function LeadConversionCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Conversion Metrics</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.conversionRate >= 5 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.conversionRate >= 2 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.conversionRate >= 5 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.conversionRate >= 2 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Conversion Rate</p>
                     <p className="text-5xl font-bold">{result.conversionRate}%</p>
                     <p className="text-sm mt-1">{result.rating}</p>

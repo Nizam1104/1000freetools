@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -74,7 +74,7 @@ export default function CameraExposureCalculatorPage() {
 
     // Generate equivalent settings (same exposure, different combinations)
     const equivalentSettings: Array<{ aperture: string; shutter: string; iso: number }> = [];
-    
+
     // Deeper depth of field equivalent
     if (apertureNum < 16) {
       const newAperture = apertureNum * 2;
@@ -246,13 +246,12 @@ export default function CameraExposureCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Exposure Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    Math.abs(result.ev - parseFloat(targetEv)) <= 1
+                  <div className={`p-4 rounded-lg text-center ${Math.abs(result.ev - parseFloat(targetEv)) <= 1
                       ? "bg-green-100 dark:bg-green-900/20"
                       : result.ev < parseFloat(targetEv)
-                      ? "bg-blue-100 dark:bg-blue-900/20"
-                      : "bg-amber-100 dark:bg-amber-900/20"
-                  }`}>
+                        ? "bg-blue-100 dark:bg-blue-900/20"
+                        : "bg-amber-100 dark:bg-amber-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Exposure Value (EV)</p>
                     <p className="text-4xl font-bold">{result.ev > 0 ? "+" : ""}{result.ev}</p>
                     <p className="text-sm mt-1">{result.lightingCondition}</p>
@@ -334,6 +333,106 @@ export default function CameraExposureCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Use the Camera Exposure Calculator</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Enter Your Settings</h3>
+                  <p className="text-muted-foreground text-sm">Input your current aperture (f-stop), shutter speed, and ISO values from your camera.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Calculate Exposure Value</h3>
+                  <p className="text-muted-foreground text-sm">Click Calculate to determine your EV (Exposure Value) and see how it compares to ideal exposure.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Review Recommendations</h3>
+                  <p className="text-muted-foreground text-sm">Get equivalent exposure settings and expert recommendations for perfect photos every time.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Key Features of This Exposure Calculator</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">📷 Exposure Value (EV) Calculation</h3>
+                <p className="text-muted-foreground text-sm">Instantly calculate the Exposure Value for any combination of aperture, shutter speed, and ISO to understand your exposure at a glance.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🔄 Equivalent Settings Finder</h3>
+                <p className="text-muted-foreground text-sm">Discover alternative settings that produce the same exposure, giving you creative flexibility with depth of field and motion blur.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">💡 Lighting Condition Analysis</h3>
+                <p className="text-muted-foreground text-sm">Automatically identifies the lighting scenario (bright sun, overcast, twilight) based on your calculated EV.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📚 Learn the Exposure Triangle</h3>
+                <p className="text-muted-foreground text-sm">Understand how aperture, shutter speed, and ISO work together with built-in explanations and the Sunny 16 rule reference.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Photography Exposure FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is exposure value (EV) in photography?</h3>
+                <p className="text-muted-foreground text-sm">Exposure Value (EV) is a number that represents all combinations of aperture and shutter speed that give the same exposure. EV 0 equals 1 second at f/1.0. Each increase of 1 EV doubles the light reaching the sensor.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is the Sunny 16 rule?</h3>
+                <p className="text-muted-foreground text-sm">The Sunny 16 rule states that on a sunny day, set your aperture to f/16 and your shutter speed to 1/ISO for correct exposure. For example, at ISO 100, use f/16 at 1/100 second.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I find equivalent exposures?</h3>
+                <p className="text-muted-foreground text-sm">To maintain the same exposure while changing settings: opening aperture by 1 stop requires doubling shutter speed or halving ISO. This calculator shows equivalent settings automatically.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What EV value should I aim for?</h3>
+                <p className="text-muted-foreground text-sm">EV depends on lighting: bright sun is around EV 15, overcast is EV 11-13, open shade is EV 9-11, and twilight can be EV 3-7. Match your target EV to your lighting conditions.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Why are my photos too dark or too bright?</h3>
+                <p className="text-muted-foreground text-sm">Underexposure (dark) means not enough light reached the sensor. Overexposure (bright) means too much light. Use this calculator to find the right balance of aperture, shutter speed, and ISO.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Photography & Design Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/canvas-aspect-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Canvas Aspect Ratio Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate and maintain aspect ratios when resizing images for print or digital media.</p>
+              </a>
+              <a href="/calculators/ceiling-tile-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Ceiling Tile Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate how many ceiling tiles you need for your room with waste allowance included.</p>
+              </a>
+              <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
+                <p className="text-muted-foreground text-sm">Convert between carpet area, built-up area, and super built-up area for real estate.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

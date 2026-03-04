@@ -136,6 +136,50 @@ export default function SpringForceCalculator() {
                 )}
               </div>
             )}
+
+            {/* How It Works Section */}
+            <div className="mt-6 pt-6 border-t">
+              <h4 className="font-semibold mb-4">How Hooke&apos;s Law Works</h4>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mb-2">1</div>
+                  <h5 className="font-medium text-sm mb-1">Choose Unknown</h5>
+                  <p className="text-xs text-muted-foreground">Select what to calculate: force, spring constant, or displacement.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mb-2">2</div>
+                  <h5 className="font-medium text-sm mb-1">Enter Known Values</h5>
+                  <p className="text-xs text-muted-foreground">Input the two known variables from F, k, and x.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mb-2">3</div>
+                  <h5 className="font-medium text-sm mb-1">Get Results</h5>
+                  <p className="text-xs text-muted-foreground">See the calculated value plus elastic potential energy.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Formula Section */}
+            <div className="mt-4 p-4 bg-primary/5 rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Hooke&apos;s Law Formulas</h4>
+              <p className="font-mono text-sm mb-1">F = kx (Force = Spring Constant × Displacement)</p>
+              <p className="font-mono text-sm mb-1">k = F/x (Spring Constant)</p>
+              <p className="font-mono text-sm mb-1">x = F/k (Displacement)</p>
+              <p className="font-mono text-sm mt-2">PE = ½kx² (Elastic Potential Energy)</p>
+            </div>
+
+            {/* Applications Section */}
+            <div className="mt-4">
+              <h4 className="font-semibold text-sm mb-2">Real-World Applications</h4>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="p-2 bg-muted rounded">🚗 Vehicle suspension systems</div>
+                <div className="p-2 bg-muted rounded">⏰ Mechanical watches</div>
+                <div className="p-2 bg-muted rounded">🖊️ Retractable pens</div>
+                <div className="p-2 bg-muted rounded">🏋️ Gym equipment</div>
+                <div className="p-2 bg-muted rounded">🚪 Door closers</div>
+                <div className="p-2 bg-muted rounded">📏 Force measurement devices</div>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>

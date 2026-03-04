@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -69,7 +69,7 @@ export default function DoorFrameCalculatorPage() {
     // Material calculations
     // Jamb length = frame height × 2 (both sides)
     const jambLength = frameHeight * 2;
-    
+
     // Header length = frame width + jamb width on each side
     const headerLength = frameWidth + (thicknessNum * 2);
 
@@ -282,28 +282,256 @@ export default function DoorFrameCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Door Frame Guidelines
+                How to Use This Door Frame Calculator
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Rough opening:</strong> 2&quot; wider, 1&quot; taller than door
-                  </li>
-                  <li>
-                    <strong>Side clearance:</strong> 1/8&quot; each side for proper fit
-                  </li>
-                  <li>
-                    <strong>Bottom clearance:</strong> 1/2&quot; for carpet clearance
-                  </li>
-                  <li>
-                    <strong>Hinges:</strong> 2 for doors under 60&quot;, 3 for taller
-                  </li>
-                </ul>
-                <p>
-                  <strong>Note:</strong> These are standard residential dimensions.
-                  Commercial doors and custom installations may have different
-                  requirements. Always check local building codes.
-                </p>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the door width and height</p>
+                    <p>Input the actual door slab dimensions. Standard interior doors are 30 or 32 inches wide by 80 inches tall. Exterior doors are typically 36 inches wide.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Measure wall thickness and select door type</p>
+                    <p>Interior walls are usually 4.5 inches thick with drywall. Exterior walls are thicker. Select interior or exterior to get appropriate material recommendations.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate to see frame dimensions</p>
+                    <p>You will get the frame opening size, rough opening dimensions, jamb and header lengths, and material requirements for your door installation.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Standard Door Sizes Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Door Type</th>
+                      <th className="text-left py-3 px-2 font-semibold">Common Sizes (W × H)</th>
+                      <th className="text-left py-3 px-2 font-semibold">Rough Opening</th>
+                      <th className="text-left py-3 px-2 font-semibold">Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Bedroom</td>
+                      <td className="py-3 px-2">30" × 80"</td>
+                      <td className="py-3 px-2">32" × 81"</td>
+                      <td className="py-3 px-2">Standard interior rooms</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Bathroom</td>
+                      <td className="py-3 px-2">28" × 80"</td>
+                      <td className="py-3 px-2">30" × 81"</td>
+                      <td className="py-3 px-2">Powder rooms, half baths</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Closet</td>
+                      <td className="py-3 px-2">24" or 28" × 80"</td>
+                      <td className="py-3 px-2">26" or 30" × 81"</td>
+                      <td className="py-3 px-2">Reach-in closets</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Entry</td>
+                      <td className="py-3 px-2">36" × 80"</td>
+                      <td className="py-3 px-2">38" × 81"</td>
+                      <td className="py-3 px-2">Front doors, main entry</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Patio</td>
+                      <td className="py-3 px-2">36" × 80" or 60" × 80"</td>
+                      <td className="py-3 px-2">38" × 81" or 62" × 81"</td>
+                      <td className="py-3 px-2">Back doors, deck access</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Wheelchair</td>
+                      <td className="py-3 px-2">36" minimum × 80"</td>
+                      <td className="py-3 px-2">38" × 81"</td>
+                      <td className="py-3 px-2">ADA compliance, accessibility</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Rough opening is typically 2 inches wider and 1 inch taller than the door size to allow for frame and shimming.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Door Frame Measurements
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Door Slab vs Frame Size</h4>
+                  <p>
+                    The door slab is the actual swinging door panel. The frame (or jamb) is the stationary structure that holds the door. The frame opening must be slightly larger than the door to allow for clearance. Standard clearance is 1/8 inch on each side and top, with 1/2 inch at the bottom for carpet clearance.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is a Rough Opening?</h4>
+                  <p>
+                    The rough opening is the framed opening in your wall before the door frame is installed. It needs to be larger than the frame to allow for leveling and shimming. The standard rule is to add 2 inches to the door width and 1 inch to the door height. This gives room for the frame plus adjustment space.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Wall Thickness Matters</h4>
+                  <p>
+                    Interior walls with 2x4 studs and 1/2 inch drywall on each side are typically 4.5 inches thick. Exterior walls with 2x6 studs are 6.5 inches or more. The door jamb must match your wall thickness exactly for proper trim installation. Custom jamb widths are available for non-standard walls.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Interior vs Exterior Frames</h4>
+                  <p>
+                    Exterior door frames are built differently than interior ones. They use thicker lumber (2x6 instead of 2x4), include a weather-resistant threshold, and have provisions for weatherstripping. Exterior frames also often include a brickmold or exterior trim that integrates with siding.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Door Installation Tips
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Check the Rough Opening First</p>
+                    <p>Before ordering a door, measure your rough opening. It should be plumb, level, and square. If the opening is out of square by more than 1/4 inch, plan to shim extensively or reframe the opening.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use Shims for Adjustment</p>
+                    <p>Wood shims go between the frame and rough opening at hinge locations and latch side. Drive shims from opposite sides to avoid bowing the frame. Check for plumb after each shim pair is installed.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Install Hinges Properly</p>
+                    <p>Standard doors need 2 hinges. Doors over 60 inches tall need 3 hinges. The top hinge goes 5-7 inches from the top of the door, the bottom hinge 10-11 inches from the bottom, and the middle hinge centered between them.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Leave Proper Clearances</p>
+                    <p>The door should have 1/8 inch gap on each side and top. The bottom clearance depends on flooring: 1/2 inch for carpet, 3/8 inch for hardwood or tile. Too tight and the door sticks; too loose and it looks sloppy.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What size rough opening do I need for a 36 inch door?</h4>
+                  <p>
+                    For a 36 inch door, the rough opening should be 38 inches wide and 81 inches tall. This allows 2 inches of width for the frame (3/4 inch on each side) plus shimming space (1/4 inch on each side), and 1 inch of height for the frame and leveling.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I measure for a replacement door frame?</h4>
+                  <p>
+                    Measure the existing door slab width and height in three places each. Use the smallest measurement. For the rough opening, measure the distance between studs. Also measure wall thickness at multiple points since walls are not always uniform.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I put a 32 inch door in a 30 inch opening?</h4>
+                  <p>
+                    No, not without reframing. A 32 inch door needs a rough opening of at least 34 inches. Trying to fit a larger door into a smaller opening will not work. You would need to remove drywall and reframe the opening with a wider header and king studs.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What lumber do I need for a door frame?</h4>
+                  <p>
+                    Interior door frames typically use 1x4 or 1x6 lumber for jambs. Exterior frames use 2x6 lumber. For the rough opening, use 2x4 or 2x6 studs matching your wall construction. The header should be sized based on whether the wall is load-bearing.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How much clearance does a door need at the bottom?</h4>
+                  <p>
+                    Standard bottom clearance is 1/2 inch for carpeted floors and 3/8 inch for hard surface flooring. Bathroom doors may need 3/4 to 1 inch clearance for proper ventilation. Exterior doors sit on a threshold, so clearance depends on the threshold height.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/drywall-area-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Drywall Area Calculator</span>
+                  <p className="text-muted-foreground">Calculate how many drywall sheets you need for your room</p>
+                </a>
+                <a
+                  href="/calculators/flooring-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Flooring Calculator</span>
+                  <p className="text-muted-foreground">Estimate flooring material quantities and costs</p>
+                </a>
+                <a
+                  href="/calculators/paint-coverage-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Paint Coverage Calculator</span>
+                  <p className="text-muted-foreground">Determine how much paint you need for your walls</p>
+                </a>
               </div>
             </CardContent>
           </Card>

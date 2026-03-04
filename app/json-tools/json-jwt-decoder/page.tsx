@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -35,14 +35,14 @@ export default function JsonJwtDecoderPage() {
     setDecoded(null);
 
     const token = input.trim();
-    
+
     if (!token) {
       toast.error("Please enter a JWT token");
       return;
     }
 
     const parts = token.split(".");
-    
+
     if (parts.length !== 3) {
       setDecoded({
         header: null,
@@ -87,9 +87,9 @@ export default function JsonJwtDecoderPage() {
   const loadSample = () => {
     // Sample JWT (not real, just for demo)
     const header = btoa(JSON.stringify({ alg: "HS256", typ: "JWT" }));
-    const payload = btoa(JSON.stringify({ 
-      sub: "1234567890", 
-      name: "John Doe", 
+    const payload = btoa(JSON.stringify({
+      sub: "1234567890",
+      name: "John Doe",
       iat: Math.floor(Date.now() / 1000),
       exp: Math.floor(Date.now() / 1000) + 3600
     }));
@@ -138,7 +138,7 @@ export default function JsonJwtDecoderPage() {
                   Security Notice
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  This tool decodes JWT tokens without verifying their signature. 
+                  This tool decodes JWT tokens without verifying their signature.
                   Do not use this to validate authentication tokens. For educational and debugging purposes only.
                 </p>
               </div>

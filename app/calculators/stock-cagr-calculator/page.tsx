@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -124,6 +124,133 @@ export default function StockCAGRCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-6">How the CAGR Calculator Works</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Enter Beginning Value</h4>
+                  <p className="text-sm text-muted-foreground">Input the initial investment amount or stock price.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Add Ending Value</h4>
+                  <p className="text-sm text-muted-foreground">Enter the final value after the investment period.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">Specify Time Period</h4>
+                  <p className="text-sm text-muted-foreground">Enter the number of years to calculate annualized return.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Why CAGR Matters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Smooths Volatility</h4>
+                    <p className="text-sm text-muted-foreground">CAGR provides a consistent annual rate, ignoring year-to-year fluctuations.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Compare Investments</h4>
+                    <p className="text-sm text-muted-foreground">Easily compare returns across different assets and time periods.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Better Than Average</h4>
+                    <p className="text-sm text-muted-foreground">Unlike arithmetic average, CAGR accounts for compounding effects.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Industry Standard</h4>
+                    <p className="text-sm text-muted-foreground">CAGR is the standard metric used by financial professionals worldwide.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is a good CAGR for stocks?</h4>
+                  <p className="text-sm text-muted-foreground">The S&P 500 has historically returned about 10% CAGR over long periods. 12-15%+ is considered excellent for individual stocks, while 7-10% is solid for diversified portfolios.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What are CAGR limitations?</h4>
+                  <p className="text-sm text-muted-foreground">CAGR ignores volatility and risk. It assumes steady growth, which rarely happens. Two investments with same CAGR can have very different risk profiles.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How is CAGR different from average return?</h4>
+                  <p className="text-sm text-muted-foreground">Average return is arithmetic mean of yearly returns. CAGR is the geometric mean that accounts for compounding. CAGR is always lower or equal to arithmetic average.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Can CAGR be negative?</h4>
+                  <p className="text-sm text-muted-foreground">Yes, if the ending value is less than the beginning value, CAGR will be negative, indicating a loss over the investment period.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What time period should I use for CAGR?</h4>
+                  <p className="text-sm text-muted-foreground">Longer periods (5+ years) provide more meaningful CAGR figures. Short-term CAGR can be misleading due to market volatility.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Investment Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/roi-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">ROI Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Calculate return on investment percentage.</p>
+                </a>
+                <a href="/calculators/compound-interest-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Compound Interest Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Model compound growth over time.</p>
+                </a>
+                <a href="/calculators/investment-return-rate-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Investment Return Rate Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Analyze investment performance metrics.</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

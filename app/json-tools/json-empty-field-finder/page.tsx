@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -68,7 +68,7 @@ export default function JsonEmptyFieldFinderPage() {
 
     const results = findEmptyFields(obj);
     setEmptyFields(results);
-    
+
     if (results.length > 0) {
       toast.warning(`Found ${results.length} empty field(s)`);
     } else {

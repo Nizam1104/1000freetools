@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -41,7 +41,7 @@ export default function CaloriesPerServingCalculatorPage() {
 
   const calculate = () => {
     const numServings = parseFloat(servings) || 1;
-    
+
     let totalCalories = 0;
     const ingredientBreakdown: { name: string; calories: number; percentage: number }[] = [];
 
@@ -96,27 +96,27 @@ export default function CaloriesPerServingCalculatorPage() {
                       <Button variant="ghost" size="sm" onClick={() => removeIngredient(ingredient.id)}>×</Button>
                     )}
                   </div>
-                  <Input 
-                    placeholder="Ingredient name" 
-                    value={ingredient.name} 
-                    onChange={(e) => updateIngredient(ingredient.id, "name", e.target.value)} 
+                  <Input
+                    placeholder="Ingredient name"
+                    value={ingredient.name}
+                    onChange={(e) => updateIngredient(ingredient.id, "name", e.target.value)}
                   />
                   <div className="grid grid-cols-2 gap-2">
                     <div className="space-y-1">
                       <Label className="text-xs">Calories/100g</Label>
-                      <Input 
-                        type="number" 
-                        placeholder="e.g., 250" 
-                        value={ingredient.calories} 
-                        onChange={(e) => updateIngredient(ingredient.id, "calories", parseFloat(e.target.value) || 0)} 
+                      <Input
+                        type="number"
+                        placeholder="e.g., 250"
+                        value={ingredient.calories}
+                        onChange={(e) => updateIngredient(ingredient.id, "calories", parseFloat(e.target.value) || 0)}
                       />
                     </div>
                     <div className="space-y-1">
                       <Label className="text-xs">Amount Used (g)</Label>
-                      <Input 
-                        type="number" 
-                        value={ingredient.servingSize} 
-                        onChange={(e) => updateIngredient(ingredient.id, "servingSize", parseFloat(e.target.value) || 0)} 
+                      <Input
+                        type="number"
+                        value={ingredient.servingSize}
+                        onChange={(e) => updateIngredient(ingredient.id, "servingSize", parseFloat(e.target.value) || 0)}
                       />
                     </div>
                   </div>
@@ -125,11 +125,11 @@ export default function CaloriesPerServingCalculatorPage() {
 
               <div className="space-y-2">
                 <Label htmlFor="servings">Number of Servings</Label>
-                <Input 
-                  id="servings" 
-                  type="number" 
-                  value={servings} 
-                  onChange={(e) => setServings(e.target.value)} 
+                <Input
+                  id="servings"
+                  type="number"
+                  value={servings}
+                  onChange={(e) => setServings(e.target.value)}
                 />
               </div>
 
@@ -172,8 +172,8 @@ export default function CaloriesPerServingCalculatorPage() {
                           <span className="text-sm text-muted-foreground">{item.percentage.toFixed(1)}%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div 
-                            className="h-2 rounded-full bg-primary" 
+                          <div
+                            className="h-2 rounded-full bg-primary"
                             style={{ width: `${item.percentage}%` }}
                           />
                         </div>
@@ -194,6 +194,106 @@ export default function CaloriesPerServingCalculatorPage() {
               )}
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Calories Per Serving</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Add Your Ingredients</h3>
+                  <p className="text-muted-foreground text-sm">Enter each ingredient from your recipe along with its calorie content per 100g and the amount you're using.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Set Serving Count</h3>
+                  <p className="text-muted-foreground text-sm">Specify how many servings your recipe makes to divide the total calories appropriately.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Your Results</h3>
+                  <p className="text-muted-foreground text-sm">Instantly see total recipe calories, calories per serving, and a breakdown of each ingredient's contribution.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Why Use This Calories Per Serving Calculator?</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">🍽️ Accurate Portion Control</h3>
+                <p className="text-muted-foreground text-sm">Know exactly how many calories are in each serving, making it easier to stick to your daily calorie goals and manage weight effectively.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📊 Ingredient Breakdown</h3>
+                <p className="text-muted-foreground text-sm">See which ingredients contribute most to your recipe's calorie count, helping you make healthier substitutions when needed.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">👨‍🍳 Perfect for Meal Prep</h3>
+                <p className="text-muted-foreground text-sm">Calculate nutrition for batch-cooked meals and plan your weekly menu with precise calorie information for each portion.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📱 No Registration Required</h3>
+                <p className="text-muted-foreground text-sm">Use this free calculator anytime without creating an account. Your recipes and data stay private on your device.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I calculate calories per serving in a recipe?</h3>
+                <p className="text-muted-foreground text-sm">Add up the calories from all ingredients in your recipe, then divide by the number of servings. For example, if your recipe has 2000 total calories and makes 4 servings, each serving contains 500 calories.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Where can I find calorie information for ingredients?</h3>
+                <p className="text-muted-foreground text-sm">Check nutrition labels on packaged foods, use the USDA FoodData Central database, or refer to reliable nutrition apps. Most whole foods have well-documented calorie values per 100g.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Does cooking method affect calorie count?</h3>
+                <p className="text-muted-foreground text-sm">Cooking methods can change calorie density. Frying adds calories from oil, while grilling or steaming may reduce them. Always account for added fats and oils in your calculations.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How accurate is this calorie calculator?</h3>
+                <p className="text-muted-foreground text-sm">This calculator provides estimates based on the values you enter. Accuracy depends on using correct calorie data for ingredients and measuring portions precisely. For medical purposes, consult a registered dietitian.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Can I use this for weight loss meal planning?</h3>
+                <p className="text-muted-foreground text-sm">Yes! This calculator is perfect for weight loss planning. By knowing exact calories per serving, you can create a calorie deficit while ensuring balanced nutrition across your meals.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Nutrition & Health Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/carb-intake-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carb Intake Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate your daily carbohydrate needs based on your diet goals and activity level.</p>
+              </a>
+              <a href="/calculators/cat-calorie-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Cat Calorie Calculator</h3>
+                <p className="text-muted-foreground text-sm">Find the right daily calorie intake for your feline friend based on weight and age.</p>
+              </a>
+              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
+                <p className="text-muted-foreground text-sm">Measure your environmental impact and discover ways to reduce your CO₂ emissions.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

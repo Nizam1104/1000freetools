@@ -271,6 +271,156 @@ export default function DNABaseCountCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO Content Section */}
+      <div className="space-y-8">
+        {/* How It Works */}
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-semibold mb-6">How the DNA Base Count Calculator Works</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Enter DNA Sequence</h3>
+                  <p className="text-sm text-muted-foreground">Input your DNA sequence using A, T, G, C nucleotide letters in any format.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Analyze Composition</h3>
+                  <p className="text-sm text-muted-foreground">The calculator counts each base type and calculates GC content percentage automatically.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">View Results and Charts</h3>
+                  <p className="text-sm text-muted-foreground">Get base counts, GC content, visual charts, and interpretation of your sequence composition.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features and Benefits */}
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-semibold mb-6">Features of This DNA Analysis Tool</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Complete Base Counting</h3>
+                    <p className="text-sm text-muted-foreground">Counts adenine, thymine, guanine, and cytosine bases individually for detailed sequence analysis.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">GC Content Calculation</h3>
+                    <p className="text-sm text-muted-foreground">Automatically calculates GC percentage to assess DNA stability and organism characteristics.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Visual Data Charts</h3>
+                    <p className="text-sm text-muted-foreground">Interactive bar and pie charts display base distribution for easy visualization and presentation.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Purine and Pyrimidine Counts</h3>
+                    <p className="text-sm text-muted-foreground">Calculates total purines (A+G) and pyrimidines (T+C) to verify Chargaff&apos;s rules.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">GC Interpretation Guide</h3>
+                    <p className="text-sm text-muted-foreground">Provides organism type classification based on GC content with real-world examples.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Free Bioinformatics Tool</h3>
+                    <p className="text-sm text-muted-foreground">Completely free DNA analysis calculator for students, researchers, and biology professionals.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Section */}
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-semibold mb-2">How do you count DNA bases in a sequence?</h3>
+                <p className="text-sm text-muted-foreground">Count each occurrence of A (adenine), T (thymine), G (guanine), and C (cytosine) in the sequence. Add up the totals for each base. Our calculator does this automatically - just paste your sequence and click analyze.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">What is GC content and why does it matter?</h3>
+                <p className="text-sm text-muted-foreground">GC content is the percentage of guanine and cytosine bases in DNA. It matters because G-C pairs have three hydrogen bonds (vs two for A-T), making DNA more stable. High GC content affects melting temperature, gene expression, and indicates organism type.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">What is Chargaff&apos;s rule?</h3>
+                <p className="text-sm text-muted-foreground">Chargaff&apos;s rules state that in double-stranded DNA, adenine equals thymine (A=T) and guanine equals cytosine (G=C). This means purines (A+G) equal pyrimidines (T+C). These rules reflect the complementary base pairing in DNA&apos;s double helix structure.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">What is a normal GC content percentage?</h3>
+                <p className="text-sm text-muted-foreground">Human DNA has about 41% GC content. Bacteria range from 25-75%. AT-rich organisms (&lt;40%) include Plasmodium (malaria parasite). GC-rich organisms (&gt;60%) include Streptomyces bacteria. Most organisms fall in the 40-60% balanced range.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">What are purines and pyrimidines in DNA?</h3>
+                <p className="text-sm text-muted-foreground">Purines (adenine and guanine) have a double-ring structure. Pyrimidines (thymine and cytosine) have a single-ring structure. In DNA, purines always pair with pyrimidines: A with T, and G with C, maintaining consistent helix width.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Tools */}
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-semibold mb-6">Related Biology Tools</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/rna-transcription-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-2">RNA Transcription Calculator</h3>
+                <p className="text-sm text-muted-foreground">Convert DNA sequences to RNA by replacing thymine with uracil for transcription studies.</p>
+              </a>
+              <a href="/calculators/codon-table-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-2">Codon Table Calculator</h3>
+                <p className="text-sm text-muted-foreground">Translate DNA or RNA sequences into amino acid sequences using the genetic code.</p>
+              </a>
+              <a href="/calculators/melting-temperature-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-2">DNA Melting Temperature Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate DNA primer melting temperature based on sequence and GC content.</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

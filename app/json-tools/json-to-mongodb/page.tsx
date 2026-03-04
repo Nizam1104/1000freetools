@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -23,11 +23,11 @@ export default function JsonToMongodbPage() {
     }
 
     const items = Array.isArray(data) ? data : [data];
-    
+
     // Convert _id if present and generate MongoDB insert code
     let code = `// MongoDB Insert Commands\n`;
     code += `db.${collectionName}.insertMany([\n`;
-    
+
     code += items.map((item: any, index: number) => {
       const doc = { ...item };
       // Add _id if not present
@@ -36,7 +36,7 @@ export default function JsonToMongodbPage() {
       }
       return `  ${JSON.stringify(doc, null, 4).split('\n').map((line, i) => i === 0 ? line : '  ' + line).join('\n')}`;
     }).join(',\n');
-    
+
     code += `\n]);`;
 
     // Also generate Node.js driver code

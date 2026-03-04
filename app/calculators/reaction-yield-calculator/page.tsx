@@ -274,6 +274,132 @@ export default function ReactionYieldCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Calculate Reaction Yield</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Choose Your Calculation Mode</h3>
+              <p className="text-sm text-muted-foreground">Select whether you want to calculate percent yield, theoretical yield, or actual yield based on your known values.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Enter Your Values</h3>
+              <p className="text-sm text-muted-foreground">Input the relevant measurements such as actual yield, theoretical yield, moles of limiting reagent, or product molar mass.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">Get Instant Results</h3>
+              <p className="text-sm text-muted-foreground">View your calculated yield with a visual comparison chart and quality assessment guide.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Features Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Why Use This Reaction Yield Calculator?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Multiple Calculation Modes
+              </h3>
+              <p className="text-sm text-muted-foreground">Calculate percent yield, theoretical yield, or actual yield depending on what values you have available.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Visual Yield Comparison
+              </h3>
+              <p className="text-sm text-muted-foreground">Interactive bar chart shows the relationship between theoretical and actual yield for easy understanding.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Quality Assessment Guide
+              </h3>
+              <p className="text-sm text-muted-foreground">Reference table helps you interpret your percent yield and understand reaction efficiency.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Limiting Reagent Support
+              </h3>
+              <p className="text-sm text-muted-foreground">Calculate theoretical yield from moles of limiting reagent and product molar mass.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Educational Examples
+              </h3>
+              <p className="text-sm text-muted-foreground">Clear explanations of yield formulas, common loss factors, and step-by-step calculation methods.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* FAQ Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions About Reaction Yield</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">What is the formula for percent yield?</h3>
+              <p className="text-sm text-muted-foreground">Percent yield = (Actual Yield / Theoretical Yield) × 100%. This tells you how efficient your reaction was compared to the maximum possible product.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Why is my percent yield over 100%?</h3>
+              <p className="text-sm text-muted-foreground">Yields over 100% usually indicate impure product, incomplete drying, or measurement errors. The product may contain solvent, unreacted starting material, or side products adding extra mass.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">How do you find the limiting reagent?</h3>
+              <p className="text-sm text-muted-foreground">Convert all reactant masses to moles, divide by their stoichiometric coefficients from the balanced equation, and identify the reactant with the smallest value. That is your limiting reagent.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">What causes low percent yield in reactions?</h3>
+              <p className="text-sm text-muted-foreground">Common causes include incomplete reactions, side reactions forming byproducts, product loss during filtration or transfer, impure reactants, and reversible reactions reaching equilibrium before completion.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Is 50% yield considered good?</h3>
+              <p className="text-sm text-muted-foreground">A 50% yield is considered fair. For simple reactions, you should aim for 70% or higher. Complex multi-step syntheses often have lower yields. Context matters - some reactions are inherently low-yielding.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Related Tools Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Chemistry Calculators</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/stoichiometry-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Stoichiometry Calculator</h3>
+              <p className="text-sm text-muted-foreground">Balance chemical equations and calculate reactant and product quantities.</p>
+            </a>
+            <a href="/calculators/limiting-reagent-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Limiting Reagent Calculator</h3>
+              <p className="text-sm text-muted-foreground">Identify the limiting reactant and calculate theoretical product amounts.</p>
+            </a>
+            <a href="/calculators/molarity-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Molarity Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate solution concentration and prepare molar solutions accurately.</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

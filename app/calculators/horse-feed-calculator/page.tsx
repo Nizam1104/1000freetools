@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -109,12 +109,12 @@ export default function HorseFeedCalculatorPage() {
             <CardContent className="p-6 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="weight">Horse Weight (kg)</Label>
-                <Input 
-                  id="weight" 
-                  type="number" 
-                  placeholder="e.g., 500" 
-                  value={weight} 
-                  onChange={(e) => setWeight(e.target.value)} 
+                <Input
+                  id="weight"
+                  type="number"
+                  placeholder="e.g., 500"
+                  value={weight}
+                  onChange={(e) => setWeight(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Average: 400-600kg for light breeds, 500-800kg for warmbloods</p>
               </div>

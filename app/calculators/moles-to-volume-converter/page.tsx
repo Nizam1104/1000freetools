@@ -278,6 +278,97 @@ export default function MolesToVolumeConverter() {
           </div>
         </CardContent>
       </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>How to Use This Calculator</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">1</div>
+              <div>
+                <p className="font-medium text-foreground">Choose conversion direction</p>
+                <p>Select "Moles to Volume" or "Volume to Moles" from the dropdown.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">2</div>
+              <div>
+                <p className="font-medium text-foreground">Enter values and conditions</p>
+                <p>Input moles or volume, plus temperature and pressure. Select your units.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">3</div>
+              <div>
+                <p className="font-medium text-foreground">Calculate</p>
+                <p>The calculator uses the ideal gas law to find the unknown value.</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h4 className="font-medium text-sm mb-2">Why is 1 mole of gas 22.4 L at STP?</h4>
+            <p className="text-xs text-muted-foreground">
+              Plug STP values into PV = nRT: V = nRT/P = (1 mol)(0.08206)(273.15 K)/(1 atm) = 22.4 L. This is why the number appears so often in gas calculations.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">When does the ideal gas law fail?</h4>
+            <p className="text-xs text-muted-foreground">
+              At high pressures (molecules are close together) and low temperatures (molecules move slowly), real gases deviate from ideal behavior. Use van der Waals equation for more accuracy.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">How do I convert Celsius to Kelvin?</h4>
+            <p className="text-xs text-muted-foreground">
+              Add 273.15. 0°C = 273.15 K, 25°C = 298.15 K, 100°C = 373.15 K. The gas law requires absolute temperature (Kelvin) because 0 K is true zero energy.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">Does the type of gas matter?</h4>
+            <p className="text-xs text-muted-foreground">
+              For ideal gases, no. One mole of any ideal gas occupies the same volume at the same T and P. Real gases differ slightly, but the ideal gas law treats all gases identically.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">What's the difference between STP and SATP?</h4>
+            <p className="text-xs text-muted-foreground">
+              STP (Standard Temperature and Pressure) is 0°C and 1 atm or 1 bar. SATP (Standard Ambient Temperature and Pressure) is 25°C and 1 bar—closer to lab conditions.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <a href="/calculators/molarity-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Molarity Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate solution concentration</p>
+            </a>
+            <a href="/calculators/ideal-gas-law-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Ideal Gas Law</p>
+              <p className="text-xs text-muted-foreground">Solve PV = nRT for any variable</p>
+            </a>
+            <a href="/calculators/gas-density-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Gas Density</p>
+              <p className="text-xs text-muted-foreground">Calculate gas density from molar mass</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

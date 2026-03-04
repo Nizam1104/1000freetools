@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -167,8 +167,8 @@ export default function AESKeySizeEstimatorPage() {
                     <p className="text-sm text-muted-foreground">Possible Keys</p>
                     <p className="text-lg font-bold text-primary break-all">2^{result.keySize}</p>
                     <p className="text-xs text-muted-foreground mt-1">
-                      {result.possibleKeys.length > 50 
-                        ? result.possibleKeys.substring(0, 50) + "..." 
+                      {result.possibleKeys.length > 50
+                        ? result.possibleKeys.substring(0, 50) + "..."
                         : result.possibleKeys}
                     </p>
                   </div>
@@ -244,6 +244,214 @@ export default function AESKeySizeEstimatorPage() {
                   brute-forcing AES-256 would take longer than the age of the universe.
                   The real risk is poor key management, not brute force attacks.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">How to Use This AES Key Size Estimator</h2>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your AES key size</p>
+                    <p>Choose from AES-128, AES-192, or AES-256 from the dropdown menu based on your encryption requirements.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate</p>
+                    <p>The estimator will show you the total possible keys, brute force time estimates, and security level for your selection.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <p className="font-medium text-foreground">Review the analysis</p>
+                    <p>Check the security recommendations and scale comparisons to understand how your key size stacks up against real-world benchmarks.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Understanding AES Encryption</h2>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  <strong>AES</strong> stands for <strong>Advanced Encryption Standard</strong>. It's a symmetric encryption algorithm adopted by the U.S. government in 2001 and has since become the global standard for securing sensitive data. AES is used everywhere - from securing your HTTPS connections to encrypting files on your hard drive.
+                </p>
+                <p>
+                  AES comes in three key sizes: <strong>128 bits</strong>, <strong>192 bits</strong>, and <strong>256 bits</strong>. The key size directly determines how many possible encryption keys exist. A larger key means more possible combinations, making brute force attacks exponentially harder.
+                </p>
+                <p>
+                  The relationship between key size and security isn't linear - it's exponential. Each additional bit doubles the number of possible keys. AES also uses a different number of encryption rounds based on key size: AES-128 uses 10 rounds, AES-192 uses 12 rounds, and AES-256 uses 14 rounds. More rounds mean more layers of transformation applied to your data.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">AES Key Size Comparison</h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Variant</th>
+                      <th className="text-left py-3 px-2 font-semibold">Key Size</th>
+                      <th className="text-left py-3 px-2 font-semibold">Rounds</th>
+                      <th className="text-left py-3 px-2 font-semibold">Security Level</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-2 font-medium">AES-128</td>
+                      <td className="py-3 px-2">128 bits</td>
+                      <td className="py-3 px-2">10 rounds</td>
+                      <td className="py-3 px-2">128 bits</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2 font-medium">AES-192</td>
+                      <td className="py-3 px-2">192 bits</td>
+                      <td className="py-3 px-2">12 rounds</td>
+                      <td className="py-3 px-2">192 bits</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2 font-medium">AES-256</td>
+                      <td className="py-3 px-2">256 bits</td>
+                      <td className="py-3 px-2">14 rounds</td>
+                      <td className="py-3 px-2">256 bits</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Brute Force Attack Time Estimates</h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                These estimates assume an optimistic quantum computer capable of testing 1 trillion keys per second. Classical computers would take vastly longer.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">AES Variant</th>
+                      <th className="text-left py-3 px-2 font-semibold">Key Combinations</th>
+                      <th className="text-left py-3 px-2 font-semibold">Time to Crack</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-2 font-medium">AES-128</td>
+                      <td className="py-3 px-2 font-mono">2<sup>128</sup></td>
+                      <td className="py-3 px-2">Billions of years</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2 font-medium">AES-192</td>
+                      <td className="py-3 px-2 font-mono">2<sup>192</sup></td>
+                      <td className="py-3 px-2">Incomprehensibly long (10<sup>28</sup>+ years)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2 font-medium">AES-256</td>
+                      <td className="py-3 px-2 font-mono">2<sup>256</sup></td>
+                      <td className="py-3 px-2">Longer than the age of the universe</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                For perspective: the age of the universe is approximately 13.8 billion years (4.3 × 10<sup>17</sup> seconds).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Choosing the Right Key Size</h2>
+              <div className="space-y-4">
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h3 className="font-medium text-foreground mb-2">AES-128: Commercial Use</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Best for general encryption needs, commercial applications, and everyday data protection. AES-128 provides strong security against all known classical computer attacks. It's faster than larger key sizes and sufficient for most use cases including SSL/TLS, file encryption, and secure communications.
+                  </p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h3 className="font-medium text-foreground mb-2">AES-192: Government Use</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Designed for higher security requirements and government applications. AES-192 offers a middle ground between AES-128 and AES-256. It's less commonly used in practice but provides additional security margin for sensitive but not top-secret information.
+                  </p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h3 className="font-medium text-foreground mb-2">AES-256: Maximum Security</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Required for top-secret data and maximum security applications. AES-256 is approved by the NSA for protecting classified information up to TOP SECRET level. It provides the highest security margin and is considered resistant to attacks from future quantum computers.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">What is the difference between AES-128 and AES-256?</h3>
+                  <p className="text-sm text-muted-foreground">
+                    The main difference is key length and the number of encryption rounds. AES-128 uses a 128-bit key with 10 rounds, while AES-256 uses a 256-bit key with 14 rounds. AES-256 has exponentially more possible keys (2<sup>256</sup> vs 2<sup>128</sup>) and provides better protection against future quantum computing threats. However, AES-128 is slightly faster and still considered secure for most applications.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">Is AES-256 more secure than AES-128?</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Yes, AES-256 is technically more secure due to its larger key size and additional encryption rounds. However, both are currently unbreakable using classical computers. The practical security difference only matters for long-term data protection against potential future quantum computers or for protecting highly classified government information.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">How long would it take to crack AES encryption?</h3>
+                  <p className="text-sm text-muted-foreground">
+                    With current technology, cracking AES through brute force is practically impossible. Even with an optimistic quantum computer testing 1 trillion keys per second, AES-128 would take billions of years to crack. AES-256 would take longer than the current age of the universe. The only realistic way to "crack" AES is through poor key management, implementation flaws, or side-channel attacks - not brute force.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">Which AES key size should I use?</h3>
+                  <p className="text-sm text-muted-foreground">
+                    For most applications, AES-128 provides adequate security with better performance. Choose AES-256 if you're protecting highly sensitive data that needs long-term security, if you're concerned about future quantum computers, or if compliance requirements mandate it (such as government classified data). AES-192 is rarely needed unless specific regulations require it.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">Is AES encryption unbreakable?</h3>
+                  <p className="text-sm text-muted-foreground">
+                    AES itself has never been broken through mathematical attacks. No practical method exists to crack properly implemented AES encryption through brute force with current or foreseeable technology. However, "unbreakable" is a strong word - vulnerabilities can exist in implementations, key management practices, or through side-channel attacks. The algorithm is sound, but real-world security depends on proper implementation and key handling.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Related Tools</h2>
+              <div className="space-y-2">
+                <a href="/calculators/password-strength-scorer" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-medium text-foreground">Password Strength Scorer</p>
+                  <p className="text-sm text-muted-foreground">Evaluate how strong your passwords are against brute force and dictionary attacks</p>
+                </a>
+                <a href="/calculators/hash-brute-force-time-estimator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-medium text-foreground">Hash Brute Force Time Estimator</p>
+                  <p className="text-sm text-muted-foreground">Calculate how long it would take to crack hashed passwords using different methods</p>
+                </a>
+                <a href="/calculators/rsa-key-strength-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-medium text-foreground">RSA Key Strength Calculator</p>
+                  <p className="text-sm text-muted-foreground">Analyze RSA key sizes and compare their security levels against modern attack methods</p>
+                </a>
               </div>
             </CardContent>
           </Card>

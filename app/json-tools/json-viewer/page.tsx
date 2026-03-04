@@ -1,19 +1,19 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { 
-  Check, 
-  ChevronRight, 
-  ChevronDown, 
-  Copy, 
-  Download, 
-  FileJson, 
-  RotateCcw, 
+import {
+  Check,
+  ChevronRight,
+  ChevronDown,
+  Copy,
+  Download,
+  FileJson,
+  RotateCcw,
   Trash2,
   Search,
   Eye,
@@ -23,7 +23,7 @@ import { toast } from "sonner";
 
 type JsonValue = string | number | boolean | null | JsonObject | JsonArray;
 interface JsonObject { [key: string]: JsonValue }
-interface JsonArray extends Array<JsonValue> {}
+interface JsonArray extends Array<JsonValue> { }
 
 interface TreeNode {
   key: string;
@@ -53,7 +53,7 @@ export default function JsonViewerPage() {
       const parsed = JSON.parse(input);
       setParsedData(parsed);
       setError(null);
-      
+
       // Auto-expand first level
       const newExpanded = new Set<string>();
       if (typeof parsed === "object" && parsed !== null) {
@@ -84,7 +84,7 @@ export default function JsonViewerPage() {
   const expandAll = () => {
     if (!parsedData) return;
     const allPaths = new Set<string>();
-    
+
     const collectPaths = (value: JsonValue, path: string) => {
       if (typeof value === "object" && value !== null) {
         allPaths.add(path);
@@ -95,7 +95,7 @@ export default function JsonViewerPage() {
         }
       }
     };
-    
+
     collectPaths(parsedData, "root");
     setExpandedPaths(allPaths);
   };
@@ -192,7 +192,7 @@ export default function JsonViewerPage() {
 
     return (
       <div className="font-mono text-sm">
-        <div 
+        <div
           className={`flex items-center gap-1 py-1 hover:bg-muted/50 rounded px-2 cursor-pointer ${!hasMatch && searchQuery ? 'opacity-30' : ''}`}
           onClick={() => isExpandable && toggleExpand(node.path)}
         >
@@ -206,14 +206,14 @@ export default function JsonViewerPage() {
             </span>
           )}
           {!isExpandable && <span className="w-4" />}
-          
+
           {node.key !== "" && (
             <span>
               <span className="text-amber-600 dark:text-amber-400">"{node.key}"</span>
               <span className="text-muted-foreground">: </span>
             </span>
           )}
-          
+
           {isExpandable ? (
             <span className="text-muted-foreground">
               {node.type === "array" ? `Array[${(node.value as JsonArray).length}]` : `Object{${Object.keys(node.value as JsonObject).length}}`}
@@ -221,10 +221,10 @@ export default function JsonViewerPage() {
           ) : (
             renderValue(node.value)
           )}
-          
+
           {!isLast && <span className="text-muted-foreground">,</span>}
         </div>
-        
+
         {isExpandable && isExpanded && (
           <div className="ml-6 border-l border-border pl-2">
             {node.type === "array" ? (
@@ -305,7 +305,7 @@ export default function JsonViewerPage() {
                   />
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" onClick={loadSample}>
                   <FileJson className="h-4 w-4 mr-2" />
@@ -370,7 +370,7 @@ export default function JsonViewerPage() {
                       Raw View
                     </Button>
                   </div>
-                  
+
                   <div className="flex items-center gap-2">
                     {viewMode === "tree" && (
                       <>
@@ -390,7 +390,7 @@ export default function JsonViewerPage() {
                     </Button>
                   </div>
                 </div>
-                
+
                 <div className="bg-muted/50 rounded-md p-4 max-h-[500px] overflow-auto">
                   {viewMode === "tree" ? (
                     treeContent

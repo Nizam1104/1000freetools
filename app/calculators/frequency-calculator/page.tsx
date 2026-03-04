@@ -134,6 +134,274 @@ export default function FrequencyCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Frequency Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Select your calculation mode</p>
+                  <p>Choose from three modes: calculate frequency from period (f = 1/T), from wavelength (f = v/λ), or calculate angular frequency from regular frequency (ω = 2πf).</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your known values</p>
+                  <p>Depending on the mode, enter period in seconds, wavelength in meters with wave velocity, or frequency in Hz. The default velocity is the speed of light (3×10⁸ m/s).</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">View your results</p>
+                  <p>The calculator displays frequency in appropriate units (Hz, kHz, MHz, or GHz), plus angular frequency and period where applicable.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequency Reference Table
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Application</th>
+                    <th className="text-left py-3 px-2 font-semibold">Frequency Range</th>
+                    <th className="text-left py-3 px-2 font-semibold">Period</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Human hearing (low)</td>
+                    <td className="py-3 px-2">20 Hz</td>
+                    <td className="py-3 px-2">50 ms</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Human hearing (high)</td>
+                    <td className="py-3 px-2">20,000 Hz (20 kHz)</td>
+                    <td className="py-3 px-2">50 μs</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">AM radio</td>
+                    <td className="py-3 px-2">540-1600 kHz</td>
+                    <td className="py-3 px-2">0.6-1.9 μs</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">FM radio</td>
+                    <td className="py-3 px-2">88-108 MHz</td>
+                    <td className="py-3 px-2">9-11 ns</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">WiFi 2.4 GHz</td>
+                    <td className="py-3 px-2">2.4 GHz</td>
+                    <td className="py-3 px-2">0.42 ns</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">WiFi 5 GHz</td>
+                    <td className="py-3 px-2">5 GHz</td>
+                    <td className="py-3 px-2">0.2 ns</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Visible light</td>
+                    <td className="py-3 px-2">430-770 THz</td>
+                    <td className="py-3 px-2">1.3-2.3 fs</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Note: Hz = cycles per second, kHz = 1000 Hz, MHz = 1 million Hz, GHz = 1 billion Hz, THz = 1 trillion Hz
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Frequency, Period, and Wavelength
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Frequency and Period Are Inverses</h4>
+                <p>
+                  Frequency (f) measures how many cycles occur per second. Period (T) measures how long
+                  one cycle takes. They are inverses: f = 1/T and T = 1/f. A 100 Hz signal completes
+                  100 cycles per second, so each cycle takes 0.01 seconds (10 milliseconds).
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Frequency and Wavelength Relationship</h4>
+                <p>
+                  For waves, frequency relates to wavelength through velocity: f = v/λ. Higher frequency
+                  means shorter wavelength. Radio waves travel at light speed (3×10⁸ m/s), so a 100 MHz
+                  signal has a wavelength of 3 meters. Sound travels at about 343 m/s in air, so a 440 Hz
+                  musical note has a wavelength of about 0.78 meters.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Angular Frequency Explained</h4>
+                <p>
+                  Angular frequency (ω, omega) measures rotation rate in radians per second instead of
+                  cycles per second. One cycle equals 2π radians, so ω = 2πf. Angular frequency is used
+                  in physics equations involving oscillation and rotation because it simplifies calculus.
+                  A 60 Hz AC power signal has an angular frequency of about 377 rad/s.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Tips for Frequency Calculations
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Use scientific notation for extreme values</p>
+                  <p>Radio frequencies are often in MHz or GHz. Write 2.4 GHz as 2.4e9 or 2400000000. Period values can be tiny: 1 nanosecond is 1e-9 seconds.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Know your wave velocity</p>
+                  <p>Electromagnetic waves travel at light speed in vacuum (3×10⁸ m/s). Sound travels at 343 m/s in air at 20°C, about 1480 m/s in water. Use the correct velocity for accurate wavelength calculations.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Check unit consistency</p>
+                  <p>If wavelength is in meters, velocity must be in meters per second. If you have wavelength in centimeters, convert to meters first (divide by 100) before calculating.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Remember the frequency spectrum</p>
+                  <p>Audio: 20 Hz to 20 kHz. Radio: kHz to GHz. Light: hundreds of THz. If your result falls far outside the expected range, double-check your inputs.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the formula for frequency?</h4>
+                <p>
+                  The basic frequency formula is f = 1/T, where T is the period in seconds. For waves,
+                  frequency also equals velocity divided by wavelength: f = v/λ. Angular frequency is
+                  ω = 2πf, measured in radians per second instead of cycles per second.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do I convert Hz to period?</h4>
+                <p>
+                  Period is the inverse of frequency: T = 1/f. For 50 Hz, the period is 1/50 = 0.02 seconds
+                  (20 milliseconds). For 1 MHz (1,000,000 Hz), the period is 1/1,000,000 = 1 microsecond.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the difference between frequency and angular frequency?</h4>
+                <p>
+                  Regular frequency (f) counts complete cycles per second in Hertz. Angular frequency (ω)
+                  measures radians per second. Since one cycle equals 2π radians, ω = 2πf. Angular
+                  frequency is preferred in physics because it eliminates factors of 2π from equations.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do I find wavelength from frequency?</h4>
+                <p>
+                  Use λ = v/f, where v is wave velocity. For electromagnetic waves in air or vacuum,
+                  v ≈ 3×10⁸ m/s. A 100 MHz radio signal has wavelength λ = 3×10⁸ / 100×10⁶ = 3 meters.
+                  For sound in air at 20°C, use v ≈ 343 m/s.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What units are used for frequency?</h4>
+                <p>
+                  The SI unit is Hertz (Hz), meaning cycles per second. Common multiples include kHz
+                  (1000 Hz) for audio, MHz (million Hz) for radio and processors, GHz (billion Hz) for
+                  WiFi and CPUs, and THz (trillion Hz) for infrared and visible light.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/wavelength-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Wavelength Calculator</span>
+                <p className="text-muted-foreground">Calculate wavelength from frequency for electromagnetic and sound waves</p>
+              </a>
+              <a
+                href="/calculators/period-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Period Calculator</span>
+                <p className="text-muted-foreground">Find the period of oscillation from frequency or angular frequency</p>
+              </a>
+              <a
+                href="/calculators/wave-speed-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Wave Speed Calculator</span>
+                <p className="text-muted-foreground">Calculate wave velocity from frequency and wavelength</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

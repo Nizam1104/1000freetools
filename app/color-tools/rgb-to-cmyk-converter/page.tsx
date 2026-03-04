@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,17 +16,17 @@ export default function RgbToCmykConverterPage() {
     const red = r / 255;
     const green = g / 255;
     const blue = b / 255;
-    
+
     const k = 1 - Math.max(red, green, blue);
-    
+
     if (k === 1) {
       return { c: 0, m: 0, y: 0, k: 100 };
     }
-    
+
     const c = (1 - red - k) / (1 - k);
     const m = (1 - green - k) / (1 - k);
     const y = (1 - blue - k) / (1 - k);
-    
+
     return {
       c: Math.round(c * 100),
       m: Math.round(m * 100),

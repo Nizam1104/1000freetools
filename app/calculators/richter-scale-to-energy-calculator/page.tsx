@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -254,6 +254,230 @@ export default function RichterScaleToEnergyCalculatorPage() {
                   the Moment Magnitude Scale (Mw) for scientific purposes, but the
                   energy calculations remain similar.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Richter Scale to Energy Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the earthquake magnitude</p>
+                    <p>Input the Richter scale magnitude value. For example, enter &quot;6.5&quot; for a magnitude 6.5 earthquake.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate</p>
+                    <p>The calculator uses the Gutenberg-Richter formula to convert magnitude to energy in joules and TNT equivalent.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review the results</p>
+                    <p>See the energy release in joules, tons of TNT, intensity level, expected damage, and comparison to known seismic events.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Earthquake Magnitude Scale Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Magnitude</th>
+                      <th className="text-left py-3 px-2 font-semibold">Classification</th>
+                      <th className="text-left py-3 px-2 font-semibold">Energy (Joules)</th>
+                      <th className="text-left py-3 px-2 font-semibold">TNT Equivalent</th>
+                      <th className="text-left py-3 px-2 font-semibold">Annual Frequency</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">&lt; 2.0</td>
+                      <td className="py-3 px-2">Micro</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^7</td>
+                      <td className="py-3 px-2">~2 kg</td>
+                      <td className="py-3 px-2">Millions</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">2.0-2.9</td>
+                      <td className="py-3 px-2">Minor</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^8</td>
+                      <td className="py-3 px-2">~25 kg</td>
+                      <td className="py-3 px-2">~100,000</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">3.0-3.9</td>
+                      <td className="py-3 px-2">Light</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^9</td>
+                      <td className="py-3 px-2">~0.25 tons</td>
+                      <td className="py-3 px-2">~10,000</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">4.0-4.9</td>
+                      <td className="py-3 px-2">Moderate</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^10</td>
+                      <td className="py-3 px-2">~2.5 tons</td>
+                      <td className="py-3 px-2">~1,000</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">5.0-5.9</td>
+                      <td className="py-3 px-2">Strong</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^12</td>
+                      <td className="py-3 px-2">~250 tons</td>
+                      <td className="py-3 px-2">~100</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">6.0-6.9</td>
+                      <td className="py-3 px-2">Major</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^14</td>
+                      <td className="py-3 px-2">~25 kilotons</td>
+                      <td className="py-3 px-2">~15</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">7.0-7.9</td>
+                      <td className="py-3 px-2">Great</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^15</td>
+                      <td className="py-3 px-2">~2.5 megatons</td>
+                      <td className="py-3 px-2">~1-2</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">8.0+</td>
+                      <td className="py-3 px-2">Mega</td>
+                      <td className="py-3 px-2 font-mono text-xs">~10^17</td>
+                      <td className="py-3 px-2">~250 megatons</td>
+                      <td className="py-3 px-2">~1 per year</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Energy values are approximate. Each whole magnitude increase represents ~31.6x more energy.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Notable Earthquakes in History
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">1960 Chile (Magnitude 9.5)</h4>
+                  <p>
+                    The largest earthquake ever recorded. It released about 2.5 x 10^19 joules — equivalent to 6 billion tons of TNT. The quake triggered a tsunami that crossed the Pacific, causing damage in Hawaii, Japan, and the Philippines.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">2004 Indian Ocean (Magnitude 9.1-9.3)</h4>
+                  <p>
+                    One of the deadliest natural disasters in history. The undersea earthquake displaced massive amounts of water, generating a tsunami that killed over 230,000 people across 14 countries.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">2011 Tohoku, Japan (Magnitude 9.0)</h4>
+                  <p>
+                    The most powerful earthquake in Japan&apos;s recorded history. It moved Honshu island 2.4 meters east and shifted Earth&apos;s axis by 10-25 cm. The resulting tsunami caused the Fukushima nuclear disaster.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">1906 San Francisco (Magnitude 7.9)</h4>
+                  <p>
+                    Devastated San Francisco with shaking lasting 45-60 seconds. Fires ignited by ruptured gas lines burned for days, causing more damage than the earthquake itself. Estimated 3,000 deaths.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What does each magnitude increase mean?</h4>
+                  <p>
+                    Each whole number increase means 10 times greater wave amplitude and about 31.6 times more energy. A magnitude 6 earthquake has 10x the amplitude and ~32x the energy of a magnitude 5. This is why a magnitude 8 is vastly more destructive than a magnitude 6.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is there a maximum earthquake magnitude?</h4>
+                  <p>
+                    Theoretically, magnitude 10 would require a fault encircling Earth — impossible with our planet&apos;s tectonic structure. Realistically, magnitude 9.5-9.7 appears to be the practical limit based on the largest faults we&apos;ve observed.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How is earthquake energy measured?</h4>
+                  <p>
+                    Seismographs record ground motion. Scientists analyze the seismic waves to determine magnitude. Energy is then calculated using the Gutenberg-Richter formula. Modern methods use seismic moment (Mw), which accounts for fault area, slip distance, and rock rigidity.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why use TNT equivalent?</h4>
+                  <p>
+                    Joules are abstract for most people. TNT equivalent provides an intuitive comparison — everyone understands that a &quot;kiloton&quot; is a nuclear bomb scale. It helps visualize the enormous energy involved in earthquakes.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can small earthquakes prevent big ones?</h4>
+                  <p>
+                    No. A magnitude 4 releases about 1/1000th the energy of a magnitude 6. You&apos;d need 1,000 magnitude 4 quakes to release the energy of one magnitude 6. Small quakes don&apos;meaningfully reduce stress on major faults.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/tsunami-travel-time-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Tsunami Travel Time Calculator</span>
+                  <p className="text-muted-foreground">Calculate how long a tsunami takes to reach different locations</p>
+                </a>
+                <a
+                  href="/calculators/earthquake-intensity-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Earthquake Intensity Calculator</span>
+                  <p className="text-muted-foreground">Convert between magnitude and Mercalli intensity scales</p>
+                </a>
+                <a
+                  href="/calculators/tnt-equivalent-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">TNT Equivalent Calculator</span>
+                  <p className="text-muted-foreground">Convert energy values to explosive equivalents</p>
+                </a>
               </div>
             </CardContent>
           </Card>

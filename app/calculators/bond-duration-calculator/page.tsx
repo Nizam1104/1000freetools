@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -174,6 +174,253 @@ export default function BondDurationCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Bond Duration Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the bond details</p>
+                    <p>Input the face value (par value), coupon rate, years to maturity, and yield to maturity. Most corporate bonds have a $1,000 face value.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select the coupon frequency</p>
+                    <p>Choose how often the bond pays interest. Most U.S. bonds pay semi-annually (twice per year), but some pay quarterly or annually.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review the duration results</p>
+                    <p>The calculator shows Macaulay Duration (weighted average time to receive cash flows) and Modified Duration (price sensitivity to interest rate changes).</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Bond Duration Reference Guide
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Bond Type</th>
+                      <th className="text-left py-3 px-2 font-semibold">Typical Duration</th>
+                      <th className="text-left py-3 px-2 font-semibold">Interest Rate Risk</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Treasury Bills</td>
+                      <td className="py-3 px-2">&lt; 1 year</td>
+                      <td className="py-3 px-2">Very Low</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Short-Term Bonds</td>
+                      <td className="py-3 px-2">1-3 years</td>
+                      <td className="py-3 px-2">Low</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Intermediate Bonds</td>
+                      <td className="py-3 px-2">3-7 years</td>
+                      <td className="py-3 px-2">Moderate</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Long-Term Bonds</td>
+                      <td className="py-3 px-2">7-15 years</td>
+                      <td className="py-3 px-2">High</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">30-Year Treasury</td>
+                      <td className="py-3 px-2">15-20 years</td>
+                      <td className="py-3 px-2">Very High</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Duration is always less than or equal to maturity for coupon-paying bonds. Zero-coupon bonds have duration equal to maturity.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Bond Duration
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is Macaulay Duration?</h4>
+                  <p>
+                    Macaulay Duration measures the weighted average time until you receive all cash flows from a bond. It accounts for both coupon payments and the return of principal at maturity. A 10-year bond with a 5% coupon might have a Macaulay Duration of around 8 years because you receive some money back before maturity through coupon payments.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is Modified Duration?</h4>
+                  <p>
+                    Modified Duration shows how much a bond's price will change for a 1% change in interest rates. If a bond has a Modified Duration of 5 years, its price will drop approximately 5% if rates rise by 1%, and rise approximately 5% if rates fall by 1%. This makes it a direct measure of interest rate risk.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Duration Matters for Investors</h4>
+                  <p>
+                    Duration helps you compare bonds with different maturities and coupons. Two 10-year bonds can have very different durations depending on their coupon rates. Higher coupon bonds have lower duration because you get more money back sooner. This matters when interest rates are expected to rise — lower duration bonds lose less value.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Duration vs. Maturity</h4>
+                  <p>
+                    Maturity is simply when the bond expires. Duration is more nuanced — it factors in when you actually receive cash. A zero-coupon bond has duration equal to maturity. A high-coupon bond has duration significantly shorter than maturity. For most coupon bonds, duration runs about 70-80% of maturity.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Using Duration in Portfolio Management
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Match Duration to Your Time Horizon</p>
+                    <p>If you need money in 5 years, consider bonds with duration around 5 years. This reduces the risk that rate changes will hurt your principal when you need to sell.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use Duration to Gauge Rate Risk</p>
+                    <p>When rates are expected to rise, shorten portfolio duration. When rates are expected to fall, extend duration to capture more price appreciation.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider Convexity for Large Rate Moves</p>
+                    <p>Duration is a linear approximation. For large rate changes, convexity matters too. Bonds with higher convexity gain more when rates fall than they lose when rates rise.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Diversify Across Durations</p>
+                    <p>A bond ladder with varying maturities gives you a blend of durations. This provides income stability while limiting exposure to any single rate environment.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a good duration for a bond?</h4>
+                  <p>
+                    There is no single "good" duration — it depends on your goals and rate outlook. Short duration (1-3 years) suits conservative investors or those expecting rising rates. Long duration (7+ years) suits those seeking higher yields or expecting falling rates. Match duration to when you'll need the money.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why is modified duration lower than Macaulay duration?</h4>
+                  <p>
+                    Modified Duration equals Macaulay Duration divided by (1 + yield/frequency). This adjustment accounts for the fact that bond prices and yields move inversely. The higher the yield, the bigger the gap between the two duration measures.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How does coupon rate affect duration?</h4>
+                  <p>
+                    Higher coupon bonds have lower duration. You receive more cash earlier through coupon payments, reducing the weighted average time to receive all cash flows. A 10-year bond with a 10% coupon has much lower duration than a 10-year bond with a 2% coupon.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can duration be negative?</h4>
+                  <p>
+                    For standard bonds, duration is always positive. However, certain complex instruments like inverse floaters or some mortgage-backed securities can have negative duration — meaning they gain value when rates rise and lose value when rates fall.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is duration the same as maturity?</h4>
+                  <p>
+                    No. Maturity is when the bond expires. Duration is the weighted average time to receive all cash flows. For zero-coupon bonds, duration equals maturity. For coupon bonds, duration is always less than maturity — often significantly so for high-coupon bonds.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/bond-price-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Bond Price Calculator</span>
+                  <p className="text-muted-foreground">Calculate the fair market price of a bond based on coupon rate and market yield</p>
+                </a>
+                <a
+                  href="/calculators/bond-yield-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Bond Yield Calculator</span>
+                  <p className="text-muted-foreground">Find current yield and yield to maturity from a bond's market price</p>
+                </a>
+                <a
+                  href="/calculators/yield-to-maturity-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Yield to Maturity Calculator</span>
+                  <p className="text-muted-foreground">Calculate the total return expected on a bond if held until maturity</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,7 +33,7 @@ export default function RetirementWithdrawalRateCalculatorPage() {
 
     const retirementYears = lifeExp - age;
     const realReturnRate = (retRate - infRate) / (1 + infRate);
-    
+
     // Calculate safe withdrawal rate using annuity formula
     const safeWithdrawalRate = realReturnRate / (1 - Math.pow(1 + realReturnRate, -retirementYears));
     const annualWithdrawal = corpus * safeWithdrawalRate;

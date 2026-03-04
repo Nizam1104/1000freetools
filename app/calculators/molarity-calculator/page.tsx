@@ -1,12 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
 
 export default function MolarityCalculator() {
   const [mode, setMode] = useState<"find-molarity" | "find-moles" | "find-volume">("find-molarity");
@@ -69,7 +78,7 @@ export default function MolarityCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
         <CardHeader>
           <CardTitle>Molarity Calculator – Calculate Molar Concentration Instantly</CardTitle>
@@ -144,59 +153,29 @@ export default function MolarityCalculator() {
               </div>
             )}
           </div>
-        </CardContent>
-      </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>What is Molarity?</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p>Molarity measures the concentration of a solution. You express it as moles of solute per liter of solution. The symbol for molarity is M. Chemists use molarity to prepare solutions with precise concentrations for experiments and reactions.</p>
-          
-          <h3 className="text-xl font-semibold">Molarity Formula</h3>
-          <div className="p-4 bg-muted rounded-md font-mono text-center">
-            M = n / V
-          </div>
-          <p>Where:</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>M = Molarity (mol/L or M)</li>
-            <li>n = Number of moles of solute (mol)</li>
-            <li>V = Volume of solution (L)</li>
-          </ul>
-
-          <h3 className="text-xl font-semibold">How to Calculate Molarity</h3>
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Determine the number of moles of solute dissolved</li>
-            <li>Measure the total volume of the solution in liters</li>
-            <li>Divide moles by volume to get molarity</li>
-          </ol>
-
-          <h3 className="text-xl font-semibold">Example Calculation</h3>
-          <p>You dissolve 0.5 moles of NaCl in 500 mL of water. First convert 500 mL to 0.5 L. Then divide: M = 0.5 mol / 0.5 L = 1.0 M. Your solution has a molarity of 1.0 M.</p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Molarity and Volume Relationship</CardTitle>
-          <CardDescription>Graph showing how molarity changes with volume for a fixed amount of solute</CardDescription>
-        </CardHeader>
-        <CardContent>
-          {graphData.length > 0 ? (
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={graphData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis label={{ value: mode === "find-volume" ? "Molarity (M)" : "Volume (mL)", position: "insideBottom", offset: -5 }} />
-                <YAxis label={{ value: mode === "find-volume" ? "Volume (mL)" : "Molarity (M)", angle: -90, position: "insideLeft" }} />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey={mode === "find-volume" ? "volume" : mode === "find-moles" ? "moles" : "molarity"} stroke="#8884d8" strokeWidth={2} />
-              </LineChart>
-            </ResponsiveContainer>
-          ) : (
-            <div className="h-64 flex items-center justify-center bg-muted rounded-md">
-              <p className="text-muted-foreground">Enter values and calculate to see the graph</p>
+          {graphData.length > 0 && (
+            <div className="mt-6 pt-6 border-t">
+              <h3 className="text-lg font-semibold mb-4">Relationship Graph</h3>
+              <div className="h-[250px]">
+                <ChartContainer
+                  config={{
+                    molarity: { label: "Molarity (M)", color: "hsl(var(--chart-1))" },
+                    moles: { label: "Moles (mol)", color: "hsl(var(--chart-2))" },
+                    volume: { label: "Volume (mL)", color: "hsl(var(--chart-3))" },
+                  }}
+                >
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={graphData}>
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey={mode === "find-volume" ? "molarity" : "volume"} tick={{ fontSize: 10 }} />
+                      <YAxis />
+                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <Line type="monotone" dataKey={mode === "find-volume" ? "volume" : mode === "find-moles" ? "moles" : "molarity"} stroke="#8884d8" strokeWidth={2} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </ChartContainer>
+              </div>
             </div>
           )}
         </CardContent>
@@ -204,62 +183,245 @@ export default function MolarityCalculator() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Molarity Reference Table</CardTitle>
+          <CardTitle>What Is Molarity?</CardTitle>
+          <CardDescription>Understanding molar concentration</CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b">
-                  <th className="p-2 text-left">Moles (mol)</th>
-                  <th className="p-2 text-left">Volume (mL)</th>
-                  <th className="p-2 text-left">Molarity (M)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b">
-                  <td className="p-2">0.1</td>
-                  <td className="p-2">100</td>
-                  <td className="p-2">1.0</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="p-2">0.5</td>
-                  <td className="p-2">500</td>
-                  <td className="p-2">1.0</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="p-2">1.0</td>
-                  <td className="p-2">1000</td>
-                  <td className="p-2">1.0</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="p-2">0.25</td>
-                  <td className="p-2">250</td>
-                  <td className="p-2">1.0</td>
-                </tr>
-                <tr>
-                  <td className="p-2">2.0</td>
-                  <td className="p-2">500</td>
-                  <td className="p-2">4.0</td>
-                </tr>
-              </tbody>
-            </table>
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">
+            Molarity tells you how concentrated a solution is. Specifically, it's the number of moles of solute dissolved in one liter of solution. The symbol is M (capital M), and you'll see it written as "2 M NaCl" or "0.1 M HCl" on lab bottles.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            One mole equals 6.022 × 10²³ particles (Avogadro's number). So a 1 M solution contains 6.022 × 10²³ molecules of solute per liter. This seems abstract, but it's practical: equal volumes of solutions with the same molarity contain the same number of molecules, regardless of what those molecules are.
+          </p>
+          <div className="rounded-lg bg-muted p-4">
+            <p className="text-sm font-semibold mb-2">The Molarity Formula</p>
+            <p className="font-mono text-center text-lg">M = n / V</p>
+            <p className="text-xs text-muted-foreground mt-2 text-center">M = molarity (mol/L), n = moles of solute, V = volume in liters</p>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Important distinction: molarity uses the volume of the final solution, not the volume of solvent you started with. If you dissolve salt in 1 L of water, the final volume exceeds 1 L. Always measure the final solution volume for accurate molarity.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Molarity Calculation Examples</CardTitle>
+          <CardDescription>Step-by-step worked problems</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-3">
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Example 1: Finding Molarity</h4>
+              <p className="text-xs text-muted-foreground mb-2">
+                Problem: You dissolve 0.5 moles of NaCl in enough water to make 500 mL of solution. What's the molarity?
+              </p>
+              <div className="text-xs font-mono bg-muted p-2 space-y-1">
+                <p>Given: n = 0.5 mol, V = 500 mL = 0.5 L</p>
+                <p>M = n / V = 0.5 mol / 0.5 L = 1.0 M</p>
+              </div>
+              <p className="text-xs text-muted-foreground mt-2">
+                Answer: The solution is 1.0 M NaCl
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Example 2: Finding Moles</h4>
+              <p className="text-xs text-muted-foreground mb-2">
+                Problem: How many moles of HCl are in 250 mL of 2.0 M HCl solution?
+              </p>
+              <div className="text-xs font-mono bg-muted p-2 space-y-1">
+                <p>Given: M = 2.0 mol/L, V = 250 mL = 0.25 L</p>
+                <p>n = M × V = 2.0 mol/L × 0.25 L = 0.5 mol</p>
+              </div>
+              <p className="text-xs text-muted-foreground mt-2">
+                Answer: The solution contains 0.5 moles of HCl
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Example 3: Finding Volume</h4>
+              <p className="text-xs text-muted-foreground mb-2">
+                Problem: What volume of 1.5 M NaOH contains 0.3 moles of NaOH?
+              </p>
+              <div className="text-xs font-mono bg-muted p-2 space-y-1">
+                <p>Given: n = 0.3 mol, M = 1.5 mol/L</p>
+                <p>V = n / M = 0.3 mol / 1.5 mol/L = 0.2 L = 200 mL</p>
+              </div>
+              <p className="text-xs text-muted-foreground mt-2">
+                Answer: You need 200 mL of the solution
+              </p>
+            </div>
           </div>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle>Common Molarity Applications</CardTitle>
+          <CardTitle>Molarity Reference Table</CardTitle>
+          <CardDescription>Common molarity conversions</CardDescription>
         </CardHeader>
         <CardContent>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Preparing standard solutions for titrations</li>
-            <li>Calculating reactant amounts in stoichiometry</li>
-            <li>Determining concentration in analytical chemistry</li>
-            <li>Dilution calculations in laboratory work</li>
-            <li>Buffer preparation in biochemistry</li>
-          </ul>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Moles (mol)</TableHead>
+                <TableHead>Volume (mL)</TableHead>
+                <TableHead>Molarity (M)</TableHead>
+                <TableHead>Common Use</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-mono">0.1</TableCell>
+                <TableCell className="font-mono">100</TableCell>
+                <TableCell className="font-mono">1.0</TableCell>
+                <TableCell className="text-xs">Standard titration</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-mono">0.5</TableCell>
+                <TableCell className="font-mono">500</TableCell>
+                <TableCell className="font-mono">1.0</TableCell>
+                <TableCell className="text-xs">General lab work</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-mono">1.0</TableCell>
+                <TableCell className="font-mono">1000</TableCell>
+                <TableCell className="font-mono">1.0</TableCell>
+                <TableCell className="text-xs">Stock solution</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-mono">0.25</TableCell>
+                <TableCell className="font-mono">250</TableCell>
+                <TableCell className="font-mono">1.0</TableCell>
+                <TableCell className="text-xs">Standard solution</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-mono">2.0</TableCell>
+                <TableCell className="font-mono">500</TableCell>
+                <TableCell className="font-mono">4.0</TableCell>
+                <TableCell className="text-xs">Concentrated reagent</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-mono">0.01</TableCell>
+                <TableCell className="font-mono">100</TableCell>
+                <TableCell className="font-mono">0.1</TableCell>
+                <TableCell className="text-xs">Dilute standard</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Molarity vs Molality vs Normality</CardTitle>
+          <CardDescription>Understanding concentration units</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Unit</TableHead>
+                <TableHead>Formula</TableHead>
+                <TableHead>Temperature Dependent</TableHead>
+                <TableHead>Best For</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">Molarity (M)</TableCell>
+                <TableCell className="font-mono text-xs">mol solute / L solution</TableCell>
+                <TableCell>Yes</TableCell>
+                <TableCell className="text-xs">General lab work, titrations</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Molality (m)</TableCell>
+                <TableCell className="font-mono text-xs">mol solute / kg solvent</TableCell>
+                <TableCell>No</TableCell>
+                <TableCell className="text-xs">Colligative properties, precise work</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Normality (N)</TableCell>
+                <TableCell className="font-mono text-xs">equivalents / L solution</TableCell>
+                <TableCell>Yes</TableCell>
+                <TableCell className="text-xs">Acid-base, redox reactions</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Mass %</TableCell>
+                <TableCell className="font-mono text-xs">(g solute / g solution) × 100</TableCell>
+                <TableCell>No</TableCell>
+                <TableCell className="text-xs">Industrial applications</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">ppm</TableCell>
+                <TableCell className="font-mono text-xs">mg solute / L solution</TableCell>
+                <TableCell>Yes</TableCell>
+                <TableCell className="text-xs">Trace analysis, environmental</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <p className="text-xs text-muted-foreground mt-3">
+            Molarity changes with temperature because volume expands/contracts. Molality stays constant because mass doesn't change with temperature. For precise thermodynamic work, use molality.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I convert grams to moles for molarity?</h4>
+            <p className="text-xs text-muted-foreground">
+              Divide grams by molar mass. For NaCl: molar mass = 58.44 g/mol. So 29.22 g NaCl = 29.22 / 58.44 = 0.5 mol. Then use M = n/V. If dissolved in 500 mL: M = 0.5 mol / 0.5 L = 1.0 M.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference between 1 M and 1 m?</h4>
+            <p className="text-xs text-muted-foreground">
+              1 M (molar) = 1 mole per liter of solution. 1 m (molal) = 1 mole per kilogram of solvent. For dilute aqueous solutions, they're nearly equal. For concentrated solutions or non-aqueous solvents, they differ significantly.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I prepare a molar solution?</h4>
+            <p className="text-xs text-muted-foreground">
+              Weigh the required moles of solute. Add to a volumetric flask. Add solvent to about 3/4 full and swirl to dissolve. Then add solvent to the calibration mark. Never add solute directly to a full-volume flask – it won't dissolve properly.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can molarity be greater than 10 M?</h4>
+            <p className="text-xs text-muted-foreground">
+              Yes. Concentrated HCl is about 12 M. Concentrated H₂SO₄ is about 18 M. Concentrated NaOH can reach 19 M. These are limited by solubility – eventually, no more solute will dissolve regardless of how much you add.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I dilute a solution to a specific molarity?</h4>
+            <p className="text-xs text-muted-foreground">
+              Use M₁V₁ = M₂V₂. Want 500 mL of 0.1 M from 1.0 M stock? (1.0)(V₁) = (0.1)(500), so V₁ = 50 mL. Take 50 mL of stock, add water to 500 mL total. Always add acid to water, never water to acid.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="/calculators/ph-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">pH Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate pH from [H⁺]</p>
+            </a>
+            <a href="/calculators/stoichiometry-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Stoichiometry Calculator</p>
+              <p className="text-xs text-muted-foreground">Balance chemical equations</p>
+            </a>
+            <a href="/calculators/dilution-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Dilution Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate dilution ratios</p>
+            </a>
+          </div>
         </CardContent>
       </Card>
     </div>

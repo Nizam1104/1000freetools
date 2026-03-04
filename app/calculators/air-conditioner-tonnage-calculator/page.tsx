@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,7 +42,7 @@ export default function AirConditionerTonnageCalculatorPage() {
 
     // Calculate area in square feet
     const area = length * width;
-    
+
     // Calculate volume
     const volume = area * height;
 
@@ -355,6 +355,270 @@ export default function AirConditionerTonnageCalculatorPage() {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How to Use Section */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">How to Use This AC Tonnage Calculator</h2>
+            <div className="space-y-4">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-1">Enter Your Room Dimensions</h3>
+                  <p className="text-muted-foreground">Input the length and width of your room. You can use either feet or meters – the calculator handles the conversion automatically. Also enter your ceiling height (standard is 8 feet).</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-1">Select Your Conditions</h3>
+                  <p className="text-muted-foreground">Choose your room type, insulation quality, climate zone, and sun exposure. These factors significantly impact how much cooling power you actually need.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-1">Get Your Recommended Size</h3>
+                  <p className="text-muted-foreground">Click Calculate to see your recommended AC tonnage, BTU requirements, and power consumption. Use this information when shopping for air conditioners.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Understanding AC Tonnage Section */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Understanding AC Tonnage</h2>
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                When you see an air conditioner labeled as "1 ton" or "2 ton," it has nothing to do with actual weight. In HVAC terms, a ton refers to cooling capacity – specifically, the amount of heat an AC unit can remove from a space in one hour.
+              </p>
+              <h3 className="text-lg font-semibold text-foreground">What Does "One Ton" Mean?</h3>
+              <p>
+                One ton of cooling equals 12,000 BTU per hour. BTU stands for British Thermal Unit, which is the amount of energy needed to raise one pound of water by one degree Fahrenheit. So a 1-ton AC removes 12,000 BTUs of heat every hour.
+              </p>
+              <h3 className="text-lg font-semibold text-foreground">Where Did This Come From?</h3>
+              <p>
+                The term dates back to the early days of refrigeration in the late 1800s. Back then, cooling was measured by comparing it to how much ice was needed to achieve the same effect. One ton of cooling represented the amount of heat absorbed when one ton (2,000 pounds) of ice melts over a 24-hour period. The ice industry was the standard before mechanical refrigeration took over, and the terminology stuck.
+              </p>
+              <h3 className="text-lg font-semibold text-foreground">Why Proper Sizing Matters</h3>
+              <p>
+                Getting the right tonnage isn't just about comfort – it affects your energy bills, equipment lifespan, and how well your AC actually works. An improperly sized unit creates real problems.
+              </p>
+              <h3 className="text-lg font-semibold text-foreground">Problems with Oversized Units</h3>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Short cycling – the AC turns on and off frequently instead of running in longer, efficient cycles</li>
+                <li>Poor humidity control – the unit cools quickly but doesn't run long enough to remove moisture, leaving the air cold and clammy</li>
+                <li>Higher energy bills – frequent startups use more power</li>
+                <li>More wear and tear – constant on/off cycles stress the compressor and components</li>
+                <li>Uneven cooling – some areas get cold while others stay warm</li>
+              </ul>
+              <h3 className="text-lg font-semibold text-foreground">Problems with Undersized Units</h3>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Never reaches target temperature – especially on hot days</li>
+                <li>Runs continuously – driving up electricity costs</li>
+                <li>Excessive wear – the compressor runs non-stop, shortening the unit's life</li>
+                <li>Poor comfort – you'll always feel slightly warm and uncomfortable</li>
+                <li>Higher maintenance costs – constant operation leads to more frequent repairs</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* AC Tonnage to BTU Conversion Table */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">AC Tonnage to BTU Conversion Table</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-border">
+                    <th className="text-left py-3 px-4 font-semibold">AC Tonnage</th>
+                    <th className="text-left py-3 px-4 font-semibold">BTU/hr</th>
+                    <th className="text-left py-3 px-4 font-semibold">Typical Application</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">1 ton</td>
+                    <td className="py-3 px-4">12,000 BTU</td>
+                    <td className="py-3 px-4">Small bedroom, home office</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">1.5 ton</td>
+                    <td className="py-3 px-4">18,000 BTU</td>
+                    <td className="py-3 px-4">Master bedroom, small living room</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">2 ton</td>
+                    <td className="py-3 px-4">24,000 BTU</td>
+                    <td className="py-3 px-4">Large living room, small apartment</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">2.5 ton</td>
+                    <td className="py-3 px-4">30,000 BTU</td>
+                    <td className="py-3 px-4">Open floor plan, medium home</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">3 ton</td>
+                    <td className="py-3 px-4">36,000 BTU</td>
+                    <td className="py-3 px-4">Large living area, small house</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">5 ton</td>
+                    <td className="py-3 px-4">60,000 BTU</td>
+                    <td className="py-3 px-4">Whole house, commercial space</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* Factors Affecting AC Sizing */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Factors Affecting AC Sizing</h2>
+            <p className="text-muted-foreground mb-6">
+              Square footage is just the starting point. Several other factors determine how much cooling capacity you actually need. Here's what matters:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Room Square Footage</h3>
+                <p className="text-sm text-muted-foreground">The floor area is the baseline for BTU calculations. Larger rooms need more cooling power. Standard calculation uses 20 BTU per square foot as a starting point.</p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Ceiling Height</h3>
+                <p className="text-sm text-muted-foreground">Standard calculations assume 8-foot ceilings. Higher ceilings mean more air volume to cool. For every foot above 8 feet, you'll need additional capacity.</p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Insulation Quality</h3>
+                <p className="text-sm text-muted-foreground">Good insulation keeps cool air in and hot air out. Poor or old insulation can increase your cooling needs by 30% or more. Well-insulated rooms need less capacity.</p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Window Area and Orientation</h3>
+                <p className="text-sm text-muted-foreground">South and west-facing windows let in more heat. Large windows, single-pane glass, and unshaded windows all increase cooling load. Window coverings help reduce this effect.</p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Climate Zone</h3>
+                <p className="text-sm text-muted-foreground">Hot climates need more cooling capacity than moderate ones. If you're in a region with summer temperatures regularly above 95°F, you'll need to size up compared to cooler areas.</p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Number of Occupants</h3>
+                <p className="text-sm text-muted-foreground">People generate heat – about 600 BTU per person. A room that regularly has 4-5 people needs more cooling than one used by just one or two.</p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Heat-Generating Appliances</h3>
+                <p className="text-sm text-muted-foreground">Computers, TVs, ovens, and other appliances add heat to a room. Kitchens and server rooms need significantly more cooling than bedrooms with the same square footage.</p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Sun Exposure</h3>
+                <p className="text-sm text-muted-foreground">Rooms in full sun need about 20% more cooling than shaded rooms. Consider how much direct sunlight the room gets during the hottest part of the day.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* AC Sizing Guidelines by Room Size */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">AC Sizing Guidelines by Room Size</h2>
+            <p className="text-muted-foreground mb-6">
+              Use this table as a general reference for matching AC tonnage to room size. These are estimates – actual needs vary based on the factors listed above.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-border">
+                    <th className="text-left py-3 px-4 font-semibold">Room Size (sq ft)</th>
+                    <th className="text-left py-3 px-4 font-semibold">Recommended AC Tonnage</th>
+                    <th className="text-left py-3 px-4 font-semibold">BTU Range</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">100-400 sq ft</td>
+                    <td className="py-3 px-4">1 ton</td>
+                    <td className="py-3 px-4">12,000 BTU</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">400-600 sq ft</td>
+                    <td className="py-3 px-4">1.5 ton</td>
+                    <td className="py-3 px-4">18,000 BTU</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">600-900 sq ft</td>
+                    <td className="py-3 px-4">2 ton</td>
+                    <td className="py-3 px-4">24,000 BTU</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">900-1200 sq ft</td>
+                    <td className="py-3 px-4">2.5-3 ton</td>
+                    <td className="py-3 px-4">30,000-36,000 BTU</td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50">
+                    <td className="py-3 px-4">1200-1600 sq ft</td>
+                    <td className="py-3 px-4">3-4 ton</td>
+                    <td className="py-3 px-4">36,000-48,000 BTU</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div className="border-b border-border pb-6">
+                <h3 className="text-lg font-semibold mb-2">What does AC tonnage mean?</h3>
+                <p className="text-muted-foreground">
+                  AC tonnage refers to the cooling capacity of an air conditioner, not its weight. One ton equals 12,000 BTU (British Thermal Units) per hour – the amount of heat the unit can remove from a space in one hour. Common residential sizes range from 1.5 tons to 5 tons.
+                </p>
+              </div>
+              <div className="border-b border-border pb-6">
+                <h3 className="text-lg font-semibold mb-2">How do I calculate what size AC I need?</h3>
+                <p className="text-muted-foreground">
+                  Start with your room's square footage and multiply by 20 BTU per square foot. Then adjust for ceiling height, insulation quality, climate, sun exposure, number of occupants, and heat-generating appliances. Divide your final BTU number by 12,000 to get the tonnage. Our calculator above does all of this automatically.
+                </p>
+              </div>
+              <div className="border-b border-border pb-6">
+                <h3 className="text-lg font-semibold mb-2">Is it better to oversize or undersize an AC?</h3>
+                <p className="text-muted-foreground">
+                  Neither is ideal, but if you have to choose, slightly undersizing is generally better than oversizing. An oversized AC short-cycles, wastes energy, and fails to remove humidity properly. A slightly undersized unit will run longer but will still cool the space and manage humidity better. The best approach is getting the size as close to correct as possible.
+                </p>
+              </div>
+              <div className="border-b border-border pb-6">
+                <h3 className="text-lg font-semibold mb-2">How many square feet does 1 ton cool?</h3>
+                <p className="text-muted-foreground">
+                  One ton of AC cooling typically handles 400-500 square feet under normal conditions. However, this varies significantly based on ceiling height, insulation, climate, and other factors. In hot climates or rooms with poor insulation, 1 ton might only cover 300-400 square feet.
+                </p>
+              </div>
+              <div className="border-b border-border pb-6">
+                <h3 className="text-lg font-semibold mb-2">What happens if my AC is too big or too small?</h3>
+                <p className="text-muted-foreground">
+                  An AC that's too big will turn on and off frequently (short cycling), leading to poor humidity control, higher energy bills, uneven cooling, and increased wear on the compressor. An AC that's too small will run constantly, struggle to reach your desired temperature on hot days, wear out faster, and leave you uncomfortable. Both scenarios cost more money in the long run.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools Section */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Related Tools</h2>
+            <p className="text-muted-foreground mb-6">
+              Explore these calculators to help with your home cooling and energy planning:
+            </p>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/room-heater-wattage-calculator" className="p-4 bg-card rounded-lg border hover:bg-muted/50 transition-colors">
+                <h3 className="font-semibold mb-1">Room Heater Wattage Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate the right heater wattage for your room size and heating needs.</p>
+              </a>
+              <a href="/calculators/hvac-btu-calculator" className="p-4 bg-card rounded-lg border hover:bg-muted/50 transition-colors">
+                <h3 className="font-semibold mb-1">HVAC BTU Calculator</h3>
+                <p className="text-sm text-muted-foreground">Determine BTU requirements for heating and cooling your entire home.</p>
+              </a>
+              <a href="/calculators/electricity-appliance-wattage-calculator" className="p-4 bg-card rounded-lg border hover:bg-muted/50 transition-colors">
+                <h3 className="font-semibold mb-1">Electricity Appliance Wattage Calculator</h3>
+                <p className="text-sm text-muted-foreground">Estimate power consumption and costs for your home appliances.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

@@ -294,6 +294,232 @@ export default function ZodiacSignCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-6 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How It Works
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-1 flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Enter Your Birth Date</h4>
+                  <p className="text-xs text-muted-foreground">Select your date of birth using the date picker. Your zodiac sign is determined by the sun's position on that date.</p>
+                </div>
+              </div>
+              <div className="flex-1 flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Instant Sign Detection</h4>
+                  <p className="text-xs text-muted-foreground">The calculator automatically identifies your Western/Tropical zodiac sign based on standard date ranges.</p>
+                </div>
+              </div>
+              <div className="flex-1 flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">View Sign Details</h4>
+                  <p className="text-xs text-muted-foreground">See your sign's symbol, element, ruling planet, date range, and key personality traits.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Zodiac Signs Date Reference
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-2 px-3 font-semibold">Sign</th>
+                    <th className="text-left py-2 px-3 font-semibold">Symbol</th>
+                    <th className="text-left py-2 px-3 font-semibold">Date Range</th>
+                    <th className="text-left py-2 px-3 font-semibold">Element</th>
+                    <th className="text-left py-2 px-3 font-semibold">Ruling Planet</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Aries</td>
+                    <td className="py-2 px-3">♈</td>
+                    <td className="py-2 px-3 text-xs">Mar 21 - Apr 19</td>
+                    <td className="py-2 px-3 text-xs">Fire</td>
+                    <td className="py-2 px-3 text-xs">Mars</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Taurus</td>
+                    <td className="py-2 px-3">♉</td>
+                    <td className="py-2 px-3 text-xs">Apr 20 - May 20</td>
+                    <td className="py-2 px-3 text-xs">Earth</td>
+                    <td className="py-2 px-3 text-xs">Venus</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Gemini</td>
+                    <td className="py-2 px-3">♊</td>
+                    <td className="py-2 px-3 text-xs">May 21 - Jun 20</td>
+                    <td className="py-2 px-3 text-xs">Air</td>
+                    <td className="py-2 px-3 text-xs">Mercury</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Cancer</td>
+                    <td className="py-2 px-3">♋</td>
+                    <td className="py-2 px-3 text-xs">Jun 21 - Jul 22</td>
+                    <td className="py-2 px-3 text-xs">Water</td>
+                    <td className="py-2 px-3 text-xs">Moon</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Leo</td>
+                    <td className="py-2 px-3">♌</td>
+                    <td className="py-2 px-3 text-xs">Jul 23 - Aug 22</td>
+                    <td className="py-2 px-3 text-xs">Fire</td>
+                    <td className="py-2 px-3 text-xs">Sun</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Virgo</td>
+                    <td className="py-2 px-3">♍</td>
+                    <td className="py-2 px-3 text-xs">Aug 23 - Sep 22</td>
+                    <td className="py-2 px-3 text-xs">Earth</td>
+                    <td className="py-2 px-3 text-xs">Mercury</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Libra</td>
+                    <td className="py-2 px-3">♎</td>
+                    <td className="py-2 px-3 text-xs">Sep 23 - Oct 22</td>
+                    <td className="py-2 px-3 text-xs">Air</td>
+                    <td className="py-2 px-3 text-xs">Venus</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Scorpio</td>
+                    <td className="py-2 px-3">♏</td>
+                    <td className="py-2 px-3 text-xs">Oct 23 - Nov 21</td>
+                    <td className="py-2 px-3 text-xs">Water</td>
+                    <td className="py-2 px-3 text-xs">Pluto</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Sagittarius</td>
+                    <td className="py-2 px-3">♐</td>
+                    <td className="py-2 px-3 text-xs">Nov 22 - Dec 21</td>
+                    <td className="py-2 px-3 text-xs">Fire</td>
+                    <td className="py-2 px-3 text-xs">Jupiter</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Capricorn</td>
+                    <td className="py-2 px-3">♑</td>
+                    <td className="py-2 px-3 text-xs">Dec 22 - Jan 19</td>
+                    <td className="py-2 px-3 text-xs">Earth</td>
+                    <td className="py-2 px-3 text-xs">Saturn</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-3 font-medium">Aquarius</td>
+                    <td className="py-2 px-3">♒</td>
+                    <td className="py-2 px-3 text-xs">Jan 20 - Feb 18</td>
+                    <td className="py-2 px-3 text-xs">Air</td>
+                    <td className="py-2 px-3 text-xs">Uranus</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-3 font-medium">Pisces</td>
+                    <td className="py-2 px-3">♓</td>
+                    <td className="py-2 px-3 text-xs">Feb 19 - Mar 20</td>
+                    <td className="py-2 px-3 text-xs">Water</td>
+                    <td className="py-2 px-3 text-xs">Neptune</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Key Features & Benefits
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">All 12 Zodiac Signs</h4>
+                <p className="text-xs text-muted-foreground">Complete coverage of the Western zodiac from Aries to Pisces with accurate date ranges.</p>
+              </div>
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">Element Classification</h4>
+                <p className="text-xs text-muted-foreground">See which element (Fire, Earth, Air, Water) governs your sign and influences your personality.</p>
+              </div>
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">Ruling Planet Info</h4>
+                <p className="text-xs text-muted-foreground">Discover which celestial body rules your sign and shapes your astrological profile.</p>
+              </div>
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">Visual Sign Display</h4>
+                <p className="text-xs text-muted-foreground">See all 12 zodiac symbols with your sign highlighted for easy reference.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What is my zodiac sign based on?</h4>
+              <p className="text-xs text-muted-foreground">
+                Your zodiac sign (sun sign) is determined by the sun's position in the zodiac constellations on your birth date. Western astrology uses the Tropical zodiac, which is based on seasons rather than actual constellation positions.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What if I was born on a cusp date?</h4>
+              <p className="text-xs text-muted-foreground">
+                Cusp dates are when the sun transitions between signs (e.g., July 22-23). Your exact sign depends on your birth year, time, and location. Use a detailed birth chart calculator for precision if born within 1-2 days of a sign change.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What are the four zodiac elements?</h4>
+              <p className="text-xs text-muted-foreground">
+                Fire (Aries, Leo, Sagittarius): Passionate, energetic, impulsive. Earth (Taurus, Virgo, Capricorn): Practical, grounded, reliable. Air (Gemini, Libra, Aquarius): Intellectual, social, communicative. Water (Cancer, Scorpio, Pisces): Emotional, intuitive, sensitive.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Is Western astrology the same as Chinese zodiac?</h4>
+              <p className="text-xs text-muted-foreground">
+                No. Western astrology uses 12 sun signs based on birth month. Chinese zodiac uses 12 animal signs based on birth year (Rat, Ox, Tiger, etc.). They're different systems with different calculation methods and interpretations.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Why do zodiac date ranges vary slightly?</h4>
+              <p className="text-xs text-muted-foreground">
+                Date ranges can vary by a day depending on the year (leap years) and astrological system used. The Tropical zodiac (Western) is fixed to seasons. The Sidereal zodiac (Vedic) accounts for Earth's precession and differs by ~23 days.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <h3 className="text-lg font-semibold">Related Tools</h3>
+          </CardHeader>
+          <CardContent>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <a href="/calculators/age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                <p className="font-semibold text-sm">Age Calculator</p>
+                <p className="text-xs text-muted-foreground">Calculate exact age from birth date</p>
+              </a>
+              <a href="/calculators/anniversary-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                <p className="font-semibold text-sm">Anniversary Calculator</p>
+                <p className="text-xs text-muted-foreground">Calculate relationship milestones</p>
+              </a>
+              <a href="/calculators/baby-age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                <p className="font-semibold text-sm">Baby Age Calculator</p>
+                <p className="text-xs text-muted-foreground">Track infant age in weeks/months</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

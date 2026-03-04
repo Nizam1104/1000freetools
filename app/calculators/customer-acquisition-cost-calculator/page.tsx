@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -175,7 +175,7 @@ export default function CustomerAcquisitionCostCalculatorPage() {
 
               <div className="border-t pt-4 space-y-3">
                 <Label className="text-sm font-medium">Optional (for deeper insights)</Label>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="ltv">Customer Lifetime Value (LTV)</Label>
                   <Input
@@ -239,18 +239,16 @@ export default function CustomerAcquisitionCostCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className={`p-3 rounded-lg ${
-                    result.cacAssessment.includes("Healthy") ? "bg-green-50 dark:bg-green-950/20" :
-                    result.cacAssessment.includes("Acceptable") ? "bg-amber-50 dark:bg-amber-950/20" :
-                    result.cacAssessment.includes("Critical") ? "bg-red-50 dark:bg-red-950/20" :
-                    "bg-muted"
-                  }`}>
-                    <p className={`text-sm font-medium ${
-                      result.cacAssessment.includes("Healthy") ? "text-green-800 dark:text-green-200" :
-                      result.cacAssessment.includes("Acceptable") ? "text-amber-800 dark:text-amber-200" :
-                      result.cacAssessment.includes("Critical") ? "text-red-800 dark:text-red-200" :
-                      ""
+                  <div className={`p-3 rounded-lg ${result.cacAssessment.includes("Healthy") ? "bg-green-50 dark:bg-green-950/20" :
+                      result.cacAssessment.includes("Acceptable") ? "bg-amber-50 dark:bg-amber-950/20" :
+                        result.cacAssessment.includes("Critical") ? "bg-red-50 dark:bg-red-950/20" :
+                          "bg-muted"
                     }`}>
+                    <p className={`text-sm font-medium ${result.cacAssessment.includes("Healthy") ? "text-green-800 dark:text-green-200" :
+                        result.cacAssessment.includes("Acceptable") ? "text-amber-800 dark:text-amber-200" :
+                          result.cacAssessment.includes("Critical") ? "text-red-800 dark:text-red-200" :
+                            ""
+                      }`}>
                       {result.cacAssessment}
                     </p>
                   </div>
@@ -305,6 +303,194 @@ export default function CustomerAcquisitionCostCalculatorPage() {
                   <strong>Tip:</strong> Track CAC by channel to identify your most efficient
                   acquisition sources. Aim to reduce CAC over time through optimization.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the CAC Calculator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Enter Acquisition Costs</h3>
+                    <p className="text-sm text-muted-foreground">Input total marketing spend, sales expenses, and other costs related to acquiring new customers.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Add New Customers Count</h3>
+                    <p className="text-sm text-muted-foreground">Enter the number of new customers acquired during the same period as your spending data.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Get CAC Analysis</h3>
+                    <p className="text-sm text-muted-foreground">Receive CAC calculation with LTV ratio assessment, payback period, and actionable recommendations.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Features of This CAC Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Complete Cost Tracking</h3>
+                      <p className="text-sm text-muted-foreground">Track marketing, sales, and overhead costs separately for detailed acquisition cost analysis.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">LTV Ratio Analysis</h3>
+                      <p className="text-sm text-muted-foreground">Calculate CAC to LTV ratio to assess customer acquisition sustainability and profitability.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Payback Period Estimation</h3>
+                      <p className="text-sm text-muted-foreground">Calculate how many purchases needed to recover acquisition cost per customer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Health Assessment</h3>
+                      <p className="text-sm text-muted-foreground">Get instant CAC health rating from Critical to Healthy based on industry benchmarks.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Actionable Recommendations</h3>
+                      <p className="text-sm text-muted-foreground">Receive specific suggestions to improve CAC based on your ratio and business metrics.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Business Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free CAC calculator for startups, marketers, and business owners.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">CAC:LTV Ratio Guidelines</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Ratio</th>
+                        <th className="text-left py-2">Assessment</th>
+                        <th className="text-left py-2">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">1:3 or higher</td>
+                        <td className="py-2 text-green-600">Healthy</td>
+                        <td className="py-2">Scale acquisition spending</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">1:2 to 1:3</td>
+                        <td className="py-2">Acceptable</td>
+                        <td className="py-2">Optimize conversion rates</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">1:1 to 1:2</td>
+                        <td className="py-2 text-amber-600">Concerning</td>
+                        <td className="py-2">Reduce CAC or increase LTV</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">Below 1:1</td>
+                        <td className="py-2 text-red-600">Critical</td>
+                        <td className="py-2">Urgent: Losing money per customer</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">How do I calculate customer acquisition cost?</h3>
+                  <p className="text-sm text-muted-foreground">CAC is calculated by dividing total acquisition costs by new customers acquired. Formula: CAC = (Marketing Spend + Sales Spend + Other Costs) / New Customers. For example, spending $10,000 to acquire 100 customers gives a CAC of $100.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is a good CAC to LTV ratio?</h3>
+                  <p className="text-sm text-muted-foreground">A healthy CAC:LTV ratio is 1:3 or higher, meaning customer lifetime value is at least 3x the acquisition cost. Ratios below 1:1 indicate you&apos;re losing money on each customer. SaaS companies typically target 1:3, while e-commerce may accept 1:2.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What costs should be included in CAC?</h3>
+                  <p className="text-sm text-muted-foreground">Include all marketing expenses (ads, content, events), sales costs (salaries, commissions, tools), and related overhead. Don&apos;t forget software subscriptions, agency fees, and creative production costs that support customer acquisition.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How can I reduce my customer acquisition cost?</h3>
+                  <p className="text-sm text-muted-foreground">Reduce CAC by improving conversion rates, optimizing ad targeting, leveraging organic channels (SEO, content, referrals), increasing customer retention, and focusing on high-ROI marketing channels. Test and iterate constantly.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is the payback period for CAC?</h3>
+                  <p className="text-sm text-muted-foreground">CAC payback period is how long it takes to recover acquisition costs from a customer. Calculate by dividing CAC by average monthly revenue per customer. SaaS companies typically target under 12 months payback for healthy cash flow.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Business Calculators</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/customer-lifetime-value-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Customer Lifetime Value Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate CLV to understand total customer worth and determine sustainable acquisition spending.</p>
+                </a>
+                <a href="/calculators/churn-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Churn Rate Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Measure customer churn rate to understand retention and its impact on LTV and growth.</p>
+                </a>
+                <a href="/calculators/roi-calculator-ad" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Advertising ROI Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate return on ad spend to optimize marketing channel performance and CAC.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

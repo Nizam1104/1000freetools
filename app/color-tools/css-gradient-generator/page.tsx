@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -40,7 +40,7 @@ export default function CSSGradientGeneratorPage() {
   const cssCode = generateGradient();
 
   const addColorStop = () => {
-    const newPosition = colorStops.length > 0 
+    const newPosition = colorStops.length > 0
       ? Math.min(100, Math.max(0, colorStops[colorStops.length - 1].position + 10))
       : 50;
     const newStop: ColorStop = {
@@ -66,7 +66,7 @@ export default function CSSGradientGeneratorPage() {
   const moveStop = (id: string, direction: "up" | "down") => {
     const index = colorStops.findIndex((s) => s.id === id);
     if (index === -1) return;
-    
+
     const newIndex = direction === "up" ? index - 1 : index + 1;
     if (newIndex < 0 || newIndex >= colorStops.length) return;
 

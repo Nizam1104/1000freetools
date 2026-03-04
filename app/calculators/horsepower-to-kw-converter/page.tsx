@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -34,7 +34,7 @@ export default function HorsepowerToKwConverterPage() {
       };
 
       output = val * conversionFactors[hpType];
-      
+
       const hpLabels = {
         mechanical: "HP (mechanical)",
         metric: "HP (metric/PS)",
@@ -42,7 +42,7 @@ export default function HorsepowerToKwConverterPage() {
       };
 
       formula = `${val} ${hpLabels[hpType]} × 0.7457 = ${output.toFixed(2)} kW`;
-      
+
       setResult({
         input: val,
         output: Math.round(output * 100) / 100,
@@ -57,7 +57,7 @@ export default function HorsepowerToKwConverterPage() {
       };
 
       output = val * conversionFactors[hpType];
-      
+
       const hpLabels = {
         mechanical: "HP (mechanical)",
         metric: "HP (metric/PS)",
@@ -65,7 +65,7 @@ export default function HorsepowerToKwConverterPage() {
       };
 
       formula = `${val} kW × ${conversionFactors[hpType].toFixed(4)} = ${output.toFixed(2)} ${hpLabels[hpType]}`;
-      
+
       setResult({
         input: val,
         output: Math.round(output * 100) / 100,

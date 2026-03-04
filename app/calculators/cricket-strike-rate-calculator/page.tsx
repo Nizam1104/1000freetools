@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -189,13 +189,12 @@ export default function CricketStrikeRateCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Strike Rate Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.strikeRate >= (result.format === "T20" ? 150 : result.format === "ODI" ? 100 : 60)
+                  <div className={`p-4 rounded-lg text-center ${result.strikeRate >= (result.format === "T20" ? 150 : result.format === "ODI" ? 100 : 60)
                       ? "bg-green-100 dark:bg-green-900/20"
                       : result.strikeRate >= (result.format === "T20" ? 120 : result.format === "ODI" ? 80 : 45)
-                      ? "bg-blue-100 dark:bg-blue-900/20"
-                      : "bg-amber-100 dark:bg-amber-900/20"
-                  }`}>
+                        ? "bg-blue-100 dark:bg-blue-900/20"
+                        : "bg-amber-100 dark:bg-amber-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Strike Rate</p>
                     <p className="text-5xl font-bold">{result.strikeRate}</p>
                     <p className="text-sm mt-1">{result.rating}</p>
@@ -272,6 +271,193 @@ export default function CricketStrikeRateCalculatorPage() {
                   average for complete batsman assessment. A high strike rate with
                   low average may indicate reckless batting.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the Cricket Strike Rate Calculator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Enter Batting Stats</h3>
+                    <p className="text-sm text-muted-foreground">Input the total runs scored and balls faced by the batsman to calculate their strike rate accurately.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Choose Cricket Format</h3>
+                    <p className="text-sm text-muted-foreground">Select T20, ODI, or Test match format to get appropriate strike rate benchmarks and performance ratings.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">View Performance Analysis</h3>
+                    <p className="text-sm text-muted-foreground">Get instant strike rate calculation with format-specific rating, comparisons, and batting recommendations.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Key Features of This Strike Rate Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Format-Specific Ratings</h3>
+                      <p className="text-sm text-muted-foreground">Get strike rate assessments tailored to T20, ODI, and Test cricket with appropriate performance standards.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Instant Calculation</h3>
+                      <p className="text-sm text-muted-foreground">Get strike rate results immediately without manual calculations. Simply enter runs and balls faced.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Performance Benchmarks</h3>
+                      <p className="text-sm text-muted-foreground">Compare strike rates against format-specific standards to understand batting aggression levels.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Expert Batting Tips</h3>
+                      <p className="text-sm text-muted-foreground">Receive actionable recommendations to improve strike rate based on format and performance level.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Sample Size Analysis</h3>
+                      <p className="text-sm text-muted-foreground">Get insights on whether the strike rate is based on a significant sample for reliable assessment.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Cricket Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free strike rate calculator for players, coaches, analysts, and cricket fans worldwide.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">Strike Rate Benchmarks by Format</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Format</th>
+                        <th className="text-left py-2">Excellent</th>
+                        <th className="text-left py-2">Good</th>
+                        <th className="text-left py-2">Average</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">T20</td>
+                        <td className="py-2 text-green-600">150+</td>
+                        <td className="py-2">120 - 130</td>
+                        <td className="py-2">110 - 120</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">ODI</td>
+                        <td className="py-2 text-green-600">100+</td>
+                        <td className="py-2">85 - 95</td>
+                        <td className="py-2">70 - 85</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">Test</td>
+                        <td className="py-2 text-green-600">60+</td>
+                        <td className="py-2">50 - 55</td>
+                        <td className="py-2">40 - 50</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">How is strike rate calculated in cricket?</h3>
+                  <p className="text-sm text-muted-foreground">Strike rate is calculated by dividing runs scored by balls faced, then multiplying by 100. The formula is: Strike Rate = (Runs ÷ Balls Faced) × 100. For example, scoring 50 runs off 35 balls gives a strike rate of 142.86.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is a good strike rate in T20 cricket?</h3>
+                  <p className="text-sm text-muted-foreground">In T20 cricket, a strike rate above 130 is considered excellent, while 110-130 is good. Elite T20 batsmen like Andre Russell and Nicholas Pooran maintain strike rates above 150. Opening batsmen typically have lower strike rates than finishers.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Why is strike rate important in cricket?</h3>
+                  <p className="text-sm text-muted-foreground">Strike rate measures batting aggression and scoring speed, which is crucial in limited-overs cricket. High strike rates help teams set competitive totals or chase targets efficiently. In T20 especially, strike rate is often more important than batting average.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is the difference between strike rate and average?</h3>
+                  <p className="text-sm text-muted-foreground">Batting average measures runs per dismissal (consistency), while strike rate measures runs per 100 balls (speed). A complete batsman balances both - high average for reliability and high strike rate for match-winning impact.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Who has the highest strike rate in T20 cricket?</h3>
+                  <p className="text-sm text-muted-foreground">Among players with significant T20 careers, Andre Russell, Nicholas Pooran, and Glenn Maxwell have strike rates above 150. In IPL, players like Andre Russell and Sunil Narine have maintained exceptional strike rates throughout their careers.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Cricket Calculators</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/cricket-economy-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Cricket Economy Rate Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate bowling economy rate to measure how well a bowler restricts runs per over.</p>
+                </a>
+                <a href="/calculators/batting-average-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Batting Average Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Compute batting average to evaluate a batsman&apos;s consistency across all cricket formats.</p>
+                </a>
+                <a href="/calculators/run-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Run Rate Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate team run rate and required run rate for chase scenarios in limited-overs cricket.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

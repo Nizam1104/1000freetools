@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -50,7 +50,7 @@ export default function CampingGearWeightCalculatorPage() {
       if (weight === 0) continue;
 
       totalWeight += weight;
-      
+
       // Base weight excludes consumables and worn items
       if (item.category !== "consumable" && item.category !== "worn") {
         baseWeight += weight;
@@ -228,12 +228,11 @@ export default function CampingGearWeightCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Pack Weight Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.baseWeight < 4.5 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.baseWeight < 9 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.baseWeight < 13.5 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.baseWeight < 4.5 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.baseWeight < 9 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.baseWeight < 13.5 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Pack Weight Category</p>
                     <p className="text-lg font-bold mt-1">{result.packWeightCategory}</p>
                   </div>
@@ -317,6 +316,144 @@ export default function CampingGearWeightCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Your Camping Gear Weight</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">List Your Gear</h3>
+                  <p className="text-muted-foreground text-sm">Add each item you plan to bring, including its weight and category (shelter, sleep, cooking, etc.).</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Add Worn Weight</h3>
+                  <p className="text-muted-foreground text-sm">Enter the weight of clothes and shoes you'll wear (not carried in your pack).</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Pack Analysis</h3>
+                  <p className="text-muted-foreground text-sm">See your total pack weight, base weight, and personalized recommendations for lighter packing.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Benefits of Using This Gear Weight Calculator</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">🎒 Base Weight Tracking</h3>
+                <p className="text-muted-foreground text-sm">Calculate your base weight (pack weight without consumables) to compare against ultralight benchmarks and track gear improvements.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">⚖️ Pack Weight Categories</h3>
+                <p className="text-muted-foreground text-sm">Instantly see if your setup qualifies as ultralight, lightweight, or traditional, with clear targets for improvement.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📊 Item-by-Item Breakdown</h3>
+                <p className="text-muted-foreground text-sm">Identify which items contribute most to your pack weight, helping you prioritize upgrades for maximum savings.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🏕️ Smart Recommendations</h3>
+                <p className="text-muted-foreground text-sm">Get personalized tips based on your gear list, including suggestions for the "big three" weight-saving opportunities.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Reference Table */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Pack Weight Classification Guide</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4">Category</th>
+                    <th className="text-left py-3 px-4">Base Weight</th>
+                    <th className="text-left py-3 px-4">Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">🏆 Ultralight</td>
+                    <td className="py-3 px-4">Under 4.5 kg (10 lbs)</td>
+                    <td className="py-3 px-4">Long-distance hiking, thru-hiking</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">✅ Lightweight</td>
+                    <td className="py-3 px-4">4.5-9 kg (10-20 lbs)</td>
+                    <td className="py-3 px-4">Weekend trips, backpacking</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">⚖️ Traditional</td>
+                    <td className="py-3 px-4">9-13.5 kg (20-30 lbs)</td>
+                    <td className="py-3 px-4">Car camping, short hikes</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">⚠️ Heavy</td>
+                    <td className="py-3 px-4">Over 13.5 kg (30+ lbs)</td>
+                    <td className="py-3 px-4">Expedition camping, winter trips</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Camping Gear Weight FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is base weight in backpacking?</h3>
+                <p className="text-muted-foreground text-sm">Base weight is your total pack weight minus consumables (food, water, fuel). It's the standard measurement for comparing gear setups because consumables vary by trip length.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What are the "big three" in ultralight backpacking?</h3>
+                <p className="text-muted-foreground text-sm">The big three are your shelter, sleep system (bag + pad), and backpack. These typically account for 60% of base weight, so upgrading them gives the biggest weight savings.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How much should my backpack weigh?</h3>
+                <p className="text-muted-foreground text-sm">A good rule is that total pack weight shouldn't exceed 20% of your body weight. For ultralight backpacking, aim for a base weight under 10 lbs (4.5 kg).</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What's the difference between pack weight and base weight?</h3>
+                <p className="text-muted-foreground text-sm">Pack weight includes everything you carry (gear + consumables). Base weight excludes consumables. Total weight adds worn weight (clothes, shoes on your body).</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How can I reduce my camping gear weight?</h3>
+                <p className="text-muted-foreground text-sm">Start with the big three: get a lighter tent, sleeping bag, and pack. Then eliminate duplicates, choose multi-use items, and cut unnecessary "just in case" gear.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Outdoor & Travel Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/cargo-volume-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Cargo Volume Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate shipping volume and chargeable weight for freight and logistics planning.</p>
+              </a>
+              <a href="/calculators/container-load-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Container Load Calculator</h3>
+                <p className="text-muted-foreground text-sm">Optimize container loading to maximize space utilization for shipping boxes.</p>
+              </a>
+              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
+                <p className="text-muted-foreground text-sm">Measure your environmental impact from travel, home energy, and lifestyle choices.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

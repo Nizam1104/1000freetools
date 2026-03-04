@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -78,7 +78,7 @@ export default function HashBruteForceTimeEstimatorPage() {
     // Security level
     let securityLevel = "";
     const log2Combinations = lengthNum * Math.log2(charsetSize);
-    
+
     if (log2Combinations < 40) {
       securityLevel = "🔴 Very Weak - Crackable instantly";
     } else if (log2Combinations < 60) {
@@ -227,15 +227,14 @@ export default function HashBruteForceTimeEstimatorPage() {
               <h3 className="text-lg font-semibold mb-4">Security Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.securityLevel.includes("Maximum") || result.securityLevel.includes("Very Strong")
+                  <div className={`p-4 rounded-lg text-center ${result.securityLevel.includes("Maximum") || result.securityLevel.includes("Very Strong")
                       ? "bg-green-100 dark:bg-green-900/20"
                       : result.securityLevel.includes("Strong")
-                      ? "bg-blue-100 dark:bg-blue-900/20"
-                      : result.securityLevel.includes("Moderate")
-                      ? "bg-amber-100 dark:bg-amber-900/20"
-                      : "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                        ? "bg-blue-100 dark:bg-blue-900/20"
+                        : result.securityLevel.includes("Moderate")
+                          ? "bg-amber-100 dark:bg-amber-900/20"
+                          : "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Security Level</p>
                     <p className="text-lg font-bold mt-1">{result.securityLevel}</p>
                   </div>

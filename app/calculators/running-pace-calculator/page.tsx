@@ -1,13 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Clock, Flag, Timer, Info } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar } from "recharts";
 
 interface PaceResult {
   pacePerMile: string;
@@ -25,7 +34,7 @@ interface SpeedResult {
 
 export default function RunningPaceCalculatorPage() {
   const [activeTab, setActiveTab] = useState<"pace" | "speed" | "time">("pace");
-  
+
   const [distance, setDistance] = useState<string>("");
   const [timeHours, setTimeHours] = useState<string>("");
   const [timeMinutes, setTimeMinutes] = useState<string>("");
@@ -33,7 +42,7 @@ export default function RunningPaceCalculatorPage() {
   const [paceMinutes, setPaceMinutes] = useState<string>("");
   const [paceSeconds, setPaceSeconds] = useState<string>("");
   const [distanceUnit, setDistanceUnit] = useState<"miles" | "km">("miles");
-  
+
   const [paceResult, setPaceResult] = useState<PaceResult | null>(null);
   const [speedResult, setSpeedResult] = useState<SpeedResult | null>(null);
   const [timeResult, setTimeResult] = useState<{ time: string; finishTime: string } | null>(null);
@@ -144,282 +153,524 @@ export default function RunningPaceCalculatorPage() {
     else calculateTime();
   }, [distance, timeHours, timeMinutes, timeSeconds, paceMinutes, paceSeconds, distanceUnit, activeTab]);
 
+  const racePaceData = paceResult
+    ? [
+        { distance: "5K", time: formatTime(paceResult.totalMinutes * (5 / (distanceUnit === "km" ? parseFloat(distance) : parseFloat(distance) * 1.60934))) },
+        { distance: "10K", time: formatTime(paceResult.totalMinutes * (10 / (distanceUnit === "km" ? parseFloat(distance) : parseFloat(distance) * 1.60934))) },
+        { distance: "Half", time: formatTime(paceResult.totalMinutes * (21.1 / (distanceUnit === "km" ? parseFloat(distance) : parseFloat(distance) * 1.60934))) },
+        { distance: "Full", time: formatTime(paceResult.totalMinutes * (42.2 / (distanceUnit === "km" ? parseFloat(distance) : parseFloat(distance) * 1.60934))) },
+      ]
+    : [];
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Running Pace Calculator – Calculate Your Running Speed & Finish Time</h1>
-          <p className="text-muted-foreground">
-            Calculate your running pace, speed, and estimated finish times with our comprehensive Running Pace Calculator. Perfect for runners training for 5K, 10K, half marathon, or marathon distances.
-          </p>
-        </div>
+    <div className="w-full max-w-5xl mx-auto space-y-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Running Pace Calculator</CardTitle>
+          <CardDescription>
+            Calculate your running pace, speed, and estimated finish times. Perfect for training and race planning for 5K, 10K, half marathon, and marathon distances.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)}>
+            <TabsList className="grid grid-cols-3 w-full">
+              <TabsTrigger value="pace">Calculate Pace</TabsTrigger>
+              <TabsTrigger value="speed">Calculate Speed</TabsTrigger>
+              <TabsTrigger value="time">Calculate Time</TabsTrigger>
+            </TabsList>
 
-        <div className="grid lg:grid-cols-3 gap-6 mb-6">
-          <Card className="lg:col-span-2">
-            <CardContent className="p-6 space-y-6">
-              <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)}>
-                <TabsList className="grid grid-cols-3 w-full">
-                  <TabsTrigger value="pace">Calculate Pace</TabsTrigger>
-                  <TabsTrigger value="speed">Calculate Speed</TabsTrigger>
-                  <TabsTrigger value="time">Calculate Time</TabsTrigger>
-                </TabsList>
-
-                <TabsContent value="pace" className="space-y-4 mt-4">
-                  <h3 className="text-lg font-semibold">Find Your Pace</h3>
-                  <div className="grid sm:grid-cols-4 gap-4">
-                    <div className="space-y-2 sm:col-span-2">
-                      <Label htmlFor="distance-p">Distance</Label>
-                      <div className="flex gap-2">
-                        <Input
-                          id="distance-p"
-                          type="number"
-                          placeholder="e.g., 5"
-                          value={distance}
-                          onChange={(e) => setDistance(e.target.value)}
-                          className="flex-1"
-                        />
-                        <Select value={distanceUnit} onValueChange={(v) => setDistanceUnit(v as "miles" | "km")}>
-                          <SelectTrigger className="w-24">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="miles">Miles</SelectItem>
-                            <SelectItem value="km">Km</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="hours">Hours</Label>
-                      <Input
-                        id="hours"
-                        type="number"
-                        placeholder="0"
-                        value={timeHours}
-                        onChange={(e) => setTimeHours(e.target.value)}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="minutes">Minutes</Label>
-                      <Input
-                        id="minutes"
-                        type="number"
-                        placeholder="e.g., 30"
-                        value={timeMinutes}
-                        onChange={(e) => setTimeMinutes(e.target.value)}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="seconds">Seconds</Label>
-                      <Input
-                        id="seconds"
-                        type="number"
-                        placeholder="0"
-                        value={timeSeconds}
-                        onChange={(e) => setTimeSeconds(e.target.value)}
-                      />
-                    </div>
+            <TabsContent value="pace" className="space-y-4 mt-4">
+              <h3 className="text-lg font-semibold">Find Your Pace</h3>
+              <div className="grid sm:grid-cols-4 gap-4">
+                <div className="space-y-2 sm:col-span-2">
+                  <Label htmlFor="distance-p">Distance</Label>
+                  <div className="flex gap-2">
+                    <Input
+                      id="distance-p"
+                      type="number"
+                      placeholder="e.g., 5"
+                      value={distance}
+                      onChange={(e) => setDistance(e.target.value)}
+                      className="flex-1"
+                    />
+                    <Select value={distanceUnit} onValueChange={(v) => setDistanceUnit(v as "miles" | "km")}>
+                      <SelectTrigger className="w-24">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="miles">Miles</SelectItem>
+                        <SelectItem value="km">Km</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
-                </TabsContent>
-
-                <TabsContent value="speed" className="space-y-4 mt-4">
-                  <h3 className="text-lg font-semibold">Find Your Speed</h3>
-                  <div className="grid sm:grid-cols-4 gap-4">
-                    <div className="space-y-2 sm:col-span-2">
-                      <Label htmlFor="distance-s">Distance</Label>
-                      <div className="flex gap-2">
-                        <Input
-                          id="distance-s"
-                          type="number"
-                          placeholder="e.g., 10"
-                          value={distance}
-                          onChange={(e) => setDistance(e.target.value)}
-                          className="flex-1"
-                        />
-                        <Select value={distanceUnit} onValueChange={(v) => setDistanceUnit(v as "miles" | "km")}>
-                          <SelectTrigger className="w-24">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="miles">Miles</SelectItem>
-                            <SelectItem value="km">Km</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="pace-mins">Pace (min)</Label>
-                      <Input
-                        id="pace-mins"
-                        type="number"
-                        placeholder="e.g., 8"
-                        value={paceMinutes}
-                        onChange={(e) => setPaceMinutes(e.target.value)}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="pace-secs">Pace (sec)</Label>
-                      <Input
-                        id="pace-secs"
-                        type="number"
-                        placeholder="e.g., 30"
-                        value={paceSeconds}
-                        onChange={(e) => setPaceSeconds(e.target.value)}
-                      />
-                    </div>
-                  </div>
-                </TabsContent>
-
-                <TabsContent value="time" className="space-y-4 mt-4">
-                  <h3 className="text-lg font-semibold">Find Your Finish Time</h3>
-                  <div className="grid sm:grid-cols-4 gap-4">
-                    <div className="space-y-2 sm:col-span-2">
-                      <Label htmlFor="distance-t">Distance</Label>
-                      <div className="flex gap-2">
-                        <Input
-                          id="distance-t"
-                          type="number"
-                          placeholder="e.g., 26.2"
-                          value={distance}
-                          onChange={(e) => setDistance(e.target.value)}
-                          className="flex-1"
-                        />
-                        <Select value={distanceUnit} onValueChange={(v) => setDistanceUnit(v as "miles" | "km")}>
-                          <SelectTrigger className="w-24">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="miles">Miles</SelectItem>
-                            <SelectItem value="km">Km</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="pace-mins-t">Pace (min)</Label>
-                      <Input
-                        id="pace-mins-t"
-                        type="number"
-                        placeholder="e.g., 9"
-                        value={paceMinutes}
-                        onChange={(e) => setPaceMinutes(e.target.value)}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="pace-secs-t">Pace (sec)</Label>
-                      <Input
-                        id="pace-secs-t"
-                        type="number"
-                        placeholder="e.g., 0"
-                        value={paceSeconds}
-                        onChange={(e) => setPaceSeconds(e.target.value)}
-                      />
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
-
-              <div className="flex gap-2 pt-4 border-t">
-                <Button onClick={reset} variant="outline" className="flex-1">
-                  Reset
-                </Button>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="hours">Hours</Label>
+                  <Input
+                    id="hours"
+                    type="number"
+                    placeholder="0"
+                    value={timeHours}
+                    onChange={(e) => setTimeHours(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="minutes">Minutes</Label>
+                  <Input
+                    id="minutes"
+                    type="number"
+                    placeholder="e.g., 30"
+                    value={timeMinutes}
+                    onChange={(e) => setTimeMinutes(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="seconds">Seconds</Label>
+                  <Input
+                    id="seconds"
+                    type="number"
+                    placeholder="0"
+                    value={timeSeconds}
+                    onChange={(e) => setTimeSeconds(e.target.value)}
+                  />
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </TabsContent>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Results</h3>
-              {activeTab === "pace" && paceResult ? (
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <p className="text-xs text-muted-foreground">Pace / Mile</p>
-                      <p className="text-lg font-bold text-primary">{paceResult.pacePerMile}</p>
-                    </div>
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <p className="text-xs text-muted-foreground">Pace / Km</p>
-                      <p className="text-lg font-bold text-primary">{paceResult.pacePerKm}</p>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3 bg-muted rounded-lg">
-                      <p className="text-xs text-muted-foreground">Speed (mph)</p>
-                      <p className="text-lg font-bold">{paceResult.speedMph}</p>
-                    </div>
-                    <div className="p-3 bg-muted rounded-lg">
-                      <p className="text-xs text-muted-foreground">Speed (km/h)</p>
-                      <p className="text-lg font-bold">{paceResult.speedKmh}</p>
-                    </div>
-                  </div>
-                </div>
-              ) : activeTab === "speed" && speedResult ? (
-                <div className="space-y-4">
-                  <div className="p-4 bg-primary/10 rounded-lg">
-                    <p className="text-sm text-muted-foreground">Time for {speedResult.distance} {distanceUnit}</p>
-                    <p className="text-3xl font-bold text-primary">{speedResult.time}</p>
-                  </div>
-                  <div className="p-3 bg-muted rounded-lg">
-                    <p className="text-sm text-muted-foreground">Pace</p>
-                    <p className="text-xl font-bold">{speedResult.pace}</p>
+            <TabsContent value="speed" className="space-y-4 mt-4">
+              <h3 className="text-lg font-semibold">Find Your Speed</h3>
+              <div className="grid sm:grid-cols-4 gap-4">
+                <div className="space-y-2 sm:col-span-2">
+                  <Label htmlFor="distance-s">Distance</Label>
+                  <div className="flex gap-2">
+                    <Input
+                      id="distance-s"
+                      type="number"
+                      placeholder="e.g., 10"
+                      value={distance}
+                      onChange={(e) => setDistance(e.target.value)}
+                      className="flex-1"
+                    />
+                    <Select value={distanceUnit} onValueChange={(v) => setDistanceUnit(v as "miles" | "km")}>
+                      <SelectTrigger className="w-24">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="miles">Miles</SelectItem>
+                        <SelectItem value="km">Km</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
-              ) : activeTab === "time" && timeResult ? (
-                <div className="space-y-4">
-                  <div className="p-4 bg-primary/10 rounded-lg">
-                    <p className="text-sm text-muted-foreground">Finish Time</p>
-                    <p className="text-3xl font-bold text-primary">{timeResult.time}</p>
-                  </div>
-                  <div className="p-3 bg-muted rounded-lg">
-                    <p className="text-sm text-muted-foreground">Finish at (starting now)</p>
-                    <p className="text-xl font-bold">{timeResult.finishTime}</p>
-                  </div>
+                <div className="space-y-2">
+                  <Label htmlFor="pace-mins">Pace (min)</Label>
+                  <Input
+                    id="pace-mins"
+                    type="number"
+                    placeholder="e.g., 8"
+                    value={paceMinutes}
+                    onChange={(e) => setPaceMinutes(e.target.value)}
+                  />
                 </div>
-              ) : (
-                <div className="text-center py-8 text-muted-foreground">
-                  <Timer className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                  <p>Enter values to calculate</p>
+                <div className="space-y-2">
+                  <Label htmlFor="pace-secs">Pace (sec)</Label>
+                  <Input
+                    id="pace-secs"
+                    type="number"
+                    placeholder="e.g., 30"
+                    value={paceSeconds}
+                    onChange={(e) => setPaceSeconds(e.target.value)}
+                  />
                 </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
+              </div>
+            </TabsContent>
 
+            <TabsContent value="time" className="space-y-4 mt-4">
+              <h3 className="text-lg font-semibold">Find Your Finish Time</h3>
+              <div className="grid sm:grid-cols-4 gap-4">
+                <div className="space-y-2 sm:col-span-2">
+                  <Label htmlFor="distance-t">Distance</Label>
+                  <div className="flex gap-2">
+                    <Input
+                      id="distance-t"
+                      type="number"
+                      placeholder="e.g., 26.2"
+                      value={distance}
+                      onChange={(e) => setDistance(e.target.value)}
+                      className="flex-1"
+                    />
+                    <Select value={distanceUnit} onValueChange={(v) => setDistanceUnit(v as "miles" | "km")}>
+                      <SelectTrigger className="w-24">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="miles">Miles</SelectItem>
+                        <SelectItem value="km">Km</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="pace-mins-t">Pace (min)</Label>
+                  <Input
+                    id="pace-mins-t"
+                    type="number"
+                    placeholder="e.g., 9"
+                    value={paceMinutes}
+                    onChange={(e) => setPaceMinutes(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="pace-secs-t">Pace (sec)</Label>
+                  <Input
+                    id="pace-secs-t"
+                    type="number"
+                    placeholder="e.g., 0"
+                    value={paceSeconds}
+                    onChange={(e) => setPaceSeconds(e.target.value)}
+                  />
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
+
+          <div className="flex gap-2 pt-4 border-t">
+            <Button onClick={reset} variant="outline" className="flex-1">
+              Reset
+            </Button>
+          </div>
+
+          {activeTab === "pace" && paceResult && (
+            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-4 bg-muted rounded-lg">
+                <p className="text-xs text-muted-foreground">Pace / Mile</p>
+                <p className="text-2xl font-bold">{paceResult.pacePerMile}</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg">
+                <p className="text-xs text-muted-foreground">Pace / Km</p>
+                <p className="text-2xl font-bold">{paceResult.pacePerKm}</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg">
+                <p className="text-xs text-muted-foreground">Speed (mph)</p>
+                <p className="text-2xl font-bold">{paceResult.speedMph}</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg">
+                <p className="text-xs text-muted-foreground">Speed (km/h)</p>
+                <p className="text-2xl font-bold">{paceResult.speedKmh}</p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "speed" && speedResult && (
+            <div className="mt-6 grid sm:grid-cols-2 gap-4">
+              <div className="p-4 bg-primary/10 rounded-lg">
+                <p className="text-sm text-muted-foreground">Time for {speedResult.distance} {distanceUnit}</p>
+                <p className="text-3xl font-bold text-primary">{speedResult.time}</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg">
+                <p className="text-sm text-muted-foreground">Pace</p>
+                <p className="text-2xl font-bold">{speedResult.pace}</p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "time" && timeResult && (
+            <div className="mt-6 grid sm:grid-cols-2 gap-4">
+              <div className="p-4 bg-primary/10 rounded-lg">
+                <p className="text-sm text-muted-foreground">Finish Time</p>
+                <p className="text-3xl font-bold text-primary">{timeResult.time}</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg">
+                <p className="text-sm text-muted-foreground">Finish at (starting now)</p>
+                <p className="text-2xl font-bold">{timeResult.finishTime}</p>
+              </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {paceResult && racePaceData.length > 0 && (
         <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              <Flag className="h-5 w-5" />
-              Common Race Distances
-            </h3>
-            <div className="grid md:grid-cols-3 gap-4 text-sm">
-              <div className="p-3 bg-muted rounded-lg">
-                <p className="font-semibold">5K</p>
-                <p className="text-muted-foreground">3.1 miles / 5 km</p>
-              </div>
-              <div className="p-3 bg-muted rounded-lg">
-                <p className="font-semibold">10K</p>
-                <p className="text-muted-foreground">6.2 miles / 10 km</p>
-              </div>
-              <div className="p-3 bg-muted rounded-lg">
-                <p className="font-semibold">Half Marathon</p>
-                <p className="text-muted-foreground">13.1 miles / 21.1 km</p>
-              </div>
-              <div className="p-3 bg-muted rounded-lg">
-                <p className="font-semibold">Marathon</p>
-                <p className="text-muted-foreground">26.2 miles / 42.2 km</p>
-              </div>
-              <div className="p-3 bg-muted rounded-lg">
-                <p className="font-semibold">50K Ultra</p>
-                <p className="text-muted-foreground">31.1 miles / 50 km</p>
-              </div>
-              <div className="p-3 bg-muted rounded-lg">
-                <p className="font-semibold">50 Miler</p>
-                <p className="text-muted-foreground">50 miles / 80.5 km</p>
-              </div>
+          <CardHeader>
+            <CardTitle>Projected Race Times</CardTitle>
+            <CardDescription>Estimated finish times at your current pace</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="h-64">
+              <ChartContainer
+                config={{
+                  time: {
+                    label: "Time",
+                    color: "hsl(var(--chart-1))",
+                  },
+                }}
+              >
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={racePaceData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                    <XAxis dataKey="distance" tick={{ fontSize: 12 }} />
+                    <YAxis tick={{ fontSize: 12 }} />
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <Bar dataKey="time" fill="hsl(var(--chart-1))" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </ChartContainer>
             </div>
           </CardContent>
         </Card>
-      </div>
+      )}
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Understanding Running Pace</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">
+            Running pace is the time it takes to cover a specific distance, usually expressed as minutes per mile or minutes per kilometer. Unlike speed (which measures distance per time), pace tells you how long each unit of distance takes - more intuitive for runners planning races.
+          </p>
+
+          <div className="rounded-lg border p-4 bg-muted">
+            <h4 className="font-semibold text-sm mb-2">Pace vs Speed</h4>
+            <div className="grid sm:grid-cols-2 gap-4 text-xs">
+              <div>
+                <p className="font-semibold mb-1">Pace (min/mile or min/km)</p>
+                <p className="text-muted-foreground">Lower is faster. An 8:00/mile pace is quicker than a 10:00/mile pace. Used by runners for training and racing.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Speed (mph or km/h)</p>
+                <p className="text-muted-foreground">Higher is faster. 7.5 mph is quicker than 6 mph. Common in fitness apps and treadmills.</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-sm text-muted-foreground">
+            A good running pace depends on your fitness level, age, and the distance you are running. Sprinting pace might be 5:00/km for a fit adult, while marathon pace could be 6:30/km. Beginners often start around 8-10 min/km (13-16 min/mile).
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Common Race Distances</CardTitle>
+          <CardDescription>Standard running race distances</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Race</TableHead>
+                <TableHead>Distance (Miles)</TableHead>
+                <TableHead>Distance (Kilometers)</TableHead>
+                <TableHead>Typical Use</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">5K</TableCell>
+                <TableCell className="font-mono text-xs">3.1 mi</TableCell>
+                <TableCell className="font-mono text-xs">5 km</TableCell>
+                <TableCell className="text-xs">Beginner races, speed work</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">10K</TableCell>
+                <TableCell className="font-mono text-xs">6.2 mi</TableCell>
+                <TableCell className="font-mono text-xs">10 km</TableCell>
+                <TableCell className="text-xs">Intermediate distance, endurance building</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Half Marathon</TableCell>
+                <TableCell className="font-mono text-xs">13.1 mi</TableCell>
+                <TableCell className="font-mono text-xs">21.1 km</TableCell>
+                <TableCell className="text-xs">Popular goal race, requires training</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Marathon</TableCell>
+                <TableCell className="font-mono text-xs">26.2 mi</TableCell>
+                <TableCell className="font-mono text-xs">42.2 km</TableCell>
+                <TableCell className="text-xs">Ultimate endurance challenge</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">50K Ultra</TableCell>
+                <TableCell className="font-mono text-xs">31.1 mi</TableCell>
+                <TableCell className="font-mono text-xs">50 km</TableCell>
+                <TableCell className="text-xs">Entry-level ultramarathon</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">50 Miler</TableCell>
+                <TableCell className="font-mono text-xs">50 mi</TableCell>
+                <TableCell className="font-mono text-xs">80.5 km</TableCell>
+                <TableCell className="text-xs">Advanced ultramarathon</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">100 Miler</TableCell>
+                <TableCell className="font-mono text-xs">100 mi</TableCell>
+                <TableCell className="font-mono text-xs">160.9 km</TableCell>
+                <TableCell className="text-xs">Elite ultramarathon distance</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Pace Guidelines by Runner Level</CardTitle>
+          <CardDescription>Average paces for different experience levels (per mile)</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Level</TableHead>
+                <TableHead>5K Pace</TableHead>
+                <TableHead>10K Pace</TableHead>
+                <TableHead>Half Marathon Pace</TableHead>
+                <TableHead>Marathon Pace</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">Beginner</TableCell>
+                <TableCell className="font-mono text-xs">11:00-13:00</TableCell>
+                <TableCell className="font-mono text-xs">11:30-13:30</TableCell>
+                <TableCell className="font-mono text-xs">12:00-14:00</TableCell>
+                <TableCell className="font-mono text-xs">12:30-14:30</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Intermediate</TableCell>
+                <TableCell className="font-mono text-xs">9:00-11:00</TableCell>
+                <TableCell className="font-mono text-xs">9:30-11:30</TableCell>
+                <TableCell className="font-mono text-xs">10:00-12:00</TableCell>
+                <TableCell className="font-mono text-xs">10:30-12:30</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Advanced</TableCell>
+                <TableCell className="font-mono text-xs">7:00-9:00</TableCell>
+                <TableCell className="font-mono text-xs">7:30-9:30</TableCell>
+                <TableCell className="font-mono text-xs">8:00-10:00</TableCell>
+                <TableCell className="font-mono text-xs">8:30-10:30</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Elite</TableCell>
+                <TableCell className="font-mono text-xs">&lt;6:00</TableCell>
+                <TableCell className="font-mono text-xs">&lt;6:30</TableCell>
+                <TableCell className="font-mono text-xs">&lt;7:00</TableCell>
+                <TableCell className="font-mono text-xs">&lt;7:30</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <p className="text-xs text-muted-foreground mt-3">
+            Paces are per mile. Women's paces average 1-2 minutes slower per mile than men's at equivalent levels. Age also affects pace - runners typically peak in their 20s-30s and gradually slow with age.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Training Pace Zones</CardTitle>
+          <CardDescription>Different paces for different training purposes</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Easy/Recovery Pace</h4>
+              <p className="text-xs text-muted-foreground mb-2">
+                <span className="font-mono bg-muted px-2 py-1 rounded">2-3 min/mile slower than 5K pace</span>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Comfortable conversational pace. Should feel easy - you can speak in full sentences. Builds aerobic base and aids recovery between hard workouts.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Tempo/Threshold Pace</h4>
+              <p className="text-xs text-muted-foreground mb-2">
+                <span className="font-mono bg-muted px-2 py-1 rounded">25-30 sec/mile slower than 5K pace</span>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                "Comfortably hard" - you can speak short phrases but not full sentences. Improves lactate threshold, allowing you to sustain faster paces longer.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Interval/VO2 Max Pace</h4>
+              <p className="text-xs text-muted-foreground mb-2">
+                <span className="font-mono bg-muted px-2 py-1 rounded">Same as 3K-5K race pace</span>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Hard effort - can only speak a few words. Typically done in repeats of 400m to 1600m with rest intervals. Increases maximum oxygen uptake.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Marathon Pace</h4>
+              <p className="text-xs text-muted-foreground mb-2">
+                <span className="font-mono bg-muted px-2 py-1 rounded">15-25 sec/mile slower than tempo</span>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Goal marathon race pace. Should feel steady but sustainable for hours. Practice this pace in long runs before race day.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is a good 5K pace for beginners?</h4>
+            <p className="text-xs text-muted-foreground">
+              Most beginners run 5K at 11-13 minutes per mile (6:50-8:00 min/km). If you are new to running, aim to finish rather than hit a specific time. Many Couch to 5K graduates finish in 35-45 minutes. With training, you can gradually improve to sub-30 minutes.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I improve my running pace?</h4>
+            <p className="text-xs text-muted-foreground">
+              Mix easy runs with speed work. Add one interval session per week (like 6 × 400m at faster than 5K pace). Include tempo runs at threshold pace. Most importantly, run most miles (80%) at easy pace - this builds the aerobic base that makes faster running possible.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is my pace slower on hills?</h4>
+            <p className="text-xs text-muted-foreground">
+              Gravity works against you uphill. A 5% grade can slow your pace by 30-60 seconds per mile even at the same effort. Focus on effort, not pace, on hills. Shorten your stride and increase cadence. Downhill running is easier on pace but harder on your legs - control your descent.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Should I use a running watch or phone app?</h4>
+            <p className="text-xs text-muted-foreground">
+              GPS watches are more accurate than phones for pace tracking, especially in areas with tree cover or buildings. But don't become a slave to the data. Some runs should be by feel. Try running without watching your pace occasionally - it builds better intuition about effort levels.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How accurate is this pace calculator?</h4>
+            <p className="text-xs text-muted-foreground">
+              The calculator gives exact mathematical projections based on your input. Real race times vary due to fitness, weather, course elevation, and race-day conditions. Use it as a guide, not a guarantee. A well-trained runner might run slightly faster than projected; beginners might need more conservative estimates.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="/calculators/marathon-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Marathon Pace Calculator</p>
+              <p className="text-xs text-muted-foreground">Specialized marathon time planning</p>
+            </a>
+            <a href="/calculators/running-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Split Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate lap and mile splits</p>
+            </a>
+            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">TDEE Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate calorie needs for runners</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

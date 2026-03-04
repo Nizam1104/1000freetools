@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -167,11 +167,10 @@ export default function JsonDiffPage() {
       <div key={item.key} className={`rounded-md border p-3 ${bgColor}`} style={{ marginLeft: depth * 16 }}>
         <div className="flex items-center gap-2">
           <span className="font-mono text-sm font-medium">{item.key}</span>
-          <span className={`text-xs px-2 py-0.5 rounded-full ${
-            item.type === "added" ? "bg-green-500 text-white" :
-            item.type === "removed" ? "bg-red-500 text-white" :
-            "bg-yellow-500 text-white"
-          }`}>
+          <span className={`text-xs px-2 py-0.5 rounded-full ${item.type === "added" ? "bg-green-500 text-white" :
+              item.type === "removed" ? "bg-red-500 text-white" :
+                "bg-yellow-500 text-white"
+            }`}>
             {typeLabel}
           </span>
         </div>

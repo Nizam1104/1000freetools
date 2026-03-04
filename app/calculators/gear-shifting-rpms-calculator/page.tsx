@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -270,6 +270,124 @@ export default function GearShiftingRPMsCalculatorPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* How It Works Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">How to Calculate Gear Shifting RPMs</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Your Gear Ratios</h3>
+                <p className="text-sm text-muted-foreground">Input your transmission gear ratios as comma-separated values (e.g., 3.5, 2.0, 1.4, 1.0, 0.8).</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Add Vehicle Specifications</h3>
+                <p className="text-sm text-muted-foreground">Enter final drive ratio, tire diameter, and engine redline RPM for accurate calculations.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">View Shift Points</h3>
+                <p className="text-sm text-muted-foreground">Get optimal RPM and speed for each gear change based on efficiency or performance goals.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Key Features of This Gear Shifting Calculator</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Multi-Gear Support
+                </h3>
+                <p className="text-sm text-muted-foreground">Calculate shift points for any number of gears from 3-speed to 10-speed transmissions.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Efficiency vs Performance Modes
+                </h3>
+                <p className="text-sm text-muted-foreground">See optimal shift RPMs for fuel economy (85% redline) or maximum acceleration (near redline).</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Speed at Redline Display
+                </h3>
+                <p className="text-sm text-muted-foreground">Know the maximum speed achievable in each gear before hitting the rev limiter.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Metric and Imperial Units
+                </h3>
+                <p className="text-sm text-muted-foreground">Support for both inches and millimeters for tire diameter measurements.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Actionable Recommendations
+                </h3>
+                <p className="text-sm text-muted-foreground">Get personalized driving tips based on your vehicle specifications and gear spread.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions About Gear Shifting</h3>
+            <div className="space-y-4">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">What RPM should I shift at for best fuel economy?</h3>
+                <p className="text-sm text-muted-foreground">For maximum fuel efficiency, shift between 2000-3000 RPM in most vehicles. This keeps the engine in its peak efficiency range while minimizing fuel consumption.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Is it bad to shift at high RPM?</h3>
+                <p className="text-sm text-muted-foreground">Occasional high-RPM shifting is fine in modern engines. However, frequent redline shifting increases wear. Performance driving is best reserved for track use or occasional spirited driving.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">How does tire size affect gear ratios?</h3>
+                <p className="text-sm text-muted-foreground">Larger tires effectively raise all gear ratios, reducing engine RPM at a given speed. Smaller tires lower the effective gearing, increasing RPM. This calculator accounts for tire diameter in all calculations.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">What is the purpose of overdrive gears?</h3>
+                <p className="text-sm text-muted-foreground">Overdrive gears (ratio less than 1:1) reduce engine RPM at highway speeds, improving fuel economy and reducing engine wear. They are not meant for acceleration but for efficient cruising.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">How do I calculate my final drive ratio?</h3>
+                <p className="text-sm text-muted-foreground">Final drive ratio is the number of driveshaft rotations per wheel rotation. Check your vehicle specifications or count ring gear and pinion teeth: Final Drive = Ring Gear Teeth / Pinion Teeth.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Tools Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Related Automotive Calculators</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/gear-ratio-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Gear Ratio Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate gear ratios and output speeds for any gear combination.</p>
+              </a>
+              <a href="/calculators/rpm-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">RPM Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate RPM for pulleys, gears, and rotating machinery.</p>
+              </a>
+              <a href="/calculators/fuel-cost-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Fuel Cost Calculator</h3>
+                <p className="text-sm text-muted-foreground">Estimate fuel expenses for trips based on distance and vehicle efficiency.</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

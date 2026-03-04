@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -261,7 +261,7 @@ export default function GoldenRatioLayoutGeneratorPage() {
                       {result.typographyScale.map((size, i) => (
                         <div key={i} className="flex justify-between items-center">
                           <span className="text-sm text-muted-foreground">
-                            {i === 2 ? "Base" : i > 2 ? `H${6-i}` : "Small"}
+                            {i === 2 ? "Base" : i > 2 ? `H${6 - i}` : "Small"}
                           </span>
                           <span className="font-mono">{size}px</span>
                         </div>

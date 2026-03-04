@@ -100,6 +100,208 @@ export default function MirrorEquationCalculator() {
               </div>
             )}
           </div>
+
+          <div className="mt-6 pt-6 border-t">
+            <h4 className="font-semibold text-sm mb-3">Mirror Equation</h4>
+            <div className="p-3 bg-muted/50 rounded font-mono text-sm text-center">1/f = 1/u + 1/v</div>
+            <p className="text-xs text-muted-foreground mt-2 text-center">f = focal length, u = object distance, v = image distance</p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>How to Use This Mirror Calculator</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">1</div>
+              <div>
+                <p className="font-medium text-foreground">Choose what to solve for</p>
+                <p>Select focal length (f), object distance (u), or image distance (v) from the dropdown.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">2</div>
+              <div>
+                <p className="font-medium text-foreground">Enter the known values</p>
+                <p>Fill in the two known quantities. Use positive values for real objects and negative for virtual.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">3</div>
+              <div>
+                <p className="font-medium text-foreground">Calculate and interpret results</p>
+                <p>The calculator shows the unknown value and magnification. Negative image distance means virtual image.</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Sign Convention for Spherical Mirrors</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2 px-2 font-semibold">Quantity</th>
+                  <th className="text-left py-2 px-2 font-semibold">Concave Mirror</th>
+                  <th className="text-left py-2 px-2 font-semibold">Convex Mirror</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                <tr className="border-b">
+                  <td className="py-2 px-2">Focal length (f)</td>
+                  <td className="py-2 px-2">Positive (+)</td>
+                  <td className="py-2 px-2">Negative (−)</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-2">Object distance (u)</td>
+                  <td className="py-2 px-2">Always positive (+)</td>
+                  <td className="py-2 px-2">Always positive (+)</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-2">Image distance (v)</td>
+                  <td className="py-2 px-2">+ for real, − for virtual</td>
+                  <td className="py-2 px-2">Always negative (−)</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-2">Magnification (m)</td>
+                  <td className="py-2 px-2">− for inverted, + for upright</td>
+                  <td className="py-2 px-2">Always positive (+)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            Note: All distances are measured from the pole (center) of the mirror along the principal axis.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Image Characteristics by Mirror Type</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h4 className="font-medium text-sm mb-2">Concave Mirror (Converging)</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-2 px-2 font-semibold">Object Position</th>
+                    <th className="text-left py-2 px-2 font-semibold">Image Type</th>
+                    <th className="text-left py-2 px-2 font-semibold">Orientation</th>
+                    <th className="text-left py-2 px-2 font-semibold">Size</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-2 px-2">Beyond C (2f)</td>
+                    <td className="py-2 px-2">Real</td>
+                    <td className="py-2 px-2">Inverted</td>
+                    <td className="py-2 px-2">Diminished</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-2">At C (2f)</td>
+                    <td className="py-2 px-2">Real</td>
+                    <td className="py-2 px-2">Inverted</td>
+                    <td className="py-2 px-2">Same size</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-2">Between C and F</td>
+                    <td className="py-2 px-2">Real</td>
+                    <td className="py-2 px-2">Inverted</td>
+                    <td className="py-2 px-2">Magnified</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-2">At F</td>
+                    <td className="py-2 px-2">At infinity</td>
+                    <td className="py-2 px-2">—</td>
+                    <td className="py-2 px-2">—</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-2">Between F and pole</td>
+                    <td className="py-2 px-2">Virtual</td>
+                    <td className="py-2 px-2">Upright</td>
+                    <td className="py-2 px-2">Magnified</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">Convex Mirror (Diverging)</h4>
+            <p className="text-xs text-muted-foreground">
+              Convex mirrors always produce virtual, upright, diminished images regardless of object position. This is why they're used in rearview mirrors and security applications—they provide a wide field of view.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h4 className="font-medium text-sm mb-2">What's the difference between concave and convex mirrors?</h4>
+            <p className="text-xs text-muted-foreground">
+              Concave mirrors curve inward (like a cave) and converge light rays. They can form real or virtual images. Convex mirrors curve outward and diverge light rays. They always form virtual, upright, diminished images.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">When is an image real vs virtual?</h4>
+            <p className="text-xs text-muted-foreground">
+              Real images form where light rays actually converge—they can be projected on a screen. Virtual images appear where rays seem to come from—they can't be projected. For mirrors: positive v = real, negative v = virtual.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">What does magnification tell me?</h4>
+            <p className="text-xs text-muted-foreground">
+              Magnification (m) = image height / object height = -v/u. If |m| &gt; 1, the image is magnified. If |m| &lt; 1, it's diminished. Negative m means inverted image; positive means upright.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">How is focal length related to radius of curvature?</h4>
+            <p className="text-xs text-muted-foreground">
+              For spherical mirrors: f = R/2. The focal length is half the radius of curvature. This relationship holds for both concave and convex mirrors (with appropriate sign conventions).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">Why do convex mirrors make things look smaller?</h4>
+            <p className="text-xs text-muted-foreground">
+              Convex mirrors diverge light rays, making objects appear smaller and farther away than they actually are. This trade-off gives a wider field of view—useful for seeing more area in rearview and security mirrors.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <a href="/calculators/lens-equation-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Lens Equation Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate lens focal length and image position</p>
+            </a>
+            <a href="/calculators/magnification-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Magnification Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate image magnification</p>
+            </a>
+            <a href="/calculators/snell-law-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Snell's Law Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate refraction angles</p>
+            </a>
+          </div>
         </CardContent>
       </Card>
     </div>

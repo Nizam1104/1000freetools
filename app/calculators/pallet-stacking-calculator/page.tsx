@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -287,11 +287,10 @@ export default function PalletStackingCalculatorPage() {
                     <h4 className="font-semibold mb-2 text-sm">Stacking Patterns</h4>
                     <div className="space-y-2">
                       {result.patterns.map((pattern, i) => (
-                        <div key={i} className={`p-3 rounded-lg ${
-                          pattern.boxesPerLayer === result.boxesPerLayer
+                        <div key={i} className={`p-3 rounded-lg ${pattern.boxesPerLayer === result.boxesPerLayer
                             ? "bg-primary/10 border border-primary"
                             : "bg-muted/50"
-                        }`}>
+                          }`}>
                           <div className="flex justify-between">
                             <span className="font-medium">{pattern.name}</span>
                             <span className="font-bold">{pattern.boxesPerLayer} boxes/layer</span>
@@ -348,6 +347,120 @@ export default function PalletStackingCalculatorPage() {
                   <strong>Tip:</strong> Always check carrier-specific pallet requirements
                   before shipping. Some have different height and weight restrictions.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">How to Calculate Pallet Stacking Capacity</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                  <h3 className="font-semibold mb-2">Enter Box Dimensions</h3>
+                  <p className="text-sm text-muted-foreground">Input the length, width, height, and weight of your boxes.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                  <h3 className="font-semibold mb-2">Select Pallet Size</h3>
+                  <p className="text-sm text-muted-foreground">Choose from standard, euro, US, or half pallet sizes with preset dimensions.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                  <h3 className="font-semibold mb-2">Get Stacking Results</h3>
+                  <p className="text-sm text-muted-foreground">View total boxes per pallet, layers, weight, and utilization rate with recommendations.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Key Features of This Pallet Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Multiple Stacking Patterns
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Compare standard, rotated, and mixed patterns to find the optimal box arrangement for your pallet.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Weight Limit Calculations
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Automatically calculates maximum layers based on both height restrictions and weight capacity limits.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Utilization Rate Analysis
+                  </h3>
+                  <p className="text-sm text-muted-foreground">See what percentage of pallet surface area is used and get alerts for inefficient box sizes.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Standard Pallet Presets
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Quick-select from common pallet sizes including standard (120×100cm), euro, and US (48×40&quot;).</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Shipping Recommendations
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Get practical tips for weight distribution, securing loads, and meeting carrier requirements.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Frequently Asked Questions About Pallet Stacking</h2>
+              <div className="space-y-4">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How do you calculate boxes per pallet?</h3>
+                  <p className="text-sm text-muted-foreground">Divide pallet length by box length and pallet width by box width, then multiply the results. For example: a 120×100cm pallet with 40×30cm boxes fits 3×3=9 boxes per layer. Multiply by the number of layers based on height limits.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What is the maximum pallet stacking height?</h3>
+                  <p className="text-sm text-muted-foreground">Standard shipping pallets are typically limited to 180cm (72 inches) total height including the pallet itself. Some carriers allow up to 200cm. Always check with your specific freight carrier for their height restrictions.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How much weight can a standard pallet hold?</h3>
+                  <p className="text-sm text-muted-foreground">Standard wooden pallets can typically support 1,000-1,500kg (2,200-3,300 lbs) when properly loaded. Heavy-duty pallets can hold up to 2,500kg. The actual limit depends on pallet construction and whether it&apos;s static or moving.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What is the best pattern for stacking boxes on a pallet?</h3>
+                  <p className="text-sm text-muted-foreground">Interlocking or pinwheel patterns provide the best stability by alternating box direction between layers. This prevents vertical columns that can collapse. Edge alignment should keep boxes within the pallet perimeter to prevent damage.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How do you calculate pallet utilization?</h3>
+                  <p className="text-sm text-muted-foreground">Divide the total area covered by boxes on one layer by the pallet surface area, then multiply by 100. Good utilization is 80% or higher. Low utilization (under 70%) means you may want to consider different box sizes.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Related Logistics and Shipping Tools</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/container-load-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Container Load Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate how many boxes fit in shipping containers for ocean freight planning.</p>
+                </a>
+                <a href="/calculators/dimensional-weight-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Dimensional Weight Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate DIM weight for shipping costs based on package dimensions.</p>
+                </a>
+                <a href="/calculators/volumetric-weight-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Volumetric Weight Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Convert package volume to weight for courier and freight pricing.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

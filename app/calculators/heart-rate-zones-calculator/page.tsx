@@ -114,6 +114,132 @@ export default function HeartRateZonesCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <Card className="mt-8">
+        <CardHeader>
+          <CardTitle>How to Calculate Heart Rate Training Zones</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Your Age</h3>
+              <p className="text-sm text-muted-foreground">Input your current age to calculate your estimated maximum heart rate.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Get Your Max Heart Rate</h3>
+              <p className="text-sm text-muted-foreground">The calculator uses the standard formula (220 - age) to estimate your maximum heart rate.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">View Your Training Zones</h3>
+              <p className="text-sm text-muted-foreground">See all five heart rate zones with target BPM ranges and training benefits for each.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Features Section */}
+      <Card className="mt-8">
+        <CardHeader>
+          <CardTitle>Why Use This Heart Rate Zones Calculator?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Five Complete Training Zones
+              </h3>
+              <p className="text-sm text-muted-foreground">From Zone 1 recovery to Zone 5 maximum effort, get target ranges for all training intensities.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Zone Descriptions Included
+              </h3>
+              <p className="text-sm text-muted-foreground">Each zone includes explanation of training benefits so you know when to use each intensity.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Standard 220-Age Formula
+              </h3>
+              <p className="text-sm text-muted-foreground">Uses the widely accepted maximum heart rate formula for consistent, comparable results.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Instant Calculation
+              </h3>
+              <p className="text-sm text-muted-foreground">Get all your training zones immediately without manual math or reference charts.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Clear BPM Display
+              </h3>
+              <p className="text-sm text-muted-foreground">Large, easy-to-read numbers show exact beats per minute for each zone boundary.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* FAQ Section */}
+      <Card className="mt-8">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions About Heart Rate Zones</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">What are the 5 heart rate training zones?</h3>
+              <p className="text-sm text-muted-foreground">Zone 1 (50-60% max HR) is very light recovery. Zone 2 (60-70%) burns fat and builds base fitness. Zone 3 (70-80%) improves aerobic capacity. Zone 4 (80-90%) builds anaerobic threshold. Zone 5 (90-100%) is maximum effort for peak performance.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Which zone is best for fat burning?</h3>
+              <p className="text-sm text-muted-foreground">Zone 2 (60-70% of max heart rate) is often called the fat-burning zone. At this intensity, your body uses a higher percentage of fat for fuel. However, total calorie burn matters more for weight loss than the fuel source.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">How accurate is the 220 minus age formula?</h3>
+              <p className="text-sm text-muted-foreground">The 220-age formula gives a reasonable estimate but can vary by ±10-12 bpm for individuals. It is less accurate for very fit athletes and older adults. For precise zones, consider a lab test or field test to find your actual maximum heart rate.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">How do I measure my heart rate during exercise?</h3>
+              <p className="text-sm text-muted-foreground">Use a chest strap monitor for most accuracy, or a wrist-based optical sensor for convenience. You can also manually check your pulse at your wrist or neck for 15 seconds and multiply by 4.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Should I train in Zone 5?</h3>
+              <p className="text-sm text-muted-foreground">Zone 5 training is very demanding and should be used sparingly. Most athletes benefit from spending 80% of training time in Zones 1-3 and only 20% in Zones 4-5. Zone 5 intervals are effective but require adequate recovery.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Related Tools Section */}
+      <Card className="mt-8">
+        <CardHeader>
+          <CardTitle>Related Fitness Calculators</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/vo2-max-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">VO2 Max Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate your maximum oxygen uptake and cardiovascular fitness level.</p>
+            </a>
+            <a href="/calculators/tdee-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">TDEE Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate your total daily energy expenditure for weight management.</p>
+            </a>
+            <a href="/calculators/bmi-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">BMI Calculator</h3>
+              <p className="text-sm text-muted-foreground">Determine your body mass index and weight category.</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

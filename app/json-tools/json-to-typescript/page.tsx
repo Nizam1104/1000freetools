@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -19,19 +19,19 @@ export default function JsonToTypeScriptPage() {
     if (value === null) {
       return "null";
     }
-    
+
     if (typeof value === "boolean") {
       return "boolean";
     }
-    
+
     if (typeof value === "number") {
       return Number.isInteger(value) ? "number" : "number";
     }
-    
+
     if (typeof value === "string") {
       return "string";
     }
-    
+
     if (Array.isArray(value)) {
       if (value.length === 0) {
         return "unknown[]";
@@ -43,17 +43,17 @@ export default function JsonToTypeScriptPage() {
       }
       return `(${uniqueTypes.join(" | ")})[]`;
     }
-    
+
     if (typeof value === "object") {
       return "object";
     }
-    
+
     return "unknown";
   };
 
   const generateInterface = (name: string, obj: Record<string, unknown>, isRoot = false): string => {
     const entries = Object.entries(obj);
-    
+
     if (entries.length === 0) {
       return `${useType ? "type" : "interface"} ${name} {}\n`;
     }
@@ -61,17 +61,17 @@ export default function JsonToTypeScriptPage() {
     const properties = entries.map(([key, value]) => {
       const safeKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `"${key}"`;
       const isOptional = Math.random() > 0.5 || value === null;
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         const nestedName = `${name}${key.charAt(0).toUpperCase()}${key.slice(1)}`;
         return `  ${safeKey}${isOptional ? "?" : ""}: ${nestedName};`;
       }
-      
+
       if (Array.isArray(value) && value.length > 0 && typeof value[0] === "object" && value[0] !== null) {
         const nestedName = `${name}${key.charAt(0).toUpperCase()}${key.slice(1)}Item`;
         return `  ${safeKey}${isOptional ? "?" : ""}: ${nestedName}[];`;
       }
-      
+
       return `  ${safeKey}${isOptional ? "?" : ""}: ${getTypeScriptType(value)};`;
     });
 
@@ -100,7 +100,7 @@ export default function JsonToTypeScriptPage() {
     try {
       const parsed = JSON.parse(input);
       let result = "";
-      
+
       if (Array.isArray(parsed) && parsed.length > 0) {
         result = generateInterface(interfaceName, parsed[0] as Record<string, unknown>, true);
       } else if (typeof parsed === "object" && parsed !== null) {
@@ -108,7 +108,7 @@ export default function JsonToTypeScriptPage() {
       } else {
         result = `${useType ? "type" : "interface"} ${interfaceName} = ${JSON.stringify(parsed)};\n`;
       }
-      
+
       setOutput(result);
       toast.success("Generated TypeScript interface successfully!");
     } catch (e) {

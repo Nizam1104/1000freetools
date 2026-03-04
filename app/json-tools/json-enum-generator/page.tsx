@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -31,9 +31,9 @@ export default function JsonEnumGeneratorPage() {
 
   const generateEnum = useCallback(() => {
     const validValues = values.filter(v => v.trim());
-    
+
     let output = "";
-    
+
     switch (outputFormat) {
       case "json":
         output = JSON.stringify({

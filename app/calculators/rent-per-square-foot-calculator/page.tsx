@@ -218,6 +218,83 @@ export default function RentPerSquareFootCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardContent className="p-6">
+          <h3 className="text-lg font-semibold mb-4">
+            Frequently Asked Questions
+          </h3>
+          <div className="space-y-4 text-sm text-muted-foreground">
+            <div>
+              <h4 className="font-medium text-foreground mb-2">What is a good rent per square foot?</h4>
+              <p>
+                It depends on location and property type. In major cities, $2-4/sqft/month is common
+                for apartments. Suburban areas may be $1-2/sqft. Commercial space varies widely by
+                location and use.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Should I use monthly or annual rent/sqft?</h4>
+              <p>
+                Residential leases typically use monthly rent/sqft. Commercial leases often quote
+                annual rent/sqft. Be sure to compare the same time period when evaluating properties.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Does rent/sqft decrease for larger units?</h4>
+              <p>
+                Often yes. Larger units typically have lower rent/sqft because fixed costs (kitchen,
+                bathroom) are spread over more space. Studios usually have the highest rent/sqft.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">What affects rent per square foot?</h4>
+              <p>
+                Location, building age, amenities, floor level, view, and neighborhood demand all
+                affect rent/sqft. Newer buildings with amenities command premium rates.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">How do I convert between sqft and sqm?</h4>
+              <p>
+                1 square meter = 10.7639 square feet. To convert rent/sqm to rent/sqft, divide by
+                10.7639. To convert rent/sqft to rent/sqm, multiply by 10.7639.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardContent className="p-6">
+          <h3 className="text-lg font-semibold mb-4">
+            Related Tools
+          </h3>
+          <div className="space-y-2 text-sm">
+            <a
+              href="/calculators/rental-yield-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Rental Yield Calculator</span>
+              <p className="text-muted-foreground">Calculate gross and net rental yield for investment properties</p>
+            </a>
+            <a
+              href="/calculators/rental-roi-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Rental ROI Calculator</span>
+              <p className="text-muted-foreground">Calculate return on investment including appreciation</p>
+            </a>
+            <a
+              href="/calculators/mortgage-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Mortgage Calculator</span>
+              <p className="text-muted-foreground">Calculate monthly mortgage payments for home purchases</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,8 +42,8 @@ export default function SoilPhAdjustmentCalculatorPage() {
     const target = parseFloat(targetPh);
     const area = parseFloat(fieldArea);
 
-    if (isNaN(current) || isNaN(target) || isNaN(area) || 
-        current <= 0 || current > 14 || target <= 0 || target > 14 || area <= 0) return;
+    if (isNaN(current) || isNaN(target) || isNaN(area) ||
+      current <= 0 || current > 14 || target <= 0 || target > 14 || area <= 0) return;
 
     const phDiff = target - current;
     const absPhDiff = Math.abs(phDiff);
@@ -269,7 +269,7 @@ export default function SoilPhAdjustmentCalculatorPage() {
             <div>pH Difference = Target pH - Current pH</div>
             <div>Lime Required = pH Diff × Soil Factor × Area / 100</div>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-4 mt-4">
             <div>
               <h4 className="font-medium mb-2">pH Scale Reference</h4>

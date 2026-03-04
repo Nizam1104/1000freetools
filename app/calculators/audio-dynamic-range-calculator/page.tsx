@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -168,12 +168,11 @@ export default function AudioDynamicRangeCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Dynamic Range Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.dynamicRange >= 90 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.dynamicRange >= 60 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.dynamicRange >= 40 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.dynamicRange >= 90 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.dynamicRange >= 60 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.dynamicRange >= 40 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Dynamic Range</p>
                     <p className="text-5xl font-bold">{result.dynamicRange.toFixed(1)} dB</p>
                     <p className="text-sm mt-1">{result.qualityRating}</p>
@@ -251,6 +250,224 @@ export default function AudioDynamicRangeCalculatorPage() {
                   loudest sounds. Modern music often has reduced dynamic range due
                   to compression (the &quot;loudness war&quot;).
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                How to Use This Audio Dynamic Range Calculator
+              </h2>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground mb-1">Enter Your Peak Level</p>
+                    <p>Input the maximum signal level of your audio in dBFS. Most recordings peak between -6 dBFS and 0 dBFS. Remember that 0 dBFS is the maximum digital level—going above this causes clipping and distortion.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground mb-1">Enter Your Noise Floor</p>
+                    <p>Input the background noise level in dBFS. This is the quietest part of your recording when no intentional sound is present. Typical values range from -60 dBFS (acceptable) to -90 dBFS or lower (excellent).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground mb-1">Review Your Results</p>
+                    <p>Click Calculate to see your dynamic range, quality rating, and how your recording compares to standard audio formats. Use the recommendations to identify potential improvements.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Understanding Dynamic Range
+              </h2>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  <strong>What is dynamic range?</strong> Dynamic range is the difference between the loudest and quietest parts of an audio signal. It measures how much variation exists between the peak level and the noise floor. A recording with wide dynamic range has both very quiet and very loud passages, while a compressed recording has less variation.
+                </p>
+                <p>
+                  <strong>Measured in decibels (dB).</strong> Dynamic range is expressed in decibels (dB), a logarithmic unit that describes the ratio between two values. In audio, we typically measure in dBFS (decibels relative to full scale), where 0 dBFS represents the maximum possible digital level.
+                </p>
+                <p>
+                  <strong>Why it matters in audio quality.</strong> Dynamic range directly affects how natural and engaging music sounds. Higher dynamic range preserves the emotional impact of quiet passages and the power of loud moments. It gives music breathing room and allows listeners to hear subtle details that get lost in heavily compressed audio.
+                </p>
+                <p>
+                  <strong>Dynamic range vs signal-to-noise ratio.</strong> While related, these are different measurements. Dynamic range measures the span between the loudest peak and the noise floor. Signal-to-noise ratio (SNR) compares the level of your desired signal to the background noise. A recording can have good SNR but limited dynamic range if it's heavily compressed.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Dynamic Range by Audio Format
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-semibold">Format</th>
+                      <th className="text-left py-2 px-3 font-semibold">Theoretical Dynamic Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">16-bit CD</td>
+                      <td className="py-2 px-3">96 dB</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">24-bit audio</td>
+                      <td className="py-2 px-3">144 dB</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">MP3 128kbps</td>
+                      <td className="py-2 px-3">~60-70 dB</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">MP3 320kbps</td>
+                      <td className="py-2 px-3">~80-90 dB</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">Vinyl LP</td>
+                      <td className="py-2 px-3">55-70 dB</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3">Cassette tape</td>
+                      <td className="py-2 px-3">50-60 dB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: These are theoretical maximums. Actual dynamic range depends on recording quality, mastering decisions, and playback equipment.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Typical Dynamic Range by Genre
+              </h2>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                  <span className="font-medium text-foreground">Classical music</span>
+                  <span className="font-mono">50+ dB (wide dynamics)</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                  <span className="font-medium text-foreground">Jazz</span>
+                  <span className="font-mono">30-40 dB</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                  <span className="font-medium text-foreground">Rock/Pop</span>
+                  <span className="font-mono">15-25 dB</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                  <span className="font-medium text-foreground">Modern pop (loudness war)</span>
+                  <span className="font-mono">8-15 dB</span>
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                These ranges reflect typical mastering practices. Classical recordings preserve wide dynamics for emotional expression, while modern pop often sacrifices dynamic range for perceived loudness.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                The Loudness War
+              </h2>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  <strong>What it is.</strong> The loudness war refers to the trend in music production where recordings are made progressively louder through dynamic range compression and limiting. The goal is to make tracks sound louder than competing songs when played on radio, streaming services, or playlists.
+                </p>
+                <p>
+                  <strong>Effects on sound quality.</strong> Heavy compression reduces the difference between quiet and loud passages. This creates a consistently loud signal but sacrifices musical dynamics. The result is listener fatigue, loss of emotional impact, and audible distortion when pushed too far.
+                </p>
+                <p>
+                  <strong>Dynamic range compression.</strong> Compression reduces dynamic range by making quiet sounds louder and loud sounds quieter. When overused, it creates a flat, lifeless sound where everything sits at the same volume level. Instruments lose their natural attack and decay characteristics.
+                </p>
+                <p>
+                  <strong>Recent trends toward better dynamics.</strong> Since around 2010, there's been a pushback against extreme compression. Streaming services now use loudness normalization (LUFS), which levels the playing field by adjusting playback volume. This reduces the incentive to master as loud as possible, allowing engineers to preserve more dynamic range.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-6 text-sm text-muted-foreground">
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">What is dynamic range in audio?</h3>
+                  <p>Dynamic range is the difference between the loudest and quietest parts of an audio signal, measured in decibels (dB). It represents how much variation exists in volume throughout a recording. Higher dynamic range means more contrast between soft and loud passages.</p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">Is higher dynamic range better?</h3>
+                  <p>Generally, yes. Higher dynamic range preserves more musical detail and emotional expression. However, the ideal range depends on the genre and listening context. Classical music benefits from wide dynamics, while some electronic genres intentionally use compression as a creative tool.</p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">What is a good dynamic range for music?</h3>
+                  <p>For most genres, 10-20 dB is common in modern releases. Classical and jazz recordings often exceed 30-50 dB. Anything below 8 dB is considered heavily compressed. Professional recordings typically aim for at least 12-15 dB to maintain musicality while remaining competitive in loudness.</p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">Why is modern music so compressed?</h3>
+                  <p>Modern music is compressed to sound louder than other tracks when played in sequence. This started with radio and CDs, where louder tracks grabbed more attention. Streaming normalization is changing this, but the habit persists in many productions.</p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-2">Does dynamic range matter for streaming?</h3>
+                  <p>Yes, but less than before. Streaming services like Spotify, Apple Music, and YouTube use loudness normalization, which adjusts all tracks to similar playback levels. This means heavily compressed tracks no longer have a loudness advantage, making dynamic range more viable for streaming releases.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Related Tools
+              </h2>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/db-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-primary hover:underline"
+                >
+                  <span className="font-medium">dB Calculator</span>
+                  <p className="text-xs text-muted-foreground mt-1">Calculate decibel values for audio and electronics</p>
+                </a>
+                <a
+                  href="/calculators/signal-to-noise-ratio-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-primary hover:underline"
+                >
+                  <span className="font-medium">Signal-to-Noise Ratio Calculator</span>
+                  <p className="text-xs text-muted-foreground mt-1">Measure SNR for audio systems and recordings</p>
+                </a>
+                <a
+                  href="/calculators/decibel-to-power-converter"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-primary hover:underline"
+                >
+                  <span className="font-medium">Decibel to Power Converter</span>
+                  <p className="text-xs text-muted-foreground mt-1">Convert between dB and power ratios</p>
+                </a>
               </div>
             </CardContent>
           </Card>

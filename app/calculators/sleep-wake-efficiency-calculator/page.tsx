@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -35,7 +35,7 @@ export default function SleepWakeEfficiencyCalculatorPage() {
     // Calculate time in bed (minutes)
     let bedMinutes = bedHour * 60 + bedMin;
     let wakeMinutes = wakeHour * 60 + wakeMin;
-    
+
     // Handle overnight
     if (wakeMinutes < bedMinutes) {
       wakeMinutes += 24 * 60;
@@ -200,12 +200,11 @@ export default function SleepWakeEfficiencyCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Sleep Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.sleepEfficiency >= 90 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.sleepEfficiency >= 85 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.sleepEfficiency >= 80 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.sleepEfficiency >= 90 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.sleepEfficiency >= 85 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.sleepEfficiency >= 80 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Sleep Efficiency</p>
                     <p className="text-5xl font-bold">{result.sleepEfficiency}%</p>
                     <p className="text-sm mt-1">{result.sleepQuality}</p>
@@ -228,11 +227,10 @@ export default function SleepWakeEfficiencyCalculatorPage() {
 
                   <div className="w-full bg-muted rounded-full h-4">
                     <div
-                      className={`h-4 rounded-full ${
-                        result.sleepEfficiency >= 85 ? "bg-green-500" :
-                        result.sleepEfficiency >= 80 ? "bg-amber-500" :
-                        "bg-red-500"
-                      }`}
+                      className={`h-4 rounded-full ${result.sleepEfficiency >= 85 ? "bg-green-500" :
+                          result.sleepEfficiency >= 80 ? "bg-amber-500" :
+                            "bg-red-500"
+                        }`}
                       style={{ width: `${Math.min(result.sleepEfficiency, 100)}%` }}
                     />
                   </div>
@@ -258,38 +256,128 @@ export default function SleepWakeEfficiencyCalculatorPage() {
           </Card>
         </div>
 
-        <div className="mt-8 space-y-6">
+        {/* How It Works Section */}
+        <div className="mt-8">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Understanding Sleep Efficiency
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <p>
-                  Sleep efficiency is the percentage of time in bed actually spent sleeping:
-                </p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Formula:</strong> (Time Asleep ÷ Time in Bed) × 100
-                  </li>
-                  <li>
-                    <strong>90%+:</strong> Excellent sleep efficiency
-                  </li>
-                  <li>
-                    <strong>85-89%:</strong> Good/Normal
-                  </li>
-                  <li>
-                    <strong>80-84%:</strong> Fair, room for improvement
-                  </li>
-                  <li>
-                    <strong>&lt;80%:</strong> Poor efficiency, may indicate sleep disorder
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> Sleep efficiency is a key metric used in CBT-I
-                  (Cognitive Behavioral Therapy for Insomnia). Improving efficiency
-                  often improves overall sleep quality.
-                </p>
+              <h3 className="text-lg font-semibold mb-6">How the Sleep Efficiency Calculator Works</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Enter Sleep Schedule</h4>
+                  <p className="text-sm text-muted-foreground">Input your bedtime and wake time to calculate total time in bed.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Add Sleep Details</h4>
+                  <p className="text-sm text-muted-foreground">Include time to fall asleep and any nighttime wakings for accuracy.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">Get Efficiency Score</h4>
+                  <p className="text-sm text-muted-foreground">Receive your sleep efficiency percentage with personalized recommendations.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Key Features</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Clinical-Grade Metric</h4>
+                    <p className="text-sm text-muted-foreground">Sleep efficiency is the gold standard metric used by sleep specialists and in CBT-I therapy.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Visual Progress Bar</h4>
+                    <p className="text-sm text-muted-foreground">Color-coded indicator shows at a glance if your sleep efficiency is good, fair, or poor.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Smart Recommendations</h4>
+                    <p className="text-sm text-muted-foreground">Get personalized tips based on your specific sleep latency and waking patterns.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Quality Assessment</h4>
+                    <p className="text-sm text-muted-foreground">Automatic sleep quality rating from Excellent to Poor based on your efficiency score.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is a good sleep efficiency score?</h4>
+                  <p className="text-sm text-muted-foreground">85% or higher is considered good sleep efficiency. 90%+ is excellent. Below 80% may indicate a sleep problem worth discussing with a healthcare provider.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How is sleep efficiency calculated?</h4>
+                  <p className="text-sm text-muted-foreground">Sleep efficiency = (Time Asleep ÷ Time in Bed) × 100. Time asleep excludes the time it takes to fall asleep and any wake periods during the night.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What causes low sleep efficiency?</h4>
+                  <p className="text-sm text-muted-foreground">Common causes include stress, irregular sleep schedules, sleep apnea, restless leg syndrome, caffeine/alcohol before bed, and poor sleep environment (noise, light, temperature).</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How can I improve my sleep efficiency?</h4>
+                  <p className="text-sm text-muted-foreground">Keep consistent sleep/wake times, create a dark and cool bedroom, avoid screens before bed, limit caffeine after noon, and only use your bed for sleep and intimacy.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Is sleep tracking accurate?</h4>
+                  <p className="text-sm text-muted-foreground">Consumer sleep trackers provide estimates. For clinical accuracy, a sleep study (polysomnography) is the gold standard. Use this calculator with your best estimates for useful insights.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Sleep Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/sleep-cycle-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Sleep Cycle Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Find optimal bedtimes and wake times based on 90-minute sleep cycles.</p>
+                </a>
+                <a href="/calculators/ideal-bedtime-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Ideal Bedtime Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Calculate the perfect bedtime to wake up refreshed.</p>
+                </a>
+                <a href="/calculators/deep-sleep-cycle-planner" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Deep Sleep Cycle Planner</h4>
+                  <p className="text-sm text-muted-foreground">Plan your sleep phases for maximum restorative rest.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

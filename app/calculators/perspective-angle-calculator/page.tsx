@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -45,7 +45,7 @@ export default function PerspectiveAngleCalculatorPage() {
 
     // Perspective angle (angle of view to horizon)
     // θ = arctan(height / distance)
-    const perspectiveAngle = distanceM > 0 
+    const perspectiveAngle = distanceM > 0
       ? Math.atan(heightM / distanceM) * (180 / Math.PI)
       : 90;
 
@@ -216,34 +216,102 @@ export default function PerspectiveAngleCalculatorPage() {
 
         <div className="mt-8 space-y-6">
           <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Perspective Drawing Basics
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Horizon line:</strong> Always at viewer&apos;s eye level
-                  </li>
-                  <li>
-                    <strong>Vanishing point:</strong> Where parallel lines converge
-                  </li>
-                  <li>
-                    <strong>One-point:</strong> Front face parallel to picture plane
-                  </li>
-                  <li>
-                    <strong>Two-point:</strong> Corner facing viewer, two vanishing points
-                  </li>
-                  <li>
-                    <strong>Three-point:</strong> Looking up or down, three vanishing points
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> The horizon line divides your drawing into sky
-                  (above) and ground (below). All vanishing points lie on the horizon
-                  line in one and two-point perspective.
-                </p>
+            <CardHeader>
+              <CardTitle>How to Calculate Perspective Angles</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <p className="font-semibold mb-1">Enter viewer height</p>
+                  <p className="text-sm text-muted-foreground">Input the eye level height from the ground. Average adult height is about 1.7m (5ft 7in).</p>
+                </div>
               </div>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <p className="font-semibold mb-1">Add distance to subject (optional)</p>
+                  <p className="text-sm text-muted-foreground">Enter how far you are from what you're drawing to calculate the perspective angle.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <p className="font-semibold mb-1">Get perspective data</p>
+                  <p className="text-sm text-muted-foreground">Receive vanishing point Y position, horizon distance, and drawing recommendations instantly.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Features for Artists and Architects</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">Accurate vanishing point calculation</p>
+                  <p className="text-sm text-muted-foreground">Find the exact Y position for your horizon line based on viewer height.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Horizon distance estimation</p>
+                  <p className="text-sm text-muted-foreground">Know how far you can see based on Earth curvature and your eye level.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Perspective angle computation</p>
+                  <p className="text-sm text-muted-foreground">Calculate the angle of view for accurate depth representation in drawings.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Multiple unit support</p>
+                  <p className="text-sm text-muted-foreground">Work in meters or feet depending on your preference and project needs.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Practical drawing tips</p>
+                  <p className="text-sm text-muted-foreground">Get contextual recommendations for one, two, and three-point perspective.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">Where is the vanishing point located?</p>
+                  <p className="text-sm text-muted-foreground">The vanishing point is always at eye level (horizon line). Its Y position equals the viewer's height from the ground plane.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">How do I calculate perspective angle?</p>
+                  <p className="text-sm text-muted-foreground">Use the formula: angle = arctan(height / distance). For a 1.7m viewer at 10m distance, the angle is about 9.6 degrees.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">What is the horizon line in perspective drawing?</p>
+                  <p className="text-sm text-muted-foreground">The horizon line represents the viewer's eye level. It divides the scene into sky above and ground below, and all vanishing points lie on it.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">How far can I see based on my height?</p>
+                  <p className="text-sm text-muted-foreground">Horizon distance = sqrt(2 × Earth radius × height). At 1.7m eye level, you can see about 4.7 km to the horizon.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">What's the difference between 1-point and 2-point perspective?</p>
+                  <p className="text-sm text-muted-foreground">One-point has a single vanishing point for objects facing you directly. Two-point uses two vanishing points for objects at an angle to the viewer.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Art and Design Tools</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-3">
+                Explore our other creative calculators: the <a href="/calculators/golden-ratio-calculator" className="text-primary hover:underline">golden ratio calculator</a> for harmonious compositions, the <a href="/calculators/aspect-ratio-calculator" className="text-primary hover:underline">aspect ratio calculator</a> for canvas sizing, and the <a href="/calculators/focal-length-calculator" className="text-primary hover:underline">focal length calculator</a> for photography planning.
+              </p>
             </CardContent>
           </Card>
         </div>

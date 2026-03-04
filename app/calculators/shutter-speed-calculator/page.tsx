@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -41,7 +41,7 @@ export default function ShutterSpeedCalculatorPage() {
 
     // Base shutter speed calculation
     // Formula considers: subject speed, distance, direction, focal length
-    let baseShutter = 1/500; // Default for moderate action
+    let baseShutter = 1 / 500; // Default for moderate action
 
     // Adjust for subject type/speed
     const subjectSpeeds: Record<string, number> = {
@@ -71,7 +71,7 @@ export default function ShutterSpeedCalculatorPage() {
 
     // Calculate recommended shutter speed
     const shutterValue = 500 * (actualSpeed / 15) * directionMult * distanceFactor * focalFactor;
-    
+
     // Convert to fraction
     let shutterSpeed = 1 / Math.round(shutterValue);
     if (shutterValue < 1) {
@@ -81,7 +81,7 @@ export default function ShutterSpeedCalculatorPage() {
     // Format shutter speed
     const formatShutter = (speed: number): string => {
       if (speed >= 1) return `${speed}s`;
-      return `1/${Math.round(1/speed)}`;
+      return `1/${Math.round(1 / speed)}`;
     };
 
     const recommendedShutter = formatShutter(shutterSpeed);
@@ -96,7 +96,7 @@ export default function ShutterSpeedCalculatorPage() {
 
     // Tips
     const tips: string[] = [];
-    
+
     if (movementDirection === "across") {
       tips.push("📸 Subject moving across frame requires fastest shutter speed");
     } else if (movementDirection === "towards" || movementDirection === "away") {

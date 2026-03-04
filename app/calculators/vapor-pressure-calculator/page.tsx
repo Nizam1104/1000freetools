@@ -274,6 +274,133 @@ export default function VaporPressureCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Vapor Pressure</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Choose Calculation Method</h3>
+              <p className="text-sm text-muted-foreground">Select Clausius-Clapeyron for theoretical calculations or Antoine equation for empirical accuracy.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Substance Parameters</h3>
+              <p className="text-sm text-muted-foreground">Input enthalpy of vaporization and reference data, or Antoine constants for your substance.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Vapor Pressure Results</h3>
+              <p className="text-sm text-muted-foreground">View calculated vapor pressure at your temperature with a complete pressure-temperature graph.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Why Use This Vapor Pressure Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Dual Calculation Methods</h3>
+            <p className="text-sm text-muted-foreground">Choose between Clausius-Clapeyron for theoretical work or Antoine equation for industry-standard accuracy.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Interactive P-T Graph</h3>
+            <p className="text-sm text-muted-foreground">Visualize the exponential relationship between vapor pressure and temperature with dynamic plotting.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Common Substance Constants</h3>
+            <p className="text-sm text-muted-foreground">Built-in Antoine constants for water, ethanol, benzene, and other common solvents.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Boiling Point Prediction</h3>
+            <p className="text-sm text-muted-foreground">Determine boiling points at various pressures for vacuum distillation and altitude cooking.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+          <h3 className="font-semibold mb-3">Vapor Pressure Equations Reference</h3>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2">Equation</th>
+                <th className="text-left py-2">Formula</th>
+                <th className="text-left py-2">Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-2">Clausius-Clapeyron</td>
+                <td className="py-2 font-mono">ln(P/P₀) = -(ΔH/R)(1/T - 1/T₀)</td>
+                <td className="py-2">Theoretical, educational</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Antoine</td>
+                <td className="py-2 font-mono">log₁₀(P) = A - B/(T+C)</td>
+                <td className="py-2">Industrial, accurate</td>
+              </tr>
+              <tr>
+                <td className="py-2">August-Roche-Magnus</td>
+                <td className="py-2 font-mono">P = 0.61094 × exp(17.625T/(T+243.04))</td>
+                <td className="py-2">Water vapor, meteorology</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold mb-2">What is vapor pressure?</h3>
+            <p className="text-sm text-muted-foreground">Vapor pressure is the pressure exerted by a vapor in equilibrium with its liquid or solid phase. It indicates how readily a substance evaporates—higher vapor pressure means faster evaporation and greater volatility.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How does temperature affect vapor pressure?</h3>
+            <p className="text-sm text-muted-foreground">Vapor pressure increases exponentially with temperature. As molecules gain kinetic energy, more escape the liquid surface. This is why water boils at lower temperatures at high altitudes where atmospheric pressure is lower.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What is the Antoine equation used for?</h3>
+            <p className="text-sm text-muted-foreground">The Antoine equation is an empirical formula that accurately predicts vapor pressure over a specific temperature range. It's widely used in chemical engineering for distillation design and process calculations.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How do I find the boiling point from vapor pressure?</h3>
+            <p className="text-sm text-muted-foreground">A liquid boils when its vapor pressure equals atmospheric pressure. At sea level (760 mmHg), water boils at 100°C. At higher elevations with lower atmospheric pressure, boiling occurs at lower temperatures.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What are Antoine constants for water?</h3>
+            <p className="text-sm text-muted-foreground">For water (P in mmHg, T in °C): A=8.07131, B=1730.63, C=233.426, valid from 1-100°C. These constants give accurate vapor pressure predictions for water in the liquid range.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Chemistry Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/ideal-gas-law-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Ideal Gas Law Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate pressure, volume, temperature, and moles for ideal gases.</p>
+          </a>
+          <a href="/calculators/boiling-point-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Boiling Point Calculator</h3>
+            <p className="text-sm text-muted-foreground">Determine boiling points at different pressures and altitudes.</p>
+          </a>
+          <a href="/calculators/humidity-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Humidity Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate relative humidity, dew point, and water vapor pressure.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

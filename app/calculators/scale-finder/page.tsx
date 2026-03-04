@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -75,7 +75,7 @@ export default function ScaleFinderPage() {
         mixolydian: ["", "m", "dim", "", "m", "m", ""],
       };
       const qualities = chordQualities[scaleType] || Array(7).fill("");
-      
+
       for (let i = 0; i < 7; i++) {
         const chordRoot = notes[i];
         const quality = qualities[i];
@@ -274,31 +274,128 @@ export default function ScaleFinderPage() {
           </Card>
         </div>
 
-        <div className="mt-8 space-y-6">
+        {/* How It Works Section */}
+        <div className="mt-8">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Scale Theory Basics
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Major scale:</strong> The foundation of Western music
-                  </li>
-                  <li>
-                    <strong>Modes:</strong> Scales derived from major scale starting on different degrees
-                  </li>
-                  <li>
-                    <strong>Pentatonic:</strong> 5-note scales, very versatile
-                  </li>
-                  <li>
-                    <strong>Blues scale:</strong> Pentatonic with added &quot;blue&quot; note
-                  </li>
-                </ul>
-                <p>
-                  <strong>Practice tip:</strong> Play scales in different keys to internalize
-                  the sound and pattern. Start slow and use a metronome.
-                </p>
+              <h3 className="text-lg font-semibold mb-6">How the Scale Finder Works</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Select Root Note</h4>
+                  <p className="text-sm text-muted-foreground">Choose the starting note (tonic) for your scale from any of the 12 chromatic notes.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Choose Scale Type</h4>
+                  <p className="text-sm text-muted-foreground">Pick from major, minor, modes, pentatonic, blues, and other scale varieties.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">Get Scale Details</h4>
+                  <p className="text-sm text-muted-foreground">View all notes, intervals, and diatonic chords for your selected scale instantly.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Key Features</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">15 Scale Types</h4>
+                    <p className="text-sm text-muted-foreground">Major, minor, all 7 modes, pentatonic, blues, whole tone, and diminished scales.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Diatonic Chords</h4>
+                    <p className="text-sm text-muted-foreground">Automatically generated chord progressions for 7-note scales.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Interval Display</h4>
+                    <p className="text-sm text-muted-foreground">See the interval structure (1, b3, 5, etc.) for music theory understanding.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Quick Presets</h4>
+                    <p className="text-sm text-muted-foreground">One-click access to common scales like C Major, A Minor, and E Minor Pentatonic.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is the difference between major and minor scales?</h4>
+                  <p className="text-sm text-muted-foreground">Major scales have a bright, happy sound with the pattern W-W-H-W-W-W-H. Natural minor scales sound sadder with the pattern W-H-W-W-H-W-W. The third note determines the mood.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What are modes in music?</h4>
+                  <p className="text-sm text-muted-foreground">Modes are scales derived from the major scale by starting on different degrees. Dorian starts on the 2nd, Phrygian on the 3rd, Lydian on the 4th, Mixolydian on the 5th, and Locrian on the 7th degree.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">When should I use pentatonic scales?</h4>
+                  <p className="text-sm text-muted-foreground">Pentatonic scales are perfect for beginners and improvisation. The minor pentatonic is essential for blues and rock guitar solos. They work over many chord progressions due to their simple, consonant structure.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What are diatonic chords?</h4>
+                  <p className="text-sm text-muted-foreground">Diatonic chords are built from each note of a scale using only notes from that scale. In C Major, these are C, Dm, Em, F, G, Am, and Bdim. They form the basis of countless songs.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How do I practice scales effectively?</h4>
+                  <p className="text-sm text-muted-foreground">Start slow with a metronome, play ascending and descending, practice in all 12 keys, and apply scales to real music by improvising over backing tracks in the same key.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Music Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/chord-progression-generator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Chord Progression Generator</h4>
+                  <p className="text-sm text-muted-foreground">Create harmonic progressions for your songs using music theory rules.</p>
+                </a>
+                <a href="/calculators/tempo-to-delay-time-converter" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Tempo to Delay Time Converter</h4>
+                  <p className="text-sm text-muted-foreground">Calculate perfect delay times synced to your song&apos;s BPM.</p>
+                </a>
+                <a href="/calculators/note-frequency-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Note Frequency Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Find the exact frequency of any musical note for tuning and production.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

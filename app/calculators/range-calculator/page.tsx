@@ -68,6 +68,206 @@ export default function RangeCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6 max-w-2xl mx-auto">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Range Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your numbers</p>
+                  <p>Type or paste your numbers separated by commas. You can include decimals and negative values.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Click Calculate</p>
+                  <p>The calculator finds the minimum, maximum, and computes the range automatically.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Review the results</p>
+                  <p>See the range value along with the minimum and maximum numbers from your set.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Range in Statistics
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                The range is the simplest measure of spread in a dataset. It tells you how far apart
+                the smallest and largest values are.
+              </p>
+              <div className="p-4 bg-muted rounded-lg font-mono text-center">
+                Range = Maximum Value - Minimum Value
+              </div>
+              <p>
+                A large range means your data is spread out. A small range means values cluster close together.
+                The range is easy to calculate but sensitive to outliers — one extreme value can skew it.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Range Examples
+            </h3>
+            <div className="space-y-3 text-sm">
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-mono text-xs mb-1">Dataset: 5, 12, 3, 18, 7</p>
+                <p className="text-muted-foreground">Min=3, Max=18, Range=15</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-mono text-xs mb-1">Dataset: 100, 95, 102, 98, 101</p>
+                <p className="text-muted-foreground">Min=95, Max=102, Range=7 (tight cluster)</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-mono text-xs mb-1">Dataset: -10, 0, 5, 20, -5</p>
+                <p className="text-muted-foreground">Min=-10, Max=20, Range=30 (includes negatives)</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-mono text-xs mb-1">Dataset: 2.5, 3.1, 2.8, 4.0, 3.5</p>
+                <p className="text-muted-foreground">Min=2.5, Max=4.0, Range=1.5 (decimals work)</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              When to Use Range
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-xs">1</span>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Quick data overview</p>
+                  <p>Get an instant sense of data spread without complex calculations.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-xs">2</span>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Quality control</p>
+                  <p>Monitor process variation. A growing range may signal quality issues.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-xs">3</span>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Comparing datasets</p>
+                  <p>Compare spread across different groups or time periods quickly.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What does range tell me about my data?</h4>
+                <p>
+                  Range shows the total spread between your smallest and largest values. It gives a quick
+                  sense of variability but does not show how values are distributed in between.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can range be negative?</h4>
+                <p>
+                  No. Range is always zero or positive because you subtract the minimum from the maximum.
+                  Even with negative numbers in your dataset, the range itself is never negative.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What if all my numbers are the same?</h4>
+                <p>
+                  The range is zero. This means there is no variation — every value equals the same number.
+                  This can happen in controlled processes or when measuring a constant.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do outliers affect range?</h4>
+                <p>
+                  Outliers have a large effect on range. One extreme value can make the range much larger
+                  than the typical spread. Consider using interquartile range (IQR) if outliers are a concern.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the difference between range and standard deviation?</h4>
+                <p>
+                  Range uses only two values (min and max). Standard deviation considers every value and
+                  shows how much they typically deviate from the mean. Standard deviation is more robust
+                  but requires more calculation.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/mean-median-mode-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Mean Median Mode Calculator</span>
+                <p className="text-muted-foreground">Find central tendency measures for your dataset</p>
+              </a>
+              <a
+                href="/calculators/standard-deviation-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Standard Deviation Calculator</span>
+                <p className="text-muted-foreground">Calculate variance and standard deviation</p>
+              </a>
+              <a
+                href="/calculators/interquartile-range-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Interquartile Range Calculator</span>
+                <p className="text-muted-foreground">Find IQR and identify outliers in your data</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

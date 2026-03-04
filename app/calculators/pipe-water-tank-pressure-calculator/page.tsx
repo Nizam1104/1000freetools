@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -44,7 +44,7 @@ export default function PipeWaterTankPressureCalculatorPage() {
     // Calculate pressure using hydrostatic pressure formula
     // P = ρgh where ρ = 1000 kg/m³ (water), g = 9.81 m/s²
     const pressurePa = 1000 * 9.81 * heightM;
-    
+
     // Convert to various units
     const pressurePsi = pressurePa * 0.000145038;
     const pressureBar = pressurePa / 100000;
@@ -207,21 +207,19 @@ export default function PipeWaterTankPressureCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className={`p-3 rounded-lg ${
-                    result.pressurePsi >= 20 && result.pressurePsi <= 60 
-                      ? "bg-green-50 dark:bg-green-950/20" 
+                  <div className={`p-3 rounded-lg ${result.pressurePsi >= 20 && result.pressurePsi <= 60
+                      ? "bg-green-50 dark:bg-green-950/20"
                       : "bg-amber-50 dark:bg-amber-950/20"
-                  }`}>
-                    <p className={`text-sm ${
-                      result.pressurePsi >= 20 && result.pressurePsi <= 60 
-                        ? "text-green-800 dark:text-green-200" 
-                        : "text-amber-800 dark:text-amber-200"
                     }`}>
-                      {result.pressurePsi >= 20 && result.pressurePsi <= 60 
-                        ? "✅ Ideal residential pressure range" 
-                        : result.pressurePsi < 20 
-                        ? "⚠️ Below recommended pressure" 
-                        : "⚠️ Above recommended pressure"}
+                    <p className={`text-sm ${result.pressurePsi >= 20 && result.pressurePsi <= 60
+                        ? "text-green-800 dark:text-green-200"
+                        : "text-amber-800 dark:text-amber-200"
+                      }`}>
+                      {result.pressurePsi >= 20 && result.pressurePsi <= 60
+                        ? "✅ Ideal residential pressure range"
+                        : result.pressurePsi < 20
+                          ? "⚠️ Below recommended pressure"
+                          : "⚠️ Above recommended pressure"}
                     </p>
                   </div>
 
@@ -276,6 +274,106 @@ export default function PipeWaterTankPressureCalculatorPage() {
                   in pipes. Residential systems typically need 40-60 PSI.
                 </p>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>How to Calculate Water Tank Pressure</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <p className="font-semibold mb-1">Enter water column height</p>
+                  <p className="text-sm text-muted-foreground">Input the vertical distance from the water surface to the measurement point in feet or meters.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <p className="font-semibold mb-1">Add pipe diameter (optional)</p>
+                  <p className="text-sm text-muted-foreground">Include pipe size for more detailed flow velocity calculations and recommendations.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <p className="font-semibold mb-1">Get pressure readings</p>
+                  <p className="text-sm text-muted-foreground">Receive static pressure in PSI, bar, kPa, and atm, plus flow velocity and system recommendations.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Key Features for Plumbing Design</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">Multiple pressure units</p>
+                  <p className="text-sm text-muted-foreground">View results in PSI, bar, kPa, and atmospheres for any application.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Flow velocity calculation</p>
+                  <p className="text-sm text-muted-foreground">Estimate water speed at the outlet using Torricelli's law.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Pressure range assessment</p>
+                  <p className="text-sm text-muted-foreground">Instant feedback on whether pressure is suitable for residential use.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Quick reference values</p>
+                  <p className="text-sm text-muted-foreground">Built-in conversion: 10 ft head = 4.33 PSI for easy mental calculations.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">System recommendations</p>
+                  <p className="text-sm text-muted-foreground">Get actionable advice on booster pumps or pressure reducing valves.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">How do I calculate water pressure from tank height?</p>
+                  <p className="text-sm text-muted-foreground">Use P = ρgh. For every foot of water height, you get 0.433 PSI. A 50-foot tank produces about 21.65 PSI at the bottom.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">What is good water pressure for a house?</p>
+                  <p className="text-sm text-muted-foreground">Ideal residential water pressure is 40-60 PSI. Below 40 PSI may cause weak flow; above 80 PSI can damage pipes and fixtures.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">How high does a water tank need to be for good pressure?</p>
+                  <p className="text-sm text-muted-foreground">For 40 PSI, you need about 92 feet of head. For 50 PSI, about 115 feet. Many homes use booster pumps instead of tall tanks.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Why is my water pressure low from an overhead tank?</p>
+                  <p className="text-sm text-muted-foreground">Low pressure usually means insufficient height. Each floor needs about 10-15 feet of elevation for adequate pressure.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Does pipe diameter affect water pressure?</p>
+                  <p className="text-sm text-muted-foreground">Pipe size affects flow rate and friction loss, not static pressure. Larger pipes reduce pressure drop during flow.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Plumbing and Engineering Tools</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-3">
+                Try our other calculators: the <a href="/calculators/pipe-flow-reynolds-number-calculator" className="text-primary hover:underline">Reynolds number calculator</a> for flow analysis, the <a href="/calculators/pipe-friction-loss-calculator" className="text-primary hover:underline">pipe friction loss calculator</a> for pressure drop, and the <a href="/calculators/water-flow-rate-calculator" className="text-primary hover:underline">water flow rate calculator</a> for volume calculations.
+              </p>
             </CardContent>
           </Card>
         </div>

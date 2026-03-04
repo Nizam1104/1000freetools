@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -44,7 +44,7 @@ export default function JsonRemoveKeysPage() {
 
     const keysSet = new Set(keysToRemove.filter(k => k.trim()));
     const removed = removeKeys(obj, keysSet, recursive);
-    
+
     setResult(JSON.stringify(removed, null, 2));
     toast.success(`Removed ${keysSet.size} key type(s)`);
   }, [input, keysToRemove, recursive, removeKeys]);

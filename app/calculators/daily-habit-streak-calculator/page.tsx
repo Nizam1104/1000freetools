@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -188,12 +188,11 @@ export default function DailyHabitStreakCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Habit Progress</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.currentStreak >= 66 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.currentStreak >= 30 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.currentStreak >= 14 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-muted"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.currentStreak >= 66 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.currentStreak >= 30 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.currentStreak >= 14 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-muted"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Current Streak</p>
                     <p className="text-5xl font-bold">{result.currentStreak}</p>
                     <p className="text-sm mt-1">days</p>
@@ -224,11 +223,10 @@ export default function DailyHabitStreakCalculatorPage() {
                       {result.milestones.map((milestone, i) => (
                         <div
                           key={i}
-                          className={`flex justify-between items-center p-2 rounded ${
-                            milestone.achieved
+                          className={`flex justify-between items-center p-2 rounded ${milestone.achieved
                               ? "bg-green-100 dark:bg-green-900/20"
                               : "bg-muted/50"
-                          }`}
+                            }`}
                         >
                           <span className={`text-sm ${milestone.achieved ? "text-green-700 dark:text-green-300" : "text-muted-foreground"}`}>
                             {milestone.achieved ? "✓" : "○"} {milestone.label}
@@ -263,30 +261,254 @@ export default function DailyHabitStreakCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Habit Formation Science
+                How to Use This Habit Streak Calculator
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>21 days:</strong> Traditional habit formation myth
-                  </li>
-                  <li>
-                    <strong>66 days:</strong> Average time for automatic behavior
-                    (Lally et al., 2009)
-                  </li>
-                  <li>
-                    <strong>18-254 days:</strong> Actual range depending on person
-                    and habit complexity
-                  </li>
-                  <li>
-                    <strong>Missing one day:</strong> Doesn&apos;t significantly impact
-                    habit formation
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> Start with &quot;tiny habits&quot; - make your new
-                  habit so small you can&apos;t say no. Consistency beats intensity!
-                </p>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your current streak</p>
+                    <p>Input how many consecutive days you&apos;ve completed your habit. This is your &quot;don&apos;t break the chain&quot; count.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Add your longest streak and total completions</p>
+                    <p>These help track your progress over time. Total completions shows how many days you&apos;ve succeeded, even if not consecutive.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set your start date and calculate</p>
+                    <p>The calculator computes your success rate, shows milestone progress, and gives personalized recommendations based on your streak length.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Habit Formation Milestones
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Days</th>
+                      <th className="text-left py-3 px-2 font-semibold">Milestone</th>
+                      <th className="text-left py-3 px-2 font-semibold">What&apos;s Happening</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">3 days</td>
+                      <td className="py-3 px-2">First milestone</td>
+                      <td className="py-3 px-2">Initial resistance fades</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">7 days</td>
+                      <td className="py-3 px-2">One week</td>
+                      <td className="py-3 px-2">Pattern starts forming</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">14 days</td>
+                      <td className="py-3 px-2">Two weeks</td>
+                      <td className="py-3 px-2">Becoming routine</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">21 days</td>
+                      <td className="py-3 px-2">Traditional goal</td>
+                      <td className="py-3 px-2">Habit formation begins (Maxwell Maltz)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">30 days</td>
+                      <td className="py-3 px-2">One month</td>
+                      <td className="py-3 px-2">Solid routine established</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">66 days</td>
+                      <td className="py-3 px-2">Automatic behavior</td>
+                      <td className="py-3 px-2">Average time to automaticity (Lally et al.)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">365 days</td>
+                      <td className="py-3 px-2">One year</td>
+                      <td className="py-3 px-2">Identity-level change</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Research from University College London found habit formation takes 18-254 days depending on the person and behavior complexity.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                The Science of Habit Formation
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Habit Loop</h4>
+                  <p>
+                    Habits form through a three-part loop: cue, routine, reward. The cue triggers the behavior. The routine is the action itself. The reward reinforces the pattern. Over time, this loop becomes automatic — your brain stops actively deciding.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why 66 Days?</h4>
+                  <p>
+                    Phillippa Lally&apos;s 2009 study tracked 96 people forming new habits. On average, behaviors became automatic after 66 days. But the range was huge: 18 to 254 days. Simple habits like drinking water formed faster; complex ones like exercising took longer.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The 21-Day Myth</h4>
+                  <p>
+                    The &quot;21 days to form a habit&quot; idea comes from Dr. Maxwell Maltz&apos;s 1960s observations of plastic surgery patients. It was never a scientific finding. The real answer: it depends. Don&apos;t get discouraged if your habit takes longer.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Missing a Day Doesn&apos;t Ruin Progress</h4>
+                  <p>
+                    Lally&apos;s research found that missing one day had no measurable impact on habit formation. Perfection isn&apos;t required. What matters is consistency over time, not an unbroken streak. Get back on track immediately instead of giving up.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Building Lasting Habits
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Start Ridiculously Small</p>
+                    <p>Want to exercise? Start with one pushup. Want to read more? Start with one page. Tiny habits succeed, then naturally expand. Big ambitions fail because they&apos;re too hard on bad days.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use Habit Stacking</p>
+                    <p>Attach your new habit to an existing one. &quot;After I brush my teeth, I will meditate for one minute.&quot; The existing habit becomes the cue. This works better than relying on willpower or remembering.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Make It Obvious and Easy</p>
+                    <p>Put your running shoes by the bed. Leave your journal on your pillow. Reduce friction between intention and action. Every extra step is a chance to skip the habit.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Track Visibly</p>
+                    <p>Use a calendar, app, or habit tracker. Mark an X for each successful day. The chain of X&apos;s becomes motivation itself — you won&apos;t want to break it. Jerry Seinfeld used this method for writing jokes.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How long does it take to form a habit?</h4>
+                  <p>
+                    On average, 66 days according to research from University College London. But the real range is 18 to 254 days depending on the person and the habit&apos;s complexity. Simple habits form faster; difficult ones take longer.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What happens if I miss a day?</h4>
+                  <p>
+                    Nothing catastrophic. Research shows missing one day doesn&apos;t significantly impact habit formation. The key is getting back on track immediately. Don&apos;t let one miss become two, then three, then quitting.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I track multiple habits at once?</h4>
+                  <p>
+                    Start with one. Habit formation requires mental energy and attention. Once the first habit feels automatic (around 2-3 months), add another. Trying to change everything at once usually leads to changing nothing.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What&apos;s a good success rate?</h4>
+                  <p>
+                    80% or higher is excellent. That means you&apos;re consistent but not perfectionist. A 50% success rate suggests the habit is too ambitious — make it smaller. Even 30% consistency is better than zero.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I recover from a broken streak?</h4>
+                  <p>
+                    Reset to zero and start again. Don&apos;t dwell on the broken chain — that&apos;s sunk cost thinking. Focus on building a new streak. Many people find their second attempt succeeds because they&apos;ve learned what went wrong the first time.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/goal-tracker-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Goal Tracker Calculator</span>
+                  <p className="text-muted-foreground">Track progress toward any goal with visual milestones</p>
+                </a>
+                <a
+                  href="/calculators/time-management-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Time Management Calculator</span>
+                  <p className="text-muted-foreground">Plan your day and optimize productivity with time blocking</p>
+                </a>
+                <a
+                  href="/calculators/stress-level-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Stress Level Calculator</span>
+                  <p className="text-muted-foreground">Assess your stress levels and get personalized coping strategies</p>
+                </a>
               </div>
             </CardContent>
           </Card>

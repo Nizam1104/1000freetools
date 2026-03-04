@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -16,19 +16,19 @@ export default function JsonToPhpPage() {
 
   const convertToPhpValue = (value: unknown, indent: number): string => {
     const indentStr = "    ".repeat(indent);
-    
+
     if (value === null) {
       return "null";
     }
-    
+
     if (typeof value === "boolean") {
       return value ? "true" : "false";
     }
-    
+
     if (typeof value === "number") {
       return String(value);
     }
-    
+
     if (typeof value === "string") {
       const escaped = value
         .replace(/\\/g, "\\\\")
@@ -39,7 +39,7 @@ export default function JsonToPhpPage() {
         .replace(/\$/g, "\\$");
       return `"${escaped}"`;
     }
-    
+
     if (Array.isArray(value)) {
       if (value.length === 0) {
         return "[]";
@@ -50,14 +50,14 @@ export default function JsonToPhpPage() {
       });
       return `[\n${items.join(",\n")}\n${indentStr}]`;
     }
-    
+
     if (typeof value === "object") {
       const entries = Object.entries(value);
-      
+
       if (entries.length === 0) {
         return "[]";
       }
-      
+
       const items = entries.map(([key, val]) => {
         const phpKey = convertToPhpValue(key, 0);
         const phpVal = convertToPhpValue(val, indent + 1);
@@ -65,7 +65,7 @@ export default function JsonToPhpPage() {
       });
       return `[\n${items.join(",\n")}\n${indentStr}]`;
     }
-    
+
     return String(value);
   };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -168,7 +168,7 @@ export default function ProfitMarginCalculatorPage() {
               <Alert>
                 <Info className="h-4 w-4" />
                 <AlertDescription className="text-sm">
-                  {calculateMode === "margin" 
+                  {calculateMode === "margin"
                     ? "Margin is profit as a percentage of selling price. Markup is profit as a percentage of cost."
                     : "Enter your cost and desired margin to find the optimal selling price."}
                 </AlertDescription>
@@ -284,6 +284,196 @@ export default function ProfitMarginCalculatorPage() {
             </div>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Profit Margin Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Choose your calculation mode</p>
+                    <p>Select "Calculate Margin" to find profit percentage from cost and price, or "Calculate Price" to determine selling price from cost and desired margin.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your values</p>
+                    <p>Input your cost of goods sold (COGS) and either the selling price or target margin percentage depending on your selected mode.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review your results</p>
+                    <p>See gross profit, margin percentage, markup percentage, and break-even price to make informed pricing decisions.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features of This Calculator
+              </h3>
+              <div className="space-y-4 text-sm">
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Dual Calculation Modes</p>
+                  <p className="text-muted-foreground">Switch between calculating margin from price or calculating optimal price from desired margin</p>
+                </div>
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Margin vs Markup Comparison</p>
+                  <p className="text-muted-foreground">See both metrics side by side — crucial since they're often confused but give different percentages</p>
+                </div>
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Break-Even Analysis</p>
+                  <p className="text-muted-foreground">Know the minimum price needed to cover costs before making any profit</p>
+                </div>
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Real-Time Calculations</p>
+                  <p className="text-muted-foreground">Results update automatically as you type — no need to click calculate repeatedly</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Profit Margin Benchmarks by Industry
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Industry</th>
+                      <th className="text-left py-3 px-2 font-semibold">Avg Gross Margin</th>
+                      <th className="text-left py-3 px-2 font-semibold">Avg Net Margin</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Software/SaaS</td>
+                      <td className="py-3 px-2">70-85%</td>
+                      <td className="py-3 px-2">15-25%</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Retail</td>
+                      <td className="py-3 px-2">25-50%</td>
+                      <td className="py-3 px-2">2-5%</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Restaurants</td>
+                      <td className="py-3 px-2">60-70%</td>
+                      <td className="py-3 px-2">3-5%</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Manufacturing</td>
+                      <td className="py-3 px-2">20-40%</td>
+                      <td className="py-3 px-2">5-10%</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">E-commerce</td>
+                      <td className="py-3 px-2">40-60%</td>
+                      <td className="py-3 px-2">5-10%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Consulting</td>
+                      <td className="py-3 px-2">70-90%</td>
+                      <td className="py-3 px-2">15-30%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Gross margin varies widely within industries. Net margin accounts for all operating expenses.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a good profit margin?</h4>
+                  <p>
+                    It depends on your industry. A 10% net margin is average across all businesses. Software companies often achieve 20%+, while grocery stores operate on 1-3%. Focus on your industry benchmark and improving your own margins over time.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I increase my profit margin?</h4>
+                  <p>
+                    Raise prices (if the market allows), negotiate better supplier costs, reduce waste, improve operational efficiency, or shift to higher-margin products. Small price increases often have the biggest impact since they flow directly to profit.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why is markup higher than margin?</h4>
+                  <p>
+                    Markup is calculated from cost (the smaller number), while margin is calculated from price (the larger number). A 50% markup on a $50 cost gives a $75 price, but that's only a 33% margin because $25 profit divided by $75 price equals 33%.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I use margin or markup for pricing?</h4>
+                  <p>
+                    Use margin for financial analysis and reporting — it's the standard metric investors and lenders expect. Use markup for quick pricing decisions and when communicating with sales teams who think in terms of "adding X% to cost."
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What's the difference between gross and net margin?</h4>
+                  <p>
+                    Gross margin only considers cost of goods sold. Net margin accounts for all expenses — rent, salaries, marketing, taxes, everything. Gross margin shows product profitability; net margin shows overall business profitability.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/markup-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Markup Calculator</span>
+                  <p className="text-muted-foreground">Calculate markup percentage and selling price from cost</p>
+                </a>
+                <a
+                  href="/calculators/break-even-point-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Break-Even Point Calculator</span>
+                  <p className="text-muted-foreground">Find the sales volume needed to cover all costs</p>
+                </a>
+                <a
+                  href="/calculators/roi-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">ROI Calculator</span>
+                  <p className="text-muted-foreground">Calculate return on investment for business decisions</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,7 +42,7 @@ export default function MapScaleCalculatorPage() {
 
     // Calculate real distance
     let realDistanceMm = 0;
-    
+
     // Convert map distance to mm first
     let mapDistMm = mapDistNum;
     if (mapUnit === "cm") {
@@ -290,6 +290,136 @@ export default function MapScaleCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* How It Works Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">How to Use the Map Scale Calculator</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Map Distance</h3>
+                <p className="text-sm text-muted-foreground">Input the measured distance on your map and select the unit (cm, mm, meters, or inches).</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Input Scale Ratio</h3>
+                <p className="text-sm text-muted-foreground">Enter the map scale denominator (e.g., 50000 for a 1:50,000 scale map).</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">Get Real Distance</h3>
+                <p className="text-sm text-muted-foreground">Instantly see the actual real-world distance with helpful comparisons and scale type info.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Key Features of Map Scale Calculator</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Multiple Unit Support
+                </h3>
+                <p className="text-sm text-muted-foreground">Work with centimeters, millimeters, meters, or inches for flexible map measurements.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Scale Type Classification
+                </h3>
+                <p className="text-sm text-muted-foreground">Automatically identifies if your map is large, medium, or small scale for better context.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Distance Comparisons
+                </h3>
+                <p className="text-sm text-muted-foreground">See your calculated distance compared to familiar references like football fields and marathons.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Practical Recommendations
+                </h3>
+                <p className="text-sm text-muted-foreground">Get tailored tips based on your map scale for navigation, planning, or orientation use.</p>
+              </div>
+            </div>
+
+            <div className="mt-6 p-6 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-3">Map Scale Reference Guide</h3>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p className="font-semibold mb-2">Common Map Scales:</p>
+                  <ul className="space-y-1 text-muted-foreground">
+                    <li>• 1:10,000 - City street maps, detailed navigation</li>
+                    <li>• 1:25,000 - Hiking and outdoor recreation</li>
+                    <li>• 1:50,000 - Regional road maps</li>
+                    <li>• 1:100,000 - County or district maps</li>
+                    <li>• 1:250,000 - State or provincial maps</li>
+                    <li>• 1:1,000,000 - Country or continental overview</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-2">Example Calculation:</p>
+                  <ul className="space-y-1 text-muted-foreground">
+                    <li>• Map distance: 5 cm</li>
+                    <li>• Map scale: 1:50,000</li>
+                    <li>• Calculation: 5 cm × 50,000 = 250,000 cm</li>
+                    <li>• Convert: 250,000 cm = 2.5 km</li>
+                    <li>• Result: Real distance is 2.5 kilometers</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Map Scales</h2>
+            <div className="space-y-4">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What does a 1:50,000 map scale mean?</h3>
+                <p className="text-sm text-muted-foreground">A 1:50,000 scale means 1 unit on the map equals 50,000 of the same units in reality. So 1 cm on the map represents 50,000 cm (500 meters) on the ground. This is a common scale for hiking and topographic maps.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What is the difference between large and small scale maps?</h3>
+                <p className="text-sm text-muted-foreground">Large scale maps (like 1:10,000) show more detail but cover smaller areas. Small scale maps (like 1:1,000,000) show less detail but cover larger areas. Counterintuitively, the smaller the denominator, the larger the scale.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">How do I measure distance on a digital map like Google Maps?</h3>
+                <p className="text-sm text-muted-foreground">Digital maps don't have a fixed scale since zoom changes it. Use the built-in measure distance tool instead. Right-click on Google Maps and select "Measure distance" to click points and get automatic real-world distances.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What map scale is best for hiking?</h3>
+                <p className="text-sm text-muted-foreground">For hiking, 1:25,000 or 1:50,000 scales work best. The 1:25,000 scale shows more trail detail, elevation contours, and landmarks. The 1:50,000 scale covers more ground per map sheet, useful for longer routes.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Can I use this calculator for online maps?</h3>
+                <p className="text-sm text-muted-foreground">Online maps like Google Maps don't use fixed scales since zoom level changes the ratio. This calculator works best with printed maps or PDF maps that have a stated scale ratio. For digital maps, use their built-in measurement tools.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Related Tools Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Related Tools You Might Find Useful</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/distance-formula-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Distance Formula Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate the straight-line distance between two coordinate points.</p>
+              </a>
+              <a href="/calculators/land-area-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Land Area Converter</h3>
+                <p className="text-sm text-muted-foreground">Convert land measurements between acres, hectares, square feet, and more.</p>
+              </a>
+              <a href="/calculators/slope-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Slope Calculator</h3>
+                <p className="text-sm text-muted-foreground">Find the slope, angle, and grade of terrain or inclines.</p>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

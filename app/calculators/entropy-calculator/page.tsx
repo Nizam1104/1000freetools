@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -299,6 +299,142 @@ export default function EntropyCalculatorPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* How It Works Section */}
+        <div className="mt-8 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">How Password Entropy Calculation Works</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Your Password</h3>
+              <p className="text-sm text-muted-foreground">Type or paste your password or passphrase into the input field for analysis.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Analyze Character Set</h3>
+              <p className="text-sm text-muted-foreground">The calculator identifies lowercase, uppercase, numbers, and symbols to determine character set size.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">Get Entropy Score</h3>
+              <p className="text-sm text-muted-foreground">View entropy in bits, strength rating, and estimated time to crack using brute force.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Entropy Calculator?</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Scientific Security Measurement
+              </h3>
+              <p className="text-sm text-muted-foreground">Uses information theory to measure true password randomness, not just length or complexity rules.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Real-World Crack Time Estimates
+              </h3>
+              <p className="text-sm text-muted-foreground">Shows how long it would take to crack your password at 1 trillion guesses per second.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Secure Password Generator
+              </h3>
+              <p className="text-sm text-muted-foreground">Generate cryptographically strong passwords with 8, 12, 16, or 20 characters instantly.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Custom Character Set Support
+              </h3>
+              <p className="text-sm text-muted-foreground">Define your own character set for specialized entropy calculations.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Shannon Entropy Mode
+              </h3>
+              <p className="text-sm text-muted-foreground">Calculate Shannon entropy for any data string, useful for cryptography and data analysis.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-6 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-3">Password Entropy Formula</h3>
+            <div className="bg-card p-4 rounded font-mono text-sm mb-4">
+              Entropy = L × log₂(N)
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="font-semibold mb-2">Where:</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li><strong>L</strong> = Password length (characters)</li>
+                  <li><strong>N</strong> = Character set size</li>
+                  <li><strong>log₂</strong> = Base-2 logarithm</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-2">Character Set Sizes:</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>Numbers only (0-9): 10</li>
+                  <li>Lowercase (a-z): 26</li>
+                  <li>Alphanumeric: 62</li>
+                  <li>Full ASCII printable: ~94</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Password Entropy</h2>
+          <div className="space-y-4">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is password entropy?</h3>
+              <p className="text-sm text-muted-foreground">Password entropy measures the randomness and unpredictability of a password in bits. Higher entropy means more possible combinations and better resistance to brute-force attacks.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How many bits of entropy is considered secure?</h3>
+              <p className="text-sm text-muted-foreground">For most purposes, 60+ bits is strong, 80+ bits is very strong. NIST recommends at least 80 bits for high-security applications. Below 36 bits is considered weak.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Is a longer password always better?</h3>
+              <p className="text-sm text-muted-foreground">Generally yes, but character variety matters too. A 12-character password with mixed case, numbers, and symbols often has more entropy than a 15-character lowercase-only password.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What makes a password have high entropy?</h3>
+              <p className="text-sm text-muted-foreground">High entropy comes from length, character variety (lowercase, uppercase, numbers, symbols), and true randomness. Avoid patterns, dictionary words, and predictable substitutions.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How is entropy different from password strength meters?</h3>
+              <p className="text-sm text-muted-foreground">Entropy is a mathematical measure based on information theory. Many strength meters use arbitrary rules. Entropy gives a more accurate measure of brute-force resistance.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Related Security Tools</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/password-strength-scorer" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Password Strength Scorer</h3>
+              <p className="text-sm text-muted-foreground">Evaluate password strength using multiple criteria including patterns and common passwords.</p>
+            </a>
+            <a href="/calculators/aes-key-size-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">AES Key Size Estimator</h3>
+              <p className="text-sm text-muted-foreground">Compare encryption key sizes and estimate brute-force resistance for AES encryption.</p>
+            </a>
+            <a href="/calculators/hash-brute-force-time-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Hash Brute Force Time Estimator</h3>
+              <p className="text-sm text-muted-foreground">Calculate how long it would take to crack hashed passwords with different hardware.</p>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -40,7 +40,7 @@ export default function TirePressureAdjustmentCalculatorPage() {
 
     // Convert temperature to Celsius if needed
     if (tempUnit === "fahrenheit") {
-      tempNum = (tempNum - 32) * 5/9;
+      tempNum = (tempNum - 32) * 5 / 9;
     }
 
     // Reference temperature (standard is 20°C / 68°F)
@@ -216,11 +216,10 @@ export default function TirePressureAdjustmentCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Pressure Adjustment</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    Math.abs(result.pressureChange) <= 2 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.pressureChange > 2 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${Math.abs(result.pressureChange) <= 2 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.pressureChange > 2 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Adjusted Pressure</p>
                     <p className="text-4xl font-bold">{result.adjustedPressure} {pressureUnit}</p>
                     <p className="text-sm mt-1">
@@ -295,6 +294,177 @@ export default function TirePressureAdjustmentCalculatorPage() {
                   pressures (found on door jamb sticker). These calculations are adjustments
                   to the base recommended pressure.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How It Works
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Enter Base Pressure</h4>
+                    <p className="text-xs text-muted-foreground">Input your vehicle's recommended tire pressure from the door jamb sticker or owner's manual.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Set Conditions</h4>
+                    <p className="text-xs text-muted-foreground">Enter ambient temperature, load condition (passengers/cargo), and altitude for accurate adjustment.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Get Adjusted Pressure</h4>
+                    <p className="text-xs text-muted-foreground">See the recommended cold tire pressure adjusted for your specific driving conditions.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Temperature & Pressure Adjustment Guide
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-semibold">Temperature Change</th>
+                      <th className="text-left py-2 px-3 font-semibold">Pressure Change</th>
+                      <th className="text-left py-2 px-3 font-semibold">Action Needed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">-40°F (-40°C)</td>
+                      <td className="py-2 px-3 text-red-600">-4 PSI</td>
+                      <td className="py-2 px-3 text-xs">Add air immediately</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">-20°F (-29°C)</td>
+                      <td className="py-2 px-3 text-red-600">-2 PSI</td>
+                      <td className="py-2 px-3 text-xs">Add air soon</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">0°F (-18°C)</td>
+                      <td className="py-2 px-3 text-amber-600">-1 PSI</td>
+                      <td className="py-2 px-3 text-xs">Monitor closely</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">+40°F (+4°C)</td>
+                      <td className="py-2 px-3 text-green-600">0 PSI</td>
+                      <td className="py-2 px-3 text-xs">No adjustment</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">+80°F (+27°C)</td>
+                      <td className="py-2 px-3 text-amber-600">+1 PSI</td>
+                      <td className="py-2 px-3 text-xs">Monitor closely</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3 font-medium">+100°F (+38°C)</td>
+                      <td className="py-2 px-3 text-amber-600">+2 PSI</td>
+                      <td className="py-2 px-3 text-xs">Don't bleed when hot</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3">Rule of thumb: Tire pressure changes ~1 PSI for every 10°F (5.5°C) temperature change.</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features & Benefits
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Temperature Compensation</h4>
+                  <p className="text-xs text-muted-foreground">Automatically adjusts for ambient temperature changes that affect tire pressure readings.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Load-Based Adjustment</h4>
+                  <p className="text-xs text-muted-foreground">Recommends pressure increases for heavy loads, towing, or maximum cargo conditions.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Altitude Correction</h4>
+                  <p className="text-xs text-muted-foreground">Accounts for altitude effects on pressure gauge readings at high elevations.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Safety Recommendations</h4>
+                  <p className="text-xs text-muted-foreground">Get condition-specific tips for cold weather, hot weather, and heavy load driving.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How much does tire pressure change with temperature?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Tire pressure changes approximately 1 PSI for every 10°F (5.5°C) temperature change. A 30°F drop from summer to winter can reduce pressure by 3 PSI, triggering the TPMS warning light.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Should I adjust tire pressure for heavy loads?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Yes. Check your door jamb sticker – most vehicles specify higher pressure for maximum load conditions. Typically add 3-6 PSI for heavy cargo or towing. This prevents excessive tire flex and heat buildup.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">When should I check tire pressure?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Check when tires are cold (vehicle parked 3+ hours). Driving heats tires and increases pressure 3-5 PSI, giving false readings. Check monthly and before long trips. Winter demands more frequent checks.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Why does TPMS light come on in winter?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Cold temperatures cause pressure drops. If tires were at 32 PSI at 70°F and temperature drops to 20°F, pressure falls to ~27 PSI – below most TPMS thresholds (usually 25% below recommended). Add air to restore proper pressure.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Should I reduce tire pressure in hot weather?</h4>
+                <p className="text-xs text-muted-foreground">
+                  No. Never bleed tires when hot. The pressure increase from heat is temporary. Manufacturers account for normal temperature rise. Only adjust based on cold pressure readings. Overinflation reduces traction and causes uneven wear.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Related Tools</h3>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/fuel-cost-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Fuel Cost Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate trip fuel expenses</p>
+                </a>
+                <a href="/calculators/mileage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Mileage Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate fuel efficiency MPG</p>
+                </a>
+                <a href="/calculators/trip-cost-estimator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Trip Cost Estimator</p>
+                  <p className="text-xs text-muted-foreground">Estimate total travel costs</p>
+                </a>
               </div>
             </CardContent>
           </Card>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -56,7 +56,7 @@ export default function GPAWeightDistributionCalculatorPage() {
       const weightedPoints = points * course.credits;
       totalPoints += weightedPoints;
       totalCredits += course.credits;
-      
+
       courseContributions.push({
         name: course.name,
         contribution: points,
@@ -106,10 +106,10 @@ export default function GPAWeightDistributionCalculatorPage() {
                       <Button variant="ghost" size="sm" onClick={() => removeCourse(course.id)}>×</Button>
                     )}
                   </div>
-                  <Input 
-                    placeholder="Course name" 
-                    value={course.name} 
-                    onChange={(e) => updateCourse(course.id, "name", e.target.value)} 
+                  <Input
+                    placeholder="Course name"
+                    value={course.name}
+                    onChange={(e) => updateCourse(course.id, "name", e.target.value)}
                   />
                   <div className="grid grid-cols-2 gap-2">
                     <Select value={course.grade} onValueChange={(value) => updateCourse(course.id, "grade", value)}>
@@ -132,11 +132,11 @@ export default function GPAWeightDistributionCalculatorPage() {
                         <SelectItem value="F">F (0.0)</SelectItem>
                       </SelectContent>
                     </Select>
-                    <Input 
-                      type="number" 
-                      placeholder="Credits" 
-                      value={course.credits} 
-                      onChange={(e) => updateCourse(course.id, "credits", parseFloat(e.target.value) || 0)} 
+                    <Input
+                      type="number"
+                      placeholder="Credits"
+                      value={course.credits}
+                      onChange={(e) => updateCourse(course.id, "credits", parseFloat(e.target.value) || 0)}
                     />
                   </div>
                 </div>
@@ -176,8 +176,8 @@ export default function GPAWeightDistributionCalculatorPage() {
                           <span className="text-sm text-muted-foreground">{course.percentage.toFixed(1)}% weight</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div 
-                            className="h-2 rounded-full bg-primary" 
+                          <div
+                            className="h-2 rounded-full bg-primary"
                             style={{ width: `${course.percentage}%` }}
                           />
                         </div>

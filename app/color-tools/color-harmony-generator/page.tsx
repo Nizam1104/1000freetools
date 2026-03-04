@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,17 +23,17 @@ interface HarmonyPalette {
 const hexToHsl = (hex: string): { h: number; s: number; l: number } | null => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   if (!result) return null;
-  
+
   let r = parseInt(result[1], 16) / 255;
   let g = parseInt(result[2], 16) / 255;
   let b = parseInt(result[3], 16) / 255;
-  
+
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
   let h = 0;
   let s = 0;
   const l = (max + min) / 2;
-  
+
   if (max !== min) {
     const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
@@ -49,7 +49,7 @@ const hexToHsl = (hex: string): { h: number; s: number; l: number } | null => {
         break;
     }
   }
-  
+
   return {
     h: Math.round(h * 360),
     s: Math.round(s * 100),
@@ -72,10 +72,10 @@ const hslToHex = (h: number, s: number, l: number): string => {
 const generateComplementary = (baseHex: string): HarmonyColor[] => {
   const hsl = hexToHsl(baseHex);
   if (!hsl) return [];
-  
+
   const { h, s, l } = hsl;
   const compH = (h + 180) % 360;
-  
+
   return [
     { hex: baseHex.toLowerCase(), hsl: `hsl(${h}, ${s}%, ${l}%)`, name: "Base" },
     { hex: hslToHex(compH, s, l), hsl: `hsl(${compH}, ${s}%, ${l}%)`, name: "Complement" },
@@ -85,9 +85,9 @@ const generateComplementary = (baseHex: string): HarmonyColor[] => {
 const generateAnalogous = (baseHex: string): HarmonyColor[] => {
   const hsl = hexToHsl(baseHex);
   if (!hsl) return [];
-  
+
   const { h, s, l } = hsl;
-  
+
   return [
     { hex: hslToHex((h - 30 + 360) % 360, s, l), hsl: `hsl(${(h - 30 + 360) % 360}, ${s}%, ${l}%)`, name: "Left" },
     { hex: baseHex.toLowerCase(), hsl: `hsl(${h}, ${s}%, ${l}%)`, name: "Base" },
@@ -98,9 +98,9 @@ const generateAnalogous = (baseHex: string): HarmonyColor[] => {
 const generateTriadic = (baseHex: string): HarmonyColor[] => {
   const hsl = hexToHsl(baseHex);
   if (!hsl) return [];
-  
+
   const { h, s, l } = hsl;
-  
+
   return [
     { hex: baseHex.toLowerCase(), hsl: `hsl(${h}, ${s}%, ${l}%)`, name: "Base" },
     { hex: hslToHex((h + 120) % 360, s, l), hsl: `hsl(${(h + 120) % 360}, ${s}%, ${l}%)`, name: "Triadic 1" },
@@ -111,9 +111,9 @@ const generateTriadic = (baseHex: string): HarmonyColor[] => {
 const generateTetradic = (baseHex: string): HarmonyColor[] => {
   const hsl = hexToHsl(baseHex);
   if (!hsl) return [];
-  
+
   const { h, s, l } = hsl;
-  
+
   return [
     { hex: baseHex.toLowerCase(), hsl: `hsl(${h}, ${s}%, ${l}%)`, name: "Base" },
     { hex: hslToHex((h + 90) % 360, s, l), hsl: `hsl(${(h + 90) % 360}, ${s}%, ${l}%)`, name: "Tetradic 1" },
@@ -125,9 +125,9 @@ const generateTetradic = (baseHex: string): HarmonyColor[] => {
 const generateSplitComplementary = (baseHex: string): HarmonyColor[] => {
   const hsl = hexToHsl(baseHex);
   if (!hsl) return [];
-  
+
   const { h, s, l } = hsl;
-  
+
   return [
     { hex: baseHex.toLowerCase(), hsl: `hsl(${h}, ${s}%, ${l}%)`, name: "Base" },
     { hex: hslToHex((h + 150) % 360, s, l), hsl: `hsl(${(h + 150) % 360}, ${s}%, ${l}%)`, name: "Split 1" },
@@ -138,9 +138,9 @@ const generateSplitComplementary = (baseHex: string): HarmonyColor[] => {
 const generateSquare = (baseHex: string): HarmonyColor[] => {
   const hsl = hexToHsl(baseHex);
   if (!hsl) return [];
-  
+
   const { h, s, l } = hsl;
-  
+
   return [
     { hex: baseHex.toLowerCase(), hsl: `hsl(${h}, ${s}%, ${l}%)`, name: "Base" },
     { hex: hslToHex((h + 90) % 360, s, l), hsl: `hsl(${(h + 90) % 360}, ${s}%, ${l}%)`, name: "Square 1" },
@@ -152,11 +152,11 @@ const generateSquare = (baseHex: string): HarmonyColor[] => {
 const getContrastColor = (hex: string): string => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   if (!result) return "#000000";
-  
+
   const r = parseInt(result[1], 16);
   const g = parseInt(result[2], 16);
   const b = parseInt(result[3], 16);
-  
+
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.5 ? "#000000" : "#ffffff";
 };
@@ -204,16 +204,16 @@ ${palette.colors.map((c, i) => `.harmony-${i + 1} { background-color: ${c.hex}; 
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    
+
     canvas.width = 800;
     canvas.height = 400;
-    
+
     const colorWidth = canvas.width / palette.colors.length;
     palette.colors.forEach((color, i) => {
       ctx.fillStyle = color.hex;
       ctx.fillRect(i * colorWidth, 0, colorWidth, canvas.height);
     });
-    
+
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -228,7 +228,7 @@ ${palette.colors.map((c, i) => `.harmony-${i + 1} { background-color: ${c.hex}; 
     });
     return;
   }
-  
+
   toast.success(`Palette downloaded as ${format.toUpperCase()}!`);
 };
 
@@ -255,7 +255,7 @@ export default function ColorHarmonyGeneratorPage() {
 
   const generatePalette = useCallback((): HarmonyPalette => {
     let colors: HarmonyColor[] = [];
-    
+
     switch (harmonyType) {
       case "complementary":
         colors = generateComplementary(baseColor);
@@ -278,7 +278,7 @@ export default function ColorHarmonyGeneratorPage() {
       default:
         colors = generateComplementary(baseColor);
     }
-    
+
     return { type: harmonyType, colors };
   }, [baseColor, harmonyType]);
 
@@ -521,7 +521,7 @@ export default function ColorHarmonyGeneratorPage() {
                 <Label className="text-sm font-medium text-muted-foreground">
                   Color Wheel Visualization
                 </Label>
-                
+
                 <div className="flex justify-center py-8">
                   <div className="relative w-64 h-64">
                     {/* Color Wheel */}
@@ -532,13 +532,13 @@ export default function ColorHarmonyGeneratorPage() {
                           <stop offset="100%" stopColor="transparent" />
                         </radialGradient>
                       </defs>
-                      
+
                       {/* Color wheel background */}
                       <circle cx="50" cy="50" r="45" fill="url(#colorWheel)" />
-                      
+
                       {/* Create color wheel */}
                       <circle cx="50" cy="50" r="45" fill="none" stroke="url(#hueGradient)" strokeWidth="90" />
-                      
+
                       <defs>
                         <linearGradient id="hueGradient" gradientTransform="rotate(90 50 50)">
                           <stop offset="0%" stopColor="#ff0000" />
@@ -550,10 +550,10 @@ export default function ColorHarmonyGeneratorPage() {
                           <stop offset="100%" stopColor="#ff0000" />
                         </linearGradient>
                       </defs>
-                      
+
                       {/* Center circle */}
                       <circle cx="50" cy="50" r="25" fill="var(--background)" stroke="var(--border)" strokeWidth="1" />
-                      
+
                       {/* Base color indicator */}
                       {(() => {
                         const hsl = hexToHsl(baseColor);
@@ -566,7 +566,7 @@ export default function ColorHarmonyGeneratorPage() {
                           <circle cx={x} cy={y} r="6" fill={baseColor} stroke="white" strokeWidth="2" />
                         );
                       })()}
-                      
+
                       {/* Harmony color indicators */}
                       {palette.colors.map((color, index) => {
                         if (color.hex === baseColor.toLowerCase()) return null;
@@ -589,7 +589,7 @@ export default function ColorHarmonyGeneratorPage() {
                         );
                       })}
                     </svg>
-                    
+
                     {/* Legend */}
                     <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-2">
                       {palette.colors.map((color, index) => (
@@ -610,7 +610,7 @@ export default function ColorHarmonyGeneratorPage() {
                 <Label className="text-sm font-medium text-muted-foreground">
                   Design Preview
                 </Label>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Card Preview */}
                   <div className="space-y-4">
@@ -669,7 +669,7 @@ export default function ColorHarmonyGeneratorPage() {
                           </div>
                         ))}
                       </div>
-                      
+
                       {/* Badges */}
                       <div className="flex flex-wrap gap-2">
                         {palette.colors.map((color, i) => (
@@ -754,11 +754,10 @@ ${palette.colors.map((c, i) => `          ${c.name.toLowerCase().replace(/\s/g, 
               {PRESET_COLORS.map((color) => (
                 <button
                   key={color}
-                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${
-                    baseColor.toLowerCase() === color.toLowerCase()
+                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${baseColor.toLowerCase() === color.toLowerCase()
                       ? "border-primary ring-2 ring-primary ring-offset-2"
                       : "border-border"
-                  }`}
+                    }`}
                   style={{ backgroundColor: color }}
                   onClick={() => {
                     setBaseColor(color);

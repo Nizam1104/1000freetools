@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -255,11 +255,10 @@ export default function WarehouseStorageVolumeCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.utilizationRate >= 50 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.utilizationRate >= 35 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.utilizationRate >= 50 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.utilizationRate >= 35 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Storage Density</p>
                     <p className="text-lg font-bold">{result.storageDensity}</p>
                     <p className="text-3xl font-bold mt-2">{result.utilizationRate}% Utilization</p>
@@ -327,6 +326,103 @@ export default function WarehouseStorageVolumeCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Warehouse Storage Volume</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Warehouse Dimensions</h3>
+                <p className="text-sm text-muted-foreground">Input length, width, and clear height of your warehouse space.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Racking Configuration</h3>
+                <p className="text-sm text-muted-foreground">Choose aisle type and racking system to calculate usable space.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Capacity Analysis</h3>
+                <p className="text-sm text-muted-foreground">See total volume, usable volume, pallet positions, and optimization tips.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Warehouse Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Multiple Racking Types**</h3>
+              <p className="text-sm text-muted-foreground">Support for selective, drive-in, push-back, and pallet flow racking systems.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Aisle Optimization**</h3>
+              <p className="text-sm text-muted-foreground">Compare narrow, standard, and wide aisle configurations for space efficiency.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Pallet Position Estimates**</h3>
+              <p className="text-sm text-muted-foreground">Calculate how many pallet positions your warehouse can accommodate.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Actionable Recommendations**</h3>
+              <p className="text-sm text-muted-foreground">Get specific tips to maximize your warehouse storage capacity.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I calculate warehouse storage capacity?</h3>
+              <p className="text-sm text-muted-foreground">Multiply length × width × clear height for total volume. Then apply utilization factors for aisles (40-50%) and racking efficiency (60-80%) to get usable capacity.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is clear height in a warehouse?</h3>
+              <p className="text-sm text-muted-foreground">Clear height is the usable vertical space from floor to the lowest overhead obstruction (sprinklers, lights, beams). This determines maximum racking height.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How much aisle space do I need?</h3>
+              <p className="text-sm text-muted-foreground">Standard aisles need 11-13 feet for counterbalance forklifts. Narrow aisles need 8-10 feet with reach trucks. Very narrow aisles (VNA) need 5-6 feet with specialized equipment.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a good warehouse utilization rate?</h3>
+              <p className="text-sm text-muted-foreground">80-85% is optimal. Above 85% causes congestion and reduced productivity. Below 70% means you&apos;re paying for unused space.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How many pallets fit in my warehouse?</h3>
+              <p className="text-sm text-muted-foreground">Depends on pallet size, racking type, and aisle configuration. A typical warehouse holds 2,000-10,000 pallet positions per 100,000 sq ft.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/container-load-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Container Load Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate how many boxes fit in shipping containers.</p>
+            </a>
+            <a href="/calculators/pallet-stacking-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Pallet Stacking Calculator</h3>
+              <p className="text-sm text-muted-foreground">Optimize pallet stacking patterns for maximum capacity.</p>
+            </a>
+            <a href="/calculators/cargo-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Cargo Volume Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate cargo space for trucks and trailers.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

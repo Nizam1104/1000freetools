@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -371,6 +371,133 @@ export default function UPSGeneratorRuntimeCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Backup Power Runtime</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Choose Power Source Type</h3>
+                <p className="text-sm text-muted-foreground">Select UPS battery backup or generator based on your emergency power system.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Capacity & Load Details</h3>
+                <p className="text-sm text-muted-foreground">Input battery Ah/voltage or fuel capacity, plus total connected wattage of your devices.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Runtime Estimate</h3>
+                <p className="text-sm text-muted-foreground">Receive estimated backup duration with recommendations for your specific setup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Runtime Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Dual Power Source Support</h3>
+              <p className="text-sm text-muted-foreground">Calculate runtime for both UPS battery systems and fuel-powered generators with appropriate formulas.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Battery Depth of Discharge</h3>
+              <p className="text-sm text-muted-foreground">Accounts for 50% DoD limit on lead-acid batteries to preserve battery health and longevity.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Fuel Consumption Rates</h3>
+              <p className="text-sm text-muted-foreground">Uses realistic fuel consumption rates for gasoline, diesel, propane, and natural gas generators.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Smart Recommendations</h3>
+              <p className="text-sm text-muted-foreground">Get actionable advice based on your runtime results, including battery replacement and sizing tips.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Runtime Calculation Formulas</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">System Type</th>
+                  <th className="text-left py-2">Formula</th>
+                  <th className="text-left py-2">Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">UPS Battery</td>
+                  <td className="py-2 font-mono">(V × Ah × Efficiency × 0.5) ÷ Watts</td>
+                  <td className="py-2">(12V × 100Ah × 0.85 × 0.5) ÷ 500W = 1.02 hrs</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Generator</td>
+                  <td className="py-2 font-mono">Fuel ÷ (kW × Rate/kW)</td>
+                  <td className="py-2">10 gal ÷ (0.5kW × 0.5 gal/kW) = 40 hrs</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Battery Energy</td>
+                  <td className="py-2 font-mono">Voltage × Amp-hours = Watt-hours</td>
+                  <td className="py-2">12V × 100Ah = 1,200 Wh</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">How long will a 1000VA UPS last?</h3>
+              <p className="text-sm text-muted-foreground">A 1000VA UPS with 100Ah battery at 12V can run a 300W load for approximately 2-3 hours. Runtime decreases significantly with higher loads - at 600W, expect only 45-60 minutes.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How do I calculate generator fuel consumption?</h3>
+              <p className="text-sm text-muted-foreground">Gasoline generators consume about 0.5 gallons per hour per kW of load. A 5kW generator at half load (2.5kW) uses roughly 1.25 gallons per hour, giving 8 hours runtime from a 10-gallon tank.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Why is UPS runtime shorter than expected?</h3>
+              <p className="text-sm text-muted-foreground">Battery capacity decreases with age (replace every 3-5 years), high discharge rates reduce effective capacity, and manufacturers often rate batteries at lower loads than real-world usage.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Should I use a UPS or generator?</h3>
+              <p className="text-sm text-muted-foreground">Use UPS for instant backup (computers, servers) and short outages. Use generators for extended outages (hours to days). For critical systems, use both: UPS bridges the gap until generator starts.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How can I extend UPS battery runtime?</h3>
+              <p className="text-sm text-muted-foreground">Reduce connected load, add external battery packs in parallel, keep batteries at room temperature, and ensure batteries are fully charged. Consider upgrading to lithium batteries for 2-3× runtime.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Power Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/ups-load-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">UPS Load Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate total load and required UPS capacity for your equipment.</p>
+            </a>
+            <a href="/calculators/electric-power-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Electric Power Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate power, voltage, current, and resistance relationships.</p>
+            </a>
+            <a href="/calculators/battery-life-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Battery Life Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate battery runtime for any device or application.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -32,10 +32,10 @@ export default function ChargingCostEvCalculatorPage() {
 
     // Energy needed to charge from current to full
     const energyNeeded = capacity - (capacity * current / 100);
-    
+
     // Account for charging losses (efficiency)
     const energyDelivered = energyNeeded / efficiency;
-    
+
     // Base cost
     let totalCost = energyDelivered * rate;
 
@@ -183,7 +183,7 @@ export default function ChargingCostEvCalculatorPage() {
                     <p className="text-sm text-muted-foreground">Total Charging Cost</p>
                     <p className="text-3xl font-bold text-primary">${result.totalCost.toFixed(2)}</p>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-4 bg-muted rounded-lg">
                       <p className="text-sm text-muted-foreground">Energy Delivered</p>
@@ -229,6 +229,149 @@ export default function ChargingCostEvCalculatorPage() {
             <strong>Tip:</strong> Home charging is typically the cheapest option. Public chargers and
             Superchargers cost more but offer faster charging speeds.
           </p>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate EV Charging Costs</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Enter Battery Details</h3>
+                  <p className="text-muted-foreground text-sm">Input your EV's battery capacity in kWh and current charge level percentage.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Set Charging Parameters</h3>
+                  <p className="text-muted-foreground text-sm">Enter electricity rate, charging type (home/public/Supercharger), and efficiency.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Cost Breakdown</h3>
+                  <p className="text-muted-foreground text-sm">See total charging cost, energy delivered, and cost per mile for trip planning.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Why Calculate EV Charging Costs?</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">⚡ Budget Planning</h3>
+                <p className="text-muted-foreground text-sm">Know exactly how much each charge costs to budget your monthly electricity or charging expenses accurately.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🔌 Charging Location Comparison</h3>
+                <p className="text-muted-foreground text-sm">Compare home charging vs public stations vs Superchargers to find the most cost-effective option.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🚗 Trip Cost Estimation</h3>
+                <p className="text-muted-foreground text-sm">Calculate cost per mile to plan road trip budgets and compare EV vs gasoline vehicle expenses.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📊 Efficiency Tracking</h3>
+                <p className="text-muted-foreground text-sm">Monitor charging efficiency losses and understand real-world energy consumption vs rated capacity.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Reference Table */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">EV Charging Cost Comparison</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4">Charging Type</th>
+                    <th className="text-left py-3 px-4">Avg Rate/kWh</th>
+                    <th className="text-left py-3 px-4">Multiplier</th>
+                    <th className="text-left py-3 px-4">Full Charge (75 kWh)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">🏠 Home Charging</td>
+                    <td className="py-3 px-4">$0.13-0.15</td>
+                    <td className="py-3 px-4">1.0× (base rate)</td>
+                    <td className="py-3 px-4">$10-12</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">⚡ Public Level 2</td>
+                    <td className="py-3 px-4">$0.20-0.30</td>
+                    <td className="py-3 px-4">1.5× base rate</td>
+                    <td className="py-3 px-4">$15-23</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">🔋 DC Fast Charging</td>
+                    <td className="py-3 px-4">$0.35-0.50</td>
+                    <td className="py-3 px-4">2.5× base rate</td>
+                    <td className="py-3 px-4">$26-38</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">🚗 Gasoline Equivalent</td>
+                    <td className="py-3 px-4">$3.50/gallon</td>
+                    <td className="py-3 px-4">~3× EV cost</td>
+                    <td className="py-3 px-4">$35-45 (300 mi)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">EV Charging Cost FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How much does it cost to fully charge an EV?</h3>
+                <p className="text-muted-foreground text-sm">For a 75 kWh battery at $0.13/kWh (US average), a full home charge costs about $10-12. Public charging can cost 2-3× more.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is charging efficiency loss?</h3>
+                <p className="text-muted-foreground text-sm">About 10-15% of electricity is lost as heat during charging. A 75 kWh battery may need 85-90 kWh from the grid to fully charge.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Is home charging cheaper than Supercharging?</h3>
+                <p className="text-muted-foreground text-sm">Yes, home charging is typically 2-3× cheaper than Supercharging. Use Superchargers for road trips, charge at home for daily use.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I calculate cost per mile for an EV?</h3>
+                <p className="text-muted-foreground text-sm">Divide charging cost by vehicle range. Example: $12 charge ÷ 300 miles = $0.04/mile, compared to ~$0.12-0.15/mile for gasoline cars.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Does fast charging damage the battery?</h3>
+                <p className="text-muted-foreground text-sm">Occasional fast charging is fine. Frequent DC fast charging can accelerate battery degradation. Use Level 2 charging when possible for daily needs.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related EV & Finance Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
+                <p className="text-muted-foreground text-sm">Compare the environmental impact of EV vs gasoline vehicles.</p>
+              </a>
+              <a href="/calculators/car-loan-affordability-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate how much electric vehicle you can afford with financing.</p>
+              </a>
+              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
+                <p className="text-muted-foreground text-sm">Evaluate EV investment decisions and total cost of ownership.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

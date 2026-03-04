@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -210,12 +210,11 @@ export default function GachaPullProbabilityCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Probability Results</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.probabilityAtLeastOne >= 75 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.probabilityAtLeastOne >= 50 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.probabilityAtLeastOne >= 25 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.probabilityAtLeastOne >= 75 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.probabilityAtLeastOne >= 50 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.probabilityAtLeastOne >= 25 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Chance of At Least One Success</p>
                     <p className="text-4xl font-bold">{result.probabilityAtLeastOne}%</p>
                     <p className="text-sm mt-1">{result.pulls} pulls at {result.pullRate}% rate</p>
@@ -295,6 +294,273 @@ export default function GachaPullProbabilityCalculatorPage() {
                   <strong>Remember:</strong> Gacha is gambling. Set a budget and stick to it.
                   Never spend money you can&apos;t afford to lose.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Gacha Pull Probability Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the pull rate for your target</p>
+                    <p>Find the published rate for your desired character or item. Typical rates are 0.3-1% for 5-star/SSR units, 5-10% for 4-star/SR units.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set your planned number of pulls</p>
+                    <p>Enter how many pulls you are planning. Common amounts are 10 (one multi-pull), 50 (half pity), or 90 (full pity in many games).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review your odds and budget</p>
+                    <p>The calculator shows your probability of success, expected cost, and whether you will reach pity. Use this to decide if pulling is worth it.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Common Gacha Game Pull Rates
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Game</th>
+                      <th className="text-left py-3 px-2 font-semibold">5-star/SSR Rate</th>
+                      <th className="text-left py-3 px-2 font-semibold">Pity Count</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Genshin Impact</td>
+                      <td className="py-3 px-2">0.6%</td>
+                      <td className="py-3 px-2">90 pulls</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Honkai: Star Rail</td>
+                      <td className="py-3 px-2">0.6%</td>
+                      <td className="py-3 px-2">90 pulls</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Fate/Grand Order</td>
+                      <td className="py-3 px-2">1%</td>
+                      <td className="py-3 px-2">330 pulls (guaranteed NP5)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Arknights</td>
+                      <td className="py-3 px-2">2%</td>
+                      <td className="py-3 px-2">99 pulls</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Nikke: Goddess of Victory</td>
+                      <td className="py-3 px-2">1%</td>
+                      <td className="py-3 px-2">160 pulls (guaranteed modern)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Reverse: 1999</td>
+                      <td className="py-3 px-2">1.4%</td>
+                      <td className="py-3 px-2">80 pulls</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Rates and pity systems can change. Always check the current in-game details before pulling. Soft pity mechanics may increase rates before hard pity.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Gacha Probability Mechanics
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Multiple Pulls Increase Your Odds</h4>
+                  <p>
+                    Each pull is an independent event with the same base rate. But the probability of getting
+                    at least one success increases with more attempts. At 1% rate, one pull has 1% chance.
+                    Ten pulls have about 9.6% chance (1 - 0.99^10). Ninety pulls reach about 59% chance.
+                    This is why saving for bulk pulls is smarter than spending on single pulls.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Pity Systems Work</h4>
+                  <p>
+                    Pity guarantees a rare item after a set number of pulls without one. Soft pity gradually
+                    increases the rate starting around 70-80% of the pity count. Hard pity guarantees at
+                    the maximum. In Genshin Impact, for example, soft pity starts around pull 74, dramatically
+                    increasing your odds before the guaranteed pull 90.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Expected Value vs Guaranteed Results</h4>
+                  <p>
+                    Expected pulls (1/p) is the average number needed, not a guarantee. At 1% rate, you
+                    expect one success every 100 pulls on average. But half of players will need more than
+                    100 pulls. Pity systems exist because the mathematical expectation does not guarantee
+                    results for individual players.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Responsible Gacha Spending
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set a strict budget before pulling</p>
+                    <p>Decide the maximum you will spend before opening the game. Stop when you hit that limit, regardless of results. Never chase losses by spending more than planned.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Save for pity rather than gambling</p>
+                    <p>If a character costs 90 pulls for pity, save enough for 90 pulls before the banner starts. Pulling without enough for pity risks getting nothing. Patience pays off in gacha games.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use free currency strategically</p>
+                    <p>Hoard primogems, jades, and tickets for banners you truly want. Don't spend on every banner. Free-to-play players can accumulate enough for 1-2 guaranteed pulls per patch by saving consistently.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Remember: every account gets unlucky sometimes</p>
+                    <p>Probability means some players lose 50/50s and hit pity early. This is normal variance, not rigged systems. Accept that luck varies and plan your pulls accordingly.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How many pulls do I need for a 50% chance?</h4>
+                  <p>
+                    Use the formula: pulls = ln(0.5) / ln(1-p). At 1% rate, you need about 69 pulls for
+                    50% chance. At 0.6% (Genshin 5-star), you need about 116 pulls. This is why pity
+                    systems are important - without them, half of players would fail even at expected
+                    pull counts.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is soft pity?</h4>
+                  <p>
+                    Soft pity is a hidden mechanic that increases your pull rate after a certain number
+                    of pulls. In Genshin Impact, the 0.6% rate starts increasing around pull 74, reaching
+                    nearly 100% by pull 90. This means most players get their 5-star between pulls 75-85,
+                    not at the full 90 pity.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is it worth pulling on rate-up banners?</h4>
+                  <p>
+                    Rate-up banners typically have 50% chance to get the featured character when you pull
+                    a 5-star. If you lose the 50/50, the next 5-star is guaranteed featured. Consider
+                    whether you have enough pulls to guarantee the character (worst case: lose 50/50,
+                    then hit pity again). If not, skipping may be wiser.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How much should I spend on gacha games?</h4>
+                  <p>
+                    Only spend money you can afford to lose completely. A common guideline is to treat
+                    gacha like entertainment: set a monthly budget similar to what you might spend on
+                    movies or dining out. Never spend rent money, emergency funds, or borrowed money
+                    on gacha pulls.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I calculate exact costs for guaranteed pulls?</h4>
+                  <p>
+                    Yes. Multiply the pity count by cost per pull. In Genshin, 90 pulls at $2.50 each
+                    equals $225 for hard pity. However, soft pity means most players spend less - around
+                    $175-200 on average for a guaranteed 5-star. Always budget for worst case though.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/probability-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Probability Calculator</span>
+                  <p className="text-muted-foreground">Calculate probabilities for various events and scenarios</p>
+                </a>
+                <a
+                  href="/calculators/percentage-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Percentage Calculator</span>
+                  <p className="text-muted-foreground">Calculate percentages, discounts, and percentage changes</p>
+                </a>
+                <a
+                  href="/calculators/expected-value-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Expected Value Calculator</span>
+                  <p className="text-muted-foreground">Calculate expected value for probability-based decisions</p>
+                </a>
               </div>
             </CardContent>
           </Card>

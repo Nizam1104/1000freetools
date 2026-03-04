@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -45,14 +45,14 @@ export default function TypographyScaleCalculatorPage() {
 
     // Generate scale
     const sizes: Array<{ level: string; size: number; lineHeight: number }> = [];
-    
+
     const levelNames = ["-2", "-1", "Base", "H4", "H3", "H2", "H1", "Display"];
-    
+
     for (let i = -2; i <= stepsNum - 3; i++) {
       const size = baseSizeNum * Math.pow(ratio, i);
       // Line height decreases as size increases
       const lineHeight = i <= 0 ? 1.5 : Math.max(1.1, 1.5 - (i * 0.08));
-      
+
       sizes.push({
         level: levelNames[i + 2] || `H${i}`,
         size: parseFloat(size.toFixed(2)),
@@ -199,7 +199,7 @@ export default function TypographyScaleCalculatorPage() {
                   <div className="p-4 bg-muted rounded-lg">
                     <h4 className="font-semibold text-sm mb-2">CSS Variables</h4>
                     <pre className="text-xs font-mono overflow-x-auto p-2 bg-background rounded">
-{`--text-xs: ${result.sizes[0]?.size || 10}px;
+                      {`--text-xs: ${result.sizes[0]?.size || 10}px;
 --text-sm: ${result.sizes[1]?.size || 12}px;
 --text-base: ${result.sizes[2]?.size || 16}px;
 --text-lg: ${result.sizes[3]?.size || 20}px;
@@ -259,6 +259,155 @@ export default function TypographyScaleCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Generate a Typography Scale</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Set Your Base Font Size</h3>
+                <p className="text-sm text-muted-foreground">Enter your body text size (typically 16px) as the foundation for your entire type scale.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Choose a Scale Ratio</h3>
+                <p className="text-sm text-muted-foreground">Select from musical intervals like Major Third (1.25) or Golden Ratio (1.618) for harmonious sizing.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Generate & Export CSS</h3>
+                <p className="text-sm text-muted-foreground">Get instant preview with live text samples and copy-ready CSS variables for your project.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Typography Scale Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Musical Scale Ratios</h3>
+              <p className="text-sm text-muted-foreground">Choose from proven ratios like Minor Second (1.067) to Golden Ratio (1.618) for naturally harmonious type hierarchies.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Live Text Preview</h3>
+              <p className="text-sm text-muted-foreground">See your actual scale rendered with sample text at each size level before implementing.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">CSS Variable Export</h3>
+              <p className="text-sm text-muted-foreground">Get ready-to-use CSS custom properties (--text-xs, --text-base, etc.) for easy integration.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Automatic Line Height</h3>
+              <p className="text-sm text-muted-foreground">Optimal line heights are calculated automatically, decreasing as font size increases for better readability.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Typography Scale Ratios Reference</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Scale Name</th>
+                  <th className="text-left py-2">Ratio</th>
+                  <th className="text-left py-2">Best For</th>
+                  <th className="text-left py-2">Example (16px base)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Minor Second</td>
+                  <td className="py-2 font-mono">1.067</td>
+                  <td className="py-2">Subtle, minimal designs</td>
+                  <td className="py-2">16px → 17px → 18px</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Major Second</td>
+                  <td className="py-2 font-mono">1.125</td>
+                  <td className="py-2">Gentle hierarchy</td>
+                  <td className="py-2">16px → 18px → 20px</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Minor Third</td>
+                  <td className="py-2 font-mono">1.2</td>
+                  <td className="py-2">Classic, readable</td>
+                  <td className="py-2">16px → 19px → 23px</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Major Third</td>
+                  <td className="py-2 font-mono">1.25</td>
+                  <td className="py-2">Popular web standard</td>
+                  <td className="py-2">16px → 20px → 25px</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Perfect Fourth</td>
+                  <td className="py-2 font-mono">1.333</td>
+                  <td className="py-2">Bold, impactful</td>
+                  <td className="py-2">16px → 21px → 28px</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Golden Ratio</td>
+                  <td className="py-2 font-mono">1.618</td>
+                  <td className="py-2">Dramatic, editorial</td>
+                  <td className="py-2">16px → 26px → 42px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What is a typography scale?</h3>
+              <p className="text-sm text-muted-foreground">A typography scale is a set of harmonious font sizes based on a mathematical ratio. Starting from a base size, each level is multiplied by the ratio to create consistent, proportional headings and text sizes.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What is the best font size ratio for websites?</h3>
+              <p className="text-sm text-muted-foreground">Major Third (1.25) and Perfect Fourth (1.333) are most popular for websites. They provide clear visual hierarchy without extreme size jumps, working well for both body text and headings.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What should my base font size be?</h3>
+              <p className="text-sm text-muted-foreground">16px is the web standard for body text, providing optimal readability on most devices. Some designers use 18px for more accessible, comfortable reading experiences.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How do I choose the right scale ratio?</h3>
+              <p className="text-sm text-muted-foreground">For text-heavy sites (blogs, news), use smaller ratios (1.125-1.2). For marketing sites with bold headlines, use larger ratios (1.333-1.5). The Golden Ratio (1.618) creates dramatic contrast for editorial designs.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What line height should I use?</h3>
+              <p className="text-sm text-muted-foreground">Body text needs 1.5-1.6 line height for readability. Headings can use tighter spacing (1.1-1.3) since larger fonts are naturally more legible. Our calculator adjusts line height automatically for each size.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Design Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/golden-ratio-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Golden Ratio Calculator</h3>
+              <p className="text-sm text-muted-foreground">Apply the divine proportion to your designs and layouts.</p>
+            </a>
+            <a href="/calculators/line-height-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Line Height Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate optimal line spacing for any font size.</p>
+            </a>
+            <a href="/calculators/golden-ratio-layout-generator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Golden Ratio Layout Generator</h3>
+              <p className="text-sm text-muted-foreground">Create balanced page layouts using golden ratio principles.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -19,27 +19,27 @@ export default function JsonToJavaPage() {
     if (value === null) {
       return "Object";
     }
-    
+
     if (typeof value === "boolean") {
       return "boolean";
     }
-    
+
     if (typeof value === "number") {
       return Number.isInteger(value) ? "int" : "double";
     }
-    
+
     if (typeof value === "string") {
       return "String";
     }
-    
+
     if (Array.isArray(value)) {
       return "List";
     }
-    
+
     if (typeof value === "object") {
       return "Object";
     }
-    
+
     return "Object";
   };
 
@@ -67,7 +67,7 @@ export default function JsonToJavaPage() {
 
     for (const [key, value] of entries) {
       const fieldName = toCamelCase(key);
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         const nestedName = `${name}${toPascalCase(key)}`;
         fields.push(`    private ${nestedName} ${fieldName};`);
@@ -90,8 +90,8 @@ export default function JsonToJavaPage() {
       const fieldType = typeof value === "object" && value !== null && !Array.isArray(value)
         ? `${name}${toPascalCase(key)}`
         : Array.isArray(value) && value.length > 0 && typeof value[0] === "object" && value[0] !== null
-        ? `List<${name}${toPascalCase(key)}Item>`
-        : getJavaType(value);
+          ? `List<${name}${toPascalCase(key)}Item>`
+          : getJavaType(value);
 
       const capitalizedField = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
       classBody += `\n    public ${fieldType} get${capitalizedField}() {\n        return ${fieldName};\n    }\n`;
@@ -112,19 +112,19 @@ export default function JsonToJavaPage() {
     try {
       const parsed = JSON.parse(input);
       let result = "";
-      
+
       if (packageName) {
         result = `package ${packageName};\n\n`;
       }
-      
+
       result += "import java.util.List;\n\n";
-      
+
       if (Array.isArray(parsed) && parsed.length > 0) {
         result += generateJavaClass(className, parsed[0] as Record<string, unknown>, new Set());
       } else if (typeof parsed === "object" && parsed !== null) {
         result += generateJavaClass(className, parsed as Record<string, unknown>, new Set());
       }
-      
+
       setOutput(result);
       toast.success("Generated Java POJO successfully!");
     } catch (e) {

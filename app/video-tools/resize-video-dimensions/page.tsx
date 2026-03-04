@@ -11,7 +11,7 @@ import {
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Progress } from "@/components/ui/progress";
@@ -212,22 +212,22 @@ export default function ResizeVideoDimensionsPage() {
     label: string;
     description: string;
   }[] = [
-    {
-      mode: "fill",
-      label: "Fill",
-      description: "Stretches video to fill dimensions (may distort)",
-    },
-    {
-      mode: "contain",
-      label: "Contain",
-      description: "Fits video within dimensions (may add black bars)",
-    },
-    {
-      mode: "cover",
-      label: "Cover",
-      description: "Crops video to cover dimensions (may cut edges)",
-    },
-  ];
+      {
+        mode: "fill",
+        label: "Fill",
+        description: "Stretches video to fill dimensions (may distort)",
+      },
+      {
+        mode: "contain",
+        label: "Contain",
+        description: "Fits video within dimensions (may add black bars)",
+      },
+      {
+        mode: "cover",
+        label: "Cover",
+        description: "Crops video to cover dimensions (may cut edges)",
+      },
+    ];
 
   const relatedTools = [
     {

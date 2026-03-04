@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -16,14 +16,14 @@ export default function JsonpathQueryPage() {
 
   const evaluateJsonPath = useCallback((json: any, path: string): any[] => {
     const results: any[] = [];
-    
+
     if (!path || path === "$") {
       results.push(json);
       return results;
     }
 
     const parts = path.replace(/^\$/, "").split(/\.|\[|\]/).filter(p => p !== "");
-    
+
     function traverse(obj: any, remainingParts: string[]) {
       if (remainingParts.length === 0) {
         results.push(obj);
@@ -31,7 +31,7 @@ export default function JsonpathQueryPage() {
       }
 
       const [current, ...rest] = remainingParts;
-      
+
       if (current === "*") {
         if (Array.isArray(obj)) {
           obj.forEach(item => traverse(item, rest));

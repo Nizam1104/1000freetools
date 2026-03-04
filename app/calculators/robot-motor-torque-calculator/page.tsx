@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -48,7 +48,7 @@ export default function RobotMotorTorqueCalculatorPage() {
     // Force = mass × gravity × (1 + friction)
     const gravity = 9.81;
     const force = massNum * gravity * (1 + frictionNum);
-    
+
     // Required torque at the joint
     const requiredTorque = force * armNum * safetyNum;
 
@@ -277,6 +277,192 @@ export default function RobotMotorTorqueCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">How This Robot Motor Torque Calculator Works</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">1</div>
+              <div>
+                <p className="font-medium mb-1">Input Your Robot Parameters</p>
+                <p className="text-muted-foreground">Enter the load mass your motor needs to move, the arm length or wheel radius, and your desired speed. Add friction coefficient and safety factor for more accurate results.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">2</div>
+              <div>
+                <p className="font-medium mb-1">We Calculate Torque Requirements</p>
+                <p className="text-muted-foreground">Using physics formulas, we compute the force needed to move your load against gravity and friction. Then we multiply by the arm length to get torque, applying your safety factor for real-world conditions.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">3</div>
+              <div>
+                <p className="font-medium mb-1">Get Motor Specifications</p>
+                <p className="text-muted-foreground">The calculator returns required torque at the joint, motor torque with gear reduction, expected motor speed in RPM, and power requirements. Recommendations help you choose the right motor type.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features and Benefits Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Why Engineers Use This Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <p className="font-semibold mb-1">Physics-Based Calculations</p>
+              <p className="text-muted-foreground">Built on fundamental mechanics formulas, this calculator accounts for gravity, friction, and leverage. The results reflect real-world forces your motor must overcome.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Safety Factor Built In</p>
+              <p className="text-muted-foreground">Dynamic loads, wear, and unexpected conditions require margin. The default 1.5× safety factor ensures your motor can handle more than just ideal conditions.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Gear Ratio Considerations</p>
+              <p className="text-muted-foreground">Most robot applications use gear reduction to multiply torque. We show both joint torque and motor torque with a typical 50:1 ratio so you can select appropriate motors and gearboxes.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Speed and Power Output</p>
+              <p className="text-muted-foreground">Torque alone is not enough. The calculator also provides motor speed in RPM and power in watts, helping you match motors to your performance requirements.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Motor Type Guidance</p>
+              <p className="text-muted-foreground">High torque applications get flagged for brushless motors. Power requirements help you size your battery and electronics. Position control needs are noted for encoder selection.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">How do I calculate torque needed for a robot arm?</p>
+              <p className="text-muted-foreground">Multiply the load mass by gravity (9.81 m/s²), then by the arm length from the joint to the load center. Add friction effects and apply a safety factor of 1.5 to 2. For example, a 2 kg load at 0.15 meters needs about 4.4 Nm with standard safety margins.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is a good safety factor for robot motors?</p>
+              <p className="text-muted-foreground">For most hobby and educational robots, a safety factor of 1.5 to 2 works well. Industrial applications may use 2 to 3 or higher. Dynamic loads, sudden stops, and external forces all justify additional margin beyond calculated minimums.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Should I use a geared motor or direct drive?</p>
+              <p className="text-muted-foreground">Geared motors provide much higher torque at lower speeds, which suits most robot applications. Direct drive works for high-speed, low-torque needs. A 50:1 gear ratio multiplies motor torque fifty times while reducing output speed proportionally.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What type of motor is best for robotics?</p>
+              <p className="text-muted-foreground">Brushless DC motors offer the best efficiency and power-to-weight ratio for most applications. Stepper motors work well for precise positioning without encoders. Servo motors provide closed-loop control. Choose based on your torque, speed, and control requirements.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How does friction affect motor torque calculations?</p>
+              <p className="text-muted-foreground">Friction increases the force your motor must produce. A friction coefficient of 0.1 adds 10 percent to the required force. Wheel robots on rough terrain or arms with stiff bearings need higher friction coefficients in calculations.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Related Engineering Calculators</h2>
+          <div className="space-y-3">
+            <div>
+              <a href="/calculators/gear-ratio-calculator" className="text-primary hover:underline font-medium">Gear Ratio Calculator</a>
+              <p className="text-muted-foreground text-sm">Calculate gear ratios, output speed, and torque multiplication for your robot drivetrain or actuator system.</p>
+            </div>
+            <div>
+              <a href="/calculators/power-consumption-calculator" className="text-primary hover:underline font-medium">Battery Power Consumption Calculator</a>
+              <p className="text-muted-foreground text-sm">Estimate runtime and power requirements for your robot based on motor specifications and battery capacity.</p>
+            </div>
+            <div>
+              <a href="/calculators/speed-distance-time-calculator" className="text-primary hover:underline font-medium">Speed Distance Time Calculator</a>
+              <p className="text-muted-foreground text-sm">Plan robot movement profiles and calculate travel times based on speed and distance requirements.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Reference Table: Motor Types */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Motor Types for Robotics</h2>
+          <p className="text-muted-foreground mb-4">This comparison helps you select the right motor technology based on your torque, speed, and control requirements.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted">
+                  <th className="text-left py-3 px-3">Motor Type</th>
+                  <th className="text-left py-3 px-3">Torque Range</th>
+                  <th className="text-left py-3 px-3">Best For</th>
+                  <th className="text-left py-3 px-3">Control Complexity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Brushed DC</td>
+                  <td className="py-3 px-3">Low to Medium</td>
+                  <td className="py-3 px-3">Simple robots, low cost builds</td>
+                  <td className="py-3 px-3">Easy (H-bridge)</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Brushless DC (BLDC)</td>
+                  <td className="py-3 px-3">Medium to High</td>
+                  <td className="py-3 px-3">Drones, high-performance robots</td>
+                  <td className="py-3 px-3">Moderate (ESC required)</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Stepper Motor</td>
+                  <td className="py-3 px-3">Low to Medium</td>
+                  <td className="py-3 px-3">3D printers, CNC, precise positioning</td>
+                  <td className="py-3 px-3">Moderate (driver board)</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Servo Motor</td>
+                  <td className="py-3 px-3">Low to High</td>
+                  <td className="py-3 px-3">Robot arms, legged robots, RC</td>
+                  <td className="py-3 px-3">Easy (PWM control)</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Coreless Motor</td>
+                  <td className="py-3 px-3">Very Low</td>
+                  <td className="py-3 px-3">Micro robots, vibration motors</td>
+                  <td className="py-3 px-3">Easy (H-bridge)</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-3">Linear Actuator</td>
+                  <td className="py-3 px-3">High</td>
+                  <td className="py-3 px-3">Push-pull applications, lifts</td>
+                  <td className="py-3 px-3">Easy (relay or H-bridge)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">Note: Torque ranges are general guidelines. Actual performance depends on motor size, quality, and gearing.</p>
+        </div>
+
+        {/* Torque Formula Reference */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Torque Calculation Formulas</h2>
+          <p className="text-muted-foreground mb-4">Understanding the math behind the calculator helps you verify results and adapt calculations for special cases.</p>
+          <div className="space-y-4">
+            <div className="p-4 bg-muted rounded-lg">
+              <p className="font-semibold mb-2">Basic Torque Formula</p>
+              <p className="font-mono text-sm">Torque = Force × Distance</p>
+              <p className="text-sm text-muted-foreground mt-2">Where Force = Mass × Gravity and Distance is the perpendicular arm length from joint to load.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <p className="font-semibold mb-2">With Friction</p>
+              <p className="font-mono text-sm">Force = Mass × Gravity × (1 + Friction Coefficient)</p>
+              <p className="text-sm text-muted-foreground mt-2">Friction coefficient ranges from 0.05 (well-lubricated bearings) to 0.5+ (rough surfaces).</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <p className="font-semibold mb-2">With Safety Factor</p>
+              <p className="font-mono text-sm">Required Torque = Calculated Torque × Safety Factor</p>
+              <p className="text-sm text-muted-foreground mt-2">Safety factors of 1.5 to 2 account for dynamic loads, wear, and unexpected conditions.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <p className="font-semibold mb-2">Power Calculation</p>
+              <p className="font-mono text-sm">Power (Watts) = Torque (Nm) × Angular Velocity (rad/s)</p>
+              <p className="text-sm text-muted-foreground mt-2">This determines minimum motor power rating and helps size your battery and electronics.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

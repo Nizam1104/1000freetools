@@ -11,7 +11,7 @@ import {
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import Faqs from "@/components/utils/Faqs";
@@ -480,7 +480,7 @@ export default function CropVideoPage() {
                               height={
                                 videoDimensions.width > 0
                                   ? (400 / videoDimensions.width) *
-                                    videoDimensions.height
+                                  videoDimensions.height
                                   : 300
                               }
                               onMouseDown={handleMouseDown}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -22,7 +22,7 @@ export default function JsonPrettyPrintPage() {
   const sortObjectKeys = (obj: any): any => {
     if (obj === null || typeof obj !== "object") return obj;
     if (Array.isArray(obj)) return obj.map(sortObjectKeys);
-    
+
     const sorted: any = {};
     Object.keys(obj).sort().forEach((key) => {
       sorted[key] = sortObjectKeys(obj[key]);
@@ -83,7 +83,7 @@ export default function JsonPrettyPrintPage() {
   };
 
   const loadSample = () => {
-    const sample = JSON.stringify({name:"Example",version:1,features:["fast","simple","reliable"],config:{debug:true,maxItems:100}}, null, 0);
+    const sample = JSON.stringify({ name: "Example", version: 1, features: ["fast", "simple", "reliable"], config: { debug: true, maxItems: 100 } }, null, 0);
     setInput(sample);
   };
 

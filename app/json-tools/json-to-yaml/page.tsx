@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -44,9 +44,9 @@ export default function JsonToYamlConverterPage() {
       }
 
       if (obj === "" || obj.includes("\n") || obj.includes(":") || obj.includes("#") ||
-          obj.startsWith(" ") || obj.endsWith(" ") ||
-          /^[-?\d.]+$/.test(obj) ||
-          /^(true|false|null|yes|no|on|off)$/i.test(obj)) {
+        obj.startsWith(" ") || obj.endsWith(" ") ||
+        /^[-?\d.]+$/.test(obj) ||
+        /^(true|false|null|yes|no|on|off)$/i.test(obj)) {
         return `"${obj.replace(/"/g, '\\"')}"`;
       }
 
@@ -91,12 +91,12 @@ export default function JsonToYamlConverterPage() {
 
   const needsQuotes = (key: string): boolean => {
     return key.includes(":") || key.includes("#") || key.includes("{") ||
-           key.includes("}") || key.includes("[") || key.includes("]") ||
-           key.includes(",") || key.includes("&") || key.includes("*") ||
-           key.includes("?") || key.includes("|") || key.includes(">") ||
-           key.includes("'") || key.includes('"') || key.includes("`") ||
-           key.startsWith(" ") || key.endsWith(" ") ||
-           /^[-?\d.]+$/.test(key);
+      key.includes("}") || key.includes("[") || key.includes("]") ||
+      key.includes(",") || key.includes("&") || key.includes("*") ||
+      key.includes("?") || key.includes("|") || key.includes(">") ||
+      key.includes("'") || key.includes('"') || key.includes("`") ||
+      key.startsWith(" ") || key.endsWith(" ") ||
+      /^[-?\d.]+$/.test(key);
   };
 
   const convertJsonToYaml = useCallback(() => {

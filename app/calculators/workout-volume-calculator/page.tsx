@@ -139,6 +139,149 @@ export default function WorkoutVolumeCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Training Volume</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Add Your Exercises</h3>
+              <p className="text-sm text-muted-foreground">Enter each exercise from your workout with sets, reps, and weight used.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Select Weight Unit</h3>
+              <p className="text-sm text-muted-foreground">Choose kilograms or pounds for your training volume calculation.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Total Volume</h3>
+              <p className="text-sm text-muted-foreground">See your total training volume for tracking progressive overload.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Why Track Training Volume</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Progressive Overload Tracking</h3>
+            <p className="text-sm text-muted-foreground">Monitor volume increases over time to ensure you're progressively challenging your muscles for growth.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Workout Comparison</h3>
+            <p className="text-sm text-muted-foreground">Compare volume between sessions to identify which workouts provide the best stimulus.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Volume Landmarking</h3>
+            <p className="text-sm text-muted-foreground">Establish baseline volumes for each muscle group to optimize your training programming.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Recovery Management</h3>
+            <p className="text-sm text-muted-foreground">Track weekly volume to avoid overtraining and ensure adequate recovery between sessions.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+          <h3 className="font-semibold mb-3">Recommended Weekly Volume by Muscle Group</h3>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2">Muscle Group</th>
+                <th className="text-left py-2">Beginner</th>
+                <th className="text-left py-2">Intermediate</th>
+                <th className="text-left py-2">Advanced</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-2">Chest</td>
+                <td className="py-2">6-10 sets</td>
+                <td className="py-2">10-16 sets</td>
+                <td className="py-2">16-22 sets</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Back</td>
+                <td className="py-2">8-12 sets</td>
+                <td className="py-2">12-20 sets</td>
+                <td className="py-2">18-25 sets</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Shoulders</td>
+                <td className="py-2">6-10 sets</td>
+                <td className="py-2">10-16 sets</td>
+                <td className="py-2">14-20 sets</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Quads</td>
+                <td className="py-2">6-10 sets</td>
+                <td className="py-2">10-16 sets</td>
+                <td className="py-2">14-22 sets</td>
+              </tr>
+              <tr>
+                <td className="py-2">Hamstrings</td>
+                <td className="py-2">4-8 sets</td>
+                <td className="py-2">8-14 sets</td>
+                <td className="py-2">12-18 sets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold mb-2">What is training volume?</h3>
+            <p className="text-sm text-muted-foreground">Training volume is the total amount of work done in a workout, calculated as Sets × Reps × Weight. It's the primary driver of muscle growth and a key metric for tracking progressive overload.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How much volume do I need for muscle growth?</h3>
+            <p className="text-sm text-muted-foreground">Research suggests 10-20 hard sets per muscle group per week for most lifters. Beginners need less (6-10 sets), while advanced lifters may need 16-22+ sets for continued growth.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Should I track volume per workout or per week?</h3>
+            <p className="text-sm text-muted-foreground">Track both. Per-workout volume helps balance individual sessions. Weekly volume ensures you're hitting optimal totals for each muscle group across your training split.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Is more volume always better?</h3>
+            <p className="text-sm text-muted-foreground">No. There's a point of diminishing returns where extra volume provides no additional benefit and may impair recovery. Most people maximize growth at 10-20 sets per muscle per week.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How do I increase training volume safely?</h3>
+            <p className="text-sm text-muted-foreground">Add volume gradually—5-10% per week maximum. Add a set to an exercise, increase reps, or add a new exercise. Monitor recovery and reduce volume if performance declines.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Fitness Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/workout-rest-timer" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Workout Rest Timer</h3>
+            <p className="text-sm text-muted-foreground">Calculate optimal rest periods between sets for your goals.</p>
+          </a>
+          <a href="/calculators/1rm-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">1RM Calculator</h3>
+            <p className="text-sm text-muted-foreground">Estimate your one-rep max from submaximal lifts.</p>
+          </a>
+          <a href="/calculators/strength-training-pr-estimator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Strength Training PR Estimator</h3>
+            <p className="text-sm text-muted-foreground">Predict your personal records based on training data.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

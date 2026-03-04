@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,10 +19,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : { r: 0, g: 0, b: 0 };
 };
 
@@ -74,7 +74,7 @@ const colorDistance = (color1: string, color2: string) => {
   // Weighted distance considering hue circularity
   let dh = Math.abs(hsl1.h - hsl2.h);
   if (dh > 180) dh = 360 - dh;
-  
+
   const ds = Math.abs(hsl1.s - hsl2.s);
   const dl = Math.abs(hsl1.l - hsl2.l);
 
@@ -189,7 +189,7 @@ export default function PaletteDuplicateFinderPage() {
       duplicateGroups.flatMap((g) => g.indices.slice(1))
     );
     const uniqueColors = colors.filter((_, i) => !duplicateIndices.has(i));
-    
+
     try {
       await navigator.clipboard.writeText(uniqueColors.join(", "));
       setCopied(true);
@@ -328,9 +328,8 @@ export default function PaletteDuplicateFinderPage() {
                     return (
                       <div
                         key={i}
-                        className={`flex items-center gap-2 px-3 py-2 rounded-lg border bg-card ${
-                          isDuplicate ? "ring-2 ring-amber-500" : ""
-                        }`}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg border bg-card ${isDuplicate ? "ring-2 ring-amber-500" : ""
+                          }`}
                         title={isDuplicate ? "Duplicate" : "Unique"}
                       >
                         <div
@@ -384,9 +383,8 @@ export default function PaletteDuplicateFinderPage() {
                           {group.colors.map((color, i) => (
                             <div
                               key={i}
-                              className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${
-                                i === 0 ? "bg-green-500/10 border-green-500/30" : "bg-card"
-                              }`}
+                              className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${i === 0 ? "bg-green-500/10 border-green-500/30" : "bg-card"
+                                }`}
                             >
                               <div
                                 className="w-8 h-8 rounded bg-checkerboard"

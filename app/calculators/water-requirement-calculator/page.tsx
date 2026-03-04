@@ -227,6 +227,103 @@ export default function WaterRequirementCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Daily Water Intake</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Your Weight</h3>
+              <p className="text-sm text-muted-foreground">Input your body weight in kg or lbs. This is the base for calculating water needs.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Add Activity & Conditions</h3>
+              <p className="text-sm text-muted-foreground">Enter exercise minutes and select climate. Check boxes for pregnancy/breastfeeding.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Personalized Goal</h3>
+              <p className="text-sm text-muted-foreground">See your daily water target in liters, ounces, and number of bottles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Water Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**Weight-Based Calculation**</h3>
+            <p className="text-sm text-muted-foreground">Uses 35ml per kg body weight as the scientific baseline for hydration needs.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Exercise Adjustment**</h3>
+            <p className="text-sm text-muted-foreground">Adds 500ml for every 30 minutes of exercise to replace sweat losses.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Climate Factors**</h3>
+            <p className="text-sm text-muted-foreground">Adjusts for hot weather, cold/dry air, and high altitude conditions.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Special Conditions**</h3>
+            <p className="text-sm text-muted-foreground">Extra hydration recommendations for pregnancy and breastfeeding.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How much water should I drink daily?</h3>
+            <p className="text-sm text-muted-foreground">A general guideline is 35ml per kg of body weight. For a 70kg person, that&apos;s about 2.5 liters. Adjust for activity, climate, and health conditions.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Does coffee count toward water intake?</h3>
+            <p className="text-sm text-muted-foreground">Yes! Despite caffeine&apos;s mild diuretic effect, coffee and tea still contribute to hydration. About 80-90% of the fluid counts toward your daily goal.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How do I know if I&apos;m drinking enough water?</h3>
+            <p className="text-sm text-muted-foreground">Check urine color - pale yellow means good hydration. Dark yellow indicates you need more water. Also watch for thirst, dry mouth, and fatigue.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Can you drink too much water?</h3>
+            <p className="text-sm text-muted-foreground">Yes, though rare. Drinking excessive water (over 1 liter/hour) can cause hyponatremia (low blood sodium). Listen to your body and drink to thirst.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Do I need more water when exercising?</h3>
+            <p className="text-sm text-muted-foreground">Absolutely! Add 500ml for every 30 minutes of moderate exercise. Hot weather and intense workouts require even more to replace sweat losses.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/water-flow-rate-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Water Flow Rate Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate water flow through pipes for plumbing and irrigation.</p>
+          </a>
+          <a href="/calculators/water-tank-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Water Tank Volume Calculator</h3>
+            <p className="text-sm text-muted-foreground">Find water tank capacity in gallons or liters.</p>
+          </a>
+          <a href="/calculators/bmi-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">BMI Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate body mass index for health assessment.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

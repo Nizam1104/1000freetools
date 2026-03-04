@@ -309,6 +309,106 @@ export default function POHCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Calculate pOH</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <p className="font-semibold mb-1">Choose conversion type</p>
+              <p className="text-sm text-muted-foreground">Select from OH to pOH, pOH to OH, pH to pOH, or pOH to pH conversions.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <p className="font-semibold mb-1">Enter your value</p>
+              <p className="text-sm text-muted-foreground">Input hydroxide concentration or pH/pOH value. Use scientific notation for concentrations.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <p className="font-semibold mb-1">View results and graph</p>
+              <p className="text-sm text-muted-foreground">Get instant pOH or pH results with a visual graph showing the relationship.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Why Use This pOH Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">Four conversion modes</p>
+              <p className="text-sm text-muted-foreground">Handle any pOH, pH, or OH concentration conversion in one tool.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Visual relationship graph</p>
+              <p className="text-sm text-muted-foreground">See the linear pH + pOH = 14 relationship plotted clearly.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Reference table included</p>
+              <p className="text-sm text-muted-foreground">Quick lookup for common OH concentrations and their pOH values.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Scientific notation support</p>
+              <p className="text-sm text-muted-foreground">Enter values like 1e-7 directly for hydroxide concentrations.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Solution classification</p>
+              <p className="text-sm text-muted-foreground">Automatically identifies acidic, neutral, or basic solutions.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">How do you calculate pOH?</p>
+              <p className="text-sm text-muted-foreground">pOH = -log10[OH]. For [OH] = 1 × 10^-4 M, pOH = -log10(1 × 10^-4) = 4.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is the relationship between pH and pOH?</p>
+              <p className="text-sm text-muted-foreground">pH + pOH = 14 at 25°C. If pH is 5, then pOH = 14 - 5 = 9.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What does pOH measure?</p>
+              <p className="text-sm text-muted-foreground">pOH measures hydroxide ion concentration. Low pOH means high OH (basic). High pOH means low OH (acidic).</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How do you convert pOH to OH concentration?</p>
+              <p className="text-sm text-muted-foreground">Use [OH] = 10^-pOH. For pOH = 4, [OH] = 10^-4 = 0.0001 mol/L.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is a neutral pOH value?</p>
+              <p className="text-sm text-muted-foreground">Neutral solutions have pOH = 7 at 25°C, same as pH. This means [OH] = [H+] = 10^-7 M.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Chemistry Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Try our other chemistry calculators: the <a href="/calculators/ph-calculator" className="text-primary hover:underline">pH calculator</a> for hydrogen ion calculations, the <a href="/calculators/pka-pkb-calculator" className="text-primary hover:underline">pKa pKb calculator</a> for acid-base constants, and the <a href="/calculators/henderson-hasselbalch-calculator" className="text-primary hover:underline">Henderson-Hasselbalch calculator</a> for buffer solutions.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

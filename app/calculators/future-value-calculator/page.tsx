@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -119,6 +119,272 @@ export default function FutureValueCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Future Value Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your current savings or investment</p>
+                    <p>Input the present value - the amount you have today or plan to invest. This is your starting principal before any growth.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set your expected annual return</p>
+                    <p>Enter the annual rate of return you expect. Conservative investments might yield 3-5%, while stock market averages around 7-10% historically.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Choose your time horizon</p>
+                    <p>Enter the number of years until you need the money. Longer time horizons allow more compound growth but also carry more risk.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Historical Investment Returns Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Investment Type</th>
+                      <th className="text-left py-3 px-2 font-semibold">Average Annual Return</th>
+                      <th className="text-left py-3 px-2 font-semibold">Risk Level</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Savings account</td>
+                      <td className="py-3 px-2">0.5-2%</td>
+                      <td className="py-3 px-2">Very Low</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Certificate of Deposit (CD)</td>
+                      <td className="py-3 px-2">2-4%</td>
+                      <td className="py-3 px-2">Very Low</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Government bonds</td>
+                      <td className="py-3 px-2">3-5%</td>
+                      <td className="py-3 px-2">Low</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Corporate bonds</td>
+                      <td className="py-3 px-2">4-6%</td>
+                      <td className="py-3 px-2">Low-Medium</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">S&P 500 Index</td>
+                      <td className="py-3 px-2">7-10%</td>
+                      <td className="py-3 px-2">Medium-High</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Real estate (REITs)</td>
+                      <td className="py-3 px-2">6-9%</td>
+                      <td className="py-3 px-2">Medium</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Past performance does not guarantee future results. Returns vary year to year. Higher returns typically come with higher risk.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Future Value and Compound Interest
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Future Value Formula</h4>
+                  <p>
+                    Future value is calculated as FV = PV x (1 + r)^t, where PV is present value, r is the
+                    annual interest rate (as a decimal), and t is time in years. For example, $10,000 invested
+                    at 7% for 10 years becomes $10,000 x (1.07)^10 = $19,672. Your money nearly doubles.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Compound Interest Works</h4>
+                  <p>
+                    Compound interest means you earn returns on your returns. Year one: $10,000 at 7% earns
+                    $700. Year two: $10,700 earns $749. Year three: $11,449 earns $801. The dollar amount
+                    of growth increases each year even though the rate stays the same. This is why starting
+                    early matters so much for retirement savings.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Rule of 72</h4>
+                  <p>
+                    A quick way to estimate doubling time: divide 72 by your annual return rate. At 7%,
+                    money doubles in about 72/7 = 10.3 years. At 10%, it doubles in 7.2 years. At 3%,
+                    it takes 24 years. This rule helps you quickly compare investment options and time horizons.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Maximizing Investment Growth
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Start investing as early as possible</p>
+                    <p>Time is the most powerful factor in compound growth. $5,000 invested at age 25 grows to $74,872 by 65 at 7%. The same $5,000 invested at 35 grows to only $38,061. A 10-year head start nearly doubles the result.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Keep fees low</p>
+                    <p>Investment fees compound against you just like returns compound for you. A 1% annual fee reduces a 7% return to 6%. Over 30 years, this cuts your final balance by about 25%. Choose low-cost index funds when possible.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Reinvest all dividends and distributions</p>
+                    <p>Dividend reinvestment buys more shares, which generate more dividends. This accelerates compounding. Many brokerages offer automatic dividend reinvestment plans (DRIPs) at no cost.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use tax-advantaged accounts</p>
+                    <p>401(k)s, IRAs, and Roth IRAs shield investment growth from taxes. Tax-deferred accounts let your full balance compound without annual tax drag. This can add 20-30% to long-term results compared to taxable accounts.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a realistic rate of return for investments?</h4>
+                  <p>
+                    The S&P 500 has averaged about 10% annually before inflation (7% after inflation) over
+                    the long term. However, returns vary significantly year to year. Conservative portfolios
+                    with bonds might target 4-6%. High-growth stock portfolios might aim for 8-12% with
+                    higher volatility. Never assume guaranteed returns.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How does inflation affect future value?</h4>
+                  <p>
+                    Inflation reduces purchasing power over time. At 3% inflation, $100,000 today buys only
+                    $74,000 worth of goods in 10 years. To calculate real (inflation-adjusted) future value,
+                    subtract inflation from your nominal return. A 7% return with 3% inflation gives 4% real growth.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I use this calculator for retirement planning?</h4>
+                  <p>
+                    This calculator works for single lump-sum investments. For retirement planning with
+                    regular contributions, use a future value with contributions calculator. Most retirement
+                    planning involves both an existing balance and ongoing monthly or annual contributions.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is the difference between simple and compound interest?</h4>
+                  <p>
+                    Simple interest pays only on the original principal. $10,000 at 5% simple interest earns
+                    $500 every year regardless of time. Compound interest pays on principal plus accumulated
+                    interest. The same $10,000 at 5% compound earns $500 year one, $525 year two, $551 year
+                    three, and so on. Compound growth accelerates over time.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How accurate are future value projections?</h4>
+                  <p>
+                    Future value calculations are mathematically precise but based on assumptions that may
+                    not hold. Markets do not return steady annual rates. Actual returns fluctuate widely.
+                    Use these projections as planning guides, not guarantees. Plan conservatively and
+                    adjust expectations as circumstances change.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/compound-interest-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Compound Interest Calculator</span>
+                  <p className="text-muted-foreground">Calculate compound growth with regular contributions over time</p>
+                </a>
+                <a
+                  href="/calculators/retirement-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Retirement Calculator</span>
+                  <p className="text-muted-foreground">Plan your retirement savings with detailed projections</p>
+                </a>
+                <a
+                  href="/calculators/inflation-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Inflation Calculator</span>
+                  <p className="text-muted-foreground">Calculate the impact of inflation on purchasing power</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

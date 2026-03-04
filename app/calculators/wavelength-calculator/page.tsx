@@ -138,6 +138,103 @@ export default function WavelengthCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Wavelength</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Frequency</h3>
+              <p className="text-sm text-muted-foreground">Input the wave frequency in Hz, kHz, MHz, or GHz.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Select Wave Type</h3>
+              <p className="text-sm text-muted-foreground">Choose electromagnetic waves (light speed) or sound waves (343 m/s).</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Wavelength Results</h3>
+              <p className="text-sm text-muted-foreground">See wavelength with auto-scaled units and electromagnetic band classification.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Wavelength Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**Multiple Frequency Units**</h3>
+            <p className="text-sm text-muted-foreground">Enter frequency in Hz, kHz, MHz, or GHz for any application.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**EM & Sound Waves**</h3>
+            <p className="text-sm text-muted-foreground">Calculate for light/radio waves or acoustic/sound waves.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Auto-Scaled Output**</h3>
+            <p className="text-sm text-muted-foreground">Results automatically shown in m, cm, µm, or nm for readability.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Spectrum Classification**</h3>
+            <p className="text-sm text-muted-foreground">Identifies the electromagnetic band (radio, microwave, visible, etc.).</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is wavelength?</h3>
+            <p className="text-sm text-muted-foreground">Wavelength (λ) is the distance between consecutive peaks of a wave. It&apos;s inversely proportional to frequency: λ = v/f, where v is wave velocity.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is the relationship between frequency and wavelength?</h3>
+            <p className="text-sm text-muted-foreground">They are inversely related. Higher frequency means shorter wavelength. Double the frequency and you halve the wavelength (for the same wave speed).</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is the speed of light?</h3>
+            <p className="text-sm text-muted-foreground">The speed of light in vacuum is exactly 299,792,458 m/s (approximately 3×10⁸ m/s). All electromagnetic waves travel at this speed in vacuum.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is the speed of sound?</h3>
+            <p className="text-sm text-muted-foreground">Sound travels at approximately 343 m/s in air at 20°C. Speed varies with temperature, humidity, and the medium (faster in water, solids).</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What are the electromagnetic spectrum bands?</h3>
+            <p className="text-sm text-muted-foreground">From longest to shortest wavelength: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/frequency-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Frequency Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate frequency from period or wavelength for wave analysis.</p>
+          </a>
+          <a href="/calculators/photon-energy-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Photon Energy Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate photon energy from wavelength or frequency.</p>
+          </a>
+          <a href="/calculators/sound-speed-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Sound Speed Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate speed of sound in different mediums and temperatures.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

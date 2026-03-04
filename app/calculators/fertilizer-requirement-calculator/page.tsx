@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -317,6 +317,143 @@ export default function FertilizerRequirementCalculatorPage() {
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+
+      {/* How It Works Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Fertilizer Requirements</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Select Your Crop</h3>
+              <p className="text-sm text-muted-foreground">Choose your crop type to access specific NPK nutrient requirements based on agricultural research data.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Field Details</h3>
+              <p className="text-sm text-muted-foreground">Input your field area and soil test results for nitrogen, phosphorus, and potassium levels.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Fertilizer Recommendations</h3>
+              <p className="text-sm text-muted-foreground">Receive precise fertilizer amounts in kilograms based on your selected fertilizer type.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Fertilizer Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Crop-Specific NPK Requirements</h3>
+            <p className="text-sm text-muted-foreground">Pre-loaded nutrient requirements for 10+ common crops including wheat, rice, corn, soybean, cotton, and vegetables.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Soil Test Integration</h3>
+            <p className="text-sm text-muted-foreground">Subtracts existing soil nutrients from crop needs to prevent over-fertilization and save money.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Multiple Fertilizer Types</h3>
+            <p className="text-sm text-muted-foreground">Supports urea, DAP, NPK blends, MOP, SSP, and ammonium sulfate with accurate N-P-K percentages.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Flexible Area Units</h3>
+            <p className="text-sm text-muted-foreground">Calculate for acres or hectares with automatic conversion for global farming applications.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+          <h3 className="font-semibold mb-3">Common Fertilizer Types and NPK Values</h3>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2">Fertilizer</th>
+                <th className="text-left py-2">N-P-K %</th>
+                <th className="text-left py-2">Primary Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-2">Urea</td>
+                <td className="py-2">46-0-0</td>
+                <td className="py-2">Nitrogen source for leaf growth</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">DAP</td>
+                <td className="py-2">18-46-0</td>
+                <td className="py-2">Phosphorus for root development</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">MOP</td>
+                <td className="py-2">0-0-60</td>
+                <td className="py-2">Potassium for disease resistance</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">NPK 15-15-15</td>
+                <td className="py-2">15-15-15</td>
+                <td className="py-2">Balanced general purpose</td>
+              </tr>
+              <tr>
+                <td className="py-2">SSP</td>
+                <td className="py-2">0-16-0</td>
+                <td className="py-2">Phosphorus with calcium</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold mb-2">How do I calculate fertilizer dose per acre?</h3>
+            <p className="text-sm text-muted-foreground">First, determine your crop&apos;s NPK requirement (e.g., wheat needs 120-60-40 kg/ha). Subtract soil test values, then divide by the fertilizer&apos;s nutrient percentage. For urea (46% N): (120 - soil N) / 0.46 = kg urea needed per hectare. Convert to acres by multiplying by 0.4047.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What is the NPK ratio and why does it matter?</h3>
+            <p className="text-sm text-muted-foreground">NPK stands for Nitrogen (N), Phosphorus (P), and Potassium (K) - the three primary nutrients plants need. Different crops require different ratios. Leafy crops need more nitrogen, root crops need more phosphorus, and fruiting crops need more potassium.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How much urea is needed for 1 acre of wheat?</h3>
+            <p className="text-sm text-muted-foreground">Wheat typically needs 120 kg N per hectare (48.5 kg/acre). With urea at 46% nitrogen, you need about 105 kg urea per hectare or 42.5 kg per acre. Adjust based on your soil test results using this calculator.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Can I apply all fertilizer at once?</h3>
+            <p className="text-sm text-muted-foreground">No. Nitrogen should be split into 2-3 applications (basal, tillering, flowering) to prevent leaching and improve uptake. Phosphorus and potassium are typically applied as basal dose before planting.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What happens if I use too much fertilizer?</h3>
+            <p className="text-sm text-muted-foreground">Over-fertilization can burn plant roots, cause excessive vegetative growth with poor yields, contaminate groundwater, and waste money. Always base applications on soil tests and crop requirements.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Agriculture Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/seed-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Seed Rate Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate the optimal seed quantity needed for your field area.</p>
+          </a>
+          <a href="/calculators/irrigation-water-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Irrigation Water Calculator</h3>
+            <p className="text-sm text-muted-foreground">Determine water requirements for crop irrigation based on evapotranspiration.</p>
+          </a>
+          <a href="/calculators/crop-yield-estimator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Crop Yield Estimator</h3>
+            <p className="text-sm text-muted-foreground">Estimate expected crop yield based on field conditions and inputs.</p>
+          </a>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -30,27 +30,27 @@ export default function JsonToSwiftPage() {
     if (value === null) {
       return "Any";
     }
-    
+
     if (typeof value === "boolean") {
       return "Bool";
     }
-    
+
     if (typeof value === "number") {
       return Number.isInteger(value) ? "Int" : "Double";
     }
-    
+
     if (typeof value === "string") {
       return "String";
     }
-    
+
     if (Array.isArray(value)) {
       return "[Any]";
     }
-    
+
     if (typeof value === "object") {
       return "[String: Any]";
     }
-    
+
     return "Any";
   };
 
@@ -66,7 +66,7 @@ export default function JsonToSwiftPage() {
 
     for (const [key, value] of entries) {
       const propertyName = toCamelCase(key);
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         const nestedName = `${name}${toPascalCase(key)}`;
         properties.push(`    let ${propertyName}: ${nestedName}?`);
@@ -96,13 +96,13 @@ export default function JsonToSwiftPage() {
     try {
       const parsed = JSON.parse(input);
       let result = "";
-      
+
       if (Array.isArray(parsed) && parsed.length > 0) {
         result += generateSwiftStruct(structName, parsed[0] as Record<string, unknown>, new Set());
       } else if (typeof parsed === "object" && parsed !== null) {
         result += generateSwiftStruct(structName, parsed as Record<string, unknown>, new Set());
       }
-      
+
       setOutput(result);
       toast.success("Generated Swift struct successfully!");
     } catch (e) {

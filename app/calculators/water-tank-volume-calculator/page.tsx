@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,23 +10,23 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function WaterTankVolumeCalculatorPage() {
   const [tankShape, setTankShape] = useState<"cylindrical" | "rectangular" | "spherical" | "cone">("cylindrical");
-  
+
   // Cylindrical dimensions
   const [cylDiameter, setCylDiameter] = useState<string>("");
   const [cylHeight, setCylHeight] = useState<string>("");
-  
+
   // Rectangular dimensions
   const [rectLength, setRectLength] = useState<string>("");
   const [rectWidth, setRectWidth] = useState<string>("");
   const [rectHeight, setRectHeight] = useState<string>("");
-  
+
   // Spherical dimensions
   const [sphereDiameter, setSphereDiameter] = useState<string>("");
-  
+
   // Cone dimensions
   const [coneRadius, setConeradius] = useState<string>("");
   const [coneHeight, setConeHeight] = useState<string>("");
-  
+
   const [unit, setUnit] = useState<"meters" | "feet" | "inches" | "cm">("meters");
   const [outputUnit, setOutputUnit] = useState<"liters" | "gallons" | "cubic-meters" | "cubic-feet">("liters");
   const [result, setResult] = useState<{
@@ -45,7 +45,7 @@ export default function WaterTankVolumeCalculatorPage() {
       const diameter = parseFloat(cylDiameter);
       const height = parseFloat(cylHeight);
       if (isNaN(diameter) || isNaN(height) || diameter <= 0 || height <= 0) return;
-      
+
       const radius = diameter / 2;
       // V = π × r² × h
       volume = Math.PI * radius * radius * height;
@@ -54,28 +54,28 @@ export default function WaterTankVolumeCalculatorPage() {
       const width = parseFloat(rectWidth);
       const height = parseFloat(rectHeight);
       if (isNaN(length) || isNaN(width) || isNaN(height) || length <= 0 || width <= 0 || height <= 0) return;
-      
+
       // V = l × w × h
       volume = length * width * height;
     } else if (tankShape === "spherical") {
       const diameter = parseFloat(sphereDiameter);
       if (isNaN(diameter) || diameter <= 0) return;
-      
+
       const radius = diameter / 2;
       // V = (4/3) × π × r³
-      volume = (4/3) * Math.PI * Math.pow(radius, 3);
+      volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
     } else if (tankShape === "cone") {
       const radius = parseFloat(coneRadius);
       const height = parseFloat(coneHeight);
       if (isNaN(radius) || isNaN(height) || radius <= 0 || height <= 0) return;
-      
+
       // V = (1/3) × π × r² × h
-      volume = (1/3) * Math.PI * radius * radius * height;
+      volume = (1 / 3) * Math.PI * radius * radius * height;
     }
 
     // Convert to cubic meters first (base unit)
     let volumeInCubicMeters = volume;
-    
+
     if (unit === "feet") {
       volumeInCubicMeters = volume * 0.0283168;
     } else if (unit === "inches") {
@@ -351,6 +351,103 @@ export default function WaterTankVolumeCalculatorPage() {
             <strong>Conversion factors:</strong><br />
             1 m³ = 1,000 liters = 264.17 gallons = 35.31 cubic feet
           </p>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Water Tank Volume</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Tank Shape</h3>
+                <p className="text-sm text-muted-foreground">Choose cylindrical, rectangular, spherical, or conical tank shape.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Dimensions</h3>
+                <p className="text-sm text-muted-foreground">Input tank measurements (diameter/length, width, height) in your preferred unit.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Capacity Results</h3>
+                <p className="text-sm text-muted-foreground">See tank volume in liters, gallons, cubic meters, and cubic feet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Tank Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Multiple Tank Shapes**</h3>
+              <p className="text-sm text-muted-foreground">Support for cylindrical, rectangular, spherical, and conical tank geometries.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Flexible Units**</h3>
+              <p className="text-sm text-muted-foreground">Enter dimensions in meters, feet, inches, or cm. Output in liters or gallons.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Complete Conversions**</h3>
+              <p className="text-sm text-muted-foreground">Results shown in all common volume units for easy reference.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Accurate Formulas**</h3>
+              <p className="text-sm text-muted-foreground">Uses precise geometric formulas for each tank shape calculation.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I calculate tank volume?</h3>
+              <p className="text-sm text-muted-foreground">For cylindrical tanks: V = π × r² × h. For rectangular: V = l × w × h. For spherical: V = (4/3) × π × r³. Measure internal dimensions for accurate capacity.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How many gallons is my water tank?</h3>
+              <p className="text-sm text-muted-foreground">Calculate volume in cubic feet, then multiply by 7.48 to get gallons. Or calculate in cubic meters and multiply by 264.17 for gallons.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What size water tank do I need?</h3>
+              <p className="text-sm text-muted-foreground">A typical household needs 50-100 gallons per person. A family of 4 might need a 400-500 gallon tank for backup water storage.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I measure a round tank?</h3>
+              <p className="text-sm text-muted-foreground">Measure the diameter (widest point across the circle) and divide by 2 for radius. Measure height from bottom to top. Use these in the cylinder formula.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Should I measure inside or outside dimensions?</h3>
+              <p className="text-sm text-muted-foreground">Always measure inside dimensions for capacity calculations. Tank walls have thickness that reduces internal volume.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/volume-of-cylinder-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Volume of Cylinder Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate cylinder volume and surface area for any application.</p>
+            </a>
+            <a href="/calculators/water-requirement-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Water Requirement Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate daily water intake needs based on weight and activity.</p>
+            </a>
+            <a href="/calculators/water-flow-rate-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Water Flow Rate Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate water flow through pipes for plumbing systems.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

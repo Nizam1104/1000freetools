@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -342,9 +342,123 @@ export default function OnlineSellerProfitCalculatorPage() {
           </div>
           <p className="text-muted-foreground text-sm mt-3">
             <strong>Note:</strong> Fees vary by category, seller tier, and region. Always check
-            current rates on the platform's official fee schedule.
+            current rates on the platform&apos;s official fee schedule.
           </p>
         </div>
+
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-6">How to Calculate Online Seller Profit</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Sale Price</h3>
+                <p className="text-sm text-muted-foreground">Input your product&apos;s selling price and cost of goods sold (COGS).</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Add Fees and Costs</h3>
+                <p className="text-sm text-muted-foreground">Include platform fees, payment processing, shipping, and any applicable taxes.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">View Profit Breakdown</h3>
+                <p className="text-sm text-muted-foreground">See your net profit, profit margin percentage, and return on investment (ROI).</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-6">Key Features of This Seller Profit Calculator</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Multi-Platform Support
+                </h3>
+                <p className="text-sm text-muted-foreground">Pre-configured fee presets for Amazon, eBay, Etsy, and Shopify, or create custom fee structures.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Complete Cost Breakdown
+                </h3>
+                <p className="text-sm text-muted-foreground">Account for all costs including COGS, shipping, platform fees, payment processing, and sales tax.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Profit Margin Analysis
+                </h3>
+                <p className="text-sm text-muted-foreground">Calculate both absolute profit and profit margin percentage to evaluate product viability.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  ROI Calculation
+                </h3>
+                <p className="text-sm text-muted-foreground">See your return on investment based on product cost to compare different products.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Visual Profit Summary
+                </h3>
+                <p className="text-sm text-muted-foreground">Clear breakdown showing revenue, each cost category, and final net profit in one view.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-6">Frequently Asked Questions About Online Selling Profit</h2>
+            <div className="space-y-4">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">How do I calculate profit margin for online sales?</h3>
+                <p className="text-sm text-muted-foreground">Subtract all costs (COGS, shipping, fees, taxes) from your sale price to get net profit. Then divide net profit by sale price and multiply by 100. For example: $50 sale - $35 costs = $15 profit. $15/$50 × 100 = 30% margin.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What are typical Amazon seller fees?</h3>
+                <p className="text-sm text-muted-foreground">Amazon charges 8-15% referral fees depending on category, plus FBA fulfillment fees if using their warehouses. Professional sellers pay $39.99/month. Individual sellers pay $0.99 per item sold instead of the monthly fee.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">How much should I markup my products?</h3>
+                <p className="text-sm text-muted-foreground">Most successful sellers aim for at least 25-30% profit margin after all fees. This means your sale price should be roughly 1.4-1.5× your total costs. Higher margins (40%+) give more room for advertising and promotions.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Do I need to include sales tax in profit calculations?</h3>
+                <p className="text-sm text-muted-foreground">Sales tax is typically collected from buyers and remitted to the government, so it&apos;s not your revenue or expense. However, if you&apos;re responsible for paying it out of your proceeds, include it as a cost in your calculations.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What is a good ROI for ecommerce products?</h3>
+                <p className="text-sm text-muted-foreground">A good ROI for ecommerce is 20-50% or higher. This means for every $100 invested in inventory, you make $20-50 profit. Lower margins may work for high-volume products, while niche items can command higher returns.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-6">Related Ecommerce and Business Tools</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/profit-margin-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Profit Margin Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate gross and net profit margins for any business or product.</p>
+              </a>
+              <a href="/calculators/markup-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Markup Calculator</h3>
+                <p className="text-sm text-muted-foreground">Determine the right markup percentage to achieve your target profit margin.</p>
+              </a>
+              <a href="/calculators/break-even-point-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Break Even Point Calculator</h3>
+                <p className="text-sm text-muted-foreground">Find out how many units you need to sell to cover all your costs.</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

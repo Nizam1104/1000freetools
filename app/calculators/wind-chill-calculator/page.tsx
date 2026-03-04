@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -36,7 +36,7 @@ export default function WindChillCalculatorPage() {
     }
 
     if (tempUnit === "celsius") {
-      tempF = (tempF * 9/5) + 32;
+      tempF = (tempF * 9 / 5) + 32;
     }
 
     if (windUnit === "kmh") {
@@ -55,7 +55,7 @@ export default function WindChillCalculatorPage() {
       windChillF = tempF;
     }
 
-    const windChillC = (windChillF - 32) * 5/9;
+    const windChillC = (windChillF - 32) * 5 / 9;
 
     let feelsLike: string;
     if (windChillF >= 30) feelsLike = "Cold";
@@ -275,6 +275,124 @@ export default function WindChillCalculatorPage() {
                   <li>Watch for signs of frostbite: numbness, white/gray skin</li>
                 </ul>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* How It Works Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">How to Calculate Wind Chill</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Air Temperature</h3>
+                <p className="text-sm text-muted-foreground">Input the current air temperature in Fahrenheit or Celsius.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Add Wind Speed</h3>
+                <p className="text-sm text-muted-foreground">Enter the wind speed in mph, km/h, m/s, or knots.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">Get Wind Chill Results</h3>
+                <p className="text-sm text-muted-foreground">See the "feels like" temperature with risk level and frostbite time estimates.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Features of This Wind Chill Calculator</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  NWS Official Formula
+                </h3>
+                <p className="text-sm text-muted-foreground">Uses the 2001 National Weather Service wind chill formula for accurate calculations.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Multiple Wind Speed Units
+                </h3>
+                <p className="text-sm text-muted-foreground">Support for mph, km/h, m/s, and knots with automatic conversion.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Frostbite Time Estimates
+                </h3>
+                <p className="text-sm text-muted-foreground">Shows approximate time until frostbite risk at calculated wind chill temperature.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Risk Level Classification
+                </h3>
+                <p className="text-sm text-muted-foreground">Automatic categorization from Low to Extreme risk with color-coded alerts.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Safety Tips Included
+                </h3>
+                <p className="text-sm text-muted-foreground">Comprehensive cold weather safety guidance for outdoor activities.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions About Wind Chill</h3>
+            <div className="space-y-4">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">What is wind chill temperature?</h3>
+                <p className="text-sm text-muted-foreground">Wind chill is how cold it feels when wind combines with low temperatures. Wind removes heat from your body faster than still air, making it feel colder than the actual air temperature.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">At what wind chill is it dangerous?</h3>
+                <p className="text-sm text-muted-foreground">Wind chill below 0°F (-18°C) is considered dangerous with frostbite possible in 30 minutes or less. Below -20°F (-29°C) is extreme danger with frostbite in under 10 minutes.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Does wind chill affect cars and pipes?</h3>
+                <p className="text-sm text-muted-foreground">No, wind chill only affects living things that generate body heat. Car engines and water pipes cool to the actual air temperature, not the wind chill temperature.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Why is there a minimum wind speed for wind chill?</h3>
+                <p className="text-sm text-muted-foreground">The wind chill formula applies when wind speed is above 3 mph. Below this, the cooling effect is minimal. Calm air wind chill equals the actual temperature.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">How does wind chill cause frostbite?</h3>
+                <p className="text-sm text-muted-foreground">Wind accelerates heat loss from exposed skin. When skin temperature drops below freezing, ice crystals form in tissue cells, causing frostbite. Wind chill speeds this process dramatically.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Tools Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Related Weather Calculators</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/heat-index-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Heat Index Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate how hot it feels when humidity combines with high temperatures.</p>
+              </a>
+              <a href="/calculators/dew-point-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Dew Point Calculator</h3>
+                <p className="text-sm text-muted-foreground">Find the temperature at which air becomes saturated and dew forms.</p>
+              </a>
+              <a href="/calculators/humidity-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Humidity Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate relative humidity, absolute humidity, and moisture content in air.</p>
+              </a>
             </div>
           </CardContent>
         </Card>

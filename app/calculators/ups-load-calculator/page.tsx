@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -137,7 +137,7 @@ export default function UpsLoadCalculatorPage() {
           <Card>
             <CardContent className="p-6 space-y-4">
               <h3 className="font-semibold">Connected Devices</h3>
-              
+
               {devices.map((device, index) => (
                 <div key={device.id} className="space-y-2 border-b pb-4 last:border-0">
                   <div className="flex gap-2 items-center">
@@ -287,16 +287,16 @@ export default function UpsLoadCalculatorPage() {
                       <p className="text-xl font-bold">{result.upsLoadPercent}%</p>
                       <p className="text-xs text-muted-foreground mt-1">
                         {result.upsLoadPercent < 50 ? "✓ Excellent headroom" :
-                         result.upsLoadPercent < 80 ? "✓ Good" :
-                         result.upsLoadPercent < 100 ? "⚠ Near capacity" :
-                         "✗ Overloaded!"}
+                          result.upsLoadPercent < 80 ? "✓ Good" :
+                            result.upsLoadPercent < 100 ? "⚠ Near capacity" :
+                              "✗ Overloaded!"}
                       </p>
                     </div>
                     <div className="p-4 bg-muted rounded-lg">
                       <p className="text-sm text-muted-foreground">Est. Runtime</p>
                       <p className="text-xl font-bold">
-                        {result.runtimeHours >= 1 
-                          ? `${result.runtimeHours} hours` 
+                        {result.runtimeHours >= 1
+                          ? `${result.runtimeHours} hours`
                           : `${result.runtimeMinutes} min`}
                       </p>
                     </div>
@@ -342,6 +342,149 @@ export default function UpsLoadCalculatorPage() {
             <strong>Power Factor:</strong> Most electronics have PF between 0.6-0.9. Higher PF
             means more efficient power usage.
           </p>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate UPS Load Capacity</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Your Devices</h3>
+                <p className="text-sm text-muted-foreground">Enter each device's wattage or select from presets like PC, monitor, router, and NAS.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter UPS Specifications</h3>
+                <p className="text-sm text-muted-foreground">Input your UPS VA rating, battery voltage, and amp-hour capacity for accurate analysis.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Load Analysis</h3>
+                <p className="text-sm text-muted-foreground">See total load percentage, estimated runtime, and recommended UPS size for your setup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This UPS Load Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Multi-Device Support</h3>
+              <p className="text-sm text-muted-foreground">Add unlimited devices with quantity support and quick-select presets for common equipment.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">VA to Watts Conversion</h3>
+              <p className="text-sm text-muted-foreground">Automatically converts between VA and watts using power factor for accurate load assessment.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Load Percentage Warning</h3>
+              <p className="text-sm text-muted-foreground">Visual indicators show if your UPS is underloaded, optimally loaded, or dangerously overloaded.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Runtime Estimation</h3>
+              <p className="text-sm text-muted-foreground">Calculates expected backup time based on battery capacity and total connected load.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Common Device Power Consumption</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Device</th>
+                  <th className="text-left py-2">Typical Watts</th>
+                  <th className="text-left py-2">Device</th>
+                  <th className="text-left py-2">Typical Watts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Desktop PC</td>
+                  <td className="py-2">300-500W</td>
+                  <td className="py-2">Router</td>
+                  <td className="py-2">10-15W</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Laptop</td>
+                  <td className="py-2">45-90W</td>
+                  <td className="py-2">Modem</td>
+                  <td className="py-2">10-20W</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Monitor 24"</td>
+                  <td className="py-2">25-35W</td>
+                  <td className="py-2">NAS</td>
+                  <td className="py-2">30-60W</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Monitor 27"</td>
+                  <td className="py-2">35-50W</td>
+                  <td className="py-2">TV 55"</td>
+                  <td className="py-2">80-120W</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Gaming Console</td>
+                  <td className="py-2">100-200W</td>
+                  <td className="py-2">Network Switch</td>
+                  <td className="py-2">20-40W</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What size UPS do I need for my PC?</h3>
+              <p className="text-sm text-muted-foreground">Add up all device watts and multiply by 1.25 for headroom. A gaming PC (400W) + monitor (40W) + router (15W) = 455W × 1.25 = 569W minimum. Choose a UPS rated at least 700-800W (1000-1200VA).</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What is the difference between VA and watts?</h3>
+              <p className="text-sm text-muted-foreground">VA (volt-amps) is apparent power, while watts is real power. Watts = VA × Power Factor. Most electronics have PF of 0.6-0.9, so a 1000VA UPS typically delivers 600-900 watts of real power.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How much load should I put on my UPS?</h3>
+              <p className="text-sm text-muted-foreground">Keep UPS load between 50-80% of rated capacity for optimal efficiency and battery life. Running at 100% reduces runtime and stresses the battery. Overloading (&gt;100%) will trip the UPS or damage it.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How long will my UPS keep devices running?</h3>
+              <p className="text-sm text-muted-foreground">Runtime depends on battery capacity and load. A typical 1000VA UPS with 7Ah battery runs a 200W load for 15-20 minutes. Halving the load roughly doubles runtime. For hours of backup, add external battery packs.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Should I run my laser printer on UPS?</h3>
+              <p className="text-sm text-muted-foreground">No. Laser printers draw 5-10× their rated power during warm-up, which can overload or damage a UPS. Use a surge protector instead. Inkjet printers are safe to connect to UPS.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Power Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/ups-generator-runtime-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">UPS Generator Runtime Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate how long your backup power will last during outages.</p>
+            </a>
+            <a href="/calculators/power-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Power Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate electrical power, voltage, current, and resistance.</p>
+            </a>
+            <a href="/calculators/electricity-appliance-wattage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Electricity Appliance Wattage Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate power consumption of household appliances.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

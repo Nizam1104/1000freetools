@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -19,27 +19,27 @@ export default function JsonToCSharpPage() {
     if (value === null) {
       return "object";
     }
-    
+
     if (typeof value === "boolean") {
       return "bool";
     }
-    
+
     if (typeof value === "number") {
       return Number.isInteger(value) ? "int" : "double";
     }
-    
+
     if (typeof value === "string") {
       return "string";
     }
-    
+
     if (Array.isArray(value)) {
       return "List";
     }
-    
+
     if (typeof value === "object") {
       return "object";
     }
-    
+
     return "object";
   };
 
@@ -61,7 +61,7 @@ export default function JsonToCSharpPage() {
 
     for (const [key, value] of entries) {
       const propertyName = toPascalCase(key);
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         const nestedName = `${name}${toPascalCase(key)}`;
         properties.push(`    public ${nestedName} ${propertyName} { get; set; }`);
@@ -91,13 +91,13 @@ export default function JsonToCSharpPage() {
     try {
       const parsed = JSON.parse(input);
       let result = "";
-      
+
       if (Array.isArray(parsed) && parsed.length > 0) {
         result += generateCSharpClass(className, parsed[0] as Record<string, unknown>, new Set());
       } else if (typeof parsed === "object" && parsed !== null) {
         result += generateCSharpClass(className, parsed as Record<string, unknown>, new Set());
       }
-      
+
       const finalOutput = `namespace ${namespaceName}\n{\n${result.split("\n").map(line => "    " + line).join("\n")}\n}`;
       setOutput(finalOutput);
       toast.success("Generated C# class successfully!");

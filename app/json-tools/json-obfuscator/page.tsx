@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -69,7 +69,7 @@ export default function JsonObfuscatorPage() {
 
     const obfuscated = obfuscateObject(obj);
     const output = minify ? JSON.stringify(obfuscated) : JSON.stringify(obfuscated, null, 2);
-    
+
     setResult(output);
     toast.success("JSON obfuscated successfully");
   }, [input, obfuscateKeys, obfuscateValues, minify]);
@@ -214,7 +214,7 @@ export default function JsonObfuscatorPage() {
                 className="min-h-[200px] font-mono text-sm resize-none"
               />
               <p className="text-xs text-muted-foreground mt-2">
-                Original size: {new Blob([input]).size} bytes | 
+                Original size: {new Blob([input]).size} bytes |
                 Obfuscated size: {new Blob([result]).size} bytes
               </p>
             </CardContent>

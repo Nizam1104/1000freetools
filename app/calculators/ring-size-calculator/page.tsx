@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -267,6 +267,200 @@ export default function RingSizeCalculatorPage() {
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Ring Size Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Measure your finger</p>
+                    <p>Wrap a strip of paper or string around the base of your finger. Mark where it overlaps, then measure the length in millimeters.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select measurement type</p>
+                    <p>Choose whether you measured circumference (around the finger) or diameter (across an existing ring that fits).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your measurement</p>
+                    <p>Input the measurement in millimeters or inches. The calculator shows your size in US, UK, EU, Japan, and India standards.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Ring Size Conversion Tips
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Measure at the Right Time</h4>
+                  <p>
+                    Fingers swell throughout the day. Measure at the end of the day when fingers are largest. Avoid measuring when your hands are cold — fingers shrink in cold weather.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Consider the Ring Width</h4>
+                  <p>
+                    Wider bands feel tighter. If buying a ring wider than 6mm, consider going up half a size. A 4mm band and 10mm band in the same size will fit differently.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Dominant Hand Factor</h4>
+                  <p>
+                    Your dominant hand is typically half a size larger. If measuring for your right hand and you&apos;re right-handed, expect a slightly larger size than your left hand.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Knuckle Considerations</h4>
+                  <p>
+                    If your knuckle is significantly larger than your finger base, measure both and choose a size in between. The ring must fit over the knuckle but not spin loosely.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                International Ring Size Standards
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Region</th>
+                      <th className="text-left py-3 px-2 font-semibold">System</th>
+                      <th className="text-left py-3 px-2 font-semibold">Example Size</th>
+                      <th className="text-left py-3 px-2 font-semibold">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">United States</td>
+                      <td className="py-3 px-2">Numerical</td>
+                      <td className="py-3 px-2">5, 5.5, 6, 6.5...</td>
+                      <td className="py-3 px-2">Half sizes common</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">United Kingdom</td>
+                      <td className="py-3 px-2">Alphabetical</td>
+                      <td className="py-3 px-2">J, K, L, M...</td>
+                      <td className="py-3 px-2">Letters A-Z</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Europe</td>
+                      <td className="py-3 px-2">Circumference (mm)</td>
+                      <td className="py-3 px-2">48, 49, 50...</td>
+                      <td className="py-3 px-2">Inner circumference</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Japan</td>
+                      <td className="py-3 px-2">Numerical</td>
+                      <td className="py-3 px-2">8, 9, 10...</td>
+                      <td className="py-3 px-2">Different scale than US</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">India</td>
+                      <td className="py-3 px-2">Numerical</td>
+                      <td className="py-3 px-2">10, 11, 12...</td>
+                      <td className="py-3 px-2">Similar to US but varies</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What if I&apos;m between sizes?</h4>
+                  <p>
+                    Size up rather than down. It&apos;s easier to add sizing beads or have a ring resized smaller than to add material. A slightly loose ring is more comfortable than one that&apos;s too tight.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How accurate is this calculator?</h4>
+                  <p>
+                    The calculator is as accurate as your measurement. Paper strip measurements are typically within half a size. For expensive rings, visit a jeweler for professional sizing.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Do ring sizes change over time?</h4>
+                  <p>
+                    Yes. Weight changes, pregnancy, arthritis, and aging can all affect finger size. Re-measure before buying important rings if it&apos;s been more than a year since your last sizing.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I use an existing ring to find my size?</h4>
+                  <p>
+                    Yes. Measure the inside diameter of a ring that fits the intended finger well. Use the diameter measurement option in this calculator for the most accurate result.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why do different jewelers give different sizes?</h4>
+                  <p>
+                    Ring sizing isn&apos;t perfectly standardized. Some jewelers use slightly different mandrels or measurement methods. Always ask which sizing system they use and get sized by the same jeweler who&apos;ll make your ring.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/engagement-ring-budget-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Engagement Ring Budget Calculator</span>
+                  <p className="text-muted-foreground">Determine how much to spend on an engagement ring</p>
+                </a>
+                <a
+                  href="/calculators/gold-weight-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Gold Weight Calculator</span>
+                  <p className="text-muted-foreground">Calculate gold jewelry weight and value</p>
+                </a>
+                <a
+                  href="/calculators/gemstone-size-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Gemstone Size Calculator</span>
+                  <p className="text-muted-foreground">Convert gemstone carat weight to millimeter dimensions</p>
+                </a>
               </div>
             </CardContent>
           </Card>

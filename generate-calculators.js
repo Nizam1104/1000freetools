@@ -6,143 +6,143 @@ const jsonData = JSON.parse(fs.readFileSync('./app/calculators/remaining-to-buil
 
 // Helper function to convert calculator name to slug
 function toSlug(name) {
-    return name
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)+/g, '');
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
 }
 
 // Helper function to get category from calculator name
 function getCategory(name) {
-    const lowerName = name.toLowerCase();
-    
-    if (lowerName.includes('fuel') || lowerName.includes('mileage') || lowerName.includes('vehicle') || 
-        lowerName.includes('car') || lowerName.includes('ev ') || lowerName.includes('charging') || 
-        lowerName.includes('range') || lowerName.includes('horsepower') || lowerName.includes('torque') ||
-        lowerName.includes('engine') || lowerName.includes('gear') || lowerName.includes('acceleration')) {
-        return 'automotive';
-    }
-    if (lowerName.includes('profit') || lowerName.includes('discount') || lowerName.includes('seller') ||
-        lowerName.includes('roi') || lowerName.includes('cpc') || lowerName.includes('cpm') || 
-        lowerName.includes('ctr') || lowerName.includes('conversion') || lowerName.includes('lifetime value') ||
-        lowerName.includes('acquisition') || lowerName.includes('churn') || lowerName.includes('mrr') ||
-        lowerName.includes('arr') || lowerName.includes('funnel') || lowerName.includes('nps') ||
-        lowerName.includes('pricing') || lowerName.includes('dynamic')) {
-        return 'business';
-    }
-    if (lowerName.includes('paint') || lowerName.includes('wallpaper') || lowerName.includes('curtain') ||
-        lowerName.includes('room') || lowerName.includes('water tank') || lowerName.includes('heater') ||
-        lowerName.includes('air conditioner') || lowerName.includes('ac tonnage')) {
-        return 'home';
-    }
-    if (lowerName.includes('gpa') || lowerName.includes('cgpa') || lowerName.includes('grade') ||
-        lowerName.includes('study') || lowerName.includes('exam') || lowerName.includes('mark') ||
-        lowerName.includes('attendance') || lowerName.includes('revision') || lowerName.includes('percentile')) {
-        return 'education';
-    }
-    if (lowerName.includes('seed') || lowerName.includes('fertilizer') || lowerName.includes('irrigation') ||
-        lowerName.includes('pesticide') || lowerName.includes('crop') || lowerName.includes('livestock') ||
-        lowerName.includes('soil') || lowerName.includes('greenhouse')) {
-        return 'agriculture';
-    }
-    if (lowerName.includes('wind chill') || lowerName.includes('heat index') || lowerName.includes('dew point') ||
-        lowerName.includes('humidity') || lowerName.includes('air density') || lowerName.includes('solar')) {
-        return 'weather';
-    }
-    if (lowerName.includes('battery') || lowerName.includes('ups') || lowerName.includes('electricity') ||
-        lowerName.includes('appliance') || lowerName.includes('wattage')) {
-        return 'utilities';
-    }
-    if (lowerName.includes('sand') || lowerName.includes('gravel') || lowerName.includes('brick') ||
-        lowerName.includes('mortar') || lowerName.includes('wood') || lowerName.includes('drywall') ||
-        lowerName.includes('ceiling') || lowerName.includes('window') || lowerName.includes('door') ||
-        lowerName.includes('stair') || lowerName.includes('ramp') || lowerName.includes('scaffold') ||
-        lowerName.includes('asphalt') || lowerName.includes('foundation') || lowerName.includes('concrete') ||
-        lowerName.includes('steel') || lowerName.includes('tile') || lowerName.includes('plaster') ||
-        lowerName.includes('floor') || lowerName.includes('roof')) {
-        return 'construction';
-    }
-    if (lowerName.includes('password') || lowerName.includes('entropy') || lowerName.includes('rsa') ||
-        lowerName.includes('aes') || lowerName.includes('hash') || lowerName.includes('brute')) {
-        return 'security';
-    }
-    if (lowerName.includes('recipe') || lowerName.includes('calories per serving') || lowerName.includes('baking') ||
-        lowerName.includes('yeast') || lowerName.includes('oven') || lowerName.includes('coffee') ||
-        lowerName.includes('tea') || lowerName.includes('alcohol') || lowerName.includes('beer') ||
-        lowerName.includes('wine') || lowerName.includes('cocktail')) {
-        return 'food';
-    }
-    if (lowerName.includes('k/d') || lowerName.includes('win') || lowerName.includes('xp') ||
-        lowerName.includes('loot') || lowerName.includes('gacha') || lowerName.includes('cricket') ||
-        lowerName.includes('football') || lowerName.includes('basketball') || lowerName.includes('tennis') ||
-        lowerName.includes('swimming') || lowerName.includes('golf') || lowerName.includes('strength') ||
-        lowerName.includes('pr estimator')) {
-        return 'gaming';
-    }
-    if (lowerName.includes('note') || lowerName.includes('tempo') || lowerName.includes('audio') ||
-        lowerName.includes('chord') || lowerName.includes('scale') || lowerName.includes('tuning')) {
-        return 'music';
-    }
-    if (lowerName.includes('golden') || lowerName.includes('grid') || lowerName.includes('poster') ||
-        lowerName.includes('aspect') || lowerName.includes('perspective') || lowerName.includes('typography') ||
-        lowerName.includes('line-height')) {
-        return 'design';
-    }
-    if (lowerName.includes('hiking') || lowerName.includes('trail') || lowerName.includes('camping') ||
-        lowerName.includes('backpack') || lowerName.includes('boat') || lowerName.includes('map')) {
-        return 'outdoor';
-    }
-    if (lowerName.includes('dog') || lowerName.includes('cat') || lowerName.includes('pet') ||
-        lowerName.includes('aquarium') || lowerName.includes('horse') || lowerName.includes('bird')) {
-        return 'pets';
-    }
-    if (lowerName.includes('baby') || lowerName.includes('diaper') || lowerName.includes('toddler') ||
-        lowerName.includes('screen-time') || lowerName.includes('feeding')) {
-        return 'parenting';
-    }
-    if (lowerName.includes('richter') || lowerName.includes('decibel') || lowerName.includes('telescope') ||
-        lowerName.includes('drone') || lowerName.includes('robot') || lowerName.includes('co₂') ||
-        lowerName.includes('carbon') || lowerName.includes('noise') || lowerName.includes('ventilation') ||
-        lowerName.includes('indoor')) {
-        return 'science';
-    }
-    if (lowerName.includes('shoe') || lowerName.includes('ring') || lowerName.includes('tire') ||
-        lowerName.includes('altitude') || lowerName.includes('mountain') || lowerName.includes('kitchen') ||
-        lowerName.includes('clothing') || lowerName.includes('screen brightness') || lowerName.includes('mobile') ||
-        lowerName.includes('turning')) {
-        return 'utilities';
-    }
-    if (lowerName.includes('volumetric') || lowerName.includes('dimensional') || lowerName.includes('container') ||
-        lowerName.includes('cargo') || lowerName.includes('pallet') || lowerName.includes('office') ||
-        lowerName.includes('warehouse') || lowerName.includes('weight distribution')) {
-        return 'shipping';
-    }
-    if (lowerName.includes('camera') || lowerName.includes('shutter') || lowerName.includes('aperture') ||
-        lowerName.includes('iso')) {
-        return 'photography';
-    }
-    if (lowerName.includes('sleep') || lowerName.includes('breathing') || lowerName.includes('meditation') ||
-        lowerName.includes('dopamine') || lowerName.includes('money') || lowerName.includes('habit') ||
-        lowerName.includes('goal') || lowerName.includes('productivity') || lowerName.includes('biorhythm')) {
-        return 'lifestyle';
-    }
-    
+  const lowerName = name.toLowerCase();
+
+  if (lowerName.includes('fuel') || lowerName.includes('mileage') || lowerName.includes('vehicle') ||
+    lowerName.includes('car') || lowerName.includes('ev ') || lowerName.includes('charging') ||
+    lowerName.includes('range') || lowerName.includes('horsepower') || lowerName.includes('torque') ||
+    lowerName.includes('engine') || lowerName.includes('gear') || lowerName.includes('acceleration')) {
+    return 'automotive';
+  }
+  if (lowerName.includes('profit') || lowerName.includes('discount') || lowerName.includes('seller') ||
+    lowerName.includes('roi') || lowerName.includes('cpc') || lowerName.includes('cpm') ||
+    lowerName.includes('ctr') || lowerName.includes('conversion') || lowerName.includes('lifetime value') ||
+    lowerName.includes('acquisition') || lowerName.includes('churn') || lowerName.includes('mrr') ||
+    lowerName.includes('arr') || lowerName.includes('funnel') || lowerName.includes('nps') ||
+    lowerName.includes('pricing') || lowerName.includes('dynamic')) {
+    return 'business';
+  }
+  if (lowerName.includes('paint') || lowerName.includes('wallpaper') || lowerName.includes('curtain') ||
+    lowerName.includes('room') || lowerName.includes('water tank') || lowerName.includes('heater') ||
+    lowerName.includes('air conditioner') || lowerName.includes('ac tonnage')) {
+    return 'home';
+  }
+  if (lowerName.includes('gpa') || lowerName.includes('cgpa') || lowerName.includes('grade') ||
+    lowerName.includes('study') || lowerName.includes('exam') || lowerName.includes('mark') ||
+    lowerName.includes('attendance') || lowerName.includes('revision') || lowerName.includes('percentile')) {
+    return 'education';
+  }
+  if (lowerName.includes('seed') || lowerName.includes('fertilizer') || lowerName.includes('irrigation') ||
+    lowerName.includes('pesticide') || lowerName.includes('crop') || lowerName.includes('livestock') ||
+    lowerName.includes('soil') || lowerName.includes('greenhouse')) {
+    return 'agriculture';
+  }
+  if (lowerName.includes('wind chill') || lowerName.includes('heat index') || lowerName.includes('dew point') ||
+    lowerName.includes('humidity') || lowerName.includes('air density') || lowerName.includes('solar')) {
+    return 'weather';
+  }
+  if (lowerName.includes('battery') || lowerName.includes('ups') || lowerName.includes('electricity') ||
+    lowerName.includes('appliance') || lowerName.includes('wattage')) {
     return 'utilities';
+  }
+  if (lowerName.includes('sand') || lowerName.includes('gravel') || lowerName.includes('brick') ||
+    lowerName.includes('mortar') || lowerName.includes('wood') || lowerName.includes('drywall') ||
+    lowerName.includes('ceiling') || lowerName.includes('window') || lowerName.includes('door') ||
+    lowerName.includes('stair') || lowerName.includes('ramp') || lowerName.includes('scaffold') ||
+    lowerName.includes('asphalt') || lowerName.includes('foundation') || lowerName.includes('concrete') ||
+    lowerName.includes('steel') || lowerName.includes('tile') || lowerName.includes('plaster') ||
+    lowerName.includes('floor') || lowerName.includes('roof')) {
+    return 'construction';
+  }
+  if (lowerName.includes('password') || lowerName.includes('entropy') || lowerName.includes('rsa') ||
+    lowerName.includes('aes') || lowerName.includes('hash') || lowerName.includes('brute')) {
+    return 'security';
+  }
+  if (lowerName.includes('recipe') || lowerName.includes('calories per serving') || lowerName.includes('baking') ||
+    lowerName.includes('yeast') || lowerName.includes('oven') || lowerName.includes('coffee') ||
+    lowerName.includes('tea') || lowerName.includes('alcohol') || lowerName.includes('beer') ||
+    lowerName.includes('wine') || lowerName.includes('cocktail')) {
+    return 'food';
+  }
+  if (lowerName.includes('k/d') || lowerName.includes('win') || lowerName.includes('xp') ||
+    lowerName.includes('loot') || lowerName.includes('gacha') || lowerName.includes('cricket') ||
+    lowerName.includes('football') || lowerName.includes('basketball') || lowerName.includes('tennis') ||
+    lowerName.includes('swimming') || lowerName.includes('golf') || lowerName.includes('strength') ||
+    lowerName.includes('pr estimator')) {
+    return 'gaming';
+  }
+  if (lowerName.includes('note') || lowerName.includes('tempo') || lowerName.includes('audio') ||
+    lowerName.includes('chord') || lowerName.includes('scale') || lowerName.includes('tuning')) {
+    return 'music';
+  }
+  if (lowerName.includes('golden') || lowerName.includes('grid') || lowerName.includes('poster') ||
+    lowerName.includes('aspect') || lowerName.includes('perspective') || lowerName.includes('typography') ||
+    lowerName.includes('line-height')) {
+    return 'design';
+  }
+  if (lowerName.includes('hiking') || lowerName.includes('trail') || lowerName.includes('camping') ||
+    lowerName.includes('backpack') || lowerName.includes('boat') || lowerName.includes('map')) {
+    return 'outdoor';
+  }
+  if (lowerName.includes('dog') || lowerName.includes('cat') || lowerName.includes('pet') ||
+    lowerName.includes('aquarium') || lowerName.includes('horse') || lowerName.includes('bird')) {
+    return 'pets';
+  }
+  if (lowerName.includes('baby') || lowerName.includes('diaper') || lowerName.includes('toddler') ||
+    lowerName.includes('screen-time') || lowerName.includes('feeding')) {
+    return 'parenting';
+  }
+  if (lowerName.includes('richter') || lowerName.includes('decibel') || lowerName.includes('telescope') ||
+    lowerName.includes('drone') || lowerName.includes('robot') || lowerName.includes('co₂') ||
+    lowerName.includes('carbon') || lowerName.includes('noise') || lowerName.includes('ventilation') ||
+    lowerName.includes('indoor')) {
+    return 'science';
+  }
+  if (lowerName.includes('shoe') || lowerName.includes('ring') || lowerName.includes('tire') ||
+    lowerName.includes('altitude') || lowerName.includes('mountain') || lowerName.includes('kitchen') ||
+    lowerName.includes('clothing') || lowerName.includes('screen brightness') || lowerName.includes('mobile') ||
+    lowerName.includes('turning')) {
+    return 'utilities';
+  }
+  if (lowerName.includes('volumetric') || lowerName.includes('dimensional') || lowerName.includes('container') ||
+    lowerName.includes('cargo') || lowerName.includes('pallet') || lowerName.includes('office') ||
+    lowerName.includes('warehouse') || lowerName.includes('weight distribution')) {
+    return 'shipping';
+  }
+  if (lowerName.includes('camera') || lowerName.includes('shutter') || lowerName.includes('aperture') ||
+    lowerName.includes('iso')) {
+    return 'photography';
+  }
+  if (lowerName.includes('sleep') || lowerName.includes('breathing') || lowerName.includes('meditation') ||
+    lowerName.includes('dopamine') || lowerName.includes('money') || lowerName.includes('habit') ||
+    lowerName.includes('goal') || lowerName.includes('productivity') || lowerName.includes('biorhythm')) {
+    return 'lifestyle';
+  }
+
+  return 'utilities';
 }
 
 // Template for calculator page
 function generateCalculatorPage(calc) {
-    const slug = toSlug(calc.calculatorName);
-    const componentName = calc.calculatorName.replace(/[^a-zA-Z0-9]/g, '');
-    const category = getCategory(calc.calculatorName);
-    
-    // Generate specific calculator logic based on the calculator type
-    const calculatorLogic = getCalculatorLogic(calc.calculatorName, slug);
-    
-    return `"use client";
+  const slug = toSlug(calc.calculatorName);
+  const componentName = calc.calculatorName.replace(/[^a-zA-Z0-9]/g, '');
+  const category = getCategory(calc.calculatorName);
+
+  // Generate specific calculator logic based on the calculator type
+  const calculatorLogic = getCalculatorLogic(calc.calculatorName, slug);
+
+  return `"use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -200,17 +200,17 @@ ${calculatorLogic.state}
 
 // Generate calculator-specific logic
 function getCalculatorLogic(name, slug) {
-    const lowerName = name.toLowerCase();
-    
-    // Automotive Calculators
-    if (lowerName.includes('fuel cost')) {
-        return {
-            state: `  const [distance, setDistance] = useState<string>("");
+  const lowerName = name.toLowerCase();
+
+  // Automotive Calculators
+  if (lowerName.includes('fuel cost')) {
+    return {
+      state: `  const [distance, setDistance] = useState<string>("");
   const [fuelEfficiency, setFuelEfficiency] = useState<string>("");
   const [fuelPrice, setFuelPrice] = useState<string>("");
   const [unit, setUnit] = useState<"mpg" | "l100km">("mpg");
   const [result, setResult] = useState<{ totalFuel: number; totalCost: number } | null>(null);`,
-            inputs: `
+      inputs: `
               <div className="space-y-2">
                 <Label htmlFor="distance">Distance (miles)</Label>
                 <Input
@@ -266,7 +266,7 @@ function getCalculatorLogic(name, slug) {
                 </div>
               </div>
 `,
-            results: `
+      results: `
                   <div className="p-4 bg-primary/10 rounded-lg">
                     <p className="text-sm text-muted-foreground">Total Fuel Cost</p>
                     <p className="text-3xl font-bold text-primary">${result?.totalCost.toFixed(2)}</p>
@@ -276,7 +276,7 @@ function getCalculatorLogic(name, slug) {
                     <p className="text-lg font-bold">{result?.totalFuel.toFixed(2)} {unit === "mpg" ? "gallons" : "liters"}</p>
                   </div>
 `,
-            calculate: `
+      calculate: `
   const calculate = () => {
     const dist = parseFloat(distance);
     const eff = parseFloat(fuelEfficiency);
@@ -304,16 +304,16 @@ function getCalculatorLogic(name, slug) {
     setResult(null);
   };
 `
-        };
-    }
-    
-    if (lowerName.includes('mileage')) {
-        return {
-            state: `  const [distance, setDistance] = useState<string>("");
+    };
+  }
+
+  if (lowerName.includes('mileage')) {
+    return {
+      state: `  const [distance, setDistance] = useState<string>("");
   const [fuelUsed, setFuelUsed] = useState<string>("");
   const [unit, setUnit] = useState<"mpg" | "kmpl" | "l100km">("mpg");
   const [result, setResult] = useState<number | null>(null);`,
-            inputs: `
+      inputs: `
               <div className="space-y-2">
                 <Label htmlFor="distance">Distance Traveled ({unit === "mpg" ? "miles" : "km"})</Label>
                 <Input
@@ -366,7 +366,7 @@ function getCalculatorLogic(name, slug) {
                 </div>
               </div>
 `,
-            results: `
+      results: `
                   <div className="p-4 bg-primary/10 rounded-lg">
                     <p className="text-sm text-muted-foreground">Fuel Efficiency</p>
                     <p className="text-3xl font-bold text-primary">
@@ -374,7 +374,7 @@ function getCalculatorLogic(name, slug) {
                     </p>
                   </div>
 `,
-            calculate: `
+      calculate: `
   const calculate = () => {
     const dist = parseFloat(distance);
     const fuel = parseFloat(fuelUsed);
@@ -399,15 +399,15 @@ function getCalculatorLogic(name, slug) {
     setResult(null);
   };
 `
-        };
-    }
+    };
+  }
 
-    // Default template for other calculators
-    return {
-        state: `  const [input1, setInput1] = useState<string>("");
+  // Default template for other calculators
+  return {
+    state: `  const [input1, setInput1] = useState<string>("");
   const [input2, setInput2] = useState<string>("");
   const [result, setResult] = useState<Record<string, number> | null>(null);`,
-        inputs: `
+    inputs: `
               <div className="space-y-2">
                 <Label htmlFor="input1">Input 1</Label>
                 <Input
@@ -430,13 +430,13 @@ function getCalculatorLogic(name, slug) {
                 />
               </div>
 `,
-        results: `
+    results: `
                   <div className="p-4 bg-primary/10 rounded-lg">
                     <p className="text-sm text-muted-foreground">Result</p>
                     <p className="text-3xl font-bold text-primary">{JSON.stringify(result)}</p>
                   </div>
 `,
-        calculate: `
+    calculate: `
   const calculate = () => {
     const val1 = parseFloat(input1);
     const val2 = parseFloat(input2);
@@ -454,7 +454,7 @@ function getCalculatorLogic(name, slug) {
     setResult(null);
   };
 `
-    };
+  };
 }
 
 // Create directories and files
@@ -462,26 +462,26 @@ let created = 0;
 let skipped = 0;
 
 jsonData.forEach((calc) => {
-    const slug = toSlug(calc.calculatorName);
-    const dirPath = path.join('./app/calculators', slug);
-    const filePath = path.join(dirPath, 'page.tsx');
-    
-    // Check if directory already exists
-    if (fs.existsSync(dirPath)) {
-        console.log(`Skipping (exists): ${calc.calculatorName}`);
-        skipped++;
-        return;
-    }
-    
-    // Create directory
-    fs.mkdirSync(dirPath, { recursive: true });
-    
-    // Generate and write file
-    const content = generateCalculatorPage(calc);
-    fs.writeFileSync(filePath, content);
-    
-    console.log(`Created: ${calc.calculatorName} -> ${slug}`);
-    created++;
+  const slug = toSlug(calc.calculatorName);
+  const dirPath = path.join('./app/calculators', slug);
+  const filePath = path.join(dirPath, 'page.tsx');
+
+  // Check if directory already exists
+  if (fs.existsSync(dirPath)) {
+    console.log(`Skipping (exists): ${calc.calculatorName}`);
+    skipped++;
+    return;
+  }
+
+  // Create directory
+  fs.mkdirSync(dirPath, { recursive: true });
+
+  // Generate and write file
+  const content = generateCalculatorPage(calc);
+  fs.writeFileSync(filePath, content);
+
+  console.log(`Created: ${calc.calculatorName} -> ${slug}`);
+  created++;
 });
 
 console.log(`\n=== Summary ===`);

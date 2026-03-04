@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -146,6 +146,247 @@ export default function MinimumPaymentCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Minimum Payment Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your credit card balance</p>
+                    <p>Input your current outstanding balance. This is the total amount you owe on the card.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Add your APR and minimum payment percentage</p>
+                    <p>Enter your annual interest rate (APR). Most cards require 2-3% minimum payments, with a $25 floor.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">See the true cost of minimum payments</p>
+                    <p>The calculator shows how many years it takes to pay off and the total interest you'll pay.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                The Cost of Minimum Payments: Example Scenarios
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Balance</th>
+                      <th className="text-left py-3 px-2 font-semibold">APR</th>
+                      <th className="text-left py-3 px-2 font-semibold">Time to Payoff</th>
+                      <th className="text-left py-3 px-2 font-semibold">Total Interest</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">$1,000</td>
+                      <td className="py-3 px-2">18%</td>
+                      <td className="py-3 px-2">9 years</td>
+                      <td className="py-3 px-2">$867</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">$5,000</td>
+                      <td className="py-3 px-2">18%</td>
+                      <td className="py-3 px-2">31 years</td>
+                      <td className="py-3 px-2">$10,450</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">$10,000</td>
+                      <td className="py-3 px-2">18%</td>
+                      <td className="py-3 px-2">47 years</td>
+                      <td className="py-3 px-2">$24,800</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">$5,000</td>
+                      <td className="py-3 px-2">24%</td>
+                      <td className="py-3 px-2">Never pays off*</td>
+                      <td className="py-3 px-2">Balance grows</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                *At high APRs with low minimum payments, interest can exceed the payment, causing the balance to grow indefinitely.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Why Minimum Payments Keep You in Debt
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Minimum Payments Work</h4>
+                  <p>
+                    Credit cards typically require 2-3% of your balance or $25, whichever is higher. On a $5,000 balance at 18% APR, the minimum might be $100-150. But most of that goes to interest, not principal.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Interest Trap</h4>
+                  <p>
+                    At 18% APR, a $5,000 balance accrues about $75 in interest the first month. If your minimum payment is $100, only $25 reduces the principal. Next month, you're paying interest on $4,975—not much progress.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Payment Floor Problem</h4>
+                  <p>
+                    When your balance drops low enough that 2% falls below $25, the $25 floor kicks in. This helps you finish paying off, but by then you've already paid years of interest.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Strategies to Escape Credit Card Debt
+              </h3>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Pay more than the minimum</p>
+                    <p>Even an extra $50/month dramatically reduces payoff time. On $5,000 at 18%, paying $200 instead of $100 cuts 20+ years off the payoff.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Try the avalanche method</p>
+                    <p>Pay minimums on all cards, put extra money toward the highest-APR card first. Mathematically optimal—saves the most on interest.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider balance transfer</p>
+                    <p>0% intro APR cards let you pay down principal without interest. Watch for transfer fees (typically 3-5%) and the rate after intro period ends.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Stop using the card</p>
+                    <p>You can't dig out while still digging. Use cash or debit until balances are under control. Keep the card open (don't close it) to protect your credit utilization ratio.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What happens if I only pay the minimum?</h4>
+                  <p>
+                    You'll stay in debt for years or decades. Most of your payment goes to interest, barely touching the principal. A $5,000 balance at 18% could take 30+ years to pay off, costing more than $10,000 in interest alone.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is paying minimum better than skipping payment?</h4>
+                  <p>
+                    Yes. Minimum payments keep your account current and avoid late fees and credit score damage. But it's the bare minimum—treat it as a temporary floor, not a long-term strategy.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How can I calculate my own payoff timeline?</h4>
+                  <p>
+                    Use this calculator with your actual balance and APR. Then experiment with higher monthly payments to see how much time and interest you can save. Even small increases make a big difference.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I use savings to pay off credit cards?</h4>
+                  <p>
+                    Usually yes, if your card APR exceeds your savings interest rate. Credit card debt at 18-25% costs far more than savings earns at 4-5%. Keep a small emergency fund ($1,000-2,000) while paying down debt.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Will paying more than minimum hurt my credit?</h4>
+                  <p>
+                    No, it helps. Lower balances improve your credit utilization ratio, which is 30% of your FICO score. Paying down debt is one of the fastest ways to boost your credit score.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/credit-card-payoff-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Credit Card Payoff Calculator</span>
+                  <p className="text-muted-foreground">Plan your debt-free date with custom monthly payments</p>
+                </a>
+                <a
+                  href="/calculators/debt-snowball-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Debt Snowball Calculator</span>
+                  <p className="text-muted-foreground">Pay off multiple debts using the snowball method</p>
+                </a>
+                <a
+                  href="/calculators/interest-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Interest Calculator</span>
+                  <p className="text-muted-foreground">Calculate simple and compound interest on loans and savings</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

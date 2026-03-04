@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -281,13 +281,11 @@ export default function ExamCorrectionCurveCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className={`p-3 rounded-lg text-center ${
-                    result.pointsAdded > 0 ? "bg-green-50 dark:bg-green-950/20" : "bg-muted"
-                  }`}>
-                    <p className="text-sm">Points Added</p>
-                    <p className={`text-2xl font-bold ${
-                      result.pointsAdded > 0 ? "text-green-600" : ""
+                  <div className={`p-3 rounded-lg text-center ${result.pointsAdded > 0 ? "bg-green-50 dark:bg-green-950/20" : "bg-muted"
                     }`}>
+                    <p className="text-sm">Points Added</p>
+                    <p className={`text-2xl font-bold ${result.pointsAdded > 0 ? "text-green-600" : ""
+                      }`}>
                       {result.pointsAdded > 0 ? "+" : ""}{result.pointsAdded}
                     </p>
                   </div>
@@ -348,6 +346,158 @@ export default function ExamCorrectionCurveCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">How to Apply Grade Curves</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Original Score</h3>
+              <p className="text-sm text-muted-foreground">Input the student's raw score and the maximum possible score for the exam.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Select Curve Method</h3>
+              <p className="text-sm text-muted-foreground">Choose from flat curve, square root, proportional scaling, bell curve, or linear interpolation.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">View Curved Grade</h3>
+              <p className="text-sm text-muted-foreground">See the adjusted score, new letter grade, points added, and explanation of the calculation.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Exam Curve Calculator?</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Multiple Curve Methods
+              </h3>
+              <p className="text-sm text-muted-foreground">Supports five different curving techniques to match your grading philosophy and class needs.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Instant Grade Conversion
+              </h3>
+              <p className="text-sm text-muted-foreground">See both numerical score and letter grade before and after curving in real-time.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Detailed Explanations
+              </h3>
+              <p className="text-sm text-muted-foreground">Each result includes a clear explanation of how the curved score was calculated.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Class Statistics Support
+              </h3>
+              <p className="text-sm text-muted-foreground">Enter class average for proportional and bell curve methods for accurate scaling.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Fair Grade Distribution
+              </h3>
+              <p className="text-sm text-muted-foreground">Helps ensure grades reflect student performance relative to exam difficulty.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-6 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-3">Curve Method Comparison</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-2">Method</th>
+                    <th className="text-left py-2">Best For</th>
+                    <th className="text-left py-2">Effect on Scores</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-2 font-medium">Flat Curve</td>
+                    <td className="py-2">Small adjustments</td>
+                    <td className="py-2">Adds same points to all</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 font-medium">Square Root</td>
+                    <td className="py-2">Helping low scorers</td>
+                    <td className="py-2">Benefits lower scores more</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 font-medium">Proportional</td>
+                    <td className="py-2">Target average</td>
+                    <td className="py-2">Scales all by same factor</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 font-medium">Bell Curve</td>
+                    <td className="py-2">Normal distribution</td>
+                    <td className="py-2">Normalizes to target mean</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 font-medium">Linear</td>
+                    <td className="py-2">Setting min/max</td>
+                    <td className="py-2">Maps to new range</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Grade Curving</h2>
+          <div className="space-y-4">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is the purpose of curving grades?</h3>
+              <p className="text-sm text-muted-foreground">Curving adjusts scores to account for exam difficulty, ensure fair grade distribution, or align with institutional standards. It helps when an exam was unexpectedly challenging.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Which curve method is fairest?</h3>
+              <p className="text-sm text-muted-foreground">Fairness depends on context. Flat curves treat everyone equally. Square root curves help struggling students most. Proportional curves maintain relative rankings while raising averages.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Can curving lower a student's grade?</h3>
+              <p className="text-sm text-muted-foreground">Most curve methods only raise scores. However, bell curve normalization could potentially lower high scores if the target distribution has a lower maximum. Always review results before applying.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I choose a target average for curving?</h3>
+              <p className="text-sm text-muted-foreground">Common target averages are 75-80% (C+/B- range). Consider course level, institutional norms, and whether the exam tested essential competencies that should be mastered.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Should I curve all exams or just difficult ones?</h3>
+              <p className="text-sm text-muted-foreground">Curve selectively when exams prove unexpectedly difficult or when scores don't reflect student preparation. Consistent curving on all exams may mask issues with exam design or instruction.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-12 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Related Education Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/exam-scoring-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Exam Scoring Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate weighted final grades from multiple exam components and assignments.</p>
+            </a>
+            <a href="/calculators/gpa-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">GPA Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate semester or cumulative GPA from course grades and credit hours.</p>
+            </a>
+            <a href="/calculators/grade-percentage-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Grade Percentage Calculator</h3>
+              <p className="text-sm text-muted-foreground">Convert raw scores to percentages and determine letter grades instantly.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

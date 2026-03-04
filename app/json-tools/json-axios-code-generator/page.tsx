@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -36,7 +36,7 @@ export default function JsonAxiosCodeGeneratorPage() {
     code += `axios({\n`;
     code += `  method: '${config.method}',\n`;
     code += `  url: '${config.url}',\n`;
-    
+
     if (config.headers) {
       code += `  headers: {\n`;
       code += Object.entries(config.headers)
@@ -44,11 +44,11 @@ export default function JsonAxiosCodeGeneratorPage() {
         .join(",\n");
       code += `\n  },\n`;
     }
-    
+
     if (config.data) {
       code += `  data: ${JSON.stringify(config.data, null, 4).split('\n').map((line, i) => i === 0 ? line : '    ' + line).join('\n')},\n`;
     }
-    
+
     code += `})\n`;
     code += `.then(response => {\n`;
     code += `  console.log(response.data);\n`;

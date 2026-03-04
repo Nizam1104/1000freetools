@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -266,6 +266,194 @@ export default function CustomerLifetimeValueCalculatorPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the CLV Calculator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Enter Customer Metrics</h3>
+                    <p className="text-sm text-muted-foreground">Input average purchase value, purchase frequency, and customer lifespan for your business.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Add Gross Margin</h3>
+                    <p className="text-sm text-muted-foreground">Enter your gross margin percentage to calculate profit-based customer lifetime value.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Get CLV Analysis</h3>
+                    <p className="text-sm text-muted-foreground">Receive customer lifetime value, maximum recommended CAC, and break-even timeline.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Features of This CLV Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Flexible Time Units</h3>
+                      <p className="text-sm text-muted-foreground">Calculate with monthly, quarterly, or annual purchase frequency and months or years for lifespan.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Gross & Net CLV</h3>
+                      <p className="text-sm text-muted-foreground">See both gross revenue CLV and profit-based CLV after applying your margin percentage.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">CAC Guidelines</h3>
+                      <p className="text-sm text-muted-foreground">Get maximum recommended customer acquisition cost (33% of CLV) for sustainable growth.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Break-even Timeline</h3>
+                      <p className="text-sm text-muted-foreground">Estimate how quickly you recover acquisition costs from each customer.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Industry Benchmarks</h3>
+                      <p className="text-sm text-muted-foreground">Reference typical margins for retail, SaaS, and services to validate your inputs.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Business Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free CLV calculator for startups, marketers, and business analysts.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">Typical Gross Margins by Industry</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Industry</th>
+                        <th className="text-left py-2">Typical Margin</th>
+                        <th className="text-left py-2">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Retail</td>
+                        <td className="py-2">30-50%</td>
+                        <td className="py-2">Varies by product category</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">SaaS</td>
+                        <td className="py-2">70-90%</td>
+                        <td className="py-2">High margins after development</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Services</td>
+                        <td className="py-2">50-80%</td>
+                        <td className="py-2">Labor-intensive businesses</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">E-commerce</td>
+                        <td className="py-2">25-45%</td>
+                        <td className="py-2">After COGS and shipping</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">How do I calculate customer lifetime value?</h3>
+                  <p className="text-sm text-muted-foreground">CLV is calculated as: Average Purchase Value × Purchase Frequency × Customer Lifespan × Gross Margin %. For example, $50 average order × 12 purchases/year × 3 years × 50% margin = $900 CLV.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is a good customer lifetime value?</h3>
+                  <p className="text-sm text-muted-foreground">Good CLV varies by industry. The key metric is CLV:CAC ratio - aim for at least 3:1. A $500 CLV is excellent if CAC is $150, but poor if CAC is $400. Focus on the ratio, not absolute value.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How can I improve customer lifetime value?</h3>
+                  <p className="text-sm text-muted-foreground">Increase CLV by raising average order value (upselling, bundling), increasing purchase frequency (email marketing, loyalty programs), extending customer lifespan (better service, subscriptions), and improving margins.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is the difference between CLV and LTV?</h3>
+                  <p className="text-sm text-muted-foreground">CLV (Customer Lifetime Value) and LTV (Lifetime Value) are the same metric - different terms for the same calculation. Both measure the total profit a customer generates over their relationship with your business.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How does CLV relate to CAC?</h3>
+                  <p className="text-sm text-muted-foreground">CLV determines how much you can profitably spend on customer acquisition (CAC). Healthy businesses maintain CLV at least 3x their CAC. If CLV is $300, aim for CAC under $100 for sustainable growth.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Business Calculators</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/customer-acquisition-cost-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Customer Acquisition Cost Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate CAC to compare against CLV and ensure profitable customer acquisition.</p>
+                </a>
+                <a href="/calculators/churn-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Churn Rate Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Measure customer churn to understand retention impact on lifetime value.</p>
+                </a>
+                <a href="/calculators/profit-margin-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Profit Margin Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate gross and net profit margins for accurate CLV calculations.</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );

@@ -330,6 +330,112 @@ export default function DilutionCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Use This Dilution Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4 text-sm text-muted-foreground">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                1
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Select what you want to find</p>
+                <p>Choose from the dropdown: Final Concentration (C2), Initial Volume (V1), Initial Concentration (C1), or Final Volume (V2).</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                2
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Enter the known values</p>
+                <p>Fill in the three known values. For example, to find C2, enter C1 (stock concentration), V1 (volume of stock), and V2 (final total volume).</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                3
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Calculate and review results</p>
+                <p>Click Calculate to get your answer. The graph shows how concentration changes with volume. Use the reference tables for common dilution ratios.</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <div>
+            <h4 className="font-medium text-foreground mb-2">What is the dilution formula?</h4>
+            <p>
+              The dilution formula is C1V1 = C2V2. This means the initial concentration times initial volume equals final concentration times final volume. The amount of solute stays constant — you're just adding more solvent.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">How do I calculate dilution factor?</h4>
+            <p>
+              Dilution factor equals V2/V1 or C1/C2. A 1:10 dilution has a dilution factor of 10. If you mix 1 mL stock with 9 mL water, total volume is 10 mL, so dilution factor is 10/1 = 10.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">What is a serial dilution?</h4>
+            <p>
+              Serial dilution means performing multiple dilutions in sequence. Take 1 mL from tube 1, add to 9 mL in tube 2 (1:10). Take 1 mL from tube 2, add to 9 mL in tube 3 (1:100 cumulative). This creates a concentration series for standard curves.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Do units matter for dilution calculations?</h4>
+            <p>
+              Yes, but only for consistency. C1 and C2 must use the same units (both M, both mM, etc.). V1 and V2 must use the same units (both mL, both L, etc.). The formula works with any concentration and volume units as long as they match.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">How do I make a 1:100 dilution?</h4>
+            <p>
+              For a 1:100 dilution, mix 1 part stock with 99 parts diluent. For 10 mL total: add 0.1 mL (100 uL) stock to 9.9 mL diluent. For 100 mL total: add 1 mL stock to 99 mL diluent.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2 text-sm">
+            <a
+              href="/calculators/molarity-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Molarity Calculator</span>
+              <p className="text-muted-foreground">Calculate molarity from mass and volume</p>
+            </a>
+            <a
+              href="/calculators/concentration-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Concentration Calculator</span>
+              <p className="text-muted-foreground">Convert between concentration units</p>
+            </a>
+            <a
+              href="/calculators/solution-mixing-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Solution Mixing Calculator</span>
+              <p className="text-muted-foreground">Mix solutions to achieve target concentration</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

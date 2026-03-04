@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -15,10 +15,10 @@ export default function JsonEnvConverterPage() {
 
   const flattenObject = (obj: any, prefix = ""): Record<string, string> => {
     const result: Record<string, string> = {};
-    
+
     for (const [key, value] of Object.entries(obj)) {
       const newKey = prefix ? `${prefix}_${key.toUpperCase()}` : key.toUpperCase();
-      
+
       if (value !== null && typeof value === "object" && !Array.isArray(value)) {
         Object.assign(result, flattenObject(value, newKey));
       } else if (Array.isArray(value)) {
@@ -29,7 +29,7 @@ export default function JsonEnvConverterPage() {
         result[newKey] = String(value);
       }
     }
-    
+
     return result;
   };
 
@@ -49,7 +49,7 @@ export default function JsonEnvConverterPage() {
 
       // Remove quotes
       if ((value.startsWith('"') && value.endsWith('"')) ||
-          (value.startsWith("'") && value.endsWith("'"))) {
+        (value.startsWith("'") && value.endsWith("'"))) {
         value = value.slice(1, -1);
       }
 

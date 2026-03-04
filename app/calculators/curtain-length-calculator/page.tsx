@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -35,7 +35,7 @@ export default function CurtainLengthCalculatorPage() {
 
     // Calculate curtain length based on style
     let lengthFromRod: number;
-    
+
     if (unit === "cm") {
       // Convert to inches for calculation
       winHeight *= 0.393701;
@@ -81,7 +81,7 @@ export default function CurtainLengthCalculatorPage() {
     // Convert back to original unit if needed
     let finalLength = totalLength;
     let finalWidth = totalWidthNeeded;
-    
+
     if (unit === "cm") {
       finalLength *= 2.54;
       finalWidth *= 2.54;
@@ -320,6 +320,194 @@ export default function CurtainLengthCalculatorPage() {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the Curtain Length Calculator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Measure Your Window</h3>
+                    <p className="text-sm text-muted-foreground">Enter window height and width, plus rod height from floor for accurate curtain length calculation.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Choose Style Options</h3>
+                    <p className="text-sm text-muted-foreground">Select curtain length style (floor, sill, apron, puddle), header type, and fullness ratio.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Get Perfect Curtain Size</h3>
+                    <p className="text-sm text-muted-foreground">Receive recommended curtain dimensions, number of panels needed, and total fabric requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Features of This Curtain Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Multiple Length Styles</h3>
+                      <p className="text-sm text-muted-foreground">Calculate floor-length, windowsill, apron, or puddle style curtains with appropriate hem allowances.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Header Style Options</h3>
+                      <p className="text-sm text-muted-foreground">Account for grommet, rod pocket, pleated, or tab top header allowances in calculations.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Fullness Ratio Control</h3>
+                      <p className="text-sm text-muted-foreground">Choose from economy (1.5x) to extra full (3x) for desired curtain gather appearance.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Panel Count Calculator</h3>
+                      <p className="text-sm text-muted-foreground">Automatically calculates number of standard panels needed based on total width required.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Inch and CM Support</h3>
+                      <p className="text-sm text-muted-foreground">Work in inches or centimeters with automatic conversions for international users.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Home Decor Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free curtain calculator for DIY decorators and professional designers.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">Curtain Length Style Guide</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Style</th>
+                        <th className="text-left py-2">Description</th>
+                        <th className="text-left py-2">Best For</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Floor</td>
+                        <td className="py-2">1/2&quot; above floor</td>
+                        <td className="py-2">Living rooms, bedrooms (most popular)</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Sill</td>
+                        <td className="py-2">Ends at windowsill</td>
+                        <td className="py-2">Kitchens, bathrooms, casual spaces</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Apron</td>
+                        <td className="py-2">4&quot; below sill</td>
+                        <td className="py-2">Traditional look, radiators below</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">Puddle</td>
+                        <td className="py-2">6-12&quot; extra on floor</td>
+                        <td className="py-2">Formal rooms, dramatic effect</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">How do I measure for curtain length?</h3>
+                  <p className="text-sm text-muted-foreground">Measure from the bottom of the curtain ring (or top of rod) to your desired endpoint. For floor-length, measure to 1/2&quot; above floor. For sill-length, measure to the windowsill. Always measure from where curtains will hang, not the top of the finial.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is the standard curtain fullness ratio?</h3>
+                  <p className="text-sm text-muted-foreground">Standard fullness is 2x the window width, creating attractive gathers. Economy (1.5x) looks flatter, while luxury (2.5x) and extra full (3x) create richer, more dramatic folds. Higher fullness requires more fabric and panels.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How high should I hang curtain rods?</h3>
+                  <p className="text-sm text-muted-foreground">Mount rods 4-6 inches above the window frame to make windows appear taller. Extend rods 3-6 inches beyond each side so curtains don&apos;t block light when open. For high ceilings, mount rods halfway between window top and ceiling.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How many curtain panels do I need?</h3>
+                  <p className="text-sm text-muted-foreground">Divide your total width needed (rod width x fullness ratio) by standard panel width (typically 50&quot;). For a 60&quot; rod with 2x fullness: 120&quot; / 50&quot; = 2.4, so you need 3 panels per side or 6 total for a pair.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is the difference between grommet and rod pocket curtains?</h3>
+                  <p className="text-sm text-muted-foreground">Grommet curtains have metal rings for easy sliding and modern look, requiring ~3&quot; header. Rod pocket curtains have a sewn channel for the rod, creating a gathered look with ~4&quot; header. Grommets work better for frequent opening/closing.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Home Improvement Tools</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/paint-coverage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Paint Coverage Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate paint needed for walls based on room dimensions and number of coats.</p>
+                </a>
+                <a href="/calculators/flooring-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Flooring Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Estimate flooring material needed for rooms with waste factor calculations.</p>
+                </a>
+                <a href="/calculators/wallpaper-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Wallpaper Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Determine wallpaper rolls needed based on wall dimensions and pattern repeat.</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

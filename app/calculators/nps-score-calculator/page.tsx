@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -92,36 +92,36 @@ export default function NPSScoreCalculatorPage() {
             <CardContent className="p-6 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="promoters">Promoters (Score 9-10)</Label>
-                <Input 
-                  id="promoters" 
-                  type="number" 
-                  placeholder="e.g., 50" 
-                  value={promoters} 
-                  onChange={(e) => setPromoters(e.target.value)} 
+                <Input
+                  id="promoters"
+                  type="number"
+                  placeholder="e.g., 50"
+                  value={promoters}
+                  onChange={(e) => setPromoters(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Loyal enthusiasts who keep buying and refer others</p>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="passives">Passives (Score 7-8)</Label>
-                <Input 
-                  id="passives" 
-                  type="number" 
-                  placeholder="e.g., 30" 
-                  value={passives} 
-                  onChange={(e) => setPassives(e.target.value)} 
+                <Input
+                  id="passives"
+                  type="number"
+                  placeholder="e.g., 30"
+                  value={passives}
+                  onChange={(e) => setPassives(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Satisfied but unenthusiastic customers</p>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="detractors">Detractors (Score 0-6)</Label>
-                <Input 
-                  id="detractors" 
-                  type="number" 
-                  placeholder="e.g., 20" 
-                  value={detractors} 
-                  onChange={(e) => setDetractors(e.target.value)} 
+                <Input
+                  id="detractors"
+                  type="number"
+                  placeholder="e.g., 20"
+                  value={detractors}
+                  onChange={(e) => setDetractors(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Unhappy customers who can damage your brand</p>
               </div>
@@ -144,11 +144,10 @@ export default function NPSScoreCalculatorPage() {
                 <div className="space-y-4">
                   <div className="p-4 bg-primary/10 rounded-lg text-center">
                     <p className="text-sm text-muted-foreground">Net Promoter Score</p>
-                    <p className={`text-5xl font-bold ${
-                      result.nps >= 50 ? "text-green-500" :
-                      result.nps >= 30 ? "text-blue-500" :
-                      result.nps >= 0 ? "text-yellow-500" : "text-red-500"
-                    }`}>{result.nps}</p>
+                    <p className={`text-5xl font-bold ${result.nps >= 50 ? "text-green-500" :
+                        result.nps >= 30 ? "text-blue-500" :
+                          result.nps >= 0 ? "text-yellow-500" : "text-red-500"
+                      }`}>{result.nps}</p>
                     <p className="text-sm mt-2 font-semibold">{result.rating}</p>
                   </div>
 
@@ -202,6 +201,270 @@ export default function NPSScoreCalculatorPage() {
                   <p>Enter survey responses and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This NPS Score Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Count your survey responses</p>
+                    <p>Tally how many customers gave scores of 9-10 (Promoters), 7-8 (Passives), and 0-6 (Detractors).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the counts</p>
+                    <p>Input the number of respondents in each category. The calculator handles the percentages automatically.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate and interpret results</p>
+                    <p>Click Calculate to see your NPS score and rating. Use the interpretation to understand what it means.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                NPS Benchmarks by Industry
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Industry</th>
+                      <th className="text-right py-3 px-2 font-semibold">Average NPS</th>
+                      <th className="text-left py-3 px-2 font-semibold">Top Performers</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Internet Software & Services</td>
+                      <td className="text-right py-3 px-2">30-40</td>
+                      <td className="py-3 px-2">50+</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Retail Banking</td>
+                      <td className="text-right py-3 px-2">25-35</td>
+                      <td className="py-3 px-2">45+</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">E-commerce</td>
+                      <td className="text-right py-3 px-2">30-40</td>
+                      <td className="py-3 px-2">50+</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Restaurants</td>
+                      <td className="text-right py-3 px-2">35-45</td>
+                      <td className="py-3 px-2">60+</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Healthcare</td>
+                      <td className="text-right py-3 px-2">20-30</td>
+                      <td className="py-3 px-2">40+</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Telecommunications</td>
+                      <td className="text-right py-3 px-2">10-20</td>
+                      <td className="py-3 px-2">30+</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Benchmarks vary by region and survey methodology. Compare to similar companies in your market.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Net Promoter Score
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is NPS?</h4>
+                  <p>
+                    Net Promoter Score measures customer loyalty by asking one simple question: "How likely
+                    are you to recommend our company/product/service to a friend or colleague?" Respondents
+                    rate 0-10. The score ranges from -100 to +100 and predicts business growth better than
+                    satisfaction metrics alone.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How NPS Is Calculated</h4>
+                  <p>
+                    NPS = % Promoters - % Detractors. Passives count toward total respondents but do not
+                    affect the score. For example, if 60% are Promoters and 20% are Detractors, NPS = 60 - 20 = 40.
+                    The score ignores Passives because they are satisfied but not enthusiastic enough to drive growth.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why NPS Matters</h4>
+                  <p>
+                    Promoters buy more, stay longer, and refer new customers. Detractors spread negative
+                    word-of-mouth and can damage your brand. Tracking NPS over time reveals whether customer
+                    experience improvements are working. High NPS correlates with organic growth and lower
+                    customer acquisition costs.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Improving Your NPS
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Follow up with Detractors immediately</p>
+                    <p>Contact unhappy customers within 24 hours. Listen to their concerns and fix what went wrong.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Ask Promoters for referrals</p>
+                    <p>Happy customers are your best salespeople. Make it easy for them to refer friends with incentives.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Close the loop on feedback</p>
+                    <p>Act on what customers tell you. Share insights across teams and track improvements over time.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Survey at the right moment</p>
+                    <p>Ask after key interactions (purchase, support call, onboarding). Timing affects response quality.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a good NPS score?</h4>
+                  <p>
+                    Scores above 0 are positive (more Promoters than Detractors). 30-50 is good, 50-70 is
+                    excellent, and above 70 is world-class. However, context matters — compare to your
+                    industry average. Some industries naturally have lower NPS due to customer expectations.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How often should I measure NPS?</h4>
+                  <p>
+                    Survey quarterly for trend tracking. Some companies survey continuously and report
+                    rolling averages. Avoid surveying the same customers too frequently — wait at least
+                    90 days between surveys to the same person to prevent survey fatigue.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I track NPS by customer segment?</h4>
+                  <p>
+                    Yes. Overall NPS can hide important differences. Segment by product line, customer
+                    tenure, geography, or account size. You might discover that new customers love you
+                    while long-term customers are becoming Detractors — critical insight for retention.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is the difference between NPS and CSAT?</h4>
+                  <p>
+                    CSAT (Customer Satisfaction) measures satisfaction with a specific interaction. NPS
+                    measures overall loyalty and likelihood to recommend. CSAT is transactional; NPS is
+                    relational. Both are useful — CSAT for operational improvements, NPS for strategic health.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can NPS be negative?</h4>
+                  <p>
+                    Yes. Negative NPS means you have more Detractors than Promoters. This is a warning sign
+                    that requires immediate attention. Focus on understanding why customers are unhappy and
+                    fixing root causes before trying to acquire new customers.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/customer-satisfaction-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Customer Satisfaction Calculator</span>
+                  <p className="text-muted-foreground">Calculate CSAT scores from customer survey responses</p>
+                </a>
+                <a
+                  href="/calculators/churn-rate-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Churn Rate Calculator</span>
+                  <p className="text-muted-foreground">Measure customer retention and churn percentage</p>
+                </a>
+                <a
+                  href="/calculators/customer-lifetime-value-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Customer Lifetime Value Calculator</span>
+                  <p className="text-muted-foreground">Estimate the total value of a customer relationship</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

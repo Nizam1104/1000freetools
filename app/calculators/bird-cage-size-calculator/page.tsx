@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -81,10 +81,10 @@ export default function BirdCageSizeCalculatorPage() {
     if (wingspan === 0) return;
 
     const numBirdsNum = parseInt(numBirds) || 1;
-    
+
     // Multiply space requirements by number of birds (with diminishing returns for flock birds)
     const multiplier = numBirdsNum === 1 ? 1 : 1 + (numBirdsNum - 1) * 0.5;
-    
+
     const minLength = Math.round(baseLength * multiplier);
     const minWidth = Math.round(baseWidth * multiplier);
     const minHeight = Math.round(baseHeight * multiplier);
@@ -248,32 +248,290 @@ export default function BirdCageSizeCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
+                How to Use This Bird Cage Size Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your bird species</p>
+                    <p>Choose from the dropdown list or enter a custom wingspan measurement in inches.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the number of birds</p>
+                    <p>If housing multiple birds together, input the total number to get adjusted space requirements.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review cage size recommendations</p>
+                    <p>Get minimum length, width, height, and volume requirements tailored to your bird.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Minimum Cage Sizes by Species
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Species</th>
+                      <th className="text-left py-3 px-2 font-semibold">Min Length</th>
+                      <th className="text-left py-3 px-2 font-semibold">Min Width</th>
+                      <th className="text-left py-3 px-2 font-semibold">Min Height</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Finch</td>
+                      <td className="py-3 px-2">12"</td>
+                      <td className="py-3 px-2">12"</td>
+                      <td className="py-3 px-2">12"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Canary</td>
+                      <td className="py-3 px-2">16"</td>
+                      <td className="py-3 px-2">16"</td>
+                      <td className="py-3 px-2">16"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Budgie/Parakeet</td>
+                      <td className="py-3 px-2">18"</td>
+                      <td className="py-3 px-2">18"</td>
+                      <td className="py-3 px-2">18"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Lovebird</td>
+                      <td className="py-3 px-2">18"</td>
+                      <td className="py-3 px-2">18"</td>
+                      <td className="py-3 px-2">18"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Cockatiel</td>
+                      <td className="py-3 px-2">24"</td>
+                      <td className="py-3 px-2">24"</td>
+                      <td className="py-3 px-2">24"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Conure</td>
+                      <td className="py-3 px-2">24"</td>
+                      <td className="py-3 px-2">24"</td>
+                      <td className="py-3 px-2">24"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">African Grey</td>
+                      <td className="py-3 px-2">36"</td>
+                      <td className="py-3 px-2">36"</td>
+                      <td className="py-3 px-2">36"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Amazon Parrot</td>
+                      <td className="py-3 px-2">36"</td>
+                      <td className="py-3 px-2">36"</td>
+                      <td className="py-3 px-2">36"</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Cockatoo</td>
+                      <td className="py-3 px-2">48"</td>
+                      <td className="py-3 px-2">48"</td>
+                      <td className="py-3 px-2">48"</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Macaw</td>
+                      <td className="py-3 px-2">60"</td>
+                      <td className="py-3 px-2">60"</td>
+                      <td className="py-3 px-2">60"</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: These are minimum sizes for single birds. Larger is always better.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
                 Why Cage Size Matters for Birds
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <p>
-                  Birds are active creatures that need space to stretch their wings,
-                  hop between perches, and engage in natural behaviors. A cage that&apos;s
-                  too small can lead to stress, feather plucking, and health problems.
-                </p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Minimum length:</strong> At least 2x the wingspan for horizontal flyers
-                  </li>
-                  <li>
-                    <strong>Minimum width:</strong> At least 1.5x the wingspan
-                  </li>
-                  <li>
-                    <strong>Minimum height:</strong> At least 1.5x the wingspan (more for climbers)
-                  </li>
-                  <li>
-                    <strong>Bar spacing:</strong> Should be appropriate for species (1/4&quot; for small birds, 3/4&quot; for large)
-                  </li>
-                </ul>
-                <p>
-                  Remember: Bigger is always better! These are minimum recommendations.
-                  Provide additional out-of-cage exercise time daily for optimal bird health.
-                </p>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Physical Health</h4>
+                  <p>
+                    Birds need space to stretch their wings fully without touching the sides. A cage that is too
+                    small can lead to muscle atrophy, obesity, and joint problems. Flightless birds still need
+                    room to hop, climb, and exercise their wings.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Mental Wellbeing</h4>
+                  <p>
+                    Confined birds develop behavioral problems like feather plucking, screaming, and aggression.
+                    These are signs of stress and boredom. A spacious cage with room for toys, perches, and
+                    foraging activities keeps birds mentally stimulated.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Natural Behaviors</h4>
+                  <p>
+                    Wild birds fly miles each day. While captivity limits this, they still need space for short
+                    flights between perches. Horizontal space is more important than vertical for most species
+                    because birds fly horizontally, not up and down like elevators.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Choosing the Right Cage
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Prioritize horizontal space</p>
+                    <p>Most birds fly horizontally. A long, wide cage is better than a tall, narrow one.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Check bar spacing</p>
+                    <p>Small birds can escape through wide bars or get their heads stuck. Use 1/4" for finches and budgies, 1/2" for cockatiels, 3/4" for large parrots.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Plan for out-of-cage time</p>
+                    <p>No cage replaces daily supervised flight time. Aim for 2-4 hours outside the cage daily.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider cage placement</p>
+                    <p>Place the cage in a social area but away from drafts, direct sunlight, and kitchen fumes.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is bigger always better for bird cages?</h4>
+                  <p>
+                    Yes. There is no such thing as a cage being too large. Birds use every inch of available space.
+                    If you can afford a bigger cage than the minimum recommendation, get it. Your bird will be
+                    healthier and happier.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I keep multiple birds in one cage?</h4>
+                  <p>
+                    Yes, but you need more space. This calculator adjusts for multiple birds by adding 50% more
+                    space for each additional bird. However, some species are territorial and should not be housed
+                    together. Research your species before combining birds.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Do round cages work for birds?</h4>
+                  <p>
+                    Round cages are not recommended. Birds need corners to retreat to when feeling insecure. Round
+                    cages also make it difficult to place perches properly and can cause stress because birds cannot
+                    find a safe spot.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How important is cage height?</h4>
+                  <p>
+                    Height matters less than length and width for most species. Parrots climb, so they use vertical
+                    space, but they fly horizontally. A cage that is wider than it is tall is usually better than
+                    a tall, narrow aviary-style cage.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What else should I include in the cage?</h4>
+                  <p>
+                    Add multiple perches of varying diameters to exercise feet, toys for mental stimulation, food
+                    and water dishes, and a bath area. Rotate toys regularly to prevent boredom. Leave some empty
+                    space for movement — don't fill every inch with accessories.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/pet-calorie-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Pet Calorie Calculator</span>
+                  <p className="text-muted-foreground">Calculate daily calorie needs for dogs and cats based on weight and activity</p>
+                </a>
+                <a
+                  href="/calculators/fish-tank-volume-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Fish Tank Volume Calculator</span>
+                  <p className="text-muted-foreground">Calculate aquarium volume and determine appropriate fish stocking levels</p>
+                </a>
+                <a
+                  href="/calculators/dog-age-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Dog Age Calculator</span>
+                  <p className="text-muted-foreground">Convert dog years to human years based on breed and size</p>
+                </a>
               </div>
             </CardContent>
           </Card>

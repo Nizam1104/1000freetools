@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -45,7 +45,7 @@ export default function MortarVolumeCalculatorPage() {
 
     // Calculate wall area
     let area = lengthNum * heightNum;
-    
+
     // Convert to square meters if needed
     if (unit === "feet") {
       area = area * 0.0929;
@@ -84,7 +84,7 @@ export default function MortarVolumeCalculatorPage() {
 
     // Total mortar volume
     let mortarVolume = totalBricks * mortarPerBrick;
-    
+
     // Add waste factor
     mortarVolume = mortarVolume * (1 + wasteNum / 100);
 
@@ -99,11 +99,11 @@ export default function MortarVolumeCalculatorPage() {
     recommendations.push(`🧱 Estimated bricks: ${Math.round(totalBricks)}`);
     recommendations.push(`📦 Mortar bags (25kg): ${bagsNeeded}`);
     recommendations.push(`⚠️ Includes ${wasteNum}% waste factor`);
-    
+
     if (jointWidthNum > 15) {
       recommendations.push("⚠️ Wide joints may require more mortar");
     }
-    
+
     recommendations.push("💡 Mix mortar in small batches to prevent drying");
     recommendations.push("🧪 Standard mix: 1 cement : 4 sand : water");
 
@@ -301,27 +301,259 @@ export default function MortarVolumeCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Mortar Mixing Guide
+                How to Use This Mortar Volume Calculator
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Standard mix:</strong> 1 cement : 4 sand : water to consistency
-                  </li>
-                  <li>
-                    <strong>Strong mix:</strong> 1 cement : 3 sand (for load-bearing)
-                  </li>
-                  <li>
-                    <strong>Joint thickness:</strong> 10mm standard, 6-15mm acceptable
-                  </li>
-                  <li>
-                    <strong>Working time:</strong> Mix in small batches, use within 2 hours
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> Always order 10-15% extra mortar for waste,
-                  spillage, and adjustments. Mortar cannot be returned once mixed.
-                </p>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter wall dimensions</p>
+                    <p>Input the length and height of your wall. Select meters or feet depending on your measurement system.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select brick type and joint specifications</p>
+                    <p>Choose your brick size from the dropdown. Enter joint width and depth (10mm is standard for most applications).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate and review results</p>
+                    <p>Click Calculate to see mortar volume in cubic meters, weight in kg, and number of 25kg bags needed.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Mortar Joint Standards by Application
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Application</th>
+                      <th className="text-left py-3 px-2 font-semibold">Joint Width</th>
+                      <th className="text-left py-3 px-2 font-semibold">Mortar Type</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Interior brick walls</td>
+                      <td className="py-3 px-2">10mm</td>
+                      <td className="py-3 px-2">Type N (1:1:6)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Exterior load-bearing</td>
+                      <td className="py-3 px-2">10-12mm</td>
+                      <td className="py-3 px-2">Type S (1:0.5:4.5)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Below grade/foundations</td>
+                      <td className="py-3 px-2">10mm</td>
+                      <td className="py-3 px-2">Type M (1:0.25:3)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Historic restoration</td>
+                      <td className="py-3 px-2">6-10mm</td>
+                      <td className="py-3 px-2">Type O or lime mortar</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Block/CMU walls</td>
+                      <td className="py-3 px-2">10-12mm</td>
+                      <td className="py-3 px-2">Type N or S</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Stone masonry</td>
+                      <td className="py-3 px-2">12-20mm</td>
+                      <td className="py-3 px-2">Type N</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Mortar Volume Calculations
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Mortar Volume Is Calculated</h4>
+                  <p>
+                    Mortar fills the gaps between bricks — both horizontal bed joints and vertical head joints.
+                    The calculator determines how many bricks fit in your wall area, then multiplies by the
+                    mortar volume needed per brick. Joint width and depth directly affect the total volume.
+                    A 10mm joint uses roughly 0.6-0.8 liters of mortar per brick depending on brick size.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Waste Factor Matters</h4>
+                  <p>
+                    Not all mortar makes it into the joints. Some falls on the ground, some dries out in the
+                    hawk, and some gets over-applied. A 10% waste factor is standard for experienced masons.
+                    First-time DIYers should plan for 15-20% waste. Mortar cannot be returned once mixed,
+                    so it is better to have a little extra than to run short mid-wall.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Mortar Density and Bag Coverage</h4>
+                  <p>
+                    Wet mortar weighs approximately 2000 kg per cubic meter. Standard pre-mix bags contain
+                    25kg of dry mortar. One 25kg bag yields about 0.012-0.015 cubic meters of wet mortar,
+                    enough for roughly 20-25 standard bricks with 10mm joints. Always check the
+                    manufacturer's coverage rating as formulations vary.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Accurate Mortar Estimation
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Measure twice, order once</p>
+                    <p>Double-check wall dimensions before calculating. Add 5% extra for cutting waste on partial bricks.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Mix small batches</p>
+                    <p>Mortar starts setting in 2-3 hours. Mix only what you can use in one session to avoid waste.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider weather conditions</p>
+                    <p>Hot weather speeds up drying. Cold weather slows curing. Plan your work accordingly and protect fresh mortar.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use consistent joint tooling</p>
+                    <p>Tool joints when thumbprint-hard. Consistent joint depth ensures uniform appearance and weather resistance.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How much mortar do I need per brick?</h4>
+                  <p>
+                    For standard bricks with 10mm joints, plan on 0.6-0.8 liters of mortar per brick.
+                    This equals roughly 1.2-1.6 kg of wet mortar. Larger bricks or wider joints increase
+                    consumption. A 25kg bag of dry mortar typically lays 20-25 standard bricks.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is the best mortar mix for bricklaying?</h4>
+                  <p>
+                    Type N mortar (1 part cement, 1 part lime, 6 parts sand) works for most above-grade
+                    brick walls. It offers good bond strength and flexibility. For load-bearing or
+                    below-grade work, use Type S (1:0.5:4.5) for higher compressive strength.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How wide should mortar joints be?</h4>
+                  <p>
+                    Standard brick joints are 10mm (3/8 inch). Acceptable range is 6-15mm depending on
+                    brick type and application. Wider joints weaken the wall and use more mortar.
+                    Historic brickwork often used narrower joints (6-8mm) for a tighter appearance.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I use old mortar for repairs?</h4>
+                  <p>
+                    Match the original mortar type when repointing historic masonry. Modern Portland-based
+                    mortars are harder and can trap moisture, damaging old bricks. For pre-1900 buildings,
+                    consider lime-based mortar that allows the wall to breathe and move naturally.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How long does mortar take to cure?</h4>
+                  <p>
+                    Mortar sets enough to tool joints in 1-2 hours. It reaches initial cure in 24-48 hours.
+                    Full cure takes 28 days. Keep mortar moist during the first week for proper curing.
+                    Avoid heavy loads or stress on the wall for at least 7 days after laying.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/brick-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Brick Calculator</span>
+                  <p className="text-muted-foreground">Calculate the number of bricks needed for your wall project</p>
+                </a>
+                <a
+                  href="/calculators/concrete-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Concrete Calculator</span>
+                  <p className="text-muted-foreground">Estimate concrete volume for slabs, footings, and foundations</p>
+                </a>
+                <a
+                  href="/calculators/cement-sand-ratio-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Cement Sand Ratio Calculator</span>
+                  <p className="text-muted-foreground">Calculate material quantities for different mortar mixes</p>
+                </a>
               </div>
             </CardContent>
           </Card>

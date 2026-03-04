@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -463,11 +463,10 @@ export default function ColorPickerPage() {
                   {PRESET_COLORS.map((presetHex) => (
                     <button
                       key={presetHex}
-                      className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${
-                        hex.toLowerCase() === presetHex.toLowerCase()
+                      className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${hex.toLowerCase() === presetHex.toLowerCase()
                           ? "border-primary ring-2 ring-primary ring-offset-2"
                           : "border-border"
-                      }`}
+                        }`}
                       style={{ backgroundColor: presetHex }}
                       onClick={() => {
                         const hsl = hexToHsl(presetHex);

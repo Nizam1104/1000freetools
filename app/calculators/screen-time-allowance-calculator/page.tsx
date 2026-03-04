@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -314,35 +314,128 @@ export default function ScreenTimeAllowanceCalculatorPage() {
           </Card>
         </div>
 
-        <div className="mt-8 space-y-6">
+        {/* How It Works Section */}
+        <div className="mt-8">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                AAP Screen Time Guidelines
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <p>
-                  The American Academy of Pediatrics recommends:
-                </p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>0-18 months:</strong> No screens except video chatting
-                  </li>
-                  <li>
-                    <strong>18-24 months:</strong> Limited high-quality content with parent
-                  </li>
-                  <li>
-                    <strong>2-5 years:</strong> 1 hour/day of high-quality programming
-                  </li>
-                  <li>
-                    <strong>6+ years:</strong> Consistent limits, ensure screens don&apos;t
-                    replace sleep, physical activity, and other healthy behaviors
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> Create a Family Media Plan at healthychildren.org
-                  to set personalized guidelines for your family.
-                </p>
+              <h3 className="text-lg font-semibold mb-6">How to Use This Calculator</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Enter Child&apos;s Age</h4>
+                  <p className="text-sm text-muted-foreground">Input your child&apos;s age to get age-appropriate screen time recommendations.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Set School Days</h4>
+                  <p className="text-sm text-muted-foreground">Specify how many school days per week to calculate weekly limits accurately.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">Get Personalized Guidelines</h4>
+                  <p className="text-sm text-muted-foreground">Receive daily limits, content breakdown, and expert recommendations instantly.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Key Features</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">AAP-Based Guidelines</h4>
+                    <p className="text-sm text-muted-foreground">Recommendations aligned with American Academy of Pediatrics screen time guidelines.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Content Breakdown</h4>
+                    <p className="text-sm text-muted-foreground">Suggested time allocation for educational, entertainment, and social content.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Age-Specific Advice</h4>
+                    <p className="text-sm text-muted-foreground">Tailored recommendations from toddlers (0-2) through teenagers (16+).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Weekend Adjustments</h4>
+                    <p className="text-sm text-muted-foreground">Automatic bonus time calculation for weekends and non-school days.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What are the recommended screen time limits by age?</h4>
+                  <p className="text-sm text-muted-foreground">AAP recommends: 0-18 months no screens (except video calls), 18-24 months limited high-quality content, 2-5 years max 1 hour/day, 6+ years consistent limits ensuring screens don&apos;t replace sleep and physical activity.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Is educational screen time counted in the limit?</h4>
+                  <p className="text-sm text-muted-foreground">For younger children (under 5), educational content with parental co-viewing is encouraged within the limit. For school-age children, homework-related screen time is typically separate from recreational limits.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How can I enforce screen time limits?</h4>
+                  <p className="text-sm text-muted-foreground">Use parental controls, set device curfews, create a family media plan, keep bedrooms screen-free, and model healthy screen habits yourself. Consistency is key.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What are the signs of too much screen time?</h4>
+                  <p className="text-sm text-muted-foreground">Watch for sleep problems, eye strain, irritability when devices are removed, declining grades, reduced physical activity, and social withdrawal.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Should I allow screens before bedtime?</h4>
+                  <p className="text-sm text-muted-foreground">No. Experts recommend no screens 1-2 hours before bedtime. Blue light suppresses melatonin and can significantly disrupt sleep quality and duration.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Parenting Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/baby-sleep-schedule-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Baby Sleep Schedule Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Plan healthy sleep routines for infants and toddlers.</p>
+                </a>
+                <a href="/calculators/ideal-bedtime-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Ideal Bedtime Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Find the perfect bedtime based on wake time and sleep cycles.</p>
+                </a>
+                <a href="/calculators/child-height-predictor" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Child Height Predictor</h4>
+                  <p className="text-sm text-muted-foreground">Estimate your child&apos;s adult height based on parent heights.</p>
+                </a>
               </div>
             </CardContent>
           </Card>
