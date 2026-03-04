@@ -5,7 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Check, FileJson, RotateCcw, Trash2, X, AlertTriangle } from "lucide-react";
+import {
+  Check,
+  FileJson,
+  RotateCcw,
+  Trash2,
+  X,
+  AlertTriangle,
+} from "lucide-react";
 import { toast } from "sonner";
 
 interface LintIssue {
@@ -29,7 +36,9 @@ export default function JsonLinterPage() {
     const issues: LintIssue[] = [];
     const lines = text.split("\n");
     const keyStack: Array<{ key: string; line: number; column: number }> = [];
-    const objectStack: Array<Array<{ key: string; line: number; column: number }>> = [];
+    const objectStack: Array<
+      Array<{ key: string; line: number; column: number }>
+    > = [];
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
@@ -80,9 +89,16 @@ export default function JsonLinterPage() {
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
 
-      if (line.endsWith(",") && (line === "}," || line === "]," || line === ",")) {
+      if (
+        line.endsWith(",") &&
+        (line === "}," || line === "]," || line === ",")
+      ) {
         const nextNonEmptyLine = lines.slice(i + 1).find((l) => l.trim());
-        if (nextNonEmptyLine && (nextNonEmptyLine.trim().startsWith("}") || nextNonEmptyLine.trim().startsWith("]"))) {
+        if (
+          nextNonEmptyLine &&
+          (nextNonEmptyLine.trim().startsWith("}") ||
+            nextNonEmptyLine.trim().startsWith("]"))
+        ) {
           issues.push({
             type: "warning",
             message: "Trailing comma before closing bracket",
@@ -109,7 +125,11 @@ export default function JsonLinterPage() {
         const beforeColon = line.substring(0, colonIndex).trim();
         if (!beforeColon.startsWith('"') && !beforeColon.endsWith('"')) {
           const quoteMatch = beforeColon.match(/"([^"]*)"$/);
-          if (!quoteMatch && beforeColon.length > 0 && !["{", "[", ":"].includes(beforeColon)) {
+          if (
+            !quoteMatch &&
+            beforeColon.length > 0 &&
+            !["{", "[", ":"].includes(beforeColon)
+          ) {
             issues.push({
               type: "warning",
               message: "Key should be wrapped in double quotes",
@@ -235,17 +255,27 @@ export default function JsonLinterPage() {
     setInput(invalid);
   };
 
-  const errorCount = useMemo(() => result?.issues.filter((i) => i.type === "error").length || 0, [result]);
-  const warningCount = useMemo(() => result?.issues.filter((i) => i.type === "warning").length || 0, [result]);
+  const errorCount = useMemo(
+    () => result?.issues.filter((i) => i.type === "error").length || 0,
+    [result],
+  );
+  const warningCount = useMemo(
+    () => result?.issues.filter((i) => i.type === "warning").length || 0,
+    [result],
+  );
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Linter – Detect JSON Errors Online</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Linter – Detect JSON Errors Online
+          </h1>
           <p className="text-muted-foreground">
-            Lint your JSON to catch syntax errors, duplicate keys, trailing commas, and structural issues. Our free JSON Linter helps you write clean and standards-compliant JSON.
+            Lint your JSON to catch syntax errors, duplicate keys, trailing
+            commas, and structural issues. Our free JSON Linter helps you write
+            clean and standards-compliant JSON.
           </p>
         </div>
 
@@ -254,24 +284,36 @@ export default function JsonLinterPage() {
           <div className="bg-card border rounded-xl p-5">
             <h2 className="text-lg font-semibold mb-3">Why Lint Your JSON?</h2>
             <p className="text-muted-foreground mb-4">
-              Your JSON looks right but something's off. Maybe a missing comma, a trailing comma that shouldn't be there, or inconsistent formatting. A linter catches these issues before they cause runtime errors. This tool checks your JSON syntax and highlights problems with clear error messages.
+              Your JSON looks right but something's off. Maybe a missing comma,
+              a trailing comma that shouldn't be there, or inconsistent
+              formatting. A linter catches these issues before they cause
+              runtime errors. This tool checks your JSON syntax and highlights
+              problems with clear error messages.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">
               <div className="flex items-start gap-2">
                 <span className="text-red-500 font-bold">✗</span>
-                <span className="text-sm text-muted-foreground">Missing commas between properties</span>
+                <span className="text-sm text-muted-foreground">
+                  Missing commas between properties
+                </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-red-500 font-bold">✗</span>
-                <span className="text-sm text-muted-foreground">Trailing commas before closing brackets</span>
+                <span className="text-sm text-muted-foreground">
+                  Trailing commas before closing brackets
+                </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-red-500 font-bold">✗</span>
-                <span className="text-sm text-muted-foreground">Duplicate keys in objects</span>
+                <span className="text-sm text-muted-foreground">
+                  Duplicate keys in objects
+                </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-red-500 font-bold">✗</span>
-                <span className="text-sm text-muted-foreground">Single quotes instead of double quotes</span>
+                <span className="text-sm text-muted-foreground">
+                  Single quotes instead of double quotes
+                </span>
               </div>
             </div>
           </div>
@@ -280,11 +322,15 @@ export default function JsonLinterPage() {
         {/* What Gets Checked */}
         <Card className="mb-6 bg-muted/30">
           <CardContent className="p-5">
-            <h2 className="text-lg font-semibold mb-4">What This Linter Checks</h2>
+            <h2 className="text-lg font-semibold mb-4">
+              What This Linter Checks
+            </h2>
             <div className="grid md:grid-cols-3 gap-4">
               <div>
                 <h3 className="font-medium mb-2 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">S</span>
+                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">
+                    S
+                  </span>
                   Syntax
                 </h3>
                 <ul className="space-y-1 text-sm text-muted-foreground">
@@ -296,7 +342,9 @@ export default function JsonLinterPage() {
               </div>
               <div>
                 <h3 className="font-medium mb-2 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">Q</span>
+                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">
+                    Q
+                  </span>
                   Quality
                 </h3>
                 <ul className="space-y-1 text-sm text-muted-foreground">
@@ -308,7 +356,9 @@ export default function JsonLinterPage() {
               </div>
               <div>
                 <h3 className="font-medium mb-2 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">F</span>
+                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">
+                    F
+                  </span>
                   Fixes
                 </h3>
                 <ul className="space-y-1 text-sm text-muted-foreground">
@@ -358,7 +408,10 @@ export default function JsonLinterPage() {
           {/* Input */}
           <Card>
             <CardContent className="p-4">
-              <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+              <Label
+                htmlFor="input"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
                 Input JSON
               </Label>
               <Textarea
@@ -366,14 +419,16 @@ export default function JsonLinterPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Paste your JSON here to lint..."
-                className="min-h-[400px] font-mono text-sm resize-none"
+                className="min-h-[400px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
 
           {/* Lint Result */}
           {result && (
-            <Card className={`border-2 ${result.isValid ? "border-green-500" : "border-destructive"}`}>
+            <Card
+              className={`border-2 ${result.isValid ? "border-green-500" : "border-destructive"}`}
+            >
               <CardContent className="p-6">
                 {result.isValid && result.issues.length === 0 ? (
                   <div className="flex items-center gap-4">
@@ -423,16 +478,22 @@ export default function JsonLinterPage() {
                             )}
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2 mb-1">
-                                <span className={`text-sm font-semibold ${
-                                  issue.type === "error" ? "text-destructive" : "text-yellow-600 dark:text-yellow-400"
-                                }`}>
+                                <span
+                                  className={`text-sm font-semibold ${
+                                    issue.type === "error"
+                                      ? "text-destructive"
+                                      : "text-yellow-600 dark:text-yellow-400"
+                                  }`}
+                                >
                                   {issue.type === "error" ? "Error" : "Warning"}
                                 </span>
                                 <span className="text-xs text-muted-foreground">
                                   Line {issue.line}, Column {issue.column}
                                 </span>
                               </div>
-                              <p className="text-sm text-foreground mb-1">{issue.message}</p>
+                              <p className="text-sm text-foreground mb-1">
+                                {issue.message}
+                              </p>
                               {issue.snippet && (
                                 <pre className="text-xs font-mono text-muted-foreground bg-muted/50 rounded p-2 overflow-x-auto">
                                   {issue.snippet}
@@ -455,59 +516,110 @@ export default function JsonLinterPage() {
       <div className="mt-16 max-w-3xl">
         <h2 className="text-2xl font-semibold mb-4">About JSON Linter</h2>
         <p className="text-muted-foreground mb-6">
-          A JSON linter checks your JSON for syntax errors and common issues beyond basic validation. It points out problems line by line with specific messages about what's wrong. This helps you fix JSON before it causes runtime errors in your application.
+          A JSON linter checks your JSON for syntax errors and common issues
+          beyond basic validation. It points out problems line by line with
+          specific messages about what's wrong. This helps you fix JSON before
+          it causes runtime errors in your application.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">How the linter works</h3>
         <p className="text-muted-foreground mb-2">
-          Paste your JSON in the input box and click Lint JSON. The tool parses your input and checks for syntax errors, comments, trailing commas, and other issues. Each problem is listed with its line number, column, and a description.
+          Paste your JSON in the input box and click Lint JSON. The tool parses
+          your input and checks for syntax errors, comments, trailing commas,
+          and other issues. Each problem is listed with its line number, column,
+          and a description.
         </p>
         <p className="text-muted-foreground mb-8">
-          Errors show in red with severity indicators. Click on an issue to see the problematic code snippet. Fix the issues and run the linter again until your JSON is clean.
+          Errors show in red with severity indicators. Click on an issue to see
+          the problematic code snippet. Fix the issues and run the linter again
+          until your JSON is clean.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
         <p className="text-muted-foreground mb-2">
-          Your JSON config file isn't loading and you need to find the syntax error. Or you're writing JSON by hand and want to catch mistakes early. This tool also helps when reviewing JSON from external sources before using it.
+          Your JSON config file isn't loading and you need to find the syntax
+          error. Or you're writing JSON by hand and want to catch mistakes
+          early. This tool also helps when reviewing JSON from external sources
+          before using it.
         </p>
         <p className="text-muted-foreground mb-8">
-          The linter checks syntax only, not semantics. It won't tell you if required fields are missing or values are wrong. For schema validation, use our JSON Schema Validator tool instead.
+          The linter checks syntax only, not semantics. It won't tell you if
+          required fields are missing or values are wrong. For schema
+          validation, use our JSON Schema Validator tool instead.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">Questions</h3>
         <div className="space-y-4 mb-8">
           <div>
-            <p className="font-medium mb-1">What issues does the linter find?</p>
-            <p className="text-muted-foreground">Syntax errors, invalid characters, comments (not allowed in JSON), trailing commas, and malformed strings or numbers.</p>
+            <p className="font-medium mb-1">
+              What issues does the linter find?
+            </p>
+            <p className="text-muted-foreground">
+              Syntax errors, invalid characters, comments (not allowed in JSON),
+              trailing commas, and malformed strings or numbers.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">Does it support JSON5?</p>
-            <p className="text-muted-foreground">No, this linter checks strict JSON. JSON5 features like comments and trailing commas will be flagged as errors.</p>
+            <p className="text-muted-foreground">
+              No, this linter checks strict JSON. JSON5 features like comments
+              and trailing commas will be flagged as errors.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">How accurate are line numbers?</p>
-            <p className="text-muted-foreground">Line numbers are calculated from your input. They should match your editor if you haven't modified the text since pasting.</p>
+            <p className="text-muted-foreground">
+              Line numbers are calculated from your input. They should match
+              your editor if you haven't modified the text since pasting.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">Can it fix errors automatically?</p>
-            <p className="text-muted-foreground">No, this tool only reports issues. Use the error messages to manually fix your JSON, then run the linter again.</p>
+            <p className="text-muted-foreground">
+              No, this tool only reports issues. Use the error messages to
+              manually fix your JSON, then run the linter again.
+            </p>
           </div>
           <div>
-            <p className="font-medium mb-1">What's the difference between linting and validating?</p>
-            <p className="text-muted-foreground">Linting finds syntax issues and reports details. Validation just says valid or invalid. Linting gives you more information to fix problems.</p>
+            <p className="font-medium mb-1">
+              What's the difference between linting and validating?
+            </p>
+            <p className="text-muted-foreground">
+              Linting finds syntax issues and reports details. Validation just
+              says valid or invalid. Linting gives you more information to fix
+              problems.
+            </p>
           </div>
         </div>
 
         <h3 className="text-xl font-semibold mb-3">Related tools</h3>
         <ul className="space-y-2 text-muted-foreground">
           <li>
-            <a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Quick validation check for JSON
+            <a
+              href="/json-tools/json-validator"
+              className="text-primary hover:underline"
+            >
+              JSON Validator
+            </a>{" "}
+            – Quick validation check for JSON
           </li>
           <li>
-            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format JSON with proper indentation
+            <a
+              href="/json-tools/json-formatter-beautifier"
+              className="text-primary hover:underline"
+            >
+              JSON Formatter
+            </a>{" "}
+            – Format JSON with proper indentation
           </li>
           <li>
-            <a href="/json-tools/json-error-explanation" className="text-primary hover:underline">JSON Error Explanation</a> – Plain-language error explanations
+            <a
+              href="/json-tools/json-error-explanation"
+              className="text-primary hover:underline"
+            >
+              JSON Error Explanation
+            </a>{" "}
+            – Plain-language error explanations
           </li>
         </ul>
       </div>

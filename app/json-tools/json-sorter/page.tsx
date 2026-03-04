@@ -5,7 +5,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { FileJson, RotateCcw, Trash2, ArrowUpDown, ArrowDownAZ, ArrowUpAZ, Copy, Check } from "lucide-react";
+import {
+  FileJson,
+  RotateCcw,
+  Trash2,
+  ArrowUpDown,
+  ArrowDownAZ,
+  ArrowUpAZ,
+  Copy,
+  Check,
+} from "lucide-react";
 import { toast } from "sonner";
 import {
   Select,
@@ -22,29 +31,32 @@ export default function JsonSorterPage() {
   const [indent, setIndent] = useState("2");
   const [copied, setCopied] = useState(false);
 
-  const sortObjectKeys = useCallback((obj: unknown, order: "asc" | "desc"): unknown => {
-    if (obj === null || typeof obj !== "object") {
-      return obj;
-    }
-
-    if (Array.isArray(obj)) {
-      return obj.map((item) => sortObjectKeys(item, order));
-    }
-
-    const entries = Object.entries(obj);
-    const sorted = entries.sort(([a], [b]) => {
-      if (order === "asc") {
-        return a.localeCompare(b);
+  const sortObjectKeys = useCallback(
+    (obj: unknown, order: "asc" | "desc"): unknown => {
+      if (obj === null || typeof obj !== "object") {
+        return obj;
       }
-      return b.localeCompare(a);
-    });
 
-    const result: Record<string, unknown> = {};
-    for (const [key, value] of sorted) {
-      result[key] = sortObjectKeys(value, order);
-    }
-    return result;
-  }, []);
+      if (Array.isArray(obj)) {
+        return obj.map((item) => sortObjectKeys(item, order));
+      }
+
+      const entries = Object.entries(obj);
+      const sorted = entries.sort(([a], [b]) => {
+        if (order === "asc") {
+          return a.localeCompare(b);
+        }
+        return b.localeCompare(a);
+      });
+
+      const result: Record<string, unknown> = {};
+      for (const [key, value] of sorted) {
+        result[key] = sortObjectKeys(value, order);
+      }
+      return result;
+    },
+    [],
+  );
 
   const sortJson = useCallback(() => {
     if (!input.trim()) {
@@ -101,9 +113,13 @@ export default function JsonSorterPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Sorter – Sort JSON Keys Alphabetically</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Sorter – Sort JSON Keys Alphabetically
+          </h1>
           <p className="text-muted-foreground">
-            Sort JSON object keys alphabetically in ascending or descending order recursively. Free online JSON Sorter keeps your values intact while organizing your data cleanly.
+            Sort JSON object keys alphabetically in ascending or descending
+            order recursively. Free online JSON Sorter keeps your values intact
+            while organizing your data cleanly.
           </p>
         </div>
 
@@ -112,7 +128,10 @@ export default function JsonSorterPage() {
           <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl p-5 border">
             <h2 className="text-lg font-semibold mb-3">Why Sort JSON Keys?</h2>
             <p className="text-muted-foreground mb-4">
-              Your JSON object has keys in random order that makes it hard to read or compare. Maybe you need consistent ordering for version control diffs or just want properties organized logically. Manually reordering keys in nested structures takes forever.
+              Your JSON object has keys in random order that makes it hard to
+              read or compare. Maybe you need consistent ordering for version
+              control diffs or just want properties organized logically.
+              Manually reordering keys in nested structures takes forever.
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
@@ -143,9 +162,11 @@ export default function JsonSorterPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <Card>
               <CardContent className="p-4">
-                <h3 className="text-sm font-medium mb-2 text-muted-foreground">Input (Unsorted)</h3>
+                <h3 className="text-sm font-medium mb-2 text-muted-foreground">
+                  Input (Unsorted)
+                </h3>
                 <pre className="text-xs bg-muted/50 p-3 rounded overflow-auto">
-{`{
+                  {`{
   "zebra": "z",
   "apple": "a",
   "mango": "m"
@@ -155,9 +176,11 @@ export default function JsonSorterPage() {
             </Card>
             <Card>
               <CardContent className="p-4">
-                <h3 className="text-sm font-medium mb-2 text-muted-foreground">Output (Sorted A→Z)</h3>
+                <h3 className="text-sm font-medium mb-2 text-muted-foreground">
+                  Output (Sorted A→Z)
+                </h3>
                 <pre className="text-xs bg-muted/50 p-3 rounded overflow-auto">
-{`{
+                  {`{
   "apple": "a",
   "mango": "m",
   "zebra": "z"
@@ -180,24 +203,28 @@ export default function JsonSorterPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <Label htmlFor="sortOrder" className="text-sm text-muted-foreground whitespace-nowrap">
+                <Label
+                  htmlFor="sortOrder"
+                  className="text-sm text-muted-foreground whitespace-nowrap"
+                >
                   Sort Order:
                 </Label>
-                <Select value={sortOrder} onValueChange={(v) => setSortOrder(v as "asc" | "desc")}>
+                <Select
+                  value={sortOrder}
+                  onValueChange={(v) => setSortOrder(v as "asc" | "desc")}
+                >
                   <SelectTrigger className="w-[150px]">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="asc">
                       <div className="flex items-center gap-2">
-                        <ArrowUpAZ className="h-4 w-4" />
-                        A → Z
+                        <ArrowUpAZ className="h-4 w-4" />A → Z
                       </div>
                     </SelectItem>
                     <SelectItem value="desc">
                       <div className="flex items-center gap-2">
-                        <ArrowDownAZ className="h-4 w-4" />
-                        Z → A
+                        <ArrowDownAZ className="h-4 w-4" />Z → A
                       </div>
                     </SelectItem>
                   </SelectContent>
@@ -205,7 +232,10 @@ export default function JsonSorterPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <Label htmlFor="indent" className="text-sm text-muted-foreground whitespace-nowrap">
+                <Label
+                  htmlFor="indent"
+                  className="text-sm text-muted-foreground whitespace-nowrap"
+                >
                   Indent:
                 </Label>
                 <Select value={indent} onValueChange={setIndent}>
@@ -242,7 +272,10 @@ export default function JsonSorterPage() {
           {/* Input */}
           <Card>
             <CardContent className="p-4">
-              <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+              <Label
+                htmlFor="input"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
                 Input JSON
               </Label>
               <Textarea
@@ -250,7 +283,7 @@ export default function JsonSorterPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Paste your JSON here..."
-                className="min-h-[500px] font-mono text-sm resize-none"
+                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -259,7 +292,10 @@ export default function JsonSorterPage() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center justify-between mb-2">
-                <Label htmlFor="output" className="text-sm font-medium text-muted-foreground">
+                <Label
+                  htmlFor="output"
+                  className="text-sm font-medium text-muted-foreground"
+                >
                   Sorted Output
                 </Label>
                 {output && (
@@ -289,59 +325,109 @@ export default function JsonSorterPage() {
       <div className="mt-16 max-w-3xl">
         <h2 className="text-2xl font-semibold mb-4">About JSON Sorter</h2>
         <p className="text-muted-foreground mb-6">
-          JSON object key order doesn't affect parsing but matters for readability and diff comparison. This tool sorts JSON keys alphabetically at all nesting levels. Consistent key ordering makes version control diffs cleaner and data comparison easier.
+          JSON object key order doesn't affect parsing but matters for
+          readability and diff comparison. This tool sorts JSON keys
+          alphabetically at all nesting levels. Consistent key ordering makes
+          version control diffs cleaner and data comparison easier.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">How the sorter works</h3>
         <p className="text-muted-foreground mb-2">
-          Paste your JSON and click Sort JSON. The tool parses your input, recursively sorts all object keys alphabetically, and outputs the result with consistent formatting. Array order is preserved since arrays are ordered by definition.
+          Paste your JSON and click Sort JSON. The tool parses your input,
+          recursively sorts all object keys alphabetically, and outputs the
+          result with consistent formatting. Array order is preserved since
+          arrays are ordered by definition.
         </p>
         <p className="text-muted-foreground mb-8">
-          Nested objects get sorted at every level. The output uses 2-space indentation by default. Use Copy to grab the sorted JSON or Download to save it as a file.
+          Nested objects get sorted at every level. The output uses 2-space
+          indentation by default. Use Copy to grab the sorted JSON or Download
+          to save it as a file.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
         <p className="text-muted-foreground mb-2">
-          You're comparing two JSON files and key order differences are cluttering the diff. Or your team has inconsistent key ordering and you want to standardize. This tool also helps when preparing JSON for documentation where consistent order improves readability.
+          You're comparing two JSON files and key order differences are
+          cluttering the diff. Or your team has inconsistent key ordering and
+          you want to standardize. This tool also helps when preparing JSON for
+          documentation where consistent order improves readability.
         </p>
         <p className="text-muted-foreground mb-8">
-          Key sorting is cosmetic, not functional. JSON parsers don't guarantee key order. Don't rely on key order for application logic. Use arrays when order matters.
+          Key sorting is cosmetic, not functional. JSON parsers don't guarantee
+          key order. Don't rely on key order for application logic. Use arrays
+          when order matters.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">Questions</h3>
         <div className="space-y-4 mb-8">
           <div>
-            <p className="font-medium mb-1">Does sorting affect data meaning?</p>
-            <p className="text-muted-foreground">No, JSON objects are unordered by specification. Sorting only changes presentation, not the actual data.</p>
+            <p className="font-medium mb-1">
+              Does sorting affect data meaning?
+            </p>
+            <p className="text-muted-foreground">
+              No, JSON objects are unordered by specification. Sorting only
+              changes presentation, not the actual data.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">Are arrays sorted too?</p>
-            <p className="text-muted-foreground">No, array order is preserved. Only object keys get sorted alphabetically.</p>
+            <p className="text-muted-foreground">
+              No, array order is preserved. Only object keys get sorted
+              alphabetically.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">What about nested objects?</p>
-            <p className="text-muted-foreground">All nested objects are sorted recursively. Every level gets alphabetically ordered keys.</p>
+            <p className="text-muted-foreground">
+              All nested objects are sorted recursively. Every level gets
+              alphabetically ordered keys.
+            </p>
           </div>
           <div>
-            <p className="font-medium mb-1">Can I sort by value instead of key?</p>
-            <p className="text-muted-foreground">Not in this version. The tool sorts by key name only. Value-based sorting would require different logic.</p>
+            <p className="font-medium mb-1">
+              Can I sort by value instead of key?
+            </p>
+            <p className="text-muted-foreground">
+              Not in this version. The tool sorts by key name only. Value-based
+              sorting would require different logic.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">Why would I need sorted JSON?</p>
-            <p className="text-muted-foreground">Sorted JSON produces consistent output for testing, cleaner git diffs, and easier visual comparison of files.</p>
+            <p className="text-muted-foreground">
+              Sorted JSON produces consistent output for testing, cleaner git
+              diffs, and easier visual comparison of files.
+            </p>
           </div>
         </div>
 
         <h3 className="text-xl font-semibold mb-3">Related tools</h3>
         <ul className="space-y-2 text-muted-foreground">
           <li>
-            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format JSON with proper indentation
+            <a
+              href="/json-tools/json-formatter-beautifier"
+              className="text-primary hover:underline"
+            >
+              JSON Formatter
+            </a>{" "}
+            – Format JSON with proper indentation
           </li>
           <li>
-            <a href="/json-tools/json-diff" className="text-primary hover:underline">JSON Diff</a> – Compare two JSON objects
+            <a
+              href="/json-tools/json-diff"
+              className="text-primary hover:underline"
+            >
+              JSON Diff
+            </a>{" "}
+            – Compare two JSON objects
           </li>
           <li>
-            <a href="/json-tools/json-minifier" className="text-primary hover:underline">JSON Minifier</a> – Compress JSON to single line
+            <a
+              href="/json-tools/json-minifier"
+              className="text-primary hover:underline"
+            >
+              JSON Minifier
+            </a>{" "}
+            – Compress JSON to single line
           </li>
         </ul>
       </div>

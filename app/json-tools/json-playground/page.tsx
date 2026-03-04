@@ -5,7 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { FileJson, RotateCcw, Trash2, Copy, Download, Maximize2, Minimize2 } from "lucide-react";
+import {
+  FileJson,
+  RotateCcw,
+  Trash2,
+  Copy,
+  Download,
+  Maximize2,
+  Minimize2,
+} from "lucide-react";
 import { toast } from "sonner";
 
 export default function JsonPlaygroundPage() {
@@ -18,23 +26,31 @@ export default function JsonPlaygroundPage() {
   const processJson = useCallback(() => {
     try {
       const parsed = JSON.parse(input);
-      
+
       let output: string;
       if (sortKeys) {
-        const sorted = JSON.parse(JSON.stringify(parsed, Object.keys(parsed).sort(), indent));
-        output = JSON.stringify(parsed, (key, value) => {
-          if (value && typeof value === "object" && !Array.isArray(value)) {
-            return Object.keys(value).sort().reduce((sorted: any, k) => {
-              sorted[k] = value[k];
-              return sorted;
-            }, {});
-          }
-          return value;
-        }, indent);
+        const sorted = JSON.parse(
+          JSON.stringify(parsed, Object.keys(parsed).sort(), indent),
+        );
+        output = JSON.stringify(
+          parsed,
+          (key, value) => {
+            if (value && typeof value === "object" && !Array.isArray(value)) {
+              return Object.keys(value)
+                .sort()
+                .reduce((sorted: any, k) => {
+                  sorted[k] = value[k];
+                  return sorted;
+                }, {});
+            }
+            return value;
+          },
+          indent,
+        );
       } else {
         output = JSON.stringify(parsed, null, indent);
       }
-      
+
       setResult(output);
       setIsValid(true);
       toast.success("JSON formatted");
@@ -65,7 +81,9 @@ export default function JsonPlaygroundPage() {
   };
 
   const loadSample = () => {
-    setInput('{"name":"John","age":30,"city":"NYC","hobbies":["reading","coding"],"active":true}');
+    setInput(
+      '{"name":"John","age":30,"city":"NYC","hobbies":["reading","coding"],"active":true}',
+    );
   };
 
   const copyResult = () => {
@@ -93,9 +111,13 @@ export default function JsonPlaygroundPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Playground – Live JSON Editor Online</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Playground – Live JSON Editor Online
+          </h1>
           <p className="text-muted-foreground">
-            Edit JSON in a live interactive playground and see formatted output instantly. Our free JSON Playground is the perfect environment for experimenting, learning, and testing JSON.
+            Edit JSON in a live interactive playground and see formatted output
+            instantly. Our free JSON Playground is the perfect environment for
+            experimenting, learning, and testing JSON.
           </p>
         </div>
 
@@ -109,7 +131,9 @@ export default function JsonPlaygroundPage() {
                   Load Sample
                 </Button>
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="indent" className="text-sm whitespace-nowrap">Indent:</Label>
+                  <Label htmlFor="indent" className="text-sm whitespace-nowrap">
+                    Indent:
+                  </Label>
                   <select
                     id="indent"
                     value={indent}
@@ -130,7 +154,9 @@ export default function JsonPlaygroundPage() {
                     onChange={(e) => setSortKeys(e.target.checked)}
                     className="rounded border-input"
                   />
-                  <Label htmlFor="sortKeys" className="text-sm cursor-pointer">Sort Keys</Label>
+                  <Label htmlFor="sortKeys" className="text-sm cursor-pointer">
+                    Sort Keys
+                  </Label>
                 </div>
               </div>
 
@@ -151,7 +177,11 @@ export default function JsonPlaygroundPage() {
                       <Copy className="h-4 w-4 mr-2" />
                       Copy
                     </Button>
-                    <Button variant="outline" size="sm" onClick={downloadResult}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={downloadResult}
+                    >
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
@@ -170,7 +200,10 @@ export default function JsonPlaygroundPage() {
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
             <CardContent className="p-4">
-              <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+              <Label
+                htmlFor="input"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
                 Input
               </Label>
               <Textarea
@@ -178,7 +211,7 @@ export default function JsonPlaygroundPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder='{"name": "John", "age": 30}'
-                className="min-h-[500px] font-mono text-sm resize-none"
+                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -193,14 +226,18 @@ export default function JsonPlaygroundPage() {
                   value={result || ""}
                   readOnly
                   placeholder="Formatted output will appear here..."
-                  className={`min-h-[500px] font-mono text-sm resize-none ${
+                  className={`min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto ${
                     isValid === false ? "border-destructive" : ""
                   }`}
                 />
                 {isValid !== null && (
-                  <div className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-medium ${
-                    isValid ? "bg-green-500 text-white" : "bg-destructive text-white"
-                  }`}>
+                  <div
+                    className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-medium ${
+                      isValid
+                        ? "bg-green-500 text-white"
+                        : "bg-destructive text-white"
+                    }`}
+                  >
                     {isValid ? "Valid JSON" : "Invalid JSON"}
                   </div>
                 )}
@@ -213,39 +250,115 @@ export default function JsonPlaygroundPage() {
         <div className="mt-16 max-w-3xl">
           <h2 className="text-2xl font-semibold mb-4">About JSON Playground</h2>
           <p className="text-muted-foreground mb-6">
-            Working with JSON often means switching between editors, validators, and formatters. A single interactive space where you can paste, format, minify, and experiment with JSON makes development faster. This JSON Playground gives you a live editor with instant feedback on your JSON structure.
+            Working with JSON often means switching between editors, validators,
+            and formatters. A single interactive space where you can paste,
+            format, minify, and experiment with JSON makes development faster.
+            This JSON Playground gives you a live editor with instant feedback
+            on your JSON structure.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">How it works</h3>
           <p className="text-muted-foreground mb-2">
-            Type or paste JSON into the Input panel on the left. Choose your formatting preference from the Indent dropdown (2, 4, or 8 spaces) or check Sort Keys to alphabetize object properties. Click Format to see the formatted result in the Output panel.
+            Type or paste JSON into the Input panel on the left. Choose your
+            formatting preference from the Indent dropdown (2, 4, or 8 spaces)
+            or check Sort Keys to alphabetize object properties. Click Format to
+            see the formatted result in the Output panel.
           </p>
           <p className="text-muted-foreground mb-8">
-            The Output panel shows a Valid or Invalid badge based on JSON syntax. Use the Minify button to compress JSON into a single line. The side-by-side view lets you compare input and output while you work.
+            The Output panel shows a Valid or Invalid badge based on JSON
+            syntax. Use the Minify button to compress JSON into a single line.
+            The side-by-side view lets you compare input and output while you
+            work.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
           <p className="text-muted-foreground mb-2">
-            Developers debugging API responses often receive minified JSON that is hard to read. Paste it here to instantly see a formatted version. Students learning JSON syntax can experiment and see validation feedback in real time.
+            Developers debugging API responses often receive minified JSON that
+            is hard to read. Paste it here to instantly see a formatted version.
+            Students learning JSON syntax can experiment and see validation
+            feedback in real time.
           </p>
           <p className="text-muted-foreground mb-8">
-            This is a client-side tool, so large files might slow down your browser. For JSON files over 10MB, consider using a dedicated desktop editor. The playground works best for typical API payloads and configuration files.
+            This is a client-side tool, so large files might slow down your
+            browser. For JSON files over 10MB, consider using a dedicated
+            desktop editor. The playground works best for typical API payloads
+            and configuration files.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">Questions</h3>
           <div className="space-y-4 mb-8">
-            <div><p className="font-medium mb-1">Does this validate JSON syntax?</p><p className="text-muted-foreground">Yes. The Output panel displays Valid JSON or Invalid JSON based on whether your input parses correctly.</p></div>
-            <div><p className="font-medium mb-1">What does Sort Keys do?</p><p className="text-muted-foreground">It alphabetizes all object keys at every nesting level. This helps compare JSON objects where key order differs.</p></div>
-            <div><p className="font-medium mb-1">Can I edit the formatted output?</p><p className="text-muted-foreground">The Output panel is read-only. Edit the Input panel and click Format again to update the result.</p></div>
-            <div><p className="font-medium mb-1">Is my JSON stored anywhere?</p><p className="text-muted-foreground">No. Everything runs in your browser. Nothing is sent to servers or stored after you close the page.</p></div>
-            <div><p className="font-medium mb-1">What indent options are available?</p><p className="text-muted-foreground">Choose from Minified (no spaces), 2 spaces, 4 spaces, or 8 spaces using the Indent dropdown.</p></div>
+            <div>
+              <p className="font-medium mb-1">
+                Does this validate JSON syntax?
+              </p>
+              <p className="text-muted-foreground">
+                Yes. The Output panel displays Valid JSON or Invalid JSON based
+                on whether your input parses correctly.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What does Sort Keys do?</p>
+              <p className="text-muted-foreground">
+                It alphabetizes all object keys at every nesting level. This
+                helps compare JSON objects where key order differs.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                Can I edit the formatted output?
+              </p>
+              <p className="text-muted-foreground">
+                The Output panel is read-only. Edit the Input panel and click
+                Format again to update the result.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Is my JSON stored anywhere?</p>
+              <p className="text-muted-foreground">
+                No. Everything runs in your browser. Nothing is sent to servers
+                or stored after you close the page.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                What indent options are available?
+              </p>
+              <p className="text-muted-foreground">
+                Choose from Minified (no spaces), 2 spaces, 4 spaces, or 8
+                spaces using the Indent dropdown.
+              </p>
+            </div>
           </div>
 
           <h3 className="text-xl font-semibold mb-3">Related tools</h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li><a href="/json-tools/json-formatter" className="text-primary hover:underline">JSON Formatter</a> – Format JSON with customizable indentation</li>
-            <li><a href="/json-tools/json-minifier" className="text-primary hover:underline">JSON Minifier</a> – Compress JSON by removing whitespace</li>
-            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Check JSON for syntax errors</li>
+            <li>
+              <a
+                href="/json-tools/json-formatter"
+                className="text-primary hover:underline"
+              >
+                JSON Formatter
+              </a>{" "}
+              – Format JSON with customizable indentation
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-minifier"
+                className="text-primary hover:underline"
+              >
+                JSON Minifier
+              </a>{" "}
+              – Compress JSON by removing whitespace
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-validator"
+                className="text-primary hover:underline"
+              >
+                JSON Validator
+              </a>{" "}
+              – Check JSON for syntax errors
+            </li>
           </ul>
         </div>
       </div>

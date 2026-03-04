@@ -15,26 +15,37 @@ export default function JsonFlattenPage() {
   const [preserveArrays, setPreserveArrays] = useState(false);
   const [flattened, setFlattened] = useState<string | null>(null);
 
-  const flattenObject = useCallback((obj: any, prefix = "", result: any = {}): any => {
-    if (obj !== null && typeof obj === "object") {
-      if (Array.isArray(obj)) {
-        if (preserveArrays) {
-          result[prefix] = obj;
+  const flattenObject = useCallback(
+    (obj: any, prefix = "", result: any = {}): any => {
+      if (obj !== null && typeof obj === "object") {
+        if (Array.isArray(obj)) {
+          if (preserveArrays) {
+            result[prefix] = obj;
+          } else {
+            obj.forEach((item, index) => {
+              flattenObject(
+                item,
+                `${prefix}${prefix ? separator : ""}${index}`,
+                result,
+              );
+            });
+          }
         } else {
-          obj.forEach((item, index) => {
-            flattenObject(item, `${prefix}${prefix ? separator : ""}${index}`, result);
+          Object.entries(obj).forEach(([key, value]) => {
+            flattenObject(
+              value,
+              `${prefix}${prefix ? separator : ""}${key}`,
+              result,
+            );
           });
         }
       } else {
-        Object.entries(obj).forEach(([key, value]) => {
-          flattenObject(value, `${prefix}${prefix ? separator : ""}${key}`, result);
-        });
+        result[prefix] = obj;
       }
-    } else {
-      result[prefix] = obj;
-    }
-    return result;
-  }, [separator, preserveArrays]);
+      return result;
+    },
+    [separator, preserveArrays],
+  );
 
   const flattenJson = useCallback(() => {
     setFlattened(null);
@@ -58,17 +69,23 @@ export default function JsonFlattenPage() {
   };
 
   const loadSample = () => {
-    setInput(JSON.stringify({
-      user: {
-        name: "John",
-        address: {
-          city: "NYC",
-          zip: "10001"
+    setInput(
+      JSON.stringify(
+        {
+          user: {
+            name: "John",
+            address: {
+              city: "NYC",
+              zip: "10001",
+            },
+            hobbies: ["reading", "coding"],
+          },
+          active: true,
         },
-        hobbies: ["reading", "coding"]
-      },
-      active: true
-    }, null, 2));
+        null,
+        2,
+      ),
+    );
   };
 
   const copyResult = () => {
@@ -96,25 +113,44 @@ export default function JsonFlattenPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Flatten Tool – Flatten Nested JSON Online</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Flatten Tool – Flatten Nested JSON Online
+          </h1>
           <p className="text-muted-foreground">
-            Flatten deeply nested JSON into simple dot-notation key-value pairs. Our free JSON Flatten Tool makes complex data easier to process, store, and analyze in flat systems.
+            Flatten deeply nested JSON into simple dot-notation key-value pairs.
+            Our free JSON Flatten Tool makes complex data easier to process,
+            store, and analyze in flat systems.
           </p>
         </div>
 
         {/* When to Flatten */}
         <Card className="mb-6 border-l-4 border-l-primary">
           <CardContent className="p-5">
-            <h2 className="text-lg font-semibold mb-3">When to Use JSON Flatten</h2>
+            <h2 className="text-lg font-semibold mb-3">
+              When to Use JSON Flatten
+            </h2>
             <p className="text-muted-foreground mb-4">
-              Your JSON has multiple levels of nesting that make it hard to work with in certain contexts. Database columns, form submissions, and environment variables all prefer flat key-value structures. Manually restructuring nested JSON is tedious and error-prone.
+              Your JSON has multiple levels of nesting that make it hard to work
+              with in certain contexts. Database columns, form submissions, and
+              environment variables all prefer flat key-value structures.
+              Manually restructuring nested JSON is tedious and error-prone.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Database imports</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Form data</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">CSV conversion</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Analytics</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Key extraction</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                Database imports
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                Form data
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                CSV conversion
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                Analytics
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                Key extraction
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -125,9 +161,11 @@ export default function JsonFlattenPage() {
           <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <h3 className="font-medium mb-2 text-muted-foreground">Before (Nested):</h3>
+                <h3 className="font-medium mb-2 text-muted-foreground">
+                  Before (Nested):
+                </h3>
                 <pre className="text-xs bg-background p-3 rounded overflow-auto">
-{`{
+                  {`{
   "user": {
     "name": "John",
     "address": {
@@ -139,9 +177,11 @@ export default function JsonFlattenPage() {
                 </pre>
               </div>
               <div>
-                <h3 className="font-medium mb-2 text-muted-foreground">After (Flattened):</h3>
+                <h3 className="font-medium mb-2 text-muted-foreground">
+                  After (Flattened):
+                </h3>
                 <pre className="text-xs bg-background p-3 rounded overflow-auto">
-{`{
+                  {`{
   "user.name": "John",
   "user.address.city": "NYC",
   "user.address.zip": "10001"
@@ -162,7 +202,12 @@ export default function JsonFlattenPage() {
                   Load Sample
                 </Button>
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="separator" className="text-sm whitespace-nowrap">Separator:</Label>
+                  <Label
+                    htmlFor="separator"
+                    className="text-sm whitespace-nowrap"
+                  >
+                    Separator:
+                  </Label>
                   <input
                     id="separator"
                     type="text"
@@ -176,9 +221,13 @@ export default function JsonFlattenPage() {
                   <Checkbox
                     id="preserveArrays"
                     checked={preserveArrays}
-                    onCheckedChange={(checked) => setPreserveArrays(checked as boolean)}
+                    onCheckedChange={(checked) =>
+                      setPreserveArrays(checked as boolean)
+                    }
                   />
-                  <Label htmlFor="preserveArrays" className="text-sm">Preserve Arrays</Label>
+                  <Label htmlFor="preserveArrays" className="text-sm">
+                    Preserve Arrays
+                  </Label>
                 </div>
               </div>
 
@@ -195,7 +244,11 @@ export default function JsonFlattenPage() {
                       <Copy className="h-4 w-4 mr-2" />
                       Copy
                     </Button>
-                    <Button variant="outline" size="sm" onClick={downloadResult}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={downloadResult}
+                    >
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
@@ -210,96 +263,152 @@ export default function JsonFlattenPage() {
           </CardContent>
         </Card>
 
-        {/* Input */}
-        <Card className="mb-6">
-          <CardContent className="p-4">
-            <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
-              Input JSON
-            </Label>
-            <Textarea
-              id="input"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder='{"user": {"name": "John", "address": {"city": "NYC"}}}'
-              className="min-h-[300px] font-mono text-sm resize-none"
-            />
-          </CardContent>
-        </Card>
-
-        {/* Result */}
-        {flattened && (
+        {/* Input and Result */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Input */}
           <Card>
             <CardContent className="p-4">
-              <Label className="text-sm font-medium text-muted-foreground mb-4 block">
-                Flattened Result
+              <Label
+                htmlFor="input"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
+                Input JSON
               </Label>
               <Textarea
-                value={flattened}
-                readOnly
-                className="min-h-[300px] font-mono text-sm resize-none"
+                id="input"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder='{"user": {"name": "John", "address": {"city": "NYC"}}}'
+                className="min-h-[500px] font-mono text-sm resize-none max-w-[500px] max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
-        )}
+
+          {/* Result */}
+          {flattened && (
+            <Card>
+              <CardContent className="p-4">
+                <Label className="text-sm font-medium text-muted-foreground mb-4 block">
+                  Flattened Result
+                </Label>
+                <Textarea
+                  value={flattened}
+                  readOnly
+                  className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 max-h-[500px] overflow-y-auto"
+                />
+              </CardContent>
+            </Card>
+          )}
+        </div>
       </div>
 
       {/* SEO Content */}
       <div className="mt-16 max-w-3xl">
         <h2 className="text-2xl font-semibold mb-4">About JSON Flatten Tool</h2>
         <p className="text-muted-foreground mb-6">
-          Nested JSON is great for structure but sometimes you need flat key-value pairs. This tool flattens nested objects by joining keys with a separator, turning deep structures into single-level objects. It also unflattens dot-notation keys back into nested JSON.
+          Nested JSON is great for structure but sometimes you need flat
+          key-value pairs. This tool flattens nested objects by joining keys
+          with a separator, turning deep structures into single-level objects.
+          It also unflattens dot-notation keys back into nested JSON.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">How flattening works</h3>
         <p className="text-muted-foreground mb-2">
-          Paste your nested JSON and choose a separator like dot or underscore. Click Flatten and nested paths become single keys like user.address.city. Arrays get indexed keys like items.0.name. The result is a flat object with all values at the top level.
+          Paste your nested JSON and choose a separator like dot or underscore.
+          Click Flatten and nested paths become single keys like
+          user.address.city. Arrays get indexed keys like items.0.name. The
+          result is a flat object with all values at the top level.
         </p>
         <p className="text-muted-foreground mb-8">
-          To unflatten, paste dot-notation JSON and click Unflatten. Keys like user.profile.name get rebuilt into nested objects. This is useful for converting between flat config formats and nested structures.
+          To unflatten, paste dot-notation JSON and click Unflatten. Keys like
+          user.profile.name get rebuilt into nested objects. This is useful for
+          converting between flat config formats and nested structures.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
         <p className="text-muted-foreground mb-2">
-          Your database stores flat key-value pairs but your app uses nested JSON. Or you need to export nested config as environment variables. This tool also helps when working with form data that uses dot notation for nested fields.
+          Your database stores flat key-value pairs but your app uses nested
+          JSON. Or you need to export nested config as environment variables.
+          This tool also helps when working with form data that uses dot
+          notation for nested fields.
         </p>
         <p className="text-muted-foreground mb-8">
-          Flattening loses some structure information. Arrays become indexed keys. Empty objects and null values need special handling. For complex structures, review the output to ensure it meets your needs.
+          Flattening loses some structure information. Arrays become indexed
+          keys. Empty objects and null values need special handling. For complex
+          structures, review the output to ensure it meets your needs.
         </p>
 
         <h3 className="text-xl font-semibold mb-3">Questions</h3>
         <div className="space-y-4 mb-8">
           <div>
             <p className="font-medium mb-1">What separators can I use?</p>
-            <p className="text-muted-foreground">Common choices are dot (.), underscore (_), or slash (/). Avoid separators that might appear in your keys naturally.</p>
+            <p className="text-muted-foreground">
+              Common choices are dot (.), underscore (_), or slash (/). Avoid
+              separators that might appear in your keys naturally.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">How are arrays handled?</p>
-            <p className="text-muted-foreground">Array items get numeric indices. An array item becomes items.0, items.1, etc. This preserves order when unflattening.</p>
+            <p className="text-muted-foreground">
+              Array items get numeric indices. An array item becomes items.0,
+              items.1, etc. This preserves order when unflattening.
+            </p>
           </div>
           <div>
             <p className="font-medium mb-1">Can I flatten very deep objects?</p>
-            <p className="text-muted-foreground">Yes, but very deep nesting creates very long keys. Consider restructuring deeply nested data if possible.</p>
+            <p className="text-muted-foreground">
+              Yes, but very deep nesting creates very long keys. Consider
+              restructuring deeply nested data if possible.
+            </p>
           </div>
           <div>
-            <p className="font-medium mb-1">Does unflatten work with any flat object?</p>
-            <p className="text-muted-foreground">Keys need to follow the dot-notation pattern. Random flat keys won't create meaningful nested structures.</p>
+            <p className="font-medium mb-1">
+              Does unflatten work with any flat object?
+            </p>
+            <p className="text-muted-foreground">
+              Keys need to follow the dot-notation pattern. Random flat keys
+              won't create meaningful nested structures.
+            </p>
           </div>
           <div>
-            <p className="font-medium mb-1">What about empty objects or null?</p>
-            <p className="text-muted-foreground">Empty objects may disappear when flattening. Null values are preserved as explicit keys with null values.</p>
+            <p className="font-medium mb-1">
+              What about empty objects or null?
+            </p>
+            <p className="text-muted-foreground">
+              Empty objects may disappear when flattening. Null values are
+              preserved as explicit keys with null values.
+            </p>
           </div>
         </div>
 
         <h3 className="text-xl font-semibold mb-3">Related tools</h3>
         <ul className="space-y-2 text-muted-foreground">
           <li>
-            <a href="/json-tools/json-unflatten" className="text-primary hover:underline">JSON Unflatten</a> – Convert flat keys back to nested JSON
+            <a
+              href="/json-tools/json-unflatten"
+              className="text-primary hover:underline"
+            >
+              JSON Unflatten
+            </a>{" "}
+            – Convert flat keys back to nested JSON
           </li>
           <li>
-            <a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Transform JSON structure with custom rules
+            <a
+              href="/json-tools/json-transformer"
+              className="text-primary hover:underline"
+            >
+              JSON Transformer
+            </a>{" "}
+            – Transform JSON structure with custom rules
           </li>
           <li>
-            <a href="/json-tools/json-nested-structure" className="text-primary hover:underline">JSON Nested Structure</a> – Work with deeply nested JSON
+            <a
+              href="/json-tools/json-nested-structure"
+              className="text-primary hover:underline"
+            >
+              JSON Nested Structure
+            </a>{" "}
+            – Work with deeply nested JSON
           </li>
         </ul>
       </div>

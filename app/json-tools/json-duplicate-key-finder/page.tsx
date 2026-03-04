@@ -36,7 +36,7 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
       // String value - skip it
       i++; // skip opening quote
       while (i < jsonText.length) {
-        if (jsonText[i] === '\\' && i + 1 < jsonText.length) {
+        if (jsonText[i] === "\\" && i + 1 < jsonText.length) {
           i += 2; // skip escaped char
         } else if (jsonText[i] === '"') {
           i++; // skip closing quote
@@ -45,23 +45,23 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
           i++;
         }
       }
-    } else if (char === '{') {
+    } else if (char === "{") {
       parseObject(path);
-    } else if (char === '[') {
+    } else if (char === "[") {
       parseArray(path);
-    } else if (char === 't' || char === 'f') {
+    } else if (char === "t" || char === "f") {
       // true or false
       while (i < jsonText.length && /[a-z]/.test(jsonText[i])) i++;
-    } else if (char === 'n') {
+    } else if (char === "n") {
       // null
       while (i < jsonText.length && /[a-z]/.test(jsonText[i])) i++;
-    } else if (char === '-' || /[0-9]/.test(char)) {
+    } else if (char === "-" || /[0-9]/.test(char)) {
       // Number
-      if (jsonText[i] === '-') i++;
+      if (jsonText[i] === "-") i++;
       while (i < jsonText.length && /[0-9.]/.test(jsonText[i])) i++;
-      if (jsonText[i] === 'e' || jsonText[i] === 'E') {
+      if (jsonText[i] === "e" || jsonText[i] === "E") {
         i++;
-        if (jsonText[i] === '+' || jsonText[i] === '-') i++;
+        if (jsonText[i] === "+" || jsonText[i] === "-") i++;
         while (i < jsonText.length && /[0-9]/.test(jsonText[i])) i++;
       }
     }
@@ -69,7 +69,7 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
 
   function parseObject(path: string) {
     skipWhitespace();
-    if (jsonText[i] !== '{') return;
+    if (jsonText[i] !== "{") return;
     i++; // skip '{'
 
     const keysSeen = new Map<string, { count: number; firstPath: string }>();
@@ -78,15 +78,15 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
 
     skipWhitespace();
 
-    while (i < jsonText.length && jsonText[i] !== '}') {
+    while (i < jsonText.length && jsonText[i] !== "}") {
       skipWhitespace();
 
-      if (jsonText[i] === ',') {
+      if (jsonText[i] === ",") {
         i++;
         skipWhitespace();
       }
 
-      if (jsonText[i] === '}') break;
+      if (jsonText[i] === "}") break;
 
       // Read key (must be a string)
       if (jsonText[i] !== '"') {
@@ -97,7 +97,7 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
       i++; // skip opening quote
       let key = "";
       while (i < jsonText.length && jsonText[i] !== '"') {
-        if (jsonText[i] === '\\' && i + 1 < jsonText.length) {
+        if (jsonText[i] === "\\" && i + 1 < jsonText.length) {
           key += jsonText[i + 1];
           i += 2;
         } else {
@@ -110,7 +110,7 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
       skipWhitespace();
 
       // Expect ':'
-      if (jsonText[i] === ':') {
+      if (jsonText[i] === ":") {
         i++;
       }
 
@@ -151,21 +151,21 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
 
   function parseArray(path: string) {
     skipWhitespace();
-    if (jsonText[i] !== '[') return;
+    if (jsonText[i] !== "[") return;
     i++; // skip '['
 
     skipWhitespace();
     let index = 0;
 
-    while (i < jsonText.length && jsonText[i] !== ']') {
+    while (i < jsonText.length && jsonText[i] !== "]") {
       skipWhitespace();
 
-      if (jsonText[i] === ',') {
+      if (jsonText[i] === ",") {
         i++;
         skipWhitespace();
       }
 
-      if (jsonText[i] === ']') break;
+      if (jsonText[i] === "]") break;
 
       parseValue(`${path}[${index}]`);
       index++;
@@ -178,9 +178,9 @@ function findDuplicateKeysInText(jsonText: string): DuplicateKey[] {
 
   // Start parsing from root
   skipWhitespace();
-  if (jsonText[i] === '{') {
+  if (jsonText[i] === "{") {
     parseObject("$");
-  } else if (jsonText[i] === '[') {
+  } else if (jsonText[i] === "[") {
     parseArray("$");
   }
 
@@ -243,9 +243,13 @@ export default function JsonDuplicateKeyFinderPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Duplicate Key Finder – Detect Duplicate Keys</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Duplicate Key Finder – Detect Duplicate Keys
+          </h1>
           <p className="text-muted-foreground">
-            Find and flag duplicate keys in JSON objects that could cause silent data loss. Our free JSON Duplicate Key Finder helps you write cleaner, safer, and more reliable JSON.
+            Find and flag duplicate keys in JSON objects that could cause silent
+            data loss. Our free JSON Duplicate Key Finder helps you write
+            cleaner, safer, and more reliable JSON.
           </p>
         </div>
 
@@ -285,7 +289,10 @@ export default function JsonDuplicateKeyFinderPage() {
         {/* Input */}
         <Card className="mb-6">
           <CardContent className="p-4">
-            <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+            <Label
+              htmlFor="input"
+              className="text-sm font-medium text-muted-foreground mb-2 block"
+            >
               Input JSON
             </Label>
             <Textarea
@@ -293,7 +300,7 @@ export default function JsonDuplicateKeyFinderPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder='{"name": "Test", "name": "Duplicate"}'
-              className="min-h-[300px] font-mono text-sm resize-none"
+              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>
@@ -320,10 +327,15 @@ export default function JsonDuplicateKeyFinderPage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 mb-4">
                     <AlertTriangle className="h-5 w-5 text-yellow-500" />
-                    <span className="font-semibold">Found {duplicates.length} duplicate key(s)</span>
+                    <span className="font-semibold">
+                      Found {duplicates.length} duplicate key(s)
+                    </span>
                   </div>
                   {duplicates.map((dup, index) => (
-                    <div key={index} className="bg-yellow-500/10 border border-yellow-500/30 rounded-md p-4">
+                    <div
+                      key={index}
+                      className="bg-yellow-500/10 border border-yellow-500/30 rounded-md p-4"
+                    >
                       <div className="flex items-center gap-2">
                         <span className="font-mono font-semibold text-yellow-600 dark:text-yellow-400">
                           "{dup.key}"
@@ -342,56 +354,114 @@ export default function JsonDuplicateKeyFinderPage() {
 
         {/* SEO Content */}
         <div className="mt-16 max-w-3xl">
-          <h2 className="text-2xl font-semibold mb-4">About JSON Duplicate Key Finder</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            About JSON Duplicate Key Finder
+          </h2>
           <p className="text-muted-foreground mb-6">
-            Duplicate keys in JSON cause silent data loss since most parsers only keep the last value. This tool scans your JSON text before parsing to find duplicate keys that could cause bugs in your application or API.
+            Duplicate keys in JSON cause silent data loss since most parsers
+            only keep the last value. This tool scans your JSON text before
+            parsing to find duplicate keys that could cause bugs in your
+            application or API.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">How it works</h3>
           <p className="text-muted-foreground mb-2">
-            The tool analyzes your JSON as raw text, tracking keys at each object level. It finds keys that appear more than once in the same object and reports their location and count.
+            The tool analyzes your JSON as raw text, tracking keys at each
+            object level. It finds keys that appear more than once in the same
+            object and reports their location and count.
           </p>
           <p className="text-muted-foreground mb-8">
-            Results show each duplicate key with its path and how many times it appears. Yellow warnings highlight problematic keys so you can fix them before they cause issues in production.
+            Results show each duplicate key with its path and how many times it
+            appears. Yellow warnings highlight problematic keys so you can fix
+            them before they cause issues in production.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
           <p className="text-muted-foreground mb-2">
-            You're manually editing large JSON config files and want to avoid accidental duplicate keys. Run this check before deploying to catch typos or copy-paste errors.
+            You're manually editing large JSON config files and want to avoid
+            accidental duplicate keys. Run this check before deploying to catch
+            typos or copy-paste errors.
           </p>
           <p className="text-muted-foreground mb-8">
-            This tool finds duplicates but doesn't fix them automatically. You'll need to manually remove or rename duplicate keys. Some JSON editors can help with this after you identify the issues.
+            This tool finds duplicates but doesn't fix them automatically.
+            You'll need to manually remove or rename duplicate keys. Some JSON
+            editors can help with this after you identify the issues.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">Questions</h3>
           <div className="space-y-4 mb-8">
             <div>
-              <p className="font-medium mb-1">Why are duplicate keys a problem?</p>
-              <p className="text-muted-foreground">Most JSON parsers silently keep only the last value when duplicates exist. This can cause unexpected behavior and data loss.</p>
+              <p className="font-medium mb-1">
+                Why are duplicate keys a problem?
+              </p>
+              <p className="text-muted-foreground">
+                Most JSON parsers silently keep only the last value when
+                duplicates exist. This can cause unexpected behavior and data
+                loss.
+              </p>
             </div>
             <div>
               <p className="font-medium mb-1">How does this find duplicates?</p>
-              <p className="text-muted-foreground">It scans the raw JSON text before parsing, tracking keys at each object level. Standard JSON.parse would lose this information.</p>
+              <p className="text-muted-foreground">
+                It scans the raw JSON text before parsing, tracking keys at each
+                object level. Standard JSON.parse would lose this information.
+              </p>
             </div>
             <div>
               <p className="font-medium mb-1">What does the path mean?</p>
-              <p className="text-muted-foreground">The path shows where the duplicate occurs, like $ for root or $.items[0] for nested objects. This helps you locate the issue.</p>
+              <p className="text-muted-foreground">
+                The path shows where the duplicate occurs, like $ for root or
+                $.items[0] for nested objects. This helps you locate the issue.
+              </p>
             </div>
             <div>
               <p className="font-medium mb-1">Can duplicates be intentional?</p>
-              <p className="text-muted-foreground">Rarely. Some legacy systems might rely on duplicate keys, but this is non-standard and should be avoided in modern applications.</p>
+              <p className="text-muted-foreground">
+                Rarely. Some legacy systems might rely on duplicate keys, but
+                this is non-standard and should be avoided in modern
+                applications.
+              </p>
             </div>
             <div>
-              <p className="font-medium mb-1">Does this validate JSON syntax?</p>
-              <p className="text-muted-foreground">Yes, it also checks that your JSON is valid. Invalid JSON will show an error before duplicate checking runs.</p>
+              <p className="font-medium mb-1">
+                Does this validate JSON syntax?
+              </p>
+              <p className="text-muted-foreground">
+                Yes, it also checks that your JSON is valid. Invalid JSON will
+                show an error before duplicate checking runs.
+              </p>
             </div>
           </div>
 
           <h3 className="text-xl font-semibold mb-3">Related tools</h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Check JSON syntax</li>
-            <li><a href="/json-tools/json-empty-field-finder" className="text-primary hover:underline">JSON Empty Field Finder</a> – Find null and empty values</li>
-            <li><a href="/json-tools/json-formatter" className="text-primary hover:underline">JSON Formatter</a> – Format and indent JSON</li>
+            <li>
+              <a
+                href="/json-tools/json-validator"
+                className="text-primary hover:underline"
+              >
+                JSON Validator
+              </a>{" "}
+              – Check JSON syntax
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-empty-field-finder"
+                className="text-primary hover:underline"
+              >
+                JSON Empty Field Finder
+              </a>{" "}
+              – Find null and empty values
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-formatter"
+                className="text-primary hover:underline"
+              >
+                JSON Formatter
+              </a>{" "}
+              – Format and indent JSON
+            </li>
           </ul>
         </div>
       </div>
