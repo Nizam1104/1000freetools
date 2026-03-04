@@ -1196,204 +1196,140 @@ export default function VideoOverlaysPage() {
           </div>
         </section>
 
-        {/* What it Does Section */}
+        {/* What Video Overlays Do */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Video Overlays Do
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Overlays permanently encode images into your video — watermarks, logos, text graphics, anything PNG. You position the image, set opacity, optionally define when it appears, and the tool burns it into every frame (or the time range you specify).
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                This isn't a preview effect. The overlay becomes part of the pixel data. The output MP4 shows the overlay on every player, platform, and device — no settings required.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                This tool permanently encodes one or more image overlays into
-                your video. You upload a PNG image, position it on the video
-                canvas, set the opacity, and optionally define the time range
-                during which the overlay appears. When you click Process, the
-                encoder reads each frame and draws the overlay image at the
-                configured position and opacity. The output is a new MP4 file
-                with the overlay permanently baked into the pixel data. The
-                original video file is not modified. All processing happens in
-                your browser so nothing is uploaded to a server.
+                Your original file isn't modified. You get a new MP4 with the overlay encoded in.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Overlays Help */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When You'd Use This</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Watermarking client review footage</h3>
+                <p className="text-sm text-muted-foreground">
+                  Freelance editors send rough cuts with a semi-transparent "Review Only" overlay. Clients can review the content but can't use it commercially before payment. Simple protection without DRM.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Adding logo to corporate videos</h3>
+                <p className="text-sm text-muted-foreground">
+                  Companies producing training videos in-house need their logo on every clip. Upload the PNG, place it in a corner, process. No video editor required.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Timestamp on security or dashcam footage</h3>
+                <p className="text-sm text-muted-foreground">
+                  Investigators presenting evidence can overlay a timestamp image. It becomes part of the pixel data in each frame — not a detachable metadata tag that could be questioned.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Branding social media clips</h3>
+                <p className="text-sm text-muted-foreground">
+                  Content creators add their username or channel handle as a subtle corner overlay. The branding stays visible even if someone downloads and re-shares the clip.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Retro broadcast graphics</h3>
+                <p className="text-sm text-muted-foreground">
+                  Filmmakers making parody news broadcasts overlay retro station logos in the corner. High opacity makes it look like part of the original footage.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* How Overlays Work */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                How Overlay Encoding Works
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Alpha Compositing</h3>
+                  <p className="text-muted-foreground mt-2">
+                    PNG files have an alpha channel that controls transparency. When the encoder draws the overlay onto each video frame, it reads each pixel's alpha value. Fully transparent pixels (alpha 0) let the video show through. Fully opaque pixels (alpha 255) replace the video pixel. The Opacity slider multiplies all alpha values — 50% opacity makes everything half-transparent.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Timing Controls</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Start Time and End Time define when the overlay appears. Set Start to 0 and End to the full duration for a permanent overlay. Set a narrower range (e.g., Start: 5, End: 15) and the overlay only appears during those 10 seconds. Frames outside the range are encoded without the overlay.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Background Processing</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The tool uses OffscreenCanvas and Web Workers to process frames without freezing your browser. Encoding happens in the background, keeping the page responsive. Long videos take several minutes depending on your CPU.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Add Overlays</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Load your video
-              </h3>
+              <h3 className="relative font-semibold text-xl">Upload your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the video upload button or drag your MP4 file into the
-                tool. The video loads into the canvas preview so you can see
-                where overlays will appear. The file is never uploaded to a
-                server.
+                Click upload or drag your MP4. The video loads into the canvas preview. It stays on your device — no server upload.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Add and position your overlay
-              </h3>
+              <h3 className="relative font-semibold text-xl">Add and position overlay</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click Add Overlay Images to upload a PNG file. The overlay
-                appears in the canvas. Click and drag to move it. Drag the
-                corner handles to resize it. Use the opacity slider to control
-                how transparent the overlay appears.
+                Click Add Overlay Images and select a PNG. Drag to move it. Drag corner handles to resize. Use the opacity slider to control transparency. Set timing if you want it to appear only during a specific section.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Process and download
-              </h3>
+              <h3 className="relative font-semibold text-xl">Process and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the Process button. The encoder reads every frame of your
-                video and draws the overlay at the defined position and time
-                range. When it finishes, download the output MP4, which contains
-                the overlay permanently encoded into the pixel data.
+                Click Process. The encoder reads every frame and draws the overlay at your specified position and time range. When done, download the MP4 with the overlay permanently encoded.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Protecting client review footage
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Freelance editors sending a rough cut to a client can add a
-                  semi-transparent "Review Only" text overlay across the center
-                  of the frame. This makes the content clear enough to review
-                  but prevents the client from using the file commercially
-                  before payment is confirmed.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Adding a logo to corporate training videos
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Companies that produce training videos in-house often need to
-                  add a company logo to every clip before distribution.
-                  Uploading the logo PNG and placing it in the bottom corner of
-                  the canvas permanently brands each video without opening a
-                  video editing application.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Adding a timestamp or date to security footage
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Investigators or property managers who need to present dashcam
-                  or camera footage as evidence can overlay a timestamp image
-                  onto the clip. The overlaid timestamp becomes part of the
-                  pixel data in each frame rather than a detachable metadata
-                  tag.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Adding a handle to social media video clips
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Content creators who share short video clips across platforms
-                  can add their username or channel handle as a subtle overlay
-                  in a corner of the frame. This ensures the branding remains
-                  visible even if someone downloads and re-shares the clip.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Recreating a broadcast graphic for a retro effect
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Filmmakers making short films or parody videos that simulate
-                  old news broadcasts can overlay a retro-styled station logo
-                  image in the corner. Using a high opacity setting makes the
-                  graphic look like it is part of the original footage.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">Alpha Compositing</h3>
-                  <p className="text-muted-foreground mt-2">
-                    When the encoder draws a PNG overlay onto a video frame, it
-                    reads the alpha value of each pixel in the overlay image.
-                    Fully transparent pixels (alpha 0) let the video frame show
-                    through completely. Fully opaque pixels (alpha 255) replace
-                    the video pixel entirely. The Opacity slider multiplies all
-                    alpha values by a factor between 0 and 1, which lets you
-                    control overall transparency independently of the image's
-                    own alpha channel.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Start Time and End Time</h3>
-                  <p className="text-muted-foreground mt-2">
-                    These fields control which portion of the video the overlay
-                    appears in. Setting Start Time to 0 and End Time to the full
-                    video duration makes the overlay appear throughout the
-                    entire video. Setting a narrower range makes the overlay
-                    appear only during that window. Frames outside the range are
-                    encoded without the overlay.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    Background Processing with OffscreenCanvas
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    The overlay compositing runs inside a Web Worker thread
-                    using the OffscreenCanvas API. This keeps the compositing
-                    work off the main browser thread, which means the page stays
-                    responsive and responsive while the encoder processes each
-                    frame. Long videos with complex overlays can take several
-                    minutes depending on your device's CPU speed.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}

@@ -605,206 +605,180 @@ export default function VideoColorSpaceTransformationPage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* What Color Adjustment Can Fix */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Color Adjustment Can (And Can't) Fix
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Color adjustments change the luminance and hue values of every pixel. Brightness lifts or darkens the whole image. Contrast spreads tones apart for more punch. Saturation makes colors more or less intense. Hue rotate shifts all colors around the spectrum wheel.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                What this won't do: fix severe white balance errors or recover detail from completely blown highlights or crushed blacks. If the camera recorded pure white or pure black, there's no data to recover. But for footage that's slightly off — too dark, too flat, wrong color temperature — these adjustments can get you close.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                This tool applies color adjustments to every frame of your video
-                and writes the results into a new MP4 file. You control six
-                parameters: Brightness raises or lowers overall light levels.
-                Contrast expands or compresses the range between shadows and
-                highlights. Saturation increases or removes color intensity. Hue
-                Rotate slides every color around the spectrum wheel. Sepia adds
-                warm brownish tones. Invert flips every color to its opposite.
-                All processing runs in your browser using your device's CPU, so
-                the file is never uploaded to a server and your original stays
-                untouched until you download the output.
+                This isn't professional color grading. It's quick correction for videos that need to look better without learning DaVinci Resolve.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Color Correction Helps */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When This Helps</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Dark footage from backlit scenes</h3>
+                <p className="text-sm text-muted-foreground">
+                  Someone recorded in front of a window and their face is a shadow. Brightness at 1.2-1.4 lifts the subject. Contrast at 1.1 keeps it from looking washed out. Not perfect, but watchable.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Flat, gray-looking video</h3>
+                <p className="text-sm text-muted-foreground">
+                  Cloudy day recording or log profile footage looks dull. Contrast at 1.15-1.25 and Saturation at 1.2-1.3 add punch and color. Instant improvement for otherwise boring footage.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Vintage or sepia effect</h3>
+                <p className="text-sm text-muted-foreground">
+                  Sepia at 0.7-0.9 adds warm brown tones. Drop Saturation to 0.5-0.6 and you get that aged film look. Works for historical content or stylized social media posts.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Matching cameras with different color</h3>
+                <p className="text-sm text-muted-foreground">
+                  One camera runs warm, another runs cool. Adjust the warmer one's Saturation down and tweak Brightness until they match. Not frame-accurate grading, but good enough for most edits.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Creative color effects</h3>
+                <p className="text-sm text-muted-foreground">
+                  Hue Rotate at 180° flips all colors to their opposites — weird psychedelic look. Invert at 1.0 creates a negative film effect. Useful for music videos, horror cuts, or experimental work.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Color Adjustment Quick Reference */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                What Each Slider Does
+              </h2>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-bold mb-2">Brightness</h3>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">1.0</strong> = Normal<br/>
+                      <strong className="text-foreground">&gt;1.0</strong> = Lighter (1.5 = very bright)<br/>
+                      <strong className="text-foreground">&lt;1.0</strong> = Darker (0.5 = very dark)<br/>
+                      Use when: footage is too dark or too bright
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-bold mb-2">Contrast</h3>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">1.0</strong> = Normal<br/>
+                      <strong className="text-foreground">&gt;1.0</strong> = More punch (1.3 = high contrast)<br/>
+                      <strong className="text-foreground">&lt;1.0</strong> = Flatter (0.7 = muted)<br/>
+                      Use when: image looks flat or needs more definition
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-bold mb-2">Saturation</h3>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">1.0</strong> = Normal<br/>
+                      <strong className="text-foreground">&gt;1.0</strong> = More vivid (1.5 = very colorful)<br/>
+                      <strong className="text-foreground">0.0</strong> = Black and white<br/>
+                      Use when: colors look washed out or too intense
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-bold mb-2">Hue Rotate</h3>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">0°</strong> = Normal<br/>
+                      <strong className="text-foreground">180°</strong> = All colors inverted<br/>
+                      <strong className="text-foreground">360°</strong> = Back to normal<br/>
+                      Use when: creative color shift needed
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-bold mb-2">Sepia</h3>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">0.0</strong> = Normal<br/>
+                      <strong className="text-foreground">0.8</strong> = Vintage brown tone<br/>
+                      <strong className="text-foreground">1.0</strong> = Full sepia<br/>
+                      Use when: old film / historical look
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-bold mb-2">Invert</h3>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">0.0</strong> = Normal<br/>
+                      <strong className="text-foreground">1.0</strong> = Negative film effect<br/>
+                      Use when: psychedelic / horror effect needed
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p className="text-muted-foreground mt-6 text-sm">
+                Start with small adjustments — 1.1-1.2 for Brightness/Contrast, 1.2-1.3 for Saturation. Big changes look artificial.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Adjust Video Colors</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Load your video
-              </h3>
+              <h3 className="relative font-semibold text-xl">Upload your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Open the file picker and select your video. The player shows the
-                original file in the preview panel. Review the current color
-                quality before adjusting. You can return to this Original view
-                at any time to compare against the processed version.
+                Select or drag your file. It stays on your device — no server upload. Watch a few seconds to identify what needs fixing: too dark, too flat, wrong colors.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Adjust the sliders
-              </h3>
+              <h3 className="relative font-semibold text-xl">Adjust the sliders</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Move each slider to the value you want. If the video is too
-                dark, set Brightness above 1.0. If colors look washed out, set
-                Saturation above 1.0. If the image looks flat, increase Contrast
-                above 1.0. Use "Reset to Defaults" to return all sliders to
-                their starting positions if the result is not what you expected.
+                Start with one adjustment at a time. Brightness for dark footage. Contrast for flat footage. Saturation for dull colors. Small changes look more natural than extreme values.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Apply and download
-              </h3>
+              <h3 className="relative font-semibold text-xl">Apply and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click Apply Transform. The encoder processes each frame with
-                your chosen values and writes them into a new MP4. When the
-                progress bar reaches 100%, click the Transformed button to
-                preview the result. If you are satisfied, click Download to save
-                the output file to your device.
+                Click Apply Transform and wait. Processing time depends on video length. When done, toggle between Original and Transformed to compare. Download if satisfied.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Recovering underexposed footage
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  A clip recorded in a dim room or against backlight often comes
-                  out too dark to share. Set Brightness to 1.3 and Contrast to
-                  1.1. The encoder raises the luminance level across every frame
-                  and separates the shadows from the midtones, making faces and
-                  details visible without a full re-shoot.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Boosting flat marketing footage
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Video filmed on a cloudy day or through a window often looks
-                  dull and gray. Set Saturation to 1.3 and Contrast to 1.15. The
-                  encoder increases color richness and deepens the difference
-                  between light and dark areas, making product colors and
-                  outdoor scenes look more vivid and inviting.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Creating a sepia or vintage look
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Set Sepia to 0.8 and reduce Saturation to 0.6. This
-                  combination floods the frame with warm brown tones and removes
-                  most of the original color, simulating old film chemistry.
-                  Reduce Contrast slightly to 0.9 to soften the shadows and
-                  complete the vintage aesthetic.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Building an inverted horror effect
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Set Invert to 1.0 to flip every color value to its direct
-                  opposite. White areas become black and dark shadows appear
-                  bright. This creates an unsettling negative-film look used in
-                  trailers, horror cuts, and experimental music videos where a
-                  jarring visual break is needed.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Matching footage from two different cameras
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  When you cut between a high-end camera and a phone or webcam,
-                  color temperature differences are visible. Process the weaker
-                  camera's footage with small Brightness, Contrast, and
-                  Saturation adjustments until the colors match. This closes the
-                  visual gap without needing dedicated color grading software.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">Brightness and Contrast</h3>
-                  <p className="text-muted-foreground mt-2">
-                    Brightness shifts the overall luminance of the frame up or
-                    down. A value of 1.0 is neutral. Values above 1.0 lift the
-                    entire image toward white. Values below 1.0 push it toward
-                    black. Contrast controls the gap between the brightest and
-                    darkest parts of the frame. Increasing contrast above 1.0
-                    makes highlights brighter and shadows darker. Reducing it
-                    below 1.0 compresses the range and makes the image look flat
-                    or hazy.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Saturation</h3>
-                  <p className="text-muted-foreground mt-2">
-                    Saturation controls the intensity of the colors in the
-                    frame. A value of 1.0 is neutral and preserves the original
-                    colors. Values above 1.0 make colors more vivid. Values
-                    below 1.0 reduce color intensity. At 0.0, the encoder
-                    removes all color and produces a grayscale image.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Hue Rotate</h3>
-                  <p className="text-muted-foreground mt-2">
-                    This slider shifts all colors in the video by the number of
-                    degrees you set, measured on the 360-degree color wheel. At
-                    90 degrees, greens shift toward blue-purple tones. At 180
-                    degrees, every color becomes its direct opposite. This
-                    control is useful for creative color effects or for
-                    correcting footage with a dominant color cast.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}

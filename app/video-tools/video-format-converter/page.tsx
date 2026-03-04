@@ -135,9 +135,7 @@ export default function VideoFormatsConversionPage() {
             Free Online Video Converter — Convert MP4, MKV, MOV, WebM and More
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Convert video and audio files between formats directly in your
-            browser. No uploads, no account, and no file size limits imposed by
-            a server. Supports MP4, WebM, MKV, MOV, MP3, WAV, and more.
+            Convert video and audio files between formats directly in your browser. No uploads, no account, no file size limits. Supports MP4, WebM, MKV, MOV, MP3, WAV, and more.
           </p>
         </section>
 
@@ -146,201 +144,151 @@ export default function VideoFormatsConversionPage() {
           <VideoFormatsConversion />
         </section>
 
-        {/* What The Tool Does Section */}
+        {/* What Format Conversion Does */}
         <section className="space-y-6">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Format Conversion Does
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Video files have two layers: the container (MP4, MKV, MOV) and the codecs inside (H.264, AAC, etc.). Conversion can change the container, the codecs, or both.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                If the codecs are already compatible with the target format, the tool does a transmux — it copies the data into a new container without re-encoding. This takes seconds and loses zero quality. If the codecs aren't compatible, it re-encodes, which takes longer but produces a file that plays everywhere.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                This tool changes the format of your video or audio file. You
-                can change the container, such as MKV to MP4, or extract the
-                audio track as MP3 or WAV. When the internal codecs are already
-                compatible, the tool performs a transmux, copying the data into
-                the new container without re-encoding. This completes quickly
-                and produces no quality loss. When the codecs are not
-                compatible, the tool re-encodes the video, which takes longer
-                but produces a file that works in the target format. All
-                conversion runs locally in your browser so your file is never
-                uploaded to a server.
+                This runs locally in your browser. No upload means faster processing and complete privacy.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Format Conversion Helps */}
         <section className="space-y-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When You Need This</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">MKV files won't play on your TV</h3>
+                <p className="text-sm text-muted-foreground">
+                  Older smart TVs and media players don't support MKV. Convert to MP4 with H.264 video — it's a transmux if codecs match, so it takes seconds. The file plays on virtually any device.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Extract audio from video interviews</h3>
+                <p className="text-sm text-muted-foreground">
+                  3-hour video interview is several GB. You only need the audio. Convert to MP3 and get a file that's 10x smaller. Perfect for podcasts or study notes.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">MOV files from iPhone won't open on Windows</h3>
+                <p className="text-sm text-muted-foreground">
+                  Windows sometimes needs QuickTime codecs to open MOV files. Convert to MP4 and it plays in the default Windows player without installing anything extra.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">WebM for smaller website videos</h3>
+                <p className="text-sm text-muted-foreground">
+                  MP4 works everywhere but WebM with VP9 codec produces ~30% smaller files at the same quality. Convert background videos to WebM for faster page loads on mobile.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Submit to platforms with format requirements</h3>
+                <p className="text-sm text-muted-foreground">
+                  Some portals only accept MP4 or AVI. Convert your WebM or MOV to the required format and submit without hassle. No need to contact support or buy conversion software.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Format Reference */}
+        <section className="space-y-6">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Common Formats Explained
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Video Containers</h3>
+                  <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                      <strong className="text-foreground">MP4</strong> — Universal compatibility. Works on phones, TVs, computers, everything.
+                    </div>
+                    <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                      <strong className="text-foreground">WebM</strong> — Web-optimized. Smaller files, modern browsers only.
+                    </div>
+                    <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                      <strong className="text-foreground">MKV</strong> — Supports multiple audio/subtitle tracks. Limited device support.
+                    </div>
+                    <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                      <strong className="text-foreground">MOV</strong> — Apple's format. Works great on Mac/iOS, sometimes needs conversion for Windows.
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Audio: MP3 vs WAV</h3>
+                  <p className="text-muted-foreground mt-2">
+                    MP3 compresses audio — smaller files, slight quality loss. Good for listening, sharing, podcasts. WAV is uncompressed — large files, no quality loss. Use for editing or archiving.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Transmux vs Re-encode</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Transmux = copies data to new container without re-encoding. Takes seconds, zero quality loss. Re-encode = converts codecs. Takes longer, required when source and target formats use different codecs.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="space-y-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Convert Video</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">Load your file</h3>
+              <h3 className="relative font-semibold text-xl">Upload your file</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the upload area or drag your video file into the tool. The
-                converter reads the file from your local drive and never sends
-                it to a server. Most common video formats are accepted,
-                including MP4, MKV, MOV, WebM, and AVI.
+                Drag or select your video. It stays on your device — no server upload. Works with MP4, MKV, MOV, WebM, AVI, and more.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Choose the output format
-              </h3>
+              <h3 className="relative font-semibold text-xl">Choose output format</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Select the target format from the dropdown. For maximum device
-                compatibility, choose MP4. For web embedding, choose WebM. To
-                extract only the audio, choose MP3 or WAV depending on whether
-                you need compressed or uncompressed audio.
+                Pick MP4 for maximum compatibility, WebM for web use, or MOV for Apple devices. For audio-only, choose MP3 (compressed) or WAV (uncompressed).
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Convert and download
-              </h3>
+              <h3 className="relative font-semibold text-xl">Convert and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the Convert button. If the codecs are compatible, the
-                conversion finishes in seconds. If re-encoding is required, a
-                progress bar shows the current status. When it completes,
-                download the converted file to your drive.
+                Click Convert. Transmux finishes in seconds. Re-encoding takes longer — progress bar shows status. Download when done.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="space-y-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Making an MKV file play on a smart TV or media player
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Many older TVs and media players do not support the MKV
-                  container. Converting the file to MP4 while keeping the same
-                  H.264 video track is a transmux operation, which takes seconds
-                  and produces a file that plays on virtually all devices.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Extracting audio from a long video interview
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  A 3-hour video interview can be several gigabytes in size. If
-                  you only need the audio, converting it to MP3 strips the video
-                  frames and produces a compressed audio file that is a fraction
-                  of the original size and easy to listen to offline.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Optimizing a background video for a website
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  MP4 files are widely supported but WebM with VP9 codec often
-                  produces smaller files at the same quality on modern browsers.
-                  Converting a landing page background video from MP4 to WebM
-                  can reduce load time for users on slower mobile connections.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Opening a MOV file on a Windows device
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  MOV files from iPhones and Macs sometimes fail to open on
-                  Windows without the QuickTime codec. Converting the MOV to MP4
-                  produces a file that the Windows default media player and most
-                  other Windows applications can open without additional
-                  software.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Submitting a video in a format accepted by an upload portal
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Online submission portals for education or corporate platforms
-                  sometimes only accept specific file formats such as MP4 or
-                  AVI. Converting from WebM or MOV to the accepted format lets
-                  you submit without contacting support or using additional
-                  conversion software.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="space-y-6">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">Output Format</h3>
-                  <p className="text-muted-foreground mt-2">
-                    The output format determines the container file that wraps
-                    your video and audio tracks. MP4 is compatible with the
-                    widest range of devices. WebM works well for browser-based
-                    video with smaller file sizes. MKV supports multiple audio
-                    and subtitle tracks but has limited device support. MOV is
-                    the native format for Apple devices.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    Audio Output: MP3 vs WAV
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    Selecting MP3 extracts the audio and compresses it. The
-                    compression reduces file size but introduces a small
-                    reduction in audio quality compared to the original. WAV
-                    extracts the audio without compression, which preserves the
-                    original quality but produces a much larger file. WAV is
-                    recommended when you plan to edit the audio further. MP3 is
-                    recommended when you want a smaller file for listening.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Transmux vs. Re-encode</h3>
-                  <p className="text-muted-foreground mt-2">
-                    A transmux operation copies the existing video and audio
-                    data into a new container without re-encoding. This
-                    completes in seconds and produces no quality loss. A
-                    re-encode operation compresses the video data using a new
-                    codec, which takes longer but is required when the source
-                    and target codecs are different.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs */}

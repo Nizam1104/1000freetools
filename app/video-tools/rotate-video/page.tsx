@@ -427,208 +427,151 @@ export default function RotateVideoPage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* Why Videos Play Sideways */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                Why Videos Play Sideways (And How This Fixes It)
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Phones and cameras don't always store video in the orientation you see. They record in a fixed orientation and add a metadata tag telling players how to rotate it. The problem: many platforms and editors ignore that tag and play the raw data — which looks sideways.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                This tool doesn't just change the metadata tag. It rotates every single frame's pixel data and writes a new file. The result plays correctly everywhere because the orientation is baked into the actual image, not stored as a hint that players can ignore.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                This tool permanently rotates the pixel data inside your video
-                file. Most phones and cameras store video in a fixed orientation
-                and use a metadata rotation tag to tell compatible players how
-                to display it. Many platforms and video editors ignore that tag
-                and play the raw data, causing the video to appear sideways or
-                upside down. This encoder reads every frame, rotates the actual
-                pixel grid by the angle you choose, and writes a new MP4 where
-                the orientation is correct at the data level. The entire process
-                runs in your browser so no file is uploaded to any server.
+                The rotation is permanent. Your original file isn't modified — you get a new MP4 with the corrected orientation.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When You Need to Rotate Video */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When This Fixes Your Problem</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Sideways phone recordings</h3>
+                <p className="text-sm text-muted-foreground">
+                  You started recording in portrait, rotated to landscape, and now the video plays sideways on YouTube. Rotate 90 degrees clockwise. The output fills the player correctly without viewers tilting their heads.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Upside-down action camera footage</h3>
+                <p className="text-sm text-muted-foreground">
+                  Helmet or handlebar mounts sometimes require upside-down camera placement. The footage looks inverted. Rotate 180 degrees and the scene appears upright.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <h3 className="font-bold mb-2 p-6">Metadata tags that editors ignore</h3>
+              <CardContent className="p-6 pt-0">
+                <p className="text-sm text-muted-foreground">
+                  Premiere Pro and DaVinci Resolve sometimes import phone footage sideways because they ignore rotation metadata. Rotating the file before importing fixes it permanently.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Vertical digital signage</h3>
+                <p className="text-sm text-muted-foreground">
+                  Retail screens are often mounted vertically. Rotate a 1920x1080 landscape video 90 degrees and it becomes 1080x1920 portrait — perfect for vertical displays.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Standardizing mixed-orientation clips</h3>
+                <p className="text-sm text-muted-foreground">
+                  Some clips shot horizontal, some vertical. Rotate them all to match before editing. Your timeline stays consistent and you avoid per-clip rotation fixes in your editor.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Rotation Angle Reference */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Rotation Angles Explained
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-4 font-medium">Angle</th>
+                      <th className="text-left py-3 px-4 font-medium">What It Does</th>
+                      <th className="text-left py-3 px-4 font-medium">Output Dimensions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">90° clockwise</td>
+                      <td className="py-3 px-4">Rotates right one quarter turn</td>
+                      <td className="py-3 px-4">Swaps (1920x1080 → 1080x1920)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">180°</td>
+                      <td className="py-3 px-4">Flips upside down</td>
+                      <td className="py-3 px-4">Same as input</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">270° clockwise</td>
+                      <td className="py-3 px-4">Rotates left one quarter turn (same as 90° counter-clockwise)</td>
+                      <td className="py-3 px-4">Swaps (1920x1080 → 1080x1920)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-muted-foreground mt-6 text-sm">
+                Not sure which direction? Try 90° first. If it's still wrong, try 270°. The preview shows the result before you download.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Rotate Your Video</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Load the video file
-              </h3>
+              <h3 className="relative font-semibold text-xl">Upload your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Open the file picker and select your MP4, MOV, or other video
-                file. The player shows the video in its raw data orientation. If
-                your phone recorded it sideways and added a metadata rotation
-                tag, the player may show it correctly here, but many platforms
-                will ignore that tag. The encoder fixes the actual pixel data
-                regardless.
+                Select or drag your file. It stays on your device — no server upload. The preview shows the current orientation so you can see what needs fixing.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Pick the rotation angle
-              </h3>
+              <h3 className="relative font-semibold text-xl">Choose rotation angle</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Select 90 degrees clockwise to rotate the video one quarter turn
-                to the right. Select 180 degrees to flip the video upside down.
-                Select 270 degrees clockwise, which is the same as 90 degrees
-                counter-clockwise, to rotate one quarter turn to the left. If
-                you are unsure, try 90 degrees first and re-process if needed.
+                Click 90°, 180°, or 270°. For sideways video, start with 90° clockwise. For upside-down footage, use 180°. The preview updates to show the result.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Process and save the file
-              </h3>
+              <h3 className="relative font-semibold text-xl">Rotate and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the Rotate Video button and wait for the progress bar to
-                reach 100%. The encoder processes each frame and writes the
-                rotated pixels into a new MP4. Keep the tab open during
-                processing. When it finishes, click the download button to save
-                the corrected file to your device.
+                Click rotate and wait. Processing time depends on video length. Keep the tab open. When done, preview the result and download the corrected file.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Fixing sideways smartphone recordings
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  You start recording in portrait mode, rotate the phone to
-                  landscape, and stop. The resulting video often has the wrong
-                  orientation when you upload it to a website. Select 90 degrees
-                  clockwise and process the file. The output plays correctly in
-                  every browser and social media player without the viewer
-                  needing to tilt their screen.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Correcting upside-down action camera footage
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Some handlebar and helmet mounts require mounting a camera
-                  upside down to get the right angle. The recorded video appears
-                  flipped. Select 180 degrees to correct it. The encoder rotates
-                  every frame and the output shows the road or scene in the
-                  correct upright position.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Removing problematic metadata rotation tags
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Some cameras embed a rotation tag in the video metadata rather
-                  than storing the image in the correct orientation. Video
-                  editors like DaVinci Resolve or Premiere Pro may ignore this
-                  tag and import the footage sideways. Running it through this
-                  tool encodes the correct orientation into the pixel data and
-                  removes the dependency on the metadata tag.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Preparing video for vertical digital signage
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Retail displays and kiosk screens are often mounted vertically
-                  in portrait orientation. If your promotional video is a
-                  standard 1920x1080 horizontal clip, select 90 degrees to
-                  rotate it. The output becomes 1080x1920, which fills the kiosk
-                  screen without black bars on the sides.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Pre-processing clips for a video editor
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  When building a timeline in a video editor, mixing clips with
-                  different orientations creates layout problems. Rotate each
-                  sideways clip before importing so every file enters the editor
-                  with consistent horizontal orientation. This lets you set one
-                  sequence resolution and avoid per-clip transform corrections
-                  inside the editor.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">90 Degrees Clockwise</h3>
-                  <p className="text-muted-foreground mt-2">
-                    This rotates the video one quarter turn to the right. The
-                    top edge of the original image becomes the right edge of the
-                    output. The output dimensions swap: a 1920x1080 source
-                    produces a 1080x1920 output. Use this when a video recorded
-                    in landscape plays as a tall vertical strip.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">180 Degrees</h3>
-                  <p className="text-muted-foreground mt-2">
-                    This rotates the video half a turn and flips the image
-                    upside down. The top edge becomes the bottom edge and the
-                    left edge becomes the right edge. The output dimensions
-                    remain the same as the source. Use this when an action
-                    camera mounted upside down records the sky at the bottom of
-                    the frame.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">270 Degrees Clockwise</h3>
-                  <p className="text-muted-foreground mt-2">
-                    This rotates three quarter turns to the right, which is
-                    equivalent to one quarter turn to the left. The top edge of
-                    the original image becomes the left edge of the output.
-                    Output dimensions swap from the source. Use this when 90
-                    degrees clockwise produces the wrong result and you need the
-                    rotation in the opposite direction.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}

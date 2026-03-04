@@ -542,77 +542,160 @@ export default function ResizeVideoDimensionsPage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* What Resizing Does */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Resizing Actually Does
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Resizing changes the pixel dimensions of your video. Downscaling (4K to 1080p) shrinks the image and usually improves perceived quality. Upscaling (480p to 1080p) makes it larger but doesn't add real detail — it just spreads existing pixels across a bigger canvas.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                The tool recalculates every frame to match your target dimensions. If aspect ratios don't match, the fit mode determines what happens: contain adds black bars, cover crops the edges, or fill stretches the image (which distorts it).
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                This tool changes the pixel dimensions of your video file to a
-                new width and height you specify. It reads your original video
-                frame by frame, calculates new pixel positions for each frame
-                based on your target resolution, and writes a fresh MP4 output
-                at the new size. You can scale down a 4K drone recording to
-                1080p for faster web delivery, or resize a landscape clip to
-                square dimensions for an Instagram post. The entire process runs
-                locally in your browser, so you get results without uploading
-                your file to any cloud server.
+                This runs entirely in your browser. No upload means faster processing and complete privacy. Processing time depends on video length and your computer's speed.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Resizing Helps */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When You Need This</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Meeting platform upload limits</h3>
+                <p className="text-sm text-muted-foreground">
+                  Some platforms cap uploads at 720p or 1080p. If you shot in 4K, downscaling ensures your file gets accepted. Smaller resolution also means faster upload and smaller file size.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Matching clips from different cameras</h3>
+                <p className="text-sm text-muted-foreground">
+                  One camera shot 4K, another shot 1080p. Editing them together causes issues. Resize everything to 1080p before importing to your editor for a smooth timeline.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Landscape to vertical for Reels or TikTok</h3>
+                <p className="text-sm text-muted-foreground">
+                  Set width to 1080 and height to 1920, then use Cover mode. The tool crops the sides to fill the vertical frame. You lose the edges but get a full-screen mobile video.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Reducing file size for email</h3>
+                <p className="text-sm text-muted-foreground">
+                  Email attachments usually cap at 10-25MB. Resizing 1080p to 480p cuts the pixel count by 75%, often enough to fit under the limit. Quality drops but it's shareable.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Custom banner or display sizes</h3>
+                <p className="text-sm text-muted-foreground">
+                  Digital signage or web banners need specific dimensions. Turn off aspect ratio lock and type exact values. Use Fill mode to stretch the video to fit — just know it will distort.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Resolution Reference */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Common Video Resolutions
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-4 font-medium">Name</th>
+                      <th className="text-left py-3 px-4 font-medium">Resolution</th>
+                      <th className="text-left py-3 px-4 font-medium">Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">4K (UHD)</td>
+                      <td className="py-3 px-4">3840 x 2160</td>
+                      <td className="py-3 px-4">High-end production, future-proofing</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">1080p (Full HD)</td>
+                      <td className="py-3 px-4">1920 x 1080</td>
+                      <td className="py-3 px-4">Standard web video, YouTube</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">720p (HD)</td>
+                      <td className="py-3 px-4">1280 x 720</td>
+                      <td className="py-3 px-4">Faster uploads, smaller screens</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">480p (SD)</td>
+                      <td className="py-3 px-4">854 x 480</td>
+                      <td className="py-3 px-4">Email attachments, low bandwidth</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">Vertical (9:16)</td>
+                      <td className="py-3 px-4">1080 x 1920</td>
+                      <td className="py-3 px-4">TikTok, Reels, Shorts</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">Square (1:1)</td>
+                      <td className="py-3 px-4">1080 x 1080</td>
+                      <td className="py-3 px-4">Instagram feed posts</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Resize Your Video</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Load your video and set a target size
-              </h3>
+              <h3 className="relative font-semibold text-xl">Upload your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Open the file picker and select your video. The tool reads its
-                original resolution and fills in the width and height fields
-                automatically. Click a preset button like 1080p or 720p to set a
-                standard size, or type custom pixel values into the width and
-                height fields for a specific display or platform requirement.
+                Select or drag your file. It stays local — no server upload. The tool shows your original resolution so you know what you're working with.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Choose a fit mode for the new frame
-              </h3>
+              <h3 className="relative font-semibold text-xl">Set target dimensions</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                If your target dimensions have a different aspect ratio than
-                your original video, pick a fit mode. Contain keeps the full
-                image and adds black bars to fill empty space. Cover fills the
-                frame completely and trims the edges. Fill stretches the image
-                to match both dimensions exactly, which can distort the content.
+                Click a preset like 1080p or 720p, or type custom width and height. Keep aspect ratio locked to avoid distortion — unless you specifically need to stretch the image.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Resize and download the output
-              </h3>
+              <h3 className="relative font-semibold text-xl">Resize and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the Resize Video button and keep the browser tab open
-                while the encoder works through your video frame by frame. The
-                progress bar updates as each frame is remapped to the new pixel
-                grid. When it reaches 100%, a download button appears and you
-                save the new MP4 directly to your device.
+                Click resize and wait. Processing time depends on video length and resolution. Keep the tab open. When done, preview and download the resized file.
               </p>
             </div>
           </div>

@@ -405,180 +405,163 @@ export default function ChangeVideoFpsPage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* What You Need to Know About Frame Rate */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Frame Rate Actually Does
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Frame rate is the number of still images shown each second. Higher numbers mean smoother motion. Lower numbers create a choppier, more stylized look. The thing people get wrong: changing frame rate doesn't add or remove motion information — it just repackages what's already there.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                When your video looks too choppy or doesn't match the required
-                frame rate for a specific platform, you can change video fps
-                online to fix it directly in your browser. This tool adjusts how
-                many frames your video displays every second without altering
-                its playback speed or sending your file to an external server.
-                By modifying the frame rate locally, you maintain complete
-                privacy while preparing your video for web standard 30fps,
-                cinematic 24fps, or even lowering the fps to reduce the overall
-                file size when bandwidth is tight.
+                When you convert 60fps footage to 24fps, the tool drops frames. When you go from 24fps to 60fps, it duplicates them. Neither creates new motion data. That's why converting won't make your handheld footage look like it was shot on a gimbal — but it will help you match delivery specs or achieve a specific aesthetic.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Frame Rate Conversion Makes Sense */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Real Scenarios Where This Helps</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Your film school project needs 24fps</h3>
+                <p className="text-sm text-muted-foreground">
+                  You recorded at 30fps because that's what your phone defaults to. Now your professor wants 24fps for the "cinematic look." Converting gives you that standard film frame rate. It won't magically add motion blur, but it will match the playback speed expected in cinema contexts.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Gaming highlights for social media</h3>
+                <p className="text-sm text-muted-foreground">
+                  You recorded at 120fps for buttery smooth gameplay, but Instagram Reels wants 30fps. Dropping the frame rate reduces file size and ensures the platform doesn't re-encode your video aggressively. The motion stays clear even after compression.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Animation reference at 12fps</h3>
+                <p className="text-sm text-muted-foreground">
+                  Traditional hand-drawn animation often runs at 12fps — one drawing every two frames at 24fps playback. Converting your reference footage to 12fps lets you study the key poses without getting lost in the in-between motion.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Bandwidth-constrained sharing</h3>
+                <p className="text-sm text-muted-foreground">
+                  Need to send a video over a slow connection? Dropping from 30fps to 15fps cuts the data roughly in half. The video looks choppier, but for instructional content or quick reviews, it's often acceptable.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Matching mixed camera sources</h3>
+                <p className="text-sm text-muted-foreground">
+                  One camera shot at 25fps, another at 30fps. Editing them together causes stutter. Converting both to a common frame rate before importing to your editor prevents timing issues down the line.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Legacy system compatibility</h3>
+                <p className="text-sm text-muted-foreground">
+                  Some older presentation software or digital signage systems demand specific frame rates. Converting to their required 30fps or 25fps prevents playback failures during important moments.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Frame Rate Standards Reference */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Common Frame Rate Standards
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-4 font-medium">Frame Rate</th>
+                      <th className="text-left py-3 px-4 font-medium">Typical Use</th>
+                      <th className="text-left py-3 px-4 font-medium">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">24 fps</td>
+                      <td className="py-3 px-4">Theatrical films, narrative content</td>
+                      <td className="py-3 px-4">The "cinematic" standard since the 1920s</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">25 fps</td>
+                      <td className="py-3 px-4">PAL broadcast (Europe, Australia)</td>
+                      <td className="py-3 px-4">Standard for 50Hz power regions</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">30 fps</td>
+                      <td className="py-3 px-4">NTSC broadcast (US, Japan), web video</td>
+                      <td className="py-3 px-4">Actually 29.97 for broadcast</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">60 fps</td>
+                      <td className="py-3 px-4">Gaming, sports, high-motion content</td>
+                      <td className="py-3 px-4">Smooth motion, larger files</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">120 fps</td>
+                      <td className="py-3 px-4">Slow-motion capture, competitive gaming</td>
+                      <td className="py-3 px-4">Often played back at 24fps for 5x slow motion</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Use This Tool</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Select your video
-              </h3>
+              <h3 className="relative font-semibold text-xl">Load your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the upload button to load your video into the browser.
-                This process happens instantly without any uploading because the
-                tool reads the file directly from your local storage, keeping
-                your media secure and saving you time on slow connections.
+                Click upload or drag your file. The video stays on your device — nothing gets sent to a server. Large files take longer to process because your browser does all the encoding work.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Choose your target FPS
-              </h3>
+              <h3 className="relative font-semibold text-xl">Pick your target FPS</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Use the quick presets or type a custom number between 1 and 120
-                in the input field. Lowering the frame rate will drop frames and
-                can save bandwidth, while increasing it duplicates frames to
-                meet specific platform requirements without actually inventing
-                new motion data.
+                Use the preset buttons for common rates like 24, 30, or 60. Or type a custom value between 1 and 120. If you're unsure, 30fps works for most web platforms.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Process and download
-              </h3>
+              <h3 className="relative font-semibold text-xl">Process and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Hit the process button to start the local re-encoding phase.
-                Once the progress bar finishes, you will see a preview of the
-                adjusted video right next to your original, allowing you to
-                verify the frame rate change before downloading the final file
-                to your device.
+                Hit the button and wait. Processing time depends on video length and your computer's speed. Keep the tab open — closing it cancels the job. When done, preview and download.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Matching cinema standards</h3>
-                <p className="text-sm text-muted-foreground">
-                  If you shot a video at 30fps or 60fps but want it to feel more
-                  like a traditional movie, converting it to 24fps will give it
-                  that natural cinematic look. This is especially helpful for
-                  short films or creative vlog segments.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Reducing file bandwidth</h3>
-                <p className="text-sm text-muted-foreground">
-                  When you need to send a video over a slow connection, dropping
-                  the frame rate down to 15fps or even 10fps severely reduces
-                  the amount of data the video requires. The video will look
-                  choppier, but it becomes much easier to share.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Meeting platform requirements
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Sometimes specific upload portals or legacy software strictly
-                  require a 30fps file to process correctly. Changing your frame
-                  rate to the standard 30fps ensures maximum compatibility
-                  across almost all modern and older systems.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Creating animation references
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  If you are animating a sequence and need a reference video,
-                  lowering the frame rate to 12fps matches the standard timing
-                  for classic hand-drawn animation. This lets you study the
-                  motion exactly as you would draw it.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Standardizing mixed footage</h3>
-                <p className="text-sm text-muted-foreground">
-                  When editing a project using clips from different cameras with
-                  varying frame rates, modifying them all to share the same FPS
-                  prevents playback glitches in your editing timeline. This tool
-                  provides a quick way to unify your media before you start
-                  editing.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">Quick Presets</h3>
-                  <p className="text-muted-foreground mt-2">
-                    These buttons offer the most common frame rates like 24, 30,
-                    and 60, allowing you to instantly set the target without
-                    typing. Use these if you are aiming for standard web,
-                    cinema, or gaming frame rates to save time.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Custom Frame Rate</h3>
-                  <p className="text-muted-foreground mt-2">
-                    This input lets you specify exactly how many frames per
-                    second the output video should have, ranging from 1 to 120.
-                    This is useful for very specific technical requirements,
-                    like matching an unusual legacy format or creating an
-                    extremely low frame rate for a stylistic choice.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}

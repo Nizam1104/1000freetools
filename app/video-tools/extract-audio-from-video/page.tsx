@@ -460,182 +460,155 @@ export default function ExtractAudioFromVideoPage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* What Audio Extraction Does */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Extraction Actually Does
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Video files contain two streams: video and audio. Extraction pulls out the audio stream and discards the video. The result is a standalone audio file — MP3, AAC, or WAV — that plays in any music player.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                The quality depends on the source. If the original video has compressed audio, extraction won't improve it — you're just copying what's already there. If the video has high-quality audio, extracting to WAV preserves it without further compression.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                When you have a great video but only need the sound, you can
-                extract audio from video online to save space and make listening
-                easier. The tool strips away the video track completely and
-                converts the remaining audio into a standalone MP3, AAC, or WAV
-                file. Everything processes directly in your browser without
-                uploading to a server, keeping your original media totally
-                private while extracting exactly what you need.
+                This tool runs locally in your browser. No upload means faster processing and complete privacy. A 10-minute video might take 30 seconds to extract, depending on your computer's speed.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When You'd Extract Audio */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When This Is Useful</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Video podcasts to audio</h3>
+                <p className="text-sm text-muted-foreground">
+                  Video podcasts are huge files. If you just want to listen during your commute, extracting to MP3 cuts the file size by 90% or more. Same content, way less storage.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Lecture recordings for study</h3>
+                <p className="text-sm text-muted-foreground">
+                  Students recording lectures often only need the audio. Extracting lets you listen while walking, exercising, or doing chores — no need to watch a static slide deck.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Music from live performance videos</h3>
+                <p className="text-sm text-muted-foreground">
+                  You recorded a concert but the video is shaky and dark. The audio is what matters. Extract to WAV for the best quality, then add it to your music library.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Voiceover extraction for editing</h3>
+                <p className="text-sm text-muted-foreground">
+                  Need to clean up dialogue or add effects? Extract the audio, edit it in your favorite audio software, then sync it back to video if needed.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Background music from stock videos</h3>
+                <p className="text-sm text-muted-foreground">
+                  Found a royalty-free video with great music? Extract the audio track and use it in your own projects. Just verify the license covers audio-only use.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Audio Format Guide */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Choosing the Right Format
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-4 font-medium">Format</th>
+                      <th className="text-left py-3 px-4 font-medium">Best For</th>
+                      <th className="text-left py-3 px-4 font-medium">File Size</th>
+                      <th className="text-left py-3 px-4 font-medium">Quality</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">MP3</td>
+                      <td className="py-3 px-4">Universal compatibility</td>
+                      <td className="py-3 px-4">Small</td>
+                      <td className="py-3 px-4">Good (lossy)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">AAC (M4A)</td>
+                      <td className="py-3 px-4">Apple devices, streaming</td>
+                      <td className="py-3 px-4">Small</td>
+                      <td className="py-3 px-4">Better than MP3 at same bitrate</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">WAV</td>
+                      <td className="py-3 px-4">Professional editing, archiving</td>
+                      <td className="py-3 px-4">Large (10x MP3)</td>
+                      <td className="py-3 px-4">Uncompressed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-muted-foreground mt-6 text-sm">
+                For most uses, MP3 at 192-256 Kbps is fine. Use WAV only if you plan to edit the audio further or need archival quality.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Extract Audio</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Choose your video
-              </h3>
+              <h3 className="relative font-semibold text-xl">Upload your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Select the video file you want to process from your device using
-                the upload button. The file loads instantly into the preview
-                player because it never leaves your computer, ensuring fast
-                performance and total privacy. You can verify you have the right
-                clip before moving forward.
+                Select or drag your video file. It stays on your device — no server upload. The preview lets you confirm it's the right file before extracting.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Set format and bitrate
-              </h3>
+              <h3 className="relative font-semibold text-xl">Choose format and quality</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Choose your preferred audio format based on your needs, whether
-                that is MP3 for universal playback or WAV for uncompressed
-                quality. Next, adjust the audio bitrate anywhere from 128 Kbps
-                to 320 Kbps, keeping in mind that higher bitrates sound better
-                but create slightly larger files. This gives you exact control
-                over the audio fidelity.
+                Pick MP3 for compatibility, AAC for better quality at smaller sizes, or WAV for uncompressed audio. Select bitrate: 128 Kbps for speech, 192-256 Kbps for music, 320 Kbps for maximum quality.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Extract and save
-              </h3>
+              <h3 className="relative font-semibold text-xl">Extract and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the extract button to begin separating the audio track
-                from the video stream locally. Once the progress bar reaches
-                completion, you will see a success message and a download button
-                to save the new audio file straight to your device.
+                Click extract and wait for processing to finish. The audio file downloads when ready. Keep the tab open during processing — closing it cancels the job.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Saving podcast episodes</h3>
-                <p className="text-sm text-muted-foreground">
-                  If you have downloaded a lengthy video podcast but prefer
-                  listening while commuting, extracting the audio track gives
-                  you a much smaller file to organize on your phone. You save
-                  storage space and battery life by dropping the unnecessary
-                  video stream.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Isolating background music</h3>
-                <p className="text-sm text-muted-foreground">
-                  When you find a royalty-free video with a great backing track
-                  that you want to reuse, isolating just the audio gives you a
-                  clean sound file. You can easily drag the resulting MP3 or WAV
-                  directly into your own video editing timeline.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Creating audio study notes</h3>
-                <p className="text-sm text-muted-foreground">
-                  Students recording long lecture videos often find that they
-                  only really need to listen to the professor's voice to review
-                  the material. Converting the lecture to an audio file makes it
-                  easier to review the notes while doing chores or exercising.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Extracting voiceovers for translation
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  If you need to transcribe or translate what someone is saying
-                  in a video, having the audio track separated makes the process
-                  simpler. You can load just the dialogue into transcription
-                  software without loading a heavy video file alongside it.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Archiving live music recordings
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  When you record a live concert on your phone, the video is
-                  often shaky or dark, but the music is what truly matters.
-                  Extracting the music into a high-quality WAV file lets you
-                  preserve the performance and add it to your normal music
-                  library.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">Audio Format Selection</h3>
-                  <p className="text-muted-foreground mt-2">
-                    This setting determines exactly what kind of file you get at
-                    the end of the process. MP3 is compatible with practically
-                    every device on earth, AAC offers slightly clearer sound at
-                    the same file size, and WAV provides completely uncompressed
-                    audio for professional editing.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Audio Bitrate</h3>
-                  <p className="text-muted-foreground mt-2">
-                    The bitrate controls the audio quality and file size of
-                    compressed formats like MP3 and AAC by changing how much
-                    data is used per second of audio. 128 Kbps is perfectly fine
-                    for basic speech, 192 Kbps is great for standard music
-                    listening, and 320 Kbps should be used when you want the
-                    highest quality possible.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}
