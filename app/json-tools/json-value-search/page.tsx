@@ -375,6 +375,46 @@ export default function JsonValueSearchPage() {
             </Card>
           )}
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Search and Filter Tool</h2>
+          <p className="text-muted-foreground mb-6">
+            Finding specific values in large JSON files means scrolling through hundreds of lines manually. Whether debugging API responses or exploring unfamiliar data structures, locating keys or values quickly saves time. This JSON Search tool scans your entire JSON and highlights all matches with their paths.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the Input area. Enter a search term in the Search Query field. Choose to search in Keys Only, Values Only, or Both. Click Search and see matching results in a table showing path, key, value, and match type.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Results highlight the matched text for easy identification. Toggle between Table and JSON output formats. Use the Case sensitive checkbox for exact matching. Copy results to clipboard for further analysis.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Developers debugging API issues need to find specific error codes or IDs buried in large responses. QA engineers verifying test data can quickly locate expected values across complex nested structures.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool performs text-based substring matching, not pattern matching. For regex searches or complex queries, use dedicated JSON query languages like JSONPath. The search works best for finding known strings or numbers.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Does it search nested objects?</p><p className="text-muted-foreground">Yes. The search recursively scans all nested objects and arrays, showing full paths to matches.</p></div>
+            <div><p className="font-medium mb-1">Can I search only keys?</p><p className="text-muted-foreground">Yes. Use the Search In dropdown to select Keys Only, Values Only, or Both.</p></div>
+            <div><p className="font-medium mb-1">Is the search case-sensitive?</p><p className="text-muted-foreground">By default no. Check the Case sensitive box for exact case matching.</p></div>
+            <div><p className="font-medium mb-1">What does match type mean?</p><p className="text-muted-foreground">Match type shows whether the term was found in the key, value, or both for that entry.</p></div>
+            <div><p className="font-medium mb-1">Can I export search results?</p><p className="text-muted-foreground">Yes. Click Copy to export all matches as JSON for further processing.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-path-finder" className="text-primary hover:underline">JSON Path Finder</a> – Extract values using JSONPath expressions</li>
+            <li><a href="/json-tools/json-viewer" className="text-primary hover:underline">JSON Viewer</a> – Interactive tree view for exploring JSON</li>
+            <li><a href="/json-tools/json-filter" className="text-primary hover:underline">JSON Filter</a> – Filter arrays based on conditions</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -195,6 +195,46 @@ export default function JsonToExcelConverterPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to Excel Converter</h2>
+          <p className="text-muted-foreground mb-6">
+            Sharing JSON data with non-technical stakeholders often means converting it to a familiar spreadsheet format. Manually copying values into Excel is tedious for large datasets. This JSON to Excel converter creates XLSX files directly in your browser with proper column headers and row data.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste a JSON array into the Input area. Each object in the array becomes a row in the spreadsheet. Set the Sheet Name if you want something other than the default. Click Download Excel and the file is generated instantly using the XLSX library.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Nested objects are flattened with dot notation for column names. Arrays within objects are converted to comma-separated strings. The Output Status panel confirms how many rows and columns were created in your spreadsheet.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Data analysts receiving JSON exports from APIs need to analyze the data in Excel. Product managers want to review feature flags or configuration data in a familiar spreadsheet view. This tool bridges the gap between developer formats and business users.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Very wide JSON objects with many unique keys create spreadsheets with many columns. Deeply nested structures may produce long column names. For complex data, consider flattening your JSON structure before conversion.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Does it handle nested objects?</p><p className="text-muted-foreground">Yes. Nested properties are flattened using dot notation like address.city for column headers.</p></div>
+            <div><p className="font-medium mb-1">What about arrays inside objects?</p><p className="text-muted-foreground">Array values are joined into comma-separated strings within a single cell.</p></div>
+            <div><p className="font-medium mb-1">Can I convert a single JSON object?</p><p className="text-muted-foreground">Yes. Single objects are wrapped in an array and converted as a one-row spreadsheet.</p></div>
+            <div><p className="font-medium mb-1">Is the Excel file generated online?</p><p className="text-muted-foreground">No. The XLSX file is created entirely in your browser using the xlsx library. No data is uploaded.</p></div>
+            <div><p className="font-medium mb-1">What Excel version is supported?</p><p className="text-muted-foreground">The XLSX format works with Excel 2007 and later, plus compatible tools like Google Sheets and LibreOffice.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Convert JSON to comma-separated values</li>
+            <li><a href="/json-tools/json-to-markdown-table" className="text-primary hover:underline">JSON to Markdown Table</a> – Create Markdown tables from JSON arrays</li>
+            <li><a href="/json-tools/csv-to-json" className="text-primary hover:underline">CSV to JSON</a> – Convert spreadsheet data to JSON format</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

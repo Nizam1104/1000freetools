@@ -243,6 +243,46 @@ export default function JsonStepByStepParserPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Step-by-Step Parser</h2>
+          <p className="text-muted-foreground mb-6">
+            Understanding how JSON parsing works helps you debug syntax errors and learn the structure of complex data. Seeing each token identified and categorized makes the parsing process transparent. This JSON Step-by-Step Parser breaks down your JSON into individual tokens with type and position information.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Enter JSON in the Input area or click Load Sample for a quick example. Click Parse Step by Step and the tool scans through your JSON character by character, identifying strings, numbers, booleans, null values, and punctuation marks.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Each token displays with its step number, token value, type classification, character position, and parser state. The color-coded token types make it easy to distinguish strings from numbers and punctuation at a glance.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Students learning JSON syntax benefit from seeing how parsers identify different token types. Developers debugging tricky parsing errors can use this to understand exactly where the parser encounters problems in their JSON structure.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This is an educational tool that shows basic tokenization. Real-world JSON parsers handle additional edge cases and Unicode escapes. Use this for learning fundamentals, not for production parsing logic.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">What token types are recognized?</p><p className="text-muted-foreground">Strings, Numbers, Booleans (true/false), Null, Punctuation (brackets, braces, colons, commas), and Unknown for unrecognized content.</p></div>
+            <div><p className="font-medium mb-1">What does the State column show?</p><p className="text-muted-foreground">State indicates the current parsing context like OBJECT when inside curly braces or ARRAY when inside square brackets.</p></div>
+            <div><p className="font-medium mb-1">How are positions counted?</p><p className="text-muted-foreground">Position shows the character index in the input string where the token begins, starting from 0.</p></div>
+            <div><p className="font-medium mb-1">Does it handle escaped characters?</p><p className="text-muted-foreground">Yes. Escaped quotes and backslashes inside strings are recognized as part of the string token.</p></div>
+            <div><p className="font-medium mb-1">Can I export the token list?</p><p className="text-muted-foreground">Yes. Click the Copy button to copy all tokens as JSON for further analysis or documentation.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Check JSON for syntax errors</li>
+            <li><a href="/json-tools/json-parser" className="text-primary hover:underline">JSON Parser</a> – Parse and analyze JSON structure</li>
+            <li><a href="/json-tools/json-path" className="text-primary hover:underline">JSON Path Finder</a> – Extract values using path expressions</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -284,6 +284,46 @@ export default function JsonToJavaPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to Java POJO Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            Java developers know the drill: receive a JSON API spec and spend hours writing POJO classes with private fields, getters, and setters. This JSON to Java generator automates that boilerplate work, creating properly typed classes with standard JavaBean conventions.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the Input area. Set the Class Name and optional Package name. Click Generate POJO and the tool creates a Java class with private fields, public getters and setters, and proper types like Integer, Double, Boolean, and String.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Nested objects generate separate classes with appropriate names. Arrays become List types with the necessary import statement included. The output is ready to copy into your Maven or Gradle project.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Backend developers integrating with REST APIs need model classes for JSON deserialization with Jackson or Gson. This tool quickly generates those classes so you can focus on service logic instead of repetitive field definitions.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generator creates basic POJOs without annotations. For production use, you may want to add @JsonProperty, @JsonIgnore, or validation annotations based on your framework requirements.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Are primitive types boxed?</p><p className="text-muted-foreground">Yes. Types like int, double, and boolean use boxed versions (Integer, Double, Boolean) to handle null values from JSON.</p></div>
+            <div><p className="font-medium mb-1">Does it handle nested classes?</p><p className="text-muted-foreground">Yes. Each nested object becomes a separate class with getters and setters following the same pattern.</p></div>
+            <div><p className="font-medium mb-1">What about List imports?</p><p className="text-muted-foreground">The output includes import java.util.List at the top for array field types.</p></div>
+            <div><p className="font-medium mb-1">Can I add Jackson annotations?</p><p className="text-muted-foreground">Not automatically. The generator creates plain POJOs. Add @JsonProperty annotations manually if needed for custom field mapping.</p></div>
+            <div><p className="font-medium mb-1">Is the package required?</p><p className="text-muted-foreground">No. Leave the Package field empty and the class will be in the default package. Enter a package name for proper namespacing.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-to-csharp" className="text-primary hover:underline">JSON to C#</a> – Generate C# classes with properties</li>
+            <li><a href="/json-tools/json-to-go" className="text-primary hover:underline">JSON to Go</a> – Create Go structs with JSON tags</li>
+            <li><a href="/json-tools/json-to-typescript" className="text-primary hover:underline">JSON to TypeScript</a> – Generate TypeScript interfaces from JSON</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

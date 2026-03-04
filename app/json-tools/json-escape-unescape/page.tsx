@@ -195,33 +195,60 @@ export default function JsonEscapeUnescapePage() {
           )}
         </div>
 
-        {/* Info */}
-        <Card className="mt-6">
-          <CardContent className="p-4">
-            <h3 className="text-sm font-semibold mb-2">
-              {mode === "escape" ? "Characters that will be escaped:" : "Characters that will be unescaped:"}
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {mode === "escape" ? (
-                <>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">\ → \\</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">" → \"</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">newline → \n</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">tab → \t</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">return → \r</code>
-                </>
-              ) : (
-                <>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">\\ → \</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">\" → "</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">\n → newline</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">\t → tab</code>
-                  <code className="px-2 py-1 bg-muted rounded text-sm">\r → return</code>
-                </>
-              )}
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Escape & Unescape Tool</h2>
+          <p className="text-muted-foreground mb-6">
+            Special characters in strings can break JSON syntax if not properly escaped. This tool escapes newlines, quotes, tabs, and other special characters for safe JSON embedding, or unescapes them back to readable text.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Select Escape or Unescape mode using the tabs. Enter your text and click the process button. Escaping converts special characters to their backslash sequences, while unescaping reverses the process.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The info card at the bottom shows which characters will be processed. Use the Swap button to quickly toggle between modes and test round-trip conversion.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You need to include user-generated text with special characters inside a JSON string value. Escape it here first to ensure the JSON remains valid and parseable.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This handles common escape sequences but doesn't validate full JSON syntax. For complete JSON validation, use a dedicated JSON validator tool alongside this one.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">Which characters are escaped?</p>
+              <p className="text-muted-foreground">Backslash, double quotes, newlines, tabs, carriage returns, form feeds, and backspaces are all escaped with backslash sequences.</p>
             </div>
-          </CardContent>
-        </Card>
+            <div>
+              <p className="font-medium mb-1">When should I escape JSON strings?</p>
+              <p className="text-muted-foreground">Escape strings before embedding them in JSON, JavaScript code, or configuration files where special characters could cause syntax errors.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I unescape any escaped string?</p>
+              <p className="text-muted-foreground">Yes, strings escaped by this tool can be unescaped back to the original. Invalid escape sequences may cause errors during unescaping.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What about Unicode characters?</p>
+              <p className="text-muted-foreground">This tool handles basic escape sequences. Unicode characters are preserved as-is unless they require escaping for JSON compatibility.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How do I download the result?</p>
+              <p className="text-muted-foreground">Use the Download button to save as a text file, or Copy to paste directly into your code or configuration.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-encode-decode" className="text-primary hover:underline">JSON Encode & Decode</a> – URI encode/decode</li>
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Validate JSON syntax</li>
+            <li><a href="/json-tools/json-stringifier" className="text-primary hover:underline">JSON Stringifier</a> – Convert values to JSON strings</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

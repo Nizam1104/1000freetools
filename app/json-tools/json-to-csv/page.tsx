@@ -307,6 +307,67 @@ export default function JsonToCsvConverterPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON to CSV Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          CSV format is universal for data exchange with spreadsheets and databases. This tool converts JSON arrays to CSV with automatic header detection, custom delimiters, and proper escaping for special characters.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How it works</h3>
+        <p className="text-muted-foreground mb-2">
+          The converter extracts all unique keys from your JSON array to create column headers. Each object becomes a row with values properly escaped for CSV format compatibility.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Enable Flatten Nested to convert nested objects into dot-notation columns. Choose your delimiter from comma, semicolon, pipe, or tab based on your target application's requirements.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You have API data in JSON that needs to go into Excel for analysis or reporting. Convert to CSV and open directly in your spreadsheet application with proper column headers.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          CSV works best with flat arrays of similar objects. Highly nested or irregular data structures may produce many empty cells or require preprocessing for clean output.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">How are nested objects handled?</p>
+            <p className="text-muted-foreground">Without flattening, nested objects become JSON strings. Enable Flatten Nested to create separate columns for each nested property.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What delimiter should I use?</p>
+            <p className="text-muted-foreground">Comma is standard but conflicts with data containing commas. Semicolon works well in European locales. Tab is great for Excel imports.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Are special characters escaped?</p>
+            <p className="text-muted-foreground">Yes, values containing the delimiter, quotes, or newlines are properly quoted and escaped according to CSV standards.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I exclude the header row?</p>
+            <p className="text-muted-foreground">Yes, uncheck Include Headers to output data rows only. This is useful when appending to existing CSV files with headers.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I download the CSV?</p>
+            <p className="text-muted-foreground">Yes. Click Download to save as a .csv file or Copy to paste directly into your spreadsheet or database import tool.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-tsv" className="text-primary hover:underline">JSON to TSV</a> – Tab-separated values format
+          </li>
+          <li>
+            <a href="/json-tools/json-to-excel" className="text-primary hover:underline">JSON to Excel</a> – Direct XLSX export
+          </li>
+          <li>
+            <a href="/json-tools/csv-to-json" className="text-primary hover:underline">CSV to JSON</a> – Convert CSV back to JSON
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

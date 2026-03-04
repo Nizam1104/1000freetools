@@ -404,6 +404,46 @@ export default function JsonViewerPage() {
             </Card>
           )}
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Viewer</h2>
+          <p className="text-muted-foreground mb-6">
+            Raw JSON in text form is hard to navigate, especially with deep nesting and large arrays. A visual tree view with expand and collapse controls makes understanding structure much easier. This JSON Viewer displays your data as an interactive tree with syntax highlighting and search.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste JSON into the Input area and click Load JSON. The tree view shows objects and arrays with expand arrows. Click any parent node to expand or collapse its children. Use the search box to find keys or values instantly.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Switch between Tree View and Raw View using the toggle buttons. Expand All and Collapse All buttons help navigate large structures. Copy and Download buttons let you save the original JSON. Color-coded types make strings, numbers, and booleans easy to distinguish.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Developers exploring unfamiliar API responses benefit from visual structure overview. Debugging nested configuration files becomes easier when you can collapse sections you are not currently examining.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Very large JSON files with thousands of nodes may cause browser slowdowns when fully expanded. Use the search feature to find specific values without expanding everything. For massive files, consider a desktop JSON editor.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">How do I expand all nodes?</p><p className="text-muted-foreground">Click the Expand All button above the tree to open every nested level at once.</p></div>
+            <div><p className="font-medium mb-1">Can I search within the tree?</p><p className="text-muted-foreground">Yes. Type in the search box to filter and highlight matching keys and values.</p></div>
+            <div><p className="font-medium mb-1">What colors represent what types?</p><p className="text-muted-foreground">Strings are green, numbers are blue, booleans are purple, and null is gray.</p></div>
+            <div><p className="font-medium mb-1">Can I edit values in the tree?</p><p className="text-muted-foreground">No. The tree view is read-only. Edit the raw JSON in the Input area and reload.</p></div>
+            <div><p className="font-medium mb-1">Does it preserve key order?</p><p className="text-muted-foreground">Yes. Keys are displayed in the order they appear in the original JSON.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-formatter" className="text-primary hover:underline">JSON Formatter</a> – Beautify JSON with proper indentation</li>
+            <li><a href="/json-tools/json-search" className="text-primary hover:underline">JSON Search</a> – Find values in JSON by key or content</li>
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Check JSON for syntax errors</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

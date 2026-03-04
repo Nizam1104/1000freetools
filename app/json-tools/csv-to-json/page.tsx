@@ -210,6 +210,54 @@ export default function CsvToJsonConverterPage() {
           </p>
         </div>
 
+        {/* The Problem */}
+        <Card className="mb-6 border-dashed">
+          <CardContent className="p-5">
+            <h2 className="text-lg font-semibold mb-3">The Challenge</h2>
+            <p className="text-muted-foreground mb-4">
+              You exported data from a spreadsheet or database as CSV but your application needs JSON. Manually restructuring the data means adding quotes, commas, and braces for every row. This tool parses your CSV and converts it to a JSON array of objects using the header row as keys.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-muted/50 rounded-lg p-3">
+                <h3 className="font-medium text-sm mb-2">Input Support:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Comma-separated values</li>
+                  <li>• Semicolon delimiters</li>
+                  <li>• Tab-separated values</li>
+                  <li>• Pipe-delimited files</li>
+                </ul>
+              </div>
+              <div className="bg-muted/50 rounded-lg p-3">
+                <h3 className="font-medium text-sm mb-2">Features:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Auto-detect delimiter</li>
+                  <li>• Type inference</li>
+                  <li>• Quote handling</li>
+                  <li>• File upload support</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* How It Works - Numbered Steps */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">Conversion Steps</h2>
+          <div className="flex flex-col md:flex-row gap-4">
+            {[
+              { num: 1, title: "Paste CSV", desc: "Enter CSV data or upload a file" },
+              { num: 2, title: "Configure", desc: "Set delimiter and output format" },
+              { num: 3, title: "Convert", desc: "Get JSON array output instantly" }
+            ].map((step) => (
+              <div key={step.num} className="flex-1 bg-card border rounded-lg p-4 text-center">
+                <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mx-auto mb-2">{step.num}</div>
+                <h3 className="font-medium mb-1">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Controls */}
         <Card className="mb-6">
           <CardContent className="p-4">
@@ -348,6 +396,67 @@ export default function CsvToJsonConverterPage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About CSV to JSON Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          CSV files from spreadsheets and databases need to become JSON for web applications. This converter handles the transformation automatically, detecting delimiters and converting data types. Export your CSV data as JSON arrays or objects keyed by the first column.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the conversion works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your CSV data in the input box. The tool auto-detects the delimiter or you can specify it manually. Choose your output format: array of objects or object keyed by first column. Click Convert and the CSV becomes structured JSON.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The first row is treated as headers. Values are converted to appropriate types: numbers become numbers, true/false become booleans. Empty cells become null. Use Copy or Download to export the result.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You exported data from Excel or a database and need it in JSON format for your app. Or you're importing spreadsheet data into a web application. This tool also helps when migrating from legacy systems that use CSV.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          CSV has limitations compared to JSON. It can't represent nested structures or arrays within cells. For complex data, consider exporting directly to JSON from your source system.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">Does this handle quoted fields?</p>
+            <p className="text-muted-foreground">Yes, CSV fields with commas or newlines should be quoted. The parser handles standard CSV quoting correctly.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What delimiters are supported?</p>
+            <p className="text-muted-foreground">Comma, semicolon, tab, pipe, and custom delimiters. Auto-detect usually figures it out from your data.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">How are data types handled?</p>
+            <p className="text-muted-foreground">Numbers and booleans are auto-converted. Strings stay as strings. Empty values become null in the JSON output.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I convert JSON back to CSV?</p>
+            <p className="text-muted-foreground">Yes, use our JSON to CSV tool for the reverse conversion. Flat JSON arrays convert best to CSV format.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What about CSV files with no headers?</p>
+            <p className="text-muted-foreground">The first row is always treated as headers. Add a header row to your CSV or use array output format.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Convert JSON arrays to CSV format
+          </li>
+          <li>
+            <a href="/json-tools/json-to-excel" className="text-primary hover:underline">JSON to Excel</a> – Export JSON data to Excel spreadsheets
+          </li>
+          <li>
+            <a href="/json-tools/json-to-tsv" className="text-primary hover:underline">JSON to TSV</a> – Convert JSON to tab-separated values
+          </li>
+        </ul>
       </div>
     </div>
   );

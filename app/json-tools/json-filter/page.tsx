@@ -241,6 +241,61 @@ export default function JsonFilterPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Filter Tool</h2>
+          <p className="text-muted-foreground mb-6">
+            Filtering JSON arrays manually means writing code for every different condition. This tool lets you filter arrays using a simple UI with conditions like equals, contains, greater than, and more, no coding required.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste a JSON array, enter the key path to filter on (like "city" or "user.age"), select a condition, and enter the compare value. Click Filter to see matching items.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Supported conditions include equals, contains, greater than, less than, starts with, and ends with. The filtered result shows the count and full JSON of matching items.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You have a list of users, products, or records and need to find items matching specific criteria. Filter here to get just the subset you need for testing or analysis.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This filters at one level using a single condition. For complex multi-condition filtering or nested property filtering, you'd need to write custom code.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What kind of input does this accept?</p>
+              <p className="text-muted-foreground">Only JSON arrays at the root level. Objects or other types will show an error. Wrap your data in [] if needed.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How do I filter nested properties?</p>
+              <p className="text-muted-foreground">Use dot notation like "user.profile.city" to access nested values. Each dot moves one level deeper into the object.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I use multiple conditions?</p>
+              <p className="text-muted-foreground">No, this tool applies one condition at a time. For multiple conditions, run filters sequentially or use a more advanced tool.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does greater than work with strings?</p>
+              <p className="text-muted-foreground">Greater than and less than compare numerically. Non-numeric values won't match these conditions correctly.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How do I get the filtered data?</p>
+              <p className="text-muted-foreground">Use Copy to paste into your code or Download to save as a JSON file. Both options appear after filtering.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/jmespath-query" className="text-primary hover:underline">JMESPath Query Tool</a> – Advanced JSON queries</li>
+            <li><a href="/json-tools/json-extract-subjson" className="text-primary hover:underline">JSON Extract Sub-JSON</a> – Extract by path</li>
+            <li><a href="/json-tools/json-map-reduce" className="text-primary hover:underline">JSON Map Reduce</a> – Transform arrays</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

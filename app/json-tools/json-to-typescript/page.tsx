@@ -268,6 +268,46 @@ export default function JsonToTypeScriptPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to TypeScript Interface Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            TypeScript developers need interface definitions matching their API data structures. Writing interfaces by hand from JSON samples is tedious and error-prone. This JSON to TypeScript generator creates properly typed interfaces with optional fields and nested type definitions.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the Input area. Set the Interface Name for the root type. Optionally check Use type instead of interface for type alias syntax. Click Generate Interface and get TypeScript definitions with inferred types.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            String, number, boolean, and null types are inferred from values. Arrays generate typed array syntax like string[] or Type[]. Nested objects create separate interface definitions. Download saves the result as a .ts file.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Frontend developers consuming REST APIs need type-safe interfaces for API responses. Teams sharing TypeScript types across projects benefit from consistent interface generation from canonical JSON examples.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generator marks fields as optional based on inference. For strict type requirements, review and adjust optionality manually. Union types from mixed array values are generated but may need refinement.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Are fields optional or required?</p><p className="text-muted-foreground">Fields are marked optional with ? based on inference. Adjust manually based on your API guarantees.</p></div>
+            <div><p className="font-medium mb-1">How are arrays typed?</p><p className="text-muted-foreground">Arrays use the inferred element type like string[] or create a nested interface for object arrays.</p></div>
+            <div><p className="font-medium mb-1">What about mixed type arrays?</p><p className="text-muted-foreground">Mixed arrays generate union types like (string | number)[] to accommodate all observed types.</p></div>
+            <div><p className="font-medium mb-1">Can I use type instead of interface?</p><p className="text-muted-foreground">Yes. Check the Use type option to generate type aliases instead of interface declarations.</p></div>
+            <div><p className="font-medium mb-1">Does it handle deeply nested structures?</p><p className="text-muted-foreground">Yes. Each nesting level generates a separate interface with appropriate naming.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-to-csharp" className="text-primary hover:underline">JSON to C#</a> – Generate C# classes from JSON</li>
+            <li><a href="/json-tools/json-to-go" className="text-primary hover:underline">JSON to Go</a> – Create Go structs with JSON tags</li>
+            <li><a href="/json-tools/typescript-to-json" className="text-primary hover:underline">TypeScript to JSON</a> – Convert TypeScript types to sample JSON</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

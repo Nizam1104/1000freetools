@@ -206,6 +206,67 @@ export default function JsonFetchCodeGeneratorPage() {
           </Card>
         )}
       </div>
+
+      {/* SEO Content */}
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON Fetch Code Generator</h2>
+        <p className="text-muted-foreground mb-6">
+          Writing fetch requests with proper error handling is repetitive. This tool generates ready-to-use Fetch API code from your request configuration, including headers, body, and error handling boilerplate.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How it works</h3>
+        <p className="text-muted-foreground mb-2">
+          Select your HTTP method, enter the URL, and optionally add headers and request body as JSON. The generator creates complete fetch code with response validation and error handling.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The generated code includes proper Content-Type headers for POST/PUT requests and handles non-OK responses by throwing descriptive errors for easier debugging.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You need to quickly scaffold API calls in a new project. Generate the fetch code here and paste it into your service layer instead of typing it from scratch.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          This generates basic fetch code without advanced features like timeouts, retries, or request cancellation. For production use, consider wrapping fetch in a more robust HTTP client.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">Which HTTP methods are supported?</p>
+            <p className="text-muted-foreground">GET, POST, PUT, PATCH, DELETE, and HEAD are all supported. The generator adjusts the code based on method requirements.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">How are headers handled?</p>
+            <p className="text-muted-foreground">Enter headers as JSON. Content-Type is automatically added for POST/PUT requests with a body. Authorization headers are commonly included here.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does it handle authentication?</p>
+            <p className="text-muted-foreground">Add your auth token in the headers section as {"{ \"Authorization\": \"Bearer token\" }"}. The generator includes it in the fetch request.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What error handling is included?</p>
+            <p className="text-muted-foreground">The code checks response.ok and throws an error with the HTTP status for failed requests. The catch block logs the error for debugging.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I use this with async/await?</p>
+            <p className="text-muted-foreground">The generated code uses .then() chains. You can easily convert it to async/await syntax or request that format in a future update.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-axios-code-generator" className="text-primary hover:underline">JSON Axios Code Generator</a> – Generate Axios request code
+          </li>
+          <li>
+            <a href="/json-tools/json-api-formatter" className="text-primary hover:underline">JSON API Formatter</a> – Standardize API responses
+          </li>
+          <li>
+            <a href="/json-tools/json-api-response-generator" className="text-primary hover:underline">JSON API Response Generator</a> – Mock API responses
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

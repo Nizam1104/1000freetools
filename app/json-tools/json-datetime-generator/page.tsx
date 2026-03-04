@@ -210,6 +210,67 @@ export default function JsonDatetimeGeneratorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Date Time Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            Generating consistent date-time values for test data or API mocks can be tedious. This tool creates properly formatted timestamps in JSON format with support for ISO 8601, UTC strings, Unix timestamps, and custom patterns.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Select your preferred date format and specify how many values you need. The generator creates timestamps starting from the current moment, incrementing by one day for each additional item.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Custom format support lets you define patterns like YYYY-MM-DD HH:mm:ss for specific requirements. The tool replaces pattern tokens with actual date components to match your expected output format.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're building a frontend that expects API responses with timestamp fields. Generate realistic date values for mock data without writing date formatting code or relying on external libraries.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool generates client-side timestamps based on your local time. For server-side date generation or timezone-specific requirements, you'll need backend logic with proper timezone handling.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What is ISO 8601 format?</p>
+              <p className="text-muted-foreground">ISO 8601 is an international standard for date-time representation, formatted as YYYY-MM-DDTHH:mm:ss.sssZ. It's widely used in APIs and databases for unambiguous timestamps.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I generate past dates?</p>
+              <p className="text-muted-foreground">This tool generates future dates starting from today. For past dates, you'd need to modify the output manually or use a more advanced date generation tool.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What custom format tokens are supported?</p>
+              <p className="text-muted-foreground">Use YYYY for four-digit year, YY for two-digit year, MM for month, DD for day, HH for hours, mm for minutes, ss for seconds, and SSS for milliseconds.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Is the timezone included?</p>
+              <p className="text-muted-foreground">ISO 8601 format includes the Z suffix indicating UTC. UTC String shows the full timezone name. Custom and timestamp formats don't include explicit timezone information.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I use this for database seeding?</p>
+              <p className="text-muted-foreground">Yes, the generated JSON can be copied and used for database seeding scripts. Just ensure the date format matches your database's expected timestamp format.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a href="/json-tools/json-array-generator" className="text-primary hover:underline">JSON Array Generator</a> – Generate arrays with configurable items
+            </li>
+            <li>
+              <a href="/json-tools/json-random-object" className="text-primary hover:underline">JSON Random Object</a> – Create random JSON test data
+            </li>
+            <li>
+              <a href="/json-tools/json-api-response-generator" className="text-primary hover:underline">JSON API Response Generator</a> – Mock complete API responses
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

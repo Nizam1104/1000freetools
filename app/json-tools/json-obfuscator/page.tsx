@@ -220,6 +220,46 @@ export default function JsonObfuscatorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Obfuscator</h2>
+          <p className="text-muted-foreground mb-6">
+            Sharing JSON data containing sensitive information can be risky. Whether you need to share logs with a colleague or publish sample data publicly, exposed emails, IDs, and private values create security concerns. This JSON Obfuscator replaces real values with safe placeholders while keeping the structure intact for debugging or demonstration purposes.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the input area and choose your obfuscation settings. Check "Obfuscate Keys" to replace key names with random 8-character strings, or "Obfuscate Values" to mask string values with X characters and randomize numbers and booleans.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The "Minify Output" option removes whitespace for compact results. Click the Obfuscate button and get your sanitized JSON instantly. Use the Copy or Download buttons to save your obfuscated output.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Developers often need to share API responses or configuration files for troubleshooting without exposing customer data, API keys, or internal identifiers. This tool helps create safe examples for documentation, Stack Overflow questions, or team communication.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Note that obfuscation is not encryption. The structure remains visible, and determined attackers could potentially reverse patterns. For true security, use proper encryption methods. This tool is best for casual data protection and privacy.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Does obfuscation preserve data types?</p><p className="text-muted-foreground">Yes. Strings become X characters, numbers become random numbers, and booleans stay boolean. The JSON structure and types remain valid.</p></div>
+            <div><p className="font-medium mb-1">Can I obfuscate only keys or only values?</p><p className="text-muted-foreground">Absolutely. Use the checkboxes to select Obfuscate Keys only, Obfuscate Values only, or both options together.</p></div>
+            <div><p className="font-medium mb-1">Is my data sent to a server?</p><p className="text-muted-foreground">No. All obfuscation happens in your browser. Your JSON never leaves your device.</p></div>
+            <div><p className="font-medium mb-1">What happens to nested objects?</p><p className="text-muted-foreground">The obfuscator recursively processes all nested objects and arrays, applying your selected options at every level.</p></div>
+            <div><p className="font-medium mb-1">Can I get consistent obfuscated output?</p><p className="text-muted-foreground">No. Random values are generated each time. For reproducible results, you would need a seeded random generator.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-minifier" className="text-primary hover:underline">JSON Minifier</a> – Remove whitespace and comments from JSON</li>
+            <li><a href="/json-tools/json-formatter" className="text-primary hover:underline">JSON Formatter</a> – Beautify and format JSON with proper indentation</li>
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Validate JSON syntax and structure</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

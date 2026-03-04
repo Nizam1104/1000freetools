@@ -128,6 +128,66 @@ export default function JsonJwtDecoderPage() {
           </p>
         </div>
 
+        {/* Understanding JWTs */}
+        <Card className="mb-6 bg-gradient-to-br from-indigo-500/10 to-pink-500/10 border-0">
+          <CardContent className="p-5">
+            <h2 className="text-lg font-semibold mb-3">What is a JWT?</h2>
+            <p className="text-muted-foreground mb-4">
+              You have a JWT from an authentication response and need to see what's inside. The token is just a long string of characters that's actually Base64-encoded JSON. You want to read the claims, check expiration, or verify the user info without making API calls.
+            </p>
+            <div className="flex flex-wrap gap-2 font-mono text-xs">
+              <span className="px-2 py-1 bg-indigo-500/20 text-indigo-400 rounded">Header</span>
+              <span className="text-muted-foreground">.</span>
+              <span className="px-2 py-1 bg-pink-500/20 text-pink-400 rounded">Payload</span>
+              <span className="text-muted-foreground">.</span>
+              <span className="px-2 py-1 bg-green-500/20 text-green-400 rounded">Signature</span>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features List */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">What This Tool Does</h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <div className="flex items-start gap-3 p-3 border rounded-lg">
+              <div className="text-primary">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+              </div>
+              <div>
+                <h3 className="font-medium text-sm">Header Display</h3>
+                <p className="text-xs text-muted-foreground">View algorithm and token type</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 border rounded-lg">
+              <div className="text-primary">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              </div>
+              <div>
+                <h3 className="font-medium text-sm">Payload Claims</h3>
+                <p className="text-xs text-muted-foreground">Read user data and metadata</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 border rounded-lg">
+              <div className="text-primary">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div>
+                <h3 className="font-medium text-sm">Expiration Check</h3>
+                <p className="text-xs text-muted-foreground">See if token is expired</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 border rounded-lg">
+              <div className="text-primary">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+              </div>
+              <div>
+                <h3 className="font-medium text-sm">Local Processing</h3>
+                <p className="text-xs text-muted-foreground">Tokens stay in your browser</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Warning */}
         <Card className="mb-6 border-yellow-500/50 bg-yellow-500/10">
           <CardContent className="p-4">
@@ -252,6 +312,67 @@ export default function JsonJwtDecoderPage() {
             </Card>
           </div>
         )}
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON JWT Decoder</h2>
+        <p className="text-muted-foreground mb-6">
+          JWT tokens contain encoded JSON data that needs to be inspected during development. This decoder splits the token into its three parts and displays the header and payload as readable JSON. No server-side processing, everything happens in your browser.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How JWT decoding works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your JWT token in the input box. The tool splits it by dots into header, payload, and signature sections. Each Base64URL-encoded part is decoded and parsed as JSON, then displayed in its own card with syntax highlighting.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The header shows the algorithm and token type. The payload displays claims like user ID, expiration, and custom data. The signature is shown as raw Base64URL. Invalid tokens show an error message.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You're debugging authentication issues and need to see what's in a JWT. Or you received a token from an API and want to verify its contents before using it. This tool also helps when learning how JWTs are structured.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          This decoder only reads token contents, it doesn't verify signatures. Don't trust decoded data without proper verification in your application. Never paste production tokens with sensitive data into online tools.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What are the three parts of a JWT?</p>
+            <p className="text-muted-foreground">Header (algorithm info), Payload (claims/data), and Signature (verification). Each is Base64URL-encoded and separated by dots.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can this verify token signatures?</p>
+            <p className="text-muted-foreground">No, this only decodes and displays contents. Signature verification requires the secret key and should happen server-side.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Is it safe to decode tokens here?</p>
+            <p className="text-muted-foreground">The decoding happens locally in your browser. However, avoid pasting tokens with sensitive data or production credentials.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What if my token is invalid?</p>
+            <p className="text-muted-foreground">Invalid tokens will show an error. Common issues include wrong format, corrupted Base64, or missing parts.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I decode expired tokens?</p>
+            <p className="text-muted-foreground">Yes, decoding works regardless of expiration. The exp claim will show the token is expired but the data is still readable.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-base64" className="text-primary hover:underline">JSON Base64</a> – Encode and decode Base64 strings
+          </li>
+          <li>
+            <a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Validate JSON syntax
+          </li>
+          <li>
+            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format and beautify JSON
+          </li>
+        </ul>
       </div>
     </div>
   );

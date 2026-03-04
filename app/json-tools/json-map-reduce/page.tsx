@@ -263,6 +263,61 @@ export default function JsonMapReducePage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Map Reduce Tool</h2>
+          <p className="text-muted-foreground mb-6">
+            Transforming JSON arrays usually requires writing JavaScript code. This tool lets you apply map and reduce operations directly in the browser, testing transformations before adding them to your codebase.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste a JSON array and write a map function using JavaScript arrow syntax. Optionally add a reduce function to aggregate results. Click Execute to see the transformation.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Use the Quick Presets for common operations like extracting properties, summing values, or counting items. The result appears below, ready to copy or download.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You need to transform API data before displaying it. Test your map/reduce logic here first to verify it produces the expected output before deploying.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This executes JavaScript in your browser, which has security implications. Don't use with untrusted input. For production, implement transformations in your actual code.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What syntax do map functions use?</p>
+              <p className="text-muted-foreground">Use arrow function syntax like "item =&gt; item.name" or "item =&gt; (&#123; id: item.id, total: item.price * item.quantity &#125;)".</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Is the reduce function required?</p>
+              <p className="text-muted-foreground">No, reduce is optional. Without it, the result is the mapped array. With it, you get a single aggregated value.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What parameters are available?</p>
+              <p className="text-muted-foreground">Map receives (item, index, arr). Reduce receives (acc, item, index, arr). Use these to access data and context.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I chain multiple operations?</p>
+              <p className="text-muted-foreground">Not directly. Run one operation, copy the result, and paste it as new input for the next transformation step.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What if my function has an error?</p>
+              <p className="text-muted-foreground">An error message appears describing the issue. Check your syntax and ensure you're accessing valid properties.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-filter" className="text-primary hover:underline">JSON Filter</a> – Filter arrays by conditions</li>
+            <li><a href="/json-tools/json-array-generator" className="text-primary hover:underline">JSON Array Generator</a> – Generate test arrays</li>
+            <li><a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Advanced transformations</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

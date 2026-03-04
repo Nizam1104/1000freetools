@@ -176,6 +176,61 @@ export default function JsonKeyFrequencyPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Key Frequency Analyzer</h2>
+          <p className="text-muted-foreground mb-6">
+            When working with large JSON datasets, knowing which keys appear most often helps identify the core structure. This tool counts how many times each key appears across your entire JSON, showing frequency with visual bars.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON and click Analyze. The tool recursively scans every object, counting each key occurrence. Results are sorted by frequency with the most common keys at the top.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Each key shows a horizontal bar representing its frequency relative to the most common key. The count appears on the right. Copy or download the frequency data as JSON.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're analyzing API response logs to understand which fields are consistently present. Frequency analysis reveals optional vs required fields and data completeness patterns.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This counts key occurrences but doesn't analyze values. Two records with the same key but different value types are counted the same. For type analysis, use a schema tool.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">How is frequency calculated?</p>
+              <p className="text-muted-foreground">Every occurrence of a key is counted, even in nested objects. If "id" appears in 100 user objects, its frequency is 100.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What do the bars represent?</p>
+              <p className="text-muted-foreground">Bars show relative frequency. The longest bar is the most common key. Other bars are scaled proportionally.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Are results sorted?</p>
+              <p className="text-muted-foreground">Yes, keys are sorted by frequency descending. The most common keys appear at the top for quick identification.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I export the frequency data?</p>
+              <p className="text-muted-foreground">Yes, use Copy to copy as JSON or Download to save as a file. The data is ready for further analysis or reporting.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it handle large datasets?</p>
+              <p className="text-muted-foreground">Yes, but very large JSON files may slow down your browser. Consider sampling for datasets over a few megabytes.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-key-extractor" className="text-primary hover:underline">JSON Key Extractor</a> – List unique keys</li>
+            <li><a href="/json-tools/json-array-object-counter" className="text-primary hover:underline">JSON Array & Object Counter</a> – Count elements</li>
+            <li><a href="/json-tools/json-schema-generator" className="text-primary hover:underline">JSON Schema Generator</a> – Infer schemas</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -259,6 +259,46 @@ export default function JsonToGoPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to Go Struct Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            Go developers frequently need to define structs matching JSON API responses. Writing struct tags by hand and choosing correct types like int versus float64 takes time. This JSON to Go converter generates properly tagged structs with pointer types for nested objects.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the Input panel. Set the Struct Name for the root type and Package name for your Go module. Click Generate Go and the tool creates struct definitions with json tags matching the original key names.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Nested objects become pointer types with asterisk prefix. Arrays generate slice types with square brackets. The output includes your package declaration at the top. Copy or Download saves the .go file for your project.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Go developers building API clients need structs that unmarshal correctly from JSON responses. This tool eliminates manual struct definition and ensures json tags match the API exactly for reliable deserialization.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generator infers types from sample data. If your API returns different types for the same field, you may need to use interface{} manually. Always test generated structs with actual API responses.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Why are nested objects pointers?</p><p className="text-muted-foreground">Pointer types allow nil values for optional nested objects, matching Go best practices for JSON unmarshaling.</p></div>
+            <div><p className="font-medium mb-1">How are arrays handled?</p><p className="text-muted-foreground">Arrays become slices with the element type inferred from the first item, like []string or []*NestedStruct.</p></div>
+            <div><p className="font-medium mb-1">What about empty arrays?</p><p className="text-muted-foreground">Empty arrays default to []interface{} since the element type cannot be determined from empty data.</p></div>
+            <div><p className="font-medium mb-1">Does it preserve key names in tags?</p><p className="text-muted-foreground">Yes. The json tag uses the original JSON key name exactly, including any special characters or casing.</p></div>
+            <div><p className="font-medium mb-1">Can I change the package name?</p><p className="text-muted-foreground">Yes. Enter your desired package name in the Package field before generating the struct.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-to-typescript" className="text-primary hover:underline">JSON to TypeScript</a> – Generate TypeScript interfaces from JSON</li>
+            <li><a href="/json-tools/json-to-csharp" className="text-primary hover:underline">JSON to C#</a> – Create C# model classes from JSON</li>
+            <li><a href="/json-tools/json-to-java" className="text-primary hover:underline">JSON to Java</a> – Generate Java POJO classes from JSON</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

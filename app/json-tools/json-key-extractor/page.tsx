@@ -241,6 +241,61 @@ export default function JsonKeyExtractorPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Key Extractor</h2>
+          <p className="text-muted-foreground mb-6">
+            Understanding what keys exist in a JSON structure is essential for writing parsing code. This tool extracts every unique key from your JSON and outputs them as a clean list, JSON array, or CSV for easy reference.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON and click Extract Keys. The tool recursively traverses all nested objects and arrays, collecting every unique key it finds. Results appear in the output panel on the right.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Choose your output format: List (one key per line), JSON Array, or CSV. Enable "Include full paths" to see the complete path to each key instead of just the key names.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're writing TypeScript interfaces or validation schemas for an API response. Extract all keys first to ensure you don't miss any fields in your type definitions.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This extracts keys but doesn't show their values or types. For complete structural analysis including value types, use the JSON Explainer or a schema inference tool.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What output formats are available?</p>
+              <p className="text-muted-foreground">Choose from List (newline-separated), JSON Array, or CSV format. Select using the Output Format dropdown.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What does "Include full paths" do?</p>
+              <p className="text-muted-foreground">When enabled, keys show their full path like "user.profile.email" instead of just "email". This helps identify where each key appears.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Are duplicate keys shown multiple times?</p>
+              <p className="text-muted-foreground">No, only unique keys are shown. If "user.name" appears in multiple places, it's listed once unless you enable full paths.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it work with arrays?</p>
+              <p className="text-muted-foreground">Yes, keys inside array elements are extracted. Array indices are shown in paths when "Include full paths" is enabled.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How do I save the key list?</p>
+              <p className="text-muted-foreground">Use the Copy button to paste into your code or documentation. The formatted output is ready to use in any text editor.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-key-frequency" className="text-primary hover:underline">JSON Key Frequency Analyzer</a> – Count key occurrences</li>
+            <li><a href="/json-tools/json-explainer" className="text-primary hover:underline">JSON Explainer</a> – Understand JSON structure</li>
+            <li><a href="/json-tools/json-schema-generator" className="text-primary hover:underline">JSON Schema Generator</a> – Generate schemas</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

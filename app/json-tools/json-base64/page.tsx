@@ -105,6 +105,52 @@ export default function JsonBase64Page() {
           </p>
         </div>
 
+        {/* Why Base64 */}
+        <div className="mb-6">
+          <div className="border-l-4 border-primary pl-4">
+            <h2 className="text-lg font-semibold mb-2">Why Encode JSON to Base64?</h2>
+            <p className="text-muted-foreground mb-4">
+              You need to send JSON in a URL parameter or store it in a place that doesn't handle special characters well. Base64 encoding converts your JSON to a safe ASCII string. Decoding it back should give you the original JSON.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">URL parameters</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">JWT tokens</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Email bodies</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Data storage</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Steps */}
+        <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          <Card className="bg-muted/30">
+            <CardContent className="p-4">
+              <h3 className="font-medium mb-2 flex items-center gap-2">
+                <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold">E</span>
+                Encoding
+              </h3>
+              <ol className="space-y-2 text-sm text-muted-foreground">
+                <li>1. Paste your JSON to encode</li>
+                <li>2. Select encode operation</li>
+                <li>3. Get Base64 string output</li>
+              </ol>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/30">
+            <CardContent className="p-4">
+              <h3 className="font-medium mb-2 flex items-center gap-2">
+                <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold">D</span>
+                Decoding
+              </h3>
+              <ol className="space-y-2 text-sm text-muted-foreground">
+                <li>1. Paste Base64 string</li>
+                <li>2. Select decode operation</li>
+                <li>3. Get readable JSON output</li>
+              </ol>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Mode Tabs */}
         <Card className="mb-6">
           <CardContent className="p-0">
@@ -194,6 +240,67 @@ export default function JsonBase64Page() {
             </Card>
           )}
         </div>
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON Base64 Encoder/Decoder</h2>
+        <p className="text-muted-foreground mb-6">
+          Base64 encoding is commonly used to embed binary data in JSON or transmit JSON in URL-safe formats. This tool encodes JSON to Base64 strings and decodes Base64 back to readable JSON. It runs entirely in your browser for privacy.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How encoding and decoding works</h3>
+        <p className="text-muted-foreground mb-2">
+          For encoding, paste your JSON and click Encode. The tool converts your JSON string to Base64 format. For decoding, paste a Base64 string and click Decode. The tool converts it back and validates the result is valid JSON.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Base64 expands data size by about 33 percent. The encoded output uses standard Base64 characters. Use Copy to grab the result or swap between encode and decode modes with the Swap button.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You need to embed JSON in a URL parameter or HTML attribute. Or your API requires Base64-encoded payloads. This tool also helps when debugging Base64-encoded tokens or config strings.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Base64 is encoding, not encryption. Anyone can decode the output. Don't use it for sensitive data. For secure transmission, use proper encryption instead.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What is Base64 encoding?</p>
+            <p className="text-muted-foreground">Base64 converts binary data to ASCII text using 64 characters. It's used to safely transmit data in text-only contexts like URLs or email.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does Base64 make data smaller?</p>
+            <p className="text-muted-foreground">No, Base64 increases size by about 33 percent. It's for compatibility, not compression. Use gzip for size reduction.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Is Base64 secure?</p>
+            <p className="text-muted-foreground">No, Base64 is easily reversible. It's not encryption. Use HTTPS and proper encryption for sensitive data.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I decode invalid Base64?</p>
+            <p className="text-muted-foreground">Invalid Base64 will fail to decode. Make sure your input uses valid Base64 characters and proper padding.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What about URL-safe Base64?</p>
+            <p className="text-muted-foreground">This tool uses standard Base64. For URL-safe variants with different characters, you may need a specialized tool.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-escape-unescape" className="text-primary hover:underline">JSON Escape/Unescape</a> – Escape special characters in JSON strings
+          </li>
+          <li>
+            <a href="/json-tools/json-stringify-parse" className="text-primary hover:underline">JSON Stringify/Parse</a> – Convert between JSON objects and strings
+          </li>
+          <li>
+            <a href="/json-tools/json-jwt-decoder" className="text-primary hover:underline">JSON JWT Decoder</a> – Decode and inspect JWT tokens
+          </li>
+        </ul>
       </div>
     </div>
   );

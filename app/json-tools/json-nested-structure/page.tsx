@@ -152,6 +152,61 @@ export default function JsonNestedStructureGeneratorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Nested Structure Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            Testing how your code handles deeply nested JSON requires sample data with controlled complexity. This tool generates nested structures with configurable depth and branching, perfect for stress testing parsers and UIs.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Set the Depth (how many levels) and Branching Factor (children per node). Click Generate and the tool creates a recursive structure with objects containing children arrays at each level.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Leaf nodes at the maximum depth contain simple value properties. The generated JSON shows the full structure with size displayed below for reference.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're building a tree viewer or recursive component and need test data. Generate structures with varying depths to verify your component handles nesting correctly.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This generates synthetic test data with a fixed pattern. For realistic nested data that matches your domain, you'll need to create custom generators or use real data samples.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What do Depth and Branching control?</p>
+              <p className="text-muted-foreground">Depth sets how many levels deep the nesting goes. Branching sets how many children each node has. Higher values create larger files.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What is the maximum depth?</p>
+              <p className="text-muted-foreground">Depth is limited to 20 levels. Very deep nesting can cause stack overflow in some parsers and browsers.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How large can the output be?</p>
+              <p className="text-muted-foreground">Size grows exponentially with depth and branching. Depth 10 with branching 5 creates thousands of nodes. Use caution with high values.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What structure is generated?</p>
+              <p className="text-muted-foreground">Each node has a level number and children array. Leaf nodes at max depth have value and depth properties instead of children.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I download the generated JSON?</p>
+              <p className="text-muted-foreground">Yes, use Copy to paste into your code or Download to save as a JSON file for use in tests or documentation.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-array-generator" className="text-primary hover:underline">JSON Array Generator</a> – Generate test arrays</li>
+            <li><a href="/json-tools/json-depth-analyzer" className="text-primary hover:underline">JSON Depth Analyzer</a> – Check nesting depth</li>
+            <li><a href="/json-tools/json-tree-generator" className="text-primary hover:underline">JSON Tree Generator</a> – Generate tree structures</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

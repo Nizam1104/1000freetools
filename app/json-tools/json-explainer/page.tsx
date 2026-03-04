@@ -181,6 +181,61 @@ export default function JsonExplainerPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Explainer</h2>
+          <p className="text-muted-foreground mb-6">
+            Complex JSON structures can be hard to understand at first glance. This tool analyzes your JSON and generates a plain English explanation of its structure, describing each level and the types of data it contains.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON and click Explain. The tool recursively walks through your structure, identifying objects, arrays, and primitive values. It builds a human-readable description of what each part contains.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The output includes an overview with type, key count, and size, followed by a detailed breakdown of each field. String previews show the first 50 characters to give context without overwhelming detail.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You received an unfamiliar API response and need to understand its structure quickly. Run it through the explainer to get a readable summary before writing parsing code.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This provides a structural overview, not semantic meaning. It tells you what types of data exist where, but not what the data represents in your domain context.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What information does the explanation include?</p>
+              <p className="text-muted-foreground">It shows the root type, total keys, file size, and a line-by-line breakdown of each field with its type and sample values.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How are arrays described?</p>
+              <p className="text-muted-foreground">Arrays show their length and the types of items they contain. Nested objects within arrays are explained recursively.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Are long strings truncated?</p>
+              <p className="text-muted-foreground">Yes, strings longer than 50 characters show the first 50 followed by ellipsis. This keeps the explanation readable.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it work with nested data?</p>
+              <p className="text-muted-foreground">Yes, the tool handles any level of nesting. Each nested object or array is explained with its path from the root.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I copy the explanation?</p>
+              <p className="text-muted-foreground">Yes, use the Copy button to copy the full explanation to your clipboard for documentation or sharing with teammates.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-key-extractor" className="text-primary hover:underline">JSON Key Extractor</a> – List all keys</li>
+            <li><a href="/json-tools/json-array-object-counter" className="text-primary hover:underline">JSON Array & Object Counter</a> – Count elements</li>
+            <li><a href="/json-tools/json-tree-viewer" className="text-primary hover:underline">JSON Tree Viewer</a> – Visual tree view</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

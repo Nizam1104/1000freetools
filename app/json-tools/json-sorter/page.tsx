@@ -107,6 +107,67 @@ export default function JsonSorterPage() {
           </p>
         </div>
 
+        {/* Why Sort Keys */}
+        <div className="mb-6">
+          <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl p-5 border">
+            <h2 className="text-lg font-semibold mb-3">Why Sort JSON Keys?</h2>
+            <p className="text-muted-foreground mb-4">
+              Your JSON object has keys in random order that makes it hard to read or compare. Maybe you need consistent ordering for version control diffs or just want properties organized logically. Manually reordering keys in nested structures takes forever.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <h3 className="font-medium mb-2">Benefits of Sorted Keys:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Cleaner git diffs</li>
+                  <li>• Easier to read and navigate</li>
+                  <li>• Consistent output for comparisons</li>
+                  <li>• Better for documentation</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Sort Options:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Ascending (A to Z)</li>
+                  <li>• Descending (Z to A)</li>
+                  <li>• Recursive (all nesting levels)</li>
+                  <li>• Custom indentation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Example */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">Example</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Card>
+              <CardContent className="p-4">
+                <h3 className="text-sm font-medium mb-2 text-muted-foreground">Input (Unsorted)</h3>
+                <pre className="text-xs bg-muted/50 p-3 rounded overflow-auto">
+{`{
+  "zebra": "z",
+  "apple": "a",
+  "mango": "m"
+}`}
+                </pre>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-4">
+                <h3 className="text-sm font-medium mb-2 text-muted-foreground">Output (Sorted A→Z)</h3>
+                <pre className="text-xs bg-muted/50 p-3 rounded overflow-auto">
+{`{
+  "apple": "a",
+  "mango": "m",
+  "zebra": "z"
+}`}
+                </pre>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Controls */}
         <Card className="mb-6">
           <CardContent className="p-4">
@@ -222,6 +283,67 @@ export default function JsonSorterPage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON Sorter</h2>
+        <p className="text-muted-foreground mb-6">
+          JSON object key order doesn't affect parsing but matters for readability and diff comparison. This tool sorts JSON keys alphabetically at all nesting levels. Consistent key ordering makes version control diffs cleaner and data comparison easier.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the sorter works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your JSON and click Sort JSON. The tool parses your input, recursively sorts all object keys alphabetically, and outputs the result with consistent formatting. Array order is preserved since arrays are ordered by definition.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Nested objects get sorted at every level. The output uses 2-space indentation by default. Use Copy to grab the sorted JSON or Download to save it as a file.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You're comparing two JSON files and key order differences are cluttering the diff. Or your team has inconsistent key ordering and you want to standardize. This tool also helps when preparing JSON for documentation where consistent order improves readability.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Key sorting is cosmetic, not functional. JSON parsers don't guarantee key order. Don't rely on key order for application logic. Use arrays when order matters.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">Does sorting affect data meaning?</p>
+            <p className="text-muted-foreground">No, JSON objects are unordered by specification. Sorting only changes presentation, not the actual data.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Are arrays sorted too?</p>
+            <p className="text-muted-foreground">No, array order is preserved. Only object keys get sorted alphabetically.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What about nested objects?</p>
+            <p className="text-muted-foreground">All nested objects are sorted recursively. Every level gets alphabetically ordered keys.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I sort by value instead of key?</p>
+            <p className="text-muted-foreground">Not in this version. The tool sorts by key name only. Value-based sorting would require different logic.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Why would I need sorted JSON?</p>
+            <p className="text-muted-foreground">Sorted JSON produces consistent output for testing, cleaner git diffs, and easier visual comparison of files.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format JSON with proper indentation
+          </li>
+          <li>
+            <a href="/json-tools/json-diff" className="text-primary hover:underline">JSON Diff</a> – Compare two JSON objects
+          </li>
+          <li>
+            <a href="/json-tools/json-minifier" className="text-primary hover:underline">JSON Minifier</a> – Compress JSON to single line
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -209,6 +209,61 @@ export default function JsonAxiosCodeGeneratorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to Axios Code Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            Writing Axios requests means remembering the right syntax for headers, request bodies, and error handling. This tool generates complete Axios code from your configuration, saving you from looking up documentation or copying from old projects.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Select your HTTP method from the dropdown, enter the URL, and optionally add headers and request body as JSON. Click Generate and the tool creates properly formatted Axios code with all your settings included.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generated code includes the axios import, configuration object with method and URL, headers if provided, request body for POST/PUT/PATCH requests, and then/catch blocks for handling responses and errors.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're starting a new React or Node project and need to make API calls. Generate the Axios code here and paste it into your service layer instead of typing it from memory.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This generates basic Axios code without interceptors, request cancellation, or advanced configuration. For production apps, consider setting up an Axios instance with defaults and interceptors.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">Which HTTP methods are supported?</p>
+              <p className="text-muted-foreground">GET, POST, PUT, PATCH, and DELETE are all supported. The generator adjusts the code based on whether the method typically includes a body.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How do I add authentication headers?</p>
+              <p className="text-muted-foreground">Enter headers as JSON like {"{ \"Authorization\": \"Bearer token123\" }"}. The generator includes them in the Axios config.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it handle request bodies?</p>
+              <p className="text-muted-foreground">Yes, for POST, PUT, and PATCH methods you can enter a JSON body. It's included in the data property of the Axios config.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What error handling is included?</p>
+              <p className="text-muted-foreground">The generated code has a catch block that logs error.response.data if available, otherwise the error message. You can customize this after copying.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I use this with TypeScript?</p>
+              <p className="text-muted-foreground">The generated code is plain JavaScript. For TypeScript, you'll need to add type annotations to the response data and error handling.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-fetch-code-generator" className="text-primary hover:underline">JSON Fetch Code Generator</a> – Generate Fetch API code</li>
+            <li><a href="/json-tools/json-api-formatter" className="text-primary hover:underline">JSON API Formatter</a> – Standardize API responses</li>
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Validate request/response JSON</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

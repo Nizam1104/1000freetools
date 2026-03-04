@@ -8,6 +8,9 @@ const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
+  { name: "Disclaimer", href: "/disclaimer" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms", href: "/terms" },
 ];
 
 const toolsByCategory = [

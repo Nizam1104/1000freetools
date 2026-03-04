@@ -258,6 +258,46 @@ export default function JsonToCSharpPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to C# Class Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            Manually creating C# classes from JSON is error-prone and time-consuming. Getting property types wrong or missing nested objects leads to runtime errors. This JSON to C# generator analyzes your JSON and produces properly typed classes with nullable types for .NET development.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the Input area. Set the Class Name for the root class and Namespace for your project. Click Generate C# and the tool creates classes with public properties, correct types like int, double, string, and bool, plus List types for arrays.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Nested objects generate separate classes with PascalCase naming. The output wraps everything in your specified namespace. Use Copy or Download to save the generated .cs file for your Visual Studio project.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            .NET developers consuming REST APIs need model classes matching the API response structure. This tool quickly scaffolds those classes so you can focus on business logic instead of manual type definitions.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generator infers types from sample data, so edge cases like empty arrays default to List without specific type parameters. Always review generated code and adjust types based on your actual data variations.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">How are nullable types handled?</p><p className="text-muted-foreground">Value types like int, double, and bool are made nullable with the ? suffix to handle missing JSON properties.</p></div>
+            <div><p className="font-medium mb-1">Does it handle nested objects?</p><p className="text-muted-foreground">Yes. Each nested object becomes a separate class with a generated name based on the parent class and property name.</p></div>
+            <div><p className="font-medium mb-1">What about arrays of objects?</p><p className="text-muted-foreground">Arrays generate List properties. If the array contains objects, a separate item class is created for the list type.</p></div>
+            <div><p className="font-medium mb-1">Can I customize property names?</p><p className="font-medium mb-1">Property names are converted to PascalCase automatically. The generator does not add JsonProperty attributes for custom serialization names.</p></div>
+            <div><p className="font-medium mb-1">Is my JSON sent to a server?</p><p className="text-muted-foreground">No. All conversion happens in your browser. Your data stays private and is not transmitted anywhere.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-to-typescript" className="text-primary hover:underline">JSON to TypeScript</a> – Generate TypeScript interfaces from JSON</li>
+            <li><a href="/json-tools/json-to-java" className="text-primary hover:underline">JSON to Java</a> – Create Java POJO classes from JSON</li>
+            <li><a href="/json-tools/json-to-go" className="text-primary hover:underline">JSON to Go</a> – Generate Go structs with JSON tags</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

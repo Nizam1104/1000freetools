@@ -250,6 +250,67 @@ export default function JsonToTextConverterPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON to Text Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          Sometimes you need JSON data in plain text format for reports, logs, or documentation. This tool flattens JSON structures into readable key-value pairs that anyone can understand, no technical knowledge required.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How it works</h3>
+        <p className="text-muted-foreground mb-2">
+          Choose from three output formats: Key-Value shows simple colon-separated pairs, Hierarchical preserves the nested structure with indentation, and Flat uses equals signs for configuration-style output.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The tool processes each JSON property and converts it to text line by line. Nested objects are flattened using dot notation so you can see the full path to each value.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You need to include API response data in a user-facing report or email. Converting to plain text makes the information accessible without requiring JSON parsing knowledge.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Note that complex nested structures may produce long key paths. For very deep JSON, the hierarchical format maintains better readability than the flattened options.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What happens to arrays in the output?</p>
+            <p className="text-muted-foreground">Arrays are shown with index notation like items[0], items[1]. This preserves the order and lets you reference specific array elements in the text output.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I convert the text back to JSON?</p>
+            <p className="text-muted-foreground">No, this is a one-way conversion. The text output loses structural information needed to reconstruct the original JSON. Keep your original JSON if you need to convert back.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Which format works best for logs?</p>
+            <p className="text-muted-foreground">The Flat format with equals signs works well for log files since it resembles standard configuration file syntax that many logging systems can parse.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Are null values included?</p>
+            <p className="text-muted-foreground">Yes, null values appear as (null) in hierarchical format or as empty values in key-value format. This helps identify missing or unset data fields.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I download the text output?</p>
+            <p className="text-muted-foreground">Yes. Click the Download button to save the text as a .txt file, or use Copy to paste it directly into your document or email.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Convert JSON to spreadsheet format
+          </li>
+          <li>
+            <a href="/json-tools/json-to-tsv" className="text-primary hover:underline">JSON to TSV</a> – Tab-separated values output
+          </li>
+          <li>
+            <a href="/json-tools/json-explainer" className="text-primary hover:underline">JSON Explainer</a> – Understand JSON in plain English
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

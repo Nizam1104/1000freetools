@@ -164,6 +164,46 @@ export default function JsonToMongodbPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to MongoDB Converter</h2>
+          <p className="text-muted-foreground mb-6">
+            Migrating JSON data into MongoDB requires proper insert statements and driver code. Writing boilerplate MongoDB insertion code for each collection gets repetitive. This JSON to MongoDB converter generates ready-to-use insert commands and Node.js driver code for quick data import.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON array or object into the Input area. Enter your Collection Name in the designated field. Click Generate and the tool produces MongoDB shell insertMany commands with ObjectId placeholders for each document.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The output also includes complete Node.js driver code showing connection setup, database selection, and insertion logic. Copy the generated code and adapt the connection string for your MongoDB instance.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Developers seeding MongoDB collections with initial data need quick insert statements. Teams migrating from JSON-based storage to MongoDB benefit from generated insertion scripts that handle document structure correctly.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generated code is a starting point. Production imports should include error handling, connection pooling, and bulk operation considerations. Always test with a small dataset before importing large volumes.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Does it add _id fields?</p><p className="text-muted-foreground">Yes. Documents without _id get new ObjectId() placeholders that MongoDB will replace on actual insertion.</p></div>
+            <div><p className="font-medium mb-1">Can I use this with MongoDB Atlas?</p><p className="text-muted-foreground">Yes. Update the connection string in the Node.js code to your Atlas URI with proper authentication.</p></div>
+            <div><p className="font-medium mb-1">What about nested documents?</p><p className="text-muted-foreground">Nested objects are preserved as-is in the generated insert statements, matching MongoDB document structure.</p></div>
+            <div><p className="font-medium mb-1">Does it handle arrays?</p><p className="text-muted-foreground">Yes. Input arrays generate insertMany calls. Single objects are wrapped for insertion as a single-document array.</p></div>
+            <div><p className="font-medium mb-1">Is the Node.js driver required?</p><p className="text-muted-foreground">The generated code uses the official mongodb npm package. Install it with npm install mongodb before running.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Validate JSON before importing</li>
+            <li><a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Reshape JSON for MongoDB schema</li>
+            <li><a href="/json-tools/mongodb-to-json" className="text-primary hover:underline">MongoDB to JSON</a> – Export MongoDB documents to JSON</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

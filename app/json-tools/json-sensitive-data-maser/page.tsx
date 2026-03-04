@@ -307,6 +307,67 @@ export default function JsonSensitiveDataMaserPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Sensitive Data Masker</h2>
+          <p className="text-muted-foreground mb-6">
+            Sharing logs or API responses for debugging often means exposing sensitive information. This tool masks passwords, tokens, emails, and phone numbers in your JSON data so you can safely share it with team members or support teams.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Define which field names should be masked by adding rules. The tool replaces values in those fields with asterisks. You can also enable automatic detection for emails and phone numbers.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The Show Last N option lets you reveal part of the masked value for context. For example, showing the last 4 characters of a token helps identify it without exposing the full secret.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You need to share an API error log with support but it contains authentication tokens. Mask the sensitive fields first, then paste the sanitized log into your support ticket.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool masks based on field names and simple patterns. It won't detect sensitive data in arbitrarily named fields, so review the output to ensure all secrets are properly masked.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">Which fields are masked by default?</p>
+              <p className="text-muted-foreground">Default rules mask fields named password, token, and secret. Add more rules for your specific field names like apiKey, authToken, or credentials.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How does email masking work?</p>
+              <p className="text-muted-foreground">When enabled, emails are partially masked showing the first character, asterisks for the middle, and the full domain. For example, j***n@example.com.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Are nested fields masked?</p>
+              <p className="text-muted-foreground">Yes, the tool recursively processes all nested objects and arrays. Fields matching your rules are masked at any depth in the JSON structure.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I use a different mask character?</p>
+              <p className="text-muted-foreground">Yes, each rule has a mask character setting. Use asterisks, X's, or any single character that works for your use case.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Is the masking reversible?</p>
+              <p className="text-muted-foreground">No, masking is one-way for security. Keep your original JSON if you need the unmasked values later. The masked output cannot be restored.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a href="/json-tools/json-obfuscator" className="text-primary hover:underline">JSON Obfuscator</a> – Obfuscate all JSON data
+            </li>
+            <li>
+              <a href="/json-tools/json-remove-keys" className="text-primary hover:underline">JSON Remove Keys</a> – Delete sensitive fields entirely
+            </li>
+            <li>
+              <a href="/json-tools/json-filter" className="text-primary hover:underline">JSON Filter</a> – Filter JSON arrays by conditions
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

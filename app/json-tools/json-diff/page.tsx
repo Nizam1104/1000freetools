@@ -318,6 +318,61 @@ export default function JsonDiffPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Diff Tool</h2>
+          <p className="text-muted-foreground mb-6">
+            Comparing two JSON files by eye is error-prone and time-consuming. This tool highlights exactly what changed between two JSON objects, showing added fields, removed fields, and modified values with color-coded results.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste the original JSON on the left and the modified JSON on the right. Click Compare and the tool recursively analyzes both structures, identifying every difference at any nesting level.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Results show green for added fields, red for removed fields, and yellow for changed values. Stats at the top show the count of each change type. Click on nested items to expand and see deeper differences.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You updated an API response and need to verify what changed before deploying. Compare the old and new responses to ensure only intended changes were made and nothing broke.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool compares structure and values, not semantic equivalence. Two JSON objects with the same data in different order will show as different. For semantic comparison, use a specialized tool.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What types of changes are detected?</p>
+              <p className="text-muted-foreground">Added fields (green), removed fields (red), and changed values (yellow). Nested changes are shown hierarchically under their parent.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it work with arrays?</p>
+              <p className="text-muted-foreground">Yes, arrays are compared by index. Items added or removed at specific positions are shown. Reordered arrays may show many changes.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How are nested objects handled?</p>
+              <p className="text-muted-foreground">Nested differences are shown under their parent with indentation. Click to expand nested items and see the full change hierarchy.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I export the diff results?</p>
+              <p className="text-muted-foreground">Yes, use Copy to copy results as JSON or Download to save as a file. This is useful for including diffs in bug reports or documentation.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What if both JSONs are identical?</p>
+              <p className="text-muted-foreground">The tool shows "No differences found" with a message. This confirms your two JSON files are structurally identical.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-merge" className="text-primary hover:underline">JSON Merge</a> – Combine two JSON objects</li>
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Validate JSON syntax</li>
+            <li><a href="/json-tools/json-pretty-print" className="text-primary hover:underline">JSON Pretty Print</a> – Format JSON for comparison</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

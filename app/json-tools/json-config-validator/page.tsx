@@ -263,6 +263,67 @@ export default function JsonConfigValidatorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Config Validator</h2>
+          <p className="text-muted-foreground mb-6">
+            Configuration files drive your application behavior, and a single typo can cause deployment failures. This tool validates your JSON config files against required keys and common patterns before you deploy, catching errors early in the process.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Define which keys must exist in your configuration by adding them to the required keys list. The validator checks your JSON and reports any missing required fields along with potential issues like empty values.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Smart pattern detection looks for common configuration fields like port numbers and debug flags, warning you if they have unexpected types or out-of-range values that could cause runtime problems.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Before deploying a new environment configuration, validate that all required settings are present. This prevents application crashes from missing database URLs, API keys, or other critical settings.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This validator checks structure and common patterns, not semantic correctness. It won't verify if your database connection string actually works, only that the field exists and isn't empty.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">How do I add required keys?</p>
+              <p className="text-muted-foreground">Click Add Key to create a new required field entry. Type the exact key name as it appears in your JSON. Press Enter to add multiple keys quickly.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it check nested configuration?</p>
+              <p className="text-muted-foreground">The validator checks for empty values at all nesting levels. Required key checking is currently limited to top-level keys only.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What warnings does it generate?</p>
+              <p className="text-muted-foreground">Warnings include null values, empty strings, empty arrays, and type mismatches for common fields like port (should be 1-65535) and debug (should be boolean).</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I save my required keys list?</p>
+              <p className="text-muted-foreground">Currently the list resets when you clear or reload. For repeated validation with the same schema, consider using a dedicated JSON Schema validator.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Is my configuration data sent anywhere?</p>
+              <p className="text-muted-foreground">No, all validation happens in your browser. Your configuration data never leaves your device, making it safe to validate sensitive settings.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a href="/json-tools/json-schema-validator" className="text-primary hover:underline">JSON Schema Validator</a> – Validate against full JSON Schema
+            </li>
+            <li>
+              <a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Check JSON syntax
+            </li>
+            <li>
+              <a href="/json-tools/json-empty-field-finder" className="text-primary hover:underline">JSON Empty Field Finder</a> – Find null and empty values
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

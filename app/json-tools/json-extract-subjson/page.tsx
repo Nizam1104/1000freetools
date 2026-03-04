@@ -246,6 +246,61 @@ export default function JsonExtractSubjsonPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Extract Tool</h2>
+          <p className="text-muted-foreground mb-6">
+            Large JSON responses often contain more data than you need. This tool extracts a specific nested portion using a JSONPath-style key path, giving you just the sub-object or array you care about.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON and enter a key path like $.data.user.profile. The tool navigates to that location and extracts just that portion as a new JSON document.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Use the Quick Paths buttons to try common patterns, or type your own path. Dot notation accesses object properties, and bracket notation accesses array indices.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Your API returns a large response but you only need one nested section for your feature. Extract just that part to simplify your code and reduce data processing.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This extracts by path only, not by filtering conditions. For extracting items that match certain criteria from arrays, use the JSON Filter tool instead.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What path syntax is supported?</p>
+              <p className="text-muted-foreground">Use $ for root, dots for properties ($.data.user), and brackets for arrays ($.items[0]). Wildcards are not supported.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What happens if the path doesn't exist?</p>
+              <p className="text-muted-foreground">An error message appears saying the path was not found. Check your path spelling and verify the structure of your JSON.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I extract multiple paths at once?</p>
+              <p className="text-muted-foreground">No, this tool extracts one path at a time. Run it multiple times for different paths or use a more advanced JSON query tool.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How do I save the extracted JSON?</p>
+              <p className="text-muted-foreground">Use Copy to paste into your code, or Download to save as a JSON file. Both options appear after extraction.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it work with array roots?</p>
+              <p className="text-muted-foreground">Yes, use $[0] to access the first array element, $[1] for the second, and so on. Combine with property access for nested data.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/jmespath-query" className="text-primary hover:underline">JMESPath Query Tool</a> – Advanced JSON queries</li>
+            <li><a href="/json-tools/json-filter" className="text-primary hover:underline">JSON Filter</a> – Filter arrays by conditions</li>
+            <li><a href="/json-tools/json-key-extractor" className="text-primary hover:underline">JSON Key Extractor</a> – List all keys</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

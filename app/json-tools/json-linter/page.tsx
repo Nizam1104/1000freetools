@@ -249,6 +249,79 @@ export default function JsonLinterPage() {
           </p>
         </div>
 
+        {/* The Problem */}
+        <div className="mb-6">
+          <div className="bg-card border rounded-xl p-5">
+            <h2 className="text-lg font-semibold mb-3">Why Lint Your JSON?</h2>
+            <p className="text-muted-foreground mb-4">
+              Your JSON looks right but something's off. Maybe a missing comma, a trailing comma that shouldn't be there, or inconsistent formatting. A linter catches these issues before they cause runtime errors. This tool checks your JSON syntax and highlights problems with clear error messages.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 font-bold">✗</span>
+                <span className="text-sm text-muted-foreground">Missing commas between properties</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 font-bold">✗</span>
+                <span className="text-sm text-muted-foreground">Trailing commas before closing brackets</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 font-bold">✗</span>
+                <span className="text-sm text-muted-foreground">Duplicate keys in objects</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 font-bold">✗</span>
+                <span className="text-sm text-muted-foreground">Single quotes instead of double quotes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* What Gets Checked */}
+        <Card className="mb-6 bg-muted/30">
+          <CardContent className="p-5">
+            <h2 className="text-lg font-semibold mb-4">What This Linter Checks</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div>
+                <h3 className="font-medium mb-2 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">S</span>
+                  Syntax
+                </h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Bracket matching</li>
+                  <li>• Quote validation</li>
+                  <li>• Comma placement</li>
+                  <li>• Colon syntax</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">Q</span>
+                  Quality
+                </h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Duplicate keys</li>
+                  <li>• Trailing commas</li>
+                  <li>• Comment detection</li>
+                  <li>• Style consistency</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold">F</span>
+                  Fixes
+                </h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Error positioning</li>
+                  <li>• Line numbers</li>
+                  <li>• Code snippets</li>
+                  <li>• Fix suggestions</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Controls */}
         <Card className="mb-6">
           <CardContent className="p-4">
@@ -376,6 +449,67 @@ export default function JsonLinterPage() {
             </Card>
           )}
         </div>
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON Linter</h2>
+        <p className="text-muted-foreground mb-6">
+          A JSON linter checks your JSON for syntax errors and common issues beyond basic validation. It points out problems line by line with specific messages about what's wrong. This helps you fix JSON before it causes runtime errors in your application.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the linter works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your JSON in the input box and click Lint JSON. The tool parses your input and checks for syntax errors, comments, trailing commas, and other issues. Each problem is listed with its line number, column, and a description.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Errors show in red with severity indicators. Click on an issue to see the problematic code snippet. Fix the issues and run the linter again until your JSON is clean.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          Your JSON config file isn't loading and you need to find the syntax error. Or you're writing JSON by hand and want to catch mistakes early. This tool also helps when reviewing JSON from external sources before using it.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The linter checks syntax only, not semantics. It won't tell you if required fields are missing or values are wrong. For schema validation, use our JSON Schema Validator tool instead.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What issues does the linter find?</p>
+            <p className="text-muted-foreground">Syntax errors, invalid characters, comments (not allowed in JSON), trailing commas, and malformed strings or numbers.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does it support JSON5?</p>
+            <p className="text-muted-foreground">No, this linter checks strict JSON. JSON5 features like comments and trailing commas will be flagged as errors.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">How accurate are line numbers?</p>
+            <p className="text-muted-foreground">Line numbers are calculated from your input. They should match your editor if you haven't modified the text since pasting.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can it fix errors automatically?</p>
+            <p className="text-muted-foreground">No, this tool only reports issues. Use the error messages to manually fix your JSON, then run the linter again.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What's the difference between linting and validating?</p>
+            <p className="text-muted-foreground">Linting finds syntax issues and reports details. Validation just says valid or invalid. Linting gives you more information to fix problems.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Quick validation check for JSON
+          </li>
+          <li>
+            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format JSON with proper indentation
+          </li>
+          <li>
+            <a href="/json-tools/json-error-explanation" className="text-primary hover:underline">JSON Error Explanation</a> – Plain-language error explanations
+          </li>
+        </ul>
       </div>
     </div>
   );

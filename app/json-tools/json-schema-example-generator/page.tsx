@@ -232,6 +232,46 @@ export default function JsonSchemaExampleGeneratorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Schema Example Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            JSON Schema defines the structure of valid JSON data, but testing validation logic requires sample instances that match your schema. Writing these examples by hand is tedious, especially for complex nested schemas. This generator reads your schema and produces a valid example automatically.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON Schema into the input area. Click Load Sample Schema to see a complex example with strings, numbers, arrays, enums, and nested objects. The generator analyzes each property type and creates appropriate sample values.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            String formats like email, date, and uri get realistic example values. Enums use the first allowed value. Numbers respect minimum and maximum constraints. Click Generate Example to see the output and copy it for testing.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            API developers writing OpenAPI specifications need example payloads for documentation. QA engineers need valid test data that conforms to schema constraints. This tool generates those examples without manual effort.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generator handles common schema keywords but does not support advanced features like oneOf, anyOf, or complex pattern validation. For highly specialized schemas, you may need to adjust the output manually.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">What JSON Schema version is supported?</p><p className="text-muted-foreground">The generator works with Draft 7 and later versions using standard type and format keywords.</p></div>
+            <div><p className="font-medium mb-1">Does it handle nested objects?</p><p className="text-muted-foreground">Yes. Nested object schemas are processed recursively up to 10 levels deep to prevent infinite loops.</p></div>
+            <div><p className="font-medium mb-1">What about arrays?</p><p className="text-muted-foreground">Arrays generate one item by default. If minItems is specified, it generates that many items.</p></div>
+            <div><p className="font-medium mb-1">Can it use default values from the schema?</p><p className="text-muted-foreground">Yes. If a property has a default keyword, that value is used in the generated example.</p></div>
+            <div><p className="font-medium mb-1">Does it support $ref references?</p><p className="text-muted-foreground">References are resolved to null. For full $ref support, you would need to provide the complete schema with all definitions inline.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-schema-validator" className="text-primary hover:underline">JSON Schema Validator</a> – Validate JSON against a schema</li>
+            <li><a href="/json-tools/json-generator" className="text-primary hover:underline">JSON Generator</a> – Create random mock JSON data</li>
+            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Check JSON syntax validity</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

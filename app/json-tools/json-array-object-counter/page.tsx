@@ -198,6 +198,61 @@ export default function JsonArrayObjectCounterPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Array & Object Counter</h2>
+          <p className="text-muted-foreground mb-6">
+            Large JSON files can be overwhelming to understand at a glance. This tool analyzes your JSON and counts every object, array, key, and value type, giving you a quick statistical overview of your data structure without manual counting.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the input area and click Analyze. The tool recursively traverses every level of your structure, counting objects, arrays, keys, and primitive values (strings, numbers, booleans, and nulls).
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Results appear as color-coded cards showing the count for each category. The statistics help you understand the composition of your JSON at a glance, useful for debugging and documentation.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You received a large API response and need to understand its structure quickly. Run it through the counter to see how many objects and arrays you're dealing with before writing parsing code.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool counts elements but doesn't show their locations or paths. For detailed structural analysis, you'd need a JSON explorer or tree viewer that shows the full hierarchy.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What does the counter track?</p>
+              <p className="text-muted-foreground">It counts objects, arrays, keys, total values, strings, numbers, booleans, and null values. Each category appears as a separate card.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How are nested structures counted?</p>
+              <p className="text-muted-foreground">Every level is counted recursively. A nested object inside an array inside another object counts toward all three categories.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What counts as a value?</p>
+              <p className="text-muted-foreground">Every primitive (string, number, boolean, null) counts as a value. Objects and arrays contain values but aren't counted as values themselves.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I use this with arrays as root?</p>
+              <p className="text-muted-foreground">Yes, the tool works with any valid JSON including arrays at the root level. It will count all elements within the array.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Is there a size limit?</p>
+              <p className="text-muted-foreground">Very large JSON files may slow down your browser. For best performance, keep files under a few megabytes when analyzing.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-depth-analyzer" className="text-primary hover:underline">JSON Depth Analyzer</a> – Check nesting depth</li>
+            <li><a href="/json-tools/json-key-frequency" className="text-primary hover:underline">JSON Key Frequency Analyzer</a> – Count key occurrences</li>
+            <li><a href="/json-tools/json-explainer" className="text-primary hover:underline">JSON Explainer</a> – Understand JSON structure</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

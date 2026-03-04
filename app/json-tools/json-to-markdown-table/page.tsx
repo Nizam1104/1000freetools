@@ -222,6 +222,46 @@ export default function JsonToMarkdownTablePage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON to Markdown Table Converter</h2>
+          <p className="text-muted-foreground mb-6">
+            Documentation often requires presenting data in readable table format. Converting JSON arrays to Markdown tables by hand means careful alignment of pipes and dashes. This JSON to Markdown converter creates properly formatted tables with headers and column alignment for README files and wikis.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste a JSON array into the Input area. Each object becomes a table row with keys as column headers. Choose column alignment from Left, Center, or Right using the Alignment dropdown. Click Convert to Markdown and get a ready-to-use table.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Nested objects and arrays are flattened for display. Special characters like pipes are escaped to prevent Markdown formatting issues. Use Copy or Download to save the table for your documentation.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Developers writing API documentation need to show example responses in a readable format. Technical writers creating user guides benefit from clean tables showing configuration options or feature comparisons.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Very wide JSON objects create tables with many columns that may not render well on all screens. For large datasets, consider selecting only relevant fields before conversion or splitting into multiple tables.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">How are nested objects displayed?</p><p className="text-muted-foreground">Nested properties are flattened with dot notation like user.name for column headers.</p></div>
+            <div><p className="font-medium mb-1">What about arrays in values?</p><p className="text-muted-foreground">Array values are joined into comma-separated strings within the table cell.</p></div>
+            <div><p className="font-medium mb-1">Can I change column alignment?</p><p className="text-muted-foreground">Yes. Use the Alignment dropdown to set all columns to Left, Center, or Right alignment.</p></div>
+            <div><p className="font-medium mb-1">Does it escape special characters?</p><p className="text-muted-foreground">Yes. Pipe characters and newlines in values are escaped to prevent breaking the table format.</p></div>
+            <div><p className="font-medium mb-1">Can I convert a single object?</p><p className="text-muted-foreground">Yes. Single objects are wrapped in an array and converted as a one-row table.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Convert JSON to spreadsheet format</li>
+            <li><a href="/json-tools/json-to-excel" className="text-primary hover:underline">JSON to Excel</a> – Generate XLSX files from JSON arrays</li>
+            <li><a href="/json-tools/markdown-to-json" className="text-primary hover:underline">Markdown to JSON</a> – Parse tables back to JSON format</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

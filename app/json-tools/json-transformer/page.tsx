@@ -276,6 +276,46 @@ export default function JsonTransformerPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Transformer</h2>
+          <p className="text-muted-foreground mb-6">
+            API responses rarely match your application data model exactly. Renaming keys, extracting nested values, and reshaping structures manually is repetitive work. This JSON Transformer lets you define rules to copy, rename, and transform JSON paths into your desired output structure.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the Input area. Add transformation rules specifying Source Path, Target Path, and Operation. Choose from Copy, Rename, Uppercase, Lowercase, or Delete operations. Click Transform to apply all rules and see the reshaped result.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Use dot notation for nested paths like user.profile.name. Add multiple rules to build complex transformations. The Load Sample button demonstrates renaming firstName to name.first and lowercasing email values in one transformation.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Frontend developers adapting third-party API responses to match component props save significant time. Data engineers normalizing JSON from multiple sources into a unified schema benefit from repeatable transformation rules.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool handles structural transformations, not complex data manipulation. For calculations, filtering, or conditional logic, use a programming language. The transformer works best for consistent reshaping tasks.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">How do I reference nested values?</p><p className="text-muted-foreground">Use dot notation like user.address.city for nested objects and array[index] for array items.</p></div>
+            <div><p className="font-medium mb-1">Can I delete fields?</p><p className="text-muted-foreground">Yes. Use the Delete operation to exclude fields from the output entirely.</p></div>
+            <div><p className="font-medium mb-1">What does Rename do?</p><p className="text-muted-foreground">Rename copies a value to a new path with a different key name, effectively renaming the field.</p></div>
+            <div><p className="font-medium mb-1">Do string operations chain?</p><p className="text-muted-foreground">No. Each rule operates on the original input. Apply Uppercase or Lowercase directly to the source value.</p></div>
+            <div><p className="font-medium mb-1">Can I save transformation rules?</p><p className="text-muted-foreground">Rules are not persisted. Copy your rule configuration for reuse or bookmark this page with your rules in browser storage.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-path-finder" className="text-primary hover:underline">JSON Path Finder</a> – Extract values using path expressions</li>
+            <li><a href="/json-tools/json-flattener" className="text-primary hover:underline">JSON Flattener</a> – Flatten nested JSON structures</li>
+            <li><a href="/json-tools/json-merger" className="text-primary hover:underline">JSON Merger</a> – Combine multiple JSON objects</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

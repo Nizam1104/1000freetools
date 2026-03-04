@@ -142,6 +142,59 @@ export default function JsonToJavaScriptPage() {
           </p>
         </div>
 
+        {/* Using This Tool */}
+        <Card className="mb-6 bg-muted/30">
+          <CardContent className="p-5">
+            <h2 className="text-xl font-semibold mb-3">Using This Tool</h2>
+            <p className="text-muted-foreground mb-4">
+              You have JSON data that needs to be a JavaScript object in your code. Copy-pasting JSON directly doesn't work because of quote differences and the need for proper variable declarations. You want a const declaration with the data ready to use.
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <div>
+                <h3 className="font-medium mb-2">Output Options:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• <code className="bg-muted px-1 rounded">const</code> declarations</li>
+                  <li>• <code className="bg-muted px-1 rounded">let</code> or <code className="bg-muted px-1 rounded">var</code></li>
+                  <li>• ES6 module exports</li>
+                  <li>• CommonJS exports</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Customization:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Single or double quotes</li>
+                  <li>• Trailing commas (ES6+)</li>
+                  <li>• Custom variable names</li>
+                  <li>• Indentation style</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* How It Works - Definition List Style */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">How the Conversion Works</h2>
+          <div className="space-y-3">
+            <div className="flex gap-4">
+              <div className="w-24 font-medium text-primary shrink-0">Input:</div>
+              <div className="text-muted-foreground">Raw JSON string with double quotes and strict syntax</div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-24 font-medium text-primary shrink-0">Parse:</div>
+              <div className="text-muted-foreground">JSON is parsed and validated for correctness</div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-24 font-medium text-primary shrink-0">Transform:</div>
+              <div className="text-muted-foreground">Values converted to JavaScript literals with your quote preference</div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-24 font-medium text-primary shrink-0">Output:</div>
+              <div className="text-muted-foreground">Ready-to-use JavaScript code with variable declaration</div>
+            </div>
+          </div>
+        </div>
+
         <Card className="mb-6">
           <CardContent className="p-4">
             <div className="flex flex-wrap items-center gap-4">
@@ -245,6 +298,67 @@ export default function JsonToJavaScriptPage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON to JavaScript Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          JSON is almost valid JavaScript but not quite. This converter transforms JSON into proper JavaScript object notation with your choice of quote style and optional trailing commas. The output is a complete const declaration ready to paste into your code.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the conversion works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your JSON in the input panel. Choose single or double quotes for strings. Optionally enable trailing commas for ES6+ code. Click Convert to JS and the tool parses your JSON then rebuilds it as a JavaScript object with a const declaration.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The output preserves your data structure with proper JavaScript syntax. Arrays and nested objects are formatted with readable indentation. Use Copy to grab the code or Download to save as a .js file.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You have JSON data that needs to become a JavaScript constant in your module. Or you're creating test fixtures and want to avoid manual conversion errors. This tool also helps when embedding API responses directly into frontend code for demos.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          This converter handles syntax only. It doesn't create JavaScript classes or add type annotations. For TypeScript interfaces or class definitions, use our JSON to TypeScript tool instead.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What's the difference between JSON and JavaScript objects?</p>
+            <p className="text-muted-foreground">JSON requires double quotes and doesn't allow trailing commas. JavaScript objects can use single quotes, allow trailing commas in ES6+, and support more value types.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I use single quotes in the output?</p>
+            <p className="text-muted-foreground">Yes, use the Quote Style dropdown to choose single or double quotes. Single quotes are common in JavaScript codebases.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What are trailing commas?</p>
+            <p className="text-muted-foreground">Trailing commas are commas after the last item in an array or object. They're valid in ES6+ and make git diffs cleaner when adding items.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does this handle functions or undefined?</p>
+            <p className="text-muted-foreground">No, JSON doesn't support functions or undefined. Those values can't be represented in JSON and won't appear in the output.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I change the variable name?</p>
+            <p className="text-muted-foreground">The variable name is currently set to "data". Edit the output manually to use your preferred name, or request this feature for future updates.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-python" className="text-primary hover:underline">JSON to Python</a> – Convert JSON to Python dictionary syntax
+          </li>
+          <li>
+            <a href="/json-tools/json-to-typescript" className="text-primary hover:underline">JSON to TypeScript</a> – Generate TypeScript interfaces from JSON
+          </li>
+          <li>
+            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format and beautify JSON with indentation
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -245,6 +245,67 @@ export default function JsonRenameKeysPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Rename Keys</h2>
+          <p className="text-muted-foreground mb-6">
+            Working with APIs often means dealing with inconsistent key naming conventions. Snake_case from one service, camelCase from another. This tool lets you bulk rename JSON keys to match your application's expected format without manual editing.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON and define rename rules by specifying old key names and their new counterparts. The tool processes each rule and applies the transformation across your entire JSON structure.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Enable the recursive option to rename keys at all nesting levels. This is useful when the same key appears in multiple nested objects and you want consistent renaming throughout.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're integrating a third-party API that returns user_name and user_email, but your frontend expects username and email. Instead of writing transformation code, quickly rename the keys here and use the output directly.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Note that this tool performs simple key replacement. If you need conditional renaming or value-based transformations, you'll need a more advanced data transformation solution.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">Does this rename keys in nested objects?</p>
+              <p className="text-muted-foreground">Yes, when you enable the Recursive checkbox, the tool renames matching keys at all nesting levels throughout your JSON structure.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I rename multiple keys at once?</p>
+              <p className="text-muted-foreground">Absolutely. Click Add Rule to create as many rename mappings as you need. Each rule is applied in sequence to transform your JSON.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What happens if old and new key names are the same?</p>
+              <p className="text-muted-foreground">The tool will simply keep the existing key name. There's no error, but the rule effectively does nothing in that case.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Are arrays handled correctly?</p>
+              <p className="text-muted-foreground">Yes. When recursive mode is on, the tool processes objects inside arrays and renames matching keys within those nested objects.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I download the renamed JSON?</p>
+              <p className="text-muted-foreground">Yes. Use the Download button to save your renamed JSON as a file, or click Copy to paste it directly into your code.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Reshape JSON structures with custom rules
+            </li>
+            <li>
+              <a href="/json-tools/json-pretty-print" className="text-primary hover:underline">JSON Pretty Print</a> – Format JSON with customizable indentation
+            </li>
+            <li>
+              <a href="/json-tools/json-remove-keys" className="text-primary hover:underline">JSON Remove Keys</a> – Delete unwanted keys from JSON objects
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -202,6 +202,67 @@ export default function JsonApiResponseGeneratorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON API Response Generator</h2>
+          <p className="text-muted-foreground mb-6">
+            Frontend development often waits on backend APIs. This tool generates realistic mock API responses with proper structure including status, data, pagination, and metadata so you can build and test without a live backend.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Choose your response status, number of data items, and optional sections like pagination and metadata. The generator creates a complete API-style response with realistic sample data.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Each data item includes an id, name, and random value. Pagination metadata calculates correct page numbers and totals based on your settings for authentic API behavior.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're building a React component that displays paginated user data. Generate a mock response to test your component's rendering and pagination logic before the API is ready.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The generated data is randomized and generic. For testing specific scenarios or edge cases, you'll need to manually edit the output or use more advanced mock data tools.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What status types are available?</p>
+              <p className="text-muted-foreground">Success, error, and warning statuses are available. Each generates an appropriate message and structure for that response type.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I customize the data fields?</p>
+              <p className="text-muted-foreground">The basic generator creates id, name, and value fields. For custom field structures, generate the response then edit it manually.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How does pagination work?</p>
+              <p className="text-muted-foreground">Enable pagination to include page, limit, total, and totalPages fields. The generator calculates correct values based on your item count.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What's in the metadata section?</p>
+              <p className="text-muted-foreground">Metadata includes a timestamp, API version, and unique request ID. These help with debugging and tracking API calls in production.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I download the response?</p>
+              <p className="text-muted-foreground">Yes. Use Download to save as a JSON file or Copy to paste into your mock server or test fixtures.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a href="/json-tools/json-array-generator" className="text-primary hover:underline">JSON Array Generator</a> – Generate test arrays
+            </li>
+            <li>
+              <a href="/json-tools/json-pagination-generator" className="text-primary hover:underline">JSON Pagination Generator</a> – Add pagination wrapper
+            </li>
+            <li>
+              <a href="/json-tools/json-random-object" className="text-primary hover:underline">JSON Random Object</a> – Create random test data
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

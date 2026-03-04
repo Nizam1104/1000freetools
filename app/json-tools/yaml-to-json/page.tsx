@@ -281,6 +281,46 @@ settings:
             </CardContent>
           </Card>
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About YAML to JSON Converter</h2>
+          <p className="text-muted-foreground mb-6">
+            YAML configuration files are popular for their readability, but many tools require JSON format. Manually converting YAML indentation and syntax to JSON brackets and quotes is error-prone. This YAML to JSON converter parses YAML and outputs valid JSON instantly.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your YAML into the Input area. Choose 2 or 4 spaces for JSON indentation. Click Convert to JSON and the tool parses the YAML structure, converting lists, mappings, and scalar values into equivalent JSON format.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The converter handles nested structures, boolean values, numbers, and strings. Sample YAML demonstrates typical configuration with users array, metadata object, and nested settings. Copy or Download saves the JSON output.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            DevOps teams working with Kubernetes or Docker configs often need JSON for tools that do not accept YAML. Developers migrating from YAML-based configuration to JSON-based systems benefit from quick conversion.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This converter handles standard YAML features. Advanced YAML like anchors, aliases, and multi-line strings may not convert perfectly. For complex YAML files, verify the output matches your expectations.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div><p className="font-medium mb-1">Does it handle nested YAML?</p><p className="text-muted-foreground">Yes. Nested mappings and lists are converted to nested JSON objects and arrays.</p></div>
+            <div><p className="font-medium mb-1">What about YAML anchors?</p><p className="text-muted-foreground">Anchors and aliases are not fully supported. The converter processes the basic structure only.</p></div>
+            <div><p className="font-medium mb-1">Are comments preserved?</p><p className="text-muted-foreground">No. JSON does not support comments, so YAML comments are removed during conversion.</p></div>
+            <div><p className="font-medium mb-1">Can I convert JSON back to YAML?</p><p className="text-muted-foreground">This tool only converts YAML to JSON. Use a separate JSON to YAML converter for reverse conversion.</p></div>
+            <div><p className="font-medium mb-1">Is my data sent anywhere?</p><p className="text-muted-foreground">No. All conversion happens in your browser. Your YAML content stays private.</p></div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-to-yaml" className="text-primary hover:underline">JSON to YAML</a> – Convert JSON back to YAML format</li>
+            <li><a href="/json-tools/yaml-validator" className="text-primary hover:underline">YAML Validator</a> – Check YAML syntax for errors</li>
+            <li><a href="/json-tools/json-formatter" className="text-primary hover:underline">JSON Formatter</a> – Beautify the converted JSON output</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

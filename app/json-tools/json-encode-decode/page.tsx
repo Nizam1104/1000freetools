@@ -180,6 +180,61 @@ export default function JsonEncodeDecodePage() {
             </Card>
           )}
         </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Encode & Decode Tool</h2>
+          <p className="text-muted-foreground mb-6">
+            JSON data often needs to be encoded for safe transmission in URLs or query parameters. This tool encodes JSON strings using URI encoding or decodes them back to readable format, handling special characters correctly.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Choose Encode or Decode mode using the tabs. Paste your input and click the process button. Encoding converts special characters to percent-encoded format, while decoding reverses the process.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            The Swap button lets you quickly switch between modes and moves the output to input for round-trip testing. Results can be copied or downloaded as text files.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You need to pass JSON data in a URL query parameter or store it in a place that requires encoding. Encode it here first to ensure special characters don't break your URL.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This uses standard URI encoding (encodeURIComponent), not base64. For base64 encoding, you'd need a different tool. URI encoding is safer for URLs but produces longer output.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What encoding method is used?</p>
+              <p className="text-muted-foreground">The tool uses encodeURIComponent, which percent-encodes special characters. This is standard for URL-safe encoding.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">When should I encode JSON?</p>
+              <p className="text-muted-foreground">Encode JSON when including it in URLs, query parameters, or HTML attributes where special characters could cause parsing issues.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I decode any encoded string?</p>
+              <p className="text-muted-foreground">Only strings encoded with encodeURIComponent can be decoded. Base64 or other encoding formats require different tools.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does encoding change the data?</p>
+              <p className="text-muted-foreground">No, encoding is reversible. Decoding the encoded output gives you back the exact original JSON string.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Why is encoded JSON so long?</p>
+              <p className="text-muted-foreground">Percent encoding expands each special character to three characters (like %7B for &#123;). This is normal and ensures safe transmission.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li><a href="/json-tools/json-escape-unescape" className="text-primary hover:underline">JSON Escape & Unescape</a> – Escape special characters</li>
+            <li><a href="/json-tools/json-url-encoder" className="text-primary hover:underline">JSON URL Encoder</a> – Encode for URLs</li>
+            <li><a href="/json-tools/json-base64" className="text-primary hover:underline">JSON Base64</a> – Base64 encode/decode JSON</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -356,6 +356,67 @@ export default function JsonSchemaValidatorPage() {
           </Card>
         )}
       </div>
+
+      {/* SEO Content */}
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON Schema Validator</h2>
+        <p className="text-muted-foreground mb-6">
+          JSON Schema defines the expected structure of your data. This validator checks if your JSON matches a schema, verifying types, required fields, and value constraints to catch data issues before they reach production.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How it works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your JSON data and the schema that defines its expected structure. The validator checks types, required properties, string patterns, numeric ranges, and array constraints against your schema.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Each validation error includes the exact path to the problematic field, what was expected, and what was found. This makes fixing data issues straightforward and fast.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          Your API accepts user-submitted JSON and you need to verify it matches your expected format. Validate sample payloads against your schema before implementing server-side validation.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          This validator supports common JSON Schema keywords but not the full specification. Complex schemas with advanced features like oneOf or conditional subschemas may not validate correctly.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What schema keywords are supported?</p>
+            <p className="text-muted-foreground">Type checking, required fields, enum values, string patterns, min/max lengths, numeric ranges, and array item constraints are all supported.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">How do I specify required fields?</p>
+            <p className="text-muted-foreground">Add a "required" array to your schema with the names of required properties. Missing required fields generate validation errors.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can it validate nested objects?</p>
+            <p className="text-muted-foreground">Yes, the validator recursively checks nested objects and arrays. Each nested property is validated against its corresponding schema definition.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What does the path in errors mean?</p>
+            <p className="text-muted-foreground">The path shows the location of the error using dot notation. "$.user.email" means the email field inside the user object has an issue.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Is my data sent anywhere?</p>
+            <p className="text-muted-foreground">No, validation happens entirely in your browser. Your JSON and schema never leave your device, keeping sensitive data secure.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Check JSON syntax
+          </li>
+          <li>
+            <a href="/json-tools/json-schema-example-generator" className="text-primary hover:underline">JSON Schema Example Generator</a> – Generate example data
+          </li>
+          <li>
+            <a href="/json-tools/json-config-validator" className="text-primary hover:underline">JSON Config Validator</a> – Validate config files
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

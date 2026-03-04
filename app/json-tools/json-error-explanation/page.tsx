@@ -203,6 +203,67 @@ export default function JsonErrorExplanationPage() {
           </div>
         )}
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON Error Explanation Tool</h2>
+        <p className="text-muted-foreground mb-6">
+          JSON syntax errors can be frustrating when the parser message makes no sense. This tool takes those cryptic error messages and translates them into plain English with specific guidance on how to fix the problem. Instead of guessing what "unexpected token" means, you get a clear explanation.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the error analysis works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your broken JSON and click the Analyze Error button. The tool attempts to parse your input, catches the error, and extracts the position information from the error message. It then calculates the exact line and column where the parser failed.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Based on the error type, the tool provides a tailored explanation and fix suggestion. It handles common issues like missing commas, unquoted properties, mismatched brackets, and invalid number formats. The context around the error is shown to help you locate the problem quickly.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You copied JSON from a log file or API response and it won't parse. The browser console shows an error but you can't figure out what's wrong. This tool is also helpful when learning JSON syntax and you want to understand why your input is invalid.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Keep in mind this tool explains syntax errors only. It won't help with semantic issues like wrong data types or missing required fields. For those cases, you'd need a JSON Schema validator instead.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What types of errors does this tool explain?</p>
+            <p className="text-muted-foreground">It covers syntax errors like missing commas, unquoted strings, mismatched brackets, invalid numbers, and unexpected tokens. Each error type gets a specific explanation.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can it handle multiple errors at once?</p>
+            <p className="text-muted-foreground">No, JSON parsers stop at the first error they encounter. Fix the reported error first, then run the analysis again if there are more issues.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does it work with JSON5 or relaxed JSON?</p>
+            <p className="text-muted-foreground">No, this tool uses the standard JSON parser which requires strict JSON syntax. JSON5 features like comments and trailing commas will be flagged as errors.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">How accurate is the error position?</p>
+            <p className="text-muted-foreground">The position points to where the parser detected the problem, which is usually right after the actual mistake. Check the characters before the reported position.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I use this to learn JSON syntax?</p>
+            <p className="text-muted-foreground">Yes, the explanations teach you what went wrong and why. Over time you'll recognize common patterns and fix errors faster on your own.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format and beautify valid JSON with proper indentation
+          </li>
+          <li>
+            <a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Quick validation check without detailed explanations
+          </li>
+          <li>
+            <a href="/json-tools/json-schema-validator" className="text-primary hover:underline">JSON Schema Validator</a> – Validate JSON structure against a schema definition
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
