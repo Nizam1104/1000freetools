@@ -93,7 +93,7 @@ export default function RemoveImageBackground({
   >([]);
   const [bulkProcessingProgress, setBulkProcessingProgress] = useState(0);
   const [currentlyProcessing, setCurrentlyProcessing] = useState<string | null>(
-    null
+    null,
   );
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
@@ -147,7 +147,7 @@ export default function RemoveImageBackground({
         setLoading(false);
       }
     },
-    [onImageUploaded]
+    [onImageUploaded],
   );
 
   const handleBulkImageUpload = useCallback(
@@ -180,7 +180,7 @@ export default function RemoveImageBackground({
       try {
         setLoading(true);
         const imageDataPromises = validFiles.map((file) =>
-          loadBackgroundImageData(file)
+          loadBackgroundImageData(file),
         );
         const imagesData = await Promise.all(imageDataPromises);
 
@@ -205,7 +205,7 @@ export default function RemoveImageBackground({
         }
       }
     },
-    []
+    [],
   );
 
   const removeBulkImage = useCallback((index: number) => {
@@ -256,12 +256,12 @@ export default function RemoveImageBackground({
       try {
         const result = await processBackgroundRemoval(
           image.file,
-          presetOptions
+          presetOptions,
         );
 
         // Update the processed image in our array
         const index = updatedProcessedImages.findIndex(
-          (img) => img.original.name === image.name
+          (img) => img.original.name === image.name,
         );
         if (index !== -1) {
           // Clean up previous processed image if exists
@@ -277,7 +277,7 @@ export default function RemoveImageBackground({
       } catch (err) {
         console.error(`Error processing ${image.name}:`, err);
         const index = updatedProcessedImages.findIndex(
-          (img) => img.original.name === image.name
+          (img) => img.original.name === image.name,
         );
         if (index !== -1) {
           updatedProcessedImages[index] = {
@@ -295,7 +295,7 @@ export default function RemoveImageBackground({
     setCurrentlyProcessing(null);
 
     toast.success(
-      `Processing complete: ${successCount} successful, ${errorCount} failed`
+      `Processing complete: ${successCount} successful, ${errorCount} failed`,
     );
   }, [
     bulkImages,
@@ -308,7 +308,7 @@ export default function RemoveImageBackground({
 
   const downloadAllProcessedImages = useCallback(async () => {
     const successfulImages = processedBulkImages.filter(
-      (img) => img.processed && !img.error
+      (img) => img.processed && !img.error,
     );
     if (successfulImages.length === 0) {
       toast.error("No processed images available for download");
@@ -331,7 +331,7 @@ export default function RemoveImageBackground({
         } catch (error) {
           console.error(
             `Failed to fetch processed image ${img.original.name}:`,
-            error
+            error,
           );
         }
       }
@@ -360,11 +360,11 @@ export default function RemoveImageBackground({
         imageUrl,
         fileName,
         "no-bg",
-        outputFormat.toLowerCase()
+        outputFormat.toLowerCase(),
       );
       toast.success("Image downloaded successfully");
     },
-    [outputFormat]
+    [outputFormat],
   );
 
   const removeImageBackground = useCallback(async () => {
@@ -395,7 +395,7 @@ export default function RemoveImageBackground({
       // Process background removal using modularized utility
       const result = await processBackgroundRemoval(
         selectedImage.file,
-        presetOptions
+        presetOptions,
       );
 
       // Store result and update UI
@@ -410,7 +410,7 @@ export default function RemoveImageBackground({
       // Auto-download the processed image
       handleDownloadProcessedImage(
         result.url,
-        selectedImage.name.replace(/\.[^/.]+$/, "")
+        selectedImage.name.replace(/\.[^/.]+$/, ""),
       );
     } catch (err) {
       console.error("Error removing background:", err);
@@ -759,14 +759,14 @@ export default function RemoveImageBackground({
                             processedImage,
                             selectedImage.name.replace(/\.[^/.]+$/, "") +
                               "_no-bg." +
-                              outputFormat.toLowerCase()
+                              outputFormat.toLowerCase(),
                           )
                         }
                       >
                         <Download className="h-3 w-3" />
                       </Button>
                     </div>
-                    <div className="w-full h-full bg-checkerboard">
+                    <div className="w-full h-full ">
                       <Image
                         src={processedImage}
                         alt="Background removed"
@@ -782,7 +782,7 @@ export default function RemoveImageBackground({
                     onClick={() =>
                       handleDownloadProcessedImage(
                         processedImage,
-                        selectedImage.name.replace(/\.[^/.]+$/, "")
+                        selectedImage.name.replace(/\.[^/.]+$/, ""),
                       )
                     }
                     className="w-full mt-2 text-xs h-8 bg-primary text-primary-foreground hover:bg-primary/90"
@@ -946,20 +946,20 @@ export default function RemoveImageBackground({
 
       {/* Bulk Processing Progress */}
       {isBulkMode && loading && bulkProcessingProgress > 0 && (
-            <div className="space-y-3 max-w-[500px] mx-auto">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Bulk Processing</span>
-                <span className="text-sm text-muted-foreground">
-                  {Math.round(bulkProcessingProgress)}%
-                </span>
-              </div>
-              <Progress value={bulkProcessingProgress} className="w-full" />
-              {currentlyProcessing && (
-                <p className="text-xs text-muted-foreground">
-                  Currently processing: {currentlyProcessing}
-                </p>
-              )}
-            </div>
+        <div className="space-y-3 max-w-[500px] mx-auto">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium">Bulk Processing</span>
+            <span className="text-sm text-muted-foreground">
+              {Math.round(bulkProcessingProgress)}%
+            </span>
+          </div>
+          <Progress value={bulkProcessingProgress} className="w-full" />
+          {currentlyProcessing && (
+            <p className="text-xs text-muted-foreground">
+              Currently processing: {currentlyProcessing}
+            </p>
+          )}
+        </div>
       )}
 
       {isBulkMode && (
@@ -1006,8 +1006,8 @@ export default function RemoveImageBackground({
                 ? `Processing (${Math.round(bulkProcessingProgress)}%)`
                 : "Processing..."
               : isBulkMode
-              ? `Process ${bulkImages.length} Images`
-              : "Remove Background"}
+                ? `Process ${bulkImages.length} Images`
+                : "Remove Background"}
           </Button>
           <Button
             variant="outline"
@@ -1020,7 +1020,6 @@ export default function RemoveImageBackground({
           </Button>
         </div>
       ) : null}
-
 
       {/* Preset Selection */}
       <Card>

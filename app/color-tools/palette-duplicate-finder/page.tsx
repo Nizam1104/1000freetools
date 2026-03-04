@@ -51,7 +51,11 @@ const rgbToHsl = (r: number, g: number, b: number) => {
         break;
     }
   }
-  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+  return {
+    h: Math.round(h * 360),
+    s: Math.round(s * 100),
+    l: Math.round(l * 100),
+  };
 };
 
 const parseColors = (input: string): string[] => {
@@ -74,7 +78,7 @@ const colorDistance = (color1: string, color2: string) => {
   // Weighted distance considering hue circularity
   let dh = Math.abs(hsl1.h - hsl2.h);
   if (dh > 180) dh = 360 - dh;
-  
+
   const ds = Math.abs(hsl1.s - hsl2.s);
   const dl = Math.abs(hsl1.l - hsl2.l);
 
@@ -83,14 +87,19 @@ const colorDistance = (color1: string, color2: string) => {
   const normalizedDs = ds / 100;
   const normalizedDl = dl / 100;
 
-  return Math.sqrt(
-    normalizedDh * normalizedDh * 0.5 +
-    normalizedDs * normalizedDs * 0.25 +
-    normalizedDl * normalizedDl * 0.25
-  ) * 100;
+  return (
+    Math.sqrt(
+      normalizedDh * normalizedDh * 0.5 +
+        normalizedDs * normalizedDs * 0.25 +
+        normalizedDl * normalizedDl * 0.25,
+    ) * 100
+  );
 };
 
-const findDuplicates = (colors: string[], threshold: number): DuplicateGroup[] => {
+const findDuplicates = (
+  colors: string[],
+  threshold: number,
+): DuplicateGroup[] => {
   const groups: DuplicateGroup[] = [];
   const used = new Set<number>();
 
@@ -120,9 +129,18 @@ const findDuplicates = (colors: string[], threshold: number): DuplicateGroup[] =
 };
 
 const PRESET_PALETTES = [
-  { name: "With Duplicates", colors: ["#6366f1", "#6366f1", "#8b5cf6", "#8b5cf6", "#a855f7"] },
-  { name: "Similar Colors", colors: ["#6366f1", "#6367f2", "#6466f0", "#8b5cf6", "#8c5cf7"] },
-  { name: "Unique", colors: ["#ef4444", "#3b82f6", "#22c55e", "#f59e0b", "#8b5cf6"] },
+  {
+    name: "With Duplicates",
+    colors: ["#6366f1", "#6366f1", "#8b5cf6", "#8b5cf6", "#a855f7"],
+  },
+  {
+    name: "Similar Colors",
+    colors: ["#6366f1", "#6367f2", "#6466f0", "#8b5cf6", "#8c5cf7"],
+  },
+  {
+    name: "Unique",
+    colors: ["#ef4444", "#3b82f6", "#22c55e", "#f59e0b", "#8b5cf6"],
+  },
 ];
 
 export default function PaletteDuplicateFinderPage() {
@@ -172,7 +190,7 @@ export default function PaletteDuplicateFinderPage() {
     if (duplicateGroups.length === 0) return;
 
     const duplicateIndices = new Set(
-      duplicateGroups.flatMap((g) => g.indices.slice(1))
+      duplicateGroups.flatMap((g) => g.indices.slice(1)),
     );
     const uniqueColors = colors.filter((_, i) => !duplicateIndices.has(i));
     setColors(uniqueColors);
@@ -186,10 +204,10 @@ export default function PaletteDuplicateFinderPage() {
     if (duplicateGroups.length === 0) return;
 
     const duplicateIndices = new Set(
-      duplicateGroups.flatMap((g) => g.indices.slice(1))
+      duplicateGroups.flatMap((g) => g.indices.slice(1)),
     );
     const uniqueColors = colors.filter((_, i) => !duplicateIndices.has(i));
-    
+
     try {
       await navigator.clipboard.writeText(uniqueColors.join(", "));
       setCopied(true);
@@ -200,7 +218,10 @@ export default function PaletteDuplicateFinderPage() {
     }
   };
 
-  const duplicateCount = duplicateGroups.reduce((sum, g) => sum + g.colors.length - 1, 0);
+  const duplicateCount = duplicateGroups.reduce(
+    (sum, g) => sum + g.colors.length - 1,
+    0,
+  );
   const uniqueCount = colors.length - duplicateCount;
 
   return (
@@ -208,9 +229,12 @@ export default function PaletteDuplicateFinderPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Palette Duplicate Finder</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Palette Duplicate Finder
+          </h1>
           <p className="text-muted-foreground">
-            Detect duplicate or near-identical colors within a color palette. Keep your design system clean and free of redundant swatches.
+            Detect duplicate or near-identical colors within a color palette.
+            Keep your design system clean and free of redundant swatches.
           </p>
         </div>
 
@@ -226,9 +250,7 @@ export default function PaletteDuplicateFinderPage() {
                 className="min-h-[100px] font-mono"
               />
               <div className="flex items-center gap-2">
-                <Button onClick={loadColors}>
-                  Load Colors
-                </Button>
+                <Button onClick={loadColors}>Load Colors</Button>
                 <Button variant="outline" onClick={() => setInputText("")}>
                   Clear
                 </Button>
@@ -237,7 +259,9 @@ export default function PaletteDuplicateFinderPage() {
 
             {/* Preset Palettes */}
             <div className="pt-4 border-t">
-              <Label className="text-sm text-muted-foreground mb-3 block">Or load a preset:</Label>
+              <Label className="text-sm text-muted-foreground mb-3 block">
+                Or load a preset:
+              </Label>
               <div className="flex flex-wrap gap-2">
                 {PRESET_PALETTES.map((preset) => (
                   <Button
@@ -269,7 +293,11 @@ export default function PaletteDuplicateFinderPage() {
                       <div className="flex items-center justify-between">
                         <Label>Similarity Threshold: {threshold}%</Label>
                         <span className="text-sm text-muted-foreground">
-                          {threshold <= 3 ? "Exact match" : threshold <= 8 ? "Very similar" : "Similar"}
+                          {threshold <= 3
+                            ? "Exact match"
+                            : threshold <= 8
+                              ? "Very similar"
+                              : "Similar"}
                         </span>
                       </div>
                       <Slider
@@ -297,18 +325,26 @@ export default function PaletteDuplicateFinderPage() {
                 {/* Stats */}
                 <div className="flex items-center gap-4 pt-4 border-t">
                   <div className="flex-1 p-3 rounded-lg bg-muted/50">
-                    <p className="text-sm text-muted-foreground">Total Colors</p>
+                    <p className="text-sm text-muted-foreground">
+                      Total Colors
+                    </p>
                     <p className="text-2xl font-semibold">{colors.length}</p>
                   </div>
                   {hasSearched && (
                     <>
                       <div className="flex-1 p-3 rounded-lg bg-green-500/10">
                         <p className="text-sm text-muted-foreground">Unique</p>
-                        <p className="text-2xl font-semibold text-green-600">{uniqueCount}</p>
+                        <p className="text-2xl font-semibold text-green-600">
+                          {uniqueCount}
+                        </p>
                       </div>
                       <div className="flex-1 p-3 rounded-lg bg-amber-500/10">
-                        <p className="text-sm text-muted-foreground">Duplicates</p>
-                        <p className="text-2xl font-semibold text-amber-600">{duplicateCount}</p>
+                        <p className="text-sm text-muted-foreground">
+                          Duplicates
+                        </p>
+                        <p className="text-2xl font-semibold text-amber-600">
+                          {duplicateCount}
+                        </p>
                       </div>
                     </>
                   )}
@@ -323,7 +359,8 @@ export default function PaletteDuplicateFinderPage() {
                 <div className="flex flex-wrap gap-2">
                   {colors.map((color, i) => {
                     const isDuplicate = duplicateGroups.some(
-                      (g) => g.indices.includes(i) && g.indices.indexOf(i) !== 0
+                      (g) =>
+                        g.indices.includes(i) && g.indices.indexOf(i) !== 0,
                     );
                     return (
                       <div
@@ -334,11 +371,15 @@ export default function PaletteDuplicateFinderPage() {
                         title={isDuplicate ? "Duplicate" : "Unique"}
                       >
                         <div
-                          className="w-8 h-8 rounded bg-checkerboard"
+                          className="w-8 h-8 rounded "
                           style={{ backgroundColor: color }}
                         />
-                        <span className="text-sm font-mono">{color.toUpperCase()}</span>
-                        <span className="text-xs text-muted-foreground">#{i + 1}</span>
+                        <span className="text-sm font-mono">
+                          {color.toUpperCase()}
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          #{i + 1}
+                        </span>
                       </div>
                     );
                   })}
@@ -353,10 +394,16 @@ export default function PaletteDuplicateFinderPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <AlertCircle className="h-5 w-5 text-amber-500" />
-                      <Label>Duplicate Groups Found ({duplicateGroups.length})</Label>
+                      <Label>
+                        Duplicate Groups Found ({duplicateGroups.length})
+                      </Label>
                     </div>
                     <div className="flex gap-2">
-                      <Button variant="outline" size="sm" onClick={copyUniqueColors}>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={copyUniqueColors}
+                      >
                         {copied ? (
                           <Check className="h-4 w-4 mr-2 text-green-500" />
                         ) : (
@@ -364,7 +411,11 @@ export default function PaletteDuplicateFinderPage() {
                         )}
                         Copy Unique
                       </Button>
-                      <Button variant="outline" size="sm" onClick={removeDuplicates}>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={removeDuplicates}
+                      >
                         <Trash2 className="h-4 w-4 mr-2" />
                         Remove Duplicates
                       </Button>
@@ -373,11 +424,15 @@ export default function PaletteDuplicateFinderPage() {
 
                   <div className="space-y-4">
                     {duplicateGroups.map((group, groupIndex) => (
-                      <div key={groupIndex} className="p-4 rounded-lg border bg-amber-500/5">
+                      <div
+                        key={groupIndex}
+                        className="p-4 rounded-lg border bg-amber-500/5"
+                      >
                         <div className="flex items-center gap-2 mb-3">
                           <AlertCircle className="h-4 w-4 text-amber-500" />
                           <span className="text-sm font-medium">
-                            Group {groupIndex + 1} - {group.colors.length} similar colors
+                            Group {groupIndex + 1} - {group.colors.length}{" "}
+                            similar colors
                           </span>
                         </div>
                         <div className="flex flex-wrap gap-2">
@@ -385,15 +440,19 @@ export default function PaletteDuplicateFinderPage() {
                             <div
                               key={i}
                               className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${
-                                i === 0 ? "bg-green-500/10 border-green-500/30" : "bg-card"
+                                i === 0
+                                  ? "bg-green-500/10 border-green-500/30"
+                                  : "bg-card"
                               }`}
                             >
                               <div
-                                className="w-8 h-8 rounded bg-checkerboard"
+                                className="w-8 h-8 rounded "
                                 style={{ backgroundColor: color }}
                               />
                               <div>
-                                <p className="text-sm font-mono">{color.toUpperCase()}</p>
+                                <p className="text-sm font-mono">
+                                  {color.toUpperCase()}
+                                </p>
                                 <p className="text-xs text-muted-foreground">
                                   Position #{group.indices[i] + 1}
                                   {i === 0 && " (kept)"}
@@ -403,7 +462,12 @@ export default function PaletteDuplicateFinderPage() {
                           ))}
                         </div>
                         <p className="text-xs text-muted-foreground mt-3">
-                          Max distance: {colorDistance(group.colors[0], group.colors[group.colors.length - 1]).toFixed(1)}%
+                          Max distance:{" "}
+                          {colorDistance(
+                            group.colors[0],
+                            group.colors[group.colors.length - 1],
+                          ).toFixed(1)}
+                          %
                         </p>
                       </div>
                     ))}
@@ -420,7 +484,9 @@ export default function PaletteDuplicateFinderPage() {
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/10 mb-4">
                       <Check className="h-8 w-8 text-green-500" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">No Duplicates Found!</h3>
+                    <h3 className="text-lg font-semibold mb-2">
+                      No Duplicates Found!
+                    </h3>
                     <p className="text-muted-foreground">
                       All {colors.length} colors in your palette are unique.
                     </p>

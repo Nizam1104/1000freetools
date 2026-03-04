@@ -25,7 +25,9 @@ const hslToHex = (h: number, s: number, l: number): string => {
   const f = (n: number) => {
     const k = (n + h / 30) % 12;
     const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color).toString(16).padStart(2, "0");
+    return Math.round(255 * color)
+      .toString(16)
+      .padStart(2, "0");
   };
   return `#${f(0)}${f(8)}${f(4)}`;
 };
@@ -96,11 +98,21 @@ const hexToHsl = (hex: string): { h: number; s: number; l: number } | null => {
         break;
     }
   }
-  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+  return {
+    h: Math.round(h * 360),
+    s: Math.round(s * 100),
+    l: Math.round(l * 100),
+  };
 };
 
 export default function AdvancedColorPickerPage() {
-  const [color, setColor] = useState<ColorState>({ h: 260, s: 70, l: 55, v: 73, a: 100 });
+  const [color, setColor] = useState<ColorState>({
+    h: 260,
+    s: 70,
+    l: 55,
+    v: 73,
+    a: 100,
+  });
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [hexInput, setHexInput] = useState("");
   const [activeTab, setActiveTab] = useState("hsl");
@@ -139,14 +151,26 @@ export default function AdvancedColorPickerPage() {
     }
   };
 
-  const CopyButton = ({ text, field, className = "" }: { text: string; field: string; className?: string }) => (
+  const CopyButton = ({
+    text,
+    field,
+    className = "",
+  }: {
+    text: string;
+    field: string;
+    className?: string;
+  }) => (
     <Button
       variant="ghost"
       size="sm"
       className={`h-8 w-8 p-0 ${className}`}
       onClick={() => copyToClipboard(text, field)}
     >
-      {copiedField === field ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+      {copiedField === field ? (
+        <Check className="h-4 w-4 text-green-500" />
+      ) : (
+        <Copy className="h-4 w-4" />
+      )}
     </Button>
   );
 
@@ -169,8 +193,13 @@ export default function AdvancedColorPickerPage() {
   }) => (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <Label className="text-sm font-medium text-muted-foreground">{label}</Label>
-        <span className="text-sm font-mono">{value}{suffix}</span>
+        <Label className="text-sm font-medium text-muted-foreground">
+          {label}
+        </Label>
+        <span className="text-sm font-mono">
+          {value}
+          {suffix}
+        </span>
       </div>
       <Slider
         value={[value]}
@@ -198,7 +227,10 @@ export default function AdvancedColorPickerPage() {
       const h = angle < 0 ? angle + 360 : angle;
 
       const distance = Math.sqrt(x * x + y * y);
-      const normalizedDistance = Math.max(0, Math.min(1, (distance - innerRadius) / (radius - innerRadius)));
+      const normalizedDistance = Math.max(
+        0,
+        Math.min(1, (distance - innerRadius) / (radius - innerRadius)),
+      );
 
       const s = 50 + normalizedDistance * 50;
       const l = 50 + (1 - normalizedDistance) * 30;
@@ -208,9 +240,12 @@ export default function AdvancedColorPickerPage() {
     };
 
     const selectorAngle = color.h;
-    const selectorDistance = innerRadius + ((color.s - 50) / 50) * (radius - innerRadius);
-    const selectorX = centerX + selectorDistance * Math.cos((selectorAngle * Math.PI) / 180);
-    const selectorY = centerY + selectorDistance * Math.sin((selectorAngle * Math.PI) / 180);
+    const selectorDistance =
+      innerRadius + ((color.s - 50) / 50) * (radius - innerRadius);
+    const selectorX =
+      centerX + selectorDistance * Math.cos((selectorAngle * Math.PI) / 180);
+    const selectorY =
+      centerY + selectorDistance * Math.sin((selectorAngle * Math.PI) / 180);
 
     return (
       <div className="flex justify-center">
@@ -240,7 +275,12 @@ export default function AdvancedColorPickerPage() {
             />
           ))}
 
-          <circle cx={centerX} cy={centerY} r={innerRadius} fill="url(#wheelGradient)" />
+          <circle
+            cx={centerX}
+            cy={centerY}
+            r={innerRadius}
+            fill="url(#wheelGradient)"
+          />
 
           <circle
             cx={selectorX}
@@ -260,9 +300,13 @@ export default function AdvancedColorPickerPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Advanced Color Picker with RGB, HSL & HSV Sliders</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Advanced Color Picker with RGB, HSL & HSV Sliders
+          </h1>
           <p className="text-muted-foreground">
-            Professional color picker featuring a full color wheel, RGB, HSL, and HSV sliders, alpha transparency control, and a live preview — all in one tool.
+            Professional color picker featuring a full color wheel, RGB, HSL,
+            and HSV sliders, alpha transparency control, and a live preview —
+            all in one tool.
           </p>
         </div>
 
@@ -270,14 +314,26 @@ export default function AdvancedColorPickerPage() {
           <Card>
             <CardContent className="p-6 space-y-6">
               <div
-                className="w-full aspect-video rounded-lg bg-checkerboard overflow-hidden flex items-center justify-center"
+                className="w-full aspect-video rounded-lg overflow-hidden flex items-center justify-center"
                 style={{ backgroundColor: hex, opacity: color.a / 100 }}
               >
                 <div className="text-center">
-                  <p className="text-sm font-mono mb-1" style={{ color: color.l > 50 ? "#000" : "#fff", textShadow: color.l > 50 ? "none" : "0 0 2px #fff" }}>
+                  <p
+                    className="text-sm font-mono mb-1"
+                    style={{
+                      color: color.l > 50 ? "#000" : "#fff",
+                      textShadow: color.l > 50 ? "none" : "0 0 2px #fff",
+                    }}
+                  >
                     {hex}
                   </p>
-                  <p className="text-xs" style={{ color: color.l > 50 ? "#000" : "#fff", opacity: 0.7 }}>
+                  <p
+                    className="text-xs"
+                    style={{
+                      color: color.l > 50 ? "#000" : "#fff",
+                      opacity: 0.7,
+                    }}
+                  >
                     Alpha: {color.a}%
                   </p>
                 </div>
@@ -294,7 +350,12 @@ export default function AdvancedColorPickerPage() {
                   max={360}
                   suffix="°"
                 />
-                <div className="h-6 rounded-full" style={{ background: `linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000)` }} />
+                <div
+                  className="h-6 rounded-full"
+                  style={{
+                    background: `linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000)`,
+                  }}
+                />
               </div>
 
               <Tabs value={activeTab} onValueChange={setActiveTab}>
@@ -305,13 +366,41 @@ export default function AdvancedColorPickerPage() {
                 </TabsList>
 
                 <TabsContent value="hsl" className="space-y-4 mt-4">
-                  <SliderInput label="Saturation" value={color.s} onChange={(v) => updateHsl(color.h, v, color.l)} min={0} max={100} suffix="%" />
-                  <SliderInput label="Lightness" value={color.l} onChange={(v) => updateHsl(color.h, color.s, v)} min={0} max={100} suffix="%" />
+                  <SliderInput
+                    label="Saturation"
+                    value={color.s}
+                    onChange={(v) => updateHsl(color.h, v, color.l)}
+                    min={0}
+                    max={100}
+                    suffix="%"
+                  />
+                  <SliderInput
+                    label="Lightness"
+                    value={color.l}
+                    onChange={(v) => updateHsl(color.h, color.s, v)}
+                    min={0}
+                    max={100}
+                    suffix="%"
+                  />
                 </TabsContent>
 
                 <TabsContent value="hsv" className="space-y-4 mt-4">
-                  <SliderInput label="Saturation" value={hsv.s} onChange={(v) => updateHsv(color.h, v, color.v)} min={0} max={100} suffix="%" />
-                  <SliderInput label="Value" value={color.v} onChange={(v) => updateHsv(color.h, hsv.s, v)} min={0} max={100} suffix="%" />
+                  <SliderInput
+                    label="Saturation"
+                    value={hsv.s}
+                    onChange={(v) => updateHsv(color.h, v, color.v)}
+                    min={0}
+                    max={100}
+                    suffix="%"
+                  />
+                  <SliderInput
+                    label="Value"
+                    value={color.v}
+                    onChange={(v) => updateHsv(color.h, hsv.s, v)}
+                    min={0}
+                    max={100}
+                    suffix="%"
+                  />
                 </TabsContent>
 
                 <TabsContent value="rgb" className="space-y-4 mt-4">
@@ -329,7 +418,12 @@ export default function AdvancedColorPickerPage() {
                     min={0}
                     max={255}
                   />
-                  <div className="h-6 rounded-full" style={{ background: `linear-gradient(to right, #000, #ff0000)` }} />
+                  <div
+                    className="h-6 rounded-full"
+                    style={{
+                      background: `linear-gradient(to right, #000, #ff0000)`,
+                    }}
+                  />
                   <SliderInput
                     label="Green"
                     value={rgb.g}
@@ -344,7 +438,12 @@ export default function AdvancedColorPickerPage() {
                     min={0}
                     max={255}
                   />
-                  <div className="h-6 rounded-full" style={{ background: `linear-gradient(to right, #000, #00ff00)` }} />
+                  <div
+                    className="h-6 rounded-full"
+                    style={{
+                      background: `linear-gradient(to right, #000, #00ff00)`,
+                    }}
+                  />
                   <SliderInput
                     label="Blue"
                     value={rgb.b}
@@ -359,7 +458,12 @@ export default function AdvancedColorPickerPage() {
                     min={0}
                     max={255}
                   />
-                  <div className="h-6 rounded-full" style={{ background: `linear-gradient(to right, #000, #0000ff)` }} />
+                  <div
+                    className="h-6 rounded-full"
+                    style={{
+                      background: `linear-gradient(to right, #000, #0000ff)`,
+                    }}
+                  />
                 </TabsContent>
               </Tabs>
 
@@ -372,7 +476,12 @@ export default function AdvancedColorPickerPage() {
                   max={100}
                   suffix="%"
                 />
-                <div className="h-6 rounded-full bg-checkerboard" style={{ background: `linear-gradient(to right, transparent, ${hex})` }} />
+                <div
+                  className="h-6 rounded-full "
+                  style={{
+                    background: `linear-gradient(to right, transparent, ${hex})`,
+                  }}
+                />
               </div>
             </CardContent>
           </Card>
@@ -381,10 +490,17 @@ export default function AdvancedColorPickerPage() {
             <Card>
               <CardContent className="p-6 space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="hex" className="text-sm font-medium text-muted-foreground">HEX</Label>
+                  <Label
+                    htmlFor="hex"
+                    className="text-sm font-medium text-muted-foreground"
+                  >
+                    HEX
+                  </Label>
                   <div className="flex gap-2">
                     <div className="relative flex-1">
-                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">#</span>
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                        #
+                      </span>
                       <Input
                         id="hex"
                         value={hexInput.replace("#", "")}
@@ -393,56 +509,96 @@ export default function AdvancedColorPickerPage() {
                         maxLength={6}
                       />
                     </div>
-                    <div className="w-12 h-10 rounded border bg-checkerboard" style={{ backgroundColor: hex }} />
+                    <div
+                      className="w-12 h-10 rounded border "
+                      style={{ backgroundColor: hex }}
+                    />
                     <CopyButton text={hex} field="HEX" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-muted-foreground">RGB</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">
+                    RGB
+                  </Label>
                   <div className="flex gap-2">
-                    <Input value={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`} readOnly className="font-mono flex-1" />
-                    <CopyButton text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`} field="RGB" />
+                    <Input
+                      value={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
+                      readOnly
+                      className="font-mono flex-1"
+                    />
+                    <CopyButton
+                      text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
+                      field="RGB"
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-muted-foreground">HSL</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">
+                    HSL
+                  </Label>
                   <div className="flex gap-2">
-                    <Input value={`hsl(${color.h}, ${color.s}%, ${color.l}%)`} readOnly className="font-mono flex-1" />
-                    <CopyButton text={`hsl(${color.h}, ${color.s}%, ${color.l}%)`} field="HSL" />
+                    <Input
+                      value={`hsl(${color.h}, ${color.s}%, ${color.l}%)`}
+                      readOnly
+                      className="font-mono flex-1"
+                    />
+                    <CopyButton
+                      text={`hsl(${color.h}, ${color.s}%, ${color.l}%)`}
+                      field="HSL"
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-muted-foreground">HSV</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">
+                    HSV
+                  </Label>
                   <div className="flex gap-2">
-                    <Input value={`hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`} readOnly className="font-mono flex-1" />
-                    <CopyButton text={`hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`} field="HSV" />
+                    <Input
+                      value={`hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`}
+                      readOnly
+                      className="font-mono flex-1"
+                    />
+                    <CopyButton
+                      text={`hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`}
+                      field="HSV"
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-muted-foreground">RGBA</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">
+                    RGBA
+                  </Label>
                   <div className="flex gap-2">
                     <Input
                       value={`rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${(color.a / 100).toFixed(2)})`}
                       readOnly
                       className="font-mono flex-1"
                     />
-                    <CopyButton text={`rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${(color.a / 100).toFixed(2)})`} field="RGBA" />
+                    <CopyButton
+                      text={`rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${(color.a / 100).toFixed(2)})`}
+                      field="RGBA"
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-muted-foreground">HSLA</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">
+                    HSLA
+                  </Label>
                   <div className="flex gap-2">
                     <Input
                       value={`hsla(${color.h}, ${color.s}%, ${color.l}%, ${(color.a / 100).toFixed(2)})`}
                       readOnly
                       className="font-mono flex-1"
                     />
-                    <CopyButton text={`hsla(${color.h}, ${color.s}%, ${color.l}%, ${(color.a / 100).toFixed(2)})`} field="HSLA" />
+                    <CopyButton
+                      text={`hsla(${color.h}, ${color.s}%, ${color.l}%, ${(color.a / 100).toFixed(2)})`}
+                      field="HSLA"
+                    />
                   </div>
                 </div>
 

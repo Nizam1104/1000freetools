@@ -1,37 +1,61 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Upload, Copy, Check, Trash2, Image as ImageIcon, Download } from "lucide-react";
+import {
+  Upload,
+  Copy,
+  Check,
+  Trash2,
+  Image as ImageIcon,
+  Download,
+} from "lucide-react";
 import { toast } from "sonner";
-import { extractDominantColors, hexToRgb, rgbToHsl, rgbToCmyk } from "@/app/color-tools/lib/color-utils";
+import {
+  extractDominantColors,
+  hexToRgb,
+  rgbToHsl,
+  rgbToCmyk,
+} from "@/app/color-tools/lib/color-utils";
 
 export default function DominantColorFinderPage() {
-  const [dominantColor, setDominantColor] = useState<{ hex: string; percentage: number } | null>(null);
+  const [dominantColor, setDominantColor] = useState<{
+    hex: string;
+    percentage: number;
+  } | null>(null);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !file.type.startsWith("image/")) {
-      toast.error("Please select a valid image file");
-      return;
-    }
+  const handleFileSelect = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file || !file.type.startsWith("image/")) {
+        toast.error("Please select a valid image file");
+        return;
+      }
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const src = event.target?.result as string;
-      setImageSrc(src);
-      findDominantColor(src);
-    };
-    reader.readAsDataURL(file);
-  }, []);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const src = event.target?.result as string;
+        setImageSrc(src);
+        findDominantColor(src);
+      };
+      reader.readAsDataURL(file);
+    },
+    [],
+  );
 
   const findDominantColor = useCallback((src: string) => {
     setIsProcessing(true);
@@ -49,7 +73,7 @@ export default function DominantColorFinderPage() {
       ctx.drawImage(img, 0, 0);
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const colors = extractDominantColors(imageData, 1);
-      
+
       if (colors.length > 0) {
         setDominantColor(colors[0]);
       }
@@ -62,22 +86,25 @@ export default function DominantColorFinderPage() {
     img.src = src;
   }, []);
 
-  const handleDrop = useCallback((e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const file = e.dataTransfer.files?.[0];
-    if (!file || !file.type.startsWith("image/")) {
-      toast.error("Please drop a valid image file");
-      return;
-    }
+  const handleDrop = useCallback(
+    (e: React.DragEvent<HTMLDivElement>) => {
+      e.preventDefault();
+      const file = e.dataTransfer.files?.[0];
+      if (!file || !file.type.startsWith("image/")) {
+        toast.error("Please drop a valid image file");
+        return;
+      }
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const src = event.target?.result as string;
-      setImageSrc(src);
-      findDominantColor(src);
-    };
-    reader.readAsDataURL(file);
-  }, [findDominantColor]);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const src = event.target?.result as string;
+        setImageSrc(src);
+        findDominantColor(src);
+      };
+      reader.readAsDataURL(file);
+    },
+    [findDominantColor],
+  );
 
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -122,9 +149,12 @@ export default function DominantColorFinderPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Dominant Color Finder from Image</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Dominant Color Finder from Image
+          </h1>
           <p className="text-muted-foreground">
-            Find the single most dominant color in any uploaded image. Great for auto-generating themes, UI accents, or brand colors from photos.
+            Find the single most dominant color in any uploaded image. Great for
+            auto-generating themes, UI accents, or brand colors from photos.
           </p>
         </div>
 
@@ -153,7 +183,9 @@ export default function DominantColorFinderPage() {
                 />
                 <ImageIcon className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
                 <p className="text-sm text-muted-foreground mb-2">
-                  {isProcessing ? "Processing..." : "Drop image here or click to upload"}
+                  {isProcessing
+                    ? "Processing..."
+                    : "Drop image here or click to upload"}
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Supports JPG, PNG, GIF, WebP
@@ -165,7 +197,7 @@ export default function DominantColorFinderPage() {
                   <img
                     src={imageSrc}
                     alt="Uploaded"
-                    className="w-full h-64 object-cover rounded-lg bg-checkerboard"
+                    className="w-full h-64 object-cover rounded-lg "
                   />
                   <Button
                     variant="destructive"
@@ -205,7 +237,9 @@ export default function DominantColorFinderPage() {
                   <div className="space-y-4">
                     {/* HEX */}
                     <div className="space-y-2">
-                      <Label className="text-sm font-medium text-muted-foreground">HEX</Label>
+                      <Label className="text-sm font-medium text-muted-foreground">
+                        HEX
+                      </Label>
                       <div className="flex gap-2">
                         <Input
                           value={dominantColor.hex}
@@ -222,22 +256,33 @@ export default function DominantColorFinderPage() {
                       if (!rgb) return null;
                       return (
                         <div className="space-y-2">
-                          <Label className="text-sm font-medium text-muted-foreground">RGB</Label>
+                          <Label className="text-sm font-medium text-muted-foreground">
+                            RGB
+                          </Label>
                           <div className="flex gap-2">
                             <Input
                               value={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
                               readOnly
                               className="font-mono flex-1"
                             />
-                            <CopyButton text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`} field="RGB" />
+                            <CopyButton
+                              text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
+                              field="RGB"
+                            />
                           </div>
                           <div className="grid grid-cols-3 gap-2">
                             {(["r", "g", "b"] as const).map((channel) => (
                               <div key={channel} className="space-y-1">
-                                <Label className="text-xs text-muted-foreground uppercase">{channel}</Label>
+                                <Label className="text-xs text-muted-foreground uppercase">
+                                  {channel}
+                                </Label>
                                 <Input
                                   type="number"
-                                  value={rgb[channel.toUpperCase() as keyof typeof rgb]}
+                                  value={
+                                    rgb[
+                                      channel.toUpperCase() as keyof typeof rgb
+                                    ]
+                                  }
                                   readOnly
                                   className="h-9 font-mono text-center"
                                 />
@@ -255,14 +300,19 @@ export default function DominantColorFinderPage() {
                       const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
                       return (
                         <div className="space-y-2">
-                          <Label className="text-sm font-medium text-muted-foreground">HSL</Label>
+                          <Label className="text-sm font-medium text-muted-foreground">
+                            HSL
+                          </Label>
                           <div className="flex gap-2">
                             <Input
                               value={`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`}
                               readOnly
                               className="font-mono flex-1"
                             />
-                            <CopyButton text={`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`} field="HSL" />
+                            <CopyButton
+                              text={`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`}
+                              field="HSL"
+                            />
                           </div>
                         </div>
                       );
@@ -275,14 +325,19 @@ export default function DominantColorFinderPage() {
                       const cmyk = rgbToCmyk(rgb.r, rgb.g, rgb.b);
                       return (
                         <div className="space-y-2">
-                          <Label className="text-sm font-medium text-muted-foreground">CMYK</Label>
+                          <Label className="text-sm font-medium text-muted-foreground">
+                            CMYK
+                          </Label>
                           <div className="flex gap-2">
                             <Input
                               value={`cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`}
                               readOnly
                               className="font-mono flex-1"
                             />
-                            <CopyButton text={`cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`} field="CMYK" />
+                            <CopyButton
+                              text={`cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`}
+                              field="CMYK"
+                            />
                           </div>
                         </div>
                       );
@@ -295,7 +350,9 @@ export default function DominantColorFinderPage() {
                       variant="outline"
                       className="flex-1"
                       onClick={() => {
-                        const blob = new Blob([dominantColor.hex], { type: "text/plain" });
+                        const blob = new Blob([dominantColor.hex], {
+                          type: "text/plain",
+                        });
                         const url = URL.createObjectURL(blob);
                         const a = document.createElement("a");
                         a.href = url;
@@ -313,7 +370,9 @@ export default function DominantColorFinderPage() {
               ) : (
                 <div className="text-center py-12 text-muted-foreground">
                   <p>No color found yet</p>
-                  <p className="text-sm mt-1">Upload an image to find the dominant color</p>
+                  <p className="text-sm mt-1">
+                    Upload an image to find the dominant color
+                  </p>
                 </div>
               )}
             </CardContent>

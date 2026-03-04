@@ -19,7 +19,9 @@ export default function HslToHexConverterPage() {
     const f = (n: number) => {
       const k = (n + h / 30) % 12;
       const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-      return Math.round(255 * color).toString(16).padStart(2, "0");
+      return Math.round(255 * color)
+        .toString(16)
+        .padStart(2, "0");
     };
     return `#${f(0)}${f(8)}${f(4)}`.toUpperCase();
   };
@@ -29,15 +31,24 @@ export default function HslToHexConverterPage() {
     const sNum = parseInt(s, 10);
     const lNum = parseInt(l, 10);
     return (
-      !isNaN(hNum) && !isNaN(sNum) && !isNaN(lNum) &&
-      hNum >= 0 && hNum <= 360 &&
-      sNum >= 0 && sNum <= 100 &&
-      lNum >= 0 && lNum <= 100
+      !isNaN(hNum) &&
+      !isNaN(sNum) &&
+      !isNaN(lNum) &&
+      hNum >= 0 &&
+      hNum <= 360 &&
+      sNum >= 0 &&
+      sNum <= 100 &&
+      lNum >= 0 &&
+      lNum <= 100
     );
   };
 
   const hex = isValidHsl(hslInput.h, hslInput.s, hslInput.l)
-    ? hslToHex(parseInt(hslInput.h, 10), parseInt(hslInput.s, 10), parseInt(hslInput.l, 10))
+    ? hslToHex(
+        parseInt(hslInput.h, 10),
+        parseInt(hslInput.s, 10),
+        parseInt(hslInput.l, 10),
+      )
     : null;
 
   const copyToClipboard = async (text: string, field: string) => {
@@ -51,14 +62,26 @@ export default function HslToHexConverterPage() {
     }
   };
 
-  const CopyButton = ({ text, field, className = "" }: { text: string; field: string; className?: string }) => (
+  const CopyButton = ({
+    text,
+    field,
+    className = "",
+  }: {
+    text: string;
+    field: string;
+    className?: string;
+  }) => (
     <Button
       variant="ghost"
       size="sm"
       className={`h-8 w-8 p-0 ${className}`}
       onClick={() => copyToClipboard(text, field)}
     >
-      {copiedField === field ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+      {copiedField === field ? (
+        <Check className="h-4 w-4 text-green-500" />
+      ) : (
+        <Copy className="h-4 w-4" />
+      )}
     </Button>
   );
 
@@ -76,9 +99,13 @@ export default function HslToHexConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">HSL to HEX Color Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            HSL to HEX Color Converter
+          </h1>
           <p className="text-muted-foreground">
-            Convert HSL color values to HEX format easily. Enter hue, saturation, and lightness values and get the equivalent hex color code.
+            Convert HSL color values to HEX format easily. Enter hue,
+            saturation, and lightness values and get the equivalent hex color
+            code.
           </p>
         </div>
 
@@ -91,7 +118,12 @@ export default function HslToHexConverterPage() {
                 </Label>
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-1">
-                    <Label htmlFor="h" className="text-xs text-muted-foreground">H</Label>
+                    <Label
+                      htmlFor="h"
+                      className="text-xs text-muted-foreground"
+                    >
+                      H
+                    </Label>
                     <Input
                       id="h"
                       type="text"
@@ -103,7 +135,12 @@ export default function HslToHexConverterPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="s" className="text-xs text-muted-foreground">S</Label>
+                    <Label
+                      htmlFor="s"
+                      className="text-xs text-muted-foreground"
+                    >
+                      S
+                    </Label>
                     <Input
                       id="s"
                       type="text"
@@ -115,7 +152,12 @@ export default function HslToHexConverterPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="l" className="text-xs text-muted-foreground">L</Label>
+                    <Label
+                      htmlFor="l"
+                      className="text-xs text-muted-foreground"
+                    >
+                      L
+                    </Label>
                     <Input
                       id="l"
                       type="text"
@@ -144,9 +186,11 @@ export default function HslToHexConverterPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="flex-1">
-                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">Preview</Label>
+                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">
+                        Preview
+                      </Label>
                       <div
-                        className="w-full aspect-video rounded-lg border bg-checkerboard"
+                        className="w-full aspect-video rounded-lg border "
                         style={{ backgroundColor: hex }}
                       />
                     </div>
@@ -163,33 +207,50 @@ export default function HslToHexConverterPage() {
               {hex ? (
                 <>
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">HEX Format</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      HEX Format
+                    </Label>
                     <div className="flex gap-2">
-                      <Input value={hex} readOnly className="font-mono flex-1" />
+                      <Input
+                        value={hex}
+                        readOnly
+                        className="font-mono flex-1"
+                      />
                       <CopyButton text={hex} field="HEX" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">Short Format (if applicable)</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      Short Format (if applicable)
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={
-                          hex[1] === hex[2] && hex[3] === hex[4] && hex[5] === hex[6]
+                          hex[1] === hex[2] &&
+                          hex[3] === hex[4] &&
+                          hex[5] === hex[6]
                             ? `#${hex[1]}${hex[3]}${hex[5]}`
                             : "N/A"
                         }
                         readOnly
                         className="font-mono flex-1"
                       />
-                      {hex[1] === hex[2] && hex[3] === hex[4] && hex[5] === hex[6] && (
-                        <CopyButton text={`#${hex[1]}${hex[3]}${hex[5]}`} field="Short HEX" />
-                      )}
+                      {hex[1] === hex[2] &&
+                        hex[3] === hex[4] &&
+                        hex[5] === hex[6] && (
+                          <CopyButton
+                            text={`#${hex[1]}${hex[3]}${hex[5]}`}
+                            field="Short HEX"
+                          />
+                        )}
                     </div>
                   </div>
 
                   <div className="space-y-2 pt-4 border-t">
-                    <Label className="text-sm font-medium text-muted-foreground">CSS Usage</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      CSS Usage
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={`color: ${hex};`}
@@ -215,7 +276,9 @@ export default function HslToHexConverterPage() {
             <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
               <li>Enter HSL values (H: 0-360, S: 0-100, L: 0-100)</li>
               <li>The HEX color code will be calculated automatically</li>
-              <li>Click the copy button to copy the HEX value to your clipboard</li>
+              <li>
+                Click the copy button to copy the HEX value to your clipboard
+              </li>
             </ol>
           </CardContent>
         </Card>

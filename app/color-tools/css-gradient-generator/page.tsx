@@ -5,7 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Copy, Plus, Trash2, ArrowUp, ArrowDown } from "lucide-react";
 import { toast } from "sonner";
@@ -17,7 +23,9 @@ interface ColorStop {
 }
 
 export default function CSSGradientGeneratorPage() {
-  const [gradientType, setGradientType] = useState<"linear" | "radial">("linear");
+  const [gradientType, setGradientType] = useState<"linear" | "radial">(
+    "linear",
+  );
   const [angle, setAngle] = useState(90);
   const [colorStops, setColorStops] = useState<ColorStop[]>([
     { id: "1", color: "#6366f1", position: 0 },
@@ -28,7 +36,9 @@ export default function CSSGradientGeneratorPage() {
 
   const generateGradient = () => {
     const sortedStops = [...colorStops].sort((a, b) => a.position - b.position);
-    const stopsString = sortedStops.map((s) => `${s.color} ${s.position}%`).join(", ");
+    const stopsString = sortedStops
+      .map((s) => `${s.color} ${s.position}%`)
+      .join(", ");
 
     if (gradientType === "linear") {
       return `linear-gradient(${angle}deg, ${stopsString})`;
@@ -40,9 +50,13 @@ export default function CSSGradientGeneratorPage() {
   const cssCode = generateGradient();
 
   const addColorStop = () => {
-    const newPosition = colorStops.length > 0 
-      ? Math.min(100, Math.max(0, colorStops[colorStops.length - 1].position + 10))
-      : 50;
+    const newPosition =
+      colorStops.length > 0
+        ? Math.min(
+            100,
+            Math.max(0, colorStops[colorStops.length - 1].position + 10),
+          )
+        : 50;
     const newStop: ColorStop = {
       id: Date.now().toString(),
       color: "#000000",
@@ -60,18 +74,23 @@ export default function CSSGradientGeneratorPage() {
   };
 
   const updateColorStop = (id: string, updates: Partial<ColorStop>) => {
-    setColorStops(colorStops.map((s) => (s.id === id ? { ...s, ...updates } : s)));
+    setColorStops(
+      colorStops.map((s) => (s.id === id ? { ...s, ...updates } : s)),
+    );
   };
 
   const moveStop = (id: string, direction: "up" | "down") => {
     const index = colorStops.findIndex((s) => s.id === id);
     if (index === -1) return;
-    
+
     const newIndex = direction === "up" ? index - 1 : index + 1;
     if (newIndex < 0 || newIndex >= colorStops.length) return;
 
     const newStops = [...colorStops];
-    [newStops[index], newStops[newIndex]] = [newStops[newIndex], newStops[index]];
+    [newStops[index], newStops[newIndex]] = [
+      newStops[newIndex],
+      newStops[index],
+    ];
     setColorStops(newStops);
   };
 
@@ -93,7 +112,9 @@ export default function CSSGradientGeneratorPage() {
       if (!ctx) return;
 
       const gradient = ctx.createLinearGradient(0, 0, 800, 0);
-      const sortedStops = [...colorStops].sort((a, b) => a.position - b.position);
+      const sortedStops = [...colorStops].sort(
+        (a, b) => a.position - b.position,
+      );
       sortedStops.forEach((stop) => {
         gradient.addColorStop(stop.position / 100, stop.color);
       });
@@ -117,9 +138,12 @@ export default function CSSGradientGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">CSS Gradient Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            CSS Gradient Generator
+          </h1>
           <p className="text-muted-foreground">
-            Create beautiful linear and radial CSS gradients with a live preview and export clean, ready-to-use CSS code. No design skills required.
+            Create beautiful linear and radial CSS gradients with a live preview
+            and export clean, ready-to-use CSS code. No design skills required.
           </p>
         </div>
 
@@ -128,14 +152,16 @@ export default function CSSGradientGeneratorPage() {
           <Card>
             <CardContent className="p-6 space-y-4">
               <div className="flex items-center justify-between">
-                <Label className="text-sm font-medium text-muted-foreground">Preview</Label>
+                <Label className="text-sm font-medium text-muted-foreground">
+                  Preview
+                </Label>
                 <Button variant="outline" size="sm" onClick={copyPreview}>
                   <Copy className="h-4 w-4 mr-2" />
                   Copy Preview
                 </Button>
               </div>
               <div
-                className="w-full aspect-video rounded-lg border bg-checkerboard"
+                className="w-full aspect-video rounded-lg border "
                 style={{ background: cssCode }}
               />
             </CardContent>
@@ -145,7 +171,9 @@ export default function CSSGradientGeneratorPage() {
           <Card>
             <CardContent className="p-6 space-y-4">
               <div className="flex items-center justify-between">
-                <Label className="text-sm font-medium text-muted-foreground">CSS Code</Label>
+                <Label className="text-sm font-medium text-muted-foreground">
+                  CSS Code
+                </Label>
                 <Button variant="outline" size="sm" onClick={copyToClipboard}>
                   <Copy className="h-4 w-4 mr-2" />
                   Copy
@@ -157,7 +185,9 @@ export default function CSSGradientGeneratorPage() {
                 </pre>
               </div>
               <div className="pt-2">
-                <Label className="text-sm font-medium text-muted-foreground mb-2 block">Background Preview</Label>
+                <Label className="text-sm font-medium text-muted-foreground mb-2 block">
+                  Background Preview
+                </Label>
                 <div className="grid grid-cols-4 gap-2">
                   {["Text", "Button", "Card", "Border"].map((item) => (
                     <div key={item} className="space-y-1">
@@ -181,7 +211,12 @@ export default function CSSGradientGeneratorPage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label>Gradient Type</Label>
-                  <Select value={gradientType} onValueChange={(v) => setGradientType(v as "linear" | "radial")}>
+                  <Select
+                    value={gradientType}
+                    onValueChange={(v) =>
+                      setGradientType(v as "linear" | "radial")
+                    }
+                  >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
@@ -196,9 +231,17 @@ export default function CSSGradientGeneratorPage() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <Label>Angle</Label>
-                      <span className="text-sm font-mono text-muted-foreground">{angle}°</span>
+                      <span className="text-sm font-mono text-muted-foreground">
+                        {angle}°
+                      </span>
                     </div>
-                    <Slider value={[angle]} min={0} max={360} step={15} onValueChange={([v]) => setAngle(v)} />
+                    <Slider
+                      value={[angle]}
+                      min={0}
+                      max={360}
+                      step={15}
+                      onValueChange={([v]) => setAngle(v)}
+                    />
                     <div className="flex justify-between text-xs text-muted-foreground">
                       <span>0°</span>
                       <span>90°</span>
@@ -211,7 +254,10 @@ export default function CSSGradientGeneratorPage() {
                   <>
                     <div className="space-y-2">
                       <Label>Shape</Label>
-                      <Select value={radialShape} onValueChange={setRadialShape}>
+                      <Select
+                        value={radialShape}
+                        onValueChange={setRadialShape}
+                      >
                         <SelectTrigger>
                           <SelectValue />
                         </SelectTrigger>
@@ -223,7 +269,10 @@ export default function CSSGradientGeneratorPage() {
                     </div>
                     <div className="space-y-2">
                       <Label>Position</Label>
-                      <Select value={radialPosition} onValueChange={setRadialPosition}>
+                      <Select
+                        value={radialPosition}
+                        onValueChange={setRadialPosition}
+                      >
                         <SelectTrigger>
                           <SelectValue />
                         </SelectTrigger>
@@ -232,11 +281,21 @@ export default function CSSGradientGeneratorPage() {
                           <SelectItem value="top left">Top Left</SelectItem>
                           <SelectItem value="top center">Top Center</SelectItem>
                           <SelectItem value="top right">Top Right</SelectItem>
-                          <SelectItem value="center left">Center Left</SelectItem>
-                          <SelectItem value="center right">Center Right</SelectItem>
-                          <SelectItem value="bottom left">Bottom Left</SelectItem>
-                          <SelectItem value="bottom center">Bottom Center</SelectItem>
-                          <SelectItem value="bottom right">Bottom Right</SelectItem>
+                          <SelectItem value="center left">
+                            Center Left
+                          </SelectItem>
+                          <SelectItem value="center right">
+                            Center Right
+                          </SelectItem>
+                          <SelectItem value="bottom left">
+                            Bottom Left
+                          </SelectItem>
+                          <SelectItem value="bottom center">
+                            Bottom Center
+                          </SelectItem>
+                          <SelectItem value="bottom right">
+                            Bottom Right
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -256,7 +315,10 @@ export default function CSSGradientGeneratorPage() {
 
                 <div className="space-y-3">
                   {colorStops.map((stop, index) => (
-                    <div key={stop.id} className="flex items-center gap-3 p-3 rounded-lg border bg-card">
+                    <div
+                      key={stop.id}
+                      className="flex items-center gap-3 p-3 rounded-lg border bg-card"
+                    >
                       <div className="flex items-center gap-2">
                         <Button
                           variant="ghost"
@@ -278,11 +340,13 @@ export default function CSSGradientGeneratorPage() {
                         </Button>
                       </div>
 
-                      <div className="relative w-12 h-10 rounded border overflow-hidden bg-checkerboard">
+                      <div className="relative w-12 h-10 rounded border overflow-hidden ">
                         <input
                           type="color"
                           value={stop.color}
-                          onChange={(e) => updateColorStop(stop.id, { color: e.target.value })}
+                          onChange={(e) =>
+                            updateColorStop(stop.id, { color: e.target.value })
+                          }
                           className="absolute inset-0 w-[150%] h-[150%] -translate-x-1/4 -translate-y-1/4 cursor-pointer border-0 p-0"
                         />
                       </div>
@@ -290,22 +354,30 @@ export default function CSSGradientGeneratorPage() {
                       <Input
                         type="text"
                         value={stop.color}
-                        onChange={(e) => updateColorStop(stop.id, { color: e.target.value })}
+                        onChange={(e) =>
+                          updateColorStop(stop.id, { color: e.target.value })
+                        }
                         className="w-24 font-mono text-sm"
                         maxLength={7}
                       />
 
                       <div className="flex-1 space-y-1">
                         <div className="flex items-center justify-between">
-                          <Label className="text-xs text-muted-foreground">Position</Label>
-                          <span className="text-xs font-mono">{stop.position}%</span>
+                          <Label className="text-xs text-muted-foreground">
+                            Position
+                          </Label>
+                          <span className="text-xs font-mono">
+                            {stop.position}%
+                          </span>
                         </div>
                         <Slider
                           value={[stop.position]}
                           min={0}
                           max={100}
                           step={1}
-                          onValueChange={([v]) => updateColorStop(stop.id, { position: v })}
+                          onValueChange={([v]) =>
+                            updateColorStop(stop.id, { position: v })
+                          }
                         />
                       </div>
 

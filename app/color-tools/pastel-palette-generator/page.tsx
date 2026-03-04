@@ -20,7 +20,9 @@ const hslToHex = (h: number, s: number, l: number): string => {
   const f = (n: number) => {
     const k = (n + h / 30) % 12;
     const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color).toString(16).padStart(2, "0");
+    return Math.round(255 * color)
+      .toString(16)
+      .padStart(2, "0");
   };
   return `#${f(0)}${f(8)}${f(4)}`;
 };
@@ -32,17 +34,31 @@ const generatePastelColor = (hueOffset: number = 0): PastelColor => {
   const saturation = 25 + Math.floor(Math.random() * 20);
   const lightness = 80 + Math.floor(Math.random() * 15);
   const hex = hslToHex(adjustedHue, saturation, lightness);
-  
-  const names = ["Blush", "Mist", "Bloom", "Cloud", "Pearl", "Dawn", "Soft", "Whisper", "Frost", "Cream"];
+
+  const names = [
+    "Blush",
+    "Mist",
+    "Bloom",
+    "Cloud",
+    "Pearl",
+    "Dawn",
+    "Soft",
+    "Whisper",
+    "Frost",
+    "Cream",
+  ];
   const name = names[Math.floor(Math.random() * names.length)];
-  
+
   return { hex, name: `${name} ${adjustedHue}` };
 };
 
-const generatePastelPalette = (size: number, harmony: string): PastelColor[] => {
+const generatePastelPalette = (
+  size: number,
+  harmony: string,
+): PastelColor[] => {
   const colors: PastelColor[] = [];
   const baseHue = Math.floor(Math.random() * 360);
-  
+
   switch (harmony) {
     case "analogous":
       for (let i = 0; i < size; i++) {
@@ -69,18 +85,18 @@ const generatePastelPalette = (size: number, harmony: string): PastelColor[] => 
       }
       break;
   }
-  
+
   return colors;
 };
 
 const getContrastColor = (hex: string): string => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   if (!result) return "#000000";
-  
+
   const r = parseInt(result[1], 16);
   const g = parseInt(result[2], 16);
   const b = parseInt(result[3], 16);
-  
+
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.5 ? "#374151" : "#ffffff";
 };
@@ -127,16 +143,16 @@ ${colors.map((c, i) => `.pastel-${i + 1} { background-color: ${c.hex}; }`).join(
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    
+
     canvas.width = 800;
     canvas.height = 400;
-    
+
     const colorWidth = canvas.width / colors.length;
     colors.forEach((color, i) => {
       ctx.fillStyle = color.hex;
       ctx.fillRect(i * colorWidth, 0, colorWidth, canvas.height);
     });
-    
+
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -151,7 +167,7 @@ ${colors.map((c, i) => `.pastel-${i + 1} { background-color: ${c.hex}; }`).join(
     });
     return;
   }
-  
+
   toast.success(`Palette downloaded as ${format.toUpperCase()}!`);
 };
 
@@ -167,25 +183,27 @@ export default function PastelPaletteGeneratorPage() {
     const newColors = generatePastelPalette(paletteSize, harmony);
     // Adjust softness
     const adjustedColors = newColors.map((color) => {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color.hex);
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
+        color.hex,
+      );
       if (!result) return color;
-      
+
       const r = parseInt(result[1], 16);
       const g = parseInt(result[2], 16);
       const b = parseInt(result[3], 16);
-      
+
       // Blend towards white based on softness
       const blend = softness / 100;
       const newR = Math.round(r + (255 - r) * blend * 0.3);
       const newG = Math.round(g + (255 - g) * blend * 0.3);
       const newB = Math.round(b + (255 - b) * blend * 0.3);
-      
+
       return {
         ...color,
         hex: `#${newR.toString(16).padStart(2, "0")}${newG.toString(16).padStart(2, "0")}${newB.toString(16).padStart(2, "0")}`,
       };
     });
-    
+
     setColors(adjustedColors);
     toast.success("New pastel palette generated!");
   };
@@ -216,9 +234,12 @@ export default function PastelPaletteGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Pastel Color Palette Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Pastel Color Palette Generator
+          </h1>
           <p className="text-muted-foreground">
-            Automatically generate soft, soothing pastel color palettes. Ideal for gentle UI designs, children's apps, and lifestyle branding.
+            Automatically generate soft, soothing pastel color palettes. Ideal
+            for gentle UI designs, children's apps, and lifestyle branding.
           </p>
         </div>
 
@@ -247,17 +268,19 @@ export default function PastelPaletteGeneratorPage() {
               <div className="space-y-3">
                 <Label className="text-sm font-medium">Color Harmony</Label>
                 <div className="grid grid-cols-2 gap-2">
-                  {["random", "analogous", "complementary", "triadic"].map((h) => (
-                    <Button
-                      key={h}
-                      variant={harmony === h ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setHarmony(h)}
-                      className="text-xs"
-                    >
-                      {h.charAt(0).toUpperCase() + h.slice(1)}
-                    </Button>
-                  ))}
+                  {["random", "analogous", "complementary", "triadic"].map(
+                    (h) => (
+                      <Button
+                        key={h}
+                        variant={harmony === h ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setHarmony(h)}
+                        className="text-xs"
+                      >
+                        {h.charAt(0).toUpperCase() + h.slice(1)}
+                      </Button>
+                    ),
+                  )}
                 </div>
               </div>
 
@@ -329,7 +352,7 @@ export default function PastelPaletteGeneratorPage() {
                   return (
                     <div key={index} className="group">
                       <div
-                        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                         style={{ backgroundColor: color.hex }}
                       >
                         {/* Color Info */}
@@ -365,7 +388,7 @@ export default function PastelPaletteGeneratorPage() {
                 <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                   Preview
                 </Label>
-                
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   {/* Card Preview */}
                   <div className="rounded-lg border border-border overflow-hidden">
@@ -375,15 +398,20 @@ export default function PastelPaletteGeneratorPage() {
                     >
                       <p
                         className="text-sm font-medium mb-2"
-                        style={{ color: getContrastColor(colors[0]?.hex || "#fff") }}
+                        style={{
+                          color: getContrastColor(colors[0]?.hex || "#fff"),
+                        }}
                       >
                         Card Title
                       </p>
                       <p
                         className="text-sm opacity-80"
-                        style={{ color: getContrastColor(colors[0]?.hex || "#fff") }}
+                        style={{
+                          color: getContrastColor(colors[0]?.hex || "#fff"),
+                        }}
                       >
-                        This is a preview of how your pastel colors might look in a design.
+                        This is a preview of how your pastel colors might look
+                        in a design.
                       </p>
                     </div>
                     <div className="p-4 bg-background space-y-3">

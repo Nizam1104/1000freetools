@@ -5,7 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Check, Copy, Shuffle, Download, Lock, Unlock } from "lucide-react";
 import { toast } from "sonner";
 
@@ -15,7 +21,12 @@ interface Color {
 }
 
 const generateRandomColor = () => {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+  return (
+    "#" +
+    Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, "0")
+  );
 };
 
 const hexToRgb = (hex: string) => {
@@ -32,7 +43,7 @@ const hexToRgb = (hex: string) => {
 const getContrastColor = (hex: string) => {
   const rgb = hexToRgb(hex);
   if (!rgb) return "#000000";
-  
+
   const luminance = (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
   return luminance > 0.5 ? "#000000" : "#ffffff";
 };
@@ -61,7 +72,11 @@ ${colors.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join("\n")}
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   } else if (format === "json") {
-    const json = JSON.stringify(colors.map((c) => c.hex), null, 2);
+    const json = JSON.stringify(
+      colors.map((c) => c.hex),
+      null,
+      2,
+    );
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -75,16 +90,16 @@ ${colors.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join("\n")}
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    
+
     canvas.width = 800;
     canvas.height = 400;
-    
+
     const colorWidth = canvas.width / colors.length;
     colors.forEach((color, i) => {
       ctx.fillStyle = color.hex;
       ctx.fillRect(i * colorWidth, 0, colorWidth, canvas.height);
     });
-    
+
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -99,7 +114,7 @@ ${colors.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join("\n")}
     });
     return;
   }
-  
+
   toast.success(`Palette downloaded as ${format.toUpperCase()}!`);
 };
 
@@ -121,16 +136,16 @@ export default function RandomColorPaletteGeneratorPage() {
   const toggleLock = (index: number) => {
     setColors((prev) =>
       prev.map((color, i) =>
-        i === index ? { ...color, locked: !color.locked } : color
-      )
+        i === index ? { ...color, locked: !color.locked } : color,
+      ),
     );
   };
 
   const regenerateUnlocked = () => {
     setColors((prev) =>
       prev.map((color) =>
-        color.locked ? color : { hex: generateRandomColor(), locked: false }
-      )
+        color.locked ? color : { hex: generateRandomColor(), locked: false },
+      ),
     );
     toast.success("Unlocked colors regenerated!");
   };
@@ -161,9 +176,13 @@ export default function RandomColorPaletteGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Random Color Palette Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Random Color Palette Generator
+          </h1>
           <p className="text-muted-foreground">
-            Generate random color palettes with a customizable number of colors. Great for sparking creative ideas and discovering unexpected color combinations.
+            Generate random color palettes with a customizable number of colors.
+            Great for sparking creative ideas and discovering unexpected color
+            combinations.
           </p>
         </div>
 
@@ -205,7 +224,11 @@ export default function RandomColorPaletteGeneratorPage() {
 
               {/* Action Buttons */}
               <div className="flex gap-2">
-                <Button onClick={regenerateUnlocked} variant="outline" disabled={colors.length === 0}>
+                <Button
+                  onClick={regenerateUnlocked}
+                  variant="outline"
+                  disabled={colors.length === 0}
+                >
                   <Shuffle className="h-4 w-4 mr-2" />
                   Regenerate
                 </Button>
@@ -240,7 +263,7 @@ export default function RandomColorPaletteGeneratorPage() {
                   return (
                     <div key={index} className="group">
                       <div
-                        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-transform group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-transform group-hover:scale-105  relative overflow-hidden"
                         style={{ backgroundColor: color.hex }}
                       >
                         {/* Lock Button */}
@@ -302,7 +325,11 @@ export default function RandomColorPaletteGeneratorPage() {
                     variant="outline"
                     size="sm"
                     onClick={() => {
-                      const json = JSON.stringify(colors.map((c) => c.hex), null, 2);
+                      const json = JSON.stringify(
+                        colors.map((c) => c.hex),
+                        null,
+                        2,
+                      );
                       copyToClipboard(json, "JSON");
                     }}
                   >
@@ -355,9 +382,12 @@ ${colors.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
                 <div className="w-16 h-16 mx-auto rounded-full bg-muted flex items-center justify-center">
                   <Shuffle className="h-8 w-8 text-muted-foreground" />
                 </div>
-                <h3 className="text-lg font-medium">No palette generated yet</h3>
+                <h3 className="text-lg font-medium">
+                  No palette generated yet
+                </h3>
                 <p className="text-muted-foreground">
-                  Click the "Generate New" button to create a random color palette
+                  Click the "Generate New" button to create a random color
+                  palette
                 </p>
                 <Button onClick={generatePalette} className="mt-4">
                   <Shuffle className="h-4 w-4 mr-2" />
@@ -373,8 +403,14 @@ ${colors.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
           <CardContent className="p-6">
             <h3 className="text-sm font-medium mb-3">Tips</h3>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• Click the lock icon on any color to keep it while regenerating others</li>
-              <li>• Adjust the palette size slider to create palettes with 2-12 colors</li>
+              <li>
+                • Click the lock icon on any color to keep it while regenerating
+                others
+              </li>
+              <li>
+                • Adjust the palette size slider to create palettes with 2-12
+                colors
+              </li>
               <li>• Download your palette in CSS, JSON, or PNG format</li>
               <li>• Click on any color swatch to copy its hex code</li>
             </ul>

@@ -79,8 +79,16 @@ const PRESET_PALETTES: Palette[] = [
 
 export default function PaletteComparisonToolPage() {
   const [palettes, setPalettes] = useState<Palette[]>([
-    { id: "1", name: "Palette 1", colors: ["#6366f1", "#8b5cf6", "#a855f7", "#c084fc", "#d8b4fe"] },
-    { id: "2", name: "Palette 2", colors: ["#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe", "#dbeafe"] },
+    {
+      id: "1",
+      name: "Palette 1",
+      colors: ["#6366f1", "#8b5cf6", "#a855f7", "#c084fc", "#d8b4fe"],
+    },
+    {
+      id: "2",
+      name: "Palette 2",
+      colors: ["#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe", "#dbeafe"],
+    },
   ]);
   const [copiedPalette, setCopiedPalette] = useState<string | null>(null);
   const [textInput, setTextInput] = useState("");
@@ -92,7 +100,10 @@ export default function PaletteComparisonToolPage() {
       toast.error("Please enter valid colors (hex codes)");
       return;
     }
-    setPalettes([...palettes, { id: newId, name: `Palette ${palettes.length + 1}`, colors }]);
+    setPalettes([
+      ...palettes,
+      { id: newId, name: `Palette ${palettes.length + 1}`, colors },
+    ]);
     setTextInput("");
     toast.success("Palette added!");
   };
@@ -137,7 +148,8 @@ export default function PaletteComparisonToolPage() {
 
   const getPaletteStats = (colors: string[]) => {
     const luminances = colors.map(getLuminance);
-    const avgLuminance = luminances.reduce((a, b) => a + b, 0) / luminances.length;
+    const avgLuminance =
+      luminances.reduce((a, b) => a + b, 0) / luminances.length;
     const contrast = getContrastRatio(colors[0], colors[colors.length - 1]);
     return { avgLuminance, contrast };
   };
@@ -147,9 +159,13 @@ export default function PaletteComparisonToolPage() {
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Palette Comparison Tool</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Palette Comparison Tool
+          </h1>
           <p className="text-muted-foreground">
-            Compare multiple color palettes side by side to evaluate contrast, harmony, and consistency. Ideal for design reviews and A/B palette testing.
+            Compare multiple color palettes side by side to evaluate contrast,
+            harmony, and consistency. Ideal for design reviews and A/B palette
+            testing.
           </p>
         </div>
 
@@ -182,7 +198,9 @@ export default function PaletteComparisonToolPage() {
 
             {/* Preset Palettes */}
             <div className="pt-4">
-              <Label className="text-sm text-muted-foreground mb-3 block">Or load a preset:</Label>
+              <Label className="text-sm text-muted-foreground mb-3 block">
+                Or load a preset:
+              </Label>
               <div className="flex flex-wrap gap-2">
                 {PRESET_PALETTES.map((preset) => (
                   <Button
@@ -211,7 +229,9 @@ export default function PaletteComparisonToolPage() {
                   <div className="flex items-center justify-between">
                     <Input
                       value={palette.name}
-                      onChange={(e) => updatePaletteName(palette.id, e.target.value)}
+                      onChange={(e) =>
+                        updatePaletteName(palette.id, e.target.value)
+                      }
                       className="w-48 font-medium border-transparent hover:border-input focus:border-input"
                     />
                     <div className="flex items-center gap-2">
@@ -243,7 +263,7 @@ export default function PaletteComparisonToolPage() {
                     {palette.colors.map((color, i) => (
                       <div
                         key={i}
-                        className="flex-1 h-full bg-checkerboard"
+                        className="flex-1 h-full "
                         style={{ backgroundColor: color }}
                         title={color}
                       />
@@ -258,10 +278,12 @@ export default function PaletteComparisonToolPage() {
                         className="flex items-center gap-2 px-3 py-2 rounded-lg border bg-card"
                       >
                         <div
-                          className="w-6 h-6 rounded bg-checkerboard"
+                          className="w-6 h-6 rounded "
                           style={{ backgroundColor: color }}
                         />
-                        <span className="text-sm font-mono">{color.toUpperCase()}</span>
+                        <span className="text-sm font-mono">
+                          {color.toUpperCase()}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -269,17 +291,31 @@ export default function PaletteComparisonToolPage() {
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-3 pt-2">
                     <div className="p-3 rounded-lg bg-muted/50">
-                      <p className="text-xs text-muted-foreground mb-1">Avg. Luminance</p>
-                      <p className="text-lg font-semibold">{(stats.avgLuminance * 100).toFixed(0)}%</p>
+                      <p className="text-xs text-muted-foreground mb-1">
+                        Avg. Luminance
+                      </p>
+                      <p className="text-lg font-semibold">
+                        {(stats.avgLuminance * 100).toFixed(0)}%
+                      </p>
                       <p className="text-xs text-muted-foreground">
-                        {stats.avgLuminance > 0.5 ? "Light palette" : "Dark palette"}
+                        {stats.avgLuminance > 0.5
+                          ? "Light palette"
+                          : "Dark palette"}
                       </p>
                     </div>
                     <div className="p-3 rounded-lg bg-muted/50">
-                      <p className="text-xs text-muted-foreground mb-1">End-to-End Contrast</p>
-                      <p className="text-lg font-semibold">{stats.contrast.toFixed(2)}:1</p>
+                      <p className="text-xs text-muted-foreground mb-1">
+                        End-to-End Contrast
+                      </p>
+                      <p className="text-lg font-semibold">
+                        {stats.contrast.toFixed(2)}:1
+                      </p>
                       <p className="text-xs text-muted-foreground">
-                        {stats.contrast >= 4.5 ? "✓ WCAG AA" : stats.contrast >= 3 ? "△ WCAG AA Large" : "✗ Not accessible"}
+                        {stats.contrast >= 4.5
+                          ? "✓ WCAG AA"
+                          : stats.contrast >= 3
+                            ? "△ WCAG AA Large"
+                            : "✗ Not accessible"}
                       </p>
                     </div>
                   </div>
@@ -294,15 +330,22 @@ export default function PaletteComparisonToolPage() {
           <Card>
             <CardContent className="p-6 space-y-4">
               <Label>Side-by-Side Comparison</Label>
-              <div className="grid gap-4" style={{ gridTemplateColumns: `repeat(${palettes.length}, 1fr)` }}>
+              <div
+                className="grid gap-4"
+                style={{
+                  gridTemplateColumns: `repeat(${palettes.length}, 1fr)`,
+                }}
+              >
                 {palettes.map((palette) => (
                   <div key={palette.id} className="space-y-2">
-                    <p className="text-sm font-medium text-center">{palette.name}</p>
+                    <p className="text-sm font-medium text-center">
+                      {palette.name}
+                    </p>
                     <div className="flex h-16 rounded-lg border overflow-hidden">
                       {palette.colors.map((color, i) => (
                         <div
                           key={i}
-                          className="flex-1 h-full bg-checkerboard"
+                          className="flex-1 h-full "
                           style={{ backgroundColor: color }}
                           title={color}
                         />

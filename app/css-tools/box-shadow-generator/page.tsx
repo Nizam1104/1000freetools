@@ -392,7 +392,7 @@ export default function BoxShadowGeneratorPage() {
               <CardTitle>Live Preview</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-64 bg-checkerboard rounded-lg flex items-center justify-center p-8">
+              <div className="h-64  rounded-lg flex items-center justify-center p-8">
                 <div
                   className="w-32 h-32 bg-white rounded-lg transition-shadow duration-200"
                   style={{ boxShadow: shadowCSS }}

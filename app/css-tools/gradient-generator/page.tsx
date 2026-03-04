@@ -1,11 +1,23 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
@@ -18,18 +30,24 @@ interface ColorStop {
 }
 
 export default function GradientGeneratorPage() {
-  const [gradientType, setGradientType] = useState<"linear" | "radial" | "conic">("linear");
+  const [gradientType, setGradientType] = useState<
+    "linear" | "radial" | "conic"
+  >("linear");
   const [angle, setAngle] = useState(90);
   const [colorStops, setColorStops] = useState<ColorStop[]>([
     { id: "1", color: "#6366f1", position: 0 },
     { id: "2", color: "#8b5cf6", position: 100 },
   ]);
-  const [radialShape, setRadialShape] = useState<"circle" | "ellipse">("circle");
+  const [radialShape, setRadialShape] = useState<"circle" | "ellipse">(
+    "circle",
+  );
   const [conicAngle, setConicAngle] = useState(0);
 
   const generateGradient = useCallback(() => {
     const sortedStops = [...colorStops].sort((a, b) => a.position - b.position);
-    const stopsString = sortedStops.map((stop) => `${stop.color} ${stop.position}%`).join(", ");
+    const stopsString = sortedStops
+      .map((stop) => `${stop.color} ${stop.position}%`)
+      .join(", ");
 
     if (gradientType === "linear") {
       return `linear-gradient(${angle}deg, ${stopsString})`;
@@ -41,12 +59,20 @@ export default function GradientGeneratorPage() {
   }, [gradientType, angle, colorStops, radialShape, conicAngle]);
 
   const addColorStop = () => {
-    const newPosition = colorStops.length > 0 
-      ? Math.min(100, Math.max(0, colorStops[colorStops.length - 1].position + 10))
-      : 50;
+    const newPosition =
+      colorStops.length > 0
+        ? Math.min(
+            100,
+            Math.max(0, colorStops[colorStops.length - 1].position + 10),
+          )
+        : 50;
     const newStop: ColorStop = {
       id: Date.now().toString(),
-      color: "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0'),
+      color:
+        "#" +
+        Math.floor(Math.random() * 16777215)
+          .toString(16)
+          .padStart(6, "0"),
       position: newPosition,
     };
     setColorStops([...colorStops, newStop]);
@@ -61,9 +87,11 @@ export default function GradientGeneratorPage() {
   };
 
   const updateColorStop = (id: string, updates: Partial<ColorStop>) => {
-    setColorStops(colorStops.map((stop) => 
-      stop.id === id ? { ...stop, ...updates } : stop
-    ));
+    setColorStops(
+      colorStops.map((stop) =>
+        stop.id === id ? { ...stop, ...updates } : stop,
+      ),
+    );
   };
 
   const copyToClipboard = async (text: string, label: string) => {
@@ -78,7 +106,11 @@ export default function GradientGeneratorPage() {
   const randomizeColors = () => {
     const randomColors = colorStops.map((stop) => ({
       ...stop,
-      color: "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0'),
+      color:
+        "#" +
+        Math.floor(Math.random() * 16777215)
+          .toString(16)
+          .padStart(6, "0"),
     }));
     setColorStops(randomColors);
   };
@@ -101,7 +133,8 @@ export default function GradientGeneratorPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Gradient Generator</h1>
         <p className="text-muted-foreground">
-          Create beautiful linear, radial, and conic gradients with live preview. Generate production-ready CSS code instantly.
+          Create beautiful linear, radial, and conic gradients with live
+          preview. Generate production-ready CSS code instantly.
         </p>
       </div>
 
@@ -115,7 +148,13 @@ export default function GradientGeneratorPage() {
             <CardContent className="space-y-4">
               <div>
                 <Label>Gradient Type</Label>
-                <Tabs value={gradientType} onValueChange={(v) => setGradientType(v as typeof gradientType)} className="mt-2">
+                <Tabs
+                  value={gradientType}
+                  onValueChange={(v) =>
+                    setGradientType(v as typeof gradientType)
+                  }
+                  className="mt-2"
+                >
                   <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="linear">Linear</TabsTrigger>
                     <TabsTrigger value="radial">Radial</TabsTrigger>
@@ -148,7 +187,12 @@ export default function GradientGeneratorPage() {
               {gradientType === "radial" && (
                 <div>
                   <Label>Shape</Label>
-                  <Select value={radialShape} onValueChange={(v) => setRadialShape(v as typeof radialShape)}>
+                  <Select
+                    value={radialShape}
+                    onValueChange={(v) =>
+                      setRadialShape(v as typeof radialShape)
+                    }
+                  >
                     <SelectTrigger className="mt-2">
                       <SelectValue />
                     </SelectTrigger>
@@ -192,30 +236,41 @@ export default function GradientGeneratorPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               {colorStops.map((stop, index) => (
-                <div key={stop.id} className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+                <div
+                  key={stop.id}
+                  className="flex items-center gap-3 p-3 bg-muted rounded-lg"
+                >
                   <div className="flex-1">
                     <Label className="text-xs">Color {index + 1}</Label>
                     <div className="flex items-center gap-2 mt-1">
                       <Input
                         type="color"
                         value={stop.color}
-                        onChange={(e) => updateColorStop(stop.id, { color: e.target.value })}
+                        onChange={(e) =>
+                          updateColorStop(stop.id, { color: e.target.value })
+                        }
                         className="w-12 h-9 p-1 cursor-pointer"
                       />
                       <Input
                         type="text"
                         value={stop.color}
-                        onChange={(e) => updateColorStop(stop.id, { color: e.target.value })}
+                        onChange={(e) =>
+                          updateColorStop(stop.id, { color: e.target.value })
+                        }
                         className="w-24 font-mono text-sm"
                         placeholder="#000000"
                       />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <Label className="text-xs">Position: {stop.position}%</Label>
+                    <Label className="text-xs">
+                      Position: {stop.position}%
+                    </Label>
                     <Slider
                       value={[stop.position]}
-                      onValueChange={([v]) => updateColorStop(stop.id, { position: v })}
+                      onValueChange={([v]) =>
+                        updateColorStop(stop.id, { position: v })
+                      }
                       min={0}
                       max={100}
                       step={1}
@@ -244,7 +299,7 @@ export default function GradientGeneratorPage() {
             </CardHeader>
             <CardContent>
               <div
-                className="w-full h-64 rounded-lg border bg-checkerboard"
+                className="w-full h-64 rounded-lg border "
                 style={{ background: gradientCSS }}
               />
             </CardContent>
@@ -280,14 +335,22 @@ export default function GradientGeneratorPage() {
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={() => copyToClipboard(`.gradient { background: ${gradientCSS}; }`, "Complete CSS")}
+                    onClick={() =>
+                      copyToClipboard(
+                        `.gradient { background: ${gradientCSS}; }`,
+                        "Complete CSS",
+                      )
+                    }
                   >
                     <Copy className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
 
-              <Button className="w-full" onClick={() => copyToClipboard(gradientCSS, "Gradient")}>
+              <Button
+                className="w-full"
+                onClick={() => copyToClipboard(gradientCSS, "Gradient")}
+              >
                 <Copy className="w-4 h-4 mr-2" />
                 Copy Gradient CSS
               </Button>
@@ -361,26 +424,30 @@ export default function GradientGeneratorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">What This Tool Does</h2>
           <p className="text-muted-foreground mb-4">
-            CSS gradients replace background images with code. You pick colors, adjust the angle or shape, 
-            and get the CSS to paste into your stylesheet. No Photoshop, no export, no 500KB PNGs.
+            CSS gradients replace background images with code. You pick colors,
+            adjust the angle or shape, and get the CSS to paste into your
+            stylesheet. No Photoshop, no export, no 500KB PNGs.
           </p>
           <p className="text-muted-foreground">
-            This generator covers all three gradient types: linear (straight transitions), radial (circular 
-            spread from a center point), and conic (rotating around a center, like a pie chart). Each has 
-            its use - linear for buttons and cards, radial for spotlights and depth, conic for charts and 
-            color wheels.
+            This generator covers all three gradient types: linear (straight
+            transitions), radial (circular spread from a center point), and
+            conic (rotating around a center, like a pie chart). Each has its use
+            - linear for buttons and cards, radial for spotlights and depth,
+            conic for charts and color wheels.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">When Gradients Actually Help</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            When Gradients Actually Help
+          </h2>
           <div className="grid gap-4 md:grid-cols-2">
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Call-to-action buttons</h3>
                 <p className="text-sm text-muted-foreground">
-                  A subtle gradient makes buttons pop without looking gimmicky. Try a 2-3% lightness 
-                  shift at a 45-degree angle.
+                  A subtle gradient makes buttons pop without looking gimmicky.
+                  Try a 2-3% lightness shift at a 45-degree angle.
                 </p>
               </CardContent>
             </Card>
@@ -388,26 +455,30 @@ export default function GradientGeneratorPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Hero section backgrounds</h3>
                 <p className="text-sm text-muted-foreground">
-                  Gradients create visual interest without the performance hit of large images. 
-                  Layer multiple gradients for complexity.
+                  Gradients create visual interest without the performance hit
+                  of large images. Layer multiple gradients for complexity.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Loading states and progress bars</h3>
+                <h3 className="font-semibold mb-2">
+                  Loading states and progress bars
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Animated gradients signal activity. Use conic gradients for circular loaders, 
-                  linear for progress bars.
+                  Animated gradients signal activity. Use conic gradients for
+                  circular loaders, linear for progress bars.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Card and section dividers</h3>
+                <h3 className="font-semibold mb-2">
+                  Card and section dividers
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  A soft gradient background separates content areas more elegantly than hard borders 
-                  or solid colors.
+                  A soft gradient background separates content areas more
+                  elegantly than hard borders or solid colors.
                 </p>
               </CardContent>
             </Card>
@@ -415,7 +486,9 @@ export default function GradientGeneratorPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Gradient Syntax, Explained</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            Gradient Syntax, Explained
+          </h2>
           <div className="space-y-4">
             <Card>
               <CardContent className="pt-6">
@@ -424,8 +497,9 @@ export default function GradientGeneratorPage() {
                   linear-gradient(135deg, #667eea 0%, #764ba2 100%)
                 </code>
                 <p className="text-sm text-muted-foreground">
-                  The angle controls direction. 0deg goes up, 90deg goes right, 180deg goes down. 
-                  Color stops define where each color hits 100% opacity.
+                  The angle controls direction. 0deg goes up, 90deg goes right,
+                  180deg goes down. Color stops define where each color hits
+                  100% opacity.
                 </p>
               </CardContent>
             </Card>
@@ -437,8 +511,9 @@ export default function GradientGeneratorPage() {
                   radial-gradient(circle, #667eea 0%, #764ba2 100%)
                 </code>
                 <p className="text-sm text-muted-foreground">
-                  Shape can be "circle" or "ellipse". The gradient spreads from the center outward. 
-                  You can also set a specific center point with "at 50% 50%".
+                  Shape can be "circle" or "ellipse". The gradient spreads from
+                  the center outward. You can also set a specific center point
+                  with "at 50% 50%".
                 </p>
               </CardContent>
             </Card>
@@ -447,11 +522,13 @@ export default function GradientGeneratorPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Conic gradients</h3>
                 <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-3">
-                  conic-gradient(from 0deg, #667eea 0%, #764ba2 50%, #667eea 100%)
+                  conic-gradient(from 0deg, #667eea 0%, #764ba2 50%, #667eea
+                  100%)
                 </code>
                 <p className="text-sm text-muted-foreground">
-                  Conic gradients rotate around a center. "from 0deg" starts at the top. 
-                  Great for pie charts - each slice is a color stop with specific start and end positions.
+                  Conic gradients rotate around a center. "from 0deg" starts at
+                  the top. Great for pie charts - each slice is a color stop
+                  with specific start and end positions.
                 </p>
               </CardContent>
             </Card>
@@ -463,10 +540,14 @@ export default function GradientGeneratorPage() {
           <div className="space-y-4">
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">How many color stops should I use?</h3>
+                <h3 className="font-semibold mb-2">
+                  How many color stops should I use?
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Two to four colors usually works best. More than that and gradients start looking muddy. 
-                  If you need complex blends, consider layering multiple gradients instead of adding more stops.
+                  Two to four colors usually works best. More than that and
+                  gradients start looking muddy. If you need complex blends,
+                  consider layering multiple gradients instead of adding more
+                  stops.
                 </p>
               </CardContent>
             </Card>
@@ -474,26 +555,36 @@ export default function GradientGeneratorPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Can I use transparency?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Yes - use rgba() or hsla() values. Transparent gradients work well for overlays. 
-                  Example: <code className="bg-muted px-1 rounded">rgba(0, 0, 0, 0.4)</code> for a dark overlay.
+                  Yes - use rgba() or hsla() values. Transparent gradients work
+                  well for overlays. Example:{" "}
+                  <code className="bg-muted px-1 rounded">
+                    rgba(0, 0, 0, 0.4)
+                  </code>{" "}
+                  for a dark overlay.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Do gradients affect performance?</h3>
+                <h3 className="font-semibold mb-2">
+                  Do gradients affect performance?
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Not noticeably. Gradients are GPU-accelerated and render faster than loading images. 
-                  The only concern is animating gradients, which can trigger repaints.
+                  Not noticeably. Gradients are GPU-accelerated and render
+                  faster than loading images. The only concern is animating
+                  gradients, which can trigger repaints.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Why does my gradient look banded?</h3>
+                <h3 className="font-semibold mb-2">
+                  Why does my gradient look banded?
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Color banding happens when there aren't enough intermediate colors. Add a tiny amount 
-                  of noise with a pseudo-element, or use more color stops to smooth the transition.
+                  Color banding happens when there aren't enough intermediate
+                  colors. Add a tiny amount of noise with a pseudo-element, or
+                  use more color stops to smooth the transition.
                 </p>
               </CardContent>
             </Card>
@@ -501,7 +592,9 @@ export default function GradientGeneratorPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Tips That Actually Help</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            Tips That Actually Help
+          </h2>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="flex gap-4">
               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -510,7 +603,8 @@ export default function GradientGeneratorPage() {
               <div>
                 <h3 className="font-semibold mb-1">Subtle beats obvious</h3>
                 <p className="text-sm text-muted-foreground">
-                  A 5% lightness shift looks professional. Rainbow gradients look like 2005 called.
+                  A 5% lightness shift looks professional. Rainbow gradients
+                  look like 2005 called.
                 </p>
               </div>
             </div>
@@ -521,7 +615,8 @@ export default function GradientGeneratorPage() {
               <div>
                 <h3 className="font-semibold mb-1">Match your brand colors</h3>
                 <p className="text-sm text-muted-foreground">
-                  Use your primary color as the base, then shift hue slightly for the second stop.
+                  Use your primary color as the base, then shift hue slightly
+                  for the second stop.
                 </p>
               </div>
             </div>
@@ -532,7 +627,8 @@ export default function GradientGeneratorPage() {
               <div>
                 <h3 className="font-semibold mb-1">Test in grayscale</h3>
                 <p className="text-sm text-muted-foreground">
-                  If the gradient disappears in grayscale, the colors are too similar in lightness.
+                  If the gradient disappears in grayscale, the colors are too
+                  similar in lightness.
                 </p>
               </div>
             </div>

@@ -5,7 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, SortAsc, ArrowUpDown, Palette } from "lucide-react";
 import { toast } from "sonner";
@@ -46,7 +52,11 @@ const rgbToHsl = (r: number, g: number, b: number) => {
         break;
     }
   }
-  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+  return {
+    h: Math.round(h * 360),
+    s: Math.round(s * 100),
+    l: Math.round(l * 100),
+  };
 };
 
 const parseColors = (input: string): string[] => {
@@ -60,7 +70,11 @@ const parseColors = (input: string): string[] => {
   return normalized;
 };
 
-const sortColors = (colors: string[], sortBy: "hue" | "brightness" | "saturation" | "lightness", order: "asc" | "desc") => {
+const sortColors = (
+  colors: string[],
+  sortBy: "hue" | "brightness" | "saturation" | "lightness",
+  order: "asc" | "desc",
+) => {
   return [...colors].sort((a, b) => {
     const rgbA = hexToRgb(a);
     const rgbB = hexToRgb(b);
@@ -95,17 +109,31 @@ const sortColors = (colors: string[], sortBy: "hue" | "brightness" | "saturation
 };
 
 const PRESET_PALETTES = [
-  { name: "Mixed", colors: ["#ef4444", "#3b82f6", "#22c55e", "#f59e0b", "#8b5cf6"] },
-  { name: "Pastels", colors: ["#fecdd3", "#fed7aa", "#fef3c7", "#d9f99d", "#bbf7d0"] },
-  { name: "Dark", colors: ["#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a"] },
-  { name: "Vibrant", colors: ["#dc2626", "#ea580c", "#ca8a04", "#16a34a", "#2563eb"] },
+  {
+    name: "Mixed",
+    colors: ["#ef4444", "#3b82f6", "#22c55e", "#f59e0b", "#8b5cf6"],
+  },
+  {
+    name: "Pastels",
+    colors: ["#fecdd3", "#fed7aa", "#fef3c7", "#d9f99d", "#bbf7d0"],
+  },
+  {
+    name: "Dark",
+    colors: ["#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a"],
+  },
+  {
+    name: "Vibrant",
+    colors: ["#dc2626", "#ea580c", "#ca8a04", "#16a34a", "#2563eb"],
+  },
 ];
 
 export default function PaletteSorterPage() {
   const [inputText, setInputText] = useState("");
   const [colors, setColors] = useState<string[]>([]);
   const [sortedColors, setSortedColors] = useState<string[]>([]);
-  const [sortBy, setSortBy] = useState<"hue" | "brightness" | "saturation" | "lightness">("hue");
+  const [sortBy, setSortBy] = useState<
+    "hue" | "brightness" | "saturation" | "lightness"
+  >("hue");
   const [order, setOrder] = useState<"asc" | "desc">("asc");
   const [copied, setCopied] = useState(false);
 
@@ -134,7 +162,9 @@ export default function PaletteSorterPage() {
     }
     const sorted = sortColors(colors, sortBy, order);
     setSortedColors(sorted);
-    toast.success(`Sorted by ${sortBy} (${order === "asc" ? "ascending" : "descending"})`);
+    toast.success(
+      `Sorted by ${sortBy} (${order === "asc" ? "ascending" : "descending"})`,
+    );
   };
 
   const copyToClipboard = async () => {
@@ -158,9 +188,13 @@ export default function PaletteSorterPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Palette Sorter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Palette Sorter
+          </h1>
           <p className="text-muted-foreground">
-            Sort the colors in your palette by hue, brightness, or saturation. Organize your swatches for cleaner presentation and easier design workflow.
+            Sort the colors in your palette by hue, brightness, or saturation.
+            Organize your swatches for cleaner presentation and easier design
+            workflow.
           </p>
         </div>
 
@@ -176,9 +210,7 @@ export default function PaletteSorterPage() {
                 className="min-h-[100px] font-mono"
               />
               <div className="flex items-center gap-2">
-                <Button onClick={loadColors}>
-                  Load Colors
-                </Button>
+                <Button onClick={loadColors}>Load Colors</Button>
                 <Button variant="outline" onClick={() => setInputText("")}>
                   Clear
                 </Button>
@@ -187,7 +219,9 @@ export default function PaletteSorterPage() {
 
             {/* Preset Palettes */}
             <div className="pt-4 border-t">
-              <Label className="text-sm text-muted-foreground mb-3 block">Or load a preset:</Label>
+              <Label className="text-sm text-muted-foreground mb-3 block">
+                Or load a preset:
+              </Label>
               <div className="flex flex-wrap gap-2">
                 {PRESET_PALETTES.map((preset) => (
                   <Button
@@ -217,7 +251,10 @@ export default function PaletteSorterPage() {
                 <div className="grid sm:grid-cols-3 gap-4">
                   <div className="space-y-2">
                     <Label>Sort By</Label>
-                    <Select value={sortBy} onValueChange={(v) => setSortBy(v as any)}>
+                    <Select
+                      value={sortBy}
+                      onValueChange={(v) => setSortBy(v as any)}
+                    >
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -232,7 +269,10 @@ export default function PaletteSorterPage() {
 
                   <div className="space-y-2">
                     <Label>Order</Label>
-                    <Select value={order} onValueChange={(v) => setOrder(v as any)}>
+                    <Select
+                      value={order}
+                      onValueChange={(v) => setOrder(v as any)}
+                    >
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -267,10 +307,12 @@ export default function PaletteSorterPage() {
                       className="flex items-center gap-2 px-3 py-2 rounded-lg border bg-card"
                     >
                       <div
-                        className="w-8 h-8 rounded bg-checkerboard"
+                        className="w-8 h-8 rounded "
                         style={{ backgroundColor: color }}
                       />
-                      <span className="text-sm font-mono">{color.toUpperCase()}</span>
+                      <span className="text-sm font-mono">
+                        {color.toUpperCase()}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -297,7 +339,7 @@ export default function PaletteSorterPage() {
                   {sortedColors.map((color, i) => (
                     <div
                       key={i}
-                      className="flex-1 h-full bg-checkerboard"
+                      className="flex-1 h-full "
                       style={{ backgroundColor: color }}
                       title={color}
                     />
@@ -309,15 +351,19 @@ export default function PaletteSorterPage() {
                   {sortedColors.map((color, i) => {
                     const rgb = hexToRgb(color);
                     const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-                    const brightness = Math.round((rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000);
+                    const brightness = Math.round(
+                      (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000,
+                    );
                     return (
                       <div key={i} className="space-y-2">
                         <div
-                          className="aspect-square rounded-lg border bg-checkerboard"
+                          className="aspect-square rounded-lg border "
                           style={{ backgroundColor: color }}
                         />
                         <div className="space-y-1">
-                          <p className="text-sm font-mono font-medium">{color.toUpperCase()}</p>
+                          <p className="text-sm font-mono font-medium">
+                            {color.toUpperCase()}
+                          </p>
                           <div className="grid grid-cols-2 gap-1 text-xs text-muted-foreground">
                             <span>H: {hsl.h}°</span>
                             <span>S: {hsl.s}%</span>
@@ -337,7 +383,9 @@ export default function PaletteSorterPage() {
                     <div className="space-y-2">
                       <Label className="text-xs">CSS Variables</Label>
                       <pre className="bg-muted p-3 rounded-lg text-xs font-mono overflow-x-auto">
-                        {sortedColors.map((c, i) => `--color-${i + 1}: ${c};`).join("\n")}
+                        {sortedColors
+                          .map((c, i) => `--color-${i + 1}: ${c};`)
+                          .join("\n")}
                       </pre>
                     </div>
                     <div className="space-y-2">
