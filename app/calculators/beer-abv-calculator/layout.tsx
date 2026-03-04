@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+
+export const metadata: Metadata = {
+  title: "Beer ABV Calculator – Calculate Alcohol Content of Your Home Brew",
+  description: "Know exactly how strong your home brew is with our Beer ABV Calculator. Enter your original gravity (OG) and final gravity (FG) readings to calculate the alcohol by volume percentage of your beer — an essential tool for home brewers.",
+  alternates: {
+    canonical: "https://1000freetools.com/calculators/beer-abv-calculator",
+  },
+};
+
+const tools = [
+  {
+    "name": "Cocktail Abv Calculator",
+    "description": "Cocktail ABV Calculator – Calculate the Alcohol Content of Any Mixed Drink",
+    "href": "/cocktail-abv-calculator"
+  },
+  {
+    "name": "Alcohol Dilution Calculator",
+    "description": "Alcohol Dilution Calculator – Calculate Water to Add for Target ABV",
+    "href": "/alcohol-dilution-calculator"
+  },
+  {
+    "name": "Wine Abv Calculator",
+    "description": "Wine ABV Calculator – Calculate Alcohol Content in Homemade Wine",
+    "href": "/wine-abv-calculator"
+  },
+  {
+    "name": "Coffee To Water Ratio Calculator",
+    "description": "Coffee to Water Ratio Calculator – Perfect Coffee Every Time",
+    "href": "/coffee-to-water-ratio-calculator"
+  },
+  {
+    "name": "Tea Brewing Strength Calculator",
+    "description": "Tea Brewing Strength Calculator – Get the Perfect Steep Time & Leaf Ratio",
+    "href": "/tea-brewing-strength-calculator"
+  },
+  {
+    "name": "0 100 Acceleration Estimator",
+    "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
+    "href": "/0-100-acceleration-estimator"
+  }
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-y-4">
+      {children}
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}

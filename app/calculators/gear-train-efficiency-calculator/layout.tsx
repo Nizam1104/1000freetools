@@ -1,0 +1,59 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+
+export const metadata: Metadata = {
+  title: "Gear Train Efficiency Calculator – Calculate Power Loss",
+  description: "Calculate the overall efficiency of a gear train. Enter gear pairs and their individual efficiencies.",
+  alternates: {
+    canonical: "https://1000freetools.com/calculators/gear-train-efficiency-calculator",
+  },
+};
+
+const tools = [
+  {
+    "name": "Gear Ratio Calculator",
+    "description": "Gear Ratio Calculator – Calculate Gear Train Ratio",
+    "href": "/gear-ratio-calculator"
+  },
+  {
+    "name": "Gear Shifting Rpms Calculator",
+    "description": "Gear Shifting RPMs Calculator – Find the Perfect RPM to Shift Gears",
+    "href": "/gear-shifting-rpms-calculator"
+  },
+  {
+    "name": "Rpm Calculator",
+    "description": "RPM Calculator – Calculate Rotational Speed and Gear Ratios",
+    "href": "/rpm-calculator"
+  },
+  {
+    "name": "Torque Calculator",
+    "description": "Torque Calculator",
+    "href": "/torque-calculator"
+  },
+  {
+    "name": "Belt Tension Calculator",
+    "description": "Belt Tension Calculator – Calculate Belt Drive Tension",
+    "href": "/belt-tension-calculator"
+  },
+  {
+    "name": "Pulley System Calculator",
+    "description": "Pulley System Calculator – Block and Tackle Calculator",
+    "href": "/pulley-system-calculator"
+  }
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-y-4">
+            <header className="max-w-3xl">
+        <h1 className="text-3xl font-bold mb-3">Gear Train Efficiency Calculator – Calculate Power Loss</h1>
+        <p className="text-muted-foreground">Calculate the overall efficiency of a gear train. Enter gear pairs and their individual efficiencies.</p>
+      </header>
+      {children}
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}

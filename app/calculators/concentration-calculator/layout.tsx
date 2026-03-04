@@ -1,0 +1,59 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+
+export const metadata: Metadata = {
+  title: "Concentration Calculator – Convert Solution Concentration Units",
+  description: "Calculate solution concentration in molarity, percent composition, ppm, or ppb with our versatile concentration calculator. Ideal for chemists, lab technicians, and students working with solution preparation and analysis.",
+  alternates: {
+    canonical: "https://1000freetools.com/calculators/concentration-calculator",
+  },
+};
+
+const tools = [
+  {
+    "name": "Dilution Calculator",
+    "description": "Dilution Calculator – C1V1 = C2V2 Solution Dilution Tool",
+    "href": "/dilution-calculator"
+  },
+  {
+    "name": "Molarity Calculator",
+    "description": "Molarity Calculator – Calculate Molar Concentration Instantly",
+    "href": "/molarity-calculator"
+  },
+  {
+    "name": "Molality Calculator",
+    "description": "Molality Calculator – Find Molality of Any Solution",
+    "href": "/molality-calculator"
+  },
+  {
+    "name": "Molecular Mass Calculator",
+    "description": "Molecular Mass Calculator – Calculate Molar Mass of Any Compound",
+    "href": "/molecular-mass-calculator"
+  },
+  {
+    "name": "Moles To Volume Converter",
+    "description": "Moles to Volume Calculator for Gas – STP and Custom Conditions",
+    "href": "/moles-to-volume-converter"
+  },
+  {
+    "name": "Percent Composition Calculator",
+    "description": "Percent Composition Calculator – Find Mass Percent of Elements",
+    "href": "/percent-composition-calculator"
+  }
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-y-4">
+            <header className="max-w-3xl">
+        <h1 className="text-3xl font-bold mb-3">Concentration Calculator – Convert Solution Concentration Units</h1>
+        <p className="text-muted-foreground">Calculate solution concentration in molarity, percent composition, ppm, or ppb with our versatile concentration calculator. Ideal for chemists, lab technicians, and students working with solution preparation and analysis.</p>
+      </header>
+      {children}
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}
