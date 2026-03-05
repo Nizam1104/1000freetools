@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
@@ -163,10 +163,9 @@ export default function JsonNestedStructureGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Nested Structure
               </Label>
-              <Textarea
+              <JsonEditor
                 value={result}
                 readOnly
-                className="min-h-[400px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
               <p className="text-xs text-muted-foreground mt-2">
                 Size: {new Blob([result]).size} bytes

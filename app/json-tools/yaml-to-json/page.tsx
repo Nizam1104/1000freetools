@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   FileJson,
@@ -284,12 +284,10 @@ settings:
               >
                 Input YAML
               </Label>
-              <Textarea
-                id="input"
+              <JsonEditor
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder="Paste your YAML here..."
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -320,12 +318,10 @@ settings:
                   </div>
                 )}
               </div>
-              <Textarea
-                id="output"
+              <JsonEditor
                 value={output}
                 readOnly
                 placeholder="JSON output will appear here..."
-                className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

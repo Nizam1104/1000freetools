@@ -3,10 +3,10 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { FileJson, RotateCcw, Trash2, Copy } from "lucide-react";
+import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
 import { NativeSelect as Select } from "@/components/ui/native-select";
 
@@ -74,6 +74,19 @@ export default function JsonFetchCodeGeneratorPage() {
     }
   };
 
+  const downloadResult = () => {
+    if (result) {
+      const blob = new Blob([result], { type: "text/javascript;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "fetch-code.js";
+      link.click();
+      URL.revokeObjectURL(url);
+      toast.success("Code downloaded!");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -104,10 +117,16 @@ export default function JsonFetchCodeGeneratorPage() {
                   Clear
                 </Button>
                 {result && (
-                  <Button variant="outline" size="sm" onClick={copyResult}>
-                    <Copy className="h-4 w-4 mr-2" />
-                    Copy
-                  </Button>
+                  <>
+                    <Button variant="outline" size="sm" onClick={copyResult}>
+                      <Copy className="h-4 w-4 mr-2" />
+                      Copy
+                    </Button>
+                    <Button variant="outline" size="sm" onClick={downloadResult}>
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </Button>
+                  </>
                 )}
                 <Button onClick={generateFetchCode}>
                   <RotateCcw className="h-4 w-4 mr-2" />
@@ -162,12 +181,11 @@ export default function JsonFetchCodeGeneratorPage() {
               <Label htmlFor="headers" className="text-sm font-medium text-muted-foreground mb-2 block">
                 Headers (JSON)
               </Label>
-              <Textarea
+              <JsonEditor
                 id="headers"
                 value={headers}
-                onChange={(e) => setHeaders(e.target.value)}
+                onChange={setHeaders}
                 placeholder='{"Authorization": "Bearer token"}'
-                className="min-h-[100px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>
@@ -178,12 +196,11 @@ export default function JsonFetchCodeGeneratorPage() {
                 <Label htmlFor="body" className="text-sm font-medium text-muted-foreground mb-2 block">
                   Request Body (JSON)
                 </Label>
-                <Textarea
+                <JsonEditor
                   id="body"
                   value={body}
-                  onChange={(e) => setBody(e.target.value)}
+                  onChange={setBody}
                   placeholder='{"key": "value"}'
-                  className="min-h-[100px] font-mono text-sm resize-none"
                 />
               </CardContent>
             </Card>
@@ -197,10 +214,10 @@ export default function JsonFetchCodeGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Fetch Code
               </Label>
-              <Textarea
+              <JsonEditor
                 value={result}
                 readOnly
-                className="min-h-[300px] font-mono text-sm resize-none"
+                placeholder="Generated code will appear here..."
               />
             </CardContent>
           </Card>

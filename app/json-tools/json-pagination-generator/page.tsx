@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
@@ -197,12 +197,10 @@ export default function JsonPaginationGeneratorPage() {
             >
               Data Array (optional)
             </Label>
-            <Textarea
-              id="data"
+            <JsonEditor
               value={data}
-              onChange={(e) => setData(e.target.value)}
+              onChange={setData}
               placeholder='[{"id": 1, "name": "Item 1"}]'
-              className="min-h-[200px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>
@@ -214,10 +212,9 @@ export default function JsonPaginationGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Paginated Response
               </Label>
-              <Textarea
+              <JsonEditor
                 value={result}
                 readOnly
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

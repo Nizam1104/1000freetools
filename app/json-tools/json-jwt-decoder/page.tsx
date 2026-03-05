@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download, AlertTriangle } from "lucide-react";
 import { toast } from "sonner";
@@ -251,12 +251,11 @@ export default function JsonJwtDecoderPage() {
             <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
               JWT Token
             </Label>
-            <Textarea
+            <JsonEditor
               id="input"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-              className="min-h-[100px] font-mono text-sm resize-none"
             />
           </CardContent>
         </Card>
@@ -270,10 +269,10 @@ export default function JsonJwtDecoderPage() {
                   Header
                 </Label>
                 {decoded.header ? (
-                  <Textarea
+                  <JsonEditor
                     value={JSON.stringify(decoded.header, null, 2)}
                     readOnly
-                    className="min-h-[150px] font-mono text-sm resize-none"
+                    placeholder="Header will appear here..."
                   />
                 ) : (
                   <p className="text-muted-foreground text-sm">{decoded.error}</p>
@@ -287,10 +286,10 @@ export default function JsonJwtDecoderPage() {
                   Payload
                 </Label>
                 {decoded.payload ? (
-                  <Textarea
+                  <JsonEditor
                     value={JSON.stringify(decoded.payload, null, 2)}
                     readOnly
-                    className="min-h-[150px] font-mono text-sm resize-none"
+                    placeholder="Payload will appear here..."
                   />
                 ) : (
                   <p className="text-muted-foreground text-sm">{decoded.error}</p>
@@ -303,10 +302,10 @@ export default function JsonJwtDecoderPage() {
                 <Label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Signature
                 </Label>
-                <Textarea
+                <JsonEditor
                   value={decoded.signature}
                   readOnly
-                  className="min-h-[60px] font-mono text-sm resize-none"
+                  placeholder="Signature will appear here..."
                 />
               </CardContent>
             </Card>

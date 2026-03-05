@@ -3,10 +3,10 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, AlertTriangle } from "lucide-react";
 import { toast } from "sonner";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 interface DuplicateKey {
   key: string;
@@ -295,12 +295,10 @@ export default function JsonDuplicateKeyFinderPage() {
             >
               Input JSON
             </Label>
-            <Textarea
-              id="input"
+            <JsonEditor
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='{"name": "Test", "name": "Duplicate"}'
-              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>

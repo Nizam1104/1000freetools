@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
@@ -163,12 +163,11 @@ export default function JsonMergePage() {
               <Label htmlFor="json1" className="text-sm font-medium text-muted-foreground mb-2 block">
                 JSON Object 1
               </Label>
-              <Textarea
+              <JsonEditor
                 id="json1"
                 value={json1}
-                onChange={(e) => setJson1(e.target.value)}
+                onChange={setJson1}
                 placeholder='{"a": 1, "b": {"x": 10}}'
-                className="min-h-[300px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>
@@ -178,12 +177,11 @@ export default function JsonMergePage() {
               <Label htmlFor="json2" className="text-sm font-medium text-muted-foreground mb-2 block">
                 JSON Object 2
               </Label>
-              <Textarea
+              <JsonEditor
                 id="json2"
                 value={json2}
-                onChange={(e) => setJson2(e.target.value)}
+                onChange={setJson2}
                 placeholder='{"b": {"y": 20}, "c": "hello"}'
-                className="min-h-[300px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>
@@ -196,10 +194,10 @@ export default function JsonMergePage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Merged Result
               </Label>
-              <Textarea
+              <JsonEditor
                 value={mergedResult}
                 readOnly
-                className="min-h-[300px] font-mono text-sm resize-none"
+                placeholder="Merged JSON will appear here..."
               />
             </CardContent>
           </Card>

@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy } from "lucide-react";
 import { toast } from "sonner";
@@ -232,12 +232,10 @@ export default function JsonSchemaExampleGeneratorPage() {
             >
               JSON Schema
             </Label>
-            <Textarea
-              id="schema"
+            <JsonEditor
               value={schema}
-              onChange={(e) => setSchema(e.target.value)}
+              onChange={setSchema}
               placeholder='{"type": "object", "properties": {...}}'
-              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>
@@ -249,10 +247,9 @@ export default function JsonSchemaExampleGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Example
               </Label>
-              <Textarea
+              <JsonEditor
                 value={result}
                 readOnly
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

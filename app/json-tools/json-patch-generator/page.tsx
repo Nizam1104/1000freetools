@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
@@ -210,12 +210,11 @@ export default function JsonPatchGeneratorPage() {
               <Label htmlFor="source" className="text-sm font-medium text-muted-foreground mb-2 block">
                 Source JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="source"
                 value={sourceJson}
-                onChange={(e) => setSourceJson(e.target.value)}
+                onChange={setSourceJson}
                 placeholder='{"name": "John", "age": 30}'
-                className="min-h-[300px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>
@@ -225,12 +224,11 @@ export default function JsonPatchGeneratorPage() {
               <Label htmlFor="target" className="text-sm font-medium text-muted-foreground mb-2 block">
                 Target JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="target"
                 value={targetJson}
-                onChange={(e) => setTargetJson(e.target.value)}
+                onChange={setTargetJson}
                 placeholder='{"name": "Jane", "country": "USA"}'
-                className="min-h-[300px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>
@@ -256,10 +254,9 @@ export default function JsonPatchGeneratorPage() {
                   </div>
                 ))}
               </div>
-              <Textarea
+              <JsonEditor
                 value={JSON.stringify(patches, null, 2)}
                 readOnly
-                className="min-h-[200px] font-mono text-sm resize-none mt-4"
               />
             </CardContent>
           </Card>

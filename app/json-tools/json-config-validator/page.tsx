@@ -3,12 +3,12 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy, Download, Plus, X } from "lucide-react";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 export default function JsonConfigValidatorPage() {
   const [input, setInput] = useState("");
@@ -165,12 +165,10 @@ export default function JsonConfigValidatorPage() {
             <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
               Configuration JSON
             </Label>
-            <Textarea
-              id="input"
+            <JsonEditor
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='{"name": "my-app", "version": "1.0.0"}'
-              className="min-h-[200px] font-mono text-sm resize-none"
             />
           </CardContent>
         </Card>

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -11,7 +14,8 @@ const colorTools = [
   // Image-based Tools
   {
     name: "Extract Colors from Image",
-    description: "Upload an image and extract dominant colors using browser canvas.",
+    description:
+      "Upload an image and extract dominant colors using browser canvas.",
     href: "/color-tools/extract-colors-from-image",
     category: "Image",
   },
@@ -71,13 +75,15 @@ const colorTools = [
   // Color Pickers
   {
     name: "Color Picker",
-    description: "Pick a color using a palette or input HEX, RGB, or HSL values and copy instantly.",
+    description:
+      "Pick a color using a palette or input HEX, RGB, or HSL values and copy instantly.",
     href: "/color-tools/color-picker",
     category: "Picker",
   },
   {
     name: "Advanced Color Picker",
-    description: "Color wheel with RGB, HSL, HSV sliders, alpha control, and live preview.",
+    description:
+      "Color wheel with RGB, HSL, HSV sliders, alpha control, and live preview.",
     href: "/color-tools/advanced-color-picker",
     category: "Picker",
   },
@@ -194,6 +200,14 @@ const categories = [
 ];
 
 export default function ColorToolsPage() {
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get("category") || "all";
+
+  const filteredTools =
+    selectedCategory === "all"
+      ? colorTools
+      : colorTools.filter((tool) => tool.category === selectedCategory);
+
   return (
     <div className="min-h-screen bg-background w-full">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -208,24 +222,34 @@ export default function ColorToolsPage() {
 
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 mb-6">
-          {categories.map((category) => (
-            <Link
-              key={category.id}
-              href={category.id === "all" ? "/color-tools" : `/color-tools?category=${category.id}`}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                category.id === "all"
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-accent"
-              }`}
-            >
-              {category.name}
-            </Link>
-          ))}
+          {categories.map((category) => {
+            const isActive =
+              category.id === "all"
+                ? selectedCategory === "all"
+                : selectedCategory === category.id;
+            return (
+              <Link
+                key={category.id}
+                href={
+                  category.id === "all"
+                    ? "/color-tools"
+                    : `/color-tools?category=${category.id}`
+                }
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  isActive
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-secondary-foreground hover:bg-accent"
+                }`}
+              >
+                {category.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Tools Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {colorTools.map((tool) => (
+          {filteredTools.map((tool) => (
             <Link key={tool.name} href={tool.href}>
               <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
                 <CardHeader>

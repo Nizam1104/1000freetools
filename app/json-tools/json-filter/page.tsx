@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
@@ -205,12 +205,11 @@ export default function JsonFilterPage() {
               >
                 Input JSON Array
               </Label>
-              <Textarea
+              <JsonEditor
                 id="input"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder='[{"name": "John", "age": 30}, ...]'
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -283,10 +282,10 @@ export default function JsonFilterPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Filtered Result ({result.length} item(s))
               </Label>
-              <Textarea
+              <JsonEditor
                 value={JSON.stringify(result, null, 2)}
                 readOnly
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
+                placeholder="Filtered results will appear here..."
               />
             </CardContent>
           </Card>

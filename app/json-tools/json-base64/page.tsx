@@ -3,11 +3,11 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download, ArrowRightLeft } from "lucide-react";
 import { toast } from "sonner";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 export default function JsonBase64Page() {
   const [input, setInput] = useState("");
@@ -215,12 +215,10 @@ export default function JsonBase64Page() {
               <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
                 Input
               </Label>
-              <Textarea
-                id="input"
+              <JsonEditor
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder={mode === "encode" ? "Enter JSON to encode to Base64..." : "Enter Base64 string..."}
-                className="min-h-[200px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>
@@ -231,10 +229,9 @@ export default function JsonBase64Page() {
                 <Label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Output
                 </Label>
-                <Textarea
+                <JsonEditor
                   value={result}
                   readOnly
-                  className="min-h-[200px] font-mono text-sm resize-none"
                 />
               </CardContent>
             </Card>

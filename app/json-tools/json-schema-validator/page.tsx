@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   Check,
@@ -320,12 +320,10 @@ export default function JsonSchemaValidatorPage() {
               >
                 JSON Data
               </Label>
-              <Textarea
-                id="jsonData"
+              <JsonEditor
                 value={jsonData}
-                onChange={(e) => setJsonData(e.target.value)}
+                onChange={setJsonData}
                 placeholder='{"name": "John", "age": 30}'
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -338,12 +336,10 @@ export default function JsonSchemaValidatorPage() {
               >
                 JSON Schema
               </Label>
-              <Textarea
-                id="schemaData"
+              <JsonEditor
                 value={schemaData}
-                onChange={(e) => setSchemaData(e.target.value)}
+                onChange={setSchemaData}
                 placeholder='{"type": "object", "properties": {...}}'
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

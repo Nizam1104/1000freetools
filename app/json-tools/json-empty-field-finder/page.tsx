@@ -3,10 +3,10 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 interface EmptyField {
   path: string;
@@ -184,12 +184,10 @@ export default function JsonEmptyFieldFinderPage() {
             >
               Input JSON
             </Label>
-            <Textarea
-              id="input"
+            <JsonEditor
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='{"name": "Test", "description": "", "data": null}'
-              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>

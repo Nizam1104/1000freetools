@@ -3,12 +3,12 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy } from "lucide-react";
 import { toast } from "sonner";
 import { NativeSelect as Select } from "@/components/ui/native-select";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 export default function JsonAxiosCodeGeneratorPage() {
   const [method, setMethod] = useState("GET");
@@ -184,12 +184,10 @@ export default function JsonAxiosCodeGeneratorPage() {
               >
                 Headers (JSON)
               </Label>
-              <Textarea
-                id="headers"
+              <JsonEditor
                 value={headers}
-                onChange={(e) => setHeaders(e.target.value)}
+                onChange={setHeaders}
                 placeholder='{"Authorization": "Bearer token"}'
-                className="min-h-[150px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -204,12 +202,10 @@ export default function JsonAxiosCodeGeneratorPage() {
               >
                 Request Body (JSON)
               </Label>
-              <Textarea
-                id="body"
+              <JsonEditor
                 value={body}
-                onChange={(e) => setBody(e.target.value)}
+                onChange={setBody}
                 placeholder='{"key": "value"}'
-                className="min-h-[150px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -222,10 +218,9 @@ export default function JsonAxiosCodeGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Axios Code
               </Label>
-              <Textarea
+              <JsonEditor
                 value={result}
                 readOnly
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

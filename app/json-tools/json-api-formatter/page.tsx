@@ -3,10 +3,10 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 export default function JsonApiFormatterPage() {
   const [input, setInput] = useState("");
@@ -152,12 +152,10 @@ export default function JsonApiFormatterPage() {
               >
                 Input JSON
               </Label>
-              <Textarea
-                id="input"
+              <JsonEditor
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder='{"status": "success", "result": {...}}'
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -169,10 +167,9 @@ export default function JsonApiFormatterPage() {
                 <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                   Formatted API Response
                 </Label>
-                <Textarea
+                <JsonEditor
                   value={result}
                   readOnly
-                  className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 max-h-[500px] overflow-y-auto"
                 />
               </CardContent>
             </Card>

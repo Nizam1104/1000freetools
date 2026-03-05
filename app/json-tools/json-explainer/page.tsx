@@ -3,10 +3,10 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { FileJson, RotateCcw, Trash2, Copy } from "lucide-react";
+import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 export default function JsonExplainerPage() {
   const [input, setInput] = useState("");
@@ -118,6 +118,19 @@ export default function JsonExplainerPage() {
     }
   };
 
+  const downloadResult = () => {
+    if (explanation) {
+      const blob = new Blob([explanation], { type: "text/plain;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "explanation.txt";
+      link.click();
+      URL.revokeObjectURL(url);
+      toast.success("Explanation downloaded!");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -152,10 +165,16 @@ export default function JsonExplainerPage() {
                   Clear
                 </Button>
                 {explanation && (
-                  <Button variant="outline" size="sm" onClick={copyResult}>
-                    <Copy className="h-4 w-4 mr-2" />
-                    Copy
-                  </Button>
+                  <>
+                    <Button variant="outline" size="sm" onClick={copyResult}>
+                      <Copy className="h-4 w-4 mr-2" />
+                      Copy
+                    </Button>
+                    <Button variant="outline" size="sm" onClick={downloadResult}>
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </Button>
+                  </>
                 )}
                 <Button onClick={explainJson}>
                   <RotateCcw className="h-4 w-4 mr-2" />
@@ -175,12 +194,10 @@ export default function JsonExplainerPage() {
             >
               Input JSON
             </Label>
-            <Textarea
-              id="input"
+            <JsonEditor
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='{"name": "John", "age": 30}'
-              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>

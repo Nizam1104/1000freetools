@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
@@ -168,12 +168,11 @@ export default function JsonKeyFrequencyPage() {
             >
               Input JSON
             </Label>
-            <Textarea
+            <JsonEditor
               id="input"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='{"users": [{"id": 1, "name": "John"}, {"id": 2, "name": "Jane"}]}'
-              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>

@@ -1,0 +1,217 @@
+[
+  {
+    "name": "Gradient Step Generator",
+    "description": "Generate smooth color gradients with customizable steps",
+    "href": "/color-tools/gradient-step-generator"
+  },
+  {
+    "name": "Gradient Palette Generator",
+    "description": "Create beautiful gradient palettes for your designs",
+    "href": "/color-tools/gradient-palette-generator"
+  },
+  {
+    "name": "Duotone Palette Generator",
+    "description": "Generate duotone color palettes from images or colors",
+    "href": "/color-tools/duotone-palette-generator"
+  },
+  {
+    "name": "Dominant Color Finder",
+    "description": "Extract dominant colors from images automatically",
+    "href": "/color-tools/dominant-color-finder"
+  },
+  {
+    "name": "Favorite Colors Manager",
+    "description": "Save, organize and manage your favorite color palettes",
+    "href": "/color-tools/favorite-colors-manager"
+  },
+  {
+    "name": "Color Palettes",
+    "description": "Browse and create stunning color palettes for any project",
+    "href": "/color-tools/color-palettes"
+  },
+  {
+    "name": "Contrast Checker",
+    "description": "Check color contrast ratios for WCAG accessibility compliance",
+    "href": "/color-tools/contrast-checker"
+  },
+  {
+    "name": "Web Safe Color Picker",
+    "description": "Pick from 216 web-safe colors that display consistently",
+    "href": "/color-tools/web-safe-color-picker"
+  },
+  {
+    "name": "Color Temperature to RGB",
+    "description": "Convert color temperature in Kelvin to RGB values",
+    "href": "/color-tools/color-temperature-to-rgb"
+  },
+  {
+    "name": "CSS Variables Generator",
+    "description": "Generate CSS custom properties for your color schemes",
+    "href": "/color-tools/css-variables-generator"
+  },
+  {
+    "name": "Advanced Color Picker",
+    "description": "Pick and fine-tune colors with advanced controls",
+    "href": "/color-tools/advanced-color-picker"
+  },
+  {
+    "name": "Color Scale Generator",
+    "description": "Create color scales with varying lightness and saturation",
+    "href": "/color-tools/color-scale-generator"
+  },
+  {
+    "name": "HSL to HEX Converter",
+    "description": "Convert HSL color values to HEX format instantly",
+    "href": "/color-tools/hsl-to-hex-converter"
+  },
+  {
+    "name": "Palette Duplicate Finder",
+    "description": "Find and remove duplicate colors from your palettes",
+    "href": "/color-tools/palette-duplicate-finder"
+  },
+  {
+    "name": "HEX to RGB Converter",
+    "description": "Convert HEX color codes to RGB values instantly",
+    "href": "/color-tools/hex-to-rgb-converter"
+  },
+  {
+    "name": "Color History Tool",
+    "description": "Track and revisit colors you've used previously",
+    "href": "/color-tools/color-history-tool"
+  },
+  {
+    "name": "HEX to CMYK Converter",
+    "description": "Convert HEX colors to CMYK for print design",
+    "href": "/color-tools/hex-to-cmyk-converter"
+  },
+  {
+    "name": "Shade Tint Tone Generator",
+    "description": "Generate shades, tints, and tones of any color",
+    "href": "/color-tools/shade-tint-tone-generator"
+  },
+  {
+    "name": "Palette Contrast Viewer",
+    "description": "Visualize how colors contrast when used together",
+    "href": "/color-tools/palette-contrast-viewer"
+  },
+  {
+    "name": "Palette Export Tool",
+    "description": "Export color palettes in multiple formats (CSS, JSON, etc.)",
+    "href": "/color-tools/palette-export-tool"
+  },
+  {
+    "name": "Text Color Suggestion Tool",
+    "description": "Get text color suggestions for any background color",
+    "href": "/color-tools/text-color-suggestion-tool"
+  },
+  {
+    "name": "Palette Sorter",
+    "description": "Sort palette colors by hue, saturation, or lightness",
+    "href": "/color-tools/palette-sorter"
+  },
+  {
+    "name": "Random Color Palette Generator",
+    "description": "Generate random color palettes for inspiration",
+    "href": "/color-tools/random-color-palette-generator"
+  },
+  {
+    "name": "RGB to HEX Converter",
+    "description": "Convert RGB color values to HEX format instantly",
+    "href": "/color-tools/rgb-to-hex-converter"
+  },
+  {
+    "name": "Color Harmony Generator",
+    "description": "Create harmonious color schemes (complementary, analogous, etc.)",
+    "href": "/color-tools/color-harmony-generator"
+  },
+  {
+    "name": "CSS Gradient Generator",
+    "description": "Generate CSS gradient code for linear and radial gradients",
+    "href": "/color-tools/css-gradient-generator"
+  },
+  {
+    "name": "Complementary Color Finder",
+    "description": "Find complementary colors that pair well together",
+    "href": "/color-tools/complementary-color-finder"
+  },
+  {
+    "name": "Custom Color Palette Generator",
+    "description": "Create custom palettes based on your preferred colors",
+    "href": "/color-tools/custom-color-palette-generator"
+  },
+  {
+    "name": "Palette Comparison Tool",
+    "description": "Compare multiple color palettes side by side",
+    "href": "/color-tools/palette-comparison-tool"
+  },
+  {
+    "name": "CSS Color Name Converter",
+    "description": "Convert between CSS color names and their HEX/RGB values",
+    "href": "/color-tools/css-color-name-converter"
+  },
+  {
+    "name": "HSL to HSV Converter",
+    "description": "Convert HSL color values to HSV format",
+    "href": "/color-tools/hsl-to-hsv-converter"
+  },
+  {
+    "name": "Monochrome Palette Generator",
+    "description": "Generate monochromatic color palettes from a single color",
+    "href": "/color-tools/monochrome-palette-generator"
+  },
+  {
+    "name": "Pastel Palette Generator",
+    "description": "Create soft pastel color palettes for gentle designs",
+    "href": "/color-tools/pastel-palette-generator"
+  },
+  {
+    "name": "RGB to HSL Converter",
+    "description": "Convert RGB color values to HSL format",
+    "href": "/color-tools/rgb-to-hsl-converter"
+  },
+  {
+    "name": "Warm or Cool Color Detector",
+    "description": "Determine if a color is warm or cool toned",
+    "href": "/color-tools/warm-or-cool-color-detector"
+  },
+  {
+    "name": "Dark Light Mode Preview",
+    "description": "Preview how colors look in dark and light modes",
+    "href": "/color-tools/dark-light-mode-preview"
+  },
+  {
+    "name": "Color Palette Generator",
+    "description": "Generate complete color palettes for your projects",
+    "href": "/color-tools/color-palette-generator"
+  },
+  {
+    "name": "RGB to CMYK Converter",
+    "description": "Convert RGB colors to CMYK for print production",
+    "href": "/color-tools/rgb-to-cmyk-converter"
+  },
+  {
+    "name": "Palette Merger",
+    "description": "Merge multiple color palettes into one unified palette",
+    "href": "/color-tools/palette-merger"
+  },
+  {
+    "name": "Color Picker",
+    "description": "Simple and intuitive color picker tool",
+    "href": "/color-tools/color-picker"
+  },
+  {
+    "name": "Color Wheel",
+    "description": "Interactive color wheel for exploring color relationships",
+    "href": "/color-tools/color-wheel"
+  },
+  {
+    "name": "HEX to HSL Converter",
+    "description": "Convert HEX color codes to HSL values",
+    "href": "/color-tools/hex-to-hsl-converter"
+  },
+  {
+    "name": "Extract Colors from Image",
+    "description": "Extract all colors from uploaded images",
+    "href": "/color-tools/extract-colors-from-image"
+  }
+]

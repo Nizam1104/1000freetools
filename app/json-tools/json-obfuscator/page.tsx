@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
@@ -236,12 +236,10 @@ export default function JsonObfuscatorPage() {
               >
                 Input JSON
               </Label>
-              <Textarea
-                id="input"
+              <JsonEditor
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder='{"user": {"name": "John", "email": "john@example.com"}}'
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -253,10 +251,9 @@ export default function JsonObfuscatorPage() {
                 <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                   Obfuscated Result
                 </Label>
-                <Textarea
+                <JsonEditor
                   value={result}
                   readOnly
-                  className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 max-h-[500px] overflow-y-auto"
                 />
                 <p className="text-xs text-muted-foreground mt-2">
                   Original size: {new Blob([input]).size} bytes | Obfuscated

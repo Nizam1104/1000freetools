@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
@@ -258,12 +258,10 @@ export default function JsonpathQueryPage() {
               >
                 Input JSON
               </Label>
-              <Textarea
-                id="input"
+              <JsonEditor
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder='{"store": {"books": [...]}}'
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -298,10 +296,9 @@ export default function JsonpathQueryPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Query Result ({result.length} item(s))
               </Label>
-              <Textarea
+              <JsonEditor
                 value={JSON.stringify(result, null, 2)}
                 readOnly
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

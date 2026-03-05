@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   FileJson,
@@ -13,6 +13,7 @@ import {
   Copy,
   Check,
   List,
+  Download,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -138,6 +139,19 @@ export default function JsonKeyExtractorPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const downloadOutput = async () => {
+    if (keys.length === 0) return;
+    const output = formatOutput(keys, outputFormat);
+    const blob = new Blob([output], { type: "text/plain;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = outputFormat === "json" ? "keys.json" : outputFormat === "csv" ? "keys.csv" : "keys.txt";
+    link.click();
+    URL.revokeObjectURL(url);
+    toast.success("Keys downloaded!");
+  };
+
   const formatOutput = (
     keyList: string[],
     format: "list" | "json" | "csv",
@@ -257,12 +271,11 @@ export default function JsonKeyExtractorPage() {
               >
                 Input JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="input"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder="Paste your JSON here..."
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto max-h-[500px]"
               />
             </CardContent>
           </Card>
@@ -278,22 +291,27 @@ export default function JsonKeyExtractorPage() {
                   Extracted Keys ({keys.length})
                 </Label>
                 {keys.length > 0 && (
-                  <Button variant="ghost" size="sm" onClick={copyOutput}>
-                    {copied ? (
-                      <Check className="h-4 w-4 mr-2" />
-                    ) : (
-                      <Copy className="h-4 w-4 mr-2" />
-                    )}
-                    {copied ? "Copied" : "Copy"}
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="sm" onClick={copyOutput}>
+                      {copied ? (
+                        <Check className="h-4 w-4 mr-2" />
+                      ) : (
+                        <Copy className="h-4 w-4 mr-2" />
+                      )}
+                      {copied ? "Copied" : "Copy"}
+                    </Button>
+                    <Button variant="ghost" size="sm" onClick={downloadOutput}>
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </Button>
+                  </div>
                 )}
               </div>
-              <Textarea
+              <JsonEditor
                 id="output"
                 value={formattedOutput}
                 readOnly
                 placeholder="Extracted keys will appear here..."
-                className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 max-h-[500px] overflow-y-auto max-h-[500px]"
               />
             </CardContent>
           </Card>

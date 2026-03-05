@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   Check,
@@ -138,12 +138,11 @@ export default function JsonMinifierPage() {
               >
                 Input JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="input"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder='Paste your JSON here, e.g., { "name": "test", "value": 123 }'
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto max-h-[500px]"
               />
             </CardContent>
           </Card>
@@ -179,11 +178,10 @@ export default function JsonMinifierPage() {
                 </div>
               </div>
               <div className="relative">
-                <Textarea
+                <JsonEditor
                   value={output}
                   readOnly
                   placeholder="Minified JSON will appear here..."
-                  className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 break-all max-h-[500px] overflow-y-auto max-h-[500px]"
                 />
                 {error && (
                   <div className="absolute bottom-4 left-4 right-4 bg-destructive text-destructive-foreground px-4 py-3 rounded-md text-sm">

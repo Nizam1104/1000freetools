@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Image Compressor",
+    "description": "Compress images online - reduce file size while maintaining quality",
+    "href": "/image-tools/image-compressor"
+  },
+  {
+    "name": "Image Editor",
+    "description": "Edit images online with powerful editing tools",
+    "href": "/image-tools/image-editor"
+  },
+  {
+    "name": "Pick Color Code from Image",
+    "description": "Extract color codes from images - get HEX, RGB, HSL values",
+    "href": "/image-tools/pick-color-code-from-image"
+  },
+  {
+    "name": "Image Format Conversions",
+    "description": "Convert images between different formats - JPEG, PNG, WebP, AVIF and more",
+    "href": "/image-tools/image-format-conversions"
+  },
+  {
+    "name": "Background Remover",
+    "description": "Remove background from images automatically",
+    "href": "/image-tools/background-remover"
+  },
+  {
+    "name": "Image to GIF",
+    "description": "Convert images to animated GIF format",
+    "href": "/image-tools/image-to-gif"
+  },
+  {
+    "name": "Image Filters",
+    "description": "Apply beautiful filters and effects to your images",
+    "href": "/image-tools/image-filters"
+  },
+  {
+    "name": "Crop Image",
+    "description": "Crop images to your desired size and aspect ratio",
+    "href": "/image-tools/crop-image"
+  },
+  {
+    "name": "Sharpen Image",
+    "description": "Enhance image sharpness and clarity online",
+    "href": "/image-tools/sharpen-image"
+  },
+  {
+    "name": "Resize Image Dimensions",
+    "description": "Resize images by changing width and height dimensions",
+    "href": "/image-tools/resize-image-dimensions"
+  },
+  {
+    "name": "Image to PDF",
+    "description": "Convert images to PDF documents",
+    "href": "/image-tools/image-to-pdf"
+  },
+  {
+    "name": "Add Watermark on Image",
+    "description": "Add text or image watermarks to protect your photos",
+    "href": "/image-tools/add-watermark-on-image"
+  },
+  {
+    "name": "Blur Image",
+    "description": "Apply blur effect to images or specific areas",
+    "href": "/image-tools/blur-image"
+  }
+]

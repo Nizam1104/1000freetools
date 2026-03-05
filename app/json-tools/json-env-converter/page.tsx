@@ -3,10 +3,10 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
+import { JsonEditor } from "@/components/ui/json-editor";
 
 export default function JsonEnvConverterPage() {
   const [input, setInput] = useState("");
@@ -271,12 +271,10 @@ export default function JsonEnvConverterPage() {
             <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
               Input ({mode === "json-to-env" ? "JSON" : ".env"})
             </Label>
-            <Textarea
-              id="input"
+            <JsonEditor
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder={mode === "json-to-env" ? '{"database": {"host": "localhost"}}' : 'DATABASE_HOST=localhost'}
-              className="min-h-[200px] font-mono text-sm resize-none"
             />
           </CardContent>
         </Card>
@@ -288,10 +286,9 @@ export default function JsonEnvConverterPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Output ({mode === "json-to-env" ? ".env" : "JSON"})
               </Label>
-              <Textarea
+              <JsonEditor
                 value={result}
                 readOnly
-                className="min-h-[200px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>

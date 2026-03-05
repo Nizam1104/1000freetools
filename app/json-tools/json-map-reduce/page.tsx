@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
@@ -251,12 +251,11 @@ export default function JsonMapReducePage() {
             >
               Input JSON Array
             </Label>
-            <Textarea
+            <JsonEditor
               id="input"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='[{"name": "Apple", "price": 1.5}, ...]'
-              className="min-h-[150px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>
@@ -271,12 +270,11 @@ export default function JsonMapReducePage() {
               >
                 Map Function (item, index, arr)
               </Label>
-              <Textarea
+              <JsonEditor
                 id="mapFn"
                 value={mapFn}
-                onChange={(e) => setMapFn(e.target.value)}
+                onChange={setMapFn}
                 placeholder="item => item.name"
-                className="min-h-[100px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -289,12 +287,11 @@ export default function JsonMapReducePage() {
               >
                 Reduce Function (acc, item, index, arr) - Optional
               </Label>
-              <Textarea
+              <JsonEditor
                 id="reduceFn"
                 value={reduceFn}
-                onChange={(e) => setReduceFn(e.target.value)}
+                onChange={setReduceFn}
                 placeholder="acc + item"
-                className="min-h-[100px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -307,14 +304,13 @@ export default function JsonMapReducePage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Result
               </Label>
-              <Textarea
+              <JsonEditor
                 value={
                   typeof result === "object"
                     ? JSON.stringify(result, null, 2)
                     : String(result)
                 }
                 readOnly
-                className="min-h-[150px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

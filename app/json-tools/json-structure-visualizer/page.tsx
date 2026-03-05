@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, ChevronRight, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
@@ -215,12 +215,10 @@ export default function JsonStructureVisualizerPage() {
             <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
               Input JSON
             </Label>
-            <Textarea
-              id="input"
+            <JsonEditor
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='{"name": "John", "age": 30}'
-              className="min-h-[150px] font-mono text-sm resize-none"
             />
           </CardContent>
         </Card>

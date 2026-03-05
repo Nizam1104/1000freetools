@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
@@ -326,12 +326,11 @@ export default function JsonDiffPage() {
               >
                 Original JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="json1"
                 value={json1}
-                onChange={(e) => setJson1(e.target.value)}
+                onChange={setJson1}
                 placeholder='{"name": "John", "age": 30}'
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -344,12 +343,11 @@ export default function JsonDiffPage() {
               >
                 Modified JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="json2"
                 value={json2}
-                onChange={(e) => setJson2(e.target.value)}
+                onChange={setJson2}
                 placeholder='{"name": "John", "age": 31}'
-                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

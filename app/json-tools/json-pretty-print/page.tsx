@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -226,12 +226,11 @@ export default function JsonPrettyPrintPage() {
               >
                 Input JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="input"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder='Paste compact JSON here, e.g., {"name":"test","value":123}'
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto max-h-[500px]"
               />
             </CardContent>
           </Card>
@@ -267,11 +266,10 @@ export default function JsonPrettyPrintPage() {
                 </div>
               </div>
               <div className="relative">
-                <Textarea
+                <JsonEditor
                   value={output}
                   readOnly
                   placeholder="Pretty printed JSON will appear here..."
-                  className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 max-h-[500px] overflow-y-auto max-h-[500px]"
                 />
                 {error && (
                   <div className="absolute bottom-4 left-4 right-4 bg-destructive text-destructive-foreground px-4 py-3 rounded-md text-sm">

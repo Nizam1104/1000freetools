@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   Check,
@@ -422,12 +422,11 @@ export default function JsonLinterPage() {
               >
                 Input JSON
               </Label>
-              <Textarea
+              <JsonEditor
                 id="input"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder="Paste your JSON here to lint..."
-                className="min-h-[400px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>

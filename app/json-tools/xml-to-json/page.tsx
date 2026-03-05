@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Code2, RotateCcw, Trash2, ArrowDownToLine, Copy, Check, Upload } from "lucide-react";
 import { toast } from "sonner";
@@ -277,12 +277,10 @@ export default function XmlToJsonConverterPage() {
               <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
                 Input XML
               </Label>
-              <Textarea
-                id="input"
+              <JsonEditor
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder="Paste your XML here or upload a file..."
-                className="min-h-[500px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>
@@ -311,12 +309,10 @@ export default function XmlToJsonConverterPage() {
                   </div>
                 )}
               </div>
-              <Textarea
-                id="output"
+              <JsonEditor
                 value={output}
                 readOnly
                 placeholder="JSON output will appear here..."
-                className="min-h-[500px] font-mono text-sm resize-none bg-muted/50"
               />
             </CardContent>
           </Card>

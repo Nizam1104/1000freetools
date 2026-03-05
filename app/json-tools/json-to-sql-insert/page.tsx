@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy } from "lucide-react";
@@ -191,12 +191,10 @@ export default function JsonToSqlInsertPage() {
             <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
               Input JSON (Array or Object)
             </Label>
-            <Textarea
-              id="input"
+            <JsonEditor
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={setInput}
               placeholder='[{"id": 1, "name": "John"}]'
-              className="min-h-[200px] font-mono text-sm resize-none"
             />
           </CardContent>
         </Card>
@@ -208,10 +206,9 @@ export default function JsonToSqlInsertPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated SQL INSERT Statements
               </Label>
-              <Textarea
+              <JsonEditor
                 value={result}
                 readOnly
-                className="min-h-[200px] font-mono text-sm resize-none"
               />
             </CardContent>
           </Card>

@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { JsonEditor } from "@/components/ui/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   FileJson,
@@ -214,12 +214,10 @@ export default function JsonPlaygroundPage() {
               >
                 Input
               </Label>
-              <Textarea
-                id="input"
+              <JsonEditor
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={setInput}
                 placeholder='{"name": "John", "age": 30}'
-                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -230,13 +228,10 @@ export default function JsonPlaygroundPage() {
                 Output
               </Label>
               <div className="relative">
-                <Textarea
+                <JsonEditor
                   value={result || ""}
                   readOnly
                   placeholder="Formatted output will appear here..."
-                  className={`min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto ${
-                    isValid === false ? "border-destructive" : ""
-                  }`}
                 />
                 {isValid !== null && (
                   <div
