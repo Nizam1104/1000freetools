@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -47,9 +47,9 @@ export default function GreenhouseVentilationCalculatorPage() {
     const maxT = parseFloat(maxTemp);
     const outsideT = parseFloat(outsideTemp);
 
-    if (isNaN(length) || isNaN(width) || isNaN(height) || 
-        length <= 0 || width <= 0 || height <= 0 ||
-        isNaN(maxT) || isNaN(outsideT)) return;
+    if (isNaN(length) || isNaN(width) || isNaN(height) ||
+      length <= 0 || width <= 0 || height <= 0 ||
+      isNaN(maxT) || isNaN(outsideT)) return;
 
     // Convert to meters if in feet
     if (unit === "feet") {

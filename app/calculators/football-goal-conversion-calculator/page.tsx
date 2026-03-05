@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -73,7 +73,7 @@ export default function FootballGoalConversionCalculatorPage() {
     if (shotsOnTargetNum > 0) {
       const accuracy = (shotsOnTargetNum / shotsNum) * 100;
       recommendations.push(`📊 Shot accuracy: ${accuracy.toFixed(1)}% (${shotsOnTargetNum}/${shotsNum} on target)`);
-      
+
       if (accuracy < 40) {
         recommendations.push("💡 Work on shooting accuracy before power.");
       }
@@ -176,12 +176,11 @@ export default function FootballGoalConversionCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Conversion Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.conversionRate >= 20 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.conversionRate >= 15 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.conversionRate >= 10 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.conversionRate >= 20 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.conversionRate >= 15 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.conversionRate >= 10 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Conversion Rate</p>
                     <p className="text-5xl font-bold">{result.conversionRate}%</p>
                     <p className="text-sm mt-1 font-medium">{result.rating}</p>
@@ -262,6 +261,149 @@ export default function FootballGoalConversionCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </div>
+
+      {/* How It Works Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Football Goal Conversion Rate</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Goals Scored</h3>
+              <p className="text-sm text-muted-foreground">Input the total number of goals scored by the player in the selected period.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Add Shot Statistics</h3>
+              <p className="text-sm text-muted-foreground">Enter total shots taken and optionally shots on target for deeper analysis.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Conversion Analysis</h3>
+              <p className="text-sm text-muted-foreground">Receive conversion rate percentage, player rating, and comparison to pro benchmarks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Why Use This Conversion Rate Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Pro Player Comparisons</h3>
+            <p className="text-sm text-muted-foreground">Compare your conversion rate to elite strikers like Haaland (25%), Kane (22%), and Salah (18%).</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Shot Accuracy Tracking</h3>
+            <p className="text-sm text-muted-foreground">Optional shots on target input reveals accuracy percentage for complete shooting analysis.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Skill Level Assessment</h3>
+            <p className="text-sm text-muted-foreground">Automatic rating from Poor to World Class based on your conversion percentage.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Personalized Tips</h3>
+            <p className="text-sm text-muted-foreground">Get targeted improvement recommendations based on your specific conversion rate.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+          <h3 className="font-semibold mb-3">Conversion Rate Benchmarks by Level</h3>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2">Rating</th>
+                <th className="text-left py-2">Conversion Rate</th>
+                <th className="text-left py-2">Shots per Goal</th>
+                <th className="text-left py-2">Example Players</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-2">World Class</td>
+                <td className="py-2">25%+</td>
+                <td className="py-2">&lt;4 shots</td>
+                <td className="py-2">Haaland, Lewandowski</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Excellent</td>
+                <td className="py-2">20-25%</td>
+                <td className="py-2">4-5 shots</td>
+                <td className="py-2">Kane, Mbappe</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Very Good</td>
+                <td className="py-2">15-20%</td>
+                <td className="py-2">5-7 shots</td>
+                <td className="py-2">Pro league strikers</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Average</td>
+                <td className="py-2">10-15%</td>
+                <td className="py-2">7-10 shots</td>
+                <td className="py-2">Midfielders, wingers</td>
+              </tr>
+              <tr>
+                <td className="py-2">Below Average</td>
+                <td className="py-2">&lt;10%</td>
+                <td className="py-2">10+ shots</td>
+                <td className="py-2">Developing players</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold mb-2">What is a good conversion rate in football?</h3>
+            <p className="text-sm text-muted-foreground">For strikers, 15-20% is considered good at professional level. Elite finishers like Haaland achieve 25%+. The Premier League average for forwards is around 12-14%.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How is goal conversion rate calculated?</h3>
+            <p className="text-sm text-muted-foreground">Conversion Rate = (Goals Scored / Total Shots) x 100. For example, 20 goals from 100 shots equals a 20% conversion rate.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What&apos;s the difference between conversion rate and shot accuracy?</h3>
+            <p className="text-sm text-muted-foreground">Conversion rate measures goals per shot. Shot accuracy measures shots on target per total shot. A player can have high accuracy but low conversion if the goalkeeper makes saves.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Who has the best conversion rate in football?</h3>
+            <p className="text-sm text-muted-foreground">Elite strikers like Erling Haaland (25%+), Harry Kane (22%), and Robert Lewandowski (23%) consistently top conversion rate charts in major European leagues.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How can I improve my conversion rate?</h3>
+            <p className="text-sm text-muted-foreground">Focus on shot placement over power, practice finishing in the box, improve decision-making on when to shoot vs. pass, and study goalkeeper positioning patterns.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Sports Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/basketball-shooting-percentage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Basketball Shooting Percentage</h3>
+            <p className="text-sm text-muted-foreground">Calculate field goal, 3-point, and free throw percentages.</p>
+          </a>
+          <a href="/calculators/cricket-strike-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Cricket Strike Rate Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate batting strike rate and economy rate for cricket.</p>
+          </a>
+          <a href="/calculators/tennis-win-probability-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Tennis Win Probability</h3>
+            <p className="text-sm text-muted-foreground">Estimate match win probability based on serve statistics.</p>
+          </a>
         </div>
       </div>
     </div>

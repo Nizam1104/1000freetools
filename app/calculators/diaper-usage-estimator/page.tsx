@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -63,7 +63,7 @@ export default function DiaperUsageEstimatorPage() {
     // Estimate total cost to potty training (assume 30 months average)
     const remainingMonths = Math.max(0, 30 - ageMonths);
     let totalDiapers = 0;
-    
+
     for (let month = ageMonths; month < 30; month++) {
       let dailyRate = 12;
       if (month >= 1 && month < 6) dailyRate = 10;
@@ -72,7 +72,7 @@ export default function DiaperUsageEstimatorPage() {
       else if (month >= 24 && month < 30) dailyRate = 5;
       totalDiapers += dailyRate * 30;
     }
-    
+
     const totalCostToPottyTrain = totalDiapers * costNum;
 
     // Age-based breakdown
@@ -102,7 +102,7 @@ export default function DiaperUsageEstimatorPage() {
     }
 
     recommendations.push(`💵 At ${costNum.toFixed(2)}/diaper, you're spending $${costPerMonth.toFixed(0)}/month`);
-    
+
     if (costNum > 0.35) {
       recommendations.push("⚠️ Your cost per diaper is above average. Consider bulk buying or store brands.");
     }
@@ -262,27 +262,322 @@ export default function DiaperUsageEstimatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Diaper Cost Comparison
+                How to Use This Diaper Usage Estimator
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Disposable diapers:</strong> $0.20-0.40 per diaper
-                  </li>
-                  <li>
-                    <strong>Cloth diapers:</strong> $200-500 initial + laundry costs
-                  </li>
-                  <li>
-                    <strong>Hybrid approach:</strong> Cloth at home, disposables out
-                  </li>
-                  <li>
-                    <strong>Average total cost:</strong> $2,000-3,000 to potty training
-                  </li>
-                </ul>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your baby's age in months</p>
+                    <p>Type your baby's current age. For a 3-month-old, enter "3". For a 4.5-month-old, enter "4.5". The calculator uses this to estimate typical diaper usage.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Input diapers per day and cost per diaper</p>
+                    <p>Enter how many diapers you use daily, or leave blank to use age-based estimates. Add your actual cost per diaper for accurate budget calculations.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review your estimates and savings tips</p>
+                    <p>See monthly and yearly diaper costs, plus the estimated total cost until potty training. Age-specific money-saving tips help you cut expenses.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Diaper Usage by Age
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Age Range</th>
+                      <th className="text-left py-3 px-2 font-semibold">Diapers Per Day</th>
+                      <th className="text-left py-3 px-2 font-semibold">Diapers Per Month</th>
+                      <th className="text-left py-3 px-2 font-semibold">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">0-1 month</td>
+                      <td className="py-3 px-2">10-12</td>
+                      <td className="py-3 px-2">300-360</td>
+                      <td className="py-3 px-2">Newborns eat frequently, produce more waste</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1-6 months</td>
+                      <td className="py-3 px-2">8-10</td>
+                      <td className="py-3 px-2">240-300</td>
+                      <td className="py-3 px-2">Still frequent but slightly less than newborn</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">6-12 months</td>
+                      <td className="py-3 px-2">6-8</td>
+                      <td className="py-3 px-2">180-240</td>
+                      <td className="py-3 px-2">Solid foods begin, patterns change</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1-2 years</td>
+                      <td className="py-3 px-2">5-6</td>
+                      <td className="py-3 px-2">150-180</td>
+                      <td className="py-3 px-2">Toddlers have more predictable patterns</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">2-3 years</td>
+                      <td className="py-3 px-2">4-5</td>
+                      <td className="py-3 px-2">120-150</td>
+                      <td className="py-3 px-2">Potty training may begin</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">3+ years</td>
+                      <td className="py-3 px-2">0-3</td>
+                      <td className="py-3 px-2">0-90</td>
+                      <td className="py-3 px-2">Most children potty trained by age 3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: These are averages. Individual babies vary based on feeding, health, and development.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Diaper Costs
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
                 <p>
-                  <strong>Tip:</strong> Sign up for diaper subscription services for
-                  15-20% savings. Buy in bulk during sales and stock up.
+                  Diapers are one of the biggest expenses in a baby's first years. The average baby goes through 6,000 to 8,000 diapers before potty training. Understanding usage patterns helps you budget accurately and find savings.
                 </p>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Newborns Use More Diapers</h4>
+                  <p>
+                    Newborns eat every 2-3 hours, and their digestive systems process food quickly. Breastfed babies may have a bowel movement after every feeding. Their bladders are also tiny, filling up frequently. This is why the first month sees the highest diaper usage.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Solid Foods Change Diaper Patterns</h4>
+                  <p>
+                    Around 6 months, when babies start solids, diaper output changes. Stool becomes more formed and less frequent. Some babies go from 10 diapers a day to 6 or 7. This is normal and continues as they transition to table foods.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Disposable vs. Cloth Diaper Costs</h4>
+                  <p>
+                    Disposables cost $0.20-0.40 per diaper, totaling $2,000-3,000 to potty training. Cloth diapers cost $200-500 upfront plus laundry expenses. Families using cloth typically spend $500-800 total. Cloth requires more work but saves money, especially with multiple children.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When Potty Training Typically Happens</h4>
+                  <p>
+                    Most children show readiness between 18-30 months. Some train earlier, some later. Girls often train slightly earlier than boys. Starting before a child is ready usually backfires, extending the process. The average age for complete daytime training is around 27-30 months.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Diaper Cost Comparison by Type
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Diaper Type</th>
+                      <th className="text-left py-3 px-2 font-semibold">Cost Per Diaper</th>
+                      <th className="text-left py-3 px-2 font-semibold">Est. Total to Potty Training</th>
+                      <th className="text-left py-3 px-2 font-semibold">Pros</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Premium disposables</td>
+                      <td className="py-3 px-2">$0.35-0.50</td>
+                      <td className="py-3 px-2">$2,500-3,500</td>
+                      <td className="py-3 px-2">Best absorbency, fewer leaks</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Store brand disposables</td>
+                      <td className="py-3 px-2">$0.15-0.25</td>
+                      <td className="py-3 px-2">$1,200-2,000</td>
+                      <td className="py-3 px-2">Budget-friendly, widely available</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Cloth (with laundry)</td>
+                      <td className="py-3 px-2">$0.05-0.10</td>
+                      <td className="py-3 px-2">$500-800</td>
+                      <td className="py-3 px-2">Reusable, eco-friendly, lowest cost</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Hybrid (cloth + disposable)</td>
+                      <td className="py-3 px-2">$0.15-0.25</td>
+                      <td className="py-3 px-2">$1,000-1,500</td>
+                      <td className="py-3 px-2">Flexibility, less laundry</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Eco-friendly disposables</td>
+                      <td className="py-3 px-2">$0.40-0.60</td>
+                      <td className="py-3 px-2">$2,800-4,000</td>
+                      <td className="py-3 px-2">Biodegradable, fewer chemicals</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Money-Saving Tips for Diapers
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Buy in Bulk</p>
+                    <p>Costco, Sam's Club, and Amazon Subscribe & Save offer 20-30% savings per diaper. Make sure you're buying the right size — babies grow quickly.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use Subscription Services</p>
+                    <p>Amazon Family, Hello Bello, and brand subscriptions offer 15-20% off plus free shipping. You can usually skip or adjust deliveries as needed.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Try Store Brands</p>
+                    <p>Target's Up & Up, Walmart's Parent's Choice, and Kirkland Signature perform comparably to name brands at half the price. Test a small pack first.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Watch for Sales and Stock Up</p>
+                    <p>Diapers go on sale every 6-8 weeks at major retailers. Buy 2-3 months' supply when prices drop. Combine sales with coupons for maximum savings.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider Cloth for Younger Babies</p>
+                    <p>Since newborns use the most diapers, using cloth during the first 6 months can save hundreds. Switch to disposables later when usage drops.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How many diapers does a newborn use per day?</h4>
+                  <p>
+                    Newborns typically use 10-12 diapers per day. Some use as many as 15 in the first week. This decreases to 8-10 by 1-2 months as their bladder capacity increases and feeding patterns stabilize.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When should I move up a diaper size?</h4>
+                  <p>
+                    Move up when you see red marks around the legs or waist, frequent leaks, or difficulty fastening tabs. Don't size up too early — ill-fitting diapers leak more. Most babies stay in each size 2-3 months.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Are expensive diapers worth it?</h4>
+                  <p>
+                    Premium diapers have better absorbency and fewer leaks, which matters for overnight or long outings. For daytime changes every 2-3 hours, store brands work fine. Many families use both — premium at night, budget during the day.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How can I reduce diaper waste?</h4>
+                  <p>
+                    Consider cloth diapers, even part-time. Choose eco-friendly disposable brands made with fewer chemicals. Some brands are biodegradable or compostable. Proper disposal (not flushing) prevents environmental contamination.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What's the average total cost of diapers?</h4>
+                  <p>
+                    The average baby uses 6,000-8,000 diapers before potty training. At $0.25 per diaper, that's $1,500-2,000. Premium brands run $2,500-3,500. Cloth diapering costs $500-800 including laundry, making it the most economical option.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/baby-age-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Baby Age Calculator</span>
+                  <p className="text-muted-foreground">Calculate your baby's exact age in weeks, months, and days</p>
+                </a>
+                <a
+                  href="/calculators/baby-feeding-chart-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Baby Feeding Chart Calculator</span>
+                  <p className="text-muted-foreground">Track feeding schedules and amounts based on baby's age and weight</p>
+                </a>
+                <a
+                  href="/calculators/child-care-cost-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Child Care Cost Calculator</span>
+                  <p className="text-muted-foreground">Estimate daycare and babysitting expenses</p>
+                </a>
               </div>
             </CardContent>
           </Card>

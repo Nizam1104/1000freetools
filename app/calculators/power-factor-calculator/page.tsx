@@ -89,6 +89,106 @@ export default function PowerFactorCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>How to Calculate Power Factor</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <p className="font-semibold mb-1">Enter two power values</p>
+              <p className="text-sm text-muted-foreground">Input any two of: real power (W), apparent power (VA), or reactive power (VAR).</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <p className="font-semibold mb-1">Click Calculate</p>
+              <p className="text-sm text-muted-foreground">The calculator uses the power triangle relationships to find all values.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <p className="font-semibold mb-1">View complete results</p>
+              <p className="text-sm text-muted-foreground">Get power factor, phase angle, and the third power value instantly.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Why Power Factor Matters</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">Energy efficiency</p>
+              <p className="text-sm text-muted-foreground">Low power factor means wasted energy and higher electricity bills.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">System capacity</p>
+              <p className="text-sm text-muted-foreground">Poor power factor reduces available power in electrical systems.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Utility penalties</p>
+              <p className="text-sm text-muted-foreground">Many utilities charge extra for power factor below 0.95.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Equipment sizing</p>
+              <p className="text-sm text-muted-foreground">Correct PF calculations ensure proper transformer and generator sizing.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Power triangle analysis</p>
+              <p className="text-sm text-muted-foreground">Understand the relationship between real, reactive, and apparent power.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">What is power factor?</p>
+              <p className="text-sm text-muted-foreground">Power factor is the ratio of real power to apparent power (P/S). It ranges from 0 to 1, with 1 being perfect efficiency.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How do you calculate power factor?</p>
+              <p className="text-sm text-muted-foreground">PF = Real Power / Apparent Power = P/S. You can also use PF = cos(phi) where phi is the phase angle.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What causes low power factor?</p>
+              <p className="text-sm text-muted-foreground">Inductive loads like motors, transformers, and fluorescent lights create reactive power, lowering the power factor.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is a good power factor value?</p>
+              <p className="text-sm text-muted-foreground">A power factor of 0.95 or higher is excellent. Below 0.85 indicates poor efficiency needing correction.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How do you improve power factor?</p>
+              <p className="text-sm text-muted-foreground">Add capacitors to counteract inductive loads. This reduces reactive power and brings PF closer to 1.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Related Electrical Calculators</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Try our other electrical tools: the <a href="/calculators/ohms-law-calculator" className="text-primary hover:underline">Ohm's law calculator</a> for voltage and current, the <a href="/calculators/electric-power-calculator" className="text-primary hover:underline">electric power calculator</a> for wattage calculations, and the <a href="/calculators/ac-impedance-calculator" className="text-primary hover:underline">AC impedance calculator</a> for circuit analysis.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

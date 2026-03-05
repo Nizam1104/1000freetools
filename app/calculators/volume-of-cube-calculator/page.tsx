@@ -4,6 +4,14 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function VolumeOfCubeCalculator() {
   const [side, setSide] = useState<string>("");
@@ -27,10 +35,10 @@ export default function VolumeOfCubeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
         <CardHeader>
-          <CardTitle>Volume of Cube Calculator</CardTitle>
+          <CardTitle>Volume of Cube Calculator – Calculate Cube Volume and Surface Area</CardTitle>
           <CardDescription>Calculate volume and surface area of a cube</CardDescription>
         </CardHeader>
         <CardContent>
@@ -72,6 +80,191 @@ export default function VolumeOfCubeCalculator() {
                 </div>
               </div>
             )}
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How Cube Volume Calculation Works</CardTitle>
+          <CardDescription>Understanding cube geometry formulas</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h4 className="font-semibold">Measure the Side Length</h4>
+                <p className="text-sm text-muted-foreground">
+                  A cube has all edges equal. Measure any side – length, width, and height are identical. This single measurement determines all cube properties.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h4 className="font-semibold">Calculate Volume as s³</h4>
+                <p className="text-sm text-muted-foreground">
+                  Volume equals side length cubed (s × s × s). This represents the 3D space inside the cube. Doubling the side increases volume by 8 times (2³ = 8).
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h4 className="font-semibold">Find Surface Area and Diagonals</h4>
+                <p className="text-sm text-muted-foreground">
+                  Surface area is 6s² (six square faces). Face diagonal is s√2. Space diagonal (corner to opposite corner) is s√3, using the 3D Pythagorean theorem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Cube Properties and Formulas</CardTitle>
+          <CardDescription>Complete reference for cube calculations</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">**Volume Formula**</h4>
+              <p className="text-xs text-muted-foreground">
+                V = s³ where s is the side length. A cube with 5 cm sides has volume 125 cm³. Volume scales with the cube of linear dimension – small changes in side cause large volume changes.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">**Surface Area Formula**</h4>
+              <p className="text-xs text-muted-foreground">
+                A = 6s² because a cube has 6 identical square faces. Each face has area s². Total surface area is useful for painting, wrapping, or heat transfer calculations.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">**Space Diagonal**</h4>
+              <p className="text-xs text-muted-foreground">
+                d = s√3 connects opposite corners through the cube interior. Derived from 3D Pythagorean theorem: d² = s² + s² + s². Important for fitting objects inside cubic spaces.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">**Face Diagonal**</h4>
+              <p className="text-xs text-muted-foreground">
+                f = s√2 runs across each square face corner to corner. This is the 2D Pythagorean theorem applied to one face. Face diagonals help in structural bracing calculations.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <h4 className="font-semibold mb-3">Cube Measurements Reference Table</h4>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Side Length</TableHead>
+                  <TableHead>Volume (s³)</TableHead>
+                  <TableHead>Surface Area (6s²)</TableHead>
+                  <TableHead>Space Diagonal (s√3)</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">1 unit</TableCell>
+                  <TableCell className="font-mono">1</TableCell>
+                  <TableCell className="font-mono">6</TableCell>
+                  <TableCell className="font-mono">1.732</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">2 units</TableCell>
+                  <TableCell className="font-mono">8</TableCell>
+                  <TableCell className="font-mono">24</TableCell>
+                  <TableCell className="font-mono">3.464</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">3 units</TableCell>
+                  <TableCell className="font-mono">27</TableCell>
+                  <TableCell className="font-mono">54</TableCell>
+                  <TableCell className="font-mono">5.196</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">4 units</TableCell>
+                  <TableCell className="font-mono">64</TableCell>
+                  <TableCell className="font-mono">96</TableCell>
+                  <TableCell className="font-mono">6.928</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">5 units</TableCell>
+                  <TableCell className="font-mono">125</TableCell>
+                  <TableCell className="font-mono">150</TableCell>
+                  <TableCell className="font-mono">8.660</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">10 units</TableCell>
+                  <TableCell className="font-mono">1000</TableCell>
+                  <TableCell className="font-mono">600</TableCell>
+                  <TableCell className="font-mono">17.321</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is the formula for volume of a cube?</h4>
+            <p className="text-xs text-muted-foreground">
+              Volume = s³ (side length cubed). Multiply the side by itself three times. For a cube with 4 cm sides: 4 × 4 × 4 = 64 cm³. All three dimensions are equal in a cube.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do you find the side length from volume?</h4>
+            <p className="text-xs text-muted-foreground">
+              Take the cube root of the volume: s = ∛V. If volume is 27 cm³, the side is ∛27 = 3 cm. Most calculators have a cube root function, or use V^(1/3).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is the difference between a cube and a cuboid?</h4>
+            <p className="text-xs text-muted-foreground">
+              A cube has all sides equal. A cuboid (rectangular prism) has different length, width, and height. Cube formulas are simpler because there is only one dimension to measure.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is the space diagonal s√3?</h4>
+            <p className="text-xs text-muted-foreground">
+              Using 3D Pythagorean theorem: diagonal² = length² + width² + height². For a cube, all three equal s, so d² = s² + s² + s² = 3s². Therefore d = s√3.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How does doubling the side affect volume?</h4>
+            <p className="text-xs text-muted-foreground">
+              Doubling the side multiplies volume by 8 (2³ = 8). Tripling multiplies by 27 (3³ = 27). This cubic relationship means small size changes create large volume differences.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="/calculators/volume-of-cuboid-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Volume of Cuboid Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate rectangular prism volume</p>
+            </a>
+            <a href="/calculators/surface-area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Surface Area Calculator</p>
+              <p className="text-xs text-muted-foreground">Find surface area of 3D shapes</p>
+            </a>
+            <a href="/calculators/pythagorean-theorem-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Pythagorean Theorem Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate triangle sides and diagonals</p>
+            </a>
           </div>
         </CardContent>
       </Card>

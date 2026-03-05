@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -180,11 +180,10 @@ export default function ROICalculatorAdPage() {
               <h3 className="text-lg font-semibold mb-4">ROI Results</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.roi >= 100 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.roi >= 0 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.roi >= 100 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.roi >= 0 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">ROI</p>
                     <p className="text-5xl font-bold">{result.roi > 0 ? "+" : ""}{result.roi}%</p>
                     <p className="text-sm mt-1">{result.assessment}</p>
@@ -264,6 +263,164 @@ export default function ROICalculatorAdPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">How This Ad ROI Calculator Works</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">1</div>
+              <div>
+                <p className="font-medium mb-1">Enter Your Campaign Data</p>
+                <p className="text-muted-foreground">Input your total ad spend, the revenue generated from the campaign, and the number of conversions. You can also specify your profit margin for more accurate profitability analysis.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">2</div>
+              <div>
+                <p className="font-medium mb-1">We Calculate Key Performance Metrics</p>
+                <p className="text-muted-foreground">The calculator computes your ROI percentage, ROAS ratio, cost per acquisition, and total profit. These metrics give you a complete picture of campaign performance.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">3</div>
+              <div>
+                <p className="font-medium mb-1">Get Actionable Recommendations</p>
+                <p className="text-muted-foreground">Based on your ROI score, you receive tailored recommendations. Low ROI campaigns get optimization suggestions, while high performers get scaling strategies to maximize returns.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features and Benefits Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Why Marketers Use This Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <p className="font-semibold mb-1">Complete ROI Picture</p>
+              <p className="text-muted-foreground">Go beyond simple profit calculations. This tool shows ROI percentage, ROAS, CPA, and profit together so you can evaluate campaigns from multiple angles.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Industry-Aligned Benchmarks</p>
+              <p className="text-muted-foreground">Results include context about what constitutes good performance. A 100 percent ROI gets flagged as excellent, while negative ROI triggers optimization alerts.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Actionable Recommendations</p>
+              <p className="text-muted-foreground">Instead of just showing numbers, the calculator provides specific next steps. Pause losing campaigns, optimize borderline performers, and scale winners.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">CPA Tracking</p>
+              <p className="text-muted-foreground">Cost per acquisition is critical for paid advertising. See exactly how much each conversion costs and compare it against customer lifetime value.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Profit Margin Awareness</p>
+              <p className="text-muted-foreground">Factor in your actual profit margins to understand true profitability. Revenue alone does not tell the full story if margins are thin.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">What is a good ROI for advertising campaigns?</p>
+              <p className="text-muted-foreground">A good advertising ROI is typically 100 percent or higher, meaning you earn at least $2 for every $1 spent. Top-performing campaigns can achieve 200 to 500 percent ROI. Anything below zero means you are losing money on the campaign.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is the difference between ROI and ROAS?</p>
+              <p className="text-muted-foreground">ROI measures profit relative to cost as a percentage. ROAS measures revenue per dollar spent as a ratio. For example, spending $1000 to generate $4000 revenue gives you 300 percent ROI and 4x ROAS. ROAS is more common in digital advertising, while ROI is used for overall business profitability.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How do I calculate cost per acquisition?</p>
+              <p className="text-muted-foreground">Divide your total ad spend by the number of conversions. If you spent $500 and got 25 conversions, your CPA is $20. This metric helps you determine if your advertising costs align with customer value.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Why is my ROI negative even though I made sales?</p>
+              <p className="text-muted-foreground">Negative ROI means your ad spend exceeded the revenue generated. This can happen with new campaigns still gathering data, poorly targeted ads, or products with low profit margins. Review your targeting, ad creative, and landing page to improve performance.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What ROAS should I aim for in Google Ads?</p>
+              <p className="text-muted-foreground">Most industries consider 4x ROAS (400 percent) a solid benchmark for Google Ads. E-commerce often targets higher, around 6x to 8x. Service businesses with high customer lifetime value can succeed with lower ROAS. Your break-even ROAS depends on your profit margins.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Related Marketing Calculators</h2>
+          <div className="space-y-3">
+            <div>
+              <a href="/calculators/cpc-calculator" className="text-primary hover:underline font-medium">CPC Calculator for Paid Ads</a>
+              <p className="text-muted-foreground text-sm">Calculate your cost per click and estimate campaign budgets for Google Ads, Facebook Ads, and other PPC platforms.</p>
+            </div>
+            <div>
+              <a href="/calculators/conversion-rate-calculator" className="text-primary hover:underline font-medium">Conversion Rate Calculator</a>
+              <p className="text-muted-foreground text-sm">Measure your website or landing page conversion rate and identify opportunities to improve campaign performance.</p>
+            </div>
+            <div>
+              <a href="/calculators/profit-margin-calculator" className="text-primary hover:underline font-medium">Profit Margin Calculator</a>
+              <p className="text-muted-foreground text-sm">Calculate gross and net profit margins to understand your true profitability before running ad campaigns.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Reference Table: ROI Benchmarks */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Ad ROI Benchmarks by Industry</h2>
+          <p className="text-muted-foreground mb-4">These average ROI and ROAS benchmarks can help you evaluate your campaign performance against industry standards.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted">
+                  <th className="text-left py-3 px-3">Industry</th>
+                  <th className="text-left py-3 px-3">Average ROAS</th>
+                  <th className="text-left py-3 px-3">Average ROI</th>
+                  <th className="text-left py-3 px-3">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 px-3">E-commerce (General)</td>
+                  <td className="py-3 px-3">4:1 to 6:1</td>
+                  <td className="py-3 px-3">300-500%</td>
+                  <td className="py-3 px-3">Higher margins allow lower ROAS</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">SaaS / Software</td>
+                  <td className="py-3 px-3">3:1 to 5:1</td>
+                  <td className="py-3 px-3">200-400%</td>
+                  <td className="py-3 px-3">LTV justifies lower initial ROAS</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Legal Services</td>
+                  <td className="py-3 px-3">5:1 to 10:1</td>
+                  <td className="py-3 px-3">400-900%</td>
+                  <td className="py-3 px-3">High case values drive strong ROI</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Real Estate</td>
+                  <td className="py-3 px-3">3:1 to 6:1</td>
+                  <td className="py-3 px-3">200-500%</td>
+                  <td className="py-3 px-3">Long sales cycles affect attribution</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Healthcare</td>
+                  <td className="py-3 px-3">4:1 to 7:1</td>
+                  <td className="py-3 px-3">300-600%</td>
+                  <td className="py-3 px-3">Regulations limit some ad channels</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-3">Retail (Local)</td>
+                  <td className="py-3 px-3">2:1 to 4:1</td>
+                  <td className="py-3 px-3">100-300%</td>
+                  <td className="py-3 px-3">Lower margins, volume-driven</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">Source: Industry averages compiled from major advertising platforms. Your results may vary based on targeting, creative quality, and market conditions.</p>
         </div>
       </div>
     </div>

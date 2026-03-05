@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -169,11 +169,10 @@ export default function CPCCPMCTRCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Ad Metrics</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.ctr >= 2 && result.cpc < 2 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.ctr >= 1 && result.cpc < 3 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    "bg-amber-100 dark:bg-amber-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.ctr >= 2 && result.cpc < 2 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.ctr >= 1 && result.cpc < 3 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        "bg-amber-100 dark:bg-amber-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Performance</p>
                     <p className="text-lg font-bold">{result.assessment}</p>
                   </div>
@@ -252,6 +251,155 @@ export default function CPCCPMCTRCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Ad Campaign Metrics</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Enter Campaign Data</h3>
+                  <p className="text-muted-foreground text-sm">Input total impressions, clicks, and ad spend from your Google Ads, Facebook Ads, or other platforms.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Calculate Key Metrics</h3>
+                  <p className="text-muted-foreground text-sm">Instantly get CTR (click-through rate), CPC (cost per click), and CPM (cost per thousand impressions).</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Performance Analysis</h3>
+                  <p className="text-muted-foreground text-sm">See how your metrics compare to industry benchmarks with actionable optimization recommendations.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Why Track CPC, CPM & CTR?</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">📊 Campaign Performance Insights</h3>
+                <p className="text-muted-foreground text-sm">Understand how efficiently your ad budget generates clicks and impressions across all platforms.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🎯 Benchmark Comparison</h3>
+                <p className="text-muted-foreground text-sm">Compare your CTR, CPC, and CPM against industry averages to gauge campaign health.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">💰 Budget Optimization</h3>
+                <p className="text-muted-foreground text-sm">Identify high-cost campaigns and reallocate budget to better-performing ads and channels.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📈 A/B Testing Support</h3>
+                <p className="text-muted-foreground text-sm">Quickly compare metrics between ad variations to determine winning creatives and copy.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Reference Table */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Digital Advertising Benchmarks by Platform</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4">Platform</th>
+                    <th className="text-left py-3 px-4">Avg CTR</th>
+                    <th className="text-left py-3 px-4">Avg CPC</th>
+                    <th className="text-left py-3 px-4">Avg CPM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">Google Search</td>
+                    <td className="py-3 px-4">3-5%</td>
+                    <td className="py-3 px-4">$2-4</td>
+                    <td className="py-3 px-4">N/A</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">Google Display</td>
+                    <td className="py-3 px-4">0.5-1%</td>
+                    <td className="py-3 px-4">$0.50-1</td>
+                    <td className="py-3 px-4">$2-5</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">Facebook Ads</td>
+                    <td className="py-3 px-4">0.9-1.5%</td>
+                    <td className="py-3 px-4">$0.50-2</td>
+                    <td className="py-3 px-4">$5-15</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">Instagram Ads</td>
+                    <td className="py-3 px-4">1-2%</td>
+                    <td className="py-3 px-4">$0.50-3</td>
+                    <td className="py-3 px-4">$5-15</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">LinkedIn Ads</td>
+                    <td className="py-3 px-4">0.4-0.6%</td>
+                    <td className="py-3 px-4">$5-12</td>
+                    <td className="py-3 px-4">$20-50</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Ad Metrics FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How is CTR calculated?</h3>
+                <p className="text-muted-foreground text-sm">CTR (Click-Through Rate) = (Clicks ÷ Impressions) × 100. A 2% CTR means 2 out of 100 people who saw your ad clicked on it.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is a good CPC for Google Ads?</h3>
+                <p className="text-muted-foreground text-sm">Average Google Ads CPC is $2-4 for search and $0.50-1 for display. Highly competitive industries (legal, insurance) can see $50+ CPC.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What's the difference between CPC and CPM?</h3>
+                <p className="text-muted-foreground text-sm">CPC (Cost Per Click) charges when someone clicks. CPM (Cost Per Mille/Thousand) charges per 1,000 impressions regardless of clicks.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Why is my CTR low?</h3>
+                <p className="text-muted-foreground text-sm">Low CTR can result from poor ad copy, irrelevant targeting, weak call-to-action, or ad fatigue. Test new creatives and refine audience targeting.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I lower my CPC?</h3>
+                <p className="text-muted-foreground text-sm">Improve Quality Score (Google Ads), refine targeting, use negative keywords, test ad variations, and optimize landing pages for relevance.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Marketing & Finance Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
+                <p className="text-muted-foreground text-sm">Evaluate marketing investment ROI against company cost of capital.</p>
+              </a>
+              <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
+                <p className="text-muted-foreground text-sm">Project long-term marketing budget growth and investment returns.</p>
+              </a>
+              <a href="/calculators/car-loan-affordability-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
+                <p className="text-muted-foreground text-sm">Budget for automotive advertising campaigns with loan payment planning.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

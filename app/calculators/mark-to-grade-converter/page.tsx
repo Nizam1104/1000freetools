@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -229,34 +229,277 @@ export default function MarkToGradeConverterPage() {
           </Card>
         </div>
 
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h3 className="text-lg font-semibold mb-3">Grading Scale Reference</h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <h4 className="font-medium mb-2">Standard (US)</h4>
-              <div className="text-sm space-y-1">
-                <div>A: 93-100% (4.0)</div>
-                <div>B: 83-86% (3.0)</div>
-                <div>C: 73-76% (2.0)</div>
-                <div>D: 63-66% (1.0)</div>
-                <div>F: 0-62% (0.0)</div>
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Mark to Grade Converter
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your marks obtained</p>
+                    <p>Type the score you received on your test or assignment. For example, if you scored 85 out of 100, enter &quot;85&quot;.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set the maximum marks and grading scale</p>
+                    <p>Enter the total possible marks (default is 100). Choose your grading scale: Standard (A-F), IB (1-7), Cambridge IGCSE (A*-U), or CBSE (A1-E).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Convert to see your grade</p>
+                    <p>The calculator shows your percentage, letter grade, grade point (GPA), and performance status instantly.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">CBSE (India)</h4>
-              <div className="text-sm space-y-1">
-                <div>A1: 91-100% (10.0)</div>
-                <div>A2: 81-90% (9.0)</div>
-                <div>B1: 71-80% (8.0)</div>
-                <div>B2: 61-70% (7.0)</div>
-                <div>C1: 51-60% (6.0)</div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Grading Scale Comparison Table
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Percentage</th>
+                      <th className="text-left py-3 px-2 font-semibold">Standard (US)</th>
+                      <th className="text-left py-3 px-2 font-semibold">IB Scale</th>
+                      <th className="text-left py-3 px-2 font-semibold">Cambridge</th>
+                      <th className="text-left py-3 px-2 font-semibold">CBSE (India)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">93-100%</td>
+                      <td className="py-3 px-2">A (4.0)</td>
+                      <td className="py-3 px-2">7</td>
+                      <td className="py-3 px-2">A*</td>
+                      <td className="py-3 px-2">A1 (10.0)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">90-92%</td>
+                      <td className="py-3 px-2">A- (3.7)</td>
+                      <td className="py-3 px-2">7</td>
+                      <td className="py-3 px-2">A*</td>
+                      <td className="py-3 px-2">A1 (10.0)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">80-89%</td>
+                      <td className="py-3 px-2">B+ to B- (3.3-2.7)</td>
+                      <td className="py-3 px-2">6</td>
+                      <td className="py-3 px-2">A</td>
+                      <td className="py-3 px-2">A2 (9.0)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">70-79%</td>
+                      <td className="py-3 px-2">C+ to C- (2.3-1.7)</td>
+                      <td className="py-3 px-2">5</td>
+                      <td className="py-3 px-2">B</td>
+                      <td className="py-3 px-2">B1 to B2 (8.0-7.0)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">60-69%</td>
+                      <td className="py-3 px-2">D+ to D- (1.3-0.7)</td>
+                      <td className="py-3 px-2">4</td>
+                      <td className="py-3 px-2">C</td>
+                      <td className="py-3 px-2">C1 to C2 (6.0-5.0)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">50-59%</td>
+                      <td className="py-3 px-2">F (0.0)</td>
+                      <td className="py-3 px-2">3</td>
+                      <td className="py-3 px-2">D</td>
+                      <td className="py-3 px-2">C1 to C2 (6.0-5.0)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Below 50%</td>
+                      <td className="py-3 px-2">F (0.0)</td>
+                      <td className="py-3 px-2">1-2</td>
+                      <td className="py-3 px-2">E to U</td>
+                      <td className="py-3 px-2">D to E (4.0-0.0)</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </div>
-          </div>
-          <p className="text-muted-foreground text-sm mt-4">
-            <strong>Note:</strong> Grading scales may vary by institution. Always verify with your
-            school's specific grading policy.
-          </p>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Exact grade boundaries may vary by school or examination board. Check your institution's specific grading policy.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Grading Systems
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Standard Letter Grades (US System)</h4>
+                  <p>
+                    The A-F grading system is used across most US schools and universities. Each letter corresponds to a grade point on a 4.0 scale. A represents excellent work (93-100%), while F indicates failure (below 60%). Plus and minus modifiers provide finer distinctions within each letter grade.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">IB Grading Scale</h4>
+                  <p>
+                    The International Baccalaureate uses a 1-7 scale, where 7 is the highest. A score of 4 is considered passing. IB grades are based on a combination of internal assessments and external examinations. The final IB diploma requires a minimum of 24 points across six subjects.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Cambridge IGCSE Grades</h4>
+                  <p>
+                    Cambridge IGCSE uses grades A* through G, with U indicating ungraded. A* represents outstanding performance (90%+). The system is criterion-referenced, meaning grades reflect achievement against set standards rather than comparison with other students.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">CBSE Grading System (India)</h4>
+                  <p>
+                    The Central Board of Secondary Education in India uses a 10-point GPA scale with grades A1 through E. A1 (91-100%) carries 10 grade points. This system reduces mark differentiation and focuses on broader achievement bands to reduce student stress.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Understanding Your Grades
+              </h3>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Know your grading scale</p>
+                    <p>Different schools and programs use different scales. Always confirm which system applies to your situation before interpreting grades.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Focus on improvement, not just the grade</p>
+                    <p>A grade shows where you are now, not where you can be. Use feedback to identify areas for growth.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate what you need</p>
+                    <p>Use this converter to figure out what score you need on remaining assignments to reach your target grade.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Understand weighted grades</p>
+                    <p>Some courses weight different assignments differently. A test might count more than homework. Factor this into your planning.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I convert my percentage to a letter grade?</h4>
+                  <p>
+                    Enter your marks and the maximum possible marks in this calculator. Select your grading scale (Standard, IB, Cambridge, or CBSE). The tool calculates your percentage and shows the corresponding letter grade, grade point, and performance status.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a passing grade in the US system?</h4>
+                  <p>
+                    In most US schools, a D (60-69%) is the minimum passing grade, though some programs require a C (70%+) to pass. Graduate programs often require a B (80%+) average. Check your specific program requirements, as policies vary.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How does GPA conversion work?</h4>
+                  <p>
+                    Each letter grade corresponds to a grade point on a 4.0 scale. A = 4.0, B = 3.0, C = 2.0, D = 1.0, F = 0.0. Plus grades add 0.3, minus grades subtract 0.3. Your GPA is the average of all your grade points, weighted by course credits.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What grade do I need for an A?</h4>
+                  <p>
+                    In the standard US system, you need 93% or higher for an A. Some schools use 90% as the A threshold. For an A-, you typically need 90-92%. Check your syllabus for your school's specific grade boundaries.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I use this for weighted grades?</h4>
+                  <p>
+                    This calculator converts raw marks to grades. For weighted grades, first calculate your weighted percentage. For example, if a test worth 60% of your grade scored 85%, that contributes 0.6 × 85 = 51 percentage points to your final grade.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/gpa-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">GPA Calculator</span>
+                  <p className="text-muted-foreground">Calculate your cumulative GPA from multiple courses and credits</p>
+                </a>
+                <a
+                  href="/calculators/final-grade-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Final Grade Calculator</span>
+                  <p className="text-muted-foreground">Find out what score you need on your final exam to reach your target grade</p>
+                </a>
+                <a
+                  href="/calculators/percentage-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Percentage Calculator</span>
+                  <p className="text-muted-foreground">Calculate percentages, percentage changes, and percentage of a number</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

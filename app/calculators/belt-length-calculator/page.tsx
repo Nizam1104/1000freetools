@@ -72,6 +72,247 @@ export default function BeltLengthCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Use This Belt Length Calculator</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">1</div>
+            <div>
+              <p className="font-medium text-foreground">Measure the small pulley diameter</p>
+              <p className="text-sm text-muted-foreground">Measure across the center of the smaller pulley. For V-belts, measure at the pitch diameter (approximately the belt's neutral axis), not the outer edge.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">2</div>
+            <div>
+              <p className="font-medium text-foreground">Measure the large pulley diameter and center distance</p>
+              <p className="text-sm text-muted-foreground">Measure the larger pulley the same way. Then measure the distance between pulley centers — the space between the shafts, not the belt edges.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">3</div>
+            <div>
+              <p className="font-medium text-foreground">Click Calculate to find belt length</p>
+              <p className="text-sm text-muted-foreground">Get the required belt length and the contact angle on the small pulley. Use this to select the correct standard belt size.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Common V-Belt Sizes</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-3 px-2 font-semibold">Belt Designation</th>
+                  <th className="text-left py-3 px-2 font-semibold">Top Width</th>
+                  <th className="text-left py-3 px-2 font-semibold">Height</th>
+                  <th className="text-left py-3 px-2 font-semibold">Common Applications</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                <tr className="border-b">
+                  <td className="py-3 px-2 font-mono">A (4L)</td>
+                  <td className="py-3 px-2">1/2 inch (13mm)</td>
+                  <td className="py-3 px-2">5/16 inch (8mm)</td>
+                  <td className="py-3 px-2">Light duty: lawn mowers, small compressors</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-2 font-mono">B (5L)</td>
+                  <td className="py-3 px-2">21/32 inch (17mm)</td>
+                  <td className="py-3 px-2">13/32 inch (10mm)</td>
+                  <td className="py-3 px-2">Medium duty: industrial motors, pumps</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-2 font-mono">C</td>
+                  <td className="py-3 px-2">7/8 inch (22mm)</td>
+                  <td className="py-3 px-2">17/32 inch (14mm)</td>
+                  <td className="py-3 px-2">Heavy duty: large compressors, conveyors</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-2 font-mono">3V</td>
+                  <td className="py-3 px-2">3/8 inch (9.5mm)</td>
+                  <td className="py-3 px-2">5/16 inch (8mm)</td>
+                  <td className="py-3 px-2">Narrow wedge: HVAC, appliances</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-2 font-mono">5V</td>
+                  <td className="py-3 px-2">5/8 inch (16mm)</td>
+                  <td className="py-3 px-2">17/32 inch (14mm)</td>
+                  <td className="py-3 px-2">Narrow wedge: industrial drives</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-2 font-mono">8V</td>
+                  <td className="py-3 px-2">1 inch (25mm)</td>
+                  <td className="py-3 px-2">29/32 inch (23mm)</td>
+                  <td className="py-3 px-2">Heavy narrow: high-power industrial</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            Note: Belt numbers indicate size. A45 means A-section belt with 45 inch outside circumference. 4L460 means 4L section with 46.0 inch outside length.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Understanding Belt Drive Calculations</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <div>
+            <h4 className="font-medium text-foreground mb-2">The Belt Length Formula</h4>
+            <p>
+              The approximate belt length formula is: L = 2C + 1.57(D + d) + (D - d)² / 4C, where C is center distance, D is large pulley diameter, and d is small pulley diameter. This accounts for the straight sections and the arc around each pulley.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Why Contact Angle Matters</h4>
+            <p>
+              Contact angle is how much of the small pulley the belt wraps around. More wrap means more grip and less slip. Aim for at least 120° contact on the small pulley. If contact is too low, consider an idler pulley or adjusting center distance.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Center Distance Guidelines</h4>
+            <p>
+              Center distance should be 1.5 to 3 times the large pulley diameter for optimal performance. Too close reduces contact angle and belt life. Too far increases belt whip and vibration. Adjustable motor bases help fine-tune tension.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Belt Tension</h4>
+            <p>
+              Proper tension is critical. Too loose causes slip, heat, and wear. Too tight loads bearings and shortens belt life. A properly tensioned belt should deflect about 1/64 inch per inch of span when pressed with moderate thumb pressure.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Belt Drive Design Tips</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3 text-sm text-muted-foreground">
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium text-foreground">Use the next size up if between sizes</p>
+              <p>Belts stretch slightly during break-in. If your calculated length falls between standard sizes, choose the longer one. You can always take up slack with an adjustable base.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium text-foreground">Match pulley groove to belt profile</p>
+              <p>A-section belts need A-section pulleys. Using mismatched profiles causes poor contact, rapid wear, and power loss. Check both belt and pulley specifications.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium text-foreground">Check pulley alignment</p>
+              <p>Misaligned pulleys cause uneven wear and belt tracking issues. Use a straightedge across both pulley faces. Angular misalignment should be under 1 degree.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium text-foreground">Replace belts in matched sets</p>
+              <p>On multi-belt drives, always replace all belts together. Mixing old and new belts causes uneven load distribution. The new belt carries more load and fails prematurely.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <div>
+            <h4 className="font-medium text-foreground mb-2">How do I measure a worn belt for replacement?</h4>
+            <p>
+              Use a flexible tape measure around the outside of the old belt. For V-belts, this gives the outside circumference. Subtract the belt's nominal top width to estimate pitch length. Or measure pulleys and center distance, then use this calculator.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">What's the difference between inside length and outside length?</h4>
+            <p>
+              Inside length is measured along the belt's inner surface. Outside length includes the belt thickness. V-belt part numbers typically use outside length. Classical belts (A, B, C) use outside length; narrow wedge (3V, 5V, 8V) also use outside length.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">How much tension should a V-belt have?</h4>
+            <p>
+              Press the belt midpoint with moderate thumb pressure. Deflection should be about 1/64 inch per inch of span length. For a 32-inch span, expect about 1/2 inch deflection. Belt tension gauges provide more accurate measurement.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Can I use this calculator for timing belts?</h4>
+            <p>
+              The basic length formula works for any two-pulley system, but timing belts have different considerations. Timing belt pitch must match pulley tooth pitch. This calculator does not account for tooth engagement requirements.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Why is my belt squealing?</h4>
+            <p>
+              Squealing usually means the belt is loose and slipping. Check tension first. If tension is correct, check for worn pulleys, contaminated belts (oil or grease), or misalignment. Glazed belt surfaces also cause noise and need replacement.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-2 text-sm">
+          <a
+            href="/calculators/pulley-speed-ratio-calculator"
+            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+          >
+            <span className="font-medium text-foreground">Pulley Speed Ratio Calculator</span>
+            <p className="text-muted-foreground">Calculate RPM and speed ratios for belt-driven pulleys</p>
+          </a>
+          <a
+            href="/calculators/conveyor-belt-speed-calculator"
+            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+          >
+            <span className="font-medium text-foreground">Conveyor Belt Speed Calculator</span>
+            <p className="text-muted-foreground">Calculate conveyor belt speed from pulley diameter and RPM</p>
+          </a>
+          <a
+            href="/calculators/sprocket-center-distance-calculator"
+            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+          >
+            <span className="font-medium text-foreground">Sprocket Center Distance Calculator</span>
+            <p className="text-muted-foreground">Calculate chain length and center distance for sprocket systems</p>
+          </a>
+        </CardContent>
+      </Card>
     </div>
   );
 }

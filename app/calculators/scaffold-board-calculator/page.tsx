@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -68,8 +68,8 @@ export default function ScaffoldBoardCalculatorPage() {
 
     // Recommendations
     const recommendations: string[] = [];
-    recommendations.push(`📐 Platform: ${(platLenMm/1000).toFixed(2)}m × ${(platWidMm/1000).toFixed(2)}m`);
-    recommendations.push(`🪵 Board size: ${(boardLen/1000).toFixed(2)}m × ${(boardWid/1000).toFixed(3)}m`);
+    recommendations.push(`📐 Platform: ${(platLenMm / 1000).toFixed(2)}m × ${(platWidMm / 1000).toFixed(2)}m`);
+    recommendations.push(`🪵 Board size: ${(boardLen / 1000).toFixed(2)}m × ${(boardWid / 1000).toFixed(3)}m`);
     recommendations.push(`📊 Boards per layer: ${boardsPerLayer}`);
     recommendations.push(`📚 Total boards (${layersNum} layer${layersNum > 1 ? 's' : ''}): ${totalBoards}`);
 
@@ -262,32 +262,102 @@ export default function ScaffoldBoardCalculatorPage() {
 
         <div className="mt-8 space-y-6">
           <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Scaffold Board Guidelines
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Standard board:</strong> 3900mm × 225mm × 38mm (L×W×T)
-                  </li>
-                  <li>
-                    <strong>Minimum overlap:</strong> 50mm at supports
-                  </li>
-                  <li>
-                    <strong>Maximum span:</strong> 1.2m for working platforms
-                  </li>
-                  <li>
-                    <strong>Platform width:</strong> Minimum 600mm for working
-                  </li>
-                </ul>
-                <p>
-                  <strong>Note:</strong> This calculator provides estimates only.
-                  Always consult scaffolding regulations and a qualified person
-                  for your specific application. Board quality and condition must
-                  be inspected before each use.
-                </p>
+            <CardHeader>
+              <CardTitle>How to Calculate Scaffold Boards</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <p className="font-semibold mb-1">Measure platform dimensions</p>
+                  <p className="text-sm text-muted-foreground">Enter the length and width of your scaffolding platform in meters, mm, or feet.</p>
+                </div>
               </div>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <p className="font-semibold mb-1">Set board size and layers</p>
+                  <p className="text-sm text-muted-foreground">Use standard 3900mm boards or enter custom sizes. Add layers for heavy loads.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <p className="font-semibold mb-1">Get board count</p>
+                  <p className="text-sm text-muted-foreground">Receive total boards needed with safety recommendations.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Why Plan Scaffold Materials</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">Accurate ordering</p>
+                  <p className="text-sm text-muted-foreground">Prevents project delays from material shortages.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Cost control</p>
+                  <p className="text-sm text-muted-foreground">Avoid over-ordering expensive scaffolding equipment.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Safety compliance</p>
+                  <p className="text-sm text-muted-foreground">Ensures proper board coverage and layering for load capacity.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Multiple layer support</p>
+                  <p className="text-sm text-muted-foreground">Calculate boards for single or multi-layer platforms.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Built-in safety tips</p>
+                  <p className="text-sm text-muted-foreground">Get recommendations for board overlap and securing methods.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">What size are standard scaffold boards?</p>
+                  <p className="text-sm text-muted-foreground">UK standard is 3900mm × 225mm × 38mm. US planks are typically 10-13 feet long by 10 inches wide.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">How many scaffold boards do I need?</p>
+                  <p className="text-sm text-muted-foreground">Divide platform width by board width, then multiply by boards needed for length. Add extra for overlaps.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">How much should scaffold boards overlap?</p>
+                  <p className="text-sm text-muted-foreground">Minimum 50mm overlap at supports. Boards should extend past the last support by at least 50mm.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">How many layers of boards for scaffolding?</p>
+                  <p className="text-sm text-muted-foreground">Single layer for light duty. Double layer for heavy loads or when required by regulations.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">What is the maximum span for scaffold boards?</p>
+                  <p className="text-sm text-muted-foreground">Maximum 1.2m span for standard working platforms. Check local regulations for specific requirements.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Construction Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-3">
+                Try our other building tools: the <a href="/calculators/brick-calculator" className="text-primary hover:underline">brick calculator</a> for masonry estimates, the <a href="/calculators/concrete-volume-calculator" className="text-primary hover:underline">concrete volume calculator</a> for foundations, and the <a href="/calculators/steel-weight-calculator" className="text-primary hover:underline">steel weight calculator</a> for structural materials.
+              </p>
             </CardContent>
           </Card>
         </div>

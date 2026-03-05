@@ -306,6 +306,191 @@ export default function PunnettSquareCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6 max-w-4xl mx-auto">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Punnett Square Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Select cross type</p>
+                  <p>Choose monohybrid for single-trait inheritance or dihybrid for two-trait crosses involving two genes.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter parent genotypes</p>
+                  <p>Input the alleles for each parent. Use capital letters for dominant traits and lowercase for recessive.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Generate and analyze results</p>
+                  <p>Click Generate to see the Punnett square grid, genotype probabilities, and phenotype ratios for your cross.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Key Features of This Calculator
+            </h3>
+            <div className="space-y-4 text-sm">
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Monohybrid and Dihybrid Crosses</p>
+                <p className="text-muted-foreground">Supports both single-gene and two-gene inheritance patterns with accurate probability calculations</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Visual Punnett Square Grid</p>
+                <p className="text-muted-foreground">See the actual 2x2 or 4x4 grid showing all possible offspring genotype combinations</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Genotype Probability Chart</p>
+                <p className="text-muted-foreground">Pie chart visualization shows the distribution of genotypes at a glance</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Reference Tables</p>
+                <p className="text-muted-foreground">Includes common genetic cross ratios and key terminology for learning</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Mendelian Inheritance Patterns Reference
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Parent Cross</th>
+                    <th className="text-left py-3 px-2 font-semibold">Genotype Ratio</th>
+                    <th className="text-left py-3 px-2 font-semibold">Phenotype Ratio</th>
+                    <th className="text-left py-3 px-2 font-semibold">Example</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Homozygous × Homozygous</td>
+                    <td className="py-3 px-2">100% heterozygous</td>
+                    <td className="py-3 px-2">100% dominant</td>
+                    <td className="py-3 px-2">TT × tt = all Tt</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Heterozygous × Homozygous Recessive</td>
+                    <td className="py-3 px-2">1:1</td>
+                    <td className="py-3 px-2">1:1</td>
+                    <td className="py-3 px-2">Tt × tt</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Heterozygous × Heterozygous</td>
+                    <td className="py-3 px-2">1:2:1</td>
+                    <td className="py-3 px-2">3:1</td>
+                    <td className="py-3 px-2">Tt × Tt</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Dihybrid Cross</td>
+                    <td className="py-3 px-2">Various</td>
+                    <td className="py-3 px-2">9:3:3:1</td>
+                    <td className="py-3 px-2">TtRr × TtRr</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Note: These ratios assume complete dominance and independent assortment.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is a Punnett square used for?</h4>
+                <p>
+                  A Punnett square predicts the probability of offspring inheriting specific genetic traits. It shows all possible combinations of parental alleles and calculates the likelihood of each genotype and phenotype in the next generation.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the difference between genotype and phenotype?</h4>
+                <p>
+                  Genotype is the genetic makeup (like BB, Bb, or bb). Phenotype is the physical trait you can observe (like brown eyes or blue eyes). Two organisms can have different genotypes but the same phenotype if one allele is dominant.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do dihybrid crosses work?</h4>
+                <p>
+                  Dihybrid crosses track two genes simultaneously. Each parent produces four types of gametes (AB, Ab, aB, ab), creating a 4x4 grid with 16 possible offspring. The classic ratio is 9:3:3:1 for two heterozygous parents.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What does capital vs lowercase mean?</h4>
+                <p>
+                  Capital letters represent dominant alleles that express their trait even when paired with a different allele. Lowercase letters are recessive alleles that only show their trait when two copies are present (homozygous recessive).
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Are Punnett squares always accurate?</h4>
+                <p>
+                  Punnett squares show probabilities, not certainties. They assume independent assortment and complete dominance. Real inheritance can involve linked genes, incomplete dominance, codominance, and environmental factors that complicate predictions.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/probability-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Probability Calculator</span>
+                <p className="text-muted-foreground">Calculate probabilities for various events and scenarios</p>
+              </a>
+              <a
+                href="/calculators/blood-type-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Blood Type Calculator</span>
+                <p className="text-muted-foreground">Predict possible blood types for offspring based on parents</p>
+              </a>
+              <a
+                href="/calculators/genetic-inheritance-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Genetic Inheritance Calculator</span>
+                <p className="text-muted-foreground">Explore more complex inheritance patterns and pedigrees</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

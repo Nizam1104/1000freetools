@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,7 +29,7 @@ export default function InterestVsPrincipalSplitCalculatorPage() {
     }
 
     const emi = P * R * Math.pow(1 + R, N) / (Math.pow(1 + R, N) - 1);
-    
+
     const remainingBalance = P * (Math.pow(1 + R, N) - Math.pow(1 + R, n)) / (Math.pow(1 + R, N) - 1);
     const interestPayment = remainingBalance * R;
     const principalPayment = emi - interestPayment;
@@ -150,6 +150,265 @@ export default function InterestVsPrincipalSplitCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Interest vs Principal Split Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your loan details</p>
+                    <p>Input the loan amount, annual interest rate, and loan tenure in years. Use the original loan terms.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Specify the payment number</p>
+                    <p>Enter which payment you want to analyze. Payment 1 is your first payment; payment 360 would be the last payment on a 30-year mortgage.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">View the payment breakdown</p>
+                    <p>See exactly how much of that payment goes to interest versus principal, plus the remaining loan balance.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Interest vs Principal Over Loan Life
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Loan Stage</th>
+                      <th className="text-left py-3 px-2 font-semibold">Interest Portion</th>
+                      <th className="text-left py-3 px-2 font-semibold">Principal Portion</th>
+                      <th className="text-left py-3 px-2 font-semibold">Remaining Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Payment 1 (start)</td>
+                      <td className="py-3 px-2">70-90%</td>
+                      <td className="py-3 px-2">10-30%</td>
+                      <td className="py-3 px-2">98-99% of original</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Payment 60 (5 years)</td>
+                      <td className="py-3 px-2">60-80%</td>
+                      <td className="py-3 px-2">20-40%</td>
+                      <td className="py-3 px-2">85-92% of original</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Payment 120 (10 years)</td>
+                      <td className="py-3 px-2">50-70%</td>
+                      <td className="py-3 px-2">30-50%</td>
+                      <td className="py-3 px-2">70-80% of original</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Payment 180 (midpoint)</td>
+                      <td className="py-3 px-2">40-60%</td>
+                      <td className="py-3 px-2">40-60%</td>
+                      <td className="py-3 px-2">50-60% of original</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Payment 300 (25 years)</td>
+                      <td className="py-3 px-2">20-40%</td>
+                      <td className="py-3 px-2">60-80%</td>
+                      <td className="py-3 px-2">20-30% of original</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Final payment</td>
+                      <td className="py-3 px-2">1-5%</td>
+                      <td className="py-3 px-2">95-99%</td>
+                      <td className="py-3 px-2">$0 (paid off)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Percentages vary based on interest rate and loan term. Higher rates mean more interest early in the loan.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Loan Amortization
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Amortization Works</h4>
+                  <p>
+                    Each loan payment splits between interest and principal. Early payments are mostly interest because the balance is high. As you pay down principal, less interest accrues, so more of each payment goes to principal. This is why loans build equity slowly at first, then faster later.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Interest Dominates Early Payments</h4>
+                  <p>
+                    Interest is calculated on the remaining balance. At the start, you owe the full amount, so interest is highest. On a $200,000 loan at 6%, the first month's interest alone is $1,000. If your payment is $1,200, only $200 reduces the principal.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Power of Extra Principal Payments</h4>
+                  <p>
+                    Paying extra toward principal reduces future interest. An extra $100/month on a 30-year mortgage can cut 7-10 years off the term and save tens of thousands in interest. Extra payments have the biggest impact early in the loan.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Payment Number Affects the Split</h4>
+                  <p>
+                    The crossover point — when principal exceeds interest — typically happens around 40-50% through the loan term. For a 30-year mortgage, this is around year 12-15. Before this point, you are mostly paying the lender's profit. After it, you are mostly building equity.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Paying Off Your Loan Faster
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Make biweekly payments</p>
+                    <p>Pay half your monthly amount every two weeks. You will make 26 half-payments per year, equal to 13 full payments. This extra payment goes directly to principal.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Round up your payment</p>
+                    <p>If your payment is $1,247, pay $1,300. The extra $53 goes to principal. Small amounts add up — $50 extra monthly on a 30-year mortgage saves about 5 years of payments.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Apply windfalls to principal</p>
+                    <p>Use tax refunds, bonuses, or gifts to make lump-sum principal payments. One $5,000 extra payment early in a mortgage can save $10,000+ in interest over the loan life.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Refinance to a shorter term</p>
+                    <p>Switching from 30-year to 15-year mortgage increases monthly payments but drastically reduces total interest. Only do this if you can comfortably afford the higher payment.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why is my early payment mostly interest?</h4>
+                  <p>
+                    Interest is calculated on the outstanding balance. At the start, you owe the full loan amount, so interest is at its maximum. As you pay down principal, the balance shrinks and less interest accrues each month.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When does principal exceed interest?</h4>
+                  <p>
+                    For most 30-year mortgages, principal exceeds interest around payment 180-200 (year 15-17). For 15-year loans, the crossover happens much earlier, around year 5-7. Higher interest rates push the crossover point later.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Does paying extra reduce my monthly payment?</h4>
+                  <p>
+                    No, extra principal payments do not change your required monthly payment. They reduce the loan balance and shorten the loan term. To lower your payment, you would need to refinance the loan.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I pay extra principal or invest?</h4>
+                  <p>
+                    Compare your loan rate to expected investment returns. If your mortgage is 3% and you expect 7% from investments, investing may be better. If your loan is 7%+, paying it down gives a guaranteed 7% return. Consider your risk tolerance and financial goals.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I verify my payment split?</h4>
+                  <p>
+                    Your monthly loan statement shows the interest and principal portions of each payment. Lenders must provide this by law. Compare the statement to this calculator's results to verify accuracy.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/interest-rate-finder-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Interest Rate Finder Calculator</span>
+                  <p className="text-muted-foreground">Reverse-calculate interest rate from loan payments</p>
+                </a>
+                <a
+                  href="/calculators/loan-amortization-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Loan Amortization Calculator</span>
+                  <p className="text-muted-foreground">Generate complete payment schedules with charts</p>
+                </a>
+                <a
+                  href="/calculators/mortgage-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Mortgage Calculator</span>
+                  <p className="text-muted-foreground">Calculate home loan payments with taxes and insurance</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

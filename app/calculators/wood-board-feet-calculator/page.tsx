@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -362,6 +362,103 @@ export default function WoodBoardFeetCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Board Feet</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Board Dimensions</h3>
+                <p className="text-sm text-muted-foreground">Enter thickness, width, and length for each board. Add multiple boards as needed.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Wood Type</h3>
+                <p className="text-sm text-muted-foreground">Choose from common lumber species to get cost estimates per board foot.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Total & Cost</h3>
+                <p className="text-sm text-muted-foreground">See total board feet and estimated cost for your lumber order.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Board Feet Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Multiple Board Support**</h3>
+              <p className="text-sm text-muted-foreground">Add and calculate board feet for multiple pieces of different sizes.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Wood Type Database**</h3>
+              <p className="text-sm text-muted-foreground">15+ common wood species with current pricing for cost estimates.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Flexible Units**</h3>
+              <p className="text-sm text-muted-foreground">Enter dimensions in inches or feet with automatic conversion.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Detailed Breakdown**</h3>
+              <p className="text-sm text-muted-foreground">See board feet and cost for each piece plus totals.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a board foot?</h3>
+              <p className="text-sm text-muted-foreground">A board foot is a volume measurement for lumber equal to 144 cubic inches (12&quot; × 12&quot; × 1&quot;). It&apos;s the standard unit for buying and selling hardwood lumber.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do you calculate board feet?</h3>
+              <p className="text-sm text-muted-foreground">Board Feet = (Thickness&quot; × Width&quot; × Length&apos;) / 12. For example, a 2&quot; × 6&quot; × 8&apos; board = (2 × 6 × 8) / 12 = 8 board feet.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why is lumber sold by board foot?</h3>
+              <p className="text-sm text-muted-foreground">Board feet measures volume, not just length. This accounts for thickness and width variations, ensuring fair pricing for different lumber dimensions.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What&apos;s the difference between hardwood and softwood?</h3>
+              <p className="text-sm text-muted-foreground">Hardwoods (oak, maple, walnut) come from deciduous trees and are typically harder. Softwoods (pine, fir, cedar) come from conifers. Hardwoods are usually sold by board foot; softwoods by linear foot.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How much waste should I add?</h3>
+              <p className="text-sm text-muted-foreground">Add 10-15% for simple projects, 20%+ for complex cuts or figured wood. This accounts for cutting waste, defects, and grain matching.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/volume-of-cylinder-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Volume of Cylinder Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate volume for round stock and logs.</p>
+            </a>
+            <a href="/calculators/volume-of-cuboid-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Volume of Cuboid Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate volume for rectangular objects.</p>
+            </a>
+            <a href="/calculators/flooring-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Flooring Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate flooring materials for home projects.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

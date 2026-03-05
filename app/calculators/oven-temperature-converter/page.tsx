@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -51,10 +51,10 @@ export default function OvenTemperatureConverterPage() {
     // Convert to both scales
     if (unit === "celsius") {
       celsius = tempNum;
-      fahrenheit = (tempNum * 9/5) + 32;
+      fahrenheit = (tempNum * 9 / 5) + 32;
     } else if (unit === "fahrenheit") {
       fahrenheit = tempNum;
-      celsius = (tempNum - 32) * 5/9;
+      celsius = (tempNum - 32) * 5 / 9;
     } else if (unit === "gasMark") {
       const gasMark = tempNum;
       const gasMarkData = gasMarks.find(gm => gm.mark === gasMark);
@@ -281,6 +281,138 @@ export default function OvenTemperatureConverterPage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* How It Works Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">How to Convert Oven Temperatures</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Select Your Scale</h3>
+                <p className="text-sm text-muted-foreground">Choose whether you're converting from Celsius, Fahrenheit, or Gas Mark.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Enter Temperature</h3>
+                <p className="text-sm text-muted-foreground">Type in your recipe's temperature value in the selected scale.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">Get All Conversions</h3>
+                <p className="text-sm text-muted-foreground">See the equivalent temperatures in all three scales plus cooking tips.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Why Use This Oven Temperature Converter</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Three-Way Conversion
+                </h3>
+                <p className="text-sm text-muted-foreground">Convert between Celsius, Fahrenheit, and Gas Mark numbers in one click.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Gas Mark Reference
+                </h3>
+                <p className="text-sm text-muted-foreground">British recipes use Gas Marks — we show you the exact Celsius and Fahrenheit equivalents.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Cooking Method Guide
+                </h3>
+                <p className="text-sm text-muted-foreground">Learn what each temperature range is best for, from slow roasting to searing.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Complete Conversion Chart
+                </h3>
+                <p className="text-sm text-muted-foreground">Full reference table with all Gas Marks from 0.25 to 10 for quick lookup.</p>
+              </div>
+            </div>
+
+            <div className="mt-6 p-6 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-3">Temperature Conversion Formulas</h3>
+              <div className="bg-card p-4 rounded font-mono text-sm mb-4 space-y-1">
+                <div>Fahrenheit = (Celsius × 9/5) + 32</div>
+                <div>Celsius = (Fahrenheit - 32) × 5/9</div>
+                <div>Gas Mark = (Fahrenheit - 225) / 25</div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p className="font-semibold mb-2">Common Baking Temperatures:</p>
+                  <ul className="space-y-1 text-muted-foreground">
+                    <li>• 180°C / 350°F / Gas 4 - Cakes and cookies</li>
+                    <li>• 200°C / 400°F / Gas 6 - Roasting vegetables</li>
+                    <li>• 220°C / 425°F / Gas 7 - Pizza and bread</li>
+                    <li>• 160°C / 325°F / Gas 3 - Slow baking</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-2">Convection Oven Tip:</p>
+                  <ul className="space-y-1 text-muted-foreground">
+                    <li>• Reduce temperature by 25°F (15°C)</li>
+                    <li>• 350°F conventional = 325°F convection</li>
+                    <li>• 180°C conventional = 160°C convection</li>
+                    <li>• Cooking time may also be reduced by 25%</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Oven Temperatures</h2>
+            <div className="space-y-4">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What is 180°C in Fahrenheit?</h3>
+                <p className="text-sm text-muted-foreground">180°C equals 350°F, which is Gas Mark 4. This is the most common baking temperature for cakes, cookies, and many baked goods.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What does Gas Mark mean?</h3>
+                <p className="text-sm text-muted-foreground">Gas Mark is a temperature scale used on gas ovens in the UK and some Commonwealth countries. Gas Mark 1 is 275°F (140°C), and each increment adds 25°F.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Should I adjust temperature for convection ovens?</h3>
+                <p className="text-sm text-muted-foreground">Yes. Convection ovens circulate hot air, cooking food faster and more evenly. Reduce the temperature by 25°F (15°C) from conventional oven recipes.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Why do American recipes use Fahrenheit?</h3>
+                <p className="text-sm text-muted-foreground">The US is one of the few countries still using Fahrenheit for cooking. Most other countries use Celsius. Gas Mark is primarily used in the UK for gas ovens.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">How accurate are oven temperature dials?</h3>
+                <p className="text-sm text-muted-foreground">Oven dials can be off by 25-50°F. For precision baking, use a standalone oven thermometer. It's a cheap tool that can save ruined batches.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Related Tools Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Related Kitchen Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/recipe-scaler-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Recipe Scaler Calculator</h3>
+                <p className="text-sm text-muted-foreground">Adjust recipe ingredients for different serving sizes.</p>
+              </a>
+              <a href="/calculators/kitchen-measurement-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Kitchen Measurement Converter</h3>
+                <p className="text-sm text-muted-foreground">Convert between cups, tablespoons, grams, and more.</p>
+              </a>
+              <a href="/calculators/baking-time-adjustment-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Baking Time Adjustment Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate baking time for different pan sizes.</p>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -131,6 +131,166 @@ export default function RecurringDepositCalculatorPage() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How Recurring Deposits Work
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                A Recurring Deposit (RD) is a term deposit where you save a fixed amount every month
+                for a predetermined period. Banks pay compound interest quarterly, making RDs a
+                low-risk savings option.
+              </p>
+              <div className="p-4 bg-muted rounded-lg font-mono text-sm">
+                Maturity = P × [((1 + R)^N - 1) / R] × (1 + R)
+              </div>
+              <p>
+                Where P is monthly deposit, R is monthly interest rate, and N is total months.
+                Interest compounds quarterly in most Indian banks.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              RD Interest Rates Reference
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Bank Type</th>
+                    <th className="text-left py-3 px-2 font-semibold">Typical Rate</th>
+                    <th className="text-left py-3 px-2 font-semibold">Senior Citizen</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Public Sector Banks</td>
+                    <td className="py-3 px-2">5.5-6.5%</td>
+                    <td className="py-3 px-2">+0.50%</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Private Banks</td>
+                    <td className="py-3 px-2">6.0-7.0%</td>
+                    <td className="py-3 px-2">+0.50%</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Small Finance Banks</td>
+                    <td className="py-3 px-2">7.0-8.0%</td>
+                    <td className="py-3 px-2">+0.75%</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Post Office RD</td>
+                    <td className="py-3 px-2">6.7%</td>
+                    <td className="py-3 px-2">No extra</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Rates vary by tenure and amount. Check current rates with your bank before investing.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              RD vs Fixed Deposit
+            </h3>
+            <div className="space-y-3 text-sm">
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Recurring Deposit</p>
+                <p className="text-muted-foreground">Monthly deposits, lower initial commitment, good for regular savers</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Fixed Deposit</p>
+                <p className="text-muted-foreground">Lump sum deposit, higher rates typically, better for one-time investments</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Is RD interest taxable?</h4>
+                <p>
+                  Yes. RD interest is fully taxable as "Income from Other Sources." Banks deduct TDS
+                  if annual interest exceeds ₹40,000 (₹50,000 for senior citizens).
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can I withdraw RD before maturity?</h4>
+                <p>
+                  Yes, but penalties apply. Most banks charge 1-2% lower interest for premature
+                  withdrawal. Some allow partial withdrawals after a lock-in period.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What happens if I miss a monthly payment?</h4>
+                <p>
+                  Banks charge penalty for missed payments (₹10-100 depending on amount). After
+                  consecutive defaults, the RD may be closed prematurely.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Is RD safer than mutual funds?</h4>
+                <p>
+                  RDs are safer — they offer guaranteed returns and are insured up to ₹5 lakh per
+                  depositor per bank. Mutual funds carry market risk but may give higher returns.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the minimum RD tenure?</h4>
+                <p>
+                  Most banks offer RDs from 6 months to 10 years. Common tenures are 1, 2, 3, and
+                  5 years. Longer tenures typically get better interest rates.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/fixed-deposit-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Fixed Deposit Calculator</span>
+                <p className="text-muted-foreground">Calculate maturity value for lump sum deposits</p>
+              </a>
+              <a
+                href="/calculators/sip-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">SIP Calculator</span>
+                <p className="text-muted-foreground">Estimate returns from mutual fund SIP investments</p>
+              </a>
+              <a
+                href="/calculators/compound-interest-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Compound Interest Calculator</span>
+                <p className="text-muted-foreground">Calculate compound interest for any investment</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

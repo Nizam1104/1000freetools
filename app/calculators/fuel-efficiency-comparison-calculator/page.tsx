@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -53,7 +53,7 @@ export default function FuelEfficiencyComparisonCalculatorPage() {
     // Recommendation
     let recommendation = "";
     const percentDifference = ((Math.abs(car1MpgNum - car2MpgNum)) / Math.min(car1MpgNum, car2MpgNum)) * 100;
-    
+
     if (percentDifference < 10) {
       recommendation = "Fuel efficiency is similar - consider other factors like price, features, reliability";
     } else if (percentDifference < 30) {
@@ -188,11 +188,10 @@ export default function FuelEfficiencyComparisonCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.savings > 500 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.savings > 200 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    "bg-muted"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.savings > 500 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.savings > 200 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        "bg-muted"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Annual Savings</p>
                     <p className="text-4xl font-bold">${result.savings}</p>
                     <p className="text-sm mt-1">with more efficient vehicle</p>
@@ -256,8 +255,272 @@ export default function FuelEfficiencyComparisonCalculatorPage() {
                   </li>
                 </ul>
                 <p>
-                  <strong>Formula:</strong> Annual Cost = (Annual Miles ÷ MPG) × Fuel Price
+                  <strong>Formula:</strong> Annual Cost = (Annual Miles / MPG) x Fuel Price
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Fuel Efficiency Comparison Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter both vehicles information</p>
+                    <p>Name each vehicle and input their fuel economy in MPG. You can compare any two vehicles: sedans, SUVs, trucks, or hybrids.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Set your driving parameters</p>
+                    <p>Enter your annual mileage (US average is 12,000-15,000 miles) and current fuel price in your area.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Compare and decide</p>
+                    <p>Review annual fuel costs, 5-year projections, and total savings. The calculator recommends which vehicle costs less to operate.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Vehicle Fuel Economy Comparison Guide
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Vehicle Class</th>
+                      <th className="text-left py-3 px-2 font-semibold">Typical MPG Range</th>
+                      <th className="text-left py-3 px-2 font-semibold">Annual Fuel Cost*</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Compact hybrid</td>
+                      <td className="py-3 px-2">45-55 MPG</td>
+                      <td className="py-3 px-2">$800-970</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Midsize sedan</td>
+                      <td className="py-3 px-2">25-32 MPG</td>
+                      <td className="py-3 px-2">$1,310-1,680</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Compact SUV</td>
+                      <td className="py-3 px-2">24-30 MPG</td>
+                      <td className="py-3 px-2">$1,400-1,750</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Midsize SUV</td>
+                      <td className="py-3 px-2">20-26 MPG</td>
+                      <td className="py-3 px-2">$1,615-2,100</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Full-size pickup</td>
+                      <td className="py-3 px-2">15-20 MPG</td>
+                      <td className="py-3 px-2">$2,100-2,800</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Electric vehicle</td>
+                      <td className="py-3 px-2">3-4 mi/kWh</td>
+                      <td className="py-3 px-2">$480-640</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                *Based on 12,000 miles/year at $3.50/gallon. EV costs based on $0.16/kWh electricity.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Vehicle Operating Costs
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Hybrid Payback Calculation</h4>
+                  <p>
+                    Hybrids cost more upfront but save on fuel. To find the payback period, divide the price
+                    premium by annual fuel savings. If a hybrid costs $3,000 more but saves $600/year on gas,
+                    payback is $3,000 / $600 = 5 years. If you keep the car longer than 5 years, the hybrid
+                    saves money. If you sell sooner, the conventional model may be cheaper overall.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Electric vs Gas: Total Cost Comparison</h4>
+                  <p>
+                    EVs have lower fuel costs (about $0.04/mile vs $0.15/mile for gas) but higher purchase
+                    prices. A $40,000 EV vs $30,000 gas car has a $10,000 premium. At 12,000 miles/year,
+                    fuel savings are about $1,320/year ($1,800 gas - $480 electric). Payback is roughly
+                    7-8 years, not counting potential tax credits or lower maintenance costs.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Depreciation Matters More Than Fuel</h4>
+                  <p>
+                    For most vehicles, depreciation exceeds fuel costs over 5 years. A $35,000 car losing
+                    50% value costs $17,500 in depreciation. Even a gas guzzler at $2,500/year fuel is
+                    $12,500 over 5 years. When comparing vehicles, consider total cost of ownership:
+                    purchase price, depreciation, fuel, insurance, and maintenance.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Choosing a Fuel-Efficient Vehicle
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate your actual needs</p>
+                    <p>Most SUV buyers never tow or haul large loads. A sedan or crossover often meets real-world needs with 30-50% better fuel economy than a truck-based SUV.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider certified pre-owned</p>
+                    <p>A 2-3 year old car has already taken the biggest depreciation hit. CPO vehicles come with warranties and cost 20-30% less than new. Your fuel savings go further.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Check EPA ratings carefully</p>
+                    <p>The EPA website provides official fuel economy data for all vehicles. Look at combined, city, and highway ratings. Real-world results typically run 10-15% below EPA numbers.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Factor in your driving pattern</p>
+                    <p>Mostly highway? Prioritize highway MPG. Mostly city? Hybrids shine in stop-and-go traffic. EVs make sense if you can charge at home and drive under 200 miles daily.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How much can I save with a more fuel-efficient car?</h4>
+                  <p>
+                    Savings depend on your driving and fuel prices. Upgrading from 20 MPG to 30 MPG saves
+                    about $700/year at 12,000 miles and $3.50/gallon. Going from 15 MPG to 25 MPG saves
+                    about $930/year. Over 5 years, these savings add up to $3,500-4,650.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is a hybrid worth the extra cost?</h4>
+                  <p>
+                    Hybrids typically cost $2,000-4,000 more than equivalent gas models. With fuel savings
+                    of $400-800/year, payback takes 4-7 years. If you keep the car longer, the hybrid wins.
+                    Hybrids also have better city MPG and lower emissions. Consider your expected ownership period.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I buy an electric vehicle?</h4>
+                  <p>
+                    EVs make sense if you can charge at home, drive under 200 miles daily, and live where
+                    electricity is cheap. Fuel costs drop 70-80% compared to gas. However, purchase prices
+                    remain higher, and public charging can be slow and expensive. Calculate total cost of
+                    ownership including any tax credits in your area.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Does premium gas improve fuel economy?</h4>
+                  <p>
+                    Only if your car requires it. Most vehicles run fine on regular 87-octane. Using premium
+                    in a regular car provides zero benefit. If your car requires premium, the higher cost
+                    per gallon may offset any small efficiency gains. Check your owner's manual.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How accurate are EPA fuel economy ratings?</h4>
+                  <p>
+                    EPA ratings are standardized but real-world results vary. Most drivers achieve 10-20%
+                    lower MPG than EPA combined ratings. Aggressive driving, cold weather, and heavy loads
+                    reduce economy further. Use EPA numbers for comparison, but expect slightly worse results.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/fuel-cost-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Fuel Cost Calculator</span>
+                  <p className="text-muted-foreground">Calculate fuel cost for a specific trip distance</p>
+                </a>
+                <a
+                  href="/calculators/mpg-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">MPG Calculator</span>
+                  <p className="text-muted-foreground">Calculate your vehicle's actual fuel economy from fill-up data</p>
+                </a>
+                <a
+                  href="/calculators/lease-vs-buy-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Lease vs Buy Calculator</span>
+                  <p className="text-muted-foreground">Compare the total cost of leasing versus buying a vehicle</p>
+                </a>
               </div>
             </CardContent>
           </Card>

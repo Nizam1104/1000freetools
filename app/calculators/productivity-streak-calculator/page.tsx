@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -194,12 +194,11 @@ export default function ProductivityStreakCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Streak Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.currentStreak >= 66 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.currentStreak >= 30 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.currentStreak >= 14 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-muted"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.currentStreak >= 66 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.currentStreak >= 30 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.currentStreak >= 14 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-muted"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Current Streak</p>
                     <p className="text-5xl font-bold">{result.currentStreak}</p>
                     <p className="text-sm mt-1">days</p>
@@ -227,11 +226,10 @@ export default function ProductivityStreakCalculatorPage() {
                       {result.milestones.map((milestone, i) => (
                         <div
                           key={i}
-                          className={`flex justify-between items-center p-2 rounded ${
-                            milestone.achieved
+                          className={`flex justify-between items-center p-2 rounded ${milestone.achieved
                               ? "bg-green-100 dark:bg-green-900/20"
                               : "bg-muted/50"
-                          }`}
+                            }`}
                         >
                           <span className={`text-sm ${milestone.achieved ? "text-green-700 dark:text-green-300" : "text-muted-foreground"}`}>
                             {milestone.achieved ? "✓" : "○"} {milestone.label}
@@ -266,29 +264,177 @@ export default function ProductivityStreakCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Habit Formation Science
+                How to Use This Productivity Streak Calculator
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>21 days:</strong> Traditional habit formation myth
-                  </li>
-                  <li>
-                    <strong>66 days:</strong> Average time for automatic behavior
-                    (Lally et al., 2009)
-                  </li>
-                  <li>
-                    <strong>Consistency:</strong> More important than intensity
-                  </li>
-                  <li>
-                    <strong>Missing one day:</strong> Doesn&apos;t significantly impact
-                    habit formation
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> Start with &quot;tiny habits&quot; - make your new
-                  habit so small you can&apos;t say no. Consistency beats intensity!
-                </p>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your current streak</p>
+                    <p>Input the number of consecutive days you have completed your habit or task. This is your current momentum.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Add tracking data</p>
+                    <p>Enter your longest streak ever, total days tracked, and days completed to get your consistency rate.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review your analysis</p>
+                    <p>See your streak status, milestone progress, and personalized recommendations to keep building momentum.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features of This Streak Tracker
+              </h3>
+              <div className="space-y-4 text-sm">
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Habit Formation Milestones</p>
+                  <p className="text-muted-foreground">Track progress through science-backed milestones from 3 days to 365 days of consistency</p>
+                </div>
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Consistency Rate Calculation</p>
+                  <p className="text-muted-foreground">See what percentage of days you actually completed your habit — the real measure of commitment</p>
+                </div>
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Personalized Recommendations</p>
+                  <p className="text-muted-foreground">Get actionable tips based on your streak length and consistency patterns</p>
+                </div>
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-1">Streak Status Indicators</p>
+                  <p className="text-muted-foreground">Visual feedback showing where you are in the habit formation journey</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Habit Formation Science Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Duration</th>
+                      <th className="text-left py-3 px-2 font-semibold">Stage</th>
+                      <th className="text-left py-3 px-2 font-semibold">What to Expect</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1-6 days</td>
+                      <td className="py-3 px-2">Starting Phase</td>
+                      <td className="py-3 px-2">Highest dropout rate — focus on just showing up</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">7-20 days</td>
+                      <td className="py-3 px-2">Building Phase</td>
+                      <td className="py-3 px-2">Getting easier but still requires conscious effort</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">21-65 days</td>
+                      <td className="py-3 px-2">Formation Phase</td>
+                      <td className="py-3 px-2">Habit becoming automatic — don't get complacent</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">66+ days</td>
+                      <td className="py-3 px-2">Solidified Phase</td>
+                      <td className="py-3 px-2">Behavior is now automatic (Lally et al., 2009)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Source: European Journal of Social Psychology — "How habits are formed" (2009)
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How long does it take to form a habit?</h4>
+                  <p>
+                    Research by Phillippa Lally found it takes an average of 66 days for a behavior to become automatic. The popular 21-day myth comes from Maxwell Maltz's observations, but actual habit formation ranges from 18 to 254 days depending on the person and behavior.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What happens if I miss a day?</h4>
+                  <p>
+                    Missing one day doesn't reset your progress significantly. The Lally study found that occasional misses didn't impact long-term habit formation. What matters is getting back on track quickly — don't let one miss become two.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I track multiple habits?</h4>
+                  <p>
+                    Start with one keystone habit first. Once that's solid (66+ days), add another. Trying to change everything at once usually leads to burnout. Stack new habits onto existing ones for better success rates.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is consistency rate more important than streak length?</h4>
+                  <p>
+                    Yes. A 90% consistency rate over 100 days (90 completions) is better than a perfect 30-day streak that ended. Consistency rate shows your actual commitment level and predicts long-term success better than current streak.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What's the best time to do a habit?</h4>
+                  <p>
+                    The best time is whenever you'll actually do it consistently. Morning habits often work well because willpower is highest early. But night owls may prefer evening routines. Attach habits to existing triggers like brushing teeth or making coffee.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/daily-habit-streak-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Daily Habit Streak Calculator</span>
+                  <p className="text-muted-foreground">Track daily habits and build consistent routines</p>
+                </a>
+                <a
+                  href="/calculators/goal-tracker-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Goal Tracker Calculator</span>
+                  <p className="text-muted-foreground">Set and monitor progress toward your goals</p>
+                </a>
+                <a
+                  href="/calculators/time-duration-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Time Duration Calculator</span>
+                  <p className="text-muted-foreground">Calculate time between dates for habit tracking</p>
+                </a>
               </div>
             </CardContent>
           </Card>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -41,8 +41,8 @@ export default function PesticideDilutionCalculatorPage() {
     const totalVolume = parseFloat(totalSprayVolume);
     const productConc = parseFloat(productConcentration);
 
-    if (isNaN(targetConc) || isNaN(totalVolume) || isNaN(productConc) || 
-        targetConc <= 0 || totalVolume <= 0 || productConc <= 0) return;
+    if (isNaN(targetConc) || isNaN(totalVolume) || isNaN(productConc) ||
+      targetConc <= 0 || totalVolume <= 0 || productConc <= 0) return;
 
     // Calculate amount of pesticide concentrate needed
     // C1V1 = C2V2 (dilution equation)
@@ -252,6 +252,106 @@ export default function PesticideDilutionCalculatorPage() {
             Water = 100L - 2.44L = 97.56L
           </p>
         </div>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>How to Calculate Pesticide Dilution</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <p className="font-semibold mb-1">Check product concentration</p>
+                <p className="text-sm text-muted-foreground">Find the active ingredient percentage on the pesticide label (e.g., 41% for glyphosate).</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <p className="font-semibold mb-1">Enter target concentration and volume</p>
+                <p className="text-sm text-muted-foreground">Input the desired spray concentration (usually 0.5-2%) and total spray volume needed.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <p className="font-semibold mb-1">Get mixing instructions</p>
+                <p className="text-sm text-muted-foreground">Receive exact amounts of concentrate and water needed, plus step-by-step mixing guidance.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Why Accurate Dilution Matters</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">Effective pest control</p>
+                <p className="text-sm text-muted-foreground">Correct concentration ensures the pesticide works as intended without under-dosing.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Prevents crop damage</p>
+                <p className="text-sm text-muted-foreground">Over-concentrated sprays can burn plants and damage foliage.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Cost savings</p>
+                <p className="text-sm text-muted-foreground">Avoid wasting expensive concentrate by mixing only what you need.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Environmental safety</p>
+                <p className="text-sm text-muted-foreground">Proper dilution reduces chemical runoff and environmental impact.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Regulatory compliance</p>
+                <p className="text-sm text-muted-foreground">Follow label rates to stay within legal application requirements.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">How do I calculate pesticide dilution ratio?</p>
+                <p className="text-sm text-muted-foreground">Use C1V1 = C2V2. For example, to make 10L of 1% spray from 50% concentrate: V1 = (1 × 10) / 50 = 0.2L or 200mL of concentrate.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">What is a typical pesticide dilution rate?</p>
+                <p className="text-sm text-muted-foreground">Most foliar sprays use 0.5-2% concentration. Soil drenches may use 0.1-0.5%. Always check the product label for specific rates.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">How much water do I add to pesticide concentrate?</p>
+                <p className="text-sm text-muted-foreground">Subtract the concentrate volume from your total spray volume. For 100L total with 2L concentrate, add 98L of water.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Can I mix different pesticides together?</p>
+                <p className="text-sm text-muted-foreground">Only if the labels allow tank mixing. Some combinations cause chemical reactions or reduce effectiveness. Test compatibility first.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">What PPE should I wear when mixing pesticides?</p>
+                <p className="text-sm text-muted-foreground">Wear chemical-resistant gloves, long sleeves, long pants, closed shoes, safety goggles, and a mask or respirator as specified on the label.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Related Agriculture Calculators</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground mb-3">
+              Try our other farming tools: the <a href="/calculators/fertilizer-requirement-calculator" className="text-primary hover:underline">fertilizer requirement calculator</a> for nutrient planning, the <a href="/calculators/seed-rate-calculator" className="text-primary hover:underline">seed rate calculator</a> for planting density, and the <a href="/calculators/irrigation-water-calculator" className="text-primary hover:underline">irrigation water calculator</a> for water management.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

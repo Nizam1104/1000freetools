@@ -275,6 +275,80 @@ export default function SolubilityProductCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <Card>
+        <CardContent className="p-6">
+          <h3 className="text-lg font-semibold mb-6">How the Ksp Calculator Works</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+              <h4 className="font-semibold mb-2">Choose Calculation Mode</h4>
+              <p className="text-sm text-muted-foreground">Select whether to find Ksp from concentrations or solubility from Ksp.</p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+              <h4 className="font-semibold mb-2">Enter Values</h4>
+              <p className="text-sm text-muted-foreground">Input ion concentrations or Ksp value along with stoichiometric coefficients.</p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+              <h4 className="font-semibold mb-2">Get Results</h4>
+              <p className="text-sm text-muted-foreground">View Ksp, molar solubility, and ion concentrations with visual comparison.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* FAQ Section */}
+      <Card>
+        <CardContent className="p-6">
+          <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-sm mb-1">What does Ksp tell us about solubility?</h4>
+              <p className="text-sm text-muted-foreground">Ksp indicates how much of a compound can dissolve in water. Lower Ksp values mean less soluble compounds. However, Ksp values can only be directly compared for compounds with the same ion ratio.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-1">How do you calculate molar solubility from Ksp?</h4>
+              <p className="text-sm text-muted-foreground">For a salt MₘXₙ, molar solubility s = (Ksp / (m^m × n^n))^(1/(m+n)). For simple 1:1 salts like AgCl, s = √Ksp.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-1">What factors affect Ksp?</h4>
+              <p className="text-sm text-muted-foreground">Ksp is temperature-dependent but independent of concentration. Increasing temperature generally increases Ksp for endothermic dissolution processes.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-1">When does precipitation occur?</h4>
+              <p className="text-sm text-muted-foreground">Precipitation occurs when the ion product (Q) exceeds Ksp. If Q &lt; Ksp, the solution is unsaturated. If Q = Ksp, the solution is at equilibrium.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-1">What is the common ion effect?</h4>
+              <p className="text-sm text-muted-foreground">Adding a common ion (an ion already present in the equilibrium) decreases solubility by shifting equilibrium toward the solid, according to Le Chatelier&apos;s principle.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Related Tools Section */}
+      <Card>
+        <CardContent className="p-6">
+          <h3 className="text-lg font-semibold mb-4">Related Chemistry Tools</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/titration-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+              <h4 className="font-semibold text-sm mb-1">Titration Calculator</h4>
+              <p className="text-sm text-muted-foreground">Calculate concentrations and equivalence points for acid-base titrations.</p>
+            </a>
+            <a href="/calculators/ph-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+              <h4 className="font-semibold text-sm mb-1">pH Calculator</h4>
+              <p className="text-sm text-muted-foreground">Calculate pH, pOH, and ion concentrations for acids and bases.</p>
+            </a>
+            <a href="/calculators/molarity-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+              <h4 className="font-semibold text-sm mb-1">Molarity Calculator</h4>
+              <p className="text-sm text-muted-foreground">Calculate solution concentrations and dilutions.</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

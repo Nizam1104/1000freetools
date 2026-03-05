@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function EngineDisplacementCalculatorPage() {
   const [bore, setBore] = useState<string>("");
@@ -206,6 +214,188 @@ export default function EngineDisplacementCalculatorPage() {
             <br />
             π/4 × 8.6² × 8.6 × 4 = 1,998 cc ≈ 2.0L
           </p>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>How to Calculate Engine Displacement</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                <strong>Step 1:</strong> Enter the bore (cylinder diameter) and select your unit (mm or inches).
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <strong>Step 2:</strong> Enter the stroke (how far the piston travels) in the same unit.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <strong>Step 3:</strong> Select the number of cylinders and calculate to see total displacement in cc and liters.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Understanding Engine Displacement</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What Is Engine Displacement</h4>
+                <p className="text-sm text-muted-foreground">
+                  Engine displacement is the total volume swept by all pistons during one stroke. It's measured in cubic centimeters (cc) or liters. A "2.0L engine" means the pistons displace 2 liters of volume as they move. Bigger displacement usually means more power, but also more fuel consumption.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Bore vs Stroke</h4>
+                <p className="text-sm text-muted-foreground mb-3">
+                  The relationship between bore and stroke affects engine character:
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-muted rounded-md">
+                    <p className="font-semibold text-sm mb-2">Oversquare (bore &gt; stroke)</p>
+                    <p className="text-xs text-muted-foreground">
+                      Wide cylinders, short stroke. Revs higher, makes more peak power. Most modern car engines are oversquare. Example: BMW S54 - 87mm bore, 84mm stroke.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted rounded-md">
+                    <p className="font-semibold text-sm mb-2">Undersquare (bore &lt; stroke)</p>
+                    <p className="text-xs text-muted-foreground">
+                      Narrow cylinders, long stroke. More torque at low RPM, but can't rev as high. Common in trucks and old engines. Example: Many diesel trucks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Why Displacement Matters</h4>
+                <p className="text-sm text-muted-foreground">
+                  Displacement affects power, torque, fuel economy, and emissions. Larger engines burn more fuel per cycle but can move heavier vehicles. Smaller engines with turbos can match larger engine power while using less fuel - that's why 2.0L turbo engines replaced V6s in many cars.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Common Engine Displacements Reference</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Vehicle Type</TableHead>
+                    <TableHead>Typical Displacement</TableHead>
+                    <TableHead>Cylinders</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>Motorcycle (small)</TableCell>
+                    <TableCell className="font-mono">125-300 cc</TableCell>
+                    <TableCell>1-2</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Motorcycle (large)</TableCell>
+                    <TableCell className="font-mono">600-1,400 cc</TableCell>
+                    <TableCell>2-4</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Subcompact car</TableCell>
+                    <TableCell className="font-mono">1.0-1.5 L</TableCell>
+                    <TableCell>3-4</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Compact car</TableCell>
+                    <TableCell className="font-mono">1.5-2.5 L</TableCell>
+                    <TableCell>4</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Mid-size sedan</TableCell>
+                    <TableCell className="font-mono">2.0-3.5 L</TableCell>
+                    <TableCell>4-6</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Full-size SUV/Truck</TableCell>
+                    <TableCell className="font-mono">3.5-6.2 L</TableCell>
+                    <TableCell>6-8</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Performance/Sports car</TableCell>
+                    <TableCell className="font-mono">3.0-8.0 L</TableCell>
+                    <TableCell>6-12</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              <p className="text-xs text-muted-foreground mt-3">
+                Electric vehicles don't have engine displacement - they're rated by motor power in kW instead.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I calculate engine cc?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Use the formula: cc = π/4 × bore² × stroke × cylinders. Bore and stroke must be in centimeters. For a 4-cylinder with 86mm bore and 86mm stroke: π/4 × 8.6² × 8.6 × 4 = 1,998 cc.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Is bigger engine displacement better?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Depends what you need. Bigger engines make more power and torque but use more fuel. For towing or performance, yes - bigger helps. For city driving and fuel economy, smaller is better. Turbocharging lets small engines make big-engine power when needed.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What does cc stand for in engines?</h4>
+                <p className="text-sm text-muted-foreground">
+                  CC means cubic centimeters. It's the volume of all cylinders combined. 1,000 cc equals 1 liter. A "2.0L" engine is 2,000 cc. Motorcycles use cc, cars usually use liters - same measurement, different units.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How does bore and stroke affect power?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Larger bore allows bigger valves for better airflow at high RPM - more peak power. Longer stroke increases leverage on the crankshaft - more torque. Short-stroke engines rev higher. Long-stroke engines pull harder at low RPM.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Can I increase my engine's displacement?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Yes, through "boring out" (wider cylinders) or "stroking" (longer stroke crankshaft). Boring adds maybe 0.5-1mm per side. Stroking requires new pistons and rods. Both increase displacement but also increase stress and may need tuning.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Tools</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/rpm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">RPM Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate engine RPM from speed</p>
+                </a>
+                <a href="/calculators/force-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Force Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate force and torque</p>
+                </a>
+                <a href="/calculators/velocity-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Velocity Calculator</p>
+                  <p className="text-xs text-muted-foreground">Find speed and acceleration</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,7 +25,7 @@ export default function SandQuantityCalculatorPage() {
     const l = parseFloat(length);
     const w = parseFloat(width);
     const d = parseFloat(depth);
-    
+
     if (isNaN(l) || isNaN(w) || isNaN(d)) return;
 
     // Convert to meters
@@ -92,12 +92,12 @@ export default function SandQuantityCalculatorPage() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
                   <Label htmlFor="length">Length</Label>
-                  <Input 
-                    id="length" 
-                    type="number" 
-                    placeholder="Enter length" 
-                    value={length} 
-                    onChange={(e) => setLength(e.target.value)} 
+                  <Input
+                    id="length"
+                    type="number"
+                    placeholder="Enter length"
+                    value={length}
+                    onChange={(e) => setLength(e.target.value)}
                   />
                 </div>
                 <Select value={lengthUnit} onValueChange={setLengthUnit}>
@@ -115,12 +115,12 @@ export default function SandQuantityCalculatorPage() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
                   <Label htmlFor="width">Width</Label>
-                  <Input 
-                    id="width" 
-                    type="number" 
-                    placeholder="Enter width" 
-                    value={width} 
-                    onChange={(e) => setWidth(e.target.value)} 
+                  <Input
+                    id="width"
+                    type="number"
+                    placeholder="Enter width"
+                    value={width}
+                    onChange={(e) => setWidth(e.target.value)}
                   />
                 </div>
                 <Select value={lengthUnit} onValueChange={setLengthUnit}>
@@ -138,12 +138,12 @@ export default function SandQuantityCalculatorPage() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
                   <Label htmlFor="depth">Depth</Label>
-                  <Input 
-                    id="depth" 
-                    type="number" 
-                    placeholder="Enter depth" 
-                    value={depth} 
-                    onChange={(e) => setDepth(e.target.value)} 
+                  <Input
+                    id="depth"
+                    type="number"
+                    placeholder="Enter depth"
+                    value={depth}
+                    onChange={(e) => setDepth(e.target.value)}
                   />
                 </div>
                 <Select value={depthUnit} onValueChange={setDepthUnit}>
@@ -215,6 +215,106 @@ export default function SandQuantityCalculatorPage() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>How to Calculate Sand Quantity</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <p className="font-semibold mb-1">Measure the area</p>
+                <p className="text-sm text-muted-foreground">Enter the length and width of the area to be filled with sand.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <p className="font-semibold mb-1">Set the depth</p>
+                <p className="text-sm text-muted-foreground">Input how deep you want the sand layer in cm, mm, meters, or inches.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <p className="font-semibold mb-1">Get quantity estimates</p>
+                <p className="text-sm text-muted-foreground">Receive volume in cubic meters and feet, plus weight and bag count.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Why Use This Sand Calculator</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">Accurate material orders</p>
+                <p className="text-sm text-muted-foreground">Prevents over-ordering or running short during construction.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Multiple unit options</p>
+                <p className="text-sm text-muted-foreground">Work in meters, feet, centimeters, or inches as needed.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Weight and volume</p>
+                <p className="text-sm text-muted-foreground">Get both cubic meters and tons for delivery planning.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Bag estimates</p>
+                <p className="text-sm text-muted-foreground">See how many 25kg bags you need for smaller projects.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Budget planning</p>
+                <p className="text-sm text-muted-foreground">Know exact quantities before getting quotes from suppliers.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">How do I calculate how much sand I need?</p>
+                <p className="text-sm text-muted-foreground">Multiply length × width × depth. For a 3m × 2m area at 10cm deep: 3 × 2 × 0.1 = 0.6 cubic meters.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">How much does sand weigh?</p>
+                <p className="text-sm text-muted-foreground">Dry sand weighs about 1600 kg per cubic meter. Wet sand is heavier at around 1900 kg/m³.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">How many bags of sand do I need?</p>
+                <p className="text-sm text-muted-foreground">Divide total weight by bag size. For 960kg needed with 25kg bags: 960 / 25 = 39 bags.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Should I order extra sand?</p>
+                <p className="text-sm text-muted-foreground">Yes, add 10-15% for compaction, settling, and waste during installation.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">What type of sand for construction?</p>
+                <p className="text-sm text-muted-foreground">Use sharp sand for concrete, building sand for mortar, and play sand for sandboxes.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Related Construction Calculators</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground mb-3">
+              Try our other building tools: the <a href="/calculators/concrete-volume-calculator" className="text-primary hover:underline">concrete volume calculator</a> for foundations, the <a href="/calculators/gravel-quantity-calculator" className="text-primary hover:underline">gravel quantity calculator</a> for landscaping, and the <a href="/calculators/asphalt-quantity-calculator" className="text-primary hover:underline">asphalt quantity calculator</a> for paving projects.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

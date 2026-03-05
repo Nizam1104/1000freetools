@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -64,7 +64,7 @@ export default function StudyHourEfficiencyCalculatorPage() {
     if (targetNum > 0) {
       const hoursNeeded = targetNum / efficiency;
       recommendations.push(`🎯 To achieve ${targetNum}%, you need approximately ${hoursNeeded.toFixed(1)} hours`);
-      
+
       if (hoursNeeded > hoursNum * 2) {
         recommendations.push("⚠️ Significant increase in study time needed");
         recommendations.push("💡 Consider improving study efficiency, not just hours");
@@ -167,12 +167,11 @@ export default function StudyHourEfficiencyCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Efficiency Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.efficiency >= 10 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.efficiency >= 5 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.efficiency >= 3 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.efficiency >= 10 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.efficiency >= 5 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.efficiency >= 3 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Study Efficiency</p>
                     <p className="text-4xl font-bold">{result.efficiency}</p>
                     <p className="text-sm mt-1">points per hour</p>

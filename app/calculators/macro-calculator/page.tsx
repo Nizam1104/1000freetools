@@ -265,7 +265,7 @@ export default function MacroCalculator() {
 
                 <div className="pt-2">
                   <p className="text-xs text-muted-foreground">
-                    Tip: Track your macros consistently and adjust based on your progress. 
+                    Tip: Track your macros consistently and adjust based on your progress.
                     Drink plenty of water and prioritize whole foods for optimal results.
                   </p>
                 </div>
@@ -274,6 +274,243 @@ export default function MacroCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Macro Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your personal details</p>
+                  <p>Input your gender, age, height, and weight. These factors determine your basal metabolic rate (BMR) — the calories your body burns at rest.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Select activity level and goal</p>
+                  <p>Choose your typical activity level from sedentary to very active. Then select your goal: cut (lose fat), maintain, or bulk (build muscle).</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Get your macro targets</p>
+                  <p>The calculator shows your daily calorie target and the grams of protein, carbs, and fat to hit each day based on your goal.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Macro Split Recommendations by Goal
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Goal</th>
+                    <th className="text-left py-3 px-2 font-semibold">Protein</th>
+                    <th className="text-left py-3 px-2 font-semibold">Carbs</th>
+                    <th className="text-left py-3 px-2 font-semibold">Fat</th>
+                    <th className="text-left py-3 px-2 font-semibold">Best For</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Cut (Fat Loss)</td>
+                    <td className="py-3 px-2">30%</td>
+                    <td className="py-3 px-2">40%</td>
+                    <td className="py-3 px-2">30%</td>
+                    <td className="py-3 px-2">Preserving muscle while in a calorie deficit</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Maintain</td>
+                    <td className="py-3 px-2">25%</td>
+                    <td className="py-3 px-2">50%</td>
+                    <td className="py-3 px-2">25%</td>
+                    <td className="py-3 px-2">Body recomposition and stable weight</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Bulk (Muscle Gain)</td>
+                    <td className="py-3 px-2">30%</td>
+                    <td className="py-3 px-2">45%</td>
+                    <td className="py-3 px-2">25%</td>
+                    <td className="py-3 px-2">Supporting muscle growth with surplus calories</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Keto</td>
+                    <td className="py-3 px-2">25%</td>
+                    <td className="py-3 px-2">5%</td>
+                    <td className="py-3 px-2">70%</td>
+                    <td className="py-3 px-2">Ketogenic diet for fat adaptation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Note: These are general guidelines. Individual needs vary based on training style, body type, and personal preference. Adjust based on your progress and how you feel.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Macros
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Macronutrients are the three main types of nutrients your body needs in large amounts: protein, carbohydrates, and fat. Each provides energy (calories) and serves specific functions. Protein builds and repairs tissue at 4 calories per gram. Carbs fuel your brain and muscles at 4 calories per gram. Fat supports hormone production and nutrient absorption at 9 calories per gram.
+              </p>
+              <p>
+                The Mifflin-St Jeor equation used by this calculator estimates your BMR based on research showing it predicts calorie needs within 10% of measured values for most people. Your activity level multiplies this baseline to estimate total daily energy expenditure (TDEE). From there, we adjust calories up or down based on your goal.
+              </p>
+              <p>
+                Tracking macros gives more flexibility than just counting calories. Two 2,000-calorie diets can have very different effects depending on their macro composition. A high-protein diet preserves muscle during weight loss. Adequate carbs fuel intense training. Healthy fats support hormone production. Hitting macro targets often produces better body composition changes than calorie counting alone.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Tips for Hitting Your Macros
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Prioritize Protein at Each Meal</p>
+                  <p>Aim for 25-40g protein per meal. Good sources include chicken breast (31g per 100g), Greek yogurt (10g per 100g), eggs (6g each), and whey protein (20-25g per scoop). Protein keeps you full and preserves muscle during cuts.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Time Carbs Around Training</p>
+                  <p>Eat more carbs before and after workouts when your body uses them most efficiently. Save lower-carb meals for rest days or evenings. Rice, oats, potatoes, and fruit are versatile carb sources that fit most macros.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Don't Fear Dietary Fat</p>
+                  <p>Fat doesn't make you fat — excess calories do. Include healthy fats from nuts, olive oil, avocado, and fatty fish. Fat slows digestion and keeps you satisfied. Just measure carefully since fat is calorie-dense at 9 cal/g.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Use a Tracking App</p>
+                  <p>Apps like MyFitnessPal, Cronometer, or MacroFactor make tracking easy. Log everything you eat for at least 2 weeks to learn portion sizes and macro content. Most people underestimate intake by 30-50% without tracking.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How much protein do I really need?</h4>
+                <p>
+                  For muscle building or fat loss, aim for 1.6-2.2g per kg of body weight (0.7-1g per lb). A 180 lb person would target 126-180g daily. Sedentary individuals need less (0.8g/kg), but higher protein helps preserve muscle during weight loss and keeps you fuller longer.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Are carbs necessary for fat loss?</h4>
+                <p>
+                  No macronutrient is strictly necessary except protein (for essential amino acids). You can lose fat on low-carb or high-carb diets as long as you're in a calorie deficit. Choose based on preference and training needs. Athletes typically perform better with moderate to high carbs.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How accurate are macro calculators?</h4>
+                <p>
+                  Calculators give estimates within 10-20% of actual needs for most people. Use the result as a starting point, then adjust based on progress over 2-4 weeks. If weight isn't moving as expected, adjust calories by 100-200 per day and reassess.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Should I track net carbs or total carbs?</h4>
+                <p>
+                  For most goals, track total carbs. Net carbs (total minus fiber) matter primarily for ketogenic diets where fiber doesn't impact blood sugar or ketosis. If you're not keto, total carbs give a simpler, more consistent target.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What if I go over my macros some days?</h4>
+                <p>
+                  One day won't ruin progress. Look at your weekly average, not daily perfection. If you consistently exceed macros, reassess your targets — they might be too restrictive. Sustainable nutrition allows flexibility. Aim for 80% adherence and don't stress over occasional deviations.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/tdee-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">TDEE Calculator</span>
+                <p className="text-muted-foreground">Calculate your total daily energy expenditure to determine calorie needs</p>
+              </a>
+              <a
+                href="/calculators/bmi-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">BMI Calculator</span>
+                <p className="text-muted-foreground">Calculate your body mass index and assess weight category</p>
+              </a>
+              <a
+                href="/calculators/body-fat-percentage-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Body Fat Percentage Calculator</span>
+                <p className="text-muted-foreground">Estimate your body fat percentage using US Navy method</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

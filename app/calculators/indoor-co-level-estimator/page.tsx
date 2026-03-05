@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -43,7 +43,7 @@ export default function IndoorCOLevelEstimatorPage() {
 
     // Calculate room volume
     let volume = lengthNum * widthNum * heightNum;
-    
+
     // Convert to cubic meters if needed
     if (unit === "feet") {
       volume = volume * 0.0283; // cubic feet to cubic meters
@@ -58,7 +58,7 @@ export default function IndoorCOLevelEstimatorPage() {
     // Calculate steady-state CO2 concentration
     // C = Co + (G × N) / (Q × 3600)
     // Where: C = indoor CO2, Co = outdoor CO2, G = generation rate, N = occupants, Q = ventilation (m³/h)
-    
+
     // If no ventilation rate provided, estimate based on room volume (typical ACH = 1-2)
     const airChangesPerHour = ventRateNum > 0 ? ventRateNum : 1.5;
     const ventilationM3h = volume * airChangesPerHour;
@@ -239,12 +239,11 @@ export default function IndoorCOLevelEstimatorPage() {
               <h3 className="text-lg font-semibold mb-4">CO₂ Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.co2Level < 800 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.co2Level < 1000 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.co2Level < 1500 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.co2Level < 800 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.co2Level < 1000 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.co2Level < 1500 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Estimated CO₂ Level</p>
                     <p className="text-5xl font-bold">{result.co2Level} ppm</p>
                     <p className="text-sm mt-1">{result.co2Rating}</p>
@@ -319,6 +318,263 @@ export default function IndoorCOLevelEstimatorPage() {
                   conditions. Actual CO2 levels vary with activity level, exact
                   ventilation, and time. Use a CO2 monitor for accurate readings.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Indoor CO2 Level Estimator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter room dimensions</p>
+                    <p>Input the length, width, and height of your room. Select meters or feet for your measurement system.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Specify occupancy and ventilation</p>
+                    <p>Enter the number of people typically in the room. Add air changes per hour if known, or leave blank for an estimate.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">View CO2 estimate and recommendations</p>
+                    <p>Results show estimated CO2 concentration in ppm with health impact assessment and actionable tips.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                CO2 Levels and Health Effects Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">CO2 Level (ppm)</th>
+                      <th className="text-left py-3 px-2 font-semibold">Air Quality</th>
+                      <th className="text-left py-3 px-2 font-semibold">Health Effects</th>
+                      <th className="text-left py-3 px-2 font-semibold">Recommended Action</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">400-600</td>
+                      <td className="py-3 px-2">Excellent</td>
+                      <td className="py-3 px-2">No effects</td>
+                      <td className="py-3 px-2">Maintain current ventilation</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">600-800</td>
+                      <td className="py-3 px-2">Good</td>
+                      <td className="py-3 px-2">No significant effects</td>
+                      <td className="py-3 px-2">Acceptable for most spaces</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">800-1000</td>
+                      <td className="py-3 px-2">Fair</td>
+                      <td className="py-3 px-2">Some may feel drowsy</td>
+                      <td className="py-3 px-2">Consider increasing ventilation</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1000-1500</td>
+                      <td className="py-3 px-2">Poor</td>
+                      <td className="py-3 px-2">Drowsiness, poor concentration</td>
+                      <td className="py-3 px-2">Increase ventilation immediately</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1500-2000</td>
+                      <td className="py-3 px-2">Very Poor</td>
+                      <td className="py-3 px-2">Headaches, sleepiness</td>
+                      <td className="py-3 px-2">Open windows, reduce occupancy</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">2000+</td>
+                      <td className="py-3 px-2">Dangerous</td>
+                      <td className="py-3 px-2">Nausea, cognitive impairment</td>
+                      <td className="py-3 px-2">Evacuate and ventilate urgently</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Source: ASHRAE Standard 62.1, OSHA, and indoor air quality research
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Indoor CO2 Levels
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Where Does Indoor CO2 Come From?</h4>
+                  <p>
+                    People are the main source of indoor CO2. Each person exhales about 18 liters of CO2 per hour at rest. More people or physical activity increases CO2 production. Outdoor air contains about 420 ppm CO2. Indoor levels rise when ventilation cannot keep up with occupancy.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Measure CO2?</h4>
+                  <p>
+                    CO2 is a proxy for ventilation effectiveness. High CO2 means stale air and potential buildup of other pollutants like viruses, VOCs, and odors. Studies show cognitive function declines when CO2 exceeds 1000 ppm. Schools and offices with good ventilation have better performance and fewer sick days.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Ventilation Affects CO2</h4>
+                  <p>
+                    Air changes per hour (ACH) determines how quickly indoor air gets replaced. Natural ventilation (opening windows) typically provides 1-2 ACH. Mechanical HVAC systems can deliver 3-6 ACH. Higher ACH means lower CO2 but also higher energy costs for heating or cooling incoming air.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Steady-State Formula</h4>
+                  <p>
+                    This calculator uses: C = Co + (G × N) / (Q × 3600). C is indoor CO2, Co is outdoor CO2 (420 ppm), G is CO2 generation per person (18 L/hour), N is number of occupants, and Q is ventilation rate in m³/hour. This assumes steady conditions — real levels fluctuate with activity and airflow.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Improving Indoor Air Quality
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Monitor CO2 continuously</p>
+                    <p>Install a CO2 monitor with a display. Check levels throughout the day. Many monitors alert when CO2 exceeds 1000 ppm.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Ventilate strategically</p>
+                    <p>Open windows on opposite sides of a room for cross-ventilation. Use exhaust fans in kitchens and bathrooms. Run HVAC fans during occupied hours.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Limit occupancy in small spaces</p>
+                    <p>Reduce the number of people in poorly ventilated rooms. A 20 m² office should have no more than 2-3 people for good air quality.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider air purification</p>
+                    <p>HEPA filters remove particles but not CO2. For CO2 reduction, you need ventilation or air exchange. Some systems combine both approaches.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a safe indoor CO2 level?</h4>
+                  <p>
+                    ASHRAE recommends keeping indoor CO2 below 1000 ppm for good air quality. Levels between 800-1000 ppm are acceptable but may cause mild drowsiness in some people. Above 1500 ppm, most people experience reduced cognitive function and headaches.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How accurate is this CO2 estimator?</h4>
+                  <p>
+                    This calculator provides a steady-state estimate assuming constant occupancy and ventilation. Real CO2 levels fluctuate with activity, door openings, and HVAC cycling. For precise measurements, use a calibrated CO2 monitor. This tool is best for planning and rough estimates.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What air changes per hour do I need?</h4>
+                  <p>
+                    Homes typically need 0.35-0.5 ACH minimum under modern codes. Offices and classrooms benefit from 4-6 ACH. Hospitals and labs require 12+ ACH. Higher ACH improves air quality but increases energy costs. Balance ventilation with efficiency.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Does CO2 monitoring help prevent virus spread?</h4>
+                  <p>
+                    CO2 is a useful proxy for airborne virus risk. High CO2 means exhaled air is accumulating, which could contain viruses if someone is infected. Keeping CO2 below 800 ppm significantly reduces airborne transmission risk in shared spaces.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I lower CO2 in my room?</h4>
+                  <p>
+                    Open windows to increase fresh air intake. Run exhaust fans or HVAC systems. Reduce the number of people in the room. Take breaks to ventilate between meetings. Install a mechanical ventilation system with heat recovery for year-round fresh air.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/hvac-airflow-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">HVAC Airflow Calculator</span>
+                  <p className="text-muted-foreground">Calculate required ventilation CFM for rooms</p>
+                </a>
+                <a
+                  href="/calculators/humidity-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Humidity Calculator</span>
+                  <p className="text-muted-foreground">Measure relative and absolute humidity levels</p>
+                </a>
+                <a
+                  href="/calculators/hvac-btu-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">HVAC BTU Calculator</span>
+                  <p className="text-muted-foreground">Size air conditioning for your space</p>
+                </a>
               </div>
             </CardContent>
           </Card>

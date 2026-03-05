@@ -290,6 +290,103 @@ export default function VoltageCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Voltage</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Choose Calculation Method</h3>
+              <p className="text-sm text-muted-foreground">Select from three methods: V = IR (Ohm&apos;s Law), V = P/I (from power), or V = √(PR) (from power and resistance).</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Known Values</h3>
+              <p className="text-sm text-muted-foreground">Input the values you know - current and resistance, power and current, or power and resistance.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Instant Results</h3>
+              <p className="text-sm text-muted-foreground">Click calculate to see voltage plus secondary results like power or resistance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Voltage Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**Three Calculation Methods**</h3>
+            <p className="text-sm text-muted-foreground">Calculate voltage using Ohm&apos;s Law (V=IR), from power and current (V=P/I), or from power and resistance (V=√PR).</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Multiple Unit Options**</h3>
+            <p className="text-sm text-muted-foreground">Display results in Volts (V), Millivolts (mV), or Kilovolts (kV) for any application.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Secondary Calculations**</h3>
+            <p className="text-sm text-muted-foreground">Each method also computes related values like power or resistance for complete circuit analysis.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Free & Educational**</h3>
+            <p className="text-sm text-muted-foreground">Perfect for students, electricians, and hobbyists learning electrical fundamentals.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is Ohm&apos;s Law?</h3>
+            <p className="text-sm text-muted-foreground">Ohm&apos;s Law states that voltage equals current times resistance (V = I × R). It&apos;s the fundamental relationship in electrical circuits discovered by Georg Ohm in 1827.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How do I calculate voltage from power?</h3>
+            <p className="text-sm text-muted-foreground">If you know power and current, use V = P/I. If you know power and resistance, use V = √(P × R). Both formulas derive from the power equation P = VI.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is the difference between AC and DC voltage?</h3>
+            <p className="text-sm text-muted-foreground">DC (direct current) voltage flows in one direction (batteries). AC (alternating current) voltage reverses direction periodically (wall outlets). This calculator works for both types.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How do I convert between voltage units?</h3>
+            <p className="text-sm text-muted-foreground">1 kilovolt (kV) = 1,000 volts. 1 volt = 1,000 millivolts (mV). To convert V to kV, divide by 1,000. To convert V to mV, multiply by 1,000.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What voltage is dangerous?</h3>
+            <p className="text-sm text-muted-foreground">Voltages above 50V AC or 120V DC can be dangerous. Always follow safety protocols when working with electrical circuits. Consult a qualified electrician for high-voltage work.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/ohms-law-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Ohm&apos;s Law Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate voltage, current, resistance, and power for complete circuit analysis.</p>
+          </a>
+          <a href="/calculators/power-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Power Calculator</h3>
+            <p className="text-sm text-muted-foreground">Compute electrical power from voltage, current, or resistance values.</p>
+          </a>
+          <a href="/calculators/resistance-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Resistance Calculator</h3>
+            <p className="text-sm text-muted-foreground">Find resistance from voltage and current or from conductor properties.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

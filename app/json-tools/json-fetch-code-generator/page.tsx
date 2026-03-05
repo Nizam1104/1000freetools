@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -20,12 +20,12 @@ export default function JsonFetchCodeGeneratorPage() {
   const generateFetchCode = useCallback(() => {
     let code = `fetch("${url}", {\n`;
     code += `  method: "${method}",\n`;
-    
+
     const headersObj = headers.trim() ? JSON.parse(headers) : {};
     if (method !== "GET" && method !== "HEAD" && body.trim()) {
       headersObj["Content-Type"] = "application/json";
     }
-    
+
     if (Object.keys(headersObj).length > 0) {
       code += `  headers: {\n`;
       code += Object.entries(headersObj)
@@ -33,11 +33,11 @@ export default function JsonFetchCodeGeneratorPage() {
         .join(",\n");
       code += `\n  },\n`;
     }
-    
+
     if (method !== "GET" && method !== "HEAD" && body.trim()) {
       code += `  body: ${JSON.stringify(JSON.parse(body))},\n`;
     }
-    
+
     code += `})\n`;
     code += `.then(response => {\n`;
     code += `  if (!response.ok) {\n`;

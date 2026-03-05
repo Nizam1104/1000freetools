@@ -217,6 +217,136 @@ export default function MolalityCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Molality</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+            <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+            <h3 className="font-semibold mb-2">Enter Moles of Solute</h3>
+            <p className="text-sm text-muted-foreground">Input the number of moles of the dissolved substance in your solution.</p>
+          </div>
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+            <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+            <h3 className="font-semibold mb-2">Input Solvent Mass</h3>
+            <p className="text-sm text-muted-foreground">Enter the mass of the solvent in grams (we convert to kilograms automatically).</p>
+          </div>
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+            <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+            <h3 className="font-semibold mb-2">View Results</h3>
+            <p className="text-sm text-muted-foreground">Get the molality value in mol/kg along with a graph showing the relationship.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">Why Use This Molality Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Temperature Independent
+            </h3>
+            <p className="text-sm text-muted-foreground">Unlike molarity, molality stays constant regardless of temperature changes since it uses mass not volume.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Visual Graph Display
+            </h3>
+            <p className="text-sm text-muted-foreground">See how molality changes with solvent mass through an interactive line chart.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Comparison Table
+            </h3>
+            <p className="text-sm text-muted-foreground">Quick reference table showing molality vs molarity differences for common scenarios.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Reference Values
+            </h3>
+            <p className="text-sm text-muted-foreground">Pre-calculated examples help you verify your understanding and check your work.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-6 bg-muted rounded-lg">
+          <h3 className="font-semibold mb-3">Molality Formula and Units</h3>
+          <div className="bg-card p-4 rounded font-mono text-sm mb-4 text-center">
+            m = n / mass_solvent (kg)
+          </div>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p className="font-semibold mb-2">Common Molality Values:</p>
+              <ul className="space-y-1 text-muted-foreground">
+                <li>• Dilute solutions: 0.001 - 0.1 m</li>
+                <li>• Moderate concentration: 0.1 - 1.0 m</li>
+                <li>• Concentrated solutions: 1.0 - 5.0 m</li>
+                <li>• Very concentrated: &gt;5.0 m</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold mb-2">Example: Seawater</p>
+              <ul className="space-y-1 text-muted-foreground">
+                <li>• Salt content: ~35 g per kg water</li>
+                <li>• NaCl molar mass: 58.44 g/mol</li>
+                <li>• Moles of NaCl: 35/58.44 = 0.60 mol</li>
+                <li>• Molality: 0.60 m</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Molality</h2>
+        <div className="space-y-4">
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is the difference between molality and molarity?</h3>
+            <p className="text-sm text-muted-foreground">Molality (m) is moles of solute per kilogram of solvent, while molarity (M) is moles per liter of solution. Molality doesn't change with temperature; molarity does because volume expands or contracts with temperature.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">When should I use molality instead of molarity?</h3>
+            <p className="text-sm text-muted-foreground">Use molality for colligative properties (boiling point elevation, freezing point depression), temperature-dependent experiments, or when working with concentrated solutions where volume isn't additive.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What units are used for molality?</h3>
+            <p className="text-sm text-muted-foreground">Molality is expressed in mol/kg, often written as just "m" (lowercase). For example, a 2.5 m solution has 2.5 moles of solute per kilogram of solvent.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How do I convert grams to moles for molality calculations?</h3>
+            <p className="text-sm text-muted-foreground">Divide the mass in grams by the molar mass of the substance. For example, 58.44 g of NaCl equals 1 mole (58.44 g / 58.44 g/mol = 1 mol).</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Why is molality preferred for colligative properties?</h3>
+            <p className="text-sm text-muted-foreground">Colligative properties depend on the number of particles, not volume. Since molality uses mass (which doesn't change with temperature), it gives consistent results for boiling point elevation and freezing point depression calculations.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">Related Chemistry Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/molarity-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+            <h3 className="font-semibold mb-2">Molarity Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate molar concentration of solutions in mol/L.</p>
+          </a>
+          <a href="/calculators/dilution-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+            <h3 className="font-semibold mb-2">Dilution Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate dilution factors and final concentrations.</p>
+          </a>
+          <a href="/calculators/molecular-mass-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+            <h3 className="font-semibold mb-2">Molecular Mass Calculator</h3>
+            <p className="text-sm text-muted-foreground">Find the molar mass of chemical compounds.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

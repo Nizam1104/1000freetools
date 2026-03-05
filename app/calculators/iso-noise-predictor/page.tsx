@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -31,7 +31,7 @@ export default function ISONoisePredictorPage() {
     };
 
     const multiplier = sensorMultipliers[sensorSize] || 1;
-    
+
     // Calculate noise level (0-100 scale)
     // Base noise increases logarithmically with ISO
     const baseNoise = Math.log2(isoValue / 100) * 15;
@@ -93,12 +93,12 @@ export default function ISONoisePredictorPage() {
             <CardContent className="p-6 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="iso">ISO Value</Label>
-                <Input 
-                  id="iso" 
-                  type="number" 
-                  placeholder="e.g., 800" 
-                  value={iso} 
-                  onChange={(e) => setIso(e.target.value)} 
+                <Input
+                  id="iso"
+                  type="number"
+                  placeholder="e.g., 800"
+                  value={iso}
+                  onChange={(e) => setIso(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Common values: 100, 400, 800, 1600, 3200, 6400</p>
               </div>
@@ -137,18 +137,16 @@ export default function ISONoisePredictorPage() {
                 <div className="space-y-4">
                   <div className="p-4 bg-primary/10 rounded-lg">
                     <p className="text-sm text-muted-foreground">Predicted Noise Level</p>
-                    <p className={`text-3xl font-bold ${
-                      result.noiseLevel < 40 ? "text-green-500" :
-                      result.noiseLevel < 60 ? "text-yellow-500" :
-                      result.noiseLevel < 80 ? "text-orange-500" : "text-red-500"
-                    }`}>{result.noiseCategory}</p>
+                    <p className={`text-3xl font-bold ${result.noiseLevel < 40 ? "text-green-500" :
+                        result.noiseLevel < 60 ? "text-yellow-500" :
+                          result.noiseLevel < 80 ? "text-orange-500" : "text-red-500"
+                      }`}>{result.noiseCategory}</p>
                     <div className="mt-2 w-full bg-gray-200 rounded-full h-3">
-                      <div 
-                        className={`h-3 rounded-full ${
-                          result.noiseLevel < 40 ? "bg-green-500" :
-                          result.noiseLevel < 60 ? "bg-yellow-500" :
-                          result.noiseLevel < 80 ? "bg-orange-500" : "bg-red-500"
-                        }`}
+                      <div
+                        className={`h-3 rounded-full ${result.noiseLevel < 40 ? "bg-green-500" :
+                            result.noiseLevel < 60 ? "bg-yellow-500" :
+                              result.noiseLevel < 80 ? "bg-orange-500" : "bg-red-500"
+                          }`}
                         style={{ width: `${result.noiseLevel}%` }}
                       />
                     </div>

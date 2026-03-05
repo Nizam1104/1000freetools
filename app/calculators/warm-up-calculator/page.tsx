@@ -135,6 +135,103 @@ export default function WarmUpCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Warm-Up Sets</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Working Weight</h3>
+              <p className="text-sm text-muted-foreground">Input the weight you plan to use for your main working sets.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Select Experience Level</h3>
+              <p className="text-sm text-muted-foreground">Choose beginner, intermediate, or advanced for appropriate warm-up progression.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Warm-Up Plan</h3>
+              <p className="text-sm text-muted-foreground">Receive a complete warm-up set sequence with weights and rep counts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Warm-Up Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**Experience-Based Plans**</h3>
+            <p className="text-sm text-muted-foreground">Different warm-up protocols for beginners (3 sets), intermediate (4 sets), and advanced lifters (6 sets).</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Percentage-Based Weights**</h3>
+            <p className="text-sm text-muted-foreground">Each warm-up set uses scientifically-backed percentages of your working weight.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Rep Progression**</h3>
+            <p className="text-sm text-muted-foreground">Higher reps early, lower reps as you approach working weight to prime without fatigue.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Injury Prevention**</h3>
+            <p className="text-sm text-muted-foreground">Proper warm-ups prepare muscles and nervous system for heavy lifting.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Why do I need warm-up sets?</h3>
+            <p className="text-sm text-muted-foreground">Warm-up sets increase blood flow, raise muscle temperature, activate the nervous system, and practice movement patterns. This improves performance and reduces injury risk.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How many warm-up sets should I do?</h3>
+            <p className="text-sm text-muted-foreground">Beginners: 3 sets. Intermediate: 4 sets. Advanced/heavy days: 5-6 sets. More warm-up is needed for heavier weights and compound movements.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Should warm-up sets be to failure?</h3>
+            <p className="text-sm text-muted-foreground">No! Warm-up sets should feel easy. Stop with 3-5 reps in reserve. The goal is preparation, not fatigue or stimulation.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How long should I rest between warm-up sets?</h3>
+            <p className="text-sm text-muted-foreground">60-90 seconds is typical. Take enough time to recover but not so long that you cool down. Adjust based on how you feel.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Do I need warm-ups for every exercise?</h3>
+            <p className="text-sm text-muted-foreground">Prioritize warm-ups for compound lifts (squat, bench, deadlift). For isolation exercises after compounds, 1-2 lighter sets are usually sufficient.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/1rm-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">1RM Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate your one-rep max for strength training programs.</p>
+          </a>
+          <a href="/calculators/workout-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Workout Volume Calculator</h3>
+            <p className="text-sm text-muted-foreground">Track total training volume for progressive overload.</p>
+          </a>
+          <a href="/calculators/workout-max-reps-estimator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Max Reps Estimator</h3>
+            <p className="text-sm text-muted-foreground">Estimate how many reps you can do at a given weight.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

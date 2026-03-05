@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -53,7 +53,7 @@ export default function DimensionalWeightCalculatorPage() {
 
     // Calculate dimensional weight
     let dimWeight = 0;
-    
+
     if (unit === "inches") {
       // (L × W × H) / DIM Factor
       dimWeight = (lengthNum * widthNum * heightNum) / dimFactor;
@@ -231,11 +231,10 @@ export default function DimensionalWeightCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.billableWeight === result.dimWeight 
-                      ? "bg-amber-100 dark:bg-amber-900/20" 
+                  <div className={`p-4 rounded-lg text-center ${result.billableWeight === result.dimWeight
+                      ? "bg-amber-100 dark:bg-amber-900/20"
                       : "bg-green-100 dark:bg-green-900/20"
-                  }`}>
+                    }`}>
                     <p className="text-sm text-muted-foreground">Billable Weight</p>
                     <p className="text-4xl font-bold">{result.billableWeight} lbs</p>
                     <p className="text-sm mt-1">{result.savings}</p>
@@ -280,34 +279,316 @@ export default function DimensionalWeightCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
+                How to Use This Dimensional Weight Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter package dimensions</p>
+                    <p>Type the length, width, and height of your package. Select inches or centimeters. Measure at the longest points of each dimension.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select carrier and enter actual weight</p>
+                    <p>Choose your shipping carrier (FedEx, UPS, DHL, USPS, or Freight). Each uses different DIM factors. Enter the package's actual weight in pounds.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate and review results</p>
+                    <p>Click Calculate to see dimensional weight, billable weight, and whether DIM or actual weight applies. Follow recommendations to reduce shipping costs.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Carrier DIM Factors Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Carrier</th>
+                      <th className="text-left py-3 px-2 font-semibold">DIM Factor (inches)</th>
+                      <th className="text-left py-3 px-2 font-semibold">DIM Factor (cm)</th>
+                      <th className="text-left py-3 px-2 font-semibold">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">FedEx</td>
+                      <td className="py-3 px-2">139</td>
+                      <td className="py-3 px-2">5000</td>
+                      <td className="py-3 px-2">Standard for all domestic and international</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">UPS</td>
+                      <td className="py-3 px-2">139</td>
+                      <td className="py-3 px-2">5000</td>
+                      <td className="py-3 px-2">Applied to all services</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">DHL</td>
+                      <td className="py-3 px-2">139</td>
+                      <td className="py-3 px-2">5000</td>
+                      <td className="py-3 px-2">International shipments</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">USPS</td>
+                      <td className="py-3 px-2">166</td>
+                      <td className="py-3 px-2">5000</td>
+                      <td className="py-3 px-2">Only for Priority Mail, larger packages</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Freight</td>
+                      <td className="py-3 px-2">139</td>
+                      <td className="py-3 px-2">5000</td>
+                      <td className="py-3 px-2">LTL and FTL shipments</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: USPS has a higher DIM factor (166), which means lower dimensional weight and potentially lower costs for lightweight, bulky packages.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
                 Understanding Dimensional Weight
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
+              <div className="space-y-4 text-sm text-muted-foreground">
                 <p>
-                  Carriers use dimensional weight to charge for the space a package
-                  occupies, not just its actual weight:
+                  Dimensional weight (DIM weight) is a pricing technique carriers use to charge for the space a package occupies rather than just its actual weight. Lightweight but bulky packages cost more to ship because they take up valuable space in trucks and planes.
                 </p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Formula (inches):</strong> (L × W × H) / DIM Factor
-                  </li>
-                  <li>
-                    <strong>Formula (cm):</strong> (L × W × H) / 5000
-                  </li>
-                  <li>
-                    <strong>FedEx/UPS/DHL:</strong> DIM factor = 139
-                  </li>
-                  <li>
-                    <strong>USPS:</strong> DIM factor = 166 (better for light packages)
-                  </li>
-                  <li>
-                    <strong>Billable:</strong> Greater of actual or dimensional weight
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> Use the smallest box possible and remove excess
-                  air from poly bags to minimize DIM weight charges.
-                </p>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Carriers Use DIM Weight</h4>
+                  <p>
+                    A truck can only hold so many packages. A box of pillows takes the same space as a box of books but weighs much less. Without DIM pricing, shipping lightweight bulky items would be underpriced. DIM weight ensures carriers charge fairly for the space used.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How DIM Weight Is Calculated</h4>
+                  <p>
+                    Formula (inches): (Length x Width x Height) / DIM Factor = DIM Weight in lbs. For FedEx/UPS with DIM factor 139: a 20x15x10 inch box = 3000/139 = 21.6 lbs DIM weight. If actual weight is 10 lbs, you pay for 22 lbs (rounded up).
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Billable Weight</h4>
+                  <p>
+                    Carriers charge based on the greater of actual weight or dimensional weight. Dense packages (actual weight higher) are charged by weight. Light, bulky packages (DIM weight higher) are charged by size. This is why packaging matters.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">International DIM Factor</h4>
+                  <p>
+                    International shipments typically use a DIM factor of 5000 when measuring in centimeters. This is roughly equivalent to 139 in inches. The formula is (L x W x H in cm) / 5000 = DIM weight in kg, then converted to lbs.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                DIM Weight Examples
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Package Size</th>
+                      <th className="text-left py-3 px-2 font-semibold">Actual Weight</th>
+                      <th className="text-left py-3 px-2 font-semibold">DIM Weight</th>
+                      <th className="text-left py-3 px-2 font-semibold">Billable Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">12x10x8 in</td>
+                      <td className="py-3 px-2">5 lbs</td>
+                      <td className="py-3 px-2">7 lbs</td>
+                      <td className="py-3 px-2">7 lbs (DIM applies)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">16x12x10 in</td>
+                      <td className="py-3 px-2">15 lbs</td>
+                      <td className="py-3 px-2">14 lbs</td>
+                      <td className="py-3 px-2">15 lbs (actual applies)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">20x16x12 in</td>
+                      <td className="py-3 px-2">8 lbs</td>
+                      <td className="py-3 px-2">28 lbs</td>
+                      <td className="py-3 px-2">28 lbs (DIM applies)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">24x18x14 in</td>
+                      <td className="py-3 px-2">25 lbs</td>
+                      <td className="py-3 px-2">44 lbs</td>
+                      <td className="py-3 px-2">44 lbs (DIM applies)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">10x8x6 in</td>
+                      <td className="py-3 px-2">12 lbs</td>
+                      <td className="py-3 px-2">3 lbs</td>
+                      <td className="py-3 px-2">12 lbs (actual applies)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips to Reduce DIM Weight Charges
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use the Smallest Box Possible</p>
+                    <p>Every inch matters. A box that's 2 inches too large in each dimension can increase DIM weight by 30%. Measure your item and choose a box with minimal extra space.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Remove Excess Air from Poly Mailers</p>
+                    <p>For soft goods, use poly mailers instead of boxes when possible. Squeeze out air before sealing. Some sellers use vacuum bags for clothing to minimize volume.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider USPS for Lightweight Items</p>
+                    <p>USPS uses a DIM factor of 166 vs. 139 for FedEx/UPS. For a 20x16x12 box, USPS DIM weight is 23 lbs vs. 28 lbs for FedEx. This can save money on lightweight shipments.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Negotiate DIM Factors for High Volume</p>
+                    <p>High-volume shippers can sometimes negotiate better DIM factors with carriers. If you ship hundreds of packages monthly, ask your rep about custom pricing.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Audit Your Packaging Regularly</p>
+                    <p>Review your most-shipped items quarterly. Look for patterns where DIM weight applies. Small packaging changes across many shipments add up to significant savings.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When does DIM weight apply?</h4>
+                  <p>
+                    DIM weight applies when it's greater than actual weight. For FedEx and UPS, DIM pricing applies to all packages. For USPS, it only applies to Priority Mail packages larger than 1 cubic foot (1,728 cubic inches).
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do carriers measure package dimensions?</h4>
+                  <p>
+                    Carriers measure at the longest points of each dimension, including any bulges or irregularities. They round up to the nearest whole inch. A box measuring 10.2 x 8.5 x 6.1 inches is billed as 11 x 9 x 7 inches.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why is USPS DIM factor higher?</h4>
+                  <p>
+                    USPS has a DIM factor of 166 vs. 139 for private carriers. This means USPS dimensional weight calculations result in lower weights. For bulky, lightweight items, USPS is often cheaper due to this more favorable factor.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Do international shipments use DIM weight?</h4>
+                  <p>
+                    Yes. International carriers use DIM weight with a metric formula: (L x W x H in cm) / 5000 = DIM weight in kg. This is roughly equivalent to the 139 factor used domestically in inches.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I dispute DIM weight charges?</h4>
+                  <p>
+                    If you believe a package was measured incorrectly, you can request a re-measurement. Carriers use automated systems that can make errors. Take photos of your packaged item with a measuring tape before shipping as evidence.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/shipping-cost-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Shipping Cost Calculator</span>
+                  <p className="text-muted-foreground">Compare shipping rates across carriers</p>
+                </a>
+                <a
+                  href="/calculators/package-size-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Package Size Calculator</span>
+                  <p className="text-muted-foreground">Find optimal box sizes for your products</p>
+                </a>
+                <a
+                  href="/calculators/postage-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Postage Calculator</span>
+                  <p className="text-muted-foreground">Calculate USPS postage rates</p>
+                </a>
               </div>
             </CardContent>
           </Card>

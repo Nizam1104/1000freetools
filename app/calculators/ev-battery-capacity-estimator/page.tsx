@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -218,11 +218,10 @@ export default function EVBatteryCapacityEstimatorPage() {
               <h3 className="text-lg font-semibold mb-4">Battery Health</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.currentCapacity / result.originalCapacity > 0.9 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.currentCapacity / result.originalCapacity > 0.8 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.currentCapacity / result.originalCapacity > 0.9 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.currentCapacity / result.originalCapacity > 0.8 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Current Capacity</p>
                     <p className="text-4xl font-bold">{result.currentCapacity} kWh</p>
                     <p className="text-sm mt-1">{result.health}</p>
@@ -300,6 +299,147 @@ export default function EVBatteryCapacityEstimatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">How EV Battery Capacity Estimation Works</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Vehicle Details</h3>
+              <p className="text-sm text-muted-foreground">Input your EV's original battery capacity, age, and total mileage for analysis.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Specify Usage Patterns</h3>
+              <p className="text-sm text-muted-foreground">Select your charging habits and climate to factor in degradation accelerators.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">Get Battery Health Report</h3>
+              <p className="text-sm text-muted-foreground">View current capacity, estimated range, degradation rate, and personalized recommendations.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of EV Battery Estimator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Multi-Factor Degradation Model
+              </h3>
+              <p className="text-sm text-muted-foreground">Accounts for age, mileage, charging habits, and climate to estimate realistic battery health.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Range Estimation
+              </h3>
+              <p className="text-sm text-muted-foreground">Calculates current driving range based on degraded battery capacity and efficiency.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Health Assessment
+              </h3>
+              <p className="text-sm text-muted-foreground">Provides clear health rating from Excellent to Poor with actionable insights.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Personalized Recommendations
+              </h3>
+              <p className="text-sm text-muted-foreground">Get specific tips to slow degradation based on your charging habits and climate.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Pre-Purchase Evaluation
+              </h3>
+              <p className="text-sm text-muted-foreground">Use when buying a used EV to estimate remaining battery life and value.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-6 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-3">EV Battery Degradation Factors</h3>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="font-semibold mb-2">Base Degradation Rate:</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Typical: 2-3% per year</li>
+                  <li>• Gentle charging: -0.5%</li>
+                  <li>• Aggressive charging: +1%</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-2">Climate Impact:</p>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Cold climates: +0.5%</li>
+                  <li>• Moderate: baseline</li>
+                  <li>• Hot climates: +0.5%</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-4 p-4 bg-card rounded">
+              <p className="font-semibold mb-2">Example: 5-Year-Old EV with 75 kWh Battery</p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li>• Original Capacity: 75 kWh (100%)</li>
+                <li>• Estimated Degradation: 10-15%</li>
+                <li>• Current Capacity: ~64-68 kWh</li>
+                <li>• Estimated Range: 350-375 km</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About EV Battery Degradation</h2>
+          <div className="space-y-4">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How fast do EV batteries degrade?</h3>
+              <p className="text-sm text-muted-foreground">Most EV batteries degrade 2-3% per year under normal use. After 10 years, expect 70-85% of original capacity. Many manufacturers warranty batteries for 8 years or 100,000 miles at 70% capacity.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Does fast charging damage EV batteries?</h3>
+              <p className="text-sm text-muted-foreground">Frequent DC fast charging can accelerate degradation. Level 2 charging is gentler on batteries. Occasional fast charging for road trips has minimal impact, but daily use may reduce battery life.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is the ideal charge level for EV batteries?</h3>
+              <p className="text-sm text-muted-foreground">For daily use, keep charge between 20-80%. Avoid regularly charging to 100% or draining below 10%. For long trips, charging to 100% is fine occasionally.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How does temperature affect EV battery life?</h3>
+              <p className="text-sm text-muted-foreground">Extreme heat and cold both accelerate degradation. Park in shade or garage when possible. Pre-condition the battery while plugged in during extreme weather.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">When should I replace my EV battery?</h3>
+              <p className="text-sm text-muted-foreground">Most EVs remain usable with 70-80% capacity. Consider replacement when capacity drops below 60% or range no longer meets your needs. Many degraded batteries have second-life applications in energy storage.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-12 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Related EV & Energy Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/charging-cost-ev-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">EV Charging Cost Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate the cost to charge your electric vehicle at home or public stations.</p>
+            </a>
+            <a href="/calculators/range-estimator-ev" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">EV Range Estimator</h3>
+              <p className="text-sm text-muted-foreground">Estimate your electric vehicle's driving range based on speed, temperature, and terrain.</p>
+            </a>
+            <a href="/calculators/battery-life-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Battery Life Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate battery runtime and lifespan for various devices and applications.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

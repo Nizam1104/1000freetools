@@ -140,6 +140,233 @@ export default function ResistanceCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6 max-w-2xl mx-auto">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Resistance Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Select calculation mode</p>
+                  <p>Choose from Ohm's Law (V/I), Power formulas (V²/P or P/I²), or Resistivity (ρL/A).</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your values</p>
+                  <p>Input the required values based on your selected mode — voltage, current, power, or material properties.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Get resistance value</p>
+                  <p>The calculator displays resistance in Ω, kΩ, or MΩ depending on the magnitude.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Electrical Resistance
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Resistance opposes the flow of electric current. It is measured in ohms (Ω) and
+                depends on the material, length, and cross-sectional area of the conductor.
+              </p>
+              <div className="p-4 bg-muted rounded-lg font-mono text-center space-y-2">
+                <div>R = V / I (Ohm's Law)</div>
+                <div>R = V² / P (from Power)</div>
+                <div>R = P / I² (from Power)</div>
+                <div>R = ρL / A (Resistivity)</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Resistivity of Common Materials
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Material</th>
+                    <th className="text-left py-3 px-2 font-semibold">Resistivity (Ω·m)</th>
+                    <th className="text-left py-3 px-2 font-semibold">Type</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Silver</td>
+                    <td className="py-3 px-2">1.59 × 10⁻⁸</td>
+                    <td className="py-3 px-2">Conductor</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Copper</td>
+                    <td className="py-3 px-2">1.68 × 10⁻⁸</td>
+                    <td className="py-3 px-2">Conductor</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Aluminum</td>
+                    <td className="py-3 px-2">2.82 × 10⁻⁸</td>
+                    <td className="py-3 px-2">Conductor</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Silicon</td>
+                    <td className="py-3 px-2">6.4 × 10²</td>
+                    <td className="py-3 px-2">Semiconductor</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Glass</td>
+                    <td className="py-3 px-2">10¹⁰ - 10¹⁴</td>
+                    <td className="py-3 px-2">Insulator</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Rubber</td>
+                    <td className="py-3 px-2">10¹³ - 10¹⁶</td>
+                    <td className="py-3 px-2">Insulator</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Lower resistivity means better conductivity. Copper is the standard for electrical wiring.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Factors Affecting Resistance
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-xs">1</span>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Length</p>
+                  <p>Longer wires have more resistance. Double the length, double the resistance.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-xs">2</span>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Cross-sectional Area</p>
+                  <p>Thicker wires have less resistance. Double the area, halve the resistance.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-xs">3</span>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Temperature</p>
+                  <p>Most conductors increase resistance with temperature. Semiconductors decrease.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is Ohm's Law?</h4>
+                <p>
+                  Ohm's Law states that voltage equals current times resistance (V = IR). It is the
+                  fundamental relationship in electrical circuits, discovered by Georg Ohm in 1827.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do I calculate resistance from power?</h4>
+                <p>
+                  Use R = V²/P if you know voltage and power, or R = P/I² if you know current and power.
+                  These come from combining Ohm's Law with the power formula P = VI.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is resistivity?</h4>
+                <p>
+                  Resistivity (ρ) is an intrinsic material property that describes how strongly a
+                  material opposes current. It is independent of shape and size, unlike resistance.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Why does temperature affect resistance?</h4>
+                <p>
+                  In conductors, heat causes atoms to vibrate more, increasing collisions with
+                  electrons. This raises resistance. In semiconductors, heat frees more charge
+                  carriers, lowering resistance.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the unit of resistance?</h4>
+                <p>
+                  The ohm (Ω) is the SI unit. One ohm equals one volt per ampere. Common prefixes
+                  include kΩ (1000 Ω) and MΩ (1,000,000 Ω) for larger values.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/ohms-law-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Ohm's Law Calculator</span>
+                <p className="text-muted-foreground">Calculate voltage, current, resistance, and power</p>
+              </a>
+              <a
+                href="/calculators/series-resistor-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Series Resistor Calculator</span>
+                <p className="text-muted-foreground">Find total resistance of resistors in series</p>
+              </a>
+              <a
+                href="/calculators/parallel-resistor-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Parallel Resistor Calculator</span>
+                <p className="text-muted-foreground">Calculate equivalent resistance for parallel circuits</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

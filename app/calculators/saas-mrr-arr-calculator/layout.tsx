@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+
+export const metadata: Metadata = {
+  title: "MRR & ARR Calculator – Calculate Monthly and Annual Recurring Revenue for SaaS",
+  description: "Measure your subscription business&apos;s revenue with our MRR/ARR Calculator.            Enter the number of paying customers and average plan price to calculate            Monthly Recurring Revenue and Annual Recurring Revenue — the core financial            metrics for any SaaS company.",
+  alternates: {
+    canonical: "https://1000freetools.com/calculators/saas-mrr-arr-calculator",
+  },
+};
+
+const tools = [
+  {
+    "name": "Saas Churn Rate Calculator",
+    "description": "SaaS Churn Rate Calculator – Calculate Monthly & Annual Customer Churn",
+    "href": "/saas-churn-rate-calculator"
+  },
+  {
+    "name": "Customer Acquisition Cost Calculator",
+    "description": "Customer Acquisition Cost (CAC) Calculator – Find Out How Much Each New Customer Costs",
+    "href": "/customer-acquisition-cost-calculator"
+  },
+  {
+    "name": "Customer Lifetime Value Calculator",
+    "description": "Customer Lifetime Value (CLV) Calculator – Measure Customer Worth",
+    "href": "/customer-lifetime-value-calculator"
+  },
+  {
+    "name": "Subscription Pricing Calculator",
+    "description": "Subscription Pricing Calculator – Find the Right Price for Your Subscription Plans",
+    "href": "/subscription-pricing-calculator"
+  },
+  {
+    "name": "Subscription Profit Calculator",
+    "description": "Subscription Business Profit Calculator",
+    "href": "/subscription-profit-calculator"
+  },
+  {
+    "name": "Funnel Drop Off Calculator",
+    "description": "Funnel Drop-off Calculator – Identify Where You&apos;re Losing Customers in Your Sales Funnel",
+    "href": "/funnel-drop-off-calculator"
+  }
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-y-4">
+      {children}
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}

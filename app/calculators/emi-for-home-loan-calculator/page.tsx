@@ -226,6 +226,132 @@ export default function EMIForHomeLoanCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Calculate Home Loan EMI</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Loan Amount</h3>
+              <p className="text-sm text-muted-foreground">Input the total home loan amount you plan to borrow from the lender.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Set Interest Rate & Tenure</h3>
+              <p className="text-sm text-muted-foreground">Provide the annual interest rate and loan tenure in years or months.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">Get Instant EMI Result</h3>
+              <p className="text-sm text-muted-foreground">View your monthly EMI, total interest payable, and complete amortization charts.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Features Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Benefits of Using This Home Loan EMI Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Accurate EMI Calculation
+              </h3>
+              <p className="text-sm text-muted-foreground">Get precise monthly payment calculations using the standard reducing balance formula used by banks.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Visual Interest Breakdown
+              </h3>
+              <p className="text-sm text-muted-foreground">Pie chart shows the proportion of principal vs total interest over the entire loan term.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Yearly Amortization Chart
+              </h3>
+              <p className="text-sm text-muted-foreground">Bar graph displays how principal and interest components change year by year.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Flexible Tenure Options
+              </h3>
+              <p className="text-sm text-muted-foreground">Calculate EMI for loans in years or months to match your lender's terms.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Compare Loan Scenarios
+              </h3>
+              <p className="text-sm text-muted-foreground">Test different loan amounts, rates, and tenures to find affordable payment options.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* FAQ Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions About Home Loan EMI</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">What is a good EMI to income ratio for home loans?</h3>
+              <p className="text-sm text-muted-foreground">Lenders typically prefer EMI to be 40-50% of your monthly income. Keeping it below 40% ensures comfortable repayment without financial stress.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">How can I reduce my home loan EMI?</h3>
+              <p className="text-sm text-muted-foreground">Opt for a longer tenure, make a larger down payment, improve your credit score for better rates, or choose a floating rate loan when interest rates are falling.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">What happens if I make a prepayment on my home loan?</h3>
+              <p className="text-sm text-muted-foreground">Prepayments reduce the principal outstanding, which either reduces your EMI or shortens the loan tenure, saving significant interest over time.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Is it better to choose a shorter or longer loan tenure?</h3>
+              <p className="text-sm text-muted-foreground">Shorter tenures have higher EMIs but much lower total interest. Choose shorter if affordable; otherwise, prepay when possible on longer tenures.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">How does interest rate affect my home loan EMI?</h3>
+              <p className="text-sm text-muted-foreground">Even a 0.5% rate change significantly impacts EMI. On a $200,000, 20-year loan, 8% vs 8.5% changes EMI by about $60/month and total interest by $14,000.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Related Tools Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Mortgage & Loan Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/emi-breakup-visualizer" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">EMI Breakup Visualizer</h3>
+              <p className="text-sm text-muted-foreground">See month-by-month principal and interest breakdown with interactive amortization charts.</p>
+            </a>
+            <a href="/calculators/mortgage-amortization-schedule" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Mortgage Amortization Schedule</h3>
+              <p className="text-sm text-muted-foreground">Generate a complete payment schedule showing every monthly payment throughout your mortgage.</p>
+            </a>
+            <a href="/calculators/buy-vs-rent-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Buy vs Rent Calculator</h3>
+              <p className="text-sm text-muted-foreground">Compare the financial benefits of buying a home versus renting over time.</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

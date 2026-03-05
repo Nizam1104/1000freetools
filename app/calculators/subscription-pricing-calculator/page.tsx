@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -36,19 +36,19 @@ export default function SubscriptionPricingCalculatorPage() {
   const [variableCostPerCustomer, setVariableCostPerCustomer] = useState<string>("10");
   const [desiredMargin, setDesiredMargin] = useState<string>("70");
   const [targetCustomers, setTargetCustomers] = useState<string>("1000");
-  
+
   const [tier1Name, setTier1Name] = useState<string>("Basic");
   const [tier1Price, setTier1Price] = useState<string>("9.99");
   const [tier1Customers, setTier1Customers] = useState<string>("500");
-  
+
   const [tier2Name, setTier2Name] = useState<string>("Pro");
   const [tier2Price, setTier2Price] = useState<string>("19.99");
   const [tier2Customers, setTier2Customers] = useState<string>("300");
-  
+
   const [tier3Name, setTier3Name] = useState<string>("Enterprise");
   const [tier3Price, setTier3Price] = useState<string>("49.99");
   const [tier3Customers, setTier3Customers] = useState<string>("200");
-  
+
   const [churnRate, setChurnRate] = useState<string>("5");
   const [result, setResult] = useState<SubscriptionResult | null>(null);
 
@@ -95,7 +95,7 @@ export default function SubscriptionPricingCalculatorPage() {
 
     // Generate recommendations
     const recommendations: string[] = [];
-    
+
     if (monthlyProfit < 0) {
       recommendations.push("⚠️ You're operating at a loss. Consider raising prices or reducing costs.");
     } else {
@@ -216,7 +216,7 @@ export default function SubscriptionPricingCalculatorPage() {
 
               <div className="border-t pt-4">
                 <h4 className="font-semibold mb-3">Pricing Tiers</h4>
-                
+
                 <div className="space-y-3">
                   <div className="grid grid-cols-3 gap-2 p-3 bg-muted/50 rounded-lg">
                     <div className="space-y-1">
@@ -354,31 +354,163 @@ export default function SubscriptionPricingCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Understanding Subscription Metrics
+                How It Works
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>ARPU (Average Revenue Per User):</strong> Total revenue divided by
-                    total customers. Key metric for pricing optimization.
-                  </li>
-                  <li>
-                    <strong>CLV (Customer Lifetime Value):</strong> Predicted revenue from a
-                    customer over their entire relationship with your business.
-                  </li>
-                  <li>
-                    <strong>Churn Rate:</strong> Percentage of customers who cancel each month.
-                    Industry average is 5-7% for SaaS.
-                  </li>
-                  <li>
-                    <strong>Break-even Point:</strong> Number of customers needed to cover
-                    all fixed costs.
-                  </li>
-                </ul>
-                <p>
-                  <strong>Tip:</strong> The ideal pricing strategy balances customer acquisition
-                  with profitability. Test different price points and monitor conversion rates.
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Enter Your Costs</h4>
+                    <p className="text-xs text-muted-foreground">Input your monthly fixed costs (hosting, salaries, tools) and variable cost per customer (support, processing fees).</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Define Pricing Tiers</h4>
+                    <p className="text-xs text-muted-foreground">Set up to 3 pricing tiers with names, monthly prices, and expected customer distribution across each tier.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Get Key Metrics</h4>
+                    <p className="text-xs text-muted-foreground">Instantly see MRR, ARR, ARPU, CLV, break-even point, and actionable recommendations for your pricing strategy.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features & Benefits
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Multi-Tier Pricing Analysis</h4>
+                  <p className="text-xs text-muted-foreground">Model up to 3 pricing tiers simultaneously to understand how different price points and customer distribution affect your overall revenue and profitability.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Customer Lifetime Value (CLV)</h4>
+                  <p className="text-xs text-muted-foreground">Calculate the predicted lifetime value of each customer based on your churn rate, helping you determine how much you can spend on acquisition.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Break-Even Analysis</h4>
+                  <p className="text-xs text-muted-foreground">Know exactly how many customers you need to cover your fixed costs, essential for financial planning and investor presentations.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Smart Recommendations</h4>
+                  <p className="text-xs text-muted-foreground">Get AI-powered suggestions based on your inputs, including warnings about high churn, low margins, or unbalanced tier distribution.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                SaaS Pricing Benchmarks
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-semibold">Metric</th>
+                      <th className="text-left py-2 px-3 font-semibold">Good</th>
+                      <th className="text-left py-2 px-3 font-semibold">Industry Average</th>
+                      <th className="text-left py-2 px-3 font-semibold">Concerning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">Gross Margin</td>
+                      <td className="py-2 px-3 text-green-600">80%+</td>
+                      <td className="py-2 px-3">70-80%</td>
+                      <td className="py-2 px-3 text-red-600">&lt;70%</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">Monthly Churn</td>
+                      <td className="py-2 px-3 text-green-600">&lt;3%</td>
+                      <td className="py-2 px-3">5-7%</td>
+                      <td className="py-2 px-3 text-red-600">&gt;7%</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">CLV:CAC Ratio</td>
+                      <td className="py-2 px-3 text-green-600">3:1+</td>
+                      <td className="py-2 px-3">2:1</td>
+                      <td className="py-2 px-3 text-red-600">&lt;1:1</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3">LTV Payback</td>
+                      <td className="py-2 px-3 text-green-600">&lt;12 months</td>
+                      <td className="py-2 px-3">12-18 months</td>
+                      <td className="py-2 px-3 text-red-600">&gt;18 months</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3">Source: SaaS industry benchmarks from OpenView, ProfitWell, and ChartMogul reports.</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I calculate subscription pricing for my SaaS?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Start with your costs: add fixed costs (hosting, salaries) and variable costs per customer. Decide your target margin (70-80% is typical for SaaS). Then factor in your expected customer distribution across tiers. Our calculator does this automatically and shows your break-even point.
                 </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is a good profit margin for subscription businesses?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Successful SaaS companies typically achieve 70-85% gross margins. Net profit margins vary widely: early-stage companies may operate at a loss while growing, while mature companies target 20-30% net margins. Focus on unit economics first – each customer should be profitable on their own.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How many pricing tiers should I offer?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Most successful SaaS products use 3 tiers: Basic/Starter, Professional/Pro, and Enterprise. This follows the "Goldilocks effect" where most customers choose the middle option. Some products succeed with 2 tiers, while complex enterprise products may have 4+ tiers with custom pricing.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What churn rate is acceptable for subscription businesses?</h4>
+                <p className="text-xs text-muted-foreground">
+                  For B2B SaaS, under 3% monthly churn is excellent, 5-7% is average, and above 7% is concerning. B2C subscription services typically see higher churn (7-10%). Annual churn should ideally be under 10% for healthy SaaS businesses. Remember: reducing churn by even 1% significantly impacts lifetime value.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I calculate customer lifetime value (CLV)?</h4>
+                <p className="text-xs text-muted-foreground">
+                  CLV = (Average Revenue Per User × Gross Margin) ÷ Churn Rate. For example, if ARPU is $50, gross margin is 80%, and monthly churn is 5%, CLV = ($50 × 0.80) ÷ 0.05 = $800. This tells you the maximum you should spend to acquire a customer while remaining profitable.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Related Tools</h3>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/subscription-profit-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Subscription Profit Calculator</p>
+                  <p className="text-xs text-muted-foreground">Analyze MRR, ARR, and profitability</p>
+                </a>
+                <a href="/calculators/customer-lifetime-value-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Customer Lifetime Value Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate CLV and LTV:CAC ratio</p>
+                </a>
+                <a href="/calculators/break-even-point-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Break-Even Point Calculator</p>
+                  <p className="text-xs text-muted-foreground">Find your break-even sales volume</p>
+                </a>
               </div>
             </CardContent>
           </Card>

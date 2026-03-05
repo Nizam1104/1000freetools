@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -246,6 +246,204 @@ export default function ElectricityApplianceWattageCalculatorPage() {
             <br />
             Monthly: 0.5 × 30 = 15 kWh → $1.95/month
           </p>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the Appliance Wattage Calculator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Select or Enter Wattage</h3>
+                    <p className="text-sm text-muted-foreground">Choose from common appliances or enter your device wattage manually from the label.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Enter Usage Details</h3>
+                    <p className="text-sm text-muted-foreground">Input daily usage hours and your electricity rate per kWh for accurate cost calculation.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Get Energy Cost Breakdown</h3>
+                    <p className="text-sm text-muted-foreground">See daily, monthly, and yearly energy consumption in kWh and actual electricity costs.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Features of This Electricity Cost Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Preset Appliance Library</h3>
+                      <p className="text-sm text-muted-foreground">Quick-select from 24 common appliances with typical wattage values for instant calculations.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Complete Cost Breakdown</h3>
+                      <p className="text-sm text-muted-foreground">See energy costs broken down by day, month, and year for budget planning.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">kWh Consumption Tracking</h3>
+                      <p className="text-sm text-muted-foreground">Calculate kilowatt-hour usage to understand your energy consumption patterns.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Custom Electricity Rates</h3>
+                      <p className="text-sm text-muted-foreground">Enter your actual utility rate for precise cost calculations tailored to your location.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Energy Savings Insights</h3>
+                      <p className="text-sm text-muted-foreground">Identify energy-hungry appliances to target for efficiency improvements and cost savings.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Energy Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free electricity calculator for homeowners, renters, and energy auditors.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">Common Appliance Wattage Guide</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Appliance</th>
+                        <th className="text-left py-2">Typical Wattage</th>
+                        <th className="text-left py-2">Monthly Cost (4 hrs/day)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">LED Light Bulb</td>
+                        <td className="py-2">10W</td>
+                        <td className="py-2">$0.16</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Ceiling Fan</td>
+                        <td className="py-2">75W</td>
+                        <td className="py-2">$1.17</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Refrigerator</td>
+                        <td className="py-2">150W</td>
+                        <td className="py-2">$2.34</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">TV (55&quot; LED)</td>
+                        <td className="py-2">100W</td>
+                        <td className="py-2">$1.56</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Air Conditioner (1 ton)</td>
+                        <td className="py-2">1000W</td>
+                        <td className="py-2">$15.60</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">Clothes Dryer</td>
+                        <td className="py-2">3000W</td>
+                        <td className="py-2">$46.80</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">How do I calculate my appliance electricity cost?</h3>
+                  <p className="text-sm text-muted-foreground">Multiply the appliance wattage by hours used per day, divide by 1000 to get kWh, then multiply by your electricity rate. For example: 100W x 5 hours / 1000 = 0.5 kWh/day x $0.13 = $0.065 per day or about $1.95 per month.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Where can I find my appliance wattage?</h3>
+                  <p className="text-sm text-muted-foreground">Check the label on the back or bottom of the appliance, look in the user manual, or search online for your model number. Many appliances list watts (W) or amps (A) - if amps, multiply by 120V to get watts.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is the average electricity rate in the US?</h3>
+                  <p className="text-sm text-muted-foreground">The US average electricity rate is around $0.13-0.15 per kWh, but varies significantly by state. California averages $0.22/kWh, while Louisiana is around $0.09/kWh. Check your utility bill for your exact rate.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Which appliances use the most electricity?</h3>
+                  <p className="text-sm text-muted-foreground">Heating and cooling systems use the most energy, followed by water heaters, dryers, and electric ovens. Running these for fewer hours or upgrading to energy-efficient models can significantly reduce your electricity bill.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How can I reduce my appliance energy costs?</h3>
+                  <p className="text-sm text-muted-foreground">Use appliances during off-peak hours, unplug devices when not in use, switch to LED bulbs, use ceiling fans instead of AC when possible, and replace old appliances with Energy Star certified models for maximum savings.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Energy Calculators</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/solar-panel-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Solar Panel Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Estimate solar panel needs and potential savings based on your electricity consumption.</p>
+                </a>
+                <a href="/calculators/battery-life-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Battery Life Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate how long a battery will power your devices based on wattage and capacity.</p>
+                </a>
+                <a href="/calculators/led-savings-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">LED Savings Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Compare LED vs incandescent bulb costs to see how much you can save by switching.</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

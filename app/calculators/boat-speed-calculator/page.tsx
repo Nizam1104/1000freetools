@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -44,7 +44,7 @@ export default function BoatSpeedCalculatorPage() {
     // Hull speed formula for displacement hulls
     // Hull Speed (knots) = 1.34 × √LWL (feet)
     const hullSpeedKnots = 1.34 * Math.sqrt(lwLFeet);
-    
+
     // Convert to other units
     const hullSpeedMph = hullSpeedKnots * 1.151;
     const hullSpeedKmh = hullSpeedKnots * 1.852;
@@ -269,6 +269,151 @@ export default function BoatSpeedCalculatorPage() {
                   <strong>Note:</strong> Some modern designs with fine entries can exceed
                   traditional hull speed. The 1.34 factor varies with hull shape (1.2-1.5).
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">How It Works</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <p className="font-medium">Enter your boat&apos;s waterline length</p>
+                    <p className="text-sm text-muted-foreground">Measure the length where the hull meets the water surface, not the overall boat length.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <p className="font-medium">Select your hull type</p>
+                    <p className="text-sm text-muted-foreground">Choose between displacement, semi-displacement, or planing hull based on your boat design.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <p className="font-medium">Get your hull speed instantly</p>
+                    <p className="text-sm text-muted-foreground">See maximum efficient speed in knots, mph, and km/h with tailored recommendations.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Key Features</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Multiple Hull Types</p>
+                  <p className="text-sm text-muted-foreground">Supports displacement, semi-displacement, and planing hull calculations.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Unit Conversion</p>
+                  <p className="text-sm text-muted-foreground">Results displayed in knots, mph, and km/h for easy reference.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Planing Speed Estimate</p>
+                  <p className="text-sm text-muted-foreground">Calculates the speed threshold where planing hulls rise onto the water surface.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Smart Recommendations</p>
+                  <p className="text-sm text-muted-foreground">Get tailored advice based on your hull type and calculated speed.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Hull Speed by Boat Type Reference</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left p-2">Boat Type</th>
+                      <th className="text-left p-2">Typical LWL</th>
+                      <th className="text-left p-2">Hull Speed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="p-2">Small Sailboat</td>
+                      <td className="p-2">20-25 ft</td>
+                      <td className="p-2">6.0-6.7 knots</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="p-2">Cruising Sailboat</td>
+                      <td className="p-2">28-35 ft</td>
+                      <td className="p-2">7.1-7.9 knots</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="p-2">Large Yacht</td>
+                      <td className="p-2">40-50 ft</td>
+                      <td className="p-2">8.5-9.5 knots</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="p-2">Trawler</td>
+                      <td className="p-2">30-45 ft</td>
+                      <td className="p-2">7.3-9.0 knots</td>
+                    </tr>
+                    <tr>
+                      <td className="p-2">Motor Yacht</td>
+                      <td className="p-2">35-60 ft</td>
+                      <td className="p-2">7.9-10.4 knots</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-medium">What is hull speed and why does it matter?</p>
+                  <p className="text-sm text-muted-foreground mt-1">Hull speed is the theoretical maximum efficient speed for displacement hulls. Beyond this speed, resistance increases dramatically, requiring exponentially more power and fuel.</p>
+                </div>
+                <div>
+                  <p className="font-medium">Can a boat go faster than hull speed?</p>
+                  <p className="text-sm text-muted-foreground mt-1">Displacement hulls cannot efficiently exceed hull speed. Planing hulls can exceed it by rising onto the water surface, but this requires significantly more power.</p>
+                </div>
+                <div>
+                  <p className="font-medium">What is the 1.34 factor in the hull speed formula?</p>
+                  <p className="text-sm text-muted-foreground mt-1">The 1.34 factor is derived from wave physics and represents the speed-length ratio for typical displacement hulls. It can range from 1.2 to 1.5 depending on hull shape.</p>
+                </div>
+                <div>
+                  <p className="font-medium">How do I measure waterline length accurately?</p>
+                  <p className="text-sm text-muted-foreground mt-1">Measure the length of the hull at the water surface when the boat is loaded normally. This is typically shorter than the overall length (LOA) due to bow and stern overhangs.</p>
+                </div>
+                <div>
+                  <p className="font-medium">What hull speed should I cruise at for fuel efficiency?</p>
+                  <p className="text-sm text-muted-foreground mt-1">For displacement hulls, cruising at 70-85% of hull speed offers the best fuel efficiency. Pushing beyond 90% dramatically increases fuel consumption.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/fuel-cost-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-semibold">Fuel Cost Calculator</p>
+                  <p className="text-sm text-muted-foreground">Estimate fuel expenses for your boat trips.</p>
+                </a>
+                <a href="/calculators/speed-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-semibold">Speed Calculator</p>
+                  <p className="text-sm text-muted-foreground">Calculate speed, distance, and time relationships.</p>
+                </a>
+                <a href="/calculators/volume-of-cylinder-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-semibold">Fuel Tank Volume Calculator</p>
+                  <p className="text-sm text-muted-foreground">Calculate fuel tank capacity for your vessel.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

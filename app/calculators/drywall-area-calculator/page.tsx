@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -327,24 +327,255 @@ export default function DrywallAreaCalculatorPage() {
 
         <Card className="mt-6">
           <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">Drywall Installation Tips</h3>
-            <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
-              <div className="space-y-2">
-                <p><strong>Sheet Sizes:</strong></p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>4'×8' = 32 sq ft (most common)</li>
-                  <li>4'×10' = 40 sq ft (fewer seams)</li>
-                  <li>4'×12' = 48 sq ft (professional use)</li>
-                </ul>
+            <h3 className="text-lg font-semibold mb-4">How to Use This Drywall Calculator</h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter your room dimensions</p>
+                  <p>Input the length, width, and ceiling height of your room in feet. For irregular rooms, calculate each section separately and add the results together.</p>
+                </div>
               </div>
-              <div className="space-y-2">
-                <p><strong>Waste Guidelines:</strong></p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Simple rooms: 10%</li>
-                  <li>Rooms with many openings: 15%</li>
-                  <li>Complex cuts/angles: 20-25%</li>
-                </ul>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Account for doors and windows</p>
+                  <p>Enter the number of doors and windows to subtract their area from the total. Standard doors are about 21 sq ft and windows about 12 sq ft.</p>
+                </div>
               </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Set options and calculate</p>
+                  <p>Choose whether to include the ceiling, adjust the waste factor for your project complexity, and optionally enter local prices for cost estimates.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Drywall Sheet Sizes and Coverage
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Sheet Size</th>
+                    <th className="text-left py-3 px-2 font-semibold">Area per Sheet</th>
+                    <th className="text-left py-3 px-2 font-semibold">Best For</th>
+                    <th className="text-left py-3 px-2 font-semibold">Handling</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">4' × 8'</td>
+                    <td className="py-3 px-2">32 sq ft</td>
+                    <td className="py-3 px-2">Standard rooms, DIY projects</td>
+                    <td className="py-3 px-2">One person manageable</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">4' × 10'</td>
+                    <td className="py-3 px-2">40 sq ft</td>
+                    <td className="py-3 px-2">Rooms with 9-10 ft ceilings</td>
+                    <td className="py-3 px-2">Two people recommended</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">4' × 12'</td>
+                    <td className="py-3 px-2">48 sq ft</td>
+                    <td className="py-3 px-2">High ceilings, commercial</td>
+                    <td className="py-3 px-2">Two people required</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">4' × 14'</td>
+                    <td className="py-3 px-2">56 sq ft</td>
+                    <td className="py-3 px-2">Vaulted ceilings, large spaces</td>
+                    <td className="py-3 px-2">Professional installation</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">4' × 16'</td>
+                    <td className="py-3 px-2">64 sq ft</td>
+                    <td className="py-3 px-2">Commercial, minimal seams</td>
+                    <td className="py-3 px-2">Professional installation</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">2' × 8'</td>
+                    <td className="py-3 px-2">16 sq ft</td>
+                    <td className="py-3 px-2">Small repairs, tight spaces</td>
+                    <td className="py-3 px-2">Easy one-person handling</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Note: 4' × 8' sheets are the most common and widely available. Larger sheets reduce seams but require more help to install.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Drywall Calculations
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Calculating Wall Area</h4>
+                <p>
+                  Wall area is calculated by multiplying the perimeter of the room by the ceiling height. Perimeter equals 2 times the length plus 2 times the width. For a 12' × 10' room with 8' ceilings, the perimeter is 44 feet and wall area is 352 square feet.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Subtracting Openings</h4>
+                <p>
+                  Doors and windows reduce the amount of drywall needed. A standard 3' × 7' door removes about 21 square feet. A typical 3' × 4' window removes about 12 square feet. For large openings like garage doors or picture windows, measure and subtract the exact area.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Waste Factor Explained</h4>
+                <p>
+                  Waste factor accounts for cuts, mistakes, and unusable scraps. Simple rectangular rooms need 10-15% waste factor. Rooms with many corners, angles, or openings need 15-20%. Complex layouts with vaulted ceilings or unusual angles may need 25% or more.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Ceiling Drywall</h4>
+                <p>
+                  Ceiling area equals length times width. Ceilings typically use 5/8 inch drywall for better sag resistance. Installing ceiling drywall first makes wall installation easier since wall sheets can support the ceiling sheets at the edges.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Drywall Installation Tips
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Install Ceiling First</p>
+                  <p>Always hang ceiling drywall before walls. The wall sheets will support the ceiling sheets at the edges. Use 5/8 inch drywall for ceilings to prevent sagging between joists.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Stagger Your Seams</p>
+                  <p>Never line up seams in adjacent rows. Stagger joints like brickwork for strength. Start alternating rows with half sheets to create offset seams throughout the room.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Use the Right Screws</p>
+                  <p>Use 1-1/4 inch coarse-thread screws for 1/2 inch drywall on wood studs. Use 1-5/8 inch fine-thread screws for 5/8 inch drywall or metal studs. Space screws 12 inches apart on walls, 8 inches on ceilings.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Store Drywall Properly</p>
+                  <p>Keep drywall flat and supported on a level surface. Store indoors or cover completely if outside. Moisture ruins drywall. Let drywall acclimate to room conditions for 24-48 hours before installation.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How many drywall sheets do I need for a 12x12 room?</h4>
+                <p>
+                  For a 12' × 12' room with 8' ceilings, you have 384 sq ft of wall area (48 ft perimeter × 8 ft). Subtract about 42 sq ft for one door and two windows, leaving 342 sq ft. Add 15% waste factor for 393 sq ft. Using 4' × 8' sheets (32 sq ft each), you need 13 sheets. Add 4 more sheets if doing the ceiling.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Should I use 1/2 inch or 5/8 inch drywall?</h4>
+                <p>
+                  1/2 inch drywall is standard for walls and easier to handle. 5/8 inch is required for ceilings to prevent sagging and provides better fire resistance and soundproofing. Use 5/8 inch for garage ceilings, between floors, or anywhere fire rating is required.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How much waste should I factor in?</h4>
+                <p>
+                  For simple rectangular rooms, 10-15% waste is typical. Rooms with many corners, windows, or doors need 15-20%. Complex layouts with angles, vaulted ceilings, or numerous cutouts may need 25% or more. It is better to have a few extra sheets than to run short mid-project.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can I install drywall myself?</h4>
+                <p>
+                  Yes, drywall is a common DIY project. The hanging is straightforward but heavy. A drywall lift helps with ceilings. The taping and finishing require more skill and practice. Many DIYers hang their own drywall but hire professionals for the finishing work.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the best way to cut drywall?</h4>
+                <p>
+                  Score the face paper with a utility knife, snap the board backward, then cut the back paper. For cutouts like electrical boxes, measure carefully and use a drywall saw or rotary cutting tool. Always cut slightly smaller rather than larger for a tight fit.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/paint-coverage-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Paint Coverage Calculator</span>
+                <p className="text-muted-foreground">Determine how much paint you need for your walls and ceilings</p>
+              </a>
+              <a
+                href="/calculators/flooring-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Flooring Calculator</span>
+                <p className="text-muted-foreground">Estimate flooring material quantities and costs</p>
+              </a>
+              <a
+                href="/calculators/tile-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Tile Calculator</span>
+                <p className="text-muted-foreground">Calculate tile quantities for floors and walls</p>
+              </a>
             </div>
           </CardContent>
         </Card>

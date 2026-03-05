@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -40,14 +40,14 @@ export default function JsonValidatorPage() {
     } catch (e) {
       const errorMatch = (e as Error).message.match(/position (\d+)/);
       const position = errorMatch ? parseInt(errorMatch[1]) : 0;
-      
+
       const lines = input.substring(0, position).split("\n");
       const line = lines.length;
       const column = lines[lines.length - 1].length + 1;
 
       let explanation = "The JSON parser encountered a syntax error.";
       const msg = (e as Error).message.toLowerCase();
-      
+
       if (msg.includes("unexpected token")) {
         explanation = "There's an unexpected character or symbol. Check for missing commas, quotes, or brackets.";
       } else if (msg.includes("string")) {
@@ -118,9 +118,9 @@ export default function JsonValidatorPage() {
                   Invalid Sample
                 </Button>
               </div>
-              
+
               <div className="flex-1" />
-              
+
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" onClick={clearAll}>
                   <Trash2 className="h-4 w-4 mr-2" />
@@ -186,15 +186,15 @@ export default function JsonValidatorPage() {
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="bg-muted rounded-md p-4 space-y-2">
                       <div className="grid grid-cols-[100px_1fr] gap-2 text-sm">
                         <span className="text-muted-foreground font-medium">Error:</span>
                         <span className="font-mono text-destructive">{error.message}</span>
-                        
+
                         <span className="text-muted-foreground font-medium">Position:</span>
                         <span>Line {error.line}, Column {error.column}</span>
-                        
+
                         <span className="text-muted-foreground font-medium">Explanation:</span>
                         <span>{error.explanation}</span>
                       </div>

@@ -228,6 +228,125 @@ export default function TitrationCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      <div className="mt-6 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How It Works
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-1 flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Select Unknown</h4>
+                  <p className="text-xs text-muted-foreground">Choose whether you need to find the acid concentration or base concentration from your titration data.</p>
+                </div>
+              </div>
+              <div className="flex-1 flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Enter Titration Data</h4>
+                  <p className="text-xs text-muted-foreground">Input volumes (mL) and known concentration (mol/L) for both acid and base solutions.</p>
+                </div>
+              </div>
+              <div className="flex-1 flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Get Concentration Result</h4>
+                  <p className="text-xs text-muted-foreground">Calculate unknown concentration using stoichiometry and view the titration curve visualization.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Key Features & Benefits
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">Acid or Base Calculation</h4>
+                <p className="text-xs text-muted-foreground">Find either unknown acid concentration or unknown base concentration from titration endpoint data.</p>
+              </div>
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">Stoichiometry Support</h4>
+                <p className="text-xs text-muted-foreground">Handle reactions with any stoichiometric ratio (1:1, 1:2, 1:3) for polyprotic acids and bases.</p>
+              </div>
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">Titration Curve Graph</h4>
+                <p className="text-xs text-muted-foreground">Visualize concentration changes during titration with interactive curve plotting.</p>
+              </div>
+              <div className="p-4 rounded-lg border">
+                <h4 className="font-semibold text-sm mb-2">Educational Reference</h4>
+                <p className="text-xs text-muted-foreground">Includes formula explanation, common reaction examples, and step-by-step calculation guide.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What is the titration formula?</h4>
+              <p className="text-xs text-muted-foreground">
+                The titration formula is: (Ca × Va) / na = (Cb × Vb) / nb, where C is concentration, V is volume, and n is the stoichiometric coefficient. At the equivalence point, moles of acid equal moles of base (adjusted for stoichiometry).
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">How do I calculate unknown concentration from titration?</h4>
+              <p className="text-xs text-muted-foreground">
+                Rearrange the formula: Cunknown = (Cknown × Vknown × nunknown) / (Vunknown × nknown). For 1:1 reactions, this simplifies to Cunknown = (Cknown × Vknown) / Vunknown.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What is the equivalence point in titration?</h4>
+              <p className="text-xs text-muted-foreground">
+                The equivalence point is when the amount of titrant added exactly neutralizes the analyte. Moles of H+ equal moles of OH-. This is detected by an indicator color change or pH meter reading.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Why do I need stoichiometric coefficients?</h4>
+              <p className="text-xs text-muted-foreground">
+                Polyprotic acids (H₂SO₄, H₃PO₄) release multiple H+ ions. Sulfuric acid needs 2 NaOH per molecule (1:2 ratio). Without accounting for stoichiometry, concentration calculations will be wrong.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What units are used in titration calculations?</h4>
+              <p className="text-xs text-muted-foreground">
+                Concentration is typically in mol/L (Molarity, M). Volume can be mL or L (be consistent). The formula works with any volume unit as long as both volumes use the same unit.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <h3 className="text-lg font-semibold">Related Tools</h3>
+          </CardHeader>
+          <CardContent>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <a href="/calculators/molarity-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                <p className="font-semibold text-sm">Molarity Calculator</p>
+                <p className="text-xs text-muted-foreground">Calculate solution molarity</p>
+              </a>
+              <a href="/calculators/dilution-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                <p className="font-semibold text-sm">Dilution Calculator</p>
+                <p className="text-xs text-muted-foreground">Solution dilution calculations</p>
+              </a>
+              <a href="/calculators/ph-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                <p className="font-semibold text-sm">pH Calculator</p>
+                <p className="text-xs text-muted-foreground">Calculate pH and pOH values</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

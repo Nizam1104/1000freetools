@@ -228,6 +228,137 @@ export default function PotentialEnergyCalculator() {
           </Tabs>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Potential Energy</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+            <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+            <h3 className="font-semibold mb-2">Choose Energy Type</h3>
+            <p className="text-sm text-muted-foreground">Select between gravitational PE (height-based) or elastic PE (spring-based).</p>
+          </div>
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+            <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+            <h3 className="font-semibold mb-2">Enter Values</h3>
+            <p className="text-sm text-muted-foreground">Input mass, height, and gravity for gravitational PE, or spring constant and displacement for elastic PE.</p>
+          </div>
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+            <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+            <h3 className="font-semibold mb-2">View Results</h3>
+            <p className="text-sm text-muted-foreground">Get potential energy in joules plus conversions to kJ, calories, watt-hours, and foot-pounds.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of Potential Energy Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Dual Calculation Modes
+            </h3>
+            <p className="text-sm text-muted-foreground">Calculate both gravitational potential energy (PE = mgh) and elastic potential energy (PE = ½kx²).</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Multiple Unit Conversions
+            </h3>
+            <p className="text-sm text-muted-foreground">Results automatically converted to kilojoules, calories, kilocalories, watt-hours, and foot-pounds.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Custom Gravity Values
+            </h3>
+            <p className="text-sm text-muted-foreground">Calculate PE for different planets — Earth (9.81), Moon (1.62), Mars (3.71), or Jupiter (24.79 m/s²).</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <span className="text-primary">✓</span>
+              Spring Physics Support
+            </h3>
+            <p className="text-sm text-muted-foreground">Elastic PE mode handles spring constant and displacement for Hooke's Law calculations.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-6 bg-muted rounded-lg">
+          <h3 className="font-semibold mb-3">Potential Energy Formulas</h3>
+          <div className="bg-card p-4 rounded font-mono text-sm mb-4 space-y-2">
+            <div><strong>Gravitational PE:</strong> PE = m × g × h</div>
+            <div><strong>Elastic PE:</strong> PE = ½ × k × x²</div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p className="font-semibold mb-2">Gravitational PE Variables:</p>
+              <ul className="space-y-1 text-muted-foreground">
+                <li>• m = mass in kilograms (kg)</li>
+                <li>• g = gravitational acceleration (m/s²)</li>
+                <li>• h = height above reference point (m)</li>
+                <li>• PE = potential energy in joules (J)</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold mb-2">Elastic PE Variables:</p>
+              <ul className="space-y-1 text-muted-foreground">
+                <li>• k = spring constant in N/m</li>
+                <li>• x = displacement from equilibrium (m)</li>
+                <li>• PE = stored elastic energy in joules (J)</li>
+                <li>• Works for both compression and extension</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Potential Energy</h2>
+        <div className="space-y-4">
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is potential energy?</h3>
+            <p className="text-sm text-muted-foreground">Potential energy is stored energy due to an object's position or configuration. Gravitational PE comes from height above ground. Elastic PE is stored in stretched or compressed springs.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What units are used for potential energy?</h3>
+            <p className="text-sm text-muted-foreground">The SI unit is the joule (J). One joule equals one newton-meter. Other common units include kilojoules (kJ), calories, and foot-pounds (ft-lb).</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How does height affect gravitational potential energy?</h3>
+            <p className="text-sm text-muted-foreground">Gravitational PE is directly proportional to height. Double the height, double the potential energy. That's why objects falling from greater heights hit harder.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Why is there a ½ in the elastic PE formula?</h3>
+            <p className="text-sm text-muted-foreground">The ½ comes from integrating Hooke's Law (F = kx) over the displacement. The force increases linearly as you stretch, so average force is half the maximum.</p>
+          </div>
+          <div className="p-5 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Can potential energy be negative?</h3>
+            <p className="text-sm text-muted-foreground">It depends on your reference point. If you set ground level as zero PE, objects below ground have negative PE. The important thing is the change in PE, not the absolute value.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 mb-8">
+        <h2 className="text-2xl font-semibold mb-6">Related Physics Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/kinetic-energy-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+            <h3 className="font-semibold mb-2">Kinetic Energy Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate the energy of moving objects.</p>
+          </a>
+          <a href="/calculators/force-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+            <h3 className="font-semibold mb-2">Force Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate force using Newton's second law (F = ma).</p>
+          </a>
+          <a href="/calculators/work-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+            <h3 className="font-semibold mb-2">Work Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate work done by forces over distances.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

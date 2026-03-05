@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -26,17 +26,17 @@ export default function JsonToTsvConverterPage() {
 
   const flattenObject = (obj: Record<string, unknown>, prefix = ""): Record<string, unknown> => {
     const result: Record<string, unknown> = {};
-    
+
     for (const [key, value] of Object.entries(obj)) {
       const newKey = prefix ? `${prefix}.${key}` : key;
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         Object.assign(result, flattenObject(value as Record<string, unknown>, newKey));
       } else {
         result[newKey] = value;
       }
     }
-    
+
     return result;
   };
 
@@ -49,7 +49,7 @@ export default function JsonToTsvConverterPage() {
     try {
       const parsed = JSON.parse(input);
       const dataArray = Array.isArray(parsed) ? parsed : [parsed];
-      
+
       if (dataArray.length === 0) {
         toast.error("JSON array is empty");
         return;
@@ -57,12 +57,12 @@ export default function JsonToTsvConverterPage() {
 
       const flattenedData = dataArray.map(item => flattenObject(item as Record<string, unknown>));
       const allKeys = Array.from(new Set(flattenedData.flatMap(obj => Object.keys(obj))));
-      
+
       const header = allKeys.join("\t");
-      const rows = flattenedData.map(obj => 
+      const rows = flattenedData.map(obj =>
         allKeys.map(key => escapeTsv(obj[key])).join("\t")
       );
-      
+
       const tsv = [header, ...rows].join("\n");
       setOutput(tsv);
       toast.success("Converted to TSV successfully!");

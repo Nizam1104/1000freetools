@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -328,6 +328,155 @@ export default function VentilationRateCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Ventilation Rate</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Room Dimensions</h3>
+                <p className="text-sm text-muted-foreground">Input length, width, and height of your space in feet or meters.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Room Type</h3>
+                <p className="text-sm text-muted-foreground">Choose from preset room types with ASHRAE-recommended ACH values.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get CFM Requirements</h3>
+                <p className="text-sm text-muted-foreground">See required airflow in CFM, L/s, and m³/h for HVAC sizing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Ventilation Rate Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">ASHRAE 62.1 Compliant</h3>
+              <p className="text-sm text-muted-foreground">Uses industry-standard ACH values from ASHRAE 62.1 for various room types.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Dual Calculation Methods</h3>
+              <p className="text-sm text-muted-foreground">Calculates based on both room volume (ACH) and occupancy (CFM/person).</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Multiple Unit Output</h3>
+              <p className="text-sm text-muted-foreground">Get results in CFM, liters/second, and cubic meters/hour for international use.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">14 Room Type Presets</h3>
+              <p className="text-sm text-muted-foreground">Pre-configured ACH values for bedrooms, kitchens, offices, labs, and more.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">ASHRAE Recommended ACH Values</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Room Type</th>
+                  <th className="text-left py-2">ACH</th>
+                  <th className="text-left py-2">CFM/Person</th>
+                  <th className="text-left py-2">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Bedroom</td>
+                  <td className="py-2">5</td>
+                  <td className="py-2">10</td>
+                  <td className="py-2">Sleeping area</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Living Room</td>
+                  <td className="py-2">4</td>
+                  <td className="py-2">15</td>
+                  <td className="py-2">General occupancy</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Kitchen</td>
+                  <td className="py-2">7</td>
+                  <td className="py-2">20</td>
+                  <td className="py-2">Cooking pollutants</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Bathroom</td>
+                  <td className="py-2">8</td>
+                  <td className="py-2">25</td>
+                  <td className="py-2">Moisture control</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Office</td>
+                  <td className="py-2">6</td>
+                  <td className="py-2">20</td>
+                  <td className="py-2">Work environment</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Laboratory</td>
+                  <td className="py-2">10</td>
+                  <td className="py-2">30</td>
+                  <td className="py-2">Fume extraction</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What is a good ACH for a home?</h3>
+              <p className="text-sm text-muted-foreground">For whole-house ventilation, 0.35-0.5 ACH is typical for energy efficiency. Individual rooms need higher rates: bathrooms 8 ACH, kitchens 7 ACH, bedrooms 5 ACH, and living areas 4-5 ACH.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How do I calculate CFM for a room?</h3>
+              <p className="text-sm text-muted-foreground">CFM = (Length × Width × Height × ACH) ÷ 60. For a 12×15×8 ft bedroom at 5 ACH: (12×15×8×5)÷60 = 120 CFM required for proper ventilation.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What is ASHRAE 62.1 standard?</h3>
+              <p className="text-sm text-muted-foreground">ASHRAE 62.1 is the industry standard for ventilation system design, specifying minimum outdoor air rates for acceptable indoor air quality in commercial and institutional buildings.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How much ventilation does a bathroom need?</h3>
+              <p className="text-sm text-muted-foreground">Bathrooms require 8 ACH or 50 CFM minimum for intermittent fans, 20 CFM continuous. For a 6×8×8 ft bathroom: (6×8×8×8)÷60 = 51 CFM minimum exhaust fan capacity.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What happens if ventilation is too low?</h3>
+              <p className="text-sm text-muted-foreground">Inadequate ventilation causes poor indoor air quality, moisture buildup, mold growth, CO2 accumulation, odors, and health issues like headaches and respiratory problems.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related HVAC Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/hvac-btu-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">HVAC BTU Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate heating and cooling capacity for your space.</p>
+            </a>
+            <a href="/calculators/hvac-airflow-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">HVAC Airflow Calculator</h3>
+              <p className="text-sm text-muted-foreground">Determine proper airflow rates for HVAC systems.</p>
+            </a>
+            <a href="/calculators/humidity-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Humidity Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate relative humidity and dew point for indoor air quality.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

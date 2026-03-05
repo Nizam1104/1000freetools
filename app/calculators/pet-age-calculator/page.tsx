@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -282,36 +282,263 @@ export default function PetAgeCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                How Pet Age Conversion Works
+                How to Use This Pet Age Calculator
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <p>
-                  The old &quot;7 dog years per human year&quot; rule is a myth. Modern veterinary
-                  science uses more accurate calculations based on:
-                </p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>First year:</strong> Dogs and cats mature rapidly, reaching
-                    adolescence by 1 year (≈15 human years)
-                  </li>
-                  <li>
-                    <strong>Second year:</strong> Continued development (adds ≈9 human years)
-                  </li>
-                  <li>
-                    <strong>After 2 years:</strong> Aging rate depends on species and size
-                  </li>
-                  <li>
-                    <strong>Dog size matters:</strong> Large dogs age faster than small dogs
-                  </li>
-                  <li>
-                    <strong>Cats:</strong> Generally age more consistently after year 2
-                    (≈4 human years per cat year)
-                  </li>
-                </ul>
-                <p>
-                  <strong>Note:</strong> These are estimates. Individual pets age differently
-                  based on genetics, diet, exercise, and healthcare.
-                </p>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your pet type</p>
+                    <p>Choose between dog or cat. For dogs, you will also need to select their size category since larger breeds age faster than smaller ones.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your pet&apos;s age in years</p>
+                    <p>Use decimals for partial years. For example, enter 2.5 for a two-and-a-half-year-old pet.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate to see results</p>
+                    <p>You will see the human age equivalent, life stage, health considerations, and milestone comparisons for your pet.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Dog Age to Human Years Conversion Chart
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Dog Age</th>
+                      <th className="text-left py-3 px-2 font-semibold">Small Dog</th>
+                      <th className="text-left py-3 px-2 font-semibold">Medium Dog</th>
+                      <th className="text-left py-3 px-2 font-semibold">Large Dog</th>
+                      <th className="text-left py-3 px-2 font-semibold">Giant Dog</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1 year</td>
+                      <td className="py-3 px-2">15 years</td>
+                      <td className="py-3 px-2">15 years</td>
+                      <td className="py-3 px-2">15 years</td>
+                      <td className="py-3 px-2">15 years</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">2 years</td>
+                      <td className="py-3 px-2">24 years</td>
+                      <td className="py-3 px-2">24 years</td>
+                      <td className="py-3 px-2">24 years</td>
+                      <td className="py-3 px-2">24 years</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">5 years</td>
+                      <td className="py-3 px-2">36 years</td>
+                      <td className="py-3 px-2">40 years</td>
+                      <td className="py-3 px-2">45 years</td>
+                      <td className="py-3 px-2">50 years</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">8 years</td>
+                      <td className="py-3 px-2">48 years</td>
+                      <td className="py-3 px-2">56 years</td>
+                      <td className="py-3 px-2">66 years</td>
+                      <td className="py-3 px-2">76 years</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">10 years</td>
+                      <td className="py-3 px-2">56 years</td>
+                      <td className="py-3 px-2">66 years</td>
+                      <td className="py-3 px-2">78 years</td>
+                      <td className="py-3 px-2">92 years</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">15 years</td>
+                      <td className="py-3 px-2">76 years</td>
+                      <td className="py-3 px-2">89 years</td>
+                      <td className="py-3 px-2">108 years</td>
+                      <td className="py-3 px-2">127 years</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Small dogs are under 20 lbs, medium dogs are 20-50 lbs, large dogs are 50-90 lbs, and giant dogs are over 90 lbs.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Pet Age Conversion
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why the 7-Year Rule Is Wrong</h4>
+                  <p>
+                    The common belief that one dog year equals seven human years is a myth. This oversimplified rule does not account for the fact that dogs mature much faster in their first two years, and that different breeds age at different rates. A Chihuahua and a Great Dane are not the same age just because they were born on the same day.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Dogs Age</h4>
+                  <p>
+                    Dogs reach physical maturity much faster than humans. By their first birthday, most dogs are already in their teenage years in human terms. The second year adds about nine more human years. After that, the aging rate depends heavily on size. Small dogs tend to live longer and age more slowly, while giant breeds have shorter lifespans and age more quickly.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Cats Age</h4>
+                  <p>
+                    Cats follow a similar pattern to dogs in their first two years. After that, they age at a more consistent rate of about four human years per cat year. Indoor cats typically live longer than outdoor cats, with many reaching their late teens or even early twenties.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Size Matters for Dogs</h4>
+                  <p>
+                    This is one of the stranger facts about dogs: smaller breeds generally live longer than larger ones. A toy poodle might live 15 years or more, while an Irish Wolfhound averages closer to 8 years. Scientists believe this has to do with the rapid growth that large breeds undergo, which may accelerate aging at the cellular level.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Pet Life Stages and Care Tips
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Puppy/Kitten Stage (0-1 year)</p>
+                    <p>Focus on socialization, basic training, and establishing a vaccination schedule. This is when pets learn most about their world.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Adolescent Stage (1-3 years)</p>
+                    <p>Energy levels peak. Continue training and establish consistent exercise routines. Consider spaying or neutering if not already done.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Adult Stage (3-7 years)</p>
+                    <p>Maintain annual vet checkups and dental care. Watch for weight gain as metabolism slows. Keep up regular exercise.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Senior Stage (7+ years)</p>
+                    <p>Switch to twice-yearly vet visits. Monitor for arthritis, dental disease, and organ function. Adjust diet and exercise for aging bodies.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I calculate my dog age in human years?</h4>
+                  <p>
+                    The first year of a dog life equals about 15 human years. The second year adds about 9 more years. After that, each dog year equals 4 to 7 human years depending on size. Small dogs age slower (about 4-5 human years per dog year), while giant breeds age faster (about 7-8 human years per dog year).
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is one dog year really equal to 7 human years?</h4>
+                  <p>
+                    No, this is a myth. The 7-to-1 ratio does not reflect how dogs actually age. Dogs mature much faster in their first two years, and the rate varies significantly by breed size. A more accurate approach uses different multipliers based on the dog age and size category.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How old is my cat in human years?</h4>
+                  <p>
+                    A one-year-old cat is about 15 in human years. A two-year-old cat is about 24. After that, add about 4 human years for each cat year. So a 10-year-old cat would be roughly 56 in human years. Indoor cats often live into their late teens or early twenties.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why do larger dogs age faster than smaller dogs?</h4>
+                  <p>
+                    Scientists believe rapid growth in large breed puppies may accelerate cellular aging. Large dogs also have higher rates of age-related diseases like cancer. A Great Dane reaches senior status around 5-6 years, while a Chihuahua might not be considered senior until 10-11 years.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When is my pet considered a senior?</h4>
+                  <p>
+                    For small dogs, senior status typically starts around 10-11 years. Medium dogs become seniors around 8-9 years. Large and giant breeds are considered seniors by 5-7 years. Cats are generally considered seniors at around 11 years and geriatric at 15 years.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/dog-calorie-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Dog Calorie Calculator</span>
+                  <p className="text-muted-foreground">Calculate daily calorie needs for dogs based on weight, age, and activity level</p>
+                </a>
+                <a
+                  href="/calculators/cat-calorie-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Cat Calorie Calculator</span>
+                  <p className="text-muted-foreground">Determine how many calories your cat needs per day for optimal health</p>
+                </a>
+                <a
+                  href="/calculators/bmi-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">BMI Calculator</span>
+                  <p className="text-muted-foreground">Check your body mass index and understand your health status</p>
+                </a>
               </div>
             </CardContent>
           </Card>

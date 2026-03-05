@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -251,11 +251,10 @@ export default function TennisWinProbabilityCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Match Prediction</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.player1WinProbability > 60 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.player1WinProbability > 40 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.player1WinProbability > 60 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.player1WinProbability > 40 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Match Win Probability</p>
                     <p className="text-4xl font-bold">{result.matchWinProbability}%</p>
                     <p className="text-sm mt-1">{player1Name} to win (Best of 3)</p>
@@ -338,6 +337,171 @@ export default function TennisWinProbabilityCalculatorPage() {
                   Actual match outcomes depend on many factors including form,
                   injuries, head-to-head records, and mental toughness.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How It Works
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Enter Player Stats</h4>
+                    <p className="text-xs text-muted-foreground">Input each player's serve win percentage and break point conversion rate from recent matches.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Select Court Surface</h4>
+                    <p className="text-xs text-muted-foreground">Choose grass, clay, or hard court – surface affects serve advantage and playing style.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Get Match Prediction</h4>
+                    <p className="text-xs text-muted-foreground">See win probability for each player, set-by-set projections, and key match factors.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                ATP Tour Average Statistics Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-semibold">Surface</th>
+                      <th className="text-left py-2 px-3 font-semibold">Avg Serve Win %</th>
+                      <th className="text-left py-2 px-3 font-semibold">Avg Break Point %</th>
+                      <th className="text-left py-2 px-3 font-semibold">Style Favored</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">Grass</td>
+                      <td className="py-2 px-3 font-mono text-xs">75-80%</td>
+                      <td className="py-2 px-3 text-xs">30-35%</td>
+                      <td className="py-2 px-3 text-xs">Big servers, volleyers</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">Hard Court</td>
+                      <td className="py-2 px-3 font-mono text-xs">65-75%</td>
+                      <td className="py-2 px-3 text-xs">35-40%</td>
+                      <td className="py-2 px-3 text-xs">All-court players</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">Clay</td>
+                      <td className="py-2 px-3 font-mono text-xs">60-70%</td>
+                      <td className="py-2 px-3 text-xs">40-45%</td>
+                      <td className="py-2 px-3 text-xs">Baseline grinders</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3 font-medium">ATP Average</td>
+                      <td className="py-2 px-3 font-mono text-xs">65-72%</td>
+                      <td className="py-2 px-3 text-xs">35-42%</td>
+                      <td className="py-2 px-3 text-xs">Varies by player</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features & Benefits
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Surface-Adjusted Analysis</h4>
+                  <p className="text-xs text-muted-foreground">Accounts for how grass, clay, and hard courts affect serve dominance and break opportunities.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Serve & Return Metrics</h4>
+                  <p className="text-xs text-muted-foreground">Uses both serve win percentage and break point conversion for complete player assessment.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Match Format Support</h4>
+                  <p className="text-xs text-muted-foreground">Calculates win probability for best-of-3 sets (most tournaments) and best-of-5 (Grand Slams).</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Key Factor Analysis</h4>
+                  <p className="text-xs text-muted-foreground">Identifies which player has serve advantage, return advantage, and surface-specific edges.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How accurate are tennis match predictions?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Statistical models using serve/return metrics achieve 65-70% accuracy for match outcomes. However, tennis has high variance – form, injuries, mental state, and head-to-head matchups significantly impact results beyond raw statistics.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is a good serve win percentage?</h4>
+                <p className="text-xs text-muted-foreground">
+                  On ATP tour, 65-70% is average, 70-75% is good, and 75%+ is elite. Big servers like Isner and Karlovic regularly exceed 80%. On clay, percentages run 5-10% lower due to slower surface reducing serve advantage.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Why does surface matter in tennis predictions?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Grass favors big servers (fast, low bounce). Clay favors baseline defenders (slow, high bounce, more time). Hard courts are balanced. Players often have vastly different records on different surfaces – Nadal dominates on clay but less so on grass.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is break point conversion rate?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Break point conversion = (Breaks achieved / Break opportunities) × 100. It measures how effectively a player converts return game chances. Top players convert 40-45% of break points. This stat is crucial for predicting match outcomes.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I find player serve statistics?</h4>
+                <p className="text-xs text-muted-foreground">
+                  ATP/WTA official websites provide detailed player stats including serve win %, break points saved/converted, and surface-specific records. Tennis Abstract and Ultimate Tennis also offer advanced metrics and historical data.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Related Tools</h3>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/basketball-shooting-percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Basketball Shooting Percentage Calculator</p>
+                  <p className="text-xs text-muted-foreground">Sports statistics calculator</p>
+                </a>
+                <a href="/calculators/cricket-strike-rate-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Cricket Strike Rate Calculator</p>
+                  <p className="text-xs text-muted-foreground">Cricket statistics calculator</p>
+                </a>
+                <a href="/calculators/win-rate-estimator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Win Rate Estimator</p>
+                  <p className="text-xs text-muted-foreground">General win probability tool</p>
+                </a>
               </div>
             </CardContent>
           </Card>

@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+
+export const metadata: Metadata = {
+  title: "Kitchen Measurement Converter – Convert Cooking Units Instantly",
+  description: "Never mess up a recipe conversion again with our Kitchen Measurement Converter.            Convert between cups, tablespoons, teaspoons, milliliters, and more — supporting            both US and metric cooking systems.",
+  alternates: {
+    canonical: "https://1000freetools.com/calculators/kitchen-measurement-converter",
+  },
+};
+
+const tools = [
+  {
+    "name": "Iso Noise Predictor",
+    "description": "ISO Noise Predictor – Estimate Image Noise Level for Any Camera ISO Setting",
+    "href": "/iso-noise-predictor"
+  },
+  {
+    "name": "K D Ratio Calculator",
+    "description": "K/D Ratio Calculator – Calculate Your Kill/Death Ratio in Any Game",
+    "href": "/k-d-ratio-calculator"
+  },
+  {
+    "name": "Ketogenic Macro Calculator",
+    "description": "Keto Macro Calculator – Perfect Macros for a Ketogenic Diet",
+    "href": "/ketogenic-macro-calculator"
+  },
+  {
+    "name": "Kidney Function Egfr Calculator",
+    "description": "Kidney Function eGFR Calculator – Free CKD-EPI Calculator",
+    "href": "/kidney-function-egfr-calculator"
+  },
+  {
+    "name": "Kinetic Energy Calculator",
+    "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
+    "href": "/kinetic-energy-calculator"
+  },
+  {
+    "name": "Lactate Threshold Calculator",
+    "description": "Lactate Threshold Calculator – Find Your Anaerobic Threshold",
+    "href": "/lactate-threshold-calculator"
+  }
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-y-4">
+      {children}
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}

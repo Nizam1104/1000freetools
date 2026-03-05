@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -215,6 +215,153 @@ export default function BuyVsRentCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">How It Works</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <p className="font-medium">Enter your home buying costs</p>
+                    <p className="text-sm text-muted-foreground">Input the home price, down payment, mortgage rate, and term to calculate total buying costs.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <p className="font-medium">Add your rental alternative</p>
+                    <p className="text-sm text-muted-foreground">Enter the monthly rent for a comparable property to compare against buying costs.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <p className="font-medium">See which option builds more wealth</p>
+                    <p className="text-sm text-muted-foreground">Compare net worth from home equity versus investing the down payment and monthly savings.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Key Factors in the Buy vs Rent Decision</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Home Appreciation</p>
+                  <p className="text-sm text-muted-foreground">Historical average of 3-4% annually, but varies significantly by location and market conditions.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Opportunity Cost</p>
+                  <p className="text-sm text-muted-foreground">Money tied up in down payment could earn returns if invested in stocks or bonds instead.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Maintenance Costs</p>
+                  <p className="text-sm text-muted-foreground">Homeowners typically spend 1-2% of home value annually on repairs and maintenance.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-semibold">Flexibility Value</p>
+                  <p className="text-sm text-muted-foreground">Renting offers mobility; buying builds equity but reduces flexibility to relocate.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Buy vs Rent Break-Even Analysis</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left p-2">Factor</th>
+                      <th className="text-left p-2">Favors Buying</th>
+                      <th className="text-left p-2">Favors Renting</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="p-2 font-medium">Time Horizon</td>
+                      <td className="p-2">5+ years</td>
+                      <td className="p-2">Less than 3 years</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="p-2 font-medium">Price-to-Rent Ratio</td>
+                      <td className="p-2">Below 15</td>
+                      <td className="p-2">Above 20</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="p-2 font-medium">Down Payment</td>
+                      <td className="p-2">20% or more</td>
+                      <td className="p-2">Less than 10%</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="p-2 font-medium">Market Trend</td>
+                      <td className="p-2">Rising home values</td>
+                      <td className="p-2">Flat or declining</td>
+                    </tr>
+                    <tr>
+                      <td className="p-2 font-medium">Job Stability</td>
+                      <td className="p-2">Stable, local job</td>
+                      <td className="p-2">May relocate</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-medium">How long should I plan to stay to make buying worth it?</p>
+                  <p className="text-sm text-muted-foreground mt-1">Generally, you need to stay 5-7 years to break even after accounting for closing costs, agent fees, and maintenance. Shorter timeframes usually favor renting.</p>
+                </div>
+                <div>
+                  <p className="font-medium">What is the price-to-rent ratio and why does it matter?</p>
+                  <p className="text-sm text-muted-foreground mt-1">Divide home price by annual rent. Ratios below 15 favor buying; above 20 favor renting. This metric helps identify overpriced housing markets.</p>
+                </div>
+                <div>
+                  <p className="font-medium">Should I consider tax benefits when comparing buy vs rent?</p>
+                  <p className="text-sm text-muted-foreground mt-1">Yes, mortgage interest and property tax deductions can reduce the effective cost of buying, especially in high-tax states. However, the standard deduction has reduced this benefit for many homeowners.</p>
+                </div>
+                <div>
+                  <p className="font-medium">What hidden costs should I consider when buying?</p>
+                  <p className="text-sm text-muted-foreground mt-1">Include closing costs (2-5% of purchase price), property taxes, homeowners insurance, HOA fees, maintenance (1-2% annually), and potential special assessments.</p>
+                </div>
+                <div>
+                  <p className="font-medium">Is renting really throwing money away?</p>
+                  <p className="text-sm text-muted-foreground mt-1">No. Renting buys flexibility and avoids maintenance costs. The difference between renting and buying costs can be invested, potentially outperforming home appreciation in some markets.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/mortgage-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-semibold">Mortgage Calculator</p>
+                  <p className="text-sm text-muted-foreground">Calculate monthly mortgage payments with taxes and insurance.</p>
+                </a>
+                <a href="/calculators/rental-yield-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-semibold">Rental Yield Calculator</p>
+                  <p className="text-sm text-muted-foreground">Analyze investment property returns and rental income.</p>
+                </a>
+                <a href="/calculators/home-affordability-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <p className="font-semibold">Home Affordability Calculator</p>
+                  <p className="text-sm text-muted-foreground">Determine how much house you can afford based on income.</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

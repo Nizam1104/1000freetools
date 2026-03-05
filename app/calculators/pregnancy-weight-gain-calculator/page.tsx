@@ -181,6 +181,106 @@ export default function PregnancyWeightGainCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>How to Calculate Pregnancy Weight Gain</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <p className="font-semibold mb-1">Enter pre-pregnancy weight</p>
+              <p className="text-sm text-muted-foreground">Input your weight before becoming pregnant in kilograms.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <p className="font-semibold mb-1">Add height and trimester</p>
+              <p className="text-sm text-muted-foreground">Enter your height in cm and select your current trimester.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <p className="font-semibold mb-1">Get personalized recommendations</p>
+              <p className="text-sm text-muted-foreground">Receive BMI-based weight gain guidelines for each trimester.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Why Track Pregnancy Weight Gain</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">Healthy baby development</p>
+              <p className="text-sm text-muted-foreground">Appropriate weight gain supports optimal fetal growth and development.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Reduce complications</p>
+              <p className="text-sm text-muted-foreground">Proper gain lowers risks of gestational diabetes and preeclampsia.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">BMI-based guidelines</p>
+              <p className="text-sm text-muted-foreground">Recommendations adjust for underweight, normal, overweight, and obese categories.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Trimester breakdown</p>
+              <p className="text-sm text-muted-foreground">Understand expected gain patterns throughout pregnancy.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">IOM guidelines</p>
+              <p className="text-sm text-muted-foreground">Based on Institute of Medicine evidence-based recommendations.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">How much weight should I gain during pregnancy?</p>
+              <p className="text-sm text-muted-foreground">Normal BMI: 11.5-16 kg. Underweight: 12.5-18 kg. Overweight: 7-11.5 kg. Obese: 5-9 kg total.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How much weight in first trimester?</p>
+              <p className="text-sm text-muted-foreground">Most women gain 0.5-2 kg in first trimester. Some gain less due to morning sickness, which is normal.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How fast should I gain weight in second trimester?</p>
+              <p className="text-sm text-muted-foreground">Normal BMI: about 0.4 kg per week. Underweight: 0.5 kg/week. Overweight: 0.3 kg/week. Obese: 0.2 kg/week.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Is it bad to gain too much weight during pregnancy?</p>
+              <p className="text-sm text-muted-foreground">Excessive gain increases risks of complications, large baby, and difficulty losing weight postpartum.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What if I'm not gaining enough weight?</p>
+              <p className="text-sm text-muted-foreground">Insufficient gain may lead to low birth weight. Talk to your provider about nutrition strategies.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Related Pregnancy Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Try our other pregnancy calculators: the <a href="/calculators/pregnancy-due-date-calculator" className="text-primary hover:underline">pregnancy due date calculator</a> for delivery estimates, the <a href="/calculators/pregnancy-week-calculator" className="text-primary hover:underline">pregnancy week calculator</a> to track progress, and the <a href="/calculators/bmi-calculator" className="text-primary hover:underline">BMI calculator</a> for health metrics.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

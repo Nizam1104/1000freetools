@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -268,6 +268,245 @@ export default function BatteryBackupTimeCalculatorPage() {
             </tbody>
           </table>
         </div>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>How to Use This Battery Backup Time Calculator</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">1</div>
+              <div>
+                <p className="font-medium text-foreground">Enter your battery specifications</p>
+                <p className="text-sm text-muted-foreground">Input the battery capacity in amp-hours (Ah) and select the voltage. Choose your battery type to apply the correct depth of discharge limit.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">2</div>
+              <div>
+                <p className="font-medium text-foreground">Enter your device power requirements</p>
+                <p className="text-sm text-muted-foreground">Input the wattage of the device you want to power. You can find this on the device label or power adapter. Select the device voltage.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">3</div>
+              <div>
+                <p className="font-medium text-foreground">Click Calculate to see runtime</p>
+                <p className="text-sm text-muted-foreground">Get your estimated backup time in hours or minutes, plus usable energy and device current draw calculations.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Typical Power Consumption by Device</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Device</th>
+                    <th className="text-left py-3 px-2 font-semibold">Power (Watts)</th>
+                    <th className="text-left py-3 px-2 font-semibold">Runtime on 100Ah 12V</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">LED Light Bulb (10W)</td>
+                    <td className="py-3 px-2">10W</td>
+                    <td className="py-3 px-2">~54 hours</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Laptop Computer</td>
+                    <td className="py-3 px-2">45-65W</td>
+                    <td className="py-3 px-2">~8-12 hours</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">LED TV (42 inch)</td>
+                    <td className="py-3 px-2">80-100W</td>
+                    <td className="py-3 px-2">~5-6 hours</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Mini Fridge</td>
+                    <td className="py-3 px-2">50-100W (avg)</td>
+                    <td className="py-3 px-2">~5-10 hours</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">CPAP Machine</td>
+                    <td className="py-3 px-2">30-60W</td>
+                    <td className="py-3 px-2">~8-16 hours</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">WiFi Router</td>
+                    <td className="py-3 px-2">5-15W</td>
+                    <td className="py-3 px-2">~30-90 hours</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Phone Charger</td>
+                    <td className="py-3 px-2">5-10W</td>
+                    <td className="py-3 px-2">~50-100 hours</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Note: Runtimes assume lead-acid battery with 50% DoD and 85% inverter efficiency. Actual results vary.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Understanding Battery Backup Calculations</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm text-muted-foreground">
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Amp-Hours vs Watt-Hours</h4>
+              <p>
+                Battery capacity is often listed in amp-hours (Ah), but devices consume watts. To compare them, multiply Ah by voltage to get watt-hours (Wh). A 100Ah 12V battery stores 1200Wh of energy. This conversion is essential for accurate runtime estimates.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Depth of Discharge (DoD)</h4>
+              <p>
+                DoD is how much of the battery capacity you can safely use. Lead-acid batteries should not discharge below 50% or their lifespan drops dramatically. Lithium batteries can safely use 80-90% of their capacity. This is why lithium costs more but delivers more usable energy.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Inverter Efficiency</h4>
+              <p>
+                Inverters convert DC battery power to AC for household devices. This conversion is not perfect — some energy becomes heat. Typical efficiency is 80-95%. A 100W device might actually draw 115W from the battery after accounting for inverter losses.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Why Runtime Is an Estimate</h4>
+              <p>
+                Battery capacity ratings are measured under ideal conditions. Cold temperatures reduce capacity. Old batteries hold less charge. High current draws reduce effective capacity (Peukert effect). Motors and compressors have startup surges. Plan for 20-30% less runtime than calculated.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Tips for Maximizing Battery Backup</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm text-muted-foreground">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Use LED lighting</p>
+                <p>LED bulbs use 80-90% less power than incandescent. A 10W LED replaces a 60W bulb. This single change can extend your backup time by hours.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Prioritize essential loads</p>
+                <p>Make a list of what you really need during an outage. Lights, phone charging, and maybe a fridge. Skip the TV and microwave. Every watt counts.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Keep batteries at room temperature</p>
+                <p>Cold reduces battery capacity. Heat shortens battery life. Store batteries in a climate-controlled space when possible. A garage that freezes in winter is not ideal.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Maintain your batteries</p>
+                <p>Flooded lead-acid batteries need water checks. All batteries need clean terminals and secure connections. Check voltage periodically. Replace batteries that no longer hold a charge.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm text-muted-foreground">
+            <div>
+              <h4 className="font-medium text-foreground mb-2">How long will a 100Ah battery last?</h4>
+              <p>
+                It depends on your load. A 100Ah 12V lead-acid battery has about 600Wh usable (50% DoD). Running a 50W device gives roughly 12 hours. A 100W device gives about 6 hours. Double the wattage, halve the runtime.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Should I choose lithium or lead-acid for backup?</h4>
+              <p>
+                Lithium costs more upfront but lasts longer and provides more usable capacity. Lead-acid is cheaper but heavier and needs more maintenance. For occasional outages, lead-acid works. For daily use or critical backup, lithium is worth the investment.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">What size inverter do I need?</h4>
+              <p>
+                Add up the wattage of all devices you might run simultaneously. Choose an inverter rated 20-25% higher than that total. Motors and compressors need surge capacity — check the inverter surge rating for starting loads.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Can I connect multiple batteries together?</h4>
+              <p>
+                Yes. Connecting in parallel (positive to positive, negative to negative) increases capacity (Ah) while keeping voltage the same. Connecting in series increases voltage. Match battery type, age, and capacity when connecting batteries.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-foreground mb-2">Why is my actual runtime shorter than calculated?</h4>
+              <p>
+                Several factors reduce real-world runtime. Battery capacity decreases with age. Cold temperatures reduce capacity. High current draws are less efficient. Inverter efficiency varies with load. Device wattage labels show maximum, not average consumption.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Related Tools</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2 text-sm">
+            <a
+              href="/calculators/battery-life-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Battery Life Calculator</span>
+              <p className="text-muted-foreground">Estimate battery runtime based on capacity and load current</p>
+            </a>
+            <a
+              href="/calculators/battery-c-rate-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Battery C-Rate Calculator</span>
+              <p className="text-muted-foreground">Calculate charge and discharge rates for batteries</p>
+            </a>
+            <a
+              href="/calculators/watts-to-amps-calculator"
+              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+            >
+              <span className="font-medium text-foreground">Watts to Amps Calculator</span>
+              <p className="text-muted-foreground">Convert between power (watts) and current (amps)</p>
+            </a>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

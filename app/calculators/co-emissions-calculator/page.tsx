@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -223,6 +223,259 @@ export default function COEmissionsCalculatorPage() {
                   region, vehicle efficiency, and energy source. Use local factors
                   for precise calculations.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This CO2 Emissions Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your activity type</p>
+                    <p>Choose from transportation (car, flight), home energy (electricity, natural gas), or food (beef). Each activity has different emission factors.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the activity value</p>
+                    <p>Input the distance traveled, energy consumed, or food consumed in the appropriate units. The calculator uses standard emission factors for each activity.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate to see emissions</p>
+                    <p>Results show CO2 emissions in grams, kilograms, or tonnes, plus equivalent trees needed to offset and miles driven for comparison.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                CO2 Emission Factors Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Activity</th>
+                      <th className="text-left py-3 px-2 font-semibold">Unit</th>
+                      <th className="text-left py-3 px-2 font-semibold">CO2 per Unit</th>
+                      <th className="text-left py-3 px-2 font-semibold">Source</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Average car</td>
+                      <td className="py-3 px-2">per km</td>
+                      <td className="py-3 px-2">0.192 kg CO2</td>
+                      <td className="py-3 px-2">EPA</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Average car</td>
+                      <td className="py-3 px-2">per mile</td>
+                      <td className="py-3 px-2">0.309 kg CO2</td>
+                      <td className="py-3 px-2">EPA</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Short-haul flight</td>
+                      <td className="py-3 px-2">per km</td>
+                      <td className="py-3 px-2">0.255 kg CO2</td>
+                      <td className="py-3 px-2">ICAO</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Grid electricity</td>
+                      <td className="py-3 px-2">per kWh</td>
+                      <td className="py-3 px-2">0.4 kg CO2</td>
+                      <td className="py-3 px-2">IEA average</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Natural gas</td>
+                      <td className="py-3 px-2">per m3</td>
+                      <td className="py-3 px-2">2.0 kg CO2</td>
+                      <td className="py-3 px-2">EPA</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Beef production</td>
+                      <td className="py-3 px-2">per kg</td>
+                      <td className="py-3 px-2">27 kg CO2e</td>
+                      <td className="py-3 px-2">Our World in Data</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Emission factors are averages and vary by region, vehicle efficiency, and energy source. Electricity emissions depend heavily on local grid mix.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Carbon Emissions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is CO2 Equivalent</h4>
+                  <p>
+                    CO2 equivalent (CO2e) expresses the warming impact of different greenhouse gases in terms of carbon dioxide. Methane is about 28 times more potent than CO2, so 1 kg of methane equals 28 kg CO2e. This calculator uses CO2e for activities like beef production that involve multiple gases.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Where Emissions Come From</h4>
+                  <p>
+                    Transportation accounts for about 29 percent of US greenhouse gas emissions, with cars and trucks being the largest contributors. Electricity generation adds 25 percent. Food production, especially beef and lamb, contributes significantly through land use changes, animal digestion, and processing.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Tree Offset Means</h4>
+                  <p>
+                    A mature tree absorbs approximately 22 kg of CO2 per year through photosynthesis. The &quot;trees to offset&quot; figure shows how many trees would need to grow for one year to absorb the emissions from your activity. This helps put abstract numbers in concrete terms.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Ways to Reduce Your Carbon Footprint
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Choose lower-carbon transportation</p>
+                    <p>Public transit produces about 75 percent less CO2 per passenger-km than driving alone. Electric vehicles eliminate tailpipe emissions. For flights, consider trains for trips under 500 km where available.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Switch to clean energy</p>
+                    <p>Install solar panels or choose a green energy supplier. LED bulbs use 75 percent less energy than incandescent. Smart thermostats can reduce heating and cooling by 10-15 percent.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Adjust your diet</p>
+                    <p>Beef has about 10 times the carbon footprint of chicken and 20 times that of beans. Reducing beef consumption even one day per week makes a measurable difference over a year.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-amber-600 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider carbon offsets</p>
+                    <p>Verified offset programs fund renewable energy, reforestation, or methane capture. Offsets should complement, not replace, direct emissions reductions. Look for Gold Standard or Verra certification.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How accurate are these emission estimates?</h4>
+                  <p>
+                    These are reasonable averages based on published emission factors. Actual emissions vary by vehicle efficiency, driving conditions, electricity grid mix, and production methods. For precise carbon accounting, use location-specific factors and actual consumption data.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why does beef have such high emissions?</h4>
+                  <p>
+                    Cattle produce methane during digestion, which is 28 times more potent than CO2. Beef production also requires large amounts of land, water, and feed. Land use changes like deforestation for grazing add to the carbon footprint.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Do electric vehicles really produce zero emissions?</h4>
+                  <p>
+                    EVs have zero tailpipe emissions, but electricity generation may produce CO2 depending on the grid mix. In regions with clean electricity, EVs have much lower lifecycle emissions. As grids decarbonize, EV emissions decrease automatically.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How many trees do I need to plant to offset my emissions?</h4>
+                  <p>
+                    Divide your annual emissions in kg by 22 to find trees needed. An average American produces about 15,000 kg CO2 per year, requiring roughly 680 trees. However, trees take years to reach full absorption capacity, and existing forests are already counted in global carbon cycles.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a good carbon footprint target?</h4>
+                  <p>
+                    To limit warming to 1.5 C, global average emissions must reach about 2,000 kg CO2 per person per year by 2050. Current averages range from 15,000 kg (US) to under 1,000 kg (many African nations). Reducing personal emissions by 50-80 percent is often recommended for developed countries.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/carbon-footprint-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Carbon Footprint Calculator</span>
+                  <p className="text-muted-foreground">Calculate your complete personal carbon footprint across all categories</p>
+                </a>
+                <a
+                  href="/calculators/fuel-cost-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Fuel Cost Calculator</span>
+                  <p className="text-muted-foreground">Estimate fuel costs for trips and compare vehicle efficiency</p>
+                </a>
+                <a
+                  href="/calculators/solar-panel-requirement-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Solar Panel Calculator</span>
+                  <p className="text-muted-foreground">Determine how many solar panels you need to power your home</p>
+                </a>
               </div>
             </CardContent>
           </Card>

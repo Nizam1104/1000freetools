@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -64,7 +64,7 @@ export default function DynamicPricingCalculatorPage() {
 
     // Inventory multipliers
     const inventoryMultipliers: Record<string, number> = {
-     过剩: 0.85,
+      过剩: 0.85,
       high: 0.9,
       normal: 1.0,
       low: 1.1,
@@ -89,7 +89,7 @@ export default function DynamicPricingCalculatorPage() {
     // If competitor is cheaper, we may need to match or differentiate
     const competitorRatio = competitorPriceNum / basePriceNum;
     let competitorAdjustedPrice = basePriceNum;
-    
+
     if (competitorRatio < 0.9) {
       // Competitor is significantly cheaper
       competitorAdjustedPrice = basePriceNum * 0.95; // Match closer to competitor
@@ -102,10 +102,10 @@ export default function DynamicPricingCalculatorPage() {
 
     // Calculate optimal price combining all factors
     const combinedMultiplier = demandMultiplier * inventoryMultiplier * timeMultiplier;
-    
+
     // Apply price elasticity (higher elasticity = more sensitive to price changes)
     const elasticityFactor = 1 / elasticityNum;
-    
+
     const optimalPrice = basePriceNum * combinedMultiplier * elasticityFactor;
 
     // Calculate price change
@@ -338,18 +338,16 @@ export default function DynamicPricingCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Results</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.priceChange > 0 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.priceChange < 0 ? "bg-red-100 dark:bg-red-900/20" :
-                    "bg-muted"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.priceChange > 0 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.priceChange < 0 ? "bg-red-100 dark:bg-red-900/20" :
+                        "bg-muted"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Optimal Price</p>
                     <p className="text-4xl font-bold">${result.optimalPrice}</p>
-                    <p className={`text-sm mt-1 ${
-                      result.priceChange > 0 ? "text-green-700 dark:text-green-300" :
-                      result.priceChange < 0 ? "text-red-700 dark:text-red-300" :
-                      "text-muted-foreground"
-                    }`}>
+                    <p className={`text-sm mt-1 ${result.priceChange > 0 ? "text-green-700 dark:text-green-300" :
+                        result.priceChange < 0 ? "text-red-700 dark:text-red-300" :
+                          "text-muted-foreground"
+                      }`}>
                       {result.priceChange > 0 ? "+" : ""}{result.priceChange} ({result.priceChangePercent}%)
                     </p>
                   </div>
@@ -371,9 +369,8 @@ export default function DynamicPricingCalculatorPage() {
                       {result.scenarios.map((scenario, i) => (
                         <div
                           key={i}
-                          className={`p-3 rounded-lg flex justify-between items-center ${
-                            scenario.name.includes("Optimal") ? "bg-primary/10 border border-primary" : "bg-muted/50"
-                          }`}
+                          className={`p-3 rounded-lg flex justify-between items-center ${scenario.name.includes("Optimal") ? "bg-primary/10 border border-primary" : "bg-muted/50"
+                            }`}
                         >
                           <div>
                             <p className="font-medium text-sm">{scenario.name}</p>
@@ -438,6 +435,204 @@ export default function DynamicPricingCalculatorPage() {
                   <strong>Tip:</strong> Test different price points and monitor conversion rates
                   to find your optimal pricing strategy.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the Dynamic Pricing Calculator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Enter Base Pricing Data</h3>
+                    <p className="text-sm text-muted-foreground">Input your base price, cost per unit, and competitor pricing for comparison.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Set Market Conditions</h3>
+                    <p className="text-sm text-muted-foreground">Select demand level, inventory status, time sensitivity, and price elasticity.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Get Optimal Price</h3>
+                    <p className="text-sm text-muted-foreground">Receive data-driven price recommendations with scenario comparisons and actionable insights.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Features of This Dynamic Pricing Tool</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Multi-Factor Analysis</h3>
+                      <p className="text-sm text-muted-foreground">Considers demand, inventory, competition, time sensitivity, and price elasticity simultaneously.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Scenario Comparisons</h3>
+                      <p className="text-sm text-muted-foreground">Compare conservative, demand-based, competitive, and optimal pricing strategies side by side.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Margin Calculations</h3>
+                      <p className="text-sm text-muted-foreground">See profit margins for each pricing scenario to balance revenue and profitability.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Smart Recommendations</h3>
+                      <p className="text-sm text-muted-foreground">Get actionable pricing advice based on your specific market conditions and goals.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Price Elasticity Support</h3>
+                      <p className="text-sm text-muted-foreground">Factor in how sensitive your customers are to price changes for accurate optimization.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Pricing Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free dynamic pricing calculator for e-commerce, hospitality, and retail businesses.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">Demand Level Pricing Multipliers</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Demand Level</th>
+                        <th className="text-left py-2">Price Multiplier</th>
+                        <th className="text-left py-2">When to Use</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Very Low</td>
+                        <td className="py-2">0.70x</td>
+                        <td className="py-2">Clearance, end of season</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Low</td>
+                        <td className="py-2">0.85x</td>
+                        <td className="py-2">Slow sales periods</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Normal</td>
+                        <td className="py-2">1.00x</td>
+                        <td className="py-2">Standard pricing</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">High</td>
+                        <td className="py-2">1.15x</td>
+                        <td className="py-2">Peak shopping seasons</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Very High</td>
+                        <td className="py-2">1.30x</td>
+                        <td className="py-2">High demand events</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">Peak</td>
+                        <td className="py-2">1.50x</td>
+                        <td className="py-2">Maximum demand periods</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">What is dynamic pricing?</h3>
+                  <p className="text-sm text-muted-foreground">Dynamic pricing is a strategy where prices adjust in real-time based on market conditions like demand, competition, inventory levels, and time. Airlines, hotels, and e-commerce sites use it to maximize revenue.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How do I calculate optimal price for my product?</h3>
+                  <p className="text-sm text-muted-foreground">Optimal price balances demand, costs, competition, and customer price sensitivity. Start with your base cost, add desired margin, then adjust based on demand level, competitor prices, and inventory. Test different price points to find the sweet spot.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is price elasticity?</h3>
+                  <p className="text-sm text-muted-foreground">Price elasticity measures how much demand changes when price changes. High elasticity (above 2) means customers are very price-sensitive. Low elasticity (below 1) means customers will buy regardless of price. Most products have elasticity between 1-2.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">When should I use dynamic pricing?</h3>
+                  <p className="text-sm text-muted-foreground">Dynamic pricing works best for products with fluctuating demand, limited inventory, or time sensitivity. Ideal for e-commerce, travel, events, ride-sharing, and seasonal goods. Less suitable for everyday commodities with stable demand.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How do competitors affect my pricing?</h3>
+                  <p className="text-sm text-muted-foreground">Competitor prices set market expectations. If you are significantly higher, justify with value differentiation. If lower, you may attract price-sensitive customers but risk a price war. Monitor competitors and position accordingly.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Business Calculators</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/profit-margin-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Profit Margin Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate gross and net profit margins to ensure your pricing covers costs and generates profit.</p>
+                </a>
+                <a href="/calculators/markup-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Markup Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Determine the right markup percentage to apply to your costs for target selling prices.</p>
+                </a>
+                <a href="/calculators/break-even-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Break-Even Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Find the sales volume needed to cover costs at different price points.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

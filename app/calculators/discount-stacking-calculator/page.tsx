@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -88,7 +88,7 @@ export default function DiscountStackingCalculatorPage() {
       // Apply percentage discount first, then fixed
       let percentAmount = price * (combinedPercent / 100);
       let afterPercent = price - percentAmount;
-      
+
       let fixedAmount = Math.min(totalFixedDiscount, afterPercent);
       let finalPrice = afterPercent - fixedAmount;
 
@@ -106,7 +106,7 @@ export default function DiscountStackingCalculatorPage() {
           newPrice: finalPrice,
         });
       }
-      
+
       currentPrice = finalPrice;
     }
 
@@ -275,24 +275,305 @@ export default function DiscountStackingCalculatorPage() {
           </Card>
         </div>
 
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h3 className="text-lg font-semibold mb-3">Understanding Discount Stacking</h3>
-          <p className="text-muted-foreground text-sm mb-3">
-            <strong>Sequential discounts</strong> apply one after another, each reducing the already
-            discounted price. This is how most stores apply multiple discounts.
-          </p>
-          <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-            <div>Example: $100 with 20% + 10% sequential:</div>
-            <div>Step 1: $100 - 20% = $80</div>
-            <div>Step 2: $80 - 10% = $72 (Final)</div>
-            <div className="mt-2 text-muted-foreground">
-              Note: This is NOT the same as 30% off ($70)
-            </div>
-          </div>
-          <p className="text-muted-foreground text-sm mt-3">
-            <strong>Tip:</strong> Sequential discounts always result in less total savings than the
-            sum of individual percentages.
-          </p>
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Discount Stacking Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the original price</p>
+                    <p>Type the regular price before any discounts. For $89.99, enter "89.99". This is your starting point.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Add all applicable discounts</p>
+                    <p>Enter each discount separately — sale price, coupon code, loyalty discount, etc. Choose percent (%) or fixed amount ($) for each. Click "Add Another Discount" for more.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Choose application method and calculate</p>
+                    <p>Select sequential (most common) or combined. Click Calculate to see your final price, total savings, and how each discount affects the total.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Sequential vs. Combined Discounts
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Method</th>
+                      <th className="text-left py-3 px-2 font-semibold">How It Works</th>
+                      <th className="text-left py-3 px-2 font-semibold">Example: $100 with 20% + 10%</th>
+                      <th className="text-left py-3 px-2 font-semibold">Final Price</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2 font-medium">Sequential</td>
+                      <td className="py-3 px-2">Each discount applies to the reduced price from the previous discount</td>
+                      <td className="py-3 px-2">$100 - 20% = $80, then $80 - 10% = $72</td>
+                      <td className="py-3 px-2">$72 (28% total)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2 font-medium">Combined</td>
+                      <td className="py-3 px-2">All percentage discounts add up, then apply once to original price</td>
+                      <td className="py-3 px-2">$100 - 30% = $70</td>
+                      <td className="py-3 px-2">$70 (30% total)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Most retailers use sequential discounting. Combined discounting is rare and usually only happens when discounts are programmed to stack additively.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Discount Stacking
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  Discount stacking means applying multiple discounts to a single purchase. This happens when you use a coupon on a sale item, apply a loyalty discount, or use a promo code during checkout. The key question is: do the discounts add up, or do they apply one after another?
+                </p>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Sequential Discounts Don't Add Up</h4>
+                  <p>
+                    A 20% discount followed by a 10% discount doesn't equal 30% off. The first discount reduces the price, then the second discount applies to that lower amount. Mathematically: $100 x 0.80 x 0.90 = $72, not $70. You save 28%, not 30%.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Formula for Sequential Discounts</h4>
+                  <p>
+                    Final Price = Original x (1 - Discount1) x (1 - Discount2) x (1 - Discount3)... For three discounts of 30%, 20%, and 10%: $100 x 0.70 x 0.80 x 0.90 = $50.40. That's 49.6% off, not 60%.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Mixing Percent and Fixed Discounts</h4>
+                  <p>
+                    When you have both percentage and fixed-dollar discounts, order matters. Typically, percentage discounts apply first, then fixed amounts. A $100 item with 20% off plus $10 off: $100 - 20% = $80, then $80 - $10 = $70.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When Stores Say "Cannot Be Combined"</h4>
+                  <p>
+                    This means you must choose one discount — you can't stack them. Often the register automatically applies the best single discount. Some stores allow stacking a percent-off coupon with a fixed-dollar reward, but not two percent-off coupons.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Common Discount Stacking Scenarios
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Scenario</th>
+                      <th className="text-left py-3 px-2 font-semibold">Discounts</th>
+                      <th className="text-left py-3 px-2 font-semibold">On $100</th>
+                      <th className="text-left py-3 px-2 font-semibold">Total Savings</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Sale + Coupon</td>
+                      <td className="py-3 px-2">40% off + 10% off</td>
+                      <td className="py-3 px-2">$54 (sequential)</td>
+                      <td className="py-3 px-2">$46 (46%)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Clearance + Rewards</td>
+                      <td className="py-3 px-2">50% off + $15 reward</td>
+                      <td className="py-3 px-2">$35 (sequential)</td>
+                      <td className="py-3 px-2">$65 (65%)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Triple Stack</td>
+                      <td className="py-3 px-2">30% + 20% + 15%</td>
+                      <td className="py-3 px-2">$47.60 (sequential)</td>
+                      <td className="py-3 px-2">$52.40 (52.4%)</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Percent + Fixed</td>
+                      <td className="py-3 px-2">25% off + $20 off</td>
+                      <td className="py-3 px-2">$55 (sequential)</td>
+                      <td className="py-3 px-2">$45 (45%)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">BOGO + Coupon</td>
+                      <td className="py-3 px-2">50% off second + 10% off total</td>
+                      <td className="py-3 px-2">$67.50 (two $50 items)</td>
+                      <td className="py-3 px-2">$32.50 (32.5%)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Maximizing Discount Stacking
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Read the Fine Print on Coupons</p>
+                    <p>Some coupons say "cannot be combined with other offers." Others say "valid on sale items." The wording determines if stacking is allowed. Store policies vary widely.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Stack Store Credit Card Discounts</p>
+                    <p>Many stores offer an extra 10-25% off for opening a store credit card. This usually stacks with sale prices. Just make sure you can pay it off immediately to avoid interest.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use Cashback Portals on Top of Discounts</p>
+                    <p>Rakuten, TopCashback, and similar portals give 1-10% cashback on purchases. This stacks with everything because it's a rebate after purchase, not a discount at checkout.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Time Your Purchases for Maximum Stacking</p>
+                    <p>Holiday weekends often have stackable offers: site-wide sales + extra coupon codes + cashback portal bonuses. Black Friday, Cyber Monday, and end-of-season clearances are prime stacking opportunities.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Know When Stacking Isn't Worth It</p>
+                    <p>Don't open a store credit card just for a one-time discount unless you're making a huge purchase. Don't buy items you don't need just because they're on sale. A 50% discount on something useless is still a 100% waste.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Do most stores allow discount stacking?</h4>
+                  <p>
+                    It depends on the store. Department stores and clothing retailers often allow stacking a sale price with a coupon. Electronics stores are stricter. Always check the coupon terms — "cannot be combined" means no stacking.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why isn't 20% + 20% equal to 40% off?</h4>
+                  <p>
+                    Because the second 20% applies to the already-discounted price, not the original. $100 - 20% = $80. Then $80 - 20% = $64. You saved $36, which is 36% off, not 40%. This is how sequential discounts work.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can I stack manufacturer and store coupons?</h4>
+                  <p>
+                    Many grocery and drug stores allow this. A manufacturer coupon plus a store coupon on the same item is common. Some stores also let you stack a third discount like a loyalty reward or app coupon.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What's the best order to apply discounts?</h4>
+                  <p>
+                    If you have control, apply percentage discounts first, then fixed-dollar discounts. This maximizes savings. However, most POS systems have a fixed order you can't change.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Do cashback apps count as discount stacking?</h4>
+                  <p>
+                    Yes, and they're the best kind because they don't affect the checkout total. Apps like Ibotta, Fetch Rewards, and Rakuten give cash back after purchase, stacking on top of any in-store discounts you already used.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/discount-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Discount Calculator</span>
+                  <p className="text-muted-foreground">Calculate single discount percentages</p>
+                </a>
+                <a
+                  href="/calculators/percentage-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Percentage Calculator</span>
+                  <p className="text-muted-foreground">General percentage calculations</p>
+                </a>
+                <a
+                  href="/calculators/sales-tax-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Sales Tax Calculator</span>
+                  <p className="text-muted-foreground">Add tax to discounted prices</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

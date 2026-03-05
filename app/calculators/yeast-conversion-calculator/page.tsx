@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -218,6 +218,143 @@ export default function YeastConversionCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Convert Between Yeast Types</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Your Yeast Type</h3>
+                <p className="text-sm text-muted-foreground">Choose the type of yeast you have: active dry, instant, rapid rise, or fresh.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Your Amount</h3>
+                <p className="text-sm text-muted-foreground">Input the amount of yeast your recipe calls for in grams or teaspoons.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get All Conversions</h3>
+                <p className="text-sm text-muted-foreground">See equivalent amounts for all yeast types to use what you have on hand.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Yeast Conversion Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Accurate Substitution Ratios</h3>
+              <p className="text-sm text-muted-foreground">Professional baker ratios ensure your bread rises properly regardless of yeast type used.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">All Yeast Types Covered</h3>
+              <p className="text-sm text-muted-foreground">Convert between active dry, instant, rapid rise, and fresh cake yeast instantly.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Multiple Unit Support</h3>
+              <p className="text-sm text-muted-foreground">Work in grams, teaspoons, tablespoons, or ounces for flexible recipe adaptation.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Baking Success Guaranteed</h3>
+              <p className="text-sm text-muted-foreground">Never ruin a recipe due to wrong yeast amounts—get perfect conversions every time.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Yeast Conversion Ratios Reference</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Yeast Type</th>
+                  <th className="text-left py-2">Ratio</th>
+                  <th className="text-left py-2">For 7g Active Dry</th>
+                  <th className="text-left py-2">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Active Dry</td>
+                  <td className="py-2">1.0</td>
+                  <td className="py-2">7g (baseline)</td>
+                  <td className="py-2">Dissolve in warm water first</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Instant Yeast</td>
+                  <td className="py-2">0.75</td>
+                  <td className="py-2">5.25g</td>
+                  <td className="py-2">Mix directly with flour</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Rapid Rise</td>
+                  <td className="py-2">0.75</td>
+                  <td className="py-2">5.25g</td>
+                  <td className="py-2">Fastest acting, single rise</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Fresh/Cake</td>
+                  <td className="py-2">2.5</td>
+                  <td className="py-2">17.5g</td>
+                  <td className="py-2">Refrigerate, use within 2 weeks</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">Can I substitute instant yeast for active dry?</h3>
+              <p className="text-sm text-muted-foreground">Yes! Use 25% less instant yeast than active dry. For 1 tablespoon active dry, use 2¼ teaspoons instant. Instant yeast can be mixed directly into flour without proofing.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How much fresh yeast equals dry yeast?</h3>
+              <p className="text-sm text-muted-foreground">Use 2.5 times more fresh yeast than dry. One 7g packet of active dry yeast equals about 17-18g (0.6 oz) of fresh cake yeast. Fresh yeast gives superior flavor but spoils faster.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What if I use too much yeast?</h3>
+              <p className="text-sm text-muted-foreground">Too much yeast causes over-proofing: bread rises too fast then collapses, creating large holes and yeasty flavor. It may also taste bitter. Reduce yeast by 25% next time.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How do I know if my yeast is still active?</h3>
+              <p className="text-sm text-muted-foreground">Proof test: Mix 1 tsp yeast + 1 tsp sugar in ¼ cup warm water (105-115°F). If it doesn't foam within 10 minutes, the yeast is dead and won't leaven your bread.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Can I convert yeast measurements to teaspoons?</h3>
+              <p className="text-sm text-muted-foreground">Yes. One standard yeast packet = 7g = 2¼ teaspoons active dry = 1¾ teaspoons instant. For bulk yeast: 1 teaspoon ≈ 3g active dry or 2.25g instant yeast.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Baking Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/recipe-scaler-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Recipe Scaler Calculator</h3>
+              <p className="text-sm text-muted-foreground">Scale baking recipes up or down for any batch size.</p>
+            </a>
+            <a href="/calculators/baking-time-adjustment-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Baking Time Adjustment Calculator</h3>
+              <p className="text-sm text-muted-foreground">Adjust baking times for different pan sizes and altitudes.</p>
+            </a>
+            <a href="/calculators/kitchen-measurement-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Kitchen Measurement Converter</h3>
+              <p className="text-sm text-muted-foreground">Convert between cups, grams, ounces, and other cooking units.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

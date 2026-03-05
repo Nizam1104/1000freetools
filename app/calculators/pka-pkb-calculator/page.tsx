@@ -319,6 +319,106 @@ export default function PKaPKbCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Use the pKa pKb Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <p className="font-semibold mb-1">Choose your conversion type</p>
+              <p className="text-sm text-muted-foreground">Select from Ka to pKa, pKa to Ka, Kb to pKb, pKb to Kb, or pKa-pKb interconversion.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <p className="font-semibold mb-1">Enter your value</p>
+              <p className="text-sm text-muted-foreground">Input the dissociation constant or p-value. Use scientific notation for Ka/Kb (e.g., 1.8e-5).</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <p className="font-semibold mb-1">Get instant results</p>
+              <p className="text-sm text-muted-foreground">View the converted value plus a graph showing the relationship between parameters.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Benefits for Chemistry Students</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">Six conversion modes</p>
+              <p className="text-sm text-muted-foreground">Handle any Ka, Kb, pKa, or pKb conversion in one tool.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Visual relationship graphs</p>
+              <p className="text-sm text-muted-foreground">See how Ka and pKa relate across different values.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Acid strength reference</p>
+              <p className="text-sm text-muted-foreground">Built-in table classifies acids from very strong to very weak.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Common pKa values</p>
+              <p className="text-sm text-muted-foreground">Quick lookup table for HCl, acetic acid, carbonic acid, and more.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Scientific notation support</p>
+              <p className="text-sm text-muted-foreground">Enter values like 1.8e-5 directly without manual conversion.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">What is the formula for pKa?</p>
+              <p className="text-sm text-muted-foreground">pKa = -log10(Ka). For acetic acid with Ka = 1.8 × 10^-5, pKa = -log10(1.8 × 10^-5) = 4.74.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How do you convert pKa to pKb?</p>
+              <p className="text-sm text-muted-foreground">Use pKa + pKb = 14 at 25°C. If pKa = 4.76, then pKb = 14 - 4.76 = 9.24.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What does a low pKa value mean?</p>
+              <p className="text-sm text-muted-foreground">Low pKa indicates a strong acid that dissociates completely. pKa less than 0 means very strong acid like HCl.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is Ka in chemistry?</p>
+              <p className="text-sm text-muted-foreground">Ka is the acid dissociation constant. It measures how much an acid dissociates in water. Higher Ka means stronger acid.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Why is pKa + pKb = 14?</p>
+              <p className="text-sm text-muted-foreground">This comes from Kw = [H+][OH-] = 10^-14 at 25°C. Taking -log of both sides gives pKa + pKb = 14.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Chemistry Calculators</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Try our other chemistry tools: the <a href="/calculators/ph-calculator" className="text-primary hover:underline">pH calculator</a> for acid-base calculations, the <a href="/calculators/henderson-hasselbalch-calculator" className="text-primary hover:underline">Henderson-Hasselbalch calculator</a> for buffer solutions, and the <a href="/calculators/titration-calculator" className="text-primary hover:underline">titration calculator</a> for neutralization problems.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -103,6 +103,141 @@ export default function EmergencyFundCalculatorPage() {
               )}
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Your Emergency Fund</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Calculate Monthly Expenses</h3>
+              <p className="text-sm text-muted-foreground">Add up all essential monthly costs including rent, utilities, groceries, insurance, and minimum debt payments.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Choose Coverage Period</h3>
+              <p className="text-sm text-muted-foreground">Select 3-6 months for most people, or up to 12 months if you have irregular income or dependents.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">Get Your Target Amount</h3>
+              <p className="text-sm text-muted-foreground">Multiply your monthly expenses by the number of months to find your emergency fund goal.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Emergency Fund Calculator?</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Personalized Recommendations
+              </h3>
+              <p className="text-sm text-muted-foreground">Get a tailored emergency fund target based on your actual spending, not generic advice.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Flexible Coverage Options
+              </h3>
+              <p className="text-sm text-muted-foreground">Adjust the months of coverage to match your job security, income stability, and risk tolerance.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Instant Results
+              </h3>
+              <p className="text-sm text-muted-foreground">See your emergency fund target immediately with no sign-up or personal information required.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Expert Guidelines Included
+              </h3>
+              <p className="text-sm text-muted-foreground">Built-in recommendations based on financial advisor standards for emergency savings.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-6 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-3">Recommended Emergency Fund by Situation</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-2">Financial Situation</th>
+                    <th className="text-left py-2">Recommended Coverage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-2">Dual income, stable jobs</td>
+                    <td className="py-2">3-4 months</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2">Single income household</td>
+                    <td className="py-2">6 months</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2">Self-employed/contractor</td>
+                    <td className="py-2">6-12 months</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2">One income with dependents</td>
+                    <td className="py-2">6-12 months</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How much emergency fund do I really need?</h3>
+              <p className="text-sm text-muted-foreground">Most financial experts recommend 3-6 months of essential expenses. If you have a stable job and dual income, 3-4 months may suffice. Self-employed individuals or single-income households should aim for 6-12 months.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Should I include discretionary spending in my emergency fund calculation?</h3>
+              <p className="text-sm text-muted-foreground">No, focus on essential expenses only: housing, utilities, groceries, insurance, minimum debt payments, and necessary transportation. Emergency funds are for necessities during income disruption.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Where should I keep my emergency fund?</h3>
+              <p className="text-sm text-muted-foreground">Keep emergency savings in a high-yield savings account or money market fund where it's easily accessible but earns some interest. Avoid investing in stocks or locking it in CDs with early withdrawal penalties.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Can I use my emergency fund for non-emergencies?</h3>
+              <p className="text-sm text-muted-foreground">Emergency funds should only be used for true emergencies: job loss, medical emergencies, major car repairs, or urgent home repairs. Planned expenses like vacations or holiday gifts should come from separate savings.</p>
+            </div>
+            <div className="p-5 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How long does it take to build an emergency fund?</h3>
+              <p className="text-sm text-muted-foreground">Timeline varies based on income and expenses. Start with a $1,000 mini emergency fund, then aim to save 10-20% of income until you reach your target. Many people build a full emergency fund in 6-24 months.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-12 mb-8">
+          <h2 className="text-2xl font-semibold mb-6">Related Financial Tools</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/50-30-20-budget-rule-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">50/30/20 Budget Calculator</h3>
+              <p className="text-sm text-muted-foreground">Create a balanced budget that includes emergency savings with this simple budgeting rule calculator.</p>
+            </a>
+            <a href="/calculators/monthly-budget-breakdown-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Monthly Budget Breakdown</h3>
+              <p className="text-sm text-muted-foreground">Track your monthly expenses to accurately calculate how much you need in emergency savings.</p>
+            </a>
+            <a href="/calculators/savings-goal-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Savings Goal Calculator</h3>
+              <p className="text-sm text-muted-foreground">Plan how long it will take to reach your emergency fund target based on your savings rate.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

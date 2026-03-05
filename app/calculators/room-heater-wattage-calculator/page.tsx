@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,7 +28,7 @@ export default function RoomHeaterWattageCalculatorPage() {
     let length = parseFloat(roomLength);
     let width = parseFloat(roomWidth);
     let height = parseFloat(ceilingHeight) || 8;
-    
+
     if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) return;
 
     // Convert to feet if in meters
@@ -347,6 +347,158 @@ export default function RoomHeaterWattageCalculatorPage() {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">How This Heater Wattage Calculator Works</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">1</div>
+              <div>
+                <p className="font-medium mb-1">Enter Your Room Details</p>
+                <p className="text-muted-foreground">Input your room dimensions, ceiling height, and select the room type. The calculator also considers your insulation quality, local climate zone, and window type to account for heat loss factors.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">2</div>
+              <div>
+                <p className="font-medium mb-1">We Calculate Heat Requirements</p>
+                <p className="text-muted-foreground">Using the standard baseline of 10 watts per square foot, we apply adjustment factors for insulation, climate, room type, and windows. Higher ceilings increase the volume that needs heating, so we adjust accordingly.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">3</div>
+              <div>
+                <p className="font-medium mb-1">Get Your Heater Recommendation</p>
+                <p className="text-muted-foreground">The calculator returns the exact wattage and BTU output you need, recommends a specific heater size category, and estimates your running costs based on average electricity rates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features and Benefits Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Why Use This Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <p className="font-semibold mb-1">Accurate Sizing</p>
+              <p className="text-muted-foreground">Avoid the common mistake of buying a heater that is too small or wastefully oversized. Proper sizing ensures efficient heating and lower energy bills.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Climate-Aware Calculations</p>
+              <p className="text-muted-foreground">Unlike basic calculators, we factor in your local climate zone. A room in Minnesota needs more heating power than the same room in Georgia.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Cost Estimates Included</p>
+              <p className="text-muted-foreground">See estimated hourly and daily running costs based on your recommended heater size. This helps you budget for winter heating expenses before you buy.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Room-Specific Adjustments</p>
+              <p className="text-muted-foreground">Different rooms have different heating needs. Bathrooms and basements require more power, while kitchens benefit from appliance heat.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">BTU and Watt Output</p>
+              <p className="text-muted-foreground">Get both wattage and BTU measurements so you can shop confidently across different heater specifications and brands.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">How many watts do I need to heat a 12x12 room?</p>
+              <p className="text-muted-foreground">A 12x12 room (144 sq ft) with average insulation and moderate climate needs approximately 1,440 watts. This calculator adjusts that baseline based on your specific conditions like ceiling height, insulation quality, and climate zone.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Is it better to have a higher wattage heater?</p>
+              <p className="text-muted-foreground">Not necessarily. An oversized heater will cycle on and off frequently, wasting energy and creating uncomfortable temperature swings. An undersized heater will run constantly without reaching your desired temperature. The right size is the most efficient choice.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is the difference between watts and BTU for heaters?</p>
+              <p className="text-muted-foreground">Watts measure electrical power consumption, while BTU (British Thermal Units) measure heat output. One watt equals approximately 3.412 BTU per hour. Both numbers help you compare heaters, but BTU is more common for gas heaters while watts are used for electric models.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How much does it cost to run a 1500 watt heater?</p>
+              <p className="text-muted-foreground">At the US average electricity rate of $0.13 per kWh, a 1500 watt heater costs about $0.20 per hour to run. Running it for 8 hours daily would cost roughly $1.56 per day or $47 per month.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Does poor insulation really affect heater size that much?</p>
+              <p className="text-muted-foreground">Yes, significantly. Poor insulation can increase your heating needs by 50 percent or more. Drafty windows, uninsulated walls, and air leaks force your heater to work harder to maintain temperature. Improving insulation is often more cost-effective than buying a larger heater.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Related Calculators</h2>
+          <div className="space-y-3">
+            <div>
+              <a href="/calculators/electricity-cost-calculator" className="text-primary hover:underline font-medium">Electricity Cost Calculator</a>
+              <p className="text-muted-foreground text-sm">Calculate the running costs of any electrical appliance based on wattage and your local electricity rates.</p>
+            </div>
+            <div>
+              <a href="/calculators/btu-calculator" className="text-primary hover:underline font-medium">BTU Calculator for Air Conditioners</a>
+              <p className="text-muted-foreground text-sm">Find the right cooling capacity for your room with our BTU sizing tool for AC units.</p>
+            </div>
+            <div>
+              <a href="/calculators/energy-consumption-calculator" className="text-primary hover:underline font-medium">Home Energy Consumption Calculator</a>
+              <p className="text-muted-foreground text-sm">Estimate your total household energy usage and identify opportunities to reduce your electricity bills.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Reference Table: Heater Size by Room */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-xl font-semibold mb-4">Quick Reference: Heater Size by Room</h2>
+          <p className="text-muted-foreground mb-4">This table provides general guidelines for heater sizing under average conditions (8 ft ceilings, moderate climate, average insulation).</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted">
+                  <th className="text-left py-3 px-3">Room Size</th>
+                  <th className="text-left py-3 px-3">Square Feet</th>
+                  <th className="text-left py-3 px-3">Recommended Watts</th>
+                  <th className="text-left py-3 px-3">BTU Output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Small bathroom</td>
+                  <td className="py-3 px-3">40-60 sq ft</td>
+                  <td className="py-3 px-3">500-750 W</td>
+                  <td className="py-3 px-3">1,700-2,550 BTU</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Home office / Bedroom</td>
+                  <td className="py-3 px-3">100-150 sq ft</td>
+                  <td className="py-3 px-3">1,000-1,500 W</td>
+                  <td className="py-3 px-3">3,400-5,100 BTU</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Living room</td>
+                  <td className="py-3 px-3">200-300 sq ft</td>
+                  <td className="py-3 px-3">2,000-3,000 W</td>
+                  <td className="py-3 px-3">6,800-10,200 BTU</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-3">Large basement</td>
+                  <td className="py-3 px-3">400-500 sq ft</td>
+                  <td className="py-3 px-3">4,000-5,000 W</td>
+                  <td className="py-3 px-3">13,600-17,000 BTU</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-3">Open floor plan</td>
+                  <td className="py-3 px-3">600+ sq ft</td>
+                  <td className="py-3 px-3">Multiple heaters or central heat</td>
+                  <td className="py-3 px-3">20,000+ BTU</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">Note: These are baseline estimates. Use the calculator above for precise recommendations based on your specific room conditions.</p>
         </div>
       </div>
     </div>

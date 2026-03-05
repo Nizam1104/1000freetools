@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -123,12 +123,12 @@ export default function JsonPatchGeneratorPage() {
 
   const applyPatch = () => {
     if (!patches || !sourceJson) return;
-    
+
     try {
       let source = JSON.parse(sourceJson);
       for (const patch of patches) {
         const pathParts = patch.path.slice(1).split("/").map(p => p.replace(/~1/g, "/").replace(/~0/g, "~"));
-        
+
         if (patch.op === "add" || patch.op === "replace") {
           let obj = source;
           for (let i = 0; i < pathParts.length - 1; i++) {

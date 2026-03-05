@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -153,6 +153,271 @@ export default function FreelanceEffectiveHourlyRateCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Freelance Effective Hourly Rate Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your billing rate and hours</p>
+                    <p>Input your hourly rate, total hours worked per week, and how many of those hours are actually billable to clients. Most freelancers bill 20-30 hours in a 40-hour work week.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Add taxes and business expenses</p>
+                    <p>Enter your estimated tax rate (typically 25-35% for self-employed) and weekly business expenses like software, equipment, home office, and insurance.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review your effective rate</p>
+                    <p>The calculator shows what you actually earn per hour after accounting for non-billable time, taxes, and expenses. Use this to evaluate if your rates are sustainable.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Freelance Billable Hour Benchmarks
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Profession</th>
+                      <th className="text-left py-3 px-2 font-semibold">Typical Billable %</th>
+                      <th className="text-left py-3 px-2 font-semibold">Billable Hours/Week</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Software Developer</td>
+                      <td className="py-3 px-2">60-75%</td>
+                      <td className="py-3 px-2">24-30 hrs</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Graphic Designer</td>
+                      <td className="py-3 px-2">50-65%</td>
+                      <td className="py-3 px-2">20-26 hrs</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Writer/Content Creator</td>
+                      <td className="py-3 px-2">40-60%</td>
+                      <td className="py-3 px-2">16-24 hrs</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Consultant</td>
+                      <td className="py-3 px-2">70-80%</td>
+                      <td className="py-3 px-2">28-32 hrs</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Virtual Assistant</td>
+                      <td className="py-3 px-2">75-85%</td>
+                      <td className="py-3 px-2">30-34 hrs</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Billable percentage varies by experience, client type, and how much time you spend on marketing and admin tasks.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Effective Hourly Rate
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Your Effective Rate Differs from Your Billing Rate</h4>
+                  <p>
+                    Your billing rate is what clients pay. Your effective rate is what you keep per hour worked.
+                    The gap comes from three sources: non-billable time (marketing, admin, learning), taxes
+                    (self-employment tax plus income tax), and business expenses (software, equipment, insurance).
+                    A $100/hour billing rate often becomes $40-60/hour effective rate.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Billable Hours Reality</h4>
+                  <p>
+                    Few freelancers bill 40 hours per week. Time goes to client communication, proposals,
+                    invoicing, professional development, and finding new clients. Industry data shows
+                    independent freelancers average 20-25 billable hours in a 40-hour work week. Agency
+                    contractors may reach 30-35 billable hours but have less schedule flexibility.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Self-Employment Tax Impact</h4>
+                  <p>
+                    Employees split payroll taxes with their employer. Freelancers pay both halves: 15.3%
+                    for Social Security and Medicare, plus income tax. A 30% tax rate is a reasonable
+                    estimate for many freelancers. This alone reduces a $50/hour rate to $35/hour before
+                    expenses and non-billable time.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Improving Your Effective Rate
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Raise your rates strategically</p>
+                    <p>Increasing rates by 10-20% often loses few clients but directly boosts effective rate. Test with new clients first, then roll out to existing clients at renewal time.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Productize your services</p>
+                    <p>Package work into fixed-price offerings based on value delivered, not hours spent. A website audit sold for $500 might take 2 hours, yielding $250/hour effective rate.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Reduce non-billable time</p>
+                    <p>Use templates for proposals and contracts. Automate invoicing with tools like FreshBooks or Wave. Batch administrative tasks into specific time blocks instead of letting them fragment your day.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Track your time honestly</p>
+                    <p>Use a time tracker like Toggl or Clockify for two weeks. Most freelancers discover they bill far fewer hours than estimated. This data helps set realistic rates and identify time drains.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What is a good effective hourly rate for freelancers?</h4>
+                  <p>
+                    It depends on your field and location, but $40-75/hour effective rate is common for
+                    skilled freelancers in developed countries. Junior freelancers may start at $20-35/hour.
+                    Specialized consultants in high-demand fields can reach $100-200/hour effective rate.
+                    Compare against local employee salaries plus 30% for benefits and overhead.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How many billable hours should I expect per week?</h4>
+                  <p>
+                    Most independent freelancers bill 20-25 hours per week in a 40-hour work week. The
+                    rest goes to marketing, admin, client communication, and skill development. If you
+                    consistently bill under 15 hours, either raise rates significantly or investigate why
+                    client work is scarce. Over 35 billable hours weekly suggests you are undercharging.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What expenses can freelancers deduct?</h4>
+                  <p>
+                    Common deductions include home office (portion of rent/utilities), software subscriptions,
+                    equipment and supplies, professional development, marketing costs, business insurance,
+                    and a portion of phone/internet. Self-employment tax and health insurance premiums
+                    may also be deductible. Consult a tax professional for your situation.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I charge hourly or project-based?</h4>
+                  <p>
+                    Project pricing often yields higher effective rates because you capture value rather
+                    than time. However, hourly works well for ongoing support or uncertain scopes. Many
+                    freelancers use both: project pricing for defined deliverables, hourly for maintenance
+                    or discovery work. Always calculate the implied hourly rate before accepting fixed-price work.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How often should I raise my freelance rates?</h4>
+                  <p>
+                    Annual increases of 5-10% keep pace with inflation and growing experience. Raise rates
+                    more aggressively (15-25%) when changing specialties, adding certifications, or if you
+                    are consistently booked solid. New clients should always get current rates; grandfather
+                    existing clients only if strategically valuable.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/freelance-rate-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Freelance Rate Calculator</span>
+                  <p className="text-muted-foreground">Determine what hourly rate you should charge based on income goals</p>
+                </a>
+                <a
+                  href="/calculators/self-employment-tax-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Self-Employment Tax Calculator</span>
+                  <p className="text-muted-foreground">Estimate your self-employment tax obligation for the year</p>
+                </a>
+                <a
+                  href="/calculators/hourly-to-salary-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Hourly to Salary Calculator</span>
+                  <p className="text-muted-foreground">Convert hourly rates to equivalent annual salary for comparison</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

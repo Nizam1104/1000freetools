@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function FixedDepositInterestCalculatorPage() {
   const [principal, setPrincipal] = useState<string>("");
@@ -164,6 +172,233 @@ export default function FixedDepositInterestCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>How to Calculate Fixed Deposit Interest</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                <strong>Step 1:</strong> Enter your principal deposit amount and the annual interest rate offered by your bank.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <strong>Step 2:</strong> Select your tenure (in years or months) and compounding frequency (monthly, quarterly, semi-annually, or annually).
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <strong>Step 3:</strong> Click Calculate to see your maturity amount, total interest earned, and effective annual rate.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Understanding Fixed Deposits and Compound Interest</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What Is a Fixed Deposit</h4>
+                <p className="text-sm text-muted-foreground">
+                  A fixed deposit (FD) is a savings instrument where you deposit money for a fixed period at a guaranteed interest rate. Banks pay higher rates than regular savings accounts because you agree not to withdraw the money until maturity. FDs are low-risk and ideal for conservative investors or short-term goals.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How Compound Interest Works in FDs</h4>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Compound interest means you earn interest on your interest. The frequency matters:
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-muted rounded-md">
+                    <p className="font-semibold text-sm mb-2">Monthly Compounding</p>
+                    <p className="text-xs text-muted-foreground">
+                      Interest is calculated and added every month. Best for maximizing returns. A 6% FD compounded monthly gives 6.17% effective rate.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-muted rounded-md">
+                    <p className="font-semibold text-sm mb-2">Quarterly Compounding</p>
+                    <p className="text-xs text-muted-foreground">
+                      Most common for FDs. Interest is added every 3 months. A 6% FD compounded quarterly gives 6.14% effective rate.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">The FD Maturity Formula</h4>
+                <p className="text-sm text-muted-foreground">
+                  A = P × (1 + r/n)^(n×t). P is principal, r is annual rate (as decimal), n is compounding frequency per year, t is time in years. For $10,000 at 6% for 5 years compounded quarterly: A = 10000 × (1 + 0.06/4)^(4×5) = $13,468.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Fixed Deposit Interest Rates Reference</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Institution Type</TableHead>
+                    <TableHead>Typical Rate Range</TableHead>
+                    <TableHead>Best For</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>Large national banks</TableCell>
+                    <TableCell className="font-mono">3-5%</TableCell>
+                    <TableCell>Safety, convenience</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Regional banks</TableCell>
+                    <TableCell className="font-mono">4-6%</TableCell>
+                    <TableCell>Better rates, local service</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Credit unions</TableCell>
+                    <TableCell className="font-mono">4-6%</TableCell>
+                    <TableCell>Member benefits, competitive rates</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Online banks</TableCell>
+                    <TableCell className="font-mono">5-7%</TableCell>
+                    <TableCell>Highest rates, no branches</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Post office FDs</TableCell>
+                    <TableCell className="font-mono">5-7%</TableCell>
+                    <TableCell>Government backing, tax benefits</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Corporate FDs</TableCell>
+                    <TableCell className="font-mono">7-9%</TableCell>
+                    <TableCell>Higher returns, higher risk</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              <p className="text-xs text-muted-foreground mt-3">
+                Rates vary by country, tenure, and deposit amount. Longer tenures typically offer higher rates. Senior citizens often get 0.25-0.50% extra.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Compounding Frequency Comparison</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="p-4 bg-muted rounded-md">
+                <h4 className="font-semibold text-sm mb-3">Example: $10,000 at 6% for 5 Years</h4>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Compounding</TableHead>
+                      <TableHead>Effective Rate</TableHead>
+                      <TableHead>Maturity Amount</TableHead>
+                      <TableHead>Interest Earned</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>Annually</TableCell>
+                      <TableCell className="font-mono">6.00%</TableCell>
+                      <TableCell className="font-mono">$13,382</TableCell>
+                      <TableCell className="font-mono">$3,382</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Semi-Annually</TableCell>
+                      <TableCell className="font-mono">6.09%</TableCell>
+                      <TableCell className="font-mono">$13,439</TableCell>
+                      <TableCell className="font-mono">$3,439</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Quarterly</TableCell>
+                      <TableCell className="font-mono">6.14%</TableCell>
+                      <TableCell className="font-mono">$13,468</TableCell>
+                      <TableCell className="font-mono">$3,468</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Monthly</TableCell>
+                      <TableCell className="font-mono">6.17%</TableCell>
+                      <TableCell className="font-mono">$13,488</TableCell>
+                      <TableCell className="font-mono">$3,488</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                More frequent compounding gives slightly higher returns. Monthly vs annually makes a $106 difference on $10,000 over 5 years.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How is FD interest calculated?</h4>
+                <p className="text-sm text-muted-foreground">
+                  FD interest uses compound interest formula: A = P(1 + r/n)^(nt). Most banks compound quarterly. For simple interest FDs (rare), use I = P × r × t. Compound interest always gives higher returns over time.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Is FD interest taxable?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Yes, FD interest is taxable as income. Banks deduct TDS (tax deducted at source) if interest exceeds threshold limits. Tax-saving FDs (5-year lock-in) offer deduction under Section 80C in India up to $1,500.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Can I withdraw FD before maturity?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Yes, but with penalties. Banks typically charge 0.5-1% lower interest on premature withdrawals. Some banks allow partial withdrawals. Tax-saving FDs cannot be broken before 5 years.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What happens to FD on maturity?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Banks either credit the amount to your linked account or auto-renew the FD at prevailing rates. Auto-renewal is convenient but you might miss better rates elsewhere. Set maturity instructions when opening the FD.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Are fixed deposits safe?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Bank FDs are very safe. In the US, FDIC insures up to $250,000. In India, DICGC insures up to ₹5 lakh per bank. Corporate FDs carry higher risk but offer better rates. Diversify across banks for large amounts.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Tools</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Compound Interest Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate compound growth with regular contributions</p>
+                </a>
+                <a href="/calculators/simple-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Simple Interest Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate simple interest for loans and deposits</p>
+                </a>
+                <a href="/calculators/future-value-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Future Value Calculator</p>
+                  <p className="text-xs text-muted-foreground">Project investment growth over time</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

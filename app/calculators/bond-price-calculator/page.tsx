@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -167,6 +167,253 @@ export default function BondPriceCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Bond Price Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter the bond's face value and coupon rate</p>
+                    <p>Face value is typically $1,000 for corporate bonds. The coupon rate is the annual interest rate the bond pays, expressed as a percentage.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Input years to maturity and market yield</p>
+                    <p>Years to maturity is how long until the bond expires. Market yield (discount rate) is the current return investors demand for similar bonds.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Calculate and review the fair price</p>
+                    <p>The result shows the bond's fair market price, whether it trades at a premium or discount to par, and the annual coupon payment amount.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Bond Pricing Reference Table
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Market Yield vs Coupon</th>
+                      <th className="text-left py-3 px-2 font-semibold">Bond Price</th>
+                      <th className="text-left py-3 px-2 font-semibold">Trading Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Market Yield = Coupon Rate</td>
+                      <td className="py-3 px-2">Equals Face Value</td>
+                      <td className="py-3 px-2">At Par</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Market Yield &lt; Coupon Rate</td>
+                      <td className="py-3 px-2">Above Face Value</td>
+                      <td className="py-3 px-2">At Premium</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Market Yield &gt; Coupon Rate</td>
+                      <td className="py-3 px-2">Below Face Value</td>
+                      <td className="py-3 px-2">At Discount</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Market Yield rises 1%</td>
+                      <td className="py-3 px-2">Price falls ~Duration%</td>
+                      <td className="py-3 px-2">Inverse relationship</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Market Yield falls 1%</td>
+                      <td className="py-3 px-2">Price rises ~Duration%</td>
+                      <td className="py-3 px-2">Inverse relationship</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Bond prices move inversely to interest rates. When market yields rise above a bond's coupon rate, the bond must trade at a discount to remain competitive.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Bond Pricing
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Bond Prices Are Calculated</h4>
+                  <p>
+                    A bond's price equals the present value of all future cash flows — coupon payments plus the return of face value at maturity. Each cash flow is discounted back to today using the current market yield. When market yields rise, the discount rate increases, making future cash flows worth less today.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Premium vs. Discount Bonds</h4>
+                  <p>
+                    A bond trades at a premium when its coupon rate exceeds current market yields. Investors pay more than face value to lock in the higher coupon. A bond trades at a discount when its coupon rate is below market yields. The lower price compensates buyers for the below-market coupon.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Bond Prices Change</h4>
+                  <p>
+                    Bond prices fluctuate as market interest rates change. If you own a 5% coupon bond and new bonds now pay 6%, your bond becomes less valuable — its price drops until its effective yield matches the market. The opposite happens when rates fall. Credit rating changes and time to maturity also affect price.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Role of Time to Maturity</h4>
+                  <p>
+                    Longer-term bonds are more sensitive to interest rate changes. A 30-year bond's price will swing much more than a 2-year bond's price for the same rate move. This is because there are more future cash flows to discount, and small changes in the discount rate compound over time.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Bond Investors
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Compare Price to Fair Value</p>
+                    <p>Use this calculator to determine if a bond is fairly priced. If the market price is below your calculated fair value, the bond may be undervalued.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Understand What Drives Premium Pricing</p>
+                    <p>Premium bonds cost more upfront but return only face value at maturity. The higher coupon provides income, but you'll have a capital loss at maturity if held to term.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Watch Out for Call Risk on Premium Bonds</p>
+                    <p>Issuers often call premium bonds when rates fall. You get your money back but lose the high coupon. Check the call schedule before paying a large premium.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider Tax Implications</p>
+                    <p>Discount bonds may generate taxable imputed interest even though you don't receive it until maturity. Premium bonds can be amortized to reduce taxable income.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why is my bond trading below face value?</h4>
+                  <p>
+                    Your bond trades at a discount when market interest rates have risen above its coupon rate. Buyers demand a lower price to compensate for the below-market coupon. The bond will still pay face value at maturity, giving you a capital gain if you hold to term.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What happens to bond prices when interest rates rise?</h4>
+                  <p>
+                    Bond prices fall when interest rates rise. Existing bonds with lower coupons become less attractive, so their prices drop until their effective yield matches new bonds. The longer the bond's duration, the more its price will fall for a given rate increase.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is it better to buy bonds at a premium or discount?</h4>
+                  <p>
+                    Neither is inherently better — both can offer fair value. Premium bonds provide higher current income but a capital loss at maturity. Discount bonds provide lower income but a capital gain. The total return depends on the yield to maturity, not the price relative to par.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How accurate is this bond price calculation?</h4>
+                  <p>
+                    This calculator provides a theoretical fair value based on the inputs. Actual market prices may differ due to factors like credit spreads, liquidity, call features, and supply-demand dynamics. Use it as a reference point, not a guaranteed market price.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Does the coupon frequency affect bond price?</h4>
+                  <p>
+                    Yes. Bonds that pay more frequently (monthly vs. annually) have slightly different prices because you receive cash sooner. More frequent payments mean each coupon can be reinvested earlier, which affects the present value calculation.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/bond-duration-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Bond Duration Calculator</span>
+                  <p className="text-muted-foreground">Measure interest rate sensitivity with Macaulay and Modified Duration</p>
+                </a>
+                <a
+                  href="/calculators/bond-yield-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Bond Yield Calculator</span>
+                  <p className="text-muted-foreground">Calculate current yield and yield to maturity from market price</p>
+                </a>
+                <a
+                  href="/calculators/current-yield-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Current Yield Calculator</span>
+                  <p className="text-muted-foreground">Find the annual return on a bond based on its current market price</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

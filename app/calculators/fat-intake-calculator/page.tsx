@@ -257,6 +257,133 @@ export default function FatIntakeCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Your Daily Fat Intake</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Your Details</h3>
+              <p className="text-sm text-muted-foreground">Input your age, gender, height, weight, and activity level. We use the Mifflin-St Jeor equation to calculate your basal metabolic rate (BMR).</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Set Your Goal</h3>
+              <p className="text-sm text-muted-foreground">Choose whether you want to lose weight, maintain, or gain. This adjusts your total daily calorie needs accordingly.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Your Fat Targets</h3>
+              <p className="text-sm text-muted-foreground">Receive personalized daily fat intake recommendations, including saturated and unsaturated fat breakdowns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Why Use This Fat Intake Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Science-Based Calculations</h3>
+            <p className="text-sm text-muted-foreground">Uses the Mifflin-St Jeor equation, considered the most accurate BMR formula by the Academy of Nutrition and Dietetics.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Goal-Specific Recommendations</h3>
+            <p className="text-sm text-muted-foreground">Fat percentages adjust based on your goal - 25% for weight loss, 30% for maintenance, and 25% for muscle gain.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Saturated Fat Guidelines</h3>
+            <p className="text-sm text-muted-foreground">Calculates maximum saturated fat based on AHA recommendations (less than 10% of total calories).</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Flexible Units</h3>
+            <p className="text-sm text-muted-foreground">Supports both metric (kg, cm) and imperial (lbs, inches) measurements for global accessibility.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+          <h3 className="font-semibold mb-3">Recommended Fat Intake by Goal</h3>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2">Goal</th>
+                <th className="text-left py-2">Fat % of Calories</th>
+                <th className="text-left py-2">Saturated Fat Max</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-2">Weight Loss</td>
+                <td className="py-2">20-30%</td>
+                <td className="py-2">&lt;10% of calories</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Maintenance</td>
+                <td className="py-2">25-35%</td>
+                <td className="py-2">&lt;10% of calories</td>
+              </tr>
+              <tr>
+                <td className="py-2">Muscle Gain</td>
+                <td className="py-2">20-30%</td>
+                <td className="py-2">&lt;10% of calories</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold mb-2">How much fat should I eat per day to lose weight?</h3>
+            <p className="text-sm text-muted-foreground">For weight loss, aim for 20-30% of your daily calories from fat. On a 1,500 calorie diet, that&apos;s about 33-50 grams of fat per day. The key is creating a calorie deficit while getting enough essential fatty acids.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Is 70 grams of fat a day too much?</h3>
+            <p className="text-sm text-muted-foreground">It depends on your total calorie needs. For someone eating 2,000 calories, 70g represents 31.5% of calories - within the acceptable range. For a 1,200 calorie diet, 70g would be 52.5% - likely too high. Use this calculator to find your personalized target.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What&apos;s the difference between saturated and unsaturated fat?</h3>
+            <p className="text-sm text-muted-foreground">Saturated fats (found in animal products, coconut oil) should be limited to less than 10% of calories. Unsaturated fats (olive oil, nuts, fish) are heart-healthy and should make up most of your fat intake. This calculator breaks down both types for you.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Can I eat too little fat?</h3>
+            <p className="text-sm text-muted-foreground">Yes. Going below 15-20% of calories from fat can lead to vitamin deficiencies (A, D, E, K are fat-soluble), hormone imbalances, and dry skin. Most adults need at least 0.5g of fat per pound of body weight daily.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How accurate is the Mifflin-St Jeor equation?</h3>
+            <p className="text-sm text-muted-foreground">Studies show the Mifflin-St Jeor equation predicts resting metabolic rate within 10% of measured values for most people. It&apos;s more accurate than the older Harris-Benedict formula, especially for obese individuals.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Nutrition Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/bmr-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">BMR Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate your basal metabolic rate to understand your baseline calorie needs.</p>
+          </a>
+          <a href="/calculators/tdee-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">TDEE Calculator</h3>
+            <p className="text-sm text-muted-foreground">Find your total daily energy expenditure based on activity level.</p>
+          </a>
+          <a href="/calculators/macro-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Macro Calculator</h3>
+            <p className="text-sm text-muted-foreground">Get complete macronutrient breakdowns including protein and carbs.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

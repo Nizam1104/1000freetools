@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -352,6 +352,120 @@ export default function OfficeSpacePerEmployeeCalculatorPage() {
                   more collaboration space and fewer assigned desks. Consider 20-30%
                   buffer for growth and hybrid work arrangements.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">How to Calculate Office Space Per Employee</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                  <h3 className="font-semibold mb-2">Enter Employee Count</h3>
+                  <p className="text-sm text-muted-foreground">Input your current or planned number of employees who will occupy the space.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                  <h3 className="font-semibold mb-2">Choose Workspace Type</h3>
+                  <p className="text-sm text-muted-foreground">Select open plan, hybrid, private offices, cubicles, or coworking style layout.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                  <h3 className="font-semibold mb-2">Get Space Requirements</h3>
+                  <p className="text-sm text-muted-foreground">View total square footage needed, space breakdown, and estimated monthly rent costs.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Key Features of This Office Space Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Multiple Workspace Types
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Calculate space for open plan, hybrid, private offices, cubicles, or coworking layouts with industry-standard sq ft per employee.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Space Allocation Breakdown
+                  </h3>
+                  <p className="text-sm text-muted-foreground">See how your total space divides into workstations, meeting rooms, common areas, and circulation paths.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Cost Estimation
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Estimate monthly rent costs based on your local rate per square foot and calculate cost per employee.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Compliance Checks
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Get alerts if your space may be below legal occupancy limits and view fire code requirements.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Flexible Unit Support
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Work in square feet or square meters with automatic conversions for international planning.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Frequently Asked Questions About Office Space Planning</h2>
+              <div className="space-y-4">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How much office space do I need per employee?</h3>
+                  <p className="text-sm text-muted-foreground">It depends on your workspace type. Open plan needs 80-120 sq ft per person, hybrid layouts need 125-175 sq ft, and private offices require 150-250 sq ft per employee. Include space for desks, meetings, and common areas.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What is the standard office space allocation?</h3>
+                  <p className="text-sm text-muted-foreground">A typical office allocates 45% to workstations, 15% to meeting rooms, 20% to common areas like break rooms and lobbies, and 20% to circulation including hallways and pathways between desks.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How do I calculate office rent per employee?</h3>
+                  <p className="text-sm text-muted-foreground">Multiply total square footage by your annual rent per sq ft, divide by 12 for monthly rent, then divide by employee count. For example: 5000 sq ft × $30/sq ft = $150,000/year = $12,500/month = $250/employee/month for 50 employees.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What is the minimum square footage per person by law?</h3>
+                  <p className="text-sm text-muted-foreground">Most building codes require a minimum of 50-100 sq ft per person for office spaces, depending on jurisdiction. This is for fire safety and occupancy limits. Always check your local building codes and ADA accessibility requirements.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How has hybrid work changed office space needs?</h3>
+                  <p className="text-sm text-muted-foreground">Hybrid work reduces dedicated desk space by 30-50% but increases collaboration areas. Companies now plan for 60% assigned desks and 40% hot desks, with more meeting rooms and phone booths for remote workers visiting the office.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Related Business and Finance Tools</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/break-even-point-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Break Even Point Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate when your business revenue covers all fixed and variable costs.</p>
+                </a>
+                <a href="/calculators/customer-acquisition-cost-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Customer Acquisition Cost Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Determine how much you spend to acquire each new customer.</p>
+                </a>
+                <a href="/calculators/working-capital-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Working Capital Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate your business working capital and assess financial health.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

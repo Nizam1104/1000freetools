@@ -11,7 +11,7 @@ import {
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
@@ -73,12 +73,12 @@ interface OverlayConfig {
   image: File;
   previewUrl: string;
   position:
-    | "top-left"
-    | "top-right"
-    | "bottom-left"
-    | "bottom-right"
-    | "center"
-    | "custom";
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right"
+  | "center"
+  | "custom";
   opacity: number;
   scale: number;
   offsetX: number;
@@ -189,12 +189,12 @@ export default function VideoOverlaysPage() {
             prev.map((o) =>
               o.id === overlay.id
                 ? {
-                    ...o,
-                    width: newWidth,
-                    height: newHeight,
-                    offsetX: (videoDimensions.width - newWidth) / 2,
-                    offsetY: (videoDimensions.height - newHeight) / 2,
-                  }
+                  ...o,
+                  width: newWidth,
+                  height: newHeight,
+                  offsetX: (videoDimensions.width - newWidth) / 2,
+                  offsetY: (videoDimensions.height - newHeight) / 2,
+                }
                 : o,
             ),
           );

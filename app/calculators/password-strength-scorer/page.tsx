@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -66,8 +66,8 @@ export default function PasswordStrengthScorerPage() {
     let score = 0;
     score += Math.min(password.length * 5, 30); // Length score
     score += entropy > 50 ? 30 : entropy > 35 ? 20 : entropy > 25 ? 10 : 0; // Entropy score
-    score += (/[A-Z]/.test(password) ? 1 : 0) + (/[a-z]/.test(password) ? 1 : 0) + 
-             (/[0-9]/.test(password) ? 1 : 0) + (/[^a-zA-Z0-9]/.test(password) ? 1 : 0); // Variety score
+    score += (/[A-Z]/.test(password) ? 1 : 0) + (/[a-z]/.test(password) ? 1 : 0) +
+      (/[0-9]/.test(password) ? 1 : 0) + (/[^a-zA-Z0-9]/.test(password) ? 1 : 0); // Variety score
     score = Math.min(score * 2.5, 100);
 
     // Determine strength
@@ -120,12 +120,12 @@ export default function PasswordStrengthScorerPage() {
             <CardContent className="p-6 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
-                <Input 
-                  id="password" 
-                  type="password" 
-                  placeholder="Enter your password" 
-                  value={password} 
-                  onChange={(e) => setPassword(e.target.value)} 
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
@@ -149,19 +149,18 @@ export default function PasswordStrengthScorerPage() {
                     <p className="text-sm text-muted-foreground">Strength</p>
                     <p className="text-3xl font-bold text-primary">{result.strength}</p>
                     <div className="mt-2 w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className={`h-2 rounded-full ${
-                          result.score >= 80 ? 'bg-green-500' :
-                          result.score >= 60 ? 'bg-blue-500' :
-                          result.score >= 40 ? 'bg-yellow-500' :
-                          result.score >= 20 ? 'bg-orange-500' : 'bg-red-500'
-                        }`}
+                      <div
+                        className={`h-2 rounded-full ${result.score >= 80 ? 'bg-green-500' :
+                            result.score >= 60 ? 'bg-blue-500' :
+                              result.score >= 40 ? 'bg-yellow-500' :
+                                result.score >= 20 ? 'bg-orange-500' : 'bg-red-500'
+                          }`}
                         style={{ width: `${result.score}%` }}
                       />
                     </div>
                     <p className="text-sm mt-1">Score: {result.score}/100</p>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-2">
                     <div className="p-3 bg-muted rounded-lg">
                       <p className="text-xs text-muted-foreground">Entropy</p>
@@ -200,6 +199,122 @@ export default function PasswordStrengthScorerPage() {
                   <p>Enter a password and click Check Strength to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">How to Check Password Strength</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                  <h3 className="font-semibold mb-2">Enter Your Password</h3>
+                  <p className="text-sm text-muted-foreground">Type or paste the password you want to evaluate into the input field.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                  <h3 className="font-semibold mb-2">Click Check Strength</h3>
+                  <p className="text-sm text-muted-foreground">The calculator analyzes length, character variety, entropy, and common patterns.</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                  <h3 className="font-semibold mb-2">Review Results</h3>
+                  <p className="text-sm text-muted-foreground">See your strength score, entropy bits, estimated crack time, and improvement suggestions.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Key Features of This Password Strength Checker</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Entropy Calculation
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Measures password randomness in bits based on character set size and length for scientific strength assessment.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Crack Time Estimation
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Estimates how long it would take to crack your password using brute force at 1 trillion guesses per second.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Pattern Detection
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Identifies weak patterns like repeated characters, sequential numbers, and common passwords like &quot;qwerty&quot;.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Character Variety Check
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Evaluates use of uppercase, lowercase, numbers, and special characters for maximum complexity.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-primary">✓</span>
+                    Actionable Suggestions
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Get specific recommendations to improve weak passwords based on detected issues.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Frequently Asked Questions About Password Security</h2>
+              <div className="space-y-4">
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What makes a password strong?</h3>
+                  <p className="text-sm text-muted-foreground">A strong password is at least 12 characters long and mixes uppercase letters, lowercase letters, numbers, and special characters. Avoid dictionary words, personal information, and patterns. Higher entropy (50+ bits) indicates better resistance to brute force attacks.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How long should a password be?</h3>
+                  <p className="text-sm text-muted-foreground">Security experts recommend at least 12 characters for important accounts. 8 characters is the absolute minimum, but 16+ characters provides excellent protection. Length matters more than complexity - a long passphrase is often stronger than a short complex password.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">What is password entropy?</h3>
+                  <p className="text-sm text-muted-foreground">Entropy measures password randomness in bits. It&apos;s calculated as log2(character set size^length). A password with 60+ bits of entropy would take centuries to crack. Higher entropy means more possible combinations an attacker must try.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">Are special characters necessary?</h3>
+                  <p className="text-sm text-muted-foreground">Special characters increase your character set from 62 (letters + numbers) to 94, adding about 0.5 bits of entropy per character. While helpful, length is more important. &quot;correcthorsebatterystaple&quot; is stronger than &quot;Tr0ub4dor&amp;3&quot; despite having no special characters.</p>
+                </div>
+                <div className="p-5 bg-card rounded-lg border">
+                  <h3 className="font-semibold mb-2">How often should I change my passwords?</h3>
+                  <p className="text-sm text-muted-foreground">Modern guidance says only change passwords if you suspect a breach. Frequent changes lead to weaker passwords. Instead, use unique passwords for each account (a password manager helps), enable two-factor authentication, and monitor for breaches.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-6">Related Security and Privacy Tools</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/hash-brute-force-time-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">Hash Brute Force Time Estimator</h3>
+                  <p className="text-sm text-muted-foreground">Estimate how long it takes to crack password hashes with different algorithms.</p>
+                </a>
+                <a href="/calculators/rsa-key-strength-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">RSA Key Strength Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Evaluate the security level of RSA encryption keys by bit length.</p>
+                </a>
+                <a href="/calculators/aes-key-size-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                  <h3 className="font-semibold mb-2">AES Key Size Estimator</h3>
+                  <p className="text-sm text-muted-foreground">Compare AES-128, AES-192, and AES-256 encryption security levels.</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

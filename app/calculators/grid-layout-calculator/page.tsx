@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,7 +42,7 @@ export default function GridLayoutCalculatorPage() {
     // Calculate available width for columns (container - margins - gutters)
     const availableWidth = containerNum - (marginNum * 2);
     const totalGutterWidth = gutterNum * (columnsNum - 1);
-    
+
     // Column width = (available width - total gutter width) / number of columns
     const columnWidth = (availableWidth - totalGutterWidth) / columnsNum;
 
@@ -61,11 +61,11 @@ padding: ${marginNum}${unit};`;
     const recommendations: string[] = [];
     recommendations.push(`📐 Column width: ${columnWidth.toFixed(1)}${unit}`);
     recommendations.push(`📏 Total gutter space: ${totalGutterWidth}${unit}`);
-    
+
     if (columnsNum === 12) {
       recommendations.push("✅ 12-column grid is industry standard");
     }
-    
+
     if (gutterNum >= 20 && gutterNum <= 30) {
       recommendations.push("✅ Gutter width is within recommended range");
     }

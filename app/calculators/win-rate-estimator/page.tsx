@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -75,7 +75,7 @@ export default function WinRateEstimatorPage() {
 
     recommendations.push(`📊 Games played: ${totalGames}`);
     if (drawsNum > 0) {
-      recommendations.push(`🤝 Draws: ${drawsNum} (${((drawsNum/totalGames)*100).toFixed(1)}%)`);
+      recommendations.push(`🤝 Draws: ${drawsNum} (${((drawsNum / totalGames) * 100).toFixed(1)}%)`);
     }
 
     setResult({
@@ -175,12 +175,11 @@ export default function WinRateEstimatorPage() {
               <h3 className="text-lg font-semibold mb-4">Win Rate Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.winRate >= 60 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.winRate >= 50 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.winRate >= 40 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.winRate >= 60 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.winRate >= 50 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.winRate >= 40 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Win Rate</p>
                     <p className="text-5xl font-bold">{result.winRate}%</p>
                     <p className="text-sm mt-1">{result.assessment}</p>
@@ -214,7 +213,7 @@ export default function WinRateEstimatorPage() {
                     </div>
                     <div className="flex justify-between mt-1 text-xs text-muted-foreground">
                       <span>Wins: {result.winRate}%</span>
-                      <span>Losses: {((result.losses/result.totalGames)*100).toFixed(1)}%</span>
+                      <span>Losses: {((result.losses / result.totalGames) * 100).toFixed(1)}%</span>
                     </div>
                   </div>
 
@@ -265,6 +264,103 @@ export default function WinRateEstimatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Win Rate</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Your Wins</h3>
+                <p className="text-sm text-muted-foreground">Input the total number of games or matches you&apos;ve won.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Losses & Draws</h3>
+                <p className="text-sm text-muted-foreground">Enter your losses and draws (if applicable) for complete stats.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Win Rate Analysis</h3>
+                <p className="text-sm text-muted-foreground">See win percentage, win/loss ratio, and performance assessment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Win Rate Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Win/Loss/Draw Support**</h3>
+              <p className="text-sm text-muted-foreground">Track all game outcomes including draws for accurate win rate calculation.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Win/Loss Ratio**</h3>
+              <p className="text-sm text-muted-foreground">Calculate W/L ratio separately from win percentage for deeper analysis.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Performance Assessment**</h3>
+              <p className="text-sm text-muted-foreground">Get instant feedback on your performance level based on win rate.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Any Game Support**</h3>
+              <p className="text-sm text-muted-foreground">Works for any competitive game - esports, sports, board games, and more.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How is win rate calculated?</h3>
+              <p className="text-sm text-muted-foreground">Win rate = (Wins ÷ Total Games) × 100. Total games includes wins, losses, and draws. A 60% win rate means you win 60 out of every 100 games.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a good win/loss ratio?</h3>
+              <p className="text-sm text-muted-foreground">A W/L ratio above 1.0 means you win more than you lose. Ratios of 1.5-2.0 are considered good. Professional players often maintain 2.0+ ratios.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Do draws count in win rate?</h3>
+              <p className="text-sm text-muted-foreground">Draws count as games played but not as wins. They lower your win percentage but don&apos;t affect win/loss ratio (which typically excludes draws).</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why is my win rate around 50%?</h3>
+              <p className="text-sm text-muted-foreground">Matchmaking systems are designed to give you ~50% win rate by matching you with similar skill players. This indicates the system is working correctly.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How many games do I need for accurate win rate?</h3>
+              <p className="text-sm text-muted-foreground">At least 50-100 games for a reliable sample. Win rates from fewer games can be skewed by luck or temporary performance swings.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/tennis-win-probability-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Tennis Win Probability Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate match win probability based on point win rates.</p>
+            </a>
+            <a href="/calculators/gpa-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">GPA Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate grade point average for academic performance tracking.</p>
+            </a>
+            <a href="/calculators/percentage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Percentage Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate percentages for various applications and comparisons.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

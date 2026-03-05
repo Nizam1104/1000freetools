@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -43,8 +43,8 @@ export default function CropYieldEstimatorPage() {
     let weightPerPlant = parseFloat(avgWeightPerPlant);
     const survival = parseFloat(survivalRate) / 100;
 
-    if (isNaN(area) || area <= 0 || isNaN(plants) || plants <= 0 || 
-        isNaN(weightPerPlant) || weightPerPlant <= 0 || isNaN(survival) || survival <= 0) return;
+    if (isNaN(area) || area <= 0 || isNaN(plants) || plants <= 0 ||
+      isNaN(weightPerPlant) || weightPerPlant <= 0 || isNaN(survival) || survival <= 0) return;
 
     // Convert area to hectares
     let areaInHectares = area;
@@ -253,7 +253,7 @@ export default function CropYieldEstimatorPage() {
                       {averageYields[cropType]?.min.toLocaleString()} - {averageYields[cropType]?.max.toLocaleString()} kg/ha
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
-                      Your estimate: {result.yieldPerArea.toLocaleString()} kg/{areaUnit} 
+                      Your estimate: {result.yieldPerArea.toLocaleString()} kg/{areaUnit}
                       ({areaUnit === "acre" ? (result.yieldPerArea * 2.471).toFixed(0) : result.yieldPerArea} kg/ha)
                     </p>
                   </div>
@@ -279,6 +279,204 @@ export default function CropYieldEstimatorPage() {
             <strong>Note:</strong> Actual yields may vary based on weather, soil fertility, pest
             pressure, and farming practices. Use this as a planning estimate.
           </p>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-8">
+          {/* How It Works */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">How the Crop Yield Estimator Works</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Enter Crop Details</h3>
+                    <p className="text-sm text-muted-foreground">Select your crop type, input field area, plant population per unit area, and average weight per plant.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Account for Survival Rate</h3>
+                    <p className="text-sm text-muted-foreground">Input plant survival rate to account for crop losses due to pests, disease, or environmental factors.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Get Yield Projection</h3>
+                    <p className="text-sm text-muted-foreground">Receive estimated total yield, yield per area, marketable yield, and comparison with average crop yields.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features and Benefits */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Features of This Crop Yield Calculator</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Multiple Crop Support</h3>
+                      <p className="text-sm text-muted-foreground">Calculate yields for wheat, rice, corn, soybean, cotton, tomato, potato, sugarcane, banana, and vegetables.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Flexible Unit Options</h3>
+                      <p className="text-sm text-muted-foreground">Work with acres or hectares for area, and grams, kg, or lbs for weight per plant calculations.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Survival Rate Adjustment</h3>
+                      <p className="text-sm text-muted-foreground">Account for realistic crop losses with customizable plant survival rate percentage.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Marketable Yield Estimate</h3>
+                      <p className="text-sm text-muted-foreground">Get realistic marketable yield calculations assuming 90% of total yield is sellable produce.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Yield Comparison</h3>
+                      <p className="text-sm text-muted-foreground">Compare your estimated yield against typical average yield ranges for each crop type.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Free Farm Planning Tool</h3>
+                      <p className="text-sm text-muted-foreground">Completely free yield estimator for farmers, agronomists, and agricultural students worldwide.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reference Table */}
+              <div className="mt-6 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-3">Average Crop Yields by Type</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-2">Crop</th>
+                        <th className="text-left py-2">Average Yield Range</th>
+                        <th className="text-left py-2">Unit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Wheat</td>
+                        <td className="py-2">3,000 - 8,000</td>
+                        <td className="py-2">kg/ha</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Rice/Paddy</td>
+                        <td className="py-2">4,000 - 10,000</td>
+                        <td className="py-2">kg/ha</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Corn/Maize</td>
+                        <td className="py-2">5,000 - 12,000</td>
+                        <td className="py-2">kg/ha</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Soybean</td>
+                        <td className="py-2">2,000 - 4,000</td>
+                        <td className="py-2">kg/ha</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-2 font-medium">Potato</td>
+                        <td className="py-2">15,000 - 40,000</td>
+                        <td className="py-2">kg/ha</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 font-medium">Tomato</td>
+                        <td className="py-2">20,000 - 50,000</td>
+                        <td className="py-2">kg/ha</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">How do you estimate crop yield before harvest?</h3>
+                  <p className="text-sm text-muted-foreground">Crop yield is estimated by multiplying plant population by average weight per plant, then adjusting for survival rate. The formula is: Yield = (Plants per area × Field area × Survival rate × Weight per plant). Sample plants from different field areas for accurate weight averages.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What factors affect crop yield the most?</h3>
+                  <p className="text-sm text-muted-foreground">Key factors include soil fertility, water availability, weather conditions, pest and disease pressure, planting density, crop variety, and farming practices. Proper irrigation, fertilization, and pest management can significantly improve yields.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How accurate is crop yield estimation?</h3>
+                  <p className="text-sm text-muted-foreground">Yield estimates are typically within 10-15% of actual harvest when based on representative samples. Accuracy improves with more sample points, proper timing (2-3 weeks before harvest), and accounting for expected losses from pests, disease, and weather.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">What is a good crop yield per hectare?</h3>
+                  <p className="text-sm text-muted-foreground">Good yields vary by crop: wheat (4,000-6,000 kg/ha), rice (5,000-7,000 kg/ha), corn (8,000-10,000 kg/ha), soybean (2,500-3,500 kg/ha). High-yielding varieties with optimal conditions can exceed these ranges. Compare your results with local averages for context.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">How can I improve my crop yield?</h3>
+                  <p className="text-sm text-muted-foreground">Improve yields through soil testing and proper fertilization, optimal planting density, quality seeds, timely irrigation, integrated pest management, crop rotation, and proper harvest timing. Consider precision agriculture techniques for data-driven decisions.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Tools */}
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-6">Related Agriculture Calculators</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/fertilizer-requirement-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Fertilizer Requirement Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate fertilizer needs based on crop type, field area, and soil nutrient requirements.</p>
+                </a>
+                <a href="/calculators/seed-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Seed Rate Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Determine optimal seed quantity for planting based on field area and recommended seeding rates.</p>
+                </a>
+                <a href="/calculators/irrigation-water-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+                  <h3 className="font-semibold mb-2">Irrigation Water Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate water requirements for crops based on field size, crop type, and evapotranspiration rates.</p>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

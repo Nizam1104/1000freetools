@@ -211,6 +211,106 @@ export default function PregnancyWeekCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>How to Track Your Pregnancy Week</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <p className="font-semibold mb-1">Choose input method</p>
+              <p className="text-sm text-muted-foreground">Select either last menstrual period (LMP) or your estimated due date.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <p className="font-semibold mb-1">Enter the date</p>
+              <p className="text-sm text-muted-foreground">Input your LMP date or due date using the date picker.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <p className="font-semibold mb-1">View pregnancy progress</p>
+              <p className="text-sm text-muted-foreground">Get current week, day, trimester, days remaining, and key dates instantly.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Benefits of Weekly Tracking</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">Know your exact week</p>
+              <p className="text-sm text-muted-foreground">Track pregnancy progress down to the day with week and day display.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Trimester awareness</p>
+              <p className="text-sm text-muted-foreground">Understand which trimester you're in for symptom and milestone tracking.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Days countdown</p>
+              <p className="text-sm text-muted-foreground">See how many days remain until your due date.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Key date reference</p>
+              <p className="text-sm text-muted-foreground">Get LMP, conception, and due dates all in one place.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Auto-updates daily</p>
+              <p className="text-sm text-muted-foreground">Calculator shows real-time progress based on today's date.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">How is pregnancy week calculated?</p>
+              <p className="text-sm text-muted-foreground">Count weeks from the first day of your last period. Each week is 7 days. Week 1 starts on your LMP, not conception.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Why count from LMP instead of conception?</p>
+              <p className="text-sm text-muted-foreground">LMP is easier to identify than conception. Ovulation typically occurs around day 14, so conception happens about 2 weeks after LMP.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What trimester am I in at 15 weeks?</p>
+              <p className="text-sm text-muted-foreground">Weeks 13-26 are second trimester. At 15 weeks, you're in the second trimester, often when morning sickness improves.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">When is full term pregnancy?</p>
+              <p className="text-sm text-muted-foreground">Full term is weeks 37-42. Babies born before 37 weeks are considered premature. After 42 weeks is post-term.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">How accurate is the pregnancy week calculator?</p>
+              <p className="text-sm text-muted-foreground">Very accurate for dating if you know your LMP. Ultrasound in first trimester can refine dating if cycles are irregular.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Related Pregnancy Calculators</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Try our other pregnancy tools: the <a href="/calculators/pregnancy-due-date-calculator" className="text-primary hover:underline">pregnancy due date calculator</a> for estimating delivery, the <a href="/calculators/pregnancy-weight-gain-calculator" className="text-primary hover:underline">pregnancy weight gain calculator</a> for healthy guidelines, and the <a href="/calculators/ovulation-calculator" className="text-primary hover:underline">ovulation calculator</a> for conception timing.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

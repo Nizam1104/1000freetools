@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -93,10 +93,10 @@ const hexToRgb = (hex: string): { r: number; g: number; b: number } | null => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 };
 
@@ -876,15 +876,14 @@ export default function CustomColorPaletteGeneratorPage() {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <button
-                            className={`aspect-square rounded-md border-2 transition-all hover:scale-110 ${
-                              colors.some(
-                                (c) =>
-                                  c.hex.toLowerCase() ===
-                                  presetHex.toLowerCase(),
-                              )
+                            className={`aspect-square rounded-md border-2 transition-all hover:scale-110 ${colors.some(
+                              (c) =>
+                                c.hex.toLowerCase() ===
+                                presetHex.toLowerCase(),
+                            )
                                 ? "border-primary ring-2 ring-primary ring-offset-2"
                                 : "border-slate-200"
-                            }`}
+                              }`}
                             style={{ backgroundColor: presetHex }}
                             onClick={() => {
                               const unlockedIndex = colors.findIndex(

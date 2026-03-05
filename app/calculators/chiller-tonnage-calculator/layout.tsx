@@ -1,0 +1,59 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+
+export const metadata: Metadata = {
+  title: "Chiller Tonnage Calculator – Calculate Cooling Capacity",
+  description: "Calculate chiller tonnage from water flow rate and temperature difference. Essential for HVAC system sizing.",
+  alternates: {
+    canonical: "https://1000freetools.com/calculators/chiller-tonnage-calculator",
+  },
+};
+
+const tools = [
+  {
+    "name": "Air Conditioner Tonnage Calculator",
+    "description": "AC Tonnage Calculator – Find the Right Air Conditioner Size for Your Room",
+    "href": "/air-conditioner-tonnage-calculator"
+  },
+  {
+    "name": "Hvac Airflow Calculator",
+    "description": "HVAC Airflow Calculator – Calculate Required CFM",
+    "href": "/hvac-airflow-calculator"
+  },
+  {
+    "name": "Hvac Btu Calculator",
+    "description": "HVAC BTU Calculator – What Size Air Conditioner Do You Need?",
+    "href": "/hvac-btu-calculator"
+  },
+  {
+    "name": "Heat Pump Cop Calculator",
+    "description": "Heat Pump COP Calculator – Coefficient of Performance",
+    "href": "/heat-pump-cop-calculator"
+  },
+  {
+    "name": "Boiler Efficiency Calculator",
+    "description": "Boiler Efficiency Calculator – Calculate Boiler Efficiency",
+    "href": "/boiler-efficiency-calculator"
+  },
+  {
+    "name": "Room Heater Wattage Calculator",
+    "description": "Room Heater Wattage Calculator – Find the Right Heater Size for Your Room",
+    "href": "/room-heater-wattage-calculator"
+  }
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-y-4">
+            <header className="max-w-3xl">
+        <h1 className="text-3xl font-bold mb-3">Chiller Tonnage Calculator – Calculate Cooling Capacity</h1>
+        <p className="text-muted-foreground">Calculate chiller tonnage from water flow rate and temperature difference. Essential for HVAC system sizing.</p>
+      </header>
+      {children}
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}

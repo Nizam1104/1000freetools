@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -16,10 +16,10 @@ export default function JsonToTextConverterPage() {
 
   const flattenObject = (obj: Record<string, unknown>, prefix = ""): Record<string, unknown> => {
     const result: Record<string, unknown> = {};
-    
+
     for (const [key, value] of Object.entries(obj)) {
       const newKey = prefix ? `${prefix}.${key}` : key;
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         Object.assign(result, flattenObject(value as Record<string, unknown>, newKey));
       } else if (Array.isArray(value)) {
@@ -34,17 +34,17 @@ export default function JsonToTextConverterPage() {
         result[newKey] = value;
       }
     }
-    
+
     return result;
   };
 
   const convertToJsonText = useCallback((obj: unknown, level = 0): string => {
     const indent = "  ".repeat(level);
-    
+
     if (obj === null) {
       return `${indent}(null)`;
     }
-    
+
     if (typeof obj === "object" && obj !== null) {
       if (Array.isArray(obj)) {
         if (obj.length === 0) {
@@ -57,12 +57,12 @@ export default function JsonToTextConverterPage() {
           return `${indent}[${index}]: ${convertToJsonText(item, 0).trim()}`;
         }).join("\n");
       }
-      
+
       const entries = Object.entries(obj);
       if (entries.length === 0) {
         return `${indent}{}`;
       }
-      
+
       return entries.map(([key, value]) => {
         if (typeof value === "object" && value !== null) {
           return `${indent}${key}:\n${convertToJsonText(value, level + 1)}`;
@@ -70,7 +70,7 @@ export default function JsonToTextConverterPage() {
         return `${indent}${key}: ${convertToJsonText(value, 0).trim()}`;
       }).join("\n");
     }
-    
+
     return `${indent}${String(obj)}`;
   }, []);
 
@@ -83,7 +83,7 @@ export default function JsonToTextConverterPage() {
     try {
       const parsed = JSON.parse(input);
       let result = "";
-      
+
       if (format === "key-value") {
         const flattened = flattenObject(parsed as Record<string, unknown>);
         result = Object.entries(flattened)
@@ -97,7 +97,7 @@ export default function JsonToTextConverterPage() {
           .map(([key, value]) => `${key} = ${value}`)
           .join("\n");
       }
-      
+
       setOutput(result);
       toast.success("Converted to text successfully!");
     } catch (e) {

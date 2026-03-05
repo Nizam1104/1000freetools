@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -211,11 +211,10 @@ export default function VolumetricWeightCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Weight Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.billableWeight === result.volumetricWeight
+                  <div className={`p-4 rounded-lg text-center ${result.billableWeight === result.volumetricWeight
                       ? "bg-amber-100 dark:bg-amber-900/20"
                       : "bg-green-100 dark:bg-green-900/20"
-                  }`}>
+                    }`}>
                     <p className="text-sm text-muted-foreground">Billable Weight</p>
                     <p className="text-4xl font-bold">{result.billableWeight} kg</p>
                     <p className="text-sm mt-1">
@@ -300,6 +299,149 @@ export default function VolumetricWeightCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Dimensional Weight</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Measure Package Dimensions</h3>
+                <p className="text-sm text-muted-foreground">Measure length, width, and height at the longest points of your package.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Carrier & Weigh</h3>
+                <p className="text-sm text-muted-foreground">Choose your shipping carrier and enter the actual package weight.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Billable Weight</h3>
+                <p className="text-sm text-muted-foreground">See which weight (actual vs volumetric) will be charged for shipping.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Volumetric Weight Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Multiple Carrier Support</h3>
+              <p className="text-sm text-muted-foreground">Calculate using divisors for FedEx, UPS, DHL, and standard shipping services.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Dual Unit System</h3>
+              <p className="text-sm text-muted-foreground">Work in centimeters or inches with automatic conversion to the correct divisor.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Billable Weight Alert</h3>
+              <p className="text-sm text-muted-foreground">Clear indication whether you're charged by actual or dimensional weight.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Cost Optimization Tips</h3>
+              <p className="text-sm text-muted-foreground">Get recommendations to reduce shipping costs through better packaging.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Carrier Dimensional Divisors</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Carrier/Service</th>
+                  <th className="text-left py-2">Divisor (cm)</th>
+                  <th className="text-left py-2">Divisor (in)</th>
+                  <th className="text-left py-2">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">FedEx</td>
+                  <td className="py-2">5000</td>
+                  <td className="py-2">139</td>
+                  <td className="py-2">Standard divisor</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">UPS</td>
+                  <td className="py-2">5000</td>
+                  <td className="py-2">139</td>
+                  <td className="py-2">All services</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">DHL Express</td>
+                  <td className="py-2">5000</td>
+                  <td className="py-2">139</td>
+                  <td className="py-2">International</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">DHL Economy</td>
+                  <td className="py-2">6000</td>
+                  <td className="py-2">166</td>
+                  <td className="py-2">Better for bulky items</td>
+                </tr>
+                <tr>
+                  <td className="py-2">USPS Priority</td>
+                  <td className="py-2">6000</td>
+                  <td className="py-2">166</td>
+                  <td className="py-2">Domestic only</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What is volumetric weight in shipping?</h3>
+              <p className="text-sm text-muted-foreground">Volumetric (dimensional) weight is a pricing technique that calculates package weight based on size rather than actual weight. It ensures carriers charge appropriately for lightweight but bulky packages that take up valuable cargo space.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How is dimensional weight calculated?</h3>
+              <p className="text-sm text-muted-foreground">For cm: (Length × Width × Height) ÷ 5000. For inches: (L × W × H) ÷ 139. Example: A 40×30×20cm box = 24,000 cm³ ÷ 5000 = 4.8 kg volumetric weight.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Do I pay for actual or volumetric weight?</h3>
+              <p className="text-sm text-muted-foreground">Carriers charge the greater of actual or volumetric weight. Dense packages (actual &gt; volumetric) are charged by actual weight. Bulgy packages (volumetric &gt; actual) are charged by dimensional weight.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How can I reduce dimensional weight charges?</h3>
+              <p className="text-sm text-muted-foreground">Use smaller boxes, remove empty space, compress items in vacuum bags, choose flat-pack options, and avoid oversized packaging. Even reducing one dimension by 5cm can significantly lower charges.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Why do carriers use dimensional weight?</h3>
+              <p className="text-sm text-muted-foreground">Aircraft and trucks have limited cargo space. A truck full of pillows weighs little but occupies all space. Dimensional weight ensures fair pricing that reflects the true cost of transporting bulky items.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Shipping Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/dimensional-weight-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Dimensional Weight Calculator</h3>
+              <p className="text-sm text-muted-foreground">Alternative dimensional weight calculation for shipping.</p>
+            </a>
+            <a href="/calculators/container-load-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Container Load Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate how many boxes fit in a shipping container.</p>
+            </a>
+            <a href="/calculators/cargo-volume-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Cargo Volume Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate cargo space and volume for shipping needs.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

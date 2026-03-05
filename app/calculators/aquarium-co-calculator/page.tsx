@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -58,7 +58,7 @@ export default function AquariumCOCalculatorPage() {
     // Rule of thumb: 1-2 watts per liter for pressurized CO2
     // Or: 1 bubble per second per 4 gallons for DIY
     const injectionRateWatts = volumeLiters * 1.5; // 1.5W per liter
-    
+
     // Bubbles per minute estimation (for standard diffuser)
     // Approximately 1 BPM per 10 liters for 30 ppm target
     const bubblesPerMinute = Math.round((volumeLiters / 10) * (targetNum / 30));
@@ -213,12 +213,11 @@ export default function AquariumCOCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">CO₂ Results</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.status.includes("Optimal") ? "bg-green-100 dark:bg-green-900/20" :
-                    result.status.includes("Low") ? "bg-amber-100 dark:bg-amber-900/20" :
-                    result.status.includes("Dangerous") ? "bg-red-100 dark:bg-red-900/20" :
-                    "bg-muted"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.status.includes("Optimal") ? "bg-green-100 dark:bg-green-900/20" :
+                      result.status.includes("Low") ? "bg-amber-100 dark:bg-amber-900/20" :
+                        result.status.includes("Dangerous") ? "bg-red-100 dark:bg-red-900/20" :
+                          "bg-muted"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Status</p>
                     <p className="text-xl font-bold">{result.status}</p>
                   </div>
@@ -314,6 +313,292 @@ export default function AquariumCOCalculatorPage() {
                   <strong>Warning:</strong> Always use a solenoid valve to turn off CO₂ at
                   night. Fish can suffocate if CO₂ remains on without photosynthesis.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                How to Use This Aquarium CO2 Calculator
+              </h2>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Enter Your Tank Volume</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Input your aquarium size in liters or gallons. This determines the baseline CO2 requirement for your setup.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Set Your Target CO2 Level</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Choose a target concentration (typically 30 ppm for heavily planted tanks). Adjust based on your plant density and livestock sensitivity.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Add Water Parameters (Optional)</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Enter current pH and KH values to calculate your existing CO2 concentration. This helps you determine how much additional injection is needed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Understanding CO2 in Planted Aquariums
+              </h2>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  Carbon dioxide is the foundation of healthy plant growth in aquariums. Here is what you need to know:
+                </p>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Plants Need CO2</h4>
+                  <p>
+                    During photosynthesis, aquatic plants absorb CO2 and convert it into energy using light. Without adequate CO2, plants cannot grow properly—they become stunted, develop weak stems, and may eventually die. In a closed aquarium environment, natural CO2 production from fish respiration and decomposition is rarely enough for demanding plant species.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Natural vs Supplemented CO2</h4>
+                  <p>
+                    Natural CO2 comes from fish breathing, bacterial activity, and organic decay. Low-tech tanks with slow-growing plants like Java Fern or Anubias can survive on this alone. Supplemented CO2—via pressurized cylinders or DIY yeast systems—becomes necessary when you want lush, fast-growing carpets or have high-light setups. The difference is night and day.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Optimal CO2 Levels</h4>
+                  <p>
+                    Most planted tanks thrive at 20-30 ppm CO2. Below 20 ppm, plant growth slows noticeably. Above 30 ppm, you enter a danger zone for fish and invertebrates. The goal is to stay in that sweet spot where plants flourish without stressing your livestock.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The pH-KH-CO2 Relationship</h4>
+                  <p>
+                    These three parameters are interconnected. CO2 dissolves in water to form carbonic acid, which lowers pH. KH (carbonate hardness) acts as a buffer, resisting pH changes. By measuring pH and KH, you can estimate dissolved CO2 using the formula built into this calculator. This relationship is why stable KH is critical for consistent CO2 levels.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                CO2 Concentration Guidelines
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-medium">CO2 Level (ppm)</th>
+                      <th className="text-left py-2 px-3 font-medium">Status</th>
+                      <th className="text-left py-2 px-3 font-medium">Effect</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">0-10 ppm</td>
+                      <td className="py-2 px-3 text-amber-600 font-medium">Low</td>
+                      <td className="py-2 px-3">Limited plant growth, possible algae issues</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">10-20 ppm</td>
+                      <td className="py-2 px-3 text-blue-600 font-medium">Moderate</td>
+                      <td className="py-2 px-3">Some plant growth, suitable for low-demand species</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3">20-30 ppm</td>
+                      <td className="py-2 px-3 text-green-600 font-medium">Optimal</td>
+                      <td className="py-2 px-3">Healthy plant growth, ideal for most planted tanks</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3">30+ ppm</td>
+                      <td className="py-2 px-3 text-red-600 font-medium">High</td>
+                      <td className="py-2 px-3">Potentially harmful to fish, requires careful monitoring</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                The pH-KH-CO2 Relationship
+              </h2>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <p>
+                  Understanding how pH, KH, and CO2 interact is essential for managing a planted aquarium. Here is the science behind it:
+                </p>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">CO2 Forms Carbonic Acid</h4>
+                  <p>
+                    When CO2 dissolves in water, it reacts to form carbonic acid (H2CO3). This weak acid releases hydrogen ions, which directly lower the pH of your aquarium water.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">KH Buffers pH Changes</h4>
+                  <p>
+                    KH measures carbonate and bicarbonate ions in your water. These act as a buffer, absorbing excess hydrogen ions and preventing drastic pH swings. Higher KH means more stability but also means you need more CO2 to achieve the same pH drop.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Using pH Drop to Estimate CO2</h4>
+                  <p>
+                    A pH drop of approximately 1.0 unit from your degassed pH (pH after CO2 has escaped) indicates roughly 30 ppm CO2. This is the principle behind drop checkers and the calculation used in this tool. Keep in mind that other acids or buffers in your water can affect accuracy.
+                  </p>
+                </div>
+                <p className="text-xs italic mt-3">
+                  Note: This calculator uses the standard formula CO2 = 3 × KH × 10^(7-pH), which provides a reliable estimate for most freshwater setups.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                CO2 Injection Tips
+              </h2>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 flex items-center justify-center text-xs font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-foreground mb-1">Start Low and Increase Gradually</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Begin with 1 bubble per second (BPS) for every 10 gallons, then increase slowly over 1-2 weeks. Watch your plants and fish for responses. Rushing this process can shock or kill livestock.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 flex items-center justify-center text-xs font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-foreground mb-1">Use a Drop Checker for Visual Monitoring</h4>
+                    <p className="text-sm text-muted-foreground">
+                      A drop checker with pH-sensitive solution gives you a constant visual readout. Blue means too low, green is optimal, and yellow signals dangerous levels. It is the most reliable way to track CO2 in real time.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 flex items-center justify-center text-xs font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-foreground mb-1">Turn Off CO2 at Night</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Plants only consume CO2 during photosynthesis, which requires light. At night, they respire like animals, releasing CO2. Continuing injection wastes gas and unnecessarily lowers oxygen levels. Use a solenoid valve on a timer.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 flex items-center justify-center text-xs font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-foreground mb-1">Watch Fish for Signs of CO2 Stress</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Gasping at the surface, lethargy, or loss of appetite can indicate CO2 overdose. If you see these signs, immediately reduce injection and increase surface agitation. Better to err on the side of caution.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-5">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How much CO2 do aquarium plants need?</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Most planted tanks perform best at 20-30 ppm CO2. Low-light tanks with hardy species can manage with less (10-15 ppm), while high-light setups with demanding carpeting plants may push toward 30 ppm. Always prioritize fish safety over maximum plant growth.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I measure CO2 in my aquarium?</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Direct CO2 test kits exist but are expensive and time-consuming. Most hobbyists use a drop checker, which changes color based on CO2 concentration. Alternatively, you can estimate CO2 using pH and KH measurements with the formula in this calculator.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is CO2 injection necessary for planted tanks?</h4>
+                  <p className="text-sm text-muted-foreground">
+                    No, it is not strictly necessary. Many beautiful aquariums run without supplemental CO2 using slow-growing plants like Java Fern, Anubias, and Cryptocoryne. However, if you want fast growth, dense carpets, or red plants that demand high light, CO2 injection becomes almost essential.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Can too much CO2 harm fish?</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Yes. CO2 displaces oxygen in water, and levels above 30-35 ppm can cause respiratory distress in fish. Above 50 ppm becomes life-threatening. Shrimp and invertebrates are even more sensitive. Always monitor your livestock and have a backup plan to increase surface agitation if needed.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When should I turn CO2 on and off?</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Turn CO2 on 1-2 hours before your lights come on, allowing time for saturation. Turn it off 1 hour before lights out. This schedule ensures plants have CO2 available during peak photosynthesis while preventing waste during dark periods. A dual-stage regulator with solenoid valve automates this process.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                Related Tools
+              </h2>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a
+                  href="/calculators/aquarium-volume-calculator"
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
+                >
+                  <h4 className="font-medium text-foreground mb-1">Aquarium Volume Calculator</h4>
+                  <p className="text-xs text-muted-foreground">
+                    Calculate your tank capacity in liters or gallons
+                  </p>
+                </a>
+                <a
+                  href="/calculators/aquarium-filtration-calculator"
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
+                >
+                  <h4 className="font-medium text-foreground mb-1">Aquarium Filtration Calculator</h4>
+                  <p className="text-xs text-muted-foreground">
+                    Determine the right filter flow rate for your tank
+                  </p>
+                </a>
+                <a
+                  href="/calculators/ph-calculator"
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
+                >
+                  <h4 className="font-medium text-foreground mb-1">pH Calculator</h4>
+                  <p className="text-xs text-muted-foreground">
+                    Understand and manage your water pH levels
+                  </p>
+                </a>
               </div>
             </CardContent>
           </Card>

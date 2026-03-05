@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -281,6 +281,124 @@ export default function GolfHandicapCalculatorPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* How It Works Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">How to Calculate Your Golf Handicap</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Your Recent Scores</h3>
+                <p className="text-sm text-muted-foreground">Input at least 3 round scores (up to 20) as comma-separated values.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Add Course Ratings</h3>
+                <p className="text-sm text-muted-foreground">Enter the Course Rating and Slope Rating from the scorecard of each round.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">Get Your Handicap Index</h3>
+                <p className="text-sm text-muted-foreground">View your official handicap index, course handicap, and personalized improvement tips.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Features of This Golf Handicap Calculator</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  World Handicap System Compliant
+                </h3>
+                <p className="text-sm text-muted-foreground">Uses the official WHS formula with 0.96 multiplier and best 8 of 20 differentials.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Multiple Handicap Values
+                </h3>
+                <p className="text-sm text-muted-foreground">Calculates Handicap Index, Course Handicap, and Playing Handicap for complete understanding.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Score Differential Breakdown
+                </h3>
+                <p className="text-sm text-muted-foreground">Shows individual differentials for each round so you can track improvement over time.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Skill Level Assessment
+                </h3>
+                <p className="text-sm text-muted-foreground">Automatic classification from scratch golfer to high handicap with appropriate benchmarks.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Personalized Improvement Tips
+                </h3>
+                <p className="text-sm text-muted-foreground">Get targeted recommendations based on your current handicap level for faster improvement.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions About Golf Handicaps</h3>
+            <div className="space-y-4">
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">How many rounds do I need to establish a handicap?</h3>
+                <p className="text-sm text-muted-foreground">You need a minimum of 3 rounds to establish an initial handicap index. For a full handicap under the World Handicap System, up to 20 rounds are used, with the best 8 differentials counting toward your index.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">What is a good golf handicap for a beginner?</h3>
+                <p className="text-sm text-muted-foreground">Beginners typically start with handicaps of 28-36. A handicap of 18 (bogey golfer) is a common goal for recreational players. Single-digit handicaps (below 10) indicate advanced skill, and scratch golfers have handicaps near 0.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">What is the difference between Course Rating and Slope Rating?</h3>
+                <p className="text-sm text-muted-foreground">Course Rating is the expected score for a scratch golfer. Slope Rating (55-155) measures how much harder the course plays for bogey golfers compared to scratch golfers. A slope of 113 is average difficulty.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">How often should I update my handicap?</h3>
+                <p className="text-sm text-muted-foreground">Under the World Handicap System, handicaps update daily as new scores are posted. You should post every acceptable round as soon as possible to maintain an accurate, current handicap index.</p>
+              </div>
+              <div className="p-5 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Why is my course handicap different from my handicap index?</h3>
+                <p className="text-sm text-muted-foreground">Course Handicap adjusts your Handicap Index for the specific course you are playing. It accounts for that course Slope Rating. Formula: Course Handicap = Handicap Index × (Slope Rating / 113). This ensures fair play across different courses.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Tools Section */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-6">Related Sports Calculators</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/basketball-shooting-percentage-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Basketball Shooting Percentage Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate field goal, three-point, and free throw shooting percentages.</p>
+              </a>
+              <a href="/calculators/running-pace-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">Running Pace Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate running pace, finish time, and distance for training and racing.</p>
+              </a>
+              <a href="/calculators/vo2-max-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+                <h3 className="font-semibold mb-2">VO2 Max Calculator</h3>
+                <p className="text-sm text-muted-foreground">Estimate your maximum oxygen uptake and cardiovascular fitness level.</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

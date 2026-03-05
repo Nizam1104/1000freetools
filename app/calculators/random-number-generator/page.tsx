@@ -109,6 +109,193 @@ export default function RandomNumberGenerator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6 max-w-2xl mx-auto">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Random Number Generator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Set your range</p>
+                  <p>Enter the minimum and maximum values for your random numbers. The generator will pick values within this range.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Choose how many numbers</p>
+                  <p>Specify how many random numbers you need. You can generate one number or hundreds at once.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Generate and copy</p>
+                  <p>Click Generate to get your random numbers. Select and copy them for use in your project or drawing.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Random Number Generation
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                This generator uses your browser's built-in Math.random() function, which produces
+                pseudo-random numbers. These numbers appear random for most practical purposes like
+                games, drawings, and sampling.
+              </p>
+              <div className="p-4 bg-muted rounded-lg font-mono text-sm">
+                random = min + Math.floor(Math.random() × (max - min + 1))
+              </div>
+              <p>
+                For cryptographic security or scientific simulations, use a dedicated hardware random
+                number generator or cryptographically secure API. This tool is designed for everyday use.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Common Uses for Random Numbers
+            </h3>
+            <div className="space-y-3 text-sm">
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Lottery and Raffles</p>
+                <p className="text-muted-foreground">Pick lottery numbers, conduct fair drawings, or select raffle winners</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Games and Gambling</p>
+                <p className="text-muted-foreground">Roll dice, shuffle cards, or determine game outcomes fairly</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Sampling and Research</p>
+                <p className="text-muted-foreground">Select random samples from a population for surveys or studies</p>
+              </div>
+              <div className="p-3 bg-muted/50 rounded-lg">
+                <p className="font-medium text-foreground mb-1">Testing and Development</p>
+                <p className="text-muted-foreground">Generate test data, random IDs, or simulate user inputs</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              With or Without Duplicates?
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                The "Allow duplicates" option controls whether the same number can appear multiple times.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-2">With Duplicates</p>
+                  <p className="text-muted-foreground">Each number is independent. Like rolling dice — you can get the same result twice. Use for simulations and games.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-foreground mb-2">Without Duplicates</p>
+                  <p className="text-muted-foreground">Each number appears only once. Like drawing names from a hat. Use for lotteries and random selection.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Are these numbers truly random?</h4>
+                <p>
+                  They are pseudo-random, generated by Math.random(). For most uses like games and drawings,
+                  they work fine. True randomness requires physical processes like radioactive decay or
+                  atmospheric noise.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can I use this for lottery numbers?</h4>
+                <p>
+                  Yes. Many people use random generators to pick lottery numbers. Remember that every
+                  combination has equal odds — random picks are no better or worse than choosing birthdays.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the maximum range?</h4>
+                <p>
+                  JavaScript can safely handle integers up to 9,007,199,254,740,991. For practical purposes,
+                  you can generate numbers in any range you would actually need for games or drawings.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Is this secure for passwords?</h4>
+                <p>
+                  No. Do not use this for passwords, encryption keys, or security tokens. Use a dedicated
+                  password manager or cryptographically secure random generator for security purposes.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Can I generate negative numbers?</h4>
+                <p>
+                  Yes. Enter a negative minimum value. For example, min=-10 and max=10 will generate random
+                  integers from -10 to 10, including zero.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/dice-roller"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Dice Roller</span>
+                <p className="text-muted-foreground">Roll virtual dice for board games and tabletop RPGs</p>
+              </a>
+              <a
+                href="/calculators/coin-flipper"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Coin Flipper</span>
+                <p className="text-muted-foreground">Flip a coin for quick yes/no decisions</p>
+              </a>
+              <a
+                href="/calculators/password-generator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Password Generator</span>
+                <p className="text-muted-foreground">Create secure random passwords for your accounts</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

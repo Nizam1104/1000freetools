@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -201,11 +201,10 @@ export default function DroneFlightTimeEstimatorPage() {
               <h3 className="text-lg font-semibold mb-4">Flight Time Estimate</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.flightTime >= 25 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.flightTime >= 15 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    "bg-amber-100 dark:bg-amber-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.flightTime >= 25 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.flightTime >= 15 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        "bg-amber-100 dark:bg-amber-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Estimated Flight Time</p>
                     <p className="text-5xl font-bold">{result.flightTimeFormatted}</p>
                     <p className="text-sm mt-1">{result.batteryLife}</p>
@@ -255,31 +254,256 @@ export default function DroneFlightTimeEstimatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
-                Flight Time Tips
+                How to Use This Drone Flight Time Estimator
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>Hover:</strong> Most efficient flight mode
-                  </li>
-                  <li>
-                    <strong>Forward flight:</strong> Uses 30-50% more power
-                  </li>
-                  <li>
-                    <strong>Wind:</strong> Can reduce flight time by 30%+
-                  </li>
-                  <li>
-                    <strong>Cold weather:</strong> Reduces battery capacity by 20-30%
-                  </li>
-                  <li>
-                    <strong>Reserve:</strong> Always land with 20% battery remaining
-                  </li>
-                </ul>
-                <p>
-                  <strong>Note:</strong> This is an estimate. Actual flight time varies
-                  based on motor efficiency, propeller size, wind conditions, temperature,
-                  and flying style. Always monitor battery voltage during flight.
-                </p>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your battery capacity and voltage</p>
+                    <p>Input your battery capacity in mAh and select the cell count (S rating). Common drone batteries range from 2S (7.4V) for small drones to 6S (22.2V) for racing and professional drones.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Input your drone weight</p>
+                    <p>Enter the total flying weight including battery, camera, and any accessories. Heavier drones consume more power and have shorter flight times.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your flight style and calculate</p>
+                    <p>Choose between hover, mixed flight, fast forward, or aggressive flying. Click Calculate to see estimated flight time, hover time, and battery recommendations.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Typical Flight Times by Drone Type
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Drone Type</th>
+                      <th className="text-left py-3 px-2 font-semibold">Weight Range</th>
+                      <th className="text-left py-3 px-2 font-semibold">Battery Capacity</th>
+                      <th className="text-left py-3 px-2 font-semibold">Flight Time</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Mini/Toy Drone</td>
+                      <td className="py-3 px-2">Under 100g</td>
+                      <td className="py-3 px-2">500-1000 mAh</td>
+                      <td className="py-3 px-2">5-10 minutes</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Camera Drone (Mini)</td>
+                      <td className="py-3 px-2">200-500g</td>
+                      <td className="py-3 px-2">2000-3000 mAh</td>
+                      <td className="py-3 px-2">20-30 minutes</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Camera Drone (Pro)</td>
+                      <td className="py-3 px-2">500-1000g</td>
+                      <td className="py-3 px-2">3000-5000 mAh</td>
+                      <td className="py-3 px-2">25-35 minutes</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Racing Drone (5&quot;)</td>
+                      <td className="py-3 px-2">600-800g</td>
+                      <td className="py-3 px-2">1300-1800 mAh 4-6S</td>
+                      <td className="py-3 px-2">4-8 minutes</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">Cinematic Long-Range</td>
+                      <td className="py-3 px-2">1000-2000g</td>
+                      <td className="py-3 px-2">6000-10000 mAh</td>
+                      <td className="py-3 px-2">30-45 minutes</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">Professional/Industrial</td>
+                      <td className="py-3 px-2">2000g+</td>
+                      <td className="py-3 px-2">10000+ mAh</td>
+                      <td className="py-3 px-2">20-40 minutes</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Note: Flight times vary based on wind conditions, temperature, payload, and flying style. Aggressive flying can reduce flight time by 50% or more.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Drone Flight Time
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Determines Flight Time?</h4>
+                  <p>
+                    Flight time depends primarily on battery capacity, drone weight, and motor efficiency. The key metric is watt-hours per gram. A well-designed drone achieves about 0.5 to 1 watt-hour per gram of weight. Higher values mean longer flight times. Propeller size and pitch also affect efficiency.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Battery Capacity Explained</h4>
+                  <p>
+                    Battery capacity is measured in milliamp-hours (mAh). A 3000 mAh battery can theoretically deliver 3 amps for one hour. However, actual capacity depends on discharge rate and temperature. Energy in watt-hours equals capacity times voltage divided by 1000. Higher voltage batteries deliver more power efficiently.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How Flight Style Affects Battery</h4>
+                  <p>
+                    Hovering is the most efficient flight mode. Forward flight requires more power due to drag. Aggressive flying with rapid acceleration and high speeds can drain batteries 2 to 3 times faster than gentle hovering. Wind significantly increases power consumption as motors work harder to maintain position.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Temperature Effects on Batteries</h4>
+                  <p>
+                    LiPo batteries lose capacity in cold weather. At 32°F (0°C), expect 20-30% less flight time. Warm batteries before flying in cold conditions by keeping them in an inside pocket. Hot weather above 100°F can also reduce performance and increase the risk of battery damage.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Tips for Maximizing Drone Flight Time
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Reduce Weight Where Possible</p>
+                    <p>Every gram matters. Remove unnecessary accessories, use lighter propellers, and consider carbon fiber upgrades. A 10% weight reduction can add 5-10% to flight time. Just ensure the drone remains stable and within legal weight limits.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Fly Smoothly and Efficiently</p>
+                    <p>Avoid rapid acceleration and hard braking. Use gentle stick inputs. Plan your flight path to minimize unnecessary maneuvers. Smooth flying not only extends battery life but also produces better video footage.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Avoid Wind When Possible</p>
+                    <p>Flying into wind dramatically increases power consumption. Check weather forecasts and plan flights for calm conditions. If you must fly in wind, position yourself so you fly with the wind outbound and against it on return.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Maintain Your Batteries</p>
+                    <p>Store batteries at 50-60% charge when not in use. Never leave them fully charged or fully depleted for extended periods. Use a quality balance charger. Replace batteries that show significant capacity loss or physical damage.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How can I increase my drone flight time?</h4>
+                  <p>
+                    The most effective ways are: reduce weight by removing unnecessary accessories, use higher capacity batteries (if your drone can handle them), fly smoothly without aggressive maneuvers, avoid wind, and maintain proper battery care. Upgrading to more efficient propellers can also help.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why does my drone battery drain so fast?</h4>
+                  <p>
+                    Fast battery drain is usually caused by aggressive flying, heavy payload, old or damaged batteries, cold weather, or flying in wind. Check your battery health with a capacity tester. If the battery is more than 2-3 years old or has many charge cycles, it may need replacement.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How long should a drone battery last?</h4>
+                  <p>
+                    Consumer camera drones typically achieve 20-35 minutes per battery. Racing drones get 4-8 minutes due to high power demands. Mini drones may get 10-15 minutes. Professional long-range drones can achieve 30-45 minutes. Always land with 20% reserve for safety.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Does cold weather affect drone batteries?</h4>
+                  <p>
+                    Yes, significantly. LiPo batteries lose 20-30% capacity at freezing temperatures. Pre-warm batteries before flying in cold weather by keeping them in an inside pocket or using a battery warmer. Fly gently until batteries warm up from use. Expect shorter flight times in winter.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How many batteries should I buy for my drone?</h4>
+                  <p>
+                    For casual flying, 2-3 batteries give you about an hour of total flight time. For serious photography or all-day events, 4-6 batteries plus a charging hub is recommended. Consider that batteries take 60-90 minutes to charge, so having multiple batteries lets you keep flying while others charge.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/battery-life-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Battery Life Calculator</span>
+                  <p className="text-muted-foreground">Estimate battery runtime for any electronic device</p>
+                </a>
+                <a
+                  href="/calculators/power-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Power Calculator</span>
+                  <p className="text-muted-foreground">Calculate electrical power, voltage, and current</p>
+                </a>
+                <a
+                  href="/calculators/charging-cost-ev-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Charging Cost Calculator</span>
+                  <p className="text-muted-foreground">Estimate the cost of charging electric vehicles and devices</p>
+                </a>
               </div>
             </CardContent>
           </Card>

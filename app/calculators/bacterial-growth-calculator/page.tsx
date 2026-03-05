@@ -244,6 +244,224 @@ export default function BacterialGrowthCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Use This Bacterial Growth Calculator</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">1</div>
+            <div>
+              <p className="font-medium text-foreground">Enter the initial bacterial count</p>
+              <p className="text-sm text-muted-foreground">Input the starting population in CFU (colony-forming units) or cells. For example, enter 100 if you start with 100 bacterial cells.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">2</div>
+            <div>
+              <p className="font-medium text-foreground">Set the doubling time and time unit</p>
+              <p className="text-sm text-muted-foreground">Enter how long it takes for the population to double. Select minutes or hours based on your bacterium. E. coli doubles every 20 minutes under ideal conditions.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">3</div>
+            <div>
+              <p className="font-medium text-foreground">Enter growth time and calculate</p>
+              <p className="text-sm text-muted-foreground">Specify how long the bacteria will grow. Click Calculate to see the final population, number of generations, and view the exponential growth curve.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Bacterial Growth Rates by Environment</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-3 px-2 font-semibold">Environment</th>
+                  <th className="text-left py-3 px-2 font-semibold">Typical Doubling Time</th>
+                  <th className="text-left py-3 px-2 font-semibold">Notes</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                <tr className="border-b">
+                  <td className="py-3 px-2">Lab culture (optimal)</td>
+                  <td className="py-3 px-2">20-30 minutes</td>
+                  <td className="py-3 px-2">Rich media, 37°C, aerobic</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-2">Human body</td>
+                  <td className="py-3 px-2">30-60 minutes</td>
+                  <td className="py-3 px-2">Varies by location and immune response</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-2">Soil</td>
+                  <td className="py-3 px-2">2-12 hours</td>
+                  <td className="py-3 px-2">Nutrient-limited, variable conditions</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-2">Deep ocean</td>
+                  <td className="py-3 px-2">Days to weeks</td>
+                  <td className="py-3 px-2">Extreme pressure, low nutrients</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-2">Permafrost</td>
+                  <td className="py-3 px-2">Years (dormant)</td>
+                  <td className="py-3 px-2">Metabolically inactive until thawed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            Note: Doubling times vary significantly based on nutrient availability, temperature, pH, and oxygen levels.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Understanding Bacterial Growth</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Binary Fission</h4>
+            <p>
+              Bacteria reproduce by splitting in half. One cell becomes two, two become four, four become eight. This is exponential growth. Under perfect conditions, a single E. coli cell can produce over 16 million cells in just 8 hours.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">The Growth Curve</h4>
+            <p>
+              Bacterial populations follow a predictable pattern. First comes the lag phase where cells adapt to their environment. Then the log (exponential) phase where rapid division happens. Eventually nutrients run out and the population plateaus (stationary phase). Finally, cells begin to die faster than they reproduce (death phase).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Why Doubling Time Matters</h4>
+            <p>
+              Different bacteria grow at vastly different rates. E. coli doubles every 20 minutes in the lab. Mycobacterium tuberculosis takes 12-24 hours. This affects how quickly infections develop, how fast food spoils, and how long experiments take. Fast growers are easier to study but also cause rapid-onset illnesses.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Real-World Applications</h4>
+            <p>
+              Understanding bacterial growth helps in food safety (predicting spoilage), medicine (dosing antibiotics), wastewater treatment (optimizing bacterial digestion), and biotechnology (producing insulin and other proteins). The same math applies whether you are studying pathogens or beneficial bacteria.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Tips for Accurate Calculations</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3 text-sm text-muted-foreground">
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium text-foreground">Use realistic doubling times</p>
+              <p>Look up species-specific data. Don't assume all bacteria grow like E. coli. Environmental conditions matter more than you might think.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium text-foreground">Remember this models ideal conditions</p>
+              <p>The calculator assumes unlimited nutrients and no waste buildup. Real populations slow down as resources deplete. Use this for the exponential phase only.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium text-foreground">Watch for overflow with long times</p>
+              <p>Exponential growth gets huge fast. After 100 generations, even starting from 1 cell, you exceed the number of atoms in the observable universe. Keep timeframes realistic.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <div>
+            <h4 className="font-medium text-foreground mb-2">What is bacterial doubling time?</h4>
+            <p>
+              Doubling time is how long it takes for a bacterial population to double in size. E. coli doubles every 20 minutes under ideal lab conditions. Other bacteria take hours or even days. Temperature, nutrients, and oxygen all affect the rate.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">How do you calculate bacterial population growth?</h4>
+            <p>
+              Use the formula N = N₀ × 2^(t/g), where N is the final population, N₀ is the starting population, t is time elapsed, and g is the generation time (doubling time). This calculator does the math for you and shows the growth curve.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Why doesn't bacterial growth stay exponential forever?</h4>
+            <p>
+              Resources run out. Bacteria need food, space, and the right conditions. As the population grows, waste products build up and nutrients deplete. Eventually the growth rate slows and the population stabilizes or crashes. This is called carrying capacity.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">What is CFU and why is it used?</h4>
+            <p>
+              CFU stands for colony-forming units. It counts viable bacteria that can form visible colonies on a plate. One CFU might be a single cell or a small clump. CFU is more useful than total cell count because it measures bacteria that are actually alive and capable of reproducing.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-foreground mb-2">Can I use this for yeast or other microorganisms?</h4>
+            <p>
+              Yes, the exponential growth formula works for any organism that reproduces by binary fission or similar mechanisms. Yeast, some protozoa, and even cancer cells follow similar growth patterns. Just use the appropriate doubling time for your organism.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-2 text-sm">
+          <a
+            href="/calculators/generation-time-calculator"
+            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+          >
+            <span className="font-medium text-foreground">Generation Time Calculator</span>
+            <p className="text-muted-foreground">Calculate bacterial generation time from population data</p>
+          </a>
+          <a
+            href="/calculators/dilution-factor-calculator"
+            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+          >
+            <span className="font-medium text-foreground">Dilution Factor Calculator</span>
+            <p className="text-muted-foreground">Calculate serial dilutions for microbiology experiments</p>
+          </a>
+          <a
+            href="/calculators/cell-count-calculator"
+            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+          >
+            <span className="font-medium text-foreground">Cell Count Calculator</span>
+            <p className="text-muted-foreground">Convert hemocytometer counts to cells per mL</p>
+          </a>
+        </CardContent>
+      </Card>
     </div>
   );
 }

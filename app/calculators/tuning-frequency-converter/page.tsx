@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -312,6 +312,149 @@ export default function TuningFrequencyConverterPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Convert Tuning Frequencies</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Set Reference and Target Frequencies</h3>
+                <p className="text-sm text-muted-foreground">Enter your current tuning standard (e.g., 440Hz) and the target frequency you want to convert to.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select the Note to Convert</h3>
+                <p className="text-sm text-muted-foreground">Choose any note from C to B and specify the octave to see its frequency at both tunings.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">View Complete Frequency Table</h3>
+                <p className="text-sm text-muted-foreground">See all 12 notes with their converted frequencies and the shift in Hz and cents.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Tuning Frequency Converter</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Multiple Reference Pitches</h3>
+              <p className="text-sm text-muted-foreground">Convert between 440Hz, 432Hz, 444Hz, 415Hz, and custom frequencies for any musical application.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Complete Note Table</h3>
+              <p className="text-sm text-muted-foreground">Generate all 12 chromatic notes at once with precise frequency values for your DAW or tuner.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Cents Calculation</h3>
+              <p className="text-sm text-muted-foreground">See the exact pitch difference in cents for microtuning and instrument setup adjustments.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Historical Temperaments</h3>
+              <p className="text-sm text-muted-foreground">Explore Baroque pitch (415Hz), Verdi tuning (432Hz), and modern orchestral standards (442-444Hz).</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Common Tuning Standards Reference</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Standard</th>
+                  <th className="text-left py-2">A4 Frequency</th>
+                  <th className="text-left py-2">Use Case</th>
+                  <th className="text-left py-2">Cents vs 440Hz</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Baroque Pitch</td>
+                  <td className="py-2 font-mono">415 Hz</td>
+                  <td className="py-2">Period instruments</td>
+                  <td className="py-2">-100 cents</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Verdi Tuning</td>
+                  <td className="py-2 font-mono">432 Hz</td>
+                  <td className="py-2">Meditation, alternative</td>
+                  <td className="py-2">-32 cents</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Concert Pitch</td>
+                  <td className="py-2 font-mono">440 Hz</td>
+                  <td className="py-2">Standard (ISO 16)</td>
+                  <td className="py-2">0 cents</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">European Orchestra</td>
+                  <td className="py-2 font-mono">442 Hz</td>
+                  <td className="py-2">European orchestras</td>
+                  <td className="py-2">+8 cents</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Modern Orchestra</td>
+                  <td className="py-2 font-mono">444 Hz</td>
+                  <td className="py-2">Bright orchestral sound</td>
+                  <td className="py-2">+16 cents</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What is the difference between 440Hz and 432Hz tuning?</h3>
+              <p className="text-sm text-muted-foreground">432Hz is 32 cents lower than 440Hz, creating a slightly warmer, more relaxed sound. Proponents claim 432Hz is more natural and resonant, though this is debated. The difference is subtle but noticeable to trained ears.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Why do orchestras tune to 442Hz or 444Hz?</h3>
+              <p className="text-sm text-muted-foreground">Higher tuning creates a brighter, more brilliant sound that projects better in concert halls. European orchestras commonly use 442Hz, while some modern ensembles use 444Hz for extra brilliance.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What is Baroque pitch (415Hz)?</h3>
+              <p className="text-sm text-muted-foreground">415Hz is approximately one semitone below 440Hz, used for historically informed performances of Baroque music. This lower pitch was common in the 17th-18th centuries and affects instrument string tension and tone.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How do I retune my guitar to 432Hz?</h3>
+              <p className="text-sm text-muted-foreground">Use a chromatic tuner set to 432Hz reference, or tune normally then flatten each string by about 32 cents. Alternatively, capo at fret 1 and tune down a semitone for approximate 432Hz sound.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Can I hear the difference between tuning standards?</h3>
+              <p className="text-sm text-muted-foreground">Most people can detect differences of 5-10 cents. The 32-cent difference between 440Hz and 432Hz is clearly audible. Side-by-side comparisons make the warmer character of lower tunings obvious.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Music Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/note-frequency-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Note Frequency Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate the exact frequency of any musical note.</p>
+            </a>
+            <a href="/calculators/tempo-to-delay-time-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Tempo to Delay Time Converter</h3>
+              <p className="text-sm text-muted-foreground">Convert BPM to milliseconds for audio delay effects.</p>
+            </a>
+            <a href="/calculators/chord-progression-generator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Chord Progression Generator</h3>
+              <p className="text-sm text-muted-foreground">Create harmonic progressions for your compositions.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

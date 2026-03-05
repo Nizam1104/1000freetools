@@ -93,6 +93,143 @@ export default function FocalLengthCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Lens Focal Length</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Select Lens Type</h3>
+              <p className="text-sm text-muted-foreground">Choose from biconvex, biconcave, plano-convex/concave, or meniscus lens configurations.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Lens Parameters</h3>
+              <p className="text-sm text-muted-foreground">Input the refractive index and radii of curvature for both lens surfaces.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Focal Length Results</h3>
+              <p className="text-sm text-muted-foreground">Receive the focal length in meters and optical power in diopters instantly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Lens Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Lensmaker&apos;s Equation</h3>
+            <p className="text-sm text-muted-foreground">Uses the complete lensmaker&apos;s formula: 1/f = (n-1)(1/R₁ - 1/R₂) for accurate calculations.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Multiple Lens Types</h3>
+            <p className="text-sm text-muted-foreground">Supports converging (biconvex) and diverging (biconcave) lenses with proper sign conventions.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Optical Power Calculation</h3>
+            <p className="text-sm text-muted-foreground">Automatically converts focal length to diopters (D = 1/f) for optometry applications.</p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Sign Convention Guide</h3>
+            <p className="text-sm text-muted-foreground">Clear instructions on positive/negative radius values for convex and concave surfaces.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+          <h3 className="font-semibold mb-3">Common Lens Materials and Refractive Indices</h3>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2">Material</th>
+                <th className="text-left py-2">Refractive Index (n)</th>
+                <th className="text-left py-2">Common Uses</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-2">Crown Glass</td>
+                <td className="py-2">1.52</td>
+                <td className="py-2">Standard eyeglasses, camera lenses</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Flint Glass</td>
+                <td className="py-2">1.62-1.75</td>
+                <td className="py-2">High-index eyeglasses</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">Polycarbonate</td>
+                <td className="py-2">1.59</td>
+                <td className="py-2">Safety glasses, sports eyewear</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">CR-39 Plastic</td>
+                <td className="py-2">1.50</td>
+                <td className="py-2">Standard plastic lenses</td>
+              </tr>
+              <tr>
+                <td className="py-2">Sapphire</td>
+                <td className="py-2">1.77</td>
+                <td className="py-2">Specialty optics, watches</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold mb-2">What is the lensmaker&apos;s equation?</h3>
+            <p className="text-sm text-muted-foreground">The lensmaker&apos;s equation relates focal length to the lens material and shape: 1/f = (n-1)(1/R₁ - 1/R₂), where n is refractive index and R₁, R₂ are the radii of curvature of both surfaces.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What does a negative focal length mean?</h3>
+            <p className="text-sm text-muted-foreground">A negative focal length indicates a diverging (concave) lens that spreads light rays apart. Positive focal length means a converging (convex) lens that focuses light to a point.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">How do I know if R₁ and R₂ are positive or negative?</h3>
+            <p className="text-sm text-muted-foreground">By convention: if the center of curvature is on the opposite side from incoming light, the radius is positive. For a biconvex lens, R₁ is positive and R₂ is negative.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">What is optical power in diopters?</h3>
+            <p className="text-sm text-muted-foreground">Optical power (P) in diopters equals 1/f where f is in meters. A 0.5m focal length lens has 2 diopters of power. Optometrists use diopters to prescribe corrective lenses.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Can this calculator handle thick lenses?</h3>
+            <p className="text-sm text-muted-foreground">This calculator uses the thin lens approximation, which is accurate when lens thickness is much smaller than the radii of curvature. For thick lenses, additional corrections are needed.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Physics & Optics Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/mirror-equation-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Mirror Equation Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate image position and magnification for spherical mirrors.</p>
+          </a>
+          <a href="/calculators/snells-law-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Snell&apos;s Law Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate light refraction angles at material boundaries.</p>
+          </a>
+          <a href="/calculators/magnification-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+            <h3 className="font-semibold mb-1">Magnification Calculator</h3>
+            <p className="text-sm text-muted-foreground">Determine image size and orientation for lens systems.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

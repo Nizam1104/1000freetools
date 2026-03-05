@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -317,6 +317,155 @@ export default function CeilingTileCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Ceiling Tiles Needed</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Measure Your Room</h3>
+                  <p className="text-muted-foreground text-sm">Enter the length and width of your ceiling in meters, centimeters, or feet.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Choose Tile Size</h3>
+                  <p className="text-muted-foreground text-sm">Select standard tile sizes (60×60cm, 62.5×62.5cm, etc.) and set waste allowance.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Order Quantity</h3>
+                  <p className="text-muted-foreground text-sm">See total tiles needed, boxes to order, and estimated cost for your project.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Why Use This Ceiling Tile Calculator?</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">📏 Accurate Material Estimates</h3>
+                <p className="text-muted-foreground text-sm">Avoid costly over-ordering or project delays from under-ordering with precise tile calculations.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">♻️ Waste Allowance Included</h3>
+                <p className="text-muted-foreground text-sm">Automatically adds cut waste percentage (typically 10-15%) for realistic order quantities.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">📦 Box Quantity Calculator</h3>
+                <p className="text-muted-foreground text-sm">Converts total tiles to full boxes based on tiles per box, matching supplier packaging.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">💰 Cost Estimation</h3>
+                <p className="text-muted-foreground text-sm">Enter price per box to get total project cost for budgeting and comparison shopping.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Reference Table */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Standard Ceiling Tile Sizes</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4">Tile Size</th>
+                    <th className="text-left py-3 px-4">Area per Tile</th>
+                    <th className="text-left py-3 px-4">Tiles per m²</th>
+                    <th className="text-left py-3 px-4">Common Use</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">30×30 cm</td>
+                    <td className="py-3 px-4">0.09 m²</td>
+                    <td className="py-3 px-4">11.1 tiles</td>
+                    <td className="py-3 px-4">Small rooms, decorative</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">45×45 cm</td>
+                    <td className="py-3 px-4">0.20 m²</td>
+                    <td className="py-3 px-4">4.9 tiles</td>
+                    <td className="py-3 px-4">Residential ceilings</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">60×60 cm</td>
+                    <td className="py-3 px-4">0.36 m²</td>
+                    <td className="py-3 px-4">2.8 tiles</td>
+                    <td className="py-3 px-4">Standard commercial</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">62.5×62.5 cm</td>
+                    <td className="py-3 px-4">0.39 m²</td>
+                    <td className="py-3 px-4">2.56 tiles</td>
+                    <td className="py-3 px-4">European grid systems</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">120×60 cm</td>
+                    <td className="py-3 px-4">0.72 m²</td>
+                    <td className="py-3 px-4">1.4 tiles</td>
+                    <td className="py-3 px-4">Large commercial spaces</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Ceiling Tile Installation FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How much waste should I allow for ceiling tiles?</h3>
+                <p className="text-muted-foreground text-sm">Allow 10% waste for simple rectangular rooms. Increase to 15% for rooms with corners, alcoves, or complex layouts requiring more cuts.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What's the difference between 60cm and 62.5cm tiles?</h3>
+                <p className="text-muted-foreground text-sm">60×60cm is standard in North America. 62.5×62.5cm is common in European grid systems. They're not interchangeable—match your grid system.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I measure for a drop ceiling?</h3>
+                <p className="text-muted-foreground text-sm">Measure the length and width of the room where tiles will install (inside the grid). Multiply to get area, then use this calculator for tile count.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Should I order extra ceiling tiles?</h3>
+                <p className="text-muted-foreground text-sm">Yes, order 5-10 extra tiles beyond calculated needs for future repairs. Ceiling tiles can be damaged and matching styles may be discontinued.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Can I install ceiling tiles myself?</h3>
+                <p className="text-muted-foreground text-sm">Yes, drop ceiling installation is a popular DIY project. You'll need a grid system, tiles, and basic tools. Allow 1-2 days for an average room.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Home Improvement Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate usable floor area for flooring and real estate purposes.</p>
+              </a>
+              <a href="/calculators/concrete-mix-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Concrete Mix Ratio Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate cement, sand, and aggregate for home construction projects.</p>
+              </a>
+              <a href="/calculators/canvas-aspect-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Canvas Aspect Ratio Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate dimensions for wall art and interior design layouts.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

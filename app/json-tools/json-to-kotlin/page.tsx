@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -31,27 +31,27 @@ export default function JsonToKotlinPage() {
     if (value === null) {
       return "Any?";
     }
-    
+
     if (typeof value === "boolean") {
       return "Boolean";
     }
-    
+
     if (typeof value === "number") {
       return Number.isInteger(value) ? "Int" : "Double";
     }
-    
+
     if (typeof value === "string") {
       return "String";
     }
-    
+
     if (Array.isArray(value)) {
       return "List";
     }
-    
+
     if (typeof value === "object") {
       return "Any";
     }
-    
+
     return "Any?";
   };
 
@@ -67,7 +67,7 @@ export default function JsonToKotlinPage() {
 
     for (const [key, value] of entries) {
       const propertyName = toCamelCase(key);
-      
+
       if (typeof value === "object" && value !== null && !Array.isArray(value)) {
         const nestedName = `${name}${toPascalCase(key)}`;
         properties.push(`    val ${propertyName}: ${nestedName}?`);
@@ -97,13 +97,13 @@ export default function JsonToKotlinPage() {
     try {
       const parsed = JSON.parse(input);
       let result = `package ${packageName}\n\n`;
-      
+
       if (Array.isArray(parsed) && parsed.length > 0) {
         result += generateKotlinClass(className, parsed[0] as Record<string, unknown>, new Set());
       } else if (typeof parsed === "object" && parsed !== null) {
         result += generateKotlinClass(className, parsed as Record<string, unknown>, new Set());
       }
-      
+
       setOutput(result);
       toast.success("Generated Kotlin data class successfully!");
     } catch (e) {

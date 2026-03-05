@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -179,6 +179,103 @@ export default function WealthGrowthProjectionCalculatorPage() {
               )}
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Project Wealth Growth</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Current Savings</h3>
+                <p className="text-sm text-muted-foreground">Input your starting balance or current investment portfolio value.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Set Contribution & Return</h3>
+                <p className="text-sm text-muted-foreground">Enter monthly contribution amount and expected annual return rate.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">View Growth Projection</h3>
+                <p className="text-sm text-muted-foreground">See year-by-year breakdown of contributions, growth, and total value.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Wealth Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Compound Growth**</h3>
+              <p className="text-sm text-muted-foreground">Calculates monthly compounding to show realistic investment growth over time.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Year-by-Year Breakdown**</h3>
+              <p className="text-sm text-muted-foreground">Detailed annual projections showing contributions, growth, and total value.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Total Growth Analysis**</h3>
+              <p className="text-sm text-muted-foreground">See how much of your wealth comes from contributions vs investment returns.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Retirement Planning**</h3>
+              <p className="text-sm text-muted-foreground">Essential tool for FIRE calculations and long-term financial planning.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a good expected return rate?</h3>
+              <p className="text-sm text-muted-foreground">Historically, the S&P 500 averages about 10% annually. Conservative estimates use 6-8%. Bonds typically return 3-5%. Diversified portfolios often target 7-9%.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How does compound interest work?</h3>
+              <p className="text-sm text-muted-foreground">Compound interest means you earn returns on both your principal and accumulated earnings. Over time, this creates exponential growth - the &quot;snowball effect&quot;.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How much should I save monthly?</h3>
+              <p className="text-sm text-muted-foreground">Financial advisors recommend saving 15-20% of income for retirement. The exact amount depends on your age, goals, and current savings.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Does this account for inflation?</h3>
+              <p className="text-sm text-muted-foreground">This calculator shows nominal (not inflation-adjusted) returns. For real purchasing power, subtract expected inflation (typically 2-3%) from your return rate.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How accurate are these projections?</h3>
+              <p className="text-sm text-muted-foreground">Projections are estimates based on constant returns. Actual markets fluctuate. Use as a planning guide, not a guarantee. Consider running best/worst case scenarios.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/compound-interest-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Compound Interest Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate compound interest growth for savings and investments.</p>
+            </a>
+            <a href="/calculators/4-percent-rule-retirement-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">4% Rule Retirement Calculator</h3>
+              <p className="text-sm text-muted-foreground">Determine safe withdrawal rates for retirement income planning.</p>
+            </a>
+            <a href="/calculators/fire-number-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">FIRE Number Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate your financial independence retirement number.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

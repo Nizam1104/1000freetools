@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -73,7 +73,7 @@ export default function WindowAreaCalculatorPage() {
       if (width === 0 || height === 0) continue;
 
       let area = width * height;
-      
+
       // Convert to sq ft if needed
       if (unit === "inches") {
         area = (width * height) / 144;
@@ -342,6 +342,103 @@ export default function WindowAreaCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Window Area</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Window Dimensions</h3>
+                <p className="text-sm text-muted-foreground">Enter width and height for each window. Add multiple windows as needed.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Set Quantity & Options</h3>
+                <p className="text-sm text-muted-foreground">Specify how many of each window size. Enter glass price per sq ft if needed.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Area & Cost Analysis</h3>
+                <p className="text-sm text-muted-foreground">See total area, glass cost estimate, and heat loss calculations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Window Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Multiple Windows**</h3>
+              <p className="text-sm text-muted-foreground">Add and calculate area for multiple windows of different sizes.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Cost Estimation**</h3>
+              <p className="text-sm text-muted-foreground">Calculate glass replacement cost based on area and price per unit.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Heat Loss Analysis**</h3>
+              <p className="text-sm text-muted-foreground">Estimate heat loss through windows in BTU and watts.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Dual Unit Support**</h3>
+              <p className="text-sm text-muted-foreground">Work in feet or meters with automatic conversions.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I measure a window for area?</h3>
+              <p className="text-sm text-muted-foreground">Measure the width and height of the glass area (not the frame). Multiply width × height for area. For multiple windows, add all areas together.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How much does window glass cost?</h3>
+              <p className="text-sm text-muted-foreground">Standard glass costs $10-20/sq ft. Tempered glass: $25-40/sq ft. Double-pane: $50-100/sq ft installed. Prices vary by region and glass type.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do windows affect energy bills?</h3>
+              <p className="text-sm text-muted-foreground">Windows can account for 25-30% of heating/cooling costs. Single-pane windows lose heat 4x faster than walls. Upgrading to double-pane can save 12-33% on energy bills.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is the standard window size?</h3>
+              <p className="text-sm text-muted-foreground">Common sizes: Double-hung 36×48 in, Picture windows 48×72 in, Sliding 60×48 in. Custom sizes are available but cost more.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I calculate heat loss through windows?</h3>
+              <p className="text-sm text-muted-foreground">Heat loss = Area × U-value × Temperature Difference. Single-pane U-value ≈ 1.0, double-pane ≈ 0.5. Larger temperature differences mean more heat loss.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/paint-coverage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Paint Coverage Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate paint needed for walls, accounting for windows and doors.</p>
+            </a>
+            <a href="/calculators/flooring-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Flooring Calculator</h3>
+              <p className="text-sm text-muted-foreground">Estimate flooring materials for home improvement projects.</p>
+            </a>
+            <a href="/calculators/wallpaper-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Wallpaper Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate wallpaper rolls needed for room decoration.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

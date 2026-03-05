@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -182,6 +182,106 @@ export default function PricePerUnitComparisonCalculatorPage() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>How to Compare Price Per Unit</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <p className="font-semibold mb-1">Enter product 1 details</p>
+                <p className="text-sm text-muted-foreground">Input the quantity and total price for the first product.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <p className="font-semibold mb-1">Enter product 2 details</p>
+                <p className="text-sm text-muted-foreground">Input the quantity and total price for the second product.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <p className="font-semibold mb-1">Get the better value</p>
+                <p className="text-sm text-muted-foreground">See which product costs less per unit and how much you'll save.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Why Compare Unit Prices</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">Smart shopping</p>
+                <p className="text-sm text-muted-foreground">Avoid marketing tricks and find the true best deal every time.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Bulk buying decisions</p>
+                <p className="text-sm text-muted-foreground">Know if bigger packages actually save money or cost more.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Brand comparison</p>
+                <p className="text-sm text-muted-foreground">Compare name brands vs generics on equal footing.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Multiple unit support</p>
+                <p className="text-sm text-muted-foreground">Works with pounds, ounces, grams, liters, pieces, and more.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Instant savings calculation</p>
+                <p className="text-sm text-muted-foreground">See exactly how much you save per unit with the better option.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">How do I calculate price per unit?</p>
+                <p className="text-sm text-muted-foreground">Divide total price by quantity. For $5.99 for 20 oz: $5.99 / 20 = $0.30 per ounce.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Is bulk always cheaper?</p>
+                <p className="text-sm text-muted-foreground">Not always. Sometimes smaller packages have better unit prices due to sales or promotions.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">What unit should I compare?</p>
+                <p className="text-sm text-muted-foreground">Use the same unit for both products. Compare oz to oz, lb to lb, or piece to piece.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">How much can I save by comparing?</p>
+                <p className="text-sm text-muted-foreground">Grocery shoppers can save 10-30% on bills by consistently choosing better unit prices.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Does brand matter for unit price?</p>
+                <p className="text-sm text-muted-foreground">Generic brands often have lower unit prices with similar quality to name brands.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Related Shopping Calculators</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground mb-3">
+              Try our other money-saving tools: the <a href="/calculators/discount-calculator" className="text-primary hover:underline">discount calculator</a> for sale prices, the <a href="/calculators/coupon-savings-calculator" className="text-primary hover:underline">coupon savings calculator</a> for deal stacking, and the <a href="/calculators/gas-savings-calculator" className="text-primary hover:underline">gas savings calculator</a> for fuel comparisons.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

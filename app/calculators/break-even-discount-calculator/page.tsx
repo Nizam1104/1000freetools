@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -124,6 +124,253 @@ export default function BreakEvenDiscountCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How to Use This Break-Even Discount Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Enter your cost price</p>
+                    <p>This is what you pay to acquire or produce each unit. Include all direct costs like materials, labor, and shipping.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Input your current selling price</p>
+                    <p>This is your regular retail price before any discounts. The calculator will determine how much you can reduce this price without losing money.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review your maximum safe discount</p>
+                    <p>The result shows the maximum discount amount and percentage you can offer while still breaking even. Any discount beyond this point means a loss.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Discount Margin Reference Guide
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Profit Margin</th>
+                      <th className="text-left py-3 px-2 font-semibold">Max Discount</th>
+                      <th className="text-left py-3 px-2 font-semibold">Risk Level</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">10%</td>
+                      <td className="py-3 px-2">10% off</td>
+                      <td className="py-3 px-2">Low flexibility</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">20%</td>
+                      <td className="py-3 px-2">20% off</td>
+                      <td className="py-3 px-2">Moderate flexibility</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">30%</td>
+                      <td className="py-3 px-2">30% off</td>
+                      <td className="py-3 px-2">Good flexibility</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">40%</td>
+                      <td className="py-3 px-2">40% off</td>
+                      <td className="py-3 px-2">High flexibility</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">50%+</td>
+                      <td className="py-3 px-2">50%+ off</td>
+                      <td className="py-3 px-2">Maximum flexibility</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Your maximum discount equals your profit margin. A 25% margin means you can discount up to 25% and still cover costs. Beyond that, each sale loses money.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Understanding Break-Even Discounts
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What Is Break-Even Discount?</h4>
+                  <p>
+                    Break-even discount is the maximum percentage you can reduce your selling price without losing money on the sale. At this discount level, your revenue exactly equals your cost — you make zero profit but also zero loss. It's the absolute floor for pricing decisions.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why Profit Margin Sets Your Discount Limit</h4>
+                  <p>
+                    Your profit margin is the difference between cost and selling price, expressed as a percentage of the selling price. This margin is your pricing cushion. If your margin is 30%, you can cut price by up to 30% and still cover costs. Any deeper discount comes out of your pocket.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">When Break-Even Pricing Makes Sense</h4>
+                  <p>
+                    Selling at break-even can be strategic. You might do this to clear old inventory, match a competitor's promotion, or attract customers who will buy other profitable items. The key is knowing your limit so you don't accidentally go below it.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">The Danger of Discounting Beyond Break-Even</h4>
+                  <p>
+                    Every sale below break-even loses real money. A 5% loss on a $100 item is $5 out of pocket. To recover that $5, you need to make profitable sales elsewhere. Many businesses fail because they discount too deeply without tracking the cumulative losses.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Smart Discounting Strategies
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Know Your Margin Before Any Sale</p>
+                    <p>Calculate your break-even point before running promotions. Keep a reference sheet showing max discount for each product. This prevents accidental losses during busy sales periods.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Use Tiered Discounts Strategically</p>
+                    <p>Offer smaller discounts (10-15%) on low-margin items and deeper discounts on high-margin products. This protects profitability while still giving customers perceived value.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Consider Volume When Discounting</p>
+                    <p>A break-even sale might make sense if it leads to additional profitable purchases. But calculate the total transaction value, not just the discounted item. Don't assume volume will materialize.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Track Discount Impact on Margins</p>
+                    <p>Monitor how discounts affect your overall profit margin over time. If you're constantly discounting to break-even, your base prices may be too high or your costs too high.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How do I calculate break-even discount percentage?</h4>
+                  <p>
+                    Subtract your cost from your selling price to get profit. Divide profit by selling price and multiply by 100. For example: $80 cost, $100 price = $20 profit. $20 / $100 = 20% maximum discount.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is it ever smart to sell below break-even?</h4>
+                  <p>
+                    Sometimes, but only with a clear strategy. Loss leaders can draw customers who buy other items. Clearance sales free up cash and space. The key is limiting the loss and having a specific goal beyond just moving inventory.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What costs should I include in cost price?</h4>
+                  <p>
+                    Include all direct costs: purchase price or materials, direct labor, shipping to you, and any customization costs. Don't include overhead like rent or utilities — those are covered by your profit margin.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How does VAT or sales tax affect break-even?</h4>
+                  <p>
+                    Sales tax is collected from customers and remitted to the government — it's not your revenue. Calculate break-even using pre-tax prices. The tax doesn't affect your profit margin calculation.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Why is my break-even discount lower than competitors?</h4>
+                  <p>
+                    Competitors may have lower costs from bulk purchasing, vertical integration, or different overhead structures. They might also be willing to accept lower margins. Focus on your own numbers, not theirs.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/break-even-point-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Break-Even Point Calculator</span>
+                  <p className="text-muted-foreground">Calculate how many units you need to sell to cover all costs</p>
+                </a>
+                <a
+                  href="/calculators/profit-margin-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Profit Margin Calculator</span>
+                  <p className="text-muted-foreground">Calculate gross and net profit margins from revenue and costs</p>
+                </a>
+                <a
+                  href="/calculators/markup-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Markup Calculator</span>
+                  <p className="text-muted-foreground">Determine selling price from cost and desired markup percentage</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

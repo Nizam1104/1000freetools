@@ -249,6 +249,143 @@ export default function CarpetAreaCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      {/* SEO Content Section */}
+      <div className="mt-12 space-y-12">
+        {/* How It Works */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Carpet Area from Built-Up Area</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Choose Calculation Mode</h3>
+                <p className="text-muted-foreground text-sm">Select whether you want to calculate from super built-up area or built-up area.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Select Property Type</h3>
+                <p className="text-muted-foreground text-sm">Choose apartment, independent house, or commercial property for accurate ratios.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Carpet Area</h3>
+                <p className="text-muted-foreground text-sm">See your usable carpet area along with efficiency ratio and area comparison chart.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features & Benefits */}
+        <section className="bg-card rounded-lg border p-6">
+          <h2 className="text-2xl font-semibold mb-6">Why Calculate Carpet Area?</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">🏠 Know Your Usable Space</h3>
+              <p className="text-muted-foreground text-sm">Carpet area is the actual floor space you can use. Understanding this helps you compare properties fairly.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">📊 RERA Compliance</h3>
+              <p className="text-muted-foreground text-sm">In India, RERA mandates carpet area disclosure. This calculator helps verify builder claims.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">💰 Fair Price Comparison</h3>
+              <p className="text-muted-foreground text-sm">Compare properties based on carpet area price per sqft, not misleading super built-up rates.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">📈 Efficiency Analysis</h3>
+              <p className="text-muted-foreground text-sm">See what percentage of the saleable area is actually usable space in your property.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Reference Table */}
+        <section className="bg-card rounded-lg border p-6">
+          <h2 className="text-2xl font-semibold mb-6">Area Deduction Ratios by Property Type</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-3 px-4">Property Type</th>
+                  <th className="text-left py-3 px-4">From Super Built-Up</th>
+                  <th className="text-left py-3 px-4">From Built-Up</th>
+                  <th className="text-left py-3 px-4">Typical Efficiency</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">🏢 Apartment/Flat</td>
+                  <td className="py-3 px-4">25% deduction</td>
+                  <td className="py-3 px-4">10% deduction</td>
+                  <td className="py-3 px-4">70-75%</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-4 font-medium">🏡 Independent House</td>
+                  <td className="py-3 px-4">15% deduction</td>
+                  <td className="py-3 px-4">5% deduction</td>
+                  <td className="py-3 px-4">85-90%</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-medium">🏬 Commercial/Office</td>
+                  <td className="py-3 px-4">30% deduction</td>
+                  <td className="py-3 px-4">15% deduction</td>
+                  <td className="py-3 px-4">65-70%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Carpet Area FAQs</h2>
+          <div className="space-y-4">
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">What is the difference between carpet area and built-up area?</h3>
+              <p className="text-muted-foreground text-sm">Carpet area is the usable floor space inside walls. Built-up area includes carpet area plus wall thickness and utility ducts, typically 10-15% more.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">What is super built-up area?</h3>
+              <p className="text-muted-foreground text-sm">Super built-up area (saleable area) includes built-up area plus your share of common spaces like lobby, stairs, elevator, and amenities. It's 25-30% more than carpet area for apartments.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">How is carpet area calculated under RERA?</h3>
+              <p className="text-muted-foreground text-sm">RERA defines carpet area as net usable floor area excluding external walls, balconies, and common areas. Builders must quote prices based on carpet area in India.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">What is a good efficiency ratio for apartments?</h3>
+              <p className="text-muted-foreground text-sm">A good efficiency ratio is 75% or higher, meaning 75% of the super built-up area is usable carpet space. Lower ratios mean you're paying for more common area.</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2">Should I buy based on carpet area or super built-up?</h3>
+              <p className="text-muted-foreground text-sm">Always compare properties using carpet area. A 1000 sqft super built-up apartment may have only 750 sqft carpet area, affecting value comparison.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Tools */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Real Estate & Home Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/ceiling-tile-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Ceiling Tile Calculator</h3>
+              <p className="text-muted-foreground text-sm">Calculate materials needed for ceiling installation in your home or office.</p>
+            </a>
+            <a href="/calculators/canvas-aspect-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Canvas Aspect Ratio Calculator</h3>
+              <p className="text-muted-foreground text-sm">Calculate dimensions for interior design layouts and wall art.</p>
+            </a>
+            <a href="/calculators/concrete-mix-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Concrete Mix Ratio Calculator</h3>
+              <p className="text-muted-foreground text-sm">Calculate cement, sand, and aggregate for home construction projects.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

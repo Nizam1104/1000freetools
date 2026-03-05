@@ -193,6 +193,106 @@ export default function PercentCompositionCalculator() {
           </ul>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Calculate Percent Composition</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <p className="font-semibold mb-1">Enter the chemical formula</p>
+              <p className="text-sm text-muted-foreground">Type the compound formula using standard element symbols (like H2O, CO2, or C6H12O6). Numbers after elements indicate atom count.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <p className="font-semibold mb-1">Click Calculate</p>
+              <p className="text-sm text-muted-foreground">The calculator finds atomic masses from the periodic table and computes the total molar mass of your compound.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <p className="font-semibold mb-1">Review the breakdown</p>
+              <p className="text-sm text-muted-foreground">Get instant results showing each element's mass contribution and percentage, plus a visual pie chart distribution.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Why Use This Percent Composition Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">Accurate atomic masses</p>
+              <p className="text-sm text-muted-foreground">Uses standard periodic table values for precise calculations in homework and lab work.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Visual element distribution</p>
+              <p className="text-sm text-muted-foreground">Pie chart shows the proportional makeup of your compound at a glance.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Detailed breakdown table</p>
+              <p className="text-sm text-muted-foreground">See atomic mass, atom count, total mass, and percentage for each element.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Works with any formula</p>
+              <p className="text-sm text-muted-foreground">Handles simple compounds like NaCl and complex molecules like C6H12O6 equally well.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Free and instant</p>
+              <p className="text-sm text-muted-foreground">No sign-up required. Results appear immediately in your browser.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold mb-1">How do you calculate percent composition?</p>
+              <p className="text-sm text-muted-foreground">Divide the total mass of each element by the compound's molar mass, then multiply by 100. For H2O: hydrogen is (2.016 / 18.015) × 100% = 11.19%.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What is the percent composition formula?</p>
+              <p className="text-sm text-muted-foreground">Percent composition = (mass of element in formula / molar mass of compound) × 100%. This gives the mass percentage of each element.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Can this calculator handle complex formulas?</p>
+              <p className="text-sm text-muted-foreground">Yes, enter formulas like C6H12O6, Ca(NO3)2, or Fe2(SO4)3. The calculator parses element symbols and their counts automatically.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Why is percent composition important in chemistry?</p>
+              <p className="text-sm text-muted-foreground">It helps determine empirical formulas, verify compound purity, and understand the elemental makeup of substances in quality control and research.</p>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">What atomic masses does this calculator use?</p>
+              <p className="text-sm text-muted-foreground">Standard atomic weights from the periodic table (IUPAC values). For example: H = 1.008, C = 12.01, O = 15.999 g/mol.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Chemistry Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Try our other chemistry calculators: the <a href="/calculators/molarity-calculator" className="text-primary hover:underline">molarity calculator</a> for solution concentrations, the <a href="/calculators/empirical-formula-calculator" className="text-primary hover:underline">empirical formula calculator</a> to find simplest ratios, and the <a href="/calculators/ph-calculator" className="text-primary hover:underline">pH calculator</a> for acid-base calculations.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

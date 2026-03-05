@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -266,6 +266,149 @@ export default function VehicleTurningRadiusCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Turning Radius</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Enter Vehicle Dimensions</h3>
+                <p className="text-sm text-muted-foreground">Input wheelbase and front track width from your vehicle specifications.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Add Steering Angle</h3>
+                <p className="text-sm text-muted-foreground">Enter maximum steering angle (typically 25-35° for passenger vehicles).</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get Turning Measurements</h3>
+                <p className="text-sm text-muted-foreground">See curb-to-curb, wall-to-wall diameter, and Ackerman steering angles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Why Use This Turning Radius Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Multiple Unit Support</h3>
+              <p className="text-sm text-muted-foreground">Enter dimensions in inches, millimeters, centimeters, or meters with automatic conversion.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Curb & Wall Measurements</h3>
+              <p className="text-sm text-muted-foreground">Distinguishes between curb-to-curb (wheel path) and wall-to-wall (total clearance needed).</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Ackerman Geometry</h3>
+              <p className="text-sm text-muted-foreground">Calculates inner wheel angle based on Ackerman steering principle for accurate results.</p>
+            </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Parking Space Planning</h3>
+              <p className="text-sm text-muted-foreground">Determine minimum space needed for U-turns, parking maneuvers, and garage design.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+            <h3 className="font-semibold mb-3">Turning Radius by Vehicle Type</h3>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2">Vehicle Type</th>
+                  <th className="text-left py-2">Typical Turning Diameter</th>
+                  <th className="text-left py-2">Wheelbase Range</th>
+                  <th className="text-left py-2">Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2">Subcompact Car</td>
+                  <td className="py-2">32-34 ft</td>
+                  <td className="py-2">95-100 in</td>
+                  <td className="py-2">City driving, tight parking</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Compact Sedan</td>
+                  <td className="py-2">35-37 ft</td>
+                  <td className="py-2">103-107 in</td>
+                  <td className="py-2">Daily commuting</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Midsize SUV</td>
+                  <td className="py-2">38-40 ft</td>
+                  <td className="py-2">108-112 in</td>
+                  <td className="py-2">Family transport</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2">Full-Size Truck</td>
+                  <td className="py-2">42-48 ft</td>
+                  <td className="py-2">120-145 in</td>
+                  <td className="py-2">Towing, hauling</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Sports Car</td>
+                  <td className="py-2">34-38 ft</td>
+                  <td className="py-2">96-108 in</td>
+                  <td className="py-2">Performance driving</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-2">What is a good turning radius for a car?</h3>
+              <p className="text-sm text-muted-foreground">A good turning diameter is under 36 feet for easy city driving. Compact cars achieve 32-34 feet, while most sedans are 35-38 feet. Anything over 40 feet makes tight urban maneuvering challenging.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">How is turning radius calculated?</h3>
+              <p className="text-sm text-muted-foreground">Turning radius = Wheelbase ÷ sin(Steering Angle). For a 106-inch wheelbase with 30° steering angle: 106 ÷ sin(30°) = 106 ÷ 0.5 = 212 inches (17.7 ft radius, 35.4 ft diameter).</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What affects a vehicle's turning radius?</h3>
+              <p className="text-sm text-muted-foreground">Main factors are wheelbase (shorter = tighter turn), steering angle (more angle = tighter turn), and front track width. Suspension geometry and Ackerman steering design also influence turning capability.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">What is curb-to-curb vs wall-to-wall turning?</h3>
+              <p className="text-sm text-muted-foreground">Curb-to-curb measures the path of the outer front wheel only. Wall-to-wall includes the vehicle's front/rear overhang, representing total clearance needed to complete a turn without hitting obstacles.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Which production car has the tightest turning radius?</h3>
+              <p className="text-sm text-muted-foreground">The Smart Fortwo has one of the tightest at 22.8 feet diameter. The Mini Cooper (34.4 ft) and Honda Fit (34.8 ft) also excel. Electric vehicles like the Fiat 500e achieve tight turns due to compact powertrain packaging.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Automotive Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/engine-displacement-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Engine Displacement Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate engine CC from bore, stroke, and cylinder count.</p>
+            </a>
+            <a href="/calculators/gear-ratio-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">Gear Ratio Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate gear ratios and final drive for your vehicle.</p>
+            </a>
+            <a href="/calculators/0-100-acceleration-estimator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-1">0-100 km/h Acceleration Estimator</h3>
+              <p className="text-sm text-muted-foreground">Estimate your car's acceleration time from power and weight.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

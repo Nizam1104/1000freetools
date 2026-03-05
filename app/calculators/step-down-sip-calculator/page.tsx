@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -184,6 +184,113 @@ export default function StepDownSIPCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-6">How the Step-Down SIP Works</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Set Initial SIP</h4>
+                  <p className="text-sm text-muted-foreground">Enter your starting monthly investment amount.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Define Step-Down</h4>
+                  <p className="text-sm text-muted-foreground">Specify the annual percentage decrease in contributions.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">View Projections</h4>
+                  <p className="text-sm text-muted-foreground">See maturity value and year-by-year breakdown.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Use Cases Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">When to Use Step-Down SIP</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h4 className="font-semibold text-sm mb-2">🎓 Education Planning</h4>
+                  <p className="text-sm text-muted-foreground">Reduce contributions as children grow and expenses shift from savings to current costs.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h4 className="font-semibold text-sm mb-2">🏠 Near Retirement</h4>
+                  <p className="text-sm text-muted-foreground">Gradually decrease equity exposure and contributions as you approach retirement age.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h4 className="font-semibold text-sm mb-2">💼 Career Break</h4>
+                  <p className="text-sm text-muted-foreground">Plan for reduced income periods by stepping down investments systematically.</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h4 className="font-semibold text-sm mb-2">📊 Risk Management</h4>
+                  <p className="text-sm text-muted-foreground">Reduce market exposure gradually while maintaining some investment growth.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is a step-down SIP?</h4>
+                  <p className="text-sm text-muted-foreground">A step-down SIP is a systematic investment plan where your monthly contribution decreases by a fixed percentage each year, opposite to a step-up SIP where contributions increase.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">When should I use step-down vs step-up SIP?</h4>
+                  <p className="text-sm text-muted-foreground">Use step-up when income is growing. Use step-down when planning for reduced future income, nearing retirement, or shifting from accumulation to distribution phase.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is a typical step-down percentage?</h4>
+                  <p className="text-sm text-muted-foreground">Common step-down rates range from 5-15% annually. A 10% step-down means your contribution reduces by 10% each year.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Can I modify my step-down SIP?</h4>
+                  <p className="text-sm text-muted-foreground">Yes, most mutual funds allow you to change or stop the step-down feature. Check with your fund house for specific policies.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What happens if step-down reaches zero?</h4>
+                  <p className="text-sm text-muted-foreground">The calculator stops contributions when they reach zero. In practice, you may want to maintain a minimum SIP amount.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Investment Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/sip-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">SIP Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Calculate returns for regular monthly investments.</p>
+                </a>
+                <a href="/calculators/sip-step-up-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Step-Up SIP Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Model increasing SIP contributions over time.</p>
+                </a>
+                <a href="/calculators/compound-interest-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Compound Interest Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Calculate compound growth on lump sum investments.</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

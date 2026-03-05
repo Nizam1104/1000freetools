@@ -6,6 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function HeatTransferCalculator() {
   const [mode, setMode] = useState<"conduction" | "convection" | "radiation">("conduction");
@@ -134,6 +142,223 @@ export default function HeatTransferCalculator() {
                 <p className="text-4xl font-bold">{Math.round(results.value * 100) / 100} {results.unit}</p>
               </div>
             )}
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Calculate Heat Transfer</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">
+            <strong>Step 1:</strong> Select the heat transfer mode - conduction (through solids), convection (through fluids), or radiation (electromagnetic).
+          </p>
+          <p className="text-sm text-muted-foreground">
+            <strong>Step 2:</strong> Enter the required parameters for your selected mode (thermal conductivity, area, temperatures, etc.).
+          </p>
+          <p className="text-sm text-muted-foreground">
+            <strong>Step 3:</strong> Click Calculate to see the heat transfer rate in watts.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Understanding Heat Transfer Modes</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Conduction - Heat Through Solids</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Conduction is heat flowing through a material from hot to cold:
+            </p>
+            <div className="p-4 bg-muted rounded-md">
+              <p className="font-mono text-sm mb-2">Q = kAΔT / L</p>
+              <p className="text-xs text-muted-foreground">
+                k is thermal conductivity (how well the material conducts heat), A is area, ΔT is temperature difference, L is thickness. Metals have high k (copper = 400 W/m·K). Insulators have low k (wood = 0.1 W/m·K).
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Convection - Heat Through Fluids</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Convection is heat carried by moving fluids (air, water, oil):
+            </p>
+            <div className="p-4 bg-muted rounded-md">
+              <p className="font-mono text-sm mb-2">Q = hA(T_s - T_∞)</p>
+              <p className="text-xs text-muted-foreground">
+                h is the heat transfer coefficient (depends on fluid and flow), A is surface area, T_s is surface temperature, T_∞ is fluid temperature. Forced convection (fans, pumps) has much higher h than natural convection.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Radiation - Heat Through Empty Space</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Radiation is heat transfer via electromagnetic waves - no medium needed:
+            </p>
+            <div className="p-4 bg-muted rounded-md">
+              <p className="font-mono text-sm mb-2">Q = εσA(T₁⁴ - T₂⁴)</p>
+              <p className="text-xs text-muted-foreground">
+                ε is emissivity (0-1, blackbody = 1), σ is Stefan-Boltzmann constant, A is area, T is absolute temperature (Kelvin). Radiation dominates at high temperatures - it scales with T⁴.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Thermal Conductivity Reference Table</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Material</TableHead>
+                <TableHead>Thermal Conductivity (W/m·K)</TableHead>
+                <TableHead>Use Case</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell>Copper</TableCell>
+                <TableCell className="font-mono">400</TableCell>
+                <TableCell>Heat sinks, cookware</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Aluminum</TableCell>
+                <TableCell className="font-mono">237</TableCell>
+                <TableCell>Heat exchangers, fins</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Steel (carbon)</TableCell>
+                <TableCell className="font-mono">50</TableCell>
+                <TableCell>Structural, pipes</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Glass</TableCell>
+                <TableCell className="font-mono">1.0</TableCell>
+                <TableCell>Windows, insulation</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Water</TableCell>
+                <TableCell className="font-mono">0.6</TableCell>
+                <TableCell>Coolant, heating</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Wood (oak)</TableCell>
+                <TableCell className="font-mono">0.17</TableCell>
+                <TableCell>Building, handles</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Air (still)</TableCell>
+                <TableCell className="font-mono">0.026</TableCell>
+                <TableCell>Insulation (double glazing)</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Styrofoam</TableCell>
+                <TableCell className="font-mono">0.033</TableCell>
+                <TableCell>Insulation, packaging</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <p className="text-xs text-muted-foreground mt-3">
+            Higher thermal conductivity means better heat transfer. Insulators have low k values. Metals are excellent conductors.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Real-World Heat Transfer Examples</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="p-4 bg-muted rounded-md">
+            <h4 className="font-semibold text-sm mb-3">Conduction Example: House Wall</h4>
+            <p className="text-xs text-muted-foreground">
+              A brick wall (k = 0.7 W/m·K) that's 10 m² area and 0.2 m thick, with 20°C inside and 0°C outside: Q = 0.7 × 10 × 20 / 0.2 = 700 W. That's 700 joules per second leaking through the wall. Add insulation and you can cut this by 80%.
+            </p>
+          </div>
+
+          <div className="p-4 bg-muted rounded-md">
+            <h4 className="font-semibold text-sm mb-3">Convection Example: CPU Cooler</h4>
+            <p className="text-xs text-muted-foreground">
+              A CPU heatsink with 0.01 m² surface area, h = 50 W/m²·K (forced air), CPU at 70°C, air at 25°C: Q = 50 × 0.01 × 45 = 22.5 W. That's why high-performance CPUs need bigger heatsinks and faster fans - more area and higher h.
+            </p>
+          </div>
+
+          <div className="p-4 bg-muted rounded-md">
+            <h4 className="font-semibold text-sm mb-3">Radiation Example: Sun to Earth</h4>
+            <p className="text-xs text-muted-foreground">
+              The Sun (5,800 K) radiates energy across space. Earth receives about 1,360 W/m² at the top of atmosphere. This is pure radiation - no air in space. The T⁴ term means doubling temperature increases radiation by 16x.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Which heat transfer mode is fastest?</h4>
+            <p className="text-sm text-muted-foreground">
+              Depends on the situation. In solids, conduction dominates. In fluids with flow, convection is usually faster. At high temperatures (above 500°C), radiation becomes dominant. Most real situations involve all three modes simultaneously.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why does metal feel colder than wood at the same temperature?</h4>
+            <p className="text-sm text-muted-foreground">
+              Metal conducts heat away from your hand much faster than wood. Your skin senses heat flow rate, not absolute temperature. A 20°C metal block feels cold because it's pulling heat from your hand. A 20°C wood block feels neutral because heat flows slowly.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I reduce heat loss in my home?</h4>
+            <p className="text-sm text-muted-foreground">
+              Add insulation (low k materials like fiberglass, foam). Seal air leaks (reduces convection). Use double/triple glazing (traps air between panes). Reflective barriers work for radiation - that's why radiant barriers go in attics.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is the R-value of insulation?</h4>
+            <p className="text-sm text-muted-foreground">
+              R-value is thermal resistance - the inverse of conductivity, adjusted for thickness. R = L/k. Higher R means better insulation. Typical walls need R-13 to R-21. Attics need R-38 to R-60. Double-pane windows are about R-2 to R-3.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Does paint color affect heat transfer?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes, for radiation. Dark colors have high emissivity and absorptivity - they radiate and absorb heat well. Light colors reflect radiation. That's why white roofs stay cooler in summer. But for conduction and convection, color doesn't matter.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="/calculators/energy-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Energy Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate kinetic and potential energy</p>
+            </a>
+            <a href="/calculators/temperature-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Temperature Converter</p>
+              <p className="text-xs text-muted-foreground">Convert between temperature units</p>
+            </a>
+            <a href="/calculators/force-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Force Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate force and pressure</p>
+            </a>
           </div>
         </CardContent>
       </Card>

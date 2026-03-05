@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -49,7 +49,7 @@ export default function GravelQuantityCalculatorPage() {
 
     // Calculate area based on shape
     let areaSqFt = 0;
-    
+
     if (shape === "rectangle") {
       areaSqFt = lengthNum * widthNum;
     } else if (shape === "circle") {

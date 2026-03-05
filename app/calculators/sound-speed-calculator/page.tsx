@@ -89,6 +89,49 @@ export default function SoundSpeedCalculator() {
                 <p className="text-sm text-muted-foreground mt-2">≈ {Math.round(results.speed * 3.6)} km/h</p>
               </div>
             )}
+
+            {/* How It Works Section */}
+            <div className="mt-6 pt-6 border-t">
+              <h4 className="font-semibold mb-4">How to Calculate Sound Speed</h4>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mb-2">1</div>
+                  <h5 className="font-medium text-sm mb-1">Select Medium</h5>
+                  <p className="text-xs text-muted-foreground">Choose air, water, steel, or enter custom properties.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mb-2">2</div>
+                  <h5 className="font-medium text-sm mb-1">Enter Parameters</h5>
+                  <p className="text-xs text-muted-foreground">For air: temperature. For others: bulk modulus and density.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mb-2">3</div>
+                  <h5 className="font-medium text-sm mb-1">Get Result</h5>
+                  <p className="text-xs text-muted-foreground">Instantly see sound speed in m/s and km/h.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Formula Section */}
+            <div className="mt-4 p-4 bg-primary/5 rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Sound Speed Formulas</h4>
+              <p className="font-mono text-sm mb-2">For air: v = 331.3 + 0.606 × T (°C)</p>
+              <p className="font-mono text-sm">For solids/liquids: v = √(K/ρ)</p>
+              <p className="text-xs text-muted-foreground mt-2">Where K = bulk modulus, ρ = density</p>
+            </div>
+
+            {/* Reference Table */}
+            <div className="mt-4">
+              <h4 className="font-semibold text-sm mb-2">Speed of Sound in Common Materials</h4>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="p-2 bg-muted rounded">Air (20°C): 343 m/s</div>
+                <div className="p-2 bg-muted rounded">Water (20°C): 1,482 m/s</div>
+                <div className="p-2 bg-muted rounded">Steel: 5,960 m/s</div>
+                <div className="p-2 bg-muted rounded">Aluminum: 6,320 m/s</div>
+                <div className="p-2 bg-muted rounded">Glass: 4,540 m/s</div>
+                <div className="p-2 bg-muted rounded">Diamond: 12,000 m/s</div>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>

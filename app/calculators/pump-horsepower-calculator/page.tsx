@@ -91,6 +91,183 @@ export default function PumpHorsepowerCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6 max-w-2xl mx-auto">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Pump Horsepower Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter flow rate and head</p>
+                  <p>Input the volumetric flow rate in cubic meters per second and the total head (height) the pump must lift the fluid.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Specify pump efficiency</p>
+                  <p>Enter the pump efficiency as a percentage. Typical centrifugal pumps range from 60-85% efficiency.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Get power requirements</p>
+                  <p>The calculator shows hydraulic power, shaft power, and motor size in both horsepower and kilowatts.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Pump Power Calculation Formulas
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                The hydraulic power represents the theoretical minimum energy needed to move the fluid. The shaft power accounts for pump inefficiency — the actual power the motor must deliver.
+              </p>
+              <div className="p-4 bg-muted rounded-lg font-mono text-sm space-y-2">
+                <div>Hydraulic Power: P_h = ρ × g × Q × H</div>
+                <div>Shaft Power: P_s = P_h / η</div>
+                <div>Horsepower: HP = P_s / 745.7</div>
+              </div>
+              <p>
+                Where ρ is fluid density (kg/m³), g is gravity (9.81 m/s²), Q is flow rate (m³/s), H is head (m), and η is pump efficiency.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Typical Pump Efficiencies
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Pump Type</th>
+                    <th className="text-left py-3 px-2 font-semibold">Efficiency Range</th>
+                    <th className="text-left py-3 px-2 font-semibold">Best For</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Centrifugal (large)</td>
+                    <td className="py-3 px-2">80-90%</td>
+                    <td className="py-3 px-2">High flow, low viscosity</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Centrifugal (small)</td>
+                    <td className="py-3 px-2">50-70%</td>
+                    <td className="py-3 px-2">General purpose</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Positive Displacement</td>
+                    <td className="py-3 px-2">70-90%</td>
+                    <td className="py-3 px-2">High viscosity, precise flow</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Submersible</td>
+                    <td className="py-3 px-2">60-80%</td>
+                    <td className="py-3 px-2">Deep wells, sewage</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Gear Pump</td>
+                    <td className="py-3 px-2">60-80%</td>
+                    <td className="py-3 px-2">Hydraulic systems, oils</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is total head in pump calculations?</h4>
+                <p>
+                  Total head is the total height the pump must lift the fluid, including vertical lift, friction losses in pipes, and any pressure requirements at the outlet. It represents the total energy the pump must add to the fluid.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do I choose a motor size?</h4>
+                <p>
+                  Select a motor rated 10-25% higher than the calculated shaft power to provide a safety margin. This accounts for startup loads, voltage variations, and ensures the motor doesn't run at maximum capacity continuously.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Why does fluid density matter?</h4>
+                <p>
+                  Denser fluids require more power to move. Water has a density of 1000 kg/m³. Oil might be 850 kg/m³, while sludge could be 1200 kg/m³. The calculator adjusts power requirements based on the fluid you specify.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What affects pump efficiency?</h4>
+                <p>
+                  Efficiency depends on pump type, size, age, and operating point. Pumps are most efficient at their design flow rate. Running too far from the best efficiency point (BEP) wastes energy and causes premature wear.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do I convert between HP and kW?</h4>
+                <p>
+                  1 horsepower equals 745.7 watts or 0.746 kW. To convert HP to kW, multiply by 0.746. To convert kW to HP, divide by 0.746. Motor nameplates typically show both ratings.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/flow-rate-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Flow Rate Calculator</span>
+                <p className="text-muted-foreground">Calculate fluid flow rate through pipes and channels</p>
+              </a>
+              <a
+                href="/calculators/pipe-pressure-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Pipe Pressure Calculator</span>
+                <p className="text-muted-foreground">Calculate pressure drop and head loss in piping systems</p>
+              </a>
+              <a
+                href="/calculators/electric-power-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Electric Power Calculator</span>
+                <p className="text-muted-foreground">Calculate electrical power, current, and energy consumption</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

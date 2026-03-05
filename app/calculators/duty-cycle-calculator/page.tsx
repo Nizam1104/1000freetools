@@ -101,6 +101,265 @@ export default function DutyCycleCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 space-y-6">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              How to Use This Duty Cycle Calculator
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  1
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Enter on-time and period values</p>
+                  <p>Input the on-time (how long the signal is high) and the total period time. Both values should be in the same units, typically seconds or milliseconds.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  2
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Or use frequency and duty cycle</p>
+                  <p>Alternatively, enter the frequency and desired duty cycle percentage. The calculator will determine the on-time and off-time for you.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                  3
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Click Calculate to see results</p>
+                  <p>You will see the duty cycle percentage, signal frequency, period, and the on-time and off-time durations for your PWM signal.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Common Duty Cycle Applications
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Application</th>
+                    <th className="text-left py-3 px-2 font-semibold">Typical Duty Cycle</th>
+                    <th className="text-left py-3 px-2 font-semibold">Purpose</th>
+                    <th className="text-left py-3 px-2 font-semibold">Frequency Range</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">LED Dimming</td>
+                    <td className="py-3 px-2">1-100%</td>
+                    <td className="py-3 px-2">Brightness control</td>
+                    <td className="py-3 px-2">100 Hz - 1 kHz</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">DC Motor Speed</td>
+                    <td className="py-3 px-2">10-90%</td>
+                    <td className="py-3 px-2">Speed regulation</td>
+                    <td className="py-3 px-2">1-20 kHz</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Servo Control</td>
+                    <td className="py-3 px-2">5-10%</td>
+                    <td className="py-3 px-2">Position control</td>
+                    <td className="py-3 px-2">50 Hz (20 ms period)</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Buck Converter</td>
+                    <td className="py-3 px-2">10-90%</td>
+                    <td className="py-3 px-2">Voltage step-down</td>
+                    <td className="py-3 px-2">50-500 kHz</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Boost Converter</td>
+                    <td className="py-3 px-2">10-80%</td>
+                    <td className="py-3 px-2">Voltage step-up</td>
+                    <td className="py-3 px-2">50-500 kHz</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Class D Audio</td>
+                    <td className="py-3 px-2">Variable</td>
+                    <td className="py-3 px-2">Audio amplification</td>
+                    <td className="py-3 px-2">200-500 kHz</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Note: Duty cycle determines the average power delivered. Higher duty cycle means more on-time and higher average output.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Understanding Duty Cycle and PWM
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What Is Duty Cycle?</h4>
+                <p>
+                  Duty cycle is the percentage of time a periodic signal is in its active (high) state. A 50% duty cycle means the signal is high for half the period and low for the other half. A 25% duty cycle means the signal is high for one-quarter of the period. Duty cycle directly controls average power delivery.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">PWM Basics</h4>
+                <p>
+                  Pulse Width Modulation (PWM) varies the width of pulses while keeping frequency constant. By changing the duty cycle, you control the average voltage or power without changing the supply voltage. This is highly efficient because the switching element is either fully on or fully off.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Duty Cycle Formula</h4>
+                <p>
+                  Duty cycle equals on-time divided by period, multiplied by 100. D = (T_on / T) × 100%. The period is the inverse of frequency: T = 1/f. Off-time equals period minus on-time: T_off = T - T_on.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Frequency Considerations</h4>
+                <p>
+                  PWM frequency affects performance. Too low and you get visible flicker in LEDs or audible noise in motors. Too high and switching losses increase. For motors, 1-20 kHz works well. For LEDs, 100 Hz minimum to avoid flicker. Power supplies often use 50-500 kHz.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              PWM Design Tips
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Choose the Right Frequency</p>
+                  <p>For motor control, use 1-20 kHz to avoid audible noise. For LED dimming, use at least 200 Hz to prevent visible flicker. For power converters, higher frequencies allow smaller components but increase switching losses.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Mind the Dead Time</p>
+                  <p>In H-bridge and half-bridge circuits, add dead time between switching transitions. This prevents shoot-through where both transistors conduct simultaneously, causing high current spikes and potential damage.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Use Proper Filtering</p>
+                  <p>PWM outputs often need filtering. Motors have inherent inductance that smooths current. LEDs may need current-limiting resistors. Power supplies require LC filters to convert PWM to smooth DC voltage.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Consider Minimum On/Off Times</p>
+                  <p>Some loads need minimum on-time or off-time. Motors need minimum pulse width to overcome friction. Switching power supplies have minimum on-time limits. Ensure your duty cycle range accounts for these constraints.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What does a 100% duty cycle mean?</h4>
+                <p>
+                  A 100% duty cycle means the signal is always high (on) with no off-time. The output delivers full continuous power, equivalent to a direct connection to the supply. There is no PWM effect at 100% duty cycle since the signal never switches off.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do I calculate duty cycle from frequency?</h4>
+                <p>
+                  First find the period: T = 1/frequency. Then duty cycle = (on-time / period) × 100%. For example, at 1 kHz (1 ms period) with 0.25 ms on-time, duty cycle = (0.25 / 1) × 100% = 25%.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What frequency should I use for PWM motor control?</h4>
+                <p>
+                  For DC motors, 1-20 kHz is typical. Below 1 kHz, you may hear audible whining. Above 20 kHz, switching losses increase without benefit. Small motors can use higher frequencies. Large motors often work well at 2-8 kHz.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Why does my LED flicker with PWM?</h4>
+                <p>
+                  Flicker occurs when PWM frequency is too low. The human eye can detect flicker below about 100 Hz, especially in peripheral vision. Use at least 200 Hz for general lighting, 1 kHz or higher for camera applications to avoid banding in video.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is the difference between duty cycle and frequency?</h4>
+                <p>
+                  Frequency is how many complete cycles occur per second. Duty cycle is what percentage of each cycle the signal is on. You can change duty cycle without changing frequency, which is how PWM controls power while maintaining constant switching rate.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/frequency-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Frequency Calculator</span>
+                <p className="text-muted-foreground">Convert between frequency, period, and angular frequency</p>
+              </a>
+              <a
+                href="/calculators/led-resistor-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">LED Resistor Calculator</span>
+                <p className="text-muted-foreground">Calculate the right resistor value for your LED circuit</p>
+              </a>
+              <a
+                href="/calculators/power-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Power Calculator</span>
+                <p className="text-muted-foreground">Calculate electrical power, voltage, and current</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

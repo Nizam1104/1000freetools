@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import palettesData from "@/public/json-assets/color-palettes.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -145,10 +145,10 @@ export default function ColorPalettesPage() {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
       ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16),
-        }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
       : null;
   }
 
@@ -242,11 +242,10 @@ export default function ColorPalettesPage() {
                         }}
                       >
                         <Heart
-                          className={`h-5 w-5 ${
-                            favorites.includes(palette.name)
+                          className={`h-5 w-5 ${favorites.includes(palette.name)
                               ? "fill-red-500 text-red-500"
                               : "text-slate-400"
-                          }`}
+                            }`}
                         />
                       </Button>
                     </div>
@@ -458,11 +457,10 @@ export default function ColorPalettesPage() {
                       onClick={() => toggleFavorite(selectedPalette.name)}
                     >
                       <Heart
-                        className={`h-5 w-5 ${
-                          favorites.includes(selectedPalette.name)
+                        className={`h-5 w-5 ${favorites.includes(selectedPalette.name)
                             ? "fill-red-500 text-red-500"
                             : "text-slate-400"
-                        }`}
+                          }`}
                       />
                     </Button>
                     <Button

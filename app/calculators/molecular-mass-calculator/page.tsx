@@ -183,17 +183,195 @@ export default function MolecularMassCalculator() {
         </Card>
       )}
 
-      <Card>
+      <Card className="mt-6">
         <CardHeader>
-          <CardTitle>Common Atomic Masses</CardTitle>
+          <CardTitle>How to Use This Molecular Mass Calculator</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">1</div>
+              <div>
+                <p className="font-medium text-foreground">Enter the chemical formula</p>
+                <p>Use standard notation: H2O for water, C6H12O6 for glucose, H2SO4 for sulfuric acid.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">2</div>
+              <div>
+                <p className="font-medium text-foreground">Click Calculate Molar Mass</p>
+                <p>The calculator parses the formula and looks up atomic masses from the periodic table.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">3</div>
+              <div>
+                <p className="font-medium text-foreground">View the breakdown</p>
+                <p>See the total molar mass and how much each element contributes.</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Common Atomic Masses Reference</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-4 gap-2">
-            {Object.entries(ELEMENTS).slice(0, 20).map(([symbol, mass]) => (
-              <div key={symbol} className="p-2 bg-muted rounded text-sm text-center">
-                <span className="font-bold">{symbol}</span>: {mass}
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2 px-2 font-semibold">Element</th>
+                  <th className="text-left py-2 px-2 font-semibold">Symbol</th>
+                  <th className="text-left py-2 px-2 font-semibold">Atomic Mass (g/mol)</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                <tr className="border-b">
+                  <td className="py-2 px-2">Hydrogen</td>
+                  <td className="py-2 px-2">H</td>
+                  <td className="py-2 px-2">1.008</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-2">Carbon</td>
+                  <td className="py-2 px-2">C</td>
+                  <td className="py-2 px-2">12.01</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-2">Nitrogen</td>
+                  <td className="py-2 px-2">N</td>
+                  <td className="py-2 px-2">14.01</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-2">Oxygen</td>
+                  <td className="py-2 px-2">O</td>
+                  <td className="py-2 px-2">15.999</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-2">Sodium</td>
+                  <td className="py-2 px-2">Na</td>
+                  <td className="py-2 px-2">22.99</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-2">Chlorine</td>
+                  <td className="py-2 px-2">Cl</td>
+                  <td className="py-2 px-2">35.45</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-2">Iron</td>
+                  <td className="py-2 px-2">Fe</td>
+                  <td className="py-2 px-2">55.85</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Why Molar Mass Matters</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">
+            Molar mass connects the microscopic world of atoms to the macroscopic world of grams. It tells you how much one mole (6.022 × 10²³ particles) of a substance weighs.
+          </p>
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
               </div>
-            ))}
+              <div>
+                <p className="font-medium text-foreground">Converting grams to moles</p>
+                <p>moles = mass (g) / molar mass (g/mol). Essential for stoichiometry calculations.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Preparing solutions</p>
+                <p>To make 1 L of 1 M NaCl, you need 58.44 g (the molar mass of NaCl).</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Determining empirical formulas</p>
+                <p>Compare mass percentages to find the simplest whole-number ratio of atoms.</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h4 className="font-medium text-sm mb-2">How do I calculate molar mass manually?</h4>
+            <p className="text-xs text-muted-foreground">
+              List each element in the formula. Find its atomic mass on the periodic table. Multiply by the number of atoms (subscript). Add all the masses. For H₂O: (2 × 1.008) + (1 × 15.999) = 18.015 g/mol.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">What's the difference between molecular mass and molar mass?</h4>
+            <p className="text-xs text-muted-foreground">
+              Molecular mass is the mass of one molecule (in atomic mass units, amu). Molar mass is the mass of one mole of molecules (in g/mol). Numerically they're the same, but units differ.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">How do I handle parentheses in formulas?</h4>
+            <p className="text-xs text-muted-foreground">
+              Multiply everything inside parentheses by the subscript outside. For Ca(OH)₂: Ca = 40.08, O = 2 × 16.00 = 32.00, H = 2 × 1.008 = 2.016. Total = 74.10 g/mol.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">Why aren't atomic masses whole numbers?</h4>
+            <p className="text-xs text-muted-foreground">
+              Atomic masses are weighted averages of all naturally occurring isotopes. Carbon is 12.01 because it's mostly C-12 with about 1% C-13. The average reflects natural abundance.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm mb-2">Can this calculator handle complex formulas?</h4>
+            <p className="text-xs text-muted-foreground">
+              It handles standard formulas like H2SO4, C6H12O6, and Ca(OH)2. For very complex formulas with nested parentheses or hydrates (like CuSO4·5H2O), calculate each part separately.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <a href="/calculators/molarity-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Molarity Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate solution concentration</p>
+            </a>
+            <a href="/calculators/stoichiometry-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Stoichiometry Calculator</p>
+              <p className="text-xs text-muted-foreground">Balance chemical equations</p>
+            </a>
+            <a href="/calculators/empirical-formula-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Empirical Formula</p>
+              <p className="text-xs text-muted-foreground">Find simplest formula from composition</p>
+            </a>
           </div>
         </CardContent>
       </Card>

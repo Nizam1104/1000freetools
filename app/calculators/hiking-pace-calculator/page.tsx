@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,7 +23,7 @@ export default function HikingPaceCalculatorPage() {
   const calculate = () => {
     const dist = parseFloat(distance);
     const elev = parseFloat(elevationGain);
-    
+
     if (isNaN(dist) || isNaN(elev)) return;
 
     // Convert to km and meters
@@ -91,12 +91,12 @@ export default function HikingPaceCalculatorPage() {
               <div className="grid grid-cols-3 gap-2">
                 <div className="col-span-2 space-y-2">
                   <Label htmlFor="distance">Distance</Label>
-                  <Input 
-                    id="distance" 
-                    type="number" 
-                    placeholder="e.g., 10" 
-                    value={distance} 
-                    onChange={(e) => setDistance(e.target.value)} 
+                  <Input
+                    id="distance"
+                    type="number"
+                    placeholder="e.g., 10"
+                    value={distance}
+                    onChange={(e) => setDistance(e.target.value)}
                   />
                 </div>
                 <Select value={distanceUnit} onValueChange={setDistanceUnit}>
@@ -113,12 +113,12 @@ export default function HikingPaceCalculatorPage() {
               <div className="grid grid-cols-3 gap-2">
                 <div className="col-span-2 space-y-2">
                   <Label htmlFor="elevation">Elevation Gain</Label>
-                  <Input 
-                    id="elevation" 
-                    type="number" 
-                    placeholder="e.g., 500" 
-                    value={elevationGain} 
-                    onChange={(e) => setElevationGain(e.target.value)} 
+                  <Input
+                    id="elevation"
+                    type="number"
+                    placeholder="e.g., 500"
+                    value={elevationGain}
+                    onChange={(e) => setElevationGain(e.target.value)}
                   />
                 </div>
                 <Select value={elevationUnit} onValueChange={setElevationUnit}>

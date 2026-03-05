@@ -132,6 +132,103 @@ export default function WaistToHeightRatioCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Calculate Waist-to-Height Ratio</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Measure Your Waist</h3>
+              <p className="text-sm text-muted-foreground">Measure around your waist at the narrowest point, usually just above the belly button.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Your Height</h3>
+              <p className="text-sm text-muted-foreground">Input your total height in the same unit (cm or inches) as your waist measurement.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Health Assessment</h3>
+              <p className="text-sm text-muted-foreground">Click calculate to see your WHtR and health risk category with personalized guidance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This WHtR Calculator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**Simple Health Metric**</h3>
+            <p className="text-sm text-muted-foreground">One number tells you about cardiovascular and metabolic health risks better than BMI alone.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Universal Threshold**</h3>
+            <p className="text-sm text-muted-foreground">The 0.5 rule works for all adults regardless of age, gender, or ethnicity.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Risk Categories</h3>
+            <p className="text-sm text-muted-foreground">Clear color-coded results show low, moderate, or high health risk levels.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Free & Private**</h3>
+            <p className="text-sm text-muted-foreground">Calculate your health metric instantly. No data stored or shared.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is waist-to-height ratio?</h3>
+            <p className="text-sm text-muted-foreground">WHtR is your waist circumference divided by your height. It measures abdominal fat distribution, which is a key indicator of health risks.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What is a healthy WHtR?</h3>
+            <p className="text-sm text-muted-foreground">A healthy WHtR is below 0.5, meaning your waist should be less than half your height. This is known as the &quot;keep your waist to less than half your height&quot; rule.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How do I measure my waist correctly?</h3>
+            <p className="text-sm text-muted-foreground">Stand relaxed, breathe out normally, and measure around your waist at the midpoint between your lowest rib and the top of your hip bone.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Is WHtR better than BMI?</h3>
+            <p className="text-sm text-muted-foreground">Many experts prefer WHtR because it accounts for fat distribution. BMI doesn&apos;t distinguish between muscle and fat or where fat is stored.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What health risks does WHtR predict?</h3>
+            <p className="text-sm text-muted-foreground">High WHtR is associated with increased risk of heart disease, type 2 diabetes, high blood pressure, and metabolic syndrome.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/bmi-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">BMI Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate body mass index to assess weight category and health status.</p>
+          </a>
+          <a href="/calculators/body-fat-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Body Fat Calculator</h3>
+            <p className="text-sm text-muted-foreground">Estimate body fat percentage using measurements and demographic data.</p>
+          </a>
+          <a href="/calculators/waist-to-hip-ratio-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Waist-to-Hip Ratio Calculator</h3>
+            <p className="text-sm text-muted-foreground">Assess health risk by comparing waist and hip measurements.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

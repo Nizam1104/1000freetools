@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -428,6 +428,177 @@ export default function ToddlerGrowthChartCalculatorPage() {
                   children 0-24 months. Always consult your pediatrician for professional
                   growth assessment.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                How It Works
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Enter Child Details</h4>
+                    <p className="text-xs text-muted-foreground">Select gender and enter age in months or years. Growth charts are gender-specific due to different growth patterns.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Input Measurements</h4>
+                    <p className="text-xs text-muted-foreground">Enter height/length and weight. Supports both metric (cm, kg) and imperial (inches, lbs) units.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Get Percentile Results</h4>
+                    <p className="text-xs text-muted-foreground">See height, weight, and BMI percentiles with Z-scores and personalized health recommendations.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                WHO Growth Percentile Reference
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2 px-3 font-semibold">Percentile</th>
+                      <th className="text-left py-2 px-3 font-semibold">Classification</th>
+                      <th className="text-left py-2 px-3 font-semibold">Z-Score</th>
+                      <th className="text-left py-2 px-3 font-semibold">Interpretation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">&gt; 97th</td>
+                      <td className="py-2 px-3 text-red-600">Very High</td>
+                      <td className="py-2 px-3 text-xs">&gt; +2.0</td>
+                      <td className="py-2 px-3 text-xs">Significantly above average</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">85th - 97th</td>
+                      <td className="py-2 px-3 text-amber-600">High</td>
+                      <td className="py-2 px-3 text-xs">+1.0 to +2.0</td>
+                      <td className="py-2 px-3 text-xs">Above average growth</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">15th - 85th</td>
+                      <td className="py-2 px-3 text-green-600">Normal</td>
+                      <td className="py-2 px-3 text-xs">-1.0 to +1.0</td>
+                      <td className="py-2 px-3 text-xs">Healthy growth range</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2 px-3 font-medium">3rd - 15th</td>
+                      <td className="py-2 px-3 text-amber-600">Low</td>
+                      <td className="py-2 px-3 text-xs">-2.0 to -1.0</td>
+                      <td className="py-2 px-3 text-xs">Below average growth</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3 font-medium">&lt; 3rd</td>
+                      <td className="py-2 px-3 text-red-600">Underweight</td>
+                      <td className="py-2 px-3 text-xs">&lt; -2.0</td>
+                      <td className="py-2 px-3 text-xs">Significantly below average</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Key Features & Benefits
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">WHO Standards Based</h4>
+                  <p className="text-xs text-muted-foreground">Uses World Health Organization growth standards for children 0-24 months, the global reference for healthy growth.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Complete Growth Assessment</h4>
+                  <p className="text-xs text-muted-foreground">Calculates height percentile, weight percentile, BMI, and BMI percentile for comprehensive growth tracking.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Z-Score Calculation</h4>
+                  <p className="text-xs text-muted-foreground">Provides Z-scores (standard deviations from median) used by healthcare professionals for precise assessment.</p>
+                </div>
+                <div className="p-4 rounded-lg border">
+                  <h4 className="font-semibold text-sm mb-2">Personalized Recommendations</h4>
+                  <p className="text-xs text-muted-foreground">Generates age-appropriate nutrition and health guidance based on your child's growth pattern.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What does my child's percentile mean?</h4>
+                <p className="text-xs text-muted-foreground">
+                  A percentile shows how your child compares to other children the same age. If your child is at the 75th percentile for height, they're taller than 75% of children their age. The 50th percentile is average.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is a normal growth percentile for toddlers?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Any percentile between 3rd and 97th is considered normal. What matters most is consistent growth along a curve. A child consistently at the 10th percentile is growing normally, just smaller than average.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">When should I be concerned about my child's growth?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Consult your pediatrician if: your child drops across two major percentile lines, is below 3rd or above 97th percentile, or if height and weight percentiles differ by more than 40 points.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What is a Z-score in growth charts?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Z-score measures how many standard deviations a measurement is from the median. Z-score of 0 = median (50th percentile), +1 = 84th percentile, -1 = 16th percentile, +2 = 97th percentile.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How often should I track my toddler's growth?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Pediatricians typically measure at well-child visits: monthly for first 6 months, every 2-3 months until age 1, then every 3-6 months. Home tracking between visits helps identify trends early.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-lg font-semibold">Related Tools</h3>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/calculators/baby-age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Baby Age Calculator</p>
+                  <p className="text-xs text-muted-foreground">Track infant age in weeks/months</p>
+                </a>
+                <a href="/calculators/bmi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">BMI Calculator</p>
+                  <p className="text-xs text-muted-foreground">Calculate body mass index</p>
+                </a>
+                <a href="/calculators/child-height-predictor" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Child Height Predictor</p>
+                  <p className="text-xs text-muted-foreground">Predict adult height</p>
+                </a>
               </div>
             </CardContent>
           </Card>

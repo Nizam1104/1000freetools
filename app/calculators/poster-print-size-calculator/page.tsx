@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -284,33 +284,102 @@ export default function PosterPrintSizeCalculatorPage() {
 
         <div className="mt-8 space-y-6">
           <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                DPI Guidelines
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>300 DPI:</strong> Standard for professional prints, magazines
-                  </li>
-                  <li>
-                    <strong>200 DPI:</strong> Good for standard photo prints
-                  </li>
-                  <li>
-                    <strong>150 DPI:</strong> Acceptable for large posters (viewed from distance)
-                  </li>
-                  <li>
-                    <strong>72 DPI:</strong> Screen display only, not for printing
-                  </li>
-                </ul>
-                <p>
-                  <strong>Formula:</strong> Pixels = Inches × DPI
-                </p>
-                <p>
-                  <strong>Tip:</strong> For large format prints (24&quot;+), viewing distance
-                  allows lower DPI. A billboard may only need 10-20 DPI!
-                </p>
+            <CardHeader>
+              <CardTitle>How to Calculate Print Size Requirements</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <p className="font-semibold mb-1">Select your print size</p>
+                  <p className="text-sm text-muted-foreground">Choose from preset sizes like 4x6, 8x10, 24x36 inches, or enter custom dimensions.</p>
+                </div>
               </div>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <p className="font-semibold mb-1">Choose print resolution</p>
+                  <p className="text-sm text-muted-foreground">Select DPI based on quality needs: 300 for professional, 150 for large format.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <p className="font-semibold mb-1">Get pixel requirements</p>
+                  <p className="text-sm text-muted-foreground">See minimum and recommended pixel dimensions plus megapixel requirements.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Features for Designers and Photographers</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">Preset print sizes</p>
+                  <p className="text-sm text-muted-foreground">Quick selection for common sizes from photos to movie posters.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Custom dimensions</p>
+                  <p className="text-sm text-muted-foreground">Enter any size for unique print projects and formats.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">DPI quality guidance</p>
+                  <p className="text-sm text-muted-foreground">Understand resolution needs from screen display to professional prints.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Megapixel estimates</p>
+                  <p className="text-sm text-muted-foreground">Know what camera resolution you need before shooting.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">File size estimates</p>
+                  <p className="text-sm text-muted-foreground">Plan storage needs with uncompressed file size approximations.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">What DPI do I need for poster printing?</p>
+                  <p className="text-sm text-muted-foreground">Use 300 DPI for small prints viewed up close. For large posters (24+ inches), 150 DPI is acceptable since they're viewed from farther away.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">How do I calculate pixels for print?</p>
+                  <p className="text-sm text-muted-foreground">Multiply inches by DPI. A 24x36 inch poster at 300 DPI needs 7200 x 10800 pixels (77.8 megapixels).</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Can I enlarge a photo for a poster?</p>
+                  <p className="text-sm text-muted-foreground">Yes, but quality depends on original resolution. A 12MP photo can print sharply at 16x20 inches at 300 DPI.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">What is the standard poster size?</p>
+                  <p className="text-sm text-muted-foreground">Common sizes include 18x24 (small), 24x36 (medium), and 27x40 inches (movie poster). Custom sizes work too.</p>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Does aspect ratio matter for printing?</p>
+                  <p className="text-sm text-muted-foreground">Yes, mismatched aspect ratios cause cropping. A 3:2 photo won't fill a 4:3 print without trimming or borders.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Design and Photo Tools</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-3">
+                Try our other creative calculators: the <a href="/calculators/aspect-ratio-calculator" className="text-primary hover:underline">aspect ratio calculator</a> for image dimensions, the <a href="/calculators/focal-length-calculator" className="text-primary hover:underline">focal length calculator</a> for photography, and the <a href="/calculators/camera-exposure-calculator" className="text-primary hover:underline">exposure calculator</a> for optimal settings.
+              </p>
             </CardContent>
           </Card>
         </div>

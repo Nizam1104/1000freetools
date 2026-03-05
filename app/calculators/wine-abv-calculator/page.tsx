@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -317,6 +317,103 @@ export default function WineABVCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">How to Calculate Wine ABV</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-2">Take Initial Reading</h3>
+                <p className="text-sm text-muted-foreground">Measure original gravity (OG) or Brix before fermentation begins.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-2">Take Final Reading</h3>
+                <p className="text-sm text-muted-foreground">Measure final gravity (FG) or Brix after fermentation completes.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-2">Get ABV Results</h3>
+                <p className="text-sm text-muted-foreground">See alcohol content, attenuation, and wine classification.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Key Features of This Wine ABV Calculator</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">**Dual Measurement Support**</h3>
+              <p className="text-sm text-muted-foreground">Calculate from specific gravity or Brix readings based on your hydrometer.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Accurate Formulas**</h3>
+              <p className="text-sm text-muted-foreground">Uses standard (OG-FG)×131.25 and advanced formulas for precision.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Attenuation Tracking**</h3>
+              <p className="text-sm text-muted-foreground">Shows fermentation completeness to help diagnose stuck fermentations.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">**Wine Classification**</h3>
+              <p className="text-sm text-muted-foreground">Automatically categorizes your wine by alcohol level and sweetness.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How is wine ABV calculated?</h3>
+              <p className="text-sm text-muted-foreground">ABV = (Original Gravity - Final Gravity) × 131.25. For example, OG 1.090 and FG 0.990 gives (1.090-0.990)×131.25 = 13.1% ABV.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What is a normal ABV for wine?</h3>
+              <p className="text-sm text-muted-foreground">Table wines: 11-14% ABV. Light wines: 9-11%. Fortified wines: 17-20%. Most commercial wines target 12.5-13.5% for balance.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">What does final gravity tell me?</h3>
+              <p className="text-sm text-muted-foreground">FG indicates fermentation completeness. Dry wines: 0.990-0.996. Sweet wines: 1.000+. FG above 1.000 may indicate stuck fermentation or residual sugar.</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">How do I convert Brix to gravity?</h3>
+              <p className="text-sm text-muted-foreground">Approximate formula: SG = 1 + (Brix / 258.6). For accuracy, use: SG = 1 + (Brix / (258.6 - (Brix/258.2)×227.1)).</p>
+            </div>
+            <div className="p-4 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Why is temperature important for readings?</h3>
+              <p className="text-sm text-muted-foreground">Hydrometers are calibrated at specific temperatures (usually 60°F/20°C). Readings at other temperatures need correction. Warm liquids read lower, cold liquids read higher.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 p-6 bg-card rounded-lg border">
+          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/beer-abv-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Beer ABV Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate alcohol content for homebrewed beer.</p>
+            </a>
+            <a href="/calculators/cocktail-abv-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Cocktail ABV Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate alcohol content of mixed drinks and cocktails.</p>
+            </a>
+            <a href="/calculators/yeast-conversion-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+              <h3 className="font-semibold mb-1">Yeast Conversion Calculator</h3>
+              <p className="text-sm text-muted-foreground">Convert between fresh, dry, and instant yeast for baking and brewing.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

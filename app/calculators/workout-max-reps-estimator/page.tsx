@@ -121,6 +121,103 @@ export default function WorkoutMaxRepsEstimator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">How to Estimate Max Reps</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Training Weight</h3>
+              <p className="text-sm text-muted-foreground">Input the weight you plan to use for your set.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Enter Your 1RM</h3>
+              <p className="text-sm text-muted-foreground">Input your one-rep max for that exercise.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Get Rep Estimate</h3>
+              <p className="text-sm text-muted-foreground">See estimated reps and percentage of 1RM.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Key Features of This Max Reps Estimator</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="font-semibold mb-2">**Brzycki Formula**</h3>
+            <p className="text-sm text-muted-foreground">Uses proven rep estimation formula for accurate predictions.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Percentage Display**</h3>
+            <p className="text-sm text-muted-foreground">Shows what percentage of 1RM your training weight represents.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Program Planning</h3>
+            <p className="text-sm text-muted-foreground">Helps select appropriate weights for rep targets.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">**Free Training Tool**</h3>
+            <p className="text-sm text-muted-foreground">Plan workouts intelligently without trial and error.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How accurate are rep estimations?</h3>
+            <p className="text-sm text-muted-foreground">Formulas are reasonably accurate for 1-10 reps. Accuracy decreases for higher reps due to fatigue and muscle endurance factors.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">What percentage of 1RM should I use?</h3>
+            <p className="text-sm text-muted-foreground">Strength (1-5 reps): 85-100%. Hypertrophy (6-12 reps): 67-85%. Endurance (12+ reps): Below 67%.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Why can&apos;t I hit the estimated reps?</h3>
+            <p className="text-sm text-muted-foreground">Formulas assume fresh muscles. Fatigue, poor form, inadequate rest, or nutrition can reduce actual performance.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">Should I train to failure?</h3>
+            <p className="text-sm text-muted-foreground">Occasionally for testing, but regular training 1-3 reps from failure is safer and more sustainable for progress.</p>
+          </div>
+          <div className="p-4 bg-card rounded-lg border">
+            <h3 className="font-semibold mb-2">How often should I test my 1RM?</h3>
+            <p className="text-sm text-muted-foreground">Every 8-12 weeks for experienced lifters. Beginners can test more frequently as they progress rapidly.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="mt-8 p-6 bg-card rounded-lg border">
+        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <a href="/calculators/1rm-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">1RM Calculator</h3>
+            <p className="text-sm text-muted-foreground">Calculate one-rep max from submaximal lifts.</p>
+          </a>
+          <a href="/calculators/workout-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Workout Volume Calculator</h3>
+            <p className="text-sm text-muted-foreground">Track total training volume for progressive overload.</p>
+          </a>
+          <a href="/calculators/warm-up-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
+            <h3 className="font-semibold mb-1">Warm-Up Calculator</h3>
+            <p className="text-sm text-muted-foreground">Generate warm-up sets based on working weight.</p>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

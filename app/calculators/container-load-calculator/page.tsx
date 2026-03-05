@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -482,6 +482,149 @@ export default function ContainerLoadCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-12 space-y-12">
+          {/* How It Works */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Container Loading</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Select Container Size</h3>
+                  <p className="text-muted-foreground text-sm">Choose from 20ft, 40ft, 40ft High Cube, or 45ft High Cube standard containers.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Enter Box Dimensions</h3>
+                  <p className="text-muted-foreground text-sm">Input your carton/box length, width, height, and weight per box.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="font-semibold mb-2">Get Loading Plan</h3>
+                  <p className="text-muted-foreground text-sm">See maximum boxes that fit, optimal orientation, and volume/weight utilization.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features & Benefits */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Why Use This Container Load Calculator?</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold mb-2">📦 Maximize Container Space</h3>
+                <p className="text-muted-foreground text-sm">Find the optimal box orientation and loading pattern to fit the maximum number of boxes per container.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">⚖️ Weight & Volume Analysis</h3>
+                <p className="text-muted-foreground text-sm">Track both volume utilization and weight limits to ensure safe, compliant container loading.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🚢 Multiple Container Sizes</h3>
+                <p className="text-muted-foreground text-sm">Compare loading across 20ft, 40ft, 40ft HC, and 45ft HC containers to choose the most cost-effective option.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">🚪 Door Clearance Check</h3>
+                <p className="text-muted-foreground text-sm">Automatically verifies boxes fit through container door opening before calculating loading plan.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Reference Table */}
+          <section className="bg-card rounded-lg border p-6">
+            <h2 className="text-2xl font-semibold mb-6">Standard Shipping Container Specifications</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4">Container Type</th>
+                    <th className="text-left py-3 px-4">Internal Length</th>
+                    <th className="text-left py-3 px-4">Internal Volume</th>
+                    <th className="text-left py-3 px-4">Max Payload</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">20ft Standard</td>
+                    <td className="py-3 px-4">5.90 m</td>
+                    <td className="py-3 px-4">33.2 m³</td>
+                    <td className="py-3 px-4">28,200 kg</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">40ft Standard</td>
+                    <td className="py-3 px-4">12.03 m</td>
+                    <td className="py-3 px-4">67.7 m³</td>
+                    <td className="py-3 px-4">28,600 kg</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-4 font-medium">40ft High Cube</td>
+                    <td className="py-3 px-4">12.03 m</td>
+                    <td className="py-3 px-4">76.4 m³</td>
+                    <td className="py-3 px-4">28,600 kg</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">45ft High Cube</td>
+                    <td className="py-3 px-4">13.72 m</td>
+                    <td className="py-3 px-4">86.1 m³</td>
+                    <td className="py-3 px-4">29,500 kg</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Container Loading FAQs</h2>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How many boxes fit in a 20ft container?</h3>
+                <p className="text-muted-foreground text-sm">It depends on box size. For standard cartons (40×40×40cm), approximately 1,000-1,200 boxes fit in a 20ft container.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is the most efficient container loading pattern?</h3>
+                <p className="text-muted-foreground text-sm">Interlocking patterns (like bricklaying) provide stability. This calculator finds the orientation that maximizes box count while ensuring door clearance.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">How do I calculate CBM for container loading?</h3>
+                <p className="text-muted-foreground text-sm">CBM = Length × Width × Height (in meters). Total shipment CBM = box CBM × quantity. Compare to container volume for utilization percentage.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">What is the door opening size for containers?</h3>
+                <p className="text-muted-foreground text-sm">20ft/40ft Standard: 2.34m wide × 2.28m high. High Cube containers: 2.34m wide × 2.58m high. Boxes must fit through this opening.</p>
+              </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold mb-2">Should I fill container to 100% volume?</h3>
+                <p className="text-muted-foreground text-sm">No, aim for 75-85% practical utilization. 100% is theoretical maximum. Leave space for proper load securing and ventilation.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Related Shipping & Logistics Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/cargo-volume-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Cargo Volume Calculator</h3>
+                <p className="text-muted-foreground text-sm">Calculate total shipment volume and chargeable weight for freight.</p>
+              </a>
+              <a href="/calculators/camping-gear-weight-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Camping Gear Weight Calculator</h3>
+                <p className="text-muted-foreground text-sm">Plan pack weight distribution for outdoor adventures.</p>
+              </a>
+              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
+                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
+                <p className="text-muted-foreground text-sm">Measure environmental impact of shipping and logistics operations.</p>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -288,18 +288,16 @@ export default function ScreenTimeCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Results</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.status === "over" ? "bg-red-100 dark:bg-red-900/20" :
-                    result.status === "at" ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-green-100 dark:bg-green-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.status === "over" ? "bg-red-100 dark:bg-red-900/20" :
+                      result.status === "at" ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-green-100 dark:bg-green-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Daily Average</p>
                     <p className="text-3xl font-bold">{result.totalHours} hrs</p>
-                    <p className={`text-sm mt-1 ${
-                      result.status === "over" ? "text-red-700 dark:text-red-300" :
-                      result.status === "at" ? "text-amber-700 dark:text-amber-300" :
-                      "text-green-700 dark:text-green-300"
-                    }`}>
+                    <p className={`text-sm mt-1 ${result.status === "over" ? "text-red-700 dark:text-red-300" :
+                        result.status === "at" ? "text-amber-700 dark:text-amber-300" :
+                          "text-green-700 dark:text-green-300"
+                      }`}>
                       {result.percentageOfMax}% of recommended max ({result.recommendedMax} hrs)
                     </p>
                   </div>
@@ -311,11 +309,10 @@ export default function ScreenTimeCalculatorPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm text-muted-foreground">Eye Strain Risk</span>
-                      <span className={`font-semibold ${
-                        result.eyeStrainRisk === "High" ? "text-red-600" :
-                        result.eyeStrainRisk === "Moderate" ? "text-amber-600" :
-                        "text-green-600"
-                      }`}>
+                      <span className={`font-semibold ${result.eyeStrainRisk === "High" ? "text-red-600" :
+                          result.eyeStrainRisk === "Moderate" ? "text-amber-600" :
+                            "text-green-600"
+                        }`}>
                         {result.eyeStrainRisk}
                       </span>
                     </div>
@@ -356,36 +353,128 @@ export default function ScreenTimeCalculatorPage() {
           </Card>
         </div>
 
-        <div className="mt-8 space-y-6">
+        {/* How It Works Section */}
+        <div className="mt-8">
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Healthy Screen Time Guidelines
-              </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <p>
-                  The American Academy of Pediatrics and WHO provide these general guidelines:
-                </p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>20-20-20 Rule:</strong> Every 20 minutes, look at something 20 feet
-                    away for 20 seconds
-                  </li>
-                  <li>
-                    <strong>Blue Light:</strong> Avoid screens 1-2 hours before bedtime
-                  </li>
-                  <li>
-                    <strong>Physical Activity:</strong> Balance screen time with outdoor activities
-                  </li>
-                  <li>
-                    <strong>Meal Times:</strong> Keep meals screen-free for better digestion and
-                    family connection
-                  </li>
-                </ul>
-                <p>
-                  <strong>Note:</strong> Not all screen time is equal. Educational and creative
-                  activities have different impacts than passive consumption.
-                </p>
+              <h3 className="text-lg font-semibold mb-6">How the Screen Time Calculator Works</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Enter Your Usage</h4>
+                  <p className="text-sm text-muted-foreground">Input weekday and weekend screen hours, plus breakdown by activity type.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Select Age Group</h4>
+                  <p className="text-sm text-muted-foreground">Choose your age category to compare against recommended guidelines.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex-items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">Get Health Insights</h4>
+                  <p className="text-sm text-muted-foreground">Receive personalized recommendations and eye strain risk assessment.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Key Features</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Activity Breakdown</h4>
+                    <p className="text-sm text-muted-foreground">Track work, entertainment, social media, and reading separately for detailed insights.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Eye Strain Assessment</h4>
+                    <p className="text-sm text-muted-foreground">Get risk level evaluation based on your total daily screen exposure.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Guideline Comparison</h4>
+                    <p className="text-sm text-muted-foreground">See how your usage compares to age-appropriate health recommendations.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">Status Indicators</h4>
+                    <p className="text-sm text-muted-foreground">Visual feedback shows if you&apos;re under, at, or over recommended limits.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is considered excessive screen time?</h4>
+                  <p className="text-sm text-muted-foreground">For adults, 6+ hours daily is associated with health risks. The 20-20-20 rule (every 20 minutes, look 20 feet away for 20 seconds) helps reduce eye strain regardless of total time.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How does screen time affect sleep?</h4>
+                  <p className="text-sm text-muted-foreground">Blue light from screens suppresses melatonin production, delaying sleep onset and reducing sleep quality. Avoid screens 1-2 hours before bed for better rest.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What are symptoms of digital eye strain?</h4>
+                  <p className="text-sm text-muted-foreground">Common symptoms include dry eyes, blurred vision, headaches, neck and shoulder pain, and difficulty focusing. Take regular breaks and adjust screen brightness.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">Is work screen time different from entertainment?</h4>
+                  <p className="text-sm text-muted-foreground">Yes, work screen time tends to be more focused with breaks, while entertainment often involves longer continuous sessions. Both contribute to total exposure and eye strain.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How can I reduce screen time health effects?</h4>
+                  <p className="text-sm text-muted-foreground">Use the 20-20-20 rule, enable blue light filters, maintain proper posture, adjust screen brightness to ambient light, and schedule regular screen-free activities.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Health Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/sleep-cycle-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Sleep Cycle Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Optimize your sleep schedule for better rest and recovery.</p>
+                </a>
+                <a href="/calculators/meditation-timer-scheduler" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Meditation Timer & Scheduler</h4>
+                  <p className="text-sm text-muted-foreground">Build mindfulness habits to counter digital stress.</p>
+                </a>
+                <a href="/calculators/breathing-exercise-timer" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Breathing Exercise Timer</h4>
+                  <p className="text-sm text-muted-foreground">Take healthy breaks with guided breathing exercises.</p>
+                </a>
               </div>
             </CardContent>
           </Card>

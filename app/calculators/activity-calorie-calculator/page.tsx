@@ -6,6 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 interface Activity {
   name: string;
@@ -73,7 +81,7 @@ export default function ActivityCalorieCalculator() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
         <CardHeader>
           <CardTitle>Activity Calorie Burn Calculator – Calories Burned by Activity & Duration</CardTitle>
@@ -177,6 +185,256 @@ export default function ActivityCalorieCalculator() {
                 </p>
               </div>
             )}
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Use This Activity Calorie Calculator</CardTitle>
+          <CardDescription>Three simple steps to calculate calories burned</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-3">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">1</div>
+              <div>
+                <p className="font-medium text-sm">Enter your weight</p>
+                <p className="text-xs text-muted-foreground">Input your current body weight in kilograms or pounds. Heavier people burn more calories doing the same activity, so this is a key factor in the calculation.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">2</div>
+              <div>
+                <p className="font-medium text-sm">Choose your activity</p>
+                <p className="text-xs text-muted-foreground">Select from the dropdown list or enter a custom MET value if you know it. Each activity has a specific MET value that represents its energy cost.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">3</div>
+              <div>
+                <p className="font-medium text-sm">Set duration and calculate</p>
+                <p className="text-xs text-muted-foreground">Enter how long you performed the activity in minutes or hours. Hit calculate and see exactly how many calories you burned.</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Understanding MET Values</CardTitle>
+          <CardDescription>What MET means and how it affects calorie burn</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">
+            MET stands for Metabolic Equivalent of Task. It's a standardized way to measure how much energy different activities require. One MET equals the amount of energy your body uses while sitting quietly – basically your baseline calorie burn at complete rest.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Here's the practical breakdown: 1 MET = 1 calorie per kilogram of body weight per hour. So if you weigh 70 kg and sit quietly (1 MET) for one hour, you burn about 70 calories. Walk at a moderate pace (3.5 METs) for that same hour, and you burn 70 × 3.5 = 245 calories.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            MET values are determined through laboratory testing where researchers measure oxygen consumption during different activities. The numbers are then averaged across populations to create standardized values. Running, for example, consistently measures around 8-12 METs because it requires that much more energy than resting.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Why does MET vary by intensity? Simple – harder work requires more energy. Walking slowly might be 2 METs, but power walking jumps to 5 METs. Your body needs more fuel to move faster, lift heavier weights, or sustain higher effort levels. That's why intensity matters more than duration for total calorie burn in many cases.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Calories Burned by Common Activities</CardTitle>
+          <CardDescription>MET values for everyday exercises and activities</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Activity</TableHead>
+                <TableHead>MET Value</TableHead>
+                <TableHead>Calories (70kg, 30 min)</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">Sitting quietly</TableCell>
+                <TableCell className="font-mono text-xs">1.0</TableCell>
+                <TableCell className="font-mono text-xs">~35 kcal</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Walking slowly (2 mph)</TableCell>
+                <TableCell className="font-mono text-xs">2.0</TableCell>
+                <TableCell className="font-mono text-xs">~70 kcal</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Walking briskly (3.5 mph)</TableCell>
+                <TableCell className="font-mono text-xs">3.5</TableCell>
+                <TableCell className="font-mono text-xs">~122 kcal</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Cycling moderate (12-14 mph)</TableCell>
+                <TableCell className="font-mono text-xs">6.0</TableCell>
+                <TableCell className="font-mono text-xs">~210 kcal</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Running (6-10 mph)</TableCell>
+                <TableCell className="font-mono text-xs">8.0 - 12.0</TableCell>
+                <TableCell className="font-mono text-xs">~280 - 420 kcal</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Swimming (moderate to vigorous)</TableCell>
+                <TableCell className="font-mono text-xs">6.0 - 10.0</TableCell>
+                <TableCell className="font-mono text-xs">~210 - 350 kcal</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Weight lifting</TableCell>
+                <TableCell className="font-mono text-xs">3.0 - 6.0</TableCell>
+                <TableCell className="font-mono text-xs">~105 - 210 kcal</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <p className="text-xs text-muted-foreground mt-3">
+            Note: Calories shown are for a 70 kg (154 lb) person performing each activity for 30 minutes. Actual burn varies by individual weight, fitness level, and effort.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Factors That Affect Calorie Burn</CardTitle>
+          <CardDescription>Why two people burn different calories doing the same activity</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Body weight</h4>
+              <p className="text-xs text-muted-foreground">
+                Heavier people burn more calories. A 90 kg person burns about 29% more calories than a 70 kg person doing the same activity for the same duration. More mass requires more energy to move.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Fitness level</h4>
+              <p className="text-xs text-muted-foreground">
+                Trained athletes are more efficient. Their bodies have adapted to perform activities with less energy waste. A beginner might burn 10-15% more calories than an experienced athlete doing the same workout.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Age</h4>
+              <p className="text-xs text-muted-foreground">
+                Metabolism naturally slows with age. After age 30, BMR drops about 1-2% per decade. Older adults may burn slightly fewer calories than younger people doing identical activities.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Muscle mass</h4>
+              <p className="text-xs text-muted-foreground">
+                More muscle means higher calorie burn. Muscle tissue is metabolically active and burns more calories than fat, even at rest. Two people at the same weight but different body compositions will burn different amounts.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="font-semibold text-sm mb-2">Exercise intensity</h4>
+              <p className="text-xs text-muted-foreground">
+                How hard you push matters. Running at 8 mph burns significantly more than jogging at 5 mph. Higher intensity = higher MET value = more calories burned per minute.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Exercise Intensity Zones</CardTitle>
+          <CardDescription>Understanding light, moderate, and vigorous intensity</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Intensity Level</TableHead>
+                <TableHead>MET Range</TableHead>
+                <TableHead>Example Activities</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">Light intensity</TableCell>
+                <TableCell className="font-mono text-xs">2-3 MET</TableCell>
+                <TableCell>Casual walking, light housework, slow dancing, fishing</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Moderate intensity</TableCell>
+                <TableCell className="font-mono text-xs">3-6 MET</TableCell>
+                <TableCell>Brisk walking, doubles tennis, gardening, cycling leisurely</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Vigorous intensity</TableCell>
+                <TableCell className="font-mono text-xs">6+ MET</TableCell>
+                <TableCell>Running, swimming laps, cycling fast, singles tennis, basketball</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <p className="text-xs text-muted-foreground mt-3">
+            Health guidelines recommend at least 150 minutes of moderate-intensity or 75 minutes of vigorous-intensity activity per week for adults.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How accurate are calorie burn estimates?</h4>
+            <p className="text-xs text-muted-foreground">
+              MET-based calculations are estimates, not exact measurements. They're typically accurate within 10-20% for most people. The actual number depends on your individual metabolism, body composition, and how efficiently your body performs the activity. For most practical purposes – tracking fitness, planning weight loss – this level of accuracy is perfectly adequate.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why do different activities burn different calories?</h4>
+            <p className="text-xs text-muted-foreground">
+              Different activities recruit different muscle groups and require varying levels of effort. Running uses large leg muscles continuously and requires significant cardiovascular output – that's why it burns so many calories. Sitting uses minimal muscle activity, so calorie burn stays near baseline. Activities that engage more muscle mass at higher intensity always burn more.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Does fitness level affect calorie burn?</h4>
+            <p className="text-xs text-muted-foreground">
+              Yes, but not in the way most people think. Fitter people are more efficient – their bodies have adapted to perform activities with less wasted energy. This means a trained runner might burn slightly fewer calories than a beginner running the same distance. However, fit people can also sustain higher intensities longer, which can offset this efficiency advantage.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is the best exercise for burning calories?</h4>
+            <p className="text-xs text-muted-foreground">
+              The best exercise is the one you'll actually do consistently. That said, running, swimming, and cycling at vigorous intensities top the calorie-burn charts. High-intensity interval training (HIIT) also delivers excellent calorie burn in less time. But don't overlook walking – it's sustainable, low-impact, and the calories add up over time.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Do I burn calories after exercise?</h4>
+            <p className="text-xs text-muted-foreground">
+              Yes, this is called EPOC (Excess Post-exercise Oxygen Consumption) or the "afterburn effect." After intense exercise, your body continues burning extra calories as it returns to baseline – repairing muscle, restoring oxygen levels, and clearing metabolic waste. The effect is modest for moderate exercise but can add 6-15% to total calorie burn after vigorous workouts.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">TDEE Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate total daily energy expenditure</p>
+            </a>
+            <a href="/calculators/bmr-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">BMR Calculator</p>
+              <p className="text-xs text-muted-foreground">Find your basal metabolic rate</p>
+            </a>
+            <a href="/calculators/heart-rate-zones-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Heart Rate Zones Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate training heart rate zones</p>
+            </a>
           </div>
         </CardContent>
       </Card>

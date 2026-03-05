@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -148,6 +148,106 @@ export default function SavingsVsInvestmentComparisonPage() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>How to Compare Savings vs Investing</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <p className="font-semibold mb-1">Enter initial amount</p>
+                <p className="text-sm text-muted-foreground">Input the lump sum you're considering saving or investing.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <p className="font-semibold mb-1">Set interest rates</p>
+                <p className="text-sm text-muted-foreground">Enter savings account rate and expected investment return.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <p className="font-semibold mb-1">Compare outcomes</p>
+                <p className="text-sm text-muted-foreground">See the difference in final value and investment advantage.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Why Compare Savings and Investments</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">Understand opportunity cost</p>
+                <p className="text-sm text-muted-foreground">See what you might miss by keeping money in low-yield savings.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Risk vs reward clarity</p>
+                <p className="text-sm text-muted-foreground">Visualize potential gains from taking investment risk.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Long-term perspective</p>
+                <p className="text-sm text-muted-foreground">Compound growth differences become dramatic over decades.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Informed decisions</p>
+                <p className="text-sm text-muted-foreground">Choose the right balance of safety and growth for your goals.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Motivation to invest</p>
+                <p className="text-sm text-muted-foreground">Concrete numbers show the real cost of staying in cash.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold mb-1">Is it better to save or invest?</p>
+                <p className="text-sm text-muted-foreground">Save for short-term needs and emergencies. Invest for long-term goals like retirement where growth matters more.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">What's a typical savings account rate?</p>
+                <p className="text-sm text-muted-foreground">Traditional banks offer 0.01-0.1%. High-yield savings accounts offer 4-5% APY as of 2024.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">What return can I expect from investing?</p>
+                <p className="text-sm text-muted-foreground">Stock market averages 7-10% annually long-term, but varies year to year. Bonds average 3-5%.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">How much more can investing earn?</p>
+                <p className="text-sm text-muted-foreground">Over 30 years, $10,000 at 7% grows to $76,000 vs $13,000 at 1% - a $63,000 difference.</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">What are the risks of investing?</p>
+                <p className="text-sm text-muted-foreground">Investments can lose value short-term. Stocks may drop 20-50% in bear markets but historically recover.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Related Finance Calculators</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground mb-3">
+              Try our other financial tools: the <a href="/calculators/compound-interest-calculator" className="text-primary hover:underline">compound interest calculator</a> for investment projections, the <a href="/calculators/stock-cagr-calculator" className="text-primary hover:underline">CAGR calculator</a> for return analysis, and the <a href="/calculators/rule-of-72-calculator" className="text-primary hover:underline">rule of 72 calculator</a> for doubling time.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -202,7 +202,7 @@ export default function RangeEstimatorEvPage() {
                       {result.adjustedRange} {distanceUnit === "miles" ? "miles" : "km"}
                     </p>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-4 bg-muted rounded-lg">
                       <p className="text-sm text-muted-foreground">Ideal Range</p>
@@ -256,6 +256,126 @@ export default function RangeEstimatorEvPage() {
             <li><strong>Speed:</strong> Higher speeds increase aerodynamic drag</li>
           </ul>
         </div>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              EV Battery Capacity Reference
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-2 font-semibold">Vehicle Type</th>
+                    <th className="text-left py-3 px-2 font-semibold">Battery Capacity</th>
+                    <th className="text-left py-3 px-2 font-semibold">Typical Range</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Compact EV</td>
+                    <td className="py-3 px-2">40-50 kWh</td>
+                    <td className="py-3 px-2">150-200 miles</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Mid-size EV</td>
+                    <td className="py-3 px-2">60-75 kWh</td>
+                    <td className="py-3 px-2">220-300 miles</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-3 px-2">Long-range EV</td>
+                    <td className="py-3 px-2">90-100 kWh</td>
+                    <td className="py-3 px-2">320-400 miles</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-2">Electric truck/SUV</td>
+                    <td className="py-3 px-2">100-200 kWh</td>
+                    <td className="py-3 px-2">300-500 miles</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How accurate is this EV range estimate?</h4>
+                <p>
+                  This calculator provides a reasonable estimate based on typical EV efficiency. Real-world
+                  range varies by vehicle model, driving style, and conditions. Use it for trip planning,
+                  not as an exact prediction.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Why does cold weather reduce EV range?</h4>
+                <p>
+                  Cold temperatures slow battery chemistry and increase cabin heating demand. At 20°F,
+                  expect 20-40% less range. Pre-conditioning while plugged in helps preserve range.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Is highway or city driving better for EVs?</h4>
+                <p>
+                  City driving is typically more efficient for EVs. Regenerative braking recovers energy
+                  during stops. Highway driving at 70+ mph uses more energy due to aerodynamic drag.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Should I charge to 100% before a trip?</h4>
+                <p>
+                  For daily driving, 80-90% is better for battery health. For long trips, charging to 100%
+                  is fine. Modern EVs manage battery health automatically. Plan charging stops for trips
+                  beyond your comfortable range.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">How do hills affect electric vehicle range?</h4>
+                <p>
+                  Climbing uses extra energy, but regenerative braking recovers some when descending.
+                  Net effect depends on elevation change. Mountainous terrain typically reduces range
+                  by 15-30% compared to flat driving.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold mb-4">
+              Related Tools
+            </h3>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/calculators/ev-charging-time-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">EV Charging Time Calculator</span>
+                <p className="text-muted-foreground">Calculate how long it takes to charge your electric vehicle</p>
+              </a>
+              <a
+                href="/calculators/fuel-cost-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Fuel Cost Calculator</span>
+                <p className="text-muted-foreground">Compare fuel costs between gas and electric vehicles</p>
+              </a>
+              <a
+                href="/calculators/trip-cost-calculator"
+                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+              >
+                <span className="font-medium text-foreground">Trip Cost Calculator</span>
+                <p className="text-muted-foreground">Estimate total cost for road trips including charging</p>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

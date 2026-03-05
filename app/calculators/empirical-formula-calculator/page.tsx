@@ -248,6 +248,132 @@ export default function EmpiricalFormulaCalculator() {
           </div>
         </CardContent>
       </Card>
+
+      {/* How It Works Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>How to Find Empirical Formula</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+              <h3 className="font-semibold mb-2">Enter Element Composition</h3>
+              <p className="text-sm text-muted-foreground">Input the symbol and percent composition or mass for each element in the compound.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+              <h3 className="font-semibold mb-2">Convert to Moles</h3>
+              <p className="text-sm text-muted-foreground">The calculator converts percentages to grams, then to moles using atomic masses.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
+              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <h3 className="font-semibold mb-2">Get Simplest Ratio</h3>
+              <p className="text-sm text-muted-foreground">Mole values are divided by the smallest to find the whole-number ratio for the formula.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Features Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Why Use This Empirical Formula Calculator?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Step-by-Step Accuracy
+              </h3>
+              <p className="text-sm text-muted-foreground">Automatically handles percent-to-gram conversion, mole calculation, and ratio simplification.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Dynamic Element Addition
+              </h3>
+              <p className="text-sm text-muted-foreground">Add or remove elements to analyze compounds with any number of constituent elements.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Visual Composition Chart
+              </h3>
+              <p className="text-sm text-muted-foreground">Pie chart displays the percent composition of each element in your compound.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Built-in Atomic Masses
+              </h3>
+              <p className="text-sm text-muted-foreground">Includes atomic masses for 30+ common elements for accurate mole calculations.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <span className="text-primary">✓</span>
+                Educational Reference
+              </h3>
+              <p className="text-sm text-muted-foreground">Comparison table shows empirical vs molecular formulas for common compounds.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* FAQ Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions About Empirical Formulas</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">What is the difference between empirical and molecular formula?</h3>
+              <p className="text-sm text-muted-foreground">Empirical formula shows the simplest whole-number ratio of atoms, while molecular formula shows the actual number. For example, glucose has molecular formula C₆H₁₂O₆ but empirical formula CH₂O.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">How do you calculate empirical formula from percent composition?</h3>
+              <p className="text-sm text-muted-foreground">Convert percentages to grams (assume 100g sample), divide by atomic masses to get moles, divide all by the smallest mole value, and multiply to get whole numbers if needed.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Can empirical formula be the same as molecular formula?</h3>
+              <p className="text-sm text-muted-foreground">Yes, for some compounds like water (H₂O), the empirical and molecular formulas are identical because the ratio cannot be simplified further.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">What if the mole ratio is not a whole number?</h3>
+              <p className="text-sm text-muted-foreground">Multiply all ratios by the same integer (2, 3, 4, etc.) until you get whole numbers. For example, a ratio of 1:1.5 becomes 2:3 when multiplied by 2.</p>
+            </div>
+            <div className="p-5 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">How do you find molecular formula from empirical formula?</h3>
+              <p className="text-sm text-muted-foreground">Divide the molecular mass by the empirical formula mass to get a multiplier, then multiply all subscripts in the empirical formula by this number.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Related Tools Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Chemistry Calculators</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/calculators/molecular-mass-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Molecular Mass Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate the molar mass of any compound from its molecular formula.</p>
+            </a>
+            <a href="/calculators/percent-composition-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Percent Composition Calculator</h3>
+              <p className="text-sm text-muted-foreground">Find the percentage by mass of each element in a chemical compound.</p>
+            </a>
+            <a href="/calculators/stoichiometry-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
+              <h3 className="font-semibold mb-2">Stoichiometry Calculator</h3>
+              <p className="text-sm text-muted-foreground">Balance chemical equations and calculate reactant and product quantities.</p>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

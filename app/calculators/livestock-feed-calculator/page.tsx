@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -95,10 +95,10 @@ export default function LivestockFeedCalculatorPage() {
 
     // Get DMI percentage for animal type and production stage
     const dmiPercent = dmiPercentages[animalType]?.[productionStage] || 2.0;
-    
+
     // Calculate daily feed intake
     let dailyFeedIntake: number;
-    
+
     // Special handling for poultry (fixed intake per bird)
     if (animalType === "chicken_broiler" || animalType === "chicken_layer") {
       dailyFeedIntake = dmiPercent * animals; // kg per day for all birds

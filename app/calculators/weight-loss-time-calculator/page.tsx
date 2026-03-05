@@ -5,6 +5,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function WeightLossTimeCalculator() {
   const [currentWeight, setCurrentWeight] = useState<string>("");
@@ -22,7 +30,6 @@ export default function WeightLossTimeCalculator() {
     if (goal >= current) return;
 
     const weightToLose = current - goal;
-    // Days = (weightToLose * 3500) / dailyDeficit
     const totalDays = (weightToLose * 3500) / deficit;
     const totalWeeks = totalDays / 7;
 
@@ -39,7 +46,7 @@ export default function WeightLossTimeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
         <CardHeader>
           <CardTitle>Weight Loss Time Calculator – How Long Will It Take to Lose Weight?</CardTitle>
@@ -99,10 +106,219 @@ export default function WeightLossTimeCalculator() {
                   With a daily deficit of {dailyDeficit} calories, you'll reach your goal of {goalWeight} lbs in approximately {days} days.
                 </p>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Note: This is an estimate. Actual results may vary based on metabolism, activity level, and other factors.
+                  Note: This is an estimate. Actual results vary based on metabolism, activity level, and other factors.
                 </p>
               </div>
             )}
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How Weight Loss Works</CardTitle>
+          <CardDescription>The math behind losing weight</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">
+            Weight loss comes down to one thing: calorie deficit. Burn more than you eat, and your body taps into stored fat for energy. The rule of thumb is that 1 pound of body fat equals about 3,500 calories.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Create a 500-calorie daily deficit and you'll lose roughly 1 pound per week. Double that to 1,000 calories and you're looking at 2 pounds weekly. Sounds simple. And it is – until hunger, cravings, and life get in the way.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Here's what most people don't realize: as you lose weight, your body burns fewer calories. A smaller body needs less energy. That's why weight loss slows down over time, even if you're eating the same amount. You'll need to recalculate your needs every 10-15 pounds lost.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Time to Lose Weight</CardTitle>
+          <CardDescription>How long it takes at different deficits</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Weight to Lose</TableHead>
+                <TableHead>250 cal/day</TableHead>
+                <TableHead>500 cal/day</TableHead>
+                <TableHead>750 cal/day</TableHead>
+                <TableHead>1000 cal/day</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">5 lbs</TableCell>
+                <TableCell className="font-mono text-xs">10 weeks</TableCell>
+                <TableCell className="font-mono text-xs">5 weeks</TableCell>
+                <TableCell className="font-mono text-xs">3.5 weeks</TableCell>
+                <TableCell className="font-mono text-xs">2.5 weeks</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">10 lbs</TableCell>
+                <TableCell className="font-mono text-xs">20 weeks</TableCell>
+                <TableCell className="font-mono text-xs">10 weeks</TableCell>
+                <TableCell className="font-mono text-xs">7 weeks</TableCell>
+                <TableCell className="font-mono text-xs">5 weeks</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">20 lbs</TableCell>
+                <TableCell className="font-mono text-xs">40 weeks</TableCell>
+                <TableCell className="font-mono text-xs">20 weeks</TableCell>
+                <TableCell className="font-mono text-xs">13 weeks</TableCell>
+                <TableCell className="font-mono text-xs">10 weeks</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">30 lbs</TableCell>
+                <TableCell className="font-mono text-xs">60 weeks</TableCell>
+                <TableCell className="font-mono text-xs">30 weeks</TableCell>
+                <TableCell className="font-mono text-xs">20 weeks</TableCell>
+                <TableCell className="font-mono text-xs">15 weeks</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">50 lbs</TableCell>
+                <TableCell className="font-mono text-xs">100 weeks</TableCell>
+                <TableCell className="font-mono text-xs">50 weeks</TableCell>
+                <TableCell className="font-mono text-xs">33 weeks</TableCell>
+                <TableCell className="font-mono text-xs">25 weeks</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <p className="text-xs text-muted-foreground mt-3">
+            Based on the 3,500 calories per pound rule. Individual results vary based on starting weight, metabolism, and adherence.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Recommended Weight Loss Rates</CardTitle>
+          <CardDescription>What's safe and sustainable</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="rounded-lg border p-4 bg-green-500/5">
+              <h4 className="font-semibold text-sm mb-2 text-green-600">Slow (0.5 lb/week)</h4>
+              <p className="text-xs text-muted-foreground mb-2">250 calorie daily deficit</p>
+              <p className="text-xs text-muted-foreground">
+                Best for: People with less weight to lose, those who've struggled with yo-yo dieting, or anyone who wants a sustainable approach. Slow loss means less muscle loss and better long-term maintenance.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4 bg-blue-500/5">
+              <h4 className="font-semibold text-sm mb-2 text-blue-600">Moderate (1 lb/week)</h4>
+              <p className="text-xs text-muted-foreground mb-2">500 calorie daily deficit</p>
+              <p className="text-xs text-muted-foreground">
+                Best for: Most people. This is the sweet spot between results and sustainability. You'll see the scale move without feeling deprived. Easy to maintain for months.
+              </p>
+            </div>
+            <div className="rounded-lg border p-4 bg-yellow-500/5">
+              <h4 className="font-semibold text-sm mb-2 text-yellow-600">Fast (2 lbs/week)</h4>
+              <p className="text-xs text-muted-foreground mb-2">1000 calorie daily deficit</p>
+              <p className="text-xs text-muted-foreground">
+                Best for: People with significant weight to lose (30+ lbs) under medical supervision. Not sustainable long-term. Higher risk of muscle loss, nutrient deficiencies, and rebound weight gain.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Why Weight Loss Slows Down</CardTitle>
+          <CardDescription>Understanding plateaus</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-3">
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">1</div>
+              <div>
+                <p className="font-medium text-sm">Metabolic adaptation</p>
+                <p className="text-xs text-muted-foreground">Your body burns fewer calories as you get lighter. A 200-lb person needs about 2,400 calories daily. At 180 lbs, that drops to 2,200. Same diet, slower loss.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">2</div>
+              <div>
+                <p className="font-medium text-sm">NEAT reduction</p>
+                <p className="text-xs text-muted-foreground">Non-exercise activity thermogenesis – the calories you burn fidgeting, walking around, standing – drops unconsciously when you're in a deficit. You move less without realizing it.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">3</div>
+              <div>
+                <p className="font-medium text-sm">Water retention</p>
+                <p className="text-xs text-muted-foreground">Diet changes, stress, and exercise can cause temporary water retention that masks fat loss on the scale. This isn't real weight gain – it's just water weight fluctuations.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">4</div>
+              <div>
+                <p className="font-medium text-sm">Calorie creep</p>
+                <p className="text-xs text-muted-foreground">Portions slowly increase. Snacks add up. "Just a bite" becomes a habit. Most people underestimate intake by 20-50%. Track honestly for a week – you might find your culprit.</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Frequently Asked Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How long does it take to lose 10 pounds?</h4>
+            <p className="text-xs text-muted-foreground">
+              With a 500-calorie daily deficit, expect 10-12 weeks. Faster deficits (750-1000 calories) can get you there in 5-7 weeks, but that's harder to sustain. The first 2-3 pounds often come off faster due to water loss.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Is losing 2 pounds per week safe?</h4>
+            <p className="text-xs text-muted-foreground">
+              For most people, yes – especially if you have significant weight to lose. The CDC recommends 1-2 pounds per week as safe. Faster than that increases risks of gallstones, muscle loss, and nutrient deficiencies.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why am I not losing weight on a 500 calorie deficit?</h4>
+            <p className="text-xs text-muted-foreground">
+              Either your actual deficit is smaller than you think (common – people underestimate food by 30-50%), or your metabolism has adapted. Try tracking intake precisely for two weeks. If still no loss, recalculate your TDEE – it may have dropped.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Should I adjust my deficit as I lose weight?</h4>
+            <p className="text-xs text-muted-foreground">
+              Yes. Recalculate every 10-15 pounds lost. Your TDEE drops as you get lighter. Someone who needed 2,000 calories at 200 lbs might need only 1,700 at 170 lbs. Keep the same deficit, just adjust your maintenance level.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How accurate is the 3,500 calories per pound rule?</h4>
+            <p className="text-xs text-muted-foreground">
+              It's a useful approximation but not perfect. Research shows actual weight loss is often 20-30% slower than the 3,500 rule predicts, especially over longer periods. Use it as a starting point, then adjust based on real-world results.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Related Tools</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">TDEE Calculator</p>
+              <p className="text-xs text-muted-foreground">Calculate your daily calorie needs</p>
+            </a>
+            <a href="/calculators/calorie-deficit-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Calorie Deficit Calculator</p>
+              <p className="text-xs text-muted-foreground">Find your optimal deficit</p>
+            </a>
+            <a href="/calculators/weight-loss-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+              <p className="font-semibold text-sm">Weight Loss Calculator</p>
+              <p className="text-xs text-muted-foreground">Track your weight loss progress</p>
+            </a>
           </div>
         </CardContent>
       </Card>

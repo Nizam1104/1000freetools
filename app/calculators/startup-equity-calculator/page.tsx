@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -180,6 +180,86 @@ export default function StartupEquityCalculatorPage() {
                   <p>Enter values and click Calculate to see results</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-6">How the Equity Calculator Works</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">1</div>
+                  <h4 className="font-semibold mb-2">Enter Founder Shares</h4>
+                  <p className="text-sm text-muted-foreground">Input the initial shares allocated to founders and the option pool.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">2</div>
+                  <h4 className="font-semibold mb-2">Add Funding Rounds</h4>
+                  <p className="text-sm text-muted-foreground">Include seed and Series A investment amounts and valuations.</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-3">3</div>
+                  <h4 className="font-semibold mb-2">View Cap Table</h4>
+                  <p className="text-sm text-muted-foreground">See ownership percentages and total dilution after each round.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is a typical option pool size?</h4>
+                  <p className="text-sm text-muted-foreground">Most startups create an option pool of 10-20% of total shares. Early-stage companies often start with 10-15%, while later-stage companies may expand to 20% for hiring executives.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How much dilution is normal per round?</h4>
+                  <p className="text-sm text-muted-foreground">Seed rounds typically dilute founders by 15-25%. Series A usually dilutes by 20-30%. Total founder ownership after Series A is often 50-70% of the original.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">What is pre-money vs post-money valuation?</h4>
+                  <p className="text-sm text-muted-foreground">Pre-money is the company value before investment. Post-money = pre-money + investment. Investor ownership = investment / post-money valuation.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">When should the option pool be created?</h4>
+                  <p className="text-sm text-muted-foreground">Investors typically require the option pool to be created pre-money, meaning founders bear the dilution. This is standard term sheet language.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-1">How do I calculate share prices?</h4>
+                  <p className="text-sm text-muted-foreground">Price per share = pre-money valuation / total shares outstanding. New shares issued = investment amount / price per share.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-6">
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Related Business Tools</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <a href="/calculators/valuation-cap-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Valuation Cap Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Calculate convertible note conversion prices and caps.</p>
+                </a>
+                <a href="/calculators/break-even-point-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Break-Even Point Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Determine when your startup will become profitable.</p>
+                </a>
+                <a href="/calculators/runway-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                  <h4 className="font-semibold text-sm mb-1">Runway Calculator</h4>
+                  <p className="text-sm text-muted-foreground">Estimate how long your funding will last.</p>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>

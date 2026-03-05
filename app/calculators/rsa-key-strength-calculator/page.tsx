@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -123,9 +123,7 @@ export default function RSAKeyStrengthCalculatorPage() {
             RSA Key Strength Calculator – Check How Secure Your RSA Encryption Key Is
           </h1>
           <p className="text-muted-foreground">
-            Ensure your RSA encryption is strong enough with our RSA Key Strength Calculator.
-            Enter your key size in bits to see its security rating, estimated crack time with
-            current hardware, and NIST compliance — vital for developers and security architects.
+            Check your RSA key security instantly with our free RSA Key Strength Calculator. Enter your key size in bits to see security rating, estimated crack time with current hardware, and NIST compliance status — essential for developers and security architects choosing encryption key sizes.
           </p>
         </div>
 
@@ -177,12 +175,11 @@ export default function RSAKeyStrengthCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Security Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.keySize >= 4096 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.keySize >= 3072 ? "bg-blue-100 dark:bg-blue-900/20" :
-                    result.keySize >= 2048 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.keySize >= 4096 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.keySize >= 3072 ? "bg-blue-100 dark:bg-blue-900/20" :
+                        result.keySize >= 2048 ? "bg-amber-100 dark:bg-amber-900/20" :
+                          "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Security Level</p>
                     <p className="text-lg font-bold mt-1">{result.securityLevel}</p>
                   </div>
@@ -242,29 +239,202 @@ export default function RSAKeyStrengthCalculatorPage() {
           <Card>
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">
+                How to Use This RSA Key Strength Calculator
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    1
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Select your RSA key size</p>
+                    <p>Choose from common key sizes ranging from 512 bits (broken) to 8192 bits (extreme security).</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    2
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Click Calculate</p>
+                    <p>The calculator analyzes your key's security bits, estimated crack time, and NIST compliance status.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
+                    3
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Review the security analysis</p>
+                    <p>See how your RSA key compares to AES and ECC, plus get recommendations for your use case.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Why RSA Key Size Matters
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Security bits determine real protection</h4>
+                  <p>
+                    RSA key size doesn't equal security bits. A 2048-bit RSA key provides roughly 112 bits of security due to the General Number Field Sieve attack. This is why 2048 bits is the minimum – anything less falls below accepted security thresholds.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">NIST compliance affects certifications</h4>
+                  <p>
+                    Government contractors and regulated industries must follow NIST guidelines. Using non-compliant key sizes can void security certifications and create compliance issues during audits.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Larger keys cost more CPU</h4>
+                  <p>
+                    Doubling key size doesn't double security – it roughly doubles computational cost. A 4096-bit key takes about 4-6x longer for operations than 2048-bit. For high-traffic servers, this latency adds up.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Quantum computers change the equation</h4>
+                  <p>
+                    Shor's algorithm could break RSA efficiently on a sufficiently large quantum computer. Current estimates suggest we need 4000+ qubits – we're at a few hundred today. But if you're encrypting data that needs to stay secret for 30+ years, consider post-quantum alternatives.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
                 RSA Key Size Guidelines
               </h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>
-                    <strong>1024 bits:</strong> Deprecated since 2013, factorable
-                  </li>
-                  <li>
-                    <strong>2048 bits:</strong> Minimum through 2030 (NIST)
-                  </li>
-                  <li>
-                    <strong>3072 bits:</strong> Recommended for new deployments
-                  </li>
-                  <li>
-                    <strong>4096 bits:</strong> Long-term security, more CPU intensive
-                  </li>
-                </ul>
-                <p>
-                  <strong>Note:</strong> RSA security relies on the difficulty of integer
-                  factorization. Quantum computers could break RSA using Shor&apos;s algorithm,
-                  but practical quantum computers capable of this don&apos;t exist yet.
-                  Consider post-quantum algorithms for long-term security.
-                </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-2 font-semibold">Key Size</th>
+                      <th className="text-left py-3 px-2 font-semibold">Security Bits</th>
+                      <th className="text-left py-3 px-2 font-semibold">Status</th>
+                      <th className="text-left py-3 px-2 font-semibold">Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b">
+                      <td className="py-3 px-2">512 bits</td>
+                      <td className="py-3 px-2">~64 bits</td>
+                      <td className="py-3 px-2 text-red-600">Broken</td>
+                      <td className="py-3 px-2">Academic only</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">1024 bits</td>
+                      <td className="py-3 px-2">~80 bits</td>
+                      <td className="py-3 px-2 text-red-600">Deprecated</td>
+                      <td className="py-3 px-2">Legacy systems</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">2048 bits</td>
+                      <td className="py-3 px-2">~112 bits</td>
+                      <td className="py-3 px-2 text-amber-600">Minimum</td>
+                      <td className="py-3 px-2">Current standard through 2030</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">3072 bits</td>
+                      <td className="py-3 px-2">~128 bits</td>
+                      <td className="py-3 px-2 text-green-600">Recommended</td>
+                      <td className="py-3 px-2">New deployments, long-term security</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-2">4096 bits</td>
+                      <td className="py-3 px-2">~140 bits</td>
+                      <td className="py-3 px-2 text-green-600">Strong</td>
+                      <td className="py-3 px-2">High-security applications</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2">8192 bits</td>
+                      <td className="py-3 px-2">~160 bits</td>
+                      <td className="py-3 px-2 text-blue-600">Maximum</td>
+                      <td className="py-3 px-2">Extreme security, research</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Security bits are approximate and based on the General Number Field Sieve (GNFS) algorithm complexity.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Is 2048-bit RSA still secure in 2026?</h4>
+                  <p>
+                    Yes, 2048-bit RSA remains secure for most applications through 2030 according to NIST. No practical attacks exist against properly implemented 2048-bit keys. However, new systems should use 3072 bits for long-term security beyond 2030.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">How long would it take to crack a 2048-bit RSA key?</h4>
+                  <p>
+                    With current technology, factoring a 2048-bit RSA modulus would take millions of years using the best known classical algorithms. The record is 829 bits (factored in 2020). Even with massive computing clusters, 2048 bits remains out of reach.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">What RSA key size does NIST recommend?</h4>
+                  <p>
+                    NIST SP 800-57 recommends 2048 bits as the minimum through 2030, and 3072 bits or higher for security beyond 2030. Federal agencies must follow these guidelines, and they're widely adopted in regulated industries.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Should I use RSA or ECC for new projects?</h4>
+                  <p>
+                    ECC (Elliptic Curve Cryptography) offers equivalent security with smaller keys – a 256-bit ECC key matches 3072-bit RSA. ECC is faster and uses less bandwidth. However, RSA has broader legacy support. For new systems, ECC or Ed25519 is often the better choice.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Will quantum computers break my RSA keys?</h4>
+                  <p>
+                    Eventually, yes – but not soon. Shor's algorithm can factor RSA efficiently on a quantum computer, but we'd need thousands of error-corrected qubits. Current quantum computers have a few hundred noisy qubits. If you need data to stay secret for 30+ years, consider post-quantum cryptography now.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Related Tools
+              </h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="/calculators/encryption-strength-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Encryption Strength Calculator</span>
+                  <p className="text-muted-foreground">Compare security levels across encryption algorithms</p>
+                </a>
+                <a
+                  href="/calculators/password-strength-calculator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">Password Strength Calculator</span>
+                  <p className="text-muted-foreground">Estimate password cracking time and entropy</p>
+                </a>
+                <a
+                  href="/calculators/sha-hash-generator"
+                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
+                >
+                  <span className="font-medium text-foreground">SHA Hash Generator</span>
+                  <p className="text-muted-foreground">Generate SHA-256 and SHA-512 hashes</p>
+                </a>
               </div>
             </CardContent>
           </Card>

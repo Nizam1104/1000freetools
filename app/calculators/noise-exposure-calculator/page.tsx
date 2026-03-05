@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -195,11 +195,10 @@ export default function NoiseExposureCalculatorPage() {
               <h3 className="text-lg font-semibold mb-4">Exposure Analysis</h3>
               {result ? (
                 <div className="space-y-4">
-                  <div className={`p-4 rounded-lg text-center ${
-                    result.noiseDose <= 50 ? "bg-green-100 dark:bg-green-900/20" :
-                    result.noiseDose <= 100 ? "bg-amber-100 dark:bg-amber-900/20" :
-                    "bg-red-100 dark:bg-red-900/20"
-                  }`}>
+                  <div className={`p-4 rounded-lg text-center ${result.noiseDose <= 50 ? "bg-green-100 dark:bg-green-900/20" :
+                      result.noiseDose <= 100 ? "bg-amber-100 dark:bg-amber-900/20" :
+                        "bg-red-100 dark:bg-red-900/20"
+                    }`}>
                     <p className="text-sm text-muted-foreground">Noise Dose</p>
                     <p className="text-4xl font-bold">{result.noiseDose}%</p>
                     <p className="text-sm mt-1">{result.riskLevel}</p>
@@ -278,6 +277,137 @@ export default function NoiseExposureCalculatorPage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* How It Works Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">How to Calculate Noise Exposure</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h3 className="font-semibold mb-2">Enter Noise Level</h3>
+                <p className="text-sm text-muted-foreground">Input the sound level in decibels (dB) from your environment or equipment.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h3 className="font-semibold mb-2">Set Exposure Duration</h3>
+                <p className="text-sm text-muted-foreground">Enter how many hours you're exposed to this noise level daily.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h3 className="font-semibold mb-2">Get Safety Analysis</h3>
+                <p className="text-sm text-muted-foreground">See your noise dose percentage, permissible time, and hearing protection recommendations.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Key Features of Noise Exposure Calculator</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  OSHA and NIOSH Standards
+                </h3>
+                <p className="text-sm text-muted-foreground">Calculate exposure using both OSHA (5 dB exchange) and NIOSH (3 dB exchange) safety standards.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Noise Dose Percentage
+                </h3>
+                <p className="text-sm text-muted-foreground">See your daily noise dose as a percentage — over 100% means you're overexposed.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Risk Level Assessment
+                </h3>
+                <p className="text-sm text-muted-foreground">Get instant risk classification from low to extreme based on your noise exposure.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-primary">✓</span>
+                  Protection Recommendations
+                </h3>
+                <p className="text-sm text-muted-foreground">Receive specific hearing protection advice based on your calculated exposure level.</p>
+              </div>
+            </div>
+
+            <div className="mt-6 p-6 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-3">Noise Exposure Reference Guide</h3>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p className="font-semibold mb-2">Common Noise Levels:</p>
+                  <ul className="space-y-1 text-muted-foreground">
+                    <li>• Normal conversation: 60 dB</li>
+                    <li>• City traffic: 85 dB (8 hr limit)</li>
+                    <li>• Power tools: 95-105 dB (15 min-1 hr)</li>
+                    <li>• Concert/club: 100-115 dB (damage in minutes)</li>
+                    <li>• Siren at 1 meter: 120 dB (pain threshold)</li>
+                    <li>• Gunshot: 140-170 dB (instant damage)</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-2">Safe Exposure Times (NIOSH):</p>
+                  <ul className="space-y-1 text-muted-foreground">
+                    <li>• 85 dB: 8 hours</li>
+                    <li>• 88 dB: 4 hours</li>
+                    <li>• 91 dB: 2 hours</li>
+                    <li>• 94 dB: 1 hour</li>
+                    <li>• 97 dB: 30 minutes</li>
+                    <li>• 100 dB: 15 minutes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions About Noise Exposure</h2>
+            <div className="space-y-4">
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What is a safe noise exposure level?</h3>
+                <p className="text-sm text-muted-foreground">NIOSH recommends limiting exposure to 85 dB for 8 hours. For every 3 dB increase, safe exposure time is cut in half. At 100 dB, limit exposure to just 15 minutes per day.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What is the 3 dB exchange rate?</h3>
+                <p className="text-sm text-muted-foreground">The 3 dB exchange rate means that for every 3 dB increase in noise level, the safe exposure time is halved. This is based on how sound energy doubles every 3 dB.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">What's the difference between OSHA and NIOSH standards?</h3>
+                <p className="text-sm text-muted-foreground">OSHA uses a 90 dB criterion with 5 dB exchange rate (legal requirement). NIOSH uses 85 dB with 3 dB exchange rate (health-based recommendation). NIOSH is more protective.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">When should I wear hearing protection?</h3>
+                <p className="text-sm text-muted-foreground">Wear hearing protection at 85 dB or higher for extended periods. At 100 dB or above, always use protection. If you need to raise your voice to talk to someone 3 feet away, it's too loud.</p>
+              </div>
+              <div className="p-5 bg-card rounded-lg border">
+                <h3 className="font-semibold mb-2">Can noise exposure damage be reversed?</h3>
+                <p className="text-sm text-muted-foreground">No. Noise-induced hearing loss is permanent and cumulative. Once the hair cells in your inner ear are damaged, they don't grow back. Prevention is the only protection.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Related Tools Section */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl font-semibold mb-6">Related Safety Calculators</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <a href="/calculators/decibel-to-power-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Decibel to Power Converter</h3>
+                <p className="text-sm text-muted-foreground">Convert between dB and power ratios.</p>
+              </a>
+              <a href="/calculators/sound-speed-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Sound Speed Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate the speed of sound in different conditions.</p>
+              </a>
+              <a href="/calculators/signal-to-noise-ratio-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-semibold mb-2">Signal to Noise Ratio Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate SNR for audio and electronic signals.</p>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

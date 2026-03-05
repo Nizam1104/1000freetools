@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -111,13 +111,13 @@ export default function SolarIrradianceCalculatorPage() {
             <CardContent className="p-6 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="latitude">Latitude (degrees)</Label>
-                <Input 
-                  id="latitude" 
-                  type="number" 
+                <Input
+                  id="latitude"
+                  type="number"
                   step="0.01"
-                  placeholder="e.g., 35.6895" 
-                  value={latitude} 
-                  onChange={(e) => setLatitude(e.target.value)} 
+                  placeholder="e.g., 35.6895"
+                  value={latitude}
+                  onChange={(e) => setLatitude(e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">Positive for Northern Hemisphere, negative for Southern</p>
               </div>
@@ -155,12 +155,12 @@ export default function SolarIrradianceCalculatorPage() {
 
               <div className="space-y-2">
                 <Label htmlFor="tiltAngle">Panel Tilt Angle (optional)</Label>
-                <Input 
-                  id="tiltAngle" 
-                  type="number" 
-                  placeholder="Leave empty for optimal (equals latitude)" 
-                  value={tiltAngle} 
-                  onChange={(e) => setTiltAngle(e.target.value)} 
+                <Input
+                  id="tiltAngle"
+                  type="number"
+                  placeholder="Leave empty for optimal (equals latitude)"
+                  value={tiltAngle}
+                  onChange={(e) => setTiltAngle(e.target.value)}
                 />
               </div>
 
