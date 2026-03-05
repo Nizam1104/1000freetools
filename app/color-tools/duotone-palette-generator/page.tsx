@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,10 +29,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
     : null;
 };
 
@@ -53,7 +61,10 @@ const mixColors = (hex1: string, hex2: string, ratio: number): string => {
   return rgbToHex(r, g, b);
 };
 
-const generateDuotonePalette = (primary: string, secondary: string): DuotonePalette => {
+const generateDuotonePalette = (
+  primary: string,
+  secondary: string,
+): DuotonePalette => {
   return {
     primary: primary.toLowerCase(),
     secondary: secondary.toLowerCase(),
@@ -134,7 +145,12 @@ const downloadPalette = (palette: DuotonePalette, format: string) => {
     canvas.width = 800;
     canvas.height = 400;
 
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    const gradient = ctx.createLinearGradient(
+      0,
+      0,
+      canvas.width,
+      canvas.height,
+    );
     gradient.addColorStop(0, palette.primary);
     gradient.addColorStop(1, palette.secondary);
     ctx.fillStyle = gradient;
@@ -159,13 +175,29 @@ const downloadPalette = (palette: DuotonePalette, format: string) => {
 };
 
 const PRESET_PRIMARY = [
-  "#3b82f6", "#8b5cf6", "#ec4899", "#ef4444", "#f97316",
-  "#f59e0b", "#22c55e", "#14b8a6", "#06b6d4", "#6366f1",
+  "#3b82f6",
+  "#8b5cf6",
+  "#ec4899",
+  "#ef4444",
+  "#f97316",
+  "#f59e0b",
+  "#22c55e",
+  "#14b8a6",
+  "#06b6d4",
+  "#6366f1",
 ];
 
 const PRESET_SECONDARY = [
-  "#1e293b", "#334155", "#475569", "#64748b", "#0f172a",
-  "#7c3aed", "#db2777", "#dc2626", "#ea580c", "#059669",
+  "#1e293b",
+  "#334155",
+  "#475569",
+  "#64748b",
+  "#0f172a",
+  "#7c3aed",
+  "#db2777",
+  "#dc2626",
+  "#ea580c",
+  "#059669",
 ];
 
 export default function DuotonePaletteGeneratorPage() {
@@ -201,8 +233,16 @@ export default function DuotonePaletteGeneratorPage() {
   };
 
   const randomizeColors = () => {
-    const randomPrimary = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
-    const randomSecondary = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+    const randomPrimary =
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
+    const randomSecondary =
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
     setPrimaryColor(randomPrimary);
     setSecondaryColor(randomSecondary);
     setPrimaryHex(randomPrimary.replace("#", ""));
@@ -242,7 +282,9 @@ export default function DuotonePaletteGeneratorPage() {
       <Label className="text-sm font-medium">{label}</Label>
       <div className="flex gap-2">
         <div className="relative flex-1">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">#</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            #
+          </span>
           <Input
             value={hexValue}
             onChange={(e) => onHexChange(e.target.value)}
@@ -252,7 +294,7 @@ export default function DuotonePaletteGeneratorPage() {
           />
         </div>
         <div
-          className="w-12 h-10 rounded border border-border bg-checkerboard cursor-pointer overflow-hidden"
+          className="w-12 h-10 rounded border border-border  cursor-pointer overflow-hidden"
           style={{ backgroundColor: value }}
         >
           <input
@@ -271,9 +313,13 @@ export default function DuotonePaletteGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Duotone Color Palette Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Duotone Color Palette Generator
+          </h1>
           <p className="text-muted-foreground">
-            Create striking duotone color combinations using two colors of your choice. Perfect for bold graphic design, posters, and modern web aesthetics.
+            Create striking duotone color combinations using two colors of your
+            choice. Perfect for bold graphic design, posters, and modern web
+            aesthetics.
           </p>
         </div>
 
@@ -371,7 +417,7 @@ export default function DuotonePaletteGeneratorPage() {
                   {/* Primary */}
                   <div className="group">
                     <div
-                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                       style={{ backgroundColor: palette.primary }}
                     >
                       <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/40 to-transparent">
@@ -383,7 +429,9 @@ export default function DuotonePaletteGeneratorPage() {
                             {palette.primary}
                           </code>
                           <button
-                            onClick={() => copyColor(palette.primary, "Primary")}
+                            onClick={() =>
+                              copyColor(palette.primary, "Primary")
+                            }
                             className="p-1 rounded-full bg-white/20 hover:bg-white/30 transition-colors opacity-0 group-hover:opacity-100"
                             style={{ color: getContrastColor(palette.primary) }}
                           >
@@ -397,14 +445,16 @@ export default function DuotonePaletteGeneratorPage() {
                       </div>
                     </div>
                     <div className="mt-2 text-center">
-                      <p className="text-xs font-medium text-muted-foreground">Primary</p>
+                      <p className="text-xs font-medium text-muted-foreground">
+                        Primary
+                      </p>
                     </div>
                   </div>
 
                   {/* Mix 1 */}
                   <div className="group">
                     <div
-                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                       style={{ backgroundColor: palette.mix1 }}
                     >
                       <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/40 to-transparent">
@@ -430,14 +480,16 @@ export default function DuotonePaletteGeneratorPage() {
                       </div>
                     </div>
                     <div className="mt-2 text-center">
-                      <p className="text-xs font-medium text-muted-foreground">75% Primary</p>
+                      <p className="text-xs font-medium text-muted-foreground">
+                        75% Primary
+                      </p>
                     </div>
                   </div>
 
                   {/* Mix 2 */}
                   <div className="group">
                     <div
-                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                       style={{ backgroundColor: palette.mix2 }}
                     >
                       <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/40 to-transparent">
@@ -463,14 +515,16 @@ export default function DuotonePaletteGeneratorPage() {
                       </div>
                     </div>
                     <div className="mt-2 text-center">
-                      <p className="text-xs font-medium text-muted-foreground">50% Mix</p>
+                      <p className="text-xs font-medium text-muted-foreground">
+                        50% Mix
+                      </p>
                     </div>
                   </div>
 
                   {/* Mix 3 */}
                   <div className="group">
                     <div
-                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                       style={{ backgroundColor: palette.mix3 }}
                     >
                       <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/40 to-transparent">
@@ -496,28 +550,36 @@ export default function DuotonePaletteGeneratorPage() {
                       </div>
                     </div>
                     <div className="mt-2 text-center">
-                      <p className="text-xs font-medium text-muted-foreground">25% Primary</p>
+                      <p className="text-xs font-medium text-muted-foreground">
+                        25% Primary
+                      </p>
                     </div>
                   </div>
 
                   {/* Secondary */}
                   <div className="group">
                     <div
-                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                      className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                       style={{ backgroundColor: palette.secondary }}
                     >
                       <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/40 to-transparent">
                         <div className="flex flex-col items-center gap-1">
                           <code
                             className="text-xs font-mono font-medium"
-                            style={{ color: getContrastColor(palette.secondary) }}
+                            style={{
+                              color: getContrastColor(palette.secondary),
+                            }}
                           >
                             {palette.secondary}
                           </code>
                           <button
-                            onClick={() => copyColor(palette.secondary, "Secondary")}
+                            onClick={() =>
+                              copyColor(palette.secondary, "Secondary")
+                            }
                             className="p-1 rounded-full bg-white/20 hover:bg-white/30 transition-colors opacity-0 group-hover:opacity-100"
-                            style={{ color: getContrastColor(palette.secondary) }}
+                            style={{
+                              color: getContrastColor(palette.secondary),
+                            }}
                           >
                             {copiedField === "Secondary" ? (
                               <Check className="h-3 w-3" />
@@ -529,7 +591,9 @@ export default function DuotonePaletteGeneratorPage() {
                       </div>
                     </div>
                     <div className="mt-2 text-center">
-                      <p className="text-xs font-medium text-muted-foreground">Secondary</p>
+                      <p className="text-xs font-medium text-muted-foreground">
+                        Secondary
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -617,14 +681,20 @@ export default function DuotonePaletteGeneratorPage() {
                         <div className="flex gap-2">
                           <Button
                             size="sm"
-                            style={{ backgroundColor: palette.primary, color: "#fff" }}
+                            style={{
+                              backgroundColor: palette.primary,
+                              color: "#fff",
+                            }}
                           >
                             Primary
                           </Button>
                           <Button
                             size="sm"
                             variant="outline"
-                            style={{ borderColor: palette.secondary, color: palette.secondary }}
+                            style={{
+                              borderColor: palette.secondary,
+                              color: palette.secondary,
+                            }}
                           >
                             Secondary
                           </Button>
@@ -657,19 +727,28 @@ export default function DuotonePaletteGeneratorPage() {
                       <div className="flex flex-wrap gap-2">
                         <span
                           className="px-3 py-1 rounded-full text-xs font-medium"
-                          style={{ backgroundColor: palette.primary, color: "#fff" }}
+                          style={{
+                            backgroundColor: palette.primary,
+                            color: "#fff",
+                          }}
                         >
                           Primary
                         </span>
                         <span
                           className="px-3 py-1 rounded-full text-xs font-medium"
-                          style={{ backgroundColor: palette.secondary, color: getContrastColor(palette.secondary) }}
+                          style={{
+                            backgroundColor: palette.secondary,
+                            color: getContrastColor(palette.secondary),
+                          }}
                         >
                           Secondary
                         </span>
                         <span
                           className="px-3 py-1 rounded-full text-xs font-medium"
-                          style={{ backgroundColor: palette.mix2, color: getContrastColor(palette.mix2) }}
+                          style={{
+                            backgroundColor: palette.mix2,
+                            color: getContrastColor(palette.mix2),
+                          }}
                         >
                           Mixed
                         </span>
@@ -677,15 +756,20 @@ export default function DuotonePaletteGeneratorPage() {
 
                       {/* Avatar Stack */}
                       <div className="flex -space-x-2">
-                        {[palette.primary, palette.mix2, palette.secondary].map((color, i) => (
-                          <div
-                            key={i}
-                            className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center text-xs font-medium"
-                            style={{ backgroundColor: color, color: getContrastColor(color) }}
-                          >
-                            {i + 1}
-                          </div>
-                        ))}
+                        {[palette.primary, palette.mix2, palette.secondary].map(
+                          (color, i) => (
+                            <div
+                              key={i}
+                              className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center text-xs font-medium"
+                              style={{
+                                backgroundColor: color,
+                                color: getContrastColor(color),
+                              }}
+                            >
+                              {i + 1}
+                            </div>
+                          ),
+                        )}
                       </div>
                     </div>
                   </div>
@@ -752,10 +836,11 @@ export default function DuotonePaletteGeneratorPage() {
                 {PRESET_PRIMARY.map((color) => (
                   <button
                     key={color}
-                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${primaryColor.toLowerCase() === color.toLowerCase()
+                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
+                      primaryColor.toLowerCase() === color.toLowerCase()
                         ? "border-primary ring-2 ring-primary ring-offset-2"
                         : "border-border"
-                      }`}
+                    }`}
                     style={{ backgroundColor: color }}
                     onClick={() => {
                       setPrimaryColor(color);
@@ -777,10 +862,11 @@ export default function DuotonePaletteGeneratorPage() {
                 {PRESET_SECONDARY.map((color) => (
                   <button
                     key={color}
-                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${secondaryColor.toLowerCase() === color.toLowerCase()
+                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
+                      secondaryColor.toLowerCase() === color.toLowerCase()
                         ? "border-primary ring-2 ring-primary ring-offset-2"
                         : "border-border"
-                      }`}
+                    }`}
                     style={{ backgroundColor: color }}
                     onClick={() => {
                       setSecondaryColor(color);

@@ -919,210 +919,158 @@ export default function EnhanceVideoQualityPage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* The Honest Truth About Video Enhancement */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What "Enhancing" Can and Can't Do
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Let's be clear: you can't create detail that was never recorded. Upscaling a 480p video to 4K makes it larger, not sharper. The tool guesses at missing pixels based on surrounding data — it doesn't magically recover what the camera didn't capture.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                What this tool actually does: adjust brightness and contrast, reduce noise from low-light recording, increase perceived sharpness through edge enhancement, and re-encode at a higher bitrate to reduce compression artifacts. These are real improvements, but they're adjustments to existing data, not miracles.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                When you are dealing with dark, blurry, or low-resolution
-                footage, you can enhance video quality online free to repair its
-                visual fidelity directly in your browser. This application
-                bundles an upscaler, noise reducer, and color correction suite
-                into a single interface that processes entirely on your local
-                machine. Because it does not upload files to complex cloud
-                rendering servers, it provides absolute privacy and eliminates
-                the long download times typical of large video file
-                manipulation.
+                If your footage is dark, grainy, or washed out, the color and noise controls can help. If it's fundamentally out of focus or shot at low resolution, enhancement can make it look more polished but won't fix the core problem.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Enhancement Actually Helps */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When This Tool Helps</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Dark footage from phone cameras</h3>
+                <p className="text-sm text-muted-foreground">
+                  Phone cameras struggle in dim restaurants or evening events. The footage comes out grainy and muddy. Brightening slightly and applying denoise can clean up the worst of the sensor noise without making everything look plastic.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Old family videos from DVDs</h3>
+                <p className="text-sm text-muted-foreground">
+                  480p home videos look soft on modern TVs. Upscaling to 1080p with mild sharpening makes them more watchable on large screens. It won't add real detail, but it reduces the blocky compression artifacts from the original DVD encoding.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Flat, washed-out corporate recordings</h3>
+                <p className="text-sm text-muted-foreground">
+                  Webcam footage often looks grey and lifeless. Boosting contrast and saturation adds punch. The HDR preset does this automatically — it's not real HDR, but it makes the image less boring.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Videos destroyed by social media compression</h3>
+                <p className="text-sm text-muted-foreground">
+                  A clip that's been downloaded and re-uploaded multiple times looks blocky and artifacted. You can't undo the damage, but re-encoding at a high bitrate with slight sharpening can make it more presentable for reuse.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Matching footage from different cameras</h3>
+                <p className="text-sm text-muted-foreground">
+                  One camera shot in log profile, another in standard color. Adjusting brightness, contrast, and saturation on the flatter clip helps it match the others in your edit. It's not full color grading, but it gets you closer.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Enhancement Settings Reference */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                What Each Setting Does
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Upscaling (Resolution)</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Makes the video larger — 480p to 1080p, or 1080p to 4K. The tool interpolates new pixels based on surrounding data. Result looks smoother but not sharper. Useful when you need to match a delivery spec, not when you expect to recover lost detail.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Bitrate</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Controls how much data is used per second of video. Higher bitrate = fewer compression artifacts = larger file. For web delivery, 5-8 Mbps is usually enough for 1080p. For archival, go higher. Below 2 Mbps and you'll see blockiness in complex scenes.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Sharpness</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Enhances edges by increasing contrast along boundaries. At 20-30%, soft footage looks more defined. At 80-100%, you get ugly white halos around objects. More isn't better here — subtle sharpening looks natural, aggressive sharpening looks fake.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Denoise</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Smooths out grain from low-light recording. At 30-40%, noise reduces without losing detail. At 70%+, faces start looking like wax figures. The trade-off: less noise but also less fine texture. Use just enough to clean up the worst grain.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Brightness / Contrast / Saturation</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Basic color adjustments. Brightness lifts or darkens everything. Contrast spreads tones apart (more punch) or crushes them together (flatter). Saturation makes colors more or less intense. Small adjustments look natural — massive swings look processed.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">HDR Effect</h3>
+                  <p className="text-muted-foreground mt-2">
+                    A preset that boosts contrast, saturation, and brightness together. It's not real HDR (which requires specific capture and display hardware), but it makes flat footage look more dynamic. Good for quick fixes, not for precise grading.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Use This Tool</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Establish target quality targets
-              </h3>
+              <h3 className="relative font-semibold text-xl">Upload your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                After dragging your video file into the application area, toggle
-                the upscaler and select a target resolution such as 1080p or 4K.
-                Use the bitrate slider to instruct the local rendering engine
-                how much data it is allowed to use per second, keeping in mind
-                that high bitrates look cleaner but result in significantly
-                larger final files.
+                Drag or select your file. Processing happens locally — no upload to servers. Large files take longer and use more RAM. If your browser tab crashes, try a smaller file or close other tabs.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Adjust correction filters
-              </h3>
+              <h3 className="relative font-semibold text-xl">Adjust settings</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Move through the individual enhancement sliders to correct
-                specific flaws occurring in the imported footage. You can pull
-                the denoise slider to smooth out ugly film grain, boost the
-                sharpness slider to clarify soft edges, or simply click the HDR
-                switch to automatically push the contrast and color saturation
-                into a more cinematic appearance.
+                Start with the HDR preset if you want a quick fix. For manual control, adjust one setting at a time. Watch the preview to see the effect. Less is usually more — subtle improvements look natural.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Render the final master
-              </h3>
+              <h3 className="relative font-semibold text-xl">Process and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the enhancement button to command your hardware to begin
-                calculating the new pixel array for every frame of the video.
-                Because applying multiple heavy filters requires intense
-                processing power, keep your browser tab active until the
-                progress indicator hits 100%, and then download the vastly
-                improved MP4 straight to your device.
+                Click enhance and wait. Processing time depends on video length, resolution, and your computer's speed. Keep the tab open. When done, preview the result and download if satisfied.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Modernizing old family home videos
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Archivists pulling video clips off dusty DVDs often discover
-                  soft, unappealing 480p footage that looks terrible on modern
-                  televisions. Using the upscaler to push the resolution to
-                  1080p and applying a mild sharpness filter makes old family
-                  memories look far more watchable on large screens.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Rescuing dark smartphone night out footage
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Mobile phones heavily compress video shot inside dim
-                  restaurants, resulting in clips plagued by chunky visual noise
-                  and muddy shadows. Pushing the brightness slider up while
-                  heavily applying the denoise filter smooths away the harsh
-                  camera struggle, revealing the people hidden in the dark.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Punching up dull corporate talking heads
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  When marketing teams receive poorly lit webcam recordings from
-                  executives sitting in flat grey offices, the footage can bore
-                  viewers. Enabling the HDR switch alongside a saturation boost
-                  injects artificial vibrancy into the corporate presentation,
-                  making the speaker look much healthier and engaged.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Overcoming aggressive social media compression
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Downloading a viral clip that has been re-uploaded to multiple
-                  chaotic social networks often yields a horribly pixelated
-                  final file. Pushing the maximum output bitrate high forces the
-                  local encoder to smooth over structural artifact gaps,
-                  patching together a solid looking file ready for safe
-                  republishing.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Preparing basic assets for heavy editing
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Video editors receiving rough cell phone clips to place into
-                  professional YouTube documentaries must ensure all sources
-                  match a baseline visual standard. Upscaling and correcting
-                  colors locally ensures the humble stock footage won't
-                  completely shatter the production value of the larger project
-                  file.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">Target Bitrate</h3>
-                  <p className="text-muted-foreground mt-2">
-                    Bitrate measures the exact megabit data allowance given to
-                    each passing second of your rendered video clip. Keeping the
-                    slider around 8Mbps provides excellent web quality, dragging
-                    it to 25Mbps provides a flawless raw archival copy, and
-                    dragging it to 2Mbps forces aggressive compression to save
-                    maximum hard drive space.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Denoise Percentage</h3>
-                  <p className="text-muted-foreground mt-2">
-                    The denoise tool intelligently blurs chaotic pixels
-                    specifically associated with poor sensor lighting without
-                    heavily damaging intended details. A value around 30%
-                    handles minor smartphone grain, but dragging the slider
-                    beyond 70% will cause your actors to look like they are made
-                    out of strangely smooth plastic.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Sharpness Percentage</h3>
-                  <p className="text-muted-foreground mt-2">
-                    The sharpening filter detects stark transitions between
-                    light and dark objects in your footage and aggressively
-                    hardens the contrast along those dividing lines. Applying a
-                    conservative 20% value successfully crisps up a soft focus
-                    lens, while setting it to 100% will create an ugly glowing
-                    white aura around every single object.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}

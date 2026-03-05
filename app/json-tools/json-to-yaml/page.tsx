@@ -173,6 +173,60 @@ export default function JsonToYamlConverterPage() {
           </p>
         </div>
 
+        {/* When to Use */}
+        <Card className="mb-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-0">
+          <CardContent className="p-5">
+            <h2 className="text-lg font-semibold mb-3">When You Need YAML</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <p className="text-muted-foreground mb-3">
+                  Your config is in JSON but the tool you're using expects YAML. Kubernetes manifests, Docker Compose files, and CI configs all use YAML. Manually converting means watching your indentation carefully and quoting strings correctly.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                  <span className="text-muted-foreground">Kubernetes manifests</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                  <span className="text-muted-foreground">Docker Compose files</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                  <span className="text-muted-foreground">GitHub Actions workflows</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                  <span className="text-muted-foreground">Ansible playbooks</span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features - Card Grid */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-6">
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-medium mb-2">Proper YAML Formatting</h3>
+              <p className="text-sm text-muted-foreground">Generates valid YAML with correct indentation and string quoting rules</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-medium mb-2">Array Conversion</h3>
+              <p className="text-sm text-muted-foreground">Converts JSON arrays to YAML list format with dash prefixes</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-medium mb-2">Nested Support</h3>
+              <p className="text-sm text-muted-foreground">Handles deeply nested objects with correct indentation</p>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Controls */}
         <Card className="mb-6">
           <CardContent className="p-4">
@@ -280,6 +334,67 @@ export default function JsonToYamlConverterPage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON to YAML Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          YAML is a popular format for configuration files in DevOps and cloud infrastructure. This converter transforms JSON into clean YAML syntax with proper indentation and quoting. It's useful for Kubernetes configs, Docker Compose files, and CI/CD pipelines.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the conversion works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your JSON in the left panel and click Convert to YAML. The tool parses your JSON and rebuilds it using YAML syntax. Objects become nested mappings, arrays become lists with dashes, and values are properly quoted when needed.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The output uses 2-space indentation by default. Strings with special characters get quoted. Boolean and null values use YAML format. Download the result as a .yaml file or copy it directly to your config.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          Your cloud provider expects YAML but your config is JSON. Or you're writing a Kubernetes manifest and want to convert from JSON examples. This tool also helps when migrating configs between systems that prefer different formats.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          YAML has features JSON doesn't support, like anchors and aliases. This converter creates basic YAML without advanced features. For complex YAML with references, manual editing may be needed after conversion.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">Does YAML support all JSON data types?</p>
+            <p className="text-muted-foreground">Yes, YAML supports all JSON types plus more. Numbers, strings, booleans, null, arrays, and objects all convert cleanly.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">How are special characters handled?</p>
+            <p className="text-muted-foreground">Strings with colons, dashes, or leading spaces get quoted. This prevents YAML parsing issues with special syntax.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I convert YAML back to JSON?</p>
+            <p className="text-muted-foreground">Yes, use our YAML to JSON tool for the reverse conversion. The round-trip should preserve your data structure.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What about comments in YAML?</p>
+            <p className="text-muted-foreground">JSON doesn't support comments so they won't appear in the output. Add comments manually after conversion if needed.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Is the output valid for Kubernetes?</p>
+            <p className="text-muted-foreground">The YAML syntax is valid but you'll need to ensure the structure matches Kubernetes schema requirements.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/yaml-to-json" className="text-primary hover:underline">YAML to JSON</a> – Convert YAML configuration back to JSON
+          </li>
+          <li>
+            <a href="/json-tools/json-to-xml" className="text-primary hover:underline">JSON to XML</a> – Convert JSON to XML format
+          </li>
+          <li>
+            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format and beautify JSON with indentation
+          </li>
+        </ul>
       </div>
     </div>
   );

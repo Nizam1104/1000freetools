@@ -206,6 +206,67 @@ export default function JsonValidatorPage() {
           )}
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON Validator</h2>
+        <p className="text-muted-foreground mb-6">
+          A single syntax error can break your entire application. This validator checks your JSON for proper syntax and pinpoints the exact location of any errors, saving you hours of debugging time.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How it works</h3>
+        <p className="text-muted-foreground mb-2">
+          The tool uses the browser's native JSON.parse to validate your input. When an error occurs, it extracts the position and calculates the exact line and column numbers.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Smart error analysis provides human-readable explanations for common mistakes like missing commas, unquoted strings, or trailing commas that JavaScript doesn't allow in JSON.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You copied JSON from a log file or API response and need to verify it's valid before using it. Quick validation catches copy-paste errors before they cause problems.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          This validator checks syntax only, not semantic correctness. Your JSON might be syntactically valid but still contain wrong data types or missing required fields.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What JSON syntax errors does it catch?</p>
+            <p className="text-muted-foreground">Missing quotes around keys or strings, trailing commas, unmatched brackets, invalid escape sequences, and unquoted reserved words like true or null.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can it validate large files?</p>
+            <p className="text-muted-foreground">Yes, but very large files may take a moment to process. For files over 50MB, consider using a command-line validator for better performance.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does it check JSON Schema?</p>
+            <p className="text-muted-foreground">No, this validates syntax only. For schema validation against a defined structure, use the JSON Schema Validator tool instead.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What's the difference between valid and invalid samples?</p>
+            <p className="text-muted-foreground">Load Valid Sample to see properly formatted JSON. Load Invalid Sample to see common errors and how the validator reports them.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Is my data sent anywhere?</p>
+            <p className="text-muted-foreground">No, validation happens entirely in your browser. Your JSON data never leaves your device, making it safe for sensitive information.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-schema-validator" className="text-primary hover:underline">JSON Schema Validator</a> – Validate against a schema
+          </li>
+          <li>
+            <a href="/json-tools/json-linter" className="text-primary hover:underline">JSON Linter</a> – Lint and fix JSON issues
+          </li>
+          <li>
+            <a href="/json-tools/json-pretty-print" className="text-primary hover:underline">JSON Pretty Print</a> – Format valid JSON
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

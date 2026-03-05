@@ -33,8 +33,13 @@ export default function RgbToHexConverterPage() {
 
   const hex = rgb.r && rgb.g && rgb.b ? rgbToHex(rgb.r, rgb.g, rgb.b) : null;
 
-  const isComplete = rgb.r !== null && rgb.g !== null && rgb.b !== null &&
-    isValidRgb(rgbInput.r) && isValidRgb(rgbInput.g) && isValidRgb(rgbInput.b);
+  const isComplete =
+    rgb.r !== null &&
+    rgb.g !== null &&
+    rgb.b !== null &&
+    isValidRgb(rgbInput.r) &&
+    isValidRgb(rgbInput.g) &&
+    isValidRgb(rgbInput.b);
 
   const copyToClipboard = async (text: string, field: string) => {
     try {
@@ -47,14 +52,26 @@ export default function RgbToHexConverterPage() {
     }
   };
 
-  const CopyButton = ({ text, field, className = "" }: { text: string; field: string; className?: string }) => (
+  const CopyButton = ({
+    text,
+    field,
+    className = "",
+  }: {
+    text: string;
+    field: string;
+    className?: string;
+  }) => (
     <Button
       variant="ghost"
       size="sm"
       className={`h-8 w-8 p-0 ${className}`}
       onClick={() => copyToClipboard(text, field)}
     >
-      {copiedField === field ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+      {copiedField === field ? (
+        <Check className="h-4 w-4 text-green-500" />
+      ) : (
+        <Copy className="h-4 w-4" />
+      )}
     </Button>
   );
 
@@ -72,9 +89,13 @@ export default function RgbToHexConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">RGB to HEX Color Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            RGB to HEX Color Converter
+          </h1>
           <p className="text-muted-foreground">
-            Convert RGB color values to HEX format in one click. Enter your red, green, and blue values and get the corresponding hex code ready to use.
+            Convert RGB color values to HEX format in one click. Enter your red,
+            green, and blue values and get the corresponding hex code ready to
+            use.
           </p>
         </div>
 
@@ -87,7 +108,12 @@ export default function RgbToHexConverterPage() {
                 </Label>
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-1">
-                    <Label htmlFor="r" className="text-xs text-muted-foreground">R</Label>
+                    <Label
+                      htmlFor="r"
+                      className="text-xs text-muted-foreground"
+                    >
+                      R
+                    </Label>
                     <Input
                       id="r"
                       type="text"
@@ -99,7 +125,12 @@ export default function RgbToHexConverterPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="g" className="text-xs text-muted-foreground">G</Label>
+                    <Label
+                      htmlFor="g"
+                      className="text-xs text-muted-foreground"
+                    >
+                      G
+                    </Label>
                     <Input
                       id="g"
                       type="text"
@@ -111,7 +142,12 @@ export default function RgbToHexConverterPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="b" className="text-xs text-muted-foreground">B</Label>
+                    <Label
+                      htmlFor="b"
+                      className="text-xs text-muted-foreground"
+                    >
+                      B
+                    </Label>
                     <Input
                       id="b"
                       type="text"
@@ -140,9 +176,11 @@ export default function RgbToHexConverterPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="flex-1">
-                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">Preview</Label>
+                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">
+                        Preview
+                      </Label>
                       <div
-                        className="w-full aspect-video rounded-lg border bg-checkerboard"
+                        className="w-full aspect-video rounded-lg border "
                         style={{ backgroundColor: hex }}
                       />
                     </div>
@@ -159,33 +197,50 @@ export default function RgbToHexConverterPage() {
               {isComplete && hex ? (
                 <>
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">HEX Format</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      HEX Format
+                    </Label>
                     <div className="flex gap-2">
-                      <Input value={hex} readOnly className="font-mono flex-1" />
+                      <Input
+                        value={hex}
+                        readOnly
+                        className="font-mono flex-1"
+                      />
                       <CopyButton text={hex} field="HEX" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">Short Format (if applicable)</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      Short Format (if applicable)
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={
-                          hex[1] === hex[2] && hex[3] === hex[4] && hex[5] === hex[6]
+                          hex[1] === hex[2] &&
+                          hex[3] === hex[4] &&
+                          hex[5] === hex[6]
                             ? `#${hex[1]}${hex[3]}${hex[5]}`
                             : "N/A"
                         }
                         readOnly
                         className="font-mono flex-1"
                       />
-                      {hex[1] === hex[2] && hex[3] === hex[4] && hex[5] === hex[6] && (
-                        <CopyButton text={`#${hex[1]}${hex[3]}${hex[5]}`} field="Short HEX" />
-                      )}
+                      {hex[1] === hex[2] &&
+                        hex[3] === hex[4] &&
+                        hex[5] === hex[6] && (
+                          <CopyButton
+                            text={`#${hex[1]}${hex[3]}${hex[5]}`}
+                            field="Short HEX"
+                          />
+                        )}
                     </div>
                   </div>
 
                   <div className="space-y-2 pt-4 border-t">
-                    <Label className="text-sm font-medium text-muted-foreground">CSS Usage</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      CSS Usage
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={`color: ${hex};`}
@@ -209,9 +264,13 @@ export default function RgbToHexConverterPage() {
           <CardContent className="p-6">
             <h3 className="text-sm font-semibold mb-3">How to use</h3>
             <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>Enter RGB values (0-255) in the Red, Green, and Blue fields</li>
+              <li>
+                Enter RGB values (0-255) in the Red, Green, and Blue fields
+              </li>
               <li>The HEX color code will be calculated automatically</li>
-              <li>Click the copy button to copy the HEX value to your clipboard</li>
+              <li>
+                Click the copy button to copy the HEX value to your clipboard
+              </li>
             </ol>
           </CardContent>
         </Card>

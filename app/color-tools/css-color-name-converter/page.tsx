@@ -173,7 +173,9 @@ export default function CssColorNameConverterPage() {
 
   const hex = selectedColor ? CSS_COLORS[selectedColor.toLowerCase()] : null;
 
-  const hexToRgb = (hex: string): { r: number; g: number; b: number } | null => {
+  const hexToRgb = (
+    hex: string,
+  ): { r: number; g: number; b: number } | null => {
     const cleanHex = hex.replace("#", "").trim();
     if (!/^[0-9A-Fa-f]{6}$/.test(cleanHex)) return null;
     const r = parseInt(cleanHex.substring(0, 2), 16);
@@ -182,7 +184,9 @@ export default function CssColorNameConverterPage() {
     return { r, g, b };
   };
 
-  const hexToHsl = (hex: string): { h: number; s: number; l: number } | null => {
+  const hexToHsl = (
+    hex: string,
+  ): { h: number; s: number; l: number } | null => {
     const cleanHex = hex.replace("#", "").trim();
     if (!/^[0-9A-Fa-f]{6}$/.test(cleanHex)) return null;
 
@@ -233,14 +237,26 @@ export default function CssColorNameConverterPage() {
     }
   };
 
-  const CopyButton = ({ text, field, className = "" }: { text: string; field: string; className?: string }) => (
+  const CopyButton = ({
+    text,
+    field,
+    className = "",
+  }: {
+    text: string;
+    field: string;
+    className?: string;
+  }) => (
     <Button
       variant="ghost"
       size="sm"
       className={`h-8 w-8 p-0 ${className}`}
       onClick={() => copyToClipboard(text, field)}
     >
-      {copiedField === field ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+      {copiedField === field ? (
+        <Check className="h-4 w-4 text-green-500" />
+      ) : (
+        <Copy className="h-4 w-4" />
+      )}
     </Button>
   );
 
@@ -254,17 +270,21 @@ export default function CssColorNameConverterPage() {
     setColorName(value);
   };
 
-  const filteredColors = Object.keys(CSS_COLORS).filter((name) =>
-    name.toLowerCase().includes(colorName.toLowerCase())
-  ).slice(0, 10);
+  const filteredColors = Object.keys(CSS_COLORS)
+    .filter((name) => name.toLowerCase().includes(colorName.toLowerCase()))
+    .slice(0, 10);
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">CSS Color Name to HEX, RGB & HSL Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            CSS Color Name to HEX, RGB & HSL Converter
+          </h1>
           <p className="text-muted-foreground">
-            Convert any CSS color name like 'tomato' or 'steelblue' to its HEX, RGB, and HSL equivalents. Quickly look up and translate named CSS colors.
+            Convert any CSS color name like 'tomato' or 'steelblue' to its HEX,
+            RGB, and HSL equivalents. Quickly look up and translate named CSS
+            colors.
           </p>
         </div>
 
@@ -272,7 +292,10 @@ export default function CssColorNameConverterPage() {
           <Card>
             <CardContent className="p-6 space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="colorName" className="text-sm font-medium text-muted-foreground">
+                <Label
+                  htmlFor="colorName"
+                  className="text-sm font-medium text-muted-foreground"
+                >
                   CSS Color Name
                 </Label>
                 <div className="flex gap-2">
@@ -306,7 +329,9 @@ export default function CssColorNameConverterPage() {
                           style={{ backgroundColor: CSS_COLORS[name] }}
                         />
                         <span className="font-mono text-sm">{name}</span>
-                        <span className="text-xs text-muted-foreground ml-auto">{CSS_COLORS[name]}</span>
+                        <span className="text-xs text-muted-foreground ml-auto">
+                          {CSS_COLORS[name]}
+                        </span>
                       </button>
                     ))}
                   </div>
@@ -321,9 +346,11 @@ export default function CssColorNameConverterPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="flex-1">
-                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">Preview</Label>
+                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">
+                        Preview
+                      </Label>
                       <div
-                        className="w-full aspect-video rounded-lg border bg-checkerboard"
+                        className="w-full aspect-video rounded-lg border "
                         style={{ backgroundColor: hex }}
                       />
                     </div>
@@ -332,7 +359,10 @@ export default function CssColorNameConverterPage() {
                   <div className="p-3 rounded-md bg-muted">
                     <p className="text-sm font-medium mb-1">Selected Color</p>
                     <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded border" style={{ backgroundColor: hex }} />
+                      <div
+                        className="w-4 h-4 rounded border"
+                        style={{ backgroundColor: hex }}
+                      />
                       <span className="font-mono">{selectedColor}</span>
                     </div>
                   </div>
@@ -348,46 +378,67 @@ export default function CssColorNameConverterPage() {
               {hex && rgb && hsl ? (
                 <>
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">HEX</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      HEX
+                    </Label>
                     <div className="flex gap-2">
-                      <Input value={hex.toUpperCase()} readOnly className="font-mono flex-1" />
+                      <Input
+                        value={hex.toUpperCase()}
+                        readOnly
+                        className="font-mono flex-1"
+                      />
                       <CopyButton text={hex.toUpperCase()} field="HEX" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">RGB</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      RGB
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
                         readOnly
                         className="font-mono flex-1"
                       />
-                      <CopyButton text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`} field="RGB" />
+                      <CopyButton
+                        text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
+                        field="RGB"
+                      />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">HSL</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      HSL
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`}
                         readOnly
                         className="font-mono flex-1"
                       />
-                      <CopyButton text={`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`} field="HSL" />
+                      <CopyButton
+                        text={`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`}
+                        field="HSL"
+                      />
                     </div>
                   </div>
 
                   <div className="space-y-2 pt-4 border-t">
-                    <Label className="text-sm font-medium text-muted-foreground">CSS Usage</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      CSS Usage
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={`color: ${selectedColor}; /* or ${hex.toUpperCase()} */`}
                         readOnly
                         className="font-mono text-sm"
                       />
-                      <CopyButton text={`color: ${selectedColor};`} field="CSS" />
+                      <CopyButton
+                        text={`color: ${selectedColor};`}
+                        field="CSS"
+                      />
                     </div>
                   </div>
                 </>
@@ -404,10 +455,21 @@ export default function CssColorNameConverterPage() {
           <CardContent className="p-6">
             <h3 className="text-sm font-semibold mb-3">Popular CSS Colors</h3>
             <div className="grid grid-cols-5 sm:grid-cols-10 gap-2">
-              {["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan", "black", "white"].map((color) => (
+              {[
+                "red",
+                "blue",
+                "green",
+                "yellow",
+                "purple",
+                "orange",
+                "pink",
+                "cyan",
+                "black",
+                "white",
+              ].map((color) => (
                 <button
                   key={color}
-                  className="aspect-square rounded-md border-2 border-border hover:border-primary transition-colors bg-checkerboard"
+                  className="aspect-square rounded-md border-2 border-border hover:border-primary transition-colors "
                   style={{ backgroundColor: CSS_COLORS[color] }}
                   onClick={() => handleSelectChange(color)}
                   title={color}
@@ -424,10 +486,15 @@ export default function CssColorNameConverterPage() {
           <CardContent className="p-6">
             <h3 className="text-sm font-semibold mb-3">How to use</h3>
             <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>Type a CSS color name in the search box (e.g., "coral", "navy", "tomato")</li>
+              <li>
+                Type a CSS color name in the search box (e.g., "coral", "navy",
+                "tomato")
+              </li>
               <li>Select the color from the dropdown suggestions</li>
               <li>View the HEX, RGB, and HSL values instantly</li>
-              <li>Click the copy button to copy any format to your clipboard</li>
+              <li>
+                Click the copy button to copy any format to your clipboard
+              </li>
             </ol>
           </CardContent>
         </Card>

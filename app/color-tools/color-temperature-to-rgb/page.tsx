@@ -80,14 +80,26 @@ export default function ColorTemperatureToRgbConverterPage() {
     }
   };
 
-  const CopyButton = ({ text, field, className = "" }: { text: string; field: string; className?: string }) => (
+  const CopyButton = ({
+    text,
+    field,
+    className = "",
+  }: {
+    text: string;
+    field: string;
+    className?: string;
+  }) => (
     <Button
       variant="ghost"
       size="sm"
       className={`h-8 w-8 p-0 ${className}`}
       onClick={() => copyToClipboard(text, field)}
     >
-      {copiedField === field ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+      {copiedField === field ? (
+        <Check className="h-4 w-4 text-green-500" />
+      ) : (
+        <Copy className="h-4 w-4" />
+      )}
     </Button>
   );
 
@@ -107,9 +119,13 @@ export default function ColorTemperatureToRgbConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Color Temperature to RGB Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Color Temperature to RGB Converter
+          </h1>
           <p className="text-muted-foreground">
-            Convert color temperature in Kelvin to RGB values. Ideal for lighting designers, photographers, and developers working with warm or cool light sources.
+            Convert color temperature in Kelvin to RGB values. Ideal for
+            lighting designers, photographers, and developers working with warm
+            or cool light sources.
           </p>
         </div>
 
@@ -151,7 +167,9 @@ export default function ColorTemperatureToRgbConverterPage() {
 
                 <div className="p-3 rounded-md bg-muted">
                   <p className="text-xs text-muted-foreground mb-1">Type</p>
-                  <p className="font-medium">{getTemperatureDescription(temperature)}</p>
+                  <p className="font-medium">
+                    {getTemperatureDescription(temperature)}
+                  </p>
                 </div>
               </div>
 
@@ -163,7 +181,9 @@ export default function ColorTemperatureToRgbConverterPage() {
                   {presetTemperatures.map((preset) => (
                     <Button
                       key={preset.value}
-                      variant={temperature === preset.value ? "default" : "outline"}
+                      variant={
+                        temperature === preset.value ? "default" : "outline"
+                      }
                       size="sm"
                       onClick={() => setTemperature(preset.value)}
                       className="text-xs"
@@ -179,7 +199,7 @@ export default function ColorTemperatureToRgbConverterPage() {
                   Preview
                 </Label>
                 <div
-                  className="w-full aspect-video rounded-lg border bg-checkerboard"
+                  className="w-full aspect-video rounded-lg border "
                   style={{ backgroundColor: hex }}
                 />
               </div>
@@ -191,19 +211,26 @@ export default function ColorTemperatureToRgbConverterPage() {
               <h2 className="text-lg font-semibold mb-4">RGB Result</h2>
 
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-muted-foreground">RGB Format</Label>
+                <Label className="text-sm font-medium text-muted-foreground">
+                  RGB Format
+                </Label>
                 <div className="flex gap-2">
                   <Input
                     value={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
                     readOnly
                     className="font-mono flex-1"
                   />
-                  <CopyButton text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`} field="RGB" />
+                  <CopyButton
+                    text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
+                    field="RGB"
+                  />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-muted-foreground">HEX Format</Label>
+                <Label className="text-sm font-medium text-muted-foreground">
+                  HEX Format
+                </Label>
                 <div className="flex gap-2">
                   <Input value={hex} readOnly className="font-mono flex-1" />
                   <CopyButton text={hex} field="HEX" />
@@ -211,55 +238,94 @@ export default function ColorTemperatureToRgbConverterPage() {
               </div>
 
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-muted-foreground">Individual Values</Label>
+                <Label className="text-sm font-medium text-muted-foreground">
+                  Individual Values
+                </Label>
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-1">
                     <Label className="text-xs text-muted-foreground">R</Label>
                     <div className="flex gap-1">
-                      <Input value={rgb.r} readOnly className="font-mono text-center h-10" />
+                      <Input
+                        value={rgb.r}
+                        readOnly
+                        className="font-mono text-center h-10"
+                      />
                     </div>
                   </div>
                   <div className="space-y-1">
                     <Label className="text-xs text-muted-foreground">G</Label>
                     <div className="flex gap-1">
-                      <Input value={rgb.g} readOnly className="font-mono text-center h-10" />
+                      <Input
+                        value={rgb.g}
+                        readOnly
+                        className="font-mono text-center h-10"
+                      />
                     </div>
                   </div>
                   <div className="space-y-1">
                     <Label className="text-xs text-muted-foreground">B</Label>
                     <div className="flex gap-1">
-                      <Input value={rgb.b} readOnly className="font-mono text-center h-10" />
+                      <Input
+                        value={rgb.b}
+                        readOnly
+                        className="font-mono text-center h-10"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-2 pt-4 border-t">
-                <Label className="text-sm font-medium text-muted-foreground">RGB Color Bars</Label>
+                <Label className="text-sm font-medium text-muted-foreground">
+                  RGB Color Bars
+                </Label>
                 <div className="grid grid-cols-3 gap-2 h-12">
                   <div
                     className="rounded border flex items-center justify-center"
                     style={{ backgroundColor: `rgb(${rgb.r}, 0, 0)` }}
                   >
-                    <span className="text-xs font-bold" style={{ textShadow: rgb.r > 128 ? '0 0 2px white' : 'none' }}>{rgb.r}</span>
+                    <span
+                      className="text-xs font-bold"
+                      style={{
+                        textShadow: rgb.r > 128 ? "0 0 2px white" : "none",
+                      }}
+                    >
+                      {rgb.r}
+                    </span>
                   </div>
                   <div
                     className="rounded border flex items-center justify-center"
                     style={{ backgroundColor: `rgb(0, ${rgb.g}, 0)` }}
                   >
-                    <span className="text-xs font-bold" style={{ textShadow: rgb.g > 128 ? '0 0 2px white' : 'none' }}>{rgb.g}</span>
+                    <span
+                      className="text-xs font-bold"
+                      style={{
+                        textShadow: rgb.g > 128 ? "0 0 2px white" : "none",
+                      }}
+                    >
+                      {rgb.g}
+                    </span>
                   </div>
                   <div
                     className="rounded border flex items-center justify-center"
                     style={{ backgroundColor: `rgb(0, 0, ${rgb.b})` }}
                   >
-                    <span className="text-xs font-bold" style={{ textShadow: rgb.b > 128 ? '0 0 2px white' : 'none' }}>{rgb.b}</span>
+                    <span
+                      className="text-xs font-bold"
+                      style={{
+                        textShadow: rgb.b > 128 ? "0 0 2px white" : "none",
+                      }}
+                    >
+                      {rgb.b}
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-2 pt-4 border-t">
-                <Label className="text-sm font-medium text-muted-foreground">CSS Usage</Label>
+                <Label className="text-sm font-medium text-muted-foreground">
+                  CSS Usage
+                </Label>
                 <div className="flex gap-2">
                   <Input
                     value={`color: ${hex};`}
@@ -275,18 +341,30 @@ export default function ColorTemperatureToRgbConverterPage() {
 
         <Card className="mt-6">
           <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">About Color Temperature</h3>
+            <h3 className="text-sm font-semibold mb-3">
+              About Color Temperature
+            </h3>
             <p className="text-sm text-muted-foreground space-y-2">
-              Color temperature is measured in <strong>Kelvin (K)</strong> and describes the color of light emitted by a theoretical black body radiator at that temperature.
+              Color temperature is measured in <strong>Kelvin (K)</strong> and
+              describes the color of light emitted by a theoretical black body
+              radiator at that temperature.
             </p>
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="p-3 rounded-md bg-muted">
-                <p className="text-xs text-muted-foreground mb-1">Lower Kelvin (&lt;3000K)</p>
-                <p className="font-medium text-sm">Warm, yellowish light (cozy, relaxing)</p>
+                <p className="text-xs text-muted-foreground mb-1">
+                  Lower Kelvin (&lt;3000K)
+                </p>
+                <p className="font-medium text-sm">
+                  Warm, yellowish light (cozy, relaxing)
+                </p>
               </div>
               <div className="p-3 rounded-md bg-muted">
-                <p className="text-xs text-muted-foreground mb-1">Higher Kelvin (&gt;5000K)</p>
-                <p className="font-medium text-sm">Cool, bluish light (energizing, focused)</p>
+                <p className="text-xs text-muted-foreground mb-1">
+                  Higher Kelvin (&gt;5000K)
+                </p>
+                <p className="font-medium text-sm">
+                  Cool, bluish light (energizing, focused)
+                </p>
               </div>
             </div>
           </CardContent>
@@ -296,10 +374,18 @@ export default function ColorTemperatureToRgbConverterPage() {
           <CardContent className="p-6">
             <h3 className="text-sm font-semibold mb-3">How to use</h3>
             <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>Use the slider or input field to set the color temperature in Kelvin (1000K - 15000K)</li>
-              <li>Or click one of the preset temperature buttons for common light sources</li>
+              <li>
+                Use the slider or input field to set the color temperature in
+                Kelvin (1000K - 15000K)
+              </li>
+              <li>
+                Or click one of the preset temperature buttons for common light
+                sources
+              </li>
               <li>The RGB and HEX values will be calculated automatically</li>
-              <li>Click the copy button to copy any format to your clipboard</li>
+              <li>
+                Click the copy button to copy any format to your clipboard
+              </li>
             </ol>
           </CardContent>
         </Card>

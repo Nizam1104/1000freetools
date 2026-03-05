@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,10 +29,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
     : null;
 };
 
@@ -119,8 +127,16 @@ const downloadPalette = (palette: ColorPalette) => {
 };
 
 const PRESET_COLORS = [
-  "#3b82f6", "#8b5cf6", "#ec4899", "#ef4444", "#f97316",
-  "#f59e0b", "#22c55e", "#14b8a6", "#06b6d4", "#6366f1",
+  "#3b82f6",
+  "#8b5cf6",
+  "#ec4899",
+  "#ef4444",
+  "#f97316",
+  "#f59e0b",
+  "#22c55e",
+  "#14b8a6",
+  "#06b6d4",
+  "#6366f1",
 ];
 
 export default function ColorPaletteGeneratorPage() {
@@ -130,12 +146,15 @@ export default function ColorPaletteGeneratorPage() {
 
   const palette = generatePalette(baseColor);
 
-  const handleColorChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^#[0-9A-Fa-f]{0,6}$/.test(value)) {
-      setBaseColor(value || "#000000");
-    }
-  }, []);
+  const handleColorChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      if (/^#[0-9A-Fa-f]{0,6}$/.test(value)) {
+        setBaseColor(value || "#000000");
+      }
+    },
+    [],
+  );
 
   const copyColor = async (color: string, name: string) => {
     await copyToClipboard(color, name);
@@ -144,7 +163,11 @@ export default function ColorPaletteGeneratorPage() {
   };
 
   const randomizeColor = () => {
-    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+    const randomColor =
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
     setBaseColor(randomColor);
     toast.success("Random color generated!");
   };
@@ -164,16 +187,28 @@ export default function ColorPaletteGeneratorPage() {
     </Button>
   );
 
-  const ColorSwatch = ({ color, name, index }: { color: string; name: string; index: number }) => (
+  const ColorSwatch = ({
+    color,
+    name,
+    index,
+  }: {
+    color: string;
+    name: string;
+    index: number;
+  }) => (
     <div className="group relative">
       <div
-        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-transform group-hover:scale-105 bg-checkerboard"
+        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-transform group-hover:scale-105 "
         style={{ backgroundColor: color }}
       />
       <div className="mt-2 space-y-1">
-        <p className="text-xs font-medium text-muted-foreground uppercase">{name}</p>
+        <p className="text-xs font-medium text-muted-foreground uppercase">
+          {name}
+        </p>
         <div className="flex items-center gap-1">
-          <code className="text-xs font-mono bg-muted px-1.5 py-0.5 rounded">{color}</code>
+          <code className="text-xs font-mono bg-muted px-1.5 py-0.5 rounded">
+            {color}
+          </code>
           <CopyButton color={color} name={name} />
         </div>
       </div>
@@ -185,9 +220,13 @@ export default function ColorPaletteGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Color Palette Generator from Base Color</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Color Palette Generator from Base Color
+          </h1>
           <p className="text-muted-foreground">
-            Generate a beautiful, harmonious color palette from a single base color. Perfect for building consistent UI color schemes and brand identities.
+            Generate a beautiful, harmonious color palette from a single base
+            color. Perfect for building consistent UI color schemes and brand
+            identities.
           </p>
         </div>
 
@@ -204,7 +243,9 @@ export default function ColorPaletteGeneratorPage() {
                   </Label>
                   <div className="flex gap-2">
                     <div className="relative flex-1">
-                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">#</span>
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                        #
+                      </span>
                       <Input
                         id="base-color"
                         value={baseColor.replace("#", "")}
@@ -215,7 +256,7 @@ export default function ColorPaletteGeneratorPage() {
                       />
                     </div>
                     <div
-                      className="w-12 h-10 rounded border border-border bg-checkerboard cursor-pointer overflow-hidden"
+                      className="w-12 h-10 rounded border border-border  cursor-pointer overflow-hidden"
                       style={{ backgroundColor: baseColor }}
                     >
                       <input
@@ -231,9 +272,12 @@ export default function ColorPaletteGeneratorPage() {
                 {/* Lightness Adjustment */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <Label className="text-sm font-medium">Lightness Adjustment</Label>
+                    <Label className="text-sm font-medium">
+                      Lightness Adjustment
+                    </Label>
                     <span className="text-sm font-mono text-muted-foreground">
-                      {lightnessAdjust > 0 ? "+" : ""}{lightnessAdjust}%
+                      {lightnessAdjust > 0 ? "+" : ""}
+                      {lightnessAdjust}%
                     </span>
                   </div>
                   <Slider
@@ -247,11 +291,18 @@ export default function ColorPaletteGeneratorPage() {
 
                 {/* Actions */}
                 <div className="flex gap-2 pt-2">
-                  <Button onClick={randomizeColor} variant="outline" className="flex-1">
+                  <Button
+                    onClick={randomizeColor}
+                    variant="outline"
+                    className="flex-1"
+                  >
                     <Shuffle className="h-4 w-4 mr-2" />
                     Random
                   </Button>
-                  <Button onClick={() => downloadPalette(palette)} className="flex-1">
+                  <Button
+                    onClick={() => downloadPalette(palette)}
+                    className="flex-1"
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Download
                   </Button>
@@ -259,15 +310,18 @@ export default function ColorPaletteGeneratorPage() {
 
                 {/* Preset Colors */}
                 <div className="space-y-3 pt-2">
-                  <Label className="text-sm font-medium text-muted-foreground">Quick Select</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">
+                    Quick Select
+                  </Label>
                   <div className="grid grid-cols-5 gap-2">
                     {PRESET_COLORS.map((color) => (
                       <button
                         key={color}
-                        className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${baseColor.toLowerCase() === color.toLowerCase()
+                        className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
+                          baseColor.toLowerCase() === color.toLowerCase()
                             ? "border-primary ring-2 ring-primary ring-offset-2"
                             : "border-border"
-                          }`}
+                        }`}
                         style={{ backgroundColor: color }}
                         onClick={() => setBaseColor(color)}
                         title={color}
@@ -324,7 +378,11 @@ export default function ColorPaletteGeneratorPage() {
 
                 {/* Full Palette Grid */}
                 <div className="grid grid-cols-5 gap-4 mb-8">
-                  <ColorSwatch color={palette.lighter} name="Lighter" index={0} />
+                  <ColorSwatch
+                    color={palette.lighter}
+                    name="Lighter"
+                    index={0}
+                  />
                   <ColorSwatch color={palette.light} name="Light" index={1} />
                   <ColorSwatch color={palette.base} name="Base" index={2} />
                   <ColorSwatch color={palette.dark} name="Dark" index={3} />
@@ -333,16 +391,31 @@ export default function ColorPaletteGeneratorPage() {
 
                 {/* Preview Cards */}
                 <div className="space-y-4">
-                  <Label className="text-sm font-medium text-muted-foreground">Preview</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">
+                    Preview
+                  </Label>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     {/* Light Theme Preview */}
                     <div className="rounded-lg border border-border overflow-hidden">
-                      <div className="p-4" style={{ backgroundColor: palette.lighter }}>
-                        <p className="text-sm font-medium" style={{ color: palette.darker }}>Light Theme</p>
+                      <div
+                        className="p-4"
+                        style={{ backgroundColor: palette.lighter }}
+                      >
+                        <p
+                          className="text-sm font-medium"
+                          style={{ color: palette.darker }}
+                        >
+                          Light Theme
+                        </p>
                       </div>
                       <div className="p-4 bg-background space-y-3">
-                        <Button style={{ backgroundColor: palette.base, color: "#fff" }}>
+                        <Button
+                          style={{
+                            backgroundColor: palette.base,
+                            color: "#fff",
+                          }}
+                        >
                           Primary Button
                         </Button>
                         <p className="text-sm" style={{ color: palette.dark }}>
@@ -353,11 +426,24 @@ export default function ColorPaletteGeneratorPage() {
 
                     {/* Dark Theme Preview */}
                     <div className="rounded-lg border border-border overflow-hidden">
-                      <div className="p-4" style={{ backgroundColor: palette.darker }}>
-                        <p className="text-sm font-medium" style={{ color: palette.lighter }}>Dark Theme</p>
+                      <div
+                        className="p-4"
+                        style={{ backgroundColor: palette.darker }}
+                      >
+                        <p
+                          className="text-sm font-medium"
+                          style={{ color: palette.lighter }}
+                        >
+                          Dark Theme
+                        </p>
                       </div>
                       <div className="p-4 bg-background space-y-3">
-                        <Button style={{ backgroundColor: palette.light, color: palette.darker }}>
+                        <Button
+                          style={{
+                            backgroundColor: palette.light,
+                            color: palette.darker,
+                          }}
+                        >
                           Secondary Button
                         </Button>
                         <p className="text-sm" style={{ color: palette.base }}>
@@ -370,7 +456,9 @@ export default function ColorPaletteGeneratorPage() {
                   {/* Gradient Preview */}
                   <div className="rounded-lg border border-border overflow-hidden">
                     <div className="p-4 bg-background">
-                      <p className="text-sm font-medium text-muted-foreground mb-3">Gradient Preview</p>
+                      <p className="text-sm font-medium text-muted-foreground mb-3">
+                        Gradient Preview
+                      </p>
                       <div
                         className="h-16 rounded-md"
                         style={{

@@ -1,0 +1,1542 @@
+[
+  {
+    "toolName": "json-remove-keys",
+    "shortTailKeywords": [
+      "remove json keys",
+      "json key remover"
+    ],
+    "mediumTailKeywords": [
+      "remove keys from json",
+      "delete json object keys",
+      "json key removal tool"
+    ],
+    "longTailKeywords": [
+      "how to remove specific keys from json object",
+      "online tool to delete keys from json data",
+      "remove multiple keys from nested json",
+      "strip unwanted keys from json response",
+      "json key remover without coding"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-graphql",
+    "shortTailKeywords": [
+      "json to graphql",
+      "graphql schema generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to graphql schema",
+      "json graphql type generator",
+      "generate graphql from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json response to graphql schema",
+      "online json to graphql schema converter",
+      "generate graphql types from json object",
+      "convert rest api json to graphql automatically",
+      "json to graphql schema definition language tool"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-formatter-beautifier",
+    "shortTailKeywords": [
+      "json formatter",
+      "json beautifier"
+    ],
+    "mediumTailKeywords": [
+      "format and beautify json",
+      "online json formatter tool",
+      "pretty print json online"
+    ],
+    "longTailKeywords": [
+      "how to format minified json online for free",
+      "json formatter and beautifier with syntax highlighting",
+      "paste and format ugly json code online",
+      "beautify compressed json string instantly",
+      "free online json code formatter and indenter"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-error-explanation",
+    "shortTailKeywords": [
+      "json error",
+      "json error checker"
+    ],
+    "mediumTailKeywords": [
+      "explain json parse error",
+      "json syntax error finder",
+      "json error message explainer"
+    ],
+    "longTailKeywords": [
+      "what does unexpected token in json mean",
+      "online tool to explain json parsing errors",
+      "debug json syntax errors with explanations",
+      "json error explanation for beginners",
+      "understand and fix json parse errors online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-env-converter",
+    "shortTailKeywords": [
+      "json to env",
+      "env file converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to env file",
+      "json to dotenv converter",
+      "env to json converter online"
+    ],
+    "longTailKeywords": [
+      "how to convert json config to env variables",
+      "online tool to turn json into dotenv file",
+      "convert json object to .env format online",
+      "json key value to environment variable converter",
+      "transform json config file to env file format"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-enum-generator",
+    "shortTailKeywords": [
+      "json enum generator",
+      "enum from json"
+    ],
+    "mediumTailKeywords": [
+      "generate enum from json data",
+      "json to enum converter online",
+      "create enum values from json"
+    ],
+    "longTailKeywords": [
+      "how to generate typescript enum from json object",
+      "online json to enum code generator",
+      "convert json array to enum definition",
+      "generate enum constants from json values automatically",
+      "json enum generator for typescript and java"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-python",
+    "shortTailKeywords": [
+      "json to python",
+      "json python converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to python dict",
+      "json to python class generator",
+      "json to python dataclass"
+    ],
+    "longTailKeywords": [
+      "how to convert json to python dictionary online",
+      "generate python dataclass from json schema",
+      "online tool to convert json to python object",
+      "json to python class definition generator",
+      "convert json response to python code automatically"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-merge",
+    "shortTailKeywords": [
+      "json merge",
+      "merge json files"
+    ],
+    "mediumTailKeywords": [
+      "merge two json objects online",
+      "combine json files tool",
+      "json deep merge tool"
+    ],
+    "longTailKeywords": [
+      "how to merge multiple json files into one",
+      "online tool to combine two json objects",
+      "deep merge nested json objects online",
+      "merge json arrays and objects without duplicates",
+      "combine json files and resolve key conflicts online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-sql-insert",
+    "shortTailKeywords": [
+      "json to sql",
+      "json to insert statement"
+    ],
+    "mediumTailKeywords": [
+      "convert json to sql insert",
+      "json to sql insert statements generator",
+      "generate sql from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json array to sql insert statements",
+      "online json to sql insert query generator",
+      "convert json data to mysql insert statement",
+      "generate bulk sql inserts from json online",
+      "transform json records into sql insert queries"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-api-error-formatter",
+    "shortTailKeywords": [
+      "api error formatter",
+      "json api error"
+    ],
+    "mediumTailKeywords": [
+      "format json api error response",
+      "api error json formatter tool",
+      "standardize api error json"
+    ],
+    "longTailKeywords": [
+      "how to format api error responses in json",
+      "online json api error response formatter",
+      "generate standard json api error object",
+      "format rest api error messages in json format",
+      "create consistent json error responses for apis"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-javascript",
+    "shortTailKeywords": [
+      "json to javascript",
+      "json js converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to javascript object",
+      "json to js code generator",
+      "json to javascript variable"
+    ],
+    "longTailKeywords": [
+      "how to convert json string to javascript object online",
+      "generate javascript object literal from json",
+      "convert json api response to javascript code",
+      "online tool to turn json into js const variable",
+      "json to javascript object assignment code generator"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-random-object",
+    "shortTailKeywords": [
+      "random json generator",
+      "json object generator"
+    ],
+    "mediumTailKeywords": [
+      "generate random json object online",
+      "fake json data generator",
+      "random json test data"
+    ],
+    "longTailKeywords": [
+      "online random json object generator for testing",
+      "generate fake json data for api testing",
+      "create random json with custom fields online",
+      "mock json object generator for development",
+      "random json data generator with nested objects"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-yaml",
+    "shortTailKeywords": [
+      "json to yaml",
+      "yaml converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to yaml online",
+      "json yaml converter tool",
+      "transform json to yaml format"
+    ],
+    "longTailKeywords": [
+      "how to convert json config file to yaml",
+      "online tool to convert json to yaml format",
+      "json to yaml converter for kubernetes configs",
+      "convert json object to yaml string online",
+      "free json to yaml transformation tool online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-base64",
+    "shortTailKeywords": [
+      "json base64",
+      "base64 json encoder"
+    ],
+    "mediumTailKeywords": [
+      "encode json to base64 online",
+      "decode base64 to json",
+      "json base64 encoder decoder"
+    ],
+    "longTailKeywords": [
+      "how to encode json object to base64 string",
+      "online tool to convert base64 back to json",
+      "base64 encode and decode json data online",
+      "encode json payload to base64 for api requests",
+      "decode base64 encoded json response online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "csv-to-json",
+    "shortTailKeywords": [
+      "csv to json",
+      "csv json converter"
+    ],
+    "mediumTailKeywords": [
+      "convert csv file to json online",
+      "csv to json array converter",
+      "transform csv data to json"
+    ],
+    "longTailKeywords": [
+      "how to convert csv spreadsheet to json online",
+      "online csv to json converter with headers",
+      "transform csv data into json array format",
+      "convert excel csv export to json object",
+      "free online tool to parse csv into json"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-jwt-decoder",
+    "shortTailKeywords": [
+      "jwt decoder",
+      "decode jwt token"
+    ],
+    "mediumTailKeywords": [
+      "decode jwt token online",
+      "jwt payload decoder tool",
+      "json web token decoder"
+    ],
+    "longTailKeywords": [
+      "how to decode a jwt token and read payload",
+      "online tool to decode and inspect jwt tokens",
+      "decode jwt claims and header online for free",
+      "read json web token without secret key online",
+      "parse and decode jwt bearer token payload online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-linter",
+    "shortTailKeywords": [
+      "json linter",
+      "lint json"
+    ],
+    "mediumTailKeywords": [
+      "online json linter tool",
+      "json syntax linter checker",
+      "lint and validate json code"
+    ],
+    "longTailKeywords": [
+      "how to lint json and find syntax problems",
+      "online json linter with error highlighting",
+      "json linting tool for developers and testers",
+      "check json code quality with online linter",
+      "free json lint tool to catch syntax mistakes"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-flatten",
+    "shortTailKeywords": [
+      "json flatten",
+      "flatten json object"
+    ],
+    "mediumTailKeywords": [
+      "flatten nested json object online",
+      "json flattener tool",
+      "convert nested json to flat"
+    ],
+    "longTailKeywords": [
+      "how to flatten deeply nested json object online",
+      "online tool to flatten json to single level",
+      "convert nested json structure to flat key value",
+      "flatten json with dot notation keys online",
+      "json flatten tool for data processing and analysis"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-sorter",
+    "shortTailKeywords": [
+      "json sorter",
+      "sort json keys"
+    ],
+    "mediumTailKeywords": [
+      "sort json keys alphabetically online",
+      "json key sorter tool",
+      "sort json array values"
+    ],
+    "longTailKeywords": [
+      "how to sort json object keys alphabetically online",
+      "online tool to sort json keys in order",
+      "sort nested json object keys recursively online",
+      "sort json array of objects by field value",
+      "alphabetically sort all keys in json document"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-structure-visualizer",
+    "shortTailKeywords": [
+      "json visualizer",
+      "visualize json structure"
+    ],
+    "mediumTailKeywords": [
+      "json structure visualizer online",
+      "visualize json as tree diagram",
+      "json tree view online"
+    ],
+    "longTailKeywords": [
+      "how to visualize json structure as a tree online",
+      "online json structure diagram and tree visualizer",
+      "see json hierarchy as interactive tree view",
+      "json schema structure visualization tool free",
+      "visualize complex nested json structure online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-swift",
+    "shortTailKeywords": [
+      "json to swift",
+      "swift codable generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to swift struct",
+      "json to swift codable model",
+      "generate swift model from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json to swift struct codable online",
+      "online tool to generate swift data model from json",
+      "json to swift codable struct generator free",
+      "create swift decodable model from json response",
+      "automatically generate swift model classes from json"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-extract-subjson",
+    "shortTailKeywords": [
+      "extract json",
+      "json extractor"
+    ],
+    "mediumTailKeywords": [
+      "extract sub json from object",
+      "json field extractor online",
+      "extract nested json data"
+    ],
+    "longTailKeywords": [
+      "how to extract a portion of json object online",
+      "online tool to extract specific fields from json",
+      "pull out sub json from deeply nested object",
+      "extract json fragment from large json document",
+      "select and extract nested json properties online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-diff",
+    "shortTailKeywords": [
+      "json diff",
+      "compare json"
+    ],
+    "mediumTailKeywords": [
+      "compare two json objects online",
+      "json diff tool online",
+      "find differences between json"
+    ],
+    "longTailKeywords": [
+      "how to compare two json files and find differences",
+      "online json diff tool with visual highlighting",
+      "find added removed and changed keys in json",
+      "compare json api responses to spot differences",
+      "json diff checker for nested objects and arrays"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-php",
+    "shortTailKeywords": [
+      "json to php",
+      "php array generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to php array online",
+      "json to php associative array",
+      "generate php code from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json object to php array online",
+      "online tool to generate php associative array from json",
+      "convert json response to php code automatically",
+      "json to php array definition generator free",
+      "transform json data into php variable code"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-api-formatter",
+    "shortTailKeywords": [
+      "api formatter",
+      "json api formatter"
+    ],
+    "mediumTailKeywords": [
+      "format json api response online",
+      "json api standard formatter",
+      "rest api json formatter tool"
+    ],
+    "longTailKeywords": [
+      "how to format json api responses to standard",
+      "online json api response formatter and validator",
+      "format rest api output in json api specification",
+      "standardize json api payload format online",
+      "json api response formatter for backend developers"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-kotlin",
+    "shortTailKeywords": [
+      "json to kotlin",
+      "kotlin data class generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to kotlin data class",
+      "json kotlin model generator",
+      "generate kotlin from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json to kotlin data class online",
+      "online tool to generate kotlin data class from json",
+      "json to kotlin serializable class generator",
+      "create kotlin model from json response automatically",
+      "convert json object to kotlin data class definition"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-xml",
+    "shortTailKeywords": [
+      "json to xml",
+      "xml converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to xml online",
+      "json xml transformation tool",
+      "json to xml format converter"
+    ],
+    "longTailKeywords": [
+      "how to convert json object to xml format online",
+      "online json to xml converter with attributes support",
+      "transform json api response to xml structure",
+      "convert nested json to xml elements online free",
+      "json to xml converter for data interchange online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-rename-keys",
+    "shortTailKeywords": [
+      "rename json keys",
+      "json key renamer"
+    ],
+    "mediumTailKeywords": [
+      "rename keys in json object online",
+      "json key rename tool",
+      "find and rename json key"
+    ],
+    "longTailKeywords": [
+      "how to rename specific keys in json object online",
+      "online tool to rename json keys in bulk",
+      "rename nested json keys without coding",
+      "find and replace json key names online",
+      "json key renaming tool for data transformation"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-pretty-print",
+    "shortTailKeywords": [
+      "pretty print json",
+      "json pretty printer"
+    ],
+    "mediumTailKeywords": [
+      "pretty print json online free",
+      "json pretty print formatter",
+      "indent and pretty print json"
+    ],
+    "longTailKeywords": [
+      "how to pretty print json with indentation online",
+      "online json pretty printer with custom indent size",
+      "pretty print json response from api online",
+      "format raw json string into readable pretty print",
+      "pretty print json with 2 or 4 space indent"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-datetime-generator",
+    "shortTailKeywords": [
+      "json datetime generator",
+      "json date generator"
+    ],
+    "mediumTailKeywords": [
+      "generate datetime json field online",
+      "json timestamp generator tool",
+      "json date format generator"
+    ],
+    "longTailKeywords": [
+      "how to generate iso datetime string for json fields",
+      "online tool to add datetime fields to json",
+      "generate json with timestamp values for testing",
+      "create json datetime fields in iso 8601 format",
+      "json date and time field generator for mock data"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-text",
+    "shortTailKeywords": [
+      "json to text",
+      "json text converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to plain text online",
+      "json to readable text converter",
+      "extract text from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json data to readable plain text",
+      "online tool to extract text content from json",
+      "turn json response into plain text output",
+      "convert json fields to human readable text",
+      "json to text converter for reports and documents"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-patch-generator",
+    "shortTailKeywords": [
+      "json patch",
+      "json patch generator"
+    ],
+    "mediumTailKeywords": [
+      "generate json patch document online",
+      "json patch rfc 6902 generator",
+      "create json patch operations"
+    ],
+    "longTailKeywords": [
+      "how to generate json patch document from two json objects",
+      "online json patch rfc 6902 operations generator",
+      "create add remove replace json patch operations",
+      "generate json patch from diff of two objects",
+      "json patch document generator for api updates"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-config-validator",
+    "shortTailKeywords": [
+      "json config validator",
+      "validate config json"
+    ],
+    "mediumTailKeywords": [
+      "validate json configuration file online",
+      "json config file validator tool",
+      "check json config syntax"
+    ],
+    "longTailKeywords": [
+      "how to validate json configuration file online",
+      "online tool to check json config file for errors",
+      "validate app configuration json against schema",
+      "json config validator for kubernetes and docker",
+      "check and fix json config file syntax errors"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-unflatten",
+    "shortTailKeywords": [
+      "json unflatten",
+      "unflatten json"
+    ],
+    "mediumTailKeywords": [
+      "unflatten json to nested object",
+      "convert flat json to nested online",
+      "json unflattener tool"
+    ],
+    "longTailKeywords": [
+      "how to convert flat json object to nested structure",
+      "online tool to unflatten dot notation json keys",
+      "restore nested json from flattened key value pairs",
+      "unflatten json with dot notation to nested object",
+      "convert flat json back to hierarchical structure online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-sensitive-data-masker",
+    "shortTailKeywords": [
+      "json data masker",
+      "mask json data"
+    ],
+    "mediumTailKeywords": [
+      "mask sensitive json data online",
+      "json field masking tool",
+      "redact sensitive json fields"
+    ],
+    "longTailKeywords": [
+      "how to mask sensitive fields in json object online",
+      "online tool to redact pii data from json",
+      "mask passwords and tokens in json for logging",
+      "hide sensitive values in json response online",
+      "json sensitive data masking tool for compliance"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-tsv",
+    "shortTailKeywords": [
+      "json to tsv",
+      "tsv converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to tsv format online",
+      "json to tab separated values",
+      "json tsv export tool"
+    ],
+    "longTailKeywords": [
+      "how to convert json array to tsv file online",
+      "online json to tab separated values converter",
+      "export json data as tsv for spreadsheet import",
+      "convert json records to tsv format for excel",
+      "json to tsv converter with custom delimiter options"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "xml-to-json",
+    "shortTailKeywords": [
+      "xml to json",
+      "xml json converter"
+    ],
+    "mediumTailKeywords": [
+      "convert xml to json online",
+      "xml json transformation tool",
+      "parse xml and convert to json"
+    ],
+    "longTailKeywords": [
+      "how to convert xml file to json format online",
+      "online xml to json converter with attribute support",
+      "transform xml api response to json object",
+      "convert soap xml response to json online free",
+      "xml to json converter for data migration online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-validator",
+    "shortTailKeywords": [
+      "json validator",
+      "validate json"
+    ],
+    "mediumTailKeywords": [
+      "validate json online free",
+      "json syntax validator tool",
+      "check if json is valid"
+    ],
+    "longTailKeywords": [
+      "how to validate json string syntax online",
+      "online json validator with detailed error messages",
+      "check if my json is valid and well formed",
+      "validate json before sending api request",
+      "free online tool to validate json structure"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-api-response-generator",
+    "shortTailKeywords": [
+      "api response generator",
+      "mock api response"
+    ],
+    "mediumTailKeywords": [
+      "generate json api response online",
+      "mock json api response generator",
+      "fake api response creator"
+    ],
+    "longTailKeywords": [
+      "how to generate mock json api response for testing",
+      "online tool to create fake api json response",
+      "generate sample rest api json response data",
+      "mock json api response generator for frontend dev",
+      "create realistic fake json api responses online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-fetch-code-generator",
+    "shortTailKeywords": [
+      "fetch code generator",
+      "json fetch generator"
+    ],
+    "mediumTailKeywords": [
+      "generate fetch api code from json",
+      "javascript fetch code generator",
+      "json fetch request generator"
+    ],
+    "longTailKeywords": [
+      "how to generate javascript fetch code for json api",
+      "online tool to create fetch api request from json",
+      "generate fetch request code from json endpoint",
+      "javascript fetch api code generator for rest calls",
+      "auto generate fetch code with json body online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-schema-validator",
+    "shortTailKeywords": [
+      "json schema validator",
+      "validate json schema"
+    ],
+    "mediumTailKeywords": [
+      "validate json against schema online",
+      "json schema validation tool",
+      "json schema checker online"
+    ],
+    "longTailKeywords": [
+      "how to validate json data against json schema",
+      "online json schema validator with error messages",
+      "validate json object against json schema draft 7",
+      "check json schema compliance for api responses",
+      "free tool to validate json using schema definition"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-csv",
+    "shortTailKeywords": [
+      "json to csv",
+      "json csv converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to csv online",
+      "json array to csv file",
+      "export json data as csv"
+    ],
+    "longTailKeywords": [
+      "how to convert json array to csv file online",
+      "online tool to export json data as csv spreadsheet",
+      "convert json objects to csv with headers",
+      "transform json api response to csv format online",
+      "json to csv converter for data export and analysis"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-minifier",
+    "shortTailKeywords": [
+      "json minifier",
+      "minify json"
+    ],
+    "mediumTailKeywords": [
+      "minify json online free",
+      "compress json data online",
+      "json minifier tool"
+    ],
+    "longTailKeywords": [
+      "how to minify and compress json online",
+      "online tool to remove whitespace from json",
+      "minify json to reduce payload size online",
+      "compress json string for api performance",
+      "json minifier to strip spaces and newlines online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "jsonpath-query",
+    "shortTailKeywords": [
+      "jsonpath query",
+      "jsonpath tool"
+    ],
+    "mediumTailKeywords": [
+      "jsonpath query tester online",
+      "run jsonpath expressions online",
+      "jsonpath evaluator tool"
+    ],
+    "longTailKeywords": [
+      "how to use jsonpath to query json data online",
+      "online jsonpath expression tester and evaluator",
+      "test jsonpath queries against json document",
+      "jsonpath query tool for extracting nested values",
+      "interactive jsonpath query runner online free"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-empty-field-finder",
+    "shortTailKeywords": [
+      "json empty field finder",
+      "find empty json fields"
+    ],
+    "mediumTailKeywords": [
+      "find empty fields in json online",
+      "json null and empty value finder",
+      "detect empty json properties"
+    ],
+    "longTailKeywords": [
+      "how to find all empty fields in json object online",
+      "online tool to detect null and empty json values",
+      "find empty strings and null fields in json data",
+      "check json for missing and empty field values",
+      "json empty field detector for data quality checks"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-array-generator",
+    "shortTailKeywords": [
+      "json array generator",
+      "generate json array"
+    ],
+    "mediumTailKeywords": [
+      "generate json array online free",
+      "create json array from data",
+      "json array builder tool"
+    ],
+    "longTailKeywords": [
+      "how to generate json array with custom values online",
+      "online tool to create json array for testing",
+      "generate random json array of objects online",
+      "build json array from list of values online",
+      "json array generator with custom length and fields"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-typescript",
+    "shortTailKeywords": [
+      "json to typescript",
+      "typescript interface generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to typescript interface",
+      "json typescript type generator",
+      "generate typescript from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json to typescript interface online",
+      "online tool to generate typescript types from json",
+      "json to typescript interface definition generator",
+      "create typescript type from json response object",
+      "generate typescript interfaces from nested json"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-explainer",
+    "shortTailKeywords": [
+      "json explainer",
+      "explain json"
+    ],
+    "mediumTailKeywords": [
+      "explain json structure online",
+      "json explanation tool for beginners",
+      "understand json format"
+    ],
+    "longTailKeywords": [
+      "how to understand and read json format for beginners",
+      "online tool to explain json object structure in plain english",
+      "get a plain english explanation of json data",
+      "json explainer tool for non developers",
+      "understand complex json response structure online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "yaml-to-json",
+    "shortTailKeywords": [
+      "yaml to json",
+      "yaml converter"
+    ],
+    "mediumTailKeywords": [
+      "convert yaml to json online",
+      "yaml json converter tool",
+      "transform yaml config to json"
+    ],
+    "longTailKeywords": [
+      "how to convert yaml file to json format online",
+      "online yaml to json converter for config files",
+      "transform kubernetes yaml config to json",
+      "convert yaml data to json object online free",
+      "yaml to json converter for devops and developers"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-filter",
+    "shortTailKeywords": [
+      "json filter",
+      "filter json data"
+    ],
+    "mediumTailKeywords": [
+      "filter json objects online",
+      "json data filter tool",
+      "filter json array by condition"
+    ],
+    "longTailKeywords": [
+      "how to filter json array by field value online",
+      "online tool to filter json objects by condition",
+      "filter json records by key value pair online",
+      "query and filter json array elements online",
+      "json filter tool to extract matching objects"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-obfuscator",
+    "shortTailKeywords": [
+      "json obfuscator",
+      "obfuscate json"
+    ],
+    "mediumTailKeywords": [
+      "obfuscate json data online",
+      "json value obfuscator tool",
+      "json data obfuscation tool"
+    ],
+    "longTailKeywords": [
+      "how to obfuscate sensitive values in json online",
+      "online tool to obfuscate json for sharing safely",
+      "replace json values with random obfuscated data",
+      "json obfuscation tool for data privacy online",
+      "obfuscate json before sharing with third parties"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-axios-code-generator",
+    "shortTailKeywords": [
+      "axios code generator",
+      "axios json generator"
+    ],
+    "mediumTailKeywords": [
+      "generate axios code from json online",
+      "axios request code generator",
+      "json to axios snippet generator"
+    ],
+    "longTailKeywords": [
+      "how to generate axios api call code from json",
+      "online axios request code generator from endpoint",
+      "generate axios post request with json body online",
+      "create axios get request code from api response",
+      "axios code snippet generator for rest api calls"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-transformer",
+    "shortTailKeywords": [
+      "json transformer",
+      "transform json"
+    ],
+    "mediumTailKeywords": [
+      "transform json structure online",
+      "json data transformer tool",
+      "reshape json object online"
+    ],
+    "longTailKeywords": [
+      "how to transform and reshape json structure online",
+      "online tool to map and transform json fields",
+      "json transformer to change data structure format",
+      "remap json keys and values using template online",
+      "transform json response to different format online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-nested-structure",
+    "shortTailKeywords": [
+      "nested json",
+      "json nested structure"
+    ],
+    "mediumTailKeywords": [
+      "create nested json structure online",
+      "nested json builder tool",
+      "build nested json object"
+    ],
+    "longTailKeywords": [
+      "how to create deeply nested json structure online",
+      "online tool to build nested json objects easily",
+      "generate nested json from flat data online",
+      "json nested structure builder for complex data",
+      "create hierarchical nested json object online free"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-pagination-generator",
+    "shortTailKeywords": [
+      "json pagination generator",
+      "paginated json"
+    ],
+    "mediumTailKeywords": [
+      "generate paginated json response online",
+      "json pagination response generator",
+      "create paginated api json"
+    ],
+    "longTailKeywords": [
+      "how to generate paginated json api response online",
+      "online tool to create json with pagination metadata",
+      "generate page based json response for rest api",
+      "mock paginated json response for frontend testing",
+      "json pagination wrapper generator with page info"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "jmespath-query",
+    "shortTailKeywords": [
+      "jmespath query",
+      "jmespath tool"
+    ],
+    "mediumTailKeywords": [
+      "jmespath query tester online",
+      "run jmespath expression online",
+      "jmespath evaluator tool"
+    ],
+    "longTailKeywords": [
+      "how to query json with jmespath expressions online",
+      "online jmespath query tester and evaluator tool",
+      "test jmespath expressions against json document",
+      "jmespath query runner for aws api responses",
+      "interactive jmespath expression evaluator online free"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-duplicate-key-finder",
+    "shortTailKeywords": [
+      "duplicate json keys",
+      "json key finder"
+    ],
+    "mediumTailKeywords": [
+      "find duplicate keys in json online",
+      "json duplicate key detector",
+      "check json for duplicate keys"
+    ],
+    "longTailKeywords": [
+      "how to find duplicate keys in json object online",
+      "online tool to detect and list duplicate json keys",
+      "check json for repeated key names automatically",
+      "find duplicate property names in json file",
+      "json duplicate key checker for validation online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-key-frequency",
+    "shortTailKeywords": [
+      "json key frequency",
+      "json key counter"
+    ],
+    "mediumTailKeywords": [
+      "count json key frequency online",
+      "json key occurrence counter",
+      "analyze json key usage"
+    ],
+    "longTailKeywords": [
+      "how to count how often each key appears in json",
+      "online tool to analyze json key frequency",
+      "count occurrences of json keys in nested object",
+      "json key frequency analyzer for large datasets",
+      "find most common keys in json document online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-excel",
+    "shortTailKeywords": [
+      "json to excel",
+      "json xlsx converter"
+    ],
+    "mediumTailKeywords": [
+      "convert json to excel file online",
+      "json to xlsx converter tool",
+      "export json data to excel"
+    ],
+    "longTailKeywords": [
+      "how to convert json array to excel spreadsheet online",
+      "online tool to export json data to xlsx file",
+      "convert json objects to excel with column headers",
+      "transform json api data into excel workbook",
+      "json to excel converter for data analysis online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-value-search",
+    "shortTailKeywords": [
+      "json value search",
+      "search json values"
+    ],
+    "mediumTailKeywords": [
+      "search values in json online",
+      "json value finder tool",
+      "find value in json object"
+    ],
+    "longTailKeywords": [
+      "how to search for a value inside json object online",
+      "online tool to find and locate values in json",
+      "search nested json for specific value online",
+      "find all occurrences of a value in json data",
+      "json value search and highlight tool online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-java",
+    "shortTailKeywords": [
+      "json to java",
+      "java pojo generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to java class online",
+      "json to java pojo generator",
+      "generate java model from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json to java class online free",
+      "online json to java pojo class generator",
+      "generate java model class from json response",
+      "convert json object to java class definition",
+      "json to java class generator with getters setters"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-size-calculator",
+    "shortTailKeywords": [
+      "json size calculator",
+      "json byte size"
+    ],
+    "mediumTailKeywords": [
+      "calculate json size in bytes online",
+      "json data size estimator tool",
+      "measure json payload size"
+    ],
+    "longTailKeywords": [
+      "how to calculate the size of a json object online",
+      "online tool to measure json payload size in bytes",
+      "check json size before sending in api request",
+      "calculate json data size for performance optimization",
+      "json size calculator for api payload planning"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-go",
+    "shortTailKeywords": [
+      "json to go",
+      "golang struct generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to go struct online",
+      "json golang struct generator",
+      "generate go struct from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json to golang struct online",
+      "online tool to generate go struct from json",
+      "json to go struct with json tags generator",
+      "convert json response to go language struct",
+      "auto generate golang struct definition from json"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-stringify-parse",
+    "shortTailKeywords": [
+      "json stringify",
+      "json parse tool"
+    ],
+    "mediumTailKeywords": [
+      "json stringify and parse online",
+      "javascript json stringify tool",
+      "json parse and stringify tester"
+    ],
+    "longTailKeywords": [
+      "how to stringify and parse json in javascript online",
+      "online json stringify and parse testing tool",
+      "test json stringify output before using in code",
+      "json parse and stringify converter online free",
+      "javascript json stringify with indent parameter"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-mongodb",
+    "shortTailKeywords": [
+      "json to mongodb",
+      "mongodb query generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to mongodb query online",
+      "json to mongodb insert generator",
+      "generate mongodb from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json to mongodb insert query online",
+      "online json to mongodb document converter",
+      "generate mongodb insertOne query from json data",
+      "convert json array to mongodb bulk insert",
+      "json to mongodb query generator for developers"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-escape-unescape",
+    "shortTailKeywords": [
+      "json escape",
+      "escape json string"
+    ],
+    "mediumTailKeywords": [
+      "escape json string online",
+      "unescape json characters online",
+      "json string escape unescape tool"
+    ],
+    "longTailKeywords": [
+      "how to escape special characters in json string online",
+      "online tool to escape and unescape json strings",
+      "escape json for use in javascript string online",
+      "unescape json encoded string characters online",
+      "json string escape tool for backslash and quotes"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-markdown-table",
+    "shortTailKeywords": [
+      "json to markdown",
+      "markdown table generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to markdown table online",
+      "json to md table converter",
+      "generate markdown table from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json array to markdown table online",
+      "online tool to turn json into markdown table format",
+      "generate github markdown table from json data",
+      "convert json objects to formatted markdown table",
+      "json to markdown table generator for documentation"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-playground",
+    "shortTailKeywords": [
+      "json playground",
+      "json sandbox"
+    ],
+    "mediumTailKeywords": [
+      "online json playground editor",
+      "interactive json editor online",
+      "json sandbox tool online"
+    ],
+    "longTailKeywords": [
+      "online json playground to test and edit json freely",
+      "interactive json editor and sandbox environment online",
+      "json playground for testing queries and transformations",
+      "browser based json playground for developers",
+      "free online json sandbox to experiment with data"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-viewer",
+    "shortTailKeywords": [
+      "json viewer",
+      "view json online"
+    ],
+    "mediumTailKeywords": [
+      "online json viewer tool",
+      "view json in tree format",
+      "json file viewer online"
+    ],
+    "longTailKeywords": [
+      "how to view json data in tree format online",
+      "online json viewer with collapsible tree view",
+      "view and browse json file content online free",
+      "json viewer tool with search and highlight feature",
+      "paste and view json in readable tree structure"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-key-extractor",
+    "shortTailKeywords": [
+      "json key extractor",
+      "extract json keys"
+    ],
+    "mediumTailKeywords": [
+      "extract all keys from json online",
+      "json key list extractor tool",
+      "get all json key names"
+    ],
+    "longTailKeywords": [
+      "how to extract all key names from json object online",
+      "online tool to list all keys in json document",
+      "extract nested json keys with full path online",
+      "get all property names from json object online",
+      "json key extractor for schema analysis and review"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-array-object-counter",
+    "shortTailKeywords": [
+      "json counter",
+      "json array counter"
+    ],
+    "mediumTailKeywords": [
+      "count json array elements online",
+      "json object counter tool",
+      "count items in json array"
+    ],
+    "longTailKeywords": [
+      "how to count elements in json array online",
+      "online tool to count json objects and arrays",
+      "count number of items in nested json array",
+      "json array length counter and object counter tool",
+      "count total records in json dataset online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-encode-decode",
+    "shortTailKeywords": [
+      "json encoder decoder",
+      "encode json online"
+    ],
+    "mediumTailKeywords": [
+      "encode and decode json online",
+      "json url encode decode tool",
+      "json encode decode converter"
+    ],
+    "longTailKeywords": [
+      "how to encode json data for url transmission online",
+      "online json encoder and decoder tool free",
+      "url encode json string for query parameters online",
+      "decode url encoded json string back to object",
+      "json encoding and decoding tool for web developers"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-to-csharp",
+    "shortTailKeywords": [
+      "json to csharp",
+      "csharp class generator"
+    ],
+    "mediumTailKeywords": [
+      "convert json to csharp class online",
+      "json to c# model generator",
+      "generate csharp from json"
+    ],
+    "longTailKeywords": [
+      "how to convert json to csharp class online free",
+      "online json to c# class definition generator",
+      "generate csharp poco class from json response",
+      "convert json object to c# model with properties",
+      "json to csharp class generator with newtonsoft attributes"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-schema-example-generator",
+    "shortTailKeywords": [
+      "json schema example",
+      "schema example generator"
+    ],
+    "mediumTailKeywords": [
+      "generate example from json schema",
+      "json schema sample data generator",
+      "json schema to example"
+    ],
+    "longTailKeywords": [
+      "how to generate example data from json schema online",
+      "online tool to create sample json from json schema",
+      "generate mock data from json schema definition",
+      "produce example json from schema for api testing",
+      "json schema to example instance generator online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-step-by-step-parser",
+    "shortTailKeywords": [
+      "json parser",
+      "step by step json"
+    ],
+    "mediumTailKeywords": [
+      "parse json step by step online",
+      "json step by step parser tool",
+      "learn json parsing interactively"
+    ],
+    "longTailKeywords": [
+      "how to parse json step by step for beginners",
+      "online json step by step parser with explanations",
+      "interactive json parser that explains each step",
+      "learn json parsing with visual step by step tool",
+      "json parsing walkthrough tool for students and beginners"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-depth-analyzer",
+    "shortTailKeywords": [
+      "json depth analyzer",
+      "json nesting depth"
+    ],
+    "mediumTailKeywords": [
+      "analyze json nesting depth online",
+      "json depth checker tool",
+      "measure json object depth"
+    ],
+    "longTailKeywords": [
+      "how to check the depth of a nested json object",
+      "online tool to measure json nesting level depth",
+      "analyze maximum nesting depth of json structure",
+      "json depth analyzer for performance optimization",
+      "check how deeply nested your json data is online"
+    ],
+    "completed": true
+  },
+  {
+    "toolName": "json-map-reduce",
+    "shortTailKeywords": [
+      "json map reduce",
+      "json data aggregator"
+    ],
+    "mediumTailKeywords": [
+      "json map reduce tool online",
+      "apply map reduce to json data",
+      "json aggregation tool online"
+    ],
+    "longTailKeywords": [
+      "how to apply map reduce operations to json data",
+      "online json map and reduce function tester",
+      "aggregate and transform json array with map reduce",
+      "json map reduce tool for data summarization online",
+      "apply custom map and reduce logic to json dataset"
+    ],
+    "completed": true
+  }
+]

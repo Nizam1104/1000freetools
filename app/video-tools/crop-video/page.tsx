@@ -640,207 +640,158 @@ export default function CropVideoPage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* What Cropping Actually Does */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Cropping Actually Does
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Cropping cuts away the outer edges of your video frame. It's not zooming — it's deleting pixels permanently. The output resolution becomes whatever box you drew, not the original size.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                When you record a beautiful moment but realize there are
-                distracting elements on the edges of the frame, you can crop
-                video online free to instantly isolate the subject. This tool
-                visually cuts away the unwanted outer borders of your footage,
-                narrowing the visible viewing area exactly to your
-                specifications. Unlike complex editor programs, it handles the
-                framing adjustment locally in your browser so you do not have to
-                endure long upload times or risk your privacy on third-party
-                servers.
+                Here's what matters: if you crop a 1920x1080 video down to a 500x500 square, the output is literally 500x500 pixels. Stretching that back to 1080p later won't recover the discarded data. Cropping is destructive. Use it when you need to remove distractions, reframe for a different aspect ratio, or isolate a subject — but know that you're throwing away information.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Cropping Makes Sense */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When You'd Actually Use This</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Landscape to vertical for Reels</h3>
+                <p className="text-sm text-muted-foreground">
+                  You have a 16:9 interview but need a 9:16 Instagram Reel. Cropping lets you isolate the speaker and fill the vertical frame. You lose the sides, but that's the trade-off for mobile-first formats.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Cutting out hardcoded black bars</h3>
+                <p className="text-sm text-muted-foreground">
+                  Some downloaded movies come with permanent letterboxing — black bars baked into the video itself. Cropping removes them entirely instead of letting your player add another set on top.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Removing watermarks or logos</h3>
+                <p className="text-sm text-muted-foreground">
+                  A stock video has a logo burned into the corner. Cropping it out sacrifices some frame area but gives you clean footage. It's a practical fix when you can't get an unwatermarked version.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Focusing on one person in a wide shot</h3>
+                <p className="text-sm text-muted-foreground">
+                  A Zoom recording shows five people, but you only need the presenter. Cropping in tight removes the distracting grid and messy backgrounds. The output is smaller but more focused.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Creating square videos for feeds</h3>
+                <p className="text-sm text-muted-foreground">
+                  Instagram grid posts work best as 1:1 squares. Cropping your landscape or portrait video to equal width and height ensures it displays without awkward padding in the feed.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Aspect Ratio Quick Reference */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                Common Aspect Ratios
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-4 font-medium">Ratio</th>
+                      <th className="text-left py-3 px-4 font-medium">Common Use</th>
+                      <th className="text-left py-3 px-4 font-medium">Example Resolution</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">16:9</td>
+                      <td className="py-3 px-4">YouTube, widescreen video</td>
+                      <td className="py-3 px-4">1920x1080</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">9:16</td>
+                      <td className="py-3 px-4">TikTok, Reels, Shorts</td>
+                      <td className="py-3 px-4">1080x1920</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">1:1</td>
+                      <td className="py-3 px-4">Instagram feed posts</td>
+                      <td className="py-3 px-4">1080x1080</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">4:5</td>
+                      <td className="py-3 px-4">Instagram portrait posts</td>
+                      <td className="py-3 px-4">1080x1350</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-4 font-mono">21:9</td>
+                      <td className="py-3 px-4">Ultrawide cinema</td>
+                      <td className="py-3 px-4">2560x1080</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-muted-foreground mt-6 text-sm">
+                Tip: To calculate crop dimensions for a target ratio, divide your desired width by the ratio. For 9:16 from a 1080-wide source: 1080 ÷ (9/16) = 1920 height.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Crop Your Video</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Import your footage
-              </h3>
+              <h3 className="relative font-semibold text-xl">Load your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Select the target video from your device to instantly load it
-                into the local preview player. Because this is an entirely
-                client-side application, the video will appear immediately
-                without uploading, allowing you to quickly scrub through the
-                timeline to find the perfect frame to use as a visual reference
-                for your adjustments.
+                Upload or drag your file. It stays local — no server upload. Find a bright, representative frame to use as your reference. Dark scenes make it harder to see crop boundaries.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Define the viewing area
-              </h3>
+              <h3 className="relative font-semibold text-xl">Draw your crop box</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Use your mouse to click and drag a blue rectangle precisely over
-                the portion of the video you want to keep. The darkened overlay
-                will show exactly what will be deleted, and you can fine-tune
-                the exact pixel coordinates on the right side if you are trying
-                to match a strict platform ratio.
+                Drag on the canvas to create a blue rectangle. The darkened area outside gets cut. Adjust the numeric inputs for pixel-perfect precision if you need exact dimensions.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Process the new frame
-              </h3>
+              <h3 className="relative font-semibold text-xl">Crop and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click the crop button to instruct your browser to securely
-                re-encode the video file, stripping away the discarded pixels
-                from every single frame. Once the progress bar reaches 100%,
-                review the isolated clip in the results panel and download the
-                new MP4 directly to your immediate storage folder.
+                Click the crop button. Your browser re-encodes the video, discarding everything outside your box. When the progress bar finishes, preview and download the result.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Reframing for vertical social media
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  When marketing teams want to post an older landscape
-                  commercial to TikTok, they have to crop the video into a
-                  vertical 9:16 layout. Dragging a tall, thin box over the main
-                  actor ensures the core message survives the shift to a mobile
-                  environment without awkward horizontal shrinking.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">Removing embedded watermarks</h3>
-                <p className="text-sm text-muted-foreground">
-                  If a downloaded stock video features a distracting logo
-                  burning permanently into the bottom right corner, trimming the
-                  visual bounds solves the problem. Carefully slicing that
-                  specific corner out of the frame leaves a clean video canvas
-                  ready for professional editing workflows.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Eliminating cinematic letterboxing
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Many ripped movie trailers come with thick, hardcoded black
-                  bars slapped onto the top and bottom of the file. Narrowing
-                  the video crop area securely shaves these bars entirely off
-                  the file, preventing your website's video player from
-                  displaying an ugly double-letterbox effect on mobile screens.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Isolating a specific interview subject
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  When a wide webcam recording shows too much messy bedroom
-                  background during an important podcast guest appearance,
-                  slicing the frame down to just the speaker improves the
-                  presentation. Removing the background clutter redirects all
-                  the viewer's attention directly onto the person speaking.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Creating matching square feeds
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Social media managers overseeing grid-style profile layouts
-                  frequently need to crop rectangular event footage into a
-                  perfect 1:1 square. Adjusting the pixel width and height to
-                  matching values creates a perfectly symmetrical block that
-                  slots flawlessly into a curated photo feed.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">Visual Drag Canvas</h3>
-                  <p className="text-muted-foreground mt-2">
-                    This interactive preview screen lets you rely entirely on
-                    your eyes to draw a blue rectangle over the video. The
-                    brighter inner section represents the video you will keep,
-                    while the heavily dimmed outer perimeter indicates the
-                    pixels that will be permanently deleted from the resulting
-                    output file.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    Left and Top Positioning
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    These number boxes define the exact starting coordinates of
-                    your target box, measured from the top-left corner of the
-                    original video. If you are a developer looking to cleanly
-                    cut the left half of a 1920x1080 screen recording, setting
-                    Left to 960 will cleanly sever the image exactly in half.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    Width and Height Dimensions
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    These inputs dictate the final total resolution of the newly
-                    trimmed video file at the end of the extraction process. If
-                    you want to guarantee a perfectly square video upload for
-                    platforms like Instagram, you must ensure both of these
-                    numbers are absolutely identical before hitting the process
-                    button.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}

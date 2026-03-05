@@ -51,8 +51,17 @@ export default function JsonMapReducePage() {
       let finalResult: any;
       if (reduceFn.trim()) {
         try {
-          const reduceFunc = new Function("acc", "item", "index", "arr", `return (${reduceFn})`);
-          finalResult = mapped.reduce((acc, item, index) => reduceFunc(acc, item, index, mapped), 0);
+          const reduceFunc = new Function(
+            "acc",
+            "item",
+            "index",
+            "arr",
+            `return (${reduceFn})`,
+          );
+          finalResult = mapped.reduce(
+            (acc, item, index) => reduceFunc(acc, item, index, mapped),
+            0,
+          );
         } catch (e) {
           toast.error(`Reduce function error: ${(e as Error).message}`);
           return;
@@ -76,12 +85,20 @@ export default function JsonMapReducePage() {
   };
 
   const loadSample = () => {
-    setInput(JSON.stringify([
-      { name: "Apple", price: 1.5, quantity: 10 },
-      { name: "Banana", price: 0.5, quantity: 20 },
-      { name: "Orange", price: 2.0, quantity: 15 }
-    ], null, 2));
-    setMapFn("item => ({ name: item.name, total: item.price * item.quantity })");
+    setInput(
+      JSON.stringify(
+        [
+          { name: "Apple", price: 1.5, quantity: 10 },
+          { name: "Banana", price: 0.5, quantity: 20 },
+          { name: "Orange", price: 2.0, quantity: 15 },
+        ],
+        null,
+        2,
+      ),
+    );
+    setMapFn(
+      "item => ({ name: item.name, total: item.price * item.quantity })",
+    );
     setReduceFn("acc + item.total");
   };
 
@@ -115,7 +132,9 @@ export default function JsonMapReducePage() {
 
   const downloadResult = () => {
     if (result !== null) {
-      const blob = new Blob([JSON.stringify(result, null, 2)], { type: "application/json" });
+      const blob = new Blob([JSON.stringify(result, null, 2)], {
+        type: "application/json",
+      });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -131,9 +150,13 @@ export default function JsonMapReducePage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Map Reduce Tool – Transform JSON Arrays</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Map Reduce Tool – Transform JSON Arrays
+          </h1>
           <p className="text-muted-foreground">
-            Apply map and reduce style transformations to JSON arrays online. Our free JSON Map Reduce Tool helps developers test data transformations quickly without a full code setup.
+            Apply map and reduce style transformations to JSON arrays online.
+            Our free JSON Map Reduce Tool helps developers test data
+            transformations quickly without a full code setup.
           </p>
         </div>
 
@@ -161,7 +184,11 @@ export default function JsonMapReducePage() {
                       <Copy className="h-4 w-4 mr-2" />
                       Copy
                     </Button>
-                    <Button variant="outline" size="sm" onClick={downloadResult}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={downloadResult}
+                    >
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
@@ -183,16 +210,32 @@ export default function JsonMapReducePage() {
               Quick Presets
             </Label>
             <div className="flex flex-wrap gap-2">
-              <Button variant="outline" size="sm" onClick={() => loadPreset("extract")}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => loadPreset("extract")}
+              >
                 Extract Property
               </Button>
-              <Button variant="outline" size="sm" onClick={() => loadPreset("sum")}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => loadPreset("sum")}
+              >
                 Sum Values
               </Button>
-              <Button variant="outline" size="sm" onClick={() => loadPreset("transform")}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => loadPreset("transform")}
+              >
                 Transform
               </Button>
-              <Button variant="outline" size="sm" onClick={() => loadPreset("count")}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => loadPreset("count")}
+              >
                 Count Items
               </Button>
             </div>
@@ -202,7 +245,10 @@ export default function JsonMapReducePage() {
         {/* Input */}
         <Card className="mb-6">
           <CardContent className="p-4">
-            <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+            <Label
+              htmlFor="input"
+              className="text-sm font-medium text-muted-foreground mb-2 block"
+            >
               Input JSON Array
             </Label>
             <Textarea
@@ -210,7 +256,7 @@ export default function JsonMapReducePage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder='[{"name": "Apple", "price": 1.5}, ...]'
-              className="min-h-[150px] font-mono text-sm resize-none"
+              className="min-h-[150px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>
@@ -219,7 +265,10 @@ export default function JsonMapReducePage() {
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <Card>
             <CardContent className="p-4">
-              <Label htmlFor="mapFn" className="text-sm font-medium text-muted-foreground mb-2 block">
+              <Label
+                htmlFor="mapFn"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
                 Map Function (item, index, arr)
               </Label>
               <Textarea
@@ -227,14 +276,17 @@ export default function JsonMapReducePage() {
                 value={mapFn}
                 onChange={(e) => setMapFn(e.target.value)}
                 placeholder="item => item.name"
-                className="min-h-[100px] font-mono text-sm resize-none"
+                className="min-h-[100px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
 
           <Card>
             <CardContent className="p-4">
-              <Label htmlFor="reduceFn" className="text-sm font-medium text-muted-foreground mb-2 block">
+              <Label
+                htmlFor="reduceFn"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
                 Reduce Function (acc, item, index, arr) - Optional
               </Label>
               <Textarea
@@ -242,7 +294,7 @@ export default function JsonMapReducePage() {
                 value={reduceFn}
                 onChange={(e) => setReduceFn(e.target.value)}
                 placeholder="acc + item"
-                className="min-h-[100px] font-mono text-sm resize-none"
+                className="min-h-[100px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
@@ -256,13 +308,133 @@ export default function JsonMapReducePage() {
                 Result
               </Label>
               <Textarea
-                value={typeof result === "object" ? JSON.stringify(result, null, 2) : String(result)}
+                value={
+                  typeof result === "object"
+                    ? JSON.stringify(result, null, 2)
+                    : String(result)
+                }
                 readOnly
-                className="min-h-[150px] font-mono text-sm resize-none"
+                className="min-h-[150px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">
+            About JSON Map Reduce Tool
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Transforming JSON arrays usually requires writing JavaScript code.
+            This tool lets you apply map and reduce operations directly in the
+            browser, testing transformations before adding them to your
+            codebase.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste a JSON array and write a map function using JavaScript arrow
+            syntax. Optionally add a reduce function to aggregate results. Click
+            Execute to see the transformation.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Use the Quick Presets for common operations like extracting
+            properties, summing values, or counting items. The result appears
+            below, ready to copy or download.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You need to transform API data before displaying it. Test your
+            map/reduce logic here first to verify it produces the expected
+            output before deploying.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This executes JavaScript in your browser, which has security
+            implications. Don't use with untrusted input. For production,
+            implement transformations in your actual code.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">
+                What syntax do map functions use?
+              </p>
+              <p className="text-muted-foreground">
+                Use arrow function syntax like "item =&gt; item.name" or "item
+                =&gt; (&#123; id: item.id, total: item.price * item.quantity
+                &#125;)".
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                Is the reduce function required?
+              </p>
+              <p className="text-muted-foreground">
+                No, reduce is optional. Without it, the result is the mapped
+                array. With it, you get a single aggregated value.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What parameters are available?</p>
+              <p className="text-muted-foreground">
+                Map receives (item, index, arr). Reduce receives (acc, item,
+                index, arr). Use these to access data and context.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                Can I chain multiple operations?
+              </p>
+              <p className="text-muted-foreground">
+                Not directly. Run one operation, copy the result, and paste it
+                as new input for the next transformation step.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                What if my function has an error?
+              </p>
+              <p className="text-muted-foreground">
+                An error message appears describing the issue. Check your syntax
+                and ensure you're accessing valid properties.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a
+                href="/json-tools/json-filter"
+                className="text-primary hover:underline"
+              >
+                JSON Filter
+              </a>{" "}
+              – Filter arrays by conditions
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-array-generator"
+                className="text-primary hover:underline"
+              >
+                JSON Array Generator
+              </a>{" "}
+              – Generate test arrays
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-transformer"
+                className="text-primary hover:underline"
+              >
+                JSON Transformer
+              </a>{" "}
+              – Advanced transformations
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

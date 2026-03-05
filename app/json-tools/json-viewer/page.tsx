@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -17,13 +25,15 @@ import {
   Trash2,
   Search,
   Eye,
-  Code
+  Code,
 } from "lucide-react";
 import { toast } from "sonner";
 
 type JsonValue = string | number | boolean | null | JsonObject | JsonArray;
-interface JsonObject { [key: string]: JsonValue }
-interface JsonArray extends Array<JsonValue> { }
+interface JsonObject {
+  [key: string]: JsonValue;
+}
+interface JsonArray extends Array<JsonValue> {}
 
 interface TreeNode {
   key: string;
@@ -89,9 +99,13 @@ export default function JsonViewerPage() {
       if (typeof value === "object" && value !== null) {
         allPaths.add(path);
         if (Array.isArray(value)) {
-          value.forEach((item, index) => collectPaths(item, `${path}[${index}]`));
+          value.forEach((item, index) =>
+            collectPaths(item, `${path}[${index}]`),
+          );
         } else {
-          Object.entries(value).forEach(([key, val]) => collectPaths(val, `${path}.${key}`));
+          Object.entries(value).forEach(([key, val]) =>
+            collectPaths(val, `${path}.${key}`),
+          );
         }
       }
     };
@@ -139,20 +153,24 @@ export default function JsonViewerPage() {
   };
 
   const loadSample = () => {
-    const sample = JSON.stringify({
-      name: "Example Project",
-      version: "1.0.0",
-      features: ["fast", "simple", "reliable"],
-      config: {
-        debug: true,
-        maxItems: 100,
-        settings: {
-          theme: "dark",
-          language: "en"
-        }
+    const sample = JSON.stringify(
+      {
+        name: "Example Project",
+        version: "1.0.0",
+        features: ["fast", "simple", "reliable"],
+        config: {
+          debug: true,
+          maxItems: 100,
+          settings: {
+            theme: "dark",
+            language: "en",
+          },
+        },
+        metadata: null,
       },
-      metadata: null
-    }, null, 2);
+      null,
+      2,
+    );
     setInput(sample);
   };
 
@@ -162,13 +180,16 @@ export default function JsonViewerPage() {
     return typeof value as TreeNode["type"];
   };
 
-  const matchesSearch = useCallback((key: string, value: JsonValue): boolean => {
-    if (!searchQuery) return true;
-    const query = searchQuery.toLowerCase();
-    if (key.toLowerCase().includes(query)) return true;
-    if (String(value).toLowerCase().includes(query)) return true;
-    return false;
-  }, [searchQuery]);
+  const matchesSearch = useCallback(
+    (key: string, value: JsonValue): boolean => {
+      if (!searchQuery) return true;
+      const query = searchQuery.toLowerCase();
+      if (key.toLowerCase().includes(query)) return true;
+      if (String(value).toLowerCase().includes(query)) return true;
+      return false;
+    },
+    [searchQuery],
+  );
 
   const TreeNodeComponent: React.FC<{
     node: TreeNode;
@@ -183,17 +204,29 @@ export default function JsonViewerPage() {
     }
 
     const renderValue = (value: JsonValue) => {
-      if (value === null) return <span className="text-muted-foreground">null</span>;
-      if (typeof value === "string") return <span className="text-green-600 dark:text-green-400">"{value}"</span>;
-      if (typeof value === "number") return <span className="text-blue-600 dark:text-blue-400">{value}</span>;
-      if (typeof value === "boolean") return <span className="text-purple-600 dark:text-purple-400">{value.toString()}</span>;
+      if (value === null)
+        return <span className="text-muted-foreground">null</span>;
+      if (typeof value === "string")
+        return (
+          <span className="text-green-600 dark:text-green-400">"{value}"</span>
+        );
+      if (typeof value === "number")
+        return (
+          <span className="text-blue-600 dark:text-blue-400">{value}</span>
+        );
+      if (typeof value === "boolean")
+        return (
+          <span className="text-purple-600 dark:text-purple-400">
+            {value.toString()}
+          </span>
+        );
       return null;
     };
 
     return (
       <div className="font-mono text-sm">
         <div
-          className={`flex items-center gap-1 py-1 hover:bg-muted/50 rounded px-2 cursor-pointer ${!hasMatch && searchQuery ? 'opacity-30' : ''}`}
+          className={`flex items-center gap-1 py-1 hover:bg-muted/50 rounded px-2 cursor-pointer ${!hasMatch && searchQuery ? "opacity-30" : ""}`}
           onClick={() => isExpandable && toggleExpand(node.path)}
         >
           {isExpandable && (
@@ -209,14 +242,18 @@ export default function JsonViewerPage() {
 
           {node.key !== "" && (
             <span>
-              <span className="text-amber-600 dark:text-amber-400">"{node.key}"</span>
+              <span className="text-amber-600 dark:text-amber-400">
+                "{node.key}"
+              </span>
               <span className="text-muted-foreground">: </span>
             </span>
           )}
 
           {isExpandable ? (
             <span className="text-muted-foreground">
-              {node.type === "array" ? `Array[${(node.value as JsonArray).length}]` : `Object{${Object.keys(node.value as JsonObject).length}}`}
+              {node.type === "array"
+                ? `Array[${(node.value as JsonArray).length}]`
+                : `Object{${Object.keys(node.value as JsonObject).length}}`}
             </span>
           ) : (
             renderValue(node.value)
@@ -227,35 +264,35 @@ export default function JsonViewerPage() {
 
         {isExpandable && isExpanded && (
           <div className="ml-6 border-l border-border pl-2">
-            {node.type === "array" ? (
-              (node.value as JsonArray).map((item, index) => (
-                <TreeNodeComponent
-                  key={`${node.path}[${index}]`}
-                  node={{
-                    key: String(index),
-                    value: item,
-                    path: `${node.path}[${index}]`,
-                    level: node.level + 1,
-                    type: getValueType(item),
-                  }}
-                  isLast={index === (node.value as JsonArray).length - 1}
-                />
-              ))
-            ) : (
-              Object.entries(node.value as JsonObject).map(([key, value], index, arr) => (
-                <TreeNodeComponent
-                  key={`${node.path}.${key}`}
-                  node={{
-                    key,
-                    value,
-                    path: `${node.path}.${key}`,
-                    level: node.level + 1,
-                    type: getValueType(value),
-                  }}
-                  isLast={index === arr.length - 1}
-                />
-              ))
-            )}
+            {node.type === "array"
+              ? (node.value as JsonArray).map((item, index) => (
+                  <TreeNodeComponent
+                    key={`${node.path}[${index}]`}
+                    node={{
+                      key: String(index),
+                      value: item,
+                      path: `${node.path}[${index}]`,
+                      level: node.level + 1,
+                      type: getValueType(item),
+                    }}
+                    isLast={index === (node.value as JsonArray).length - 1}
+                  />
+                ))
+              : Object.entries(node.value as JsonObject).map(
+                  ([key, value], index, arr) => (
+                    <TreeNodeComponent
+                      key={`${node.path}.${key}`}
+                      node={{
+                        key,
+                        value,
+                        path: `${node.path}.${key}`,
+                        level: node.level + 1,
+                        type: getValueType(value),
+                      }}
+                      isLast={index === arr.length - 1}
+                    />
+                  ),
+                )}
           </div>
         )}
       </div>
@@ -283,9 +320,13 @@ export default function JsonViewerPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Viewer – Interactive Tree View Online</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Viewer – Interactive Tree View Online
+          </h1>
           <p className="text-muted-foreground">
-            View JSON data in a clean interactive tree with expand/collapse, search, and raw toggle. Our free JSON Viewer makes exploring complex JSON structures effortless.
+            View JSON data in a clean interactive tree with expand/collapse,
+            search, and raw toggle. Our free JSON Viewer makes exploring complex
+            JSON structures effortless.
           </p>
         </div>
 
@@ -325,15 +366,18 @@ export default function JsonViewerPage() {
           {/* Input */}
           <Card>
             <CardContent className="p-4">
-              <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+              <Label
+                htmlFor="input"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
                 Input JSON
               </Label>
               <Textarea
                 id="input"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder='Paste your JSON here...'
-                className="min-h-[200px] font-mono text-sm resize-none"
+                placeholder="Paste your JSON here..."
+                className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
               />
               <div className="flex items-center gap-2 mt-4">
                 <Button onClick={parseJson}>
@@ -377,13 +421,21 @@ export default function JsonViewerPage() {
                         <Button variant="outline" size="sm" onClick={expandAll}>
                           Expand All
                         </Button>
-                        <Button variant="outline" size="sm" onClick={collapseAll}>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={collapseAll}
+                        >
                           Collapse All
                         </Button>
                       </>
                     )}
                     <Button variant="ghost" size="sm" onClick={copyToClipboard}>
-                      {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                      {copied ? (
+                        <Check className="h-4 w-4 text-green-500" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
                     </Button>
                     <Button variant="ghost" size="sm" onClick={downloadJson}>
                       <Download className="h-4 w-4" />
@@ -403,6 +455,119 @@ export default function JsonViewerPage() {
               </CardContent>
             </Card>
           )}
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Viewer</h2>
+          <p className="text-muted-foreground mb-6">
+            Raw JSON in text form is hard to navigate, especially with deep
+            nesting and large arrays. A visual tree view with expand and
+            collapse controls makes understanding structure much easier. This
+            JSON Viewer displays your data as an interactive tree with syntax
+            highlighting and search.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste JSON into the Input area and click Load JSON. The tree view
+            shows objects and arrays with expand arrows. Click any parent node
+            to expand or collapse its children. Use the search box to find keys
+            or values instantly.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Switch between Tree View and Raw View using the toggle buttons.
+            Expand All and Collapse All buttons help navigate large structures.
+            Copy and Download buttons let you save the original JSON.
+            Color-coded types make strings, numbers, and booleans easy to
+            distinguish.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            Developers exploring unfamiliar API responses benefit from visual
+            structure overview. Debugging nested configuration files becomes
+            easier when you can collapse sections you are not currently
+            examining.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Very large JSON files with thousands of nodes may cause browser
+            slowdowns when fully expanded. Use the search feature to find
+            specific values without expanding everything. For massive files,
+            consider a desktop JSON editor.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">How do I expand all nodes?</p>
+              <p className="text-muted-foreground">
+                Click the Expand All button above the tree to open every nested
+                level at once.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I search within the tree?</p>
+              <p className="text-muted-foreground">
+                Yes. Type in the search box to filter and highlight matching
+                keys and values.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                What colors represent what types?
+              </p>
+              <p className="text-muted-foreground">
+                Strings are green, numbers are blue, booleans are purple, and
+                null is gray.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I edit values in the tree?</p>
+              <p className="text-muted-foreground">
+                No. The tree view is read-only. Edit the raw JSON in the Input
+                area and reload.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it preserve key order?</p>
+              <p className="text-muted-foreground">
+                Yes. Keys are displayed in the order they appear in the original
+                JSON.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a
+                href="/json-tools/json-formatter"
+                className="text-primary hover:underline"
+              >
+                JSON Formatter
+              </a>{" "}
+              – Beautify JSON with proper indentation
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-search"
+                className="text-primary hover:underline"
+              >
+                JSON Search
+              </a>{" "}
+              – Find values in JSON by key or content
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-validator"
+                className="text-primary hover:underline"
+              >
+                JSON Validator
+              </a>{" "}
+              – Check JSON for syntax errors
+            </li>
+          </ul>
         </div>
       </div>
     </div>

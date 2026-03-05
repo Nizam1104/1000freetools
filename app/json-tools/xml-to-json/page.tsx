@@ -322,6 +322,67 @@ export default function XmlToJsonConverterPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About XML to JSON Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          Many legacy systems and APIs still use XML, but modern applications prefer JSON. This tool converts XML documents to JSON format while preserving the document structure, attributes, and data types.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How it works</h3>
+        <p className="text-muted-foreground mb-2">
+          The converter parses your XML using the browser's built-in DOM parser. Elements become JSON objects, attributes are stored under @attributes, and text content becomes string values.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Smart type detection converts numeric and boolean strings to their proper types. The preserve attributes option lets you include or exclude XML attributes based on your needs.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You're migrating from an XML-based API to a modern JSON API. Convert sample responses to understand the data structure and plan your new JSON schema accordingly.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Complex XML with mixed content or processing instructions may not convert perfectly. Review the output for complex documents and adjust manually if needed.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">How are XML attributes handled?</p>
+            <p className="text-muted-foreground">Attributes are grouped under an @attributes key within each element's object. Enable the preserve attributes option to include them in the output.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I upload XML files?</p>
+            <p className="text-muted-foreground">Yes, click Upload File to select an XML file from your device. The content loads directly into the input area for conversion.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What about XML namespaces?</p>
+            <p className="text-muted-foreground">Namespaces are preserved in element names. For cleaner output, you may need to post-process the JSON to remove or simplify namespace prefixes.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Are CDATA sections preserved?</p>
+            <p className="text-muted-foreground">CDATA content is extracted as text content. The distinction between CDATA and regular text is not preserved in the JSON output.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I download the JSON?</p>
+            <p className="text-muted-foreground">Yes. Use the Download button to save the converted JSON as a file, or Copy to paste it directly into your application.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-xml" className="text-primary hover:underline">JSON to XML</a> – Convert JSON back to XML
+          </li>
+          <li>
+            <a href="/json-tools/yaml-to-json" className="text-primary hover:underline">YAML to JSON</a> – Convert YAML to JSON
+          </li>
+          <li>
+            <a href="/json-tools/json-to-json" className="text-primary hover:underline">JSON Formatter</a> – Format and validate JSON
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

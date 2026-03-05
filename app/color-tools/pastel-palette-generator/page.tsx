@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -20,7 +28,9 @@ const hslToHex = (h: number, s: number, l: number): string => {
   const f = (n: number) => {
     const k = (n + h / 30) % 12;
     const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color).toString(16).padStart(2, "0");
+    return Math.round(255 * color)
+      .toString(16)
+      .padStart(2, "0");
   };
   return `#${f(0)}${f(8)}${f(4)}`;
 };
@@ -33,13 +43,27 @@ const generatePastelColor = (hueOffset: number = 0): PastelColor => {
   const lightness = 80 + Math.floor(Math.random() * 15);
   const hex = hslToHex(adjustedHue, saturation, lightness);
 
-  const names = ["Blush", "Mist", "Bloom", "Cloud", "Pearl", "Dawn", "Soft", "Whisper", "Frost", "Cream"];
+  const names = [
+    "Blush",
+    "Mist",
+    "Bloom",
+    "Cloud",
+    "Pearl",
+    "Dawn",
+    "Soft",
+    "Whisper",
+    "Frost",
+    "Cream",
+  ];
   const name = names[Math.floor(Math.random() * names.length)];
 
   return { hex, name: `${name} ${adjustedHue}` };
 };
 
-const generatePastelPalette = (size: number, harmony: string): PastelColor[] => {
+const generatePastelPalette = (
+  size: number,
+  harmony: string,
+): PastelColor[] => {
   const colors: PastelColor[] = [];
   const baseHue = Math.floor(Math.random() * 360);
 
@@ -167,7 +191,9 @@ export default function PastelPaletteGeneratorPage() {
     const newColors = generatePastelPalette(paletteSize, harmony);
     // Adjust softness
     const adjustedColors = newColors.map((color) => {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color.hex);
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
+        color.hex,
+      );
       if (!result) return color;
 
       const r = parseInt(result[1], 16);
@@ -216,9 +242,12 @@ export default function PastelPaletteGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Pastel Color Palette Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Pastel Color Palette Generator
+          </h1>
           <p className="text-muted-foreground">
-            Automatically generate soft, soothing pastel color palettes. Ideal for gentle UI designs, children's apps, and lifestyle branding.
+            Automatically generate soft, soothing pastel color palettes. Ideal
+            for gentle UI designs, children's apps, and lifestyle branding.
           </p>
         </div>
 
@@ -247,17 +276,19 @@ export default function PastelPaletteGeneratorPage() {
               <div className="space-y-3">
                 <Label className="text-sm font-medium">Color Harmony</Label>
                 <div className="grid grid-cols-2 gap-2">
-                  {["random", "analogous", "complementary", "triadic"].map((h) => (
-                    <Button
-                      key={h}
-                      variant={harmony === h ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setHarmony(h)}
-                      className="text-xs"
-                    >
-                      {h.charAt(0).toUpperCase() + h.slice(1)}
-                    </Button>
-                  ))}
+                  {["random", "analogous", "complementary", "triadic"].map(
+                    (h) => (
+                      <Button
+                        key={h}
+                        variant={harmony === h ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setHarmony(h)}
+                        className="text-xs"
+                      >
+                        {h.charAt(0).toUpperCase() + h.slice(1)}
+                      </Button>
+                    ),
+                  )}
                 </div>
               </div>
 
@@ -329,7 +360,7 @@ export default function PastelPaletteGeneratorPage() {
                   return (
                     <div key={index} className="group">
                       <div
-                        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                        className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                         style={{ backgroundColor: color.hex }}
                       >
                         {/* Color Info */}
@@ -375,15 +406,20 @@ export default function PastelPaletteGeneratorPage() {
                     >
                       <p
                         className="text-sm font-medium mb-2"
-                        style={{ color: getContrastColor(colors[0]?.hex || "#fff") }}
+                        style={{
+                          color: getContrastColor(colors[0]?.hex || "#fff"),
+                        }}
                       >
                         Card Title
                       </p>
                       <p
                         className="text-sm opacity-80"
-                        style={{ color: getContrastColor(colors[0]?.hex || "#fff") }}
+                        style={{
+                          color: getContrastColor(colors[0]?.hex || "#fff"),
+                        }}
                       >
-                        This is a preview of how your pastel colors might look in a design.
+                        This is a preview of how your pastel colors might look
+                        in a design.
                       </p>
                     </div>
                     <div className="p-4 bg-background space-y-3">

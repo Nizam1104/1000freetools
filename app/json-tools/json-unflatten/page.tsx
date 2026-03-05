@@ -188,6 +188,67 @@ export default function JsonUnflattenPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">About JSON Unflatten</h2>
+          <p className="text-muted-foreground mb-6">
+            Flattened JSON with dot-notation keys is common in form data and NoSQL databases, but sometimes you need the original nested structure back. This tool reverses the flattening process, restoring your JSON hierarchy automatically.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            The tool parses each flattened key by splitting on your chosen separator character. It then rebuilds the nested structure by creating objects and arrays as needed based on the key path.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Numeric key segments are treated as array indices, allowing the tool to reconstruct arrays from flattened data. The default separator is a dot, but you can customize it to match your data format.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You received form submission data where each field is a flattened key like user.address.city. Convert it back to nested JSON before processing or storing in your database.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool assumes well-formed flattened keys. If your data has inconsistent separators or mixed nesting patterns, you may need to preprocess it before unflattening.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What separator should I use?</p>
+              <p className="text-muted-foreground">The default dot separator works for most cases. Use a different character if your keys contain dots, like user.profile.name instead of user.name.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How are arrays reconstructed?</p>
+              <p className="text-muted-foreground">Numeric key segments become array indices. Keys like items.0 and items.1 will create an array with those values at positions 0 and 1.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What if I have conflicting paths?</p>
+              <p className="text-muted-foreground">If the same path appears with different types (object vs value), the last value wins. Ensure your flattened data doesn't have conflicting definitions.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can this handle deeply nested data?</p>
+              <p className="text-muted-foreground">Yes, there's no practical limit to nesting depth. Very deep structures may take slightly longer to process but will unflatten correctly.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I download the result?</p>
+              <p className="text-muted-foreground">Yes. Use the Download button to save the unflattened JSON as a file, or Copy to paste it directly into your application code.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a href="/json-tools/json-flatten" className="text-primary hover:underline">JSON Flatten</a> – Convert nested JSON to dot notation
+            </li>
+            <li>
+              <a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Reshape JSON structures
+            </li>
+            <li>
+              <a href="/json-tools/json-rename-keys" className="text-primary hover:underline">JSON Rename Keys</a> – Bulk rename JSON keys
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -51,36 +51,6 @@ const tools = [
     "href": "/css-tools/media-query-builder"
   },
   {
-    "name": "Area Converter",
-    "description": "Convert area units — square meters, acres, hectares, square feet, square kilometers, and more. Ideal for real estate and construction.",
-    "href": "/css-tools/area"
-  },
-  {
-    "name": "Length Converter",
-    "description": "Convert length units instantly — meters, feet, inches, kilometers, miles, yards, and more. Free online length converter for everyday and scientific use.",
-    "href": "/css-tools/length"
-  },
-  {
-    "name": "Floor Area Converter",
-    "description": "Convert floor area between square meters, square feet, square yards, and more. Free online floor area converter for real estate, interior design, and construction planning.",
-    "href": "/css-tools/floor-area-converter"
-  },
-  {
-    "name": "Roofing Sheet Coverage Calculator",
-    "description": "Calculate how many roofing sheets you need for your roof area. Enter roof dimensions, sheet size, and overlap to get an accurate sheet count. Free online roofing coverage calculator.",
-    "href": "/css-tools/roofing-sheet-coverage-converter"
-  },
-  {
-    "name": "Image DPI Converter",
-    "description": "Convert image DPI and calculate print size from pixel dimensions. Free online image DPI converter for photographers, designers, and print-ready file preparation.",
-    "href": "/css-tools/image-dpi-converter"
-  },
-  {
-    "name": "Digital Image Resolution Converter",
-    "description": "Convert digital image resolution units — DPI, PPI, dots/cm, pixels/mm, and more. Free online resolution converter for photography and printing.",
-    "href": "/css-tools/digital-image-resolution"
-  },
-  {
     "name": "CSS Border Radius Generator",
     "description": "Create asymmetric border-radius values with live preview. Generate organic, smooth corner shapes for modern UI design. Free online border radius tool.",
     "href": "/css-tools/border-radius-generator"

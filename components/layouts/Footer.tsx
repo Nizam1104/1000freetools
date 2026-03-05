@@ -8,6 +8,9 @@ const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
+  { name: "Disclaimer", href: "/disclaimer" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms", href: "/terms" },
 ];
 
 const toolsByCategory = [
@@ -97,6 +100,10 @@ const toolsByCategory = [
         name: "Mock Data Generator",
         href: "/developer-tools/mock-data-generator",
       },
+      {
+        name: "Javascript Online Playground",
+        href: "/developer-tools/js-online-compiler",
+      },
     ],
   },
   {
@@ -183,77 +190,92 @@ const toolsByCategory = [
     tools: [
       {
         name: "JSON Formatter / Beautifier",
-        description: "Formats raw JSON into a readable, indented structure with configurable spacing, collapsible nodes, and copy/download support.",
+        description:
+          "Formats raw JSON into a readable, indented structure with configurable spacing, collapsible nodes, and copy/download support.",
         href: "/json-tools/json-formatter-beautifier",
       },
       {
         name: "JSON Minifier",
-        description: "Removes whitespace, line breaks, and unnecessary characters to reduce JSON size while preserving validity.",
+        description:
+          "Removes whitespace, line breaks, and unnecessary characters to reduce JSON size while preserving validity.",
         href: "/json-tools/json-minifier",
       },
       {
         name: "JSON Validator",
-        description: "Validates JSON syntax, highlights errors with line and column numbers, and explains parsing issues.",
+        description:
+          "Validates JSON syntax, highlights errors with line and column numbers, and explains parsing issues.",
         href: "/json-tools/json-validator",
       },
       {
         name: "JSON Viewer",
-        description: "Displays JSON in a tree view with expand/collapse, search, and raw view toggle.",
+        description:
+          "Displays JSON in a tree view with expand/collapse, search, and raw view toggle.",
         href: "/json-tools/json-viewer",
       },
       {
         name: "JSON Pretty Print",
-        description: "Converts compact JSON into human-readable formatted output with customizable indentation.",
+        description:
+          "Converts compact JSON into human-readable formatted output with customizable indentation.",
         href: "/json-tools/json-pretty-print",
       },
       {
         name: "JSON Linter",
-        description: "Detects syntax errors, duplicate keys, trailing commas, and structural issues in JSON.",
+        description:
+          "Detects syntax errors, duplicate keys, trailing commas, and structural issues in JSON.",
         href: "/json-tools/json-linter",
       },
       {
         name: "JSON Sorter",
-        description: "Sorts JSON object keys alphabetically (A–Z or Z–A) recursively while keeping values intact.",
+        description:
+          "Sorts JSON object keys alphabetically (A–Z or Z–A) recursively while keeping values intact.",
         href: "/json-tools/json-sorter",
       },
       {
         name: "JSON Key Extractor",
-        description: "Extracts all unique keys from a JSON object or array and outputs them as a list.",
+        description:
+          "Extracts all unique keys from a JSON object or array and outputs them as a list.",
         href: "/json-tools/json-key-extractor",
       },
       {
         name: "JSON Value Search / Filter",
-        description: "Searches JSON by key or value and filters matching nodes with highlight support.",
+        description:
+          "Searches JSON by key or value and filters matching nodes with highlight support.",
         href: "/json-tools/json-value-search",
       },
       {
         name: "JSON Size Calculator",
-        description: "Calculates the size of JSON data in bytes, KB, and MB, with minified vs formatted comparison.",
+        description:
+          "Calculates the size of JSON data in bytes, KB, and MB, with minified vs formatted comparison.",
         href: "/json-tools/json-size-calculator",
       },
       {
         name: "JSON to CSV Converter",
-        description: "Converts JSON arrays into CSV format with header detection and delimiter options.",
+        description:
+          "Converts JSON arrays into CSV format with header detection and delimiter options.",
         href: "/json-tools/json-to-csv",
       },
       {
         name: "CSV to JSON Converter",
-        description: "Parses CSV files or text and converts them into structured JSON objects or arrays.",
+        description:
+          "Parses CSV files or text and converts them into structured JSON objects or arrays.",
         href: "/json-tools/csv-to-json",
       },
       {
         name: "JSON to XML Converter",
-        description: "Transforms JSON into equivalent XML structure with configurable root and attribute handling.",
+        description:
+          "Transforms JSON into equivalent XML structure with configurable root and attribute handling.",
         href: "/json-tools/json-to-xml",
       },
       {
         name: "XML to JSON Converter",
-        description: "Parses XML input and converts it into JSON while preserving hierarchy.",
+        description:
+          "Parses XML input and converts it into JSON while preserving hierarchy.",
         href: "/json-tools/xml-to-json",
       },
       {
         name: "JSON to YAML Converter",
-        description: "Converts JSON into YAML format with clean indentation and readable syntax.",
+        description:
+          "Converts JSON into YAML format with clean indentation and readable syntax.",
         href: "/json-tools/json-to-yaml",
       },
       {
@@ -263,17 +285,20 @@ const toolsByCategory = [
       },
       {
         name: "JSON to TSV Converter",
-        description: "Converts JSON arrays into tab-separated values for spreadsheet usage.",
+        description:
+          "Converts JSON arrays into tab-separated values for spreadsheet usage.",
         href: "/json-tools/json-to-tsv",
       },
       {
         name: "JSON to Excel Converter",
-        description: "Exports JSON data into XLSX format using client-side spreadsheet generation.",
+        description:
+          "Exports JSON data into XLSX format using client-side spreadsheet generation.",
         href: "/json-tools/json-to-excel",
       },
       {
         name: "JSON to Markdown Table",
-        description: "Converts JSON arrays into Markdown table format with headers and alignment.",
+        description:
+          "Converts JSON arrays into Markdown table format with headers and alignment.",
         href: "/json-tools/json-to-markdown-table",
       },
       {
@@ -283,12 +308,14 @@ const toolsByCategory = [
       },
       {
         name: "JSON to JavaScript Object",
-        description: "Converts JSON into JavaScript object notation with proper formatting.",
+        description:
+          "Converts JSON into JavaScript object notation with proper formatting.",
         href: "/json-tools/json-to-javascript",
       },
       {
         name: "JSON to TypeScript Interface",
-        description: "Generates TypeScript interfaces from JSON including optional fields and nested types.",
+        description:
+          "Generates TypeScript interfaces from JSON including optional fields and nested types.",
         href: "/json-tools/json-to-typescript",
       },
       {
@@ -298,12 +325,14 @@ const toolsByCategory = [
       },
       {
         name: "JSON to Java POJO",
-        description: "Generates Java POJO classes with fields, getters, and setters from JSON.",
+        description:
+          "Generates Java POJO classes with fields, getters, and setters from JSON.",
         href: "/json-tools/json-to-java",
       },
       {
         name: "JSON to C# Class",
-        description: "Generates C# model classes from JSON with proper data types.",
+        description:
+          "Generates C# model classes from JSON with proper data types.",
         href: "/json-tools/json-to-csharp",
       },
       {
@@ -318,7 +347,8 @@ const toolsByCategory = [
       },
       {
         name: "JSON to Kotlin Data Class",
-        description: "Generates Kotlin data classes with nullable and non-nullable fields.",
+        description:
+          "Generates Kotlin data classes with nullable and non-nullable fields.",
         href: "/json-tools/json-to-kotlin",
       },
       {
@@ -328,27 +358,32 @@ const toolsByCategory = [
       },
       {
         name: "JSON Schema Generator",
-        description: "Automatically generates JSON Schema definitions from sample JSON data.",
+        description:
+          "Automatically generates JSON Schema definitions from sample JSON data.",
         href: "/json-tools/json-schema-example-generator",
       },
       {
         name: "JSON Schema Validator",
-        description: "Validates JSON data against a provided JSON Schema and reports errors.",
+        description:
+          "Validates JSON data against a provided JSON Schema and reports errors.",
         href: "/json-tools/json-schema-validator",
       },
       {
         name: "JSON Diff Tool",
-        description: "Compares two JSON objects and highlights added, removed, and changed fields.",
+        description:
+          "Compares two JSON objects and highlights added, removed, and changed fields.",
         href: "/json-tools/json-diff",
       },
       {
         name: "JSON Merge Tool",
-        description: "Merges multiple JSON objects using configurable merge strategies.",
+        description:
+          "Merges multiple JSON objects using configurable merge strategies.",
         href: "/json-tools/json-merge",
       },
       {
         name: "JSON Patch Generator",
-        description: "Generates JSON Patch operations to transform one JSON into another.",
+        description:
+          "Generates JSON Patch operations to transform one JSON into another.",
         href: "/json-tools/json-patch-generator",
       },
       {
@@ -358,7 +393,8 @@ const toolsByCategory = [
       },
       {
         name: "JSON Unflatten Tool",
-        description: "Converts flattened dot-notation JSON back into nested structure.",
+        description:
+          "Converts flattened dot-notation JSON back into nested structure.",
         href: "/json-tools/json-unflatten",
       },
       {
@@ -373,42 +409,50 @@ const toolsByCategory = [
       },
       {
         name: "JSON Array/Object Counter",
-        description: "Counts arrays, objects, keys, and values inside JSON data.",
+        description:
+          "Counts arrays, objects, keys, and values inside JSON data.",
         href: "/json-tools/json-array-object-counter",
       },
       {
         name: "JSON Duplicate Key Finder",
-        description: "Detects duplicate keys within JSON objects that may cause data loss.",
+        description:
+          "Detects duplicate keys within JSON objects that may cause data loss.",
         href: "/json-tools/json-duplicate-key-finder",
       },
       {
         name: "JSON Empty Field Finder",
-        description: "Identifies null, empty string, or missing values in JSON data.",
+        description:
+          "Identifies null, empty string, or missing values in JSON data.",
         href: "/json-tools/json-empty-field-finder",
       },
       {
         name: "JSONPath Query Tool",
-        description: "Runs JSONPath queries against JSON data and displays matching results.",
+        description:
+          "Runs JSONPath queries against JSON data and displays matching results.",
         href: "/json-tools/jsonpath-query",
       },
       {
         name: "JMESPath Query Tool",
-        description: "Executes JMESPath expressions on JSON for advanced querying.",
+        description:
+          "Executes JMESPath expressions on JSON for advanced querying.",
         href: "/json-tools/jmespath-query",
       },
       {
         name: "JSON Filter Tool",
-        description: "Filters JSON arrays based on conditions like equals, contains, or range.",
+        description:
+          "Filters JSON arrays based on conditions like equals, contains, or range.",
         href: "/json-tools/json-filter",
       },
       {
         name: "JSON Map Reduce Tool",
-        description: "Applies map and reduce style transformations on JSON arrays.",
+        description:
+          "Applies map and reduce style transformations on JSON arrays.",
         href: "/json-tools/json-map-reduce",
       },
       {
         name: "JSON Transformer",
-        description: "Transforms JSON structure using user-defined rules and mappings.",
+        description:
+          "Transforms JSON structure using user-defined rules and mappings.",
         href: "/json-tools/json-transformer",
       },
       {
@@ -423,7 +467,8 @@ const toolsByCategory = [
       },
       {
         name: "JSON Extract Sub-JSON Tool",
-        description: "Extracts a specific nested portion of JSON based on a key path.",
+        description:
+          "Extracts a specific nested portion of JSON based on a key path.",
         href: "/json-tools/json-extract-subjson",
       },
       {
@@ -433,12 +478,14 @@ const toolsByCategory = [
       },
       {
         name: "JSON Encode Decode Tool",
-        description: "Encodes and decodes JSON strings safely for transport or storage.",
+        description:
+          "Encodes and decodes JSON strings safely for transport or storage.",
         href: "/json-tools/json-encode-decode",
       },
       {
         name: "JSON Stringify Parse Playground",
-        description: "Interactive playground to experiment with JSON.stringify and JSON.parse options.",
+        description:
+          "Interactive playground to experiment with JSON.stringify and JSON.parse options.",
         href: "/json-tools/json-stringify-parse",
       },
       {
@@ -448,22 +495,26 @@ const toolsByCategory = [
       },
       {
         name: "JSON JWT Decoder",
-        description: "Decodes JWT payloads and headers into readable JSON without verification.",
+        description:
+          "Decodes JWT payloads and headers into readable JSON without verification.",
         href: "/json-tools/json-jwt-decoder",
       },
       {
         name: "JSON Sensitive Data Masker",
-        description: "Masks sensitive fields like emails, tokens, or passwords in JSON data.",
+        description:
+          "Masks sensitive fields like emails, tokens, or passwords in JSON data.",
         href: "/json-tools/json-sensitive-data-maser",
       },
       {
         name: "JSON Obfuscator",
-        description: "Minifies and obfuscates JSON keys and values for safer sharing.",
+        description:
+          "Minifies and obfuscates JSON keys and values for safer sharing.",
         href: "/json-tools/json-obfuscator",
       },
       {
         name: "JSON Array Generator",
-        description: "Generates JSON arrays with configurable length and value types.",
+        description:
+          "Generates JSON arrays with configurable length and value types.",
         href: "/json-tools/json-array-generator",
       },
       {
@@ -473,17 +524,20 @@ const toolsByCategory = [
       },
       {
         name: "JSON API Response Generator",
-        description: "Generates mock API-style JSON responses with status, data, and pagination.",
+        description:
+          "Generates mock API-style JSON responses with status, data, and pagination.",
         href: "/json-tools/json-api-response-generator",
       },
       {
         name: "JSON Pagination Generator",
-        description: "Wraps JSON data with pagination metadata like page, limit, and total.",
+        description:
+          "Wraps JSON data with pagination metadata like page, limit, and total.",
         href: "/json-tools/json-pagination-generator",
       },
       {
         name: "JSON Nested Structure Generator",
-        description: "Generates deeply nested JSON structures for stress testing.",
+        description:
+          "Generates deeply nested JSON structures for stress testing.",
         href: "/json-tools/json-nested-structure",
       },
       {
@@ -493,12 +547,14 @@ const toolsByCategory = [
       },
       {
         name: "JSON Date Time Generator",
-        description: "Generates ISO, UTC, and custom formatted date-time values in JSON.",
+        description:
+          "Generates ISO, UTC, and custom formatted date-time values in JSON.",
         href: "/json-tools/json-datetime-generator",
       },
       {
         name: "JSON API Formatter",
-        description: "Formats JSON API responses to a consistent and readable structure.",
+        description:
+          "Formats JSON API responses to a consistent and readable structure.",
         href: "/json-tools/json-api-formatter",
       },
       {
@@ -508,7 +564,8 @@ const toolsByCategory = [
       },
       {
         name: "JSON Config File Validator",
-        description: "Validates JSON configuration files and checks required keys.",
+        description:
+          "Validates JSON configuration files and checks required keys.",
         href: "/json-tools/json-config-validator",
       },
       {
@@ -518,7 +575,8 @@ const toolsByCategory = [
       },
       {
         name: "JSON to Fetch Code Generator",
-        description: "Generates JavaScript fetch API code from JSON request definitions.",
+        description:
+          "Generates JavaScript fetch API code from JSON request definitions.",
         href: "/json-tools/json-fetch-code-generator",
       },
       {
@@ -538,12 +596,14 @@ const toolsByCategory = [
       },
       {
         name: "JSON to MongoDB Converter",
-        description: "Converts JSON into MongoDB-compatible document structure.",
+        description:
+          "Converts JSON into MongoDB-compatible document structure.",
         href: "/json-tools/json-to-mongodb",
       },
       {
         name: "JSON Explainer",
-        description: "Explains JSON structure in simple human-readable language.",
+        description:
+          "Explains JSON structure in simple human-readable language.",
         href: "/json-tools/json-explainer",
       },
       {
@@ -558,12 +618,14 @@ const toolsByCategory = [
       },
       {
         name: "JSON Playground",
-        description: "Live editor to modify JSON and instantly see formatted output.",
+        description:
+          "Live editor to modify JSON and instantly see formatted output.",
         href: "/json-tools/json-playground",
       },
       {
         name: "JSON Step by Step Parser",
-        description: "Shows how JSON is parsed token by token for learning purposes.",
+        description:
+          "Shows how JSON is parsed token by token for learning purposes.",
         href: "/json-tools/json-step-by-step-parser",
       },
       {
@@ -578,32 +640,27 @@ const toolsByCategory = [
     tools: [
       {
         name: "Gradient Step Generator",
-        description:
-          "Generate smooth color gradients with customizable steps",
+        description: "Generate smooth color gradients with customizable steps",
         href: "/color-tools/gradient-step-generator",
       },
       {
         name: "Gradient Palette Generator",
-        description:
-          "Create beautiful gradient palettes for your designs",
+        description: "Create beautiful gradient palettes for your designs",
         href: "/color-tools/gradient-palette-generator",
       },
       {
         name: "Duotone Palette Generator",
-        description:
-          "Generate duotone color palettes from images or colors",
+        description: "Generate duotone color palettes from images or colors",
         href: "/color-tools/duotone-palette-generator",
       },
       {
         name: "Dominant Color Finder",
-        description:
-          "Extract dominant colors from images automatically",
+        description: "Extract dominant colors from images automatically",
         href: "/color-tools/dominant-color-finder",
       },
       {
         name: "Favorite Colors Manager",
-        description:
-          "Save, organize and manage your favorite color palettes",
+        description: "Save, organize and manage your favorite color palettes",
         href: "/color-tools/favorite-colors-manager",
       },
       {
@@ -620,26 +677,22 @@ const toolsByCategory = [
       },
       {
         name: "Web Safe Color Picker",
-        description:
-          "Pick from 216 web-safe colors that display consistently",
+        description: "Pick from 216 web-safe colors that display consistently",
         href: "/color-tools/web-safe-color-picker",
       },
       {
         name: "Color Temperature to RGB",
-        description:
-          "Convert color temperature in Kelvin to RGB values",
+        description: "Convert color temperature in Kelvin to RGB values",
         href: "/color-tools/color-temperature-to-rgb",
       },
       {
         name: "CSS Variables Generator",
-        description:
-          "Generate CSS custom properties for your color schemes",
+        description: "Generate CSS custom properties for your color schemes",
         href: "/color-tools/css-variables-generator",
       },
       {
         name: "Advanced Color Picker",
-        description:
-          "Pick and fine-tune colors with advanced controls",
+        description: "Pick and fine-tune colors with advanced controls",
         href: "/color-tools/advanced-color-picker",
       },
       {
@@ -650,44 +703,37 @@ const toolsByCategory = [
       },
       {
         name: "HSL to HEX Converter",
-        description:
-          "Convert HSL color values to HEX format instantly",
+        description: "Convert HSL color values to HEX format instantly",
         href: "/color-tools/hsl-to-hex-converter",
       },
       {
         name: "Palette Duplicate Finder",
-        description:
-          "Find and remove duplicate colors from your palettes",
+        description: "Find and remove duplicate colors from your palettes",
         href: "/color-tools/palette-duplicate-finder",
       },
       {
         name: "HEX to RGB Converter",
-        description:
-          "Convert HEX color codes to RGB values instantly",
+        description: "Convert HEX color codes to RGB values instantly",
         href: "/color-tools/hex-to-rgb-converter",
       },
       {
         name: "Color History Tool",
-        description:
-          "Track and revisit colors you've used previously",
+        description: "Track and revisit colors you've used previously",
         href: "/color-tools/color-history-tool",
       },
       {
         name: "HEX to CMYK Converter",
-        description:
-          "Convert HEX colors to CMYK for print design",
+        description: "Convert HEX colors to CMYK for print design",
         href: "/color-tools/hex-to-cmyk-converter",
       },
       {
         name: "Shade Tint Tone Generator",
-        description:
-          "Generate shades, tints, and tones of any color",
+        description: "Generate shades, tints, and tones of any color",
         href: "/color-tools/shade-tint-tone-generator",
       },
       {
         name: "Palette Contrast Viewer",
-        description:
-          "Visualize how colors contrast when used together",
+        description: "Visualize how colors contrast when used together",
         href: "/color-tools/palette-contrast-viewer",
       },
       {
@@ -698,26 +744,22 @@ const toolsByCategory = [
       },
       {
         name: "Text Color Suggestion Tool",
-        description:
-          "Get text color suggestions for any background color",
+        description: "Get text color suggestions for any background color",
         href: "/color-tools/text-color-suggestion-tool",
       },
       {
         name: "Palette Sorter",
-        description:
-          "Sort palette colors by hue, saturation, or lightness",
+        description: "Sort palette colors by hue, saturation, or lightness",
         href: "/color-tools/palette-sorter",
       },
       {
         name: "Random Color Palette Generator",
-        description:
-          "Generate random color palettes for inspiration",
+        description: "Generate random color palettes for inspiration",
         href: "/color-tools/random-color-palette-generator",
       },
       {
         name: "RGB to HEX Converter",
-        description:
-          "Convert RGB color values to HEX format instantly",
+        description: "Convert RGB color values to HEX format instantly",
         href: "/color-tools/rgb-to-hex-converter",
       },
       {
@@ -734,32 +776,27 @@ const toolsByCategory = [
       },
       {
         name: "Complementary Color Finder",
-        description:
-          "Find complementary colors that pair well together",
+        description: "Find complementary colors that pair well together",
         href: "/color-tools/complementary-color-finder",
       },
       {
         name: "Custom Color Palette Generator",
-        description:
-          "Create custom palettes based on your preferred colors",
+        description: "Create custom palettes based on your preferred colors",
         href: "/color-tools/custom-color-palette-generator",
       },
       {
         name: "Palette Comparison Tool",
-        description:
-          "Compare multiple color palettes side by side",
+        description: "Compare multiple color palettes side by side",
         href: "/color-tools/palette-comparison-tool",
       },
       {
         name: "CSS Color Name Converter",
-        description:
-          "Convert between CSS color names and their HEX/RGB values",
+        description: "Convert between CSS color names and their HEX/RGB values",
         href: "/color-tools/css-color-name-converter",
       },
       {
         name: "HSL to HSV Converter",
-        description:
-          "Convert HSL color values to HSV format",
+        description: "Convert HSL color values to HSV format",
         href: "/color-tools/hsl-to-hsv-converter",
       },
       {
@@ -770,50 +807,42 @@ const toolsByCategory = [
       },
       {
         name: "Pastel Palette Generator",
-        description:
-          "Create soft pastel color palettes for gentle designs",
+        description: "Create soft pastel color palettes for gentle designs",
         href: "/color-tools/pastel-palette-generator",
       },
       {
         name: "RGB to HSL Converter",
-        description:
-          "Convert RGB color values to HSL format",
+        description: "Convert RGB color values to HSL format",
         href: "/color-tools/rgb-to-hsl-converter",
       },
       {
         name: "Warm or Cool Color Detector",
-        description:
-          "Determine if a color is warm or cool toned",
+        description: "Determine if a color is warm or cool toned",
         href: "/color-tools/warm-or-cool-color-detector",
       },
       {
         name: "Dark Light Mode Preview",
-        description:
-          "Preview how colors look in dark and light modes",
+        description: "Preview how colors look in dark and light modes",
         href: "/color-tools/dark-light-mode-preview",
       },
       {
         name: "Color Palette Generator",
-        description:
-          "Generate complete color palettes for your projects",
+        description: "Generate complete color palettes for your projects",
         href: "/color-tools/color-palette-generator",
       },
       {
         name: "RGB to CMYK Converter",
-        description:
-          "Convert RGB colors to CMYK for print production",
+        description: "Convert RGB colors to CMYK for print production",
         href: "/color-tools/rgb-to-cmyk-converter",
       },
       {
         name: "Palette Merger",
-        description:
-          "Merge multiple color palettes into one unified palette",
+        description: "Merge multiple color palettes into one unified palette",
         href: "/color-tools/palette-merger",
       },
       {
         name: "Color Picker",
-        description:
-          "Simple and intuitive color picker tool",
+        description: "Simple and intuitive color picker tool",
         href: "/color-tools/color-picker",
       },
       {
@@ -824,14 +853,12 @@ const toolsByCategory = [
       },
       {
         name: "HEX to HSL Converter",
-        description:
-          "Convert HEX color codes to HSL values",
+        description: "Convert HEX color codes to HSL values",
         href: "/color-tools/hex-to-hsl-converter",
       },
       {
         name: "Extract Colors from Image",
-        description:
-          "Extract all colors from uploaded images",
+        description: "Extract all colors from uploaded images",
         href: "/color-tools/extract-colors-from-image",
       },
     ],

@@ -61,26 +61,6 @@ const tools = [
     "href": "/css-tools/aspect-ratio-calculator"
   },
   {
-    "name": "Area Converter",
-    "description": "Convert area units — square meters, acres, hectares, square feet, square kilometers, and more. Ideal for real estate and construction.",
-    "href": "/css-tools/area"
-  },
-  {
-    "name": "Length Converter",
-    "description": "Convert length units instantly — meters, feet, inches, kilometers, miles, yards, and more. Free online length converter for everyday and scientific use.",
-    "href": "/css-tools/length"
-  },
-  {
-    "name": "Floor Area Converter",
-    "description": "Convert floor area between square meters, square feet, square yards, and more. Free online floor area converter for real estate, interior design, and construction planning.",
-    "href": "/css-tools/floor-area-converter"
-  },
-  {
-    "name": "Roofing Sheet Coverage Calculator",
-    "description": "Calculate how many roofing sheets you need for your roof area. Enter roof dimensions, sheet size, and overlap to get an accurate sheet count. Free online roofing coverage calculator.",
-    "href": "/css-tools/roofing-sheet-coverage-converter"
-  },
-  {
     "name": "CSS Minifier & Beautifier",
     "description": "Minify CSS to reduce file size or beautify/format compressed CSS. Free online CSS minifier and prettifier for web developers.",
     "href": "/css-tools/css-minifier"

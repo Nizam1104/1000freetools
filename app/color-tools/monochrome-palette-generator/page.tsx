@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -60,7 +68,9 @@ const hslToHex = (h: number, s: number, l: number): string => {
   const f = (n: number) => {
     const k = (n + h / 30) % 12;
     const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color).toString(16).padStart(2, "0");
+    return Math.round(255 * color)
+      .toString(16)
+      .padStart(2, "0");
   };
   return `#${f(0)}${f(8)}${f(4)}`;
 };
@@ -68,14 +78,22 @@ const hslToHex = (h: number, s: number, l: number): string => {
 const generateMonochromePalette = (
   baseColor: string,
   shadeCount: number,
-  range: number
+  range: number,
 ): MonochromeColor[] => {
   const hsl = hexToHsl(baseColor);
   if (!hsl) return [];
 
   const { h, s } = hsl;
   const colors: MonochromeColor[] = [];
-  const names = ["Lightest", "Lighter", "Light", "Base", "Dark", "Darker", "Darkest"];
+  const names = [
+    "Lightest",
+    "Lighter",
+    "Light",
+    "Base",
+    "Dark",
+    "Darker",
+    "Darkest",
+  ];
 
   const step = (range * 2) / (shadeCount - 1);
   const startLightness = Math.max(5, hsl.l - range);
@@ -88,7 +106,10 @@ const generateMonochromePalette = (
     colors.push({
       hex,
       lightness: Math.round(lightness),
-      name: i === Math.floor(shadeCount / 2) ? "Base" : names[nameIndex] || `Shade ${i + 1}`,
+      name:
+        i === Math.floor(shadeCount / 2)
+          ? "Base"
+          : names[nameIndex] || `Shade ${i + 1}`,
     });
   }
 
@@ -116,7 +137,11 @@ const copyToClipboard = async (text: string, fieldName: string) => {
   }
 };
 
-const downloadPalette = (colors: MonochromeColor[], baseColor: string, format: string) => {
+const downloadPalette = (
+  colors: MonochromeColor[],
+  baseColor: string,
+  format: string,
+) => {
   if (format === "css") {
     const cssContent = `:root {
   --monochrome-base: ${baseColor};
@@ -180,8 +205,16 @@ ${colors.map((c, i) => `.text-mono-${i + 1} { color: ${c.hex}; }`).join("\n")}
 };
 
 const PRESET_COLORS = [
-  "#3b82f6", "#8b5cf6", "#ec4899", "#ef4444", "#f97316",
-  "#f59e0b", "#22c55e", "#14b8a6", "#06b6d4", "#6366f1",
+  "#3b82f6",
+  "#8b5cf6",
+  "#ec4899",
+  "#ef4444",
+  "#f97316",
+  "#f59e0b",
+  "#22c55e",
+  "#14b8a6",
+  "#06b6d4",
+  "#6366f1",
 ];
 
 export default function MonochromePaletteGeneratorPage() {
@@ -202,10 +235,13 @@ export default function MonochromePaletteGeneratorPage() {
     }
   }, []);
 
-  const handleColorPickerChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setBaseColor(e.target.value);
-    setHexInput(e.target.value.replace("#", ""));
-  }, []);
+  const handleColorPickerChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setBaseColor(e.target.value);
+      setHexInput(e.target.value.replace("#", ""));
+    },
+    [],
+  );
 
   const copyColor = async (color: string, name: string) => {
     await copyToClipboard(color, name);
@@ -214,7 +250,11 @@ export default function MonochromePaletteGeneratorPage() {
   };
 
   const randomizeColor = () => {
-    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+    const randomColor =
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
     setBaseColor(randomColor);
     setHexInput(randomColor.replace("#", ""));
     toast.success("Random color generated!");
@@ -240,9 +280,13 @@ export default function MonochromePaletteGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Monochrome Color Palette Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Monochrome Color Palette Generator
+          </h1>
           <p className="text-muted-foreground">
-            Generate a full range of shades, tints, and tones from a single color. Build clean, cohesive monochromatic palettes for minimal design systems.
+            Generate a full range of shades, tints, and tones from a single
+            color. Build clean, cohesive monochromatic palettes for minimal
+            design systems.
           </p>
         </div>
 
@@ -255,7 +299,9 @@ export default function MonochromePaletteGeneratorPage() {
                 <Label className="text-sm font-medium">Base Color</Label>
                 <div className="flex gap-2">
                   <div className="relative flex-1">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">#</span>
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                      #
+                    </span>
                     <Input
                       value={hexInput}
                       onChange={(e) => handleHexChange(e.target.value)}
@@ -265,7 +311,7 @@ export default function MonochromePaletteGeneratorPage() {
                     />
                   </div>
                   <div
-                    className="w-12 h-10 rounded border border-border bg-checkerboard cursor-pointer overflow-hidden"
+                    className="w-12 h-10 rounded border border-border  cursor-pointer overflow-hidden"
                     style={{ backgroundColor: baseColor }}
                   >
                     <input
@@ -342,7 +388,9 @@ export default function MonochromePaletteGeneratorPage() {
                 Reset
               </Button>
               <Button
-                onClick={() => downloadPalette(palette, baseColor, exportFormat)}
+                onClick={() =>
+                  downloadPalette(palette, baseColor, exportFormat)
+                }
                 variant="secondary"
               >
                 <Download className="h-4 w-4 mr-2" />
@@ -372,7 +420,7 @@ export default function MonochromePaletteGeneratorPage() {
                     return (
                       <div key={index} className="group">
                         <div
-                          className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                          className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                           style={{ backgroundColor: color.hex }}
                         >
                           {/* Color Info */}
@@ -535,7 +583,11 @@ export default function MonochromePaletteGeneratorPage() {
                   variant="outline"
                   size="sm"
                   onClick={() => {
-                    const json = JSON.stringify({ base: baseColor, shades: palette }, null, 2);
+                    const json = JSON.stringify(
+                      { base: baseColor, shades: palette },
+                      null,
+                      2,
+                    );
                     copyToClipboard(json, "JSON");
                   }}
                 >
@@ -591,10 +643,11 @@ ${palette.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
               {PRESET_COLORS.map((color) => (
                 <button
                   key={color}
-                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110 bg-checkerboard ${baseColor.toLowerCase() === color.toLowerCase()
+                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
+                    baseColor.toLowerCase() === color.toLowerCase()
                       ? "border-primary ring-2 ring-primary ring-offset-2"
                       : "border-border"
-                    }`}
+                  }`}
                   style={{ backgroundColor: color }}
                   onClick={() => {
                     setBaseColor(color);

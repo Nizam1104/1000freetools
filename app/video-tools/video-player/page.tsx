@@ -121,35 +121,28 @@ export default function VideoPlayerPage() {
           Free Online Video Player — Play Any Video or Audio File Instantly
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          Open any video or audio file and play it directly in your browser. No
-          software to install, no account to create, and your file never leaves
-          your device. Supports MP4, WebM, MKV, MOV, MP3, WAV, and other common
-          formats, along with external subtitle files.
+          Open any video or audio file and play it directly in your browser. No software to install, no account required. Your file never leaves your device. Supports MP4, WebM, MKV, MOV, MP3, WAV, and external subtitles.
         </p>
       </div>
 
       <VideoPlayer />
 
-      {/* What it Does Section */}
+      {/* What This Player Does */}
       <section className="mt-16 mb-16">
         <div className="rounded-3xl border border-muted/50 bg-gradient-to-br from-card to-muted/20 p-8 sm:p-12 shadow-sm">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6 text-gray-900 dark:text-gray-100">
-            What it Does
+            What This Player Does
           </h2>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-4">
+            This player opens video and audio files from your local drive and plays them inside your browser. It uses your browser's built-in media decoder with hardware acceleration on most devices.
+          </p>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-            This player opens video and audio files from your local drive and
-            plays them inside your browser window. It uses the browser's
-            built-in media decoder, which supports hardware acceleration on most
-            devices. You can load an external subtitle file in .srt or .vtt
-            format, and the player will display the subtitles as a text track
-            over the video. Because all files stay on your device, you can use
-            this player for private, unreleased, or confidential footage without
-            any risk of the file being transmitted to a server.
+            Load external .srt or .vtt subtitle files and they display as text tracks over the video. No files are uploaded or transmitted — everything stays on your device. Safe for private, unreleased, or confidential footage.
           </p>
         </div>
       </section>
 
-      {/* How to Use Section */}
+      {/* How to Use */}
       <section className="mt-16 mb-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
@@ -165,10 +158,7 @@ export default function VideoPlayerPage() {
               Open your file
             </h3>
             <p className="relative mt-2 text-sm text-gray-600 dark:text-gray-400 text-left">
-              Click the file picker or drag your video or audio file onto the
-              player area. The player accepts MP4, WebM, MKV, MOV, AVI, MP3,
-              WAV, and other common formats. The file is read from your local
-              drive and never uploaded.
+              Click the file picker or drag your video onto the player. Works with MP4, WebM, MKV, MOV, AVI, MP3, WAV. The file is read locally — never uploaded.
             </p>
           </div>
           <div className="relative text-center">
@@ -179,10 +169,7 @@ export default function VideoPlayerPage() {
               Add subtitles if needed
             </h3>
             <p className="relative mt-2 text-sm text-gray-600 dark:text-gray-400 text-left">
-              If you have a separate .srt or .vtt subtitle file, open the
-              subtitle upload button and load it. The player displays the
-              subtitles as an on-screen text track without permanently modifying
-              the video file.
+              Have a separate .srt or .vtt file? Load it with the subtitle button. The player converts SRT to WebVTT and displays subtitles as an overlay — no permanent modification to your video.
             </p>
           </div>
           <div className="relative text-center">
@@ -193,88 +180,68 @@ export default function VideoPlayerPage() {
               Control playback
             </h3>
             <p className="relative mt-2 text-sm text-gray-600 dark:text-gray-400 text-left">
-              Use the player controls to play, pause, skip, and adjust volume.
-              Toggle full-screen mode for a larger view. If the video has
-              multiple audio tracks, use the audio track selector to switch
-              between them.
+              Play, pause, skip, adjust volume — standard controls. Toggle fullscreen for larger viewing. If the video has multiple audio tracks, switch between them with the track selector.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
+      {/* Use Cases */}
       <section className="mt-16 mb-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-            Use Cases
+            When You'd Use This
           </h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Reviewing confidential footage without uploading it
+              Reviewing confidential footage safely
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Editors working on unreleased client projects or footage covered
-              by an NDA need to review files without risking a cloud upload.
-              This player reads the file locally so the footage never leaves the
-              device, which means it cannot be intercepted on the network.
+              Editors working on unreleased projects or NDA-covered footage need to review without cloud uploads. This player reads files locally — footage never leaves your device. Can't be intercepted on the network.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Playing MKV files with external subtitle tracks
+              Playing MKV files with subtitles
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              MKV files are commonly distributed with separate .srt subtitle
-              files. Most operating systems do not open MKV files without
-              installing a third-party player. This tool plays MKV directly in
-              the browser and lets you load the .srt file alongside it without
-              installing any software.
+              MKV files often come with separate .srt subtitles. Most operating systems need third-party software to open them. This player handles MKV in the browser and loads .srt files alongside — no installation needed.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Screening large video files without waiting for a download
+              Quick review of large video files
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              A videographer who has just transferred 3 GB of drone footage from
-              an SD card can open the files immediately in this player to check
-              focus, exposure, and content before deciding which clips to
-              process. No upload or conversion is needed to start reviewing.
+              Videographer with 3 GB of drone footage can open files immediately to check focus, exposure, and content. No upload or conversion needed. Decide which clips to process before committing time.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Checking audio quality in a WAV or MP3 file
+              Checking audio quality in WAV/MP3
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              An audio engineer can open a long WAV recording directly in the
-              browser player and scrub through the timeline to locate a problem,
-              such as clipping or static, without opening a full DAW application
-              like Audacity or Logic Pro.
+              Audio engineer can open a long WAV recording and scrub through to find problems — clipping, static, etc. — without launching a full DAW like Audacity or Logic Pro.
             </p>
           </div>
           <div className="bg-muted/50 border-muted rounded-xl p-6">
             <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">
-              Opening MOV files on a Windows device
+              Opening MOV files on Windows
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              MOV files recorded on an iPhone or Mac sometimes fail to open on
-              Windows because the default media player does not include Apple's
-              QuickTime codec pack. Modern browsers support the H.264 video
-              track inside MOV files natively, so this player can open them
-              without any additional codec installation.
+              MOV files from iPhone/Mac sometimes fail on Windows without QuickTime codecs. Modern browsers support H.264 inside MOV natively. This player opens them without installing anything extra.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Settings Explained Section */}
+      {/* How It Works */}
       <section className="mt-16 mb-16">
         <div className="rounded-3xl border border-muted/50 bg-gradient-to-br from-card to-muted/20 p-8 sm:p-12 shadow-sm">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6 text-gray-900 dark:text-gray-100">
-            Settings Explained
+            How It Works
           </h2>
           <div className="space-y-6 text-left">
             <div>
@@ -282,23 +249,15 @@ export default function VideoPlayerPage() {
                 Local Object URL
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
-                When you open a file, the browser creates a temporary local URL
-                using the URL.createObjectURL API. This URL points to the file
-                in your device's memory. The video element streams the file
-                through this local URL exactly like it would stream a remote
-                URL, but no data is ever sent over the network.
+                When you open a file, the browser creates a temporary local URL using URL.createObjectURL. This URL points to the file in your device's memory. The video element streams through this local URL — works like streaming but no data leaves your device.
               </p>
             </div>
             <div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100">
-                Subtitle Conversion: SRT to WebVTT
+                SRT to WebVTT Conversion
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
-                Browsers only support the WebVTT subtitle format natively. When
-                you load an .srt file, the player reads the timestamp and text
-                blocks and converts them to the WebVTT format in memory. The
-                result is linked to the video as a text track and displayed
-                during playback. The original .srt file is not modified.
+                Browsers only support WebVTT subtitles natively. When you load an .srt file, the player reads the timestamp and text blocks, converts them to WebVTT in memory, and links them as a text track. Original .srt file isn't modified.
               </p>
             </div>
             <div>
@@ -306,12 +265,7 @@ export default function VideoPlayerPage() {
                 Hardware-Accelerated Decoding
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
-                Modern browsers delegate video decoding to the GPU when the
-                codec is supported in hardware. H.264 and H.265 decoding is
-                hardware-accelerated on most devices, which means the CPU stays
-                free and the video plays smoothly even on lower-power machines.
-                VP9 hardware decoding is available on most recent devices but
-                not all older hardware.
+                Modern browsers pass video decoding to the GPU when the codec is supported in hardware. H.264 and H.265 decoding is hardware-accelerated on most devices — CPU stays free, video plays smoothly even on lower-power machines.
               </p>
             </div>
           </div>

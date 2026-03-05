@@ -23,50 +23,63 @@ export default function JsonArrayObjectCounterPage() {
   const [input, setInput] = useState("");
   const [stats, setStats] = useState<JsonStats | null>(null);
 
-  const countElements = useCallback((obj: any, stats: JsonStats = {
-    objects: 0, arrays: 0, keys: 0, values: 0, strings: 0, numbers: 0, booleans: 0, nulls: 0
-  }): JsonStats => {
-    if (obj === null) {
-      stats.nulls++;
-      stats.values++;
-      return stats;
-    }
+  const countElements = useCallback(
+    (
+      obj: any,
+      stats: JsonStats = {
+        objects: 0,
+        arrays: 0,
+        keys: 0,
+        values: 0,
+        strings: 0,
+        numbers: 0,
+        booleans: 0,
+        nulls: 0,
+      },
+    ): JsonStats => {
+      if (obj === null) {
+        stats.nulls++;
+        stats.values++;
+        return stats;
+      }
 
-    if (typeof obj === "string") {
-      stats.strings++;
-      stats.values++;
-      return stats;
-    }
+      if (typeof obj === "string") {
+        stats.strings++;
+        stats.values++;
+        return stats;
+      }
 
-    if (typeof obj === "number") {
-      stats.numbers++;
-      stats.values++;
-      return stats;
-    }
+      if (typeof obj === "number") {
+        stats.numbers++;
+        stats.values++;
+        return stats;
+      }
 
-    if (typeof obj === "boolean") {
-      stats.booleans++;
-      stats.values++;
-      return stats;
-    }
+      if (typeof obj === "boolean") {
+        stats.booleans++;
+        stats.values++;
+        return stats;
+      }
 
-    if (Array.isArray(obj)) {
-      stats.arrays++;
-      obj.forEach(item => countElements(item, stats));
-      return stats;
-    }
+      if (Array.isArray(obj)) {
+        stats.arrays++;
+        obj.forEach((item) => countElements(item, stats));
+        return stats;
+      }
 
-    if (typeof obj === "object") {
-      stats.objects++;
-      Object.entries(obj).forEach(([key, value]) => {
-        stats.keys++;
-        countElements(value, stats);
-      });
-      return stats;
-    }
+      if (typeof obj === "object") {
+        stats.objects++;
+        Object.entries(obj).forEach(([key, value]) => {
+          stats.keys++;
+          countElements(value, stats);
+        });
+        return stats;
+      }
 
-    return stats;
-  }, []);
+      return stats;
+    },
+    [],
+  );
 
   const analyzeJson = useCallback(() => {
     setStats(null);
@@ -90,13 +103,19 @@ export default function JsonArrayObjectCounterPage() {
   };
 
   const loadSample = () => {
-    setInput(JSON.stringify({
-      users: [
-        { id: 1, name: "John", active: true },
-        { id: 2, name: "Jane", active: false }
-      ],
-      meta: { total: 2, page: null }
-    }, null, 2));
+    setInput(
+      JSON.stringify(
+        {
+          users: [
+            { id: 1, name: "John", active: true },
+            { id: 2, name: "Jane", active: false },
+          ],
+          meta: { total: 2, page: null },
+        },
+        null,
+        2,
+      ),
+    );
   };
 
   const copyResult = () => {
@@ -125,9 +144,13 @@ export default function JsonArrayObjectCounterPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Array & Object Counter Online</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Array & Object Counter Online
+          </h1>
           <p className="text-muted-foreground">
-            Count all arrays, objects, keys, and values inside any JSON structure. Our free JSON Counter gives you a quick statistical overview of your JSON data composition.
+            Count all arrays, objects, keys, and values inside any JSON
+            structure. Our free JSON Counter gives you a quick statistical
+            overview of your JSON data composition.
           </p>
         </div>
 
@@ -167,7 +190,10 @@ export default function JsonArrayObjectCounterPage() {
         {/* Input */}
         <Card className="mb-6">
           <CardContent className="p-4">
-            <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+            <Label
+              htmlFor="input"
+              className="text-sm font-medium text-muted-foreground mb-2 block"
+            >
               Input JSON
             </Label>
             <Textarea
@@ -175,7 +201,7 @@ export default function JsonArrayObjectCounterPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder='{"users": [{"id": 1, "name": "John"}]}'
-              className="min-h-[300px] font-mono text-sm resize-none"
+              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>
@@ -185,11 +211,13 @@ export default function JsonArrayObjectCounterPage() {
           <Card>
             <CardContent className="p-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {statItems.map(item => (
+                {statItems.map((item) => (
                   <div key={item.label} className="bg-muted rounded-lg p-4">
                     <div className="flex items-center gap-2 mb-2">
                       <div className={`w-3 h-3 rounded-full ${item.color}`} />
-                      <span className="text-sm text-muted-foreground">{item.label}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {item.label}
+                      </span>
                     </div>
                     <p className="text-3xl font-bold">{item.value}</p>
                   </div>
@@ -198,6 +226,120 @@ export default function JsonArrayObjectCounterPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">
+            About JSON Array & Object Counter
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Large JSON files can be overwhelming to understand at a glance. This
+            tool analyzes your JSON and counts every object, array, key, and
+            value type, giving you a quick statistical overview of your data
+            structure without manual counting.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON into the input area and click Analyze. The tool
+            recursively traverses every level of your structure, counting
+            objects, arrays, keys, and primitive values (strings, numbers,
+            booleans, and nulls).
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Results appear as color-coded cards showing the count for each
+            category. The statistics help you understand the composition of your
+            JSON at a glance, useful for debugging and documentation.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You received a large API response and need to understand its
+            structure quickly. Run it through the counter to see how many
+            objects and arrays you're dealing with before writing parsing code.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool counts elements but doesn't show their locations or paths.
+            For detailed structural analysis, you'd need a JSON explorer or tree
+            viewer that shows the full hierarchy.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What does the counter track?</p>
+              <p className="text-muted-foreground">
+                It counts objects, arrays, keys, total values, strings, numbers,
+                booleans, and null values. Each category appears as a separate
+                card.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                How are nested structures counted?
+              </p>
+              <p className="text-muted-foreground">
+                Every level is counted recursively. A nested object inside an
+                array inside another object counts toward all three categories.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">What counts as a value?</p>
+              <p className="text-muted-foreground">
+                Every primitive (string, number, boolean, null) counts as a
+                value. Objects and arrays contain values but aren't counted as
+                values themselves.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                Can I use this with arrays as root?
+              </p>
+              <p className="text-muted-foreground">
+                Yes, the tool works with any valid JSON including arrays at the
+                root level. It will count all elements within the array.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Is there a size limit?</p>
+              <p className="text-muted-foreground">
+                Very large JSON files may slow down your browser. For best
+                performance, keep files under a few megabytes when analyzing.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a
+                href="/json-tools/json-depth-analyzer"
+                className="text-primary hover:underline"
+              >
+                JSON Depth Analyzer
+              </a>{" "}
+              – Check nesting depth
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-key-frequency"
+                className="text-primary hover:underline"
+              >
+                JSON Key Frequency Analyzer
+              </a>{" "}
+              – Count key occurrences
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-explainer"
+                className="text-primary hover:underline"
+              >
+                JSON Explainer
+              </a>{" "}
+              – Understand JSON structure
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

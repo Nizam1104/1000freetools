@@ -264,6 +264,67 @@ export default function JsonToKotlinPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON to Kotlin Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          Android developers need data classes to parse JSON responses. This tool generates Kotlin data classes from your JSON with proper types and nullable fields. It handles nested objects, arrays, and creates separate classes for complex structures.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the conversion works</h3>
+        <p className="text-muted-foreground mb-2">
+          Paste your JSON and set the class name and package. Click Convert to Kotlin and the tool analyzes your structure, infers types, and generates data classes with primary constructors. Nested objects become separate data classes.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          The output uses Kotlin types: String, Int, Double, Boolean, and List. Nullable fields are marked with question marks. Use Copy to grab the code or Download to save as a .kt file for your Android project.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You're building an Android app that consumes a REST API. Or you received JSON from backend and need Kotlin models quickly. This tool also helps when exploring an unfamiliar API and you want to understand the data structure.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Generated classes are a starting point. You may need to add serialization annotations, custom serializers, or validation. For production code, consider using libraries like kotlinx.serialization or Moshi.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">Does this handle nested JSON?</p>
+            <p className="text-muted-foreground">Yes, nested objects become separate data classes. The tool generates all necessary nested classes automatically.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Are fields nullable by default?</p>
+            <p className="text-muted-foreground">Fields that could be null based on the JSON are marked as nullable with the question mark suffix.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I set a custom package name?</p>
+            <p className="text-muted-foreground">Yes, use the Package Name input to set your Android app's package. The default is com.example.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does it support data class defaults?</p>
+            <p className="text-muted-foreground">No default values are generated. All fields are required constructor parameters in the data classes.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What about JSON serialization?</p>
+            <p className="text-muted-foreground">The generated classes are plain data classes. Add @Serializable or @Json annotations based on your chosen library.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-java" className="text-primary hover:underline">JSON to Java</a> – Generate Java class definitions from JSON
+          </li>
+          <li>
+            <a href="/json-tools/json-to-typescript" className="text-primary hover:underline">JSON to TypeScript</a> – Generate TypeScript interfaces from JSON
+          </li>
+          <li>
+            <a href="/json-tools/json-to-swift" className="text-primary hover:underline">JSON to Swift</a> – Generate Swift structs from JSON
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -18,42 +18,49 @@ export default function JsonEmptyFieldFinderPage() {
   const [input, setInput] = useState("");
   const [emptyFields, setEmptyFields] = useState<EmptyField[] | null>(null);
 
-  const findEmptyFields = useCallback((obj: any, path: string = "$", results: EmptyField[] = []): EmptyField[] => {
-    if (obj === null) {
-      results.push({ path, type: "null", value: null });
-      return results;
-    }
-
-    if (typeof obj === "string" && obj === "") {
-      results.push({ path, type: "empty_string", value: "" });
-      return results;
-    }
-
-    if (Array.isArray(obj)) {
-      if (obj.length === 0) {
-        results.push({ path, type: "empty_array", value: [] });
-      } else {
-        obj.forEach((item, index) => {
-          findEmptyFields(item, `${path}[${index}]`, results);
-        });
+  const findEmptyFields = useCallback(
+    (
+      obj: any,
+      path: string = "$",
+      results: EmptyField[] = [],
+    ): EmptyField[] => {
+      if (obj === null) {
+        results.push({ path, type: "null", value: null });
+        return results;
       }
-      return results;
-    }
 
-    if (typeof obj === "object") {
-      const keys = Object.keys(obj);
-      if (keys.length === 0) {
-        results.push({ path, type: "empty_object", value: {} });
-      } else {
-        Object.entries(obj).forEach(([key, value]) => {
-          findEmptyFields(value, `${path}.${key}`, results);
-        });
+      if (typeof obj === "string" && obj === "") {
+        results.push({ path, type: "empty_string", value: "" });
+        return results;
       }
-      return results;
-    }
 
-    return results;
-  }, []);
+      if (Array.isArray(obj)) {
+        if (obj.length === 0) {
+          results.push({ path, type: "empty_array", value: [] });
+        } else {
+          obj.forEach((item, index) => {
+            findEmptyFields(item, `${path}[${index}]`, results);
+          });
+        }
+        return results;
+      }
+
+      if (typeof obj === "object") {
+        const keys = Object.keys(obj);
+        if (keys.length === 0) {
+          results.push({ path, type: "empty_object", value: {} });
+        } else {
+          Object.entries(obj).forEach(([key, value]) => {
+            findEmptyFields(value, `${path}.${key}`, results);
+          });
+        }
+        return results;
+      }
+
+      return results;
+    },
+    [],
+  );
 
   const findEmpty = useCallback(() => {
     setEmptyFields(null);
@@ -82,14 +89,20 @@ export default function JsonEmptyFieldFinderPage() {
   };
 
   const loadSample = () => {
-    setInput(JSON.stringify({
-      name: "Test",
-      description: "",
-      data: null,
-      items: [],
-      meta: {},
-      valid: "value"
-    }, null, 2));
+    setInput(
+      JSON.stringify(
+        {
+          name: "Test",
+          description: "",
+          data: null,
+          items: [],
+          meta: {},
+          valid: "value",
+        },
+        null,
+        2,
+      ),
+    );
   };
 
   const copyResult = () => {
@@ -101,11 +114,16 @@ export default function JsonEmptyFieldFinderPage() {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case "null": return "bg-gray-500";
-      case "empty_string": return "bg-yellow-500";
-      case "empty_array": return "bg-orange-500";
-      case "empty_object": return "bg-purple-500";
-      default: return "bg-gray-500";
+      case "null":
+        return "bg-gray-500";
+      case "empty_string":
+        return "bg-yellow-500";
+      case "empty_array":
+        return "bg-orange-500";
+      case "empty_object":
+        return "bg-purple-500";
+      default:
+        return "bg-gray-500";
     }
   };
 
@@ -114,9 +132,13 @@ export default function JsonEmptyFieldFinderPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Empty Field Finder – Find Null & Empty Values</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Empty Field Finder – Find Null & Empty Values
+          </h1>
           <p className="text-muted-foreground">
-            Identify null, empty string, and missing values in your JSON data instantly. Our free JSON Empty Field Finder helps you clean datasets and ensure data completeness.
+            Identify null, empty string, and missing values in your JSON data
+            instantly. Our free JSON Empty Field Finder helps you clean datasets
+            and ensure data completeness.
           </p>
         </div>
 
@@ -156,7 +178,10 @@ export default function JsonEmptyFieldFinderPage() {
         {/* Input */}
         <Card className="mb-6">
           <CardContent className="p-4">
-            <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+            <Label
+              htmlFor="input"
+              className="text-sm font-medium text-muted-foreground mb-2 block"
+            >
               Input JSON
             </Label>
             <Textarea
@@ -164,7 +189,7 @@ export default function JsonEmptyFieldFinderPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder='{"name": "Test", "description": "", "data": null}'
-              className="min-h-[300px] font-mono text-sm resize-none"
+              className="min-h-[300px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto"
             />
           </CardContent>
         </Card>
@@ -191,11 +216,18 @@ export default function JsonEmptyFieldFinderPage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 mb-4">
                     <AlertCircle className="h-5 w-5 text-yellow-500" />
-                    <span className="font-semibold">Found {emptyFields.length} empty field(s)</span>
+                    <span className="font-semibold">
+                      Found {emptyFields.length} empty field(s)
+                    </span>
                   </div>
                   {emptyFields.map((field, index) => (
-                    <div key={index} className="bg-muted rounded-md p-3 flex items-center gap-3">
-                      <div className={`w-3 h-3 rounded-full ${getTypeColor(field.type)}`} />
+                    <div
+                      key={index}
+                      className="bg-muted rounded-md p-3 flex items-center gap-3"
+                    >
+                      <div
+                        className={`w-3 h-3 rounded-full ${getTypeColor(field.type)}`}
+                      />
                       <span className="font-mono text-sm">{field.path}</span>
                       <span className="text-xs px-2 py-0.5 rounded-full bg-muted-foreground/20">
                         {field.type.replace("_", " ")}
@@ -207,6 +239,119 @@ export default function JsonEmptyFieldFinderPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">
+            About JSON Empty Field Finder
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Null values and empty fields in JSON can cause runtime errors or
+            display issues in your application. This tool scans your JSON and
+            identifies all null values, empty strings, empty arrays, and empty
+            objects so you can handle them properly.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON and click Find Empty. The tool recursively checks
+            every value, flagging nulls, empty strings, empty arrays, and empty
+            objects with their full path.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Results are color-coded by type: gray for null, yellow for empty
+            strings, orange for empty arrays, and purple for empty objects. Each
+            result shows the path so you can locate and fix the issue.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're cleaning a dataset before importing it into your application.
+            Find all empty fields first so you can decide whether to fill them,
+            remove them, or handle them in code.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This tool identifies empty fields but doesn't modify your JSON.
+            You'll need to manually fix issues or use a transformation tool to
+            remove or replace empty values.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">What counts as an empty field?</p>
+              <p className="text-muted-foreground">
+                Null values, empty strings "", empty arrays [], and empty
+                objects {} are all considered empty and will be flagged.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                How are nested empty fields found?
+              </p>
+              <p className="text-muted-foreground">
+                The tool checks every level recursively. Empty fields deep in
+                nested objects are found and their full path is shown.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                Are zero and false considered empty?
+              </p>
+              <p className="text-muted-foreground">
+                No, zero (0) and false are valid values. Only null, empty
+                strings, empty arrays, and empty objects are flagged.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Can I export the results?</p>
+              <p className="text-muted-foreground">
+                Yes, use the Copy button to copy all empty field locations as
+                JSON. This is useful for documentation or bug reports.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                What if no empty fields are found?
+              </p>
+              <p className="text-muted-foreground">
+                A green success message appears confirming all fields have
+                values. Your JSON is ready to use without empty field concerns.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a
+                href="/json-tools/json-validator"
+                className="text-primary hover:underline"
+              >
+                JSON Validator
+              </a>{" "}
+              – Validate JSON syntax
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-duplicate-key-finder"
+                className="text-primary hover:underline"
+              >
+                JSON Duplicate Key Finder
+              </a>{" "}
+              – Find duplicate keys
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-cleaner"
+                className="text-primary hover:underline"
+              >
+                JSON Cleaner
+              </a>{" "}
+              – Remove null and empty values
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

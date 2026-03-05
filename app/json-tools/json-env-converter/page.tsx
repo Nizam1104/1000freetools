@@ -147,6 +147,58 @@ export default function JsonEnvConverterPage() {
           </p>
         </div>
 
+        {/* Why This Matters */}
+        <Card className="mb-6 bg-muted/30">
+          <CardContent className="p-5">
+            <h2 className="text-xl font-semibold mb-3">Why Convert JSON to ENV Format?</h2>
+            <p className="text-muted-foreground mb-4">
+              Your config is in JSON but your deployment expects environment variables. Manually rewriting each key as an ENV variable is tedious and error-prone. You need a quick way to transform JSON configuration into dotenv format that works with Docker, Node.js, and most deployment platforms.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <h3 className="font-medium mb-2">Common Use Cases:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Docker container configuration</li>
+                  <li>• Node.js dotenv files</li>
+                  <li>• CI/CD pipeline variables</li>
+                  <li>• Cloud platform environment settings</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Benefits:</h3>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Fast conversion without manual typing</li>
+                  <li>• Handles nested JSON automatically</li>
+                  <li>• Proper value escaping</li>
+                  <li>• Bidirectional conversion support</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* How It Works */}
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">Quick Steps</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <div className="bg-card border rounded-lg p-4">
+              <div className="text-2xl font-bold text-primary mb-2">1</div>
+              <h3 className="font-medium mb-1">Paste JSON</h3>
+              <p className="text-sm text-muted-foreground">Enter your JSON configuration object with nested settings</p>
+            </div>
+            <div className="bg-card border rounded-lg p-4">
+              <div className="text-2xl font-bold text-primary mb-2">2</div>
+              <h3 className="font-medium mb-1">Set Options</h3>
+              <p className="text-sm text-muted-foreground">Choose prefix for variable names if needed</p>
+            </div>
+            <div className="bg-card border rounded-lg p-4">
+              <div className="text-2xl font-bold text-primary mb-2">3</div>
+              <h3 className="font-medium mb-1">Get ENV File</h3>
+              <p className="text-sm text-muted-foreground">Download or copy the generated .env content</p>
+            </div>
+          </div>
+        </div>
+
         {/* Mode Selection */}
         <Card className="mb-6">
           <CardContent className="p-4">
@@ -244,6 +296,67 @@ export default function JsonEnvConverterPage() {
             </CardContent>
           </Card>
         )}
+      </div>
+
+      {/* SEO Content */}
+      <div className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON to ENV Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          Moving configuration between JSON files and environment variables is a common DevOps task. This converter handles the transformation automatically, flattening nested JSON objects into the KEY_VALUE format that dotenv files expect. It works both ways, converting .env content back to JSON when needed.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How the conversion works</h3>
+        <p className="text-muted-foreground mb-2">
+          For JSON to .env mode, paste your JSON config and optionally set a prefix like APP. The tool flattens nested objects by joining keys with underscores and converts them to UPPERCASE. Arrays get stringified, booleans become true or false strings.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          For .env to JSON mode, paste your dotenv content and the tool parses each KEY=value line. It intelligently converts values back to their original types: numbers become numbers, true becomes boolean true, and quoted strings stay as strings. The result is a nested JSON object.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          Your Docker deployment needs environment variables but your local config is JSON. Or you're migrating from a .env file to a cloud provider that expects JSON configuration. This tool also helps when documenting configuration options in different formats.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Note that complex nested structures may not round-trip perfectly. Arrays become JSON strings in .env format. Very deep nesting can create unwieldy environment variable names. For simple flat configs the conversion is clean.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">How are nested objects handled?</p>
+            <p className="text-muted-foreground">Nested keys get flattened with underscores. A database.host value becomes DATABASE_HOST. The prefix option adds another level like APP_DATABASE_HOST.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What happens to arrays in .env format?</p>
+            <p className="text-muted-foreground">Arrays are converted to JSON strings. An array like [1,2,3] becomes the literal string "[1,2,3]" in the .env file.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Are special characters escaped properly?</p>
+            <p className="text-muted-foreground">Yes, values containing spaces, equals signs, or hash symbols get wrapped in double quotes to ensure valid .env syntax.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I convert back from .env to JSON?</p>
+            <p className="text-muted-foreground">Yes, switch to .env to JSON mode. The tool parses the dotenv format and reconstructs a flat JSON object with proper type conversion.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Does this support multiline values?</p>
+            <p className="text-muted-foreground">No, standard .env files don't support multiline values well. Keep your values on single lines for best results with this converter.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-yaml" className="text-primary hover:underline">JSON to YAML</a> – Convert JSON to YAML configuration format
+          </li>
+          <li>
+            <a href="/json-tools/yaml-to-json" className="text-primary hover:underline">YAML to JSON</a> – Convert YAML back to JSON
+          </li>
+          <li>
+            <a href="/json-tools/json-config-validator" className="text-primary hover:underline">JSON Config Validator</a> – Validate your JSON configuration files
+          </li>
+        </ul>
       </div>
     </div>
   );

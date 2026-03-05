@@ -191,6 +191,67 @@ export default function JsonToTsvConverterPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4">About JSON to TSV Converter</h2>
+        <p className="text-muted-foreground mb-6">
+          Tab-separated values format is perfect for importing JSON data into spreadsheets, databases, or legacy systems. This tool converts your JSON arrays into TSV format with proper escaping for special characters.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">How it works</h3>
+        <p className="text-muted-foreground mb-2">
+          The tool extracts all unique keys from your JSON array to create the header row. Each object becomes a data row with values separated by tabs, handling nested objects by flattening them.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Special characters like tabs and newlines within values are properly escaped to maintain TSV integrity. Values containing tabs are quoted to prevent column misalignment.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+        <p className="text-muted-foreground mb-2">
+          You have JSON data from an API that needs to go into Excel or Google Sheets. TSV format opens directly in spreadsheet applications while preserving the data structure.
+        </p>
+        <p className="text-muted-foreground mb-8">
+          TSV works best with flat or moderately nested data. Deeply nested structures produce long flattened key names that may be harder to work with in spreadsheet applications.
+        </p>
+
+        <h3 className="text-xl font-semibold mb-3">Questions</h3>
+        <div className="space-y-4 mb-8">
+          <div>
+            <p className="font-medium mb-1">What's the difference between TSV and CSV?</p>
+            <p className="text-muted-foreground">TSV uses tabs as delimiters while CSV uses commas. TSV is safer when your data might contain commas, but CSV is more universally supported.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">How are nested objects handled?</p>
+            <p className="text-muted-foreground">Nested objects are flattened using dot notation. A field like address.city becomes a single column header in the TSV output.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I open TSV in Excel?</p>
+            <p className="text-muted-foreground">Yes, Excel opens TSV files directly. You can also import TSV data using the Text Import Wizard for more control over column formatting.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">What about arrays in the data?</p>
+            <p className="text-muted-foreground">Arrays are converted to JSON strings within their cell. For better array handling, consider preprocessing your data to expand arrays into separate rows.</p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Can I download the TSV file?</p>
+            <p className="text-muted-foreground">Yes. Click Download to save the TSV as a file, or use Copy to paste it directly into your spreadsheet or database import tool.</p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+        <ul className="space-y-2 text-muted-foreground">
+          <li>
+            <a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Comma-separated values format
+          </li>
+          <li>
+            <a href="/json-tools/json-to-excel" className="text-primary hover:underline">JSON to Excel</a> – Direct XLSX export
+          </li>
+          <li>
+            <a href="/json-tools/json-to-text" className="text-primary hover:underline">JSON to Text</a> – Plain text key-value format
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

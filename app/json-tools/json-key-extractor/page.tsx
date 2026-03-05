@@ -5,7 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { FileJson, RotateCcw, Trash2, Key, Copy, Check, List } from "lucide-react";
+import {
+  FileJson,
+  RotateCcw,
+  Trash2,
+  Key,
+  Copy,
+  Check,
+  List,
+} from "lucide-react";
 import { toast } from "sonner";
 import {
   Select,
@@ -18,42 +26,64 @@ import {
 export default function JsonKeyExtractorPage() {
   const [input, setInput] = useState("");
   const [keys, setKeys] = useState<string[]>([]);
-  const [outputFormat, setOutputFormat] = useState<"list" | "json" | "csv">("list");
+  const [outputFormat, setOutputFormat] = useState<"list" | "json" | "csv">(
+    "list",
+  );
   const [copied, setCopied] = useState(false);
   const [includePaths, setIncludePaths] = useState(false);
 
-  const extractKeys = useCallback((obj: unknown, prefix = ""): string[] => {
-    if (obj === null || typeof obj !== "object") {
-      return [];
-    }
+  const extractKeys = useCallback(
+    (obj: unknown, prefix = ""): string[] => {
+      if (obj === null || typeof obj !== "object") {
+        return [];
+      }
 
-    if (Array.isArray(obj)) {
-      const arrayKeys: string[] = [];
-      obj.forEach((item, index) => {
-        const itemPrefix = includePaths ? `${prefix}[${index}]` : prefix;
-        arrayKeys.push(...extractKeys(item, itemPrefix));
-      });
-      return arrayKeys;
-    }
+      if (Array.isArray(obj)) {
+        const arrayKeys: string[] = [];
+        obj.forEach((item, index) => {
+          const itemPrefix = includePaths ? `${prefix}[${index}]` : prefix;
+          arrayKeys.push(...extractKeys(item, itemPrefix));
+        });
+        return arrayKeys;
+      }
 
-    const entries = Object.entries(obj);
-    const result: string[] = [];
+      const entries = Object.entries(obj);
+      const result: string[] = [];
 
-    for (const [key, value] of entries) {
-      const fullPath = includePaths ? (prefix ? `${prefix}.${key}` : key) : key;
-      result.push(fullPath);
-      result.push(...extractKeys(value, fullPath));
-    }
+      for (const [key, value] of entries) {
+        const fullPath = includePaths
+          ? prefix
+            ? `${prefix}.${key}`
+            : key
+          : key;
+        result.push(fullPath);
+        result.push(...extractKeys(value, fullPath));
+      }
 
-    return result;
-  }, [includePaths]);
+      return result;
+    },
+    [includePaths],
+  );
 
-  const getUniqueKeys = useCallback((allKeys: string[]): string[] => {
-    if (includePaths) {
-      return [...new Set(allKeys)];
-    }
-    return [...new Set(allKeys.map((k) => k.split(".").pop()?.replace(/\[\d+\]/g, "") || k))].sort();
-  }, [includePaths]);
+  const getUniqueKeys = useCallback(
+    (allKeys: string[]): string[] => {
+      if (includePaths) {
+        return [...new Set(allKeys)];
+      }
+      return [
+        ...new Set(
+          allKeys.map(
+            (k) =>
+              k
+                .split(".")
+                .pop()
+                ?.replace(/\[\d+\]/g, "") || k,
+          ),
+        ),
+      ].sort();
+    },
+    [includePaths],
+  );
 
   const extractJsonKeys = useCallback(() => {
     if (!input.trim()) {
@@ -108,7 +138,10 @@ export default function JsonKeyExtractorPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const formatOutput = (keyList: string[], format: "list" | "json" | "csv"): string => {
+  const formatOutput = (
+    keyList: string[],
+    format: "list" | "json" | "csv",
+  ): string => {
     switch (format) {
       case "list":
         return keyList.join("\n");
@@ -121,16 +154,23 @@ export default function JsonKeyExtractorPage() {
     }
   };
 
-  const formattedOutput = useMemo(() => formatOutput(keys, outputFormat), [keys, outputFormat]);
+  const formattedOutput = useMemo(
+    () => formatOutput(keys, outputFormat),
+    [keys, outputFormat],
+  );
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Key Extractor – Extract All JSON Keys</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Key Extractor – Extract All JSON Keys
+          </h1>
           <p className="text-muted-foreground">
-            Extract every unique key from any JSON object or array with one click. Our free JSON Key Extractor outputs a clean list of all keys for quick analysis and mapping.
+            Extract every unique key from any JSON object or array with one
+            click. Our free JSON Key Extractor outputs a clean list of all keys
+            for quick analysis and mapping.
           </p>
         </div>
 
@@ -146,10 +186,18 @@ export default function JsonKeyExtractorPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <Label htmlFor="format" className="text-sm text-muted-foreground whitespace-nowrap">
+                <Label
+                  htmlFor="format"
+                  className="text-sm text-muted-foreground whitespace-nowrap"
+                >
                   Output Format:
                 </Label>
-                <Select value={outputFormat} onValueChange={(v) => setOutputFormat(v as "list" | "json" | "csv")}>
+                <Select
+                  value={outputFormat}
+                  onValueChange={(v) =>
+                    setOutputFormat(v as "list" | "json" | "csv")
+                  }
+                >
                   <SelectTrigger className="w-[120px]">
                     <SelectValue />
                   </SelectTrigger>
@@ -174,7 +222,10 @@ export default function JsonKeyExtractorPage() {
                   onChange={(e) => setIncludePaths(e.target.checked)}
                   className="h-4 w-4 rounded border-input"
                 />
-                <Label htmlFor="includePaths" className="text-sm text-muted-foreground cursor-pointer">
+                <Label
+                  htmlFor="includePaths"
+                  className="text-sm text-muted-foreground cursor-pointer"
+                >
                   Include full paths
                 </Label>
               </div>
@@ -200,7 +251,10 @@ export default function JsonKeyExtractorPage() {
           {/* Input */}
           <Card>
             <CardContent className="p-4">
-              <Label htmlFor="input" className="text-sm font-medium text-muted-foreground mb-2 block">
+              <Label
+                htmlFor="input"
+                className="text-sm font-medium text-muted-foreground mb-2 block"
+              >
                 Input JSON
               </Label>
               <Textarea
@@ -208,7 +262,7 @@ export default function JsonKeyExtractorPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Paste your JSON here..."
-                className="min-h-[500px] font-mono text-sm resize-none"
+                className="min-h-[500px] font-mono text-sm resize-none max-h-[500px] overflow-y-auto max-h-[500px]"
               />
             </CardContent>
           </Card>
@@ -217,7 +271,10 @@ export default function JsonKeyExtractorPage() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center justify-between mb-2">
-                <Label htmlFor="output" className="text-sm font-medium text-muted-foreground">
+                <Label
+                  htmlFor="output"
+                  className="text-sm font-medium text-muted-foreground"
+                >
                   Extracted Keys ({keys.length})
                 </Label>
                 {keys.length > 0 && (
@@ -236,10 +293,124 @@ export default function JsonKeyExtractorPage() {
                 value={formattedOutput}
                 readOnly
                 placeholder="Extracted keys will appear here..."
-                className="min-h-[500px] font-mono text-sm resize-none bg-muted/50"
+                className="min-h-[500px] font-mono text-sm resize-none bg-muted/50 max-h-[500px] overflow-y-auto max-h-[500px]"
               />
             </CardContent>
           </Card>
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-semibold mb-4">
+            About JSON Key Extractor
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Understanding what keys exist in a JSON structure is essential for
+            writing parsing code. This tool extracts every unique key from your
+            JSON and outputs them as a clean list, JSON array, or CSV for easy
+            reference.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">How it works</h3>
+          <p className="text-muted-foreground mb-2">
+            Paste your JSON and click Extract Keys. The tool recursively
+            traverses all nested objects and arrays, collecting every unique key
+            it finds. Results appear in the output panel on the right.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            Choose your output format: List (one key per line), JSON Array, or
+            CSV. Enable "Include full paths" to see the complete path to each
+            key instead of just the key names.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
+          <p className="text-muted-foreground mb-2">
+            You're writing TypeScript interfaces or validation schemas for an
+            API response. Extract all keys first to ensure you don't miss any
+            fields in your type definitions.
+          </p>
+          <p className="text-muted-foreground mb-8">
+            This extracts keys but doesn't show their values or types. For
+            complete structural analysis including value types, use the JSON
+            Explainer or a schema inference tool.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-3">Questions</h3>
+          <div className="space-y-4 mb-8">
+            <div>
+              <p className="font-medium mb-1">
+                What output formats are available?
+              </p>
+              <p className="text-muted-foreground">
+                Choose from List (newline-separated), JSON Array, or CSV format.
+                Select using the Output Format dropdown.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                What does "Include full paths" do?
+              </p>
+              <p className="text-muted-foreground">
+                When enabled, keys show their full path like
+                "user.profile.email" instead of just "email". This helps
+                identify where each key appears.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">
+                Are duplicate keys shown multiple times?
+              </p>
+              <p className="text-muted-foreground">
+                No, only unique keys are shown. If "user.name" appears in
+                multiple places, it's listed once unless you enable full paths.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Does it work with arrays?</p>
+              <p className="text-muted-foreground">
+                Yes, keys inside array elements are extracted. Array indices are
+                shown in paths when "Include full paths" is enabled.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">How do I save the key list?</p>
+              <p className="text-muted-foreground">
+                Use the Copy button to paste into your code or documentation.
+                The formatted output is ready to use in any text editor.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <a
+                href="/json-tools/json-key-frequency"
+                className="text-primary hover:underline"
+              >
+                JSON Key Frequency Analyzer
+              </a>{" "}
+              – Count key occurrences
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-explainer"
+                className="text-primary hover:underline"
+              >
+                JSON Explainer
+              </a>{" "}
+              – Understand JSON structure
+            </li>
+            <li>
+              <a
+                href="/json-tools/json-schema-generator"
+                className="text-primary hover:underline"
+              >
+                JSON Schema Generator
+              </a>{" "}
+              – Generate schemas
+            </li>
+          </ul>
         </div>
       </div>
     </div>

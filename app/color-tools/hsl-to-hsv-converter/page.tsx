@@ -12,7 +12,11 @@ export default function HslToHsvConverterPage() {
   const [hslInput, setHslInput] = useState({ h: "", s: "", l: "" });
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
-  const hslToHsv = (h: number, s: number, l: number): { h: number; s: number; v: number } => {
+  const hslToHsv = (
+    h: number,
+    s: number,
+    l: number,
+  ): { h: number; s: number; v: number } => {
     s /= 100;
     l /= 100;
     const sv = s * Math.min(l, 1 - l);
@@ -30,15 +34,24 @@ export default function HslToHsvConverterPage() {
     const sNum = parseInt(s, 10);
     const lNum = parseInt(l, 10);
     return (
-      !isNaN(hNum) && !isNaN(sNum) && !isNaN(lNum) &&
-      hNum >= 0 && hNum <= 360 &&
-      sNum >= 0 && sNum <= 100 &&
-      lNum >= 0 && lNum <= 100
+      !isNaN(hNum) &&
+      !isNaN(sNum) &&
+      !isNaN(lNum) &&
+      hNum >= 0 &&
+      hNum <= 360 &&
+      sNum >= 0 &&
+      sNum <= 100 &&
+      lNum >= 0 &&
+      lNum <= 100
     );
   };
 
   const hsv = isValidHsl(hslInput.h, hslInput.s, hslInput.l)
-    ? hslToHsv(parseInt(hslInput.h, 10), parseInt(hslInput.s, 10), parseInt(hslInput.l, 10))
+    ? hslToHsv(
+        parseInt(hslInput.h, 10),
+        parseInt(hslInput.s, 10),
+        parseInt(hslInput.l, 10),
+      )
     : null;
 
   const copyToClipboard = async (text: string, field: string) => {
@@ -52,14 +65,26 @@ export default function HslToHsvConverterPage() {
     }
   };
 
-  const CopyButton = ({ text, field, className = "" }: { text: string; field: string; className?: string }) => (
+  const CopyButton = ({
+    text,
+    field,
+    className = "",
+  }: {
+    text: string;
+    field: string;
+    className?: string;
+  }) => (
     <Button
       variant="ghost"
       size="sm"
       className={`h-8 w-8 p-0 ${className}`}
       onClick={() => copyToClipboard(text, field)}
     >
-      {copiedField === field ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+      {copiedField === field ? (
+        <Check className="h-4 w-4 text-green-500" />
+      ) : (
+        <Copy className="h-4 w-4" />
+      )}
     </Button>
   );
 
@@ -77,9 +102,13 @@ export default function HslToHsvConverterPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">HSL to HSV Color Converter</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            HSL to HSV Color Converter
+          </h1>
           <p className="text-muted-foreground">
-            Convert HSL (Hue, Saturation, Lightness) color values to HSV (Hue, Saturation, Value) format. Useful for designers working across different color models.
+            Convert HSL (Hue, Saturation, Lightness) color values to HSV (Hue,
+            Saturation, Value) format. Useful for designers working across
+            different color models.
           </p>
         </div>
 
@@ -92,7 +121,12 @@ export default function HslToHsvConverterPage() {
                 </Label>
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-1">
-                    <Label htmlFor="h" className="text-xs text-muted-foreground">H</Label>
+                    <Label
+                      htmlFor="h"
+                      className="text-xs text-muted-foreground"
+                    >
+                      H
+                    </Label>
                     <Input
                       id="h"
                       type="text"
@@ -104,7 +138,12 @@ export default function HslToHsvConverterPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="s" className="text-xs text-muted-foreground">S</Label>
+                    <Label
+                      htmlFor="s"
+                      className="text-xs text-muted-foreground"
+                    >
+                      S
+                    </Label>
                     <Input
                       id="s"
                       type="text"
@@ -116,7 +155,12 @@ export default function HslToHsvConverterPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="l" className="text-xs text-muted-foreground">L</Label>
+                    <Label
+                      htmlFor="l"
+                      className="text-xs text-muted-foreground"
+                    >
+                      L
+                    </Label>
                     <Input
                       id="l"
                       type="text"
@@ -145,10 +189,14 @@ export default function HslToHsvConverterPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="flex-1">
-                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">Preview</Label>
+                      <Label className="text-sm font-medium text-muted-foreground mb-2 block">
+                        Preview
+                      </Label>
                       <div
-                        className="w-full aspect-video rounded-lg border bg-checkerboard"
-                        style={{ backgroundColor: `hsl(${hslInput.h}, ${hslInput.s}%, ${hslInput.l}%)` }}
+                        className="w-full aspect-video rounded-lg border "
+                        style={{
+                          backgroundColor: `hsl(${hslInput.h}, ${hslInput.s}%, ${hslInput.l}%)`,
+                        }}
                       />
                     </div>
                   </div>
@@ -164,55 +212,92 @@ export default function HslToHsvConverterPage() {
               {hsv ? (
                 <>
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">HSV Format</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      HSV Format
+                    </Label>
                     <div className="flex gap-2">
                       <Input
                         value={`hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`}
                         readOnly
                         className="font-mono flex-1"
                       />
-                      <CopyButton text={`hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`} field="HSV" />
+                      <CopyButton
+                        text={`hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`}
+                        field="HSV"
+                      />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-muted-foreground">Individual Values</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      Individual Values
+                    </Label>
                     <div className="grid grid-cols-3 gap-3">
                       <div className="space-y-1">
-                        <Label className="text-xs text-muted-foreground">H</Label>
+                        <Label className="text-xs text-muted-foreground">
+                          H
+                        </Label>
                         <div className="flex gap-1">
-                          <Input value={hsv.h} readOnly className="font-mono text-center h-10" />
+                          <Input
+                            value={hsv.h}
+                            readOnly
+                            className="font-mono text-center h-10"
+                          />
                         </div>
-                        <p className="text-xs text-muted-foreground text-center">Hue (0-360°)</p>
+                        <p className="text-xs text-muted-foreground text-center">
+                          Hue (0-360°)
+                        </p>
                       </div>
                       <div className="space-y-1">
-                        <Label className="text-xs text-muted-foreground">S</Label>
+                        <Label className="text-xs text-muted-foreground">
+                          S
+                        </Label>
                         <div className="flex gap-1">
-                          <Input value={`${hsv.s}%`} readOnly className="font-mono text-center h-10" />
+                          <Input
+                            value={`${hsv.s}%`}
+                            readOnly
+                            className="font-mono text-center h-10"
+                          />
                         </div>
-                        <p className="text-xs text-muted-foreground text-center">Saturation</p>
+                        <p className="text-xs text-muted-foreground text-center">
+                          Saturation
+                        </p>
                       </div>
                       <div className="space-y-1">
-                        <Label className="text-xs text-muted-foreground">V</Label>
+                        <Label className="text-xs text-muted-foreground">
+                          V
+                        </Label>
                         <div className="flex gap-1">
-                          <Input value={`${hsv.v}%`} readOnly className="font-mono text-center h-10" />
+                          <Input
+                            value={`${hsv.v}%`}
+                            readOnly
+                            className="font-mono text-center h-10"
+                          />
                         </div>
-                        <p className="text-xs text-muted-foreground text-center">Value</p>
+                        <p className="text-xs text-muted-foreground text-center">
+                          Value
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-2 pt-4 border-t">
-                    <Label className="text-sm font-medium text-muted-foreground">Comparison</Label>
+                    <Label className="text-sm font-medium text-muted-foreground">
+                      Comparison
+                    </Label>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="p-3 rounded-md bg-muted">
-                        <p className="text-xs text-muted-foreground mb-1">HSL</p>
+                        <p className="text-xs text-muted-foreground mb-1">
+                          HSL
+                        </p>
                         <p className="font-mono text-sm">
                           {hslInput.h}°, {hslInput.s}%, {hslInput.l}%
                         </p>
                       </div>
                       <div className="p-3 rounded-md bg-muted">
-                        <p className="text-xs text-muted-foreground mb-1">HSV</p>
+                        <p className="text-xs text-muted-foreground mb-1">
+                          HSV
+                        </p>
                         <p className="font-mono text-sm">
                           {hsv.h}°, {hsv.s}%, {hsv.v}%
                         </p>
@@ -233,10 +318,14 @@ export default function HslToHsvConverterPage() {
           <CardContent className="p-6">
             <h3 className="text-sm font-semibold mb-3">About HSL vs HSV</h3>
             <p className="text-sm text-muted-foreground space-y-2">
-              <strong>HSL (Hue, Saturation, Lightness)</strong> and <strong>HSV (Hue, Saturation, Value)</strong> are two different ways to represent colors.
+              <strong>HSL (Hue, Saturation, Lightness)</strong> and{" "}
+              <strong>HSV (Hue, Saturation, Value)</strong> are two different
+              ways to represent colors.
             </p>
             <p className="text-sm text-muted-foreground mt-2">
-              HSL is more intuitive for humans as it represents lightness from black to white, while HSV is based on how colors are mixed in paint (adding black or white).
+              HSL is more intuitive for humans as it represents lightness from
+              black to white, while HSV is based on how colors are mixed in
+              paint (adding black or white).
             </p>
           </CardContent>
         </Card>

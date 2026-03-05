@@ -1,12 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 
@@ -14,10 +28,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
     : { r: 0, g: 0, b: 0 };
 };
 
@@ -50,7 +64,11 @@ const rgbToHsl = (r: number, g: number, b: number) => {
         break;
     }
   }
-  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+  return {
+    h: Math.round(h * 360),
+    s: Math.round(s * 100),
+    l: Math.round(l * 100),
+  };
 };
 
 const hslToRgb = (h: number, s: number, l: number) => {
@@ -71,7 +89,7 @@ const hslToRgb = (h: number, s: number, l: number) => {
 const generateColorScale = (
   baseColor: string,
   steps: number,
-  scaleType: "lightness" | "saturation" | "hue" | "diverging"
+  scaleType: "lightness" | "saturation" | "hue" | "diverging",
 ): string[] => {
   const rgb = hexToRgb(baseColor);
   const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
@@ -93,7 +111,11 @@ const generateColorScale = (
         const ratio = (i - midPoint) / (steps - midPoint - 1);
         newLightness = hsl.l + (100 - hsl.l) * ratio;
       }
-      const newRgb = hslToRgb(hsl.h, hsl.s, Math.max(5, Math.min(95, newLightness)));
+      const newRgb = hslToRgb(
+        hsl.h,
+        hsl.s,
+        Math.max(5, Math.min(95, newLightness)),
+      );
       colors.push(rgbToHex(newRgb.r, newRgb.g, newRgb.b));
     }
   } else {
@@ -126,7 +148,9 @@ const generateColorScale = (
 export default function ColorScaleGeneratorPage() {
   const [baseColor, setBaseColor] = useState("#6366f1");
   const [steps, setSteps] = useState(5);
-  const [scaleType, setScaleType] = useState<"lightness" | "saturation" | "hue" | "diverging">("lightness");
+  const [scaleType, setScaleType] = useState<
+    "lightness" | "saturation" | "hue" | "diverging"
+  >("lightness");
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   const colorScale = generateColorScale(baseColor, steps, scaleType);
@@ -182,9 +206,13 @@ export default function ColorScaleGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Color Scale Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Color Scale Generator
+          </h1>
           <p className="text-muted-foreground">
-            Generate stepped color scales between two colors for charts, maps, and UI usage. Export scales for use in data visualization libraries and design systems.
+            Generate stepped color scales between two colors for charts, maps,
+            and UI usage. Export scales for use in data visualization libraries
+            and design systems.
           </p>
         </div>
 
@@ -196,7 +224,7 @@ export default function ColorScaleGeneratorPage() {
               <div className="space-y-2">
                 <Label>Base Color</Label>
                 <div className="flex gap-2">
-                  <div className="relative w-12 h-10 rounded border overflow-hidden bg-checkerboard">
+                  <div className="relative w-12 h-10 rounded border overflow-hidden ">
                     <input
                       type="color"
                       value={baseColor}
@@ -218,15 +246,26 @@ export default function ColorScaleGeneratorPage() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label>Steps</Label>
-                  <span className="text-sm font-mono text-muted-foreground">{steps}</span>
+                  <span className="text-sm font-mono text-muted-foreground">
+                    {steps}
+                  </span>
                 </div>
-                <Slider value={[steps]} min={3} max={15} step={1} onValueChange={([v]) => setSteps(v)} />
+                <Slider
+                  value={[steps]}
+                  min={3}
+                  max={15}
+                  step={1}
+                  onValueChange={([v]) => setSteps(v)}
+                />
               </div>
 
               {/* Scale Type */}
               <div className="space-y-2">
                 <Label>Scale Type</Label>
-                <Select value={scaleType} onValueChange={(v) => setScaleType(v as any)}>
+                <Select
+                  value={scaleType}
+                  onValueChange={(v) => setScaleType(v as any)}
+                >
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
@@ -262,7 +301,7 @@ export default function ColorScaleGeneratorPage() {
                 {colorScale.map((color, i) => (
                   <div
                     key={i}
-                    className="flex-1 h-full bg-checkerboard"
+                    className="flex-1 h-full "
                     style={{ backgroundColor: color }}
                     title={color}
                   />
@@ -297,7 +336,7 @@ export default function ColorScaleGeneratorPage() {
               {colorScale.map((color, index) => (
                 <div key={index} className="space-y-2">
                   <div
-                    className="aspect-square rounded-lg border bg-checkerboard cursor-pointer transition-transform hover:scale-105"
+                    className="aspect-square rounded-lg border  cursor-pointer transition-transform hover:scale-105"
                     style={{ backgroundColor: color }}
                     onClick={() => copyToClipboard(color, index)}
                   >
@@ -310,8 +349,12 @@ export default function ColorScaleGeneratorPage() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <p className="text-xs font-mono text-muted-foreground">{color.toUpperCase()}</p>
-                    <p className="text-xs text-muted-foreground">{(index + 1) * 100}</p>
+                    <p className="text-xs font-mono text-muted-foreground">
+                      {color.toUpperCase()}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {(index + 1) * 100}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -327,40 +370,65 @@ export default function ColorScaleGeneratorPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">Step</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">Preview</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">HEX</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">RGB</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">HSL</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">Usage</th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      Step
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      Preview
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      HEX
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      RGB
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      HSL
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      Usage
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {colorScale.map((color, index) => {
                     const rgb = hexToRgb(color);
                     const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-                    const usage = scaleType === "diverging"
-                      ? index < steps / 2 ? "Negative/Low" : index === Math.floor(steps / 2) ? "Neutral" : "Positive/High"
-                      : scaleType === "lightness"
-                        ? index < steps / 2 ? "Background" : index === Math.floor(steps / 2) ? "Border" : "Text/Accent"
-                        : "Variable";
+                    const usage =
+                      scaleType === "diverging"
+                        ? index < steps / 2
+                          ? "Negative/Low"
+                          : index === Math.floor(steps / 2)
+                            ? "Neutral"
+                            : "Positive/High"
+                        : scaleType === "lightness"
+                          ? index < steps / 2
+                            ? "Background"
+                            : index === Math.floor(steps / 2)
+                              ? "Border"
+                              : "Text/Accent"
+                          : "Variable";
                     return (
                       <tr key={index} className="border-b last:border-0">
                         <td className="py-2 px-3">{(index + 1) * 100}</td>
                         <td className="py-2 px-3">
                           <div
-                            className="w-8 h-8 rounded border bg-checkerboard"
+                            className="w-8 h-8 rounded border "
                             style={{ backgroundColor: color }}
                           />
                         </td>
-                        <td className="py-2 px-3 font-mono">{color.toUpperCase()}</td>
+                        <td className="py-2 px-3 font-mono">
+                          {color.toUpperCase()}
+                        </td>
                         <td className="py-2 px-3 font-mono">
                           rgb({rgb.r}, {rgb.g}, {rgb.b})
                         </td>
                         <td className="py-2 px-3 font-mono">
                           hsl({hsl.h}, {hsl.s}%, {hsl.l}%)
                         </td>
-                        <td className="py-2 px-3 text-muted-foreground">{usage}</td>
+                        <td className="py-2 px-3 text-muted-foreground">
+                          {usage}
+                        </td>
                       </tr>
                     );
                   })}

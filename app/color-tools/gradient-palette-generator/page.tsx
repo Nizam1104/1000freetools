@@ -1,14 +1,36 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Check, Copy, Download, Shuffle, RotateCcw, Plus, Trash2 } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Check,
+  Copy,
+  Download,
+  Shuffle,
+  RotateCcw,
+  Plus,
+  Trash2,
+} from "lucide-react";
 import { toast } from "sonner";
 
 interface GradientStop {
@@ -26,10 +48,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
     : null;
 };
 
@@ -60,7 +82,7 @@ const mixColors = (hex1: string, hex2: string, ratio: number): string => {
 
 const generateGradientPalette = (
   stops: GradientStop[],
-  paletteSize: number
+  paletteSize: number,
 ): GradientPalette => {
   if (stops.length < 2) {
     return { colors: [], gradient: "" };
@@ -77,7 +99,10 @@ const generateGradientPalette = (
     let upperStop = sortedStops[sortedStops.length - 1];
 
     for (let j = 0; j < sortedStops.length - 1; j++) {
-      if (position >= sortedStops[j].position && position <= sortedStops[j + 1].position) {
+      if (
+        position >= sortedStops[j].position &&
+        position <= sortedStops[j + 1].position
+      ) {
         lowerStop = sortedStops[j];
         upperStop = sortedStops[j + 1];
         break;
@@ -148,7 +173,11 @@ ${palette.colors.map((c, i) => `.gradient-${i + 1} { background-color: ${c}; }`)
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   } else if (format === "json") {
-    const json = JSON.stringify({ gradient: palette.gradient, colors: palette.colors }, null, 2);
+    const json = JSON.stringify(
+      { gradient: palette.gradient, colors: palette.colors },
+      null,
+      2,
+    );
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -166,9 +195,15 @@ ${palette.colors.map((c, i) => `.gradient-${i + 1} { background-color: ${c}; }`)
     canvas.width = 800;
     canvas.height = 400;
 
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    const gradient = ctx.createLinearGradient(
+      0,
+      0,
+      canvas.width,
+      canvas.height,
+    );
     const colors = palette.gradient.match(/#[0-9a-fA-F]{6}/g) || [];
-    const positions = palette.gradient.match(/(\d+)%/g)?.map((s) => parseInt(s) / 100) || [];
+    const positions =
+      palette.gradient.match(/(\d+)%/g)?.map((s) => parseInt(s) / 100) || [];
 
     if (colors.length > 0) {
       colors.forEach((color, i) => {
@@ -221,8 +256,15 @@ export default function GradientPaletteGeneratorPage() {
 
   const addStop = () => {
     const newPosition = Math.floor(Math.random() * 100);
-    const newColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
-    setStops([...stops, { id: Date.now().toString(), color: newColor, position: newPosition }]);
+    const newColor =
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
+    setStops([
+      ...stops,
+      { id: Date.now().toString(), color: newColor, position: newPosition },
+    ]);
     toast.success("Color stop added!");
   };
 
@@ -257,11 +299,23 @@ export default function GradientPaletteGeneratorPage() {
 
   const randomizeGradient = () => {
     const numStops = 2 + Math.floor(Math.random() * 3);
-    const newStops: GradientStop[] = Array.from({ length: numStops }, (_, i) => ({
-      id: Date.now().toString() + i,
-      color: "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0"),
-      position: i === 0 ? 0 : i === numStops - 1 ? 100 : Math.floor(Math.random() * 80) + 10,
-    }));
+    const newStops: GradientStop[] = Array.from(
+      { length: numStops },
+      (_, i) => ({
+        id: Date.now().toString() + i,
+        color:
+          "#" +
+          Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, "0"),
+        position:
+          i === 0
+            ? 0
+            : i === numStops - 1
+              ? 100
+              : Math.floor(Math.random() * 80) + 10,
+      }),
+    );
     setStops(newStops);
     toast.success("Random gradient generated!");
   };
@@ -286,9 +340,13 @@ export default function GradientPaletteGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Gradient-Based Color Palette Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Gradient-Based Color Palette Generator
+          </h1>
           <p className="text-muted-foreground">
-            Generate smooth, gradient-inspired color palettes between two or more colors. Useful for creating cohesive UI themes and data visualization scales.
+            Generate smooth, gradient-inspired color palettes between two or
+            more colors. Useful for creating cohesive UI themes and data
+            visualization scales.
           </p>
         </div>
 
@@ -314,7 +372,9 @@ export default function GradientPaletteGeneratorPage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label className="text-sm font-medium">Angle</Label>
-                  <span className="text-sm font-mono text-muted-foreground">{angle}°</span>
+                  <span className="text-sm font-mono text-muted-foreground">
+                    {angle}°
+                  </span>
                 </div>
                 <Slider
                   value={[angle]}
@@ -330,7 +390,9 @@ export default function GradientPaletteGeneratorPage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label className="text-sm font-medium">Palette Size</Label>
-                  <span className="text-sm font-mono text-muted-foreground">{paletteSize}</span>
+                  <span className="text-sm font-mono text-muted-foreground">
+                    {paletteSize}
+                  </span>
                 </div>
                 <Slider
                   value={[paletteSize]}
@@ -391,13 +453,14 @@ export default function GradientPaletteGeneratorPage() {
 
             <div className="space-y-4">
               {/* Visual Editor */}
-              <div className="relative h-16 rounded-lg border border-border overflow-hidden bg-checkerboard">
+              <div className="relative h-16 rounded-lg border border-border overflow-hidden ">
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: gradientType === "linear"
-                      ? `linear-gradient(${angle}deg, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`
-                      : `radial-gradient(circle, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`,
+                    background:
+                      gradientType === "linear"
+                        ? `linear-gradient(${angle}deg, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`
+                        : `radial-gradient(circle, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`,
                   }}
                 />
 
@@ -414,10 +477,15 @@ export default function GradientPaletteGeneratorPage() {
               {/* Stop Controls */}
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {stops.map((stop, index) => (
-                  <div key={stop.id} className="flex items-center gap-3 p-3 rounded-lg border border-border">
+                  <div
+                    key={stop.id}
+                    className="flex items-center gap-3 p-3 rounded-lg border border-border"
+                  >
                     <div className="flex-1 space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium text-muted-foreground">Stop {index + 1}</span>
+                        <span className="text-xs font-medium text-muted-foreground">
+                          Stop {index + 1}
+                        </span>
                         {stops.length > 2 && (
                           <Button
                             variant="ghost"
@@ -437,19 +505,30 @@ export default function GradientPaletteGeneratorPage() {
                           <input
                             type="color"
                             value={stop.color}
-                            onChange={(e) => updateStop(stop.id, { color: e.target.value })}
+                            onChange={(e) =>
+                              updateStop(stop.id, { color: e.target.value })
+                            }
                             className="w-[150%] h-[150%] -m-[25%] cursor-pointer"
                           />
                         </div>
                         <Input
                           type="number"
                           value={stop.position}
-                          onChange={(e) => updateStop(stop.id, { position: Math.min(100, Math.max(0, Number(e.target.value))) })}
+                          onChange={(e) =>
+                            updateStop(stop.id, {
+                              position: Math.min(
+                                100,
+                                Math.max(0, Number(e.target.value)),
+                              ),
+                            })
+                          }
                           className="w-20 h-8 text-xs"
                           min={0}
                           max={100}
                         />
-                        <span className="text-sm text-muted-foreground self-center">%</span>
+                        <span className="text-sm text-muted-foreground self-center">
+                          %
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -480,7 +559,7 @@ export default function GradientPaletteGeneratorPage() {
                       return (
                         <div key={index} className="group">
                           <div
-                            className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105 bg-checkerboard relative overflow-hidden"
+                            className="w-full aspect-square rounded-lg border border-border shadow-sm transition-all group-hover:scale-105  relative overflow-hidden"
                             style={{ backgroundColor: color }}
                           >
                             <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/40 to-transparent">
@@ -524,9 +603,10 @@ export default function GradientPaletteGeneratorPage() {
                     <div
                       className="w-full h-48 rounded-lg border border-border overflow-hidden"
                       style={{
-                        background: gradientType === "linear"
-                          ? `linear-gradient(${angle}deg, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`
-                          : `radial-gradient(circle, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`,
+                        background:
+                          gradientType === "linear"
+                            ? `linear-gradient(${angle}deg, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`
+                            : `radial-gradient(circle, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`,
                       }}
                     />
 
@@ -566,9 +646,10 @@ export default function GradientPaletteGeneratorPage() {
                       <div
                         className="rounded-lg border border-border overflow-hidden"
                         style={{
-                          background: gradientType === "linear"
-                            ? `linear-gradient(${angle}deg, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`
-                            : `radial-gradient(circle, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`,
+                          background:
+                            gradientType === "linear"
+                              ? `linear-gradient(${angle}deg, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`
+                              : `radial-gradient(circle, ${stops.map((s) => `${s.color} ${s.position}%`).join(", ")})`,
                         }}
                       >
                         <div className="p-6">
@@ -576,14 +657,20 @@ export default function GradientPaletteGeneratorPage() {
                             Gradient Card
                           </h3>
                           <p className="text-sm text-white/90">
-                            Beautiful gradient background with {stops.length} color stops
+                            Beautiful gradient background with {stops.length}{" "}
+                            color stops
                           </p>
                         </div>
                         <div className="p-4 bg-background/90 backdrop-blur space-y-3">
                           <div className="flex gap-2">
                             <Button
                               size="sm"
-                              style={{ backgroundColor: stops[0]?.color, color: getContrastColor(stops[0]?.color || "#fff") }}
+                              style={{
+                                backgroundColor: stops[0]?.color,
+                                color: getContrastColor(
+                                  stops[0]?.color || "#fff",
+                                ),
+                              }}
                             >
                               Primary
                             </Button>
@@ -639,7 +726,10 @@ export default function GradientPaletteGeneratorPage() {
                             <span
                               key={i}
                               className="px-3 py-1 rounded-full text-xs font-medium"
-                              style={{ backgroundColor: color, color: getContrastColor(color) }}
+                              style={{
+                                backgroundColor: color,
+                                color: getContrastColor(color),
+                              }}
                             >
                               Badge {i + 1}
                             </span>
@@ -661,7 +751,11 @@ export default function GradientPaletteGeneratorPage() {
                     variant="outline"
                     size="sm"
                     onClick={() => {
-                      const json = JSON.stringify({ gradient: palette.gradient, colors: palette.colors }, null, 2);
+                      const json = JSON.stringify(
+                        { gradient: palette.gradient, colors: palette.colors },
+                        null,
+                        2,
+                      );
                       copyToClipboard(json, "JSON");
                     }}
                   >

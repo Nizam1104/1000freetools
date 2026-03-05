@@ -470,212 +470,140 @@ export default function VideoGrayscalePage() {
           </div>
         </section>
 
-        {/* What the Tool Does Section */}
+        {/* What Grayscale Conversion Does */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
             <CardContent className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                What it Does
+                What Grayscale Conversion Does
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Grayscale conversion removes all color information from your video. The tool reads each pixel's red, green, and blue values and replaces them with a single luminance value based on how bright that pixel appears. The result is a video using only shades of gray — from black to white — with no color remaining.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                This isn't a CSS filter or preview effect. The grayscale data is written into every frame of the output MP4. The file plays in black and white on every device, player, and platform — no settings required.
+              </p>
               <p className="text-muted-foreground leading-relaxed">
-                This tool applies a grayscale filter to every frame of your
-                video and encodes the result into a new MP4 file. The filter
-                works by reading each pixel's individual red, green, and blue
-                values and replacing them all with a single luminance value that
-                represents how bright that point in the image is. The result is
-                a video that uses only shades of gray from black to white, with
-                no hue information remaining. All processing runs in your
-                browser using your device's CPU, so no file is uploaded to any
-                server. Your original video is not modified.
+                Your original file isn't modified. You get a new grayscale MP4 to download.
               </p>
             </CardContent>
           </Card>
         </section>
 
-        {/* How to Use Section */}
+        {/* When Grayscale Helps */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+            <h2 className="text-3xl font-bold tracking-tight">When You'd Use This</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Matching modern footage to archival film</h3>
+                <p className="text-sm text-muted-foreground">
+                  Documentary makers cutting between new interviews and 1940s footage need them to match. Converting the new clips to grayscale removes the jarring color difference. Both clips sit in the same tonal range.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Fixing unworkable mixed lighting</h3>
+                <p className="text-sm text-muted-foreground">
+                  Mixed light sources — warm tungsten on one side, cool daylight on the other — create color shifts that are hard to fix. Removing color entirely eliminates the problem. The result looks intentional, not broken.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Creating a stark, dramatic mood</h3>
+                <p className="text-sm text-muted-foreground">
+                  Color carries emotional warmth. Removing it shifts the mood toward something more formal or timeless. Filmmakers use grayscale for memorial content, dramatic flashbacks, and opening credits.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">High-contrast art or music videos</h3>
+                <p className="text-sm text-muted-foreground">
+                  Without color to draw the eye, shapes, edges, and lighting become the dominant elements. Musicians and visual artists use grayscale for a raw, stripped-down aesthetic that emphasizes contrast and form.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-muted/50 border-muted">
+              <CardContent className="p-6">
+                <h3 className="font-bold mb-2">Preparing for monochrome displays</h3>
+                <p className="text-sm text-muted-foreground">
+                  Some digital signage, e-ink displays, and print workflows only support grayscale. Converting before export lets you see the actual monochrome appearance — not an approximation by the display driver.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* How Grayscale Works */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+            <CardContent className="p-8 sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+                How Grayscale Conversion Works
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg">Luminance Calculation</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The tool reads each pixel's red, green, and blue values. It calculates a weighted average — green counts more (human eyes are more sensitive to it), red counts less, blue counts least. That single luminance value replaces all three color channels. The result preserves the original lighting and contrast, just without hue.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Permanent Encoding</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The grayscale data is written into every frame of a new MP4 file. This isn't a filter that can be toggled off — the color data is gone from the output file. The video plays in black and white everywhere, on every player and platform.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Browser-Based Processing</h3>
+                  <p className="text-muted-foreground mt-2">
+                    The tool uses OffscreenCanvas to process frames without freezing your browser. Encoding happens in the background, keeping the interface responsive. Your file stays local — no upload to servers.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Using This Tool */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">How to Convert to Grayscale</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Select your video
-              </h3>
+              <h3 className="relative font-semibold text-xl">Upload your video</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Open the file picker and load your video. The preview panel
-                shows the original color footage so you can confirm the file
-                loaded correctly. You can return to this Original view after
-                processing to compare it side by side with the grayscale output.
+                Select or drag your file. It stays on your device — no server upload. The preview shows the original color footage.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Start the conversion
-              </h3>
+              <h3 className="relative font-semibold text-xl">Convert to grayscale</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                Click Convert to Grayscale. The encoder reads each frame,
-                calculates a luminance value for every pixel, and writes the
-                result into a new MP4. Keep the browser tab open. The progress
-                bar updates as the encoder works through the video from the
-                first frame to the last.
+                Click Convert to Grayscale. The encoder processes each frame, calculates luminance values, and writes a new MP4. Keep the tab open during processing.
               </p>
             </div>
             <div className="relative text-center">
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="relative font-semibold text-xl">
-                Preview and download
-              </h3>
+              <h3 className="relative font-semibold text-xl">Preview and download</h3>
               <p className="relative mt-2 text-sm text-muted-foreground text-left">
-                When the progress bar reaches 100%, click the Grayscale button
-                in the preview panel to watch the converted video. Toggle
-                between the Original and Grayscale views to confirm the result.
-                Click Download to save the black and white MP4 to your device.
+                When done, toggle between Original and Grayscale to compare. The output is a true grayscale MP4 — plays in black and white everywhere. Download when satisfied.
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Blending modern footage with archive material
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Documentary makers inserting new interviews next to 1940s
-                  archival footage need the new clips to match the period look.
-                  Converting the modern footage to grayscale lets both clips sit
-                  in the same tonal range on the timeline without a visually
-                  jarring color difference.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Fixing unworkable mixed lighting
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Footage shot in a location with mixed light sources, such as
-                  warm tungsten lights on one side and cool daylight on the
-                  other, often produces a color shift that is difficult to
-                  grade. Removing color entirely eliminates the problem and
-                  produces a clean, consistent look across the entire clip.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Setting a serious or cinematic tone
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Color carries emotional warmth. Removing it shifts the mood of
-                  a video toward something more formal, stark, or timeless.
-                  Filmmakers use grayscale for memorial content, dramatic
-                  flashback sequences, and opening credits where a neutral,
-                  high-contrast look reinforces the subject matter.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Creating high-contrast photo or art video
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Musicians and visual artists who want a raw, stripped-down
-                  aesthetic use grayscale to bring out the contrast between
-                  light and shadow. Without color to draw the eye, shapes,
-                  edges, and lighting patterns become the dominant visual
-                  elements in the frame.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-6">
-                <h3 className="font-bold mb-2">
-                  Preparing video for print or export
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Some digital signage screens, e-ink displays, and print
-                  workflows only support monochrome output. Converting the
-                  source video to grayscale before export ensures you review the
-                  actual monochrome appearance rather than relying on the
-                  display or print driver to approximate it.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Settings Explained Section */}
-        <section className="container mx-auto max-w-6xl px-4 py-16">
-          <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-            <CardContent className="p-8 sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-                Settings Explained
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg">
-                    How the Grayscale Filter Works
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    The grayscale filter reads the red, green, and blue values
-                    for every pixel in every frame. It calculates a single
-                    luminance value using a weighted average based on how the
-                    human eye perceives brightness across the three channels.
-                    That single value then replaces the red, green, and blue
-                    channels equally, removing all hue information and leaving
-                    only brightness data. The result is a true grayscale image
-                    where the tonal range mirrors the original lighting in the
-                    scene.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    OffscreenCanvas Processing
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    This tool uses the browser's OffscreenCanvas API to process
-                    video frames without blocking the browser's main thread. The
-                    encoding work happens in a background process, which keeps
-                    the interface responsive during conversion. This also means
-                    the tool can handle longer videos without the browser
-                    appearing to freeze or hang.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">
-                    Permanent Pixel-Level Encoding
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    The output is a new MP4 where the grayscale data is written
-                    at the pixel level. This is not a CSS filter or a preview
-                    overlay. The color data is absent from the output file
-                    itself, not just hidden. This means the file will appear in
-                    grayscale in every player, editor, and platform without any
-                    further settings required.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* FAQs Section */}

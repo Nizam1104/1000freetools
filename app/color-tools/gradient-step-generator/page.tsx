@@ -24,7 +24,11 @@ const rgbToHex = (r: number, g: number, b: number) => {
   return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).padStart(6, "0")}`;
 };
 
-const generateGradientSteps = (startColor: string, endColor: string, steps: number): string[] => {
+const generateGradientSteps = (
+  startColor: string,
+  endColor: string,
+  steps: number,
+): string[] => {
   const start = hexToRgb(startColor);
   const end = hexToRgb(endColor);
 
@@ -95,9 +99,13 @@ export default function GradientStepGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Gradient Step Generator</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Gradient Step Generator
+          </h1>
           <p className="text-muted-foreground">
-            Generate evenly spaced color steps between two colors. Ideal for building smooth transitions, data visualizations, and gradient-based design tokens.
+            Generate evenly spaced color steps between two colors. Ideal for
+            building smooth transitions, data visualizations, and gradient-based
+            design tokens.
           </p>
         </div>
 
@@ -109,7 +117,7 @@ export default function GradientStepGeneratorPage() {
               <div className="space-y-2">
                 <Label>Start Color</Label>
                 <div className="flex gap-2">
-                  <div className="relative w-12 h-10 rounded border overflow-hidden bg-checkerboard">
+                  <div className="relative w-12 h-10 rounded border overflow-hidden ">
                     <input
                       type="color"
                       value={startColor}
@@ -131,7 +139,7 @@ export default function GradientStepGeneratorPage() {
               <div className="space-y-2">
                 <Label>End Color</Label>
                 <div className="flex gap-2">
-                  <div className="relative w-12 h-10 rounded border overflow-hidden bg-checkerboard">
+                  <div className="relative w-12 h-10 rounded border overflow-hidden ">
                     <input
                       type="color"
                       value={endColor}
@@ -153,9 +161,17 @@ export default function GradientStepGeneratorPage() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label>Number of Steps</Label>
-                  <span className="text-sm font-mono text-muted-foreground">{steps}</span>
+                  <span className="text-sm font-mono text-muted-foreground">
+                    {steps}
+                  </span>
                 </div>
-                <Slider value={[steps]} min={2} max={20} step={1} onValueChange={([v]) => setSteps(v)} />
+                <Slider
+                  value={[steps]}
+                  min={2}
+                  max={20}
+                  step={1}
+                  onValueChange={([v]) => setSteps(v)}
+                />
                 <div className="flex justify-between text-xs text-muted-foreground">
                   <span>2</span>
                   <span>10</span>
@@ -202,7 +218,7 @@ export default function GradientStepGeneratorPage() {
               {gradientSteps.map((color, index) => (
                 <div key={index} className="space-y-2">
                   <div
-                    className="aspect-square rounded-lg border bg-checkerboard cursor-pointer transition-transform hover:scale-105"
+                    className="aspect-square rounded-lg border  cursor-pointer transition-transform hover:scale-105"
                     style={{ backgroundColor: color }}
                     onClick={() => copyToClipboard(color, index)}
                   >
@@ -215,8 +231,12 @@ export default function GradientStepGeneratorPage() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <p className="text-xs font-mono text-muted-foreground">{color.toUpperCase()}</p>
-                    <p className="text-xs text-muted-foreground">Step {index + 1}</p>
+                    <p className="text-xs font-mono text-muted-foreground">
+                      {color.toUpperCase()}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      Step {index + 1}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -232,11 +252,21 @@ export default function GradientStepGeneratorPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">Step</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">Preview</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">HEX</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">RGB</th>
-                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">Position</th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      Step
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      Preview
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      HEX
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      RGB
+                    </th>
+                    <th className="text-left py-2 px-3 font-medium text-muted-foreground">
+                      Position
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -248,11 +278,13 @@ export default function GradientStepGeneratorPage() {
                         <td className="py-2 px-3">{index + 1}</td>
                         <td className="py-2 px-3">
                           <div
-                            className="w-8 h-8 rounded border bg-checkerboard"
+                            className="w-8 h-8 rounded border "
                             style={{ backgroundColor: color }}
                           />
                         </td>
-                        <td className="py-2 px-3 font-mono">{color.toUpperCase()}</td>
+                        <td className="py-2 px-3 font-mono">
+                          {color.toUpperCase()}
+                        </td>
                         <td className="py-2 px-3 font-mono">
                           rgb({rgb.r}, {rgb.g}, {rgb.b})
                         </td>

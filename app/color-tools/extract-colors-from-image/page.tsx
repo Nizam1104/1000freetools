@@ -1,13 +1,29 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Upload, Download, Copy, Check, Trash2, Image as ImageIcon } from "lucide-react";
+import {
+  Upload,
+  Download,
+  Copy,
+  Check,
+  Trash2,
+  Image as ImageIcon,
+} from "lucide-react";
 import { toast } from "sonner";
-import { extractDominantColors, hexToRgb } from "@/app/color-tools/lib/color-utils";
+import {
+  extractDominantColors,
+  hexToRgb,
+} from "@/app/color-tools/lib/color-utils";
 
 interface ExtractedColor {
   hex: string;
@@ -23,64 +39,73 @@ export default function ExtractColorsFromImagePage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !file.type.startsWith("image/")) {
-      toast.error("Please select a valid image file");
-      return;
-    }
+  const handleFileSelect = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file || !file.type.startsWith("image/")) {
+        toast.error("Please select a valid image file");
+        return;
+      }
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const src = event.target?.result as string;
-      setImageSrc(src);
-      extractColors(src);
-    };
-    reader.readAsDataURL(file);
-  }, [colorCount]);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const src = event.target?.result as string;
+        setImageSrc(src);
+        extractColors(src);
+      };
+      reader.readAsDataURL(file);
+    },
+    [colorCount],
+  );
 
-  const extractColors = useCallback((src: string) => {
-    setIsProcessing(true);
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.onload = () => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
+  const extractColors = useCallback(
+    (src: string) => {
+      setIsProcessing(true);
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
 
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
 
-      ctx.drawImage(img, 0, 0);
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const extractedColors = extractDominantColors(imageData, colorCount);
-      setColors(extractedColors);
-      setIsProcessing(false);
-    };
-    img.onerror = () => {
-      toast.error("Failed to load image");
-      setIsProcessing(false);
-    };
-    img.src = src;
-  }, [colorCount]);
+        ctx.drawImage(img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const extractedColors = extractDominantColors(imageData, colorCount);
+        setColors(extractedColors);
+        setIsProcessing(false);
+      };
+      img.onerror = () => {
+        toast.error("Failed to load image");
+        setIsProcessing(false);
+      };
+      img.src = src;
+    },
+    [colorCount],
+  );
 
-  const handleDrop = useCallback((e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const file = e.dataTransfer.files?.[0];
-    if (!file || !file.type.startsWith("image/")) {
-      toast.error("Please drop a valid image file");
-      return;
-    }
+  const handleDrop = useCallback(
+    (e: React.DragEvent<HTMLDivElement>) => {
+      e.preventDefault();
+      const file = e.dataTransfer.files?.[0];
+      if (!file || !file.type.startsWith("image/")) {
+        toast.error("Please drop a valid image file");
+        return;
+      }
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const src = event.target?.result as string;
-      setImageSrc(src);
-      extractColors(src);
-    };
-    reader.readAsDataURL(file);
-  }, [extractColors]);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const src = event.target?.result as string;
+        setImageSrc(src);
+        extractColors(src);
+      };
+      reader.readAsDataURL(file);
+    },
+    [extractColors],
+  );
 
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -104,7 +129,9 @@ export default function ExtractColorsFromImagePage() {
 
     switch (format) {
       case "css":
-        content = colors.map((c, i) => `--color-${i + 1}: ${c.hex};`).join("\n");
+        content = colors
+          .map((c, i) => `--color-${i + 1}: ${c.hex};`)
+          .join("\n");
         filename = "colors.css";
         break;
       case "json":
@@ -140,9 +167,13 @@ export default function ExtractColorsFromImagePage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Extract Colors from an Image</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Extract Colors from an Image
+          </h1>
           <p className="text-muted-foreground">
-            Upload any image and extract its dominant colors directly in your browser using canvas. No data is sent to a server — 100% private and instant.
+            Upload any image and extract its dominant colors directly in your
+            browser using canvas. No data is sent to a server — 100% private and
+            instant.
           </p>
         </div>
 
@@ -171,7 +202,9 @@ export default function ExtractColorsFromImagePage() {
                 />
                 <ImageIcon className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
                 <p className="text-sm text-muted-foreground mb-2">
-                  {isProcessing ? "Processing..." : "Drop image here or click to upload"}
+                  {isProcessing
+                    ? "Processing..."
+                    : "Drop image here or click to upload"}
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Supports JPG, PNG, GIF, WebP
@@ -183,7 +216,7 @@ export default function ExtractColorsFromImagePage() {
                   <img
                     src={imageSrc}
                     alt="Uploaded"
-                    className="w-full h-64 object-cover rounded-lg bg-checkerboard"
+                    className="w-full h-64 object-cover rounded-lg "
                   />
                   <Button
                     variant="destructive"
@@ -237,9 +270,12 @@ export default function ExtractColorsFromImagePage() {
                     {colors.map((color, index) => {
                       const rgb = hexToRgb(color.hex);
                       const luminance = rgb
-                        ? (0.2126 * (rgb.r / 255) + 0.7152 * (rgb.g / 255) + 0.0722 * (rgb.b / 255))
+                        ? 0.2126 * (rgb.r / 255) +
+                          0.7152 * (rgb.g / 255) +
+                          0.0722 * (rgb.b / 255)
                         : 0;
-                      const textColor = luminance > 0.179 ? "#000000" : "#FFFFFF";
+                      const textColor =
+                        luminance > 0.179 ? "#000000" : "#FFFFFF";
 
                       return (
                         <div
@@ -252,7 +288,9 @@ export default function ExtractColorsFromImagePage() {
                           />
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
-                              <span className="font-mono font-medium">{color.hex}</span>
+                              <span className="font-mono font-medium">
+                                {color.hex}
+                              </span>
                               <span className="text-sm text-muted-foreground">
                                 {color.percentage}%
                               </span>

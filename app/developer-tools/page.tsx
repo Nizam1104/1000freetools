@@ -10,6 +10,11 @@ const developerTools = [
       "Generate realistic test data for your applications to speed up development and testing.",
     href: "/developer-tools/mock-data-generator",
   },
+  {
+    name: "Javascript Online Playground",
+    description: "Run Javascript in browser",
+    href: "/developer-tools/js-online-compiler",
+  },
 ];
 
 export const metadata: Metadata = {

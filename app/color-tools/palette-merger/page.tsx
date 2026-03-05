@@ -6,7 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Copy, Check, Trash2, Plus, Combine, Palette } from "lucide-react";
 import { toast } from "sonner";
 
@@ -52,7 +58,11 @@ const rgbToHsl = (r: number, g: number, b: number) => {
         break;
     }
   }
-  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+  return {
+    h: Math.round(h * 360),
+    s: Math.round(s * 100),
+    l: Math.round(l * 100),
+  };
 };
 
 const parseColors = (input: string): string[] => {
@@ -79,7 +89,11 @@ const colorDistance = (color1: string, color2: string) => {
   return Math.sqrt(dh * dh + ds * ds + dl * dl);
 };
 
-const mergePalettes = (palettes: Palette[], removeDuplicates: boolean, similarityThreshold: number): string[] => {
+const mergePalettes = (
+  palettes: Palette[],
+  removeDuplicates: boolean,
+  similarityThreshold: number,
+): string[] => {
   const allColors = palettes.flatMap((p) => p.colors);
 
   if (!removeDuplicates) {
@@ -147,9 +161,15 @@ export default function PaletteMergerPage() {
       toast.error("Please add at least one palette");
       return;
     }
-    const merged = mergePalettes(palettes, removeDuplicates, similarityThreshold);
+    const merged = mergePalettes(
+      palettes,
+      removeDuplicates,
+      similarityThreshold,
+    );
     setMergedColors(merged);
-    toast.success(`Merged ${merged.length} colors from ${palettes.length} palettes`);
+    toast.success(
+      `Merged ${merged.length} colors from ${palettes.length} palettes`,
+    );
   };
 
   const copyToClipboard = async () => {
@@ -174,9 +194,13 @@ export default function PaletteMergerPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">Palette Merger</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            Palette Merger
+          </h1>
           <p className="text-muted-foreground">
-            Merge two or more color palettes into a single unified palette. Useful for combining brand colors, theme tokens, and design system libraries.
+            Merge two or more color palettes into a single unified palette.
+            Useful for combining brand colors, theme tokens, and design system
+            libraries.
           </p>
         </div>
 
@@ -211,14 +235,22 @@ export default function PaletteMergerPage() {
                 <Plus className="h-4 w-4 mr-2" />
                 Add Palette
               </Button>
-              <Button variant="outline" onClick={() => { setCurrentInput(""); setCurrentName(""); }}>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setCurrentInput("");
+                  setCurrentName("");
+                }}
+              >
                 Clear
               </Button>
             </div>
 
             {/* Preset Palettes */}
             <div className="pt-4 border-t">
-              <Label className="text-sm text-muted-foreground mb-3 block">Or load a preset:</Label>
+              <Label className="text-sm text-muted-foreground mb-3 block">
+                Or load a preset:
+              </Label>
               <div className="flex flex-wrap gap-2">
                 {PRESET_PALETTES.map((preset) => (
                   <Button
@@ -249,7 +281,10 @@ export default function PaletteMergerPage() {
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 {palettes.map((palette) => (
-                  <div key={palette.id} className="p-4 rounded-lg border bg-card space-y-3">
+                  <div
+                    key={palette.id}
+                    className="p-4 rounded-lg border bg-card space-y-3"
+                  >
                     <div className="flex items-center justify-between">
                       <p className="font-medium">{palette.name}</p>
                       <Button
@@ -264,7 +299,7 @@ export default function PaletteMergerPage() {
                       {palette.colors.map((color, i) => (
                         <div
                           key={i}
-                          className="flex-1 h-full bg-checkerboard"
+                          className="flex-1 h-full "
                           style={{ backgroundColor: color }}
                           title={color}
                         />
@@ -272,7 +307,10 @@ export default function PaletteMergerPage() {
                     </div>
                     <div className="flex flex-wrap gap-1">
                       {palette.colors.map((color, i) => (
-                        <span key={i} className="text-xs font-mono text-muted-foreground">
+                        <span
+                          key={i}
+                          className="text-xs font-mono text-muted-foreground"
+                        >
                           {color.toUpperCase()}
                         </span>
                       ))}
@@ -328,7 +366,11 @@ export default function PaletteMergerPage() {
               </div>
 
               <div className="flex items-end">
-                <Button onClick={mergeAll} className="w-full" disabled={palettes.length === 0}>
+                <Button
+                  onClick={mergeAll}
+                  className="w-full"
+                  disabled={palettes.length === 0}
+                >
                   <Combine className="h-4 w-4 mr-2" />
                   Merge Palettes
                 </Button>
@@ -358,7 +400,7 @@ export default function PaletteMergerPage() {
                 {mergedColors.map((color, i) => (
                   <div
                     key={i}
-                    className="flex-1 h-full bg-checkerboard"
+                    className="flex-1 h-full "
                     style={{ backgroundColor: color }}
                     title={color}
                   />
@@ -373,11 +415,13 @@ export default function PaletteMergerPage() {
                   return (
                     <div key={i} className="space-y-2">
                       <div
-                        className="aspect-square rounded-lg border bg-checkerboard"
+                        className="aspect-square rounded-lg border "
                         style={{ backgroundColor: color }}
                       />
                       <div className="text-center">
-                        <p className="text-xs font-mono">{color.toUpperCase()}</p>
+                        <p className="text-xs font-mono">
+                          {color.toUpperCase()}
+                        </p>
                         <p className="text-xs text-muted-foreground">
                           L: {hsl.l}%
                         </p>
@@ -400,7 +444,9 @@ export default function PaletteMergerPage() {
                   <div className="space-y-2">
                     <Label className="text-xs">CSS Variables</Label>
                     <pre className="bg-muted p-3 rounded-lg text-xs font-mono overflow-x-auto">
-                      {mergedColors.map((c, i) => `--color-${i + 1}: ${c};`).join("\n")}
+                      {mergedColors
+                        .map((c, i) => `--color-${i + 1}: ${c};`)
+                        .join("\n")}
                     </pre>
                   </div>
                 </div>

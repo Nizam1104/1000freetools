@@ -634,208 +634,160 @@ export default function VideoCompressionPage() {
         </CardContent>
       </Card>
 
-      {/* What the Tool Does Section */}
+      {/* What Compression Does */}
       <section className="mb-12">
         <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
           <CardContent className="p-8 sm:p-12">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-              What it Does
+              What Compression Does (And What It Costs)
             </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Compression reduces file size by lowering the bitrate — the amount of data used per second of video. Lower bitrate = smaller file = some quality loss. That's the trade-off. There's no way around it.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              The encoder rewrites every frame to fit within your chosen data budget. At moderate compression (4-6 Mbps for 1080p), most people won't notice much difference. At aggressive compression (1-2 Mbps), fast motion gets blocky and colors band. But the file is tiny.
+            </p>
             <p className="text-muted-foreground leading-relaxed">
-              This tool re-encodes your video at a lower bitrate to reduce the
-              file size. You set the target bitrate using the slider, and the
-              encoder rewrites every frame to fit within that data budget. A
-              lower bitrate means a smaller file and some reduction in visual
-              detail, particularly in fast-moving scenes. A higher bitrate
-              preserves more detail but produces a larger file. The tool also
-              lets you change the output codec and resolution, which gives you
-              additional control over the final file size. All processing
-              happens in your browser so your video data never leaves your
-              device.
+              This tool runs locally in your browser. No upload means faster processing and complete privacy. A 100 MB video might compress to 20-30 MB depending on your settings.
             </p>
           </CardContent>
         </Card>
       </section>
 
-      {/* How to Use Section */}
+      {/* When Compression Helps */}
       <section className="mb-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">How to Use</h2>
+          <h2 className="text-3xl font-bold tracking-tight">When You Need This</h2>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Email attachments</h3>
+              <p className="text-sm text-muted-foreground">
+                Email caps attachments at 10-25 MB. A 2-minute 1080p video can be 500 MB+. Compress to 1-2 Mbps and that same video fits under 20 MB. Quality drops but it's shareable via email.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Website background videos</h3>
+              <p className="text-sm text-muted-foreground">
+                Landing page backgrounds should be under 5 MB for fast loading. Compress a 30-second clip to VP9 at 720p and you get 3-5 MB. Good enough for background use, loads fast on mobile.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Freeing phone storage</h3>
+              <p className="text-sm text-muted-foreground">
+                4K phone videos eat storage — 3-5 GB for 10 minutes. Compress to 1080p at 4 Mbps and you get ~300 MB. Still watchable, way less space. Keep the compressed version, delete the original.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Slow upload connections</h3>
+              <p className="text-sm text-muted-foreground">
+                Hotel Wi-Fi uploading 2 GB takes forever. Compress to draft quality (1-2 Mbps) first — file drops to a few hundred MB. Uploads in minutes. Send the full quality version later if needed.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-muted/50 border-muted">
+            <CardContent className="p-6">
+              <h3 className="font-bold mb-2">Platform upload limits</h3>
+              <p className="text-sm text-muted-foreground">
+                Discord free tier: 25 MB limit. Some Slack workspaces: 1 GB. Compress your clip to fit the platform's cap. Share directly in chat instead of using cloud links.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Compression Settings Reference */}
+      <section className="mb-12">
+        <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
+          <CardContent className="p-8 sm:p-12">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
+              Settings That Affect File Size
+            </h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-bold text-lg">Bitrate (Most Important)</h3>
+                <p className="text-muted-foreground mt-2">
+                  Bitrate controls data per second of video. Higher = better quality, larger file. Lower = worse quality, smaller file.
+                </p>
+                <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                    <strong className="text-foreground">1 Mbps</strong> — Small files, visible artifacts. Good for email, previews.
+                  </div>
+                  <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                    <strong className="text-foreground">2-4 Mbps</strong> — Good web quality. YouTube, social media.
+                  </div>
+                  <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                    <strong className="text-foreground">5-8 Mbps</strong> — High quality 1080p. Minimal visible loss.
+                  </div>
+                  <div className="p-3 bg-muted/50 rounded-lg text-sm">
+                    <strong className="text-foreground">10+ Mbps</strong> — Near-original quality. Large files.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Codec: H.264 vs VP9</h3>
+                <p className="text-muted-foreground mt-2">
+                  H.264 plays everywhere — phones, TVs, old computers. VP9 produces ~30% smaller files at the same quality but doesn't play on some older devices. Use H.264 for sharing, VP9 for web embedding.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Resolution</h3>
+                <p className="text-muted-foreground mt-2">
+                  Halving resolution (4K to 1080p, or 1080p to 720p) cuts file size significantly. 720p looks fine on phones and small screens. 4K is overkill for most uses anyway.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Format: MP4 vs WebM</h3>
+                <p className="text-muted-foreground mt-2">
+                  MP4 = universal compatibility. WebM = smaller files, browser-optimized. If you're embedding on a website, WebM. If you're sending to people, MP4.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Using This Tool */}
+      <section className="mb-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight">How to Compress Video</h2>
         </div>
         <div className="grid gap-8 sm:grid-cols-3">
           <div className="relative text-center">
             <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
               <span className="text-2xl font-bold">1</span>
             </div>
-            <h3 className="relative font-semibold text-xl">
-              Upload your video
-            </h3>
+            <h3 className="relative font-semibold text-xl">Upload your video</h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              Click the upload area or drag your MP4, MOV, or WebM file into the
-              tool. The original file size is displayed immediately so you have
-              a clear baseline before making any changes. The file is read from
-              your local drive and never sent to a server.
+              Drag or select your file. It stays on your device — no server upload. You'll see the original file size immediately.
             </p>
           </div>
           <div className="relative text-center">
             <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
               <span className="text-2xl font-bold">2</span>
             </div>
-            <h3 className="relative font-semibold text-xl">Set the bitrate</h3>
+            <h3 className="relative font-semibold text-xl">Set compression level</h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              Move the bitrate slider to choose how much data to allocate per
-              second of video. The estimated output file size updates as you
-              drag. If you want a smaller file, open the advanced options to
-              also change the codec to VP9 or reduce the resolution.
+              Drag the bitrate slider. The estimated output size updates as you move it. For smaller files, open Advanced Options and switch to VP9 or reduce resolution.
             </p>
           </div>
           <div className="relative text-center">
             <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/25">
               <span className="text-2xl font-bold">3</span>
             </div>
-            <h3 className="relative font-semibold text-xl">
-              Compress and download
-            </h3>
+            <h3 className="relative font-semibold text-xl">Compress and download</h3>
             <p className="relative mt-2 text-sm text-muted-foreground text-left">
-              Click the Compress button. The tool processes every frame in your
-              browser and shows a progress bar as it works. When it finishes,
-              the compressed file size and the percentage saved are shown. Click
-              the download button to save the output to your drive.
+              Click Compress and wait. Processing time depends on video length. When done, you'll see the new file size and savings percentage. Download if satisfied.
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="mb-12">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">Use Cases</h2>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Card className="bg-muted/50 border-muted">
-            <CardContent className="p-6">
-              <h3 className="font-bold mb-2">
-                Fitting a video inside an email attachment limit
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Most email services cap attachments at 10 to 25 MB. A 2-minute
-                tutorial recorded at 1080p can produce a file well above that
-                limit. Compressing the video to around 2 Mbps reduces a typical
-                500 MB file to under 20 MB for a 2-minute clip, which fits
-                within the limit while keeping the content clear.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-muted/50 border-muted">
-            <CardContent className="p-6">
-              <h3 className="font-bold mb-2">
-                Reducing load time for website background videos
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                A looping background video for a landing page should be well
-                under 5 MB to avoid slowing page load on mobile connections.
-                Switching to VP9 and reducing the resolution to 720p can reduce
-                a 30-second clip from 40 MB down to around 3 to 5 MB while
-                keeping the visual quality good enough for background use.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-muted/50 border-muted">
-            <CardContent className="p-6">
-              <h3 className="font-bold mb-2">
-                Freeing storage space on a phone
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                A 10-minute 4K video recorded on a phone can be 3 to 5 GB. If
-                you want to keep a watchable copy without using that much
-                storage, compressing it to 1080p at 4 Mbps reduces the file to
-                around 300 MB while keeping the content easy to watch on a
-                screen.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-muted/50 border-muted">
-            <CardContent className="p-6">
-              <h3 className="font-bold mb-2">
-                Preparing a smaller file for a slow upload connection
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Uploading a 2 GB raw video over a slow hotel or public Wi-Fi
-                connection can take hours. Compressing the file to a draft
-                quality at a lower bitrate before uploading can reduce the file
-                to a few hundred megabytes, which uploads in minutes and lets
-                the recipient review the cut before you send the final version.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-muted/50 border-muted">
-            <CardContent className="p-6">
-              <h3 className="font-bold mb-2">
-                Meeting platform upload size limits
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Discord's free tier limits file uploads to 25 MB. Some Slack
-                workspaces cap uploads at 1 GB. Compressing a short clip to fit
-                within the specific platform limit means you can share it
-                directly in chat without a third-party link or a paid
-                subscription.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Settings Explained Section */}
-      <section className="mb-12">
-        <Card className="overflow-hidden border-muted/50 bg-gradient-to-br from-card to-muted/20">
-          <CardContent className="p-8 sm:p-12">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-6">
-              Settings Explained
-            </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-bold text-lg">Target Bitrate</h3>
-                <p className="text-muted-foreground mt-2">
-                  Bitrate controls how much data the encoder allocates per
-                  second of video, measured in Mbps. Higher bitrates preserve
-                  more detail but produce larger files. Lower bitrates produce
-                  smaller files but may show visible compression artifacts in
-                  fast-moving scenes. For social media sharing, 2 to 4 Mbps at
-                  1080p is generally a good starting point. For email
-                  attachments, 1 Mbps or lower is often needed.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg">
-                  Output Format: MP4 vs WebM
-                </h3>
-                <p className="text-muted-foreground mt-2">
-                  MP4 plays on virtually every device, including older phones
-                  and TVs. WebM is a browser-optimized container that works well
-                  for embedding video on websites but is not supported by all
-                  media players. If you are sharing the file with other people
-                  on different devices, MP4 is the safer choice. If you are
-                  embedding video on a website, WebM with VP9 typically produces
-                  a smaller file.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg">
-                  Codec: H.264 vs VP9 vs VP8
-                </h3>
-                <p className="text-muted-foreground mt-2">
-                  H.264 (avc1) is the most widely compatible codec and plays on
-                  essentially all devices made in the last 15 years. VP9 is a
-                  more efficient codec that produces smaller files at the same
-                  visual quality but requires more time to encode and is not
-                  supported by some older media players. VP8 is an older Google
-                  codec that is less efficient than VP9 and is rarely the best
-                  choice for new files.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </section>
 
       {/* FAQs Section */}
