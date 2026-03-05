@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download, ArrowRightLeft } from "lucide-react";
 import { toast } from "sonner";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 
 export default function JsonBase64Page() {
   const [input, setInput] = useState("");

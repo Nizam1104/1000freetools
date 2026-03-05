@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
 import { NativeSelect as Select } from "@/components/ui/native-select";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 
 export default function JsonDatetimeGeneratorPage() {
   const [format, setFormat] = useState<"iso" | "utc" | "timestamp" | "custom">("iso");

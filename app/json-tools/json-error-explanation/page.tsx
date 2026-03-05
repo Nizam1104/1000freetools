@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 
 export default function JsonErrorExplanationPage() {
   const [input, setInput] = useState("");

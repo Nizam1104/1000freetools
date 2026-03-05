@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
@@ -226,13 +226,12 @@ export default function JsonDiffPage() {
         <div className="flex items-center gap-2">
           <span className="font-mono text-sm font-medium">{item.key}</span>
           <span
-            className={`text-xs px-2 py-0.5 rounded-full ${
-              item.type === "added"
+            className={`text-xs px-2 py-0.5 rounded-full ${item.type === "added"
                 ? "bg-green-500 text-white"
                 : item.type === "removed"
                   ? "bg-red-500 text-white"
                   : "bg-yellow-500 text-white"
-            }`}
+              }`}
           >
             {typeLabel}
           </span>

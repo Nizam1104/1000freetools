@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   FileJson,
@@ -238,11 +238,10 @@ export default function JsonSorterPage() {
                     <button
                       key={value}
                       onClick={() => setSortMode(value)}
-                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium border transition-all ${
-                        sortMode === value
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium border transition-all ${sortMode === value
                           ? "bg-primary text-primary-foreground border-primary shadow-sm"
                           : "bg-background border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
-                      }`}
+                        }`}
                     >
                       <Icon className="h-3.5 w-3.5" />
                       {label}
@@ -261,11 +260,10 @@ export default function JsonSorterPage() {
                 </Label>
                 <Select value={selectedKey} onValueChange={setSelectedKey}>
                   <SelectTrigger
-                    className={`w-[200px] ${
-                      isValueSort && selectedKey === "__all__"
+                    className={`w-[200px] ${isValueSort && selectedKey === "__all__"
                         ? "border-orange-400 text-orange-500"
                         : ""
-                    }`}
+                      }`}
                   >
                     <SelectValue placeholder="Select a key…" />
                   </SelectTrigger>

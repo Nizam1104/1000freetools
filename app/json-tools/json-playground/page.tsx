@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   FileJson,
@@ -235,11 +235,10 @@ export default function JsonPlaygroundPage() {
                 />
                 {isValid !== null && (
                   <div
-                    className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-medium ${
-                      isValid
+                    className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-medium ${isValid
                         ? "bg-green-500 text-white"
                         : "bg-destructive text-white"
-                    }`}
+                      }`}
                   >
                     {isValid ? "Valid JSON" : "Invalid JSON"}
                   </div>

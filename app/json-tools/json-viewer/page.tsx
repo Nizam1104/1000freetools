@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import {
@@ -33,7 +33,7 @@ type JsonValue = string | number | boolean | null | JsonObject | JsonArray;
 interface JsonObject {
   [key: string]: JsonValue;
 }
-interface JsonArray extends Array<JsonValue> {}
+interface JsonArray extends Array<JsonValue> { }
 
 interface TreeNode {
   key: string;
@@ -266,33 +266,33 @@ export default function JsonViewerPage() {
           <div className="ml-6 border-l border-border pl-2">
             {node.type === "array"
               ? (node.value as JsonArray).map((item, index) => (
-                  <TreeNodeComponent
-                    key={`${node.path}[${index}]`}
-                    node={{
-                      key: String(index),
-                      value: item,
-                      path: `${node.path}[${index}]`,
-                      level: node.level + 1,
-                      type: getValueType(item),
-                    }}
-                    isLast={index === (node.value as JsonArray).length - 1}
-                  />
-                ))
+                <TreeNodeComponent
+                  key={`${node.path}[${index}]`}
+                  node={{
+                    key: String(index),
+                    value: item,
+                    path: `${node.path}[${index}]`,
+                    level: node.level + 1,
+                    type: getValueType(item),
+                  }}
+                  isLast={index === (node.value as JsonArray).length - 1}
+                />
+              ))
               : Object.entries(node.value as JsonObject).map(
-                  ([key, value], index, arr) => (
-                    <TreeNodeComponent
-                      key={`${node.path}.${key}`}
-                      node={{
-                        key,
-                        value,
-                        path: `${node.path}.${key}`,
-                        level: node.level + 1,
-                        type: getValueType(value),
-                      }}
-                      isLast={index === arr.length - 1}
-                    />
-                  ),
-                )}
+                ([key, value], index, arr) => (
+                  <TreeNodeComponent
+                    key={`${node.path}.${key}`}
+                    node={{
+                      key,
+                      value,
+                      path: `${node.path}.${key}`,
+                      level: node.level + 1,
+                      type: getValueType(value),
+                    }}
+                    isLast={index === arr.length - 1}
+                  />
+                ),
+              )}
           </div>
         )}
       </div>

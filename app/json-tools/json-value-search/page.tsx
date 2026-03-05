@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import {
@@ -413,13 +413,12 @@ export default function JsonValueSearchPage() {
                             </div>
                             <div className="p-3">
                               <span
-                                className={`inline-block px-2 py-1 rounded text-xs font-medium ${
-                                  match.matchType === "both"
+                                className={`inline-block px-2 py-1 rounded text-xs font-medium ${match.matchType === "both"
                                     ? "bg-purple-500/20 text-purple-600 dark:text-purple-400"
                                     : match.matchType === "key"
                                       ? "bg-blue-500/20 text-blue-600 dark:text-blue-400"
                                       : "bg-green-500/20 text-green-600 dark:text-green-400"
-                                }`}
+                                  }`}
                               >
                                 {match.matchType}
                               </span>

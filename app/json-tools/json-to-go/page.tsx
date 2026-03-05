@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   FileJson,
@@ -366,7 +366,7 @@ export default function JsonToGoPage() {
           </p>
           <p className="text-muted-foreground mb-8">
             The generator infers types from sample data. If your API returns
-            different types for the same field, you may need to use interface{}{" "}
+            different types for the same field, you may need to use interface{ }{" "}
             manually. Always test generated structs with actual API responses.
           </p>
 
@@ -391,7 +391,7 @@ export default function JsonToGoPage() {
             <div>
               <p className="font-medium mb-1">What about empty arrays?</p>
               <p className="text-muted-foreground">
-                Empty arrays default to []interface{} since the element type
+                Empty arrays default to []interface{ } since the element type
                 cannot be determined from empty data.
               </p>
             </div>

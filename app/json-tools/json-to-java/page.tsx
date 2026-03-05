@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
 import {
   FileJson,
@@ -139,9 +139,9 @@ export default function JsonToJavaPage() {
         typeof value === "object" && value !== null && !Array.isArray(value)
           ? `${name}${toPascalCase(key)}`
           : Array.isArray(value) &&
-              value.length > 0 &&
-              typeof value[0] === "object" &&
-              value[0] !== null
+            value.length > 0 &&
+            typeof value[0] === "object" &&
+            value[0] !== null
             ? `List<${name}${toPascalCase(key)}Item>`
             : getJavaType(value);
 

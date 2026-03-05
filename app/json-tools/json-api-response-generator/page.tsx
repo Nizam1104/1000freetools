@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
 import { toast } from "sonner";
 import { NativeSelect as Select } from "@/components/ui/native-select";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 
 export default function JsonApiResponseGeneratorPage() {
   const [status, setStatus] = useState("success");

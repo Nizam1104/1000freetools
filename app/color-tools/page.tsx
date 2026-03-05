@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import {
   Card,
   CardContent,
@@ -199,7 +200,7 @@ const categories = [
   { id: "Utility", name: "Utilities" },
 ];
 
-export default function ColorToolsPage() {
+function ColorToolsContent() {
   const searchParams = useSearchParams();
   const selectedCategory = searchParams.get("category") || "all";
 
@@ -272,5 +273,13 @@ export default function ColorToolsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ColorToolsPage() {
+  return (
+    <Suspense fallback={<div className="p-8">Loading...</div>}>
+      <ColorToolsContent />
+    </Suspense>
   );
 }

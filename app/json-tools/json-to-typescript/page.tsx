@@ -22,7 +22,7 @@ import {
   Code2,
 } from "lucide-react";
 import { toast } from "sonner";
-import { JsonEditor } from "@/components/ui/json-editor";
+import { JsonEditor } from "@/components/utils/json-editor";
 
 export default function JsonToTypeScriptPage() {
   const [input, setInput] = useState("");
