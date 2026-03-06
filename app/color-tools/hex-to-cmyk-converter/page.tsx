@@ -9,12 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "HEX to CMYK Converter — Convert Hex Colors for Print",
-  description: "Convert HEX color codes to CMYK values for print-ready design. Enter a hex code and get the corresponding CMYK breakdown for professional printing workflows.",
-  keywords: "hex to CMYK, HEX CMYK converter, hex to print colors, CMYK color separation, print design converter, hex code to CMYK, web to print colors",
-};
-
 export const relatedTools = [
   { name: "RGB to CMYK Converter", href: "/color-tools/rgb-to-cmyk-converter" },
   { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },

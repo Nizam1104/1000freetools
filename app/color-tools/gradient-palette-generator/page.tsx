@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const metadata = {
-  title: "Gradient Palette Generator — Create Multi-Color Gradients",
-  description: "Generate smooth gradient palettes with multiple colors. Create seamless color transitions for backgrounds, UI elements, and visual designs.",
-  keywords: "gradient palette, multi-color gradient, color transition, gradient steps, smooth color blend, gradient scale, color interpolation",
-};
-
 export const relatedTools = [
   { name: "Gradient Step Generator", href: "/gradient-step-generator" },
   { name: "Color Scale Generator", href: "/color-scale-generator" },

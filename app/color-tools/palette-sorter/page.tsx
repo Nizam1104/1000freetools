@@ -15,12 +15,6 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
-export const metadata = {
-  title: "Palette Sorter — Organize Colors by Hue, Lightness, Saturation",
-  description: "Sort and organize color palettes by hue angle, lightness, or saturation. Arrange colors logically for design systems and documentation.",
-  keywords: "palette sorter, sort colors, organize colors, hue sorter, color organizer, lightness sort, saturation sort, color arrangement",
-};
-
 export const relatedTools = [
   { name: "Palette Comparison Tool", href: "/palette-comparison-tool" },
   { name: "Color Palette Generator", href: "/color-palette-generator" },

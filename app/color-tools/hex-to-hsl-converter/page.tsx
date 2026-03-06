@@ -9,12 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "HEX to HSL Converter — Convert Hex to Hue Saturation Lightness",
-  description: "Convert HEX color codes to HSL (Hue, Saturation, Lightness) format. Perfect for CSS developers working with HSL color functions and modern color manipulation.",
-  keywords: "hex to HSL, HSL converter, hue saturation lightness, CSS HSL colors, hex color translation, HSL format converter, web color conversion",
-};
-
 export const relatedTools = [
   { name: "HSL to Hex Converter", href: "/color-tools/hsl-to-hex-converter" },
   { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },

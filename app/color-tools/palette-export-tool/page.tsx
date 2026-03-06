@@ -11,17 +11,6 @@ import { toast } from "sonner";
 import { hexToRgb, hexToHsl } from "@/app/color-tools/lib/color-utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export const metadata = {
-  title: "Palette Export Tool — Export Colors as CSS, JSON, Tailwind & More",
-  description: "Export your color palette in multiple formats: CSS variables, SCSS, JSON, Tailwind config, SwiftUI, Android XML. Seamlessly transfer colors to any project or platform.",
-  keywords: ["palette exporter", "color palette converter", "CSS SCSS JSON export", "Tailwind color config", "multi-format palette", "design token exporter", "color conversion tool"],
-  openGraph: {
-    title: "Palette Export Tool — Export Colors as CSS, JSON, Tailwind & More",
-    description: "Export your color palette in multiple formats: CSS variables, SCSS, JSON, Tailwind config, SwiftUI, Android XML. Transfer colors to any project.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties" },
   { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Get colors from images" },

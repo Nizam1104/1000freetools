@@ -28,17 +28,6 @@ import {
   rgbToCmyk,
 } from "@/app/color-tools/lib/color-utils";
 
-export const metadata = {
-  title: "Dominant Color Finder from Image — Extract Main Color Instantly",
-  description: "Find the single most dominant color in any image. Perfect for auto-generating UI themes, extracting brand colors from logos, or creating accent colors from photos. Free, private, browser-based.",
-  keywords: ["dominant color finder", "main color extractor", "image color analysis", "brand color picker", "auto theme generator", "color extraction tool"],
-  openGraph: {
-    title: "Dominant Color Finder from Image — Extract Main Color Instantly",
-    description: "Find the single most dominant color in any image. Perfect for auto-generating UI themes, extracting brand colors from logos, or creating accent colors from photos.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Extract full color palettes from any image" },
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors in multiple formats" },

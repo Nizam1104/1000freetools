@@ -9,12 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "RGB to HSL Converter — Convert RGB to HSL Color Format",
-  description: "Convert RGB color values to HSL format instantly. Get hue, saturation, and lightness representation of any RGB color for modern CSS and design workflows.",
-  keywords: "RGB to HSL, RGB to HSL converter, RGB color conversion, hue saturation lightness converter, CSS HSL format, color space conversion, RGB translator",
-};
-
 export const relatedTools = [
   { name: "HSL to RGB Converter", href: "/color-tools/hsl-to-rgb-converter" },
   { name: "Hex to HSL Converter", href: "/color-tools/hex-to-hsl-converter" },

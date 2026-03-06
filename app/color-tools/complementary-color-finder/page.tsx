@@ -9,17 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Check, Copy, RotateCcw, Palette } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Complementary Color Finder — Find Opposite Colors Instantly",
-  description: "Find the perfect complementary color for any base color. Generate high-contrast color pairs, analogous schemes, triadic colors, and split-complementary palettes for dynamic designs.",
-  keywords: ["complementary color finder", "opposite color tool", "color contrast pairs", "high contrast colors", "split complementary", "triadic colors", "color scheme generator"],
-  openGraph: {
-    title: "Complementary Color Finder — Find Opposite Colors Instantly",
-    description: "Find the perfect complementary color for any base color. Generate high-contrast color pairs and dynamic color schemes.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },
   { name: "Shade Tint Tone Generator", href: "/color-tools/shade-tint-tone-generator", description: "Create full color ranges" },

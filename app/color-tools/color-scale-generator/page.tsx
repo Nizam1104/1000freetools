@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const metadata = {
-  title: "Color Scale Generator — Create Gradient Color Scales",
-  description: "Generate smooth color scales and gradients between any two colors. Perfect for creating progress indicators, heat maps, and gradient UI elements.",
-  keywords: "color scale generator, gradient scale, color steps, interpolation tool, color progression, gradient generator, stepped colors",
-};
-
 export const relatedTools = [
   { name: "Gradient Step Generator", href: "/gradient-step-generator" },
   { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },

@@ -15,12 +15,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export const metadata = {
-  title: "Palette Merger — Combine Multiple Color Palettes",
-  description: "Merge two or more color palettes into one cohesive system. Combine brand colors, find common tones, and create unified color schemes.",
-  keywords: "palette merger, combine palettes, merge colors, palette combiner, color unification, palette integration, color scheme merger",
-};
-
 export const relatedTools = [
   { name: "Palette Comparison Tool", href: "/palette-comparison-tool" },
   { name: "Color Palette Generator", href: "/color-palette-generator" },

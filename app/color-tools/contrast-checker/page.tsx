@@ -16,17 +16,6 @@ import {
   getLuminance,
 } from "@/app/color-tools/lib/color-utils";
 
-export const metadata = {
-  title: "Color Contrast Checker — WCAG Accessibility Compliance Tool",
-  description: "Check text and background color contrast ratios against WCAG AA and AAA accessibility standards. Ensure your designs are readable for all users with this free contrast testing tool.",
-  keywords: ["color contrast checker", "WCAG compliance", "accessibility checker", "contrast ratio calculator", "AA AAA test", "readable text colors", "accessible design"],
-  openGraph: {
-    title: "Color Contrast Checker — WCAG Accessibility Compliance Tool",
-    description: "Check text and background color contrast ratios against WCAG AA and AAA accessibility standards. Ensure your designs are readable for all users.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },
   { name: "Palette Contrast Viewer", href: "/color-tools/palette-contrast-viewer", description: "View contrast matrix for color palettes" },

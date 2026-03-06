@@ -10,17 +10,6 @@ import { Copy, Check, Sun, Moon, Plus, Trash2, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
 
-export const metadata = {
-  title: "Dark & Light Mode Color Preview — Test Colors in Both Themes",
-  description: "Preview how your colors look in both dark and light UI modes side by side. Test your palette's versatility and accessibility before committing to a design direction.",
-  keywords: ["dark light mode preview", "theme color tester", "dual theme preview", "dark mode colors", "light mode colors", "theme switcher tool", "accessible theme design"],
-  openGraph: {
-    title: "Dark & Light Mode Color Preview — Test Colors in Both Themes",
-    description: "Preview how your colors look in both dark and light UI modes side by side. Test your palette's versatility and accessibility.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check WCAG accessibility compliance" },
   { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },

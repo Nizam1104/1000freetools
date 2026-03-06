@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const metadata = {
-  title: "Duotone Palette Generator — Create Two-Color Schemes",
-  description: "Generate elegant duotone color palettes from any two colors. Perfect for minimalist designs, logos, and modern UI aesthetics.",
-  keywords: "duotone palette, two-color scheme, duotone generator, minimal color palette, two-color design, duotone effect, simple color scheme",
-};
-
 export const relatedTools = [
   { name: "Complementary Color Finder", href: "/complementary-color-finder" },
   { name: "Color Palette Generator", href: "/color-palette-generator" },

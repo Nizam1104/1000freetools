@@ -10,12 +10,6 @@ import { Slider } from "@/components/ui/slider";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Gradient Step Generator — Create Even Color Steps",
-  description: "Generate evenly spaced color steps between two colors. Perfect for creating progress indicators, loading states, and stepped visualizations.",
-  keywords: "gradient steps, color steps generator, even color interpolation, stepped gradient, color progression, intermediate colors, color transitions",
-};
-
 export const relatedTools = [
   { name: "Gradient Palette Generator", href: "/gradient-palette-generator" },
   { name: "Color Scale Generator", href: "/color-scale-generator" },

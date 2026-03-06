@@ -11,17 +11,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, RotateCcw, Download, Palette } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Shade, Tint & Tone Generator — Create Full Color Ranges",
-  description: "Generate complete color palettes from a single base color. Create shades (darker), tints (lighter), and tones (desaturated) for comprehensive design systems and UI libraries.",
-  keywords: ["shade generator", "tint generator", "tone generator", "color palette creator", "monochromatic colors", "color variations", "design system colors", "UI color scales"],
-  openGraph: {
-    title: "Shade, Tint & Tone Generator — Create Full Color Ranges",
-    description: "Generate complete color palettes from a single base color. Create shades, tints, and tones for design systems.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },
   { name: "Complementary Color Finder", href: "/color-tools/complementary-color-finder", description: "Find opposite colors" },

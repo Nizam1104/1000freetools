@@ -18,12 +18,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, Download, Shuffle, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Color Harmony Generator — Create Harmonious Color Schemes",
-  description: "Generate harmonious color schemes using color theory rules. Create complementary, analogous, triadic, split-complementary, and tetradic palettes instantly.",
-  keywords: "color harmony generator, harmonious colors, color scheme generator, color theory tool, complementary analogous triadic, color palette creator, design harmony",
-};
-
 export const relatedTools = [
   { name: "Color Wheel", href: "/color-wheel" },
   { name: "Complementary Color Finder", href: "/complementary-color-finder" },

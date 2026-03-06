@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const metadata = {
-  title: "Monochrome Palette Generator — Single Color Variations",
-  description: "Generate monochromatic color palettes from a single base color. Create cohesive designs with varying shades, tints, and tones of one hue.",
-  keywords: "monochrome palette, single color palette, monochromatic colors, same hue variations, tonal palette, cohesive color scheme, single hue system",
-};
-
 export const relatedTools = [
   { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
   { name: "Color Palette Generator", href: "/color-palette-generator" },

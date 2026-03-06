@@ -9,12 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "RGB to CMYK Converter — Convert Screen Colors to Print",
-  description: "Convert RGB color values to CMYK format for print design. Translate your screen colors into cyan, magenta, yellow, and black values used in professional printing.",
-  keywords: "RGB to CMYK, CMYK converter, print color conversion, RGB to print, cyan magenta yellow black, print design tool, color separation",
-};
-
 export const relatedTools = [
   { name: "Hex to CMYK Converter", href: "/color-tools/hex-to-cmyk-converter" },
   { name: "RGB to Hex Converter", href: "/color-tools/rgb-to-hex-converter" },

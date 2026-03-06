@@ -15,12 +15,6 @@ import {
 } from "@/components/ui/tooltip";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Custom Color Palette Generator — Build Bespoke Color Systems",
-  description: "Build custom color palettes with complete control over each color. Name, organize, and export your bespoke color system for any project.",
-  keywords: "custom color palette, bespoke color system, personalized palette, named color palette, custom color scheme, design system colors, brand palette creator",
-};
-
 export const relatedTools = [
   { name: "Color Palette Generator", href: "/color-palette-generator" },
   { name: "Palette Export Tool", href: "/palette-export-tool" },

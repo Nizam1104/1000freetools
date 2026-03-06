@@ -10,17 +10,6 @@ import { Copy, Check, Trash2, Clock, Plus } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
 
-export const metadata = {
-  title: "Color History Tool — Track Recently Used Colors Locally",
-  description: "Automatically store and revisit your recently used colors in the browser. Never lose track of a color you've worked with — no account needed, 100% private local storage.",
-  keywords: ["color history tracker", "recent colors tool", "browser color storage", "local color history", "color workflow tool", "private color tracker", "no-signup color tool"],
-  openGraph: {
-    title: "Color History Tool — Track Recently Used Colors Locally",
-    description: "Automatically store and revisit your recently used colors in the browser. Never lose track of a color — no account needed, 100% private.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Favorite Colors Manager", href: "/color-tools/favorite-colors-manager", description: "Save and organize color swatches" },
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors" },

@@ -25,17 +25,6 @@ interface TextSuggestion {
   type: "optimal" | "good" | "minimum";
 }
 
-export const metadata = {
-  title: "Text Color Suggestion Tool — Find Readable Text Colors",
-  description: "Enter a background color and get instant suggestions for accessible, readable text colors. Automatically generates WCAG-compliant text color options for your designs.",
-  keywords: ["text color finder", "readable text colors", "accessible text suggestions", "background color text", "WCAG text colors", "contrast-aware colors"],
-  openGraph: {
-    title: "Text Color Suggestion Tool — Find Readable Text Colors",
-    description: "Enter a background color and get instant suggestions for accessible, readable text colors. Automatically generates WCAG-compliant text color options.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check contrast ratios for accessibility" },
   { name: "Palette Contrast Viewer", href: "/color-tools/palette-contrast-viewer", description: "View contrast matrix for color palettes" },

@@ -9,12 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "RGB to HEX Converter — Convert RGB to Hex Color Code",
-  description: "Convert RGB color values to HEX format instantly. Enter red, green, blue values (0-255) and get the corresponding hex code for CSS and web development.",
-  keywords: "RGB to hex, RGB to HEX converter, color to hex code, RGB converter, web color format, CSS hex code, RGB translation",
-};
-
 export const relatedTools = [
   { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },
   { name: "RGB to HSL Converter", href: "/color-tools/rgb-to-hsl-converter" },

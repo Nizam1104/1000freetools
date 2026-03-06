@@ -32,26 +32,6 @@ interface ExtractedColor {
 }
 
 // SEO Metadata for this tool
-export const metadata = {
-  title: "Extract Colors from Image — Free Online Color Palette Generator",
-  description:
-    "Upload any image and extract its dominant colors instantly. Get HEX, RGB color codes for design projects. Free, private, runs entirely in your browser — no server uploads.",
-  keywords: [
-    "extract colors from image",
-    "image color picker",
-    "color palette generator",
-    "dominant color extractor",
-    "photo color analyzer",
-    "HEX color from image",
-    "design color tools",
-  ],
-  openGraph: {
-    title: "Extract Colors from Image — Free Color Palette Generator",
-    description:
-      "Upload any image and extract its dominant colors instantly. Free, private, browser-based tool for designers and developers.",
-    type: "website",
-  },
-};
 
 // Internal linking suggestions for this tool
 export const relatedTools = [

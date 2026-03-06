@@ -11,17 +11,6 @@ import { Slider } from "@/components/ui/slider";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Interactive Color Wheel — Visualize Color Relationships & Harmonies",
-  description: "Explore color theory with an interactive color wheel. Generate complementary, analogous, triadic, and other color harmonies. Perfect for designers learning color relationships.",
-  keywords: ["color wheel", "color harmony generator", "complementary colors", "analogous colors", "triadic colors", "color theory tool", "interactive color wheel", "color relationships"],
-  openGraph: {
-    title: "Interactive Color Wheel — Visualize Color Relationships & Harmonies",
-    description: "Explore color theory with an interactive color wheel. Generate complementary, analogous, triadic, and other color harmonies.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Complementary Color Finder", href: "/color-tools/complementary-color-finder", description: "Find opposite colors instantly" },
   { name: "Shade Tint Tone Generator", href: "/color-tools/shade-tint-tone-generator", description: "Create full color ranges" },

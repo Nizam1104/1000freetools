@@ -11,17 +11,6 @@ import { Slider } from "@/components/ui/slider";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Advanced Color Picker with RGB, HSL, HSV Sliders & Color Wheel",
-  description: "Professional color picker with full color wheel, RGB/HSL/HSV sliders, alpha transparency control, and live preview. For designers who need precise color control.",
-  keywords: ["advanced color picker", "color wheel picker", "RGB HSL HSV sliders", "alpha color picker", "professional color tool", "precise color selector", "transparency picker"],
-  openGraph: {
-    title: "Advanced Color Picker with RGB, HSL, HSV Sliders & Color Wheel",
-    description: "Professional color picker with full color wheel, RGB/HSL/HSV sliders, alpha transparency control, and live preview.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Simple color selection" },
   { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },

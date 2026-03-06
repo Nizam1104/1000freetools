@@ -10,12 +10,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Trash2, Plus, Palette } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Palette Comparison Tool — Compare Two Color Palettes Side by Side",
-  description: "Compare two color palettes side by side to evaluate design options. Analyze contrast, mood, and accessibility differences between color schemes.",
-  keywords: "palette comparison tool, compare color palettes, side by side colors, A/B color testing, palette analyzer, color scheme comparator, design decision tool",
-};
-
 export const relatedTools = [
   { name: "Palette Contrast Viewer", href: "/palette-contrast-viewer" },
   { name: "Contrast Checker", href: "/contrast-checker" },

@@ -16,12 +16,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export const metadata = {
-  title: "CSS Color Name Converter — Named Colors to HEX, RGB, HSL",
-  description: "Convert any CSS color name like 'tomato' or 'steelblue' to HEX, RGB, and HSL equivalents. Quick lookup for all 140+ standard CSS named colors.",
-  keywords: "CSS color names, named color converter, color name to hex, CSS named colors, color lookup tool, HTML color names, standard CSS colors",
-};
-
 export const relatedTools = [
   { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },
   { name: "Color Picker", href: "/color-tools/color-picker" },

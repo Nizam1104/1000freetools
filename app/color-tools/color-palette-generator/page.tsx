@@ -18,12 +18,6 @@ import { Slider } from "@/components/ui/slider";
 import { Check, Copy, Shuffle, Download } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Color Palette Generator — Create 5-Color Palettes from Base Color",
-  description: "Generate complete 5-color palettes from any base color. Get lighter, darker, and complementary shades for cohesive design systems and UI projects.",
-  keywords: "color palette generator, 5-color palette, monochromatic generator, color scheme creator, design palette tool, UI color system, base color palette",
-};
-
 export const relatedTools = [
   { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
   { name: "Complementary Color Finder", href: "/complementary-color-finder" },

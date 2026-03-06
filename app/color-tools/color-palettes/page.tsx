@@ -15,12 +15,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-export const metadata = {
-  title: "Pre-made Color Palettes — Ready-to-Use Color Schemes",
-  description: "Browse and use pre-made color palettes for common design scenarios. Save time with professionally curated color combinations.",
-  keywords: "pre-made palettes, ready color schemes, curated palettes, professional color combinations, design palettes, color library, palette collection",
-};
-
 export const relatedTools = [
   { name: "Color Palette Generator", href: "/color-palette-generator" },
   { name: "Palette Export Tool", href: "/palette-export-tool" },

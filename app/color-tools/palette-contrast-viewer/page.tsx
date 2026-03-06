@@ -15,17 +15,6 @@ interface ColorSwatch {
   color: string;
 }
 
-export const metadata = {
-  title: "Palette Contrast Viewer — Visualize Color Contrast Matrix",
-  description: "View contrast levels between every color pair in your palette. Quickly identify inaccessible color combinations before they reach production. Essential for design system creators.",
-  keywords: ["palette contrast checker", "color matrix tool", "design system accessibility", "color contrast grid", "palette analyzer", "accessibility testing"],
-  openGraph: {
-    title: "Palette Contrast Viewer — Visualize Color Contrast Matrix",
-    description: "View contrast levels between every color pair in your palette. Quickly identify inaccessible color combinations before they reach production.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check contrast ratios for accessibility" },
   { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },

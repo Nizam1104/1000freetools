@@ -10,17 +10,6 @@ import { Copy, Check, Trash2, Heart, Plus, Edit2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
 
-export const metadata = {
-  title: "Favorite Colors Manager — Save & Organize Color Swatches",
-  description: "Save, organize, and manage your favorite color swatches locally in the browser. Build a personal color library with naming, starring, and export features. No signup required.",
-  keywords: ["favorite colors manager", "color swatch organizer", "personal color library", "save colors locally", "color collection tool", "named color swatches", "browser color storage"],
-  openGraph: {
-    title: "Favorite Colors Manager — Save & Organize Color Swatches",
-    description: "Save, organize, and manage your favorite color swatches locally. Build a personal color library with naming, starring, and export features.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Color History Tool", href: "/color-tools/color-history-tool", description: "Track recently used colors" },
   { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },

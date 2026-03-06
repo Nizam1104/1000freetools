@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const metadata = {
-  title: "CSS Gradient Generator — Create Linear & Radial Gradients",
-  description: "Create beautiful CSS gradients with full control over direction, colors, and stops. Generate ready-to-use CSS code for linear and radial gradients.",
-  keywords: "CSS gradient generator, linear gradient, radial gradient, CSS gradient maker, gradient code generator, web gradient tool, CSS background generator",
-};
-
 export const relatedTools = [
   { name: "Color Palette Generator", href: "/color-palette-generator" },
   { name: "Palette Export Tool", href: "/palette-export-tool" },

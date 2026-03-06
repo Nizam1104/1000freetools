@@ -10,12 +10,6 @@ import { Check, Copy, RotateCcw } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Color Temperature to RGB — Kelvin to RGB Color Converter",
-  description: "Convert color temperature in Kelvin to RGB values. Ideal for lighting designers, photographers, and developers working with warm or cool light sources.",
-  keywords: "color temperature to RGB, Kelvin to RGB, color temperature converter, warm cool light, lighting design tool, photography color temperature, Kelvin color calculator",
-};
-
 export const relatedTools = [
   { name: "Color Picker", href: "/color-tools/color-picker" },
   { name: "Warm or Cool Color Detector", href: "/color-tools/warm-cool-color-detector" },

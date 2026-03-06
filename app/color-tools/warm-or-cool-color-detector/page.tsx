@@ -9,17 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Check, Copy, RotateCcw, Palette, Thermometer, Snowflake, Flame } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Warm or Cool Color Detector — Analyze Color Temperature",
-  description: "Detect whether a color has warm or cool undertones. Understand color temperature for consistent visual mood across your palette. Essential for cohesive design systems.",
-  keywords: ["warm cool color detector", "color temperature analyzer", "warm colors", "cool colors", "color undertones", "color psychology", "visual mood", "color temperature scale"],
-  openGraph: {
-    title: "Warm or Cool Color Detector — Analyze Color Temperature",
-    description: "Detect whether a color has warm or cool undertones. Understand color temperature for consistent visual mood.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Complementary Color Finder", href: "/color-tools/complementary-color-finder", description: "Find opposite colors" },
   { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },

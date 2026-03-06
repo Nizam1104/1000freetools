@@ -10,17 +10,6 @@ import { Plus, Trash2, Copy, Check, RotateCcw, Download } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
 
-export const metadata = {
-  title: "CSS Variables Generator — Convert Color Palette to CSS Custom Properties",
-  description: "Convert your color palette into ready-to-use CSS custom properties. Generate clean :root variables for design systems, themes, and Tailwind integration. Free developer tool.",
-  keywords: ["CSS variables generator", "CSS custom properties", "color variables", ":root color generator", "design system CSS", "theme variables", "CSS color tokens"],
-  openGraph: {
-    title: "CSS Variables Generator — Convert Color Palette to CSS Custom Properties",
-    description: "Convert your color palette into ready-to-use CSS custom properties. Generate clean :root variables for design systems, themes, and Tailwind integration.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
   { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter", description: "Convert HEX to RGB values" },

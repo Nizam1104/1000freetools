@@ -19,17 +19,6 @@ import { Slider } from "@/components/ui/slider";
 import { Check, Copy, RotateCcw, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "Free Online Color Picker — Pick Colors by HEX, RGB, HSL Values",
-  description: "Pick any color using an interactive palette or enter HEX, RGB, or HSL values. Copy color codes instantly for CSS, design tools, or development projects. Free and private.",
-  keywords: ["color picker", "HEX color picker", "RGB color selector", "HSL color tool", "pick color online", "color code generator", "CSS color picker", "free color tool"],
-  openGraph: {
-    title: "Free Online Color Picker — Pick Colors by HEX, RGB, HSL Values",
-    description: "Pick any color using an interactive palette or enter HEX, RGB, or HSL values. Copy color codes instantly.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Advanced Color Picker", href: "/color-tools/advanced-color-picker", description: "Full color wheel with sliders" },
   { name: "Web Safe Color Picker", href: "/color-tools/web-safe-color-picker", description: "216 cross-browser safe colors" },

@@ -10,17 +10,6 @@ import { Copy, Check, Shield, AlertTriangle } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb, rgbToHex } from "@/app/color-tools/lib/color-utils";
 
-export const metadata = {
-  title: "Web Safe Color Picker — 216 Cross-Browser Safe Colors",
-  description: "Pick from the 216 web-safe colors guaranteed to display consistently across all browsers and devices. Ideal for legacy support and maximum compatibility projects.",
-  keywords: ["web safe colors", "browser safe colors", "216 color palette", "cross-browser colors", "legacy color support", "safe color picker", "compatible colors"],
-  openGraph: {
-    title: "Web Safe Color Picker — 216 Cross-Browser Safe Colors",
-    description: "Pick from the 216 web-safe colors guaranteed to display consistently across all browsers and devices.",
-    type: "website",
-  },
-};
-
 export const relatedTools = [
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick any color" },
   { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check color accessibility" },

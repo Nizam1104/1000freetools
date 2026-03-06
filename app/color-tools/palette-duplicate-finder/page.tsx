@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const metadata = {
-  title: "Palette Duplicate Finder — Remove Similar Colors",
-  description: "Find and remove duplicate or near-duplicate colors from your palette. Clean up color systems and eliminate redundant swatches.",
-  keywords: "palette duplicate finder, remove similar colors, color deduplication, find duplicate colors, palette cleaner, similar color detector, color cleanup",
-};
-
 export const relatedTools = [
   { name: "Palette Merger", href: "/palette-merger" },
   { name: "Palette Sorter", href: "/palette-sorter" },

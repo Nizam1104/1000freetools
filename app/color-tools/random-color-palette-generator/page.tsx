@@ -15,12 +15,6 @@ import {
 } from "@/components/ui/select";
 import { Check, Copy, Shuffle, Download, Lock, Unlock } from "lucide-react";
 
-export const metadata = {
-  title: "Random Color Palette Generator — Instant Color Inspiration",
-  description: "Generate random color palettes for instant design inspiration. Break out of creative ruts with unexpected color combinations.",
-  keywords: "random color palette, color inspiration, random colors, palette generator, color ideas, creative color tool, random color scheme",
-};
-
 export const relatedTools = [
   { name: "Color Palette Generator", href: "/color-palette-generator" },
   { name: "Color Harmony Generator", href: "/color-harmony-generator" },

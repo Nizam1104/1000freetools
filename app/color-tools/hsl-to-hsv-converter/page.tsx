@@ -9,12 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
-export const metadata = {
-  title: "HSL to HSV Converter — Convert Between Color Models",
-  description: "Convert HSL (Hue, Saturation, Lightness) to HSV (Hue, Saturation, Value) format. Essential for designers working across different color models and software.",
-  keywords: "HSL to HSV, HSL HSV converter, color model conversion, HSL to HSV format, color space converter, hue saturation conversion, design color tools",
-};
-
 export const relatedTools = [
   { name: "RGB to HSL Converter", href: "/color-tools/rgb-to-hsl-converter" },
   { name: "Hex to HSL Converter", href: "/color-tools/hex-to-hsl-converter" },

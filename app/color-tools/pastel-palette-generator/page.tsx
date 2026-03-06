@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 
-export const metadata = {
-  title: "Pastel Palette Generator — Soft, Muted Color Schemes",
-  description: "Generate soft pastel color palettes perfect for gentle, calming designs. Create muted, desaturated colors for nurseries, wellness, and lifestyle brands.",
-  keywords: "pastel palette, pastel colors, soft color scheme, muted colors, desaturated palette, gentle colors, calming color scheme",
-};
-
 export const relatedTools = [
   { name: "Color Palette Generator", href: "/color-palette-generator" },
   { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
