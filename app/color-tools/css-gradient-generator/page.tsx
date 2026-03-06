@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -13,6 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+export const metadata = {
+  title: "CSS Gradient Generator — Create Linear & Radial Gradients",
+  description: "Create beautiful CSS gradients with full control over direction, colors, and stops. Generate ready-to-use CSS code for linear and radial gradients.",
+  keywords: "CSS gradient generator, linear gradient, radial gradient, CSS gradient maker, gradient code generator, web gradient tool, CSS background generator",
+};
+
+export const relatedTools = [
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "CSS Variables Generator", href: "/css-variables-generator" },
+  { name: "Color Picker", href: "/color-picker" },
+];
 import {
   Select,
   SelectContent,
@@ -405,6 +419,41 @@ export default function CSSGradientGeneratorPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the CSS Gradient Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The CSS Gradient Generator helps you create beautiful linear and radial gradients with full control over direction, color stops, and positioning. Add multiple color stops, adjust their positions, and preview your gradient in real-time.
+            </p>
+            <p className="text-muted-foreground">
+              Export clean, production-ready CSS code that works across all modern browsers. Perfect for backgrounds, buttons, cards, and any element that needs a gradient touch. Copy the CSS directly or download as a file for later use.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

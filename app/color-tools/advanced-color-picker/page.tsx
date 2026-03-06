@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +10,24 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Advanced Color Picker with RGB, HSL, HSV Sliders & Color Wheel",
+  description: "Professional color picker with full color wheel, RGB/HSL/HSV sliders, alpha transparency control, and live preview. For designers who need precise color control.",
+  keywords: ["advanced color picker", "color wheel picker", "RGB HSL HSV sliders", "alpha color picker", "professional color tool", "precise color selector", "transparency picker"],
+  openGraph: {
+    title: "Advanced Color Picker with RGB, HSL, HSV Sliders & Color Wheel",
+    description: "Professional color picker with full color wheel, RGB/HSL/HSV sliders, alpha transparency control, and live preview.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Simple color selection" },
+  { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },
+  { name: "Shade Tint Tone Generator", href: "/color-tools/shade-tint-tone-generator", description: "Create color variations" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
+];
 
 interface ColorState {
   h: number;
@@ -618,6 +637,109 @@ export default function AdvancedColorPickerPage() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Internal Linking Section */}
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Color Tools</CardTitle>
+              <CardDescription>
+                Explore more professional tools for advanced color work
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {relatedTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={tool.href}
+                    className="group p-4 rounded-lg border hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {tool.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">How to Use the Advanced Color Picker</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Click anywhere on the color wheel to select a base hue, then fine-tune using the RGB, HSL, or HSV sliders. Adjust the alpha channel for transparency control, and see live previews of your color in real-time.
+              </p>
+              <div className="space-y-2">
+                <h3 className="font-medium text-foreground">Color selection methods:</h3>
+                <ul className="list-disc list-inside space-y-1">
+                  <li><strong>Color wheel:</strong> Click to select hue and saturation in one interaction</li>
+                  <li><strong>HSL sliders:</strong> Precise control over hue, saturation, and lightness</li>
+                  <li><strong>HSV sliders:</strong> Adjust hue, saturation, and value (brightness)</li>
+                  <li><strong>RGB sliders:</strong> Direct control of red, green, and blue channels</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Understanding Color Models</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Different color models serve different purposes. This tool supports all major models used in digital design, photography, and print production.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Additive models (screens):</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li><strong>RGB:</strong> Red, Green, Blue — native to displays</li>
+                    <li><strong>RGBA:</strong> RGB with alpha transparency channel</li>
+                    <li>Used for web, mobile apps, and digital interfaces</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Cylindrical models:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li><strong>HSL:</strong> Hue, Saturation, Lightness — intuitive for humans</li>
+                    <li><strong>HSV/HSB:</strong> Hue, Saturation, Value/Brightness</li>
+                    <li>Better for creating color harmonies and variations</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Why Use Advanced Color Controls</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Professional design work demands precision. The advanced color picker gives you granular control over every aspect of your color selection, from exact hue values to transparency levels.
+              </p>
+              <div className="space-y-2">
+                <h3 className="font-medium text-foreground">Perfect for:</h3>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Creating subtle gradients with precise transparency</li>
+                  <li>Matching colors from reference images exactly</li>
+                  <li>Building design systems with consistent color tokens</li>
+                  <li>Working with overlay effects and blend modes</li>
+                  <li>Fine-tuning colors for accessibility compliance</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

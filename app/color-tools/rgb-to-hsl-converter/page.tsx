@@ -1,12 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "RGB to HSL Converter — Convert RGB to HSL Color Format",
+  description: "Convert RGB color values to HSL format instantly. Get hue, saturation, and lightness representation of any RGB color for modern CSS and design workflows.",
+  keywords: "RGB to HSL, RGB to HSL converter, RGB color conversion, hue saturation lightness converter, CSS HSL format, color space conversion, RGB translator",
+};
+
+export const relatedTools = [
+  { name: "HSL to RGB Converter", href: "/color-tools/hsl-to-rgb-converter" },
+  { name: "Hex to HSL Converter", href: "/color-tools/hex-to-hsl-converter" },
+  { name: "RGB to Hex Converter", href: "/color-tools/rgb-to-hex-converter" },
+  { name: "Advanced Color Picker", href: "/color-tools/advanced-color-picker" },
+];
 
 export default function RgbToHslConverterPage() {
   const [rgbInput, setRgbInput] = useState({ r: "", g: "", b: "" });
@@ -342,6 +356,38 @@ export default function RgbToHslConverterPage() {
             </ol>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Why Convert RGB to HSL?</h2>
+            <p className="text-muted-foreground">
+              RGB is the native color model for screens, but HSL offers a more intuitive way to think about colors. Converting RGB to HSL helps you understand the hue, saturation, and lightness of any color, making it easier to create harmonious color schemes, adjust brightness, or generate color variations programmatically.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Benefits of HSL for CSS</h2>
+            <p className="text-muted-foreground">
+              CSS supports HSL natively through the hsl() function. Using HSL in your stylesheets makes it easier to create dynamic color systems, implement dark mode, or build themeable components. You can adjust lightness for different states without changing the core hue of your brand colors.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">{tool.href}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

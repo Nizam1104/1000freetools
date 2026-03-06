@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +10,24 @@ import { Plus, Trash2, Copy, Check, Download, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb, hexToHsl } from "@/app/color-tools/lib/color-utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+export const metadata = {
+  title: "Palette Export Tool — Export Colors as CSS, JSON, Tailwind & More",
+  description: "Export your color palette in multiple formats: CSS variables, SCSS, JSON, Tailwind config, SwiftUI, Android XML. Seamlessly transfer colors to any project or platform.",
+  keywords: ["palette exporter", "color palette converter", "CSS SCSS JSON export", "Tailwind color config", "multi-format palette", "design token exporter", "color conversion tool"],
+  openGraph: {
+    title: "Palette Export Tool — Export Colors as CSS, JSON, Tailwind & More",
+    description: "Export your color palette in multiple formats: CSS variables, SCSS, JSON, Tailwind config, SwiftUI, Android XML. Transfer colors to any project.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties" },
+  { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Get colors from images" },
+  { name: "Color History Tool", href: "/color-tools/color-history-tool", description: "Track recently used colors" },
+  { name: "Favorite Colors Manager", href: "/color-tools/favorite-colors-manager", description: "Save and organize colors" },
+];
 
 interface ColorSwatch {
   id: string;
@@ -437,6 +456,64 @@ ${colors.map((c) => `        '${c.name.toLowerCase().replace(/\s+/g, "-")}': '${
             </Card>
           </div>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Export Your Color Palette</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Add colors to your palette using the color picker or HEX input</li>
+                <li>Name each color for better organization (optional)</li>
+                <li>Select your desired export format from the tabs</li>
+                <li>Click Copy to clipboard or Download to save the file</li>
+                <li>Import the exported code directly into your project</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Supported Export Formats</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                Export your palette in the format that works best for your workflow:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li><strong>CSS/SCSS:</strong> Variables for web projects</li>
+                <li><strong>JSON:</strong> Design tokens and data exchange</li>
+                <li><strong>Tailwind:</strong> Ready-to-use config extension</li>
+                <li><strong>SwiftUI:</strong> iOS app development</li>
+                <li><strong>Android XML:</strong> Android color resources</li>
+              </ul>
+              <p className="pt-2">
+                All formats preserve your color names and values for easy integration into any platform or framework.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

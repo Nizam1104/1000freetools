@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -14,6 +15,24 @@ import {
   meetsWcagAAA,
   getLuminance,
 } from "@/app/color-tools/lib/color-utils";
+
+export const metadata = {
+  title: "Color Contrast Checker — WCAG Accessibility Compliance Tool",
+  description: "Check text and background color contrast ratios against WCAG AA and AAA accessibility standards. Ensure your designs are readable for all users with this free contrast testing tool.",
+  keywords: ["color contrast checker", "WCAG compliance", "accessibility checker", "contrast ratio calculator", "AA AAA test", "readable text colors", "accessible design"],
+  openGraph: {
+    title: "Color Contrast Checker — WCAG Accessibility Compliance Tool",
+    description: "Check text and background color contrast ratios against WCAG AA and AAA accessibility standards. Ensure your designs are readable for all users.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },
+  { name: "Palette Contrast Viewer", href: "/color-tools/palette-contrast-viewer", description: "View contrast matrix for color palettes" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors in multiple formats" },
+  { name: "Web Safe Color Picker", href: "/color-tools/web-safe-color-picker", description: "Browse web-safe color palette" },
+];
 
 export default function ContrastCheckerPage() {
   const [textColor, setTextColor] = useState("#000000");
@@ -372,6 +391,63 @@ export default function ContrastCheckerPage() {
             </Card>
           </div>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Use the Contrast Checker</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Select your text color using the color picker or enter a HEX value</li>
+                <li>Choose your background color the same way</li>
+                <li>Toggle between "Normal Text" and "Large Text" to test different size requirements</li>
+                <li>Review the contrast ratio and WCAG compliance badges (AA and AAA levels)</li>
+                <li>Use the live preview to see how your colors look together in context</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                The Contrast Checker ensures your designs meet accessibility standards so everyone can read your content. Use it for:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Testing text and background combinations before deployment</li>
+                <li>Meeting WCAG 2.1 AA and AAA compliance requirements</li>
+                <li>Improving readability for users with visual impairments</li>
+                <li>Validating design system color choices</li>
+              </ul>
+              <p className="pt-2">
+                WCAG AA requires 4.5:1 for normal text, 3:1 for large text. AAA requires 7:1 for normal text, 4.5:1 for large text.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

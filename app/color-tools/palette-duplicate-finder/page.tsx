@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -13,6 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+export const metadata = {
+  title: "Palette Duplicate Finder — Remove Similar Colors",
+  description: "Find and remove duplicate or near-duplicate colors from your palette. Clean up color systems and eliminate redundant swatches.",
+  keywords: "palette duplicate finder, remove similar colors, color deduplication, find duplicate colors, palette cleaner, similar color detector, color cleanup",
+};
+
+export const relatedTools = [
+  { name: "Palette Merger", href: "/palette-merger" },
+  { name: "Palette Sorter", href: "/palette-sorter" },
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Contrast Checker", href: "/contrast-checker" },
+];
 import { Textarea } from "@/components/ui/textarea";
 import { Slider } from "@/components/ui/slider";
 import { Copy, Check, Trash2, Search, AlertCircle } from "lucide-react";
@@ -504,6 +518,41 @@ export default function PaletteDuplicateFinderPage() {
             )}
           </>
         )}
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Palette Duplicate Finder
+            </h2>
+            <p className="text-muted-foreground">
+              The Palette Duplicate Finder detects exact and near-duplicate colors in your palette. Set a similarity threshold to find colors that are visually similar, helping you clean up redundant swatches.
+            </p>
+            <p className="text-muted-foreground">
+              Duplicate colors can accumulate when merging palettes or working with multiple designers. This tool identifies groups of similar colors, shows which one will be kept, and lets you remove duplicates with a single click.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

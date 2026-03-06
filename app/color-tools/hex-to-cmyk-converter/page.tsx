@@ -1,12 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "HEX to CMYK Converter — Convert Hex Colors for Print",
+  description: "Convert HEX color codes to CMYK values for print-ready design. Enter a hex code and get the corresponding CMYK breakdown for professional printing workflows.",
+  keywords: "hex to CMYK, HEX CMYK converter, hex to print colors, CMYK color separation, print design converter, hex code to CMYK, web to print colors",
+};
+
+export const relatedTools = [
+  { name: "RGB to CMYK Converter", href: "/color-tools/rgb-to-cmyk-converter" },
+  { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool" },
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator" },
+];
 
 export default function HexToCmykConverterPage() {
   const [hexInput, setHexInput] = useState("");
@@ -337,6 +351,38 @@ export default function HexToCmykConverterPage() {
             </div>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Why Convert HEX to CMYK?</h2>
+            <p className="text-muted-foreground">
+              HEX codes are the standard for web colors, but print production requires CMYK values. Converting HEX to CMYK is crucial when taking web designs to print, creating branded materials, or working with professional printers. This conversion ensures your brand colors remain consistent across digital and print media.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Print Color Considerations</h2>
+            <p className="text-muted-foreground">
+              Not all HEX/RGB colors can be accurately reproduced in CMYK print. The printable color gamut is smaller than what screens can display. Bright neon colors and certain shades may appear duller when printed. Always request a proof from your printer for critical color matching, and consider using Pantone spot colors for exact brand color reproduction.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">{tool.href}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

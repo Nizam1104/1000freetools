@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,24 @@ import { Label } from "@/components/ui/label";
 import { Copy, Check, Trash2, Clock, Plus } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
+
+export const metadata = {
+  title: "Color History Tool — Track Recently Used Colors Locally",
+  description: "Automatically store and revisit your recently used colors in the browser. Never lose track of a color you've worked with — no account needed, 100% private local storage.",
+  keywords: ["color history tracker", "recent colors tool", "browser color storage", "local color history", "color workflow tool", "private color tracker", "no-signup color tool"],
+  openGraph: {
+    title: "Color History Tool — Track Recently Used Colors Locally",
+    description: "Automatically store and revisit your recently used colors in the browser. Never lose track of a color — no account needed, 100% private.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Favorite Colors Manager", href: "/color-tools/favorite-colors-manager", description: "Save and organize color swatches" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors" },
+  { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Get colors from images" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
+];
 
 interface ColorHistoryItem {
   id: string;
@@ -305,6 +324,66 @@ export default function ColorHistoryToolPage() {
             )}
           </div>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How Color History Works</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                The Color History Tool automatically tracks colors you work with:
+              </p>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Add colors manually using the input or color picker</li>
+                <li>Colors are stored in your browser's local storage</li>
+                <li>Each color includes a timestamp showing when it was added</li>
+                <li>History persists across browser sessions</li>
+                <li>Export your history as JSON for backup or transfer</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Why Track Your Color History</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                Keep a record of colors you've used without manual organization:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Recover colors from previous design sessions</li>
+                <li>Build a reference library of tested combinations</li>
+                <li>Track color exploration during brainstorming</li>
+                <li>No signup or account required — completely private</li>
+              </ul>
+              <p className="pt-2">
+                Your color history stays in your browser. Clear your cache or use incognito mode to start fresh.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

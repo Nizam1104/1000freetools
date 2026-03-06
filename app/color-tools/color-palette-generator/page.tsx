@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -16,6 +17,19 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Check, Copy, Shuffle, Download } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Color Palette Generator — Create 5-Color Palettes from Base Color",
+  description: "Generate complete 5-color palettes from any base color. Get lighter, darker, and complementary shades for cohesive design systems and UI projects.",
+  keywords: "color palette generator, 5-color palette, monochromatic generator, color scheme creator, design palette tool, UI color system, base color palette",
+};
+
+export const relatedTools = [
+  { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
+  { name: "Complementary Color Finder", href: "/complementary-color-finder" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "CSS Variables Generator", href: "/css-variables-generator" },
+];
 
 interface ColorPalette {
   base: string;
@@ -472,6 +486,41 @@ export default function ColorPaletteGeneratorPage() {
             </Card>
           </div>
         </div>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Color Palette Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Color Palette Generator helps you create complete 5-color palettes from any base color. Whether you're building a design system, working on UI projects, or need cohesive colors for branding, this tool generates lighter, darker, and complementary shades that work together harmoniously.
+            </p>
+            <p className="text-muted-foreground">
+              Simply enter a base color using the hex input or color picker, and instantly get a full palette with five variations. Adjust the lightness slider to fine-tune the generated shades. Export your palette as CSS variables, JSON, or download as a CSS file for easy integration into your projects.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

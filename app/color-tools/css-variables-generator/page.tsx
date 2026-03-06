@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,24 @@ import { Label } from "@/components/ui/label";
 import { Plus, Trash2, Copy, Check, RotateCcw, Download } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
+
+export const metadata = {
+  title: "CSS Variables Generator — Convert Color Palette to CSS Custom Properties",
+  description: "Convert your color palette into ready-to-use CSS custom properties. Generate clean :root variables for design systems, themes, and Tailwind integration. Free developer tool.",
+  keywords: ["CSS variables generator", "CSS custom properties", "color variables", ":root color generator", "design system CSS", "theme variables", "CSS color tokens"],
+  openGraph: {
+    title: "CSS Variables Generator — Convert Color Palette to CSS Custom Properties",
+    description: "Convert your color palette into ready-to-use CSS custom properties. Generate clean :root variables for design systems, themes, and Tailwind integration.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
+  { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter", description: "Convert HEX to RGB values" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors" },
+  { name: "RGB to HSL Converter", href: "/color-tools/rgb-to-hsl-converter", description: "Convert RGB to HSL format" },
+];
 
 interface ColorVariable {
   id: string;
@@ -336,6 +355,63 @@ module.exports = {
             </Card>
           </div>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Use the CSS Variables Generator</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Add colors using the color picker or enter HEX values manually</li>
+                <li>Name each variable with a descriptive prefix like "--color-primary"</li>
+                <li>Customize the variable prefix in the settings if needed</li>
+                <li>Copy the generated CSS or download as a .css file</li>
+                <li>Use the RGB fallback version for broader browser support</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Why Use CSS Custom Properties for Colors</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                CSS custom properties (variables) make color management easier across your entire project:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Update one variable to change colors site-wide</li>
+                <li>Enable dynamic theming with CSS and JavaScript</li>
+                <li>Integrate cleanly with Tailwind and other frameworks</li>
+                <li>Improve code maintainability and consistency</li>
+              </ul>
+              <p className="pt-2">
+                CSS variables work in all modern browsers and can be used for colors, spacing, typography, and any other reusable values.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

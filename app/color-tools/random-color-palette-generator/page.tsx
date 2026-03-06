@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -13,6 +14,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Check, Copy, Shuffle, Download, Lock, Unlock } from "lucide-react";
+
+export const metadata = {
+  title: "Random Color Palette Generator — Instant Color Inspiration",
+  description: "Generate random color palettes for instant design inspiration. Break out of creative ruts with unexpected color combinations.",
+  keywords: "random color palette, color inspiration, random colors, palette generator, color ideas, creative color tool, random color scheme",
+};
+
+export const relatedTools = [
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Color Harmony Generator", href: "/color-harmony-generator" },
+  { name: "Complementary Color Finder", href: "/complementary-color-finder" },
+  { name: "Color Picker", href: "/color-picker" },
+];
 import { toast } from "sonner";
 
 interface Color {
@@ -416,6 +430,41 @@ ${colors.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
             </ul>
           </CardContent>
         </Card>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Random Color Palette Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Random Color Palette Generator creates instant color inspiration with the click of a button. Generate completely random palettes or lock colors you like while regenerating the rest.
+            </p>
+            <p className="text-muted-foreground">
+              Perfect for breaking creative blocks, discovering unexpected color combinations, or quickly generating placeholder palettes for mockups. Lock your favorite colors and keep regenerating until you find the perfect combination.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

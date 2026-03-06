@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,24 @@ import { Label } from "@/components/ui/label";
 import { Copy, Check, Sun, Moon, Plus, Trash2, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
+
+export const metadata = {
+  title: "Dark & Light Mode Color Preview — Test Colors in Both Themes",
+  description: "Preview how your colors look in both dark and light UI modes side by side. Test your palette's versatility and accessibility before committing to a design direction.",
+  keywords: ["dark light mode preview", "theme color tester", "dual theme preview", "dark mode colors", "light mode colors", "theme switcher tool", "accessible theme design"],
+  openGraph: {
+    title: "Dark & Light Mode Color Preview — Test Colors in Both Themes",
+    description: "Preview how your colors look in both dark and light UI modes side by side. Test your palette's versatility and accessibility.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check WCAG accessibility compliance" },
+  { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors" },
+  { name: "Palette Contrast Viewer", href: "/color-tools/palette-contrast-viewer", description: "View contrast matrix for palettes" },
+];
 
 interface ColorSwatch {
   id: string;
@@ -452,6 +471,63 @@ export default function DarkLightModePreviewPage() {
             </Card>
           </div>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Test Colors in Both Themes</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Add your color palette using the color picker or HEX input</li>
+                <li>Name each color for easy reference (Primary, Secondary, etc.)</li>
+                <li>Toggle between Light Only, Split View, and Dark Only modes</li>
+                <li>Review how buttons, inputs, and text appear in each theme</li>
+                <li>Adjust colors that don't translate well between modes</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Why Preview Both Light and Dark Modes</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                Users expect apps and websites to work well in their preferred theme:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Catch accessibility issues before they affect users</li>
+                <li>Ensure brand colors work across different backgrounds</li>
+                <li>Test contrast ratios in both light and dark contexts</li>
+                <li>Save time by fixing problems during design, not development</li>
+              </ul>
+              <p className="pt-2">
+                A well-designed color palette should maintain readability and visual hierarchy in both light and dark modes.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

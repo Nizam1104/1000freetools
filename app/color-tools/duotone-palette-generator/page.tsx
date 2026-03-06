@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -13,6 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+export const metadata = {
+  title: "Duotone Palette Generator — Create Two-Color Schemes",
+  description: "Generate elegant duotone color palettes from any two colors. Perfect for minimalist designs, logos, and modern UI aesthetics.",
+  keywords: "duotone palette, two-color scheme, duotone generator, minimal color palette, two-color design, duotone effect, simple color scheme",
+};
+
+export const relatedTools = [
+  { name: "Complementary Color Finder", href: "/complementary-color-finder" },
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "Contrast Checker", href: "/contrast-checker" },
+];
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, Download, Shuffle, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
@@ -879,6 +893,41 @@ export default function DuotonePaletteGeneratorPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Duotone Palette Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Duotone Palette Generator creates elegant two-color schemes with smooth transitions between them. Enter a primary and secondary color to generate a complete duotone palette with intermediate mix shades.
+            </p>
+            <p className="text-muted-foreground">
+              Duotone designs are perfect for minimalist aesthetics, modern branding, and creating visual hierarchy with limited colors. Export your palette as CSS, JSON, or PNG for easy integration into your projects.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

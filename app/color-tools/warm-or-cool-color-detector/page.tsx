@@ -1,12 +1,31 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Check, Copy, RotateCcw, Palette, Thermometer, Snowflake, Flame } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Warm or Cool Color Detector — Analyze Color Temperature",
+  description: "Detect whether a color has warm or cool undertones. Understand color temperature for consistent visual mood across your palette. Essential for cohesive design systems.",
+  keywords: ["warm cool color detector", "color temperature analyzer", "warm colors", "cool colors", "color undertones", "color psychology", "visual mood", "color temperature scale"],
+  openGraph: {
+    title: "Warm or Cool Color Detector — Analyze Color Temperature",
+    description: "Detect whether a color has warm or cool undertones. Understand color temperature for consistent visual mood.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Complementary Color Finder", href: "/color-tools/complementary-color-finder", description: "Find opposite colors" },
+  { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },
+  { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text colors" },
+  { name: "Dark Light Mode Preview", href: "/color-tools/dark-light-mode-preview", description: "Preview colors in different themes" },
+];
 import {
   hexToRgb,
   rgbToHsl,
@@ -448,6 +467,89 @@ export default function WarmOrCoolColorDetectorPage() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Internal Linking Section */}
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Color Tools</CardTitle>
+              <CardDescription>
+                Explore more tools to work with color temperature and palettes
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {relatedTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={tool.href}
+                    className="group p-4 rounded-lg border hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {tool.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">How to Use the Warm or Cool Color Detector</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Enter any color using the HEX input or color picker to instantly see whether it has warm or cool undertones. The tool analyzes the hue value to determine color temperature and shows where your color falls on the warm-cool spectrum.
+              </p>
+              <div className="space-y-2">
+                <h3 className="font-medium text-foreground">Color temperature ranges:</h3>
+                <ul className="list-disc list-inside space-y-1">
+                  <li><strong>Warm (0-60 degrees):</strong> Reds, oranges, and yellows — energetic and inviting</li>
+                  <li><strong>Cool (60-300 degrees):</strong> Greens, blues, and purples — calm and professional</li>
+                  <li><strong>Warm (300-360 degrees):</strong> Magentas and reds — passionate and bold</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Why Color Temperature Matters</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Color temperature affects the emotional response to your designs. Mixing warm and cool colors intentionally can create visual interest, while maintaining consistent temperature helps establish a cohesive mood throughout your project.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Warm colors evoke:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Energy, excitement, and passion</li>
+                    <li>Warmth, comfort, and friendliness</li>
+                    <li>Urgency and action (great for CTAs)</li>
+                    <li>Appetite and hospitality</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Cool colors evoke:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Calm, trust, and professionalism</li>
+                    <li>Nature, health, and wellness</li>
+                    <li>Technology and innovation</li>
+                    <li>Finance and stability</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -9,6 +10,24 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Interactive Color Wheel — Visualize Color Relationships & Harmonies",
+  description: "Explore color theory with an interactive color wheel. Generate complementary, analogous, triadic, and other color harmonies. Perfect for designers learning color relationships.",
+  keywords: ["color wheel", "color harmony generator", "complementary colors", "analogous colors", "triadic colors", "color theory tool", "interactive color wheel", "color relationships"],
+  openGraph: {
+    title: "Interactive Color Wheel — Visualize Color Relationships & Harmonies",
+    description: "Explore color theory with an interactive color wheel. Generate complementary, analogous, triadic, and other color harmonies.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Complementary Color Finder", href: "/color-tools/complementary-color-finder", description: "Find opposite colors instantly" },
+  { name: "Shade Tint Tone Generator", href: "/color-tools/shade-tint-tone-generator", description: "Create full color ranges" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors" },
+  { name: "Advanced Color Picker", href: "/color-tools/advanced-color-picker", description: "Advanced color selection tool" },
+];
 import {
   hslToHex,
   hslToRgb,
@@ -359,6 +378,91 @@ export default function ColorWheelPage() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Internal Linking Section */}
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Color Tools</CardTitle>
+              <CardDescription>
+                Explore more tools to work with color harmonies and palettes
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {relatedTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={tool.href}
+                    className="group p-4 rounded-lg border hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {tool.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">How to Use the Color Wheel</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                The interactive color wheel helps you visualize color relationships and generate harmonious color schemes. Click anywhere on the wheel to select a base color, then explore different harmony types to see how colors work together.
+              </p>
+              <div className="space-y-2">
+                <h3 className="font-medium text-foreground">Color harmony types:</h3>
+                <ul className="list-disc list-inside space-y-1">
+                  <li><strong>Complementary:</strong> Colors opposite each other on the wheel for high contrast</li>
+                  <li><strong>Analogous:</strong> Colors adjacent to each other for harmonious, cohesive palettes</li>
+                  <li><strong>Triadic:</strong> Three colors evenly spaced (120 degrees apart) for vibrant balance</li>
+                  <li><strong>Split-Complementary:</strong> Base color plus two colors adjacent to its complement</li>
+                  <li><strong>Tetradic:</strong> Four colors in two complementary pairs for rich, complex schemes</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Why Use a Color Wheel</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Understanding color relationships is essential for creating visually appealing designs. The color wheel provides a visual framework for making informed color choices based on established color theory principles.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Perfect for:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Learning color theory fundamentals</li>
+                    <li>Creating balanced color palettes</li>
+                    <li>Exploring color relationships</li>
+                    <li>Building cohesive design systems</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Key benefits:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Visual, interactive learning experience</li>
+                    <li>Instant preview of color harmonies</li>
+                    <li>Copy colors in HEX, RGB, or HSL formats</li>
+                    <li>Free to use with no limitations</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

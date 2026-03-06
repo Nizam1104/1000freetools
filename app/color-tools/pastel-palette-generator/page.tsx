@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -13,6 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+
+export const metadata = {
+  title: "Pastel Palette Generator — Soft, Muted Color Schemes",
+  description: "Generate soft pastel color palettes perfect for gentle, calming designs. Create muted, desaturated colors for nurseries, wellness, and lifestyle brands.",
+  keywords: "pastel palette, pastel colors, soft color scheme, muted colors, desaturated palette, gentle colors, calming color scheme",
+};
+
+export const relatedTools = [
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
+  { name: "Warm or Cool Color Detector", href: "/warm-or-cool-color-detector" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+];
 import { Check, Copy, Shuffle, Download, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
 
@@ -525,6 +539,41 @@ export default function PastelPaletteGeneratorPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Pastel Palette Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Pastel Palette Generator creates soft, soothing color palettes with low saturation and high lightness. Choose from random, analogous, complementary, or triadic harmony modes to generate cohesive pastel schemes.
+            </p>
+            <p className="text-muted-foreground">
+              Pastel colors are perfect for gentle, calming designs like nurseries, wellness apps, lifestyle brands, and any project needing a soft, approachable aesthetic. Adjust the softness level to fine-tune the muted effect.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

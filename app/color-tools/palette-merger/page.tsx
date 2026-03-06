@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+export const metadata = {
+  title: "Palette Merger — Combine Multiple Color Palettes",
+  description: "Merge two or more color palettes into one cohesive system. Combine brand colors, find common tones, and create unified color schemes.",
+  keywords: "palette merger, combine palettes, merge colors, palette combiner, color unification, palette integration, color scheme merger",
+};
+
+export const relatedTools = [
+  { name: "Palette Comparison Tool", href: "/palette-comparison-tool" },
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "CSS Variables Generator", href: "/css-variables-generator" },
+];
 import { Copy, Check, Trash2, Plus, Combine, Palette } from "lucide-react";
 import { toast } from "sonner";
 
@@ -454,6 +468,41 @@ export default function PaletteMergerPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Palette Merger
+            </h2>
+            <p className="text-muted-foreground">
+              The Palette Merger combines multiple color palettes into a single unified system. Add palettes by pasting hex codes or loading presets, then merge them with optional duplicate removal based on color similarity.
+            </p>
+            <p className="text-muted-foreground">
+              Perfect for consolidating brand colors, combining design system tokens, or finding common tones across multiple projects. Set a similarity threshold to automatically remove near-duplicate colors.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

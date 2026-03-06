@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -13,6 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+export const metadata = {
+  title: "Gradient Palette Generator — Create Multi-Color Gradients",
+  description: "Generate smooth gradient palettes with multiple colors. Create seamless color transitions for backgrounds, UI elements, and visual designs.",
+  keywords: "gradient palette, multi-color gradient, color transition, gradient steps, smooth color blend, gradient scale, color interpolation",
+};
+
+export const relatedTools = [
+  { name: "Gradient Step Generator", href: "/gradient-step-generator" },
+  { name: "Color Scale Generator", href: "/color-scale-generator" },
+  { name: "CSS Gradient Generator", href: "/css-gradient-generator" },
+  { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
+];
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -847,6 +861,41 @@ ${palette.colors.map((c, i) => `          ${i + 1}: '${c}',`).join("\n")}
             </div>
           </CardContent>
         </Card>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Gradient Palette Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Gradient Palette Generator creates smooth, multi-color gradient palettes by interpolating between your chosen color stops. Add 2 or more colors, adjust their positions, and extract evenly-spaced palette colors from the gradient.
+            </p>
+            <p className="text-muted-foreground">
+              Perfect for creating cohesive UI themes, data visualization scales, and gradient-based design systems. Export your gradient palette as CSS, JSON, or PNG for use in any project.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

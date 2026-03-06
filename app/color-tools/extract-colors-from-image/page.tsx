@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -29,6 +30,52 @@ interface ExtractedColor {
   hex: string;
   percentage: number;
 }
+
+// SEO Metadata for this tool
+export const metadata = {
+  title: "Extract Colors from Image — Free Online Color Palette Generator",
+  description:
+    "Upload any image and extract its dominant colors instantly. Get HEX, RGB color codes for design projects. Free, private, runs entirely in your browser — no server uploads.",
+  keywords: [
+    "extract colors from image",
+    "image color picker",
+    "color palette generator",
+    "dominant color extractor",
+    "photo color analyzer",
+    "HEX color from image",
+    "design color tools",
+  ],
+  openGraph: {
+    title: "Extract Colors from Image — Free Color Palette Generator",
+    description:
+      "Upload any image and extract its dominant colors instantly. Free, private, browser-based tool for designers and developers.",
+    type: "website",
+  },
+};
+
+// Internal linking suggestions for this tool
+export const relatedTools = [
+  {
+    name: "Dominant Color Finder",
+    href: "/color-tools/dominant-color-finder",
+    description: "Find the single most dominant color in an image",
+  },
+  {
+    name: "Palette Export Tool",
+    href: "/color-tools/palette-export-tool",
+    description: "Export your extracted colors as CSS, JSON, or Tailwind",
+  },
+  {
+    name: "Color History Tool",
+    href: "/color-tools/color-history-tool",
+    description: "Save and manage your extracted colors locally",
+  },
+  {
+    name: "CSS Variables Generator",
+    href: "/color-tools/css-variables-generator",
+    description: "Convert extracted colors to CSS custom properties",
+  },
+];
 
 export default function ExtractColorsFromImagePage() {
   const [colors, setColors] = useState<ExtractedColor[]>([]);
@@ -347,6 +394,90 @@ export default function ExtractColorsFromImagePage() {
                   </div>
                 </>
               )}
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Internal Linking Section */}
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Color Tools</CardTitle>
+              <CardDescription>
+                Explore more tools to work with your extracted colors
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {relatedTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={tool.href}
+                    className="group p-4 rounded-lg border hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {tool.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">How to Extract Colors from an Image</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                This tool analyzes any uploaded image and identifies its dominant colors using advanced color quantization algorithms. The process happens entirely in your browser using HTML5 canvas — no images are uploaded to any server.
+              </p>
+              <div className="space-y-2">
+                <h3 className="font-medium text-foreground">Step-by-step guide:</h3>
+                <ol className="list-decimal list-inside space-y-1">
+                  <li>Upload your image by dragging and dropping or clicking the upload area</li>
+                  <li>Adjust the number of colors to extract (2-12 colors)</li>
+                  <li>View the extracted color palette with HEX and RGB values</li>
+                  <li>Copy individual colors or export the entire palette as CSS, SCSS, or JSON</li>
+                </ol>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Why Use This Tool?</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Whether you're a designer looking to create a color palette from a mood board, a developer matching brand colors, or an artist analyzing color schemes, this tool provides instant results without compromising privacy.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Perfect for:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Creating color palettes from photos</li>
+                    <li>Matching brand colors from logos</li>
+                    <li>Analyzing competitor design schemes</li>
+                    <li>Building design systems from inspiration images</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Key benefits:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>100% private — images never leave your device</li>
+                    <li>Instant processing with no wait times</li>
+                    <li>Export to multiple formats (CSS, SCSS, JSON)</li>
+                    <li>Free to use with no limitations</li>
+                  </ul>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>

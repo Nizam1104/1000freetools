@@ -1,12 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "HSL to HSV Converter — Convert Between Color Models",
+  description: "Convert HSL (Hue, Saturation, Lightness) to HSV (Hue, Saturation, Value) format. Essential for designers working across different color models and software.",
+  keywords: "HSL to HSV, HSL HSV converter, color model conversion, HSL to HSV format, color space converter, hue saturation conversion, design color tools",
+};
+
+export const relatedTools = [
+  { name: "RGB to HSL Converter", href: "/color-tools/rgb-to-hsl-converter" },
+  { name: "Hex to HSL Converter", href: "/color-tools/hex-to-hsl-converter" },
+  { name: "Advanced Color Picker", href: "/color-tools/advanced-color-picker" },
+  { name: "Color Wheel", href: "/color-tools/color-wheel" },
+];
 
 export default function HslToHsvConverterPage() {
   const [hslInput, setHslInput] = useState({ h: "", s: "", l: "" });
@@ -329,6 +343,38 @@ export default function HslToHsvConverterPage() {
             </p>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Understanding HSL and HSV</h2>
+            <p className="text-muted-foreground">
+              HSL and HSV are both cylindrical color models that represent colors in ways more intuitive than RGB. HSL uses Lightness (from black through the hue to white), while HSV uses Value (from black through the hue to full color intensity). Different software and design tools use different models, making conversion essential for consistent workflows.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">When to Use Each Model</h2>
+            <p className="text-muted-foreground">
+              Use HSL for CSS and web development, as it's natively supported and more intuitive for creating color variations. Use HSV when working with design software like Adobe Photoshop, Illustrator, or when dealing with color pickers that use this model. Understanding both helps you work seamlessly across different tools.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">{tool.href}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

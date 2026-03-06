@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -23,6 +24,24 @@ interface TextSuggestion {
   wcagAAA: boolean;
   type: "optimal" | "good" | "minimum";
 }
+
+export const metadata = {
+  title: "Text Color Suggestion Tool — Find Readable Text Colors",
+  description: "Enter a background color and get instant suggestions for accessible, readable text colors. Automatically generates WCAG-compliant text color options for your designs.",
+  keywords: ["text color finder", "readable text colors", "accessible text suggestions", "background color text", "WCAG text colors", "contrast-aware colors"],
+  openGraph: {
+    title: "Text Color Suggestion Tool — Find Readable Text Colors",
+    description: "Enter a background color and get instant suggestions for accessible, readable text colors. Automatically generates WCAG-compliant text color options.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check contrast ratios for accessibility" },
+  { name: "Palette Contrast Viewer", href: "/color-tools/palette-contrast-viewer", description: "View contrast matrix for color palettes" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors in multiple formats" },
+  { name: "Dark Light Mode Preview", href: "/color-tools/dark-light-mode-preview", description: "Preview colors in light and dark themes" },
+];
 
 export default function TextColorSuggestionToolPage() {
   const [bgColor, setBgColor] = useState("#FFFFFF");
@@ -315,6 +334,63 @@ export default function TextColorSuggestionToolPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Use the Text Color Suggestion Tool</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Enter your background color using the color picker or type a HEX value</li>
+                <li>Click "Generate Suggestions" to get accessible text color options</li>
+                <li>Review suggested colors ranked by contrast ratio (highest first)</li>
+                <li>Each suggestion shows its WCAG compliance level: Optimal (AAA), Good (AA), or Minimum (large text only)</li>
+                <li>Click the copy button to grab any color for your project</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                The Text Color Suggestion Tool takes the guesswork out of choosing readable text colors. Ideal for:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Finding accessible text colors for custom backgrounds</li>
+                <li>Quickly generating WCAG-compliant color options</li>
+                <li>Testing multiple text color variations at once</li>
+                <li>Ensuring your designs work for all users</li>
+              </ul>
+              <p className="pt-2">
+                The tool automatically calculates contrast ratios and suggests colors that meet WCAG guidelines, so you don't have to manually test each option.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

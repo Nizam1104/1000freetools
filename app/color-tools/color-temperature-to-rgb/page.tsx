@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,19 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Color Temperature to RGB — Kelvin to RGB Color Converter",
+  description: "Convert color temperature in Kelvin to RGB values. Ideal for lighting designers, photographers, and developers working with warm or cool light sources.",
+  keywords: "color temperature to RGB, Kelvin to RGB, color temperature converter, warm cool light, lighting design tool, photography color temperature, Kelvin color calculator",
+};
+
+export const relatedTools = [
+  { name: "Color Picker", href: "/color-tools/color-picker" },
+  { name: "Warm or Cool Color Detector", href: "/color-tools/warm-cool-color-detector" },
+  { name: "RGB to Hex Converter", href: "/color-tools/rgb-to-hex-converter" },
+  { name: "Advanced Color Picker", href: "/color-tools/advanced-color-picker" },
+];
 
 export default function ColorTemperatureToRgbConverterPage() {
   const [temperature, setTemperature] = useState<number>(6500);
@@ -389,6 +403,38 @@ export default function ColorTemperatureToRgbConverterPage() {
             </ol>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Understanding Color Temperature</h2>
+            <p className="text-muted-foreground">
+              Color temperature describes the color characteristics of light, measured in Kelvin (K). Lower temperatures (2000K-3000K) produce warm, yellowish light similar to candlelight or sunrise. Higher temperatures (5000K-10000K) produce cool, bluish light like daylight or overcast skies. This concept is essential for lighting design, photography, and display calibration.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Applications of Color Temperature</h2>
+            <p className="text-muted-foreground">
+              Photographers use color temperature to white balance images. Lighting designers select appropriate temperatures for different spaces warm light for cozy environments, cool light for workspaces. Web developers can use color temperature to create realistic lighting effects, simulate time of day, or build ambient UI themes that match natural light cycles.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">{tool.href}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

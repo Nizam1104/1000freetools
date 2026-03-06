@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -26,6 +27,24 @@ import {
   rgbToHsl,
   rgbToCmyk,
 } from "@/app/color-tools/lib/color-utils";
+
+export const metadata = {
+  title: "Dominant Color Finder from Image — Extract Main Color Instantly",
+  description: "Find the single most dominant color in any image. Perfect for auto-generating UI themes, extracting brand colors from logos, or creating accent colors from photos. Free, private, browser-based.",
+  keywords: ["dominant color finder", "main color extractor", "image color analysis", "brand color picker", "auto theme generator", "color extraction tool"],
+  openGraph: {
+    title: "Dominant Color Finder from Image — Extract Main Color Instantly",
+    description: "Find the single most dominant color in any image. Perfect for auto-generating UI themes, extracting brand colors from logos, or creating accent colors from photos.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Extract full color palettes from any image" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors in multiple formats" },
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties from colors" },
+  { name: "Color History Tool", href: "/color-tools/color-history", description: "Track and manage your color history" },
+];
 
 export default function DominantColorFinderPage() {
   const [dominantColor, setDominantColor] = useState<{
@@ -378,6 +397,62 @@ export default function DominantColorFinderPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Use the Dominant Color Finder</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Upload any image (JPG, PNG, GIF, or WebP) by dragging it into the upload area or clicking to select a file</li>
+                <li>The tool automatically analyzes the image and extracts the single most dominant color</li>
+                <li>View the color in multiple formats: HEX, RGB, HSL, and CMYK</li>
+                <li>Copy any format with one click or export the color for use in your projects</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                The Dominant Color Finder helps you quickly extract the primary color from any image without manual color picking. Perfect for:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Auto-generating UI themes from hero images or backgrounds</li>
+                <li>Extracting brand colors from company logos</li>
+                <li>Creating accent colors that match your photography</li>
+                <li>Building cohesive color schemes from inspiration images</li>
+              </ul>
+              <p className="pt-2">
+                All processing happens in your browser — your images never leave your device.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

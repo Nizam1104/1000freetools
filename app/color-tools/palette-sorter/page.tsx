@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+
+export const metadata = {
+  title: "Palette Sorter — Organize Colors by Hue, Lightness, Saturation",
+  description: "Sort and organize color palettes by hue angle, lightness, or saturation. Arrange colors logically for design systems and documentation.",
+  keywords: "palette sorter, sort colors, organize colors, hue sorter, color organizer, lightness sort, saturation sort, color arrangement",
+};
+
+export const relatedTools = [
+  { name: "Palette Comparison Tool", href: "/palette-comparison-tool" },
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "Color Wheel", href: "/color-wheel" },
+];
 import { Copy, Check, SortAsc, ArrowUpDown, Palette } from "lucide-react";
 import { toast } from "sonner";
 
@@ -400,6 +414,41 @@ export default function PaletteSorterPage() {
             </Card>
           </>
         )}
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Palette Sorter
+            </h2>
+            <p className="text-muted-foreground">
+              The Palette Sorter organizes your colors by hue, brightness, saturation, or lightness. Load any palette and sort it in ascending or descending order to create logical, visually coherent arrangements.
+            </p>
+            <p className="text-muted-foreground">
+              Sorting colors is essential for creating organized design systems, documentation, and style guides. Each sorted color displays its HSL values and brightness for easy reference and selection.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

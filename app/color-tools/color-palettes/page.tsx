@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import palettesData from "@/public/json-assets/color-palettes.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
+export const metadata = {
+  title: "Pre-made Color Palettes — Ready-to-Use Color Schemes",
+  description: "Browse and use pre-made color palettes for common design scenarios. Save time with professionally curated color combinations.",
+  keywords: "pre-made palettes, ready color schemes, curated palettes, professional color combinations, design palettes, color library, palette collection",
+};
+
+export const relatedTools = [
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "Favorite Colors Manager", href: "/favorite-colors-manager" },
+  { name: "CSS Variables Generator", href: "/css-variables-generator" },
+];
 import { toast } from "sonner";
 import {
   Copy,
@@ -632,6 +646,41 @@ export default function ColorPalettesPage() {
             </Card>
           </div>
         )}
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Color Palette Explorer
+            </h2>
+            <p className="text-muted-foreground">
+              The Color Palette Explorer offers a curated collection of pre-made color palettes for common design scenarios. Browse through professionally designed color schemes, search by name, and save your favorites for quick access.
+            </p>
+            <p className="text-muted-foreground">
+              Each palette is ready to use in your projects. Click on any color to copy its hex code, or export the entire palette as JSON or CSS variables. Use the built-in generator to create your own custom palettes when you need something unique.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

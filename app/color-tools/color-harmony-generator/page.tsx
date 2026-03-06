@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -16,6 +17,19 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, Download, Shuffle, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Color Harmony Generator — Create Harmonious Color Schemes",
+  description: "Generate harmonious color schemes using color theory rules. Create complementary, analogous, triadic, split-complementary, and tetradic palettes instantly.",
+  keywords: "color harmony generator, harmonious colors, color scheme generator, color theory tool, complementary analogous triadic, color palette creator, design harmony",
+};
+
+export const relatedTools = [
+  { name: "Color Wheel", href: "/color-wheel" },
+  { name: "Complementary Color Finder", href: "/complementary-color-finder" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+];
 
 interface HarmonyColor {
   hex: string;
@@ -957,6 +971,41 @@ ${palette.colors.map((c, i) => `          ${c.name.toLowerCase().replace(/\s/g, 
             </div>
           </CardContent>
         </Card>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Color Harmony Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Color Harmony Generator uses color theory principles to create harmonious color schemes. Choose from complementary, analogous, triadic, tetradic, split-complementary, and square harmony types to generate palettes that work well together.
+            </p>
+            <p className="text-muted-foreground">
+              Each harmony type follows specific rules on the color wheel. Complementary colors sit opposite each other for high contrast, analogous colors sit adjacent for serene designs, and triadic colors are evenly spaced for vibrant balance. Export your harmony palette in CSS, JSON, or PNG format.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

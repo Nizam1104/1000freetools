@@ -1,12 +1,31 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Check, Copy, RotateCcw, Palette } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Complementary Color Finder — Find Opposite Colors Instantly",
+  description: "Find the perfect complementary color for any base color. Generate high-contrast color pairs, analogous schemes, triadic colors, and split-complementary palettes for dynamic designs.",
+  keywords: ["complementary color finder", "opposite color tool", "color contrast pairs", "high contrast colors", "split complementary", "triadic colors", "color scheme generator"],
+  openGraph: {
+    title: "Complementary Color Finder — Find Opposite Colors Instantly",
+    description: "Find the perfect complementary color for any base color. Generate high-contrast color pairs and dynamic color schemes.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },
+  { name: "Shade Tint Tone Generator", href: "/color-tools/shade-tint-tone-generator", description: "Create full color ranges" },
+  { name: "Warm or Cool Color Detector", href: "/color-tools/warm-or-cool-color-detector", description: "Analyze color temperature" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
+];
 import {
   hexToRgb,
   rgbToHsl,
@@ -312,6 +331,90 @@ export default function ComplementaryColorFinderPage() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Internal Linking Section */}
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Color Tools</CardTitle>
+              <CardDescription>
+                Explore more tools to work with complementary colors and palettes
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {relatedTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={tool.href}
+                    className="group p-4 rounded-lg border hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {tool.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">How to Use the Complementary Color Finder</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Enter any color using the HEX input or color picker to instantly see its complementary (opposite) color on the color wheel. The tool also generates related color schemes including analogous, triadic, and split-complementary palettes.
+              </p>
+              <div className="space-y-2">
+                <h3 className="font-medium text-foreground">Color schemes included:</h3>
+                <ul className="list-disc list-inside space-y-1">
+                  <li><strong>Complementary:</strong> The exact opposite color for maximum contrast</li>
+                  <li><strong>Analogous:</strong> Colors next to your base color for harmonious combinations</li>
+                  <li><strong>Triadic:</strong> Three colors spaced 120 degrees apart for balanced vibrancy</li>
+                  <li><strong>Split-Complementary:</strong> Base color plus two colors flanking its complement</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Why Use Complementary Colors</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Complementary colors create the strongest possible contrast, making them ideal for drawing attention and creating visual impact. When used thoughtfully, complementary pairs make designs more dynamic and memorable.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Perfect for:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Call-to-action buttons and highlights</li>
+                    <li>Creating visual hierarchy</li>
+                    <li>Sports and entertainment designs</li>
+                    <li>Making text stand out from backgrounds</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Tips for use:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Use one color as dominant, the other as accent</li>
+                    <li>Avoid 50/50 splits to prevent visual vibration</li>
+                    <li>Adjust saturation for more subtle contrast</li>
+                    <li>Test accessibility with contrast checkers</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

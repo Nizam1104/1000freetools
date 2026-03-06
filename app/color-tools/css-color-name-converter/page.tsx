@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +15,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+export const metadata = {
+  title: "CSS Color Name Converter — Named Colors to HEX, RGB, HSL",
+  description: "Convert any CSS color name like 'tomato' or 'steelblue' to HEX, RGB, and HSL equivalents. Quick lookup for all 140+ standard CSS named colors.",
+  keywords: "CSS color names, named color converter, color name to hex, CSS named colors, color lookup tool, HTML color names, standard CSS colors",
+};
+
+export const relatedTools = [
+  { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },
+  { name: "Color Picker", href: "/color-tools/color-picker" },
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator" },
+  { name: "Web Safe Color Picker", href: "/color-tools/web-safe-color-picker" },
+];
 
 const CSS_COLORS: Record<string, string> = {
   aliceblue: "#f0f8ff",
@@ -498,6 +512,38 @@ export default function CssColorNameConverterPage() {
             </ol>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-semibold mb-3">CSS Named Colors Reference</h2>
+            <p className="text-muted-foreground">
+              CSS defines 140+ standard color names that can be used directly in stylesheets. These named colors range from basic colors like "red" and "blue" to more specific shades like "rebeccapurple" and "cornflowerblue". Using color names can make your CSS more readable, though HEX and RGB values offer more precise color control.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">When to Use Color Names</h2>
+            <p className="text-muted-foreground">
+              Color names are great for rapid prototyping, learning CSS, or when exact color matching isn't critical. They're also useful for accessibility-focused designs where semantic color names help convey meaning. However, for production designs requiring specific brand colors, HEX, RGB, or HSL values provide the precision you need.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">{tool.href}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

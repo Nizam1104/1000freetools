@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,24 @@ import { Label } from "@/components/ui/label";
 import { Copy, Check, Trash2, Heart, Plus, Edit2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
+
+export const metadata = {
+  title: "Favorite Colors Manager — Save & Organize Color Swatches",
+  description: "Save, organize, and manage your favorite color swatches locally in the browser. Build a personal color library with naming, starring, and export features. No signup required.",
+  keywords: ["favorite colors manager", "color swatch organizer", "personal color library", "save colors locally", "color collection tool", "named color swatches", "browser color storage"],
+  openGraph: {
+    title: "Favorite Colors Manager — Save & Organize Color Swatches",
+    description: "Save, organize, and manage your favorite color swatches locally. Build a personal color library with naming, starring, and export features.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Color History Tool", href: "/color-tools/color-history-tool", description: "Track recently used colors" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors" },
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties" },
+];
 
 interface FavoriteColor {
   id: string;
@@ -440,6 +459,63 @@ export default function FavoriteColorsManagerPage() {
             )}
           </div>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Use the Favorite Colors Manager</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Enter a color name (optional) and select or input a color value</li>
+                <li>Click the plus button to add the color to your favorites</li>
+                <li>Star important colors for quick filtering</li>
+                <li>Edit color names by clicking the pencil icon</li>
+                <li>Export your collection as JSON or import from a backup file</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Build Your Personal Color Library</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                Create a curated collection of colors you use regularly:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Name colors for easy identification in projects</li>
+                <li>Star frequently used colors for quick access</li>
+                <li>Filter between all colors and starred favorites</li>
+                <li>Export and import collections across devices</li>
+              </ul>
+              <p className="pt-2">
+                All data is stored locally in your browser. No account needed, and your colors stay private.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

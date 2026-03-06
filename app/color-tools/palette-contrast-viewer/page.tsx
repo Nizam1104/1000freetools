@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,24 @@ interface ColorSwatch {
   id: string;
   color: string;
 }
+
+export const metadata = {
+  title: "Palette Contrast Viewer — Visualize Color Contrast Matrix",
+  description: "View contrast levels between every color pair in your palette. Quickly identify inaccessible color combinations before they reach production. Essential for design system creators.",
+  keywords: ["palette contrast checker", "color matrix tool", "design system accessibility", "color contrast grid", "palette analyzer", "accessibility testing"],
+  openGraph: {
+    title: "Palette Contrast Viewer — Visualize Color Contrast Matrix",
+    description: "View contrast levels between every color pair in your palette. Quickly identify inaccessible color combinations before they reach production.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check contrast ratios for accessibility" },
+  { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties from colors" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export", description: "Export palettes in multiple formats" },
+];
 
 export default function PaletteContrastViewerPage() {
   const [colors, setColors] = useState<ColorSwatch[]>([
@@ -323,6 +342,63 @@ export default function PaletteContrastViewerPage() {
             </Card>
           </div>
         </div>
+
+        {/* Related Tools - Internal Linking */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">Related Color Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                  {tool.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO Content */}
+        <section className="mt-12 grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">How to Use the Palette Contrast Viewer</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Add your palette colors using the color picker or by entering HEX values</li>
+                <li>The contrast matrix updates automatically, showing ratios between every color pair</li>
+                <li>Each cell displays the contrast ratio — click to see detailed information</li>
+                <li>Color-coded badges indicate compliance: AAA (green), AA (blue), Fair (yellow), Poor (red)</li>
+                <li>Use the color previews at the bottom to see how colors look in UI elements</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                The Palette Contrast Viewer helps you catch accessibility issues before they reach production. Essential for:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Design system creators building accessible color tokens</li>
+                <li>Teams validating entire palettes against WCAG standards</li>
+                <li>Quickly spotting problematic color combinations</li>
+                <li>Documenting contrast levels for design handoffs</li>
+              </ul>
+              <p className="pt-2">
+                Instead of testing color pairs one at a time, see your entire palette's contrast matrix at once — saving hours of manual testing.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );

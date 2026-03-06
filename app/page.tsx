@@ -13,6 +13,11 @@ import {
   Palette,
   Code2,
   ChevronRight,
+  FileJson,
+  Calculator,
+  Type,
+  FileSpreadsheet,
+  RefreshCw,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -33,6 +38,7 @@ const toolsByCategory = [
     icon: FileImage,
     color: "from-violet-500 to-indigo-600",
     accent: "#7c3aed",
+    categoryHref: "/image-tools",
     tools: [
       {
         name: "Image Compressor",
@@ -107,6 +113,7 @@ const toolsByCategory = [
     icon: Video,
     color: "from-rose-500 to-pink-600",
     accent: "#e11d48",
+    categoryHref: "/video-tools",
     tools: [
       {
         name: "Video Compressor",
@@ -183,10 +190,323 @@ const toolsByCategory = [
     ],
   },
   {
+    categoryName: "CSS Tools",
+    icon: Palette,
+    color: "from-amber-500 to-orange-500",
+    accent: "#f59e0b",
+    categoryHref: "/css-tools",
+    tools: [
+      {
+        name: "Gradient Generator",
+        description: "Create linear, radial, and conic gradients with CSS code.",
+        href: "/css-tools/gradient-generator",
+      },
+      {
+        name: "Color Palette Generator",
+        description: "Extract and generate color harmonies from base colors.",
+        href: "/css-tools/color-palette-generator",
+      },
+      {
+        name: "Box Shadow Generator",
+        description: "Generate multi-layer CSS box-shadow with live preview.",
+        href: "/css-tools/box-shadow-generator",
+      },
+      {
+        name: "Border Radius Generator",
+        description: "Create custom rounded corners with CSS border-radius.",
+        href: "/css-tools/border-radius-generator",
+      },
+      {
+        name: "CSS Grid Generator",
+        description: "Build CSS grid layouts visually with instant code.",
+        href: "/css-tools/css-grid-generator",
+      },
+      {
+        name: "Flexbox Playground",
+        description: "Interactive flexbox builder with live preview.",
+        href: "/css-tools/flexbox-playground",
+      },
+      {
+        name: "Color Contrast Checker",
+        description: "Check WCAG compliance for color combinations.",
+        href: "/css-tools/color-contrast-checker",
+      },
+      {
+        name: "CSS Animation Generator",
+        description: "Build CSS keyframe animations with ease.",
+        href: "/css-tools/animation-generator",
+      },
+      {
+        name: "Cubic Bezier Editor",
+        description: "Create custom easing functions for animations.",
+        href: "/css-tools/cubic-bezier-editor",
+      },
+      {
+        name: "PX to REM Converter",
+        description: "Convert between px and rem units for responsive design.",
+        href: "/css-tools/px-rem-converter",
+      },
+    ],
+  },
+  {
+    categoryName: "JSON Tools",
+    icon: FileJson,
+    color: "from-emerald-500 to-teal-600",
+    accent: "#10b981",
+    categoryHref: "/json-tools",
+    tools: [
+      {
+        name: "JSON Validator",
+        description: "Validate JSON syntax with error highlighting.",
+        href: "/json-tools/json-validator",
+      },
+      {
+        name: "JSON Formatter",
+        description: "Format and beautify raw JSON for readability.",
+        href: "/json-tools/json-formatter-beautifier",
+      },
+      {
+        name: "JSON Minifier",
+        description: "Remove whitespace to reduce JSON file size.",
+        href: "/json-tools/json-minifier",
+      },
+      {
+        name: "JSON Diff Tool",
+        description: "Compare two JSON objects and highlight changes.",
+        href: "/json-tools/json-diff",
+      },
+      {
+        name: "JSON to CSV",
+        description: "Convert JSON arrays to CSV format.",
+        href: "/json-tools/json-to-csv",
+      },
+      {
+        name: "CSV to JSON",
+        description: "Parse CSV and convert to JSON format.",
+        href: "/json-tools/csv-to-json",
+      },
+      {
+        name: "JSON to TypeScript",
+        description: "Generate TypeScript interfaces from JSON.",
+        href: "/json-tools/json-to-typescript",
+      },
+      {
+        name: "JSON Viewer",
+        description: "View JSON in interactive tree format.",
+        href: "/json-tools/json-viewer",
+      },
+    ],
+  },
+  {
+    categoryName: "Calculators",
+    icon: Calculator,
+    color: "from-blue-500 to-cyan-600",
+    accent: "#3b82f6",
+    categoryHref: "/calculators",
+    tools: [
+      {
+        name: "BMI Calculator",
+        description: "Calculate Body Mass Index with health category.",
+        href: "/calculators/bmi-calculator",
+      },
+      {
+        name: "Age Calculator",
+        description: "Calculate your exact age from birth date.",
+        href: "/calculators/age-calculator",
+      },
+      {
+        name: "Percentage Calculator",
+        description: "Calculate percentages and percentage changes.",
+        href: "/calculators/percentage-calculator",
+      },
+      {
+        name: "Loan Calculator",
+        description: "Calculate loan payments and interest.",
+        href: "/calculators/loan-calculator",
+      },
+      {
+        name: "Tip Calculator",
+        description: "Split bills and calculate tips easily.",
+        href: "/calculators/tip-calculator",
+      },
+      {
+        name: "Date Difference Calculator",
+        description: "Find the difference between two dates.",
+        href: "/calculators/date-difference-calculator",
+      },
+    ],
+  },
+  {
+    categoryName: "Math Tools",
+    icon: Calculator,
+    color: "from-indigo-500 to-purple-600",
+    accent: "#6366f1",
+    categoryHref: "/math-tools",
+    tools: [
+      {
+        name: "Scientific Calculator",
+        description: "Full-featured scientific calculator online.",
+        href: "/math-tools/scientific-calculator",
+      },
+      {
+        name: "Fraction Calculator",
+        description: "Add, subtract, multiply, and divide fractions.",
+        href: "/math-tools/fraction-calculator",
+      },
+      {
+        name: "Quadratic Equation Solver",
+        description: "Solve quadratic equations step by step.",
+        href: "/math-tools/quadratic-equation-solver",
+      },
+      {
+        name: "Matrix Calculator",
+        description: "Perform matrix operations and calculations.",
+        href: "/math-tools/matrix-calculator",
+      },
+      {
+        name: "Standard Deviation Calculator",
+        description: "Calculate mean, variance, and standard deviation.",
+        href: "/math-tools/standard-deviation-variance-calculator",
+      },
+      {
+        name: "Probability Calculator",
+        description: "Calculate probability and statistics.",
+        href: "/math-tools/probability-calculator",
+      },
+    ],
+  },
+  {
+    categoryName: "Unit Converters",
+    icon: RefreshCw,
+    color: "from-teal-500 to-green-600",
+    accent: "#14b8a6",
+    categoryHref: "/unit-converters",
+    tools: [
+      {
+        name: "Length Converter",
+        description: "Convert between meters, feet, inches, and more.",
+        href: "/unit-converters/length-converter",
+      },
+      {
+        name: "Weight Converter",
+        description: "Convert between kg, lbs, oz, and other units.",
+        href: "/unit-converters/weight-converter",
+      },
+      {
+        name: "Temperature Converter",
+        description: "Convert between Celsius, Fahrenheit, and Kelvin.",
+        href: "/unit-converters/temperature-converter",
+      },
+      {
+        name: "Volume Converter",
+        description: "Convert between liters, gallons, cups, and more.",
+        href: "/unit-converters/volume-converter",
+      },
+      {
+        name: "Speed Converter",
+        description: "Convert between mph, km/h, m/s, and knots.",
+        href: "/unit-converters/speed-converter",
+      },
+      {
+        name: "Area Converter",
+        description: "Convert between square meters, feet, acres, and more.",
+        href: "/unit-converters/area-converter",
+      },
+    ],
+  },
+  {
+    categoryName: "Color Tools",
+    icon: Palette,
+    color: "from-pink-500 to-rose-600",
+    accent: "#ec4899",
+    categoryHref: "/color-tools",
+    tools: [
+      {
+        name: "Color Picker",
+        description: "Pick colors and get HEX, RGB, HSL values.",
+        href: "/color-tools/color-picker",
+      },
+      {
+        name: "Color Converter",
+        description: "Convert between RGB, HEX, HSL, and HSV formats.",
+        href: "/color-tools/color-converter",
+      },
+      {
+        name: "Contrast Checker",
+        description: "Check color contrast for WCAG accessibility.",
+        href: "/color-tools/contrast-checker",
+      },
+      {
+        name: "Color Palette Generator",
+        description: "Generate color harmonies and palettes.",
+        href: "/color-tools/color-palette-generator",
+      },
+      {
+        name: "Extract Colors from Image",
+        description: "Extract dominant colors from uploaded images.",
+        href: "/color-tools/extract-colors-from-image",
+      },
+    ],
+  },
+  {
+    categoryName: "Text Tools",
+    icon: Type,
+    color: "from-slate-500 to-gray-600",
+    accent: "#64748b",
+    categoryHref: "/text-tools",
+    tools: [
+      {
+        name: "Word Counter",
+        description: "Count words, characters, and reading time.",
+        href: "/text-tools/word-counter",
+      },
+      {
+        name: "Case Converter",
+        description: "Convert text between uppercase, lowercase, title case.",
+        href: "/text-tools/case-converter",
+      },
+      {
+        name: "Lorem Ipsum Generator",
+        description: "Generate placeholder text for designs.",
+        href: "/text-tools/lorem-ipsum-generator",
+      },
+      {
+        name: "Diff Checker",
+        description: "Compare two texts and find differences.",
+        href: "/text-tools/diff-checker",
+      },
+      {
+        name: "Random Password Generator",
+        description: "Generate strong, secure random passwords.",
+        href: "/text-tools/random-password-generator",
+      },
+      {
+        name: "QR Code Generator",
+        description: "Create QR codes from URLs, text, and more.",
+        href: "/text-tools/qr-code-generator",
+      },
+    ],
+  },
+  {
+    categoryName: "CSV Tools",
+    icon: FileSpreadsheet,
+    color: "from-green-500 to-emerald-600",
+    accent: "#22c55e",
+    categoryHref: "/csv-tools",
+    tools: [
+      {
+        name: "CSV Viewer",
+        description: "View and analyze CSV files online.",
+        href: "/csv-tools/csv-viewer",
+      },
+    ],
+  },
+  {
     categoryName: "Design Tools",
     icon: Palette,
     color: "from-amber-500 to-orange-500",
     accent: "#f59e0b",
+    categoryHref: "/design-tools",
     tools: [
       {
         name: "Favicon Generator",
@@ -201,6 +521,7 @@ const toolsByCategory = [
     icon: Code2,
     color: "from-emerald-500 to-teal-600",
     accent: "#10b981",
+    categoryHref: "/developer-tools",
     tools: [
       {
         name: "Mock Data Generator",
@@ -502,6 +823,15 @@ export default function Home() {
                   <span className="ml-1 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                     {category.tools.length}
                   </span>
+                  {category.categoryHref && (
+                    <Link
+                      href={category.categoryHref}
+                      className="ml-auto text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
+                    >
+                      View all
+                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
 
                 {/* Tools grid - improved cards with better accessibility */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,19 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Trash2, Plus, Palette } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Palette Comparison Tool — Compare Two Color Palettes Side by Side",
+  description: "Compare two color palettes side by side to evaluate design options. Analyze contrast, mood, and accessibility differences between color schemes.",
+  keywords: "palette comparison tool, compare color palettes, side by side colors, A/B color testing, palette analyzer, color scheme comparator, design decision tool",
+};
+
+export const relatedTools = [
+  { name: "Palette Contrast Viewer", href: "/palette-contrast-viewer" },
+  { name: "Contrast Checker", href: "/contrast-checker" },
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Dark Light Mode Preview", href: "/dark-light-mode-preview" },
+];
 
 interface Palette {
   id: string;
@@ -357,6 +371,41 @@ export default function PaletteComparisonToolPage() {
             </CardContent>
           </Card>
         )}
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Palette Comparison Tool
+            </h2>
+            <p className="text-muted-foreground">
+              The Palette Comparison Tool lets you compare multiple color palettes side by side to make informed design decisions. Load two or more palettes and evaluate their contrast, mood, and accessibility characteristics at a glance.
+            </p>
+            <p className="text-muted-foreground">
+              Perfect for A/B testing color schemes, reviewing client options, or choosing between different brand palettes. Each palette shows average luminance and contrast ratios to help you assess accessibility and visual hierarchy.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

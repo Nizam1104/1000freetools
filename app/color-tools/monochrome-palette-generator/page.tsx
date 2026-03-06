@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -13,6 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+export const metadata = {
+  title: "Monochrome Palette Generator — Single Color Variations",
+  description: "Generate monochromatic color palettes from a single base color. Create cohesive designs with varying shades, tints, and tones of one hue.",
+  keywords: "monochrome palette, single color palette, monochromatic colors, same hue variations, tonal palette, cohesive color scheme, single hue system",
+};
+
+export const relatedTools = [
+  { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Complementary Color Finder", href: "/complementary-color-finder" },
+  { name: "CSS Variables Generator", href: "/css-variables-generator" },
+];
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, Download, RotateCcw, Shuffle } from "lucide-react";
@@ -659,6 +673,41 @@ ${palette.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
             </div>
           </CardContent>
         </Card>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Monochrome Palette Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Monochrome Palette Generator creates a full range of shades from a single base color. Adjust the shade count and lightness range to generate a cohesive monochromatic palette perfect for minimal, elegant designs.
+            </p>
+            <p className="text-muted-foreground">
+              Monochromatic color schemes are inherently harmonious since all colors share the same hue. Use them for clean UIs, sophisticated branding, and designs where simplicity and cohesion are priorities.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

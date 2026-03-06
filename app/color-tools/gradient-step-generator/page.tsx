@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,19 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Gradient Step Generator — Create Even Color Steps",
+  description: "Generate evenly spaced color steps between two colors. Perfect for creating progress indicators, loading states, and stepped visualizations.",
+  keywords: "gradient steps, color steps generator, even color interpolation, stepped gradient, color progression, intermediate colors, color transitions",
+};
+
+export const relatedTools = [
+  { name: "Gradient Palette Generator", href: "/gradient-palette-generator" },
+  { name: "Color Scale Generator", href: "/color-scale-generator" },
+  { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
+  { name: "CSS Gradient Generator", href: "/css-gradient-generator" },
+];
 
 const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -297,6 +311,41 @@ export default function GradientStepGeneratorPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Gradient Step Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Gradient Step Generator creates evenly spaced color steps between any two colors. Specify the number of steps (2-20) and get smooth, interpolated colors perfect for progress bars, loading states, and data visualizations.
+            </p>
+            <p className="text-muted-foreground">
+              Each step represents an equal transition from the start color to the end color. Export your steps as CSS variables, JavaScript arrays, or copy individual colors for immediate use in your projects.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

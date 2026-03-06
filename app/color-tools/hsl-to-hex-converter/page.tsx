@@ -1,12 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "HSL to HEX Converter — Convert HSL Colors to Hex Code",
+  description: "Convert HSL color values to HEX format easily. Enter hue, saturation, and lightness values and get the equivalent hex color code for web and design use.",
+  keywords: "HSL to hex, HSL to HEX converter, HSL color conversion, hue to hex code, saturation lightness to hex, CSS color converter, HSL translator",
+};
+
+export const relatedTools = [
+  { name: "Hex to HSL Converter", href: "/color-tools/hex-to-hsl-converter" },
+  { name: "RGB to Hex Converter", href: "/color-tools/rgb-to-hex-converter" },
+  { name: "HSL to HSV Converter", href: "/color-tools/hsl-to-hsv-converter" },
+  { name: "Color Picker", href: "/color-tools/color-picker" },
+];
 
 export default function HslToHexConverterPage() {
   const [hslInput, setHslInput] = useState({ h: "", s: "", l: "" });
@@ -282,6 +296,38 @@ export default function HslToHexConverterPage() {
             </ol>
           </CardContent>
         </Card>
+
+        <div className="mt-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Why Convert HSL to HEX?</h2>
+            <p className="text-muted-foreground">
+              While HSL is great for understanding and manipulating colors, HEX codes remain the standard for CSS and web development. Converting HSL to HEX lets you use your carefully adjusted colors in stylesheets, share them with team members, or integrate them into design systems that require hex format.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">When to Use HSL vs HEX</h2>
+            <p className="text-muted-foreground">
+              Use HSL when you need to create color variations, adjust brightness systematically, or work with color relationships. Use HEX when writing CSS, sharing colors in design tools, or working with legacy codebases. This converter bridges both workflows seamlessly.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">{tool.href}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

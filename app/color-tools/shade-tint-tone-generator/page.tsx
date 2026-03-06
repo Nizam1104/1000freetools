@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -9,6 +10,24 @@ import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, RotateCcw, Download, Palette } from "lucide-react";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Shade, Tint & Tone Generator — Create Full Color Ranges",
+  description: "Generate complete color palettes from a single base color. Create shades (darker), tints (lighter), and tones (desaturated) for comprehensive design systems and UI libraries.",
+  keywords: ["shade generator", "tint generator", "tone generator", "color palette creator", "monochromatic colors", "color variations", "design system colors", "UI color scales"],
+  openGraph: {
+    title: "Shade, Tint & Tone Generator — Create Full Color Ranges",
+    description: "Generate complete color palettes from a single base color. Create shades, tints, and tones for design systems.",
+    type: "website",
+  },
+};
+
+export const relatedTools = [
+  { name: "Color Wheel", href: "/color-tools/color-wheel", description: "Visualize color relationships" },
+  { name: "Complementary Color Finder", href: "/color-tools/complementary-color-finder", description: "Find opposite colors" },
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Convert colors to CSS custom properties" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
+];
 import {
   hexToRgb,
   rgbToHsl,
@@ -398,6 +417,89 @@ export default function ShadeTintToneGeneratorPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Internal Linking Section */}
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Color Tools</CardTitle>
+              <CardDescription>
+                Explore more tools to work with color palettes and variations
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {relatedTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={tool.href}
+                    className="group p-4 rounded-lg border hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {tool.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">How to Use the Shade, Tint & Tone Generator</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Select a base color using the HEX input or color picker, then adjust the number of variations (3-10) to generate a complete color range. Browse through shades, tints, and tones using the tabs, and export any palette for use in your projects.
+              </p>
+              <div className="space-y-2">
+                <h3 className="font-medium text-foreground">Understanding the differences:</h3>
+                <ul className="list-disc list-inside space-y-1">
+                  <li><strong>Shades:</strong> Created by reducing lightness (adding black) for darker versions</li>
+                  <li><strong>Tints:</strong> Created by increasing lightness (adding white) for lighter versions</li>
+                  <li><strong>Tones:</strong> Created by reducing saturation (adding gray) for muted versions</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Why Generate Color Variations</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <p>
+                Building a complete color system requires more than just a single base color. Shades, tints, and tones provide the range needed for hover states, disabled elements, borders, backgrounds, and text across your entire application.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Perfect for:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Creating design system color scales</li>
+                    <li>Building UI component libraries</li>
+                    <li>Generating brand color palettes</li>
+                    <li>Developing monochromatic themes</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-foreground mb-2">Common use cases:</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Button hover and active states</li>
+                    <li>Background and surface colors</li>
+                    <li>Border and divider colors</li>
+                    <li>Text color hierarchies</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );

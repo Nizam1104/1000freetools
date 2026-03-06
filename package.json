@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "dev-workers": "node build-workers.js --watch",
-    "build:zip": "cd out && zip -r ../1000freetools.zip ."
+    "build:zip": "cd out && zip -r ../1000freetools.zip .",
+    "deploy": "npx wrangler pages deploy out --project-name 1000freetools"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,19 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { toast } from "sonner";
+
+export const metadata = {
+  title: "Custom Color Palette Generator — Build Bespoke Color Systems",
+  description: "Build custom color palettes with complete control over each color. Name, organize, and export your bespoke color system for any project.",
+  keywords: "custom color palette, bespoke color system, personalized palette, named color palette, custom color scheme, design system colors, brand palette creator",
+};
+
+export const relatedTools = [
+  { name: "Color Palette Generator", href: "/color-palette-generator" },
+  { name: "Palette Export Tool", href: "/palette-export-tool" },
+  { name: "Favorite Colors Manager", href: "/favorite-colors-manager" },
+  { name: "CSS Variables Generator", href: "/css-variables-generator" },
+];
 import {
   Copy,
   Shuffle,
@@ -961,6 +975,41 @@ export default function CustomColorPaletteGeneratorPage() {
             </Card>
           </TabsContent>
         </Tabs>
+
+        {/* Related Tools & SEO Content */}
+        <section className="mt-12 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Related Color Tools
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedTools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                >
+                  <p className="font-medium">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tool.href.replace(/^\//, "")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              About the Custom Color Palette Generator
+            </h2>
+            <p className="text-muted-foreground">
+              The Custom Color Palette Generator gives you complete control over every color in your palette. Add up to 10 colors, lock the ones you love, regenerate others, and name each color for easy reference in your design system.
+            </p>
+            <p className="text-muted-foreground">
+              Choose from harmony modes like analogous, complementary, triadic, and more to generate cohesive colors, or go fully custom. Export your palette in JSON, CSS, SCSS, or Tailwind format for seamless integration into any project.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );
