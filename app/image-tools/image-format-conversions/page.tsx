@@ -11,7 +11,15 @@ import {
   Package,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Label } from "@/components/ui/label";
@@ -41,7 +49,7 @@ import {
 
 import { toast } from "sonner";
 import Image from "next/image";
-import Faqs from "@/components/utils/Faqs";
+import { ImageFormatConverterSEO } from "@/components/seo-content/image-tools/ImageFormatConverter";
 
 interface ImageFile {
   id: string;
@@ -64,62 +72,6 @@ export default function ImageFormatConversionsPage() {
   const { isProcessing, progress, error, reset } =
     useImageFormatConverterWorker();
 
-  const faqs = [
-    {
-      question:
-        "Is this image format converter completely free for bulk process tasks?",
-      answer:
-        "Yes, our robust batch processing engine is entirely free to use without mandatory subscriptions. You can efficiently queue and export up to 200 files simultaneously without encountering restrictive paywalls or hidden processing fees.",
-    },
-    {
-      question:
-        "Which specific file types can I upload to the conversion tool?",
-      answer:
-        "You can confidently upload all major structures including JPG, PNG, WebP, BMP, GIF, AVIF, TIFF, ICO, SVG, and modern HEIC files. The intelligent engine will automatically parse these inputs and display the compatible output options.",
-    },
-    {
-      question:
-        "Will my transparent PNG graphics gain a white background if converted?",
-      answer:
-        "It depends on your chosen target format. If you convert a transparent image to WebP or AVIF, the transparency is perfectly preserved. However, converting to standard JPG will physically flatten the transparent pixels into a solid background.",
-    },
-    {
-      question:
-        "Are my confidential photography files uploaded to an internet server?",
-      answer:
-        "No. We prioritize absolute data security by executing every mathematical conversion command strictly inside your localized browser memory. Your sensitive files, document scans, and portraits are never broadcast across the wider internet.",
-    },
-    {
-      question:
-        "How do I download my pictures after a massive batch conversion finishes?",
-      answer:
-        "Once the progress bar hits 100%, you can choose to click individual buttons underneath specific thumbnails, or you can click the convenient 'Download All' button. This will package your entire processed queue into a single, organized ZIP file.",
-    },
-    {
-      question:
-        "Does converting the file automatically compress the overall file size?",
-      answer:
-        "It depends exclusively on the specific target. Changing an uncompressed BMP into a modern WebP or AVIF format will aggressively shrink the physical footprint on your hard drive while maintaining the identical visual fidelity.",
-    },
-  ];
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
-  const MAX_BULK_CONVERSION_LIMIT = 200;
-  const PREVIEW_LIMIT = 50;
-
-  // Get possible output formats based on input files
   const possibleOutputFormats = useMemo(() => {
     const fileObjects = files.map((f) => f.file);
     return getAvailableOutputFormats(fileObjects);
@@ -130,16 +82,15 @@ export default function ImageFormatConversionsPage() {
       const imageFiles = validateImageFile
         ? acceptedFiles.filter(validateImageFile)
         : acceptedFiles.filter((file) =>
-          SUPPORTED_INPUT_FORMATS.includes(
-            file.name.split(".").pop()?.toLowerCase() || "",
-          ),
-        );
+            SUPPORTED_INPUT_FORMATS.includes(
+              file.name.split(".").pop()?.toLowerCase() || "",
+            ),
+          );
 
-      // Check if adding these files would exceed the limit
       const totalFilesAfterAdding = files.length + imageFiles.length;
-      if (totalFilesAfterAdding > MAX_BULK_CONVERSION_LIMIT) {
+      if (totalFilesAfterAdding > 200) {
         toast.error(
-          `Cannot add more than ${MAX_BULK_CONVERSION_LIMIT} images at once. You currently have ${files.length} images.`,
+          `Cannot add more than 200 images at once. You currently have ${files.length} images.`,
         );
         return;
       }
@@ -159,8 +110,6 @@ export default function ImageFormatConversionsPage() {
 
       setFiles((prev) => [...prev, ...newFiles]);
       reset();
-
-      // Reset showAllImages when new files are added
       setShowAllImages(false);
     },
     [reset, files.length],
@@ -207,9 +156,7 @@ export default function ImageFormatConversionsPage() {
         imageFile.file,
         selectedOutputFormat,
         {
-          onProgress: (progress, message) => {
-            // Optional: Handle progress updates if needed
-          },
+          onProgress: (progress, message) => {},
         },
       );
 
@@ -218,11 +165,11 @@ export default function ImageFormatConversionsPage() {
           prev.map((f) =>
             f.id === imageFile.id
               ? {
-                ...f,
-                status: "completed",
-                convertedFormat: selectedOutputFormat,
-                convertedData: result.data,
-              }
+                  ...f,
+                  status: "completed",
+                  convertedFormat: selectedOutputFormat,
+                  convertedData: result.data,
+                }
               : f,
           ),
         );
@@ -237,10 +184,10 @@ export default function ImageFormatConversionsPage() {
         prev.map((f) =>
           f.id === imageFile.id
             ? {
-              ...f,
-              status: "error",
-              error: err instanceof Error ? err.message : "Conversion failed",
-            }
+                ...f,
+                status: "error",
+                error: err instanceof Error ? err.message : "Conversion failed",
+              }
             : f,
         ),
       );
@@ -258,7 +205,6 @@ export default function ImageFormatConversionsPage() {
 
     for (const file of pendingFiles) {
       await convertSingleFile(file);
-      // Small delay between conversions to prevent overwhelming the browser
       await new Promise((resolve) => setTimeout(resolve, 100));
     }
   };
@@ -272,7 +218,6 @@ export default function ImageFormatConversionsPage() {
       downloadBlob(url, fileName);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     } else {
-      // Fallback to original file
       const a = document.createElement("a");
       a.href = imageFile.preview;
       a.download = `${imageFile.name.split(".")[0]}.${imageFile.convertedFormat || selectedOutputFormat}`;
@@ -333,34 +278,27 @@ export default function ImageFormatConversionsPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
           Online Image Format Converter
         </h1>
         <p className="text-base sm:text-lg md:text-xl max-w-4xl text-muted-foreground">
-          Convert your images smoothly between multiple formats entirely within
-          your browser. Process large batches of photos safely and download the
-          results instantly.
+          Convert images between formats online. Support for JPG, PNG, WebP,
+          AVIF, BMP, GIF, TIFF, ICO, SVG, HEIC. Batch convert up to 200 files.
         </p>
       </div>
 
-      {/* 2. Tool Interface - SECOND ELEMENT */}
       <div className="container mx-auto py-8 w-full">
         <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 space-y-4">
-          {/* Upload Area */}
           <div className="w-full max-w-md mx-auto sm:max-w-lg">
             <CardContent className="p-4 sm:p-6">
               <div
                 {...getRootProps()}
-                className={`border-2 border-dashed rounded-lg p-6 sm:p-8 text-center cursor-pointer transition-all hover:border-primary/50 ${isDragActive
+                className={`border-2 border-dashed rounded-lg p-6 sm:p-8 text-center cursor-pointer transition-all hover:border-primary/50 ${
+                  isDragActive
                     ? "border-primary bg-primary/5 scale-[1.02]"
                     : "border-muted-foreground/25"
-                  }`}
+                }`}
               >
                 <input {...getInputProps()} />
                 <FileImage className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4 text-muted-foreground" />
@@ -371,7 +309,7 @@ export default function ImageFormatConversionsPage() {
                 ) : (
                   <div>
                     <p className="font-medium mb-2 text-sm sm:text-base">
-                      Drag & drop images here, or click to select
+                      Drag & drop images here, or click to browse
                     </p>
                     <p className="text-xs sm:text-sm text-muted-foreground">
                       JPG, PNG, WebP, BMP, GIF, AVIF, SVG, TIFF, ICO, HEIC • Max
@@ -383,10 +321,8 @@ export default function ImageFormatConversionsPage() {
             </CardContent>
           </div>
 
-          {/* Main Interface - Show only when files exist */}
           {files.length > 0 && (
             <>
-              {/* Settings Bar */}
               <div className="bg-background border rounded-lg p-3 sm:p-4">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                   <div className="flex items-center gap-2 min-w-0 w-full sm:w-auto">
@@ -426,9 +362,9 @@ export default function ImageFormatConversionsPage() {
                       <span className="text-sm text-muted-foreground">
                         {files.length} {files.length === 1 ? "file" : "files"}
                       </span>
-                      {files.length > MAX_BULK_CONVERSION_LIMIT * 0.8 && (
+                      {files.length > 200 * 0.8 && (
                         <span className="text-xs text-orange-600 font-medium">
-                          ({files.length}/{MAX_BULK_CONVERSION_LIMIT})
+                          ({files.length}/200)
                         </span>
                       )}
                     </div>
@@ -470,11 +406,10 @@ export default function ImageFormatConversionsPage() {
                 </div>
               </div>
 
-              {/* Files Grid */}
               <div className="max-h-[600px] overflow-y-auto">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3">
                   {files
-                    .slice(0, showAllImages ? files.length : PREVIEW_LIMIT)
+                    .slice(0, showAllImages ? files.length : 50)
                     .map((imageFile) => (
                       <Card
                         key={imageFile.id}
@@ -558,8 +493,7 @@ export default function ImageFormatConversionsPage() {
                       </Card>
                     ))}
 
-                  {/* Show More/Less Button */}
-                  {files.length > PREVIEW_LIMIT && (
+                  {files.length > 50 && (
                     <div className="col-span-full">
                       <Button
                         variant="outline"
@@ -567,11 +501,9 @@ export default function ImageFormatConversionsPage() {
                         className="w-full h-8 text-sm"
                       >
                         {showAllImages ? (
-                          <>Show Less ({PREVIEW_LIMIT} previews)</>
+                          <>Show Less (50 previews)</>
                         ) : (
-                          <>
-                            Show More (+{files.length - PREVIEW_LIMIT} images)
-                          </>
+                          <>Show More (+{files.length - 50} images)</>
                         )}
                       </Button>
                     </div>
@@ -579,7 +511,6 @@ export default function ImageFormatConversionsPage() {
                 </div>
               </div>
 
-              {/* Progress Summary */}
               {(completedCount > 0 || errorCount > 0) && (
                 <div className="bg-background border rounded-lg p-3 sm:p-4">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
@@ -635,7 +566,6 @@ export default function ImageFormatConversionsPage() {
             </>
           )}
 
-          {/* Error Display */}
           {error && (
             <Alert variant="destructive" className="max-w-md mx-auto">
               <AlertCircle className="h-4 w-4" />
@@ -643,7 +573,6 @@ export default function ImageFormatConversionsPage() {
             </Alert>
           )}
 
-          {/* Supported Formats - Only show on initial load */}
           {files.length === 0 && (
             <div className="max-w-md mx-auto">
               <div className="bg-muted/20 rounded-lg p-3 sm:p-4">
@@ -691,129 +620,8 @@ export default function ImageFormatConversionsPage() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert max-w-none">
-        <section>
-          <h2 className="text-2xl font-bold mb-4">What It Does</h2>
-          <p className="mb-4">
-            Website builders and social media platforms frequently reject
-            specific graphic types like HEIC or uncompressed TIFFs. This
-            intelligent image format converter swiftly transitions your files
-            into universally compatible types like JPG, WebP, or AVIF directly
-            within your browser. It solves compatibility issues instantly while
-            utilizing a secure, offline batch-processing engine capable of
-            converting up to 200 files simultaneously without uploading anything
-            to a remote database.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4">How to Use</h2>
-          <p className="mb-4">
-            <strong>1. Stage your heavy batch</strong>
-            <br />
-            Select up to 200 files from your directory and drag them directly
-            into the dashed upload area. The application instantly parses the
-            local data and renders precise mini-preview cards so you can verify
-            the queue is correct.
-          </p>
-          <p className="mb-4">
-            <strong>2. Select your targeted file extension</strong>
-            <br />
-            Navigate to the dropdown menu labeled "Convert to" near the top
-            controls. Choose a specific target extension like WebP or PNG,
-            causing the system to automatically validate that format against
-            every file loaded in the queue.
-          </p>
-          <p className="mb-4">
-            <strong>3. Execute the bulk transition</strong>
-            <br />
-            Hit the "Convert All" command to trigger the local scripting
-            process. Watch the individual status bars update in real-time, then
-            use the "Download All" feature to pack the finalized files instantly
-            into a single neat ZIP archive.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
-          <p className="mb-4">
-            <strong>Preparing iPhone photography for Windows users</strong>
-            <br />
-            Apple devices default to shooting in the highly efficient HEIC
-            format, which generally displays poorly on older PC hardware.
-            Dropping a vacation album into the tool and targeting standard JPG
-            ensures family members on older machines can effortlessly view the
-            memories.
-          </p>
-          <p className="mb-4">
-            <strong>Modernizing a WordPress media library</strong>
-            <br />
-            Heavy JPG hero banners severely slow down website loading and impact
-            your core web vital metrics. By batch-converting your massive
-            headers into modern WebP structures, you dramatically boost loading
-            velocity without noticeably degrading the visual punch.
-          </p>
-          <p className="mb-4">
-            <strong>Generating app icon transparency</strong>
-            <br />
-            When you receive a flattened logo asset as a JPG file, you cannot
-            easily place it over colored website themes. Transitioning the
-            specific file into a PNG structure allows graphic designers to
-            easily extract the background securely for proper overlaying.
-          </p>
-          <p className="mb-4">
-            <strong>Standardizing messy client document submissions</strong>
-            <br />
-            Freelancers frequently receive disorganized zipped folders
-            containing a chaotic mix of BMP, GIF, and PDF references. Imposing
-            order by converting the entire messy batch strictly into uniform JPG
-            files allows for clean chronological sorting and reviewing.
-          </p>
-          <p className="mb-4">
-            <strong>Archiving raw graphics efficiently</strong>
-            <br />
-            TIFF files contain massive amounts of uncompressed data used by
-            printers, which rapidly consume external hard drives. Flipping these
-            finalized print layouts into highly compressed AVIFs creates a dense
-            archive that retains high visual detail for long-term historical
-            storage.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Settings Explained</h2>
-          <p className="mb-4">
-            <strong>Output Format Dropdown</strong>
-            <br />
-            This primary control dictates the structural blueprint your files
-            will adopt. Select JPG for universal sharing, PNG for preserving
-            missing background pixels, and WebP or AVIF when speed and
-            microscopic file sizes represent your top priority.
-          </p>
-          <p className="mb-4">
-            <strong>Queue Limit (200 Files)</strong>
-            <br />
-            This restriction ensures your specific web browser does not
-            unexpectedly crash from memory exhaustion. Processing massive queues
-            requires temporary RAM allocations, so limiting the batch protects
-            the stability of your active system.
-          </p>
-          <p className="mb-4">
-            <strong>Download All (ZIP Feature)</strong>
-            <br />
-            Instead of manually clicking "Save" two hundred distinct times, this
-            function dynamically bundles the completed data layer into a
-            standard ZIP folder. It represents the fastest method for
-            maintaining organized local directory structures.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-6">
-            Frequently Asked Questions
-          </h2>
-          <Faqs faqs={faqs} />
-        </section>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 text-foreground prose dark:prose-invert">
+        <ImageFormatConverterSEO />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import Faqs from "@/components/utils/Faqs";
+import { ImageToolsIndexSEO } from "@/components/seo-content/image-tools/ImageToolsIndex";
 import Script from "next/script";
 
 const imageTools = [
@@ -74,13 +74,13 @@ const imageTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free Image Tools",
+  title: "Free Image Tools - Compress, Edit, Convert, Resize Images Online",
   description:
-    "Free online image tools. Compress, edit, convert, resize and optimize images with ease.",
+    "Free online image tools. Compress, edit, convert, resize and optimize images with ease. All processing happens in your browser - no upload required.",
   openGraph: {
-    title: "Free Image Tools",
+    title: "Free Image Tools - Compress, Edit, Convert, Resize Images Online",
     description:
-      "Free online image tools. Compress, edit, convert, resize and optimize images with ease.",
+      "Free online image tools. Compress, edit, convert, resize and optimize images with ease. All processing happens in your browser - no upload required.",
     type: "website",
   },
   alternates: {
@@ -93,21 +93,20 @@ export default function ImageToolsPage() {
     {
       question: "What image formats do you support?",
       answer:
-        "We support JPEG, PNG, WebP, AVIF, and other common image formats. You can compress and convert between these formats easily.",
+        "We support JPEG, PNG, WebP, AVIF, GIF, BMP, TIFF, ICO, and HEIC. Each tool supports different formats - check the individual tool pages for specifics.",
     },
     {
-      question: "Are all these tool Free?",
+      question: "Are all these tools free?",
       answer:
-        "Yes! all current and upcoming tools are free to use. No hidden charges, no premium plans, no limits.",
+        "Yes. All tools are completely free with no hidden charges, no premium plans, no watermarks, and no usage limits.",
     },
     {
       question: "Do you store my images?",
       answer:
-        "No! all images are processed in your browser and are not stored on our servers.",
+        "No. All images are processed locally in your browser using WebAssembly and JavaScript. Your files never leave your device.",
     },
   ];
 
-  // JSON-LD Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -130,20 +129,18 @@ export default function ImageToolsPage() {
       />
 
       <div className="min-h-screen max-w-6xl mx-auto">
-        {/* Hero Section */}
         <section className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Free Image Tools
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Free online image tools. Compress, edit, convert, resize and
-              optimize images with ease.
+              Compress, edit, convert, resize and optimize images with ease. All
+              processing happens in your browser - no upload required.
             </p>
           </div>
         </section>
 
-        {/* Tools Section */}
         <section className="container mx-auto px-4 py-8">
           <h2 className="text-3xl font-semibold mb-8 text-center">
             Available Tools
@@ -151,28 +148,7 @@ export default function ImageToolsPage() {
           <ToolLinkCards tools={imageTools} />
         </section>
 
-        {/* Main Content */}
-        <section className="container mx-auto px-4 py-12">
-          <div className="prose max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-4">
-              Why use 1000freetools?
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              1000freetools is a free online tool that helps you compress, edit,
-              convert, resize and optimize images with ease. All processing
-              happens directly in your browser, so your images stay private and
-              never touch our servers.
-            </p>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="container mx-auto px-4 py-12 mb-12">
-          <h2 className="text-3xl font-semibold mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
-          <Faqs faqs={faqsData} />
-        </section>
+        <ImageToolsIndexSEO />
       </div>
     </>
   );
