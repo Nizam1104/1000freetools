@@ -1,6 +1,33 @@
 const fs = require("fs");
 const path = require("path");
 
+/**
+ * Dynamically discover tools from the app/math-tools directory
+ * Only includes tools that have a page.tsx file
+ */
+function discoverToolsFromDirectory() {
+  const toolsDir = path.join("app", "math-tools");
+  const tools = [];
+
+  if (!fs.existsSync(toolsDir)) {
+    console.error(`❌ Directory not found: ${toolsDir}`);
+    return tools;
+  }
+
+  const entries = fs.readdirSync(toolsDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      const pagePath = path.join(toolsDir, entry.name, "page.tsx");
+      if (fs.existsSync(pagePath)) {
+        tools.push(entry.name);
+      }
+    }
+  }
+
+  return tools.sort();
+}
+
 const linkMapping = {
   1: [2, 3, 4, 7, 8, 9, 34, 35],
   2: [1, 7, 8, 19, 57, 58, 96, 97],
@@ -527,7 +554,7 @@ const toolMetadata = [
     mediumTailKeywords:
       "solve system of two linear equations, simultaneous equations solver online, two variable equation system calculator, elimination substitution method calculator",
     longTailKeywords:
-      "how to solve system of two linear equations online, free simultaneous equations calculator with steps, solve 2 equations 2 unknowns online calculator, system of linear equations solver with steps",
+      "how to solve system of two linear equations online, free simultaneous equations calculator with steps, solve 2 equations 2 unknowns online calculator, system of linear equations solver using elimination method",
   },
   {
     toolName: "Polynomial Evaluator",
@@ -886,28 +913,1736 @@ const toolMetadata = [
     mediumTailKeywords:
       "convert decimal to fraction online, decimal to fraction calculator free, repeating decimal to fraction, simplify decimal as fraction",
     longTailKeywords:
-      "how to convert a decimal to a fraction online, free decimal to fraction converter with steps, convert repeating decimal to fraction calculator, decimal to simplified fraction converter online",
+      "how to convert a decimal to a fraction online, free decimal to fraction converter with steps, convert repeating decimal to fraction calculator, express decimal number as simplified fraction online",
+  },
+  {
+    toolName: "Fraction to Decimal Converter",
+    description:
+      "Converts any fraction or mixed number to its decimal equivalent",
+    h1: "Fraction to Decimal Converter – Convert Fractions to Decimals",
+    p: "Convert any fraction or mixed number to a decimal with our free online fraction to decimal converter. Get exact or rounded decimal results instantly with the division shown.",
+    shortTailKeywords:
+      "fraction to decimal, fraction to decimal converter, convert fraction to decimal",
+    mediumTailKeywords:
+      "convert fraction to decimal online, fraction to decimal calculator, mixed number to decimal, fraction decimal conversion",
+    longTailKeywords:
+      "how to convert fraction to decimal online, free fraction to decimal converter with steps, convert mixed number fraction to decimal calculator, fraction to decimal conversion tool showing division",
+  },
+  {
+    toolName: "Mixed Number Calculator",
+    description:
+      "Performs arithmetic operations (add, subtract, multiply, divide) on mixed numbers",
+    h1: "Mixed Number Calculator – Add, Subtract, Multiply Mixed Numbers",
+    p: "Calculate with mixed numbers easily using our free online mixed number calculator. Add, subtract, multiply, and divide mixed numbers with instant simplified results and full steps.",
+    shortTailKeywords:
+      "mixed number calculator, mixed fractions calculator, mixed numbers math",
+    mediumTailKeywords:
+      "add subtract mixed numbers calculator, mixed number operations online, mixed fraction arithmetic calculator, simplify mixed numbers calculator",
+    longTailKeywords:
+      "how to add and subtract mixed numbers online, free mixed number calculator with step by step solutions, multiply and divide mixed fractions calculator, arithmetic operations with mixed numbers calculator",
+  },
+  {
+    toolName: "Area Calculator (Circle, Rectangle, Triangle, etc.)",
+    description:
+      "Calculates the area of common 2D shapes including circle, rectangle, triangle, trapezoid, and more",
+    h1: "Area Calculator – Find Area of Any 2D Shape Online",
+    p: "Calculate the area of any 2D shape with our free online area calculator. Supports circle, rectangle, triangle, trapezoid, parallelogram, and more with formula explanations.",
+    shortTailKeywords: "area calculator, calculate area, area of shapes",
+    mediumTailKeywords:
+      "area calculator for all shapes, find area of circle rectangle triangle, 2D shape area calculator, geometry area calculator online",
+    longTailKeywords:
+      "how to calculate area of different shapes online, free area calculator for circle rectangle and triangle, find area of any 2D geometric shape calculator, online area calculator with formula and solution",
+  },
+  {
+    toolName: "Perimeter Calculator",
+    description:
+      "Calculates the perimeter of common 2D shapes including rectangles, triangles, circles, and polygons",
+    h1: "Perimeter Calculator – Find Perimeter of Any Shape Online",
+    p: "Calculate the perimeter of any 2D shape with our free online perimeter calculator. Covers rectangles, triangles, circles, polygons, and more with step-by-step solutions.",
+    shortTailKeywords:
+      "perimeter calculator, find perimeter, calculate perimeter",
+    mediumTailKeywords:
+      "perimeter of shapes calculator, find perimeter of rectangle online, triangle perimeter calculator, polygon perimeter calculator",
+    longTailKeywords:
+      "how to find perimeter of different shapes online, free perimeter calculator for all 2D shapes, calculate perimeter of rectangle triangle circle online, geometry perimeter calculator with formula shown",
+  },
+  {
+    toolName: "Volume Calculator (Cube, Sphere, Cylinder, Cone, etc.)",
+    description:
+      "Calculates the volume of common 3D shapes including cube, sphere, cylinder, cone, and pyramid",
+    h1: "Volume Calculator – Compute Volume of 3D Shapes Online",
+    p: "Calculate the volume of any 3D shape with our free online volume calculator. Supports cube, sphere, cylinder, cone, pyramid, and more with formula references and instant results.",
+    shortTailKeywords: "volume calculator, calculate volume, 3D shape volume",
+    mediumTailKeywords:
+      "volume of 3D shapes calculator, find volume of sphere cylinder cone, geometry volume calculator online, 3D geometry calculator",
+    longTailKeywords:
+      "how to calculate volume of different 3D shapes online, free volume calculator for cube sphere cylinder cone, find volume of any geometric solid calculator, online 3D shape volume calculator with formula",
+  },
+  {
+    toolName: "Surface Area Calculator",
+    description:
+      "Calculates the surface area of 3D shapes including cube, sphere, cylinder, cone, and more",
+    h1: "Surface Area Calculator – Find Surface Area of Any 3D Shape",
+    p: "Calculate the surface area of any 3D geometric shape with our free online surface area calculator. Covers cube, sphere, cylinder, cone, pyramid, and prisms with full formula details.",
+    shortTailKeywords:
+      "surface area calculator, find surface area, 3D surface area",
+    mediumTailKeywords:
+      "surface area of 3D shapes calculator, find surface area of sphere cylinder, total surface area calculator, geometry surface area online",
+    longTailKeywords:
+      "how to find surface area of 3D shapes online, free surface area calculator for all geometric solids, calculate total surface area of cylinder cone sphere online, online 3D shape surface area calculator with formula",
+  },
+  {
+    toolName: "Pythagorean Theorem Calculator",
+    description:
+      "Solves for any side of a right triangle using the Pythagorean theorem (a² + b² = c²)",
+    h1: "Pythagorean Theorem Calculator – Find Any Side of a Right Triangle",
+    p: "Solve for any missing side of a right triangle using the Pythagorean theorem with our free online calculator. Enter two sides and instantly find the third with step-by-step working.",
+    shortTailKeywords:
+      "Pythagorean theorem calculator, right triangle calculator, a squared b squared",
+    mediumTailKeywords:
+      "Pythagorean theorem solver online, find hypotenuse calculator, right triangle sides calculator, a2 plus b2 equals c2 calculator",
+    longTailKeywords:
+      "how to use Pythagorean theorem to find missing side online, free Pythagorean theorem calculator with steps, find hypotenuse using a squared b squared c squared calculator, right triangle missing side calculator online",
+  },
+  {
+    toolName: "Distance Between Two Points",
+    description:
+      "Calculates the straight-line distance between two coordinate points in 2D or 3D space",
+    h1: "Distance Between Two Points Calculator – Find Distance Online",
+    p: "Find the distance between any two points on a coordinate plane using our free online distance formula calculator. Supports 2D and 3D coordinates with instant accurate results.",
+    shortTailKeywords:
+      "distance between two points, distance formula calculator, coordinate distance",
+    mediumTailKeywords:
+      "distance between two coordinates calculator, find distance using distance formula, 2D 3D distance calculator, coordinate plane distance tool",
+    longTailKeywords:
+      "how to find distance between two points using distance formula online, free distance calculator for two coordinate points, calculate distance between two points 2D and 3D, distance formula calculator with step by step solution",
+  },
+  {
+    toolName: "Midpoint Calculator",
+    description:
+      "Finds the midpoint of a line segment given the coordinates of its two endpoints",
+    h1: "Midpoint Calculator – Find the Midpoint of a Line Segment",
+    p: "Calculate the midpoint between any two coordinate points with our free online midpoint calculator. Get the exact midpoint coordinates with the midpoint formula shown clearly.",
+    shortTailKeywords: "midpoint calculator, find midpoint, midpoint formula",
+    mediumTailKeywords:
+      "midpoint of two points calculator, find midpoint of line segment, midpoint coordinates calculator, midpoint formula solver",
+    longTailKeywords:
+      "how to find midpoint between two points online, free midpoint calculator using midpoint formula, calculate midpoint of a line segment with coordinates, online midpoint calculator for coordinate geometry",
+  },
+  {
+    toolName: "Slope Calculator",
+    description:
+      "Calculates the slope (gradient) of a line given two points or an equation",
+    h1: "Slope Calculator – Find the Slope of a Line Online",
+    p: "Calculate the slope or gradient of any line using two points or a linear equation with our free online slope calculator. Find slope, intercepts, and line equations easily.",
+    shortTailKeywords: "slope calculator, find slope, gradient calculator",
+    mediumTailKeywords:
+      "slope of a line calculator, calculate gradient online, find slope given two points, rise over run calculator",
+    longTailKeywords:
+      "how to find slope of a line given two points online, free slope calculator rise over run formula, calculate slope and y-intercept of a line online, gradient of a line between two coordinates calculator",
+  },
+  {
+    toolName: "Angle Calculator (in triangle)",
+    description:
+      "Calculates missing angles in a triangle given other angles or side lengths",
+    h1: "Triangle Angle Calculator – Find Missing Angles in a Triangle",
+    p: "Find any missing angle in a triangle with our free online angle calculator. Enter known angles or sides and instantly solve for the remaining angles using trigonometry rules.",
+    shortTailKeywords:
+      "triangle angle calculator, find missing angle, angle solver",
+    mediumTailKeywords:
+      "calculate missing angle in triangle, triangle angles calculator online, find unknown angle triangle, interior angle calculator",
+    longTailKeywords:
+      "how to find missing angle in a triangle online, free triangle angle calculator with steps, calculate unknown angles of a triangle given two sides, online triangle angle solver using sine rule",
+  },
+  {
+    toolName: "Polygon Interior Angle Sum",
+    description:
+      "Calculates the sum of interior angles of any polygon given the number of sides",
+    h1: "Polygon Interior Angle Sum Calculator – Find Angle Sum of Polygon",
+    p: "Calculate the sum of interior angles of any polygon with our free online calculator. Enter the number of sides and instantly find the total interior angle sum and each angle for regular polygons.",
+    shortTailKeywords:
+      "polygon angle sum, interior angles calculator, polygon angles",
+    mediumTailKeywords:
+      "sum of interior angles polygon calculator, find interior angle sum, polygon angle calculator online, regular polygon angle calculator",
+    longTailKeywords:
+      "how to find sum of interior angles of a polygon online, free polygon interior angle sum calculator, calculate each interior angle of a regular polygon, total interior angle calculator for any sided polygon",
+  },
+  {
+    toolName: "Circle Calculator (radius, diameter, area, circumference)",
+    description:
+      "Calculates all properties of a circle including radius, diameter, area, and circumference from any one measurement",
+    h1: "Circle Calculator – Find Radius, Diameter, Area & Circumference",
+    p: "Calculate any property of a circle instantly with our free online circle calculator. Enter radius, diameter, area, or circumference and find all other measurements with formulas shown.",
+    shortTailKeywords:
+      "circle calculator, circumference calculator, area of circle",
+    mediumTailKeywords:
+      "circle area and circumference calculator, find circle properties online, radius diameter area circle calculator, circle geometry calculator",
+    longTailKeywords:
+      "how to calculate area and circumference of a circle online, free circle calculator for radius diameter area circumference, find all circle measurements from radius online, complete circle properties calculator",
+  },
+  {
+    toolName: "Triangle Solver (SSS, SAS, ASA, AAS)",
+    description:
+      "Solves all sides and angles of a triangle given SSS, SAS, ASA, or AAS configurations",
+    h1: "Triangle Solver – Solve Any Triangle SSS SAS ASA AAS",
+    p: "Solve any triangle completely using SSS, SAS, ASA, or AAS methods with our free online triangle solver. Find all missing sides, angles, and area with step-by-step trigonometric solutions.",
+    shortTailKeywords: "triangle solver, solve a triangle, triangle calculator",
+    mediumTailKeywords:
+      "SSS SAS ASA AAS triangle solver, solve all sides and angles triangle, complete triangle calculator, law of sines cosines triangle solver",
+    longTailKeywords:
+      "how to solve a triangle using SSS SAS ASA AAS online, free triangle solver for all sides and angles, complete triangle solution calculator with steps, solve triangle given two sides and included angle online",
+  },
+  {
+    toolName: "Coordinate Geometry Calculator",
+    description:
+      "Performs coordinate geometry calculations including distance, midpoint, slope, and line equations",
+    h1: "Coordinate Geometry Calculator – Distance, Slope, Midpoint Online",
+    p: "Perform all coordinate geometry calculations with our free online calculator. Find distance, midpoint, slope, and line equations for any pair of coordinate points instantly.",
+    shortTailKeywords:
+      "coordinate geometry calculator, coordinate math calculator, xy plane calculator",
+    mediumTailKeywords:
+      "coordinate geometry solver online, distance midpoint slope calculator, coordinate plane math calculator, analytic geometry calculator",
+    longTailKeywords:
+      "free coordinate geometry calculator for distance midpoint slope online, how to solve coordinate geometry problems online, coordinate plane calculator for line equations, analytic geometry calculations for two points calculator",
+  },
+  {
+    toolName: "Trig Function Calculator (sin, cos, tan, etc.)",
+    description:
+      "Calculates values of trigonometric functions (sin, cos, tan, csc, sec, cot) for any angle",
+    h1: "Trig Function Calculator – Calculate Sin Cos Tan Online",
+    p: "Calculate any trigonometric function value including sin, cos, tan, csc, sec, and cot for any angle in degrees or radians with our free online trig calculator.",
+    shortTailKeywords:
+      "trig calculator, sin cos tan calculator, trigonometry calculator",
+    mediumTailKeywords:
+      "calculate sin cos tan online, trigonometric function calculator, sin cos tan sec csc cot calculator, trig values calculator",
+    longTailKeywords:
+      "how to calculate sin cos tan of any angle online, free trigonometric function calculator for degrees and radians, calculate all trig functions sin cos tan sec csc cot, online trigonometry calculator with angle input",
+  },
+  {
+    toolName: "Inverse Trig Calculator",
+    description:
+      "Calculates inverse trigonometric values (arcsin, arccos, arctan) returning angles in degrees or radians",
+    h1: "Inverse Trig Calculator – Find arcsin arccos arctan Online",
+    p: "Calculate inverse trigonometric functions including arcsin, arccos, and arctan with our free online inverse trig calculator. Get angle results in both degrees and radians.",
+    shortTailKeywords:
+      "inverse trig calculator, arcsin arccos arctan, inverse trigonometry",
+    mediumTailKeywords:
+      "calculate arcsin arccos arctan online, inverse trigonometric function calculator, arc sin cos tan calculator, find angle from trig value",
+    longTailKeywords:
+      "how to calculate inverse trigonometric functions online, free arcsin arccos arctan calculator in degrees and radians, inverse trig function calculator for any value, find angle using arctan arcsin online",
+  },
+  {
+    toolName: "Degrees ↔ Radians Converter",
+    description:
+      "Converts angle measurements between degrees and radians instantly",
+    h1: "Degrees to Radians Converter – Convert Angles Online",
+    p: "Convert any angle from degrees to radians or radians to degrees with our free online converter. Instant and accurate angle conversions using π-based formulas.",
+    shortTailKeywords:
+      "degrees to radians, radians to degrees, angle converter",
+    mediumTailKeywords:
+      "convert degrees to radians online, degrees radians converter, angle conversion calculator, radians degrees calculator",
+    longTailKeywords:
+      "how to convert degrees to radians online, free degrees and radians converter with formula, convert angle from radians to degrees calculator, online angle conversion tool degrees to radians",
+  },
+  {
+    toolName: "Trigonometric Identity Verifier",
+    description:
+      "Verifies whether a given trigonometric identity is true by simplifying both sides",
+    h1: "Trig Identity Verifier – Verify Trigonometric Identities Online",
+    p: "Verify any trigonometric identity online with our free trig identity verifier. Simplifies both sides of an equation to check if the identity holds using fundamental trig rules.",
+    shortTailKeywords:
+      "trig identity verifier, trigonometric identities, verify trig identity",
+    mediumTailKeywords:
+      "verify trigonometric identity online, trig identity checker, trigonometric identity solver, prove trig identity calculator",
+    longTailKeywords:
+      "how to verify a trigonometric identity online, free trig identity verifier with steps, check if trigonometric identity is valid calculator, prove trigonometric identities online step by step",
+  },
+  {
+    toolName: "Law of Sines Calculator",
+    description:
+      "Applies the Law of Sines to find missing sides or angles in any triangle",
+    h1: "Law of Sines Calculator – Solve Triangles Using Sine Rule",
+    p: "Solve any triangle using the Law of Sines with our free online calculator. Find missing sides and angles for ASA, AAS, and SSA triangle configurations with step-by-step solutions.",
+    shortTailKeywords:
+      "law of sines calculator, sine rule calculator, triangle sine law",
+    mediumTailKeywords:
+      "law of sines solver online, find missing side using sine rule, AAS ASA triangle calculator, sine rule triangle calculator",
+    longTailKeywords:
+      "how to use law of sines to solve a triangle online, free law of sines calculator with steps, find missing angle using sine rule calculator, law of sines calculator for AAS ASA SSA triangles",
+  },
+  {
+    toolName: "Law of Cosines Calculator",
+    description:
+      "Applies the Law of Cosines to find missing sides or angles in any triangle",
+    h1: "Law of Cosines Calculator – Solve Triangles Using Cosine Rule",
+    p: "Solve triangles using the Law of Cosines with our free online calculator. Find missing sides and angles for SSS and SAS configurations with detailed step-by-step solutions.",
+    shortTailKeywords:
+      "law of cosines calculator, cosine rule calculator, triangle cosine law",
+    mediumTailKeywords:
+      "law of cosines solver online, find missing side using cosine rule, SAS SSS triangle calculator, cosine rule triangle solver",
+    longTailKeywords:
+      "how to apply law of cosines to solve triangle online, free law of cosines calculator with step by step solution, find missing side using cosine rule SSS SAS, law of cosines calculator for any triangle configuration",
+  },
+  {
+    toolName: "Unit Circle Reference Tool",
+    description:
+      "Displays the unit circle with all key angle values, coordinates, and trig function values",
+    h1: "Unit Circle Reference Tool – Interactive Unit Circle Chart",
+    p: "Explore the complete unit circle with our free interactive unit circle reference tool. View all key angles in degrees and radians with their exact trig values and coordinates.",
+    shortTailKeywords: "unit circle, unit circle chart, unit circle reference",
+    mediumTailKeywords:
+      "interactive unit circle tool online, unit circle with trig values, unit circle degrees and radians, unit circle angles chart",
+    longTailKeywords:
+      "free interactive unit circle reference chart online, unit circle with all angle values degrees and radians, unit circle showing sin cos tan values at key angles, complete unit circle chart with exact trig values",
+  },
+  {
+    toolName: "Right Triangle Calculator",
+    description:
+      "Calculates all sides and angles of a right triangle given two known values",
+    h1: "Right Triangle Calculator – Solve Right Triangles Online",
+    p: "Solve any right triangle by entering two known values with our free online right triangle calculator. Find all sides, angles, area, and perimeter with clear step-by-step solutions.",
+    shortTailKeywords:
+      "right triangle calculator, solve right triangle, right angle triangle",
+    mediumTailKeywords:
+      "right triangle sides and angles calculator, solve right triangle online, right angle triangle calculator, find hypotenuse and angles",
+    longTailKeywords:
+      "how to solve a right triangle online given two sides, free right triangle calculator for all sides and angles, calculate hypotenuse legs and angles of right triangle, right triangle solver with area and perimeter",
+  },
+  {
+    toolName: "Angle of Elevation / Depression Solver",
+    description:
+      "Calculates the angle of elevation or depression given height and horizontal distance, or vice versa",
+    h1: "Angle of Elevation & Depression Calculator – Solve Word Problems",
+    p: "Calculate the angle of elevation or depression with our free online solver. Enter height and distance to find the angle, or the angle to find missing dimensions – perfect for trig word problems.",
+    shortTailKeywords:
+      "angle of elevation calculator, angle of depression, elevation angle solver",
+    mediumTailKeywords:
+      "angle of elevation and depression calculator, calculate angle of elevation online, elevation depression word problem solver, height and distance calculator",
+    longTailKeywords:
+      "how to calculate angle of elevation and depression online, free angle of elevation calculator with steps, height and distance angle of elevation solver, trigonometry angle of elevation depression word problem calculator",
+  },
+  {
+    toolName: "Mean, Median, Mode Calculator",
+    description:
+      "Calculates the mean, median, and mode of any dataset with full statistical breakdown",
+    h1: "Mean, Median, Mode Calculator – Statistics Calculator Online",
+    p: "Calculate mean, median, and mode of any dataset with our free online statistics calculator. Enter your numbers and get comprehensive central tendency measures instantly.",
+    shortTailKeywords:
+      "mean median mode calculator, statistics calculator, average calculator",
+    mediumTailKeywords:
+      "calculate mean median mode online, central tendency calculator, mean median mode finder, statistics data calculator",
+    longTailKeywords:
+      "how to find mean median and mode of a dataset online, free mean median mode calculator with steps, calculate all measures of central tendency online, statistics calculator for mean median mode and range",
+  },
+  {
+    toolName: "Standard Deviation & Variance",
+    description:
+      "Calculates standard deviation and variance for a dataset in both population and sample forms",
+    h1: "Standard Deviation Calculator – Variance & SD Online",
+    p: "Calculate standard deviation and variance for any dataset with our free online calculator. Supports both population and sample standard deviation with step-by-step workings.",
+    shortTailKeywords:
+      "standard deviation calculator, variance calculator, SD calculator",
+    mediumTailKeywords:
+      "calculate standard deviation online, population sample standard deviation, variance and standard deviation calculator, statistics spread calculator",
+    longTailKeywords:
+      "how to calculate standard deviation of a dataset online, free standard deviation and variance calculator with steps, population vs sample standard deviation calculator, online statistics calculator for standard deviation",
+  },
+  {
+    toolName: "Probability Calculator",
+    description:
+      "Calculates basic probability, complementary probability, and conditional probability for events",
+    h1: "Probability Calculator – Calculate Probability of Events Online",
+    p: "Calculate the probability of any event with our free online probability calculator. Find simple, complementary, and conditional probabilities with formula explanations.",
+    shortTailKeywords:
+      "probability calculator, calculate probability, chance calculator",
+    mediumTailKeywords:
+      "online probability calculator free, calculate probability of event, complementary probability calculator, simple probability finder",
+    longTailKeywords:
+      "how to calculate probability of an event online, free probability calculator with formula and steps, calculate complementary and conditional probability online, online probability calculator for statistics students",
+  },
+  {
+    toolName: "Permutation Calculator (nPr)",
+    description:
+      "Calculates the number of permutations of r items chosen from n items",
+    h1: "Permutation Calculator – Calculate nPr Online",
+    p: "Calculate permutations (nPr) instantly with our free online permutation calculator. Find the number of ways r items can be arranged from n items with formula and solution shown.",
+    shortTailKeywords: "permutation calculator, nPr calculator, permutations",
+    mediumTailKeywords:
+      "calculate permutations nPr online, permutation formula calculator, number of permutations calculator, nPr value finder",
+    longTailKeywords:
+      "how to calculate permutations nPr online, free permutation calculator with formula and steps, find number of arrangements for nPr permutation, online permutation calculator for probability and statistics",
+  },
+  {
+    toolName: "Combination Calculator (nCr)",
+    description:
+      "Calculates the number of combinations of r items chosen from n items",
+    h1: "Combination Calculator – Calculate nCr Online",
+    p: "Calculate combinations (nCr) instantly with our free online combination calculator. Find how many ways r items can be chosen from n items using the combination formula.",
+    shortTailKeywords: "combination calculator, nCr calculator, combinations",
+    mediumTailKeywords:
+      "calculate combinations nCr online, combination formula calculator, number of combinations calculator, nCr value finder",
+    longTailKeywords:
+      "how to calculate combinations nCr online, free combination calculator with formula and solution, find number of ways to choose r from n combination, online nCr combination calculator for probability",
+  },
+  {
+    toolName: "Factorial Calculator",
+    description: "Calculates the factorial of any non-negative integer (n!)",
+    h1: "Factorial Calculator – Compute n! Instantly Online",
+    p: "Calculate the factorial of any non-negative integer instantly with our free online factorial calculator. Supports large factorials with exact results.",
+    shortTailKeywords: "factorial calculator, n factorial, calculate n!",
+    mediumTailKeywords:
+      "factorial of a number calculator, compute n factorial online, n! calculator free, factorial value finder",
+    longTailKeywords:
+      "how to calculate factorial of any number online, free n factorial calculator for large numbers, compute exact factorial value n! online, factorial calculator for combinatorics and statistics",
+  },
+  {
+    toolName: "Z-Score Calculator",
+    description:
+      "Calculates the Z-score (standard score) of a data point given the mean and standard deviation",
+    h1: "Z-Score Calculator – Find Standard Score Online",
+    p: "Calculate the Z-score of any data point with our free online Z-score calculator. Enter the value, mean, and standard deviation to get the standardized score instantly.",
+    shortTailKeywords: "Z-score calculator, standard score calculator, z score",
+    mediumTailKeywords:
+      "calculate z score online, z score formula calculator, standard score z-score, z score from mean and standard deviation",
+    longTailKeywords:
+      "how to calculate z-score from mean and standard deviation online, free Z-score calculator with formula, find standard score of a data point calculator, z score calculator for normal distribution statistics",
+  },
+  {
+    toolName: "Normal Distribution Calculator",
+    description:
+      "Calculates probabilities and percentiles for a normal distribution given mean and standard deviation",
+    h1: "Normal Distribution Calculator – Find Probability & Percentile",
+    p: "Calculate probabilities and percentiles for a normal distribution with our free online calculator. Input mean and standard deviation to find area under the bell curve.",
+    shortTailKeywords:
+      "normal distribution calculator, bell curve calculator, Gaussian calculator",
+    mediumTailKeywords:
+      "normal distribution probability calculator, calculate normal distribution online, bell curve probability calculator, area under normal curve",
+    longTailKeywords:
+      "how to calculate probability using normal distribution online, free normal distribution calculator with mean and standard deviation, find area under bell curve calculator, normal distribution percentile calculator online",
+  },
+  {
+    toolName: "Confidence Interval Calculator",
+    description:
+      "Calculates confidence intervals for population means given sample statistics",
+    h1: "Confidence Interval Calculator – Find CI for Mean Online",
+    p: "Calculate confidence intervals for population means with our free online confidence interval calculator. Supports 90%, 95%, and 99% confidence levels with margin of error shown.",
+    shortTailKeywords:
+      "confidence interval calculator, CI calculator, margin of error",
+    mediumTailKeywords:
+      "calculate confidence interval online, 95% confidence interval calculator, margin of error calculator, confidence interval for mean",
+    longTailKeywords:
+      "how to calculate 95% confidence interval online, free confidence interval calculator with margin of error, find confidence interval given sample mean and standard deviation, confidence interval calculator for population mean statistics",
+  },
+  {
+    toolName: "Correlation Coefficient Calculator",
+    description:
+      "Calculates the Pearson correlation coefficient (r) between two datasets to measure linear relationship",
+    h1: "Correlation Coefficient Calculator – Find Pearson r Online",
+    p: "Calculate the Pearson correlation coefficient between two variables with our free online calculator. Measure the strength and direction of linear relationships in your data.",
+    shortTailKeywords:
+      "correlation coefficient calculator, Pearson r calculator, correlation calculator",
+    mediumTailKeywords:
+      "calculate correlation coefficient online, Pearson correlation calculator, linear correlation calculator, r value statistics calculator",
+    longTailKeywords:
+      "how to calculate Pearson correlation coefficient online, free correlation coefficient calculator for two datasets, find r value for linear relationship between variables, Pearson r calculator for statistics and data analysis",
+  },
+  {
+    toolName: "Linear Regression Calculator",
+    description:
+      "Performs linear regression analysis on two-variable data and provides the regression equation and R² value",
+    h1: "Linear Regression Calculator – Find Best Fit Line Online",
+    p: "Perform linear regression analysis on any dataset with our free online linear regression calculator. Get the regression equation, slope, intercept, and R² value with a scatter plot.",
+    shortTailKeywords:
+      "linear regression calculator, regression calculator, line of best fit",
+    mediumTailKeywords:
+      "linear regression analysis online, best fit line calculator, regression equation calculator, least squares regression calculator",
+    longTailKeywords:
+      "how to perform linear regression analysis online, free linear regression calculator with R squared value, find best fit line equation for dataset calculator, least squares method linear regression online calculator",
+  },
+  {
+    toolName: "Histogram Generator",
+    description:
+      "Creates a histogram from a dataset by dividing data into bins and plotting frequency",
+    h1: "Histogram Generator – Create Histograms Online Free",
+    p: "Create professional histograms from any dataset with our free online histogram generator. Customize bin sizes and view frequency distributions as visual bar charts instantly.",
+    shortTailKeywords: "histogram generator, create histogram, histogram maker",
+    mediumTailKeywords:
+      "online histogram generator free, make histogram from data, frequency distribution histogram, histogram chart creator",
+    longTailKeywords:
+      "free online histogram generator from data set, how to create a histogram for frequency distribution online, histogram maker with customizable bins, generate histogram chart from list of numbers online",
+  },
+  {
+    toolName: "Pie / Bar Chart Generator",
+    description:
+      "Creates pie charts and bar charts from user-provided categorical data",
+    h1: "Pie & Bar Chart Generator – Create Charts Online Free",
+    p: "Create professional pie charts and bar charts from your data with our free online chart generator. Enter labels and values to instantly visualize your data beautifully.",
+    shortTailKeywords: "pie chart generator, bar chart maker, chart creator",
+    mediumTailKeywords:
+      "online pie chart generator free, create bar chart from data, pie and bar chart maker, data visualization chart tool",
+    longTailKeywords:
+      "free online pie chart generator from data, create professional bar chart online for free, make pie chart and bar chart from numbers online, data chart generator for pie bar graphs",
+  },
+  {
+    toolName: "Box Plot Generator",
+    description:
+      "Creates a box-and-whisker plot from a dataset showing five-number summary and outliers",
+    h1: "Box Plot Generator – Create Box and Whisker Plots Online",
+    p: "Generate box plots (box-and-whisker plots) from any dataset with our free online box plot generator. Visualize quartiles, median, and outliers with a clear and accurate diagram.",
+    shortTailKeywords:
+      "box plot generator, box and whisker plot, box plot maker",
+    mediumTailKeywords:
+      "create box plot online free, box and whisker plot generator, box plot from data calculator, five number summary box plot",
+    longTailKeywords:
+      "free online box plot generator from dataset, create box and whisker plot with quartiles online, box plot showing median Q1 Q3 and outliers, box plot generator for statistics visualization",
+  },
+  {
+    toolName: "Frequency Distribution Table",
+    description:
+      "Generates a frequency distribution table from raw data showing frequency, relative frequency, and cumulative frequency",
+    h1: "Frequency Distribution Table Generator – Organize Data Online",
+    p: "Create a complete frequency distribution table from any dataset with our free online tool. Includes frequency, relative frequency, and cumulative frequency for easy data analysis.",
+    shortTailKeywords:
+      "frequency distribution table, frequency table calculator, data distribution",
+    mediumTailKeywords:
+      "create frequency distribution table online, relative frequency calculator, cumulative frequency table generator, frequency table from data",
+    longTailKeywords:
+      "how to create a frequency distribution table from data online, free frequency distribution table generator with relative and cumulative frequency, make frequency table from raw data calculator, online frequency distribution calculator for statistics",
+  },
+  {
+    toolName: "Weighted Average Calculator",
+    description:
+      "Calculates the weighted average of values given their respective weights",
+    h1: "Weighted Average Calculator – Compute Weighted Mean Online",
+    p: "Calculate the weighted average or weighted mean of any set of values with our free online calculator. Enter values and weights to get the accurate weighted result instantly.",
+    shortTailKeywords:
+      "weighted average calculator, weighted mean calculator, weighted average",
+    mediumTailKeywords:
+      "calculate weighted average online, weighted mean calculator free, find weighted average of numbers, grade weighted average calculator",
+    longTailKeywords:
+      "how to calculate weighted average with different weights online, free weighted average calculator for grades and data, weighted mean formula calculator with steps, calculate weighted average of numbers with unequal weights",
+  },
+  {
+    toolName: "Geometric Mean Calculator",
+    description: "Calculates the geometric mean of a set of numbers",
+    h1: "Geometric Mean Calculator – Find Geometric Average Online",
+    p: "Calculate the geometric mean of any set of numbers with our free online calculator. Ideal for finance, biology, and statistics where multiplicative relationships matter.",
+    shortTailKeywords:
+      "geometric mean calculator, geometric average, find geometric mean",
+    mediumTailKeywords:
+      "calculate geometric mean online, geometric mean of numbers, geometric average calculator, nth root mean calculator",
+    longTailKeywords:
+      "how to calculate geometric mean of a set of numbers online, free geometric mean calculator with formula, find geometric average for finance and statistics, geometric mean vs arithmetic mean calculator",
+  },
+  {
+    toolName: "Harmonic Mean Calculator",
+    description:
+      "Calculates the harmonic mean of a dataset, the reciprocal of the arithmetic mean of reciprocals",
+    h1: "Harmonic Mean Calculator – Find Harmonic Average Online",
+    p: "Calculate the harmonic mean of any dataset with our free online harmonic mean calculator. Ideal for rates and ratios where harmonic averaging is more appropriate.",
+    shortTailKeywords:
+      "harmonic mean calculator, harmonic average, find harmonic mean",
+    mediumTailKeywords:
+      "calculate harmonic mean online, harmonic mean of numbers, harmonic mean formula calculator, average of rates calculator",
+    longTailKeywords:
+      "how to calculate harmonic mean of a dataset online, free harmonic mean calculator with steps, find harmonic average for rates and ratios, harmonic mean vs arithmetic mean calculator",
+  },
+  {
+    toolName: "Five Number Summary Calculator",
+    description:
+      "Calculates the five-number summary of a dataset: minimum, Q1, median, Q3, and maximum",
+    h1: "Five Number Summary Calculator – Min Q1 Median Q3 Max",
+    p: "Find the five-number summary of any dataset with our free online calculator. Instantly compute the minimum, Q1, median, Q3, and maximum for complete data analysis.",
+    shortTailKeywords:
+      "five number summary calculator, quartile calculator, Q1 Q3 calculator",
+    mediumTailKeywords:
+      "five number summary statistics calculator, find quartiles online, min Q1 median Q3 max calculator, five point summary data",
+    longTailKeywords:
+      "how to find five number summary of a dataset online, free five number summary calculator with quartiles, calculate min Q1 median Q3 max for any dataset, five number summary calculator for box plot",
+  },
+  {
+    toolName: "Outlier Detector (IQR method)",
+    description:
+      "Identifies outliers in a dataset using the Interquartile Range (IQR) method",
+    h1: "Outlier Detector – Find Outliers Using IQR Method Online",
+    p: "Detect outliers in any dataset using the IQR method with our free online outlier detector. Find lower and upper fences and identify all outlying values in your data.",
+    shortTailKeywords:
+      "outlier detector, IQR outlier calculator, find outliers",
+    mediumTailKeywords:
+      "outlier detection IQR method, find outliers in dataset, IQR fence calculator, statistical outlier finder",
+    longTailKeywords:
+      "how to find outliers using IQR method online, free outlier detector for statistical data, interquartile range outlier calculator with fences, detect data outliers using box plot IQR method",
+  },
+  {
+    toolName: "Matrix Addition / Subtraction",
+    description:
+      "Adds or subtracts two matrices of compatible dimensions element by element",
+    h1: "Matrix Addition & Subtraction Calculator – Compute Matrices Online",
+    p: "Add or subtract any two matrices with our free online matrix calculator. Supports all matrix sizes with instant results and element-wise computation displayed clearly.",
+    shortTailKeywords:
+      "matrix addition calculator, matrix subtraction, add matrices",
+    mediumTailKeywords:
+      "add two matrices online, matrix addition and subtraction calculator, compute matrix sum, matrix arithmetic calculator",
+    longTailKeywords:
+      "how to add and subtract matrices online, free matrix addition calculator for any size, element wise matrix subtraction calculator, online matrix calculator for addition and subtraction operations",
+  },
+  {
+    toolName: "Matrix Multiplication",
+    description:
+      "Multiplies two matrices together showing the complete product matrix with steps",
+    h1: "Matrix Multiplication Calculator – Multiply Matrices Online",
+    p: "Multiply any two compatible matrices with our free online matrix multiplication calculator. See the full product matrix with step-by-step row-by-column computation.",
+    shortTailKeywords:
+      "matrix multiplication calculator, multiply matrices, matrix product",
+    mediumTailKeywords:
+      "multiply two matrices online, matrix product calculator, matrix multiplication with steps, 2x2 3x3 matrix multiplication",
+    longTailKeywords:
+      "how to multiply two matrices online step by step, free matrix multiplication calculator with solution, compute product of two matrices calculator, 2x2 and 3x3 matrix multiplication calculator online",
+  },
+  {
+    toolName: "Matrix Transpose",
+    description:
+      "Computes the transpose of any matrix by swapping its rows and columns",
+    h1: "Matrix Transpose Calculator – Find Transpose of Any Matrix",
+    p: "Find the transpose of any matrix instantly with our free online matrix transpose calculator. Swap rows and columns of any size matrix with a single click.",
+    shortTailKeywords:
+      "matrix transpose calculator, transpose matrix, matrix flip",
+    mediumTailKeywords:
+      "find transpose of a matrix online, matrix transposition calculator, row column swap matrix, compute transpose matrix",
+    longTailKeywords:
+      "how to find the transpose of a matrix online, free matrix transpose calculator for any size, swap rows and columns of a matrix calculator, online matrix transposition tool with step by step",
+  },
+  {
+    toolName: "Matrix Determinant",
+    description:
+      "Calculates the determinant of square matrices (2x2, 3x3, 4x4) with full expansion shown",
+    h1: "Matrix Determinant Calculator – Compute Det of Any Matrix",
+    p: "Calculate the determinant of any square matrix with our free online determinant calculator. Supports 2x2, 3x3, and larger matrices with cofactor expansion steps shown.",
+    shortTailKeywords:
+      "matrix determinant calculator, determinant calculator, find det of matrix",
+    mediumTailKeywords:
+      "calculate determinant of matrix online, 2x2 3x3 determinant calculator, square matrix determinant, det matrix calculator with steps",
+    longTailKeywords:
+      "how to calculate determinant of a matrix online, free 2x2 3x3 matrix determinant calculator with steps, find determinant of square matrix using cofactor expansion, online matrix determinant calculator for linear algebra",
+  },
+  {
+    toolName: "Matrix Inverse",
+    description:
+      "Calculates the inverse of a square matrix if it exists, using row reduction or adjugate method",
+    h1: "Matrix Inverse Calculator – Find Inverse of Any Matrix",
+    p: "Find the inverse of any invertible square matrix with our free online matrix inverse calculator. Uses row reduction method with step-by-step solution for 2x2, 3x3, and larger matrices.",
+    shortTailKeywords:
+      "matrix inverse calculator, inverse of a matrix, invert matrix",
+    mediumTailKeywords:
+      "find inverse of matrix online, 2x2 3x3 matrix inverse calculator, matrix inversion calculator, inverse matrix with steps",
+    longTailKeywords:
+      "how to find inverse of a matrix online, free matrix inverse calculator with row reduction steps, calculate 2x2 and 3x3 matrix inverse online, online matrix inverse calculator for linear algebra",
+  },
+  {
+    toolName: "Identity Matrix Generator",
+    description: "Generates an identity matrix of any given size n×n",
+    h1: "Identity Matrix Generator – Create n×n Identity Matrix",
+    p: "Generate an identity matrix of any size instantly with our free online identity matrix generator. Create n×n identity matrices for linear algebra, matrix operations, and proofs.",
+    shortTailKeywords:
+      "identity matrix generator, identity matrix creator, nxn identity matrix",
+    mediumTailKeywords:
+      "generate identity matrix online, create nxn identity matrix, unit matrix generator, identity matrix for any size",
+    longTailKeywords:
+      "how to generate an identity matrix of any size online, free identity matrix generator for n by n matrices, create 3x3 4x4 identity matrix online, unit matrix generator for linear algebra calculations",
+  },
+  {
+    toolName: "Scalar Multiplication",
+    description: "Multiplies every element of a matrix by a scalar constant",
+    h1: "Scalar Matrix Multiplication Calculator – Multiply Matrix by Scalar",
+    p: "Multiply any matrix by a scalar constant with our free online scalar multiplication calculator. See the scaled matrix with all element-by-element calculations shown clearly.",
+    shortTailKeywords:
+      "scalar multiplication calculator, scalar matrix multiply, multiply matrix by number",
+    mediumTailKeywords:
+      "scalar matrix multiplication online, multiply matrix by scalar calculator, scale a matrix calculator, matrix scalar product",
+    longTailKeywords:
+      "how to multiply a matrix by a scalar online, free scalar matrix multiplication calculator, compute scalar times matrix element by element, online calculator to multiply matrix by constant scalar",
+  },
+  {
+    toolName: "Rank of a Matrix",
+    description:
+      "Determines the rank of a matrix using row reduction to row echelon form",
+    h1: "Matrix Rank Calculator – Find Rank of Any Matrix Online",
+    p: "Find the rank of any matrix with our free online matrix rank calculator. Uses row reduction to row echelon form with step-by-step working shown for complete understanding.",
+    shortTailKeywords:
+      "matrix rank calculator, rank of a matrix, find matrix rank",
+    mediumTailKeywords:
+      "find rank of matrix online, matrix rank using row reduction, linear algebra rank calculator, row echelon form rank",
+    longTailKeywords:
+      "how to find rank of a matrix using row reduction online, free matrix rank calculator with row echelon steps, determine rank of matrix using Gaussian elimination, online linear algebra rank of matrix calculator",
+  },
+  {
+    toolName: "Trace of a Matrix",
+    description:
+      "Calculates the trace of a square matrix by summing the main diagonal elements",
+    h1: "Matrix Trace Calculator – Find Trace of a Square Matrix",
+    p: "Calculate the trace of any square matrix instantly with our free online trace calculator. Sums the main diagonal elements with a clear formula and highlighted diagonal shown.",
+    shortTailKeywords:
+      "matrix trace calculator, trace of matrix, find matrix trace",
+    mediumTailKeywords:
+      "find trace of square matrix online, matrix trace sum of diagonal, diagonal sum matrix calculator, linear algebra trace calculator",
+    longTailKeywords:
+      "how to find trace of a matrix online, free matrix trace calculator sum of main diagonal, calculate trace of 2x2 3x3 matrix online, trace of a square matrix linear algebra calculator",
+  },
+  {
+    toolName: "Eigenvalue Calculator (2x2, 3x3)",
+    description:
+      "Finds the eigenvalues of 2x2 and 3x3 matrices by solving the characteristic polynomial",
+    h1: "Eigenvalue Calculator – Find Eigenvalues of 2x2 & 3x3 Matrices",
+    p: "Calculate eigenvalues of 2x2 and 3x3 matrices with our free online eigenvalue calculator. Solves the characteristic polynomial with step-by-step solutions and complex eigenvalue support.",
+    shortTailKeywords:
+      "eigenvalue calculator, eigenvalues of matrix, find eigenvalues",
+    mediumTailKeywords:
+      "2x2 3x3 eigenvalue calculator, find eigenvalues online, characteristic polynomial calculator, matrix eigenvalue solver",
+    longTailKeywords:
+      "how to find eigenvalues of a 2x2 matrix online, free eigenvalue calculator for 3x3 matrix with steps, compute eigenvalues using characteristic equation online, online 2x2 3x3 eigenvalue calculator for linear algebra",
+  },
+  {
+    toolName: "Derivative Calculator (basic rules)",
+    description:
+      "Calculates derivatives of functions using basic differentiation rules including power, product, quotient, and chain rules",
+    h1: "Derivative Calculator – Differentiate Functions Step by Step",
+    p: "Calculate the derivative of any function with our free online derivative calculator. Applies power, product, quotient, and chain rules with detailed step-by-step differentiation shown.",
+    shortTailKeywords:
+      "derivative calculator, differentiation calculator, find derivative",
+    mediumTailKeywords:
+      "calculate derivative of function online, derivative calculator with steps, differentiation online calculator, find dy/dx calculator",
+    longTailKeywords:
+      "how to find the derivative of a function online, free derivative calculator with step by step solution, differentiate polynomial exponential trig functions online, derivative calculator using power rule chain rule online",
+  },
+  {
+    toolName: "Definite Integral Calculator (numerical)",
+    description:
+      "Numerically evaluates definite integrals over a specified interval",
+    h1: "Definite Integral Calculator – Compute Integrals Numerically",
+    p: "Calculate definite integrals numerically with our free online integral calculator. Evaluate the area under any function curve over any interval with accurate numerical results.",
+    shortTailKeywords:
+      "definite integral calculator, integral calculator, calculate integral",
+    mediumTailKeywords:
+      "compute definite integral online, numerical integration calculator, area under curve calculator, integration over interval",
+    longTailKeywords:
+      "how to compute a definite integral online, free numerical integration calculator for any function, calculate area under the curve definite integral, online definite integral solver for calculus students",
+  },
+  {
+    toolName: "Limit Calculator (basic)",
+    description:
+      "Evaluates limits of functions as the variable approaches a value or infinity",
+    h1: "Limit Calculator – Evaluate Limits of Functions Online",
+    p: "Calculate limits of any function as x approaches a value or infinity with our free online limit calculator. Evaluates one-sided and two-sided limits with clear results.",
+    shortTailKeywords: "limit calculator, find limit, calculus limit solver",
+    mediumTailKeywords:
+      "evaluate limit of function online, limit calculator as x approaches, calculus limit solver, find limit at infinity",
+    longTailKeywords:
+      "how to evaluate limit of a function online, free limit calculator as x approaches value or infinity, compute one sided and two sided limits online, limit calculator for calculus with steps",
+  },
+  {
+    toolName: "Riemann Sum Calculator",
+    description:
+      "Approximates the area under a curve using left, right, midpoint, or trapezoidal Riemann sums",
+    h1: "Riemann Sum Calculator – Approximate Integral with Rectangles",
+    p: "Approximate integrals using Riemann sums with our free online Riemann sum calculator. Choose from left, right, midpoint, or trapezoidal methods with visual rectangle illustrations.",
+    shortTailKeywords:
+      "Riemann sum calculator, Riemann sum approximation, area approximation",
+    mediumTailKeywords:
+      "calculate Riemann sum online, left right midpoint Riemann sum, numerical integration Riemann sums, approximate area under curve",
+    longTailKeywords:
+      "how to calculate Riemann sum for definite integral online, free Riemann sum calculator left right midpoint trapezoidal, approximate area under curve using rectangles calculator, Riemann sum numerical integration calculus calculator",
+  },
+  {
+    toolName: "Taylor Series Approximation",
+    description:
+      "Generates the Taylor or Maclaurin series expansion of a function up to n terms",
+    h1: "Taylor Series Calculator – Expand Functions as Taylor Series",
+    p: "Generate Taylor and Maclaurin series expansions of any function with our free online calculator. Compute series up to any number of terms with coefficient and error visualization.",
+    shortTailKeywords:
+      "Taylor series calculator, Maclaurin series, Taylor expansion",
+    mediumTailKeywords:
+      "Taylor series expansion calculator, Maclaurin series calculator online, function approximation Taylor series, compute Taylor polynomial",
+    longTailKeywords:
+      "how to find Taylor series expansion of a function online, free Taylor series calculator up to n terms, compute Maclaurin series for common functions online, Taylor polynomial approximation calculator for calculus",
+  },
+  {
+    toolName: "Tangent Line Calculator",
+    description:
+      "Finds the equation of the tangent line to a function at a given point",
+    h1: "Tangent Line Calculator – Find Tangent Line Equation Online",
+    p: "Find the equation of the tangent line to any function at any point with our free online tangent line calculator. Get slope, y-intercept, and the full tangent equation with steps.",
+    shortTailKeywords:
+      "tangent line calculator, tangent line equation, find tangent line",
+    mediumTailKeywords:
+      "equation of tangent line calculator, tangent to a curve at a point, tangent line slope calculator, calculus tangent line finder",
+    longTailKeywords:
+      "how to find equation of tangent line to a function online, free tangent line calculator with step by step solution, compute tangent line at a given point on a curve, online tangent line equation calculator for calculus",
+  },
+  {
+    toolName: "Gradient / Slope at a Point",
+    description:
+      "Calculates the gradient (derivative value) of a function at a specific point",
+    h1: "Gradient Calculator – Find Slope of a Function at a Point",
+    p: "Calculate the gradient or slope of any function at a specific point with our free online gradient calculator. Uses differentiation to find the exact rate of change at any x value.",
+    shortTailKeywords: "gradient calculator, slope at a point, rate of change",
+    mediumTailKeywords:
+      "find gradient of function at a point, slope at specific x value, derivative value at a point, instantaneous rate of change calculator",
+    longTailKeywords:
+      "how to find gradient of a function at a point online, free slope calculator at a specific x value, calculate instantaneous rate of change of a function, derivative value at given point calculus calculator",
+  },
+  {
+    toolName: "Simple Interest Calculator",
+    description:
+      "Calculates simple interest, principal, rate, or time using the SI formula",
+    h1: "Simple Interest Calculator – Compute SI Online Instantly",
+    p: "Calculate simple interest, total amount, principal, rate, or time with our free online simple interest calculator. Uses the SI = PRT formula with clear step-by-step results.",
+    shortTailKeywords:
+      "simple interest calculator, SI calculator, calculate simple interest",
+    mediumTailKeywords:
+      "simple interest formula calculator, calculate SI online, principal rate time interest calculator, simple interest PRT calculator",
+    longTailKeywords:
+      "how to calculate simple interest online using PRT formula, free simple interest calculator with steps, find interest rate time or principal using SI formula, online simple interest calculator for loans and savings",
+  },
+  {
+    toolName: "Compound Interest Calculator",
+    description:
+      "Calculates compound interest and total amount for various compounding periods",
+    h1: "Compound Interest Calculator – Compute CI with Compounding",
+    p: "Calculate compound interest for daily, monthly, quarterly, or annual compounding with our free online calculator. See total interest earned and growth over time with a breakdown.",
+    shortTailKeywords:
+      "compound interest calculator, CI calculator, calculate compound interest",
+    mediumTailKeywords:
+      "compound interest formula calculator, calculate CI online, annual monthly daily compounding, compound interest over time calculator",
+    longTailKeywords:
+      "how to calculate compound interest with monthly compounding online, free compound interest calculator with different compounding periods, total amount after compound interest calculator, compound interest vs simple interest calculator online",
+  },
+  {
+    toolName: "EMI / Loan Calculator",
+    description:
+      "Calculates monthly EMI payments for loans based on principal, interest rate, and tenure",
+    h1: "EMI Calculator – Calculate Monthly Loan EMI Online",
+    p: "Calculate your monthly EMI for any loan with our free online EMI calculator. Enter principal, interest rate, and loan tenure to get the exact monthly payment and total interest paid.",
+    shortTailKeywords:
+      "EMI calculator, loan calculator, monthly payment calculator",
+    mediumTailKeywords:
+      "calculate EMI for loan online, monthly loan payment calculator, EMI calculator with interest, home loan EMI calculator",
+    longTailKeywords:
+      "how to calculate EMI for home or personal loan online, free EMI calculator with total interest and amortization, monthly loan repayment calculator for any tenure, EMI calculator for home car and personal loans India",
+  },
+  {
+    toolName: "ROI Calculator",
+    description:
+      "Calculates Return on Investment (ROI) percentage for any investment",
+    h1: "ROI Calculator – Calculate Return on Investment Online",
+    p: "Calculate your Return on Investment (ROI) quickly with our free online ROI calculator. Enter cost and return values to get the ROI percentage and net profit instantly.",
+    shortTailKeywords:
+      "ROI calculator, return on investment calculator, calculate ROI",
+    mediumTailKeywords:
+      "calculate ROI percentage online, return on investment formula calculator, ROI calculator for business, investment return calculator",
+    longTailKeywords:
+      "how to calculate return on investment ROI online, free ROI calculator with percentage and profit, compute ROI for any business investment online, return on investment calculator with formula and steps",
+  },
+  {
+    toolName: "Discount & Markup Calculator",
+    description:
+      "Calculates the discount price or markup price of an item given percentage values",
+    h1: "Discount & Markup Calculator – Find Sale Price Online",
+    p: "Calculate discounted or marked-up prices instantly with our free online discount and markup calculator. Find the final price, savings amount, and percentage with ease.",
+    shortTailKeywords:
+      "discount calculator, markup calculator, sale price calculator",
+    mediumTailKeywords:
+      "calculate discount price online, percentage discount calculator, markup price calculator, find sale price with discount",
+    longTailKeywords:
+      "how to calculate discount price from percentage online, free discount and markup calculator for retail, find final price after percentage discount calculator, sale price calculator with discount percentage and savings",
+  },
+  {
+    toolName: "Break-Even Point Calculator",
+    description:
+      "Calculates the break-even point in units and revenue for a business given fixed costs, variable costs, and selling price",
+    h1: "Break-Even Point Calculator – Find BEP for Your Business",
+    p: "Calculate the break-even point in units and sales revenue with our free online break-even calculator. Enter fixed costs, variable costs, and selling price for instant BEP analysis.",
+    shortTailKeywords:
+      "break even calculator, BEP calculator, break even point",
+    mediumTailKeywords:
+      "break even point calculator business, calculate BEP in units and revenue, break even analysis calculator, fixed variable cost break even",
+    longTailKeywords:
+      "how to calculate break even point in units online, free break even point calculator for small business, break even analysis calculator with fixed and variable costs, find break even revenue and units sold calculator",
+  },
+  {
+    toolName: "Future Value Calculator",
+    description:
+      "Calculates the future value of an investment given present value, interest rate, and time period",
+    h1: "Future Value Calculator – Compute FV of Investment Online",
+    p: "Calculate the future value of any investment or savings with our free online future value calculator. Account for compound interest and time to see how your money grows.",
+    shortTailKeywords:
+      "future value calculator, FV calculator, investment growth calculator",
+    mediumTailKeywords:
+      "calculate future value of investment, compound interest future value, FV formula calculator, money growth calculator",
+    longTailKeywords:
+      "how to calculate future value of an investment online, free future value calculator with compound interest, compute FV of savings with interest rate and time, future value of money calculator for financial planning",
+  },
+  {
+    toolName: "Present Value Calculator",
+    description:
+      "Calculates the present value of a future sum given discount rate and time period",
+    h1: "Present Value Calculator – Compute PV of Future Money",
+    p: "Determine the present value of any future amount with our free online present value calculator. Discount future cash flows to their current worth using any interest rate.",
+    shortTailKeywords:
+      "present value calculator, PV calculator, discount rate calculator",
+    mediumTailKeywords:
+      "calculate present value online, PV formula calculator, discount future cash flow, present value of money calculator",
+    longTailKeywords:
+      "how to calculate present value of future money online, free present value calculator with discount rate, PV calculator for time value of money, find current worth of future amount present value calculator",
+  },
+  {
+    toolName: "Annuity Calculator",
+    description:
+      "Calculates the payment, present value, or future value of an annuity",
+    h1: "Annuity Calculator – Compute Annuity Payments Online",
+    p: "Calculate annuity payments, present value, or future value with our free online annuity calculator. Covers ordinary annuities and annuities due with complete financial breakdowns.",
+    shortTailKeywords:
+      "annuity calculator, annuity payment calculator, calculate annuity",
+    mediumTailKeywords:
+      "annuity payment calculator online, present value annuity calculator, future value of annuity, ordinary annuity due calculator",
+    longTailKeywords:
+      "how to calculate annuity payment present and future value online, free annuity calculator for ordinary annuity and annuity due, compute annuity payment with interest rate online, annuity calculator for retirement and financial planning",
+  },
+  {
+    toolName: "Tip Calculator",
+    description:
+      "Calculates tip amount and total bill including tip for any service, with bill splitting option",
+    h1: "Tip Calculator – Calculate Tip & Split Bill Online",
+    p: "Calculate the perfect tip and split your restaurant bill with our free online tip calculator. Enter bill amount, tip percentage, and number of people to split for instant results.",
+    shortTailKeywords: "tip calculator, bill tip calculator, restaurant tip",
+    mediumTailKeywords:
+      "calculate tip online, split bill tip calculator, restaurant tip calculator free, tip and total bill calculator",
+    longTailKeywords:
+      "how to calculate tip on a restaurant bill online, free tip calculator to split bill between people, what percent tip should I leave calculator, tip calculator with bill splitting for groups",
+  },
+  {
+    toolName: "Profit & Loss Calculator",
+    description:
+      "Calculates profit or loss amount and percentage given cost price and selling price",
+    h1: "Profit & Loss Calculator – Find Profit or Loss Percentage",
+    p: "Calculate profit or loss on any transaction with our free online profit and loss calculator. Enter cost price and selling price to instantly find profit/loss amount and percentage.",
+    shortTailKeywords:
+      "profit loss calculator, P&L calculator, profit percentage calculator",
+    mediumTailKeywords:
+      "calculate profit and loss percentage online, profit loss from cost selling price, profit percentage finder, loss percentage calculator",
+    longTailKeywords:
+      "how to calculate profit and loss percentage online, free profit loss calculator with cost price and selling price, find profit or loss amount and percentage calculator, online profit and loss calculator for business transactions",
+  },
+  {
+    toolName: "Sales Tax / VAT Calculator",
+    description:
+      "Calculates the sales tax or VAT amount and total price including tax for any purchase",
+    h1: "Sales Tax & VAT Calculator – Compute Tax Amount Online",
+    p: "Calculate sales tax or VAT on any purchase with our free online tax calculator. Enter price and tax rate to find the tax amount and total price including tax.",
+    shortTailKeywords: "sales tax calculator, VAT calculator, tax calculator",
+    mediumTailKeywords:
+      "calculate sales tax online, VAT amount calculator, price with tax calculator, add tax to price calculator",
+    longTailKeywords:
+      "how to calculate sales tax on a purchase online, free VAT and sales tax calculator with total price, find tax amount and total with sales tax online, sales tax calculator for shopping and business",
+  },
+  {
+    toolName: "Currency Exchange Calculator (static rates)",
+    description:
+      "Converts amounts between major world currencies using static exchange rates",
+    h1: "Currency Exchange Calculator – Convert Currencies Online",
+    p: "Convert amounts between major world currencies with our free online currency exchange calculator. Uses static reference rates to provide quick currency conversion estimates.",
+    shortTailKeywords:
+      "currency exchange calculator, currency converter, exchange rate calculator",
+    mediumTailKeywords:
+      "convert currency online free, foreign exchange calculator, USD to EUR converter, currency conversion tool",
+    longTailKeywords:
+      "free online currency exchange calculator with static rates, convert USD to EUR GBP INR online, currency converter for major world currencies, exchange rate calculator for international transactions",
+  },
+  {
+    toolName: "Length Converter",
+    description:
+      "Converts between length units including meters, feet, inches, kilometers, miles, and more",
+    h1: "Length Converter – Convert Meters, Feet, Inches, Miles Online",
+    p: "Convert between any length or distance units with our free online length converter. Covers metric and imperial systems including meters, feet, inches, kilometers, and miles.",
+    shortTailKeywords:
+      "length converter, distance converter, unit converter length",
+    mediumTailKeywords:
+      "convert meters to feet online, length unit converter, meters feet inches converter, metric imperial length conversion",
+    longTailKeywords:
+      "how to convert meters to feet and inches online, free length unit converter for all units, convert kilometers to miles and meters online, metric to imperial length converter online",
+  },
+  {
+    toolName: "Weight / Mass Converter",
+    description:
+      "Converts between weight and mass units including kilograms, pounds, grams, ounces, and tons",
+    h1: "Weight Converter – Convert kg, lbs, grams, oz Online",
+    p: "Convert between any weight or mass unit with our free online weight converter. Supports kilograms, pounds, grams, ounces, stones, metric tons, and more instantly.",
+    shortTailKeywords: "weight converter, mass converter, kg to lbs converter",
+    mediumTailKeywords:
+      "convert kilograms to pounds online, weight unit converter, kg lbs grams ounces converter, metric imperial weight conversion",
+    longTailKeywords:
+      "how to convert kilograms to pounds online, free weight and mass unit converter, convert grams to ounces and pounds calculator, kg to lbs and stones weight converter online",
+  },
+  {
+    toolName: "Temperature Converter",
+    description:
+      "Converts temperatures between Celsius, Fahrenheit, and Kelvin scales",
+    h1: "Temperature Converter – Celsius to Fahrenheit & Kelvin",
+    p: "Convert temperatures between Celsius, Fahrenheit, and Kelvin instantly with our free online temperature converter. Get accurate conversions with the formula used shown clearly.",
+    shortTailKeywords:
+      "temperature converter, Celsius to Fahrenheit, temperature conversion",
+    mediumTailKeywords:
+      "convert Celsius to Fahrenheit online, temperature unit converter, Kelvin to Celsius converter, Fahrenheit Celsius Kelvin calculator",
+    longTailKeywords:
+      "how to convert Celsius to Fahrenheit online, free temperature converter Celsius Fahrenheit Kelvin, convert body temperature from Celsius to Fahrenheit, temperature scale converter with formula shown",
+  },
+  {
+    toolName: "Speed Converter",
+    description:
+      "Converts between speed units including mph, km/h, m/s, knots, and more",
+    h1: "Speed Converter – Convert mph, km/h, m/s Online",
+    p: "Convert between any speed unit with our free online speed converter. Covers mph, km/h, m/s, knots, and more for travel, physics, and engineering applications.",
+    shortTailKeywords:
+      "speed converter, mph to km/h converter, velocity converter",
+    mediumTailKeywords:
+      "convert mph to kmh online, speed unit converter, mph km/h m/s converter, velocity unit conversion",
+    longTailKeywords:
+      "how to convert miles per hour to kilometers per hour online, free speed unit converter mph kmh m/s knots, convert speed units for physics and travel, online mph to km/h and m/s speed converter",
+  },
+  {
+    toolName: "Area Converter",
+    description:
+      "Converts between area units including square meters, square feet, acres, hectares, and more",
+    h1: "Area Converter – Convert sq ft, sq m, Acres, Hectares Online",
+    p: "Convert between any area unit with our free online area converter. Supports square meters, square feet, acres, hectares, and many more area measurement units.",
+    shortTailKeywords:
+      "area converter, square feet to square meters, acre converter",
+    mediumTailKeywords:
+      "convert square feet to square meters online, area unit converter, acres to hectares converter, square meter feet converter",
+    longTailKeywords:
+      "how to convert square feet to square meters online, free area unit converter for all units, convert acres to hectares and square meters, land area converter sq ft sq m acres hectares",
+  },
+  {
+    toolName: "Volume Converter",
+    description:
+      "Converts between volume units including liters, gallons, cubic meters, milliliters, and more",
+    h1: "Volume Converter – Convert Liters, Gallons, Cubic Meters",
+    p: "Convert between any volume or capacity unit with our free online volume converter. Covers liters, gallons, milliliters, cubic meters, fluid ounces, and more.",
+    shortTailKeywords:
+      "volume converter, liters to gallons, capacity converter",
+    mediumTailKeywords:
+      "convert liters to gallons online, volume unit converter, ml to liters converter, cubic meter gallon converter",
+    longTailKeywords:
+      "how to convert liters to gallons online, free volume unit converter liters gallons milliliters, convert cubic meters to liters and gallons, volume capacity converter for cooking and science",
+  },
+  {
+    toolName: "Time Converter",
+    description:
+      "Converts between time units including seconds, minutes, hours, days, weeks, months, and years",
+    h1: "Time Converter – Convert Seconds, Minutes, Hours, Days Online",
+    p: "Convert between any time unit with our free online time converter. Quickly convert between seconds, minutes, hours, days, weeks, months, and years with precise results.",
+    shortTailKeywords:
+      "time converter, seconds to minutes, hours to days converter",
+    mediumTailKeywords:
+      "convert seconds to minutes hours online, time unit converter, hours minutes seconds converter, days weeks years time conversion",
+    longTailKeywords:
+      "how to convert hours to minutes and seconds online, free time unit converter for all units, convert days to weeks months and years online, seconds minutes hours days time converter tool",
+  },
+  {
+    toolName: "Energy Converter",
+    description:
+      "Converts between energy units including joules, calories, kilowatt-hours, BTU, and more",
+    h1: "Energy Converter – Convert Joules, Calories, kWh Online",
+    p: "Convert between any energy unit with our free online energy converter. Supports joules, calories, kilocalories, kilowatt-hours, BTU, and more for science and engineering.",
+    shortTailKeywords: "energy converter, joules to calories, kWh converter",
+    mediumTailKeywords:
+      "convert joules to calories online, energy unit converter, kilowatt hour joule converter, BTU calorie joule calculator",
+    longTailKeywords:
+      "how to convert joules to calories and kilowatt hours online, free energy unit converter joules calories BTU kWh, convert calories to joules and kilojoules online, energy conversion tool for physics and engineering",
+  },
+  {
+    toolName: "Pressure Converter",
+    description:
+      "Converts between pressure units including pascals, bar, psi, atm, mmHg, and more",
+    h1: "Pressure Converter – Convert Pascal, Bar, PSI, ATM Online",
+    p: "Convert between any pressure unit with our free online pressure converter. Covers pascals, bar, PSI, atmospheres, mmHg, and more for science, engineering, and weather applications.",
+    shortTailKeywords:
+      "pressure converter, psi to bar converter, pascal converter",
+    mediumTailKeywords:
+      "convert psi to bar online, pressure unit converter, pascal bar atm psi converter, atmospheric pressure conversion",
+    longTailKeywords:
+      "how to convert psi to bar and pascal online, free pressure unit converter all units, convert atmospheres to pascals and psi online, pressure unit conversion tool for engineering and science",
+  },
+  {
+    toolName: "Data Storage Converter (KB, MB, GB, TB)",
+    description:
+      "Converts between digital storage units including bytes, KB, MB, GB, TB, and PB",
+    h1: "Data Storage Converter – Convert KB, MB, GB, TB Online",
+    p: "Convert between any digital storage unit with our free online data storage converter. Supports bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes instantly.",
+    shortTailKeywords:
+      "data storage converter, MB to GB converter, KB MB GB TB",
+    mediumTailKeywords:
+      "convert MB to GB online, data storage unit converter, KB MB GB TB converter, digital storage calculator",
+    longTailKeywords:
+      "how to convert megabytes to gigabytes online, free data storage converter KB MB GB TB PB, convert bytes to megabytes and gigabytes calculator, digital data storage unit conversion tool",
+  },
+  {
+    toolName: "2D Function Plotter (y = f(x))",
+    description:
+      "Plots any 2D mathematical function y = f(x) on an interactive coordinate plane",
+    h1: "2D Function Plotter – Plot y = f(x) Graphs Online",
+    p: "Plot any mathematical function y = f(x) on an interactive graph with our free online 2D function plotter. Visualize polynomials, trig functions, exponentials, and more instantly.",
+    shortTailKeywords: "function plotter, graph plotter, plot function online",
+    mediumTailKeywords:
+      "2D function plotter online, plot y equals f of x, math function grapher, equation graphing tool",
+    longTailKeywords:
+      "how to plot a function y equals f of x online, free 2D math function plotter and grapher, graph any mathematical equation online, interactive function plotting tool for students",
+  },
+  {
+    toolName: "Scatter Plot Generator",
+    description:
+      "Creates scatter plots from two-variable datasets to visualize relationships between variables",
+    h1: "Scatter Plot Generator – Create Scatter Plots Online Free",
+    p: "Generate scatter plots from any two-variable dataset with our free online scatter plot generator. Visualize data relationships, trends, and correlations instantly.",
+    shortTailKeywords:
+      "scatter plot generator, scatter chart maker, scatter plot creator",
+    mediumTailKeywords:
+      "create scatter plot online free, scatter chart generator from data, two variable scatter plot, data scatter plot maker",
+    longTailKeywords:
+      "free online scatter plot generator from dataset, how to create a scatter plot for two variables online, scatter chart maker for correlation analysis, generate scatter diagram from x and y data",
+  },
+  {
+    toolName: "Line Graph Builder",
+    description:
+      "Creates line graphs from datasets to visualize trends and changes over time",
+    h1: "Line Graph Builder – Create Line Charts Online Free",
+    p: "Build professional line graphs from any dataset with our free online line graph builder. Visualize trends, patterns, and changes over time with clean interactive charts.",
+    shortTailKeywords:
+      "line graph builder, line chart maker, line graph creator",
+    mediumTailKeywords:
+      "create line graph online free, line chart generator from data, build line chart online, trend line graph maker",
+    longTailKeywords:
+      "free online line graph builder from dataset, how to create a line graph for data online, line chart maker showing trends over time, create professional line graphs from numbers online",
+  },
+  {
+    toolName: "Bar Chart Builder",
+    description:
+      "Creates bar charts from categorical data to compare values across categories",
+    h1: "Bar Chart Builder – Create Bar Charts Online Free",
+    p: "Build professional bar charts from any categorical data with our free online bar chart builder. Compare values across categories with clean, customizable bar graph visualizations.",
+    shortTailKeywords: "bar chart builder, bar graph maker, create bar chart",
+    mediumTailKeywords:
+      "create bar chart online free, bar graph generator from data, categorical data bar chart, bar chart maker tool",
+    longTailKeywords:
+      "free online bar chart builder from data, how to create a bar graph for categorical data online, bar chart generator for comparison of values, professional bar graph maker from numbers",
+  },
+  {
+    toolName: "Pie Chart Builder",
+    description:
+      "Creates pie charts from proportional data to show part-to-whole relationships",
+    h1: "Pie Chart Builder – Create Pie Charts Online Free",
+    p: "Create professional pie charts from any proportional data with our free online pie chart builder. Visualize percentages and part-to-whole relationships with clear labeled segments.",
+    shortTailKeywords: "pie chart builder, pie chart maker, create pie chart",
+    mediumTailKeywords:
+      "create pie chart online free, pie chart generator from data, percentage pie chart maker, proportional data pie chart",
+    longTailKeywords:
+      "free online pie chart builder from data, how to create a pie chart for percentages online, pie chart generator showing part to whole relationships, professional pie chart maker from numbers online",
+  },
+  {
+    toolName: "Number Line Visualizer",
+    description:
+      "Displays numbers and ranges on an interactive number line visualization",
+    h1: "Number Line Visualizer – Plot Numbers on a Number Line",
+    p: "Visualize numbers, fractions, and inequalities on an interactive number line with our free online number line tool. Plot points and ranges to better understand number concepts.",
+    shortTailKeywords:
+      "number line visualizer, number line tool, plot number line",
+    mediumTailKeywords:
+      "visualize numbers on number line, interactive number line online, number line plotter, plot fractions on number line",
+    longTailKeywords:
+      "free interactive number line visualizer online, how to plot numbers on a number line, number line tool for fractions and inequalities, interactive number line for elementary and middle school math",
+  },
+  {
+    toolName: "Venn Diagram Tool (2-3 sets)",
+    description:
+      "Creates Venn diagrams for 2 or 3 sets and calculates union, intersection, and differences",
+    h1: "Venn Diagram Tool – Create 2 & 3 Set Venn Diagrams Online",
+    p: "Create interactive Venn diagrams for 2 or 3 sets with our free online tool. Visualize union, intersection, and set differences with customizable labels and shading.",
+    shortTailKeywords: "Venn diagram tool, Venn diagram maker, set diagram",
+    mediumTailKeywords:
+      "create Venn diagram online free, 2 set 3 set Venn diagram, interactive Venn diagram tool, set theory diagram maker",
+    longTailKeywords:
+      "free online Venn diagram creator for 2 and 3 sets, how to make a Venn diagram online, interactive Venn diagram tool for set theory, create Venn diagram showing union intersection difference",
+  },
+  {
+    toolName: "Coordinate Plane Plotter",
+    description:
+      "Plots points, lines, and shapes on an interactive coordinate (Cartesian) plane",
+    h1: "Coordinate Plane Plotter – Plot Points & Lines Online",
+    p: "Plot points, lines, and geometric shapes on an interactive coordinate plane with our free online plotter. Ideal for graphing equations, visualizing geometry, and teaching math.",
+    shortTailKeywords:
+      "coordinate plane plotter, Cartesian plane, plot coordinates",
+    mediumTailKeywords:
+      "plot points on coordinate plane online, Cartesian coordinate plotter, graph points and lines online, xy plane plotter",
+    longTailKeywords:
+      "free online coordinate plane plotter for points and lines, how to plot coordinates on a Cartesian plane online, interactive xy plane graph plotter for math, coordinate plane tool for geometry and algebra",
+  },
+  {
+    toolName: "Union of Sets",
+    description:
+      "Calculates the union of two or more sets, returning all unique elements",
+    h1: "Union of Sets Calculator – Find A ∪ B Online",
+    p: "Calculate the union of any two or more sets with our free online union calculator. Returns all unique elements combined from each set with clear set notation.",
+    shortTailKeywords: "union of sets calculator, set union, A union B",
+    mediumTailKeywords:
+      "find union of two sets online, A union B calculator, set theory union calculator, combine sets calculator",
+    longTailKeywords:
+      "how to find union of two sets online, free union of sets calculator for multiple sets, calculate A union B in set theory online, set union calculator showing all unique elements",
+  },
+  {
+    toolName: "Intersection of Sets",
+    description:
+      "Calculates the intersection of two or more sets, returning only common elements",
+    h1: "Intersection of Sets Calculator – Find A ∩ B Online",
+    p: "Find the intersection of any two or more sets with our free online intersection calculator. Identifies all common elements shared between sets with clear notation.",
+    shortTailKeywords:
+      "intersection of sets calculator, set intersection, A intersect B",
+    mediumTailKeywords:
+      "find intersection of two sets online, A intersect B calculator, set theory intersection, common elements of sets calculator",
+    longTailKeywords:
+      "how to find intersection of two sets online, free set intersection calculator for multiple sets, calculate A intersection B in set theory, online intersection of sets calculator showing common elements",
+  },
+  {
+    toolName: "Difference of Sets",
+    description:
+      "Calculates the difference between two sets (A - B), returning elements in A not in B",
+    h1: "Set Difference Calculator – Find A − B Online",
+    p: "Calculate the difference between any two sets with our free online set difference calculator. Find all elements that are in set A but not in set B instantly.",
+    shortTailKeywords:
+      "set difference calculator, A minus B sets, set subtraction",
+    mediumTailKeywords:
+      "find difference of two sets online, A minus B set theory calculator, set difference tool, elements in A not in B",
+    longTailKeywords:
+      "how to find set difference A minus B online, free set difference calculator for two sets, calculate elements in A not in B set theory, online set subtraction calculator with solution",
+  },
+  {
+    toolName: "Complement of a Set",
+    description:
+      "Calculates the complement of a set with respect to a given universal set",
+    h1: "Complement of a Set Calculator – Find Set Complement Online",
+    p: "Find the complement of any set with respect to a universal set using our free online complement calculator. Get all elements in the universal set not present in the given set.",
+    shortTailKeywords:
+      "complement of set calculator, set complement, complement set",
+    mediumTailKeywords:
+      "find complement of a set online, set complement calculator, A complement set theory, universal set minus A calculator",
+    longTailKeywords:
+      "how to find complement of a set with universal set online, free set complement calculator in set theory, calculate U minus A complement of set A, online set theory complement calculator with solution",
+  },
+  {
+    toolName: "Subset Checker",
+    description:
+      "Checks whether one set is a subset or proper subset of another set",
+    h1: "Subset Checker – Check if A is a Subset of B Online",
+    p: "Check whether a set is a subset or proper subset of another set with our free online subset checker. Instantly verify set containment relationships with clear explanations.",
+    shortTailKeywords: "subset checker, subset calculator, is A subset of B",
+    mediumTailKeywords:
+      "check if set is subset online, subset verification calculator, proper subset checker, subset relationship calculator",
+    longTailKeywords:
+      "how to check if one set is a subset of another online, free subset checker for any two sets, verify subset and proper subset relationship online, set theory subset calculator with explanation",
+  },
+  {
+    toolName: "Power Set Generator",
+    description: "Generates all subsets (power set) of a given set",
+    h1: "Power Set Generator – Find All Subsets of a Set Online",
+    p: "Generate the complete power set (all subsets) of any set with our free online power set generator. Lists every possible subset from empty set to the complete set.",
+    shortTailKeywords:
+      "power set generator, find all subsets, power set calculator",
+    mediumTailKeywords:
+      "generate power set of a set online, all subsets of a set calculator, power set in set theory, list all subsets generator",
+    longTailKeywords:
+      "how to find the power set of any set online, free power set generator listing all subsets, calculate all possible subsets of a given set, online power set calculator for set theory",
+  },
+  {
+    toolName: "Cartesian Product Calculator",
+    description:
+      "Calculates the Cartesian product of two sets, listing all ordered pairs",
+    h1: "Cartesian Product Calculator – Find A × B Online",
+    p: "Calculate the Cartesian product of any two sets with our free online calculator. Lists all ordered pairs in A × B for set theory, relations, and combinatorics applications.",
+    shortTailKeywords:
+      "Cartesian product calculator, A times B sets, ordered pairs",
+    mediumTailKeywords:
+      "find Cartesian product of two sets, A cross B calculator, ordered pairs set calculator, Cartesian product set theory",
+    longTailKeywords:
+      "how to find Cartesian product of two sets online, free Cartesian product calculator listing all ordered pairs, calculate A cross B in set theory online, online Cartesian product calculator for relations",
+  },
+  {
+    toolName: "Arithmetic Sequence Calculator",
+    description:
+      "Calculates terms, common difference, and partial sums of arithmetic sequences",
+    h1: "Arithmetic Sequence Calculator – Find Terms & Sum Online",
+    p: "Calculate any term, common difference, or partial sum of an arithmetic sequence with our free online calculator. Enter known values to solve arithmetic progressions instantly.",
+    shortTailKeywords:
+      "arithmetic sequence calculator, arithmetic progression, AP calculator",
+    mediumTailKeywords:
+      "arithmetic sequence terms calculator, find nth term of AP, arithmetic progression sum calculator, common difference calculator",
+    longTailKeywords:
+      "how to find nth term of arithmetic sequence online, free arithmetic sequence calculator with sum and terms, arithmetic progression AP calculator with steps, find terms and sum of arithmetic sequence online",
+  },
+  {
+    toolName: "Geometric Sequence Calculator",
+    description:
+      "Calculates terms, common ratio, and partial sums of geometric sequences",
+    h1: "Geometric Sequence Calculator – Find Terms & Sum Online",
+    p: "Calculate any term, common ratio, or sum of a geometric sequence with our free online calculator. Solve geometric progressions for any number of terms with full solutions.",
+    shortTailKeywords:
+      "geometric sequence calculator, geometric progression, GP calculator",
+    mediumTailKeywords:
+      "geometric sequence terms calculator, find nth term of GP, geometric progression sum, common ratio calculator",
+    longTailKeywords:
+      "how to find nth term of geometric sequence online, free geometric sequence calculator with sum and terms, geometric progression GP calculator with steps, find terms and sum of geometric sequence online",
+  },
+  {
+    toolName: "Sum of Arithmetic Series",
+    description:
+      "Calculates the sum of an arithmetic series using the arithmetic series sum formula",
+    h1: "Arithmetic Series Sum Calculator – Find Sum of AP Online",
+    p: "Calculate the sum of any arithmetic series with our free online calculator. Enter the first term, common difference, and number of terms to find the series sum instantly.",
+    shortTailKeywords:
+      "arithmetic series sum calculator, sum of AP, arithmetic sum formula",
+    mediumTailKeywords:
+      "sum of arithmetic series calculator, AP series sum online, find sum of arithmetic progression, S_n arithmetic series calculator",
+    longTailKeywords:
+      "how to find sum of arithmetic series online, free arithmetic series sum calculator with formula, calculate Sn of arithmetic progression online, sum of n terms of arithmetic sequence calculator",
+  },
+  {
+    toolName: "Sum of Geometric Series",
+    description:
+      "Calculates the sum of a geometric series including infinite geometric series",
+    h1: "Geometric Series Sum Calculator – Find Sum of GP Online",
+    p: "Calculate the sum of finite and infinite geometric series with our free online calculator. Supports both converging and diverging series with the geometric sum formula shown.",
+    shortTailKeywords:
+      "geometric series sum calculator, sum of GP, geometric sum formula",
+    mediumTailKeywords:
+      "sum of geometric series calculator, GP series sum online, infinite geometric series sum, find sum of geometric progression",
+    longTailKeywords:
+      "how to find sum of geometric series online, free geometric series sum calculator finite and infinite, calculate sum of GP for n terms online, infinite geometric series convergence sum calculator",
+  },
+  {
+    toolName: "nth Term Finder",
+    description:
+      "Finds the nth term of arithmetic or geometric sequences given initial values",
+    h1: "nth Term Finder – Find Any Term of a Sequence Online",
+    p: "Find the nth term of any arithmetic or geometric sequence with our free online nth term finder. Enter sequence parameters to calculate any specific term instantly.",
+    shortTailKeywords:
+      "nth term finder, find nth term, sequence term calculator",
+    mediumTailKeywords:
+      "find nth term of sequence online, nth term calculator AP GP, term n of arithmetic sequence, sequence nth term finder",
+    longTailKeywords:
+      "how to find the nth term of an arithmetic or geometric sequence, free nth term finder for sequences online, calculate specific term n in AP or GP calculator, nth term of sequence calculator with steps",
+  },
+  {
+    toolName: "Harmonic Series Calculator",
+    description: "Calculates partial sums of the harmonic series up to n terms",
+    h1: "Harmonic Series Calculator – Compute Partial Sums Online",
+    p: "Calculate the partial sum of the harmonic series up to any number of terms with our free online harmonic series calculator. Explore the divergent nature of this classic series.",
+    shortTailKeywords:
+      "harmonic series calculator, harmonic series sum, harmonic series",
+    mediumTailKeywords:
+      "partial sum harmonic series calculator, sum of harmonic series online, harmonic series to n terms, divergent series harmonic",
+    longTailKeywords:
+      "how to calculate partial sum of harmonic series online, free harmonic series sum calculator for n terms, compute 1 plus 1/2 plus 1/3 harmonic series sum, harmonic series calculator showing divergence",
+  },
+  {
+    toolName: "Pascal's Triangle Generator",
+    description: "Generates Pascal's Triangle up to any number of rows",
+    h1: "Pascal's Triangle Generator – Generate Pascal's Triangle Online",
+    p: "Generate Pascal's Triangle up to any number of rows with our free online generator. Visualize binomial coefficients, patterns, and number relationships in a clear triangle format.",
+    shortTailKeywords:
+      "Pascal's triangle generator, Pascal's triangle, triangle numbers",
+    mediumTailKeywords:
+      "generate Pascal's triangle online, Pascal's triangle calculator, Pascal's triangle up to n rows, binomial coefficients triangle",
+    longTailKeywords:
+      "how to generate Pascal's triangle up to n rows online, free Pascal's triangle generator for any size, Pascal's triangle calculator showing binomial coefficients, online Pascal's triangle visualization tool",
+  },
+  {
+    toolName: "Binomial Expansion Calculator",
+    description:
+      "Expands binomial expressions (a + b)^n using the binomial theorem for any power n",
+    h1: "Binomial Expansion Calculator – Expand (a+b)^n Online",
+    p: "Expand any binomial expression (a + b)^n with our free online binomial expansion calculator. Uses the binomial theorem with Pascal's triangle coefficients and full term listing.",
+    shortTailKeywords:
+      "binomial expansion calculator, expand a plus b to the n, binomial theorem",
+    mediumTailKeywords:
+      "binomial expansion theorem calculator, expand binomial to power n, a plus b n calculator, binomial coefficients expansion",
+    longTailKeywords:
+      "how to expand a plus b to the power n using binomial theorem online, free binomial expansion calculator with all terms, calculate binomial expansion using Pascal's triangle coefficients, online binomial theorem expansion calculator with steps",
+  },
+  {
+    toolName: "Truth Table Generator",
+    description:
+      "Generates truth tables for any logical expression with any number of variables",
+    h1: "Truth Table Generator – Create Logic Truth Tables Online",
+    p: "Generate truth tables for any logical expression with our free online truth table generator. Supports AND, OR, NOT, XOR, NAND, NOR, and implication operators for any number of variables.",
+    shortTailKeywords:
+      "truth table generator, logic truth table, Boolean truth table",
+    mediumTailKeywords:
+      "generate truth table online, logic expression truth table, Boolean logic truth table, truth table calculator",
+    longTailKeywords:
+      "how to generate a truth table for any logical expression online, free truth table generator for AND OR NOT XOR operators, create truth table for Boolean expression with multiple variables, online logic truth table calculator",
+  },
+  {
+    toolName: "Boolean Expression Evaluator",
+    description:
+      "Evaluates Boolean expressions for given truth values of variables",
+    h1: "Boolean Expression Evaluator – Evaluate Logic Expressions Online",
+    p: "Evaluate any Boolean expression for given variable values with our free online Boolean expression evaluator. Supports all logical operators including AND, OR, NOT, XOR, and more.",
+    shortTailKeywords:
+      "Boolean expression evaluator, Boolean calculator, logic expression calculator",
+    mediumTailKeywords:
+      "evaluate Boolean expression online, Boolean logic calculator, simplify Boolean expression, Boolean algebra evaluator",
+    longTailKeywords:
+      "how to evaluate a Boolean expression online with given values, free Boolean expression evaluator for logic gates, compute Boolean algebra expressions with AND OR NOT XOR, online Boolean expression calculator for digital logic",
+  },
+  {
+    toolName: "Logic Gate Simulator",
+    description:
+      "Simulates digital logic gates (AND, OR, NOT, NAND, NOR, XOR) with visual input/output",
+    h1: "Logic Gate Simulator – Simulate AND OR NOT Gates Online",
+    p: "Simulate any combination of digital logic gates with our free online logic gate simulator. Set input values and see real-time output for AND, OR, NOT, NAND, NOR, and XOR gates.",
+    shortTailKeywords:
+      "logic gate simulator, digital logic simulator, AND OR NOT gates",
+    mediumTailKeywords:
+      "logic gate simulator online, simulate AND OR NAND NOR gates, digital logic circuit simulator, Boolean logic gate tool",
+    longTailKeywords:
+      "free online logic gate simulator for AND OR NOT XOR NAND NOR, how to simulate digital logic circuits online, interactive logic gate input output tool, online Boolean logic gate simulator for students",
+  },
+  {
+    toolName: "Binary Addition / Subtraction",
+    description:
+      "Performs binary number addition and subtraction with step-by-step working",
+    h1: "Binary Addition & Subtraction Calculator – Compute in Base 2",
+    p: "Add and subtract binary numbers step by step with our free online binary calculator. See each bit-by-bit operation clearly – perfect for computer science and digital electronics.",
+    shortTailKeywords:
+      "binary addition calculator, binary subtraction, binary arithmetic",
+    mediumTailKeywords:
+      "add binary numbers online, binary addition and subtraction calculator, base 2 arithmetic calculator, binary math calculator",
+    longTailKeywords:
+      "how to add binary numbers step by step online, free binary addition and subtraction calculator with steps, perform binary arithmetic calculations online, binary number addition calculator for computer science students",
+  },
+  {
+    toolName: "Two's Complement Calculator",
+    description:
+      "Converts integers to two's complement binary representation and vice versa",
+    h1: "Two's Complement Calculator – Convert to Twos Complement",
+    p: "Convert any integer to its two's complement binary form or decode two's complement back to decimal with our free online calculator. Supports various bit widths.",
+    shortTailKeywords:
+      "two's complement calculator, twos complement, binary two's complement",
+    mediumTailKeywords:
+      "convert to two's complement online, two's complement binary calculator, integer to twos complement, two's complement 8 bit 16 bit",
+    longTailKeywords:
+      "how to convert integer to two's complement online, free two's complement calculator for 8 16 32 bit, calculate two's complement representation of negative numbers, binary two's complement converter for computer science",
+  },
+  {
+    toolName: "Bitwise Operations Calculator",
+    description:
+      "Performs bitwise AND, OR, XOR, NOT, and shift operations on integers",
+    h1: "Bitwise Operations Calculator – Compute AND OR XOR NOT Shifts",
+    p: "Perform bitwise AND, OR, XOR, NOT, left shift, and right shift operations on integers with our free online bitwise calculator. See binary representations alongside results.",
+    shortTailKeywords:
+      "bitwise calculator, bitwise operations, AND OR XOR calculator",
+    mediumTailKeywords:
+      "bitwise AND OR XOR NOT calculator, binary bitwise operations online, bitwise shift calculator, integer bit operations calculator",
+    longTailKeywords:
+      "how to perform bitwise operations on integers online, free bitwise AND OR XOR NOT calculator with binary output, calculate bitwise left right shift operations, online bitwise operations calculator for programming",
+  },
+  {
+    toolName: "Modular Arithmetic Calculator",
+    description:
+      "Performs modular arithmetic operations including addition, subtraction, multiplication, and exponentiation under a modulus",
+    h1: "Modular Arithmetic Calculator – Compute mod n Operations",
+    p: "Perform modular arithmetic operations including addition, subtraction, multiplication, and exponentiation under any modulus with our free online calculator.",
+    shortTailKeywords:
+      "modular arithmetic calculator, mod n calculator, modular math",
+    mediumTailKeywords:
+      "modular arithmetic operations calculator, compute mod n online, addition subtraction mod m, modular exponentiation calculator",
+    longTailKeywords:
+      "how to perform modular arithmetic operations online, free modular arithmetic calculator for addition subtraction multiplication, compute a mod n for any operation online, modular exponentiation calculator for cryptography",
+  },
+  {
+    toolName: "Euler's Totient Function",
+    description:
+      "Calculates Euler's totient function φ(n), counting integers up to n that are coprime to n",
+    h1: "Euler's Totient Function Calculator – Compute φ(n) Online",
+    p: "Calculate Euler's totient function φ(n) for any integer with our free online calculator. Find the count of integers up to n that share no common factor with n.",
+    shortTailKeywords:
+      "Euler's totient function, phi function calculator, totient calculator",
+    mediumTailKeywords:
+      "calculate Euler's totient phi n, Euler's phi function online, totient function calculator, count coprime integers",
+    longTailKeywords:
+      "how to calculate Euler's totient function phi of n online, free Euler's phi function calculator for any integer, compute count of integers coprime to n online, Euler totient function calculator for number theory and cryptography",
+  },
+  {
+    toolName: "Age Calculator",
+    description:
+      "Calculates exact age in years, months, and days from a birthdate to today or a specified date",
+    h1: "Age Calculator – Find Your Exact Age in Years & Days",
+    p: "Calculate your exact age in years, months, and days with our free online age calculator. Enter your birthdate to find your precise age as of today or any specific date.",
+    shortTailKeywords: "age calculator, calculate age, how old am I",
+    mediumTailKeywords:
+      "age calculator from birthdate, how old am I calculator, calculate exact age online, years months days age calculator",
+    longTailKeywords:
+      "how to calculate my exact age in years months and days online, free age calculator from date of birth, find exact age from birthdate calculator, how old am I today age calculator",
+  },
+  {
+    toolName: "Date Difference Calculator",
+    description:
+      "Calculates the number of days, weeks, months, and years between two dates",
+    h1: "Date Difference Calculator – Find Days Between Two Dates",
+    p: "Calculate the exact difference between any two dates in days, weeks, months, and years with our free online date difference calculator. Instant and accurate date comparison.",
+    shortTailKeywords:
+      "date difference calculator, days between dates, date calculator",
+    mediumTailKeywords:
+      "calculate difference between two dates, days between two dates calculator, date gap calculator, how many days between dates",
+    longTailKeywords:
+      "how to calculate difference between two dates in days online, free date difference calculator days weeks months years, find number of days between two dates calculator, online date gap calculator for any two dates",
+  },
+  {
+    toolName: "Days Until / Since Calculator",
+    description:
+      "Calculates how many days until or since a specific date from today",
+    h1: "Days Until / Since Calculator – Countdown to Any Date",
+    p: "Find out how many days until or since any date with our free online countdown calculator. Perfect for counting down to events, deadlines, holidays, and special occasions.",
+    shortTailKeywords:
+      "days until calculator, countdown to date, days since calculator",
+    mediumTailKeywords:
+      "how many days until date calculator, date countdown calculator online, days remaining until event, days since a date calculator",
+    longTailKeywords:
+      "how many days until my event or birthday online, free days countdown calculator from today to any date, calculate days since a specific date online, countdown timer calculator days until any future date",
+  },
+  {
+    toolName: "Leap Year Checker",
+    description: "Determines whether a given year is a leap year or not",
+    h1: "Leap Year Checker – Is It a Leap Year? Find Out Online",
+    p: "Check if any year is a leap year with our free online leap year checker. Instantly verify using Gregorian calendar rules with a clear explanation of why it is or isn't a leap year.",
+    shortTailKeywords:
+      "leap year checker, is it a leap year, leap year calculator",
+    mediumTailKeywords:
+      "check if year is leap year online, leap year finder, Gregorian leap year rules, leap year or not calculator",
+    longTailKeywords:
+      "how to check if a year is a leap year online, free leap year checker with explanation, is 2024 2025 2026 a leap year, online leap year checker using Gregorian calendar rules",
+  },
+  {
+    toolName: "Day of the Week Calculator",
+    description: "Determines what day of the week any given date falls on",
+    h1: "Day of the Week Calculator – Find What Day Any Date Falls On",
+    p: "Find out what day of the week any past, present, or future date falls on with our free online day of the week calculator. Works for any date in history.",
+    shortTailKeywords: "day of week calculator, what day was it, date to day",
+    mediumTailKeywords:
+      "find day of week for any date, what day is a specific date, day of the week finder, date day calculator online",
+    longTailKeywords:
+      "how to find what day of the week a date falls on online, free day of the week calculator for any date in history, what day was a specific historical date calculator, online day of week finder for past and future dates",
+  },
+  {
+    toolName: "Time Duration Calculator",
+    description:
+      "Calculates the duration between two times showing hours, minutes, and seconds elapsed",
+    h1: "Time Duration Calculator – Find Time Between Two Times",
+    p: "Calculate the exact duration between any two times with our free online time duration calculator. Find hours, minutes, and seconds elapsed for any start and end time.",
+    shortTailKeywords:
+      "time duration calculator, time difference calculator, elapsed time",
+    mediumTailKeywords:
+      "calculate time duration between two times, hours minutes elapsed calculator, time difference in hours minutes, elapsed time calculator online",
+    longTailKeywords:
+      "how to calculate time duration between two times online, free time elapsed calculator hours minutes seconds, find difference between start and end time calculator, online time duration calculator for hours and minutes",
+  },
+  {
+    toolName: "Date Arithmetic (add/subtract days)",
+    description:
+      "Adds or subtracts a number of days, weeks, or months to/from a given date",
+    h1: "Date Arithmetic Calculator – Add or Subtract Days from a Date",
+    p: "Add or subtract days, weeks, or months from any date with our free online date arithmetic calculator. Find past and future dates from any starting date instantly.",
+    shortTailKeywords:
+      "date arithmetic calculator, add days to date, subtract days from date",
+    mediumTailKeywords:
+      "add days to a date calculator, subtract days from date online, date plus days calculator, find date after n days",
+    longTailKeywords:
+      "how to add or subtract days from a date online, free date arithmetic calculator adding days weeks months, find future date by adding number of days, calculate date that is n days from today or any date",
+  },
+  {
+    toolName: "Random Number Generator",
+    description: "Generates random numbers within a user-specified range",
+    h1: "Random Number Generator – Generate Random Numbers Online",
+    p: "Generate random numbers within any range with our free online random number generator. Useful for games, statistics, lotteries, and any application requiring random values.",
+    shortTailKeywords:
+      "random number generator, generate random number, random number picker",
+    mediumTailKeywords:
+      "random number generator online free, generate random number in range, number randomizer tool, random integer generator",
+    longTailKeywords:
+      "free online random number generator between any range, how to generate random numbers online, random number picker for lottery and games, generate multiple random numbers online instantly",
+  },
+  {
+    toolName: "Dice Roller Simulator",
+    description:
+      "Simulates rolling one or more dice of various types (d4, d6, d8, d10, d12, d20) and totals results",
+    h1: "Dice Roller Simulator – Roll Virtual Dice Online Free",
+    p: "Roll any type and number of dice virtually with our free online dice roller simulator. Supports d4, d6, d8, d10, d12, and d20 dice with instant results and totals.",
+    shortTailKeywords: "dice roller, roll dice online, virtual dice",
+    mediumTailKeywords:
+      "online dice roller simulator free, roll d6 d20 dice online, virtual dice roller, multiple dice roller calculator",
+    longTailKeywords:
+      "free online dice roller for any type of dice, how to roll virtual dice online, roll d4 d6 d8 d10 d12 d20 dice simulator, online dice roller for tabletop games and DnD",
+  },
+  {
+    toolName: "Multiplication Table Generator",
+    description:
+      "Generates multiplication tables for any number up to a specified range",
+    h1: "Multiplication Table Generator – Create Times Tables Online",
+    p: "Generate complete multiplication tables for any number with our free online generator. Create and print times tables from 1 to any limit – great for students learning multiplication.",
+    shortTailKeywords:
+      "multiplication table generator, times table generator, multiplication chart",
+    mediumTailKeywords:
+      "generate multiplication table online, times table creator, create multiplication chart, multiplication table for any number",
+    longTailKeywords:
+      "free online multiplication table generator for any number, how to generate times tables for any number online, printable multiplication table generator, create custom multiplication chart online for students",
+  },
+  {
+    toolName: "Grade / GPA Calculator",
+    description:
+      "Calculates GPA and overall grade from individual subject scores and credit hours",
+    h1: "GPA Calculator – Calculate Your Grade & GPA Online",
+    p: "Calculate your GPA and overall grade from multiple subject scores and credit hours with our free online GPA calculator. Supports weighted and unweighted GPA calculations.",
+    shortTailKeywords: "GPA calculator, grade calculator, calculate GPA",
+    mediumTailKeywords:
+      "calculate GPA online free, grade point average calculator, weighted GPA calculator, semester GPA calculator",
+    longTailKeywords:
+      "how to calculate GPA from grades and credit hours online, free GPA calculator for semester and cumulative GPA, weighted and unweighted GPA calculator online, college grade point average calculator with multiple subjects",
+  },
+  {
+    toolName: "Percentage Change Calculator",
+    description:
+      "Calculates the percentage increase or decrease between two values",
+    h1: "Percentage Change Calculator – Find % Increase or Decrease",
+    p: "Calculate the percentage change between any two values with our free online percentage change calculator. Instantly find percentage increase or decrease with the formula shown.",
+    shortTailKeywords:
+      "percentage change calculator, percent change, percentage increase decrease",
+    mediumTailKeywords:
+      "calculate percentage change online, percent increase decrease calculator, find percentage difference, percentage growth calculator",
+    longTailKeywords:
+      "how to calculate percentage change between two numbers online, free percentage increase and decrease calculator with formula, find percent change from one value to another calculator, online percentage change calculator for any two values",
+  },
+  {
+    toolName: "Number Sorter",
+    description: "Sorts a list of numbers in ascending or descending order",
+    h1: "Number Sorter – Sort Numbers Ascending or Descending Online",
+    p: "Sort any list of numbers in ascending or descending order instantly with our free online number sorter. Paste or enter numbers and get a sorted list in one click.",
+    shortTailKeywords:
+      "number sorter, sort numbers online, number ordering tool",
+    mediumTailKeywords:
+      "sort list of numbers online, ascending descending number sorter, order numbers calculator, number list sorter",
+    longTailKeywords:
+      "how to sort a list of numbers online ascending and descending, free number sorter for any list of values, arrange numbers in order ascending descending online, online number sorting tool for statistics and math",
+  },
+  {
+    toolName: "Equation Balancer (simple)",
+    description:
+      "Balances simple chemical or algebraic equations by finding correct coefficients",
+    h1: "Equation Balancer – Balance Simple Equations Online",
+    p: "Balance simple chemical or algebraic equations automatically with our free online equation balancer. Enter your equation and get correctly balanced coefficients in seconds.",
+    shortTailKeywords:
+      "equation balancer, balance equations, equation calculator",
+    mediumTailKeywords:
+      "simple equation balancer online, balance algebraic equations, chemical equation balancer simple, coefficient balancer",
+    longTailKeywords:
+      "how to balance simple equations online, free equation balancer for chemical and algebraic equations, automatically balance equation with coefficients online, online simple equation balancing tool",
+  },
+  {
+    toolName: "Estimation Rounding Tool",
+    description:
+      "Estimates and rounds numbers to aid in quick mental math approximations",
+    h1: "Estimation & Rounding Tool – Round for Quick Estimation",
+    p: "Round and estimate numbers quickly with our free online estimation and rounding tool. Round to nearest ten, hundred, thousand, or custom place value for fast mental math.",
+    shortTailKeywords: "estimation tool, rounding estimator, round to nearest",
+    mediumTailKeywords:
+      "estimation and rounding tool online, round to nearest hundred thousand, estimate numbers online, quick rounding calculator",
+    longTailKeywords:
+      "how to round numbers for estimation online, free estimation rounding tool to nearest ten hundred thousand, round numbers to any place value for quick estimation, online rounding and estimation calculator for students",
+  },
+  {
+    toolName: "Digit Sum Calculator",
+    description:
+      "Calculates the sum of all digits in a number, with iterative digital root option",
+    h1: "Digit Sum Calculator – Find Sum of Digits of Any Number",
+    p: "Calculate the sum of all digits in any number with our free online digit sum calculator. Also computes the digital root through repeated digit summation.",
+    shortTailKeywords:
+      "digit sum calculator, sum of digits, digital root calculator",
+    mediumTailKeywords:
+      "find sum of digits of a number, digit sum calculator online, digital root calculator, add all digits of number",
+    longTailKeywords:
+      "how to find sum of digits of any number online, free digit sum and digital root calculator, calculate digit sum repeatedly to find digital root, sum of digits of a large number calculator online",
+  },
+  {
+    toolName: "Reverse a Number",
+    description: "Reverses the digits of any given integer",
+    h1: "Reverse a Number – Reverse Digits of Any Number Online",
+    p: "Reverse the digits of any number instantly with our free online reverse number tool. Great for palindrome checking, number puzzles, and learning digit manipulation.",
+    shortTailKeywords: "reverse a number, reverse digits, number reverser",
+    mediumTailKeywords:
+      "reverse digits of a number online, reverse number calculator, flip number digits, number reversal tool",
+    longTailKeywords:
+      "how to reverse digits of any number online, free reverse number calculator for any integer, flip the digits of a number online tool, reverse a number calculator for palindrome and puzzle checking",
+  },
+  {
+    toolName: "Check Divisibility by 2–20",
+    description:
+      "Checks divisibility of a number by all integers from 2 to 20 using divisibility rules",
+    h1: "Divisibility Check 2–20 – Test Divisibility for All Numbers",
+    p: "Check divisibility by all integers from 2 to 20 with a single input using our free online divisibility tool. Displays divisibility results with the rules used for each.",
+    shortTailKeywords:
+      "divisibility check 2 to 20, divisibility test all, divisibility rules calculator",
+    mediumTailKeywords:
+      "check divisibility by numbers 2 to 20, full divisibility test calculator, divisibility by 2 3 5 7 11 13, divisibility rules checker",
+    longTailKeywords:
+      "how to check divisibility by all numbers 2 to 20 online, free divisibility checker for integers 2 through 20, test if number is divisible by 2 to 20 online, comprehensive divisibility rules calculator with all results",
+  },
+  {
+    toolName: "Pi (π) Digit Generator",
+    description:
+      "Generates and displays the digits of Pi (π) up to a specified number of decimal places",
+    h1: "Pi Digit Generator – View Digits of π to Any Decimal Place",
+    p: "View the digits of Pi (π) to any decimal place with our free online Pi digit generator. Explore and study the infinite decimal expansion of this famous mathematical constant.",
+    shortTailKeywords: "pi digit generator, digits of pi, pi calculator",
+    mediumTailKeywords:
+      "generate pi digits online, view pi to n decimal places, pi constant digit generator, first 100 1000 digits of pi",
+    longTailKeywords:
+      "how to find digits of pi to any decimal place online, free pi digit generator for first 1000 digits, view expansion of pi constant online, online calculator showing pi digits to n decimal places",
+  },
+  {
+    toolName: "Magic Square Generator",
+    description:
+      "Generates magic squares of any odd or even order where all rows, columns, and diagonals sum to the same value",
+    h1: "Magic Square Generator – Create Magic Squares Online",
+    p: "Generate magic squares of any order with our free online magic square generator. Creates valid magic squares where all rows, columns, and diagonals have the same magical sum.",
+    shortTailKeywords:
+      "magic square generator, magic square calculator, magic square maker",
+    mediumTailKeywords:
+      "generate magic square online, magic square any order, create 3x3 4x4 magic square, magic square magic sum calculator",
+    longTailKeywords:
+      "how to generate a magic square online for any order, free magic square generator for odd and even orders, create 3x3 5x5 magic square calculator, online magic square maker showing magic sum",
+  },
+  {
+    toolName: "Sudoku Validator",
+    description:
+      "Validates whether a completed Sudoku grid follows all the rules correctly",
+    h1: "Sudoku Validator – Check if Your Sudoku Solution is Valid",
+    p: "Validate any completed Sudoku puzzle grid with our free online Sudoku validator. Instantly check if all rows, columns, and 3x3 boxes satisfy Sudoku rules correctly.",
+    shortTailKeywords: "Sudoku validator, Sudoku checker, validate Sudoku",
+    mediumTailKeywords:
+      "check if Sudoku is valid online, Sudoku solution validator, Sudoku grid checker, verify Sudoku answer",
+    longTailKeywords:
+      "how to check if a Sudoku solution is correct online, free Sudoku validator for completed grids, verify Sudoku rows columns and boxes online, online Sudoku checker to validate any 9x9 grid",
   },
 ];
 
-// Create reverse mappings
-const idToSlug = Object.fromEntries(
-  Object.entries(pageIds).map(([slug, id]) => [id, slug]),
-);
-
 // Category for math tools
 const category = "math-tools";
-
-// Create a mapping from slug to metadata by index
-// The toolMetadata array is in the same order as the IDs (1-indexed)
-const slugToMetadata = {};
-Object.entries(pageIds).forEach(([slug, id]) => {
-  // toolMetadata is 0-indexed, IDs are 1-indexed
-  const metadata = toolMetadata[id - 1];
-  if (metadata) {
-    slugToMetadata[slug] = metadata;
-  }
-});
 
 /**
  * Escape special characters for JSON strings in template literals
@@ -917,30 +2652,107 @@ const escapeString = (str) => {
 };
 
 /**
- * Generate layout file content with proper SEO meta and interlinking cards
+ * Find tool metadata by tool name (handling slight variations)
  */
-const generateLayout = (toolName, { h1, p }) => {
-  const canonical = `https://1000freetools.com/math-tools/${toolName}`;
+const findToolMetadata = (toolName) => {
+  // Try exact match first
+  let metadata = toolMetadata.find((m) => m.toolName === toolName);
 
-  // Get the ID of the current tool
-  const currentToolId = pageIds[toolName];
-
-  let linkedToolSlugs = [];
-  if (currentToolId && linkMapping[currentToolId]) {
-    // Map the linked IDs to their corresponding slugs
-    linkedToolSlugs = linkMapping[currentToolId]
-      .map((id) => idToSlug[id])
-      .filter(Boolean); // Filter out any undefined slugs if an ID is missing
+  if (!metadata) {
+    // Try case-insensitive match
+    metadata = toolMetadata.find(
+      (m) => m.toolName.toLowerCase() === toolName.toLowerCase(),
+    );
   }
 
-  // Generate tools array for ToolLinkCards based on the mapping
+  if (!metadata) {
+    // Try matching by removing special characters
+    const normalizedToolName = toolName
+      .replace(/[^a-zA-Z0-9]/g, "")
+      .toLowerCase();
+    metadata = toolMetadata.find(
+      (m) =>
+        m.toolName.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() ===
+        normalizedToolName,
+    );
+  }
+
+  return (
+    metadata || {
+      toolName,
+      h1: toolName,
+      p: `Free online ${toolName} tool.`,
+    }
+  );
+};
+
+// Main execution
+console.log("🚀 Starting layout generation for math tools...\n");
+
+// Discover tools dynamically from the directory
+const discoveredTools = discoverToolsFromDirectory();
+console.log(
+  `📂 Discovered ${discoveredTools.length} tools with page.tsx files\n`,
+);
+
+// Filter pageIds to only include tools that exist in the directory
+const existingSlugs = new Set(discoveredTools);
+const validPageIds = {};
+let nextId = 1;
+
+// Assign IDs only to tools that exist
+for (const slug of discoveredTools) {
+  if (pageIds[slug]) {
+    validPageIds[slug] = pageIds[slug];
+  } else {
+    // Assign new ID for tools not in the original pageIds
+    validPageIds[slug] = nextId++;
+  }
+}
+
+// Create reverse mapping for valid tools only
+const validIdToSlug = Object.fromEntries(
+  Object.entries(validPageIds).map(([slug, id]) => [id, slug]),
+);
+
+// Filter linkMapping to only include valid tool IDs
+const validLinkMapping = {};
+for (const [id, linkedIds] of Object.entries(linkMapping)) {
+  const numericId = typeof id === "string" ? parseInt(id, 10) : id;
+  if (validIdToSlug[numericId]) {
+    // Filter linked IDs to only include tools that exist
+    const validLinkedIds = linkedIds.filter(
+      (linkedId) => validIdToSlug[linkedId],
+    );
+    validLinkMapping[numericId] = validLinkedIds;
+  }
+}
+
+// Update slugToMetadata to use validPageIds
+const validSlugToMetadata = {};
+Object.entries(validPageIds).forEach(([slug, id]) => {
+  const metadata = toolMetadata[id - 1];
+  if (metadata) {
+    validSlugToMetadata[slug] = metadata;
+  }
+});
+
+// Updated generateLayout to use valid mappings
+const generateValidLayout = (toolName, { h1, p }) => {
+  const canonical = `https://1000freetools.com/math-tools/${toolName}`;
+  const currentToolId = validPageIds[toolName];
+
+  let linkedToolSlugs = [];
+  if (currentToolId && validLinkMapping[currentToolId]) {
+    linkedToolSlugs = validLinkMapping[currentToolId]
+      .map((id) => validIdToSlug[id])
+      .filter(Boolean);
+  }
+
   const otherTools = linkedToolSlugs
     .map((slug) => {
-      // Find the metadata for this linked tool
-      const linkedMetadata = slugToMetadata[slug];
-
+      const linkedMetadata = validSlugToMetadata[slug];
       if (!linkedMetadata) return null;
-
       return {
         name: linkedMetadata.h1,
         description: linkedMetadata.p,
@@ -950,8 +2762,6 @@ const generateLayout = (toolName, { h1, p }) => {
     .filter(Boolean);
 
   const toolsJson = JSON.stringify(otherTools, null, 2);
-
-  // Escape strings for template literal
   const escapedH1 = escapeString(h1);
   const escapedP = escapeString(p);
 
@@ -995,50 +2805,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 `;
 };
 
-/**
- * Find tool metadata by tool name (handling slight variations)
- */
-const findToolMetadata = (toolName) => {
-  // Try exact match first
-  let metadata = toolMetadata.find((m) => m.toolName === toolName);
-
-  if (!metadata) {
-    // Try case-insensitive match
-    metadata = toolMetadata.find(
-      (m) => m.toolName.toLowerCase() === toolName.toLowerCase(),
-    );
-  }
-
-  if (!metadata) {
-    // Try matching by removing special characters
-    const normalizedToolName = toolName
-      .replace(/[^a-zA-Z0-9]/g, "")
-      .toLowerCase();
-    metadata = toolMetadata.find(
-      (m) =>
-        m.toolName.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() ===
-        normalizedToolName,
-    );
-  }
-
-  return (
-    metadata || {
-      toolName,
-      h1: toolName,
-      p: `Free online ${toolName} tool.`,
-    }
-  );
-};
-
-// Main execution
-console.log("🚀 Starting layout generation for math tools...\n");
-
-// Get all slugs from pageIds
-const allSlugs = Object.keys(pageIds);
-
-for (const slug of allSlugs) {
+for (const slug of discoveredTools) {
   const toolName = slug;
-  const metadata = slugToMetadata[slug] || {
+  const metadata = validSlugToMetadata[slug] || {
     toolName: slug,
     h1: slug
       .split("-")
@@ -1051,11 +2820,11 @@ for (const slug of allSlugs) {
   const filePath = path.join(dir, "layout.tsx");
 
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(filePath, generateLayout(toolName, metadata), "utf-8");
+  fs.writeFileSync(filePath, generateValidLayout(toolName, metadata), "utf-8");
 
   console.log(`✅ Created: ${filePath}`);
 }
 
 console.log("\n🎉 Done! All layout files generated successfully.");
-console.log(`📁 Total layouts created: ${allSlugs.length}`);
+console.log(`📁 Total layouts created: ${discoveredTools.length}`);
 console.log(`📂 Category: ${category}`);

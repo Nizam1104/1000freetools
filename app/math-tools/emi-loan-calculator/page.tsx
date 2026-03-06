@@ -156,7 +156,7 @@ export default function EMILoanCalculator() {
                 <br />
                 Where:<br />
                 P = {principal} (Principal)<br />
-                r = {(rate/12/100).toFixed(6)} (Monthly interest rate)<br />
+                r = {(parseFloat(rate)/12/100).toFixed(6)} (Monthly interest rate)<br />
                 n = {tenureUnit === "years" ? `${tenure} × 12 = ${parseFloat(tenure) * 12}` : tenure} (Months)
               </code>
             </div>

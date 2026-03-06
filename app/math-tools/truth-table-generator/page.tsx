@@ -272,31 +272,43 @@ export default function TruthTableGenerator() {
           <div className="p-4 bg-muted rounded-lg">
             <h3 className="font-semibold mb-2 text-center">AND</h3>
             <table className="w-full text-sm">
-              <tr className="border-b"><td>A</td><td>B</td><td>A∧B</td></tr>
-              <tr><td>F</td><td>F</td><td>F</td></tr>
-              <tr><td>F</td><td>T</td><td>F</td></tr>
-              <tr><td>T</td><td>F</td><td>F</td></tr>
-              <tr><td>T</td><td>T</td><td>T</td></tr>
+              <thead>
+                <tr className="border-b"><th>A</th><th>B</th><th>A∧B</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>F</td><td>F</td><td>F</td></tr>
+                <tr><td>F</td><td>T</td><td>F</td></tr>
+                <tr><td>T</td><td>F</td><td>F</td></tr>
+                <tr><td>T</td><td>T</td><td>T</td></tr>
+              </tbody>
             </table>
           </div>
           <div className="p-4 bg-muted rounded-lg">
             <h3 className="font-semibold mb-2 text-center">OR</h3>
             <table className="w-full text-sm">
-              <tr className="border-b"><td>A</td><td>B</td><td>A∨B</td></tr>
-              <tr><td>F</td><td>F</td><td>F</td></tr>
-              <tr><td>F</td><td>T</td><td>T</td></tr>
-              <tr><td>T</td><td>F</td><td>T</td></tr>
-              <tr><td>T</td><td>T</td><td>T</td></tr>
+              <thead>
+                <tr className="border-b"><th>A</th><th>B</th><th>A∨B</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>F</td><td>F</td><td>F</td></tr>
+                <tr><td>F</td><td>T</td><td>T</td></tr>
+                <tr><td>T</td><td>F</td><td>T</td></tr>
+                <tr><td>T</td><td>T</td><td>T</td></tr>
+              </tbody>
             </table>
           </div>
           <div className="p-4 bg-muted rounded-lg">
             <h3 className="font-semibold mb-2 text-center">XOR</h3>
             <table className="w-full text-sm">
-              <tr className="border-b"><td>A</td><td>B</td><td>A⊕B</td></tr>
-              <tr><td>F</td><td>F</td><td>F</td></tr>
-              <tr><td>F</td><td>T</td><td>T</td></tr>
-              <tr><td>T</td><td>F</td><td>T</td></tr>
-              <tr><td>T</td><td>T</td><td>F</td></tr>
+              <thead>
+                <tr className="border-b"><th>A</th><th>B</th><th>A⊕B</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>F</td><td>F</td><td>F</td></tr>
+                <tr><td>F</td><td>T</td><td>T</td></tr>
+                <tr><td>T</td><td>F</td><td>T</td></tr>
+                <tr><td>T</td><td>T</td><td>F</td></tr>
+              </tbody>
             </table>
           </div>
         </div>

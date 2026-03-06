@@ -163,7 +163,7 @@ export default function EulersTotientCalculator() {
                   <p className="text-xs text-muted-foreground mb-2">Coprime Count</p>
                   <p className="text-lg">Out of {number} numbers, {result.totient} are coprime</p>
                   <p className="text-sm text-muted-foreground">
-                    ({Math.round(result.totient / number * 100)}%)
+                    ({Math.round(result.totient / parseFloat(number) * 100)}%)
                   </p>
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function EulersTotientCalculator() {
           Euler's totient function φ(n) counts how many positive integers up to n are coprime to n (share no common factors other than 1). It's a fundamental function in number theory with important applications in cryptography.
         </p>
         <p className="text-muted-foreground">
-          For example, φ(12) = 4 because among {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, only {1, 5, 7, 11} share no common factor with 12.
+          For example, φ(12) = 4 because among &#123;1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12&#125;, only &#123;1, 5, 7, 11&#125; share no common factor with 12.
         </p>
       </section>
 

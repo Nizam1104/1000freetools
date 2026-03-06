@@ -10,7 +10,7 @@ export default function IntersectionOfSetsCalculator() {
   const [setA, setAInput] = useState("");
   const [setB, setBInput] = useState("");
   const [setC, setCInput] = useState("");
-  const [result, setResult] = useState<number[] | string[] | null>(null);
+  const [result, setResult] = useState<(number | string)[] | null>(null);
   const [error, setError] = useState("");
 
   const parseSet = (input: string): (number | string)[] => {

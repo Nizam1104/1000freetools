@@ -1,0 +1,1132 @@
+{
+  "categories": [
+    {
+      "name": "Basic Calculators",
+      "icon": "Calculator"
+    },
+    {
+      "name": "Fractions & Percentages",
+      "icon": "Percent"
+    },
+    {
+      "name": "Algebra",
+      "icon": "Variable"
+    },
+    {
+      "name": "Geometry",
+      "icon": "Triangle"
+    },
+    {
+      "name": "Number Theory",
+      "icon": "Hash"
+    },
+    {
+      "name": "Statistics & Data Visualization",
+      "icon": "BarChart"
+    },
+    {
+      "name": "Calculus",
+      "icon": "TrendingUp"
+    },
+    {
+      "name": "Sequences & Series",
+      "icon": "List"
+    },
+    {
+      "name": "Trigonometry",
+      "icon": "Circle"
+    },
+    {
+      "name": "Logarithms",
+      "icon": "LogIn"
+    },
+    {
+      "name": "Financial Mathematics",
+      "icon": "DollarSign"
+    },
+    {
+      "name": "Unit Converters",
+      "icon": "RefreshCw"
+    },
+    {
+      "name": "Logic & Set Theory",
+      "icon": "GitMerge"
+    },
+    {
+      "name": "Roots & Powers",
+      "icon": "Zap"
+    },
+    {
+      "name": "Other Calculators",
+      "icon": "Wrench"
+    },
+    {
+      "name": "Other Tools",
+      "icon": "MoreHorizontal"
+    }
+  ],
+  "tools": [
+    {
+      "name": "2D Function Plotter (y = f(x))",
+      "href": "/math-tools/2d-function-plotter",
+      "category": "statistics-data-visualization",
+      "description": "Plots any 2D mathematical function y = f(x) on an interactive coordinate plane"
+    },
+    {
+      "name": "Absolute Value Calculator",
+      "href": "/math-tools/absolute-value-calculator",
+      "category": "roots-powers",
+      "description": "Returns the absolute value (magnitude) of any real number or expression"
+    },
+    {
+      "name": "Age Calculator",
+      "href": "/math-tools/age-calculator",
+      "category": "other-calculators",
+      "description": "Calculates exact age in years, months, and days from a birthdate to today or a specified date"
+    },
+    {
+      "name": "Angle Calculator (in triangle)",
+      "href": "/math-tools/angle-calculator",
+      "category": "geometry",
+      "description": "Calculates missing angles in a triangle given other angles or side lengths"
+    },
+    {
+      "name": "Angle of Elevation / Depression Solver",
+      "href": "/math-tools/angle-elevation-depression-solver",
+      "category": "trigonometry",
+      "description": "Calculates the angle of elevation or depression given height and horizontal distance, or vice versa"
+    },
+    {
+      "name": "Annuity Calculator",
+      "href": "/math-tools/annuity-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates the payment, present value, or future value of an annuity"
+    },
+    {
+      "name": "Antilogarithm Calculator",
+      "href": "/math-tools/antilogarithm-calculator",
+      "category": "logarithms",
+      "description": "Calculates the antilogarithm (inverse of logarithm) for any base and given log value"
+    },
+    {
+      "name": "Area Calculator (Circle, Rectangle, Triangle, etc.)",
+      "href": "/math-tools/area-calculator",
+      "category": "geometry",
+      "description": "Calculates the area of common 2D shapes including circle, rectangle, triangle, trapezoid, and more"
+    },
+    {
+      "name": "Area Converter",
+      "href": "/math-tools/area-converter",
+      "category": "unit-converters",
+      "description": "Converts between area units including square meters, square feet, acres, hectares, and more"
+    },
+    {
+      "name": "Arithmetic Sequence Calculator",
+      "href": "/math-tools/arithmetic-sequence-calculator",
+      "category": "sequences-series",
+      "description": "Calculates terms, common difference, and partial sums of arithmetic sequences"
+    },
+    {
+      "name": "Armstrong Number Checker",
+      "href": "/math-tools/armstrong-number-checker",
+      "category": "number-theory",
+      "description": "Checks if a number is an Armstrong (narcissistic) number where the sum of digits raised to the power of digit count equals the number"
+    },
+    {
+      "name": "Average / Mean Calculator",
+      "href": "/math-tools/average-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Computes the arithmetic mean of a set of numbers instantly"
+    },
+    {
+      "name": "Bar Chart Builder",
+      "href": "/math-tools/bar-chart-builder",
+      "category": "statistics-data-visualization",
+      "description": "Creates bar charts from categorical data to compare values across categories"
+    },
+    {
+      "name": "Big Number Calculator",
+      "href": "/math-tools/big-number-calculator",
+      "category": "other-calculators",
+      "description": "Performs arithmetic operations on very large integers beyond normal calculator limits"
+    },
+    {
+      "name": "Binary Addition / Subtraction",
+      "href": "/math-tools/binary-arithmetic-calculator",
+      "category": "other-calculators",
+      "description": "Performs binary number addition and subtraction with step-by-step working"
+    },
+    {
+      "name": "Binomial Expansion Calculator",
+      "href": "/math-tools/binomial-expansion-calculator",
+      "category": "algebra",
+      "description": "Expands binomial expressions (a + b)^n using the binomial theorem for any power n"
+    },
+    {
+      "name": "Bitwise Operations Calculator",
+      "href": "/math-tools/bitwise-operations-calculator",
+      "category": "fractions-percentages",
+      "description": "Performs bitwise AND, OR, XOR, NOT, and shift operations on integers"
+    },
+    {
+      "name": "Boolean Expression Evaluator",
+      "href": "/math-tools/boolean-expression-evaluator",
+      "category": "algebra",
+      "description": "Evaluates Boolean expressions for given truth values of variables"
+    },
+    {
+      "name": "Box Plot Generator",
+      "href": "/math-tools/box-plot-generator",
+      "category": "statistics-data-visualization",
+      "description": "Creates a box-and-whisker plot from a dataset showing five-number summary and outliers"
+    },
+    {
+      "name": "Break-Even Point Calculator",
+      "href": "/math-tools/break-even-point-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates the break-even point in units and revenue for a business given fixed costs, variable costs, and selling price"
+    },
+    {
+      "name": "Cartesian Product Calculator",
+      "href": "/math-tools/cartesian-product-calculator",
+      "category": "logic-set-theory",
+      "description": "Calculates the Cartesian product of two sets, listing all ordered pairs"
+    },
+    {
+      "name": "Check Divisibility by 2–20",
+      "href": "/math-tools/divisibility-check-2-20",
+      "category": "number-theory",
+      "description": "Checks divisibility of a number by all integers from 2 to 20 using divisibility rules"
+    },
+    {
+      "name": "Circle Calculator (radius, diameter, area, circumference)",
+      "href": "/math-tools/circle-calculator",
+      "category": "geometry",
+      "description": "Calculates all properties of a circle including radius, diameter, area, and circumference from any one measurement"
+    },
+    {
+      "name": "Combination Calculator (nCr)",
+      "href": "/math-tools/combination-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the number of combinations of r items chosen from n items"
+    },
+    {
+      "name": "Complement of a Set",
+      "href": "/math-tools/complement-of-set-calculator",
+      "category": "logic-set-theory",
+      "description": "Calculates the complement of a set with respect to a given universal set"
+    },
+    {
+      "name": "Compound Interest Calculator",
+      "href": "/math-tools/compound-interest-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates compound interest and total amount for various compounding periods"
+    },
+    {
+      "name": "Confidence Interval Calculator",
+      "href": "/math-tools/confidence-interval-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates confidence intervals for population means given sample statistics"
+    },
+    {
+      "name": "Coordinate Geometry Calculator",
+      "href": "/math-tools/coordinate-geometry-calculator",
+      "category": "other-calculators",
+      "description": "Performs coordinate geometry calculations including distance, midpoint, slope, and line equations"
+    },
+    {
+      "name": "Coordinate Plane Plotter",
+      "href": "/math-tools/coordinate-plane-plotter",
+      "category": "statistics-data-visualization",
+      "description": "Plots points, lines, and shapes on an interactive coordinate (Cartesian) plane"
+    },
+    {
+      "name": "Correlation Coefficient Calculator",
+      "href": "/math-tools/correlation-coefficient-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the Pearson correlation coefficient (r) between two datasets to measure linear relationship"
+    },
+    {
+      "name": "Currency Exchange Calculator (static rates)",
+      "href": "/math-tools/currency-exchange-calculator",
+      "category": "financial-mathematics",
+      "description": "Converts amounts between major world currencies using static exchange rates"
+    },
+    {
+      "name": "Data Storage Converter (KB, MB, GB, TB)",
+      "href": "/math-tools/data-storage-converter",
+      "category": "unit-converters",
+      "description": "Converts between digital storage units including bytes, KB, MB, GB, TB, and PB"
+    },
+    {
+      "name": "Date Arithmetic (add/subtract days)",
+      "href": "/math-tools/date-arithmetic-calculator",
+      "category": "other-calculators",
+      "description": "Adds or subtracts a number of days, weeks, or months to/from a given date"
+    },
+    {
+      "name": "Date Difference Calculator",
+      "href": "/math-tools/date-difference-calculator",
+      "category": "other-calculators",
+      "description": "Calculates the number of days, weeks, months, and years between two dates"
+    },
+    {
+      "name": "Day of the Week Calculator",
+      "href": "/math-tools/day-of-week-calculator",
+      "category": "other-calculators",
+      "description": "Determines what day of the week any given date falls on"
+    },
+    {
+      "name": "Days Until / Since Calculator",
+      "href": "/math-tools/days-until-since-calculator",
+      "category": "other-calculators",
+      "description": "Calculates how many days until or since a specific date from today"
+    },
+    {
+      "name": "Decimal to Fraction Converter",
+      "href": "/math-tools/decimal-to-fraction-converter",
+      "category": "fractions-percentages",
+      "description": "Converts any decimal number to its equivalent fraction in simplified form"
+    },
+    {
+      "name": "Definite Integral Calculator (numerical)",
+      "href": "/math-tools/definite-integral-calculator",
+      "category": "calculus",
+      "description": "Numerically evaluates definite integrals over a specified interval"
+    },
+    {
+      "name": "Degrees ↔ Radians Converter",
+      "href": "/math-tools/degrees-radians-converter",
+      "category": "trigonometry",
+      "description": "Converts angle measurements between degrees and radians instantly"
+    },
+    {
+      "name": "Derivative Calculator (basic rules)",
+      "href": "/math-tools/derivative-calculator",
+      "category": "calculus",
+      "description": "Calculates derivatives of functions using basic differentiation rules including power, product, quotient, and chain rules"
+    },
+    {
+      "name": "Dice Roller Simulator",
+      "href": "/math-tools/dice-roller",
+      "category": "other-tools",
+      "description": "Simulates rolling one or more dice of various types (d4, d6, d8, d10, d12, d20) and totals results"
+    },
+    {
+      "name": "Difference of Sets",
+      "href": "/math-tools/difference-of-sets-calculator",
+      "category": "logic-set-theory",
+      "description": "Calculates the difference between two sets (A - B), returning elements in A not in B"
+    },
+    {
+      "name": "Digit Sum Calculator",
+      "href": "/math-tools/digit-sum-calculator",
+      "category": "other-calculators",
+      "description": "Calculates the sum of all digits in a number, with iterative digital root option"
+    },
+    {
+      "name": "Discount & Markup Calculator",
+      "href": "/math-tools/discount-markup-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates the discount price or markup price of an item given percentage values"
+    },
+    {
+      "name": "Distance Between Two Points",
+      "href": "/math-tools/distance-between-two-points-calculator",
+      "category": "geometry",
+      "description": "Calculates the straight-line distance between two coordinate points in 2D or 3D space"
+    },
+    {
+      "name": "Divisibility Checker",
+      "href": "/math-tools/divisibility-checker",
+      "category": "number-theory",
+      "description": "Checks whether a given number is divisible by another number and shows the divisibility rule used"
+    },
+    {
+      "name": "Eigenvalue Calculator (2x2, 3x3)",
+      "href": "/math-tools/eigenvalue-calculator",
+      "category": "other-calculators",
+      "description": "Finds the eigenvalues of 2x2 and 3x3 matrices by solving the characteristic polynomial"
+    },
+    {
+      "name": "EMI / Loan Calculator",
+      "href": "/math-tools/emi-loan-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates monthly EMI payments for loans based on principal, interest rate, and tenure"
+    },
+    {
+      "name": "Energy Converter",
+      "href": "/math-tools/energy-converter",
+      "category": "unit-converters",
+      "description": "Converts between energy units including joules, calories, kilowatt-hours, BTU, and more"
+    },
+    {
+      "name": "Equation Balancer (simple)",
+      "href": "/math-tools/equation-balancer-simple",
+      "category": "algebra",
+      "description": "Balances simple chemical or algebraic equations by finding correct coefficients"
+    },
+    {
+      "name": "Estimation Rounding Tool",
+      "href": "/math-tools/estimation-rounding-tool",
+      "category": "other-tools",
+      "description": "Estimates and rounds numbers to aid in quick mental math approximations"
+    },
+    {
+      "name": "Euler's Totient Function",
+      "href": "/math-tools/eulers-totient-calculator",
+      "category": "number-theory",
+      "description": "Calculates Euler's totient function φ(n), counting integers up to n that are coprime to n"
+    },
+    {
+      "name": "Expand & Simplify Binomials",
+      "href": "/math-tools/expand-simplify-binomials",
+      "category": "algebra",
+      "description": "Expands and simplifies binomial expressions like (a + b)² or (x + y)(x - y)"
+    },
+    {
+      "name": "Exponent Calculator",
+      "href": "/math-tools/exponent-calculator",
+      "category": "roots-powers",
+      "description": "Computes the result of raising a base number to any given power or exponent"
+    },
+    {
+      "name": "Factor Calculator (integers)",
+      "href": "/math-tools/factor-calculator",
+      "category": "algebra",
+      "description": "Finds all factors of a given integer and lists them in ascending order"
+    },
+    {
+      "name": "Factorial Calculator",
+      "href": "/math-tools/factorial-calculator",
+      "category": "other-calculators",
+      "description": "Calculates the factorial of any non-negative integer (n!)"
+    },
+    {
+      "name": "Factors List Generator",
+      "href": "/math-tools/factors-list-generator",
+      "category": "number-theory",
+      "description": "Generates and lists all factors of a given number in sorted order"
+    },
+    {
+      "name": "Fibonacci Sequence Generator",
+      "href": "/math-tools/fibonacci-generator",
+      "category": "number-theory",
+      "description": "Generates the Fibonacci sequence up to n terms or finds the nth Fibonacci number"
+    },
+    {
+      "name": "Five Number Summary Calculator",
+      "href": "/math-tools/five-number-summary-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the five-number summary of a dataset: minimum, Q1, median, Q3, and maximum"
+    },
+    {
+      "name": "Fraction Calculator",
+      "href": "/math-tools/fraction-calculator",
+      "category": "fractions-percentages",
+      "description": "Calculates addition, subtraction, multiplication, and division of fractions and mixed numbers with simplified results"
+    },
+    {
+      "name": "Fraction to Decimal Converter",
+      "href": "/math-tools/fraction-to-decimal-converter",
+      "category": "fractions-percentages",
+      "description": "Converts any fraction or mixed number to its decimal equivalent"
+    },
+    {
+      "name": "Frequency Distribution Table",
+      "href": "/math-tools/frequency-distribution-table",
+      "category": "statistics-data-visualization",
+      "description": "Generates a frequency distribution table from raw data showing frequency, relative frequency, and cumulative frequency"
+    },
+    {
+      "name": "Future Value Calculator",
+      "href": "/math-tools/future-value-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates the future value of an investment given present value, interest rate, and time period"
+    },
+    {
+      "name": "GCD / HCF Calculator",
+      "href": "/math-tools/gcd-hcf-calculator",
+      "category": "number-theory",
+      "description": "Finds the Greatest Common Divisor (GCD) or Highest Common Factor (HCF) of two or more numbers"
+    },
+    {
+      "name": "Geometric Mean Calculator",
+      "href": "/math-tools/geometric-mean-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the geometric mean of a set of numbers"
+    },
+    {
+      "name": "Geometric Sequence Calculator",
+      "href": "/math-tools/geometric-sequence-calculator",
+      "category": "sequences-series",
+      "description": "Calculates terms, common ratio, and partial sums of geometric sequences"
+    },
+    {
+      "name": "Grade / GPA Calculator",
+      "href": "/math-tools/gpa-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates GPA and overall grade from individual subject scores and credit hours"
+    },
+    {
+      "name": "Gradient / Slope at a Point",
+      "href": "/math-tools/gradient-slope-calculator",
+      "category": "calculus",
+      "description": "Calculates the gradient (derivative value) of a function at a specific point"
+    },
+    {
+      "name": "Harmonic Mean Calculator",
+      "href": "/math-tools/harmonic-mean-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the harmonic mean of a dataset, the reciprocal of the arithmetic mean of reciprocals"
+    },
+    {
+      "name": "Harmonic Series Calculator",
+      "href": "/math-tools/harmonic-series-calculator",
+      "category": "sequences-series",
+      "description": "Calculates partial sums of the harmonic series up to n terms"
+    },
+    {
+      "name": "Histogram Generator",
+      "href": "/math-tools/histogram-generator",
+      "category": "statistics-data-visualization",
+      "description": "Creates a histogram from a dataset by dividing data into bins and plotting frequency"
+    },
+    {
+      "name": "Identity Matrix Generator",
+      "href": "/math-tools/identity-matrix-generator",
+      "category": "other-tools",
+      "description": "Generates an identity matrix of any given size n×n"
+    },
+    {
+      "name": "Inequality Solver (linear)",
+      "href": "/math-tools/inequality-solver",
+      "category": "algebra",
+      "description": "Solves linear inequalities and displays the solution set on a number line"
+    },
+    {
+      "name": "Intersection of Sets",
+      "href": "/math-tools/intersection-of-sets-calculator",
+      "category": "logic-set-theory",
+      "description": "Calculates the intersection of two or more sets, returning only common elements"
+    },
+    {
+      "name": "Inverse Trig Calculator",
+      "href": "/math-tools/inverse-trig-calculator",
+      "category": "trigonometry",
+      "description": "Calculates inverse trigonometric values (arcsin, arccos, arctan) returning angles in degrees or radians"
+    },
+    {
+      "name": "Law of Cosines Calculator",
+      "href": "/math-tools/law-of-cosines-calculator",
+      "category": "trigonometry",
+      "description": "Applies the Law of Cosines to find missing sides or angles in any triangle"
+    },
+    {
+      "name": "Law of Sines Calculator",
+      "href": "/math-tools/law-of-sines-calculator",
+      "category": "trigonometry",
+      "description": "Applies the Law of Sines to find missing sides or angles in any triangle"
+    },
+    {
+      "name": "LCM Calculator",
+      "href": "/math-tools/lcm-calculator",
+      "category": "number-theory",
+      "description": "Calculates the Least Common Multiple (LCM) of two or more numbers"
+    },
+    {
+      "name": "Leap Year Checker",
+      "href": "/math-tools/leap-year-checker",
+      "category": "other-calculators",
+      "description": "Determines whether a given year is a leap year or not"
+    },
+    {
+      "name": "Length Converter",
+      "href": "/math-tools/length-converter",
+      "category": "unit-converters",
+      "description": "Converts between length units including meters, feet, inches, kilometers, miles, and more"
+    },
+    {
+      "name": "Limit Calculator (basic)",
+      "href": "/math-tools/limit-calculator",
+      "category": "calculus",
+      "description": "Evaluates limits of functions as the variable approaches a value or infinity"
+    },
+    {
+      "name": "Line Graph Builder",
+      "href": "/math-tools/line-graph-builder",
+      "category": "statistics-data-visualization",
+      "description": "Creates line graphs from datasets to visualize trends and changes over time"
+    },
+    {
+      "name": "Linear Equation Solver (ax + b = c)",
+      "href": "/math-tools/linear-equation-solver",
+      "category": "algebra",
+      "description": "Solves linear equations of the form ax + b = c for the unknown variable x"
+    },
+    {
+      "name": "Linear Regression Calculator",
+      "href": "/math-tools/linear-regression-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Performs linear regression analysis on two-variable data and provides the regression equation and R² value"
+    },
+    {
+      "name": "Logarithm Calculator",
+      "href": "/math-tools/logarithm-calculator",
+      "category": "logarithms",
+      "description": "Calculates the logarithm of a number for any base including natural log and log base 10"
+    },
+    {
+      "name": "Logic Gate Simulator",
+      "href": "/math-tools/logic-gate-simulator",
+      "category": "logic-set-theory",
+      "description": "Simulates digital logic gates (AND, OR, NOT, NAND, NOR, XOR) with visual input/output"
+    },
+    {
+      "name": "Long Division Calculator (with steps)",
+      "href": "/math-tools/long-division-calculator",
+      "category": "other-calculators",
+      "description": "Performs long division showing each step of the division process including quotient and remainder"
+    },
+    {
+      "name": "Long Multiplication (with steps)",
+      "href": "/math-tools/long-multiplication-calculator",
+      "category": "other-calculators",
+      "description": "Performs long multiplication of large numbers showing each step of the process"
+    },
+    {
+      "name": "Magic Square Generator",
+      "href": "/math-tools/magic-square-generator",
+      "category": "other-tools",
+      "description": "Generates magic squares of any odd or even order where all rows, columns, and diagonals sum to the same value"
+    },
+    {
+      "name": "Matrix Addition / Subtraction",
+      "href": "/math-tools/matrix-addition-subtraction-calculator",
+      "category": "other-calculators",
+      "description": "Adds or subtracts two matrices of compatible dimensions element by element"
+    },
+    {
+      "name": "Matrix Determinant",
+      "href": "/math-tools/matrix-determinant-calculator",
+      "category": "other-calculators",
+      "description": "Calculates the determinant of square matrices (2x2, 3x3, 4x4) with full expansion shown"
+    },
+    {
+      "name": "Matrix Inverse",
+      "href": "/math-tools/matrix-inverse-calculator",
+      "category": "other-calculators",
+      "description": "Calculates the inverse of a square matrix if it exists, using row reduction or adjugate method"
+    },
+    {
+      "name": "Matrix Multiplication",
+      "href": "/math-tools/matrix-multiplication-calculator",
+      "category": "other-calculators",
+      "description": "Multiplies two matrices together showing the complete product matrix with steps"
+    },
+    {
+      "name": "Matrix Transpose",
+      "href": "/math-tools/matrix-transpose-calculator",
+      "category": "other-calculators",
+      "description": "Computes the transpose of any matrix by swapping its rows and columns"
+    },
+    {
+      "name": "Mean, Median, Mode Calculator",
+      "href": "/math-tools/mean-median-mode-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the mean, median, and mode of any dataset with full statistical breakdown"
+    },
+    {
+      "name": "Midpoint Calculator",
+      "href": "/math-tools/midpoint-calculator",
+      "category": "geometry",
+      "description": "Finds the midpoint of a line segment given the coordinates of its two endpoints"
+    },
+    {
+      "name": "Mixed Number Calculator",
+      "href": "/math-tools/mixed-number-calculator",
+      "category": "fractions-percentages",
+      "description": "Performs arithmetic operations (add, subtract, multiply, divide) on mixed numbers"
+    },
+    {
+      "name": "Modular Arithmetic Calculator",
+      "href": "/math-tools/modular-arithmetic-calculator",
+      "category": "other-calculators",
+      "description": "Performs modular arithmetic operations including addition, subtraction, multiplication, and exponentiation under a modulus"
+    },
+    {
+      "name": "Modulo Calculator",
+      "href": "/math-tools/modulo-calculator",
+      "category": "roots-powers",
+      "description": "Calculates the remainder when one number is divided by another using modulo operation"
+    },
+    {
+      "name": "Multiplication Table Generator",
+      "href": "/math-tools/multiplication-table-generator",
+      "category": "other-calculators",
+      "description": "Generates multiplication tables for any number up to a specified range"
+    },
+    {
+      "name": "Normal Distribution Calculator",
+      "href": "/math-tools/normal-distribution-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates probabilities and percentiles for a normal distribution given mean and standard deviation"
+    },
+    {
+      "name": "nth Term Finder",
+      "href": "/math-tools/nth-term-finder",
+      "category": "sequences-series",
+      "description": "Finds the nth term of arithmetic or geometric sequences given initial values"
+    },
+    {
+      "name": "Number Base Converter (Binary, Octal, Hex, Decimal)",
+      "href": "/math-tools/number-base-converter",
+      "category": "unit-converters",
+      "description": "Converts numbers between binary, octal, decimal, and hexadecimal number systems"
+    },
+    {
+      "name": "Number Line Visualizer",
+      "href": "/math-tools/number-line-visualizer",
+      "category": "other-tools",
+      "description": "Displays numbers and ranges on an interactive number line visualization"
+    },
+    {
+      "name": "Number Sorter",
+      "href": "/math-tools/number-sorter",
+      "category": "other-tools",
+      "description": "Sorts a list of numbers in ascending or descending order"
+    },
+    {
+      "name": "Number Word Converter (e.g. 1234 → one thousand...)",
+      "href": "/math-tools/number-word-converter",
+      "category": "unit-converters",
+      "description": "Converts any number into its full English word form"
+    },
+    {
+      "name": "Order of Operations (BODMAS) Solver",
+      "href": "/math-tools/order-of-operations-solver",
+      "category": "fractions-percentages",
+      "description": "Evaluates math expressions using the correct order of operations (BODMAS/PEMDAS) with step-by-step breakdown"
+    },
+    {
+      "name": "Outlier Detector (IQR method)",
+      "href": "/math-tools/outlier-detector",
+      "category": "statistics-data-visualization",
+      "description": "Identifies outliers in a dataset using the Interquartile Range (IQR) method"
+    },
+    {
+      "name": "Palindrome Number Checker",
+      "href": "/math-tools/palindrome-number-checker",
+      "category": "number-theory",
+      "description": "Checks whether a given number reads the same forwards and backwards"
+    },
+    {
+      "name": "Pascal's Triangle Generator",
+      "href": "/math-tools/pascals-triangle-generator",
+      "category": "sequences-series",
+      "description": "Generates Pascal's Triangle up to any number of rows"
+    },
+    {
+      "name": "Percentage Calculator",
+      "href": "/math-tools/percentage-calculator",
+      "category": "fractions-percentages",
+      "description": "Calculates percentages, percentage increase/decrease, and what percent one number is of another"
+    },
+    {
+      "name": "Percentage Change Calculator",
+      "href": "/math-tools/percentage-change-calculator",
+      "category": "fractions-percentages",
+      "description": "Calculates the percentage increase or decrease between two values"
+    },
+    {
+      "name": "Perfect Number Checker",
+      "href": "/math-tools/perfect-number-checker",
+      "category": "number-theory",
+      "description": "Determines whether a given number is a perfect number (sum of its divisors equals the number)"
+    },
+    {
+      "name": "Perimeter Calculator",
+      "href": "/math-tools/perimeter-calculator",
+      "category": "geometry",
+      "description": "Calculates the perimeter of common 2D shapes including rectangles, triangles, circles, and polygons"
+    },
+    {
+      "name": "Permutation Calculator (nPr)",
+      "href": "/math-tools/permutation-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the number of permutations of r items chosen from n items"
+    },
+    {
+      "name": "Pi (π) Digit Generator",
+      "href": "/math-tools/pi-digit-generator",
+      "category": "other-tools",
+      "description": "Generates and displays the digits of Pi (π) up to a specified number of decimal places"
+    },
+    {
+      "name": "Pie / Bar Chart Generator",
+      "href": "/math-tools/pie-bar-chart-generator",
+      "category": "statistics-data-visualization",
+      "description": "Creates pie charts and bar charts from user-provided categorical data"
+    },
+    {
+      "name": "Pie Chart Builder",
+      "href": "/math-tools/pie-chart-builder",
+      "category": "statistics-data-visualization",
+      "description": "Creates pie charts from proportional data to show part-to-whole relationships"
+    },
+    {
+      "name": "Polygon Interior Angle Sum",
+      "href": "/math-tools/polygon-interior-angle-sum-calculator",
+      "category": "geometry",
+      "description": "Calculates the sum of interior angles of any polygon given the number of sides"
+    },
+    {
+      "name": "Polynomial Evaluator",
+      "href": "/math-tools/polynomial-evaluator",
+      "category": "algebra",
+      "description": "Evaluates a polynomial expression for a given value of the variable"
+    },
+    {
+      "name": "Power Set Generator",
+      "href": "/math-tools/power-set-generator",
+      "category": "logic-set-theory",
+      "description": "Generates all subsets (power set) of a given set"
+    },
+    {
+      "name": "Present Value Calculator",
+      "href": "/math-tools/present-value-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates the present value of a future sum given discount rate and time period"
+    },
+    {
+      "name": "Pressure Converter",
+      "href": "/math-tools/pressure-converter",
+      "category": "unit-converters",
+      "description": "Converts between pressure units including pascals, bar, psi, atm, mmHg, and more"
+    },
+    {
+      "name": "Prime Factorization",
+      "href": "/math-tools/prime-factorization-calculator",
+      "category": "number-theory",
+      "description": "Breaks down any integer into its prime factors and displays the prime factor tree"
+    },
+    {
+      "name": "Prime Number Checker",
+      "href": "/math-tools/prime-number-checker",
+      "category": "number-theory",
+      "description": "Determines whether a given integer is a prime number or composite number"
+    },
+    {
+      "name": "Probability Calculator",
+      "href": "/math-tools/probability-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates basic probability, complementary probability, and conditional probability for events"
+    },
+    {
+      "name": "Profit & Loss Calculator",
+      "href": "/math-tools/profit-loss-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates profit or loss amount and percentage given cost price and selling price"
+    },
+    {
+      "name": "Pythagorean Theorem Calculator",
+      "href": "/math-tools/pythagorean-theorem-calculator",
+      "category": "geometry",
+      "description": "Solves for any side of a right triangle using the Pythagorean theorem (a² + b² = c²)"
+    },
+    {
+      "name": "Quadratic Equation Solver",
+      "href": "/math-tools/quadratic-equation-solver",
+      "category": "algebra",
+      "description": "Solves quadratic equations of the form ax² + bx + c = 0 using the quadratic formula, showing all roots"
+    },
+    {
+      "name": "Random Number Generator",
+      "href": "/math-tools/random-number-generator",
+      "category": "other-tools",
+      "description": "Generates random numbers within a user-specified range"
+    },
+    {
+      "name": "Rank of a Matrix",
+      "href": "/math-tools/matrix-rank-calculator",
+      "category": "other-calculators",
+      "description": "Determines the rank of a matrix using row reduction to row echelon form"
+    },
+    {
+      "name": "Ratio Calculator",
+      "href": "/math-tools/ratio-calculator",
+      "category": "fractions-percentages",
+      "description": "Simplifies ratios and solves for missing values in proportional ratio equations"
+    },
+    {
+      "name": "Reverse a Number",
+      "href": "/math-tools/reverse-number",
+      "category": "other-tools",
+      "description": "Reverses the digits of any given integer"
+    },
+    {
+      "name": "Riemann Sum Calculator",
+      "href": "/math-tools/riemann-sum-calculator",
+      "category": "calculus",
+      "description": "Approximates the area under a curve using left, right, midpoint, or trapezoidal Riemann sums"
+    },
+    {
+      "name": "Right Triangle Calculator",
+      "href": "/math-tools/right-triangle-calculator",
+      "category": "trigonometry",
+      "description": "Calculates all sides and angles of a right triangle given two known values"
+    },
+    {
+      "name": "ROI Calculator",
+      "href": "/math-tools/roi-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates Return on Investment (ROI) percentage for any investment"
+    },
+    {
+      "name": "Roman Numeral Converter",
+      "href": "/math-tools/roman-numeral-converter",
+      "category": "number-theory",
+      "description": "Converts integers to Roman numerals and Roman numerals back to integers"
+    },
+    {
+      "name": "Rounding Calculator",
+      "href": "/math-tools/rounding-calculator",
+      "category": "other-calculators",
+      "description": "Rounds numbers to a specified number of decimal places or significant figures"
+    },
+    {
+      "name": "Sales Tax / VAT Calculator",
+      "href": "/math-tools/sales-tax-vat-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates the sales tax or VAT amount and total price including tax for any purchase"
+    },
+    {
+      "name": "Scalar Multiplication",
+      "href": "/math-tools/scalar-multiplication-calculator",
+      "category": "other-calculators",
+      "description": "Multiplies every element of a matrix by a scalar constant"
+    },
+    {
+      "name": "Scatter Plot Generator",
+      "href": "/math-tools/scatter-plot-generator",
+      "category": "statistics-data-visualization",
+      "description": "Creates scatter plots from two-variable datasets to visualize relationships between variables"
+    },
+    {
+      "name": "Scientific Calculator",
+      "href": "/math-tools/scientific-calculator",
+      "category": "basic-calculators",
+      "description": "An advanced calculator supporting trigonometric functions, logarithms, exponents, and complex scientific computations"
+    },
+    {
+      "name": "Scientific Notation Converter",
+      "href": "/math-tools/scientific-notation-converter",
+      "category": "unit-converters",
+      "description": "Converts numbers between standard form and scientific notation and vice versa"
+    },
+    {
+      "name": "Significant Figures Calculator",
+      "href": "/math-tools/significant-figures-calculator",
+      "category": "other-calculators",
+      "description": "Counts or rounds a number to the correct number of significant figures"
+    },
+    {
+      "name": "Simple Interest Calculator",
+      "href": "/math-tools/simple-interest-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates simple interest, principal, rate, or time using the SI formula"
+    },
+    {
+      "name": "Simplify Expression (basic)",
+      "href": "/math-tools/simplify-expression",
+      "category": "algebra",
+      "description": "Simplifies basic algebraic expressions by combining like terms and applying arithmetic rules"
+    },
+    {
+      "name": "Slope Calculator",
+      "href": "/math-tools/slope-calculator",
+      "category": "geometry",
+      "description": "Calculates the slope (gradient) of a line given two points or an equation"
+    },
+    {
+      "name": "Speed Converter",
+      "href": "/math-tools/speed-converter",
+      "category": "unit-converters",
+      "description": "Converts between speed units including mph, km/h, m/s, knots, and more"
+    },
+    {
+      "name": "Square Root Calculator",
+      "href": "/math-tools/square-root-calculator",
+      "category": "roots-powers",
+      "description": "Calculates the square root of any positive number with high precision"
+    },
+    {
+      "name": "Standard Calculator",
+      "href": "/math-tools/standard-calculator",
+      "category": "basic-calculators",
+      "description": "A basic calculator that performs addition, subtraction, multiplication, and division operations"
+    },
+    {
+      "name": "Standard Deviation & Variance",
+      "href": "/math-tools/standard-deviation-variance-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates standard deviation and variance for a dataset in both population and sample forms"
+    },
+    {
+      "name": "Subset Checker",
+      "href": "/math-tools/subset-checker",
+      "category": "logic-set-theory",
+      "description": "Checks whether one set is a subset or proper subset of another set"
+    },
+    {
+      "name": "Sudoku Validator",
+      "href": "/math-tools/sudoku-validator",
+      "category": "other-tools",
+      "description": "Validates whether a completed Sudoku grid follows all the rules correctly"
+    },
+    {
+      "name": "Sum of Arithmetic Series",
+      "href": "/math-tools/arithmetic-series-calculator",
+      "category": "sequences-series",
+      "description": "Calculates the sum of an arithmetic series using the arithmetic series sum formula"
+    },
+    {
+      "name": "Sum of Geometric Series",
+      "href": "/math-tools/geometric-series-calculator",
+      "category": "sequences-series",
+      "description": "Calculates the sum of a geometric series including infinite geometric series"
+    },
+    {
+      "name": "Surface Area Calculator",
+      "href": "/math-tools/surface-area-calculator",
+      "category": "geometry",
+      "description": "Calculates the surface area of 3D shapes including cube, sphere, cylinder, cone, and more"
+    },
+    {
+      "name": "System of 2 Linear Equations Solver",
+      "href": "/math-tools/system-of-equations-solver",
+      "category": "algebra",
+      "description": "Solves a system of two linear equations with two unknowns using substitution or elimination method"
+    },
+    {
+      "name": "Tangent Line Calculator",
+      "href": "/math-tools/tangent-line-calculator",
+      "category": "calculus",
+      "description": "Finds the equation of the tangent line to a function at a given point"
+    },
+    {
+      "name": "Taylor Series Approximation",
+      "href": "/math-tools/taylor-series-approximation",
+      "category": "calculus",
+      "description": "Generates the Taylor or Maclaurin series expansion of a function up to n terms"
+    },
+    {
+      "name": "Temperature Converter",
+      "href": "/math-tools/temperature-converter",
+      "category": "unit-converters",
+      "description": "Converts temperatures between Celsius, Fahrenheit, and Kelvin scales"
+    },
+    {
+      "name": "Time Converter",
+      "href": "/math-tools/time-converter",
+      "category": "unit-converters",
+      "description": "Converts between time units including seconds, minutes, hours, days, weeks, months, and years"
+    },
+    {
+      "name": "Time Duration Calculator",
+      "href": "/math-tools/time-duration-calculator",
+      "category": "fractions-percentages",
+      "description": "Calculates the duration between two times showing hours, minutes, and seconds elapsed"
+    },
+    {
+      "name": "Tip Calculator",
+      "href": "/math-tools/tip-calculator",
+      "category": "financial-mathematics",
+      "description": "Calculates tip amount and total bill including tip for any service, with bill splitting option"
+    },
+    {
+      "name": "Trace of a Matrix",
+      "href": "/math-tools/matrix-trace-calculator",
+      "category": "other-calculators",
+      "description": "Calculates the trace of a square matrix by summing the main diagonal elements"
+    },
+    {
+      "name": "Triangle Solver (SSS, SAS, ASA, AAS)",
+      "href": "/math-tools/triangle-solver",
+      "category": "geometry",
+      "description": "Solves all sides and angles of a triangle given SSS, SAS, ASA, or AAS configurations"
+    },
+    {
+      "name": "Trig Function Calculator (sin, cos, tan, etc.)",
+      "href": "/math-tools/trig-function-calculator",
+      "category": "trigonometry",
+      "description": "Calculates values of trigonometric functions (sin, cos, tan, csc, sec, cot) for any angle"
+    },
+    {
+      "name": "Trigonometric Identity Verifier",
+      "href": "/math-tools/trig-identity-verifier",
+      "category": "trigonometry",
+      "description": "Verifies whether a given trigonometric identity is true by simplifying both sides"
+    },
+    {
+      "name": "Truth Table Generator",
+      "href": "/math-tools/truth-table-generator",
+      "category": "logic-set-theory",
+      "description": "Generates truth tables for any logical expression with any number of variables"
+    },
+    {
+      "name": "Two's Complement Calculator",
+      "href": "/math-tools/twos-complement-calculator",
+      "category": "other-calculators",
+      "description": "Converts integers to two's complement binary representation and vice versa"
+    },
+    {
+      "name": "Union of Sets",
+      "href": "/math-tools/union-of-sets-calculator",
+      "category": "logic-set-theory",
+      "description": "Calculates the union of two or more sets, returning all unique elements"
+    },
+    {
+      "name": "Unit Circle Reference Tool",
+      "href": "/math-tools/unit-circle-reference",
+      "category": "trigonometry",
+      "description": "Displays the unit circle with all key angle values, coordinates, and trig function values"
+    },
+    {
+      "name": "Venn Diagram Tool (2-3 sets)",
+      "href": "/math-tools/venn-diagram-tool",
+      "category": "statistics-data-visualization",
+      "description": "Creates Venn diagrams for 2 or 3 sets and calculates union, intersection, and differences"
+    },
+    {
+      "name": "Volume Calculator (Cube, Sphere, Cylinder, Cone, etc.)",
+      "href": "/math-tools/volume-calculator",
+      "category": "geometry",
+      "description": "Calculates the volume of common 3D shapes including cube, sphere, cylinder, cone, and pyramid"
+    },
+    {
+      "name": "Volume Converter",
+      "href": "/math-tools/volume-converter",
+      "category": "unit-converters",
+      "description": "Converts between volume units including liters, gallons, cubic meters, milliliters, and more"
+    },
+    {
+      "name": "Weight / Mass Converter",
+      "href": "/math-tools/weight-converter",
+      "category": "unit-converters",
+      "description": "Converts between weight and mass units including kilograms, pounds, grams, ounces, and tons"
+    },
+    {
+      "name": "Weighted Average Calculator",
+      "href": "/math-tools/weighted-average-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the weighted average of values given their respective weights"
+    },
+    {
+      "name": "Z-Score Calculator",
+      "href": "/math-tools/z-score-calculator",
+      "category": "statistics-data-visualization",
+      "description": "Calculates the Z-score (standard score) of a data point given the mean and standard deviation"
+    }
+  ]
+}

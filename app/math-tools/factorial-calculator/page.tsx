@@ -30,10 +30,10 @@ export default function FactorialCalculator() {
     }
 
     setError("");
-    
+
     const steps: string[] = [];
-    let factorial = 1n;
-    
+    let factorial = BigInt(1);
+
     if (num === 0 || num === 1) {
       steps.push(`${num}! = 1 (by definition)`);
     } else {
