@@ -13,6 +13,7 @@ import colorToolsLinks from "@/json-assets/color-tools-links.json";
 import jsonToolLinks from "@/json-assets/json-tools-links.json";
 import videoToolLinks from "@/json-assets/video-tool-links.json";
 import imageToolLinks from "@/json-assets/image-tool-links.json";
+import mathToolsData from "@/json-assets/math-tools-links.json";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 
@@ -76,6 +77,10 @@ const toolsByCategory = [
   {
     categoryName: "Color Tools",
     tools: colorToolsLinks,
+  },
+  {
+    categoryName: "Math Tools",
+    tools: mathToolsData.tools,
   },
   {
     categoryName: "Unit Converters",

@@ -76,7 +76,10 @@
   {
     "categoryName": "Design Tools",
     "tools": [
-      { "name": "Favicon Generator", "href": "/design-tools/favicon-generator" }
+      {
+        "name": "Favicon Generator",
+        "href": "/design-tools/favicon-generator"
+      }
     ]
   },
   {
@@ -146,7 +149,7 @@
       },
       {
         "name": "Rotate Video",
-        "description": "Rotate videos 90°, 180° or 270° - fix orientation",
+        "description": "Rotate videos 90\u00b0, 180\u00b0 or 270\u00b0 - fix orientation",
         "href": "/video-tools/rotate-video"
       },
       {
@@ -215,7 +218,7 @@
       },
       {
         "name": "JSON Sorter",
-        "description": "Sorts JSON object keys alphabetically (A–Z or Z–A) recursively while keeping values intact.",
+        "description": "Sorts JSON object keys alphabetically (A\u2013Z or Z\u2013A) recursively while keeping values intact.",
         "href": "/json-tools/json-sorter"
       },
       {
@@ -1195,7 +1198,7 @@
         "href": "/unit-converters/exposure-dose-converter"
       },
       {
-        "name": "Sound Pressure Converter — Pa to dB",
+        "name": "Sound Pressure Converter \u2014 Pa to dB",
         "href": "/unit-converters/sound-pressure-pa-to-db"
       },
       {
@@ -1231,7 +1234,7 @@
         "href": "/unit-converters/clothing-size-converter"
       },
       {
-        "name": "BMI Calculator — Body Mass Index",
+        "name": "BMI Calculator \u2014 Body Mass Index",
         "href": "/unit-converters/bmi-calculator"
       },
       {
@@ -1243,7 +1246,7 @@
         "href": "/unit-converters/running-pace-to-speed-converter"
       },
       {
-        "name": "Height Converter — cm to ft & In",
+        "name": "Height Converter \u2014 cm to ft & In",
         "href": "/unit-converters/height-converter"
       },
       {
@@ -1386,6 +1389,165 @@
       {
         "name": "Tile Calculator",
         "href": "/calculators/tile-calculator"
+      }
+    ]
+  },
+  {
+    "categoryName": "Math Tools",
+    "tools": [
+      {
+        "name": "All Math Tools",
+        "href": "/math-tools"
+      },
+      {
+        "name": "Standard Calculator",
+        "description": "A basic calculator that performs addition, subtraction, multiplication, and division operations",
+        "href": "/math-tools/standard-calculator"
+      },
+      {
+        "name": "Scientific Calculator",
+        "description": "An advanced calculator supporting trigonometric functions, logarithms, exponents, and complex scientific computations",
+        "href": "/math-tools/scientific-calculator"
+      },
+      {
+        "name": "Fraction Calculator",
+        "description": "Calculates addition, subtraction, multiplication, and division of fractions and mixed numbers with simplified results",
+        "href": "/math-tools/fraction-calculator"
+      },
+      {
+        "name": "Percentage Calculator",
+        "description": "Calculates percentages, percentage increase/decrease, and what percent one number is of another",
+        "href": "/math-tools/percentage-calculator"
+      },
+      {
+        "name": "Ratio Calculator",
+        "description": "Simplifies ratios and solves for missing values in proportional ratio equations",
+        "href": "/math-tools/ratio-calculator"
+      },
+      {
+        "name": "Average / Mean Calculator",
+        "description": "Computes the arithmetic mean of a set of numbers instantly",
+        "href": "/math-tools/average-calculator"
+      },
+      {
+        "name": "Square Root Calculator",
+        "description": "Calculates the square root of any positive number with high precision",
+        "href": "/math-tools/square-root-calculator"
+      },
+      {
+        "name": "Exponent Calculator",
+        "description": "Computes the result of raising a base number to any given power or exponent",
+        "href": "/math-tools/exponent-calculator"
+      },
+      {
+        "name": "Linear Equation Solver (ax + b = c)",
+        "description": "Solves linear equations of the form ax + b = c for the unknown variable x",
+        "href": "/math-tools/linear-equation-solver"
+      },
+      {
+        "name": "Quadratic Equation Solver",
+        "description": "Solves quadratic equations of the form ax\u00b2 + bx + c = 0 using the quadratic formula, showing all roots",
+        "href": "/math-tools/quadratic-equation-solver"
+      },
+      {
+        "name": "Logarithm Calculator",
+        "description": "Calculates the logarithm of a number for any base including natural log and log base 10",
+        "href": "/math-tools/logarithm-calculator"
+      },
+      {
+        "name": "Prime Number Checker",
+        "description": "Determines whether a given integer is a prime number or composite number",
+        "href": "/math-tools/prime-number-checker"
+      },
+      {
+        "name": "Prime Factorization",
+        "description": "Breaks down any integer into its prime factors and displays the prime factor tree",
+        "href": "/math-tools/prime-factorization-calculator"
+      },
+      {
+        "name": "GCD / HCF Calculator",
+        "description": "Finds the Greatest Common Divisor (GCD) or Highest Common Factor (HCF) of two or more numbers",
+        "href": "/math-tools/gcd-hcf-calculator"
+      },
+      {
+        "name": "LCM Calculator",
+        "description": "Calculates the Least Common Multiple (LCM) of two or more numbers",
+        "href": "/math-tools/lcm-calculator"
+      },
+      {
+        "name": "Number Base Converter (Binary, Octal, Hex, Decimal)",
+        "description": "Converts numbers between binary, octal, decimal, and hexadecimal number systems",
+        "href": "/math-tools/number-base-converter"
+      },
+      {
+        "name": "Area Calculator (Circle, Rectangle, Triangle, etc.)",
+        "description": "Calculates the area of common 2D shapes including circle, rectangle, triangle, trapezoid, and more",
+        "href": "/math-tools/area-calculator"
+      },
+      {
+        "name": "Volume Calculator (Cube, Sphere, Cylinder, Cone, etc.)",
+        "description": "Calculates the volume of common 3D shapes including cube, sphere, cylinder, cone, and pyramid",
+        "href": "/math-tools/volume-calculator"
+      },
+      {
+        "name": "Pythagorean Theorem Calculator",
+        "description": "Solves for any side of a right triangle using the Pythagorean theorem (a\u00b2 + b\u00b2 = c\u00b2)",
+        "href": "/math-tools/pythagorean-theorem-calculator"
+      },
+      {
+        "name": "Distance Between Two Points",
+        "description": "Calculates the straight-line distance between two coordinate points in 2D or 3D space",
+        "href": "/math-tools/distance-between-two-points-calculator"
+      },
+      {
+        "name": "Midpoint Calculator",
+        "description": "Finds the midpoint of a line segment given the coordinates of its two endpoints",
+        "href": "/math-tools/midpoint-calculator"
+      },
+      {
+        "name": "Slope Calculator",
+        "description": "Calculates the slope (gradient) of a line given two points or an equation",
+        "href": "/math-tools/slope-calculator"
+      },
+      {
+        "name": "Circle Calculator (radius, diameter, area, circumference)",
+        "description": "Calculates all properties of a circle including radius, diameter, area, and circumference from any one measurement",
+        "href": "/math-tools/circle-calculator"
+      },
+      {
+        "name": "Simple Interest Calculator",
+        "description": "Calculates simple interest, principal, rate, or time using the SI formula",
+        "href": "/math-tools/simple-interest-calculator"
+      },
+      {
+        "name": "Compound Interest Calculator",
+        "description": "Calculates compound interest and total amount for various compounding periods",
+        "href": "/math-tools/compound-interest-calculator"
+      },
+      {
+        "name": "EMI / Loan Calculator",
+        "description": "Calculates monthly EMI payments for loans based on principal, interest rate, and tenure",
+        "href": "/math-tools/emi-loan-calculator"
+      },
+      {
+        "name": "Length Converter",
+        "description": "Converts between length units including meters, feet, inches, kilometers, miles, and more",
+        "href": "/math-tools/length-converter"
+      },
+      {
+        "name": "Weight / Mass Converter",
+        "description": "Converts between weight and mass units including kilograms, pounds, grams, ounces, and tons",
+        "href": "/math-tools/weight-converter"
+      },
+      {
+        "name": "Temperature Converter",
+        "description": "Converts temperatures between Celsius, Fahrenheit, and Kelvin scales",
+        "href": "/math-tools/temperature-converter"
+      },
+      {
+        "name": "Time Converter",
+        "description": "Converts between time units including seconds, minutes, hours, days, weeks, months, and years",
+        "href": "/math-tools/time-converter"
       }
     ]
   }
