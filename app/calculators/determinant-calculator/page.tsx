@@ -54,10 +54,7 @@ export default function DeterminantCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Determinant Calculator</CardTitle>
-          <CardDescription>Calculate the determinant of a square matrix</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

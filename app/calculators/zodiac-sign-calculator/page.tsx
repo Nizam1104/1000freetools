@@ -202,12 +202,7 @@ export default function ZodiacSignCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Zodiac Sign Calculator – Free Western Astrology Sign Finder</CardTitle>
-          <CardDescription>
-            Discover your Western zodiac sign from your birth date. Get detailed information about your sign including element, ruling planet, date range, and key personality traits.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

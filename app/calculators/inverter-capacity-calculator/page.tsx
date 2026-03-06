@@ -66,12 +66,7 @@ export default function InverterCapacityCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Inverter Capacity Calculator – Size Your Inverter</CardTitle>
-          <CardDescription>
-            Calculate the required inverter capacity for your electrical loads. Enter your devices and their power consumption to determine the right inverter size.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             {devices.map((device, i) => (

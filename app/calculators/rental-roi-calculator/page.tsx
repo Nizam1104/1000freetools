@@ -96,12 +96,7 @@ export default function RentalROICalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Rental ROI Calculator – Calculate Return on Investment for Rental Properties</CardTitle>
-          <CardDescription>
-            Evaluate the profitability of rental properties with our free rental ROI calculator. Factor in purchase price, monthly rent, expenses, and loan costs to calculate annual return on investment. Essential for real estate investors and landlords.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

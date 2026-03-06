@@ -41,12 +41,7 @@ export default function DopplerEffectCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Doppler Effect Calculator – Calculate Frequency Shift</CardTitle>
-          <CardDescription>
-            Calculate the observed frequency shift due to relative motion between source and observer. Works for both sound and light waves.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

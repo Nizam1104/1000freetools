@@ -73,12 +73,7 @@ export default function StepsToCaloriesCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Steps to Calories Calculator – Convert Your Steps to Calories Burned</CardTitle>
-          <CardDescription>
-            Easily convert your daily step count into calories burned. Our step-to-calorie calculator gives you accurate results based on your weight and stride length.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

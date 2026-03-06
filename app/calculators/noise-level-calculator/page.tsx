@@ -51,12 +51,7 @@ export default function NoiseLevelCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Noise Level Calculator – Combine Multiple Sound Sources</CardTitle>
-          <CardDescription>
-            Calculate the combined noise level from multiple sound sources. Our calculator adds decibels correctly and accounts for distance attenuation.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             {sources.map((source, i) => (

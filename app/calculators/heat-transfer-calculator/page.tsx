@@ -85,12 +85,7 @@ export default function HeatTransferCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Heat Transfer Calculator – Conduction, Convection & Radiation</CardTitle>
-          <CardDescription>
-            Analyze thermal performance with our heat transfer calculator. Compute heat flow rates for conduction, convection, and radiation in HVAC, manufacturing, and engineering design.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <Tabs defaultValue="conduction">

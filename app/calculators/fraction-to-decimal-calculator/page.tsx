@@ -31,10 +31,7 @@ export default function FractionToDecimalCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Fraction to Decimal Calculator</CardTitle>
-          <CardDescription>Convert a fraction to decimal</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="flex items-center gap-2">

@@ -65,12 +65,7 @@ export default function GlycemicLoadCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Glycemic Load Calculator – Calculate GL of Foods and Meals</CardTitle>
-          <CardDescription>
-            Understand the real impact of carbohydrates on your blood sugar. Our glycemic load calculator factors in both the GI and the amount of carbs to give you a true measure of glycemic impact.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

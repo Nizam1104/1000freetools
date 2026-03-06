@@ -62,12 +62,7 @@ export default function DistanceFormulaCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Distance Formula Calculator – Find Distance Between Two Points</CardTitle>
-          <CardDescription>
-            Calculate the straight-line distance between any two points on a coordinate plane. Enter the x and y coordinates to get the distance and midpoint instantly.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="p-3 bg-muted rounded-md text-center font-mono text-sm">

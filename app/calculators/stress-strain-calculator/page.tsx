@@ -76,12 +76,7 @@ export default function StressStrainCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Stress/Strain Calculator – Mechanical Properties Calculator</CardTitle>
-          <CardDescription>
-            Calculate stress, strain, and Young's modulus for materials. Our calculator helps analyze mechanical properties for engineering and physics applications.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <Tabs defaultValue="stress">

@@ -80,12 +80,7 @@ export default function ConcreteVolumeCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Concrete Volume Calculator – How Much Concrete Do You Need?</CardTitle>
-          <CardDescription>
-            Estimate concrete quantities for any project with our concrete volume calculator. Compute cubic yards or meters for slabs, columns, footings, and walls to avoid over-ordering.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

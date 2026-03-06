@@ -91,12 +91,7 @@ export default function FiftyThirtyTwentyBudgetRuleCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>50/30/20 Budget Rule Calculator</CardTitle>
-          <CardDescription>
-            Apply the popular 50/30/20 budgeting rule to your income. Get recommended amounts for needs, wants, and savings based on your monthly take-home pay.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

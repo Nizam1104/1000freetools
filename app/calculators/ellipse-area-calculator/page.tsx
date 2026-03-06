@@ -31,10 +31,7 @@ export default function EllipseAreaCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Ellipse Area Calculator</CardTitle>
-          <CardDescription>Calculate area and circumference of an ellipse</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

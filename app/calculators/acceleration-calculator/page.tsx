@@ -56,12 +56,7 @@ export default function AccelerationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Acceleration Calculator</CardTitle>
-          <CardDescription>
-            Calculate acceleration from change in velocity over time, or use Newton's second law (F = ma).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs defaultValue="velocity" className="w-full">
             <TabsList className="grid w-full grid-cols-2">

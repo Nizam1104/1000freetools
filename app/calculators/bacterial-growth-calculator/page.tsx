@@ -49,12 +49,7 @@ export default function BacterialGrowthCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Bacterial Growth Calculator – Model Microbial Population Growth</CardTitle>
-          <CardDescription>
-            Model bacterial population growth using exponential growth equations with our bacterial growth calculator. Input initial population, growth rate, and time to predict colony size. Perfect for microbiology, food science, and infectious disease studies.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

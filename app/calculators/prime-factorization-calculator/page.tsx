@@ -64,10 +64,7 @@ export default function PrimeFactorizationCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Prime Factorization Calculator – Find Prime Factors</CardTitle>
-          <CardDescription>Find the prime factors of a number</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

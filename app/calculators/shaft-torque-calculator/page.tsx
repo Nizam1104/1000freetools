@@ -39,12 +39,7 @@ export default function ShaftTorqueCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Shaft Torque Calculator – Calculate Shaft Torque</CardTitle>
-          <CardDescription>
-            Calculate shaft torque from power and RPM, or from force and radius. Our calculator helps size shafts and couplings for mechanical systems.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

@@ -105,12 +105,7 @@ export default function ZeroToHundredAccelerationEstimatorPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-5xl space-y-8">
         <Card>
-          <CardHeader>
-            <CardTitle>0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time</CardTitle>
-            <CardDescription>
-              Wondering how fast your car actually is? Enter your vehicle's horsepower, weight, and drivetrain to get instant 0-60 mph and 0-100 km/h time estimates. No sign-up required.
-            </CardDescription>
-          </CardHeader>
+          
           <CardContent>
             <p className="text-sm text-muted-foreground">
               Car enthusiasts love debating acceleration times, but not everyone has access to a drag strip. This estimator uses physics-based formulas to predict your 0-60 mph and 0-100 km/h times right in your browser. Whether you're comparing cars, tuning your ride, or just curious about performance, you'll get results instantly. The calculator factors in power-to-weight ratio, drivetrain traction differences, and transmission type to give realistic estimates.

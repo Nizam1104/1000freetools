@@ -107,12 +107,7 @@ export default function ROICalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>ROI Calculator – Calculate Return on Investment Percentage</CardTitle>
-          <CardDescription>
-            Calculate your Return on Investment (ROI) instantly with our free ROI Calculator. Enter your initial investment and final value to determine your profit or loss percentage — essential for evaluating investments, business projects, and financial decisions.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-6">

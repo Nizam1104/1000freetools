@@ -62,12 +62,7 @@ export default function FactorialCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Factorial Calculator</CardTitle>
-          <CardDescription>
-            Calculate the factorial of a number (n!)
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -63,12 +63,7 @@ export default function PercentCompositionCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Percent Composition Calculator – Find Mass Percent of Elements</CardTitle>
-          <CardDescription>
-            Determine the percent composition by mass of each element in a compound with our free percent composition calculator. Enter the chemical formula and get accurate elemental percentages instantly. Perfect for chemistry coursework and analysis.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -27,10 +27,7 @@ export default function ExponentCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Exponent Calculator</CardTitle>
-          <CardDescription>Calculate base raised to a power (bⁿ)</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

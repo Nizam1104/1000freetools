@@ -99,12 +99,7 @@ export default function PKaPKbCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>pKa and pKb Calculator – Convert Ka, Kb, pKa, and pKb</CardTitle>
-          <CardDescription>
-            Convert between Ka, Kb, pKa, and pKb values effortlessly with our pKa/pKb calculator. Use the relationship pKa + pKb = 14 to find acid and base dissociation constants. Essential for acid-base chemistry and biochemistry.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

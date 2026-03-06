@@ -76,12 +76,7 @@ export default function CarLoanCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Car Loan Calculator – Calculate Auto Loan Payments</CardTitle>
-          <CardDescription>
-            Plan your auto financing with confidence. Calculate your monthly car loan payment and total cost based on vehicle price, down payment, rate, and duration.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

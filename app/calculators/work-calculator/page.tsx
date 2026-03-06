@@ -49,12 +49,7 @@ export default function WorkCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Work Calculator</CardTitle>
-          <CardDescription>
-            Calculate mechanical work done. Enter force and distance, with an optional angle for W = Fd cos(θ).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

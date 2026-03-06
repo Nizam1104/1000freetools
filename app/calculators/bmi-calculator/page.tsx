@@ -78,12 +78,7 @@ export default function BMICalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>BMI Calculator – Free Body Mass Index Calculator Online</CardTitle>
-          <CardDescription>
-            Use our free BMI calculator to instantly find your Body Mass Index. Enter your height and weight to check if you're in a healthy weight range. Supports both metric and imperial units.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

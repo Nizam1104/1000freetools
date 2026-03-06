@@ -28,10 +28,7 @@ export default function CircleAreaCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Circle Area Calculator</CardTitle>
-          <CardDescription>Calculate area, circumference, and diameter of a circle</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

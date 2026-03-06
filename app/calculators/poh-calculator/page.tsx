@@ -91,12 +91,7 @@ export default function POHCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>pOH Calculator – Calculate pOH and Convert to pH</CardTitle>
-          <CardDescription>
-            Use our pOH calculator to find the pOH of a solution from [OH⁻] concentration, or easily convert between pH and pOH. Essential tool for acid-base chemistry problems and laboratory work.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

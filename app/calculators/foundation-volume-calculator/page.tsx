@@ -39,12 +39,7 @@ export default function FoundationVolumeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Foundation Volume Calculator – Calculate Concrete for Footings</CardTitle>
-          <CardDescription>
-            Calculate the volume of concrete needed for foundation footings. Enter dimensions and number of footings.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

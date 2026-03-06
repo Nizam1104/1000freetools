@@ -44,12 +44,7 @@ export default function PumpHorsepowerCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Pump Horsepower Calculator – Calculate Required Pump Power</CardTitle>
-          <CardDescription>
-            Size your pump correctly with our pump horsepower calculator. Enter flow rate, total head, and efficiency to find the required pump power in HP or kW.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

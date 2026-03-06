@@ -40,12 +40,7 @@ export default function RmsValueCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>RMS Value Calculator – Calculate Root Mean Square Voltage</CardTitle>
-          <CardDescription>
-            Calculate RMS voltage for different waveforms. RMS is the effective DC-equivalent voltage for AC signals.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

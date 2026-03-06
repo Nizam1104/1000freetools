@@ -115,12 +115,7 @@ export default function FatIntakeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Fat Intake Calculator – How Much Fat Should You Eat Daily?</CardTitle>
-          <CardDescription>
-            Calculate your daily fat requirements with our fat intake calculator. Get a breakdown of saturated and unsaturated fat targets based on your calorie needs and health goals.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

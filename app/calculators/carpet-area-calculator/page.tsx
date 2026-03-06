@@ -72,12 +72,7 @@ export default function CarpetAreaCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Carpet Area Calculator – Calculate Carpet Area from Built-Up Area</CardTitle>
-          <CardDescription>
-            Calculate the carpet area of a flat or house from built-up or super built-up area using standard ratios with our free carpet area calculator. Understand exactly how much usable space you're getting. Essential for home buyers in India.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

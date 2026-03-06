@@ -59,12 +59,7 @@ export default function BeamBendingCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Beam Bending Calculator – Stress & Deflection for Structural Beams</CardTitle>
-          <CardDescription>
-            Analyze beam performance under load with our beam bending calculator. Calculate maximum bending stress, deflection, and moment for simply supported and cantilever beams.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

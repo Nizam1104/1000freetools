@@ -43,12 +43,7 @@ export default function ElectrochemicalCellPotentialCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Electrochemical Cell Potential Calculator – Calculate EMF of Galvanic Cells</CardTitle>
-          <CardDescription>
-            Find the standard cell potential (EMF) of galvanic or electrolytic cells using our electrochemical calculator. Enter reduction potentials for cathode and anode to get the cell voltage. Perfect for electrochemistry and physical chemistry students.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

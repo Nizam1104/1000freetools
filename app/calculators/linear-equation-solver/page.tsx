@@ -40,10 +40,7 @@ export default function LinearEquationSolver() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Linear Equation Solver – Solve ax + b = 0</CardTitle>
-          <CardDescription>Solve equations in the form: ax + b = 0</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="p-3 bg-muted rounded-md text-center font-mono">

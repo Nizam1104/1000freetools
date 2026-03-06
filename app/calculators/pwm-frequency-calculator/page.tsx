@@ -45,12 +45,7 @@ export default function PwmFrequencyCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>PWM Frequency Calculator – Calculate PWM Output Frequency</CardTitle>
-          <CardDescription>
-            Calculate PWM frequency based on clock speed, prescaler, and resolution. Essential for motor control and power electronics.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

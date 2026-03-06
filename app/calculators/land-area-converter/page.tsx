@@ -67,12 +67,7 @@ export default function LandAreaConverter() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Land Area Converter – Convert Acres, Hectares, Sq Ft, and Bigha</CardTitle>
-          <CardDescription>
-            Convert land area between acres, hectares, square meters, square feet, bigha, and other units with our free land area converter. Perfect for real estate buyers, sellers, farmers, and property developers needing accurate area conversions.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

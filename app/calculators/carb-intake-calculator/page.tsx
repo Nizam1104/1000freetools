@@ -97,12 +97,7 @@ export default function CarbIntakeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Carb Intake Calculator – Daily Carbohydrate Needs Calculator</CardTitle>
-          <CardDescription>
-            Find out how many grams of carbohydrates you need each day. Our carb intake calculator tailors your carb target to your calorie goals, lifestyle, and dietary preferences.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

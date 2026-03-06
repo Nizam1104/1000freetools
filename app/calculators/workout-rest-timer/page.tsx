@@ -71,12 +71,7 @@ export default function WorkoutRestTimer() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Workout Rest Timer – Optimal Rest Time Between Sets Calculator</CardTitle>
-          <CardDescription>
-            Rest the right amount between sets to hit your goals. Our workout rest timer recommends evidence-based rest periods for strength, muscle building, or endurance training.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -65,12 +65,7 @@ export default function RoofingSheetsCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Roofing Calculator – How Many Roofing Sheets Do You Need?</CardTitle>
-          <CardDescription>
-            Plan your roofing project with our roofing sheets calculator. Enter roof area and sheet dimensions to calculate the exact number of panels needed with waste included.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

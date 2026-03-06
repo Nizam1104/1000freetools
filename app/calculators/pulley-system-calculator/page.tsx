@@ -40,12 +40,7 @@ export default function PulleySystemCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Pulley System Calculator – Block and Tackle Calculator</CardTitle>
-          <CardDescription>
-            Calculate mechanical advantage and required effort for pulley systems. Determine rope length needed for lifting.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

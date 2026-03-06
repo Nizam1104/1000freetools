@@ -67,12 +67,7 @@ export default function HeartRateZonesCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Heart Rate Zones Calculator – Find Your Target Heart Rate Zones</CardTitle>
-          <CardDescription>
-            Train smarter with our heart rate zones calculator. Discover your five heart rate training zones to optimize fat burn, aerobic fitness, and peak performance.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

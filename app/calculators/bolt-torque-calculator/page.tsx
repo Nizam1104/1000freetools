@@ -42,12 +42,7 @@ export default function BoltTorqueCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Bolt Torque Calculator – Calculate Bolt Tightening Torque</CardTitle>
-          <CardDescription>
-            Calculate the recommended tightening torque for bolts based on size, grade, and lubrication condition.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

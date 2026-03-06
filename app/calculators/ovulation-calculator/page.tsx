@@ -74,12 +74,7 @@ export default function OvulationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Ovulation Calculator – Find Your Most Fertile Days</CardTitle>
-          <CardDescription>
-            Maximize your chances of conception with our ovulation calculator. Get your predicted ovulation date and full fertile window based on your cycle length and last period.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

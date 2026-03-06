@@ -27,12 +27,7 @@ export default function TriangleAreaCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Triangle Area Calculator – Find Area from Base and Height</CardTitle>
-          <CardDescription>
-            Calculate the area of any triangle instantly. Enter the base and height to get the area using the standard formula – no sign-up required.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

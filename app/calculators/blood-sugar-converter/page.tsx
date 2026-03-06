@@ -36,12 +36,7 @@ export default function BloodSugarConverter() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Blood Sugar Converter – Free Glucose Unit Converter mg/dL to mmol/L</CardTitle>
-          <CardDescription>
-            Convert blood glucose levels between mg/dL and mmol/L instantly. Enter a value in either unit to see the conversion in real-time. Essential tool for diabetes management.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-6">
             <div>

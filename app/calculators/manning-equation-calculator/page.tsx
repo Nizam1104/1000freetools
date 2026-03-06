@@ -35,12 +35,7 @@ export default function ManningEquationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Manning Equation Calculator – Open Channel Flow</CardTitle>
-          <CardDescription>
-            Calculate flow velocity and discharge in open channels using the Manning equation. Used for rivers, canals, and stormwater systems.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

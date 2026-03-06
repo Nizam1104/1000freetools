@@ -35,12 +35,7 @@ export default function PaceToSpeedConverter() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Pace to Speed Converter – Convert Running Pace to Speed Instantly</CardTitle>
-          <CardDescription>
-            Easily convert your running or cycling pace to speed. Our pace-to-speed converter handles both metric and imperial units so you can track performance your way.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

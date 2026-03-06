@@ -60,12 +60,7 @@ export default function ElectricalLoadCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Electrical Load Calculator – Calculate Circuit Load</CardTitle>
-          <CardDescription>
-            Calculate the total electrical load on a circuit. Enter voltage and connected loads to determine current, breaker size, and wire requirements.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

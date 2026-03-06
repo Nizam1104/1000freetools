@@ -41,12 +41,7 @@ export default function BoilerEfficiencyCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Boiler Efficiency Calculator – Calculate Boiler Efficiency</CardTitle>
-          <CardDescription>
-            Calculate boiler efficiency from fuel input and heat output. Estimate stack losses from exhaust temperature.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

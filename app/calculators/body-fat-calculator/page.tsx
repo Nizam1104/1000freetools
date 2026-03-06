@@ -84,12 +84,7 @@ export default function BodyFatCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Body Fat Percentage Calculator – Estimate Your Body Fat Instantly</CardTitle>
-          <CardDescription>
-            Calculate your body fat percentage accurately using our free online tool. Input your measurements to get an estimate of your fat mass, lean mass, and fitness category.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

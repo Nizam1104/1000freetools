@@ -153,12 +153,7 @@ export default function StaircaseRiseRunCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Staircase Rise & Run Calculator – Design Safe & Comfortable Stairs</CardTitle>
-          <CardDescription>
-            Design code-compliant and comfortable stairs with our Staircase Rise/Run Calculator. Enter the total height and available horizontal space to calculate optimal riser height, tread depth, and number of steps for your staircase.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid lg:grid-cols-3 gap-6">
             <Card className="lg:col-span-2">

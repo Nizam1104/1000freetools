@@ -64,12 +64,7 @@ export default function SeriesParallelCapacitorCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Capacitor Calculator – Series and Parallel Capacitance Calculator</CardTitle>
-          <CardDescription>
-            Find the equivalent capacitance for series or parallel capacitor circuits. Our calculator handles any number of capacitors and displays results in µF, nF, or pF.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

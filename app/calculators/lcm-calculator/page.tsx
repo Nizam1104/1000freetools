@@ -48,10 +48,7 @@ export default function LCMCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>LCM Calculator – Find Least Common Multiple Online</CardTitle>
-          <CardDescription>Find the Least Common Multiple</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

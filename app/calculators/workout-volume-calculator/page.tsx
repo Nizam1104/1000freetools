@@ -46,12 +46,7 @@ export default function WorkoutVolumeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Workout Volume Calculator – Track Your Total Training Volume</CardTitle>
-          <CardDescription>
-            Monitor your workout progress with our training volume calculator. Calculate total sets, reps, and weight lifted to ensure progressive overload and consistent gains.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

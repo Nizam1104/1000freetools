@@ -60,12 +60,7 @@ export default function TileCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Tile Calculator – How Many Tiles Do You Need?</CardTitle>
-          <CardDescription>
-            Plan your tiling project accurately with our tile calculator. Enter room dimensions and tile size to calculate the number of tiles needed, including a recommended waste allowance.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

@@ -28,12 +28,7 @@ export default function VolumeOfSphereCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Volume of Sphere Calculator – Find Volume and Surface Area</CardTitle>
-          <CardDescription>
-            Calculate the volume and surface area of a sphere instantly. Enter the radius to get all measurements using the standard formulas – perfect for geometry, engineering, and science.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

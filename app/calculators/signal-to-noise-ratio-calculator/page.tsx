@@ -41,12 +41,7 @@ export default function SignalToNoiseRatioCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Signal-to-Noise Ratio Calculator – Calculate SNR in dB</CardTitle>
-          <CardDescription>
-            Calculate SNR from power or voltage ratios. Essential for audio, RF, and communication system analysis.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

@@ -80,12 +80,7 @@ export default function BMRCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>BMR Calculator</CardTitle>
-          <CardDescription>
-            Calculate your Basal Metabolic Rate - the calories your body burns at complete rest. Enter your details to find your BMR using the Mifflin-St Jeor equation.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

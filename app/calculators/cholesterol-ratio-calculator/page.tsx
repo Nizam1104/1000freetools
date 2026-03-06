@@ -89,12 +89,7 @@ export default function CholesterolRatioCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Cholesterol Ratio Calculator – Free Heart Health Risk Assessment</CardTitle>
-          <CardDescription>
-            Calculate your cholesterol ratios to assess heart disease risk. Enter your lipid panel results to get your Total/HDL and LDL/HDL ratios with risk assessment.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

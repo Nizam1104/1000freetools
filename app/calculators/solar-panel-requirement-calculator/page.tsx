@@ -60,12 +60,7 @@ export default function SolarPanelRequirementCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Solar Panel Requirement Calculator – Size Your Solar System</CardTitle>
-          <CardDescription>
-            Calculate how many solar panels you need for your energy requirements. Our calculator considers daily consumption, sun hours, and system losses to size your solar installation.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

@@ -90,12 +90,7 @@ export default function DilutionCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Dilution Calculator – C1V1 = C2V2 Solution Dilution Tool</CardTitle>
-          <CardDescription>
-            Quickly calculate solution dilutions with our free dilution calculator. Using the C1V1 = C2V2 formula, find any unknown concentration or volume in seconds. Perfect for lab preparation, microbiology, and chemistry experiments.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

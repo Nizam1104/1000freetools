@@ -24,10 +24,7 @@ export default function MultiplicationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Multiplication Calculator</CardTitle>
-          <CardDescription>Multiply multiple numbers together</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

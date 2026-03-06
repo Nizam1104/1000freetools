@@ -49,12 +49,7 @@ export default function BusinessDaysCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Business Days Calculator – Count Working Days Between Dates</CardTitle>
-          <CardDescription>
-            Count the number of working/business days between two dates, excluding weekends and holidays. Perfect for project planning and deadline calculations.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

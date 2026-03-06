@@ -74,12 +74,7 @@ export default function SIPCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>SIP Calculator</CardTitle>
-          <CardDescription>
-            Calculate the maturity value of your Systematic Investment Plan. Enter your monthly investment, expected return rate, and duration to see your potential corpus.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="space-y-2">

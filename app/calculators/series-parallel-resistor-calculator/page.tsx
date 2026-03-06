@@ -54,12 +54,7 @@ export default function SeriesParallelResistorCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Resistor Calculator – Series and Parallel Resistance Calculator</CardTitle>
-          <CardDescription>
-            Calculate total resistance for any series or parallel resistor network. Enter individual resistor values to get the equivalent resistance for circuit design and analysis.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

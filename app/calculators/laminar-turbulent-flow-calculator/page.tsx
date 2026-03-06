@@ -45,12 +45,7 @@ export default function LaminarTurbulentFlowCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Laminar/Turbulent Flow Calculator – Flow Regime Calculator</CardTitle>
-          <CardDescription>
-            Determine if fluid flow is laminar or turbulent based on Reynolds number. Enter flow parameters to analyze flow regime.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

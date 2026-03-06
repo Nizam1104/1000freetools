@@ -59,12 +59,7 @@ export default function GearRatioCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Gear Ratio Calculator – Calculate Gear Train Ratio</CardTitle>
-          <CardDescription>
-            Calculate gear ratios for single or multi-stage gear trains. Our calculator determines output speed and torque based on gear tooth counts.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             {gears.map((gear, i) => (

@@ -28,12 +28,7 @@ export default function SquareAreaCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Square Area Calculator – Find Area, Perimeter and Diagonal</CardTitle>
-          <CardDescription>
-            Calculate the area, perimeter, and diagonal of a square instantly. Enter the side length to get all measurements – perfect for construction, crafts, and math homework.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

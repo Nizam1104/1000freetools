@@ -38,12 +38,7 @@ export default function PeakToPeakVoltageCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Peak-to-Peak Voltage Calculator – Convert AC Voltage Measurements</CardTitle>
-          <CardDescription>
-            Convert between peak, RMS, average, and peak-to-peak voltage for sine waves.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

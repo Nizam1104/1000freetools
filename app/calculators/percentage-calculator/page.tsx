@@ -76,12 +76,7 @@ export default function PercentageCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Percentage Calculator – Calculate Percentages Instantly</CardTitle>
-          <CardDescription>
-            Calculate percentages, find what percent one number is of another, or compute percentage change. Our free percentage calculator handles all common percentage calculations with clear results.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

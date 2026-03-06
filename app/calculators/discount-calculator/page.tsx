@@ -63,12 +63,7 @@ export default function DiscountCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Discount Calculator – Calculate Sale Price & Savings</CardTitle>
-          <CardDescription>
-            Instantly find the sale price, amount saved, and percentage off for any discount. Perfect for shopping, pricing, and deal comparisons.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

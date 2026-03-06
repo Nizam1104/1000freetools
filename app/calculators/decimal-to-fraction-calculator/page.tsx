@@ -46,10 +46,7 @@ export default function DecimalToFractionCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Decimal to Fraction Calculator</CardTitle>
-          <CardDescription>Convert a decimal to a simplified fraction</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

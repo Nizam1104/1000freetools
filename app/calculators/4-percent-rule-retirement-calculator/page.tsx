@@ -89,12 +89,7 @@ export default function FourPercentRuleRetirementCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>4% Rule Retirement Calculator</CardTitle>
-          <CardDescription>
-            Apply the classic 4% rule to your retirement plan. Calculate the corpus needed to withdraw 4% annually and see if your current savings are on track.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

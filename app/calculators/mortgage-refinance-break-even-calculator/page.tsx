@@ -99,12 +99,7 @@ export default function MortgageRefinanceBreakEvenCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Mortgage Refinance Break-Even Calculator</CardTitle>
-          <CardDescription>
-            Is refinancing worth it? Calculate the number of months your monthly savings will take to offset closing costs and determine your refinance break-even point.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

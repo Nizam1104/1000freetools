@@ -51,12 +51,7 @@ export default function BatteryLifeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Battery Life Calculator – Calculate Battery Runtime</CardTitle>
-          <CardDescription>
-            Estimate how long your battery will last with our battery life calculator. Enter battery capacity and load to calculate runtime in hours and minutes.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

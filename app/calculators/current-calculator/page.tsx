@@ -52,12 +52,7 @@ export default function CurrentCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Current Calculator – Calculate Electrical Current (Amps)</CardTitle>
-          <CardDescription>
-            Calculate the current flowing through any circuit. Enter voltage and resistance to apply Ohm's Law and find current in amperes with our electrical current calculator.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

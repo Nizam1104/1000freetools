@@ -43,12 +43,7 @@ export default function HeatPumpCopCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Heat Pump COP Calculator – Coefficient of Performance</CardTitle>
-          <CardDescription>
-            Calculate the Coefficient of Performance (COP) for heat pumps and compare to Carnot efficiency.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

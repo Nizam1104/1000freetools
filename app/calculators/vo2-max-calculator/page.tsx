@@ -74,12 +74,7 @@ export default function VO2MaxCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>VO2 Max Calculator – Estimate Your Aerobic Fitness Level</CardTitle>
-          <CardDescription>
-            Measure your cardiovascular fitness with our VO2 max calculator. Estimate your maximal oxygen uptake using simple field test data and compare your results to fitness norms.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

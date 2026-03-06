@@ -165,12 +165,7 @@ export default function RunningPaceCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Running Pace Calculator</CardTitle>
-          <CardDescription>
-            Calculate your running pace, speed, and estimated finish times. Perfect for training and race planning for 5K, 10K, half marathon, and marathon distances.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)}>
             <TabsList className="grid grid-cols-3 w-full">

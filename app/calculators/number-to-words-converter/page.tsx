@@ -79,10 +79,7 @@ export default function NumberToWordsConverter() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Number to Words Converter</CardTitle>
-          <CardDescription>Convert numbers to English words</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

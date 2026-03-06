@@ -32,10 +32,7 @@ export default function LogarithmCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Logarithm Calculator</CardTitle>
-          <CardDescription>Calculate logarithms with different bases</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

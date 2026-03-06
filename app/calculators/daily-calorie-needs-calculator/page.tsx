@@ -92,12 +92,7 @@ export default function DailyCalorieNeedsCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Daily Calorie Needs Calculator – How Many Calories Should You Eat?</CardTitle>
-          <CardDescription>
-            Find out exactly how many calories you need each day with our daily calorie needs calculator. Personalized results based on your age, weight, height, and activity level.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">

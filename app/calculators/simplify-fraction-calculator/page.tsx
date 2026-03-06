@@ -45,10 +45,7 @@ export default function SimplifyFractionCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Simplify Fraction Calculator</CardTitle>
-          <CardDescription>Reduce a fraction to its simplest form</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="flex items-center gap-2">

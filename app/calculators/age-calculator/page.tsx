@@ -94,12 +94,7 @@ export default function AgeCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Age Calculator – Calculate Your Exact Age in Years, Months & Days</CardTitle>
-          <CardDescription>
-            Find out your exact age down to the day with our free age calculator. Enter any date of birth and get a precise breakdown of years, months, and days elapsed.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -63,12 +63,7 @@ export default function PotentialEnergyCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Potential Energy Calculator</CardTitle>
-          <CardDescription>
-            Calculate gravitational potential energy (PE = mgh) or elastic potential energy (PE = ½kx²).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs defaultValue="gravitational" className="w-full">
             <TabsList className="grid w-full grid-cols-2">

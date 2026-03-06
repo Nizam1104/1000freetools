@@ -78,12 +78,7 @@ export default function BrickCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Brick Calculator</CardTitle>
-          <CardDescription>
-            Calculate how many bricks you need for your wall. Enter wall dimensions, brick size, and mortar thickness to get accurate quantities with waste allowance.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

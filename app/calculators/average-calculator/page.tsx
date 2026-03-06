@@ -70,12 +70,7 @@ export default function AverageCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Average Calculator – Calculate Mean, Median & More</CardTitle>
-          <CardDescription>
-            Calculate the mean (average), median, and other statistics for any set of numbers. Enter values separated by commas or spaces for instant results.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

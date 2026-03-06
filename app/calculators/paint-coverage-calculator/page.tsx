@@ -50,12 +50,7 @@ export default function PaintCoverageCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Paint Calculator – How Much Paint Do You Need to Cover a Room?</CardTitle>
-          <CardDescription>
-            Take the guesswork out of painting with our paint coverage calculator. Enter your room dimensions and number of coats to find out exactly how much paint to buy.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

@@ -109,12 +109,7 @@ export default function PregnancyDueDateCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Pregnancy Due Date Calculator – When Is My Baby Due?</CardTitle>
-          <CardDescription>
-            Find your estimated due date instantly with our pregnancy calculator. Enter the date of your last period or conception date to get a personalized birth timeline and week-by-week breakdown.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -40,10 +40,7 @@ export default function StandardDeviationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Standard Deviation Calculator</CardTitle>
-          <CardDescription>Calculate population and sample standard deviation</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

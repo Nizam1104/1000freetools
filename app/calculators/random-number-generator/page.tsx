@@ -53,10 +53,7 @@ export default function RandomNumberGenerator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Random Number Generator</CardTitle>
-          <CardDescription>Generate random numbers within a range</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

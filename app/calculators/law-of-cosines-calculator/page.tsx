@@ -46,10 +46,7 @@ export default function LawOfCosinesCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Law of Cosines Calculator</CardTitle>
-          <CardDescription>Solve triangles using c² = a² + b² - 2ab·cos(C)</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="p-3 bg-muted rounded-md text-center font-mono text-sm">

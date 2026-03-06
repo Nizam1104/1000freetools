@@ -83,12 +83,7 @@ export default function ActivityCalorieCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Activity Calorie Burn Calculator – Calories Burned by Activity & Duration</CardTitle>
-          <CardDescription>
-            Find out how many calories any activity burns based on your weight and how long you do it. Our calculator covers hundreds of activities using MET-based calculations.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

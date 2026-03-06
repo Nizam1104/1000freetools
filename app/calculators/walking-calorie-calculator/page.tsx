@@ -58,12 +58,7 @@ export default function WalkingCalorieCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Walking Calorie Calculator – How Many Calories Do You Burn Walking?</CardTitle>
-          <CardDescription>
-            Find out how many calories you burn walking with our free calculator. Input your weight, speed, and duration to get an accurate calorie expenditure estimate for any walk.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

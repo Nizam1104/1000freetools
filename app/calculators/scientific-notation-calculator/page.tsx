@@ -32,12 +32,7 @@ export default function ScientificNotationCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Scientific Notation Calculator – Convert to Standard Form</CardTitle>
-          <CardDescription>
-            Convert any number to scientific notation instantly. Enter large or small values and get the standard form with mantissa and exponent – perfect for science and engineering calculations.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

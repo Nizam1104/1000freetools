@@ -29,10 +29,7 @@ export default function MedianCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Median Calculator</CardTitle>
-          <CardDescription>Find the middle value of a dataset</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

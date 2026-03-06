@@ -30,12 +30,7 @@ export default function RlTimeConstantCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>RL Time Constant Calculator – Calculate RL Circuit Time Constant</CardTitle>
-          <CardDescription>
-            Calculate the time constant for RL circuits. τ = L / R determines current rise and decay rates.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

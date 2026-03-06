@@ -48,12 +48,7 @@ export default function WorkoutMaxRepsEstimator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Max Reps Estimator – How Many Reps Can You Do at a Given Weight?</CardTitle>
-          <CardDescription>
-            Predict how many reps you can complete with any weight using your 1RM. Our max reps estimator helps you program training weights intelligently.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -27,12 +27,7 @@ export default function SubtractionCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Subtraction Calculator – Subtract Numbers Instantly</CardTitle>
-          <CardDescription>
-            Find the difference between two numbers with our free subtraction calculator. Enter any two values and get instant results – no sign-up required.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

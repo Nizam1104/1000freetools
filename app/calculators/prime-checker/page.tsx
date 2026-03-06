@@ -49,10 +49,7 @@ export default function PrimeChecker() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Prime Number Checker – Is This Number Prime?</CardTitle>
-          <CardDescription>Check if a number is prime and see its factors</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

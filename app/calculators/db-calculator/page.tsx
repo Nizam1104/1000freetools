@@ -66,12 +66,7 @@ export default function DbCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>dB Calculator – Decibel to Ratio Converter for Audio and RF</CardTitle>
-          <CardDescription>
-            Convert between decibels and linear ratios for power, voltage, and amplitude. Our dB calculator is essential for audio engineering, RF systems, and signal processing.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <Tabs defaultValue="dB_to_power">

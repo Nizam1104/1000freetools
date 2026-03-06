@@ -47,12 +47,7 @@ export default function ChildHeightPredictor() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Child Height Predictor – Free Adult Height Calculator</CardTitle>
-          <CardDescription>
-            Predict your child's adult height using the mid-parental height method. Enter both parents' heights and the child's gender to get an estimated adult height with a normal range.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

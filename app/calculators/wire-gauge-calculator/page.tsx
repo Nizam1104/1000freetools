@@ -73,12 +73,7 @@ export default function WireGaugeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Wire Gauge Calculator – Calculate Required Wire Size</CardTitle>
-          <CardDescription>
-            Determine the appropriate wire gauge for your electrical project. Our calculator considers current, length, voltage, and acceptable voltage drop to recommend the right AWG size.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

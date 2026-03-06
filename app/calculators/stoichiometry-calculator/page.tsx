@@ -92,12 +92,7 @@ export default function StoichiometryCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Stoichiometry Calculator – Balance Chemical Reactions Instantly</CardTitle>
-          <CardDescription>
-            Solve stoichiometry problems effortlessly with our stoichiometry calculator. Input your balanced chemical equation coefficients and known quantities to find moles, grams, or molecules of reactants and products. A must-have tool for chemistry students.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

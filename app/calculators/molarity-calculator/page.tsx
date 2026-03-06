@@ -80,12 +80,7 @@ export default function MolarityCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Molarity Calculator – Calculate Molar Concentration Instantly</CardTitle>
-          <CardDescription>
-            Use our free molarity calculator to find the molar concentration of a solution. Enter moles of solute and volume of solution to get accurate results in seconds. Perfect for chemistry students, lab technicians, and researchers.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

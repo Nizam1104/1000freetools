@@ -46,12 +46,7 @@ export default function PcbTraceWidthCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>PCB Trace Width Calculator – Calculate Copper Trace Width</CardTitle>
-          <CardDescription>
-            Calculate minimum PCB trace width for a given current using IPC-2221 guidelines. Prevents overheating and ensures reliability.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

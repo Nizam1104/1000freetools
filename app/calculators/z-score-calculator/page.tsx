@@ -34,10 +34,7 @@ export default function ZScoreCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Z-Score Calculator</CardTitle>
-          <CardDescription>Calculate the standard score and percentile</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

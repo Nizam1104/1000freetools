@@ -44,12 +44,7 @@ export default function RlcResonanceCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>RLC Resonance Calculator – Calculate Resonant Frequency</CardTitle>
-          <CardDescription>
-            Calculate resonant frequency, quality factor, and bandwidth for RLC circuits. Essential for filter and oscillator design.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

@@ -50,12 +50,7 @@ export default function MirrorEquationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Mirror Equation Calculator – Spherical Mirror Formula</CardTitle>
-          <CardDescription>
-            Calculate focal length, object distance, or image distance for spherical mirrors. Our calculator works for both concave and convex mirrors.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-muted-foreground">1/f = 1/u + 1/v (f = R/2 for spherical mirrors)</p>

@@ -90,10 +90,7 @@ export default function InverseMatrixCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Inverse Matrix Calculator</CardTitle>
-          <CardDescription>Calculate the inverse of a 2x2 or 3x3 matrix</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -41,12 +41,7 @@ export default function DateDifferenceCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Date Difference Calculator – Days Between Two Dates</CardTitle>
-          <CardDescription>
-            Easily find the difference between any two dates. Our date difference calculator returns results in days, weeks, months, and years—perfect for planning and tracking.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

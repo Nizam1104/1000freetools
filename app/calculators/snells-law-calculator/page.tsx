@@ -57,12 +57,7 @@ export default function SnellsLawCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Snell's Law Calculator – Refraction Calculator</CardTitle>
-          <CardDescription>
-            Calculate the angle of refraction using Snell's law. Our calculator also determines the critical angle for total internal reflection.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

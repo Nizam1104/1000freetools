@@ -57,12 +57,7 @@ export default function PipeFrictionLossCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Pipe Friction Loss Calculator – Head Loss in Pipe Flow</CardTitle>
-          <CardDescription>
-            Calculate pressure or head loss due to friction in pipes. Our pipe friction loss calculator uses the Darcy-Weisbach equation for accurate results in water and fluid systems.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

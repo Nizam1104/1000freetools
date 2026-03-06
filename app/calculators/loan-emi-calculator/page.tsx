@@ -73,12 +73,7 @@ export default function LoanEMICalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Loan EMI Calculator – Calculate Monthly Loan Payments</CardTitle>
-          <CardDescription>
-            Calculate your fixed monthly loan installment (EMI) in seconds. Enter the loan amount, interest rate, and tenure to see your monthly payment.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

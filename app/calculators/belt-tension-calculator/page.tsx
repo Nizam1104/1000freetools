@@ -40,12 +40,7 @@ export default function BeltTensionCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Belt Tension Calculator – Calculate Belt Drive Tension</CardTitle>
-          <CardDescription>
-            Calculate belt tension and torque for belt drive systems. Determine proper initial tension for installation.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

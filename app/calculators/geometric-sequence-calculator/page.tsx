@@ -50,10 +50,7 @@ export default function GeometricSequenceCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Geometric Sequence Calculator</CardTitle>
-          <CardDescription>Calculate nth term and sum of geometric sequence</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

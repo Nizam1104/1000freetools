@@ -113,12 +113,7 @@ export default function VoltageCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Voltage Calculator</CardTitle>
-          <CardDescription>
-            Calculate voltage using Ohm's Law (V = IR), from power and current (V = P/I), or from power and resistance (V = √(PR)).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs defaultValue="vir" className="w-full">
             <TabsList className="grid w-full grid-cols-3">

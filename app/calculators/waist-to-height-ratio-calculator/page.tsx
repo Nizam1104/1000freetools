@@ -57,12 +57,7 @@ export default function WaistToHeightRatioCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Waist-to-Height Ratio Calculator – Assess Your Health Risk</CardTitle>
-          <CardDescription>
-            The waist-to-height ratio is a powerful predictor of health risks. Use our calculator to see where you stand and get insights on cardiovascular and metabolic health.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

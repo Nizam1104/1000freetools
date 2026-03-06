@@ -91,12 +91,7 @@ export default function KineticEnergyCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Kinetic Energy Calculator – Calculate Energy of Motion</CardTitle>
-          <CardDescription>
-            Calculate kinetic energy from mass and velocity. Includes classical and relativistic calculations for high-speed objects. Perfect for physics students and engineers.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

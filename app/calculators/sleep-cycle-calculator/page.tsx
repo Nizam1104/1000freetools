@@ -57,12 +57,7 @@ export default function SleepCycleCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Sleep Cycle Calculator – Wake Up Refreshed Every Morning</CardTitle>
-          <CardDescription>
-            Wake up feeling energized by timing your sleep with our sleep cycle calculator. Find the best times to wake up or fall asleep based on natural 90-minute sleep cycles.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

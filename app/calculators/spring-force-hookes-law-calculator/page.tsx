@@ -56,12 +56,7 @@ export default function SpringForceCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Hooke's Law Calculator – Spring Force and Displacement</CardTitle>
-          <CardDescription>
-            Solve spring mechanics problems with our Hooke's Law calculator. Find force, spring constant, or displacement using F = kx for physics and mechanical engineering.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <Tabs defaultValue="force">

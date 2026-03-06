@@ -47,12 +47,7 @@ export default function ConcreteMixRatioCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Concrete Mix Ratio Calculator – Calculate Material Quantities</CardTitle>
-          <CardDescription>
-            Calculate cement, sand, and aggregate quantities for concrete mixes. Enter volume and mix ratio.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

@@ -60,10 +60,7 @@ export default function QuadraticEquationSolver() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Quadratic Equation Solver</CardTitle>
-          <CardDescription>Solve equations in the form: ax² + bx + c = 0</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="p-3 bg-muted rounded-md text-center font-mono">

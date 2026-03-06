@@ -26,10 +26,7 @@ export default function RangeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Range Calculator</CardTitle>
-          <CardDescription>Find the difference between max and min values</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

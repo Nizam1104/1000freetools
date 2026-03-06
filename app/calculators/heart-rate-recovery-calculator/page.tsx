@@ -56,12 +56,7 @@ export default function HeartRateRecoveryCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Heart Rate Recovery Calculator – Measure Your Cardiovascular Fitness</CardTitle>
-          <CardDescription>
-            Heart rate recovery is a key fitness metric. Enter your peak and post-exercise heart rate to calculate HRR and gauge your cardiovascular health and recovery efficiency.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

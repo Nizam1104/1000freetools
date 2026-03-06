@@ -38,12 +38,7 @@ export default function LeanBodyMassCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Lean Body Mass Calculator – Find Your Fat-Free Mass Instantly</CardTitle>
-          <CardDescription>
-            Determine your lean body mass with our simple calculator. Enter your total weight and body fat percentage to get your fat-free mass—a key metric for fitness and nutrition planning.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

@@ -52,12 +52,7 @@ export default function SwimmingCalorieCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Swimming Calorie Calculator – How Many Calories Does Swimming Burn?</CardTitle>
-          <CardDescription>
-            Discover the calorie-burning power of swimming. Input your weight, swim style, and duration to calculate calories burned in the pool with our free swimming calorie calculator.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

@@ -30,12 +30,7 @@ export default function HvacAirflowCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>HVAC Airflow Calculator – Calculate Required CFM</CardTitle>
-          <CardDescription>
-            Calculate the required airflow for HVAC systems based on room volume and air changes per hour (ACH).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

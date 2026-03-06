@@ -33,10 +33,7 @@ export default function RhombusAreaCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Rhombus Area Calculator</CardTitle>
-          <CardDescription>Calculate area and perimeter of a rhombus</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

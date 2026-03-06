@@ -48,12 +48,7 @@ export default function WeightLossTimeCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Weight Loss Time Calculator – How Long Will It Take to Lose Weight?</CardTitle>
-          <CardDescription>
-            Plan your weight loss journey with confidence. Enter your current weight, goal weight, and daily deficit to see a realistic timeline for reaching your target.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

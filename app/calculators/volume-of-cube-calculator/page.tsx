@@ -37,10 +37,7 @@ export default function VolumeOfCubeCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Volume of Cube Calculator – Calculate Cube Volume and Surface Area</CardTitle>
-          <CardDescription>Calculate volume and surface area of a cube</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

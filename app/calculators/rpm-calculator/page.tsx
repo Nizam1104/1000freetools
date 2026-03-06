@@ -60,12 +60,7 @@ export default function RpmCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>RPM Calculator – Calculate Rotational Speed and Gear Ratios</CardTitle>
-          <CardDescription>
-            Calculate RPM for pulley systems, gear trains, and AC motors instantly. Enter your parameters to find output speed, gear ratio, and motor synchronous speed — free online RPM calculator for engineers and mechanics.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-2">

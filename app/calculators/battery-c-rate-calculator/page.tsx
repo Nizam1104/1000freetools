@@ -36,12 +36,7 @@ export default function BatteryCRateCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Battery C-Rate Calculator – Calculate Charge/Discharge Rate</CardTitle>
-          <CardDescription>
-            Calculate battery C-rate and corresponding current. C-rate indicates how fast a battery charges or discharges.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

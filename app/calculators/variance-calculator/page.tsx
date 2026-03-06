@@ -40,10 +40,7 @@ export default function VarianceCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Variance Calculator – Calculate Population and Sample Variance</CardTitle>
-          <CardDescription>Calculate population and sample variance</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

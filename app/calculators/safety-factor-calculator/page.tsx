@@ -64,12 +64,7 @@ export default function SafetyFactorCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Safety Factor Calculator – Factor of Safety Calculator</CardTitle>
-          <CardDescription>
-            Calculate the factor of safety for your design. Enter material properties and applied stress to determine if your design meets safety requirements.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

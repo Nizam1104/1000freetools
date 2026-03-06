@@ -60,12 +60,7 @@ export default function BloodAlcoholCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Blood Alcohol Content Calculator – Estimate Your BAC Level</CardTitle>
-          <CardDescription>
-            Use our BAC calculator to estimate your blood alcohol content based on the number of drinks, your body weight, and time elapsed. Stay safe and make informed decisions.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -98,12 +98,7 @@ export default function SteelWeightCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Steel Weight Calculator – Calculate Weight of Steel Sections and Bars</CardTitle>
-          <CardDescription>
-            Find the weight of any steel component quickly. Our steel weight calculator covers bars, plates, pipes, and structural sections in kg or lbs from standard dimensions.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

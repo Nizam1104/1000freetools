@@ -47,12 +47,7 @@ export default function PowerFactorCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Power Factor Calculator – Calculate PF and Phase Angle</CardTitle>
-          <CardDescription>
-            Calculate power factor, phase angle, and reactive power for AC circuits. Essential for power system analysis.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

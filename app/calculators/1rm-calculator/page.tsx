@@ -11,7 +11,7 @@ export default function OneRMCalculator() {
   const [weight, setWeight] = useState<string>("");
   const [reps, setReps] = useState<string>("");
   const [unit, setUnit] = useState<"kg" | "lbs">("kg");
-  const [results, setResults] = useState<{formula: string, value: number}[]>([]);
+  const [results, setResults] = useState<{ formula: string, value: number }[]>([]);
 
   const calculate = () => {
     const w = parseFloat(weight);
@@ -21,13 +21,13 @@ export default function OneRMCalculator() {
 
     // Epley: weight × (1 + reps/30)
     const epley = w * (1 + r / 30);
-    
+
     // Brzycki: weight × 36/(37-reps)
     const brzycki = r < 37 ? w * (36 / (37 - r)) : epley;
-    
+
     // Lander: weight × (100 / (101.3 - 2.67123 × reps))
     const lander = w * (100 / (101.3 - 2.67123 * r));
-    
+
     // Lombardi: weight × reps^0.10
     const lombardi = w * Math.pow(r, 0.10);
 
@@ -49,12 +49,7 @@ export default function OneRMCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>1RM Calculator – Calculate Your One Rep Max for Any Lift</CardTitle>
-          <CardDescription>
-            Find your one-rep max without maxing out. Enter the weight and reps you lifted to calculate your estimated 1RM and set smarter strength training goals.
-          </CardDescription>
-        </CardHeader>
+
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

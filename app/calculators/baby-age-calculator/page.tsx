@@ -104,12 +104,7 @@ export default function BabyAgeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Baby Age Calculator – Free Infant Age Calculator in Weeks and Months</CardTitle>
-          <CardDescription>
-            Calculate your baby's exact age in weeks, months, and days. Track upcoming developmental milestones and never miss an important date in your baby's growth journey.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

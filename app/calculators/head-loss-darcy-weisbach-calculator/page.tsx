@@ -43,12 +43,7 @@ export default function HeadLossDarcyWeisbachCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Head Loss (Darcy-Weisbach) Calculator – Pipe Friction Loss</CardTitle>
-          <CardDescription>
-            Calculate head loss due to friction in pipes using the Darcy-Weisbach equation. Essential for pipe system design and pump sizing.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

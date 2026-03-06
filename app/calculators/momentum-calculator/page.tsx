@@ -53,12 +53,7 @@ export default function MomentumCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Momentum Calculator</CardTitle>
-          <CardDescription>
-            Calculate linear momentum from mass and velocity (p = mv), or from force and time (p = F × t).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs defaultValue="mass" className="w-full">
             <TabsList className="grid w-full grid-cols-2">

@@ -35,12 +35,7 @@ export default function BrewsterAngleCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Brewster Angle Calculator – Polarization Angle Calculator</CardTitle>
-          <CardDescription>
-            Calculate Brewster's angle (polarization angle) for light passing between two media. At this angle, reflected light is completely polarized.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

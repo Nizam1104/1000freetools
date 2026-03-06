@@ -31,10 +31,7 @@ export default function PercentageChangeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Percentage Change Calculator</CardTitle>
-          <CardDescription>Calculate the percentage increase or decrease</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

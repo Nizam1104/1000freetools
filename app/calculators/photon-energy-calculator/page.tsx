@@ -41,12 +41,7 @@ export default function PhotonEnergyCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Photon Energy Calculator – Calculate Energy of a Photon</CardTitle>
-          <CardDescription>
-            Calculate the energy of a photon from its wavelength or frequency. Our calculator provides results in Joules and electron-volts (eV).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

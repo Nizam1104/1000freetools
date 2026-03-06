@@ -40,12 +40,7 @@ export default function FastenerLoadCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Fastener Load Calculator – Calculate Fastener Capacity</CardTitle>
-          <CardDescription>
-            Calculate the load capacity of fasteners including tensile and shear strength with safety factors.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

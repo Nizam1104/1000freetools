@@ -40,12 +40,7 @@ export default function ProteinDistributionCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Protein Distribution Calculator – Optimize Protein Timing Per Meal</CardTitle>
-          <CardDescription>
-            Maximize muscle growth and recovery by spacing your protein intake correctly. Our protein distribution calculator helps you divide your daily protein across meals for best results.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

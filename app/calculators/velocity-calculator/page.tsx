@@ -93,12 +93,7 @@ export default function VelocityCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Velocity Calculator – Calculate Speed with Direction</CardTitle>
-          <CardDescription>
-            Calculate velocity from displacement and time. Unlike speed, velocity includes direction – making it a vector quantity essential for physics and engineering calculations.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

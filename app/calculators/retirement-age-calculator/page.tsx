@@ -79,12 +79,7 @@ export default function RetirementAgeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Retirement Age Calculator – Free Retirement Date Calculator</CardTitle>
-          <CardDescription>
-            Calculate when you can retire based on your birth date and desired retirement age. Find out exactly how many years, months, and days until your retirement.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

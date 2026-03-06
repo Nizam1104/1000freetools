@@ -109,12 +109,7 @@ export default function PregnancyWeekCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Pregnancy Week Calculator – Free Due Date & Pregnancy Tracker</CardTitle>
-          <CardDescription>
-            Calculate your current pregnancy week and due date. Enter your last menstrual period (LMP) or due date to track your pregnancy progress, trimester, and estimated conception date.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <Tabs value={inputMethod} onValueChange={(v) => setInputMethod(v as "lmp" | "due")}>

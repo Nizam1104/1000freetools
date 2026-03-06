@@ -70,12 +70,7 @@ export default function CalorieDeficitCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Calorie Deficit Calculator – How Many Calories to Cut to Lose Weight?</CardTitle>
-          <CardDescription>
-            Find out exactly how large a calorie deficit you need to reach your weight loss goals. Our calorie deficit calculator helps you lose weight safely and sustainably.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">

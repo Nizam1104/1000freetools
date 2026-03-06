@@ -70,10 +70,7 @@ export default function RomanNumeralsConverter() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Roman Numerals Converter</CardTitle>
-          <CardDescription>Convert between Roman numerals and decimal numbers</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="flex gap-2">

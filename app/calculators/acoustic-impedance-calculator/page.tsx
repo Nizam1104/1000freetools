@@ -28,12 +28,7 @@ export default function AcousticImpedanceCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Acoustic Impedance Calculator – Calculate Z</CardTitle>
-          <CardDescription>
-            Calculate the acoustic impedance of a material. Z = ρc where ρ is density and c is the speed of sound.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

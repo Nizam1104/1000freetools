@@ -31,10 +31,7 @@ export default function SectorAreaCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Sector Area Calculator</CardTitle>
-          <CardDescription>Calculate area and arc length of a circular sector</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

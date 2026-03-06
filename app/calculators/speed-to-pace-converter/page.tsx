@@ -33,12 +33,7 @@ export default function SpeedToPaceConverter() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Speed to Pace Converter – Convert Speed to Running Pace Online</CardTitle>
-          <CardDescription>
-            Convert speed to pace instantly with our free tool. Whether you prefer km/h or mph, get your per-kilometer or per-mile pace in seconds.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

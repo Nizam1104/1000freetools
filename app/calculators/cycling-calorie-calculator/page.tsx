@@ -52,12 +52,7 @@ export default function CyclingCalorieCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Cycling Calorie Calculator – Calories Burned Biking Calculator</CardTitle>
-          <CardDescription>
-            Estimate how many calories you burn on your bike rides. Our cycling calorie calculator factors in your weight, speed, and ride duration for accurate energy expenditure results.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

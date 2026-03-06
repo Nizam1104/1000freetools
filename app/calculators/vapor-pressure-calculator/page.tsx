@@ -94,12 +94,7 @@ export default function VaporPressureCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Vapor Pressure Calculator – Calculate Vapor Pressure at Any Temperature</CardTitle>
-          <CardDescription>
-            Determine the vapor pressure of a substance at any temperature using our vapor pressure calculator. Based on the Clausius-Clapeyron and Antoine equations, it's ideal for physical chemistry, thermodynamics, and engineering applications.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -103,12 +103,7 @@ export default function ElectricPowerCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Electric Power Calculator</CardTitle>
-          <CardDescription>
-            Calculate electrical power using P = VI, P = I²R, or P = V²/R. Also calculate energy consumption over time.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs defaultValue="pvi" className="w-full">
             <TabsList className="grid w-full grid-cols-3">

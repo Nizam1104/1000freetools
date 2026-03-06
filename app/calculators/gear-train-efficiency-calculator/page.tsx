@@ -59,12 +59,7 @@ export default function GearTrainEfficiencyCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Gear Train Efficiency Calculator – Calculate Power Loss</CardTitle>
-          <CardDescription>
-            Calculate the overall efficiency of a gear train. Enter gear pairs and their individual efficiencies.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             {gears.map((gear, i) => (

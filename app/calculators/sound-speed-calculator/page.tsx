@@ -44,12 +44,7 @@ export default function SoundSpeedCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Sound Speed Calculator – Calculate Speed of Sound</CardTitle>
-          <CardDescription>
-            Calculate the speed of sound in various media. For air, enter temperature. For other media, use bulk modulus and density.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -59,12 +59,7 @@ export default function IdealGasLawCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Ideal Gas Law Calculator – Solve PV = nRT for Any Variable</CardTitle>
-          <CardDescription>
-            Apply the ideal gas law PV = nRT to find any unknown gas property. Our calculator solves for pressure, volume, temperature, or amount of gas in chemistry and physics.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

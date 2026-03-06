@@ -87,12 +87,7 @@ export default function EmpiricalFormulaCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Empirical Formula Calculator – Find Empirical Formula from Percent Composition</CardTitle>
-          <CardDescription>
-            Find the empirical formula of any compound using our free empirical formula calculator. Enter percent composition or mass of each element to instantly get the simplest whole-number ratio. Great for general and organic chemistry students.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             {elements.map((element, index) => (

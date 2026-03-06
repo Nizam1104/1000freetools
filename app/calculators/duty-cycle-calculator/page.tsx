@@ -38,12 +38,7 @@ export default function DutyCycleCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Duty Cycle Calculator – Calculate PWM Duty Cycle</CardTitle>
-          <CardDescription>
-            Calculate duty cycle, on-time, and off-time for PWM signals. Essential for motor control and power regulation.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

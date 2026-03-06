@@ -38,12 +38,7 @@ export default function BeltLengthCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Belt Length Calculator – Calculate V-Belt Length</CardTitle>
-          <CardDescription>
-            Calculate the required belt length for a two-pulley system. Enter pulley diameters and center distance to find the correct belt size.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

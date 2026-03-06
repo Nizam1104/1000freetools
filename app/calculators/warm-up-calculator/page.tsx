@@ -58,12 +58,7 @@ export default function WarmUpCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Warm-Up Calculator – Build the Perfect Warm-Up Set Progression</CardTitle>
-          <CardDescription>
-            Prepare your body and CNS for heavy lifting. Our warm-up calculator generates a complete set-by-set warm-up progression leading up to your working weight.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

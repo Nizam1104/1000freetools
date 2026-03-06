@@ -123,12 +123,7 @@ export default function GradePercentageCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Grade Percentage Calculator – Convert Marks to Percentage & Letter Grade</CardTitle>
-          <CardDescription>
-            Instantly convert your exam or assignment marks to a percentage grade with our Grade Percentage Calculator. Enter your score and the maximum marks to get your grade percentage, letter grade, and GPA equivalent.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

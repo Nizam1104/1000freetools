@@ -46,12 +46,7 @@ export default function AcImpedanceCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>AC Impedance Calculator – Calculate Impedance in AC Circuits</CardTitle>
-          <CardDescription>
-            Calculate impedance, reactance, and phase angle for AC circuits with R, L, and C components.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

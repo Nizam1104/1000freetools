@@ -39,12 +39,7 @@ export default function NuclearDecayHalfLifeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Nuclear Decay Half-Life Calculator – Radioactive Decay</CardTitle>
-          <CardDescription>
-            Calculate radioactive decay using half-life. Find remaining amount after time, or calculate time needed for specific decay.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

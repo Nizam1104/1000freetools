@@ -34,10 +34,7 @@ export default function ModeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Mode Calculator</CardTitle>
-          <CardDescription>Find the most frequently occurring value(s)</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

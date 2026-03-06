@@ -49,12 +49,7 @@ export default function RelativisticEnergyCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Relativistic Energy Calculator – Special Relativity Calculator</CardTitle>
-          <CardDescription>
-            Calculate relativistic energy, momentum, and mass using Einstein's special relativity. Our calculator handles high-velocity scenarios where classical physics breaks down.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

@@ -76,12 +76,7 @@ export default function MortgageCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Mortgage Calculator – Calculate Monthly Home Loan Payments</CardTitle>
-          <CardDescription>
-            Estimate your monthly mortgage payment, total interest paid, and full amortization schedule based on home price, down payment, rate, and loan term.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

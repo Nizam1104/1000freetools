@@ -50,12 +50,7 @@ export default function DateAddSubtractCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Date Calculator – Add or Subtract Days, Weeks & Months from a Date</CardTitle>
-          <CardDescription>
-            Find past or future dates instantly by adding or subtracting time from any date. Works with days, weeks, months, and years for deadlines, events, and planning.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

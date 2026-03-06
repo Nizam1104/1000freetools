@@ -107,12 +107,7 @@ export default function TDEECalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>TDEE Calculator – Calculate Your Total Daily Energy Expenditure</CardTitle>
-          <CardDescription>
-            Our TDEE calculator gives you a complete picture of your daily calorie burn. Factor in your activity level for an accurate estimate to guide weight loss, gain, or maintenance.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -62,12 +62,7 @@ export default function ThermalExpansionCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Thermal Expansion Calculator – Linear and Volumetric Expansion</CardTitle>
-          <CardDescription>
-            Calculate how much a material expands or contracts with temperature change. Our thermal expansion calculator covers linear and volumetric expansion for engineering design.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

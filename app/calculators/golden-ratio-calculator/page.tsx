@@ -44,10 +44,7 @@ export default function GoldenRatioCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Golden Ratio Calculator</CardTitle>
-          <CardDescription>Calculate proportions using the golden ratio (φ ≈ 1.618)</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="p-3 bg-muted rounded-md text-center font-mono text-sm">

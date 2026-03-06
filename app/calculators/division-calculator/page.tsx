@@ -42,10 +42,7 @@ export default function DivisionCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Division Calculator</CardTitle>
-          <CardDescription>Divide one number by another</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

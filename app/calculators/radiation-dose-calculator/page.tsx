@@ -42,12 +42,7 @@ export default function RadiationDoseCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Radiation Dose Calculator – Estimate Radiation Exposure</CardTitle>
-          <CardDescription>
-            Estimate radiation dose from a gamma source. Enter activity, distance, and exposure time for approximate dose calculation.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

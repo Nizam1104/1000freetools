@@ -90,12 +90,7 @@ export default function DeepSleepCyclePlanner() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Deep Sleep Planner – Optimize Your Sleep Schedule for Deep Rest</CardTitle>
-          <CardDescription>
-            Maximize deep sleep for better recovery and brain health. Our deep sleep cycle planner helps you schedule bedtimes that align with natural sleep architecture for optimal rest.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

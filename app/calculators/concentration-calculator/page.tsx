@@ -83,12 +83,7 @@ export default function ConcentrationCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Concentration Calculator – Convert Solution Concentration Units</CardTitle>
-          <CardDescription>
-            Calculate solution concentration in molarity, percent composition, ppm, or ppb with our versatile concentration calculator. Ideal for chemists, lab technicians, and students working with solution preparation and analysis.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

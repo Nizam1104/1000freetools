@@ -82,12 +82,7 @@ export default function InductorCalculations() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Inductor Calculator – Inductance and Inductive Reactance Calculator</CardTitle>
-          <CardDescription>
-            Analyze inductor behavior in circuits with our inductor calculator. Compute inductance, inductive reactance (XL), and impedance for AC circuit design and electronics.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <Tabs defaultValue="inductance">

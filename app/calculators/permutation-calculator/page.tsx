@@ -55,12 +55,7 @@ export default function PermutationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Permutation Calculator</CardTitle>
-          <CardDescription>
-            Calculate arrangements where order matters: P(n,r)
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

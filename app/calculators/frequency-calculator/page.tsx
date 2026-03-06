@@ -56,12 +56,7 @@ export default function FrequencyCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Frequency Calculator – Calculate Frequency from Period and More</CardTitle>
-          <CardDescription>
-            Calculate signal frequency, period, and angular frequency with our frequency calculator. Covers Hz to period conversions and is useful for electronics, physics, and audio.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

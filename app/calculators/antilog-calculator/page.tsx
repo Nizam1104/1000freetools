@@ -28,10 +28,7 @@ export default function AntilogCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Antilog Calculator</CardTitle>
-          <CardDescription>Calculate the inverse logarithm (bˣ)</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -82,12 +82,7 @@ export default function IdealWeightCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Ideal Weight Calculator – What Is Your Ideal Body Weight?</CardTitle>
-          <CardDescription>
-            Discover your ideal weight range with our free calculator. Based on your height and gender, we apply multiple scientific formulas to give you a healthy target weight.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -42,12 +42,7 @@ export default function WeldingStrengthCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Welding Strength Calculator – Calculate Weld Strength</CardTitle>
-          <CardDescription>
-            Calculate the strength of welds based on weld type, size, and electrode strength. Essential for structural design.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

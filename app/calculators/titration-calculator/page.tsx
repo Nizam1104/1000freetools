@@ -58,12 +58,7 @@ export default function TitrationCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Titration Calculator – Find Unknown Concentration from Titration Data</CardTitle>
-          <CardDescription>
-            Solve titration problems quickly with our titration calculator. Enter the volume and concentration of your titrant and analyte to find the unknown concentration of an acid or base. Essential for analytical chemistry labs.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

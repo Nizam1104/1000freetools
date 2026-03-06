@@ -37,12 +37,7 @@ export default function ReynoldsNumberCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Reynolds Number Calculator – Pipe Flow Reynolds Number</CardTitle>
-          <CardDescription>
-            Calculate the Reynolds number for pipe flow to determine if flow is laminar, transitional, or turbulent.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

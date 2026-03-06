@@ -45,10 +45,7 @@ export default function FibonacciGenerator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Fibonacci Generator</CardTitle>
-          <CardDescription>Generate Fibonacci sequence up to n terms</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

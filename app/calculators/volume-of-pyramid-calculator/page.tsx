@@ -34,10 +34,7 @@ export default function VolumeOfPyramidCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Volume of Pyramid Calculator</CardTitle>
-          <CardDescription>Calculate volume of a rectangular pyramid</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

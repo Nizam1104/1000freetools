@@ -28,10 +28,7 @@ export default function ModuloCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Modulo Calculator</CardTitle>
-          <CardDescription>Calculate the remainder: a mod n</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -62,12 +62,7 @@ export default function FlooringCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Flooring Calculator – How Much Flooring Do You Need?</CardTitle>
-          <CardDescription>
-            Get accurate flooring estimates for any room with our flooring calculator. Enter room dimensions and material size to calculate the total area and number of units needed.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

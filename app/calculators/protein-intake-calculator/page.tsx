@@ -72,12 +72,7 @@ export default function ProteinIntakeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Protein Intake Calculator – How Much Protein Do You Need Per Day?</CardTitle>
-          <CardDescription>
-            Use our protein intake calculator to determine your optimal daily protein consumption. Whether you're building muscle, losing weight, or maintaining fitness, get personalized recommendations.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

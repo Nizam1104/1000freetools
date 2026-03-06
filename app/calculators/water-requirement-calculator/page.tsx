@@ -95,12 +95,7 @@ export default function WaterRequirementCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Water Intake Calculator – How Much Water Should You Drink Per Day?</CardTitle>
-          <CardDescription>
-            Staying hydrated is vital. Use our water requirement calculator to find your personalized daily water intake goal based on your body weight, exercise habits, and environment.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

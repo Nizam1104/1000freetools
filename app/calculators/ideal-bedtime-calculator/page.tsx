@@ -38,12 +38,7 @@ export default function IdealBedtimeCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Ideal Bedtime Calculator – What Time Should You Go to Sleep?</CardTitle>
-          <CardDescription>
-            Struggling with morning grogginess? Our bedtime calculator tells you exactly when to go to sleep so you wake up feeling rested and refreshed every day.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

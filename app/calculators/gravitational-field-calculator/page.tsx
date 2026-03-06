@@ -40,12 +40,7 @@ export default function GravitationalFieldCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Gravitational Field Calculator – Calculate Gravitational Field Strength</CardTitle>
-          <CardDescription>
-            Calculate the gravitational field strength at a distance from a mass. Our calculator uses g = GM/r² for point masses and spherical bodies.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

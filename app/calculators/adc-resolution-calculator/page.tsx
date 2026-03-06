@@ -35,12 +35,7 @@ export default function AdcResolutionCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>ADC Resolution Calculator – Calculate ADC LSB Size</CardTitle>
-          <CardDescription>
-            Calculate the resolution and number of levels for an ADC based on bit depth and reference voltage.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

@@ -93,12 +93,7 @@ export default function PregnancyWeightGainCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Pregnancy Weight Gain Calculator – Free Pregnancy BMI Calculator</CardTitle>
-          <CardDescription>
-            Calculate recommended pregnancy weight gain based on your pre-pregnancy BMI. Get personalized weight gain recommendations for each trimester according to IOM guidelines.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

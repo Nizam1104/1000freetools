@@ -97,12 +97,7 @@ export default function KidneyFunctionEgfrCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Kidney Function eGFR Calculator – Free CKD-EPI Calculator</CardTitle>
-          <CardDescription>
-            Calculate your estimated Glomerular Filtration Rate (eGFR) using the CKD-EPI formula. Enter serum creatinine, age, gender, and race to assess kidney function and determine CKD stage.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

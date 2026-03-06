@@ -31,12 +31,7 @@ export default function RootCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Root Calculator – Calculate Square, Cube and Nth Roots</CardTitle>
-          <CardDescription>
-            Calculate any nth root instantly with our free Root Calculator. Find square roots, cube roots, or any higher-order roots with full precision. Enter your radicand and root index to get results — supports negative numbers for odd roots.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

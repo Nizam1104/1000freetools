@@ -110,12 +110,7 @@ export default function OhmsLawCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Ohm's Law Calculator</CardTitle>
-          <CardDescription>
-            Calculate voltage, current, resistance, or power using Ohm's Law. Enter any two known values to find the unknown parameters.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)}>
             <TabsList className="grid grid-cols-4 w-full">

@@ -47,12 +47,7 @@ export default function PlasteringCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Plastering Calculator – How Much Plaster Do You Need?</CardTitle>
-          <CardDescription>
-            Calculate plaster quantities for walls and ceilings with our plastering calculator. Enter surface area and plaster thickness to find the volume and weight of plaster needed.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

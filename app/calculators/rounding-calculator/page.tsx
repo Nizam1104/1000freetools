@@ -28,12 +28,7 @@ export default function RoundingCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Rounding Calculator – Round Numbers to Decimal Places</CardTitle>
-          <CardDescription>
-            Round any number to specified decimal places instantly with our free Rounding Calculator. Enter your number and choose decimal places for currency, science, or general math — uses standard round-half-up method for accurate results.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

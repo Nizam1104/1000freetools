@@ -84,12 +84,7 @@ export default function KetogenicMacroCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Keto Macro Calculator – Perfect Macros for a Ketogenic Diet</CardTitle>
-          <CardDescription>
-            Start your keto journey the right way. Our ketogenic macro calculator gives you personalized fat, protein, and carb targets to keep your body in ketosis and burning fat.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

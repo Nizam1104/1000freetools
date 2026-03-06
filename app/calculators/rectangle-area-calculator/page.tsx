@@ -31,10 +31,7 @@ export default function RectangleAreaCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Rectangle Area Calculator</CardTitle>
-          <CardDescription>Calculate area, perimeter, and diagonal of a rectangle</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

@@ -61,12 +61,7 @@ export default function ResistanceCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Resistance Calculator – Calculate Resistance with Ohm's Law</CardTitle>
-          <CardDescription>
-            Find electrical resistance using voltage and current with our resistance calculator. Based on Ohm's Law R = V/I, suitable for circuit analysis and electronics design.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

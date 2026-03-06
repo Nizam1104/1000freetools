@@ -54,12 +54,7 @@ export default function WaistToHipRatioCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Waist-to-Hip Ratio Calculator – Check Your Body Shape & Health Risk</CardTitle>
-          <CardDescription>
-            Find your waist-to-hip ratio and understand what it means for your health. Our calculator helps identify risk levels for heart disease, diabetes, and other conditions.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

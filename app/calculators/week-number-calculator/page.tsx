@@ -54,12 +54,7 @@ export default function WeekNumberCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Week Number Calculator – Find ISO Week Number for Any Date</CardTitle>
-          <CardDescription>
-            Look up the week number for any date instantly. Our ISO week number calculator also shows the start and end dates for any given week of the year.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

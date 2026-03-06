@@ -86,12 +86,7 @@ export default function CompoundInterestCalculatorPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Compound Interest Calculator</CardTitle>
-          <CardDescription>
-            Find out how your money grows when interest compounds on both principal and accumulated earnings. Choose your compounding frequency for accurate projections.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

@@ -79,12 +79,7 @@ export default function ReactionYieldCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Reaction Yield Calculator – Calculate Theoretical and Percent Yield</CardTitle>
-          <CardDescription>
-            Calculate the theoretical yield, actual yield, and percent yield of any chemical reaction with our free yield calculator. Understand your reaction efficiency and optimize lab results. Ideal for chemistry students and researchers.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

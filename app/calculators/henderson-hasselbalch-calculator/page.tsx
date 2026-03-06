@@ -52,12 +52,7 @@ export default function HendersonHasselbalchCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Henderson-Hasselbalch Calculator – Buffer pH Made Easy</CardTitle>
-          <CardDescription>
-            Calculate the pH of buffer solutions using the Henderson-Hasselbalch equation. Enter pKa, acid concentration, and conjugate base concentration to get precise buffer pH values. Ideal for biochemistry, pharmacology, and analytical chemistry.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

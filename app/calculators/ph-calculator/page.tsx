@@ -93,12 +93,7 @@ export default function PHCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>pH Calculator – Calculate pH from H⁺ Concentration</CardTitle>
-          <CardDescription>
-            Determine the pH of any solution instantly with our pH calculator. Input the hydrogen ion concentration [H⁺] or pH value to convert between them. Great for chemistry students, teachers, and lab professionals.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

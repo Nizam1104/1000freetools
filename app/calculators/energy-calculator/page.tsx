@@ -70,12 +70,7 @@ export default function EnergyCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Energy Calculator</CardTitle>
-          <CardDescription>
-            Calculate kinetic energy (KE = ½mv²) and gravitational potential energy (PE = mgh).
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <Tabs defaultValue="kinetic" className="w-full">
             <TabsList className="grid w-full grid-cols-2">

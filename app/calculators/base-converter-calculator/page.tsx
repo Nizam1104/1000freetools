@@ -38,10 +38,7 @@ export default function BaseConverterCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Base Converter Calculator</CardTitle>
-          <CardDescription>Convert numbers between different bases (2-36)</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

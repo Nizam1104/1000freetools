@@ -126,12 +126,7 @@ export default function AnniversaryCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Anniversary Calculator – Free Anniversary Date Counter</CardTitle>
-          <CardDescription>
-            Calculate how long since your special day and when your next anniversary is. Perfect for weddings, birthdays, relationships, and any memorable date.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

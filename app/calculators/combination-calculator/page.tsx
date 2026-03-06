@@ -40,10 +40,7 @@ export default function CombinationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Combination Calculator</CardTitle>
-          <CardDescription>Calculate selections where order doesn't matter: C(n,r)</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

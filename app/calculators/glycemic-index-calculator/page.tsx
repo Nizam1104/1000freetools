@@ -85,12 +85,7 @@ export default function GlycemicIndexCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Glycemic Index Calculator – Find the GI of Any Food</CardTitle>
-          <CardDescription>
-            Manage blood sugar and energy levels with our glycemic index tool. Look up GI values for common foods to make smarter dietary choices for diabetes management or performance.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

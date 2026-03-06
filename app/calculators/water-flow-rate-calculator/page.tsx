@@ -57,12 +57,7 @@ export default function WaterFlowRateCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Water Flow Rate Calculator – Calculate Flow Rate in Pipes</CardTitle>
-          <CardDescription>
-            Determine water or fluid flow rates quickly with our flow rate calculator. Enter pipe diameter and velocity to calculate volumetric flow in liters per second or gallons per minute.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

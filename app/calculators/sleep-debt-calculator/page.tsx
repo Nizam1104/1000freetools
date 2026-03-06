@@ -62,12 +62,7 @@ export default function SleepDebtCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <Card>
-        <CardHeader>
-          <CardTitle>Sleep Debt Calculator – How Much Sleep Are You Missing?</CardTitle>
-          <CardDescription>
-            Are you chronically under-slept? Our sleep debt calculator totals your cumulative sleep deficit over days or weeks so you can understand and address your sleep deprivation.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

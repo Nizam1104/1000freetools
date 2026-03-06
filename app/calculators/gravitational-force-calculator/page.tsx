@@ -45,12 +45,7 @@ export default function GravitationalForceCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Gravitational Force Calculator – Newton's Law of Gravitation</CardTitle>
-          <CardDescription>
-            Calculate the gravitational force between two objects using Newton's universal law of gravitation. Enter mass and distance values to compute gravitational attraction.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-3 gap-4">

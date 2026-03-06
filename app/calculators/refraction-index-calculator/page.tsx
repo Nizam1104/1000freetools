@@ -39,12 +39,7 @@ export default function RefractionIndexCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Refraction Index Calculator – Calculate Refractive Index</CardTitle>
-          <CardDescription>
-            Calculate the refractive index of a material from the speed of light or wavelength ratio. Our calculator helps determine optical properties.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-2">

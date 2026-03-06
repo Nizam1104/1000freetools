@@ -31,10 +31,7 @@ export default function VolumeOfCylinderCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Volume of Cylinder Calculator</CardTitle>
-          <CardDescription>Calculate volume and surface area of a cylinder</CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>

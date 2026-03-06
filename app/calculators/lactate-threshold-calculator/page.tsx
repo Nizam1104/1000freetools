@@ -71,12 +71,7 @@ export default function LactateThresholdCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>Lactate Threshold Calculator – Find Your Anaerobic Threshold</CardTitle>
-          <CardDescription>
-            Train at the right intensity with our lactate threshold calculator. Estimate your threshold heart rate and pace to improve endurance performance and training zone accuracy.
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-4">
             <div>
