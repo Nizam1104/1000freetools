@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import HslToHsvConverterSEO from "@/components/seo-content/color-tools/HslToHsvConverter";
 
 export const relatedTools = [
   { name: "RGB to HSL Converter", href: "/color-tools/rgb-to-hsl-converter" },
@@ -56,10 +57,10 @@ export default function HslToHsvConverterPage() {
 
   const hsv = isValidHsl(hslInput.h, hslInput.s, hslInput.l)
     ? hslToHsv(
-        parseInt(hslInput.h, 10),
-        parseInt(hslInput.s, 10),
-        parseInt(hslInput.l, 10),
-      )
+      parseInt(hslInput.h, 10),
+      parseInt(hslInput.s, 10),
+      parseInt(hslInput.l, 10),
+    )
     : null;
 
   const copyToClipboard = async (text: string, field: string) => {
@@ -322,53 +323,7 @@ export default function HslToHsvConverterPage() {
           </Card>
         </div>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">About HSL vs HSV</h3>
-            <p className="text-sm text-muted-foreground space-y-2">
-              <strong>HSL (Hue, Saturation, Lightness)</strong> and{" "}
-              <strong>HSV (Hue, Saturation, Value)</strong> are two different
-              ways to represent colors.
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              HSL is more intuitive for humans as it represents lightness from
-              black to white, while HSV is based on how colors are mixed in
-              paint (adding black or white).
-            </p>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Understanding HSL and HSV</h2>
-            <p className="text-muted-foreground">
-              HSL and HSV are both cylindrical color models that represent colors in ways more intuitive than RGB. HSL uses Lightness (from black through the hue to white), while HSV uses Value (from black through the hue to full color intensity). Different software and design tools use different models, making conversion essential for consistent workflows.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">When to Use Each Model</h2>
-            <p className="text-muted-foreground">
-              Use HSL for CSS and web development, as it's natively supported and more intuitive for creating color variations. Use HSV when working with design software like Adobe Photoshop, Illustrator, or when dealing with color pickers that use this model. Understanding both helps you work seamlessly across different tools.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <HslToHsvConverterSEO />
       </div>
     </div>
   );

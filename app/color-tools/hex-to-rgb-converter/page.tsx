@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import HexToRgbConverterSEO from "@/components/seo-content/color-tools/HexToRgbConverter";
 
 export const relatedTools = [
   { name: "RGB to Hex Converter", href: "/color-tools/rgb-to-hex-converter" },
@@ -235,50 +236,7 @@ export default function HexToRgbConverterPage() {
           </Card>
         </div>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>Enter a 6-digit HEX color code (e.g., FF5733 or #FF5733)</li>
-              <li>The RGB values will be calculated automatically</li>
-              <li>
-                Click the copy button to copy the RGB value to your clipboard
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Why Convert HEX to RGB?</h2>
-            <p className="text-muted-foreground">
-              HEX and RGB are two common ways to represent colors in web development and design. HEX codes are compact and easy to read in CSS, while RGB values are more intuitive when you need to adjust individual color channels. Converting between them is essential for working across different design tools, programming languages, and CSS preprocessors.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Understanding HEX Color Codes</h2>
-            <p className="text-muted-foreground">
-              A HEX color code is a 6-digit hexadecimal number representing the intensity of red, green, and blue. Each pair of digits ranges from 00 to FF (0 to 255 in decimal). For example, #FF5733 means red=255, green=87, blue=51. The format is widely used in HTML, CSS, and graphic design software.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <HexToRgbConverterSEO />
       </div>
     </div>
   );

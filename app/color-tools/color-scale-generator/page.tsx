@@ -31,15 +31,16 @@ import {
 } from "@/components/ui/select";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
+import ColorScaleGeneratorSEO from "@/components/seo-content/color-tools/ColorScaleGenerator";
 
 const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : { r: 0, g: 0, b: 0 };
 };
 
@@ -446,40 +447,7 @@ export default function ColorScaleGeneratorPage() {
           </CardContent>
         </Card>
 
-        {/* Related Tools & SEO Content */}
-        <section className="mt-12 space-y-8">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight mb-4">
-              Related Color Tools
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {tool.href.replace(/^\//, "")}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Color Scale Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Color Scale Generator creates smooth, evenly-spaced color scales between any two colors. Choose from lightness, saturation, hue, or diverging scale types to generate the perfect gradient for your project.
-            </p>
-            <p className="text-muted-foreground">
-              Ideal for data visualization, heat maps, progress indicators, and creating design tokens. Export your scale as CSS variables, Tailwind config, or copy individual colors for immediate use.
-            </p>
-          </div>
-        </section>
+        <ColorScaleGeneratorSEO />
       </div>
     </div>
   );

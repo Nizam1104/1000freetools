@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import AdvancedColorPickerSEO from "@/components/seo-content/color-tools/AdvancedColorPicker";
 
 export const relatedTools = [
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Simple color selection" },
@@ -658,78 +659,7 @@ export default function AdvancedColorPickerPage() {
           </Card>
         </div>
 
-        {/* SEO Content Section */}
-        <div className="mt-8 space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">How to Use the Advanced Color Picker</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Click anywhere on the color wheel to select a base hue, then fine-tune using the RGB, HSL, or HSV sliders. Adjust the alpha channel for transparency control, and see live previews of your color in real-time.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Color selection methods:</h3>
-                <ul className="list-disc list-inside space-y-1">
-                  <li><strong>Color wheel:</strong> Click to select hue and saturation in one interaction</li>
-                  <li><strong>HSL sliders:</strong> Precise control over hue, saturation, and lightness</li>
-                  <li><strong>HSV sliders:</strong> Adjust hue, saturation, and value (brightness)</li>
-                  <li><strong>RGB sliders:</strong> Direct control of red, green, and blue channels</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Understanding Color Models</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Different color models serve different purposes. This tool supports all major models used in digital design, photography, and print production.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Additive models (screens):</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li><strong>RGB:</strong> Red, Green, Blue — native to displays</li>
-                    <li><strong>RGBA:</strong> RGB with alpha transparency channel</li>
-                    <li>Used for web, mobile apps, and digital interfaces</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Cylindrical models:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li><strong>HSL:</strong> Hue, Saturation, Lightness — intuitive for humans</li>
-                    <li><strong>HSV/HSB:</strong> Hue, Saturation, Value/Brightness</li>
-                    <li>Better for creating color harmonies and variations</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Why Use Advanced Color Controls</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Professional design work demands precision. The advanced color picker gives you granular control over every aspect of your color selection, from exact hue values to transparency levels.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Perfect for:</h3>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Creating subtle gradients with precise transparency</li>
-                  <li>Matching colors from reference images exactly</li>
-                  <li>Building design systems with consistent color tokens</li>
-                  <li>Working with overlay effects and blend modes</li>
-                  <li>Fine-tuning colors for accessibility compliance</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <AdvancedColorPickerSEO />
       </div>
     </div>
   );

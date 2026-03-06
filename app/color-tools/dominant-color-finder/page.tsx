@@ -27,6 +27,7 @@ import {
   rgbToHsl,
   rgbToCmyk,
 } from "@/app/color-tools/lib/color-utils";
+import { DominantColorFinderSEO } from "@/components/seo-content/color-tools/DominantColorFinder";
 
 export const relatedTools = [
   { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Extract full color palettes from any image" },
@@ -288,7 +289,7 @@ export default function DominantColorFinderPage() {
                                   type="number"
                                   value={
                                     rgb[
-                                      channel.toUpperCase() as keyof typeof rgb
+                                    channel.toUpperCase() as keyof typeof rgb
                                     ]
                                   }
                                   readOnly
@@ -406,42 +407,7 @@ export default function DominantColorFinderPage() {
           </div>
         </section>
 
-        {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Use the Dominant Color Finder</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Upload any image (JPG, PNG, GIF, or WebP) by dragging it into the upload area or clicking to select a file</li>
-                <li>The tool automatically analyzes the image and extracts the single most dominant color</li>
-                <li>View the color in multiple formats: HEX, RGB, HSL, and CMYK</li>
-                <li>Copy any format with one click or export the color for use in your projects</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                The Dominant Color Finder helps you quickly extract the primary color from any image without manual color picking. Perfect for:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Auto-generating UI themes from hero images or backgrounds</li>
-                <li>Extracting brand colors from company logos</li>
-                <li>Creating accent colors that match your photography</li>
-                <li>Building cohesive color schemes from inspiration images</li>
-              </ul>
-              <p className="pt-2">
-                All processing happens in your browser — your images never leave your device.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <DominantColorFinderSEO />
       </div>
     </div>
   );

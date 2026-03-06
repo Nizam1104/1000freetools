@@ -10,6 +10,7 @@ import { Plus, Trash2, Copy, Check, Download, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb, hexToHsl } from "@/app/color-tools/lib/color-utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import PaletteExportToolSEO from "@/components/seo-content/color-tools/PaletteExportTool";
 
 export const relatedTools = [
   { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties" },
@@ -466,43 +467,7 @@ ${colors.map((c) => `        '${c.name.toLowerCase().replace(/\s+/g, "-")}': '${
         </section>
 
         {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Export Your Color Palette</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Add colors to your palette using the color picker or HEX input</li>
-                <li>Name each color for better organization (optional)</li>
-                <li>Select your desired export format from the tabs</li>
-                <li>Click Copy to clipboard or Download to save the file</li>
-                <li>Import the exported code directly into your project</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Supported Export Formats</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                Export your palette in the format that works best for your workflow:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li><strong>CSS/SCSS:</strong> Variables for web projects</li>
-                <li><strong>JSON:</strong> Design tokens and data exchange</li>
-                <li><strong>Tailwind:</strong> Ready-to-use config extension</li>
-                <li><strong>SwiftUI:</strong> iOS app development</li>
-                <li><strong>Android XML:</strong> Android color resources</li>
-              </ul>
-              <p className="pt-2">
-                All formats preserve your color names and values for easy integration into any platform or framework.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <PaletteExportToolSEO />
       </div>
     </div>
   );

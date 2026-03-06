@@ -22,6 +22,7 @@ export const relatedTools = [
   { name: "Color Picker", href: "/color-picker" },
 ];
 import { toast } from "sonner";
+import RandomColorPaletteGeneratorSEO from "@/components/seo-content/color-tools/RandomColorPaletteGenerator";
 
 interface Color {
   hex: string;
@@ -425,7 +426,9 @@ ${colors.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
           </CardContent>
         </Card>
 
-        {/* Related Tools & SEO Content */}
+        <RandomColorPaletteGeneratorSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -445,18 +448,6 @@ ${colors.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Random Color Palette Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Random Color Palette Generator creates instant color inspiration with the click of a button. Generate completely random palettes or lock colors you like while regenerating the rest.
-            </p>
-            <p className="text-muted-foreground">
-              Perfect for breaking creative blocks, discovering unexpected color combinations, or quickly generating placeholder palettes for mockups. Lock your favorite colors and keep regenerating until you find the perfect combination.
-            </p>
           </div>
         </section>
       </div>

@@ -23,6 +23,7 @@ export const relatedTools = [
 ];
 import { Check, Copy, Shuffle, Download, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
+import PastelPaletteGeneratorSEO from "@/components/seo-content/color-tools/PastelPaletteGenerator";
 
 interface PastelColor {
   hex: string;
@@ -534,7 +535,9 @@ export default function PastelPaletteGeneratorPage() {
           </Card>
         )}
 
-        {/* Related Tools & SEO Content */}
+        <PastelPaletteGeneratorSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -554,18 +557,6 @@ export default function PastelPaletteGeneratorPage() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Pastel Palette Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Pastel Palette Generator creates soft, soothing color palettes with low saturation and high lightness. Choose from random, analogous, complementary, or triadic harmony modes to generate cohesive pastel schemes.
-            </p>
-            <p className="text-muted-foreground">
-              Pastel colors are perfect for gentle, calming designs like nurseries, wellness apps, lifestyle brands, and any project needing a soft, approachable aesthetic. Adjust the softness level to fine-tune the muted effect.
-            </p>
           </div>
         </section>
       </div>

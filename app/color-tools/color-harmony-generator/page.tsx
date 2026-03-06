@@ -4,12 +4,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import {
   Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardFooter,
+  CardContent
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, Download, Shuffle, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import ColorHarmonyGeneratorSEO from "@/components/seo-content/color-tools/ColorHarmonyGenerator";
 
 export const relatedTools = [
   { name: "Color Wheel", href: "/color-wheel" },
@@ -949,11 +945,10 @@ ${palette.colors.map((c, i) => `          ${c.name.toLowerCase().replace(/\s/g, 
               {PRESET_COLORS.map((color) => (
                 <button
                   key={color}
-                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
-                    baseColor.toLowerCase() === color.toLowerCase()
-                      ? "border-primary ring-2 ring-primary ring-offset-2"
-                      : "border-border"
-                  }`}
+                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${baseColor.toLowerCase() === color.toLowerCase()
+                    ? "border-primary ring-2 ring-primary ring-offset-2"
+                    : "border-border"
+                    }`}
                   style={{ backgroundColor: color }}
                   onClick={() => {
                     setBaseColor(color);
@@ -988,17 +983,7 @@ ${palette.colors.map((c, i) => `          ${c.name.toLowerCase().replace(/\s/g, 
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Color Harmony Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Color Harmony Generator uses color theory principles to create harmonious color schemes. Choose from complementary, analogous, triadic, tetradic, split-complementary, and square harmony types to generate palettes that work well together.
-            </p>
-            <p className="text-muted-foreground">
-              Each harmony type follows specific rules on the color wheel. Complementary colors sit opposite each other for high contrast, analogous colors sit adjacent for serene designs, and triadic colors are evenly spaced for vibrant balance. Export your harmony palette in CSS, JSON, or PNG format.
-            </p>
-          </div>
+          <ColorHarmonyGeneratorSEO />
         </section>
       </div>
     </div>

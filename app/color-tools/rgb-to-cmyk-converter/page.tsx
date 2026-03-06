@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import RgbToCmykConverterSEO from "@/components/seo-content/color-tools/RgbToCmykConverter";
 
 export const relatedTools = [
   { name: "Hex to CMYK Converter", href: "/color-tools/hex-to-cmyk-converter" },
@@ -390,59 +391,7 @@ export default function RgbToCmykConverterPage() {
           </Card>
         </div>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>
-                Enter RGB values (0-255) in the Red, Green, and Blue fields
-              </li>
-              <li>The CMYK values will be calculated automatically</li>
-              <li>
-                Click the copy button to copy the CMYK value to your clipboard
-              </li>
-            </ol>
-            <div className="mt-4 p-3 rounded-md bg-muted">
-              <p className="text-xs text-muted-foreground">
-                <strong>Note:</strong> CMYK is used for print design. RGB colors
-                may look different when printed due to the different color
-                gamuts of screens and printers.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Why Convert RGB to CMYK?</h2>
-            <p className="text-muted-foreground">
-              RGB is the color model for screens and digital displays, while CMYK is used for print production. Converting RGB to CMYK is essential when preparing designs for professional printing, ensuring your colors translate accurately from screen to paper. This conversion helps avoid unexpected color shifts in printed materials.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Understanding CMYK Color Model</h2>
-            <p className="text-muted-foreground">
-              CMYK stands for Cyan, Magenta, Yellow, and Key (black). These four ink colors are combined in varying percentages to create the full spectrum of printable colors. Unlike RGB which adds light to create colors, CMYK subtracts light by layering inks on paper. This subtractive model is the standard for offset printing, digital printing, and most commercial print processes.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <RgbToCmykConverterSEO />
       </div>
     </div>
   );

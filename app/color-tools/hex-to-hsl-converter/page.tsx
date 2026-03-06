@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import HexToHslConverterSEO from "@/components/seo-content/color-tools/HexToHslConverter";
 
 export const relatedTools = [
   { name: "HSL to Hex Converter", href: "/color-tools/hsl-to-hex-converter" },
@@ -271,51 +272,7 @@ export default function HexToHslConverterPage() {
             </CardContent>
           </Card>
         </div>
-
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>Enter a 6-digit HEX color code (e.g., FF5733 or #FF5733)</li>
-              <li>The HSL values will be calculated automatically</li>
-              <li>
-                Click the copy button to copy the HSL value to your clipboard
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Why Convert HEX to HSL?</h2>
-            <p className="text-muted-foreground">
-              HSL (Hue, Saturation, Lightness) is a more intuitive color model for designers and developers. Unlike RGB or HEX, HSL lets you think about colors the way humans perceive them. Converting HEX to HSL makes it easier to create color variations, adjust brightness, or build dynamic color schemes in CSS.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Understanding HSL Color Format</h2>
-            <p className="text-muted-foreground">
-              HSL represents colors using three values: Hue (0-360 degrees on the color wheel), Saturation (0-100% intensity of the color), and Lightness (0-100% from black to white). This format is supported natively in CSS through the hsl() function, making it ideal for modern web development.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <HexToHslConverterSEO />
       </div>
     </div>
   );

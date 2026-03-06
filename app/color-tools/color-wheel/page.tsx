@@ -27,6 +27,7 @@ import {
   getSplitComplementaryColors,
   getTetradicColors,
 } from "@/app/color-tools/lib/color-utils";
+import ColorWheelSEO from "@/components/seo-content/color-tools/ColorWheel";
 
 interface ColorHarmony {
   name: string;
@@ -400,59 +401,7 @@ export default function ColorWheelPage() {
         </div>
 
         {/* SEO Content Section */}
-        <div className="mt-8 space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">How to Use the Color Wheel</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                The interactive color wheel helps you visualize color relationships and generate harmonious color schemes. Click anywhere on the wheel to select a base color, then explore different harmony types to see how colors work together.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Color harmony types:</h3>
-                <ul className="list-disc list-inside space-y-1">
-                  <li><strong>Complementary:</strong> Colors opposite each other on the wheel for high contrast</li>
-                  <li><strong>Analogous:</strong> Colors adjacent to each other for harmonious, cohesive palettes</li>
-                  <li><strong>Triadic:</strong> Three colors evenly spaced (120 degrees apart) for vibrant balance</li>
-                  <li><strong>Split-Complementary:</strong> Base color plus two colors adjacent to its complement</li>
-                  <li><strong>Tetradic:</strong> Four colors in two complementary pairs for rich, complex schemes</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Why Use a Color Wheel</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Understanding color relationships is essential for creating visually appealing designs. The color wheel provides a visual framework for making informed color choices based on established color theory principles.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Perfect for:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Learning color theory fundamentals</li>
-                    <li>Creating balanced color palettes</li>
-                    <li>Exploring color relationships</li>
-                    <li>Building cohesive design systems</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Key benefits:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Visual, interactive learning experience</li>
-                    <li>Instant preview of color harmonies</li>
-                    <li>Copy colors in HEX, RGB, or HSL formats</li>
-                    <li>Free to use with no limitations</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <ColorWheelSEO />
       </div>
     </div>
   );

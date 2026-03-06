@@ -24,6 +24,7 @@ export const relatedTools = [
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, Download, Shuffle, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import { DuotonePaletteGeneratorSEO } from "@/components/seo-content/color-tools/DuotonePaletteGenerator";
 
 interface DuotonePalette {
   primary: string;
@@ -37,10 +38,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 };
 
@@ -844,11 +845,10 @@ export default function DuotonePaletteGeneratorPage() {
                 {PRESET_PRIMARY.map((color) => (
                   <button
                     key={color}
-                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
-                      primaryColor.toLowerCase() === color.toLowerCase()
-                        ? "border-primary ring-2 ring-primary ring-offset-2"
-                        : "border-border"
-                    }`}
+                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${primaryColor.toLowerCase() === color.toLowerCase()
+                      ? "border-primary ring-2 ring-primary ring-offset-2"
+                      : "border-border"
+                      }`}
                     style={{ backgroundColor: color }}
                     onClick={() => {
                       setPrimaryColor(color);
@@ -870,11 +870,10 @@ export default function DuotonePaletteGeneratorPage() {
                 {PRESET_SECONDARY.map((color) => (
                   <button
                     key={color}
-                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
-                      secondaryColor.toLowerCase() === color.toLowerCase()
-                        ? "border-primary ring-2 ring-primary ring-offset-2"
-                        : "border-border"
-                    }`}
+                    className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${secondaryColor.toLowerCase() === color.toLowerCase()
+                      ? "border-primary ring-2 ring-primary ring-offset-2"
+                      : "border-border"
+                      }`}
                     style={{ backgroundColor: color }}
                     onClick={() => {
                       setSecondaryColor(color);
@@ -889,6 +888,9 @@ export default function DuotonePaletteGeneratorPage() {
         </div>
 
         {/* Related Tools & SEO Content */}
+        <DuotonePaletteGeneratorSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -910,17 +912,6 @@ export default function DuotonePaletteGeneratorPage() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Duotone Palette Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Duotone Palette Generator creates elegant two-color schemes with smooth transitions between them. Enter a primary and secondary color to generate a complete duotone palette with intermediate mix shades.
-            </p>
-            <p className="text-muted-foreground">
-              Duotone designs are perfect for minimalist aesthetics, modern branding, and creating visual hierarchy with limited colors. Export your palette as CSS, JSON, or PNG for easy integration into your projects.
-            </p>
-          </div>
         </section>
       </div>
     </div>

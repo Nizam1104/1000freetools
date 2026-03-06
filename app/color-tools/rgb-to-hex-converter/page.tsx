@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import RgbToHexConverterSEO from "@/components/seo-content/color-tools/RgbToHexConverter";
 
 export const relatedTools = [
   { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },
@@ -226,8 +227,8 @@ export default function RgbToHexConverterPage() {
                       <Input
                         value={
                           hex[1] === hex[2] &&
-                          hex[3] === hex[4] &&
-                          hex[5] === hex[6]
+                            hex[3] === hex[4] &&
+                            hex[5] === hex[6]
                             ? `#${hex[1]}${hex[3]}${hex[5]}`
                             : "N/A"
                         }
@@ -268,52 +269,7 @@ export default function RgbToHexConverterPage() {
           </Card>
         </div>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>
-                Enter RGB values (0-255) in the Red, Green, and Blue fields
-              </li>
-              <li>The HEX color code will be calculated automatically</li>
-              <li>
-                Click the copy button to copy the HEX value to your clipboard
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Why Convert RGB to HEX?</h2>
-            <p className="text-muted-foreground">
-              RGB values are intuitive for adjusting colors programmatically, but HEX codes are more compact and widely used in CSS and HTML. Converting RGB to HEX is essential for web development, especially when working with stylesheets, design systems, or sharing colors with other developers.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Understanding RGB Color Values</h2>
-            <p className="text-muted-foreground">
-              RGB stands for Red, Green, and Blue. Each channel ranges from 0 to 255, representing the intensity of that color. When combined, these three channels can produce over 16 million colors. RGB is the standard color model for screens, digital cameras, and most electronic displays.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <RgbToHexConverterSEO />
       </div>
     </div>
   );

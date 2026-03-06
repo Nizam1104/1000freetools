@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Copy, Check, Trash2, Heart, Plus, Edit2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
+import FavoriteColorsManagerSEO from "@/components/seo-content/color-tools/FavoriteColorsManager";
 
 export const relatedTools = [
   { name: "Color History Tool", href: "/color-tools/color-history-tool", description: "Track recently used colors" },
@@ -137,8 +138,8 @@ export default function FavoriteColorsManagerPage() {
     </Button>
   );
 
-  const filteredFavorites = filter === "starred" 
-    ? favorites.filter((f) => f.isStarred) 
+  const filteredFavorites = filter === "starred"
+    ? favorites.filter((f) => f.isStarred)
     : favorites;
 
   const starredCount = favorites.filter((f) => f.isStarred).length;
@@ -292,11 +293,10 @@ export default function FavoriteColorsManagerPage() {
                             className="absolute top-2 right-2 p-1.5 rounded-full bg-white/90 dark:bg-black/50 hover:scale-110 transition-transform"
                           >
                             <Star
-                              className={`h-4 w-4 ${
-                                item.isStarred
-                                  ? "fill-yellow-400 text-yellow-400"
-                                  : "text-gray-400"
-                              }`}
+                              className={`h-4 w-4 ${item.isStarred
+                                ? "fill-yellow-400 text-yellow-400"
+                                : "text-gray-400"
+                                }`}
                             />
                           </button>
                         </div>
@@ -469,42 +469,7 @@ export default function FavoriteColorsManagerPage() {
         </section>
 
         {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Use the Favorite Colors Manager</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Enter a color name (optional) and select or input a color value</li>
-                <li>Click the plus button to add the color to your favorites</li>
-                <li>Star important colors for quick filtering</li>
-                <li>Edit color names by clicking the pencil icon</li>
-                <li>Export your collection as JSON or import from a backup file</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Build Your Personal Color Library</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                Create a curated collection of colors you use regularly:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Name colors for easy identification in projects</li>
-                <li>Star frequently used colors for quick access</li>
-                <li>Filter between all colors and starred favorites</li>
-                <li>Export and import collections across devices</li>
-              </ul>
-              <p className="pt-2">
-                All data is stored locally in your browser. No account needed, and your colors stay private.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <FavoriteColorsManagerSEO />
       </div>
     </div>
   );

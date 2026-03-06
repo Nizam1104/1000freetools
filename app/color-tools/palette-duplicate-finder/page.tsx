@@ -25,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Slider } from "@/components/ui/slider";
 import { Copy, Check, Trash2, Search, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
+import PaletteDuplicateFinderSEO from "@/components/seo-content/color-tools/PaletteDuplicateFinder";
 
 interface DuplicateGroup {
   colors: string[];
@@ -35,10 +36,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : { r: 0, g: 0, b: 0 };
 };
 
@@ -106,8 +107,8 @@ const colorDistance = (color1: string, color2: string) => {
   return (
     Math.sqrt(
       normalizedDh * normalizedDh * 0.5 +
-        normalizedDs * normalizedDs * 0.25 +
-        normalizedDl * normalizedDl * 0.25,
+      normalizedDs * normalizedDs * 0.25 +
+      normalizedDl * normalizedDl * 0.25,
     ) * 100
   );
 };
@@ -381,9 +382,8 @@ export default function PaletteDuplicateFinderPage() {
                     return (
                       <div
                         key={i}
-                        className={`flex items-center gap-2 px-3 py-2 rounded-lg border bg-card ${
-                          isDuplicate ? "ring-2 ring-amber-500" : ""
-                        }`}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg border bg-card ${isDuplicate ? "ring-2 ring-amber-500" : ""
+                          }`}
                         title={isDuplicate ? "Duplicate" : "Unique"}
                       >
                         <div
@@ -455,11 +455,10 @@ export default function PaletteDuplicateFinderPage() {
                           {group.colors.map((color, i) => (
                             <div
                               key={i}
-                              className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${
-                                i === 0
+                              className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${i === 0
                                   ? "bg-green-500/10 border-green-500/30"
                                   : "bg-card"
-                              }`}
+                                }`}
                             >
                               <div
                                 className="w-8 h-8 rounded "
@@ -513,7 +512,9 @@ export default function PaletteDuplicateFinderPage() {
           </>
         )}
 
-        {/* Related Tools & SEO Content */}
+        <PaletteDuplicateFinderSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -533,18 +534,6 @@ export default function PaletteDuplicateFinderPage() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Palette Duplicate Finder
-            </h2>
-            <p className="text-muted-foreground">
-              The Palette Duplicate Finder detects exact and near-duplicate colors in your palette. Set a similarity threshold to find colors that are visually similar, helping you clean up redundant swatches.
-            </p>
-            <p className="text-muted-foreground">
-              Duplicate colors can accumulate when merging palettes or working with multiple designers. This tool identifies groups of similar colors, shows which one will be kept, and lets you remove duplicates with a single click.
-            </p>
           </div>
         </section>
       </div>

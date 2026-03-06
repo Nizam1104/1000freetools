@@ -16,10 +16,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export const relatedTools = [
-  { name: "Color Palette Generator", href: "/color-palette-generator" },
-  { name: "Palette Export Tool", href: "/palette-export-tool" },
-  { name: "CSS Variables Generator", href: "/css-variables-generator" },
-  { name: "Color Picker", href: "/color-picker" },
+  { name: "Color Palette Generator", href: "/color-tools/color-palette-generator", description: "Generate palettes from a base color" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export to CSS, Tailwind, JSON & more" },
+  { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Create CSS custom properties" },
+  { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors easily" },
+  { name: "Color Palettes", href: "/color-tools/color-palettes", description: "Explore and generate color palettes" },
+  { name: "Gradient Palette Generator", href: "/color-tools/gradient-palette-generator", description: "Create gradient-based palettes" },
 ];
 import {
   Select,
@@ -31,6 +33,7 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Copy, Plus, Trash2, ArrowUp, ArrowDown } from "lucide-react";
 import { toast } from "sonner";
+import { CSSGradientGeneratorSEO } from "@/components/seo-content/color-tools/CSSGradientGenerator";
 
 interface ColorStop {
   id: string;
@@ -69,9 +72,9 @@ export default function CSSGradientGeneratorPage() {
     const newPosition =
       colorStops.length > 0
         ? Math.min(
-            100,
-            Math.max(0, colorStops[colorStops.length - 1].position + 10),
-          )
+          100,
+          Math.max(0, colorStops[colorStops.length - 1].position + 10),
+        )
         : 50;
     const newStop: ColorStop = {
       id: Date.now().toString(),
@@ -414,40 +417,28 @@ export default function CSSGradientGeneratorPage() {
           </Card>
         </div>
 
-        {/* Related Tools & SEO Content */}
-        <section className="mt-12 space-y-8">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight mb-4">
-              Related Color Tools
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {tool.href.replace(/^\//, "")}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the CSS Gradient Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The CSS Gradient Generator helps you create beautiful linear and radial gradients with full control over direction, color stops, and positioning. Add multiple color stops, adjust their positions, and preview your gradient in real-time.
-            </p>
-            <p className="text-muted-foreground">
-              Export clean, production-ready CSS code that works across all modern browsers. Perfect for backgrounds, buttons, cards, and any element that needs a gradient touch. Copy the CSS directly or download as a file for later use.
-            </p>
+        {/* Related Tools */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">
+            Related Color Tools
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {relatedTools.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+              >
+                <p className="font-medium">{tool.name}</p>
+                <p className="text-sm text-muted-foreground">
+                  {tool.description}
+                </p>
+              </Link>
+            ))}
           </div>
         </section>
+
+        <CSSGradientGeneratorSEO />
       </div>
     </div>
   );

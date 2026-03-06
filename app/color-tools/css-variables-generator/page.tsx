@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Plus, Trash2, Copy, Check, RotateCcw, Download } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
+import CssVariablesGeneratorSEO from "@/components/seo-content/color-tools/CssVariablesGenerator";
 
 export const relatedTools = [
   { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export colors in multiple formats" },
@@ -254,9 +255,9 @@ export default function CssVariablesGeneratorPage() {
                         style={{
                           color:
                             hexToRgb(variable.color) &&
-                            hexToRgb(variable.color)!.r * 0.299 +
-                                hexToRgb(variable.color)!.g * 0.587 +
-                                hexToRgb(variable.color)!.b * 0.114 >
+                              hexToRgb(variable.color)!.r * 0.299 +
+                              hexToRgb(variable.color)!.g * 0.587 +
+                              hexToRgb(variable.color)!.b * 0.114 >
                               150
                               ? "#000"
                               : "#fff",
@@ -322,7 +323,7 @@ export default function CssVariablesGeneratorPage() {
                 <div className="space-y-2">
                   <Label className="text-sm">Usage Example</Label>
                   <pre className="p-4 rounded-lg bg-muted text-sm font-mono overflow-x-auto">
-{`/* In your CSS */
+                    {`/* In your CSS */
 .button {
   background-color: var(${colors[0]?.name || "--color-primary"});
   color: white;
@@ -365,42 +366,7 @@ module.exports = {
         </section>
 
         {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Use the CSS Variables Generator</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Add colors using the color picker or enter HEX values manually</li>
-                <li>Name each variable with a descriptive prefix like "--color-primary"</li>
-                <li>Customize the variable prefix in the settings if needed</li>
-                <li>Copy the generated CSS or download as a .css file</li>
-                <li>Use the RGB fallback version for broader browser support</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Why Use CSS Custom Properties for Colors</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                CSS custom properties (variables) make color management easier across your entire project:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Update one variable to change colors site-wide</li>
-                <li>Enable dynamic theming with CSS and JavaScript</li>
-                <li>Integrate cleanly with Tailwind and other frameworks</li>
-                <li>Improve code maintainability and consistency</li>
-              </ul>
-              <p className="pt-2">
-                CSS variables work in all modern browsers and can be used for colors, spacing, typography, and any other reusable values.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <CssVariablesGeneratorSEO />
       </div>
     </div>
   );

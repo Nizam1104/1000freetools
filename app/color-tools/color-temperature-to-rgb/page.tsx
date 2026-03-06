@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { toast } from "sonner";
+import ColorTemperatureToRgbSEO from "@/components/seo-content/color-tools/ColorTemperatureToRgb";
 
 export const relatedTools = [
   { name: "Color Picker", href: "/color-tools/color-picker" },
@@ -347,88 +348,7 @@ export default function ColorTemperatureToRgbConverterPage() {
           </Card>
         </div>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">
-              About Color Temperature
-            </h3>
-            <p className="text-sm text-muted-foreground space-y-2">
-              Color temperature is measured in <strong>Kelvin (K)</strong> and
-              describes the color of light emitted by a theoretical black body
-              radiator at that temperature.
-            </p>
-            <div className="grid grid-cols-2 gap-4 mt-4">
-              <div className="p-3 rounded-md bg-muted">
-                <p className="text-xs text-muted-foreground mb-1">
-                  Lower Kelvin (&lt;3000K)
-                </p>
-                <p className="font-medium text-sm">
-                  Warm, yellowish light (cozy, relaxing)
-                </p>
-              </div>
-              <div className="p-3 rounded-md bg-muted">
-                <p className="text-xs text-muted-foreground mb-1">
-                  Higher Kelvin (&gt;5000K)
-                </p>
-                <p className="font-medium text-sm">
-                  Cool, bluish light (energizing, focused)
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>
-                Use the slider or input field to set the color temperature in
-                Kelvin (1000K - 15000K)
-              </li>
-              <li>
-                Or click one of the preset temperature buttons for common light
-                sources
-              </li>
-              <li>The RGB and HEX values will be calculated automatically</li>
-              <li>
-                Click the copy button to copy any format to your clipboard
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Understanding Color Temperature</h2>
-            <p className="text-muted-foreground">
-              Color temperature describes the color characteristics of light, measured in Kelvin (K). Lower temperatures (2000K-3000K) produce warm, yellowish light similar to candlelight or sunrise. Higher temperatures (5000K-10000K) produce cool, bluish light like daylight or overcast skies. This concept is essential for lighting design, photography, and display calibration.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Applications of Color Temperature</h2>
-            <p className="text-muted-foreground">
-              Photographers use color temperature to white balance images. Lighting designers select appropriate temperatures for different spaces warm light for cozy environments, cool light for workspaces. Web developers can use color temperature to create realistic lighting effects, simulate time of day, or build ambient UI themes that match natural light cycles.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <ColorTemperatureToRgbSEO />
       </div>
     </div>
   );

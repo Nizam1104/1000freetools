@@ -16,6 +16,7 @@ import {
   generateShades,
   generateTints,
 } from "@/app/color-tools/lib/color-utils";
+import TextColorSuggestionToolSEO from "@/components/seo-content/color-tools/TextColorSuggestionTool";
 
 interface TextSuggestion {
   hex: string;
@@ -344,42 +345,7 @@ export default function TextColorSuggestionToolPage() {
         </section>
 
         {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Use the Text Color Suggestion Tool</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Enter your background color using the color picker or type a HEX value</li>
-                <li>Click "Generate Suggestions" to get accessible text color options</li>
-                <li>Review suggested colors ranked by contrast ratio (highest first)</li>
-                <li>Each suggestion shows its WCAG compliance level: Optimal (AAA), Good (AA), or Minimum (large text only)</li>
-                <li>Click the copy button to grab any color for your project</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                The Text Color Suggestion Tool takes the guesswork out of choosing readable text colors. Ideal for:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Finding accessible text colors for custom backgrounds</li>
-                <li>Quickly generating WCAG-compliant color options</li>
-                <li>Testing multiple text color variations at once</li>
-                <li>Ensuring your designs work for all users</li>
-              </ul>
-              <p className="pt-2">
-                The tool automatically calculates contrast ratios and suggests colors that meet WCAG guidelines, so you don't have to manually test each option.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <TextColorSuggestionToolSEO />
       </div>
     </div>
   );

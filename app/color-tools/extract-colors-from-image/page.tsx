@@ -25,13 +25,13 @@ import {
   extractDominantColors,
   hexToRgb,
 } from "@/app/color-tools/lib/color-utils";
+import ExtractColorsFromImageSEO from "@/components/seo-content/color-tools/ExtractColorsFromImage";
 
 interface ExtractedColor {
   hex: string;
   percentage: number;
 }
 
-// SEO Metadata for this tool
 
 // Internal linking suggestions for this tool
 export const relatedTools = [
@@ -298,8 +298,8 @@ export default function ExtractColorsFromImagePage() {
                       const rgb = hexToRgb(color.hex);
                       const luminance = rgb
                         ? 0.2126 * (rgb.r / 255) +
-                          0.7152 * (rgb.g / 255) +
-                          0.0722 * (rgb.b / 255)
+                        0.7152 * (rgb.g / 255) +
+                        0.0722 * (rgb.b / 255)
                         : 0;
                       const textColor =
                         luminance > 0.179 ? "#000000" : "#FFFFFF";
@@ -409,58 +409,7 @@ export default function ExtractColorsFromImagePage() {
         </div>
 
         {/* SEO Content Section */}
-        <div className="mt-8 space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">How to Extract Colors from an Image</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                This tool analyzes any uploaded image and identifies its dominant colors using advanced color quantization algorithms. The process happens entirely in your browser using HTML5 canvas — no images are uploaded to any server.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Step-by-step guide:</h3>
-                <ol className="list-decimal list-inside space-y-1">
-                  <li>Upload your image by dragging and dropping or clicking the upload area</li>
-                  <li>Adjust the number of colors to extract (2-12 colors)</li>
-                  <li>View the extracted color palette with HEX and RGB values</li>
-                  <li>Copy individual colors or export the entire palette as CSS, SCSS, or JSON</li>
-                </ol>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Why Use This Tool?</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Whether you're a designer looking to create a color palette from a mood board, a developer matching brand colors, or an artist analyzing color schemes, this tool provides instant results without compromising privacy.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Perfect for:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Creating color palettes from photos</li>
-                    <li>Matching brand colors from logos</li>
-                    <li>Analyzing competitor design schemes</li>
-                    <li>Building design systems from inspiration images</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Key benefits:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>100% private — images never leave your device</li>
-                    <li>Instant processing with no wait times</li>
-                    <li>Export to multiple formats (CSS, SCSS, JSON)</li>
-                    <li>Free to use with no limitations</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <ExtractColorsFromImageSEO />
       </div>
     </div>
   );

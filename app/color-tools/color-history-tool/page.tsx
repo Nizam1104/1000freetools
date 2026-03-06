@@ -10,6 +10,8 @@ import { Copy, Check, Trash2, Clock, Plus } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
 
+import ColorHistoryToolSEO from "@/components/seo-content/color-tools/ColorHistoryTool";
+
 export const relatedTools = [
   { name: "Favorite Colors Manager", href: "/color-tools/favorite-colors-manager", description: "Save and organize color swatches" },
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors" },
@@ -333,46 +335,7 @@ export default function ColorHistoryToolPage() {
           </div>
         </section>
 
-        {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How Color History Works</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                The Color History Tool automatically tracks colors you work with:
-              </p>
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Add colors manually using the input or color picker</li>
-                <li>Colors are stored in your browser's local storage</li>
-                <li>Each color includes a timestamp showing when it was added</li>
-                <li>History persists across browser sessions</li>
-                <li>Export your history as JSON for backup or transfer</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Why Track Your Color History</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                Keep a record of colors you've used without manual organization:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Recover colors from previous design sessions</li>
-                <li>Build a reference library of tested combinations</li>
-                <li>Track color exploration during brainstorming</li>
-                <li>No signup or account required — completely private</li>
-              </ul>
-              <p className="pt-2">
-                Your color history stays in your browser. Clear your cache or use incognito mode to start fresh.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <ColorHistoryToolSEO />
       </div>
     </div>
   );

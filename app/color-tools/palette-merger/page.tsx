@@ -23,6 +23,7 @@ export const relatedTools = [
 ];
 import { Copy, Check, Trash2, Plus, Combine, Palette } from "lucide-react";
 import { toast } from "sonner";
+import PaletteMergerSEO from "@/components/seo-content/color-tools/PaletteMerger";
 
 interface Palette {
   id: string;
@@ -463,7 +464,9 @@ export default function PaletteMergerPage() {
           </Card>
         )}
 
-        {/* Related Tools & SEO Content */}
+        <PaletteMergerSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -483,18 +486,6 @@ export default function PaletteMergerPage() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Palette Merger
-            </h2>
-            <p className="text-muted-foreground">
-              The Palette Merger combines multiple color palettes into a single unified system. Add palettes by pasting hex codes or loading presets, then merge them with optional duplicate removal based on color similarity.
-            </p>
-            <p className="text-muted-foreground">
-              Perfect for consolidating brand colors, combining design system tokens, or finding common tones across multiple projects. Set a similarity threshold to automatically remove near-duplicate colors.
-            </p>
           </div>
         </section>
       </div>

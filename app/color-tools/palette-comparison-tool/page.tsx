@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Trash2, Plus, Palette } from "lucide-react";
 import { toast } from "sonner";
+import PaletteComparisonToolSEO from "@/components/seo-content/color-tools/PaletteComparisonTool";
 
 export const relatedTools = [
   { name: "Palette Contrast Viewer", href: "/palette-contrast-viewer" },
@@ -366,7 +367,9 @@ export default function PaletteComparisonToolPage() {
           </Card>
         )}
 
-        {/* Related Tools & SEO Content */}
+        <PaletteComparisonToolSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -386,18 +389,6 @@ export default function PaletteComparisonToolPage() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Palette Comparison Tool
-            </h2>
-            <p className="text-muted-foreground">
-              The Palette Comparison Tool lets you compare multiple color palettes side by side to make informed design decisions. Load two or more palettes and evaluate their contrast, mood, and accessibility characteristics at a glance.
-            </p>
-            <p className="text-muted-foreground">
-              Perfect for A/B testing color schemes, reviewing client options, or choosing between different brand palettes. Each palette shows average luminance and contrast ratios to help you assess accessibility and visual hierarchy.
-            </p>
           </div>
         </section>
       </div>

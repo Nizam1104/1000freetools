@@ -25,6 +25,7 @@ import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Copy, Download, RotateCcw, Shuffle } from "lucide-react";
 import { toast } from "sonner";
+import MonochromePaletteGeneratorSEO from "@/components/seo-content/color-tools/MonochromePaletteGenerator";
 
 interface MonochromeColor {
   hex: string;
@@ -651,11 +652,10 @@ ${palette.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
               {PRESET_COLORS.map((color) => (
                 <button
                   key={color}
-                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
-                    baseColor.toLowerCase() === color.toLowerCase()
+                  className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${baseColor.toLowerCase() === color.toLowerCase()
                       ? "border-primary ring-2 ring-primary ring-offset-2"
                       : "border-border"
-                  }`}
+                    }`}
                   style={{ backgroundColor: color }}
                   onClick={() => {
                     setBaseColor(color);
@@ -668,7 +668,9 @@ ${palette.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
           </CardContent>
         </Card>
 
-        {/* Related Tools & SEO Content */}
+        <MonochromePaletteGeneratorSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -688,18 +690,6 @@ ${palette.map((c, i) => `          ${i + 1}: '${c.hex}',`).join("\n")}
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Monochrome Palette Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Monochrome Palette Generator creates a full range of shades from a single base color. Adjust the shade count and lightness range to generate a cohesive monochromatic palette perfect for minimal, elegant designs.
-            </p>
-            <p className="text-muted-foreground">
-              Monochromatic color schemes are inherently harmonious since all colors share the same hue. Use them for clean UIs, sophisticated branding, and designs where simplicity and cohesion are priorities.
-            </p>
           </div>
         </section>
       </div>

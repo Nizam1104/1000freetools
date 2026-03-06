@@ -18,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { Check, Copy, RotateCcw, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { ColorPickerSEO } from "@/components/seo-content/color-tools/ColorPicker";
 
 export const relatedTools = [
   { name: "Advanced Color Picker", href: "/color-tools/advanced-color-picker", description: "Full color wheel with sliders" },
@@ -603,11 +604,10 @@ export default function ColorPickerPage() {
                   {PRESET_COLORS.map((presetHex) => (
                     <button
                       key={presetHex}
-                      className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
-                        hex.toLowerCase() === presetHex.toLowerCase()
+                      className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${hex.toLowerCase() === presetHex.toLowerCase()
                           ? "border-primary ring-2 ring-primary ring-offset-2"
                           : "border-border"
-                      }`}
+                        }`}
                       style={{ backgroundColor: presetHex }}
                       onClick={() => {
                         const hsl = hexToHsl(presetHex);
@@ -652,78 +652,7 @@ export default function ColorPickerPage() {
           </Card>
         </div>
 
-        {/* SEO Content Section */}
-        <div className="mt-8 space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">How to Use the Color Picker</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Select any color using the interactive saturation and lightness picker, or adjust the hue slider to browse the full color spectrum. Enter specific values in HEX, RGB, HSL, or CMYK formats for precise color matching.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Key features:</h3>
-                <ul className="list-disc list-inside space-y-1">
-                  <li><strong>Visual picker:</strong> Click or drag on the saturation/lightness grid to select colors</li>
-                  <li><strong>Hue slider:</strong> Browse through all 360 degrees of the color spectrum</li>
-                  <li><strong>Multiple formats:</strong> Get color values in HEX, RGB, HSL, and CMYK</li>
-                  <li><strong>Save palette:</strong> Store up to 12 colors for quick access during your project</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Understanding Color Formats</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Different projects require different color formats. This tool converts your selected color instantly across all major formats used in web design, print, and digital art.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Web & CSS formats:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li><strong>HEX:</strong> Six-digit code (#RRGGBB) for HTML and CSS</li>
-                    <li><strong>RGB:</strong> Red, Green, Blue values (0-255) for screens</li>
-                    <li><strong>HSL:</strong> Hue, Saturation, Lightness for intuitive adjustments</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Print format:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li><strong>CMYK:</strong> Cyan, Magenta, Yellow, Key (black) for printing</li>
-                    <li>Used in professional design software and print production</li>
-                    <li>Values expressed as percentages (0-100%)</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Why Use This Color Picker</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Whether you're a designer matching brand colors, a developer building UI components, or anyone working with digital colors, this tool provides quick, accurate color selection with instant format conversion.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Common use cases:</h3>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Extracting colors from designs or screenshots</li>
-                  <li>Creating consistent color schemes for websites</li>
-                  <li>Matching colors across different design tools</li>
-                  <li>Building accessible color palettes with proper contrast</li>
-                  <li>Converting between color formats for different platforms</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <ColorPickerSEO />
       </div>
     </div>
   );

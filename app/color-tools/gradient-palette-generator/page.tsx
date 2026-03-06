@@ -40,6 +40,8 @@ import {
   Trash2,
 } from "lucide-react";
 import { toast } from "sonner";
+import GradientStepGeneratorSEO from "@/components/seo-content/color-tools/GradientStepGenerator";
+import GradientPaletteGeneratorSEO from "@/components/seo-content/color-tools/GradientPaletteGenerator";
 
 interface GradientStop {
   id: string;
@@ -56,10 +58,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 };
 
@@ -857,6 +859,8 @@ ${palette.colors.map((c, i) => `          ${i + 1}: '${c}',`).join("\n")}
         </Card>
 
         {/* Related Tools & SEO Content */}
+        <GradientPaletteGeneratorSEO />
+
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -876,18 +880,6 @@ ${palette.colors.map((c, i) => `          ${i + 1}: '${c}',`).join("\n")}
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Gradient Palette Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Gradient Palette Generator creates smooth, multi-color gradient palettes by interpolating between your chosen color stops. Add 2 or more colors, adjust their positions, and extract evenly-spaced palette colors from the gradient.
-            </p>
-            <p className="text-muted-foreground">
-              Perfect for creating cohesive UI themes, data visualization scales, and gradient-based design systems. Export your gradient palette as CSS, JSON, or PNG for use in any project.
-            </p>
           </div>
         </section>
       </div>

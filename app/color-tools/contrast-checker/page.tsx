@@ -15,6 +15,7 @@ import {
   meetsWcagAAA,
   getLuminance,
 } from "@/app/color-tools/lib/color-utils";
+import ContrastCheckerSEO from "@/components/seo-content/color-tools/ContrastChecker";
 
 export const relatedTools = [
   { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },
@@ -32,13 +33,13 @@ export default function ContrastCheckerPage() {
   const calculateContrast = useCallback(() => {
     const textRgb = hexToRgb(textColor);
     const bgRgb = hexToRgb(bgColor);
-    
+
     if (!textRgb || !bgRgb) return null;
-    
+
     const ratio = getContrastRatio(textRgb, bgRgb);
     const textLuminance = getLuminance(textRgb.r, textRgb.g, textRgb.b);
     const bgLuminance = getLuminance(bgRgb.r, bgRgb.g, bgRgb.b);
-    
+
     return {
       ratio: ratio.toFixed(2),
       textLuminance: textLuminance.toFixed(3),
@@ -82,11 +83,10 @@ export default function ContrastCheckerPage() {
     <div className="flex items-center justify-between p-3 rounded-lg border bg-card">
       <span className="text-sm font-medium">{label}</span>
       <span
-        className={`px-3 py-1 rounded-full text-xs font-medium ${
-          pass
-            ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-            : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-        }`}
+        className={`px-3 py-1 rounded-full text-xs font-medium ${pass
+          ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+          : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
+          }`}
       >
         {pass ? "✓ Pass" : "✗ Fail"}
       </span>
@@ -401,42 +401,7 @@ export default function ContrastCheckerPage() {
         </section>
 
         {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Use the Contrast Checker</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Select your text color using the color picker or enter a HEX value</li>
-                <li>Choose your background color the same way</li>
-                <li>Toggle between "Normal Text" and "Large Text" to test different size requirements</li>
-                <li>Review the contrast ratio and WCAG compliance badges (AA and AAA levels)</li>
-                <li>Use the live preview to see how your colors look together in context</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                The Contrast Checker ensures your designs meet accessibility standards so everyone can read your content. Use it for:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Testing text and background combinations before deployment</li>
-                <li>Meeting WCAG 2.1 AA and AAA compliance requirements</li>
-                <li>Improving readability for users with visual impairments</li>
-                <li>Validating design system color choices</li>
-              </ul>
-              <p className="pt-2">
-                WCAG AA requires 4.5:1 for normal text, 3:1 for large text. AAA requires 7:1 for normal text, 4.5:1 for large text.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <ContrastCheckerSEO />
       </div>
     </div>
   );

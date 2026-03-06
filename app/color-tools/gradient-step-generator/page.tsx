@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
+import GradientStepGeneratorSEO from "@/components/seo-content/color-tools/GradientStepGenerator";
 
 export const relatedTools = [
   { name: "Gradient Palette Generator", href: "/gradient-palette-generator" },
@@ -328,17 +329,7 @@ export default function GradientStepGeneratorPage() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Gradient Step Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Gradient Step Generator creates evenly spaced color steps between any two colors. Specify the number of steps (2-20) and get smooth, interpolated colors perfect for progress bars, loading states, and data visualizations.
-            </p>
-            <p className="text-muted-foreground">
-              Each step represents an equal transition from the start color to the end color. Export your steps as CSS variables, JavaScript arrays, or copy individual colors for immediate use in your projects.
-            </p>
-          </div>
+          <GradientStepGeneratorSEO />
         </section>
       </div>
     </div>

@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Copy, Check, Shield, AlertTriangle } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb, rgbToHex } from "@/app/color-tools/lib/color-utils";
+import WebSafeColorPickerSEO from "@/components/seo-content/color-tools/WebSafeColorPicker";
 
 export const relatedTools = [
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick any color" },
@@ -182,11 +183,10 @@ export default function WebSafeColorPickerPage() {
 
                 {/* Web Safe Status */}
                 <div
-                  className={`p-4 rounded-lg border flex items-center gap-3 ${
-                    colorIsWebSafe
-                      ? "bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800"
-                      : "bg-yellow-50 border-yellow-200 dark:bg-yellow-900/20 dark:border-yellow-800"
-                  }`}
+                  className={`p-4 rounded-lg border flex items-center gap-3 ${colorIsWebSafe
+                    ? "bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800"
+                    : "bg-yellow-50 border-yellow-200 dark:bg-yellow-900/20 dark:border-yellow-800"
+                    }`}
                 >
                   {colorIsWebSafe ? (
                     <Shield className="h-5 w-5 text-green-600" />
@@ -195,9 +195,8 @@ export default function WebSafeColorPickerPage() {
                   )}
                   <div>
                     <p
-                      className={`font-medium ${
-                        colorIsWebSafe ? "text-green-800" : "text-yellow-800"
-                      }`}
+                      className={`font-medium ${colorIsWebSafe ? "text-green-800" : "text-yellow-800"
+                        }`}
                     >
                       {colorIsWebSafe ? "Web Safe Color" : "Not Web Safe"}
                     </p>
@@ -249,7 +248,7 @@ export default function WebSafeColorPickerPage() {
                             nearestRgb.r * 0.299 +
                               nearestRgb.g * 0.587 +
                               nearestRgb.b * 0.114 >
-                            150
+                              150
                               ? "#000"
                               : "#fff",
                         }}
@@ -301,41 +300,13 @@ export default function WebSafeColorPickerPage() {
                     <button
                       key={color}
                       onClick={() => handleColorSelect(color)}
-                      className={`aspect-square rounded-md border transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-                        selectedColor === color ? "ring-2 ring-primary ring-offset-2" : ""
-                      }`}
+                      className={`aspect-square rounded-md border transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${selectedColor === color ? "ring-2 ring-primary ring-offset-2" : ""
+                        }`}
                       style={{ backgroundColor: color }}
                       title={color}
                     />
                   ))}
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Info Card */}
-            <Card>
-              <CardHeader>
-                <CardTitle>About Web Safe Colors</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground">
-                <p>
-                  Web safe colors are a set of 216 colors that were designed to display
-                  consistently across different computers, browsers, and operating systems.
-                </p>
-                <p>
-                  These colors use only the hex values{" "}
-                  <code className="bg-muted px-1 rounded">00</code>,{" "}
-                  <code className="bg-muted px-1 rounded">33</code>,{" "}
-                  <code className="bg-muted px-1 rounded">66</code>,{" "}
-                  <code className="bg-muted px-1 rounded">99</code>,{" "}
-                  <code className="bg-muted px-1 rounded">CC</code>, and{" "}
-                  <code className="bg-muted px-1 rounded">FF</code> for each RGB channel.
-                </p>
-                <p>
-                  While modern displays can show millions of colors, using web safe colors
-                  can still be beneficial for ensuring maximum compatibility and consistent
-                  appearance across all devices.
-                </p>
               </CardContent>
             </Card>
           </div>
@@ -372,80 +343,7 @@ export default function WebSafeColorPickerPage() {
         </div>
 
         {/* SEO Content Section */}
-        <div className="mt-8 space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">How to Use the Web Safe Color Picker</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Browse the complete 216 web-safe color palette or enter any HEX value to check if it's web-safe. If your color isn't web-safe, the tool automatically suggests the nearest web-safe alternative.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Key features:</h3>
-                <ul className="list-disc list-inside space-y-1">
-                  <li><strong>Full palette grid:</strong> All 216 web-safe colors organized for easy browsing</li>
-                  <li><strong>Web-safe checker:</strong> Instantly see if any color is web-safe</li>
-                  <li><strong>Nearest match:</strong> Get the closest web-safe alternative for any color</li>
-                  <li><strong>Live preview:</strong> See your color with both safe and unsafe indicators</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">What Are Web Safe Colors</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                Web safe colors are a set of 216 colors that were designed to display consistently across different computers, browsers, and operating systems from the early days of the web. These colors use only six specific values for each RGB channel.
-              </p>
-              <div className="space-y-2">
-                <h3 className="font-medium text-foreground">Web safe hex values:</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["00", "33", "66", "99", "CC", "FF"].map((val) => (
-                    <code key={val} className="bg-muted px-3 py-1 rounded font-mono text-sm">#{val}{val}{val}</code>
-                  ))}
-                </div>
-                <p className="text-sm">
-                  Each channel (Red, Green, Blue) uses only these six values: 00, 33, 66, 99, CC, and FF. This creates 6 x 6 x 6 = 216 possible combinations.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">When to Use Web Safe Colors</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                While modern displays can show millions of colors, web safe colors still have practical applications in specific scenarios where maximum compatibility is essential.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Good use cases:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Email templates for legacy email clients</li>
-                    <li>Applications targeting older hardware</li>
-                    <li>Projects requiring maximum cross-platform consistency</li>
-                    <li>Terminal or low-color display environments</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Modern considerations:</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Most modern devices support 24-bit color (16.7 million colors)</li>
-                    <li>Web safe colors are less critical for general web design</li>
-                    <li>Still useful for ensuring fallback compatibility</li>
-                    <li>Can help create intentionally limited color palettes</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <WebSafeColorPickerSEO />
       </div>
     </div>
   );

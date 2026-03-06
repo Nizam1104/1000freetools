@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Plus, Trash2, Copy, Check, Palette } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb, getContrastRatio, getLuminance } from "@/app/color-tools/lib/color-utils";
+import PaletteContrastViewerSEO from "@/components/seo-content/color-tools/PaletteContrastViewer";
 
 interface ColorSwatch {
   id: string;
@@ -351,43 +352,7 @@ export default function PaletteContrastViewerPage() {
           </div>
         </section>
 
-        {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Use the Palette Contrast Viewer</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Add your palette colors using the color picker or by entering HEX values</li>
-                <li>The contrast matrix updates automatically, showing ratios between every color pair</li>
-                <li>Each cell displays the contrast ratio — click to see detailed information</li>
-                <li>Color-coded badges indicate compliance: AAA (green), AA (blue), Fair (yellow), Poor (red)</li>
-                <li>Use the color previews at the bottom to see how colors look in UI elements</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Why Use This Tool</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                The Palette Contrast Viewer helps you catch accessibility issues before they reach production. Essential for:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Design system creators building accessible color tokens</li>
-                <li>Teams validating entire palettes against WCAG standards</li>
-                <li>Quickly spotting problematic color combinations</li>
-                <li>Documenting contrast levels for design handoffs</li>
-              </ul>
-              <p className="pt-2">
-                Instead of testing color pairs one at a time, see your entire palette's contrast matrix at once — saving hours of manual testing.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <PaletteContrastViewerSEO />
       </div>
     </div>
   );

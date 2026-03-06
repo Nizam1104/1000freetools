@@ -23,6 +23,7 @@ export const relatedTools = [
 ];
 import { Copy, Check, SortAsc, ArrowUpDown, Palette } from "lucide-react";
 import { toast } from "sonner";
+import PaletteSorterSEO from "@/components/seo-content/color-tools/PaletteSorter";
 
 const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -409,7 +410,9 @@ export default function PaletteSorterPage() {
           </>
         )}
 
-        {/* Related Tools & SEO Content */}
+        <PaletteSorterSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -429,18 +432,6 @@ export default function PaletteSorterPage() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Palette Sorter
-            </h2>
-            <p className="text-muted-foreground">
-              The Palette Sorter organizes your colors by hue, brightness, saturation, or lightness. Load any palette and sort it in ascending or descending order to create logical, visually coherent arrangements.
-            </p>
-            <p className="text-muted-foreground">
-              Sorting colors is essential for creating organized design systems, documentation, and style guides. Each sorted color displays its HSL values and brightness for easy reference and selection.
-            </p>
           </div>
         </section>
       </div>

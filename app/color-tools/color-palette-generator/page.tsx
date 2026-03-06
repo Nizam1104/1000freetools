@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Check, Copy, Shuffle, Download } from "lucide-react";
 import { toast } from "sonner";
+import ColorPaletteGeneratorSEO from "@/components/seo-content/color-tools/ColorPaletteGenerator";
 
 export const relatedTools = [
   { name: "Shade Tint Tone Generator", href: "/shade-tint-tone-generator" },
@@ -37,10 +38,10 @@ const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 };
 
@@ -325,11 +326,10 @@ export default function ColorPaletteGeneratorPage() {
                     {PRESET_COLORS.map((color) => (
                       <button
                         key={color}
-                        className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${
-                          baseColor.toLowerCase() === color.toLowerCase()
-                            ? "border-primary ring-2 ring-primary ring-offset-2"
-                            : "border-border"
-                        }`}
+                        className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${baseColor.toLowerCase() === color.toLowerCase()
+                          ? "border-primary ring-2 ring-primary ring-offset-2"
+                          : "border-border"
+                          }`}
                         style={{ backgroundColor: color }}
                         onClick={() => setBaseColor(color)}
                         title={color}
@@ -480,42 +480,8 @@ export default function ColorPaletteGeneratorPage() {
             </Card>
           </div>
         </div>
-
-        {/* Related Tools & SEO Content */}
-        <section className="mt-12 space-y-8">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight mb-4">
-              Related Color Tools
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {tool.href.replace(/^\//, "")}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Color Palette Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Color Palette Generator helps you create complete 5-color palettes from any base color. Whether you're building a design system, working on UI projects, or need cohesive colors for branding, this tool generates lighter, darker, and complementary shades that work together harmoniously.
-            </p>
-            <p className="text-muted-foreground">
-              Simply enter a base color using the hex input or color picker, and instantly get a full palette with five variations. Adjust the lightness slider to fine-tune the generated shades. Export your palette as CSS variables, JSON, or download as a CSS file for easy integration into your projects.
-            </p>
-          </div>
-        </section>
+        <ColorPaletteGeneratorSEO />
       </div>
-    </div>
+    </div >
   );
 }

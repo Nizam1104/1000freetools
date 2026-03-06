@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import RgbToHslConverterSEO from "@/components/seo-content/color-tools/RgbToHslConverter";
 
 export const relatedTools = [
   { name: "HSL to RGB Converter", href: "/color-tools/hsl-to-rgb-converter" },
@@ -336,52 +337,7 @@ export default function RgbToHslConverterPage() {
           </Card>
         </div>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>
-                Enter RGB values (0-255) in the Red, Green, and Blue fields
-              </li>
-              <li>The HSL values will be calculated automatically</li>
-              <li>
-                Click the copy button to copy the HSL value to your clipboard
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Why Convert RGB to HSL?</h2>
-            <p className="text-muted-foreground">
-              RGB is the native color model for screens, but HSL offers a more intuitive way to think about colors. Converting RGB to HSL helps you understand the hue, saturation, and lightness of any color, making it easier to create harmonious color schemes, adjust brightness, or generate color variations programmatically.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Benefits of HSL for CSS</h2>
-            <p className="text-muted-foreground">
-              CSS supports HSL natively through the hsl() function. Using HSL in your stylesheets makes it easier to create dynamic color systems, implement dark mode, or build themeable components. You can adjust lightness for different states without changing the core hue of your brand colors.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <RgbToHslConverterSEO />
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { toast } from "sonner";
+import { CustomColorPaletteGeneratorSEO } from "@/components/seo-content/color-tools/CustomColorPaletteGenerator";
 
 export const relatedTools = [
   { name: "Color Palette Generator", href: "/color-palette-generator" },
@@ -889,8 +890,8 @@ export default function CustomColorPaletteGeneratorPage() {
                                 c.hex.toLowerCase() ===
                                 presetHex.toLowerCase(),
                             )
-                                ? "border-primary ring-2 ring-primary ring-offset-2"
-                                : "border-slate-200"
+                              ? "border-primary ring-2 ring-primary ring-offset-2"
+                              : "border-slate-200"
                               }`}
                             style={{ backgroundColor: presetHex }}
                             onClick={() => {
@@ -970,7 +971,9 @@ export default function CustomColorPaletteGeneratorPage() {
           </TabsContent>
         </Tabs>
 
-        {/* Related Tools & SEO Content */}
+        <CustomColorPaletteGeneratorSEO />
+
+        {/* Related Tools */}
         <section className="mt-12 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
@@ -990,18 +993,6 @@ export default function CustomColorPaletteGeneratorPage() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              About the Custom Color Palette Generator
-            </h2>
-            <p className="text-muted-foreground">
-              The Custom Color Palette Generator gives you complete control over every color in your palette. Add up to 10 colors, lock the ones you love, regenerate others, and name each color for easy reference in your design system.
-            </p>
-            <p className="text-muted-foreground">
-              Choose from harmony modes like analogous, complementary, triadic, and more to generate cohesive colors, or go fully custom. Export your palette in JSON, CSS, SCSS, or Tailwind format for seamless integration into any project.
-            </p>
           </div>
         </section>
       </div>

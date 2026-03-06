@@ -15,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import CssColorNameConverterSEO from "@/components/seo-content/color-tools/CssColorNameConverter";
 
 export const relatedTools = [
   { name: "Hex to RGB Converter", href: "/color-tools/hex-to-rgb-converter" },
@@ -490,54 +491,7 @@ export default function CssColorNameConverterPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>
-                Type a CSS color name in the search box (e.g., "coral", "navy",
-                "tomato")
-              </li>
-              <li>Select the color from the dropdown suggestions</li>
-              <li>View the HEX, RGB, and HSL values instantly</li>
-              <li>
-                Click the copy button to copy any format to your clipboard
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">CSS Named Colors Reference</h2>
-            <p className="text-muted-foreground">
-              CSS defines 140+ standard color names that can be used directly in stylesheets. These named colors range from basic colors like "red" and "blue" to more specific shades like "rebeccapurple" and "cornflowerblue". Using color names can make your CSS more readable, though HEX and RGB values offer more precise color control.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">When to Use Color Names</h2>
-            <p className="text-muted-foreground">
-              Color names are great for rapid prototyping, learning CSS, or when exact color matching isn't critical. They're also useful for accessibility-focused designs where semantic color names help convey meaning. However, for production designs requiring specific brand colors, HEX, RGB, or HSL values provide the precision you need.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors block"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">{tool.href}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
+        <CssColorNameConverterSEO />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, Copy, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
+import HslToHexConverterSEO from "@/components/seo-content/color-tools/HslToHexConverter";
 
 export const relatedTools = [
   { name: "Hex to HSL Converter", href: "/color-tools/hex-to-hsl-converter" },
@@ -53,10 +54,10 @@ export default function HslToHexConverterPage() {
 
   const hex = isValidHsl(hslInput.h, hslInput.s, hslInput.l)
     ? hslToHex(
-        parseInt(hslInput.h, 10),
-        parseInt(hslInput.s, 10),
-        parseInt(hslInput.l, 10),
-      )
+      parseInt(hslInput.h, 10),
+      parseInt(hslInput.s, 10),
+      parseInt(hslInput.l, 10),
+    )
     : null;
 
   const copyToClipboard = async (text: string, field: string) => {
@@ -236,8 +237,8 @@ export default function HslToHexConverterPage() {
                       <Input
                         value={
                           hex[1] === hex[2] &&
-                          hex[3] === hex[4] &&
-                          hex[5] === hex[6]
+                            hex[3] === hex[4] &&
+                            hex[5] === hex[6]
                             ? `#${hex[1]}${hex[3]}${hex[5]}`
                             : "N/A"
                         }
@@ -278,34 +279,9 @@ export default function HslToHexConverterPage() {
           </Card>
         </div>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-sm font-semibold mb-3">How to use</h3>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>Enter HSL values (H: 0-360, S: 0-100, L: 0-100)</li>
-              <li>The HEX color code will be calculated automatically</li>
-              <li>
-                Click the copy button to copy the HEX value to your clipboard
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
 
         <div className="mt-8 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-3">Why Convert HSL to HEX?</h2>
-            <p className="text-muted-foreground">
-              While HSL is great for understanding and manipulating colors, HEX codes remain the standard for CSS and web development. Converting HSL to HEX lets you use your carefully adjusted colors in stylesheets, share them with team members, or integrate them into design systems that require hex format.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">When to Use HSL vs HEX</h2>
-            <p className="text-muted-foreground">
-              Use HSL when you need to create color variations, adjust brightness systematically, or work with color relationships. Use HEX when writing CSS, sharing colors in design tools, or working with legacy codebases. This converter bridges both workflows seamlessly.
-            </p>
-          </section>
-
+          <HslToHexConverterSEO />
           <section>
             <h2 className="text-xl font-semibold mb-3">Related Color Tools</h2>
             <div className="grid sm:grid-cols-2 gap-3">

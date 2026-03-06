@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Copy, Check, Sun, Moon, Plus, Trash2, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { hexToRgb } from "@/app/color-tools/lib/color-utils";
+import DarkLightModePreviewSEO from "@/components/seo-content/color-tools/DarkLightModePreview";
 
 export const relatedTools = [
   { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check WCAG accessibility compliance" },
@@ -98,7 +99,7 @@ export default function DarkLightModePreviewPage() {
   const getDarkModeColor = (color: string): string => {
     const rgb = hexToRgb(color);
     if (!rgb) return color;
-    
+
     // For background-like colors, darken them
     const luminance = rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114;
     if (luminance > 200) {
@@ -481,42 +482,7 @@ export default function DarkLightModePreviewPage() {
         </section>
 
         {/* SEO Content */}
-        <section className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">How to Test Colors in Both Themes</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Add your color palette using the color picker or HEX input</li>
-                <li>Name each color for easy reference (Primary, Secondary, etc.)</li>
-                <li>Toggle between Light Only, Split View, and Dark Only modes</li>
-                <li>Review how buttons, inputs, and text appear in each theme</li>
-                <li>Adjust colors that don't translate well between modes</li>
-              </ol>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Why Preview Both Light and Dark Modes</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                Users expect apps and websites to work well in their preferred theme:
-              </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Catch accessibility issues before they affect users</li>
-                <li>Ensure brand colors work across different backgrounds</li>
-                <li>Test contrast ratios in both light and dark contexts</li>
-                <li>Save time by fixing problems during design, not development</li>
-              </ul>
-              <p className="pt-2">
-                A well-designed color palette should maintain readability and visual hierarchy in both light and dark modes.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        <DarkLightModePreviewSEO />
       </div>
     </div>
   );
