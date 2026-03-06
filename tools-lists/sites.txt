@@ -1,0 +1,26 @@
+Calculators & Math
+calculator.net, rapidtables.com, unitconverters.net, omnicalculator.com, calculatorsoup.com, desmos.com, symbolab.com, mathway.com, web2.0calc.com, derivative-calculator.net, integral-calculator.com, matrix-calculator.net, cymath.com, easycalculation.com, mathsisfun.com/calculator
+Unit & Measurement Converters
+convertunits.com, onlineconversion.com, metric-conversions.org, unitjuggler.com, translatorscafe.com, conversioncalculator.org, everydaycalculation.com
+Date & Time
+timeanddate.com, epochconverter.com, datecalculator.org, currentmillis.com, worldtimebuddy.com, days.to, daysuntilcalculator.com, timecalculator.com
+Color & Design
+coolors.co, colorhunt.co, colorhexa.com, color-hex.com, paletton.com, contrast-ratio.com, cssgradient.io, css3generator.com, box-shadow.dev, neumorphism.io, glassmorphism.com, cubic-bezier.com, easings.net, keyframes.app, animista.net
+Text Tools
+wordcounter.net, charactercountonline.com, lettercount.com, diffchecker.com, convertcase.net, titlecase.com, capitalizemytitle.com, textcompare.org, reversestringonline.com, loremipsum.io, textfixer.com
+Code & Developer Tools
+jsonformatter.org, jsonlint.com, base64decode.org, base64encode.org, urlencoder.org, beautifier.io, minifier.org, jscompress.com, cssminifier.com, regex101.com, regexr.com, codebeautify.org, jsfiddle.net, codepen.io, cryptii.com, rot13.com
+Image Tools (client-side processing)
+squoosh.app, ezgif.com, favicon.io, resizeimage.net, onlinepngtools.com, onlinejpgtools.com, gifmaker.me
+Random Generators
+random.org*, randomwordgenerator.com, randomnamegenerator.com, uuidgenerator.net, guidgenerator.com, randomcolor.com, wheeldecide.com, spinthewheel.app, flipsimu.com, randomlists.com
+QR Code & Barcode
+qr-code-generator.com, qrcode-monkey.com, barcode-generator.org, goqr.me — all render entirely in-browser via canvas/JS
+Finance Calculators
+mortgagecalculator.org, moneychimp.com, calculator.me, interest.com, bankrate.com calculators, dqydj.com
+Health Calculators
+bmi-calculator.net, tdee-calculator.net, healthstatus.com, freedieting.com/tools
+Typing & Fun
+typingtest.com, monkeytype.com, humanbenchmark.com, 10fastfingers.com, keybr.com
+Misc Utilities
+passwordsgenerator.net, randomkeygen.com, tableconvert.com, csvjson.com, loremipsum.io, notepad-online.net, hash-generator.com, md5hashgenerator.com (MD5 can run in-browser via JS)
