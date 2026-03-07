@@ -198,6 +198,11 @@ export default function HslToHexConverterPage() {
                       <Label className="text-sm font-medium text-muted-foreground mb-2 block">
                         Preview
                       </Label>
+                      <div
+                        className="w-full h-24 rounded-lg border"
+                        style={{ backgroundColor: hex }}
+                      />
+                    </div>
                   </div>
                 </div>
               )}

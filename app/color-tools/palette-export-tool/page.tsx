@@ -433,6 +433,13 @@ ${colors.map((c) => `        '${c.name.toLowerCase().replace(/\s+/g, "-")}': '${
                 <div className="grid grid-cols-5 gap-3">
                   {colors.map((swatch) => (
                     <div key={swatch.id} className="text-center">
+                      <div
+                        className="w-full aspect-square rounded-md border mb-2"
+                        style={{ backgroundColor: swatch.color }}
+                      />
+                      <p className="text-xs font-medium truncate">{swatch.name}</p>
+                      <p className="text-xs text-muted-foreground font-mono">{swatch.color}</p>
+                    </div>
                   ))}
                 </div>
               </CardContent>

@@ -377,6 +377,9 @@ export default function DominantColorFinderPage() {
                   </div>
                 </>
               ) : (
+                <div className="flex flex-col items-center justify-center h-48 text-muted-foreground">
+                  <p>Upload an image to see the dominant color</p>
+                </div>
               )}
             </CardContent>
           </Card>
