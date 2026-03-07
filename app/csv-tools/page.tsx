@@ -11,6 +11,236 @@ const csvTools = [
     description: "View and analyze CSV files online with sorting and filtering",
     href: "/csv-tools/csv-viewer",
   },
+  {
+    name: "CSV Editor",
+    description: "Edit CSV files directly in your browser with spreadsheet-like interface",
+    href: "/csv-tools/csv-editor",
+  },
+  {
+    name: "CSV Validator",
+    description: "Validate CSV structure, column counts, data types, and encoding issues",
+    href: "/csv-tools/csv-validator",
+  },
+  {
+    name: "CSV Formatter",
+    description: "Standardize CSV formatting: quoting, delimiters, whitespace, line endings, UTF-8",
+    href: "/csv-tools/csv-formatter",
+  },
+  {
+    name: "CSV Pretty Print",
+    description: "Convert CSV to human-readable aligned text tables",
+    href: "/csv-tools/csv-pretty-print",
+  },
+  {
+    name: "CSV Minifier",
+    description: "Strip unnecessary whitespace, blank lines, and redundant quotes to reduce file size",
+    href: "/csv-tools/csv-minifier",
+  },
+  {
+    name: "CSV to JSON",
+    description: "Convert CSV to JSON array of objects with type inference options",
+    href: "/csv-tools/csv-to-json",
+  },
+  {
+    name: "JSON to CSV",
+    description: "Flatten JSON arrays of objects into CSV with nested object handling",
+    href: "/csv-tools/json-to-csv",
+  },
+  {
+    name: "CSV to Excel",
+    description: "Convert CSV to formatted .xlsx spreadsheets with styled headers",
+    href: "/csv-tools/csv-to-excel",
+  },
+  {
+    name: "Excel to CSV",
+    description: "Extract sheets from .xlsx/.xls files and convert to CSV",
+    href: "/csv-tools/excel-to-csv",
+  },
+  {
+    name: "CSV to TSV",
+    description: "Convert comma-delimited CSV to tab-separated values (TSV)",
+    href: "/csv-tools/csv-to-tsv",
+  },
+  {
+    name: "TSV to CSV",
+    description: "Convert tab-separated value files to standard CSV",
+    href: "/csv-tools/tsv-to-csv",
+  },
+  {
+    name: "CSV to XML",
+    description: "Transform CSV rows into XML elements with configurable structure",
+    href: "/csv-tools/csv-to-xml",
+  },
+  {
+    name: "XML to CSV",
+    description: "Parse XML and extract repeating element structures into CSV",
+    href: "/csv-tools/xml-to-csv",
+  },
+  {
+    name: "CSV to YAML",
+    description: "Convert CSV to YAML list of mappings with type inference",
+    href: "/csv-tools/csv-to-yaml",
+  },
+  {
+    name: "CSV to SQL",
+    description: "Generate SQL INSERT statements from CSV data for MySQL, PostgreSQL, SQLite",
+    href: "/csv-tools/csv-to-sql",
+  },
+  {
+    name: "SQL to CSV",
+    description: "Extract row data from SQL INSERT scripts into CSV format",
+    href: "/csv-tools/sql-to-csv",
+  },
+  {
+    name: "CSV to HTML Table",
+    description: "Convert CSV to styled HTML table with CSS classes and responsive layout",
+    href: "/csv-tools/csv-to-html",
+  },
+  {
+    name: "HTML Table to CSV",
+    description: "Scrape HTML tables from pasted HTML and export as CSV",
+    href: "/csv-tools/html-to-csv",
+  },
+  {
+    name: "CSV to Markdown",
+    description: "Convert CSV to GitHub-Flavored Markdown table with alignment options",
+    href: "/csv-tools/csv-to-markdown",
+  },
+  {
+    name: "CSV to Array",
+    description: "Convert CSV to programming language arrays (JavaScript, Python, PHP, Ruby)",
+    href: "/csv-tools/csv-to-array",
+  },
+  {
+    name: "CSV to Text",
+    description: "Generate plain text from CSV rows using customizable templates",
+    href: "/csv-tools/csv-to-text",
+  },
+  {
+    name: "Text to CSV",
+    description: "Parse unstructured text and convert to structured CSV",
+    href: "/csv-tools/text-to-csv",
+  },
+  {
+    name: "CSV Column Extractor",
+    description: "Extract specific columns from CSV by name or index with reordering",
+    href: "/csv-tools/csv-column-extractor",
+  },
+  {
+    name: "CSV Column Remover",
+    description: "Remove selected columns from CSV by name or index",
+    href: "/csv-tools/csv-column-remover",
+  },
+  {
+    name: "CSV Column Reorder",
+    description: "Drag-and-drop interface to reorder CSV columns",
+    href: "/csv-tools/csv-column-reorder",
+  },
+  {
+    name: "CSV Column Splitter",
+    description: "Split a single CSV column into multiple columns by delimiter or regex",
+    href: "/csv-tools/csv-column-splitter",
+  },
+  {
+    name: "CSV Column Merger",
+    description: "Combine multiple CSV columns into a single field with custom separator",
+    href: "/csv-tools/csv-column-merger",
+  },
+  {
+    name: "CSV Row Filter",
+    description: "Filter CSV rows using conditions (equals, contains, regex, comparisons)",
+    href: "/csv-tools/csv-row-filter",
+  },
+  {
+    name: "CSV Row Sorter",
+    description: "Sort CSV rows by one or more columns with multi-level sorting",
+    href: "/csv-tools/csv-row-sorter",
+  },
+  {
+    name: "CSV Row Counter",
+    description: "Count rows, blanks, and compute per-column fill rate statistics",
+    href: "/csv-tools/csv-row-counter",
+  },
+  {
+    name: "CSV Header Editor",
+    description: "Rename, recase, and clean CSV column headers in bulk",
+    href: "/csv-tools/csv-header-editor",
+  },
+  {
+    name: "CSV Duplicate Remover",
+    description: "Remove duplicate rows from CSV (full-row or key-column based)",
+    href: "/csv-tools/csv-duplicate-remover",
+  },
+  {
+    name: "CSV Deduplicator",
+    description: "Advanced fuzzy matching for near-duplicate detection with similarity threshold",
+    href: "/csv-tools/csv-deduplicator",
+  },
+  {
+    name: "CSV Join/Merge",
+    description: "SQL-style joins (inner, left, right, full outer) on two CSV files",
+    href: "/csv-tools/csv-join-merge",
+  },
+  {
+    name: "CSV Splitter",
+    description: "Split large CSV into multiple files by row count, size, or column groups",
+    href: "/csv-tools/csv-splitter",
+  },
+  {
+    name: "CSV File Merger",
+    description: "Combine multiple CSV files into one with column alignment strategies",
+    href: "/csv-tools/csv-file-merger",
+  },
+  {
+    name: "CSV Delimiter Converter",
+    description: "Change CSV delimiter (comma, semicolon, pipe, tab, custom)",
+    href: "/csv-tools/csv-delimiter-converter",
+  },
+  {
+    name: "CSV Quote Escaper",
+    description: "Apply or normalize quoting to CSV fields (RFC 4180 compliant)",
+    href: "/csv-tools/csv-quote-escaper",
+  },
+  {
+    name: "CSV Unquote",
+    description: "Remove unnecessary quote characters from over-quoted CSV files",
+    href: "/csv-tools/csv-unquote",
+  },
+  {
+    name: "CSV Cleaner",
+    description: "Automatically fix common CSV issues: whitespace, blank rows, encoding, BOM",
+    href: "/csv-tools/csv-cleaner",
+  },
+  {
+    name: "CSV Data Normalizer",
+    description: "Standardize dates, phone numbers, currencies, casing, and boolean values",
+    href: "/csv-tools/csv-data-normalizer",
+  },
+  {
+    name: "CSV Transpose",
+    description: "Swap rows and columns in any CSV file instantly",
+    href: "/csv-tools/csv-transpose",
+  },
+  {
+    name: "CSV Random Row Generator",
+    description: "Generate realistic fake CSV data with configurable column types",
+    href: "/csv-tools/csv-random-row-generator",
+  },
+  {
+    name: "CSV Sample Generator",
+    description: "Extract a random sample from large CSV files (count or percentage)",
+    href: "/csv-tools/csv-sample-generator",
+  },
+  {
+    name: "CSV Column Statistics",
+    description: "Get instant descriptive statistics for every column in your CSV",
+    href: "/csv-tools/csv-column-statistics",
+  },
+  {
+    name: "CSV Email Extractor",
+    description: "Pull all valid email addresses from CSV with domain filtering",
+    href: "/csv-tools/csv-email-extractor",
+  },
 ];
 
 export const metadata: Metadata = {

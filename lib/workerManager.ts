@@ -14,7 +14,7 @@ interface WorkerInstance {
 }
 
 interface WorkerConfig {
-  workerPath: string;
+  workerPath: string | URL;
   maxIdleTime?: number; // in milliseconds, default 5 minutes
   type?: "module" | "classic";
 }
@@ -25,7 +25,8 @@ type WorkerType =
   | "mockDataGenerator"
   | "imageFormatConverter"
   | "imageEditor"
-  | "fileZipping";
+  | "fileZipping"
+  | "csvParser";
 
 class WorkerManager {
   private workers: Map<WorkerType, WorkerInstance> = new Map();
@@ -350,3 +351,12 @@ export const getFileZippingWorker = () =>
 
 export const releaseFileZippingWorker = () =>
   workerManager.releaseWorker("fileZipping");
+
+// CSV Worker
+export const getCsvWorker = () =>
+  workerManager.getWorker("csvParser", {
+    workerPath: new URL("./workers/csv-worker.ts", import.meta.url),
+    type: "module",
+  });
+
+export const releaseCsvWorker = () => workerManager.releaseWorker("csvParser");
