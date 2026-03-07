@@ -1,388 +1,478 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function DeterminantCalculator() {
-  const [matrix, setMatrix] = useState<string>("1,2,3\n4,5,6\n7,8,9");
+  const [size, setSize] = useState<number>(3);
+  const [matrix, setMatrix] = useState<number[][]>([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
   const [result, setResult] = useState<number | null>(null);
-  const [error, setError] = useState<string>("");
+  const [steps, setSteps] = useState<string[]>([]);
+  const [error, setError] = useState("");
+  const [inputMode, setInputMode] = useState<"textarea" | "row">("textarea");
+  const [textareaValue, setTextareaValue] = useState("1, 2, 3\n4, 5, 6\n7, 8, 9");
+  const [rowInputs, setRowInputs] = useState<string[]>(["1, 2, 3", "4, 5, 6", "7, 8, 9"]);
+  const [textareaError, setTextareaError] = useState("");
 
-  const parseMatrix = (input: string): number[][] => {
-    return input.trim().split("\n").map((row) =>
-      row.split(",").map((cell) => parseFloat(cell.trim())).filter((n) => !isNaN(n))
-    );
+  const initializeMatrix = (newSize: number) => {
+    setSize(newSize);
+    setMatrix(Array(newSize).fill(0).map(() => Array(newSize).fill(0)));
+    setResult(null);
+    setSteps([]);
+    setError("");
+    setTextareaValue("");
+    setRowInputs(Array(newSize).fill(""));
+    setTextareaError("");
   };
 
-  const determinant = (matrix: number[][]): number => {
-    const n = matrix.length;
-    if (n === 1) return matrix[0][0];
-    if (n === 2) return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
-    
-    let det = 0;
-    for (let col = 0; col < n; col++) {
-      const subMatrix = matrix.slice(1).map((row) => [...row.slice(0, col), ...row.slice(col + 1)]);
-      det += Math.pow(-1, col) * matrix[0][col] * determinant(subMatrix);
+  const updateCell = (row: number, col: number, value: string) => {
+    const newMatrix = matrix.map((r, ri) =>
+      r.map((c, ci) => (ri === row && ci === col ? parseFloat(value) || 0 : c))
+    );
+    setMatrix(newMatrix);
+  };
+
+  const parseMatrixInput = (text: string): { matrix: number[][]; size: number; error: string } => {
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return { matrix: [], size: 0, error: "" };
     }
-    return det;
+
+    const rows = trimmed.split("\n").filter(row => row.trim());
+    if (rows.length === 0) {
+      return { matrix: [], size: 0, error: "Please enter matrix values" };
+    }
+
+    const parsedRows: number[][] = [];
+    for (const row of rows) {
+      const values = row.split(/[\s,]+/).filter(v => v.trim());
+      const numbers = values.map(v => parseFloat(v));
+      if (numbers.some(n => isNaN(n))) {
+        return { matrix: [], size: 0, error: "Invalid number detected. Please enter only numeric values." };
+      }
+      parsedRows.push(numbers);
+    }
+
+    const rowCount = parsedRows.length;
+    const colCount = parsedRows[0].length;
+
+    if (rowCount > 10) {
+      return { matrix: [], size: 0, error: "Maximum supported matrix size is 10×10" };
+    }
+
+    if (rowCount !== colCount) {
+      return {
+        matrix: [],
+        size: 0,
+        error: `Matrix must be square. Got ${rowCount} rows and ${colCount} columns.`
+      };
+    }
+
+    for (let i = 1; i < rowCount; i++) {
+      if (parsedRows[i].length !== colCount) {
+        return {
+          matrix: [],
+          size: 0,
+          error: `All rows must have the same number of elements. Row ${i + 1} has ${parsedRows[i].length} elements.`
+        };
+      }
+    }
+
+    return { matrix: parsedRows, size: rowCount, error: "" };
+  };
+
+  const parseRowInput = (rowIndex: number, value: string): { matrix: number[][]; error: string } => {
+    const newRowInputs = [...rowInputs];
+    newRowInputs[rowIndex] = value;
+    setRowInputs(newRowInputs);
+
+    const values = value.split(/[\s,]+/).filter(v => v.trim());
+    const numbers = values.map(v => parseFloat(v));
+
+    if (values.length > 0 && numbers.some(n => isNaN(n))) {
+      return { matrix: [], error: `Row ${rowIndex + 1} contains invalid numbers` };
+    }
+
+    const newMatrix = matrix.map((r, ri) => {
+      if (ri === rowIndex) {
+        const newRow = Array(size).fill(0);
+        for (let i = 0; i < Math.min(numbers.length, size); i++) {
+          newRow[i] = numbers[i];
+        }
+        return newRow;
+      }
+      return r;
+    });
+
+    return { matrix: newMatrix, error: "" };
+  };
+
+  const handleTextareaChange = (value: string) => {
+    setTextareaValue(value);
+    const result = parseMatrixInput(value);
+    setTextareaError("");
+    if (result.matrix.length > 0) {
+      setMatrix(result.matrix);
+      setSize(result.size);
+    }
+  };
+
+  const calculateDeterminantRecursive = (m: number[][]): { det: number; steps: string[] } => {
+    const n = m.length;
+
+    if (n === 1) {
+      return { det: m[0][0], steps: [`det([${m[0][0]}]) = ${m[0][0]}`] };
+    }
+
+    if (n === 2) {
+      const a = m[0][0], b = m[0][1], c = m[1][0], d = m[1][1];
+      const det = a * d - b * c;
+      return {
+        det,
+        steps: [
+          `For a 2×2 matrix:`,
+          `det = ad - bc`,
+          `det = ${a}×${d} - ${b}×${c} = ${a*d} - ${b*c} = ${det}`
+        ]
+      };
+    }
+
+    const steps: string[] = [`Using cofactor expansion along the first row:`];
+    let det = 0;
+
+    for (let j = 0; j < n; j++) {
+      const minor = getMinor(m, 0, j);
+      const subResult = calculateDeterminantRecursive(minor);
+      const cofactor = Math.pow(-1, j) * m[0][j] * subResult.det;
+      det += cofactor;
+
+      const sign = j % 2 === 0 ? "+" : "-";
+      steps.push(`${sign} a₀,${j} × det(M₀,${j}) = ${sign} ${m[0][j]} × ${subResult.det.toFixed(4)} = ${cofactor.toFixed(4)}`);
+    }
+
+    steps.push(``, `Total determinant: ${det}`);
+    return { det, steps };
+  };
+
+  const getMinor = (m: number[][], skipRow: number, skipCol: number): number[][] => {
+    return m
+      .filter((_, ri) => ri !== skipRow)
+      .map(row => row.filter((_, ci) => ci !== skipCol));
   };
 
   const calculate = () => {
-    try {
-      const M = parseMatrix(matrix);
-      
-      if (M.length !== M[0].length) {
-        setError("Matrix must be square");
+    if (inputMode === "textarea") {
+      const result = parseMatrixInput(textareaValue);
+      if (result.error) {
+        setTextareaError(result.error);
         return;
       }
-      
-      setResult(determinant(M));
-      setError("");
-    } catch {
-      setError("Invalid matrix format");
+      if (result.matrix.length > 0) {
+        setMatrix(result.matrix);
+        setSize(result.size);
+      }
     }
+
+    if (matrix.length === 0 || matrix.some(row => row.length === 0)) {
+      setError("Please enter a valid matrix");
+      return;
+    }
+
+    if (matrix.length !== matrix[0].length) {
+      setError("Matrix must be square (same number of rows and columns)");
+      return;
+    }
+
+    const calculation = calculateDeterminantRecursive(matrix);
+    setResult(calculation.det);
+    setSteps(calculation.steps);
+    setError("");
+    setTextareaError("");
   };
 
   const reset = () => {
-    setMatrix("1,2,3\n4,5,6\n7,8,9");
+    setMatrix(Array(size).fill(0).map(() => Array(size).fill(0)));
     setResult(null);
+    setSteps([]);
     setError("");
+    setTextareaValue("");
+    setRowInputs(Array(size).fill(""));
+    setTextareaError("");
+  };
+
+  const fillExample = () => {
+    const exampleMatrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 10]
+    ].slice(0, size).map(row => row.slice(0, size));
+
+    setMatrix(exampleMatrix);
+
+    if (inputMode === "textarea") {
+      setTextareaValue(exampleMatrix.map(row => row.join(", ")).join("\n"));
+    } else {
+      setRowInputs(exampleMatrix.map(row => row.join(", ")));
+    }
+
+    setResult(null);
+    setSteps([]);
+    setError("");
+    setTextareaError("");
+  };
+
+  const handleSizeChange = (newSize: number) => {
+    const newMatrix = Array(newSize).fill(0).map((_, ri) =>
+      Array(newSize).fill(0).map((_, ci) =>
+        ri < matrix.length && ci < matrix[ri].length ? matrix[ri][ci] : 0
+      )
+    );
+    setMatrix(newMatrix);
+    setSize(newSize);
+    setResult(null);
+    setSteps([]);
+    setError("");
+    setTextareaError("");
+
+    if (inputMode === "row") {
+      setRowInputs(Array(newSize).fill("").map((_, i) =>
+        i < rowInputs.length ? rowInputs[i] : ""
+      ));
+    }
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <Card>
-        
-        <CardContent>
-          <div className="space-y-4">
-            <div>
-              <label className="text-sm text-muted-foreground mb-2 block">Matrix (rows separated by newlines)</label>
-              <textarea
-                className="w-full min-h-[100px] p-2 border rounded-md font-mono text-sm bg-background"
-                value={matrix}
-                onChange={(e) => setMatrix(e.target.value)}
-                placeholder="1,2,3&#10;4,5,6&#10;7,8,9"
-              />
+    <div className="w-full max-w-5xl mx-auto space-y-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-semibold mb-2">Matrix Determinant Calculator – Compute Det of Any Matrix</h1>
+        <p className="text-muted-foreground">
+          Calculate the determinant of any square matrix up to 10×10 with our free online determinant calculator. Enter values via textarea or row-by-row input with cofactor expansion steps shown.
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        <Card>
+          <CardContent className="pt-6 space-y-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <Label>Matrix Size:</Label>
+              <div className="flex gap-2">
+                {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+                  <Button
+                    key={n}
+                    variant={size === n ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => handleSizeChange(n)}
+                    className="w-10"
+                  >
+                    {n}
+                  </Button>
+                ))}
+              </div>
+              <Button variant="outline" size="sm" onClick={fillExample}>Load Example</Button>
             </div>
-            {error && <p className="text-destructive text-sm">{error}</p>}
-            <div className="flex gap-2">
-              <Button onClick={calculate}>Calculate</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-            {result !== null && (
-              <div className="p-4 bg-muted rounded-md">
-                <p className="text-sm text-muted-foreground">Determinant</p>
-                <p className="text-2xl font-semibold">{result}</p>
+
+            <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
+              <TabsList>
+                <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
+                <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="textarea" className="space-y-4">
+                <div>
+                  <Label>Enter matrix values (each row on a new line, values separated by spaces or commas)</Label>
+                  <Textarea
+                    value={textareaValue}
+                    onChange={(e) => handleTextareaChange(e.target.value)}
+                    placeholder={`Example for 3×3 matrix:\n1 2 3\n4 5 6\n7 8 9\n\nor\n\n1, 2, 3\n4, 5, 6\n7, 8, 9`}
+                    className="min-h-[200px] font-mono"
+                  />
+                  {textareaError && (
+                    <p className="text-xs text-destructive mt-2">{textareaError}</p>
+                  )}
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Current matrix: {size}×{size} | Detected from your input
+                  </p>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="row" className="space-y-4">
+                <div className="space-y-3">
+                  <Label>Enter each row (comma or space separated values)</Label>
+                  {rowInputs.map((rowValue, rowIndex) => (
+                    <div key={rowIndex} className="flex items-center gap-2">
+                      <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
+                      <Input
+                        value={rowValue}
+                        onChange={(e) => {
+                          const result = parseRowInput(rowIndex, e.target.value);
+                          if (result.matrix.length > 0) {
+                            setMatrix(result.matrix);
+                          }
+                        }}
+                        placeholder={`Enter ${size} values for row ${rowIndex + 1}`}
+                        className="flex-1 font-mono"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
+
+            {error && (
+              <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
+                {error}
               </div>
             )}
+
+            <div className="flex gap-2">
+              <Button onClick={calculate} disabled={matrix.length === 0}>Calculate Determinant</Button>
+              <Button variant="outline" onClick={reset}>Reset</Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {result !== null && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg text-center">
+              <p className="text-sm text-muted-foreground mb-2">Determinant</p>
+              <p className="text-5xl font-bold">det(A) = {result}</p>
+              {result === 0 && (
+                <p className="text-sm text-destructive mt-2">
+                  This matrix is singular (not invertible)
+                </p>
+              )}
+              {result !== 0 && (
+                <p className="text-sm text-muted-foreground mt-2">
+                  This matrix is invertible
+                </p>
+              )}
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Step-by-Step Solution</h4>
+              <div className="space-y-2 font-mono text-sm bg-muted p-3 rounded">
+                {steps.map((step, i) => (
+                  <div key={i} className={step === "" ? "h-4" : ""}>
+                    {step}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </CardContent>
-      </Card>
-
-      <div className="mt-8 space-y-6">
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              How to Use This Determinant Calculator
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
-                  1
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Enter your matrix values</p>
-                  <p>Type numbers separated by commas for each row. Press Enter or use a new line for each row. The matrix must be square (same number of rows and columns).</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="flex-shrink-0-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
-                  2
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Verify the matrix format</p>
-                  <p>Check that your input looks correct. For a 3x3 matrix, you need 3 rows with 3 numbers each, like: 1,2,3 on the first line, 4,5,6 on the second, 7,8,9 on the third.</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold">
-                  3
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Click Calculate to get the result</p>
-                  <p>The calculator computes the determinant using cofactor expansion. A result of 0 means the matrix is singular (not invertible).</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Determinant Properties Reference
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-3 px-2 font-semibold">Property</th>
-                    <th className="text-left py-3 px-2 font-semibold">Description</th>
-                    <th className="text-left py-3 px-2 font-semibold">Example</th>
-                  </tr>
-                </thead>
-                <tbody className="text-muted-foreground">
-                  <tr className="border-b">
-                    <td className="py-3 px-2 font-medium">Identity Matrix</td>
-                    <td className="py-3 px-2">Determinant equals 1</td>
-                    <td className="py-3 px-2">det(I) = 1</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2 font-medium">Zero Row/Column</td>
-                    <td className="py-3 px-2">Determinant equals 0</td>
-                    <td className="py-3 px-2">Any row of zeros gives det = 0</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2 font-medium">Row Swap</td>
-                    <td className="py-3 px-2">Changes sign of determinant</td>
-                    <td className="py-3 px-2">Swapping rows multiplies det by -1</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2 font-medium">Scalar Multiple</td>
-                    <td className="py-3 px-2">Multiply row by k, det multiplies by k</td>
-                    <td className="py-3 px-2">det(kA) = k^n det(A) for n x n matrix</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2 font-medium">Product Rule</td>
-                    <td className="py-3 px-2">det(AB) = det(A) det(B)</td>
-                    <td className="py-3 px-2">Determinant of product equals product of determinants</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-2 font-medium">Transpose</td>
-                    <td className="py-3 px-2">det(A) = det(A^T)</td>
-                    <td className="py-3 px-2">Determinant unchanged by transposing</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Understanding Determinants
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <p>
-                The determinant is a single number calculated from a square matrix. It tells you important things about the matrix without needing to look at all the individual elements.
-              </p>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What Does the Determinant Tell You?</h4>
-                <p>
-                  If the determinant is zero, the matrix is singular — it has no inverse. This means the system of equations it represents either has no solution or infinitely many solutions. If the determinant is non-zero, the matrix is invertible and the system has exactly one solution.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Geometric Meaning</h4>
-                <p>
-                  For a 2x2 matrix, the absolute value of the determinant equals the area of the parallelogram formed by the column vectors. For a 3x3 matrix, it equals the volume of the parallelepiped. The sign indicates orientation (whether the transformation preserves or reverses handedness).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">2x2 Determinant Formula</h4>
-                <p>
-                  For a 2x2 matrix [[a,b],[c,d]], the determinant is ad - bc. Example: [[3,1],[2,4]] has determinant (3)(4) - (1)(2) = 12 - 2 = 10.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">3x3 Determinant Using Cofactor Expansion</h4>
-                <p>
-                  For a 3x3 matrix, expand along the first row: det = a(ei-fh) - b(di-fg) + c(dh-eg) where the matrix is [[a,b,c],[d,e,f],[g,h,i]]. This is sometimes called the "rule of Sarrus" when visualized with diagonals.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Common Determinant Values
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-3 px-2 font-semibold">Matrix Type</th>
-                    <th className="text-left py-3 px-2 font-semibold">Determinant</th>
-                    <th className="text-left py-3 px-2 font-semibold">Invertible?</th>
-                  </tr>
-                </thead>
-                <tbody className="text-muted-foreground">
-                  <tr className="border-b">
-                    <td className="py-3 px-2">Identity Matrix</td>
-                    <td className="py-3 px-2">1</td>
-                    <td className="py-3 px-2">Yes</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2">Diagonal Matrix</td>
-                    <td className="py-3 px-2">Product of diagonal elements</td>
-                    <td className="py-3 px-2">Yes, if no diagonal element is 0</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2">Triangular Matrix</td>
-                    <td className="py-3 px-2">Product of diagonal elements</td>
-                    <td className="py-3 px-2">Yes, if no diagonal element is 0</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2">Matrix with proportional rows</td>
-                    <td className="py-3 px-2">0</td>
-                    <td className="py-3 px-2">No (singular)</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3 px-2">Orthogonal Matrix</td>
-                    <td className="py-3 px-2">1 or -1</td>
-                    <td className="py-3 px-2">Yes</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-2">Matrix with a zero row</td>
-                    <td className="py-3 px-2">0</td>
-                    <td className="py-3 px-2">No (singular)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Tips for Working with Determinants
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Use Row Operations to Simplify</p>
-                  <p>Adding a multiple of one row to another doesn't change the determinant. Use this to create zeros and make calculation easier.</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Expand Along Rows or Columns with Zeros</p>
-                  <p>When using cofactor expansion, pick the row or column with the most zeros. You only need to compute cofactors for non-zero elements.</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Check for Singular Matrices First</p>
-                  <p>If two rows or columns are identical or proportional, the determinant is zero. Spot these patterns before calculating.</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Remember the Sign Pattern for Cofactors</p>
-                  <p>Cofactor signs alternate in a checkerboard pattern: + - + / - + - / + - +. This matters when expanding by cofactors.</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does a determinant of 0 mean?</h4>
-                <p>
-                  A determinant of 0 means the matrix is singular — it has no inverse. Geometrically, the transformation collapses space into a lower dimension. For systems of equations, it means either no solution or infinitely many solutions.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can a determinant be negative?</h4>
-                <p>
-                  Yes. A negative determinant indicates the transformation reverses orientation. In 2D, it flips the plane (like a mirror reflection). In 3D, it changes a right-handed coordinate system to left-handed or vice versa.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I find the determinant of a 4x4 matrix?</h4>
-                <p>
-                  Use cofactor expansion along a row or column, which reduces it to four 3x3 determinants. Alternatively, use row reduction to get an upper triangular matrix, then multiply the diagonal elements. For large matrices, computational tools are recommended.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the relationship between determinants and eigenvalues?</h4>
-                <p>
-                  The determinant equals the product of all eigenvalues. This is useful for checking eigenvalue calculations. If you know the eigenvalues, you can find the determinant by multiplying them together.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why are determinants only defined for square matrices?</h4>
-                <p>
-                  Determinants represent scaling factors for linear transformations. Only square matrices represent transformations from a space to itself (like R^n to R^n). Non-square matrices change the dimension, so there's no single scaling factor.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/matrix-multiplication-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Matrix Multiplication Calculator</span>
-                <p className="text-muted-foreground">Multiply matrices and see step-by-step results</p>
-              </a>
-              <a
-                href="/calculators/matrix-inverse-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Matrix Inverse Calculator</span>
-                <p className="text-muted-foreground">Find the inverse of a square matrix</p>
-              </a>
-              <a
-                href="/calculators/system-of-equations-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">System of Equations Calculator</span>
-                <p className="text-muted-foreground">Solve linear systems using matrices</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
+        )}
       </div>
+
+      <section className="border-t pt-8 space-y-4">
+        <h2 className="text-2xl font-semibold">What is a Determinant?</h2>
+        <p className="text-muted-foreground">
+          The determinant is a scalar value that can be computed from a square matrix. It provides important information about the matrix and is used in many areas of mathematics including solving systems of linear equations, finding matrix inverses, and calculating areas and volumes.
+        </p>
+        <p className="text-muted-foreground">
+          A determinant of 0 means the matrix is singular (not invertible). A non-zero determinant means the matrix has an inverse.
+        </p>
+      </section>
+
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Determinant Formulas</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold mb-2">2×2 Matrix</h3>
+            <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+              |a b|<br />
+              |c d| = ad - bc
+            </code>
+            <p className="text-xs text-muted-foreground mt-2">
+              Multiply diagonals and subtract
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold mb-2">3×3 Matrix (Cofactor Expansion)</h3>
+            <code className="text-xs font-mono bg-muted px-3 py-2 rounded block">
+              det = a(ei - fh) - b(di - fg) + c(dh - eg)
+            </code>
+            <p className="text-xs text-muted-foreground mt-2">
+              Expand along first row using minors
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Properties of Determinants</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Key Properties</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• det(AB) = det(A) × det(B)</li>
+              <li>• det(A⁻¹) = 1/det(A)</li>
+              <li>• det(Aᵀ) = det(A)</li>
+              <li>• det(kA) = kⁿ × det(A) for n×n matrix</li>
+            </ul>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">When det = 0</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Matrix is not invertible</li>
+              <li>• Rows/columns are linearly dependent</li>
+              <li>• System has no unique solution</li>
+              <li>• Transformation collapses space</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">What does a determinant of 0 mean?</h3>
+            <p className="text-sm text-muted-foreground">
+              A determinant of 0 means the matrix is singular – it has no inverse. The rows or columns are linearly dependent, and the matrix transformation collapses space to a lower dimension.
+            </p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Can determinants be negative?</h3>
+            <p className="text-sm text-muted-foreground">
+              Yes, determinants can be positive, negative, or zero. A negative determinant indicates the matrix includes a reflection (it reverses orientation).
+            </p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">How is the determinant used?</h3>
+            <p className="text-sm text-muted-foreground">
+              Determinants are used to check if a matrix is invertible, solve systems of equations (Cramer's rule), find eigenvalues, calculate volumes in geometry, and in calculus for change of variables.
+            </p>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">What is cofactor expansion?</h3>
+            <p className="text-sm text-muted-foreground">
+              Cofactor expansion is a method to calculate determinants by expanding along a row or column. Each element is multiplied by its cofactor (signed minor determinant) and summed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/calculators/matrix-addition-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Addition</p>
+            <p className="text-xs text-muted-foreground">Add two matrices</p>
+          </a>
+          <a href="/calculators/matrix-multiplication-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Multiplication</p>
+            <p className="text-xs text-muted-foreground">Multiply matrices</p>
+          </a>
+          <a href="/calculators/inverse-matrix-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Inverse</p>
+            <p className="text-xs text-muted-foreground">Find A⁻¹</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,270 +1,595 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function MatrixAdditionCalculator() {
-  const [matrixA, setMatrixA] = useState<string>("1,2\n3,4");
-  const [matrixB, setMatrixB] = useState<string>("5,6\n7,8");
-  const [result, setResult] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [sizeA, setSizeA] = useState<{ rows: number; cols: number }>({ rows: 2, cols: 2 });
+  const [sizeB, setSizeB] = useState<{ rows: number; cols: number }>({ rows: 2, cols: 2 });
+  const [matrixA, setMatrixA] = useState<number[][]>([[0, 0], [0, 0]]);
+  const [matrixB, setMatrixB] = useState<number[][]>([[0, 0], [0, 0]]);
+  const [result, setResult] = useState<number[][] | null>(null);
+  const [error, setError] = useState("");
+  const [inputMode, setInputMode] = useState<"textarea" | "row">("textarea");
+  
+  // Matrix A input states
+  const [textareaAValue, setTextareaAValue] = useState("1, 2\n3, 4");
+  const [rowInputsA, setRowInputsA] = useState<string[]>(["1, 2", "3, 4"]);
+  const [textareaAError, setTextareaAError] = useState("");
+  
+  // Matrix B input states
+  const [textareaBValue, setTextareaBValue] = useState("5, 6\n7, 8");
+  const [rowInputsB, setRowInputsB] = useState<string[]>(["5, 6", "7, 8"]);
+  const [textareaBError, setTextareaBError] = useState("");
 
-  const parseMatrix = (input: string): number[][] => {
-    return input.trim().split("\n").map((row) =>
-      row.split(",").map((cell) => parseFloat(cell.trim())).filter((n) => !isNaN(n))
-    );
+  const parseMatrixInput = (text: string): { matrix: number[][]; rows: number; cols: number; error: string } => {
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return { matrix: [], rows: 0, cols: 0, error: "" };
+    }
+
+    const rows = trimmed.split("\n").filter(row => row.trim());
+    if (rows.length === 0) {
+      return { matrix: [], rows: 0, cols: 0, error: "Please enter matrix values" };
+    }
+
+    const parsedRows: number[][] = [];
+    let expectedCols: number | null = null;
+
+    for (const row of rows) {
+      const values = row.split(/[\s,]+/).filter(v => v.trim());
+      const numbers = values.map(v => parseFloat(v));
+      
+      if (numbers.some(n => isNaN(n))) {
+        return { matrix: [], rows: 0, cols: 0, error: "Invalid number detected. Please enter only numeric values." };
+      }
+      
+      if (expectedCols === null) {
+        expectedCols = numbers.length;
+      } else if (numbers.length !== expectedCols) {
+        return {
+          matrix: [],
+          rows: 0,
+          cols: 0,
+          error: `All rows must have the same number of elements. Expected ${expectedCols} columns.`
+        };
+      }
+      
+      if (numbers.length > 10) {
+        return { matrix: [], rows: 0, cols: 0, error: "Maximum supported matrix size is 10×10" };
+      }
+      
+      parsedRows.push(numbers);
+    }
+
+    if (parsedRows.length > 10) {
+      return { matrix: [], rows: 0, cols: 0, error: "Maximum supported matrix size is 10×10" };
+    }
+
+    return { matrix: parsedRows, rows: parsedRows.length, cols: parsedRows[0]?.length || 0, error: "" };
   };
 
-  const calculate = () => {
-    try {
-      const A = parseMatrix(matrixA);
-      const B = parseMatrix(matrixB);
-      
-      if (A.length !== B.length || A[0].length !== B[0].length) {
-        setError("Matrices must have the same dimensions");
-        return;
+  const handleTextareaChange = (value: string, matrix: "A" | "B") => {
+    if (matrix === "A") {
+      setTextareaAValue(value);
+      const result = parseMatrixInput(value);
+      setTextareaAError("");
+      if (result.matrix.length > 0 && !result.error) {
+        setMatrixA(result.matrix);
+        setSizeA({ rows: result.rows, cols: result.cols });
+        setResult(null);
       }
-      
-      const rows = A.length;
-      const cols = A[0].length;
-      const sum: number[][] = [];
-      
-      for (let i = 0; i < rows; i++) {
-        sum[i] = [];
-        for (let j = 0; j < cols; j++) {
-          sum[i][j] = A[i][j] + B[i][j];
-        }
+    } else {
+      setTextareaBValue(value);
+      const result = parseMatrixInput(value);
+      setTextareaBError("");
+      if (result.matrix.length > 0 && !result.error) {
+        setMatrixB(result.matrix);
+        setSizeB({ rows: result.rows, cols: result.cols });
+        setResult(null);
       }
-      
-      setResult(sum.map((row) => row.join(", ")).join("\n"));
-      setError("");
-    } catch {
-      setError("Invalid matrix format");
     }
   };
 
-  const reset = () => {
-    setMatrixA("1,2\n3,4");
-    setMatrixB("5,6\n7,8");
-    setResult("");
+  const parseRowInput = (rowIndex: number, value: string, matrix: "A" | "B"): { matrix: number[][]; error: string } => {
+    if (matrix === "A") {
+      const newRowInputs = [...rowInputsA];
+      newRowInputs[rowIndex] = value;
+      setRowInputsA(newRowInputs);
+
+      const values = value.split(/[\s,]+/).filter(v => v.trim());
+      const numbers = values.map(v => parseFloat(v));
+
+      if (values.length > 0 && numbers.some(n => isNaN(n))) {
+        return { matrix: [], error: `Row ${rowIndex + 1} contains invalid numbers` };
+      }
+
+      const newMatrix = matrixA.map((r, ri) => {
+        if (ri === rowIndex) {
+          const newRow = Array(sizeA.cols).fill(0);
+          for (let i = 0; i < Math.min(numbers.length, sizeA.cols); i++) {
+            newRow[i] = numbers[i];
+          }
+          return newRow;
+        }
+        return r;
+      });
+
+      return { matrix: newMatrix, error: "" };
+    } else {
+      const newRowInputs = [...rowInputsB];
+      newRowInputs[rowIndex] = value;
+      setRowInputsB(newRowInputs);
+
+      const values = value.split(/[\s,]+/).filter(v => v.trim());
+      const numbers = values.map(v => parseFloat(v));
+
+      if (values.length > 0 && numbers.some(n => isNaN(n))) {
+        return { matrix: [], error: `Row ${rowIndex + 1} contains invalid numbers` };
+      }
+
+      const newMatrix = matrixB.map((r, ri) => {
+        if (ri === rowIndex) {
+          const newRow = Array(sizeB.cols).fill(0);
+          for (let i = 0; i < Math.min(numbers.length, sizeB.cols); i++) {
+            newRow[i] = numbers[i];
+          }
+          return newRow;
+        }
+        return r;
+      });
+
+      return { matrix: newMatrix, error: "" };
+    }
+  };
+
+  const handleSizeChange = (newRows: number, newCols: number, matrix: "A" | "B") => {
+    const newMatrix = Array(newRows).fill(0).map((_, ri) =>
+      Array(newCols).fill(0).map((_, ci) => {
+        const sourceMatrix = matrix === "A" ? matrixA : matrixB;
+        const sourceSize = matrix === "A" ? sizeA : sizeB;
+        return ri < sourceSize.rows && ci < sourceSize.cols ? sourceMatrix[ri][ci] : 0;
+      })
+    );
+
+    if (matrix === "A") {
+      setMatrixA(newMatrix);
+      setSizeA({ rows: newRows, cols: newCols });
+      setRowInputsA(Array(newRows).fill("").map((_, i) =>
+        i < rowInputsA.length ? rowInputsA[i] : ""
+      ));
+    } else {
+      setMatrixB(newMatrix);
+      setSizeB({ rows: newRows, cols: newCols });
+      setRowInputsB(Array(newRows).fill("").map((_, i) =>
+        i < rowInputsB.length ? rowInputsB[i] : ""
+      ));
+    }
+    setResult(null);
+  };
+
+  const calculate = () => {
+    if (inputMode === "textarea") {
+      const resultA = parseMatrixInput(textareaAValue);
+      const resultB = parseMatrixInput(textareaBValue);
+      
+      if (resultA.error) {
+        setTextareaAError(resultA.error);
+        return;
+      }
+      if (resultB.error) {
+        setTextareaBError(resultB.error);
+        return;
+      }
+      
+      if (resultA.matrix.length > 0) {
+        setMatrixA(resultA.matrix);
+        setSizeA({ rows: resultA.rows, cols: resultA.cols });
+      }
+      if (resultB.matrix.length > 0) {
+        setMatrixB(resultB.matrix);
+        setSizeB({ rows: resultB.rows, cols: resultB.cols });
+      }
+    }
+
+    if (matrixA.length === 0 || matrixB.length === 0) {
+      setError("Please enter both matrices");
+      return;
+    }
+
+    if (sizeA.rows !== sizeB.rows || sizeA.cols !== sizeB.cols) {
+      setError(`Matrices must have the same dimensions. Matrix A is ${sizeA.rows}×${sizeA.cols}, Matrix B is ${sizeB.rows}×${sizeB.cols}`);
+      return;
+    }
+
+    const sum: number[][] = matrixA.map((row, i) =>
+      row.map((val, j) => val + matrixB[i][j])
+    );
+
+    setResult(sum);
     setError("");
+    setTextareaAError("");
+    setTextareaBError("");
+  };
+
+  const reset = () => {
+    setMatrixA([[0, 0], [0, 0]]);
+    setMatrixB([[0, 0], [0, 0]]);
+    setSizeA({ rows: 2, cols: 2 });
+    setSizeB({ rows: 2, cols: 2 });
+    setResult(null);
+    setError("");
+    setTextareaAValue("1, 2\n3, 4");
+    setTextareaBValue("5, 6\n7, 8");
+    setRowInputsA(["1, 2", "3, 4"]);
+    setRowInputsB(["5, 6", "7, 8"]);
+    setTextareaAError("");
+    setTextareaBError("");
+  };
+
+  const fillExample = () => {
+    const exampleA = [[1, 2], [3, 4]];
+    const exampleB = [[5, 6], [7, 8]];
+    
+    setMatrixA(exampleA);
+    setMatrixB(exampleB);
+    setSizeA({ rows: 2, cols: 2 });
+    setSizeB({ rows: 2, cols: 2 });
+
+    if (inputMode === "textarea") {
+      setTextareaAValue(exampleA.map(row => row.join(", ")).join("\n"));
+      setTextareaBValue(exampleB.map(row => row.join(", ")).join("\n"));
+    } else {
+      setRowInputsA(exampleA.map(row => row.join(", ")));
+      setRowInputsB(exampleB.map(row => row.join(", ")));
+    }
+
+    setResult(null);
+    setError("");
+    setTextareaAError("");
+    setTextareaBError("");
+  };
+
+  const renderSizeButtons = (matrix: "A" | "B") => {
+    const currentSize = matrix === "A" ? sizeA : sizeB;
+    return (
+      <div className="flex gap-2 flex-wrap">
+        {[2, 3, 4].map((n) => (
+          <Button
+            key={n}
+            variant={currentSize.rows === n && currentSize.cols === n ? "default" : "outline"}
+            size="sm"
+            onClick={() => handleSizeChange(n, n, matrix)}
+            className="w-10"
+          >
+            {n}×{n}
+          </Button>
+        ))}
+        <span className="text-xs text-muted-foreground self-center">or custom</span>
+        <Input
+          type="number"
+          min="1"
+          max="10"
+          className="w-16 h-8"
+          value={currentSize.rows}
+          onChange={(e) => handleSizeChange(Math.max(1, Math.min(10, parseInt(e.target.value) || 1)), currentSize.cols, matrix)}
+          placeholder="rows"
+        />
+        <span className="self-center text-sm">×</span>
+        <Input
+          type="number"
+          min="1"
+          max="10"
+          className="w-16 h-8"
+          value={currentSize.cols}
+          onChange={(e) => handleSizeChange(currentSize.rows, Math.max(1, Math.min(10, parseInt(e.target.value) || 1)), matrix)}
+          placeholder="cols"
+        />
+      </div>
+    );
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <Card>
-        
-        <CardContent>
-          <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Matrix A (rows separated by newlines)</label>
-                <textarea
-                  className="w-full min-h-[100px] p-2 border rounded-md font-mono text-sm bg-background"
-                  value={matrixA}
-                  onChange={(e) => setMatrixA(e.target.value)}
-                  placeholder="1,2&#10;3,4"
-                />
+    <div className="w-full max-w-5xl mx-auto space-y-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-semibold mb-2">Matrix Addition Calculator – Add Two Matrices</h1>
+        <p className="text-muted-foreground">
+          Add two matrices of the same dimensions with our free online matrix addition calculator. Enter values via textarea or row-by-row input with step-by-step results.
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        <Card>
+          <CardContent className="pt-6 space-y-6">
+            {/* Matrix A Section */}
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center gap-4">
+                <Label className="font-semibold">Matrix A Size:</Label>
+                {renderSizeButtons("A")}
               </div>
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Matrix B</label>
-                <textarea
-                  className="w-full min-h-[100px] p-2 border rounded-md font-mono text-sm bg-background"
-                  value={matrixB}
-                  onChange={(e) => setMatrixB(e.target.value)}
-                  placeholder="5,6&#10;7,8"
-                />
+
+              <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
+                <TabsList>
+                  <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
+                  <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="textarea" className="space-y-4">
+                  <div>
+                    <Label>Enter Matrix A values (each row on a new line, values separated by spaces or commas)</Label>
+                    <Textarea
+                      value={textareaAValue}
+                      onChange={(e) => handleTextareaChange(e.target.value, "A")}
+                      placeholder={`Example for 2×2 matrix:\n1 2\n3 4\n\nor\n\n1, 2\n3, 4`}
+                      className="min-h-[120px] font-mono"
+                    />
+                    {textareaAError && (
+                      <p className="text-xs text-destructive mt-2">{textareaAError}</p>
+                    )}
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Current Matrix A: {sizeA.rows}×{sizeA.cols}
+                    </p>
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="row" className="space-y-4">
+                  <div className="space-y-3">
+                    <Label>Enter each row for Matrix A (comma or space separated values)</Label>
+                    {rowInputsA.map((rowValue, rowIndex) => (
+                      <div key={rowIndex} className="flex items-center gap-2">
+                        <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
+                        <Input
+                          value={rowValue}
+                          onChange={(e) => {
+                            const result = parseRowInput(rowIndex, e.target.value, "A");
+                            if (result.matrix.length > 0) {
+                              setMatrixA(result.matrix);
+                            }
+                          }}
+                          placeholder={`Enter ${sizeA.cols} values for row ${rowIndex + 1}`}
+                          className="flex-1 font-mono"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
+
+            {/* Matrix B Section */}
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center gap-4">
+                <Label className="font-semibold">Matrix B Size:</Label>
+                {renderSizeButtons("B")}
               </div>
+
+              <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
+                <TabsList>
+                  <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
+                  <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="textarea" className="space-y-4">
+                  <div>
+                    <Label>Enter Matrix B values (each row on a new line, values separated by spaces or commas)</Label>
+                    <Textarea
+                      value={textareaBValue}
+                      onChange={(e) => handleTextareaChange(e.target.value, "B")}
+                      placeholder={`Example for 2×2 matrix:\n5 6\n7 8\n\nor\n\n5, 6\n7, 8`}
+                      className="min-h-[120px] font-mono"
+                    />
+                    {textareaBError && (
+                      <p className="text-xs text-destructive mt-2">{textareaBError}</p>
+                    )}
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Current Matrix B: {sizeB.rows}×{sizeB.cols}
+                    </p>
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="row" className="space-y-4">
+                  <div className="space-y-3">
+                    <Label>Enter each row for Matrix B (comma or space separated values)</Label>
+                    {rowInputsB.map((rowValue, rowIndex) => (
+                      <div key={rowIndex} className="flex items-center gap-2">
+                        <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
+                        <Input
+                          value={rowValue}
+                          onChange={(e) => {
+                            const result = parseRowInput(rowIndex, e.target.value, "B");
+                            if (result.matrix.length > 0) {
+                              setMatrixB(result.matrix);
+                            }
+                          }}
+                          placeholder={`Enter ${sizeB.cols} values for row ${rowIndex + 1}`}
+                          className="flex-1 font-mono"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
-            {error && <p className="text-destructive text-sm">{error}</p>}
-            <div className="flex gap-2">
-              <Button onClick={calculate}>Add</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-            {result && (
-              <div className="p-4 bg-muted rounded-md">
-                <p className="text-sm text-muted-foreground mb-2">Result (A + B)</p>
-                <pre className="font-mono text-lg">{result}</pre>
+
+            {error && (
+              <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
+                {error}
               </div>
             )}
-          </div>
 
-          <div className="mt-6 space-y-4">
-            <div>
-              <h4 className="font-semibold text-sm mb-2">How Matrix Addition Works</h4>
-              <p className="text-xs text-muted-foreground">
-                Add corresponding elements from each matrix. Element at position (i,j) in matrix A is added to element at position (i,j) in matrix B.
-              </p>
+            <div className="flex gap-2">
+              <Button onClick={calculate} disabled={matrixA.length === 0 || matrixB.length === 0}>Add Matrices</Button>
+              <Button variant="outline" onClick={reset}>Reset</Button>
+              <Button variant="outline" onClick={fillExample}>Load Example</Button>
             </div>
-            <div className="p-3 bg-muted/50 rounded text-xs font-mono">
-              <div>[a₁₁  a₁₂]   [b₁₁  b₁₂]   [a₁₁+b₁₁  a₁₂+b₁₂]</div>
-              <div>[a₂₁  a₂₂] + [b₂₁  b₂₂] = [a₂₁+b₂₁  a₂₂+b₂₂]</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>How to Use This Matrix Addition Calculator</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-3 text-sm text-muted-foreground">
-            <div className="flex gap-3">
-              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">1</div>
-              <div>
-                <p className="font-medium text-foreground">Enter Matrix A</p>
-                <p>Input numbers separated by commas for each row. Press Enter or use newlines to separate rows. Example: "1,2,3" for a row with three elements.</p>
+        {result !== null && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg">
+              <p className="text-sm text-muted-foreground mb-4 text-center">Result (A + B)</p>
+              <div className="flex justify-center items-center gap-4 flex-wrap">
+                <div className="text-center">
+                  <p className="text-xs text-muted-foreground mb-2">Matrix A</p>
+                  <div className="font-mono text-sm">
+                    {matrixA.map((row, i) => (
+                      <div key={i}>{row.join("  ")}</div>
+                    ))}
+                  </div>
+                </div>
+                <span className="text-2xl font-bold">+</span>
+                <div className="text-center">
+                  <p className="text-xs text-muted-foreground mb-2">Matrix B</p>
+                  <div className="font-mono text-sm">
+                    {matrixB.map((row, i) => (
+                      <div key={i}>{row.join("  ")}</div>
+                    ))}
+                  </div>
+                </div>
+                <span className="text-2xl font-bold">=</span>
+                <div className="text-center">
+                  <p className="text-xs text-muted-foreground mb-2">Result</p>
+                  <div className="font-mono text-lg font-bold">
+                    {result.map((row, i) => (
+                      <div key={i}>{row.join("  ")}</div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex gap-3">
-              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">2</div>
-              <div>
-                <p className="font-medium text-foreground">Enter Matrix B</p>
-                <p>Use the same format. Both matrices must have identical dimensions (same number of rows and columns).</p>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-xs">3</div>
-              <div>
-                <p className="font-medium text-foreground">Click Add</p>
-                <p>The calculator adds corresponding elements and displays the result matrix instantly.</p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Matrix Addition Reference</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left py-2 px-2 font-semibold">Property</th>
-                  <th className="text-left py-2 px-2 font-semibold">Description</th>
-                </tr>
-              </thead>
-              <tbody className="text-muted-foreground">
-                <tr className="border-b">
-                  <td className="py-2 px-2">Requirement</td>
-                  <td className="py-2 px-2">Matrices must have same dimensions</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-2 px-2">Commutative</td>
-                  <td className="py-2 px-2">Yes: A + B = B + A</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-2 px-2">Associative</td>
-                  <td className="py-2 px-2">Yes: (A + B) + C = A + (B + C)</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-2 px-2">Identity Element</td>
-                  <td className="py-2 px-2">Zero matrix: A + 0 = A</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-2">Inverse</td>
-                  <td className="py-2 px-2">A + (-A) = 0 (zero matrix)</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Step-by-Step Solution</h4>
+              <div className="space-y-2 font-mono text-sm bg-muted p-3 rounded">
+                <div>Adding corresponding elements from each matrix:</div>
+                {result.map((row, i) => (
+                  <div key={i}>
+                    Row {i + 1}: [{matrixA[i].map((_, j) => `${matrixA[i][j]} + ${matrixB[i][j]} = ${result[i][j]}`).join(", ")}]
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <p className="text-xs text-muted-foreground">
-            Matrix addition is element-wise. Each position in the result contains the sum of the corresponding positions from the input matrices.
+        )}
+      </div>
+
+      <section className="border-t pt-8 space-y-4">
+        <h2 className="text-2xl font-semibold">What is Matrix Addition?</h2>
+        <p className="text-muted-foreground">
+          Matrix addition is the operation of adding two matrices of the same dimensions by adding their corresponding elements. If matrix A and matrix B both have dimensions m×n, their sum C = A + B also has dimensions m×n, where each element cᵢⱼ = aᵢⱼ + bᵢⱼ.
+        </p>
+        <p className="text-muted-foreground">
+          Matrix addition is only defined for matrices of the same size. You cannot add matrices with different dimensions.
+        </p>
+      </section>
+
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Matrix Addition Formula</h2>
+        <div className="p-4 border rounded-lg">
+          <h3 className="font-semibold mb-2">General Formula</h3>
+          <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+            If A = [aᵢⱼ] and B = [bᵢⱼ], then C = A + B = [aᵢⱼ + bᵢⱼ]
+          </code>
+          <p className="text-xs text-muted-foreground mt-2">
+            Each element in the result is the sum of corresponding elements from the input matrices
           </p>
-        </CardContent>
-      </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Common Matrix Dimensions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            <div className="p-3 bg-muted rounded">
-              <p className="font-medium">2×2 Matrix</p>
-              <p className="text-xs text-muted-foreground">Square matrix, common in transformations</p>
-            </div>
-            <div className="p-3 bg-muted rounded">
-              <p className="font-medium">3×3 Matrix</p>
-              <p className="text-xs text-muted-foreground">3D graphics, rotation matrices</p>
-            </div>
-            <div className="p-3 bg-muted rounded">
-              <p className="font-medium">m×n Matrix</p>
-              <p className="text-xs text-muted-foreground">General rectangular matrix</p>
-            </div>
-            <div className="p-3 bg-muted rounded">
-              <p className="font-medium">1×n Matrix</p>
-              <p className="text-xs text-muted-foreground">Row vector</p>
-            </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-4 mt-4">
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold mb-2">2×2 Example</h3>
+            <code className="text-xs font-mono bg-muted px-3 py-2 rounded block">
+              [a b]   [e f]   [a+e  b+f]<br />
+              [c d] + [g h] = [c+g  d+h]
+            </code>
           </div>
-        </CardContent>
-      </Card>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold mb-2">3×3 Example</h3>
+            <code className="text-xs font-mono bg-muted px-3 py-2 rounded block">
+              [a b c]   [j k l]   [a+j  b+k  c+l]<br />
+              [d e f] + [m n o] = [d+m  e+n  f+o]<br />
+              [g h i]   [p q r]   [g+p  h+q  i+r]
+            </code>
+          </div>
+        </div>
+      </section>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-medium text-sm mb-2">What happens if matrices have different sizes?</h4>
-            <p className="text-xs text-muted-foreground">
-              Matrix addition is only defined for matrices of the same dimensions. If A is 2×3 and B is 3×2, they cannot be added. The calculator will show an error message.
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Properties of Matrix Addition</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Key Properties</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• <strong>Commutative:</strong> A + B = B + A</li>
+              <li>• <strong>Associative:</strong> (A + B) + C = A + (B + C)</li>
+              <li>• <strong>Identity:</strong> A + 0 = A (zero matrix)</li>
+              <li>• <strong>Inverse:</strong> A + (-A) = 0</li>
+            </ul>
+          </div>
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Requirements</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Both matrices must have same dimensions</li>
+              <li>• Same number of rows</li>
+              <li>• Same number of columns</li>
+              <li>• Result has the same dimensions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">What happens if matrices have different sizes?</h3>
+            <p className="text-sm text-muted-foreground">
+              Matrix addition is only defined for matrices of the same dimensions. If A is 2×3 and B is 3×2, they cannot be added. The calculator will show an error message indicating the dimension mismatch.
             </p>
           </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Can I add more than two matrices?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Matrix addition is associative, so you can add multiple matrices: A + B + C = (A + B) + C. Add them two at a time or all at once if dimensions match.
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Can I add more than two matrices?</h3>
+            <p className="text-sm text-muted-foreground">
+              Yes. Matrix addition is associative, so you can add multiple matrices: A + B + C = (A + B) + C. All matrices must have the same dimensions.
             </p>
           </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">What is the zero matrix?</h4>
-            <p className="text-xs text-muted-foreground">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">What is the zero matrix?</h3>
+            <p className="text-sm text-muted-foreground">
               A zero matrix has all elements equal to zero. Adding a zero matrix to any matrix A gives A unchanged. It's the additive identity for matrices.
             </p>
           </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Is matrix addition commutative?</h4>
-            <p className="text-xs text-muted-foreground">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="font-semibold mb-2">Is matrix addition commutative?</h3>
+            <p className="text-sm text-muted-foreground">
               Yes. A + B = B + A for any matrices of the same size. The order doesn't matter because you're just adding numbers at each position.
             </p>
           </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">How is matrix addition used in real applications?</h4>
-            <p className="text-xs text-muted-foreground">
-              Matrix addition appears in computer graphics (combining transformations), economics (adding cost matrices), physics (superposition of states), and data analysis (combining datasets).
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/matrix-multiplication-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Matrix Multiplication</p>
-              <p className="text-xs text-muted-foreground">Multiply two matrices</p>
-            </a>
-            <a href="/calculators/matrix-determinant-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Matrix Determinant</p>
-              <p className="text-xs text-muted-foreground">Calculate matrix determinant</p>
-            </a>
-            <a href="/calculators/matrix-inverse-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Matrix Inverse</p>
-              <p className="text-xs text-muted-foreground">Find the inverse matrix</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/calculators/matrix-multiplication-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Multiplication</p>
+            <p className="text-xs text-muted-foreground">Multiply two matrices</p>
+          </a>
+          <a href="/calculators/determinant-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Determinant</p>
+            <p className="text-xs text-muted-foreground">Calculate determinant</p>
+          </a>
+          <a href="/calculators/inverse-matrix-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Inverse</p>
+            <p className="text-xs text-muted-foreground">Find A⁻¹</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

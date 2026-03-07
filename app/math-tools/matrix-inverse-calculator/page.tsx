@@ -4,22 +4,30 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function MatrixInverseCalculator() {
-  const [size, setSize] = useState<"2" | "3">("2");
+  const [size, setSize] = useState<number>(2);
   const [matrix, setMatrix] = useState<number[][]>([[0, 0], [0, 0]]);
   const [inverse, setInverse] = useState<number[][] | null>(null);
   const [steps, setSteps] = useState<string[]>([]);
   const [error, setError] = useState("");
+  const [inputMode, setInputMode] = useState<"textarea" | "row">("textarea");
+  const [textareaValue, setTextareaValue] = useState("");
+  const [rowInputs, setRowInputs] = useState<string[]>(["", ""]);
+  const [textareaError, setTextareaError] = useState<string>("");
 
-  const initializeMatrix = (newSize: "2" | "3") => {
+  const initializeMatrix = (newSize: number) => {
     setSize(newSize);
-    const n = parseInt(newSize);
-    setMatrix(Array(n).fill(0).map(() => Array(n).fill(0)));
+    setMatrix(Array(newSize).fill(0).map(() => Array(newSize).fill(0)));
     setInverse(null);
     setSteps([]);
     setError("");
+    setTextareaValue("");
+    setRowInputs(Array(newSize).fill(""));
+    setTextareaError("");
   };
 
   const updateCell = (row: number, col: number, value: string) => {
@@ -27,6 +35,91 @@ export default function MatrixInverseCalculator() {
       r.map((c, ci) => (ri === row && ci === col ? parseFloat(value) || 0 : c))
     );
     setMatrix(newMatrix);
+  };
+
+  const parseTextareaInput = (text: string): { matrix: number[][]; size: number; error: string } => {
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return { matrix: [], size: 0, error: "" };
+    }
+
+    const rows = trimmed.split("\n").filter(row => row.trim());
+    if (rows.length === 0) {
+      return { matrix: [], size: 0, error: "Please enter matrix values" };
+    }
+
+    const parsedRows: number[][] = [];
+    for (const row of rows) {
+      const values = row.split(/[\s,]+/).filter(v => v.trim());
+      const numbers = values.map(v => parseFloat(v));
+      if (numbers.some(n => isNaN(n))) {
+        return { matrix: [], size: 0, error: "Invalid number detected. Please enter only numeric values." };
+      }
+      parsedRows.push(numbers);
+    }
+
+    const rowCount = parsedRows.length;
+    const colCount = parsedRows[0].length;
+
+    if (rowCount > 10) {
+      return { matrix: [], size: 0, error: "Maximum supported matrix size is 10×10" };
+    }
+
+    if (rowCount !== colCount) {
+      return {
+        matrix: [],
+        size: 0,
+        error: `Matrix must be square. Got ${rowCount} rows and ${colCount} columns.`
+      };
+    }
+
+    for (let i = 1; i < rowCount; i++) {
+      if (parsedRows[i].length !== colCount) {
+        return {
+          matrix: [],
+          size: 0,
+          error: `All rows must have the same number of elements. Row ${i + 1} has ${parsedRows[i].length} elements.`
+        };
+      }
+    }
+
+    return { matrix: parsedRows, size: rowCount, error: "" };
+  };
+
+  const parseRowInput = (rowIndex: number, value: string): { matrix: number[][]; error: string } => {
+    const newRowInputs = [...rowInputs];
+    newRowInputs[rowIndex] = value;
+    setRowInputs(newRowInputs);
+
+    const values = value.split(/[\s,]+/).filter(v => v.trim());
+    const numbers = values.map(v => parseFloat(v));
+
+    if (values.length > 0 && numbers.some(n => isNaN(n))) {
+      return { matrix: [], error: `Row ${rowIndex + 1} contains invalid numbers` };
+    }
+
+    const newMatrix = matrix.map((r, ri) => {
+      if (ri === rowIndex) {
+        const newRow = Array(size).fill(0);
+        for (let i = 0; i < Math.min(numbers.length, size); i++) {
+          newRow[i] = numbers[i];
+        }
+        return newRow;
+      }
+      return r;
+    });
+
+    return { matrix: newMatrix, error: "" };
+  };
+
+  const handleTextareaChange = (value: string) => {
+    setTextareaValue(value);
+    const result = parseTextareaInput(value);
+    setTextareaError("");
+    if (result.matrix.length > 0) {
+      setMatrix(result.matrix);
+      setSize(result.size);
+    }
   };
 
   const calculateDeterminant2x2 = (m: number[][]): number => {
@@ -82,6 +175,7 @@ export default function MatrixInverseCalculator() {
     setInverse(inv);
     setSteps(steps);
     setError("");
+    setTextareaError("");
   };
 
   const calculateInverse3x3 = () => {
@@ -137,6 +231,7 @@ export default function MatrixInverseCalculator() {
     setInverse(inv);
     setSteps(steps);
     setError("");
+    setTextareaError("");
   };
 
   const round = (n: number): string => {
@@ -145,29 +240,81 @@ export default function MatrixInverseCalculator() {
   };
 
   const calculate = () => {
-    if (size === "2") {
+    if (inputMode === "textarea") {
+      const result = parseTextareaInput(textareaValue);
+      if (result.error) {
+        setTextareaError(result.error);
+        return;
+      }
+      if (result.matrix.length > 0) {
+        setMatrix(result.matrix);
+        setSize(result.size);
+      }
+    }
+
+    if (matrix.length === 0 || matrix.some(row => row.length === 0)) {
+      setError("Please enter a valid matrix");
+      return;
+    }
+
+    if (size === 2) {
       calculateInverse2x2();
-    } else {
+    } else if (size === 3) {
       calculateInverse3x3();
+    } else {
+      setError("Inverse calculation is only supported for 2×2 and 3×3 matrices");
     }
   };
 
   const reset = () => {
-    setMatrix(Array(parseInt(size)).fill(0).map(() => Array(parseInt(size)).fill(0)));
+    setMatrix(Array(size).fill(0).map(() => Array(size).fill(0)));
     setInverse(null);
     setSteps([]);
     setError("");
+    setTextareaValue("");
+    setRowInputs(Array(size).fill(""));
+    setTextareaError("");
   };
 
   const fillExample = () => {
-    if (size === "2") {
-      setMatrix([[4, 7], [2, 6]]);
+    let exampleMatrix: number[][];
+    if (size === 2) {
+      exampleMatrix = [[4, 7], [2, 6]];
     } else {
-      setMatrix([[1, 2, 3], [0, 1, 4], [5, 6, 0]]);
+      exampleMatrix = [[1, 2, 3], [0, 1, 4], [5, 6, 0]];
     }
+    setMatrix(exampleMatrix);
+
+    if (inputMode === "textarea") {
+      setTextareaValue(exampleMatrix.map(row => row.join(" ")).join("\n"));
+    } else {
+      setRowInputs(exampleMatrix.map(row => row.join(", ")));
+    }
+
     setInverse(null);
     setSteps([]);
     setError("");
+    setTextareaError("");
+  };
+
+  const handleSizeChange = (newSize: number) => {
+    const newMatrix = Array(newSize).fill(0).map((_, ri) =>
+      Array(newSize).fill(0).map((_, ci) =>
+        ri < matrix.length && ci < matrix[ri]?.length ? matrix[ri][ci] : 0
+      )
+    );
+    setMatrix(newMatrix);
+    setSize(newSize);
+    setInverse(null);
+    setSteps([]);
+    setError("");
+    setTextareaError("");
+
+    if (inputMode === "row") {
+      setRowInputs(Array(newSize).fill("").map((_, i) =>
+        i < rowInputs.length ? rowInputs[i] : ""
+      ));
+    }
   };
 
   return (
@@ -180,52 +327,80 @@ export default function MatrixInverseCalculator() {
       </div>
 
       <div className="space-y-4">
-        <div className="flex items-center gap-4">
-          <Label>Matrix Size:</Label>
-          <Select value={size} onValueChange={(v) => initializeMatrix(v as "2" | "3")}>
-            <SelectTrigger className="w-32">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="2">2 × 2</SelectItem>
-              <SelectItem value="3">3 × 3</SelectItem>
-            </SelectContent>
-          </Select>
-          <Button variant="outline" size="sm" onClick={fillExample}>Load Example</Button>
-        </div>
-
-        <div className="overflow-x-auto">
-          <div className="inline-block">
-            <div className="flex items-center">
-              <span className="text-4xl font-light mr-2">[</span>
-              <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${size}, 1fr)` }}>
-                {matrix.map((row, ri) =>
-                  row.map((cell, ci) => (
-                    <Input
-                      key={`${ri}-${ci}`}
-                      type="number"
-                      value={cell || ""}
-                      onChange={(e) => updateCell(ri, ci, e.target.value)}
-                      className="w-16 h-12 text-center"
-                    />
-                  ))
-                )}
+        <Card>
+          <CardContent className="pt-6 space-y-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <Label>Matrix Size:</Label>
+              <div className="flex gap-2">
+                {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+                  <Button
+                    key={n}
+                    variant={size === n ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => handleSizeChange(n)}
+                    className="w-10"
+                  >
+                    {n}
+                  </Button>
+                ))}
               </div>
-              <span className="text-4xl font-light ml-2">]</span>
+              <Button variant="outline" size="sm" onClick={fillExample}>Load Example</Button>
             </div>
-          </div>
-        </div>
 
-        <div className="flex gap-2">
-          <Button onClick={calculate}>Calculate Inverse</Button>
-          <Button variant="outline" onClick={reset}>Reset</Button>
-        </div>
+            <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
+              <TabsList>
+                <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
+                <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
+              </TabsList>
 
-        {error && (
-          <div className="p-4 bg-destructive/10 text-destructive rounded-md">
-            <p className="text-sm">{error}</p>
-          </div>
-        )}
+              <TabsContent value="textarea" className="space-y-4">
+                <div>
+                  <Label>Enter matrix values (each row on a new line, values separated by spaces or commas)</Label>
+                  <Textarea
+                    value={textareaValue}
+                    onChange={(e) => handleTextareaChange(e.target.value)}
+                    placeholder={`Example for 2×2 matrix:\n4 7\n2 6\n\nor\n\n4, 7\n2, 6`}
+                    className="min-h-[150px] font-mono"
+                  />
+                  {textareaError && (
+                    <p className="text-xs text-destructive mt-2">{textareaError}</p>
+                  )}
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Current matrix: {size}×{size} | Detected from your input
+                  </p>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="row" className="space-y-4">
+                <div className="space-y-3">
+                  <Label>Enter each row (comma or space separated values)</Label>
+                  {rowInputs.map((rowValue, rowIndex) => (
+                    <div key={rowIndex} className="flex items-center gap-2">
+                      <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
+                      <Input
+                        value={rowValue}
+                        onChange={(e) => parseRowInput(rowIndex, e.target.value)}
+                        placeholder={`Enter ${size} values for row ${rowIndex + 1}`}
+                        className="flex-1 font-mono"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
+
+            {error && (
+              <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
+                {error}
+              </div>
+            )}
+
+            <div className="flex gap-2">
+              <Button onClick={calculate} disabled={matrix.length === 0}>Calculate Inverse</Button>
+              <Button variant="outline" onClick={reset}>Reset</Button>
+            </div>
+          </CardContent>
+        </Card>
 
         {inverse && (
           <div className="space-y-4">

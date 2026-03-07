@@ -4,62 +4,160 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function MatrixRankCalculator() {
-  const [size, setSize] = useState<"2x2" | "2x3" | "3x2" | "3x3" | "3x4" | "4x3" | "4x4">("3x3");
-  const [matrix, setMatrix] = useState<string[][]>([["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]]);
+  const [rows, setRows] = useState<number>(3);
+  const [cols, setCols] = useState<number>(3);
+  const [matrix, setMatrix] = useState<number[][]>([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState("");
+  const [inputMode, setInputMode] = useState<"textarea" | "row">("textarea");
+  const [textareaValue, setTextareaValue] = useState("");
+  const [rowInputs, setRowInputs] = useState<string[]>(["", "", ""]);
+  const [textareaError, setTextareaError] = useState<string>("");
 
   const getDimensions = () => {
-    const [rows, cols] = size.split('x').map(Number);
     return { rows, cols };
   };
 
   const updateMatrix = (row: number, col: number, value: string) => {
-    const newMatrix = matrix.map((r, ri) => r.map((c, ci) => (ri === row && ci === col ? value : c)));
+    const newMatrix = matrix.map((r, ri) => r.map((c, ci) => (ri === row && ci === col ? parseFloat(value) || 0 : c)));
     setMatrix(newMatrix);
     setResult(null);
   };
 
-  const initializeMatrix = (newSize: typeof size) => {
-    setSize(newSize);
-    const { rows, cols } = { 
-      "2x2": { rows: 2, cols: 2 }, 
-      "2x3": { rows: 2, cols: 3 },
-      "3x2": { rows: 3, cols: 2 },
-      "3x3": { rows: 3, cols: 3 },
-      "3x4": { rows: 3, cols: 4 },
-      "4x3": { rows: 4, cols: 3 },
-      "4x4": { rows: 4, cols: 4 }
-    }[newSize];
-    
-    const newMatrix = Array(rows).fill(null).map((_, i) => 
-      Array(cols).fill(null).map((_, j) => 
-        i === j ? "1" : "0"
+  const initializeMatrix = (newRows: number, newCols: number) => {
+    setRows(newRows);
+    setCols(newCols);
+    const newMatrix = Array(newRows).fill(null).map((_, i) =>
+      Array(newCols).fill(null).map((_, j) =>
+        i === j ? 1 : 0
       )
     );
     setMatrix(newMatrix);
     setResult(null);
+    setError("");
+    setTextareaValue("");
+    setRowInputs(Array(newRows).fill(""));
+    setTextareaError("");
+  };
+
+  const parseTextareaInput = (text: string): { matrix: number[][]; rows: number; cols: number; error: string } => {
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return { matrix: [], rows: 0, cols: 0, error: "" };
+    }
+
+    const rowLines = trimmed.split("\n").filter(row => row.trim());
+    if (rowLines.length === 0) {
+      return { matrix: [], rows: 0, cols: 0, error: "Please enter matrix values" };
+    }
+
+    const parsedRows: number[][] = [];
+    for (const row of rowLines) {
+      const values = row.split(/[\s,]+/).filter(v => v.trim());
+      const numbers = values.map(v => parseFloat(v));
+      if (numbers.some(n => isNaN(n))) {
+        return { matrix: [], rows: 0, cols: 0, error: "Invalid number detected. Please enter only numeric values." };
+      }
+      parsedRows.push(numbers);
+    }
+
+    const rowCount = parsedRows.length;
+    const colCount = parsedRows[0].length;
+
+    if (rowCount > 10) {
+      return { matrix: [], rows: 0, cols: 0, error: "Maximum supported matrix size is 10×10" };
+    }
+
+    for (let i = 1; i < rowCount; i++) {
+      if (parsedRows[i].length !== colCount) {
+        return {
+          matrix: [],
+          rows: 0,
+          cols: 0,
+          error: `All rows must have the same number of elements. Row ${i + 1} has ${parsedRows[i].length} elements.`
+        };
+      }
+    }
+
+    return { matrix: parsedRows, rows: rowCount, cols: colCount, error: "" };
+  };
+
+  const parseRowInput = (rowIndex: number, value: string): { matrix: number[][]; error: string } => {
+    const newRowInputs = [...rowInputs];
+    newRowInputs[rowIndex] = value;
+    setRowInputs(newRowInputs);
+
+    const values = value.split(/[\s,]+/).filter(v => v.trim());
+    const numbers = values.map(v => parseFloat(v));
+
+    if (values.length > 0 && numbers.some(n => isNaN(n))) {
+      return { matrix: [], error: `Row ${rowIndex + 1} contains invalid numbers` };
+    }
+
+    const newMatrix = matrix.map((r, ri) => {
+      if (ri === rowIndex) {
+        const newRow = Array(cols).fill(0);
+        for (let i = 0; i < Math.min(numbers.length, cols); i++) {
+          newRow[i] = numbers[i];
+        }
+        return newRow;
+      }
+      return r;
+    });
+
+    return { matrix: newMatrix, error: "" };
+  };
+
+  const handleTextareaChange = (value: string) => {
+    setTextareaValue(value);
+    const result = parseTextareaInput(value);
+    setTextareaError("");
+    if (result.matrix.length > 0) {
+      setMatrix(result.matrix);
+      setRows(result.rows);
+      setCols(result.cols);
+    }
   };
 
   const calculateRank = () => {
     setError("");
     setResult(null);
 
+    if (inputMode === "textarea") {
+      const result = parseTextareaInput(textareaValue);
+      if (result.error) {
+        setTextareaError(result.error);
+        return;
+      }
+      if (result.matrix.length > 0) {
+        setMatrix(result.matrix);
+        setRows(result.rows);
+        setCols(result.cols);
+      }
+    }
+
+    if (matrix.length === 0 || matrix.some(row => row.length === 0)) {
+      setError("Please enter a valid matrix");
+      return;
+    }
+
     const { rows, cols } = getDimensions();
-    
-    // Parse matrix
-    const parsedMatrix = matrix.map(row => row.map(cell => parseFloat(cell)));
-    if (parsedMatrix.flat().some(isNaN)) {
+
+    // Matrix is already number[][]
+    const parsedMatrix = matrix;
+    if (parsedMatrix.flat().some(n => isNaN(n))) {
       setError("Please enter all matrix values as numbers");
       return;
     }
 
     // Create a copy for row reduction
     const augmented = parsedMatrix.map(row => [...row]);
-    
+
     let rank = 0;
     const steps: string[] = [];
     const rowOperations: string[] = [];
@@ -71,7 +169,7 @@ export default function MatrixRankCalculator() {
     steps.push("");
 
     let pivotRow = 0;
-    
+
     for (let col = 0; col < cols && pivotRow < rows; col++) {
       // Find pivot
       let maxRow = pivotRow;
@@ -127,11 +225,11 @@ export default function MatrixRankCalculator() {
     const isFullRank = rank === Math.min(rows, cols);
     let propertyText = "";
     if (rows === cols) {
-      propertyText = rank === rows 
-        ? "Matrix is full rank (invertible/non-singular)" 
+      propertyText = rank === rows
+        ? "Matrix is full rank (invertible/non-singular)"
         : "Matrix is rank deficient (singular/non-invertible)";
     } else {
-      propertyText = isFullRank 
+      propertyText = isFullRank
         ? `Matrix has full rank (${rank} = min(${rows}, ${cols}))`
         : `Matrix is rank deficient (rank ${rank} < min(${rows}, ${cols}) = ${Math.min(rows, cols)})`;
     }
@@ -145,60 +243,90 @@ export default function MatrixRankCalculator() {
       propertyText,
       nullity: cols - rank
     });
+    setError("");
+    setTextareaError("");
   };
 
   const formatMatrix = (m: number[][]): string => {
-    return m.map(row => 
+    return m.map(row =>
       "[ " + row.map(x => x.toFixed(2).padStart(8)).join(" ") + " ]"
     ).join("\n");
   };
 
   const reset = () => {
-    const { rows, cols } = getDimensions();
-    const newMatrix = Array(rows).fill(null).map((_, i) => 
-      Array(cols).fill(null).map((_, j) => 
-        i === j ? "1" : "0"
+    const newMatrix = Array(rows).fill(null).map((_, i) =>
+      Array(cols).fill(null).map((_, j) =>
+        i === j ? 1 : 0
       )
     );
     setMatrix(newMatrix);
     setResult(null);
     setError("");
+    setTextareaValue("");
+    setRowInputs(Array(rows).fill(""));
+    setTextareaError("");
   };
 
   const loadExample = (type: "identity" | "zeros" | "random" | "singular") => {
-    const { rows, cols } = getDimensions();
-    let newMatrix: string[][];
+    let newMatrix: number[][];
 
     if (type === "identity") {
-      newMatrix = Array(rows).fill(null).map((_, i) => 
-        Array(cols).fill(null).map((_, j) => (i === j ? "1" : "0"))
+      newMatrix = Array(rows).fill(null).map((_, i) =>
+        Array(cols).fill(null).map((_, j) => (i === j ? 1 : 0))
       );
     } else if (type === "zeros") {
-      newMatrix = Array(rows).fill(null).map(() => 
-        Array(cols).fill("0")
+      newMatrix = Array(rows).fill(null).map(() =>
+        Array(cols).fill(0)
       );
     } else if (type === "singular") {
       // Create a singular matrix (row3 = row1 + row2)
       newMatrix = [
-        ["1", "2", "3", cols > 3 ? "4" : ""].filter(Boolean),
-        ["2", "4", "6", cols > 3 ? "8" : ""].filter(Boolean),
-        ["3", "6", "9", cols > 3 ? "12" : ""].filter(Boolean),
-        rows > 3 ? ["4", "8", "12", cols > 3 ? "16" : ""].filter(Boolean) : null
-      ].filter(Boolean) as string[][];
+        [1, 2, 3, cols > 3 ? 4 : 0].slice(0, cols),
+        [2, 4, 6, cols > 3 ? 8 : 0].slice(0, cols),
+        [3, 6, 9, cols > 3 ? 12 : 0].slice(0, cols),
+        rows > 3 ? [4, 8, 12, cols > 3 ? 16 : 0].slice(0, cols) : null
+      ].filter(Boolean) as number[][];
     } else {
       // Random
-      newMatrix = Array(rows).fill(null).map(() => 
-        Array(cols).fill(null).map(() => Math.floor(Math.random() * 10).toString())
+      newMatrix = Array(rows).fill(null).map(() =>
+        Array(cols).fill(null).map(() => Math.floor(Math.random() * 10))
       );
     }
 
     setMatrix(newMatrix);
     setResult(null);
     setError("");
+    setTextareaError("");
+
+    if (inputMode === "textarea") {
+      setTextareaValue(newMatrix.map(row => row.join(" ")).join("\n"));
+    } else {
+      setRowInputs(newMatrix.map(row => row.join(", ")));
+    }
+  };
+
+  const handleDimensionChange = (newRows: number, newCols: number) => {
+    const newMatrix = Array(newRows).fill(0).map((_, ri) =>
+      Array(newCols).fill(0).map((_, ci) =>
+        ri < matrix.length && ci < matrix[ri]?.length ? matrix[ri][ci] : 0
+      )
+    );
+    setMatrix(newMatrix);
+    setRows(newRows);
+    setCols(newCols);
+    setResult(null);
+    setError("");
+    setTextareaError("");
+
+    if (inputMode === "row") {
+      setRowInputs(Array(newRows).fill("").map((_, i) =>
+        i < rowInputs.length ? rowInputs[i] : ""
+      ));
+    }
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full max-w-5xl mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Rank Calculator – Find Rank of a Matrix</h1>
         <p className="text-muted-foreground">
@@ -207,52 +335,99 @@ export default function MatrixRankCalculator() {
       </div>
 
       <div className="space-y-4">
-        <div className="flex items-center gap-4 flex-wrap">
-          <Label>Matrix Size:</Label>
-          <Tabs value={size} onValueChange={(v) => initializeMatrix(v as typeof size)}>
-            <TabsList className="flex flex-wrap">
-              <TabsTrigger value="2x2">2×2</TabsTrigger>
-              <TabsTrigger value="2x3">2×3</TabsTrigger>
-              <TabsTrigger value="3x2">3×2</TabsTrigger>
-              <TabsTrigger value="3x3">3×3</TabsTrigger>
-              <TabsTrigger value="3x4">3×4</TabsTrigger>
-              <TabsTrigger value="4x3">4×3</TabsTrigger>
-              <TabsTrigger value="4x4">4×4</TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </div>
+        <Card>
+          <CardContent className="pt-6 space-y-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <Label>Rows:</Label>
+              <div className="flex gap-2">
+                {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+                  <Button
+                    key={n}
+                    variant={rows === n ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => handleDimensionChange(n, cols)}
+                    className="w-10"
+                  >
+                    {n}
+                  </Button>
+                ))}
+              </div>
+              <Label className="ml-4">Columns:</Label>
+              <div className="flex gap-2">
+                {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+                  <Button
+                    key={n}
+                    variant={cols === n ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => handleDimensionChange(rows, n)}
+                    className="w-10"
+                  >
+                    {n}
+                  </Button>
+                ))}
+              </div>
+            </div>
 
-        <div className="flex justify-center">
-          <div className="inline-grid gap-2" style={{ gridTemplateColumns: `repeat(${getDimensions().cols}, auto)` }}>
-            <span className="text-3xl self-center">[</span>
-            {matrix.map((row, ri) => (
-              row.map((cell, ci) => (
-                <Input
-                  key={`${ri}-${ci}`}
-                  type="number"
-                  value={cell}
-                  onChange={(e) => updateMatrix(ri, ci, e.target.value)}
-                  className="w-16 text-center"
-                />
-              ))
-            ))}
-            <span className="text-3xl self-center">]</span>
-          </div>
-        </div>
+            <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
+              <TabsList>
+                <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
+                <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
+              </TabsList>
 
-        <div className="flex gap-2 flex-wrap">
-          <Button onClick={calculateRank}>Calculate Rank</Button>
-          <Button variant="outline" onClick={reset}>Reset</Button>
-          <Button variant="outline" onClick={() => loadExample("identity")}>Identity</Button>
-          <Button variant="outline" onClick={() => loadExample("singular")}>Singular</Button>
-          <Button variant="outline" onClick={() => loadExample("random")}>Random</Button>
-        </div>
+              <TabsContent value="textarea" className="space-y-4">
+                <div>
+                  <Label>Enter matrix values (each row on a new line, values separated by spaces or commas)</Label>
+                  <Textarea
+                    value={textareaValue}
+                    onChange={(e) => handleTextareaChange(e.target.value)}
+                    placeholder={`Example for 3×3 matrix:\n1 2 3\n4 5 6\n7 8 9\n\nor\n\n1, 2, 3\n4, 5, 6\n7, 8, 9`}
+                    className="min-h-[150px] font-mono"
+                  />
+                  {textareaError && (
+                    <p className="text-xs text-destructive mt-2">{textareaError}</p>
+                  )}
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Current matrix: {rows}×{cols} | Detected from your input
+                  </p>
+                </div>
+              </TabsContent>
 
-        {error && (
-          <div className="p-4 bg-destructive/10 text-destructive rounded-md">
-            <p className="text-sm">{error}</p>
-          </div>
-        )}
+              <TabsContent value="row" className="space-y-4">
+                <div className="space-y-3">
+                  <Label>Enter each row (comma or space separated values)</Label>
+                  {rowInputs.map((rowValue, rowIndex) => (
+                    <div key={rowIndex} className="flex items-center gap-2">
+                      <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
+                      <Input
+                        value={rowValue}
+                        onChange={(e) => parseRowInput(rowIndex, e.target.value)}
+                        placeholder={`Enter ${cols} values for row ${rowIndex + 1}`}
+                        className="flex-1 font-mono"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
+
+            <div className="flex flex-wrap gap-2">
+              <Button variant="outline" size="sm" onClick={() => loadExample("identity")}>Identity</Button>
+              <Button variant="outline" size="sm" onClick={() => loadExample("singular")}>Singular</Button>
+              <Button variant="outline" size="sm" onClick={() => loadExample("random")}>Random</Button>
+            </div>
+
+            {error && (
+              <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
+                {error}
+              </div>
+            )}
+
+            <div className="flex gap-2">
+              <Button onClick={calculateRank} disabled={matrix.length === 0}>Calculate Rank</Button>
+              <Button variant="outline" onClick={reset}>Reset</Button>
+            </div>
+          </CardContent>
+        </Card>
 
         {result && (
           <div className="space-y-4">
