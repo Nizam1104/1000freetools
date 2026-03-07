@@ -277,23 +277,6 @@ export default function ColorPalettesPage() {
           <TabsContent value="generator" className="space-y-6">
             <Card>
               <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-bold">Generate Palette</h2>
-                  <div className="flex gap-2">
-                    <Button onClick={regenerateAll} variant="outline">
-                      <Shuffle className="h-4 w-4 mr-2" />
-                      Regenerate All
-                    </Button>
-                    <Button
-                      onClick={() =>
-                        exportPalette("Generated", generatorColors)
-                      }
-                    >
-                      <Download className="h-4 w-4 mr-2" />
-                      Export
-                    </Button>
-                  </div>
-                </div>
 
                 <div className="flex h-48 rounded-lg overflow-hidden mb-6">
                   {generatorColors.map((color, index) => (

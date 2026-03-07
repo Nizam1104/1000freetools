@@ -1,63 +1,15 @@
 [
   {
-    "404_URL": "https://1000freetools.com/json-tools/yaml-validator",
-    "From_Page": "https://1000freetools.com/json-tools/yaml-to-json"
-  },
-  {
     "404_URL": "https://1000freetools.com/math-tools/matrix-calculator",
     "From_Page": "https://1000freetools.com/math-tools/system-of-equations-solver"
-  },
-  {
-    "404_URL": "https://1000freetools.com/palette-sorter",
-    "From_Page": "https://1000freetools.com/color-tools/palette-duplicate-finder"
-  },
-  {
-    "404_URL": "https://1000freetools.com/palette-comparison-tool",
-    "From_Page": "https://1000freetools.com/color-tools/palette-merger"
-  },
-  {
-    "404_URL": "https://1000freetools.com/css-gradient-generator",
-    "From_Page": "https://1000freetools.com/color-tools/gradient-palette-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-schema-generator",
-    "From_Page": "https://1000freetools.com/json-tools/json-key-extractor"
   },
   {
     "404_URL": "https://1000freetools.com/math-tools/power-converter",
     "From_Page": "https://1000freetools.com/math-tools/energy-converter"
   },
   {
-    "404_URL": "https://1000freetools.com/color-harmony-generator",
-    "From_Page": "https://1000freetools.com/color-tools/random-color-palette-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/color-tools/palette-export",
-    "From_Page": "https://1000freetools.com/color-tools/palette-contrast-viewer"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/php-to-json",
-    "From_Page": "https://1000freetools.com/json-tools/json-to-php"
-  },
-  {
     "404_URL": "https://1000freetools.com/math-tools/average-mean-calculator",
     "From_Page": "https://1000freetools.com/math-tools/geometric-mean-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/css-gradient-generator",
-    "From_Page": "https://1000freetools.com/color-tools/gradient-palette-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/color-scale-generator",
-    "From_Page": "https://1000freetools.com/color-tools/gradient-palette-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/paint-cost-estimate-calculator",
-    "From_Page": "https://1000freetools.com/calculators/paint-coverage-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/gradient-step-generator",
-    "From_Page": "https://1000freetools.com/color-tools/gradient-palette-generator"
   },
   {
     "404_URL": "https://1000freetools.com/math-tools/distance-formula-calculator",
@@ -68,44 +20,8 @@
     "From_Page": "https://1000freetools.com/math-tools/absolute-value-calculator"
   },
   {
-    "404_URL": "https://1000freetools.com/color-tools/favorite-colors",
-    "From_Page": "https://1000freetools.com/color-tools/color-picker"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-tree-viewer",
-    "From_Page": "https://1000freetools.com/json-tools/json-explainer"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-generator",
-    "From_Page": "https://1000freetools.com/json-tools/json-pagination-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-parser",
-    "From_Page": "https://1000freetools.com/json-tools/json-step-by-step-parser"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-cleaner",
-    "From_Page": "https://1000freetools.com/json-tools/json-empty-field-finder"
-  },
-  {
-    "404_URL": "https://1000freetools.com/favorite-colors-manager",
-    "From_Page": "https://1000freetools.com/color-tools/custom-color-palette-generator"
-  },
-  {
     "404_URL": "https://1000freetools.com/math-tools/hours-calculator",
     "From_Page": "https://1000freetools.com/math-tools/time-duration-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/palette-contrast-viewer",
-    "From_Page": "https://1000freetools.com/color-tools/palette-comparison-tool"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-formatter",
-    "From_Page": "https://1000freetools.com/json-tools/json-duplicate-key-finder"
-  },
-  {
-    "404_URL": "https://1000freetools.com/css-variables-generator",
-    "From_Page": "https://1000freetools.com/color-tools/custom-color-palette-generator"
   },
   {
     "404_URL": "https://1000freetools.com/math-tools/matrix-transpose",
@@ -116,20 +32,12 @@
     "From_Page": "https://1000freetools.com/math-tools/absolute-value-calculator"
   },
   {
-    "404_URL": "https://1000freetools.com/json-tools/json-object-generator",
-    "From_Page": "https://1000freetools.com/json-tools/json-array-generator"
-  },
-  {
     "404_URL": "https://1000freetools.com/developer-tools/regex-tester",
     "From_Page": "https://1000freetools.com/developer-tools/js-online-compiler"
   },
   {
     "404_URL": "https://1000freetools.com/unit-converters/length-converter",
     "From_Page": "https://1000freetools.com/math-tools/area-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/color-picker",
-    "From_Page": "https://1000freetools.com/color-tools/random-color-palette-generator"
   },
   {
     "404_URL": "https://1000freetools.com/math-tools/discount-calculator",
@@ -140,32 +48,12 @@
     "From_Page": "https://1000freetools.com/math-tools/pressure-converter"
   },
   {
-    "404_URL": "https://1000freetools.com/dark-light-mode-preview",
-    "From_Page": "https://1000freetools.com/color-tools/palette-comparison-tool"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-flattener",
-    "From_Page": "https://1000freetools.com/json-tools/json-depth-analyzer"
-  },
-  {
-    "404_URL": "https://1000freetools.com/color-tools/color-history",
-    "From_Page": "https://1000freetools.com/color-tools/color-picker"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-to-json",
-    "From_Page": "https://1000freetools.com/json-tools/xml-to-json"
-  },
-  {
     "404_URL": "https://1000freetools.com/developer-tools/json-formatter",
     "From_Page": "https://1000freetools.com/developer-tools/js-online-compiler"
   },
   {
     "404_URL": "https://1000freetools.com/math-tools/square-area-calculator",
     "From_Page": "https://1000freetools.com/math-tools/square-root-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-stringifier",
-    "From_Page": "https://1000freetools.com/json-tools/json-escape-unescape"
   },
   {
     "404_URL": "https://1000freetools.com/unit-converters/volume-converter",
@@ -180,80 +68,20 @@
     "From_Page": "https://1000freetools.com/math-tools/factor-calculator"
   },
   {
-    "404_URL": "https://1000freetools.com/json-tools/markdown-to-json",
-    "From_Page": "https://1000freetools.com/json-tools/json-to-markdown-table"
-  },
-  {
     "404_URL": "https://1000freetools.com/math-tools/grade-calculator",
     "From_Page": "https://1000freetools.com/math-tools/gpa-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/subtraction-calculator",
-    "From_Page": "https://1000freetools.com/calculators/addition-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/math-tools/triangle-area-calculator",
-    "From_Page": "https://1000freetools.com/calculators/pythagorean-theorem-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-search",
-    "From_Page": "https://1000freetools.com/json-tools/json-viewer"
-  },
-  {
-    "404_URL": "https://1000freetools.com/warm-or-cool-color-detector",
-    "From_Page": "https://1000freetools.com/color-tools/pastel-palette-generator"
   },
   {
     "404_URL": "https://1000freetools.com/math-tools/multiplication-table-generator",
     "From_Page": "https://1000freetools.com/math-tools"
   },
   {
-    "404_URL": "https://1000freetools.com/mortgage-amortization-schedule",
-    "From_Page": "https://1000freetools.com/calculators/buy-vs-rent-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/aquarium-co-calculator",
-    "From_Page": "https://1000freetools.com/calculators/aquarium-filtration-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/palette-merger",
-    "From_Page": "https://1000freetools.com/color-tools/palette-duplicate-finder"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-404_URL-encoder",
-    "From_Page": "https://1000freetools.com/json-tools/json-encode-decode"
-  },
-  {
     "404_URL": "https://1000freetools.com/unit-converters/area-converter",
     "From_Page": "https://1000freetools.com/math-tools/surface-area-calculator"
   },
   {
-    "404_URL": "https://1000freetools.com/warm-up-calculator",
-    "From_Page": "https://1000freetools.com/calculators/1rm-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/gradient-palette-generator",
-    "From_Page": "https://1000freetools.com/color-tools/gradient-step-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-compressor",
-    "From_Page": "https://1000freetools.com/json-tools/json-size-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/mongodb-to-json",
-    "From_Page": "https://1000freetools.com/json-tools/json-to-mongodb"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-path",
-    "From_Page": "https://1000freetools.com/json-tools/json-step-by-step-parser"
-  },
-  {
     "404_URL": "https://1000freetools.com/math-tools/combinatio%20n-calculator",
     "From_Page": "https://1000freetools.com/math-tools/binomial-expansion-calculator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-path-finder",
-    "From_Page": "https://1000freetools.com/json-tools/json-transformer"
   },
   {
     "404_URL": "https://1000freetools.com/math-tools/npv-calculator",
@@ -268,39 +96,11 @@
     "From_Page": "https://1000freetools.com/about"
   },
   {
-    "404_URL": "https://1000freetools.com/color-palette-generator",
-    "From_Page": "https://1000freetools.com/color-tools/color-harmony-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/json-merger",
-    "From_Page": "https://1000freetools.com/json-tools/json-transformer"
-  },
-  {
-    "404_URL": "https://1000freetools.com/rivet-strength-calculator",
-    "From_Page": "https://1000freetools.com/calculators/fastener-load-calculator"
-  },
-  {
     "404_URL": "https://1000freetools.com/developer-tools/base64-encoder-decoder",
     "From_Page": "https://1000freetools.com/developer-tools/js-online-compiler"
   },
   {
-    "404_URL": "https://1000freetools.com/json-tools/json-tree-generator",
-    "From_Page": "https://1000freetools.com/json-tools/json-nested-structure"
-  },
-  {
-    "404_URL": "https://1000freetools.com/complementary-color-finder",
-    "From_Page": "https://1000freetools.com/color-tools/color-harmony-generator"
-  },
-  {
-    "404_URL": "https://1000freetools.com/json-tools/typescript-to-json",
-    "From_Page": "https://1000freetools.com/json-tools/json-to-typescript"
-  },
-  {
     "404_URL": "https://1000freetools.com/math-tools/combinations-calculator",
     "From_Page": "https://1000freetools.com/math-tools/dice-roller"
-  },
-  {
-    "404_URL": "https://1000freetools.com/contrast-checker",
-    "From_Page": "https://1000freetools.com/color-tools/duotone-palette-generator"
   }
 ]

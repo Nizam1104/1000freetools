@@ -198,11 +198,6 @@ export default function HslToHexConverterPage() {
                       <Label className="text-sm font-medium text-muted-foreground mb-2 block">
                         Preview
                       </Label>
-                      <div
-                        className="w-full aspect-video rounded-lg border "
-                        style={{ backgroundColor: hex }}
-                      />
-                    </div>
                   </div>
                 </div>
               )}
@@ -278,7 +273,6 @@ export default function HslToHexConverterPage() {
             </CardContent>
           </Card>
         </div>
-
 
         <div className="mt-8 space-y-6">
           <HslToHexConverterSEO />

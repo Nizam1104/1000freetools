@@ -280,36 +280,6 @@ export default function ColorHistoryToolPage() {
                   <CardTitle className="text-base">Manage History</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex gap-2">
-                    <Button
-                      variant="outline"
-                      onClick={() => {
-                        const data = JSON.stringify(history, null, 2);
-                        navigator.clipboard.writeText(data);
-                        toast.success("History copied to clipboard!");
-                      }}
-                    >
-                      <Copy className="h-4 w-4 mr-2" />
-                      Copy History
-                    </Button>
-                    <Button
-                      variant="outline"
-                      onClick={() => {
-                        const data = JSON.stringify(history, null, 2);
-                        const blob = new Blob([data], { type: "application/json" });
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement("a");
-                        a.href = url;
-                        a.download = "color-history.json";
-                        a.click();
-                        URL.revokeObjectURL(url);
-                        toast.success("History exported!");
-                      }}
-                    >
-                      <Trash2 className="h-4 w-4 mr-2" />
-                      Export JSON
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             )}

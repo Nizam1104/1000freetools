@@ -381,14 +381,6 @@ export default function CSSGradientGeneratorPage() {
                       />
 
                       <div className="flex-1 space-y-1">
-                        <div className="flex items-center justify-between">
-                          <Label className="text-xs text-muted-foreground">
-                            Position
-                          </Label>
-                          <span className="text-xs font-mono">
-                            {stop.position}%
-                          </span>
-                        </div>
                         <Slider
                           value={[stop.position]}
                           min={0}

@@ -377,12 +377,6 @@ export default function DominantColorFinderPage() {
                   </div>
                 </>
               ) : (
-                <div className="text-center py-12 text-muted-foreground">
-                  <p>No color found yet</p>
-                  <p className="text-sm mt-1">
-                    Upload an image to find the dominant color
-                  </p>
-                </div>
               )}
             </CardContent>
           </Card>

@@ -301,20 +301,6 @@ export default function PaletteContrastViewerPage() {
                       className="rounded-lg p-4 flex items-center justify-between"
                       style={{ backgroundColor: color.color }}
                     >
-                      <div>
-                        <p
-                          className="font-semibold"
-                          style={{ color: textColor }}
-                        >
-                          Color {index + 1}
-                        </p>
-                        <p
-                          className="text-sm opacity-80"
-                          style={{ color: textColor }}
-                        >
-                          {color.color}
-                        </p>
-                      </div>
                       <Button
                         variant="outline"
                         size="sm"

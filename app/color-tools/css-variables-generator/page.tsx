@@ -320,27 +320,6 @@ export default function CssVariablesGeneratorPage() {
                 </div>
 
                 {/* Usage Example */}
-                <div className="space-y-2">
-                  <Label className="text-sm">Usage Example</Label>
-                  <pre className="p-4 rounded-lg bg-muted text-sm font-mono overflow-x-auto">
-                    {`/* In your CSS */
-.button {
-  background-color: var(${colors[0]?.name || "--color-primary"});
-  color: white;
-}
-
-/* In Tailwind config */
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: "var(${colors[0]?.name || "--color-primary"})",
-      }
-    }
-  }
-}`}
-                  </pre>
-                </div>
               </CardContent>
             </Card>
           </div>

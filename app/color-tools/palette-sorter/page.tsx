@@ -414,25 +414,6 @@ export default function PaletteSorterPage() {
 
         {/* Related Tools */}
         <section className="mt-12 space-y-8">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight mb-4">
-              Related Color Tools
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {relatedTools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
-                >
-                  <p className="font-medium">{tool.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {tool.href.replace(/^\//, "")}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
         </section>
       </div>
     </div>
