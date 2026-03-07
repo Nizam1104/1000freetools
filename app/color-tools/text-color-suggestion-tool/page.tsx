@@ -299,6 +299,11 @@ export default function TextColorSuggestionToolPage() {
                 <div className="pt-4 border-t">
                   <div className="grid grid-cols-2 gap-2">
                     {suggestions.slice(0, 4).map((s) => (
+                      <div
+                        key={s.hex}
+                        className="h-8 rounded"
+                        style={{ backgroundColor: s.hex }}
+                      />
                     ))}
                   </div>
                 </div>
