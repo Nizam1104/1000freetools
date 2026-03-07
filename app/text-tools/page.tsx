@@ -3,123 +3,6 @@ import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Faqs from "@/components/utils/Faqs";
 import Script from "next/script";
 
-const textTools = [
-  {
-    name: "Word Counter",
-    description: "Count words in text instantly with live updating as you type",
-    href: "/text-tools/word-counter",
-  },
-  {
-    name: "Character Counter",
-    description: "Count characters in text with options to include or exclude spaces",
-    href: "/text-tools/character-counter",
-  },
-  {
-    name: "Reading Time Calculator",
-    description: "Estimate how long it takes to read any text",
-    href: "/text-tools/reading-time-calculator",
-  },
-  {
-    name: "Writing Time Calculator",
-    description: "Estimate time to write content based on word count and typing speed",
-    href: "/text-tools/writing-time-calculator",
-  },
-  {
-    name: "Keyword Density Calculator",
-    description: "Analyze keyword frequency and density in text for SEO",
-    href: "/text-tools/keyword-density-calculator",
-  },
-  {
-    name: "Case Converter",
-    description: "Convert text between uppercase, lowercase, title case, camelCase, and more",
-    href: "/text-tools/case-converter",
-  },
-  {
-    name: "Lorem Ipsum Generator",
-    description: "Generate placeholder Lorem Ipsum text for design mockups",
-    href: "/text-tools/lorem-ipsum-generator",
-  },
-  {
-    name: "Diff Checker",
-    description: "Compare two texts and highlight differences line by line",
-    href: "/text-tools/diff-checker",
-  },
-  {
-    name: "Regex Tester",
-    description: "Test regular expressions against text with real-time highlighting",
-    href: "/text-tools/regex-tester",
-  },
-  {
-    name: "Text to ASCII Converter",
-    description: "Convert text to ASCII codes and ASCII back to text",
-    href: "/text-tools/ascii-text-converter",
-  },
-  {
-    name: "Base64 Encoder/Decoder",
-    description: "Encode text to Base64 or decode Base64 strings",
-    href: "/text-tools/base64-encode-decode",
-  },
-  {
-    name: "URL Encoder/Decoder",
-    description: "Encode special characters in URLs or decode encoded URLs",
-    href: "/text-tools/url-encode-decode",
-  },
-  {
-    name: "HTML Encoder/Decoder",
-    description: "Convert HTML special characters to entities and back",
-    href: "/text-tools/html-encode-decode",
-  },
-  {
-    name: "JWT Decoder",
-    description: "Decode JSON Web Tokens to view header, payload, and signature",
-    href: "/text-tools/jwt-decoder",
-  },
-  {
-    name: "Hash Generator",
-    description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text",
-    href: "/text-tools/hash-generator",
-  },
-  {
-    name: "UUID Generator",
-    description: "Generate random UUIDs/GUIDs in v1, v4, and other formats",
-    href: "/text-tools/uuid-generator",
-  },
-  {
-    name: "Random Password Generator",
-    description: "Generate strong, secure random passwords with customizable options",
-    href: "/text-tools/random-password-generator",
-  },
-  {
-    name: "Random String Generator",
-    description: "Generate random alphanumeric strings for testing and development",
-    href: "/text-tools/random-string-generator",
-  },
-  {
-    name: "QR Code Generator",
-    description: "Generate QR codes from URLs, text, contact info, and more",
-    href: "/text-tools/qr-code-generator",
-  },
-  {
-    name: "SQL Formatter",
-    description: "Format and beautify SQL queries for improved readability",
-    href: "/text-tools/sql-formatter",
-  },
-  {
-    name: "JSON Formatter",
-    description: "Format, beautify, and minify JSON data with syntax validation",
-    href: "/text-tools/json-formatter",
-  },
-  {
-    name: "Escape Character Converter",
-    description: "Convert escape sequences like \\n, \\t to literal characters and back",
-    href: "/text-tools/escape-character-converter",
-  },
-  {
-    name: "Token Count Calculator",
-    description: "Estimate token count for LLM APIs like OpenAI and Anthropic",
-    href: "/text-tools/token-count-calculator",
-  },
-];
 
 export const metadata: Metadata = {
   title: "Free Text Tools",
@@ -135,6 +18,109 @@ export const metadata: Metadata = {
     canonical: "https://1000freetools.com/text-tools",
   },
 };
+
+const textTools = [
+  {
+    name: "Word Counter",
+    description: "Real-time word, character, sentence, and paragraph count with reading time and keyword density.",
+    href: "/text-tools/word-counter",
+  },
+  {
+    name: "Character Counter",
+    description: "Count characters with platform limits for Twitter, SMS, meta descriptions, and more.",
+    href: "/text-tools/character-counter",
+  },
+  {
+    name: "Case Converter",
+    description: "Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more.",
+    href: "/text-tools/case-converter",
+  },
+  {
+    name: "Remove Duplicate Lines",
+    description: "Remove duplicate lines from lists with case-sensitive and sorting options.",
+    href: "/text-tools/remove-duplicate-lines",
+  },
+  {
+    name: "Text to Slug Converter",
+    description: "Generate clean, SEO-friendly URL slugs from headlines and titles.",
+    href: "/text-tools/text-to-slug-converter",
+  },
+  {
+    name: "Lorem Ipsum Generator",
+    description: "Generate placeholder text by words, sentences, or paragraphs with HTML output option.",
+    href: "/text-tools/lorem-ipsum-generator",
+  },
+  {
+    name: "Text Reverser",
+    description: "Reverse text by characters, words, or create mirror text with upside-down Unicode.",
+    href: "/text-tools/text-reverser",
+  },
+  {
+    name: "Word Frequency Counter",
+    description: "Analyze text and show word frequency table with CSV export option.",
+    href: "/text-tools/word-frequency-counter",
+  },
+  {
+    name: "Find and Replace Text",
+    description: "Find and replace text with regex support, case-sensitive, and whole word matching.",
+    href: "/text-tools/find-and-replace-text",
+  },
+  {
+    name: "Text to Binary Converter",
+    description: "Convert text to binary and back with ASCII, hex, and decimal breakdowns.",
+    href: "/text-tools/text-to-binary-converter",
+  },
+  {
+    name: "Text Size Calculator",
+    description: "Calculate text size in bytes, KB, MB with UTF-8 and ASCII encoding breakdown.",
+    href: "/text-tools/text-size-calculator",
+  },
+  {
+    name: "Duplicate Word Remover",
+    description: "Remove duplicate words from text or keyword lists with case sensitivity options.",
+    href: "/text-tools/duplicate-word-remover",
+  },
+  {
+    name: "Text Line Sorter",
+    description: "Sort lines alphabetically, by length, numerically, or randomly with options.",
+    href: "/text-tools/text-line-sorter",
+  },
+  {
+    name: "Whitespace Remover",
+    description: "Remove extra spaces, tabs, blank lines, and clean up messy pasted text.",
+    href: "/text-tools/whitespace-remover",
+  },
+  {
+    name: "Sentence Counter",
+    description: "Count sentences, paragraphs, and clauses with punctuation-aware parsing.",
+    href: "/text-tools/sentence-counter",
+  },
+  {
+    name: "Text to Hashtags Generator",
+    description: "Extract relevant hashtags from text for Instagram, Twitter, LinkedIn, and TikTok.",
+    href: "/text-tools/text-to-hashtags-generator",
+  },
+  {
+    name: "Text Repeater",
+    description: "Repeat text multiple times with custom separators like newline, comma, or space.",
+    href: "/text-tools/text-repeater",
+  },
+  {
+    name: "String Length Calculator",
+    description: "Measure string length in characters, bytes, and Unicode code points with per-line breakdown.",
+    href: "/text-tools/string-length-calculator",
+  },
+  {
+    name: "Text to List Converter",
+    description: "Convert text to comma-separated list, bullet list, numbered list, or JSON array.",
+    href: "/text-tools/text-to-list-converter",
+  },
+  {
+    name: "Random Text Shuffler",
+    description: "Randomize lines, sentences, words, or characters with optional seeded shuffle.",
+    href: "/text-tools/random-text-shuffler",
+  },
+];
 
 export default function TextToolsPage() {
   const faqsData = [
@@ -201,20 +187,6 @@ export default function TextToolsPage() {
             Available Tools
           </h2>
           <ToolLinkCards tools={textTools} />
-        </section>
-
-        {/* Main Content */}
-        <section className="container mx-auto px-4 py-12">
-          <div className="prose max-w-4xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-4">
-              Why use 1000freetools?
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              1000freetools provides a comprehensive collection of free online text tools
-              for developers, writers, students, and professionals. All processing happens
-              directly in your browser, so your text stays private and never touches our servers.
-            </p>
-          </div>
         </section>
 
         {/* FAQ Section */}
