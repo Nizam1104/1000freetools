@@ -383,28 +383,6 @@ export default function ConcreteVolumeCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/concrete-mix-ratio-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Concrete Mix Ratio</p>
-              <p className="text-xs text-muted-foreground">Calculate cement, sand, aggregate</p>
-            </a>
-            <a href="/calculators/steel-weight-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Steel Weight Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate rebar weight</p>
-            </a>
-            <a href="/calculators/tile-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Tile Calculator</p>
-              <p className="text-xs text-muted-foreground">Plan your tiling project</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

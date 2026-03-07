@@ -474,35 +474,6 @@ export default function BasketballShootingPercentageCalculatorPage() {
               </div>
             </CardContent>
           </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Related Tools</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2 text-sm">
-              <a
-                href="/calculators/basketball-stats-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Basketball Stats Calculator</span>
-                <p className="text-muted-foreground">Calculate comprehensive basketball statistics and efficiency ratings</p>
-              </a>
-              <a
-                href="/calculators/pace-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Pace Calculator</span>
-                <p className="text-muted-foreground">Calculate possessions per game and team pace statistics</p>
-              </a>
-              <a
-                href="/calculators/true-shooting-percentage-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">True Shooting Percentage Calculator</span>
-                <p className="text-muted-foreground">Calculate TS% including free throws and three-pointers</p>
-              </a>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

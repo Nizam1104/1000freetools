@@ -390,28 +390,6 @@ export default function LoanEMICalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/mortgage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mortgage Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate home loan payments</p>
-            </a>
-            <a href="/calculators/car-loan-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Car Loan Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate auto loan EMI</p>
-            </a>
-            <a href="/calculators/loan-amortization-visualizer" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Loan Amortization</p>
-              <p className="text-xs text-muted-foreground">View payment schedule</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

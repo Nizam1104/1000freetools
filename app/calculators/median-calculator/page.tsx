@@ -229,28 +229,6 @@ export default function MedianCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/mean-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mean Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate the average</p>
-            </a>
-            <a href="/calculators/mode-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mode Calculator</p>
-              <p className="text-xs text-muted-foreground">Find most frequent value</p>
-            </a>
-            <a href="/calculators/standard-deviation-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Standard Deviation</p>
-              <p className="text-xs text-muted-foreground">Measure data spread</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

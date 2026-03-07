@@ -267,34 +267,6 @@ export default function SubtractionCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/addition-calculator" className="text-primary hover:underline">
-                Addition Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Add multiple numbers together</span>
-            </li>
-            <li>
-              <a href="/calculators/multiplication-calculator" className="text-primary hover:underline">
-                Multiplication Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Multiply numbers instantly</span>
-            </li>
-            <li>
-              <a href="/calculators/division-calculator" className="text-primary hover:underline">
-                Division Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Divide numbers with remainder support</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

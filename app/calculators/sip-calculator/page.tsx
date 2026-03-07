@@ -382,28 +382,6 @@ export default function SIPCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Compound Interest Calculator</p>
-              <p className="text-xs text-muted-foreground">See how compounding grows your money</p>
-            </a>
-            <a href="/calculators/step-up-sip-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Step Up SIP Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate SIP with annual increases</p>
-            </a>
-            <a href="/calculators/retirement-corpus-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Retirement Corpus Calculator</p>
-              <p className="text-xs text-muted-foreground">Plan your retirement savings goal</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

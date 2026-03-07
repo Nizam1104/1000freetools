@@ -304,28 +304,6 @@ export default function AverageCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/weighted-average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Weighted Average Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate weighted means</p>
-            </a>
-            <a href="/calculators/standard-deviation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Standard Deviation</p>
-              <p className="text-xs text-muted-foreground">Measure data spread</p>
-            </a>
-            <a href="/calculators/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate percentages</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -299,28 +299,6 @@ export default function PaybackPeriodCalculatorPage() {
               </div>
             </CardContent>
           </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Related Tools</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2 text-sm">
-                <a href="/calculators/roi-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <span className="font-medium text-foreground">ROI Calculator</span>
-                  <p className="text-muted-foreground">Calculate return on investment percentage</p>
-                </a>
-                <a href="/calculators/npv-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <span className="font-medium text-foreground">NPV Calculator</span>
-                  <p className="text-muted-foreground">Calculate net present value of cash flows</p>
-                </a>
-                <a href="/calculators/irr-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <span className="font-medium text-foreground">IRR Calculator</span>
-                  <p className="text-muted-foreground">Calculate internal rate of return</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

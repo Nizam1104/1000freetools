@@ -241,28 +241,6 @@ export default function FibonacciGenerator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/golden-ratio-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Golden Ratio Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate golden ratio proportions</p>
-            </a>
-            <a href="/calculators/geometric-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Geometric Sequence Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate geometric progressions</p>
-            </a>
-            <a href="/calculators/arithmetic-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Arithmetic Sequence Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate arithmetic progressions</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

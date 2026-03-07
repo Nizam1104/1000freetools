@@ -351,34 +351,6 @@ export default function StressStrainCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li>
-              <a href="/calculators/concrete-volume-calculator" className="text-primary hover:underline">
-                Concrete Volume Calculator
-              </a>{" "}
-              — Calculate concrete needed for slabs, beams, and columns
-            </li>
-            <li>
-              <a href="/calculators/steel-weight-calculator" className="text-primary hover:underline">
-                Steel Weight Calculator
-              </a>{" "}
-              — Calculate weight of steel beams, plates, and structural sections
-            </li>
-            <li>
-              <a href="/calculators/ohms-law-calculator" className="text-primary hover:underline">
-                Ohm's Law Calculator
-              </a>{" "}
-              — Calculate voltage, current, resistance, and power for electrical circuits
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

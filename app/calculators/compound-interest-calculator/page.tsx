@@ -438,28 +438,6 @@ export default function CompoundInterestCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/roi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">ROI Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate return on investment</p>
-            </a>
-            <a href="/calculators/simple-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Simple Interest Calculator</p>
-              <p className="text-xs text-muted-foreground">Compare simple vs compound interest</p>
-            </a>
-            <a href="/calculators/fixed-deposit-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fixed Deposit Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate FD maturity value</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

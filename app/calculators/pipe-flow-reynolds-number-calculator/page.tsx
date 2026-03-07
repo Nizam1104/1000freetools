@@ -243,28 +243,6 @@ export default function ReynoldsNumberCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/pipe-friction-loss-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Pipe Friction Loss Calculator</span>
-                <p className="text-muted-foreground">Calculate head loss and pressure drop in pipes</p>
-              </a>
-              <a href="/calculators/flow-rate-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Flow Rate Calculator</span>
-                <p className="text-muted-foreground">Calculate volumetric and mass flow rates</p>
-              </a>
-              <a href="/calculators/bernoulli-equation-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Bernoulli Equation Calculator</span>
-                <p className="text-muted-foreground">Calculate pressure, velocity, and elevation relationships</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

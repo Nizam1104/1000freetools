@@ -481,28 +481,6 @@ export default function GradePercentageCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/gpa-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">GPA Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate cumulative GPA</p>
-            </a>
-            <a href="/calculators/final-grade-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Final Grade Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate what you need on final</p>
-            </a>
-            <a href="/calculators/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">General percentage calculations</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

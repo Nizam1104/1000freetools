@@ -342,28 +342,6 @@ export default function MolesToVolumeConverter() {
           </div>
         </CardContent>
       </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/molarity-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Molarity Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate solution concentration</p>
-            </a>
-            <a href="/calculators/ideal-gas-law-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Ideal Gas Law</p>
-              <p className="text-xs text-muted-foreground">Solve PV = nRT for any variable</p>
-            </a>
-            <a href="/calculators/gas-density-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Gas Density</p>
-              <p className="text-xs text-muted-foreground">Calculate gas density from molar mass</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

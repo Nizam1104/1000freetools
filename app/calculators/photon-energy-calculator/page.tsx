@@ -275,28 +275,6 @@ export default function PhotonEnergyCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/wavelength-frequency-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Wavelength Frequency Calculator</span>
-                <p className="text-muted-foreground">Convert between wavelength and frequency</p>
-              </a>
-              <a href="/calculators/ph-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">pH Calculator</span>
-                <p className="text-muted-foreground">Calculate pH from hydrogen ion concentration</p>
-              </a>
-              <a href="/calculators/energy-converter" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Energy Converter</span>
-                <p className="text-muted-foreground">Convert between different energy units</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

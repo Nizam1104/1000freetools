@@ -273,28 +273,6 @@ export default function PaintCoverageCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/paint-cost-estimate-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Paint Cost Estimate Calculator</span>
-                <p className="text-muted-foreground">Calculate total paint cost including price per gallon</p>
-              </a>
-              <a href="/calculators/floor-area-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Floor Area Calculator</span>
-                <p className="text-muted-foreground">Calculate square footage for flooring projects</p>
-              </a>
-              <a href="/calculators/wallpaper-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Wallpaper Calculator</span>
-                <p className="text-muted-foreground">Estimate wallpaper rolls needed for your room</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

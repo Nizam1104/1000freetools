@@ -230,28 +230,6 @@ export default function VarianceCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/standard-deviation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Standard Deviation Calculator</p>
-              <p className="text-xs text-muted-foreground">Find standard deviation from variance</p>
-            </a>
-            <a href="/calculators/mean-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mean Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate average of numbers</p>
-            </a>
-            <a href="/calculators/average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Average Calculator</p>
-              <p className="text-xs text-muted-foreground">Compute mean, median, and mode</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

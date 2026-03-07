@@ -400,37 +400,6 @@ export default function DilutionCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-2 text-sm">
-            <a
-              href="/calculators/molarity-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Molarity Calculator</span>
-              <p className="text-muted-foreground">Calculate molarity from mass and volume</p>
-            </a>
-            <a
-              href="/calculators/concentration-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Concentration Calculator</span>
-              <p className="text-muted-foreground">Convert between concentration units</p>
-            </a>
-            <a
-              href="/calculators/solution-mixing-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Solution Mixing Calculator</span>
-              <p className="text-muted-foreground">Mix solutions to achieve target concentration</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

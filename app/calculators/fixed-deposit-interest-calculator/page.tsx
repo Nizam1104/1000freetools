@@ -379,28 +379,6 @@ export default function FixedDepositInterestCalculatorPage() {
               </div>
             </CardContent>
           </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Related Tools</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Compound Interest Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate compound growth with regular contributions</p>
-                </a>
-                <a href="/calculators/simple-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Simple Interest Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate simple interest for loans and deposits</p>
-                </a>
-                <a href="/calculators/future-value-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Future Value Calculator</p>
-                  <p className="text-xs text-muted-foreground">Project investment growth over time</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

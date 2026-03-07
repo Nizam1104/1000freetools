@@ -245,28 +245,6 @@ export default function PercentageChangeCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/percentage-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Percentage Calculator</span>
-                <p className="text-muted-foreground">Calculate percentages, what percent of, and more</p>
-              </a>
-              <a href="/calculators/discount-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Discount Calculator</span>
-                <p className="text-muted-foreground">Calculate sale prices and savings</p>
-              </a>
-              <a href="/calculators/inflation-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Inflation Calculator</span>
-                <p className="text-muted-foreground">Calculate purchasing power changes over time</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -354,28 +354,6 @@ export default function TileCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/ceiling-tile-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Ceiling Tile Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate ceiling tiles needed</p>
-            </a>
-            <a href="/calculators/concrete-volume-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Concrete Volume</p>
-              <p className="text-xs text-muted-foreground">For subfloor preparation</p>
-            </a>
-            <a href="/calculators/floor-area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Floor Area Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate room area</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

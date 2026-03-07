@@ -396,28 +396,6 @@ export default function TDEECalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/bmi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">BMI Calculator</p>
-              <p className="text-xs text-muted-foreground">Check your body mass index</p>
-            </a>
-            <a href="/calculators/calorie-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Calorie Calculator</p>
-              <p className="text-xs text-muted-foreground">Track daily calorie needs</p>
-            </a>
-            <a href="/calculators/macro-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Macro Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate macronutrient ratios</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

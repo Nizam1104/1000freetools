@@ -314,28 +314,6 @@ export default function WaistToHipRatioCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/bmi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">BMI Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate your body mass index</p>
-            </a>
-            <a href="/calculators/body-fat-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Body Fat Calculator</p>
-              <p className="text-xs text-muted-foreground">Estimate body fat percentage</p>
-            </a>
-            <a href="/calculators/waist-to-height-ratio-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Waist-to-Height Ratio</p>
-              <p className="text-xs text-muted-foreground">Another health risk indicator</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

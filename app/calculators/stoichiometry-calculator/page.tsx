@@ -307,34 +307,6 @@ export default function StoichiometryCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li>
-              <a href="/calculators/ph-calculator" className="text-primary hover:underline">
-                pH Calculator
-              </a>{" "}
-              — Calculate pH, pOH, and hydrogen ion concentration for acid-base solutions
-            </li>
-            <li>
-              <a href="/calculators/molarity-calculator" className="text-primary hover:underline">
-                Molarity Calculator
-              </a>{" "}
-              — Calculate solution concentration, moles, and volume for chemistry problems
-            </li>
-            <li>
-              <a href="/calculators/kinetic-energy-calculator" className="text-primary hover:underline">
-                Kinetic Energy Calculator
-              </a>{" "}
-              — Calculate kinetic energy, mass, or velocity for moving objects
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

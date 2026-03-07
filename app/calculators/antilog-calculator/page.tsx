@@ -282,34 +282,6 @@ export default function AntilogCalculator() {
         </CardContent>
       </Card>
 
-      {/* Related Tools Section */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/logarithm-calculator" className="text-primary hover:underline">
-                Logarithm Calculator
-              </a>
-              <p className="text-muted-foreground text-xs">Calculate logarithms with any base</p>
-            </li>
-            <li>
-              <a href="/calculators/exponent-calculator" className="text-primary hover:underline">
-                Exponent Calculator
-              </a>
-              <p className="text-muted-foreground text-xs">Raise numbers to any power</p>
-            </li>
-            <li>
-              <a href="/calculators/ph-calculator" className="text-primary hover:underline">
-                pH Calculator
-              </a>
-              <p className="text-muted-foreground text-xs">Calculate pH and hydrogen ion concentration</p>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-    </div>
+      {/* Related Tools Section */}    </div>
   );
 }

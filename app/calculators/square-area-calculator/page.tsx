@@ -294,34 +294,6 @@ export default function SquareAreaCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/rectangle-area-calculator" className="text-primary hover:underline">
-                Rectangle Area Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Calculate area and perimeter of rectangles</span>
-            </li>
-            <li>
-              <a href="/calculators/triangle-area-calculator" className="text-primary hover:underline">
-                Triangle Area Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Find area from base and height</span>
-            </li>
-            <li>
-              <a href="/calculators/circle-area-calculator" className="text-primary hover:underline">
-                Circle Area Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Calculate circle area and circumference</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

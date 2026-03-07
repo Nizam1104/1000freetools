@@ -277,28 +277,6 @@ export default function MirrorEquationCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/lens-equation-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Lens Equation Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate lens focal length and image position</p>
-            </a>
-            <a href="/calculators/magnification-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Magnification Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate image magnification</p>
-            </a>
-            <a href="/calculators/snell-law-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Snell's Law Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate refraction angles</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -343,28 +343,6 @@ export default function RoofingSheetsCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/roof-pitch-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Roof Pitch Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate roof slope</p>
-            </a>
-            <a href="/calculators/steel-weight-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Steel Weight Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate sheet weight</p>
-            </a>
-            <a href="/calculators/rainwater-harvesting-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Rainwater Harvesting</p>
-              <p className="text-xs text-muted-foreground">Calculate collection potential</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

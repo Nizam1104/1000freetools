@@ -478,35 +478,6 @@ export default function BatteryBackupTimeCalculatorPage() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2 text-sm">
-            <a
-              href="/calculators/battery-life-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Battery Life Calculator</span>
-              <p className="text-muted-foreground">Estimate battery runtime based on capacity and load current</p>
-            </a>
-            <a
-              href="/calculators/battery-c-rate-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Battery C-Rate Calculator</span>
-              <p className="text-muted-foreground">Calculate charge and discharge rates for batteries</p>
-            </a>
-            <a
-              href="/calculators/watts-to-amps-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Watts to Amps Calculator</span>
-              <p className="text-muted-foreground">Convert between power (watts) and current (amps)</p>
-            </a>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

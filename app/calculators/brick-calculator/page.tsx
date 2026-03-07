@@ -352,28 +352,6 @@ export default function BrickCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/concrete-volume-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Concrete Volume Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate concrete for foundations</p>
-            </a>
-            <a href="/calculators/mortar-volume-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mortar Volume Calculator</p>
-              <p className="text-xs text-muted-foreground">Estimate mortar quantities</p>
-            </a>
-            <a href="/calculators/tile-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Tile Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate tiles for floors and walls</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

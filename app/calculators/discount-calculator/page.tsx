@@ -408,28 +408,6 @@ export default function DiscountCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">General percentage calculations</p>
-            </a>
-            <a href="/calculators/sales-tax-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Sales Tax Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate tax on purchases</p>
-            </a>
-            <a href="/calculators/price-comparison-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Price Comparison</p>
-              <p className="text-xs text-muted-foreground">Compare unit prices</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

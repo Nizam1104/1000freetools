@@ -361,28 +361,6 @@ export default function BMRCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">TDEE Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate total daily energy expenditure</p>
-            </a>
-            <a href="/calculators/daily-calorie-needs-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Daily Calorie Needs Calculator</p>
-              <p className="text-xs text-muted-foreground">Find your personalized calorie targets</p>
-            </a>
-            <a href="/calculators/calorie-deficit-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Calorie Deficit Calculator</p>
-              <p className="text-xs text-muted-foreground">Plan your weight loss calorie deficit</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

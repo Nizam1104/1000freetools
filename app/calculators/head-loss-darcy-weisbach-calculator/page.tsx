@@ -234,28 +234,6 @@ export default function HeadLossDarcyWeisbachCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/reynolds-number-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Reynolds Number Calculator</p>
-              <p className="text-xs text-muted-foreground">Determine flow regime for friction factor</p>
-            </a>
-            <a href="/calculators/pipe-flow-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Pipe Flow Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate flow rate and velocity</p>
-            </a>
-            <a href="/calculators/pump-power-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Pump Power Calculator</p>
-              <p className="text-xs text-muted-foreground">Size pumps based on head requirements</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

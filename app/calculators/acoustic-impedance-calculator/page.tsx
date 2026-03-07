@@ -224,25 +224,6 @@ export default function AcousticImpedanceCalculator() {
         </CardContent>
       </Card>
 
-      {/* Related Tools Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-wrap gap-3">
-            <a href="/calculators/sound-speed-calculator" className="px-4 py-2 bg-primary/10 text-primary rounded-md hover:bg-primary/20 transition-colors">
-              Sound Speed Calculator
-            </a>
-            <a href="/calculators/frequency-calculator" className="px-4 py-2 bg-primary/10 text-primary rounded-md hover:bg-primary/20 transition-colors">
-              Frequency Calculator
-            </a>
-            <a href="/calculators/wavelength-calculator" className="px-4 py-2 bg-primary/10 text-primary rounded-md hover:bg-primary/20 transition-colors">
-              Wavelength Calculator
-            </a>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+      {/* Related Tools Section */}    </div>
   );
 }

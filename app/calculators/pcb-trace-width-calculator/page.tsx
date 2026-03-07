@@ -272,28 +272,6 @@ export default function PcbTraceWidthCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/peak-to-peak-voltage-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Peak-to-Peak Voltage Calculator</span>
-                <p className="text-muted-foreground">Convert between AC voltage measurements</p>
-              </a>
-              <a href="/calculators/ohms-law-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Ohm's Law Calculator</span>
-                <p className="text-muted-foreground">Calculate voltage, current, resistance, and power</p>
-              </a>
-              <a href="/calculators/led-resistor-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">LED Resistor Calculator</span>
-                <p className="text-muted-foreground">Calculate current-limiting resistor for LEDs</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

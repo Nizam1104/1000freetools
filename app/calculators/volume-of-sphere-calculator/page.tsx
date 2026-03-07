@@ -283,34 +283,6 @@ export default function VolumeOfSphereCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/volume-of-cylinder-calculator" className="text-primary hover:underline">
-                Volume of Cylinder Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Calculate cylinder volume and surface area</span>
-            </li>
-            <li>
-              <a href="/calculators/volume-of-cone-calculator" className="text-primary hover:underline">
-                Volume of Cone Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Find cone volume from radius and height</span>
-            </li>
-            <li>
-              <a href="/calculators/circle-area-calculator" className="text-primary hover:underline">
-                Circle Area Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Calculate circle area and circumference</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

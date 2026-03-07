@@ -644,28 +644,6 @@ export default function RunningPaceCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/marathon-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Marathon Pace Calculator</p>
-              <p className="text-xs text-muted-foreground">Specialized marathon time planning</p>
-            </a>
-            <a href="/calculators/running-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Split Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate lap and mile splits</p>
-            </a>
-            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">TDEE Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate calorie needs for runners</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

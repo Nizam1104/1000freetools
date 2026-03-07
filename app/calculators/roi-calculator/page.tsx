@@ -435,28 +435,6 @@ export default function ROICalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Compound Interest Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate investment growth over time</p>
-            </a>
-            <a href="/calculators/4-percent-rule-retirement-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">4% Rule Retirement Calculator</p>
-              <p className="text-xs text-muted-foreground">Plan retirement withdrawals</p>
-            </a>
-            <a href="/calculators/rental-roi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Rental ROI Calculator</p>
-              <p className="text-xs text-muted-foreground">Analyze rental property returns</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

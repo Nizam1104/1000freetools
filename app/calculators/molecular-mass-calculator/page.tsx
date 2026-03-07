@@ -348,28 +348,6 @@ export default function MolecularMassCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/molarity-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Molarity Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate solution concentration</p>
-            </a>
-            <a href="/calculators/stoichiometry-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Stoichiometry Calculator</p>
-              <p className="text-xs text-muted-foreground">Balance chemical equations</p>
-            </a>
-            <a href="/calculators/empirical-formula-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Empirical Formula</p>
-              <p className="text-xs text-muted-foreground">Find simplest formula from composition</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

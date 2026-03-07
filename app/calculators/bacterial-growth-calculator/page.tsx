@@ -428,35 +428,6 @@ export default function BacterialGrowthCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <a
-            href="/calculators/generation-time-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Generation Time Calculator</span>
-            <p className="text-muted-foreground">Calculate bacterial generation time from population data</p>
-          </a>
-          <a
-            href="/calculators/dilution-factor-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Dilution Factor Calculator</span>
-            <p className="text-muted-foreground">Calculate serial dilutions for microbiology experiments</p>
-          </a>
-          <a
-            href="/calculators/cell-count-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Cell Count Calculator</span>
-            <p className="text-muted-foreground">Convert hemocytometer counts to cells per mL</p>
-          </a>
-        </CardContent>
-      </Card>
     </div>
   );
 }
