@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Shoe Size Converter",
     "description": "Shoe Size Converter – Convert Shoe Sizes Between US, UK, EU & CM",
-    "href": "/shoe-size-converter"
+    "href": "/calculators/shoe-size-converter"
   },
   {
     "name": "Laundry Detergent Calculator",
     "description": "Laundry Detergent Calculator – How Much Detergent Should You Use Per Wash?",
-    "href": "/laundry-detergent-calculator"
+    "href": "/calculators/laundry-detergent-calculator"
   },
   {
     "name": "Flooring Calculator",
     "description": "Flooring Calculator – How Much Flooring Do You Need?",
-    "href": "/flooring-calculator"
+    "href": "/calculators/flooring-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   },
   {
     "name": "4 Percent Rule Retirement Calculator",
     "description": "4% Rule Retirement Calculator",
-    "href": "/4-percent-rule-retirement-calculator"
+    "href": "/calculators/4-percent-rule-retirement-calculator"
   }
 ];
 

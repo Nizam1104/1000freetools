@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Pregnancy Due Date Calculator",
     "description": "Pregnancy Due Date Calculator – When Is My Baby Due?",
-    "href": "/pregnancy-due-date-calculator"
+    "href": "/calculators/pregnancy-due-date-calculator"
   },
   {
     "name": "Pregnancy Week Calculator",
     "description": "Pregnancy Week Calculator – Free Due Date & Pregnancy Tracker",
-    "href": "/pregnancy-week-calculator"
+    "href": "/calculators/pregnancy-week-calculator"
   },
   {
     "name": "Ovulation Calculator",
     "description": "Ovulation Calculator – Find Your Most Fertile Days",
-    "href": "/ovulation-calculator"
+    "href": "/calculators/ovulation-calculator"
   },
   {
     "name": "Baby Age Calculator",
     "description": "Baby Age Calculator – Free Infant Age Calculator in Weeks and Months",
-    "href": "/baby-age-calculator"
+    "href": "/calculators/baby-age-calculator"
   },
   {
     "name": "Child Height Predictor",
     "description": "Child Height Predictor – Free Adult Height Calculator",
-    "href": "/child-height-predictor"
+    "href": "/calculators/child-height-predictor"
   },
   {
     "name": "Toddler Growth Chart Calculator",
     "description": "Toddler Growth Chart Calculator – Track Height & Weight Percentiles for Your Child",
-    "href": "/toddler-growth-chart-calculator"
+    "href": "/calculators/toddler-growth-chart-calculator"
   }
 ];
 

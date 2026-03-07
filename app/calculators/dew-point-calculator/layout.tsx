@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Humidity Calculator",
     "description": "Humidity Calculator – Calculate Relative, Absolute & Specific Humidity",
-    "href": "/humidity-calculator"
+    "href": "/calculators/humidity-calculator"
   },
   {
     "name": "Air Density Calculator",
     "description": "Air Density Calculator – Calculate Air Density by Temperature & Pressure",
-    "href": "/air-density-calculator"
+    "href": "/calculators/air-density-calculator"
   },
   {
     "name": "Heat Index Calculator",
     "description": "Heat Index Calculator – Calculate the 'Feels Like' Temperature",
-    "href": "/heat-index-calculator"
+    "href": "/calculators/heat-index-calculator"
   },
   {
     "name": "Wind Chill Calculator",
     "description": "Wind Chill Calculator – Find Out What the Temperature Really Feels Like",
-    "href": "/wind-chill-calculator"
+    "href": "/calculators/wind-chill-calculator"
   },
   {
     "name": "Ideal Gas Law Calculator",
     "description": "Ideal Gas Law Calculator – Solve PV = nRT for Any Variable",
-    "href": "/ideal-gas-law-calculator"
+    "href": "/calculators/ideal-gas-law-calculator"
   },
   {
     "name": "Mountain Oxygen Calculator",
     "description": "Mountain Oxygen Calculator – Calculate Available Oxygen at Any Altitude",
-    "href": "/mountain-oxygen-calculator"
+    "href": "/calculators/mountain-oxygen-calculator"
   }
 ];
 

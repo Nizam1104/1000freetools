@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Empirical Formula Calculator",
     "description": "Empirical Formula Calculator – Find Empirical Formula from Percent Composition",
-    "href": "/empirical-formula-calculator"
+    "href": "/calculators/empirical-formula-calculator"
   },
   {
     "name": "Percent Composition Calculator",
     "description": "Percent Composition Calculator – Find Mass Percent of Elements",
-    "href": "/percent-composition-calculator"
+    "href": "/calculators/percent-composition-calculator"
   },
   {
     "name": "Concentration Calculator",
     "description": "Concentration Calculator – Convert Solution Concentration Units",
-    "href": "/concentration-calculator"
+    "href": "/calculators/concentration-calculator"
   },
   {
     "name": "Dilution Calculator",
     "description": "Dilution Calculator – C1V1 = C2V2 Solution Dilution Tool",
-    "href": "/dilution-calculator"
+    "href": "/calculators/dilution-calculator"
   },
   {
     "name": "Molarity Calculator",
     "description": "Molarity Calculator – Calculate Molar Concentration Instantly",
-    "href": "/molarity-calculator"
+    "href": "/calculators/molarity-calculator"
   },
   {
     "name": "Molality Calculator",
     "description": "Molality Calculator – Find Molality of Any Solution",
-    "href": "/molality-calculator"
+    "href": "/calculators/molality-calculator"
   }
 ];
 

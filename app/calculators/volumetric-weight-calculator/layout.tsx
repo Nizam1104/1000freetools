@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Dimensional Weight Calculator",
     "description": "Dimensional Weight Calculator – Calculate DIM Weight for FedEx, UPS & DHL",
-    "href": "/dimensional-weight-calculator"
+    "href": "/calculators/dimensional-weight-calculator"
   },
   {
     "name": "Container Load Calculator",
     "description": "Container Load Calculator – How Many Boxes Fit in a 20ft or 40ft Container?",
-    "href": "/container-load-calculator"
+    "href": "/calculators/container-load-calculator"
   },
   {
     "name": "Pallet Stacking Calculator",
     "description": "Pallet Stacking Calculator – Maximize Box Quantities Per Pallet",
-    "href": "/pallet-stacking-calculator"
+    "href": "/calculators/pallet-stacking-calculator"
   },
   {
     "name": "Cargo Volume Calculator",
     "description": "Cargo Volume Calculator – Calculate Total Shipment Volume & Chargeable Weight",
-    "href": "/cargo-volume-calculator"
+    "href": "/calculators/cargo-volume-calculator"
   },
   {
     "name": "Warehouse Storage Volume Calculator",
     "description": "Warehouse Storage Volume Calculator – Calculate Usable Warehouse Capacity",
-    "href": "/warehouse-storage-volume-calculator"
+    "href": "/calculators/warehouse-storage-volume-calculator"
   },
   {
     "name": "Land Area Converter",
     "description": "Land Area Converter – Convert Acres, Hectares, Sq Ft, and Bigha",
-    "href": "/land-area-converter"
+    "href": "/calculators/land-area-converter"
   }
 ];
 

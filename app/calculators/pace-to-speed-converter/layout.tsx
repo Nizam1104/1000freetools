@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Speed To Pace Converter",
     "description": "Speed to Pace Converter – Convert Speed to Running Pace Online",
-    "href": "/speed-to-pace-converter"
+    "href": "/calculators/speed-to-pace-converter"
   },
   {
     "name": "Marathon Pace Calculator",
     "description": "Marathon Pace Calculator – Calculate Your Target Running Pace",
-    "href": "/marathon-pace-calculator"
+    "href": "/calculators/marathon-pace-calculator"
   },
   {
     "name": "Running Pace Calculator",
     "description": "Running Pace Calculator",
-    "href": "/running-pace-calculator"
+    "href": "/calculators/running-pace-calculator"
   },
   {
     "name": "Heart Rate Recovery Calculator",
     "description": "Heart Rate Recovery Calculator – Measure Your Cardiovascular Fitness",
-    "href": "/heart-rate-recovery-calculator"
+    "href": "/calculators/heart-rate-recovery-calculator"
   },
   {
     "name": "Heart Rate Zones Calculator",
     "description": "Heart Rate Zones Calculator – Find Your Target Heart Rate Zones",
-    "href": "/heart-rate-zones-calculator"
+    "href": "/calculators/heart-rate-zones-calculator"
   },
   {
     "name": "Lactate Threshold Calculator",
     "description": "Lactate Threshold Calculator – Find Your Anaerobic Threshold",
-    "href": "/lactate-threshold-calculator"
+    "href": "/calculators/lactate-threshold-calculator"
   }
 ];
 

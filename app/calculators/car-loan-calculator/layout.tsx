@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Car Loan Affordability Calculator",
     "description": "Car Loan Affordability Calculator – Find Out What Car You Can Afford",
-    "href": "/car-loan-affordability-calculator"
+    "href": "/calculators/car-loan-affordability-calculator"
   },
   {
     "name": "Fuel Cost Calculator",
     "description": "Fuel Cost Calculator – Estimate Your Trip Fuel Expenses Instantly",
-    "href": "/fuel-cost-calculator"
+    "href": "/calculators/fuel-cost-calculator"
   },
   {
     "name": "Fuel Efficiency Comparison Calculator",
     "description": "Fuel Efficiency Comparison Calculator – Compare Cars by MPG & Running Cost",
-    "href": "/fuel-efficiency-comparison-calculator"
+    "href": "/calculators/fuel-efficiency-comparison-calculator"
   },
   {
     "name": "Mileage Calculator",
     "description": "Mileage Calculator – Calculate Your Car's Fuel Efficiency (MPG & km/L)",
-    "href": "/mileage-calculator"
+    "href": "/calculators/mileage-calculator"
   },
   {
     "name": "Trip Cost Estimator",
     "description": "Trip Cost Estimator – Plan Your Road Trip Budget with Ease",
-    "href": "/trip-cost-estimator"
+    "href": "/calculators/trip-cost-estimator"
   },
   {
     "name": "Vehicle Depreciation Calculator",
     "description": "Vehicle Depreciation Calculator – Find Out How Much Your Car Has Lost in Value",
-    "href": "/vehicle-depreciation-calculator"
+    "href": "/calculators/vehicle-depreciation-calculator"
   }
 ];
 

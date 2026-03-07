@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Acceleration Calculator",
     "description": "Acceleration Calculator",
-    "href": "/acceleration-calculator"
+    "href": "/calculators/acceleration-calculator"
   },
   {
     "name": "Velocity Calculator",
     "description": "Velocity Calculator – Calculate Speed with Direction",
-    "href": "/velocity-calculator"
+    "href": "/calculators/velocity-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Energy Calculator",
     "description": "Energy Calculator",
-    "href": "/energy-calculator"
+    "href": "/calculators/energy-calculator"
   },
   {
     "name": "Potential Energy Calculator",
     "description": "Potential Energy Calculator",
-    "href": "/potential-energy-calculator"
+    "href": "/calculators/potential-energy-calculator"
   },
   {
     "name": "Spring Force Hookes Law Calculator",
     "description": "Hooke's Law Calculator – Spring Force and Displacement",
-    "href": "/spring-force-hookes-law-calculator"
+    "href": "/calculators/spring-force-hookes-law-calculator"
   }
 ];
 

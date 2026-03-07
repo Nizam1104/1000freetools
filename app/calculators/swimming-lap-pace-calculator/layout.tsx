@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Swimming Calorie Calculator",
     "description": "Swimming Calorie Calculator – How Many Calories Does Swimming Burn?",
-    "href": "/swimming-calorie-calculator"
+    "href": "/calculators/swimming-calorie-calculator"
   },
   {
     "name": "Marathon Pace Calculator",
     "description": "Marathon Pace Calculator – Calculate Your Target Running Pace",
-    "href": "/marathon-pace-calculator"
+    "href": "/calculators/marathon-pace-calculator"
   },
   {
     "name": "Running Pace Calculator",
     "description": "Running Pace Calculator",
-    "href": "/running-pace-calculator"
+    "href": "/calculators/running-pace-calculator"
   },
   {
     "name": "Pace To Speed Converter",
     "description": "Pace to Speed Converter – Convert Running Pace to Speed Instantly",
-    "href": "/pace-to-speed-converter"
+    "href": "/calculators/pace-to-speed-converter"
   },
   {
     "name": "Speed To Pace Converter",
     "description": "Speed to Pace Converter – Convert Speed to Running Pace Online",
-    "href": "/speed-to-pace-converter"
+    "href": "/calculators/speed-to-pace-converter"
   },
   {
     "name": "Heart Rate Recovery Calculator",
     "description": "Heart Rate Recovery Calculator – Measure Your Cardiovascular Fitness",
-    "href": "/heart-rate-recovery-calculator"
+    "href": "/calculators/heart-rate-recovery-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Startup Equity Calculator",
     "description": "Startup Equity Calculator",
-    "href": "/startup-equity-calculator"
+    "href": "/calculators/startup-equity-calculator"
   },
   {
     "name": "Rsu Vesting Calculator",
     "description": "RSU Vesting Calculator",
-    "href": "/rsu-vesting-calculator"
+    "href": "/calculators/rsu-vesting-calculator"
   },
   {
     "name": "Stock Split Calculator",
     "description": "Stock Split Calculator",
-    "href": "/stock-split-calculator"
+    "href": "/calculators/stock-split-calculator"
   },
   {
     "name": "Stock Cagr Calculator",
     "description": "Stock CAGR Calculator",
-    "href": "/stock-cagr-calculator"
+    "href": "/calculators/stock-cagr-calculator"
   },
   {
     "name": "Reverse Stock Split Calculator",
     "description": "Reverse Stock Split Calculator",
-    "href": "/reverse-stock-split-calculator"
+    "href": "/calculators/reverse-stock-split-calculator"
   },
   {
     "name": "Investment Return Rate Calculator",
     "description": "Investment Return Rate Calculator",
-    "href": "/investment-return-rate-calculator"
+    "href": "/calculators/investment-return-rate-calculator"
   }
 ];
 

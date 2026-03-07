@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Tea Brewing Strength Calculator",
     "description": "Tea Brewing Strength Calculator – Get the Perfect Steep Time & Leaf Ratio",
-    "href": "/tea-brewing-strength-calculator"
+    "href": "/calculators/tea-brewing-strength-calculator"
   },
   {
     "name": "Baking Time Adjustment Calculator",
     "description": "Baking Time Adjustment Calculator – Adjust Oven Time When Changing Pan Sizes",
-    "href": "/baking-time-adjustment-calculator"
+    "href": "/calculators/baking-time-adjustment-calculator"
   },
   {
     "name": "Calories Per Serving Calculator",
     "description": "Calories Per Serving Calculator – Calculate Nutrition Calories in Any Recipe",
-    "href": "/calories-per-serving-calculator"
+    "href": "/calculators/calories-per-serving-calculator"
   },
   {
     "name": "Recipe Scaler Calculator",
     "description": "Recipe Scaler Calculator – Adjust Recipe Servings Instantly",
-    "href": "/recipe-scaler-calculator"
+    "href": "/calculators/recipe-scaler-calculator"
   },
   {
     "name": "Kitchen Measurement Converter",
     "description": "Kitchen Measurement Converter – Convert Cooking Units Instantly",
-    "href": "/kitchen-measurement-converter"
+    "href": "/calculators/kitchen-measurement-converter"
   },
   {
     "name": "Beer Abv Calculator",
     "description": "Beer ABV Calculator – Calculate Alcohol Content of Your Home Brew",
-    "href": "/beer-abv-calculator"
+    "href": "/calculators/beer-abv-calculator"
   }
 ];
 

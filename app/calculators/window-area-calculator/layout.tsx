@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Carpet Area Calculator",
     "description": "Carpet Area Calculator – Calculate Carpet Area from Built-Up Area",
-    "href": "/carpet-area-calculator"
+    "href": "/calculators/carpet-area-calculator"
   },
   {
     "name": "Flooring Calculator",
     "description": "Flooring Calculator – How Much Flooring Do You Need?",
-    "href": "/flooring-calculator"
+    "href": "/calculators/flooring-calculator"
   },
   {
     "name": "Curtain Length Calculator",
     "description": "Curtain Length Calculator – Find the Perfect Curtain Size for Your Windows",
-    "href": "/curtain-length-calculator"
+    "href": "/calculators/curtain-length-calculator"
   },
   {
     "name": "Paint Cost Estimate Calculator",
     "description": "Paint Cost Estimate Calculator – How Much Paint Do You Need for a Room?",
-    "href": "/paint-cost-estimate-calculator"
+    "href": "/calculators/paint-cost-estimate-calculator"
   },
   {
     "name": "Paint Coverage Calculator",
     "description": "Paint Calculator – How Much Paint Do You Need to Cover a Room?",
-    "href": "/paint-coverage-calculator"
+    "href": "/calculators/paint-coverage-calculator"
   },
   {
     "name": "Tile Calculator",
     "description": "Tile Calculator – How Many Tiles Do You Need?",
-    "href": "/tile-calculator"
+    "href": "/calculators/tile-calculator"
   }
 ];
 

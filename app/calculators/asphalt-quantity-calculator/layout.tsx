@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Brick Calculator",
     "description": "Brick Calculator",
-    "href": "/brick-calculator"
+    "href": "/calculators/brick-calculator"
   },
   {
     "name": "Concrete Mix Ratio Calculator",
     "description": "Concrete Mix Ratio Calculator – Calculate Material Quantities",
-    "href": "/concrete-mix-ratio-calculator"
+    "href": "/calculators/concrete-mix-ratio-calculator"
   },
   {
     "name": "Concrete Volume Calculator",
     "description": "Concrete Volume Calculator – How Much Concrete Do You Need?",
-    "href": "/concrete-volume-calculator"
+    "href": "/calculators/concrete-volume-calculator"
   },
   {
     "name": "Gravel Quantity Calculator",
     "description": "Gravel Quantity Calculator – Calculate Gravel Needed for Driveways & Landscaping",
-    "href": "/gravel-quantity-calculator"
+    "href": "/calculators/gravel-quantity-calculator"
   },
   {
     "name": "Mortar Volume Calculator",
     "description": "Mortar Volume Calculator – Calculate Mortar Needed for Bricklaying & Tiling",
-    "href": "/mortar-volume-calculator"
+    "href": "/calculators/mortar-volume-calculator"
   },
   {
     "name": "Sand Quantity Calculator",
     "description": "Sand Quantity Calculator – Calculate How Much Sand You Need for Construction",
-    "href": "/sand-quantity-calculator"
+    "href": "/calculators/sand-quantity-calculator"
   }
 ];
 

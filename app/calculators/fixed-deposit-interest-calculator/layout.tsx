@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Recurring Deposit Calculator",
     "description": "Recurring Deposit (RD) Calculator",
-    "href": "/recurring-deposit-calculator"
+    "href": "/calculators/recurring-deposit-calculator"
   },
   {
     "name": "Simple Interest Calculator",
     "description": "Simple Interest Calculator",
-    "href": "/simple-interest-calculator"
+    "href": "/calculators/simple-interest-calculator"
   },
   {
     "name": "Compound Interest Calculator",
     "description": "Compound Interest Calculator",
-    "href": "/compound-interest-calculator"
+    "href": "/calculators/compound-interest-calculator"
   },
   {
     "name": "Compounding Frequency Comparison",
     "description": "Compounding Frequency Comparison Calculator",
-    "href": "/compounding-frequency-comparison"
+    "href": "/calculators/compounding-frequency-comparison"
   },
   {
     "name": "Future Value Calculator",
     "description": "Future Value Calculator",
-    "href": "/future-value-calculator"
+    "href": "/calculators/future-value-calculator"
   },
   {
     "name": "Present Value Calculator",
     "description": "Present Value Calculator",
-    "href": "/present-value-calculator"
+    "href": "/calculators/present-value-calculator"
   }
 ];
 

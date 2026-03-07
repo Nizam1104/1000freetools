@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Aperture Depth Of Field Calculator",
     "description": "Depth of Field Calculator – Calculate DOF from Aperture, Focal Length & Distance",
-    "href": "/aperture-depth-of-field-calculator"
+    "href": "/calculators/aperture-depth-of-field-calculator"
   },
   {
     "name": "Camera Exposure Calculator",
     "description": "Camera Exposure Calculator – Find the Perfect Aperture, Shutter Speed & ISO",
-    "href": "/camera-exposure-calculator"
+    "href": "/calculators/camera-exposure-calculator"
   },
   {
     "name": "Lens Equation Calculator",
     "description": "Lens Equation Calculator – Thin Lens Formula Calculator",
-    "href": "/lens-equation-calculator"
+    "href": "/calculators/lens-equation-calculator"
   },
   {
     "name": "Perspective Angle Calculator",
     "description": "Perspective Angle Calculator – Calculate Vanishing Points for Technical Drawing",
-    "href": "/perspective-angle-calculator"
+    "href": "/calculators/perspective-angle-calculator"
   },
   {
     "name": "Iso Noise Predictor",
     "description": "ISO Noise Predictor – Estimate Image Noise Level for Any Camera ISO Setting",
-    "href": "/iso-noise-predictor"
+    "href": "/calculators/iso-noise-predictor"
   },
   {
     "name": "Brewster Angle Calculator",
     "description": "Brewster Angle Calculator – Polarization Angle Calculator",
-    "href": "/brewster-angle-calculator"
+    "href": "/calculators/brewster-angle-calculator"
   }
 ];
 

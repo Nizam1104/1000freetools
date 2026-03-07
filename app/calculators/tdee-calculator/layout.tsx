@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Bmr Calculator",
     "description": "BMR Calculator",
-    "href": "/bmr-calculator"
+    "href": "/calculators/bmr-calculator"
   },
   {
     "name": "Bmi Calculator",
     "description": "BMI Calculator – Free Body Mass Index Calculator Online",
-    "href": "/bmi-calculator"
+    "href": "/calculators/bmi-calculator"
   },
   {
     "name": "Body Fat Calculator",
     "description": "Body Fat Percentage Calculator – Estimate Your Body Fat Instantly",
-    "href": "/body-fat-calculator"
+    "href": "/calculators/body-fat-calculator"
   },
   {
     "name": "Ideal Weight Calculator",
     "description": "Ideal Weight Calculator – What Is Your Ideal Body Weight?",
-    "href": "/ideal-weight-calculator"
+    "href": "/calculators/ideal-weight-calculator"
   },
   {
     "name": "Lean Body Mass Calculator",
     "description": "Lean Body Mass Calculator – Find Your Fat-Free Mass Instantly",
-    "href": "/lean-body-mass-calculator"
+    "href": "/calculators/lean-body-mass-calculator"
   },
   {
     "name": "Calorie Deficit Calculator",
     "description": "Calorie Deficit Calculator – How Many Calories to Cut to Lose Weight?",
-    "href": "/calorie-deficit-calculator"
+    "href": "/calculators/calorie-deficit-calculator"
   }
 ];
 

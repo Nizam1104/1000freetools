@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Gacha Pull Probability Calculator",
     "description": "Gacha Pull Probability Calculator – Calculate Your Odds in Gacha Games",
-    "href": "/gacha-pull-probability-calculator"
+    "href": "/calculators/gacha-pull-probability-calculator"
   },
   {
     "name": "Random Number Generator",
     "description": "Random Number Generator",
-    "href": "/random-number-generator"
+    "href": "/calculators/random-number-generator"
   },
   {
     "name": "Combination Calculator",
     "description": "Combination Calculator",
-    "href": "/combination-calculator"
+    "href": "/calculators/combination-calculator"
   },
   {
     "name": "Permutation Calculator",
     "description": "Permutation Calculator",
-    "href": "/permutation-calculator"
+    "href": "/calculators/permutation-calculator"
   },
   {
     "name": "Factorial Calculator",
     "description": "Factorial Calculator",
-    "href": "/factorial-calculator"
+    "href": "/calculators/factorial-calculator"
   },
   {
     "name": "Pascals Triangle Calculator",
     "description": "Pascal's Triangle Calculator",
-    "href": "/pascals-triangle-calculator"
+    "href": "/calculators/pascals-triangle-calculator"
   }
 ];
 

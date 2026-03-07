@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Date Difference Calculator",
     "description": "Date Difference Calculator – Days Between Two Dates",
-    "href": "/date-difference-calculator"
+    "href": "/calculators/date-difference-calculator"
   },
   {
     "name": "Age Calculator",
     "description": "Age Calculator – Calculate Your Exact Age in Years, Months & Days",
-    "href": "/age-calculator"
+    "href": "/calculators/age-calculator"
   },
   {
     "name": "Anniversary Calculator",
     "description": "Anniversary Calculator – Free Anniversary Date Counter",
-    "href": "/anniversary-calculator"
+    "href": "/calculators/anniversary-calculator"
   },
   {
     "name": "Business Days Calculator",
     "description": "Business Days Calculator – Count Working Days Between Dates",
-    "href": "/business-days-calculator"
+    "href": "/calculators/business-days-calculator"
   },
   {
     "name": "Week Number Calculator",
     "description": "Week Number Calculator – Find ISO Week Number for Any Date",
-    "href": "/week-number-calculator"
+    "href": "/calculators/week-number-calculator"
   },
   {
     "name": "Revision Planner",
     "description": "Revision Planner – Create a Smart Spaced Repetition Study Schedule",
-    "href": "/revision-planner"
+    "href": "/calculators/revision-planner"
   }
 ];
 

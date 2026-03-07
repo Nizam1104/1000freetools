@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Arithmetic Sequence Calculator",
     "description": "Arithmetic Sequence Calculator",
-    "href": "/arithmetic-sequence-calculator"
+    "href": "/calculators/arithmetic-sequence-calculator"
   },
   {
     "name": "Fibonacci Generator",
     "description": "Fibonacci Generator",
-    "href": "/fibonacci-generator"
+    "href": "/calculators/fibonacci-generator"
   },
   {
     "name": "Average Calculator",
     "description": "Average Calculator – Calculate Mean, Median & More",
-    "href": "/average-calculator"
+    "href": "/calculators/average-calculator"
   },
   {
     "name": "Weighted Average Calculator",
     "description": "Weighted Average Calculator",
-    "href": "/weighted-average-calculator"
+    "href": "/calculators/weighted-average-calculator"
   },
   {
     "name": "Range Calculator",
     "description": "Range Calculator",
-    "href": "/range-calculator"
+    "href": "/calculators/range-calculator"
   },
   {
     "name": "Standard Deviation Calculator",
     "description": "Standard Deviation Calculator",
-    "href": "/standard-deviation-calculator"
+    "href": "/calculators/standard-deviation-calculator"
   }
 ];
 

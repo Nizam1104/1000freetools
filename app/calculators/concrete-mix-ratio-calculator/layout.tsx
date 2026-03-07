@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Concrete Volume Calculator",
     "description": "Concrete Volume Calculator – How Much Concrete Do You Need?",
-    "href": "/concrete-volume-calculator"
+    "href": "/calculators/concrete-volume-calculator"
   },
   {
     "name": "Brick Calculator",
     "description": "Brick Calculator",
-    "href": "/brick-calculator"
+    "href": "/calculators/brick-calculator"
   },
   {
     "name": "Brick Bond Calculator",
     "description": "Brick Bond Calculator – Calculate Bricks Needed for Any Wall Pattern",
-    "href": "/brick-bond-calculator"
+    "href": "/calculators/brick-bond-calculator"
   },
   {
     "name": "Mortar Volume Calculator",
     "description": "Mortar Volume Calculator – Calculate Mortar Needed for Bricklaying & Tiling",
-    "href": "/mortar-volume-calculator"
+    "href": "/calculators/mortar-volume-calculator"
   },
   {
     "name": "Sand Quantity Calculator",
     "description": "Sand Quantity Calculator – Calculate How Much Sand You Need for Construction",
-    "href": "/sand-quantity-calculator"
+    "href": "/calculators/sand-quantity-calculator"
   },
   {
     "name": "Asphalt Quantity Calculator",
     "description": "Asphalt Quantity Calculator – Calculate Asphalt Needed for Roads & Driveways",
-    "href": "/asphalt-quantity-calculator"
+    "href": "/calculators/asphalt-quantity-calculator"
   }
 ];
 

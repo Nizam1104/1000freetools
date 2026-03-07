@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Fraction To Decimal Calculator",
     "description": "Fraction to Decimal Calculator",
-    "href": "/fraction-to-decimal-calculator"
+    "href": "/calculators/fraction-to-decimal-calculator"
   },
   {
     "name": "Simplify Fraction Calculator",
     "description": "Simplify Fraction Calculator",
-    "href": "/simplify-fraction-calculator"
+    "href": "/calculators/simplify-fraction-calculator"
   },
   {
     "name": "Base Converter Calculator",
     "description": "Base Converter Calculator",
-    "href": "/base-converter-calculator"
+    "href": "/calculators/base-converter-calculator"
   },
   {
     "name": "Number To Words Converter",
     "description": "Number to Words Converter",
-    "href": "/number-to-words-converter"
+    "href": "/calculators/number-to-words-converter"
   },
   {
     "name": "Expression Evaluator",
     "description": "Expression Evaluator",
-    "href": "/expression-evaluator"
+    "href": "/calculators/expression-evaluator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

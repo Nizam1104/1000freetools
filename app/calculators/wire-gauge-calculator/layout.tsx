@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Led Resistor Calculator",
     "description": "LED Resistor Calculator – Calculate Current Limiting Resistor",
-    "href": "/led-resistor-calculator"
+    "href": "/calculators/led-resistor-calculator"
   },
   {
     "name": "Ohms Law Calculator",
     "description": "Ohm's Law Calculator",
-    "href": "/ohms-law-calculator"
+    "href": "/calculators/ohms-law-calculator"
   },
   {
     "name": "Resistance Calculator",
     "description": "Resistance Calculator – Calculate Resistance with Ohm's Law",
-    "href": "/resistance-calculator"
+    "href": "/calculators/resistance-calculator"
   },
   {
     "name": "Pcb Trace Width Calculator",
     "description": "PCB Trace Width Calculator – Calculate Copper Trace Width",
-    "href": "/pcb-trace-width-calculator"
+    "href": "/calculators/pcb-trace-width-calculator"
   },
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   },
   {
     "name": "Series Parallel Resistor Calculator",
     "description": "Resistor Calculator – Series and Parallel Resistance Calculator",
-    "href": "/series-parallel-resistor-calculator"
+    "href": "/calculators/series-parallel-resistor-calculator"
   }
 ];
 

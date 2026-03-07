@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Belt Length Calculator",
     "description": "Belt Length Calculator – Calculate V-Belt Length",
-    "href": "/belt-length-calculator"
+    "href": "/calculators/belt-length-calculator"
   },
   {
     "name": "Gear Ratio Calculator",
     "description": "Gear Ratio Calculator – Calculate Gear Train Ratio",
-    "href": "/gear-ratio-calculator"
+    "href": "/calculators/gear-ratio-calculator"
   },
   {
     "name": "Rpm Calculator",
     "description": "RPM Calculator – Calculate Rotational Speed and Gear Ratios",
-    "href": "/rpm-calculator"
+    "href": "/calculators/rpm-calculator"
   },
   {
     "name": "Torque Calculator",
     "description": "Torque Calculator",
-    "href": "/torque-calculator"
+    "href": "/calculators/torque-calculator"
   },
   {
     "name": "Pulley System Calculator",
     "description": "Pulley System Calculator – Block and Tackle Calculator",
-    "href": "/pulley-system-calculator"
+    "href": "/calculators/pulley-system-calculator"
   },
   {
     "name": "Safety Factor Calculator",
     "description": "Safety Factor Calculator – Factor of Safety Calculator",
-    "href": "/safety-factor-calculator"
+    "href": "/calculators/safety-factor-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Range Calculator",
     "description": "Range Calculator",
-    "href": "/range-calculator"
+    "href": "/calculators/range-calculator"
   },
   {
     "name": "Range Estimator Ev",
     "description": "EV Range Estimator – Calculate How Far Your Electric Car Can Go",
-    "href": "/range-estimator-ev"
+    "href": "/calculators/range-estimator-ev"
   },
   {
     "name": "Ranking Percentile Calculator",
     "description": "Ranking Percentile Calculator – Find Your Percentile Rank in Class or Exam",
-    "href": "/ranking-percentile-calculator"
+    "href": "/calculators/ranking-percentile-calculator"
   },
   {
     "name": "Rc Time Constant Calculator",
     "description": "RC Time Constant Calculator – Calculate RC Circuit Time Constant",
-    "href": "/rc-time-constant-calculator"
+    "href": "/calculators/rc-time-constant-calculator"
   },
   {
     "name": "Reaction Yield Calculator",
     "description": "Reaction Yield Calculator – Calculate Theoretical and Percent Yield",
-    "href": "/reaction-yield-calculator"
+    "href": "/calculators/reaction-yield-calculator"
   },
   {
     "name": "Rectangle Area Calculator",
     "description": "Rectangle Area Calculator",
-    "href": "/rectangle-area-calculator"
+    "href": "/calculators/rectangle-area-calculator"
   }
 ];
 

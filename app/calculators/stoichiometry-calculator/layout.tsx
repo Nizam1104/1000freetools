@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Reaction Yield Calculator",
     "description": "Reaction Yield Calculator – Calculate Theoretical and Percent Yield",
-    "href": "/reaction-yield-calculator"
+    "href": "/calculators/reaction-yield-calculator"
   },
   {
     "name": "Empirical Formula Calculator",
     "description": "Empirical Formula Calculator – Find Empirical Formula from Percent Composition",
-    "href": "/empirical-formula-calculator"
+    "href": "/calculators/empirical-formula-calculator"
   },
   {
     "name": "Molecular Mass Calculator",
     "description": "Molecular Mass Calculator – Calculate Molar Mass of Any Compound",
-    "href": "/molecular-mass-calculator"
+    "href": "/calculators/molecular-mass-calculator"
   },
   {
     "name": "Concentration Calculator",
     "description": "Concentration Calculator – Convert Solution Concentration Units",
-    "href": "/concentration-calculator"
+    "href": "/calculators/concentration-calculator"
   },
   {
     "name": "Dilution Calculator",
     "description": "Dilution Calculator – C1V1 = C2V2 Solution Dilution Tool",
-    "href": "/dilution-calculator"
+    "href": "/calculators/dilution-calculator"
   },
   {
     "name": "Molarity Calculator",
     "description": "Molarity Calculator – Calculate Molar Concentration Instantly",
-    "href": "/molarity-calculator"
+    "href": "/calculators/molarity-calculator"
   }
 ];
 

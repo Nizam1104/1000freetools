@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Safety Factor Calculator",
     "description": "Safety Factor Calculator – Factor of Safety Calculator",
-    "href": "/safety-factor-calculator"
+    "href": "/calculators/safety-factor-calculator"
   },
   {
     "name": "Beam Bending Calculator",
     "description": "Beam Bending Calculator – Stress & Deflection for Structural Beams",
-    "href": "/beam-bending-calculator"
+    "href": "/calculators/beam-bending-calculator"
   },
   {
     "name": "Stress Strain Calculator",
     "description": "Stress/Strain Calculator – Mechanical Properties Calculator",
-    "href": "/stress-strain-calculator"
+    "href": "/calculators/stress-strain-calculator"
   },
   {
     "name": "Bolt Torque Calculator",
     "description": "Bolt Torque Calculator – Calculate Bolt Tightening Torque",
-    "href": "/bolt-torque-calculator"
+    "href": "/calculators/bolt-torque-calculator"
   },
   {
     "name": "Rivet Strength Calculator",
     "description": "Rivet Strength Calculator – Calculate Rivet Shear Capacity",
-    "href": "/rivet-strength-calculator"
+    "href": "/calculators/rivet-strength-calculator"
   },
   {
     "name": "Belt Tension Calculator",
     "description": "Belt Tension Calculator – Calculate Belt Drive Tension",
-    "href": "/belt-tension-calculator"
+    "href": "/calculators/belt-tension-calculator"
   }
 ];
 

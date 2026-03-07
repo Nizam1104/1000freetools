@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
@@ -417,24 +425,6 @@ settings:
                 JSON to YAML
               </a>{" "}
               – Convert JSON back to YAML format
-            </li>
-            <li>
-              <a
-                href="/json-tools/yaml-validator"
-                className="text-primary hover:underline"
-              >
-                YAML Validator
-              </a>{" "}
-              – Check YAML syntax for errors
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Beautify the converted JSON output
             </li>
           </ul>
         </div>

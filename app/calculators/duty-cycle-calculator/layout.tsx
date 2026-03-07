@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Pwm Frequency Calculator",
     "description": "PWM Frequency Calculator – Calculate PWM Output Frequency",
-    "href": "/pwm-frequency-calculator"
+    "href": "/calculators/pwm-frequency-calculator"
   },
   {
     "name": "Frequency Calculator",
     "description": "Frequency Calculator – Calculate Frequency from Period and More",
-    "href": "/frequency-calculator"
+    "href": "/calculators/frequency-calculator"
   },
   {
     "name": "Rc Time Constant Calculator",
     "description": "RC Time Constant Calculator – Calculate RC Circuit Time Constant",
-    "href": "/rc-time-constant-calculator"
+    "href": "/calculators/rc-time-constant-calculator"
   },
   {
     "name": "Rl Time Constant Calculator",
     "description": "RL Time Constant Calculator – Calculate RL Circuit Time Constant",
-    "href": "/rl-time-constant-calculator"
+    "href": "/calculators/rl-time-constant-calculator"
   },
   {
     "name": "Rlc Resonance Calculator",
     "description": "RLC Resonance Calculator – Calculate Resonant Frequency",
-    "href": "/rlc-resonance-calculator"
+    "href": "/calculators/rlc-resonance-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

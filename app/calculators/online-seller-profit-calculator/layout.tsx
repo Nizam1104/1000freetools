@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Npv Calculator",
     "description": "NPV Calculator – Net Present Value",
-    "href": "/npv-calculator"
+    "href": "/calculators/npv-calculator"
   },
   {
     "name": "Nuclear Decay Half Life Calculator",
     "description": "Nuclear Decay Half-Life Calculator – Radioactive Decay",
-    "href": "/nuclear-decay-half-life-calculator"
+    "href": "/calculators/nuclear-decay-half-life-calculator"
   },
   {
     "name": "Number To Words Converter",
     "description": "Number to Words Converter",
-    "href": "/number-to-words-converter"
+    "href": "/calculators/number-to-words-converter"
   },
   {
     "name": "Office Space Per Employee Calculator",
     "description": "Office Space Per Employee Calculator – How Much Office Space Do You Need?",
-    "href": "/office-space-per-employee-calculator"
+    "href": "/calculators/office-space-per-employee-calculator"
   },
   {
     "name": "Ohms Law Calculator",
     "description": "Ohm's Law Calculator",
-    "href": "/ohms-law-calculator"
+    "href": "/calculators/ohms-law-calculator"
   },
   {
     "name": "Operating Margin Calculator",
     "description": "Operating Margin Calculator",
-    "href": "/operating-margin-calculator"
+    "href": "/calculators/operating-margin-calculator"
   }
 ];
 

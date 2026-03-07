@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ev Battery Capacity Estimator",
     "description": "EV Battery Capacity Estimator – Calculate Your Electric Car&apos;s Real Battery Life",
-    "href": "/ev-battery-capacity-estimator"
+    "href": "/calculators/ev-battery-capacity-estimator"
   },
   {
     "name": "Charging Cost Ev Calculator",
     "description": "EV Charging Cost Calculator – Calculate the Cost to Charge Your Electric Car",
-    "href": "/charging-cost-ev-calculator"
+    "href": "/calculators/charging-cost-ev-calculator"
   },
   {
     "name": "Fuel Cost Calculator",
     "description": "Fuel Cost Calculator – Estimate Your Trip Fuel Expenses Instantly",
-    "href": "/fuel-cost-calculator"
+    "href": "/calculators/fuel-cost-calculator"
   },
   {
     "name": "Fuel Efficiency Comparison Calculator",
     "description": "Fuel Efficiency Comparison Calculator – Compare Cars by MPG & Running Cost",
-    "href": "/fuel-efficiency-comparison-calculator"
+    "href": "/calculators/fuel-efficiency-comparison-calculator"
   },
   {
     "name": "Vehicle Depreciation Calculator",
     "description": "Vehicle Depreciation Calculator – Find Out How Much Your Car Has Lost in Value",
-    "href": "/vehicle-depreciation-calculator"
+    "href": "/calculators/vehicle-depreciation-calculator"
   },
   {
     "name": "Car Loan Calculator",
     "description": "Car Loan Calculator – Calculate Auto Loan Payments",
-    "href": "/car-loan-calculator"
+    "href": "/calculators/car-loan-calculator"
   }
 ];
 

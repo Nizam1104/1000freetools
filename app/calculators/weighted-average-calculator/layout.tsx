@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Average Calculator",
     "description": "Average Calculator – Calculate Mean, Median & More",
-    "href": "/average-calculator"
+    "href": "/calculators/average-calculator"
   },
   {
     "name": "Median Calculator",
     "description": "Median Calculator",
-    "href": "/median-calculator"
+    "href": "/calculators/median-calculator"
   },
   {
     "name": "Mode Calculator",
     "description": "Mode Calculator",
-    "href": "/mode-calculator"
+    "href": "/calculators/mode-calculator"
   },
   {
     "name": "Range Calculator",
     "description": "Range Calculator",
-    "href": "/range-calculator"
+    "href": "/calculators/range-calculator"
   },
   {
     "name": "Standard Deviation Calculator",
     "description": "Standard Deviation Calculator",
-    "href": "/standard-deviation-calculator"
+    "href": "/calculators/standard-deviation-calculator"
   },
   {
     "name": "Variance Calculator",
     "description": "Variance Calculator – Calculate Population and Sample Variance",
-    "href": "/variance-calculator"
+    "href": "/calculators/variance-calculator"
   }
 ];
 

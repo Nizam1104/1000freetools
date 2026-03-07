@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Percentage Calculator",
     "description": "Percentage Calculator – Calculate Percentages Instantly",
-    "href": "/percentage-calculator"
+    "href": "/calculators/percentage-calculator"
   },
   {
     "name": "Average Calculator",
     "description": "Average Calculator – Calculate Mean, Median & More",
-    "href": "/average-calculator"
+    "href": "/calculators/average-calculator"
   },
   {
     "name": "Discount Calculator",
     "description": "Discount Calculator – Calculate Sale Price & Savings",
-    "href": "/discount-calculator"
+    "href": "/calculators/discount-calculator"
   },
   {
     "name": "Discount Stacking Calculator",
     "description": "Discount Stacking Calculator – Calculate Final Price After Multiple Discounts",
-    "href": "/discount-stacking-calculator"
+    "href": "/calculators/discount-stacking-calculator"
   },
   {
     "name": "Margin Calculator",
     "description": "Profit Margin Calculator",
-    "href": "/margin-calculator"
+    "href": "/calculators/margin-calculator"
   },
   {
     "name": "Markup Calculator",
     "description": "Markup Calculator",
-    "href": "/markup-calculator"
+    "href": "/calculators/markup-calculator"
   }
 ];
 

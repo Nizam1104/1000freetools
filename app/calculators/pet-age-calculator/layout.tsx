@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Baby Age Calculator",
     "description": "Baby Age Calculator – Free Infant Age Calculator in Weeks and Months",
-    "href": "/baby-age-calculator"
+    "href": "/calculators/baby-age-calculator"
   },
   {
     "name": "Child Height Predictor",
     "description": "Child Height Predictor – Free Adult Height Calculator",
-    "href": "/child-height-predictor"
+    "href": "/calculators/child-height-predictor"
   },
   {
     "name": "Toddler Growth Chart Calculator",
     "description": "Toddler Growth Chart Calculator – Track Height & Weight Percentiles for Your Child",
-    "href": "/toddler-growth-chart-calculator"
+    "href": "/calculators/toddler-growth-chart-calculator"
   },
   {
     "name": "Bird Cage Size Calculator",
     "description": "Bird Cage Size Calculator – Find the Minimum Cage Size for Your Bird",
-    "href": "/bird-cage-size-calculator"
+    "href": "/calculators/bird-cage-size-calculator"
   },
   {
     "name": "Cat Calorie Calculator",
     "description": "Cat Calorie Calculator – Calculate Your Cat&apos;s Daily Calorie Requirements",
-    "href": "/cat-calorie-calculator"
+    "href": "/calculators/cat-calorie-calculator"
   },
   {
     "name": "Dog Calorie Calculator",
     "description": "Dog Calorie Calculator – Find Out How Many Calories Your Dog Needs Per Day",
-    "href": "/dog-calorie-calculator"
+    "href": "/calculators/dog-calorie-calculator"
   }
 ];
 

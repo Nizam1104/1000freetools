@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Adc Resolution Calculator",
     "description": "ADC Resolution Calculator – Calculate ADC LSB Size",
-    "href": "/adc-resolution-calculator"
+    "href": "/calculators/adc-resolution-calculator"
   },
   {
     "name": "Base Converter Calculator",
     "description": "Base Converter Calculator",
-    "href": "/base-converter-calculator"
+    "href": "/calculators/base-converter-calculator"
   },
   {
     "name": "Db Calculator",
     "description": "dB Calculator – Decibel to Ratio Converter for Audio and RF",
-    "href": "/db-calculator"
+    "href": "/calculators/db-calculator"
   },
   {
     "name": "Pwm Frequency Calculator",
     "description": "PWM Frequency Calculator – Calculate PWM Output Frequency",
-    "href": "/pwm-frequency-calculator"
+    "href": "/calculators/pwm-frequency-calculator"
   },
   {
     "name": "Rc Time Constant Calculator",
     "description": "RC Time Constant Calculator – Calculate RC Circuit Time Constant",
-    "href": "/rc-time-constant-calculator"
+    "href": "/calculators/rc-time-constant-calculator"
   },
   {
     "name": "Rl Time Constant Calculator",
     "description": "RL Time Constant Calculator – Calculate RL Circuit Time Constant",
-    "href": "/rl-time-constant-calculator"
+    "href": "/calculators/rl-time-constant-calculator"
   }
 ];
 

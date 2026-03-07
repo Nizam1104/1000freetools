@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Logarithm Calculator",
     "description": "Logarithm Calculator",
-    "href": "/logarithm-calculator"
+    "href": "/calculators/logarithm-calculator"
   },
   {
     "name": "Exponent Calculator",
     "description": "Exponent Calculator",
-    "href": "/exponent-calculator"
+    "href": "/calculators/exponent-calculator"
   },
   {
     "name": "Root Calculator",
     "description": "Root Calculator – Calculate Square, Cube and Nth Roots",
-    "href": "/root-calculator"
+    "href": "/calculators/root-calculator"
   },
   {
     "name": "Scientific Notation Calculator",
     "description": "Scientific Notation Calculator – Convert to Standard Form",
-    "href": "/scientific-notation-calculator"
+    "href": "/calculators/scientific-notation-calculator"
   },
   {
     "name": "Expression Evaluator",
     "description": "Expression Evaluator",
-    "href": "/expression-evaluator"
+    "href": "/calculators/expression-evaluator"
   },
   {
     "name": "Base Converter Calculator",
     "description": "Base Converter Calculator",
-    "href": "/base-converter-calculator"
+    "href": "/calculators/base-converter-calculator"
   }
 ];
 

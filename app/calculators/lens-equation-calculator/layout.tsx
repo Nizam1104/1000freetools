@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Focal Length Calculator",
     "description": "Focal Length Calculator – Lensmaker's Equation",
-    "href": "/focal-length-calculator"
+    "href": "/calculators/focal-length-calculator"
   },
   {
     "name": "Aperture Depth Of Field Calculator",
     "description": "Depth of Field Calculator – Calculate DOF from Aperture, Focal Length & Distance",
-    "href": "/aperture-depth-of-field-calculator"
+    "href": "/calculators/aperture-depth-of-field-calculator"
   },
   {
     "name": "Camera Exposure Calculator",
     "description": "Camera Exposure Calculator – Find the Perfect Aperture, Shutter Speed & ISO",
-    "href": "/camera-exposure-calculator"
+    "href": "/calculators/camera-exposure-calculator"
   },
   {
     "name": "Brewster Angle Calculator",
     "description": "Brewster Angle Calculator – Polarization Angle Calculator",
-    "href": "/brewster-angle-calculator"
+    "href": "/calculators/brewster-angle-calculator"
   },
   {
     "name": "Refraction Index Calculator",
     "description": "Refraction Index Calculator – Calculate Refractive Index",
-    "href": "/refraction-index-calculator"
+    "href": "/calculators/refraction-index-calculator"
   },
   {
     "name": "Perspective Angle Calculator",
     "description": "Perspective Angle Calculator – Calculate Vanishing Points for Technical Drawing",
-    "href": "/perspective-angle-calculator"
+    "href": "/calculators/perspective-angle-calculator"
   }
 ];
 

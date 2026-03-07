@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Camera Exposure Calculator",
     "description": "Camera Exposure Calculator – Find the Perfect Aperture, Shutter Speed & ISO",
-    "href": "/camera-exposure-calculator"
+    "href": "/calculators/camera-exposure-calculator"
   },
   {
     "name": "Focal Length Calculator",
     "description": "Focal Length Calculator – Lensmaker's Equation",
-    "href": "/focal-length-calculator"
+    "href": "/calculators/focal-length-calculator"
   },
   {
     "name": "Iso Noise Predictor",
     "description": "ISO Noise Predictor – Estimate Image Noise Level for Any Camera ISO Setting",
-    "href": "/iso-noise-predictor"
+    "href": "/calculators/iso-noise-predictor"
   },
   {
     "name": "Shutter Speed Calculator",
     "description": "Shutter Speed Calculator – Find the Right Shutter Speed for Sharp or Blurred Shots",
-    "href": "/shutter-speed-calculator"
+    "href": "/calculators/shutter-speed-calculator"
   },
   {
     "name": "Lens Equation Calculator",
     "description": "Lens Equation Calculator – Thin Lens Formula Calculator",
-    "href": "/lens-equation-calculator"
+    "href": "/calculators/lens-equation-calculator"
   },
   {
     "name": "Perspective Angle Calculator",
     "description": "Perspective Angle Calculator – Calculate Vanishing Points for Technical Drawing",
-    "href": "/perspective-angle-calculator"
+    "href": "/calculators/perspective-angle-calculator"
   }
 ];
 

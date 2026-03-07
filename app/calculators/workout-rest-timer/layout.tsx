@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Meditation Timer Scheduler",
     "description": "Meditation Timer Scheduler – Set Up & Time Your Daily Meditation Sessions",
-    "href": "/meditation-timer-scheduler"
+    "href": "/calculators/meditation-timer-scheduler"
   },
   {
     "name": "Breathing Exercise Timer",
     "description": "Breathing Exercise Timer – Guided Timer for Box Breathing, 4-7-8 & More",
-    "href": "/breathing-exercise-timer"
+    "href": "/calculators/breathing-exercise-timer"
   },
   {
     "name": "Sleep Cycle Calculator",
     "description": "Sleep Cycle Calculator – Wake Up Refreshed Every Morning",
-    "href": "/sleep-cycle-calculator"
+    "href": "/calculators/sleep-cycle-calculator"
   },
   {
     "name": "Sleep Debt Calculator",
     "description": "Sleep Debt Calculator – How Much Sleep Are You Missing?",
-    "href": "/sleep-debt-calculator"
+    "href": "/calculators/sleep-debt-calculator"
   },
   {
     "name": "Slope Calculator",
     "description": "Slope Calculator",
-    "href": "/slope-calculator"
+    "href": "/calculators/slope-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

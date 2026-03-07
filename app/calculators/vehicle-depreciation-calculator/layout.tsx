@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Car Loan Calculator",
     "description": "Car Loan Calculator – Calculate Auto Loan Payments",
-    "href": "/car-loan-calculator"
+    "href": "/calculators/car-loan-calculator"
   },
   {
     "name": "Depreciation Calculator",
     "description": "Depreciation Calculator",
-    "href": "/depreciation-calculator"
+    "href": "/calculators/depreciation-calculator"
   },
   {
     "name": "Fuel Cost Calculator",
     "description": "Fuel Cost Calculator – Estimate Your Trip Fuel Expenses Instantly",
-    "href": "/fuel-cost-calculator"
+    "href": "/calculators/fuel-cost-calculator"
   },
   {
     "name": "Fuel Efficiency Comparison Calculator",
     "description": "Fuel Efficiency Comparison Calculator – Compare Cars by MPG & Running Cost",
-    "href": "/fuel-efficiency-comparison-calculator"
+    "href": "/calculators/fuel-efficiency-comparison-calculator"
   },
   {
     "name": "Range Estimator Ev",
     "description": "EV Range Estimator – Calculate How Far Your Electric Car Can Go",
-    "href": "/range-estimator-ev"
+    "href": "/calculators/range-estimator-ev"
   },
   {
     "name": "Ev Battery Capacity Estimator",
     "description": "EV Battery Capacity Estimator – Calculate Your Electric Car&apos;s Real Battery Life",
-    "href": "/ev-battery-capacity-estimator"
+    "href": "/calculators/ev-battery-capacity-estimator"
   }
 ];
 

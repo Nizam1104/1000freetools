@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Torque Calculator",
     "description": "Torque Calculator",
-    "href": "/torque-calculator"
+    "href": "/calculators/torque-calculator"
   },
   {
     "name": "Belt Tension Calculator",
     "description": "Belt Tension Calculator – Calculate Belt Drive Tension",
-    "href": "/belt-tension-calculator"
+    "href": "/calculators/belt-tension-calculator"
   },
   {
     "name": "Shaft Torque Calculator",
     "description": "Shaft Torque Calculator – Calculate Shaft Torque",
-    "href": "/shaft-torque-calculator"
+    "href": "/calculators/shaft-torque-calculator"
   },
   {
     "name": "Robot Motor Torque Calculator",
     "description": "Robot Motor Torque Calculator – Calculate Required Torque for Motors & Actuators",
-    "href": "/robot-motor-torque-calculator"
+    "href": "/calculators/robot-motor-torque-calculator"
   },
   {
     "name": "Safety Factor Calculator",
     "description": "Safety Factor Calculator – Factor of Safety Calculator",
-    "href": "/safety-factor-calculator"
+    "href": "/calculators/safety-factor-calculator"
   },
   {
     "name": "Fastener Load Calculator",
     "description": "Fastener Load Calculator – Calculate Fastener Capacity",
-    "href": "/fastener-load-calculator"
+    "href": "/calculators/fastener-load-calculator"
   }
 ];
 

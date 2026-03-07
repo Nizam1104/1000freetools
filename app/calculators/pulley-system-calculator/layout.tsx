@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Belt Length Calculator",
     "description": "Belt Length Calculator – Calculate V-Belt Length",
-    "href": "/belt-length-calculator"
+    "href": "/calculators/belt-length-calculator"
   },
   {
     "name": "Belt Tension Calculator",
     "description": "Belt Tension Calculator – Calculate Belt Drive Tension",
-    "href": "/belt-tension-calculator"
+    "href": "/calculators/belt-tension-calculator"
   },
   {
     "name": "Gear Ratio Calculator",
     "description": "Gear Ratio Calculator – Calculate Gear Train Ratio",
-    "href": "/gear-ratio-calculator"
+    "href": "/calculators/gear-ratio-calculator"
   },
   {
     "name": "Safety Factor Calculator",
     "description": "Safety Factor Calculator – Factor of Safety Calculator",
-    "href": "/safety-factor-calculator"
+    "href": "/calculators/safety-factor-calculator"
   },
   {
     "name": "Beam Bending Calculator",
     "description": "Beam Bending Calculator – Stress & Deflection for Structural Beams",
-    "href": "/beam-bending-calculator"
+    "href": "/calculators/beam-bending-calculator"
   },
   {
     "name": "Fastener Load Calculator",
     "description": "Fastener Load Calculator – Calculate Fastener Capacity",
-    "href": "/fastener-load-calculator"
+    "href": "/calculators/fastener-load-calculator"
   }
 ];
 

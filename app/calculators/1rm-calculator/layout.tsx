@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Strength Training Pr Estimator",
     "description": "Strength Training PR Estimator – Calculate Your One-Rep Max & Training Weights",
-    "href": "/strength-training-pr-estimator"
+    "href": "/calculators/strength-training-pr-estimator"
   },
   {
     "name": "Warm Up Calculator",
     "description": "Warm-Up Calculator – Build the Perfect Warm-Up Set Progression",
-    "href": "/warm-up-calculator"
+    "href": "/calculators/warm-up-calculator"
   },
   {
     "name": "Workout Max Reps Estimator",
     "description": "Max Reps Estimator – How Many Reps Can You Do at a Given Weight?",
-    "href": "/workout-max-reps-estimator"
+    "href": "/calculators/workout-max-reps-estimator"
   },
   {
     "name": "Workout Volume Calculator",
     "description": "Workout Volume Calculator – Track Your Total Training Volume",
-    "href": "/workout-volume-calculator"
+    "href": "/calculators/workout-volume-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "Running Pace Calculator",
     "description": "Running Pace Calculator",
-    "href": "/running-pace-calculator"
+    "href": "/calculators/running-pace-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Series Parallel Resistor Calculator",
     "description": "Resistor Calculator – Series and Parallel Resistance Calculator",
-    "href": "/series-parallel-resistor-calculator"
+    "href": "/calculators/series-parallel-resistor-calculator"
   },
   {
     "name": "Inductor Calculations",
     "description": "Inductor Calculator – Inductance and Inductive Reactance Calculator",
-    "href": "/inductor-calculations"
+    "href": "/calculators/inductor-calculations"
   },
   {
     "name": "Rc Time Constant Calculator",
     "description": "RC Time Constant Calculator – Calculate RC Circuit Time Constant",
-    "href": "/rc-time-constant-calculator"
+    "href": "/calculators/rc-time-constant-calculator"
   },
   {
     "name": "Rl Time Constant Calculator",
     "description": "RL Time Constant Calculator – Calculate RL Circuit Time Constant",
-    "href": "/rl-time-constant-calculator"
+    "href": "/calculators/rl-time-constant-calculator"
   },
   {
     "name": "Rlc Resonance Calculator",
     "description": "RLC Resonance Calculator – Calculate Resonant Frequency",
-    "href": "/rlc-resonance-calculator"
+    "href": "/calculators/rlc-resonance-calculator"
   },
   {
     "name": "Ohms Law Calculator",
     "description": "Ohm's Law Calculator",
-    "href": "/ohms-law-calculator"
+    "href": "/calculators/ohms-law-calculator"
   }
 ];
 

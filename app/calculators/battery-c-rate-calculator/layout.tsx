@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Battery Backup Time Calculator",
     "description": "Battery Backup Time Calculator – How Long Will Your Battery Last?",
-    "href": "/battery-backup-time-calculator"
+    "href": "/calculators/battery-backup-time-calculator"
   },
   {
     "name": "Battery Life Calculator",
     "description": "Battery Life Calculator – Calculate Battery Runtime",
-    "href": "/battery-life-calculator"
+    "href": "/calculators/battery-life-calculator"
   },
   {
     "name": "Charging Cost Ev Calculator",
     "description": "EV Charging Cost Calculator – Calculate the Cost to Charge Your Electric Car",
-    "href": "/charging-cost-ev-calculator"
+    "href": "/calculators/charging-cost-ev-calculator"
   },
   {
     "name": "Mobile Charging Time Calculator",
     "description": "Phone Charging Time Calculator – How Long Will It Take to Charge Your Phone?",
-    "href": "/mobile-charging-time-calculator"
+    "href": "/calculators/mobile-charging-time-calculator"
   },
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   },
   {
     "name": "Inverter Capacity Calculator",
     "description": "Inverter Capacity Calculator – Size Your Inverter",
-    "href": "/inverter-capacity-calculator"
+    "href": "/calculators/inverter-capacity-calculator"
   }
 ];
 

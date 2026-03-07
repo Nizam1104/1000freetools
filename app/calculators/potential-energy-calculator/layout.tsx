@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Energy Calculator",
     "description": "Energy Calculator",
-    "href": "/energy-calculator"
+    "href": "/calculators/energy-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Spring Force Hookes Law Calculator",
     "description": "Hooke's Law Calculator – Spring Force and Displacement",
-    "href": "/spring-force-hookes-law-calculator"
+    "href": "/calculators/spring-force-hookes-law-calculator"
   },
   {
     "name": "Work Calculator",
     "description": "Work Calculator",
-    "href": "/work-calculator"
+    "href": "/calculators/work-calculator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   },
   {
     "name": "Gravitational Field Calculator",
     "description": "Gravitational Field Calculator – Calculate Gravitational Field Strength",
-    "href": "/gravitational-field-calculator"
+    "href": "/calculators/gravitational-field-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Dew Point Calculator",
     "description": "Dew Point Calculator – Calculate Dew Point from Temperature & Humidity",
-    "href": "/dew-point-calculator"
+    "href": "/calculators/dew-point-calculator"
   },
   {
     "name": "Humidity Calculator",
     "description": "Humidity Calculator – Calculate Relative, Absolute & Specific Humidity",
-    "href": "/humidity-calculator"
+    "href": "/calculators/humidity-calculator"
   },
   {
     "name": "Wind Chill Calculator",
     "description": "Wind Chill Calculator – Find Out What the Temperature Really Feels Like",
-    "href": "/wind-chill-calculator"
+    "href": "/calculators/wind-chill-calculator"
   },
   {
     "name": "Air Density Calculator",
     "description": "Air Density Calculator – Calculate Air Density by Temperature & Pressure",
-    "href": "/air-density-calculator"
+    "href": "/calculators/air-density-calculator"
   },
   {
     "name": "Mountain Oxygen Calculator",
     "description": "Mountain Oxygen Calculator – Calculate Available Oxygen at Any Altitude",
-    "href": "/mountain-oxygen-calculator"
+    "href": "/calculators/mountain-oxygen-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

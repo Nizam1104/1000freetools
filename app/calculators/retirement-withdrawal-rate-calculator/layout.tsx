@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "4 Percent Rule Retirement Calculator",
     "description": "4% Rule Retirement Calculator",
-    "href": "/4-percent-rule-retirement-calculator"
+    "href": "/calculators/4-percent-rule-retirement-calculator"
   },
   {
     "name": "Fire Number Calculator",
     "description": "FIRE Number Calculator – Financial Independence",
-    "href": "/fire-number-calculator"
+    "href": "/calculators/fire-number-calculator"
   },
   {
     "name": "Retirement Age Calculator",
     "description": "Retirement Age Calculator – Free Retirement Date Calculator",
-    "href": "/retirement-age-calculator"
+    "href": "/calculators/retirement-age-calculator"
   },
   {
     "name": "Retirement Corpus Calculator",
     "description": "Retirement Corpus Calculator",
-    "href": "/retirement-corpus-calculator"
+    "href": "/calculators/retirement-corpus-calculator"
   },
   {
     "name": "Rule Of 72 Calculator",
     "description": "Rule of 72 Calculator",
-    "href": "/rule-of-72-calculator"
+    "href": "/calculators/rule-of-72-calculator"
   },
   {
     "name": "Savings Goal Calculator",
     "description": "Savings Goal Calculator",
-    "href": "/savings-goal-calculator"
+    "href": "/calculators/savings-goal-calculator"
   }
 ];
 

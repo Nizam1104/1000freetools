@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Pace To Speed Converter",
     "description": "Pace to Speed Converter – Convert Running Pace to Speed Instantly",
-    "href": "/pace-to-speed-converter"
+    "href": "/calculators/pace-to-speed-converter"
   },
   {
     "name": "Speed To Pace Converter",
     "description": "Speed to Pace Converter – Convert Speed to Running Pace Online",
-    "href": "/speed-to-pace-converter"
+    "href": "/calculators/speed-to-pace-converter"
   },
   {
     "name": "Marathon Pace Calculator",
     "description": "Marathon Pace Calculator – Calculate Your Target Running Pace",
-    "href": "/marathon-pace-calculator"
+    "href": "/calculators/marathon-pace-calculator"
   },
   {
     "name": "Running Pace Calculator",
     "description": "Running Pace Calculator",
-    "href": "/running-pace-calculator"
+    "href": "/calculators/running-pace-calculator"
   },
   {
     "name": "Acceleration Calculator",
     "description": "Acceleration Calculator",
-    "href": "/acceleration-calculator"
+    "href": "/calculators/acceleration-calculator"
   },
   {
     "name": "Velocity Calculator",
     "description": "Velocity Calculator – Calculate Speed with Direction",
-    "href": "/velocity-calculator"
+    "href": "/calculators/velocity-calculator"
   }
 ];
 

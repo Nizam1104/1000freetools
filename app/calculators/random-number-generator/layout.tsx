@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Combination Calculator",
     "description": "Combination Calculator",
-    "href": "/combination-calculator"
+    "href": "/calculators/combination-calculator"
   },
   {
     "name": "Factorial Calculator",
     "description": "Factorial Calculator",
-    "href": "/factorial-calculator"
+    "href": "/calculators/factorial-calculator"
   },
   {
     "name": "Permutation Calculator",
     "description": "Permutation Calculator",
-    "href": "/permutation-calculator"
+    "href": "/calculators/permutation-calculator"
   },
   {
     "name": "Gacha Pull Probability Calculator",
     "description": "Gacha Pull Probability Calculator – Calculate Your Odds in Gacha Games",
-    "href": "/gacha-pull-probability-calculator"
+    "href": "/calculators/gacha-pull-probability-calculator"
   },
   {
     "name": "Loot Probability Calculator",
     "description": "Loot Drop Probability Calculator – Calculate Your Chances of Getting Rare Items",
-    "href": "/loot-probability-calculator"
+    "href": "/calculators/loot-probability-calculator"
   },
   {
     "name": "Z Score Calculator",
     "description": "Z-Score Calculator",
-    "href": "/z-score-calculator"
+    "href": "/calculators/z-score-calculator"
   }
 ];
 

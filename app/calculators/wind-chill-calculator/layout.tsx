@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Weight Distribution Calculator",
     "description": "Weight Distribution Calculator – Calculate Load Distribution Across Axles & Points",
-    "href": "/weight-distribution-calculator"
+    "href": "/calculators/weight-distribution-calculator"
   },
   {
     "name": "Weight Loss Time Calculator",
     "description": "Weight Loss Time Calculator – How Long Will It Take to Lose Weight?",
-    "href": "/weight-loss-time-calculator"
+    "href": "/calculators/weight-loss-time-calculator"
   },
   {
     "name": "Weighted Average Calculator",
     "description": "Weighted Average Calculator",
-    "href": "/weighted-average-calculator"
+    "href": "/calculators/weighted-average-calculator"
   },
   {
     "name": "Welding Strength Calculator",
     "description": "Welding Strength Calculator – Calculate Weld Strength",
-    "href": "/welding-strength-calculator"
+    "href": "/calculators/welding-strength-calculator"
   },
   {
     "name": "Win Rate Estimator",
     "description": "Win Rate Calculator – Calculate Your Gaming Win Rate & Win/Loss Ratio",
-    "href": "/win-rate-estimator"
+    "href": "/calculators/win-rate-estimator"
   },
   {
     "name": "Window Area Calculator",
     "description": "Window Area Calculator – Calculate Total Window Size for Glass & Heat Loss",
-    "href": "/window-area-calculator"
+    "href": "/calculators/window-area-calculator"
   }
 ];
 

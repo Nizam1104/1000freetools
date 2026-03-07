@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Crop Yield Estimator",
     "description": "Crop Yield Estimator – Predict Your Farm's Harvest Before It Happens",
-    "href": "/crop-yield-estimator"
+    "href": "/calculators/crop-yield-estimator"
   },
   {
     "name": "Irrigation Water Calculator",
     "description": "Irrigation Water Calculator – Calculate Water Needed for Crop Irrigation",
-    "href": "/irrigation-water-calculator"
+    "href": "/calculators/irrigation-water-calculator"
   },
   {
     "name": "Pesticide Dilution Calculator",
     "description": "Pesticide Dilution Calculator – Calculate the Right Pesticide-to-Water Ratio",
-    "href": "/pesticide-dilution-calculator"
+    "href": "/calculators/pesticide-dilution-calculator"
   },
   {
     "name": "Seed Rate Calculator",
     "description": "Seed Rate Calculator – Calculate Seeds Per Acre for Optimal Crop Yield",
-    "href": "/seed-rate-calculator"
+    "href": "/calculators/seed-rate-calculator"
   },
   {
     "name": "Soil Ph Adjustment Calculator",
     "description": "Soil pH Adjustment Calculator – How Much Lime or Sulfur to Add to Your Soil",
-    "href": "/soil-ph-adjustment-calculator"
+    "href": "/calculators/soil-ph-adjustment-calculator"
   },
   {
     "name": "Water Requirement Calculator",
     "description": "Water Intake Calculator – How Much Water Should You Drink Per Day?",
-    "href": "/water-requirement-calculator"
+    "href": "/calculators/water-requirement-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Pump Horsepower Calculator",
     "description": "Pump Horsepower Calculator – Calculate Required Pump Power",
-    "href": "/pump-horsepower-calculator"
+    "href": "/calculators/pump-horsepower-calculator"
   },
   {
     "name": "Torque To Power Converter",
     "description": "Torque to Power Converter – Convert Engine Torque & RPM to HP or kW",
-    "href": "/torque-to-power-converter"
+    "href": "/calculators/torque-to-power-converter"
   },
   {
     "name": "Torque Calculator",
     "description": "Torque Calculator",
-    "href": "/torque-calculator"
+    "href": "/calculators/torque-calculator"
   },
   {
     "name": "Robot Motor Torque Calculator",
     "description": "Robot Motor Torque Calculator – Calculate Required Torque for Motors & Actuators",
-    "href": "/robot-motor-torque-calculator"
+    "href": "/calculators/robot-motor-torque-calculator"
   },
   {
     "name": "Shaft Torque Calculator",
     "description": "Shaft Torque Calculator – Calculate Shaft Torque",
-    "href": "/shaft-torque-calculator"
+    "href": "/calculators/shaft-torque-calculator"
   },
   {
     "name": "Rpm Calculator",
     "description": "RPM Calculator – Calculate Rotational Speed and Gear Ratios",
-    "href": "/rpm-calculator"
+    "href": "/calculators/rpm-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Glycemic Index Calculator",
     "description": "Glycemic Index Calculator – Find the GI of Any Food",
-    "href": "/glycemic-index-calculator"
+    "href": "/calculators/glycemic-index-calculator"
   },
   {
     "name": "Carb Intake Calculator",
     "description": "Carb Intake Calculator – Daily Carbohydrate Needs Calculator",
-    "href": "/carb-intake-calculator"
+    "href": "/calculators/carb-intake-calculator"
   },
   {
     "name": "Fat Intake Calculator",
     "description": "Fat Intake Calculator – How Much Fat Should You Eat Daily?",
-    "href": "/fat-intake-calculator"
+    "href": "/calculators/fat-intake-calculator"
   },
   {
     "name": "Ketogenic Macro Calculator",
     "description": "Keto Macro Calculator – Perfect Macros for a Ketogenic Diet",
-    "href": "/ketogenic-macro-calculator"
+    "href": "/calculators/ketogenic-macro-calculator"
   },
   {
     "name": "Macro Calculator",
     "description": "Macro Calculator – Calculate Your Daily Macros for Any Goal",
-    "href": "/macro-calculator"
+    "href": "/calculators/macro-calculator"
   },
   {
     "name": "Calorie Deficit Calculator",
     "description": "Calorie Deficit Calculator – How Many Calories to Cut to Lose Weight?",
-    "href": "/calorie-deficit-calculator"
+    "href": "/calculators/calorie-deficit-calculator"
   }
 ];
 

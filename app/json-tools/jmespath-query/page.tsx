@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -372,37 +380,6 @@ export default function JmespathQueryPage() {
               </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-filter"
-                className="text-primary hover:underline"
-              >
-                JSON Filter
-              </a>{" "}
-              – Filter JSON arrays by conditions
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-extract-subjson"
-                className="text-primary hover:underline"
-              >
-                JSON Extract Sub-JSON
-              </a>{" "}
-              – Extract nested data by path
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-key-extractor"
-                className="text-primary hover:underline"
-              >
-                JSON Key Extractor
-              </a>{" "}
-              – List all keys in JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

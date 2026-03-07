@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ebitda Calculator",
     "description": "EBITDA Calculator",
-    "href": "/ebitda-calculator"
+    "href": "/calculators/ebitda-calculator"
   },
   {
     "name": "Net Profit Margin Calculator",
     "description": "Net Profit Margin Calculator",
-    "href": "/net-profit-margin-calculator"
+    "href": "/calculators/net-profit-margin-calculator"
   },
   {
     "name": "Operating Margin Calculator",
     "description": "Operating Margin Calculator",
-    "href": "/operating-margin-calculator"
+    "href": "/calculators/operating-margin-calculator"
   },
   {
     "name": "Profit Margin Calculator",
     "description": "Profit Margin Calculator – Calculate Gross Profit & Markup",
-    "href": "/profit-margin-calculator"
+    "href": "/calculators/profit-margin-calculator"
   },
   {
     "name": "Cost Of Capital Calculator",
     "description": "Cost of Capital Calculator",
-    "href": "/cost-of-capital-calculator"
+    "href": "/calculators/cost-of-capital-calculator"
   },
   {
     "name": "Wacc Calculator",
     "description": "WACC Calculator – Weighted Average Cost of Capital",
-    "href": "/wacc-calculator"
+    "href": "/calculators/wacc-calculator"
   }
 ];
 

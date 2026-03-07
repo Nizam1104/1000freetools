@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Relativistic Energy Calculator",
     "description": "Relativistic Energy Calculator – Special Relativity Calculator",
-    "href": "/relativistic-energy-calculator"
+    "href": "/calculators/relativistic-energy-calculator"
   },
   {
     "name": "Energy Calculator",
     "description": "Energy Calculator",
-    "href": "/energy-calculator"
+    "href": "/calculators/energy-calculator"
   },
   {
     "name": "Wavelength Calculator",
     "description": "Wavelength Calculator – Calculate Wavelength from Frequency",
-    "href": "/wavelength-calculator"
+    "href": "/calculators/wavelength-calculator"
   },
   {
     "name": "Frequency Calculator",
     "description": "Frequency Calculator – Calculate Frequency from Period and More",
-    "href": "/frequency-calculator"
+    "href": "/calculators/frequency-calculator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   }
 ];
 

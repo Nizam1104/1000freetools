@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Savings Goal Calculator",
     "description": "Savings Goal Calculator",
-    "href": "/savings-goal-calculator"
+    "href": "/calculators/savings-goal-calculator"
   },
   {
     "name": "Compound Interest Calculator",
     "description": "Compound Interest Calculator",
-    "href": "/compound-interest-calculator"
+    "href": "/calculators/compound-interest-calculator"
   },
   {
     "name": "Compounding Frequency Comparison",
     "description": "Compounding Frequency Comparison Calculator",
-    "href": "/compounding-frequency-comparison"
+    "href": "/calculators/compounding-frequency-comparison"
   },
   {
     "name": "Fixed Deposit Interest Calculator",
     "description": "Fixed Deposit (FD) Interest Calculator",
-    "href": "/fixed-deposit-interest-calculator"
+    "href": "/calculators/fixed-deposit-interest-calculator"
   },
   {
     "name": "Future Value Calculator",
     "description": "Future Value Calculator",
-    "href": "/future-value-calculator"
+    "href": "/calculators/future-value-calculator"
   },
   {
     "name": "Investment Return Rate Calculator",
     "description": "Investment Return Rate Calculator",
-    "href": "/investment-return-rate-calculator"
+    "href": "/calculators/investment-return-rate-calculator"
   }
 ];
 

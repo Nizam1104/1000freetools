@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "K D Ratio Calculator",
     "description": "K/D Ratio Calculator – Calculate Your Kill/Death Ratio in Any Game",
-    "href": "/k-d-ratio-calculator"
+    "href": "/calculators/k-d-ratio-calculator"
   },
   {
     "name": "Win Rate Estimator",
     "description": "Win Rate Calculator – Calculate Your Gaming Win Rate & Win/Loss Ratio",
-    "href": "/win-rate-estimator"
+    "href": "/calculators/win-rate-estimator"
   },
   {
     "name": "Gacha Pull Probability Calculator",
     "description": "Gacha Pull Probability Calculator – Calculate Your Odds in Gacha Games",
-    "href": "/gacha-pull-probability-calculator"
+    "href": "/calculators/gacha-pull-probability-calculator"
   },
   {
     "name": "Loot Probability Calculator",
     "description": "Loot Drop Probability Calculator – Calculate Your Chances of Getting Rare Items",
-    "href": "/loot-probability-calculator"
+    "href": "/calculators/loot-probability-calculator"
   },
   {
     "name": "Random Number Generator",
     "description": "Random Number Generator",
-    "href": "/random-number-generator"
+    "href": "/calculators/random-number-generator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

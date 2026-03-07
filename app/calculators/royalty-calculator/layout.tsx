@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Roi Calculator",
     "description": "ROI Calculator – Calculate Return on Investment Percentage",
-    "href": "/roi-calculator"
+    "href": "/calculators/roi-calculator"
   },
   {
     "name": "Profit Margin Calculator",
     "description": "Profit Margin Calculator – Calculate Gross Profit & Markup",
-    "href": "/profit-margin-calculator"
+    "href": "/calculators/profit-margin-calculator"
   },
   {
     "name": "Margin Calculator",
     "description": "Profit Margin Calculator",
-    "href": "/margin-calculator"
+    "href": "/calculators/margin-calculator"
   },
   {
     "name": "Markup Calculator",
     "description": "Markup Calculator",
-    "href": "/markup-calculator"
+    "href": "/calculators/markup-calculator"
   },
   {
     "name": "Freelance Effective Hourly Rate Calculator",
     "description": "Freelance Effective Hourly Rate Calculator",
-    "href": "/freelance-effective-hourly-rate-calculator"
+    "href": "/calculators/freelance-effective-hourly-rate-calculator"
   },
   {
     "name": "Salary To Hourly Calculator",
     "description": "Salary to Hourly Rate Calculator",
-    "href": "/salary-to-hourly-calculator"
+    "href": "/calculators/salary-to-hourly-calculator"
   }
 ];
 

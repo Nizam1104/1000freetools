@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Rent Per Square Foot Calculator",
     "description": "Rent per Square Foot Calculator – Compare Property Rental Rates",
-    "href": "/rent-per-square-foot-calculator"
+    "href": "/calculators/rent-per-square-foot-calculator"
   },
   {
     "name": "Rental Yield Calculator",
     "description": "Rental Yield Calculator",
-    "href": "/rental-yield-calculator"
+    "href": "/calculators/rental-yield-calculator"
   },
   {
     "name": "Buy Vs Rent Calculator",
     "description": "Buy vs Rent Calculator",
-    "href": "/buy-vs-rent-calculator"
+    "href": "/calculators/buy-vs-rent-calculator"
   },
   {
     "name": "Housing Affordability Calculator",
     "description": "Housing Affordability Calculator",
-    "href": "/housing-affordability-calculator"
+    "href": "/calculators/housing-affordability-calculator"
   },
   {
     "name": "Mortgage Calculator",
     "description": "Mortgage Calculator – Calculate Monthly Home Loan Payments",
-    "href": "/mortgage-calculator"
+    "href": "/calculators/mortgage-calculator"
   },
   {
     "name": "Mortgage Amortization Schedule",
     "description": "Mortgage Amortization Schedule Calculator",
-    "href": "/mortgage-amortization-schedule"
+    "href": "/calculators/mortgage-amortization-schedule"
   }
 ];
 

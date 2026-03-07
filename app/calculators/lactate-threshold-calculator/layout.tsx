@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Heart Rate Recovery Calculator",
     "description": "Heart Rate Recovery Calculator – Measure Your Cardiovascular Fitness",
-    "href": "/heart-rate-recovery-calculator"
+    "href": "/calculators/heart-rate-recovery-calculator"
   },
   {
     "name": "Heart Rate Zones Calculator",
     "description": "Heart Rate Zones Calculator – Find Your Target Heart Rate Zones",
-    "href": "/heart-rate-zones-calculator"
+    "href": "/calculators/heart-rate-zones-calculator"
   },
   {
     "name": "Vo2 Max Calculator",
     "description": "VO2 Max Calculator – Estimate Your Aerobic Fitness Level",
-    "href": "/vo2-max-calculator"
+    "href": "/calculators/vo2-max-calculator"
   },
   {
     "name": "Running Pace Calculator",
     "description": "Running Pace Calculator",
-    "href": "/running-pace-calculator"
+    "href": "/calculators/running-pace-calculator"
   },
   {
     "name": "Marathon Pace Calculator",
     "description": "Marathon Pace Calculator – Calculate Your Target Running Pace",
-    "href": "/marathon-pace-calculator"
+    "href": "/calculators/marathon-pace-calculator"
   },
   {
     "name": "Pace To Speed Converter",
     "description": "Pace to Speed Converter – Convert Running Pace to Speed Instantly",
-    "href": "/pace-to-speed-converter"
+    "href": "/calculators/pace-to-speed-converter"
   }
 ];
 

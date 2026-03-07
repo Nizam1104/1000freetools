@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Bacterial Growth Calculator",
     "description": "Bacterial Growth Calculator – Model Microbial Population Growth",
-    "href": "/bacterial-growth-calculator"
+    "href": "/calculators/bacterial-growth-calculator"
   },
   {
     "name": "Dna Base Count Calculator",
     "description": "DNA Base Count Calculator – Count Nucleotides and GC Content",
-    "href": "/dna-base-count-calculator"
+    "href": "/calculators/dna-base-count-calculator"
   },
   {
     "name": "Radiation Dose Calculator",
     "description": "Radiation Dose Calculator – Estimate Radiation Exposure",
-    "href": "/radiation-dose-calculator"
+    "href": "/calculators/radiation-dose-calculator"
   },
   {
     "name": "Richter Scale To Energy Calculator",
     "description": "Richter Scale to Energy Calculator – Convert Earthquake Magnitude to Energy",
-    "href": "/richter-scale-to-energy-calculator"
+    "href": "/calculators/richter-scale-to-energy-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   }
 ];
 

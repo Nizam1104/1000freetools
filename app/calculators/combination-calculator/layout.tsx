@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Permutation Calculator",
     "description": "Permutation Calculator",
-    "href": "/permutation-calculator"
+    "href": "/calculators/permutation-calculator"
   },
   {
     "name": "Factorial Calculator",
     "description": "Factorial Calculator",
-    "href": "/factorial-calculator"
+    "href": "/calculators/factorial-calculator"
   },
   {
     "name": "Pascals Triangle Calculator",
     "description": "Pascal's Triangle Calculator",
-    "href": "/pascals-triangle-calculator"
+    "href": "/calculators/pascals-triangle-calculator"
   },
   {
     "name": "Gcd Calculator",
     "description": "GCD / HCF Calculator",
-    "href": "/gcd-calculator"
+    "href": "/calculators/gcd-calculator"
   },
   {
     "name": "Lcm Calculator",
     "description": "LCM Calculator – Find Least Common Multiple Online",
-    "href": "/lcm-calculator"
+    "href": "/calculators/lcm-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

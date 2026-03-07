@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Air Density Calculator",
     "description": "Air Density Calculator – Calculate Air Density by Temperature & Pressure",
-    "href": "/air-density-calculator"
+    "href": "/calculators/air-density-calculator"
   },
   {
     "name": "Humidity Calculator",
     "description": "Humidity Calculator – Calculate Relative, Absolute & Specific Humidity",
-    "href": "/humidity-calculator"
+    "href": "/calculators/humidity-calculator"
   },
   {
     "name": "Vapor Pressure Calculator",
     "description": "Vapor Pressure Calculator – Calculate Vapor Pressure at Any Temperature",
-    "href": "/vapor-pressure-calculator"
+    "href": "/calculators/vapor-pressure-calculator"
   },
   {
     "name": "Heat Transfer Calculator",
     "description": "Heat Transfer Calculator – Conduction, Convection & Radiation",
-    "href": "/heat-transfer-calculator"
+    "href": "/calculators/heat-transfer-calculator"
   },
   {
     "name": "Thermal Expansion Calculator",
     "description": "Thermal Expansion Calculator – Linear and Volumetric Expansion",
-    "href": "/thermal-expansion-calculator"
+    "href": "/calculators/thermal-expansion-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

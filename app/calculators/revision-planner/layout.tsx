@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Study Hour Planner",
     "description": "Study Hour Planner – Create a Personalized Study Schedule for Exams",
-    "href": "/study-hour-planner"
+    "href": "/calculators/study-hour-planner"
   },
   {
     "name": "Study Hour Efficiency Calculator",
     "description": "Study Hour Efficiency Calculator – Measure and Improve Your Study Productivity",
-    "href": "/study-hour-efficiency-calculator"
+    "href": "/calculators/study-hour-efficiency-calculator"
   },
   {
     "name": "Productivity Streak Calculator",
     "description": "Productivity Streak Calculator – Track Your Daily Productivity Streaks & Consistency",
-    "href": "/productivity-streak-calculator"
+    "href": "/calculators/productivity-streak-calculator"
   },
   {
     "name": "Goal Tracker Calculator",
     "description": "Goal Tracker Calculator – Track Your Progress Toward Any Goal",
-    "href": "/goal-tracker-calculator"
+    "href": "/calculators/goal-tracker-calculator"
   },
   {
     "name": "Daily Habit Streak Calculator",
     "description": "Daily Habit Streak Calculator – Track & Build Your Daily Habit Streaks",
-    "href": "/daily-habit-streak-calculator"
+    "href": "/calculators/daily-habit-streak-calculator"
   },
   {
     "name": "Business Days Calculator",
     "description": "Business Days Calculator – Count Working Days Between Dates",
-    "href": "/business-days-calculator"
+    "href": "/calculators/business-days-calculator"
   }
 ];
 

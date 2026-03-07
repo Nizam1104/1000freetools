@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Cost Of Capital Calculator",
     "description": "Cost of Capital Calculator",
-    "href": "/cost-of-capital-calculator"
+    "href": "/calculators/cost-of-capital-calculator"
   },
   {
     "name": "Ebitda Calculator",
     "description": "EBITDA Calculator",
-    "href": "/ebitda-calculator"
+    "href": "/calculators/ebitda-calculator"
   },
   {
     "name": "Net Profit Margin Calculator",
     "description": "Net Profit Margin Calculator",
-    "href": "/net-profit-margin-calculator"
+    "href": "/calculators/net-profit-margin-calculator"
   },
   {
     "name": "Operating Margin Calculator",
     "description": "Operating Margin Calculator",
-    "href": "/operating-margin-calculator"
+    "href": "/calculators/operating-margin-calculator"
   },
   {
     "name": "Profit Margin Calculator",
     "description": "Profit Margin Calculator – Calculate Gross Profit & Markup",
-    "href": "/profit-margin-calculator"
+    "href": "/calculators/profit-margin-calculator"
   },
   {
     "name": "Roi Calculator",
     "description": "ROI Calculator – Calculate Return on Investment Percentage",
-    "href": "/roi-calculator"
+    "href": "/calculators/roi-calculator"
   }
 ];
 

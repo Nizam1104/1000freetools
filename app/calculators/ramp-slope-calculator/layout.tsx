@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Staircase Rise Run Calculator",
     "description": "Staircase Rise & Run Calculator – Design Safe & Comfortable Stairs",
-    "href": "/staircase-rise-run-calculator"
+    "href": "/calculators/staircase-rise-run-calculator"
   },
   {
     "name": "Slope Calculator",
     "description": "Slope Calculator",
-    "href": "/slope-calculator"
+    "href": "/calculators/slope-calculator"
   },
   {
     "name": "Door Frame Calculator",
     "description": "Door Frame Calculator – Calculate Door Frame Dimensions & Material Quantities",
-    "href": "/door-frame-calculator"
+    "href": "/calculators/door-frame-calculator"
   },
   {
     "name": "Flooring Calculator",
     "description": "Flooring Calculator – How Much Flooring Do You Need?",
-    "href": "/flooring-calculator"
+    "href": "/calculators/flooring-calculator"
   },
   {
     "name": "Carpet Area Calculator",
     "description": "Carpet Area Calculator – Calculate Carpet Area from Built-Up Area",
-    "href": "/carpet-area-calculator"
+    "href": "/calculators/carpet-area-calculator"
   },
   {
     "name": "Window Area Calculator",
     "description": "Window Area Calculator – Calculate Total Window Size for Glass & Heat Loss",
-    "href": "/window-area-calculator"
+    "href": "/calculators/window-area-calculator"
   }
 ];
 

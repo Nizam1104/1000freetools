@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Horsepower To Kw Converter",
     "description": "Horsepower to kW Converter – Instantly Convert HP to Kilowatts",
-    "href": "/horsepower-to-kw-converter"
+    "href": "/calculators/horsepower-to-kw-converter"
   },
   {
     "name": "Torque Calculator",
     "description": "Torque Calculator",
-    "href": "/torque-calculator"
+    "href": "/calculators/torque-calculator"
   },
   {
     "name": "Shaft Torque Calculator",
     "description": "Shaft Torque Calculator – Calculate Shaft Torque",
-    "href": "/shaft-torque-calculator"
+    "href": "/calculators/shaft-torque-calculator"
   },
   {
     "name": "Robot Motor Torque Calculator",
     "description": "Robot Motor Torque Calculator – Calculate Required Torque for Motors & Actuators",
-    "href": "/robot-motor-torque-calculator"
+    "href": "/calculators/robot-motor-torque-calculator"
   },
   {
     "name": "Electric Power Calculator",
     "description": "Electric Power Calculator",
-    "href": "/electric-power-calculator"
+    "href": "/calculators/electric-power-calculator"
   },
   {
     "name": "Safety Factor Calculator",
     "description": "Safety Factor Calculator – Factor of Safety Calculator",
-    "href": "/safety-factor-calculator"
+    "href": "/calculators/safety-factor-calculator"
   }
 ];
 

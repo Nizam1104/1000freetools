@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Age Calculator",
     "description": "Age Calculator – Calculate Your Exact Age in Years, Months & Days",
-    "href": "/age-calculator"
+    "href": "/calculators/age-calculator"
   },
   {
     "name": "Anniversary Calculator",
     "description": "Anniversary Calculator – Free Anniversary Date Counter",
-    "href": "/anniversary-calculator"
+    "href": "/calculators/anniversary-calculator"
   },
   {
     "name": "Biorhythm Calculator",
     "description": "Biorhythm Calculator – Track Your Physical, Emotional & Intellectual Cycles",
-    "href": "/biorhythm-calculator"
+    "href": "/calculators/biorhythm-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   },
   {
     "name": "4 Percent Rule Retirement Calculator",
     "description": "4% Rule Retirement Calculator",
-    "href": "/4-percent-rule-retirement-calculator"
+    "href": "/calculators/4-percent-rule-retirement-calculator"
   }
 ];
 

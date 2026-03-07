@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Decimal To Fraction Calculator",
     "description": "Decimal to Fraction Calculator",
-    "href": "/decimal-to-fraction-calculator"
+    "href": "/calculators/decimal-to-fraction-calculator"
   },
   {
     "name": "Fraction To Decimal Calculator",
     "description": "Fraction to Decimal Calculator",
-    "href": "/fraction-to-decimal-calculator"
+    "href": "/calculators/fraction-to-decimal-calculator"
   },
   {
     "name": "Number To Words Converter",
     "description": "Number to Words Converter",
-    "href": "/number-to-words-converter"
+    "href": "/calculators/number-to-words-converter"
   },
   {
     "name": "Roman Numerals Converter",
     "description": "Roman Numerals Converter",
-    "href": "/roman-numerals-converter"
+    "href": "/calculators/roman-numerals-converter"
   },
   {
     "name": "Scientific Notation Calculator",
     "description": "Scientific Notation Calculator – Convert to Standard Form",
-    "href": "/scientific-notation-calculator"
+    "href": "/calculators/scientific-notation-calculator"
   },
   {
     "name": "Expression Evaluator",
     "description": "Expression Evaluator",
-    "href": "/expression-evaluator"
+    "href": "/calculators/expression-evaluator"
   }
 ];
 

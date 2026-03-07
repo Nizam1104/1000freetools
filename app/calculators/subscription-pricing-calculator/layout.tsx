@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Subscription Profit Calculator",
     "description": "Subscription Business Profit Calculator",
-    "href": "/subscription-profit-calculator"
+    "href": "/calculators/subscription-profit-calculator"
   },
   {
     "name": "Saas Churn Rate Calculator",
     "description": "SaaS Churn Rate Calculator – Calculate Monthly & Annual Customer Churn",
-    "href": "/saas-churn-rate-calculator"
+    "href": "/calculators/saas-churn-rate-calculator"
   },
   {
     "name": "Saas Mrr Arr Calculator",
     "description": "MRR & ARR Calculator – Calculate Monthly and Annual Recurring Revenue for SaaS",
-    "href": "/saas-mrr-arr-calculator"
+    "href": "/calculators/saas-mrr-arr-calculator"
   },
   {
     "name": "Customer Acquisition Cost Calculator",
     "description": "Customer Acquisition Cost (CAC) Calculator – Find Out How Much Each New Customer Costs",
-    "href": "/customer-acquisition-cost-calculator"
+    "href": "/calculators/customer-acquisition-cost-calculator"
   },
   {
     "name": "Customer Lifetime Value Calculator",
     "description": "Customer Lifetime Value (CLV) Calculator – Measure Customer Worth",
-    "href": "/customer-lifetime-value-calculator"
+    "href": "/calculators/customer-lifetime-value-calculator"
   },
   {
     "name": "Funnel Drop Off Calculator",
     "description": "Funnel Drop-off Calculator – Identify Where You&apos;re Losing Customers in Your Sales Funnel",
-    "href": "/funnel-drop-off-calculator"
+    "href": "/calculators/funnel-drop-off-calculator"
   }
 ];
 

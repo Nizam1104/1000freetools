@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   },
   {
     "name": "Strength Training Pr Estimator",
     "description": "Strength Training PR Estimator – Calculate Your One-Rep Max & Training Weights",
-    "href": "/strength-training-pr-estimator"
+    "href": "/calculators/strength-training-pr-estimator"
   },
   {
     "name": "Warm Up Calculator",
     "description": "Warm-Up Calculator – Build the Perfect Warm-Up Set Progression",
-    "href": "/warm-up-calculator"
+    "href": "/calculators/warm-up-calculator"
   },
   {
     "name": "Workout Volume Calculator",
     "description": "Workout Volume Calculator – Track Your Total Training Volume",
-    "href": "/workout-volume-calculator"
+    "href": "/calculators/workout-volume-calculator"
   },
   {
     "name": "Running Pace Calculator",
     "description": "Running Pace Calculator",
-    "href": "/running-pace-calculator"
+    "href": "/calculators/running-pace-calculator"
   },
   {
     "name": "Heart Rate Zones Calculator",
     "description": "Heart Rate Zones Calculator – Find Your Target Heart Rate Zones",
-    "href": "/heart-rate-zones-calculator"
+    "href": "/calculators/heart-rate-zones-calculator"
   }
 ];
 

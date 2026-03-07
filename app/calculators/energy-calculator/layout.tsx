@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Potential Energy Calculator",
     "description": "Potential Energy Calculator",
-    "href": "/potential-energy-calculator"
+    "href": "/calculators/potential-energy-calculator"
   },
   {
     "name": "Work Calculator",
     "description": "Work Calculator",
-    "href": "/work-calculator"
+    "href": "/calculators/work-calculator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   },
   {
     "name": "Spring Force Hookes Law Calculator",
     "description": "Hooke's Law Calculator – Spring Force and Displacement",
-    "href": "/spring-force-hookes-law-calculator"
+    "href": "/calculators/spring-force-hookes-law-calculator"
   },
   {
     "name": "Photon Energy Calculator",
     "description": "Photon Energy Calculator – Calculate Energy of a Photon",
-    "href": "/photon-energy-calculator"
+    "href": "/calculators/photon-energy-calculator"
   }
 ];
 

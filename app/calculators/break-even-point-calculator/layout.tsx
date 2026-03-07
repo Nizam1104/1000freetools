@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Break Even Discount Calculator",
     "description": "Break-Even Discount Calculator",
-    "href": "/break-even-discount-calculator"
+    "href": "/calculators/break-even-discount-calculator"
   },
   {
     "name": "Discount Calculator",
     "description": "Discount Calculator – Calculate Sale Price & Savings",
-    "href": "/discount-calculator"
+    "href": "/calculators/discount-calculator"
   },
   {
     "name": "Discount Stacking Calculator",
     "description": "Discount Stacking Calculator – Calculate Final Price After Multiple Discounts",
-    "href": "/discount-stacking-calculator"
+    "href": "/calculators/discount-stacking-calculator"
   },
   {
     "name": "Margin Calculator",
     "description": "Profit Margin Calculator",
-    "href": "/margin-calculator"
+    "href": "/calculators/margin-calculator"
   },
   {
     "name": "Markup Calculator",
     "description": "Markup Calculator",
-    "href": "/markup-calculator"
+    "href": "/calculators/markup-calculator"
   },
   {
     "name": "Profit Margin Calculator",
     "description": "Profit Margin Calculator – Calculate Gross Profit & Markup",
-    "href": "/profit-margin-calculator"
+    "href": "/calculators/profit-margin-calculator"
   }
 ];
 

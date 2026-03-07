@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Z Score Calculator",
     "description": "Z-Score Calculator",
-    "href": "/z-score-calculator"
+    "href": "/calculators/z-score-calculator"
   },
   {
     "name": "Standard Deviation Calculator",
     "description": "Standard Deviation Calculator",
-    "href": "/standard-deviation-calculator"
+    "href": "/calculators/standard-deviation-calculator"
   },
   {
     "name": "Variance Calculator",
     "description": "Variance Calculator – Calculate Population and Sample Variance",
-    "href": "/variance-calculator"
+    "href": "/calculators/variance-calculator"
   },
   {
     "name": "Average Calculator",
     "description": "Average Calculator – Calculate Mean, Median & More",
-    "href": "/average-calculator"
+    "href": "/calculators/average-calculator"
   },
   {
     "name": "Median Calculator",
     "description": "Median Calculator",
-    "href": "/median-calculator"
+    "href": "/calculators/median-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

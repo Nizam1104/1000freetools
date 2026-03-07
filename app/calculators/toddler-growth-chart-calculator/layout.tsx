@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Child Height Predictor",
     "description": "Child Height Predictor – Free Adult Height Calculator",
-    "href": "/child-height-predictor"
+    "href": "/calculators/child-height-predictor"
   },
   {
     "name": "Baby Age Calculator",
     "description": "Baby Age Calculator – Free Infant Age Calculator in Weeks and Months",
-    "href": "/baby-age-calculator"
+    "href": "/calculators/baby-age-calculator"
   },
   {
     "name": "Baby Feeding Chart Calculator",
     "description": "Baby Feeding Chart Calculator – How Much & How Often to Feed Your Baby",
-    "href": "/baby-feeding-chart-calculator"
+    "href": "/calculators/baby-feeding-chart-calculator"
   },
   {
     "name": "Diaper Usage Estimator",
     "description": "Diaper Usage Estimator – Calculate Monthly Diaper Costs for Your Baby",
-    "href": "/diaper-usage-estimator"
+    "href": "/calculators/diaper-usage-estimator"
   },
   {
     "name": "Pet Age Calculator",
     "description": "Pet Age Calculator – Convert Dog & Cat Age to Human Years",
-    "href": "/pet-age-calculator"
+    "href": "/calculators/pet-age-calculator"
   },
   {
     "name": "Baby Sleep Schedule Calculator",
     "description": "Baby Sleep Schedule Calculator – Create the Perfect Sleep Routine for Your Baby",
-    "href": "/baby-sleep-schedule-calculator"
+    "href": "/calculators/baby-sleep-schedule-calculator"
   }
 ];
 

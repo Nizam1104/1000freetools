@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ph Calculator",
     "description": "pH Calculator – Calculate pH from H⁺ Concentration",
-    "href": "/ph-calculator"
+    "href": "/calculators/ph-calculator"
   },
   {
     "name": "Crop Yield Estimator",
     "description": "Crop Yield Estimator – Predict Your Farm's Harvest Before It Happens",
-    "href": "/crop-yield-estimator"
+    "href": "/calculators/crop-yield-estimator"
   },
   {
     "name": "Fertilizer Requirement Calculator",
     "description": "Fertilizer Requirement Calculator – Calculate NPK Fertilizer Dose Per Acre",
-    "href": "/fertilizer-requirement-calculator"
+    "href": "/calculators/fertilizer-requirement-calculator"
   },
   {
     "name": "Irrigation Water Calculator",
     "description": "Irrigation Water Calculator – Calculate Water Needed for Crop Irrigation",
-    "href": "/irrigation-water-calculator"
+    "href": "/calculators/irrigation-water-calculator"
   },
   {
     "name": "Pesticide Dilution Calculator",
     "description": "Pesticide Dilution Calculator – Calculate the Right Pesticide-to-Water Ratio",
-    "href": "/pesticide-dilution-calculator"
+    "href": "/calculators/pesticide-dilution-calculator"
   },
   {
     "name": "Seed Rate Calculator",
     "description": "Seed Rate Calculator – Calculate Seeds Per Acre for Optimal Crop Yield",
-    "href": "/seed-rate-calculator"
+    "href": "/calculators/seed-rate-calculator"
   }
 ];
 

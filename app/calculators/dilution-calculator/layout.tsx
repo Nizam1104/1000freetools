@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Concentration Calculator",
     "description": "Concentration Calculator – Convert Solution Concentration Units",
-    "href": "/concentration-calculator"
+    "href": "/calculators/concentration-calculator"
   },
   {
     "name": "Molarity Calculator",
     "description": "Molarity Calculator – Calculate Molar Concentration Instantly",
-    "href": "/molarity-calculator"
+    "href": "/calculators/molarity-calculator"
   },
   {
     "name": "Molality Calculator",
     "description": "Molality Calculator – Find Molality of Any Solution",
-    "href": "/molality-calculator"
+    "href": "/calculators/molality-calculator"
   },
   {
     "name": "Molecular Mass Calculator",
     "description": "Molecular Mass Calculator – Calculate Molar Mass of Any Compound",
-    "href": "/molecular-mass-calculator"
+    "href": "/calculators/molecular-mass-calculator"
   },
   {
     "name": "Moles To Volume Converter",
     "description": "Moles to Volume Calculator for Gas – STP and Custom Conditions",
-    "href": "/moles-to-volume-converter"
+    "href": "/calculators/moles-to-volume-converter"
   },
   {
     "name": "Percent Composition Calculator",
     "description": "Percent Composition Calculator – Find Mass Percent of Elements",
-    "href": "/percent-composition-calculator"
+    "href": "/calculators/percent-composition-calculator"
   }
 ];
 

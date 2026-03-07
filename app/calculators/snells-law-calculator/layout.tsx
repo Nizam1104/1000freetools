@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Brewster Angle Calculator",
     "description": "Brewster Angle Calculator – Polarization Angle Calculator",
-    "href": "/brewster-angle-calculator"
+    "href": "/calculators/brewster-angle-calculator"
   },
   {
     "name": "Refraction Index Calculator",
     "description": "Refraction Index Calculator – Calculate Refractive Index",
-    "href": "/refraction-index-calculator"
+    "href": "/calculators/refraction-index-calculator"
   },
   {
     "name": "Lens Equation Calculator",
     "description": "Lens Equation Calculator – Thin Lens Formula Calculator",
-    "href": "/lens-equation-calculator"
+    "href": "/calculators/lens-equation-calculator"
   },
   {
     "name": "Mirror Equation Calculator",
     "description": "Mirror Equation Calculator – Spherical Mirror Formula",
-    "href": "/mirror-equation-calculator"
+    "href": "/calculators/mirror-equation-calculator"
   },
   {
     "name": "Focal Length Calculator",
     "description": "Focal Length Calculator – Lensmaker's Equation",
-    "href": "/focal-length-calculator"
+    "href": "/calculators/focal-length-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

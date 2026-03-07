@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Altitude Sickness Risk Calculator",
     "description": "Altitude Sickness Risk Calculator – Assess Your Risk of AMS Before Climbing",
-    "href": "/altitude-sickness-risk-calculator"
+    "href": "/calculators/altitude-sickness-risk-calculator"
   },
   {
     "name": "Dew Point Calculator",
     "description": "Dew Point Calculator – Calculate Dew Point from Temperature & Humidity",
-    "href": "/dew-point-calculator"
+    "href": "/calculators/dew-point-calculator"
   },
   {
     "name": "Humidity Calculator",
     "description": "Humidity Calculator – Calculate Relative, Absolute & Specific Humidity",
-    "href": "/humidity-calculator"
+    "href": "/calculators/humidity-calculator"
   },
   {
     "name": "Heat Index Calculator",
     "description": "Heat Index Calculator – Calculate the 'Feels Like' Temperature",
-    "href": "/heat-index-calculator"
+    "href": "/calculators/heat-index-calculator"
   },
   {
     "name": "Wind Chill Calculator",
     "description": "Wind Chill Calculator – Find Out What the Temperature Really Feels Like",
-    "href": "/wind-chill-calculator"
+    "href": "/calculators/wind-chill-calculator"
   },
   {
     "name": "Air Density Calculator",
     "description": "Air Density Calculator – Calculate Air Density by Temperature & Pressure",
-    "href": "/air-density-calculator"
+    "href": "/calculators/air-density-calculator"
   }
 ];
 

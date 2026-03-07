@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Volume Of Cone Calculator",
     "description": "Volume of Cone Calculator",
-    "href": "/volume-of-cone-calculator"
+    "href": "/calculators/volume-of-cone-calculator"
   },
   {
     "name": "Volume Of Cube Calculator",
     "description": "Volume of Cube Calculator – Calculate Cube Volume and Surface Area",
-    "href": "/volume-of-cube-calculator"
+    "href": "/calculators/volume-of-cube-calculator"
   },
   {
     "name": "Volume Of Cuboid Calculator",
     "description": "Volume of Cuboid Calculator",
-    "href": "/volume-of-cuboid-calculator"
+    "href": "/calculators/volume-of-cuboid-calculator"
   },
   {
     "name": "Volume Of Cylinder Calculator",
     "description": "Volume of Cylinder Calculator",
-    "href": "/volume-of-cylinder-calculator"
+    "href": "/calculators/volume-of-cylinder-calculator"
   },
   {
     "name": "Volume Of Pyramid Calculator",
     "description": "Volume of Pyramid Calculator",
-    "href": "/volume-of-pyramid-calculator"
+    "href": "/calculators/volume-of-pyramid-calculator"
   },
   {
     "name": "Circle Area Calculator",
     "description": "Circle Area Calculator",
-    "href": "/circle-area-calculator"
+    "href": "/calculators/circle-area-calculator"
   }
 ];
 

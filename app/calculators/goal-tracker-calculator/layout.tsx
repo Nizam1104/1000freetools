@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Daily Habit Streak Calculator",
     "description": "Daily Habit Streak Calculator – Track & Build Your Daily Habit Streaks",
-    "href": "/daily-habit-streak-calculator"
+    "href": "/calculators/daily-habit-streak-calculator"
   },
   {
     "name": "Productivity Streak Calculator",
     "description": "Productivity Streak Calculator – Track Your Daily Productivity Streaks & Consistency",
-    "href": "/productivity-streak-calculator"
+    "href": "/calculators/productivity-streak-calculator"
   },
   {
     "name": "Revision Planner",
     "description": "Revision Planner – Create a Smart Spaced Repetition Study Schedule",
-    "href": "/revision-planner"
+    "href": "/calculators/revision-planner"
   },
   {
     "name": "Study Hour Planner",
     "description": "Study Hour Planner – Create a Personalized Study Schedule for Exams",
-    "href": "/study-hour-planner"
+    "href": "/calculators/study-hour-planner"
   },
   {
     "name": "Study Hour Efficiency Calculator",
     "description": "Study Hour Efficiency Calculator – Measure and Improve Your Study Productivity",
-    "href": "/study-hour-efficiency-calculator"
+    "href": "/calculators/study-hour-efficiency-calculator"
   },
   {
     "name": "Dopamine Detox Planner",
     "description": "Dopamine Detox Planner – Plan a Digital Detox & Reset Your Dopamine Levels",
-    "href": "/dopamine-detox-planner"
+    "href": "/calculators/dopamine-detox-planner"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Acceleration Calculator",
     "description": "Acceleration Calculator",
-    "href": "/acceleration-calculator"
+    "href": "/calculators/acceleration-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Boat Speed Calculator",
     "description": "Boat Speed Calculator – Calculate Maximum Hull Speed for Any Boat",
-    "href": "/boat-speed-calculator"
+    "href": "/calculators/boat-speed-calculator"
   },
   {
     "name": "Pace To Speed Converter",
     "description": "Pace to Speed Converter – Convert Running Pace to Speed Instantly",
-    "href": "/pace-to-speed-converter"
+    "href": "/calculators/pace-to-speed-converter"
   }
 ];
 

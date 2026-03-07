@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "50 30 20 Budget Rule Calculator",
     "description": "50/30/20 Budget Rule Calculator",
-    "href": "/50-30-20-budget-rule-calculator"
+    "href": "/calculators/50-30-20-budget-rule-calculator"
   },
   {
     "name": "Debt To Income Ratio Calculator",
     "description": "Debt-to-Income Ratio Calculator",
-    "href": "/debt-to-income-ratio-calculator"
+    "href": "/calculators/debt-to-income-ratio-calculator"
   },
   {
     "name": "Gross Vs Net Income Calculator",
     "description": "Gross vs Net Income Calculator",
-    "href": "/gross-vs-net-income-calculator"
+    "href": "/calculators/gross-vs-net-income-calculator"
   },
   {
     "name": "Emergency Fund Calculator",
     "description": "Emergency Fund Calculator",
-    "href": "/emergency-fund-calculator"
+    "href": "/calculators/emergency-fund-calculator"
   },
   {
     "name": "Savings Goal Calculator",
     "description": "Savings Goal Calculator",
-    "href": "/savings-goal-calculator"
+    "href": "/calculators/savings-goal-calculator"
   },
   {
     "name": "Money Saving Challenge Calculator",
     "description": "Money-Saving Challenge Calculator – Track Your 52-Week or Custom Savings Challenge",
-    "href": "/money-saving-challenge-calculator"
+    "href": "/calculators/money-saving-challenge-calculator"
   }
 ];
 

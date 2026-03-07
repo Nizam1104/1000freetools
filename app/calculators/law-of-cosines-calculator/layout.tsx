@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Law Of Sines Calculator",
     "description": "Law of Sines Calculator",
-    "href": "/law-of-sines-calculator"
+    "href": "/calculators/law-of-sines-calculator"
   },
   {
     "name": "Pythagorean Theorem Calculator",
     "description": "Pythagorean Theorem Calculator",
-    "href": "/pythagorean-theorem-calculator"
+    "href": "/calculators/pythagorean-theorem-calculator"
   },
   {
     "name": "Distance Formula Calculator",
     "description": "Distance Formula Calculator – Find Distance Between Two Points",
-    "href": "/distance-formula-calculator"
+    "href": "/calculators/distance-formula-calculator"
   },
   {
     "name": "Triangle Area Calculator",
     "description": "Triangle Area Calculator – Find Area from Base and Height",
-    "href": "/triangle-area-calculator"
+    "href": "/calculators/triangle-area-calculator"
   },
   {
     "name": "Parallelogram Area Calculator",
     "description": "Parallelogram Area Calculator",
-    "href": "/parallelogram-area-calculator"
+    "href": "/calculators/parallelogram-area-calculator"
   },
   {
     "name": "Rhombus Area Calculator",
     "description": "Rhombus Area Calculator",
-    "href": "/rhombus-area-calculator"
+    "href": "/calculators/rhombus-area-calculator"
   }
 ];
 

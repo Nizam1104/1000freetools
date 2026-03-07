@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Win Rate Estimator",
     "description": "Win Rate Calculator – Calculate Your Gaming Win Rate & Win/Loss Ratio",
-    "href": "/win-rate-estimator"
+    "href": "/calculators/win-rate-estimator"
   },
   {
     "name": "Wind Chill Calculator",
     "description": "Wind Chill Calculator – Find Out What the Temperature Really Feels Like",
-    "href": "/wind-chill-calculator"
+    "href": "/calculators/wind-chill-calculator"
   },
   {
     "name": "Window Area Calculator",
     "description": "Window Area Calculator – Calculate Total Window Size for Glass & Heat Loss",
-    "href": "/window-area-calculator"
+    "href": "/calculators/window-area-calculator"
   },
   {
     "name": "Wine Abv Calculator",
     "description": "Wine ABV Calculator – Calculate Alcohol Content in Homemade Wine",
-    "href": "/wine-abv-calculator"
+    "href": "/calculators/wine-abv-calculator"
   },
   {
     "name": "Wire Gauge Calculator",
     "description": "Wire Gauge Calculator – Calculate Required Wire Size",
-    "href": "/wire-gauge-calculator"
+    "href": "/calculators/wire-gauge-calculator"
   },
   {
     "name": "Work Calculator",
     "description": "Work Calculator",
-    "href": "/work-calculator"
+    "href": "/calculators/work-calculator"
   }
 ];
 

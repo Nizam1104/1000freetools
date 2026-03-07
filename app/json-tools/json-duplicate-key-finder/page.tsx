@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, AlertTriangle } from "lucide-react";
@@ -430,37 +438,6 @@ export default function JsonDuplicateKeyFinderPage() {
               </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Check JSON syntax
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-empty-field-finder"
-                className="text-primary hover:underline"
-              >
-                JSON Empty Field Finder
-              </a>{" "}
-              – Find null and empty values
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Format and indent JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

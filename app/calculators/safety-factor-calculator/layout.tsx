@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Fastener Load Calculator",
     "description": "Fastener Load Calculator – Calculate Fastener Capacity",
-    "href": "/fastener-load-calculator"
+    "href": "/calculators/fastener-load-calculator"
   },
   {
     "name": "Beam Bending Calculator",
     "description": "Beam Bending Calculator – Stress & Deflection for Structural Beams",
-    "href": "/beam-bending-calculator"
+    "href": "/calculators/beam-bending-calculator"
   },
   {
     "name": "Stress Strain Calculator",
     "description": "Stress/Strain Calculator – Mechanical Properties Calculator",
-    "href": "/stress-strain-calculator"
+    "href": "/calculators/stress-strain-calculator"
   },
   {
     "name": "Rivet Strength Calculator",
     "description": "Rivet Strength Calculator – Calculate Rivet Shear Capacity",
-    "href": "/rivet-strength-calculator"
+    "href": "/calculators/rivet-strength-calculator"
   },
   {
     "name": "Bolt Torque Calculator",
     "description": "Bolt Torque Calculator – Calculate Bolt Tightening Torque",
-    "href": "/bolt-torque-calculator"
+    "href": "/calculators/bolt-torque-calculator"
   },
   {
     "name": "Belt Tension Calculator",
     "description": "Belt Tension Calculator – Calculate Belt Drive Tension",
-    "href": "/belt-tension-calculator"
+    "href": "/calculators/belt-tension-calculator"
   }
 ];
 

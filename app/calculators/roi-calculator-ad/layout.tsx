@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Roi Calculator",
     "description": "ROI Calculator – Calculate Return on Investment Percentage",
-    "href": "/roi-calculator"
+    "href": "/calculators/roi-calculator"
   },
   {
     "name": "Customer Acquisition Cost Calculator",
     "description": "Customer Acquisition Cost (CAC) Calculator – Find Out How Much Each New Customer Costs",
-    "href": "/customer-acquisition-cost-calculator"
+    "href": "/calculators/customer-acquisition-cost-calculator"
   },
   {
     "name": "Customer Lifetime Value Calculator",
     "description": "Customer Lifetime Value (CLV) Calculator – Measure Customer Worth",
-    "href": "/customer-lifetime-value-calculator"
+    "href": "/calculators/customer-lifetime-value-calculator"
   },
   {
     "name": "Cpc Cpm Ctr Calculator",
     "description": "CPC, CPM & CTR Calculator – Measure Your Digital Ad Campaign Performance",
-    "href": "/cpc-cpm-ctr-calculator"
+    "href": "/calculators/cpc-cpm-ctr-calculator"
   },
   {
     "name": "Funnel Drop Off Calculator",
     "description": "Funnel Drop-off Calculator – Identify Where You&apos;re Losing Customers in Your Sales Funnel",
-    "href": "/funnel-drop-off-calculator"
+    "href": "/calculators/funnel-drop-off-calculator"
   },
   {
     "name": "Nps Score Calculator",
     "description": "NPS Score Calculator – Calculate Your Net Promoter Score from Survey Results",
-    "href": "/nps-score-calculator"
+    "href": "/calculators/nps-score-calculator"
   }
 ];
 

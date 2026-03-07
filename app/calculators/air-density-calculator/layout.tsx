@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Humidity Calculator",
     "description": "Humidity Calculator – Calculate Relative, Absolute & Specific Humidity",
-    "href": "/humidity-calculator"
+    "href": "/calculators/humidity-calculator"
   },
   {
     "name": "Dew Point Calculator",
     "description": "Dew Point Calculator – Calculate Dew Point from Temperature & Humidity",
-    "href": "/dew-point-calculator"
+    "href": "/calculators/dew-point-calculator"
   },
   {
     "name": "Heat Index Calculator",
     "description": "Heat Index Calculator – Calculate the 'Feels Like' Temperature",
-    "href": "/heat-index-calculator"
+    "href": "/calculators/heat-index-calculator"
   },
   {
     "name": "Wind Chill Calculator",
     "description": "Wind Chill Calculator – Find Out What the Temperature Really Feels Like",
-    "href": "/wind-chill-calculator"
+    "href": "/calculators/wind-chill-calculator"
   },
   {
     "name": "Ideal Gas Law Calculator",
     "description": "Ideal Gas Law Calculator – Solve PV = nRT for Any Variable",
-    "href": "/ideal-gas-law-calculator"
+    "href": "/calculators/ideal-gas-law-calculator"
   },
   {
     "name": "Vapor Pressure Calculator",
     "description": "Vapor Pressure Calculator – Calculate Vapor Pressure at Any Temperature",
-    "href": "/vapor-pressure-calculator"
+    "href": "/calculators/vapor-pressure-calculator"
   }
 ];
 

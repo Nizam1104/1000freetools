@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Activity Calorie Calculator",
     "description": "Activity Calorie Burn Calculator – Calories Burned by Activity & Duration",
-    "href": "/activity-calorie-calculator"
+    "href": "/calculators/activity-calorie-calculator"
   },
   {
     "name": "Calorie Deficit Calculator",
     "description": "Calorie Deficit Calculator – How Many Calories to Cut to Lose Weight?",
-    "href": "/calorie-deficit-calculator"
+    "href": "/calculators/calorie-deficit-calculator"
   },
   {
     "name": "Daily Calorie Needs Calculator",
     "description": "Daily Calorie Needs Calculator – How Many Calories Should You Eat?",
-    "href": "/daily-calorie-needs-calculator"
+    "href": "/calculators/daily-calorie-needs-calculator"
   },
   {
     "name": "Cycling Calorie Calculator",
     "description": "Cycling Calorie Calculator – Calories Burned Biking Calculator",
-    "href": "/cycling-calorie-calculator"
+    "href": "/calculators/cycling-calorie-calculator"
   },
   {
     "name": "Swimming Calorie Calculator",
     "description": "Swimming Calorie Calculator – How Many Calories Does Swimming Burn?",
-    "href": "/swimming-calorie-calculator"
+    "href": "/calculators/swimming-calorie-calculator"
   },
   {
     "name": "Walking Calorie Calculator",
     "description": "Walking Calorie Calculator – How Many Calories Do You Burn Walking?",
-    "href": "/walking-calorie-calculator"
+    "href": "/calculators/walking-calorie-calculator"
   }
 ];
 

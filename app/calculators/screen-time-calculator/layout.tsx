@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Screen Time Allowance Calculator",
     "description": "Screen-Time Allowance Calculator – Set Healthy Screen Time Limits for Kids",
-    "href": "/screen-time-allowance-calculator"
+    "href": "/calculators/screen-time-allowance-calculator"
   },
   {
     "name": "Screen Brightness Battery Calculator",
     "description": "Screen Brightness Battery Calculator – How Brightness Affects Your Battery Life",
-    "href": "/screen-brightness-battery-calculator"
+    "href": "/calculators/screen-brightness-battery-calculator"
   },
   {
     "name": "Battery Life Calculator",
     "description": "Battery Life Calculator – Calculate Battery Runtime",
-    "href": "/battery-life-calculator"
+    "href": "/calculators/battery-life-calculator"
   },
   {
     "name": "Dopamine Detox Planner",
     "description": "Dopamine Detox Planner – Plan a Digital Detox & Reset Your Dopamine Levels",
-    "href": "/dopamine-detox-planner"
+    "href": "/calculators/dopamine-detox-planner"
   },
   {
     "name": "Meditation Timer Scheduler",
     "description": "Meditation Timer Scheduler – Set Up & Time Your Daily Meditation Sessions",
-    "href": "/meditation-timer-scheduler"
+    "href": "/calculators/meditation-timer-scheduler"
   },
   {
     "name": "Daily Habit Streak Calculator",
     "description": "Daily Habit Streak Calculator – Track & Build Your Daily Habit Streaks",
-    "href": "/daily-habit-streak-calculator"
+    "href": "/calculators/daily-habit-streak-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Matrix Addition Calculator",
     "description": "Matrix Addition Calculator",
-    "href": "/matrix-addition-calculator"
+    "href": "/calculators/matrix-addition-calculator"
   },
   {
     "name": "Matrix Multiplication Calculator",
     "description": "Matrix Multiplication Calculator",
-    "href": "/matrix-multiplication-calculator"
+    "href": "/calculators/matrix-multiplication-calculator"
   },
   {
     "name": "Median Calculator",
     "description": "Median Calculator",
-    "href": "/median-calculator"
+    "href": "/calculators/median-calculator"
   },
   {
     "name": "Meditation Timer Scheduler",
     "description": "Meditation Timer Scheduler – Set Up & Time Your Daily Meditation Sessions",
-    "href": "/meditation-timer-scheduler"
+    "href": "/calculators/meditation-timer-scheduler"
   },
   {
     "name": "Mileage Calculator",
     "description": "Mileage Calculator – Calculate Your Car's Fuel Efficiency (MPG & km/L)",
-    "href": "/mileage-calculator"
+    "href": "/calculators/mileage-calculator"
   },
   {
     "name": "Mirror Equation Calculator",
     "description": "Mirror Equation Calculator – Spherical Mirror Formula",
-    "href": "/mirror-equation-calculator"
+    "href": "/calculators/mirror-equation-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Percentage Change Calculator",
     "description": "Percentage Change Calculator",
-    "href": "/percentage-change-calculator"
+    "href": "/calculators/percentage-change-calculator"
   },
   {
     "name": "Average Calculator",
     "description": "Average Calculator – Calculate Mean, Median & More",
-    "href": "/average-calculator"
+    "href": "/calculators/average-calculator"
   },
   {
     "name": "Median Calculator",
     "description": "Median Calculator",
-    "href": "/median-calculator"
+    "href": "/calculators/median-calculator"
   },
   {
     "name": "Mode Calculator",
     "description": "Mode Calculator",
-    "href": "/mode-calculator"
+    "href": "/calculators/mode-calculator"
   },
   {
     "name": "Weighted Average Calculator",
     "description": "Weighted Average Calculator",
-    "href": "/weighted-average-calculator"
+    "href": "/calculators/weighted-average-calculator"
   },
   {
     "name": "Discount Calculator",
     "description": "Discount Calculator – Calculate Sale Price & Savings",
-    "href": "/discount-calculator"
+    "href": "/calculators/discount-calculator"
   }
 ];
 

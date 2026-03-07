@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Roi Calculator Ad",
     "description": "Ad ROI Calculator – Calculate Return on Investment for Your Ad Campaigns",
-    "href": "/roi-calculator-ad"
+    "href": "/calculators/roi-calculator-ad"
   },
   {
     "name": "Irr Calculator",
     "description": "IRR Calculator – Internal Rate of Return",
-    "href": "/irr-calculator"
+    "href": "/calculators/irr-calculator"
   },
   {
     "name": "Npv Calculator",
     "description": "NPV Calculator – Net Present Value",
-    "href": "/npv-calculator"
+    "href": "/calculators/npv-calculator"
   },
   {
     "name": "Payback Period Calculator",
     "description": "Payback Period Calculator",
-    "href": "/payback-period-calculator"
+    "href": "/calculators/payback-period-calculator"
   },
   {
     "name": "Cost Of Capital Calculator",
     "description": "Cost of Capital Calculator",
-    "href": "/cost-of-capital-calculator"
+    "href": "/calculators/cost-of-capital-calculator"
   },
   {
     "name": "Wacc Calculator",
     "description": "WACC Calculator – Weighted Average Cost of Capital",
-    "href": "/wacc-calculator"
+    "href": "/calculators/wacc-calculator"
   }
 ];
 

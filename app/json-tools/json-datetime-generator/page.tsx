@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
@@ -10,7 +18,9 @@ import { NativeSelect as Select } from "@/components/ui/native-select";
 import { JsonEditor } from "@/components/utils/json-editor";
 
 export default function JsonDatetimeGeneratorPage() {
-  const [format, setFormat] = useState<"iso" | "utc" | "timestamp" | "custom">("iso");
+  const [format, setFormat] = useState<"iso" | "utc" | "timestamp" | "custom">(
+    "iso",
+  );
   const [customFormat, setCustomFormat] = useState("YYYY-MM-DD HH:mm:ss");
   const [count, setCount] = useState(1);
   const [result, setResult] = useState<string | null>(null);
@@ -88,9 +98,13 @@ export default function JsonDatetimeGeneratorPage() {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">JSON Date Time Generator – Generate Timestamps</h1>
+          <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            JSON Date Time Generator – Generate Timestamps
+          </h1>
           <p className="text-muted-foreground">
-            Generate ISO 8601, UTC, and custom formatted date-time values in JSON. Our free JSON Date Time Generator is perfect for mocking timestamps in test data and API responses.
+            Generate ISO 8601, UTC, and custom formatted date-time values in
+            JSON. Our free JSON Date Time Generator is perfect for mocking
+            timestamps in test data and API responses.
           </p>
         </div>
 
@@ -100,7 +114,9 @@ export default function JsonDatetimeGeneratorPage() {
             <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="format" className="text-sm whitespace-nowrap">Format:</Label>
+                  <Label htmlFor="format" className="text-sm whitespace-nowrap">
+                    Format:
+                  </Label>
                   <Select
                     id="format"
                     value={format}
@@ -114,7 +130,9 @@ export default function JsonDatetimeGeneratorPage() {
                   </Select>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="count" className="text-sm whitespace-nowrap">Count:</Label>
+                  <Label htmlFor="count" className="text-sm whitespace-nowrap">
+                    Count:
+                  </Label>
                   <input
                     id="count"
                     type="number"
@@ -129,7 +147,12 @@ export default function JsonDatetimeGeneratorPage() {
 
               {format === "custom" && (
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="customFormat" className="text-sm whitespace-nowrap">Custom Format:</Label>
+                  <Label
+                    htmlFor="customFormat"
+                    className="text-sm whitespace-nowrap"
+                  >
+                    Custom Format:
+                  </Label>
                   <input
                     id="customFormat"
                     value={customFormat}
@@ -153,7 +176,11 @@ export default function JsonDatetimeGeneratorPage() {
                       <Copy className="h-4 w-4 mr-2" />
                       Copy
                     </Button>
-                    <Button variant="outline" size="sm" onClick={downloadResult}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={downloadResult}
+                    >
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
@@ -202,73 +229,94 @@ export default function JsonDatetimeGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Datetime
               </Label>
-              <JsonEditor
-                value={result}
-                readOnly
-              />
+              <JsonEditor value={result} readOnly />
             </CardContent>
           </Card>
         )}
 
         {/* SEO Content */}
         <div className="mt-16 max-w-3xl">
-          <h2 className="text-2xl font-semibold mb-4">About JSON Date Time Generator</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            About JSON Date Time Generator
+          </h2>
           <p className="text-muted-foreground mb-6">
-            Generating consistent date-time values for test data or API mocks can be tedious. This tool creates properly formatted timestamps in JSON format with support for ISO 8601, UTC strings, Unix timestamps, and custom patterns.
+            Generating consistent date-time values for test data or API mocks
+            can be tedious. This tool creates properly formatted timestamps in
+            JSON format with support for ISO 8601, UTC strings, Unix timestamps,
+            and custom patterns.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">How it works</h3>
           <p className="text-muted-foreground mb-2">
-            Select your preferred date format and specify how many values you need. The generator creates timestamps starting from the current moment, incrementing by one day for each additional item.
+            Select your preferred date format and specify how many values you
+            need. The generator creates timestamps starting from the current
+            moment, incrementing by one day for each additional item.
           </p>
           <p className="text-muted-foreground mb-8">
-            Custom format support lets you define patterns like YYYY-MM-DD HH:mm:ss for specific requirements. The tool replaces pattern tokens with actual date components to match your expected output format.
+            Custom format support lets you define patterns like YYYY-MM-DD
+            HH:mm:ss for specific requirements. The tool replaces pattern tokens
+            with actual date components to match your expected output format.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">When you'd use this</h3>
           <p className="text-muted-foreground mb-2">
-            You're building a frontend that expects API responses with timestamp fields. Generate realistic date values for mock data without writing date formatting code or relying on external libraries.
+            You're building a frontend that expects API responses with timestamp
+            fields. Generate realistic date values for mock data without writing
+            date formatting code or relying on external libraries.
           </p>
           <p className="text-muted-foreground mb-8">
-            This tool generates client-side timestamps based on your local time. For server-side date generation or timezone-specific requirements, you'll need backend logic with proper timezone handling.
+            This tool generates client-side timestamps based on your local time.
+            For server-side date generation or timezone-specific requirements,
+            you'll need backend logic with proper timezone handling.
           </p>
 
           <h3 className="text-xl font-semibold mb-3">Questions</h3>
           <div className="space-y-4 mb-8">
             <div>
               <p className="font-medium mb-1">What is ISO 8601 format?</p>
-              <p className="text-muted-foreground">ISO 8601 is an international standard for date-time representation, formatted as YYYY-MM-DDTHH:mm:ss.sssZ. It's widely used in APIs and databases for unambiguous timestamps.</p>
+              <p className="text-muted-foreground">
+                ISO 8601 is an international standard for date-time
+                representation, formatted as YYYY-MM-DDTHH:mm:ss.sssZ. It's
+                widely used in APIs and databases for unambiguous timestamps.
+              </p>
             </div>
             <div>
               <p className="font-medium mb-1">Can I generate past dates?</p>
-              <p className="text-muted-foreground">This tool generates future dates starting from today. For past dates, you'd need to modify the output manually or use a more advanced date generation tool.</p>
+              <p className="text-muted-foreground">
+                This tool generates future dates starting from today. For past
+                dates, you'd need to modify the output manually or use a more
+                advanced date generation tool.
+              </p>
             </div>
             <div>
-              <p className="font-medium mb-1">What custom format tokens are supported?</p>
-              <p className="text-muted-foreground">Use YYYY for four-digit year, YY for two-digit year, MM for month, DD for day, HH for hours, mm for minutes, ss for seconds, and SSS for milliseconds.</p>
+              <p className="font-medium mb-1">
+                What custom format tokens are supported?
+              </p>
+              <p className="text-muted-foreground">
+                Use YYYY for four-digit year, YY for two-digit year, MM for
+                month, DD for day, HH for hours, mm for minutes, ss for seconds,
+                and SSS for milliseconds.
+              </p>
             </div>
             <div>
               <p className="font-medium mb-1">Is the timezone included?</p>
-              <p className="text-muted-foreground">ISO 8601 format includes the Z suffix indicating UTC. UTC String shows the full timezone name. Custom and timestamp formats don't include explicit timezone information.</p>
+              <p className="text-muted-foreground">
+                ISO 8601 format includes the Z suffix indicating UTC. UTC String
+                shows the full timezone name. Custom and timestamp formats don't
+                include explicit timezone information.
+              </p>
             </div>
             <div>
-              <p className="font-medium mb-1">Can I use this for database seeding?</p>
-              <p className="text-muted-foreground">Yes, the generated JSON can be copied and used for database seeding scripts. Just ensure the date format matches your database's expected timestamp format.</p>
+              <p className="font-medium mb-1">
+                Can I use this for database seeding?
+              </p>
+              <p className="text-muted-foreground">
+                Yes, the generated JSON can be copied and used for database
+                seeding scripts. Just ensure the date format matches your
+                database's expected timestamp format.
+              </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a href="/json-tools/json-array-generator" className="text-primary hover:underline">JSON Array Generator</a> – Generate arrays with configurable items
-            </li>
-            <li>
-              <a href="/json-tools/json-random-object" className="text-primary hover:underline">JSON Random Object</a> – Create random JSON test data
-            </li>
-            <li>
-              <a href="/json-tools/json-api-response-generator" className="text-primary hover:underline">JSON API Response Generator</a> – Mock complete API responses
-            </li>
-          </ul>
         </div>
       </div>
     </div>

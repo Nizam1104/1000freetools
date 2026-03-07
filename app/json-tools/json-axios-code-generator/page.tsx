@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -218,10 +226,7 @@ export default function JsonAxiosCodeGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Axios Code
               </Label>
-              <JsonEditor
-                value={result}
-                readOnly
-              />
+              <JsonEditor value={result} readOnly />
             </CardContent>
           </Card>
         )}
@@ -315,37 +320,6 @@ export default function JsonAxiosCodeGeneratorPage() {
               </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-fetch-code-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Fetch Code Generator
-              </a>{" "}
-              – Generate Fetch API code
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-api-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON API Formatter
-              </a>{" "}
-              – Standardize API responses
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Validate request/response JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

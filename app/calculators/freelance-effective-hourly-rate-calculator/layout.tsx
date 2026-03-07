@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Salary To Hourly Calculator",
     "description": "Salary to Hourly Rate Calculator",
-    "href": "/salary-to-hourly-calculator"
+    "href": "/calculators/salary-to-hourly-calculator"
   },
   {
     "name": "Hourly Wage To Salary Calculator",
     "description": "Hourly Wage to Annual Salary Calculator",
-    "href": "/hourly-wage-to-salary-calculator"
+    "href": "/calculators/hourly-wage-to-salary-calculator"
   },
   {
     "name": "Gross Vs Net Income Calculator",
     "description": "Gross vs Net Income Calculator",
-    "href": "/gross-vs-net-income-calculator"
+    "href": "/calculators/gross-vs-net-income-calculator"
   },
   {
     "name": "Profit Margin Calculator",
     "description": "Profit Margin Calculator – Calculate Gross Profit & Markup",
-    "href": "/profit-margin-calculator"
+    "href": "/calculators/profit-margin-calculator"
   },
   {
     "name": "Margin Calculator",
     "description": "Profit Margin Calculator",
-    "href": "/margin-calculator"
+    "href": "/calculators/margin-calculator"
   },
   {
     "name": "Markup Calculator",
     "description": "Markup Calculator",
-    "href": "/markup-calculator"
+    "href": "/calculators/markup-calculator"
   }
 ];
 

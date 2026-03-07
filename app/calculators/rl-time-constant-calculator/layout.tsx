@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Rc Time Constant Calculator",
     "description": "RC Time Constant Calculator – Calculate RC Circuit Time Constant",
-    "href": "/rc-time-constant-calculator"
+    "href": "/calculators/rc-time-constant-calculator"
   },
   {
     "name": "Rlc Resonance Calculator",
     "description": "RLC Resonance Calculator – Calculate Resonant Frequency",
-    "href": "/rlc-resonance-calculator"
+    "href": "/calculators/rlc-resonance-calculator"
   },
   {
     "name": "Inductor Calculations",
     "description": "Inductor Calculator – Inductance and Inductive Reactance Calculator",
-    "href": "/inductor-calculations"
+    "href": "/calculators/inductor-calculations"
   },
   {
     "name": "Series Parallel Capacitor Calculator",
     "description": "Capacitor Calculator – Series and Parallel Capacitance Calculator",
-    "href": "/series-parallel-capacitor-calculator"
+    "href": "/calculators/series-parallel-capacitor-calculator"
   },
   {
     "name": "Duty Cycle Calculator",
     "description": "Duty Cycle Calculator – Calculate PWM Duty Cycle",
-    "href": "/duty-cycle-calculator"
+    "href": "/calculators/duty-cycle-calculator"
   },
   {
     "name": "Pwm Frequency Calculator",
     "description": "PWM Frequency Calculator – Calculate PWM Output Frequency",
-    "href": "/pwm-frequency-calculator"
+    "href": "/calculators/pwm-frequency-calculator"
   }
 ];
 

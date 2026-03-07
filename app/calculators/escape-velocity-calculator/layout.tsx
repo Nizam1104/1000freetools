@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Gravitational Field Calculator",
     "description": "Gravitational Field Calculator – Calculate Gravitational Field Strength",
-    "href": "/gravitational-field-calculator"
+    "href": "/calculators/gravitational-field-calculator"
   },
   {
     "name": "Orbital Period Calculator",
     "description": "Orbital Period Calculator – Calculate Orbital Period",
-    "href": "/orbital-period-calculator"
+    "href": "/calculators/orbital-period-calculator"
   },
   {
     "name": "Gravitational Force Calculator",
     "description": "Gravitational Force Calculator – Newton's Law of Gravitation",
-    "href": "/gravitational-force-calculator"
+    "href": "/calculators/gravitational-force-calculator"
   },
   {
     "name": "Acceleration Calculator",
     "description": "Acceleration Calculator",
-    "href": "/acceleration-calculator"
+    "href": "/calculators/acceleration-calculator"
   },
   {
     "name": "Velocity Calculator",
     "description": "Velocity Calculator – Calculate Speed with Direction",
-    "href": "/velocity-calculator"
+    "href": "/calculators/velocity-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   }
 ];
 

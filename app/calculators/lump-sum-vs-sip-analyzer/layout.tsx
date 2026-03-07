@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Dollar Cost Averaging Calculator",
     "description": "Dollar-Cost Averaging (DCA) Calculator",
-    "href": "/dollar-cost-averaging-calculator"
+    "href": "/calculators/dollar-cost-averaging-calculator"
   },
   {
     "name": "Sip Calculator",
     "description": "SIP Calculator",
-    "href": "/sip-calculator"
+    "href": "/calculators/sip-calculator"
   },
   {
     "name": "Sip Step Up Calculator",
     "description": "SIP Step-Up Calculator",
-    "href": "/sip-step-up-calculator"
+    "href": "/calculators/sip-step-up-calculator"
   },
   {
     "name": "Step Down Sip Calculator",
     "description": "Step-Down SIP Calculator",
-    "href": "/step-down-sip-calculator"
+    "href": "/calculators/step-down-sip-calculator"
   },
   {
     "name": "Future Value Calculator",
     "description": "Future Value Calculator",
-    "href": "/future-value-calculator"
+    "href": "/calculators/future-value-calculator"
   },
   {
     "name": "Investment Return Rate Calculator",
     "description": "Investment Return Rate Calculator",
-    "href": "/investment-return-rate-calculator"
+    "href": "/calculators/investment-return-rate-calculator"
   }
 ];
 

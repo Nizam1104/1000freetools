@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Iso Noise Predictor",
     "description": "ISO Noise Predictor – Estimate Image Noise Level for Any Camera ISO Setting",
-    "href": "/iso-noise-predictor"
+    "href": "/calculators/iso-noise-predictor"
   },
   {
     "name": "K D Ratio Calculator",
     "description": "K/D Ratio Calculator – Calculate Your Kill/Death Ratio in Any Game",
-    "href": "/k-d-ratio-calculator"
+    "href": "/calculators/k-d-ratio-calculator"
   },
   {
     "name": "Ketogenic Macro Calculator",
     "description": "Keto Macro Calculator – Perfect Macros for a Ketogenic Diet",
-    "href": "/ketogenic-macro-calculator"
+    "href": "/calculators/ketogenic-macro-calculator"
   },
   {
     "name": "Kidney Function Egfr Calculator",
     "description": "Kidney Function eGFR Calculator – Free CKD-EPI Calculator",
-    "href": "/kidney-function-egfr-calculator"
+    "href": "/calculators/kidney-function-egfr-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Lactate Threshold Calculator",
     "description": "Lactate Threshold Calculator – Find Your Anaerobic Threshold",
-    "href": "/lactate-threshold-calculator"
+    "href": "/calculators/lactate-threshold-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Meditation Timer Scheduler",
     "description": "Meditation Timer Scheduler – Set Up & Time Your Daily Meditation Sessions",
-    "href": "/meditation-timer-scheduler"
+    "href": "/calculators/meditation-timer-scheduler"
   },
   {
     "name": "Breathing Exercise Timer",
     "description": "Breathing Exercise Timer – Guided Timer for Box Breathing, 4-7-8 & More",
-    "href": "/breathing-exercise-timer"
+    "href": "/calculators/breathing-exercise-timer"
   },
   {
     "name": "Daily Habit Streak Calculator",
     "description": "Daily Habit Streak Calculator – Track & Build Your Daily Habit Streaks",
-    "href": "/daily-habit-streak-calculator"
+    "href": "/calculators/daily-habit-streak-calculator"
   },
   {
     "name": "Productivity Streak Calculator",
     "description": "Productivity Streak Calculator – Track Your Daily Productivity Streaks & Consistency",
-    "href": "/productivity-streak-calculator"
+    "href": "/calculators/productivity-streak-calculator"
   },
   {
     "name": "Revision Planner",
     "description": "Revision Planner – Create a Smart Spaced Repetition Study Schedule",
-    "href": "/revision-planner"
+    "href": "/calculators/revision-planner"
   },
   {
     "name": "Study Hour Planner",
     "description": "Study Hour Planner – Create a Personalized Study Schedule for Exams",
-    "href": "/study-hour-planner"
+    "href": "/calculators/study-hour-planner"
   }
 ];
 

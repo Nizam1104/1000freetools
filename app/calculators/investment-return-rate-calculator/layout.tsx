@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Future Value Calculator",
     "description": "Future Value Calculator",
-    "href": "/future-value-calculator"
+    "href": "/calculators/future-value-calculator"
   },
   {
     "name": "Compound Interest Calculator",
     "description": "Compound Interest Calculator",
-    "href": "/compound-interest-calculator"
+    "href": "/calculators/compound-interest-calculator"
   },
   {
     "name": "Compounding Frequency Comparison",
     "description": "Compounding Frequency Comparison Calculator",
-    "href": "/compounding-frequency-comparison"
+    "href": "/calculators/compounding-frequency-comparison"
   },
   {
     "name": "Simple Interest Calculator",
     "description": "Simple Interest Calculator",
-    "href": "/simple-interest-calculator"
+    "href": "/calculators/simple-interest-calculator"
   },
   {
     "name": "Rule Of 72 Calculator",
     "description": "Rule of 72 Calculator",
-    "href": "/rule-of-72-calculator"
+    "href": "/calculators/rule-of-72-calculator"
   },
   {
     "name": "Roi Calculator",
     "description": "ROI Calculator – Calculate Return on Investment Percentage",
-    "href": "/roi-calculator"
+    "href": "/calculators/roi-calculator"
   }
 ];
 

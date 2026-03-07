@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Discount Stacking Calculator",
     "description": "Discount Stacking Calculator – Calculate Final Price After Multiple Discounts",
-    "href": "/discount-stacking-calculator"
+    "href": "/calculators/discount-stacking-calculator"
   },
   {
     "name": "Percentage Calculator",
     "description": "Percentage Calculator – Calculate Percentages Instantly",
-    "href": "/percentage-calculator"
+    "href": "/calculators/percentage-calculator"
   },
   {
     "name": "Percentage Change Calculator",
     "description": "Percentage Change Calculator",
-    "href": "/percentage-change-calculator"
+    "href": "/calculators/percentage-change-calculator"
   },
   {
     "name": "Break Even Discount Calculator",
     "description": "Break-Even Discount Calculator",
-    "href": "/break-even-discount-calculator"
+    "href": "/calculators/break-even-discount-calculator"
   },
   {
     "name": "Break Even Point Calculator",
     "description": "Break-Even Point Calculator",
-    "href": "/break-even-point-calculator"
+    "href": "/calculators/break-even-point-calculator"
   },
   {
     "name": "Margin Calculator",
     "description": "Profit Margin Calculator",
-    "href": "/margin-calculator"
+    "href": "/calculators/margin-calculator"
   }
 ];
 
