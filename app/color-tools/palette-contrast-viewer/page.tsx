@@ -20,7 +20,7 @@ export const relatedTools = [
   { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check contrast ratios for accessibility" },
   { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },
   { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties from colors" },
-  { name: "Palette Export Tool", href: "/color-tools/palette-export", description: "Export palettes in multiple formats" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export palettes in multiple formats" },
 ];
 
 export default function PaletteContrastViewerPage() {

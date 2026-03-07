@@ -504,7 +504,7 @@ export default function SquareRootCalculator() {
           <CardTitle>Related Math Tools</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             <a href="/math-tools/scientific-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
               <p className="font-semibold text-sm">Scientific Calculator</p>
               <p className="text-xs text-muted-foreground">Advanced math functions</p>
@@ -512,10 +512,6 @@ export default function SquareRootCalculator() {
             <a href="/math-tools/exponent-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
               <p className="font-semibold text-sm">Exponent Calculator</p>
               <p className="text-xs text-muted-foreground">Calculate powers</p>
-            </a>
-            <a href="/math-tools/square-area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Square Area Calculator</p>
-              <p className="text-xs text-muted-foreground">Geometry calculations</p>
             </a>
           </div>
         </CardContent>

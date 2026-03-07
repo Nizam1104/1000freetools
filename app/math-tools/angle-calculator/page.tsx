@@ -584,14 +584,10 @@ export default function AngleCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
           <a href="/calculators/pythagorean-theorem-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
             <p className="font-semibold text-sm">Pythagorean Theorem</p>
             <p className="text-xs text-muted-foreground">Right triangle solver</p>
-          </a>
-          <a href="/math-tools/triangle-area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Triangle Area Calculator</p>
-            <p className="text-xs text-muted-foreground">Triangle area</p>
           </a>
           <a href="/calculators/law-of-cosines-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
             <p className="font-semibold text-sm">Law of Cosines Calculator</p>

@@ -576,11 +576,7 @@ export default function CoordinateGeometryCalculator() {
           <CardTitle>Related Math Tools</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/distance-formula-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Distance Formula Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate distance between points</p>
-            </a>
+          <div className="grid sm:grid-cols-2 gap-4">
             <a href="/math-tools/slope-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
               <p className="font-semibold text-sm">Slope Calculator</p>
               <p className="text-xs text-muted-foreground">Find slope and angle</p>

@@ -33,7 +33,7 @@ export const relatedTools = [
   { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Extract full color palettes from any image" },
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors in multiple formats" },
   { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties from colors" },
-  { name: "Color History Tool", href: "/color-tools/color-history", description: "Track and manage your color history" },
+  { name: "Color History Tool", href: "/color-tools/color-history-tool", description: "Track and manage your color history" },
 ];
 
 export default function DominantColorFinderPage() {
