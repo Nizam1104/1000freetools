@@ -71,6 +71,4 @@ Return clean HTML-ready content using:
 - `<ol>` / `<ul>` only where a list is genuinely the right format
 - `<strong>` sparingly for genuinely important terms
 
-put all the seo content in /components/seo-content/ToolName.tsx then put that in the page code
-
 ## Strict Note: "DON'T MAKE ANY TEMPLATE FOR SEO CONTENT"
