@@ -374,36 +374,6 @@ export default function LumpSumVsSIPAnalyzerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/sip-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">SIP Calculator</span>
-                  <p className="text-muted-foreground">Calculate the future value of your monthly SIP investments with expected returns</p>
-                </a>
-                <a
-                  href="/calculators/compound-interest-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Compound Interest Calculator</span>
-                  <p className="text-muted-foreground">See how your investments grow with compound interest over time</p>
-                </a>
-                <a
-                  href="/calculators/inflation-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Inflation Calculator</span>
-                  <p className="text-muted-foreground">Calculate the real value of your money after adjusting for inflation</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

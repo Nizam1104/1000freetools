@@ -357,23 +357,6 @@ export default function CarLoanAffordabilityCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Finance Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
-                <p className="text-muted-foreground text-sm">Compare how different compounding periods affect your investment returns over time.</p>
-              </a>
-              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate cost of equity and debt using CAPM for business investment decisions.</p>
-              </a>
-              <a href="/calculators/cpc-cpm-ctr-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">CPC CPM CTR Calculator</h3>
-                <p className="text-muted-foreground text-sm">Analyze digital advertising campaign performance and optimize ad spend.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

@@ -566,42 +566,6 @@ export default function AquariumCOCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">
-                Related Tools
-              </h2>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a
-                  href="/calculators/aquarium-volume-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
-                >
-                  <h4 className="font-medium text-foreground mb-1">Aquarium Volume Calculator</h4>
-                  <p className="text-xs text-muted-foreground">
-                    Calculate your tank capacity in liters or gallons
-                  </p>
-                </a>
-                <a
-                  href="/calculators/aquarium-filtration-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
-                >
-                  <h4 className="font-medium text-foreground mb-1">Aquarium Filtration Calculator</h4>
-                  <p className="text-xs text-muted-foreground">
-                    Determine the right filter flow rate for your tank
-                  </p>
-                </a>
-                <a
-                  href="/calculators/ph-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
-                >
-                  <h4 className="font-medium text-foreground mb-1">pH Calculator</h4>
-                  <p className="text-xs text-muted-foreground">
-                    Understand and manage your water pH levels
-                  </p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

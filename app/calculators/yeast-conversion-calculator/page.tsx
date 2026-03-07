@@ -339,23 +339,6 @@ export default function YeastConversionCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Baking Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/recipe-scaler-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Recipe Scaler Calculator</h3>
-              <p className="text-sm text-muted-foreground">Scale baking recipes up or down for any batch size.</p>
-            </a>
-            <a href="/calculators/baking-time-adjustment-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Baking Time Adjustment Calculator</h3>
-              <p className="text-sm text-muted-foreground">Adjust baking times for different pan sizes and altitudes.</p>
-            </a>
-            <a href="/calculators/kitchen-measurement-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Kitchen Measurement Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert between cups, grams, ounces, and other cooking units.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

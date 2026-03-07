@@ -411,36 +411,6 @@ export default function IdealWeightCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/bmi-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMI Calculator</span>
-                <p className="text-muted-foreground">Calculate body mass index and weight category</p>
-              </a>
-              <a
-                href="/calculators/body-fat-percentage-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Body Fat Percentage Calculator</span>
-                <p className="text-muted-foreground">Estimate body fat using US Navy method</p>
-              </a>
-              <a
-                href="/calculators/ideal-bedtime-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ideal Bedtime Calculator</span>
-                <p className="text-muted-foreground">Find optimal sleep times for better health</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

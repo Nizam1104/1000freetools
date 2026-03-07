@@ -396,25 +396,6 @@ export default function DNABaseCountCalculator() {
         </Card>
 
         {/* Related Tools */}
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold mb-6">Related Biology Tools</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/rna-transcription-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">RNA Transcription Calculator</h3>
-                <p className="text-sm text-muted-foreground">Convert DNA sequences to RNA by replacing thymine with uracil for transcription studies.</p>
-              </a>
-              <a href="/calculators/codon-table-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Codon Table Calculator</h3>
-                <p className="text-sm text-muted-foreground">Translate DNA or RNA sequences into amino acid sequences using the genetic code.</p>
-              </a>
-              <a href="/calculators/melting-temperature-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">DNA Melting Temperature Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate DNA primer melting temperature based on sequence and GC content.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

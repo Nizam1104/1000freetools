@@ -378,7 +378,7 @@ export default function PosterPrintSizeCalculatorPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-3">
-                Try our other creative calculators: the <a href="/calculators/aspect-ratio-calculator" className="text-primary hover:underline">aspect ratio calculator</a> for image dimensions, the <a href="/calculators/focal-length-calculator" className="text-primary hover:underline">focal length calculator</a> for photography, and the <a href="/calculators/camera-exposure-calculator" className="text-primary hover:underline">exposure calculator</a> for optimal settings.
+                Try our other creative calculators: the <a href="/calculators/focal-length-calculator" className="text-primary hover:underline">focal length calculator</a> for photography and the <a href="/calculators/camera-exposure-calculator" className="text-primary hover:underline">exposure calculator</a> for optimal settings.
               </p>
             </CardContent>
           </Card>

@@ -386,23 +386,6 @@ export default function WallpaperCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/paint-coverage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Paint Coverage Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate how much paint you need for your walls and ceilings.</p>
-            </a>
-            <a href="/calculators/flooring-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Flooring Calculator</h3>
-              <p className="text-sm text-muted-foreground">Estimate flooring materials needed for any room size.</p>
-            </a>
-            <a href="/calculators/tile-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Tile Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate tiles needed for floors, walls, and backsplashes.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

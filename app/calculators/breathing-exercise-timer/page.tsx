@@ -512,36 +512,6 @@ export default function BreathingExerciseTimerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/meditation-timer"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Meditation Timer</span>
-                  <p className="text-muted-foreground">Customizable timer for mindfulness and meditation sessions</p>
-                </a>
-                <a
-                  href="/calculators/heart-rate-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Heart Rate Calculator</span>
-                  <p className="text-muted-foreground">Calculate target heart rate zones for exercise and training</p>
-                </a>
-                <a
-                  href="/calculators/sleep-cycle-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Sleep Cycle Calculator</span>
-                  <p className="text-muted-foreground">Find optimal wake times based on 90-minute sleep cycles</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

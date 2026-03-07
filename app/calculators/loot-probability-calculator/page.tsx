@@ -367,36 +367,6 @@ export default function LootProbabilityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/drop-rate-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Drop Rate Calculator</span>
-                  <p className="text-muted-foreground">Calculate actual drop rates from your farming data and number of drops received</p>
-                </a>
-                <a
-                  href="/calculators/probability-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Probability Calculator</span>
-                  <p className="text-muted-foreground">Calculate probabilities for various events using different probability distributions</p>
-                </a>
-                <a
-                  href="/calculators/percentage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Percentage Calculator</span>
-                  <p className="text-muted-foreground">Calculate percentages, percentage change, and percentage differences</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

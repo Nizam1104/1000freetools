@@ -508,36 +508,6 @@ export default function HumidityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/hvac-btu-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">HVAC BTU Calculator</span>
-                  <p className="text-muted-foreground">Size your air conditioner based on room dimensions and climate</p>
-                </a>
-                <a
-                  href="/calculators/hvac-airflow-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">HVAC Airflow Calculator</span>
-                  <p className="text-muted-foreground">Calculate required CFM for proper room ventilation</p>
-                </a>
-                <a
-                  href="/calculators/indoor-co-level-estimator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Indoor CO2 Level Estimator</span>
-                  <p className="text-muted-foreground">Estimate indoor air quality based on occupancy and ventilation</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

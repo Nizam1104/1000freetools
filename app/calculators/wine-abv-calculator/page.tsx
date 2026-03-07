@@ -398,23 +398,6 @@ export default function WineABVCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/beer-abv-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Beer ABV Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate alcohol content for homebrewed beer.</p>
-            </a>
-            <a href="/calculators/cocktail-abv-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Cocktail ABV Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate alcohol content of mixed drinks and cocktails.</p>
-            </a>
-            <a href="/calculators/yeast-conversion-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Yeast Conversion Calculator</h3>
-              <p className="text-sm text-muted-foreground">Convert between fresh, dry, and instant yeast for baking and brewing.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

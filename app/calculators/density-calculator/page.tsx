@@ -318,25 +318,6 @@ export default function DensityCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/mass-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Mass Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate mass from density and volume.</p>
-              </a>
-              <a href="/calculators/volume-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Volume Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find volume of various 3D shapes.</p>
-              </a>
-              <a href="/calculators/pressure-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Pressure Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate and convert pressure units.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -383,23 +383,6 @@ export default function AttendancePercentageCalculatorPage() {
           </section>
 
           {/* Related Tools Section */}
-          <section>
-            <h2 className="text-2xl font-semibold tracking-tight mb-4">Related Tools</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/grade-percentage-calculator" className="p-4 bg-card rounded-lg border hover:bg-accent transition-colors">
-                <h3 className="font-medium mb-1">Grade Percentage Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate your grade percentage and track your academic performance.</p>
-              </a>
-              <a href="/calculators/percentage-calculator" className="p-4 bg-card rounded-lg border hover:bg-accent transition-colors">
-                <h3 className="font-medium mb-1">Percentage Calculator</h3>
-                <p className="text-muted-foreground text-sm">General percentage calculations for any purpose.</p>
-              </a>
-              <a href="/calculators/gpa-calculator" className="p-4 bg-card rounded-lg border hover:bg-accent transition-colors">
-                <h3 className="font-medium mb-1">GPA Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate your grade point average and track academic standing.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

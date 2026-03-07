@@ -584,36 +584,6 @@ export default function BackpackLoadCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/hiking-pace-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Hiking Pace Calculator</span>
-                  <p className="text-muted-foreground">Estimate your hiking speed and trip duration based on distance and elevation</p>
-                </a>
-                <a
-                  href="/calculators/camping-gear-weight-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Camping Gear Weight Calculator</span>
-                  <p className="text-muted-foreground">Calculate and optimize your total camping gear weight</p>
-                </a>
-                <a
-                  href="/calculators/water-requirement-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Water Requirement Calculator</span>
-                  <p className="text-muted-foreground">Determine daily water needs based on activity level and conditions</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

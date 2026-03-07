@@ -398,25 +398,6 @@ export default function BoatSpeedCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/fuel-cost-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-semibold">Fuel Cost Calculator</p>
-                  <p className="text-sm text-muted-foreground">Estimate fuel expenses for your boat trips.</p>
-                </a>
-                <a href="/calculators/speed-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-semibold">Speed Calculator</p>
-                  <p className="text-sm text-muted-foreground">Calculate speed, distance, and time relationships.</p>
-                </a>
-                <a href="/calculators/volume-of-cylinder-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-semibold">Fuel Tank Volume Calculator</p>
-                  <p className="text-sm text-muted-foreground">Calculate fuel tank capacity for your vessel.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -275,25 +275,6 @@ export default function CreditCardPayoffCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Financial Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/debt-to-income-ratio-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Debt-to-Income Ratio Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate your DTI ratio to understand your overall debt burden and improve loan approval chances.</p>
-                </a>
-                <a href="/calculators/loan-payoff-time-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Loan Payoff Time Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Estimate how long it will take to pay off any loan with extra payments and see interest savings.</p>
-                </a>
-                <a href="/calculators/minimum-payment-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Minimum Payment Calculator</h3>
-                  <p className="text-sm text-muted-foreground">See how long minimum payments take and why paying more saves thousands in interest.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

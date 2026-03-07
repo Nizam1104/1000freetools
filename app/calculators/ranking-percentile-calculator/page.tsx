@@ -292,36 +292,6 @@ export default function RankingPercentileCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/gpa-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">GPA Calculator</span>
-                <p className="text-muted-foreground">Calculate your grade point average for high school or college</p>
-              </a>
-              <a
-                href="/calculators/final-grade-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Final Grade Calculator</span>
-                <p className="text-muted-foreground">Find out what score you need on your final exam</p>
-              </a>
-              <a
-                href="/calculators/class-rank-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Class Rank Calculator</span>
-                <p className="text-muted-foreground">Estimate your class rank based on GPA and class size</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

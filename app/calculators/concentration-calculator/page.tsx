@@ -368,23 +368,6 @@ export default function ConcentrationCalculator() {
         </section>
 
         {/* Related Tools */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Science & Math Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/concrete-mix-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Concrete Mix Ratio Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate material ratios for construction mixtures and proportions.</p>
-            </a>
-            <a href="/calculators/combination-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Combination Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate permutations and combinations for statistical analysis.</p>
-            </a>
-            <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
-              <p className="text-muted-foreground text-sm">Compare exponential growth calculations with different frequencies.</p>
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   );

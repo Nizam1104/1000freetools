@@ -425,25 +425,6 @@ export default function ElectricityApplianceWattageCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Energy Calculators</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/solar-panel-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Solar Panel Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Estimate solar panel needs and potential savings based on your electricity consumption.</p>
-                </a>
-                <a href="/calculators/battery-life-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Battery Life Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate how long a battery will power your devices based on wattage and capacity.</p>
-                </a>
-                <a href="/calculators/led-savings-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">LED Savings Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Compare LED vs incandescent bulb costs to see how much you can save by switching.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

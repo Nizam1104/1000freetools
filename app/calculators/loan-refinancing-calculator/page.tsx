@@ -413,36 +413,6 @@ export default function LoanRefinancingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/loan-prepayment-impact-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Loan Prepayment Impact Calculator</span>
-                  <p className="text-muted-foreground">See how extra payments reduce your loan term and total interest paid</p>
-                </a>
-                <a
-                  href="/calculators/mortgage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Mortgage Calculator</span>
-                  <p className="text-muted-foreground">Estimate monthly mortgage payments including principal, interest, taxes, and insurance</p>
-                </a>
-                <a
-                  href="/calculators/closing-costs-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Closing Costs Calculator</span>
-                  <p className="text-muted-foreground">Estimate total closing costs for a home purchase or refinance</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

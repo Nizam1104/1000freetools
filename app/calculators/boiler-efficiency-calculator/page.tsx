@@ -302,36 +302,6 @@ export default function BoilerEfficiencyCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/fuel-cost-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Fuel Cost Calculator</span>
-                <p className="text-muted-foreground">Compare heating costs across different fuel types and efficiencies</p>
-              </a>
-              <a
-                href="/calculators/energy-consumption-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Energy Consumption Calculator</span>
-                <p className="text-muted-foreground">Estimate energy usage and costs for appliances and equipment</p>
-              </a>
-              <a
-                href="/calculators/heat-load-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Heat Load Calculator</span>
-                <p className="text-muted-foreground">Calculate heating requirements for buildings and rooms</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

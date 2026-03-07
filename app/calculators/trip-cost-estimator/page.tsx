@@ -401,23 +401,6 @@ export default function TripCostEstimatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Travel Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/fuel-cost-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Fuel Cost Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate fuel expenses for any distance with current gas prices.</p>
-            </a>
-            <a href="/calculators/mileage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Mileage Calculator</h3>
-              <p className="text-sm text-muted-foreground">Track and calculate your vehicle's fuel efficiency and mileage.</p>
-            </a>
-            <a href="/calculators/car-loan-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Car Loan Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate monthly payments for your vehicle purchase or road trip budget.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

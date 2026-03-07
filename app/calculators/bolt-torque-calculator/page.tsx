@@ -320,36 +320,6 @@ export default function BoltTorqueCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/belt-tension-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Belt Tension Calculator</span>
-                <p className="text-muted-foreground">Calculate belt drive tension and torque for power transmission systems</p>
-              </a>
-              <a
-                href="/calculators/torque-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Torque Calculator</span>
-                <p className="text-muted-foreground">Calculate torque from force and distance for mechanical applications</p>
-              </a>
-              <a
-                href="/calculators/thread-pitch-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Thread Pitch Calculator</span>
-                <p className="text-muted-foreground">Determine metric and imperial thread specifications</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

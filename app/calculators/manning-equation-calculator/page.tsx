@@ -280,36 +280,6 @@ export default function ManningEquationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/pipe-flow-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Pipe Flow Calculator</span>
-                <p className="text-muted-foreground">Calculate flow rate and pressure drop in pressurized pipe systems</p>
-              </a>
-              <a
-                href="/calculators/channel-flow-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Channel Flow Calculator</span>
-                <p className="text-muted-foreground">Analyze flow in various channel shapes including trapezoidal and circular</p>
-              </a>
-              <a
-                href="/calculators/stormwater-runoff-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Stormwater Runoff Calculator</span>
-                <p className="text-muted-foreground">Estimate peak runoff using the rational method for drainage design</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

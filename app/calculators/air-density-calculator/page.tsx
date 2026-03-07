@@ -515,25 +515,6 @@ export default function AirDensityCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold mb-4">Related Tools</h2>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a href="/calculators/ideal-gas-law-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block">
-                <h4 className="font-semibold mb-1">Ideal Gas Law Calculator</h4>
-                <p className="text-sm text-muted-foreground">Calculate pressure, volume, and temperature relationships for gases</p>
-              </a>
-              <a href="/calculators/pressure-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block">
-                <h4 className="font-semibold mb-1">Pressure Calculator</h4>
-                <p className="text-sm text-muted-foreground">Convert between different pressure units and calculate atmospheric pressure</p>
-              </a>
-              <a href="/calculators/temperature-converter" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block">
-                <h4 className="font-semibold mb-1">Temperature Converter</h4>
-                <p className="text-sm text-muted-foreground">Convert between Celsius, Fahrenheit, Kelvin, and other temperature scales</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

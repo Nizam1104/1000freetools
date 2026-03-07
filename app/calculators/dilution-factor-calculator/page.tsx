@@ -323,25 +323,6 @@ export default function DilutionFactorCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/cell-culture-doubling-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Cell Culture Doubling Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate cell doubling time for culture growth.</p>
-              </a>
-              <a href="/calculators/molarity-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Molarity Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate molar concentration of solutions.</p>
-              </a>
-              <a href="/calculators/concentration-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Concentration Calculator</h3>
-                <p className="text-sm text-muted-foreground">Convert between concentration units.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

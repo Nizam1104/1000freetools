@@ -308,36 +308,6 @@ export default function ProteinIntakeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/protein-distribution-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Protein Distribution Calculator</span>
-                <p className="text-muted-foreground">Split your daily protein across meals for optimal absorption</p>
-              </a>
-              <a
-                href="/calculators/macro-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Macro Calculator</span>
-                <p className="text-muted-foreground">Calculate complete macronutrient ratios for your goals</p>
-              </a>
-              <a
-                href="/calculators/tdee-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">TDEE Calculator</span>
-                <p className="text-muted-foreground">Find your total daily energy expenditure for calorie planning</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

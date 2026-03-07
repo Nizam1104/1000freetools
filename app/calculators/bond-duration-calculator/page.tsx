@@ -393,36 +393,6 @@ export default function BondDurationCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/bond-price-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Price Calculator</span>
-                  <p className="text-muted-foreground">Calculate the fair market price of a bond based on coupon rate and market yield</p>
-                </a>
-                <a
-                  href="/calculators/bond-yield-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Yield Calculator</span>
-                  <p className="text-muted-foreground">Find current yield and yield to maturity from a bond's market price</p>
-                </a>
-                <a
-                  href="/calculators/yield-to-maturity-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Yield to Maturity Calculator</span>
-                  <p className="text-muted-foreground">Calculate the total return expected on a bond if held until maturity</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

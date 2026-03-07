@@ -462,23 +462,6 @@ export default function BabyFeedingChartCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold tracking-tight mb-4">Related Tools</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/baby-age-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Baby Age Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate your baby&apos;s exact age in weeks, months, and days</p>
-              </a>
-              <a href="/calculators/baby-sleep-schedule-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Baby Sleep Schedule Calculator</h3>
-                <p className="text-sm text-muted-foreground">Get age-appropriate sleep recommendations and nap schedules</p>
-              </a>
-              <a href="/calculators/breast-milk-storage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Breast Milk Storage Calculator</h3>
-                <p className="text-sm text-muted-foreground">Track storage times and learn safe handling guidelines</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

@@ -370,36 +370,6 @@ export default function RampSlopeCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/slope-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Slope Calculator</span>
-                <p className="text-muted-foreground">Calculate slope percentage, angle, and gradient for any incline</p>
-              </a>
-              <a
-                href="/calculators/stair-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Stair Calculator</span>
-                <p className="text-muted-foreground">Design stairs with proper rise and run dimensions</p>
-              </a>
-              <a
-                href="/calculators/incline-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Incline Calculator</span>
-                <p className="text-muted-foreground">Calculate incline angles for treadmills and surfaces</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

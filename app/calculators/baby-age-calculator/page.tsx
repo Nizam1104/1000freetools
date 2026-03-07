@@ -395,23 +395,6 @@ export default function BabyAgeCalculator() {
         </section>
 
         {/* Related Tools */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Related Tools</h2>
-          <div className="grid gap-3 sm:grid-cols-3">
-            <a href="/calculators/baby-feeding-chart-calculator" className="p-4 bg-muted rounded-md hover:bg-muted/80 transition-colors block">
-              <h3 className="font-semibold mb-1">Baby Feeding Chart Calculator</h3>
-              <p className="text-sm text-muted-foreground">Track feeding schedules and amounts for breastfed and formula-fed babies.</p>
-            </a>
-            <a href="/calculators/baby-sleep-schedule-calculator" className="p-4 bg-muted rounded-md hover:bg-muted/80 transition-colors block">
-              <h3 className="font-semibold mb-1">Baby Sleep Schedule Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate optimal nap times and bedtime based on your baby's age and wake windows.</p>
-            </a>
-            <a href="/calculators/pregnancy-due-date-calculator" className="p-4 bg-muted rounded-md hover:bg-muted/80 transition-colors block">
-              <h3 className="font-semibold mb-1">Pregnancy Due Date Calculator</h3>
-              <p className="text-sm text-muted-foreground">Estimate your baby's arrival date based on your last menstrual period or conception date.</p>
-            </a>
-          </div>
-        </section>
 
       </div>
     </div>

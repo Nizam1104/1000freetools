@@ -221,23 +221,6 @@ export default function FactorialCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 mb-8">
-        <h2 className="text-2xl font-semibold mb-6">Related Math Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/combination-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Combination Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate combinations (nCr) for selecting items without regard to order.</p>
-          </a>
-          <a href="/calculators/permutation-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Permutation Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate permutations (nPr) for arranging items in specific orders.</p>
-          </a>
-          <a href="/calculators/exponent-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Exponent Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate powers and exponential expressions.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

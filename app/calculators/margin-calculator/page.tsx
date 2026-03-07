@@ -311,36 +311,6 @@ export default function MarginCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/markup-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Markup Calculator</span>
-                  <p className="text-muted-foreground">Calculate markup percentage and selling price from cost and desired markup</p>
-                </a>
-                <a
-                  href="/calculators/profit-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Profit Calculator</span>
-                  <p className="text-muted-foreground">Calculate net profit after all expenses including operating costs and taxes</p>
-                </a>
-                <a
-                  href="/calculators/break-even-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Break-Even Calculator</span>
-                  <p className="text-muted-foreground">Determine how many units you need to sell to cover all costs</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

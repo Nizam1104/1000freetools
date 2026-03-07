@@ -379,14 +379,10 @@ export default function ReactionYieldCalculator() {
           <CardTitle>Related Chemistry Calculators</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             <a href="/calculators/stoichiometry-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
               <h3 className="font-semibold mb-2">Stoichiometry Calculator</h3>
               <p className="text-sm text-muted-foreground">Balance chemical equations and calculate reactant and product quantities.</p>
-            </a>
-            <a href="/calculators/limiting-reagent-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-              <h3 className="font-semibold mb-2">Limiting Reagent Calculator</h3>
-              <p className="text-sm text-muted-foreground">Identify the limiting reactant and calculate theoretical product amounts.</p>
             </a>
             <a href="/calculators/molarity-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
               <h3 className="font-semibold mb-2">Molarity Calculator</h3>

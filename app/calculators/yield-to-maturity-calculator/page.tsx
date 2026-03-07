@@ -268,23 +268,6 @@ export default function YieldToMaturityCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Finance Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/bond-price-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Bond Price Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate bond price from yield, coupon, and maturity.</p>
-            </a>
-            <a href="/calculators/bond-yield-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Bond Yield Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate current yield and other bond yield metrics.</p>
-            </a>
-            <a href="/calculators/fixed-deposit-interest-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Fixed Deposit Interest Calculator</h3>
-              <p className="text-sm text-muted-foreground">Compare fixed income investment returns.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

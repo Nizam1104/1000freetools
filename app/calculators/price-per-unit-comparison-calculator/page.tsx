@@ -278,7 +278,7 @@ export default function PricePerUnitComparisonCalculatorPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground mb-3">
-              Try our other money-saving tools: the <a href="/calculators/discount-calculator" className="text-primary hover:underline">discount calculator</a> for sale prices, the <a href="/calculators/coupon-savings-calculator" className="text-primary hover:underline">coupon savings calculator</a> for deal stacking, and the <a href="/calculators/gas-savings-calculator" className="text-primary hover:underline">gas savings calculator</a> for fuel comparisons.
+              Try our other money-saving tools: the <a href="/calculators/discount-calculator" className="text-primary hover:underline">discount calculator</a> for sale prices.
             </p>
           </CardContent>
         </Card>

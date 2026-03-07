@@ -439,23 +439,6 @@ export default function TuningFrequencyConverterPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Music Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/note-frequency-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Note Frequency Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the exact frequency of any musical note.</p>
-            </a>
-            <a href="/calculators/tempo-to-delay-time-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Tempo to Delay Time Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert BPM to milliseconds for audio delay effects.</p>
-            </a>
-            <a href="/calculators/chord-progression-generator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Chord Progression Generator</h3>
-              <p className="text-sm text-muted-foreground">Create harmonic progressions for your compositions.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

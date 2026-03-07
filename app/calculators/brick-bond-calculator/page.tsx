@@ -447,36 +447,6 @@ export default function BrickBondCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/concrete-block-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Concrete Block Calculator</span>
-                  <p className="text-muted-foreground">Calculate concrete blocks needed for foundation and wall construction</p>
-                </a>
-                <a
-                  href="/calculators/mortar-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Mortar Calculator</span>
-                  <p className="text-muted-foreground">Estimate mortar quantity for bricklaying and blockwork projects</p>
-                </a>
-                <a
-                  href="/calculators/concrete-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Concrete Calculator</span>
-                  <p className="text-muted-foreground">Calculate concrete volume for slabs, footings, and foundations</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

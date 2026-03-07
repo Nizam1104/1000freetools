@@ -596,14 +596,10 @@ export default function PerimeterCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-1 gap-4">
           <a href="/math-tools/area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
             <p className="font-semibold text-sm">Area Calculator</p>
             <p className="text-xs text-muted-foreground">Calculate area of 2D shapes</p>
-          </a>
-          <a href="/calculators/volume-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Volume Calculator</p>
-            <p className="text-xs text-muted-foreground">3D shape volume</p>
           </a>
         </div>
       </section>

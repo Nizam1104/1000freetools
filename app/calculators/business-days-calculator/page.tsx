@@ -320,36 +320,6 @@ export default function BusinessDaysCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/date-duration-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Date Duration Calculator</span>
-                <p className="text-muted-foreground">Calculate the exact number of days between any two dates</p>
-              </a>
-              <a
-                href="/calculators/add-days-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Add Days Calculator</span>
-                <p className="text-muted-foreground">Add or subtract days from a date to find a future or past date</p>
-              </a>
-              <a
-                href="/calculators/project-timeline-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Project Timeline Calculator</span>
-                <p className="text-muted-foreground">Plan project milestones and deadlines with working day calculations</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

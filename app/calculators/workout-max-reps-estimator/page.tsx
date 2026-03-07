@@ -196,23 +196,6 @@ export default function WorkoutMaxRepsEstimator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/1rm-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">1RM Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate one-rep max from submaximal lifts.</p>
-          </a>
-          <a href="/calculators/workout-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Workout Volume Calculator</h3>
-            <p className="text-sm text-muted-foreground">Track total training volume for progressive overload.</p>
-          </a>
-          <a href="/calculators/warm-up-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Warm-Up Calculator</h3>
-            <p className="text-sm text-muted-foreground">Generate warm-up sets based on working weight.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

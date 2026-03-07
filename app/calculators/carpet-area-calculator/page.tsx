@@ -363,23 +363,6 @@ export default function CarpetAreaCalculator() {
         </section>
 
         {/* Related Tools */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Real Estate & Home Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/ceiling-tile-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Ceiling Tile Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate materials needed for ceiling installation in your home or office.</p>
-            </a>
-            <a href="/calculators/canvas-aspect-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Canvas Aspect Ratio Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate dimensions for interior design layouts and wall art.</p>
-            </a>
-            <a href="/calculators/concrete-mix-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Concrete Mix Ratio Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate cement, sand, and aggregate for home construction projects.</p>
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   );

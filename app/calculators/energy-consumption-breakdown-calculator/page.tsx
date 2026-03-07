@@ -430,23 +430,6 @@ export default function EnergyConsumptionBreakdownCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-12 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Related Energy & Utility Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/electricity-appliance-wattage-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Electricity Appliance Wattage Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate power consumption and costs for individual appliances.</p>
-            </a>
-            <a href="/calculators/solar-panel-requirement-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Solar Panel Requirement Calculator</h3>
-              <p className="text-sm text-muted-foreground">Determine how many solar panels you need based on your energy consumption.</p>
-            </a>
-            <a href="/calculators/heat-pump-cop-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Heat Pump COP Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the coefficient of performance for heating and cooling systems.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

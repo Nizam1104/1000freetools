@@ -412,36 +412,6 @@ export default function OvulationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/pregnancy-due-date-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Pregnancy Due Date Calculator</span>
-                <p className="text-muted-foreground">Estimate your baby's due date from last period or conception</p>
-              </a>
-              <a
-                href="/calculators/baby-age-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Baby Age Calculator</span>
-                <p className="text-muted-foreground">Calculate your baby's exact age in weeks and months</p>
-              </a>
-              <a
-                href="/calculators/period-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Period Calculator</span>
-                <p className="text-muted-foreground">Predict your next period and track menstrual cycles</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

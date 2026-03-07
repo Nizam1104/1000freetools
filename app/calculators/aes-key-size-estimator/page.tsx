@@ -436,25 +436,6 @@ export default function AESKeySizeEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">Related Tools</h2>
-              <div className="space-y-2">
-                <a href="/calculators/password-strength-scorer" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-medium text-foreground">Password Strength Scorer</p>
-                  <p className="text-sm text-muted-foreground">Evaluate how strong your passwords are against brute force and dictionary attacks</p>
-                </a>
-                <a href="/calculators/hash-brute-force-time-estimator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-medium text-foreground">Hash Brute Force Time Estimator</p>
-                  <p className="text-sm text-muted-foreground">Calculate how long it would take to crack hashed passwords using different methods</p>
-                </a>
-                <a href="/calculators/rsa-key-strength-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-medium text-foreground">RSA Key Strength Calculator</p>
-                  <p className="text-sm text-muted-foreground">Analyze RSA key sizes and compare their security levels against modern attack methods</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -277,36 +277,6 @@ export default function RelativisticEnergyCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/lorentz-transformation-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Lorentz Transformation Calculator</span>
-                <p className="text-muted-foreground">Transform coordinates between reference frames</p>
-              </a>
-              <a
-                href="/calculators/time-dilation-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Time Dilation Calculator</span>
-                <p className="text-muted-foreground">Calculate how time slows at high velocities</p>
-              </a>
-              <a
-                href="/calculators/mass-energy-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Mass-Energy Converter</span>
-                <p className="text-muted-foreground">Convert between mass and energy using E=mc²</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

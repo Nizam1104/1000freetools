@@ -202,23 +202,6 @@ export default function CombinationCalculator() {
         </section>
 
         {/* Related Tools */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math & Statistics Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate investment growth with different compounding periods.</p>
-            </a>
-            <a href="/calculators/concentration-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Concentration Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate solution concentrations for chemistry applications.</p>
-            </a>
-            <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
-              <p className="text-muted-foreground text-sm">Financial calculations using statistical and mathematical formulas.</p>
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   );

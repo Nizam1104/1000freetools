@@ -464,27 +464,6 @@ export default function SwimmingLapPaceCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/swimming-calorie-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Swimming Calorie Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate calories burned swimming</p>
-                </a>
-                <a href="/calculators/running-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Running Pace Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate running pace & speed</p>
-                </a>
-                <a href="/calculators/marathon-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Marathon Pace Calculator</p>
-                  <p className="text-xs text-muted-foreground">Race pace predictor</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

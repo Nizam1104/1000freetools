@@ -469,23 +469,6 @@ export default function UpsLoadCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Power Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/ups-generator-runtime-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">UPS Generator Runtime Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate how long your backup power will last during outages.</p>
-            </a>
-            <a href="/calculators/power-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Power Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate electrical power, voltage, current, and resistance.</p>
-            </a>
-            <a href="/calculators/electricity-appliance-wattage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Electricity Appliance Wattage Calculator</h3>
-              <p className="text-sm text-muted-foreground">Estimate power consumption of household appliances.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

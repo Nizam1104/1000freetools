@@ -366,25 +366,6 @@ export default function RecipeScalerCalculatorPage() {
         </Card>
 
         {/* Related Tools Section */}
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Cooking Calculators</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/kitchen-measurement-converter" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Kitchen Measurement Converter</h3>
-                <p className="text-sm text-muted-foreground">Convert between cups, tablespoons, grams, and other cooking measurements.</p>
-              </a>
-              <a href="/calculators/oven-temperature-converter" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Oven Temperature Converter</h3>
-                <p className="text-sm text-muted-foreground">Convert between Fahrenheit, Celsius, and gas mark temperatures for baking.</p>
-              </a>
-              <a href="/calculators/baking-time-adjustment-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Baking Time Adjustment Calculator</h3>
-                <p className="text-sm text-muted-foreground">Adjust baking times when changing pan sizes or recipe quantities.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -364,23 +364,6 @@ export default function CgpaCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Education & Finance Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
-                <p className="text-muted-foreground text-sm">Plan student loan repayments and understand investment growth for education savings.</p>
-              </a>
-              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
-                <p className="text-muted-foreground text-sm">Evaluate education ROI and student loan financing options.</p>
-              </a>
-              <a href="/calculators/car-loan-affordability-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
-                <p className="text-muted-foreground text-sm">Budget for transportation costs while managing student finances.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

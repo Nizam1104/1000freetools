@@ -544,36 +544,6 @@ export default function DiscountStackingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/discount-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Discount Calculator</span>
-                  <p className="text-muted-foreground">Calculate single discount percentages</p>
-                </a>
-                <a
-                  href="/calculators/percentage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Percentage Calculator</span>
-                  <p className="text-muted-foreground">General percentage calculations</p>
-                </a>
-                <a
-                  href="/calculators/sales-tax-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Sales Tax Calculator</span>
-                  <p className="text-muted-foreground">Add tax to discounted prices</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

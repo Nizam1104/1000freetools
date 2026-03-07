@@ -380,25 +380,6 @@ export default function ScaleFinderPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Music Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/chord-progression-generator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Chord Progression Generator</h4>
-                  <p className="text-sm text-muted-foreground">Create harmonic progressions for your songs using music theory rules.</p>
-                </a>
-                <a href="/calculators/tempo-to-delay-time-converter" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Tempo to Delay Time Converter</h4>
-                  <p className="text-sm text-muted-foreground">Calculate perfect delay times synced to your song&apos;s BPM.</p>
-                </a>
-                <a href="/calculators/note-frequency-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Note Frequency Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Find the exact frequency of any musical note for tuning and production.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

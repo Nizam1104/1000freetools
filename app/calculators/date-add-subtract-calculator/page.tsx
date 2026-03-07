@@ -336,36 +336,6 @@ export default function DateAddSubtractCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/date-difference-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Date Difference Calculator</span>
-                <p className="text-muted-foreground">Find the number of days, weeks, and months between two dates</p>
-              </a>
-              <a
-                href="/calculators/business-day-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Business Day Calculator</span>
-                <p className="text-muted-foreground">Add or subtract business days, excluding weekends and holidays</p>
-              </a>
-              <a
-                href="/calculators/age-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Age Calculator</span>
-                <p className="text-muted-foreground">Calculate exact age in years, months, and days from birth date</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

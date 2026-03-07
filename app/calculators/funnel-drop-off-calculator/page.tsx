@@ -472,36 +472,6 @@ export default function FunnelDropOffCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/conversion-rate-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Conversion Rate Calculator</span>
-                  <p className="text-muted-foreground">Calculate conversion rates and analyze performance metrics</p>
-                </a>
-                <a
-                  href="/calculators/ab-test-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">A/B Test Calculator</span>
-                  <p className="text-muted-foreground">Determine statistical significance of A/B test results</p>
-                </a>
-                <a
-                  href="/calculators/churn-rate-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Churn Rate Calculator</span>
-                  <p className="text-muted-foreground">Calculate customer churn and retention rates</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -477,36 +477,6 @@ export default function DroneFlightTimeEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/battery-life-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Battery Life Calculator</span>
-                  <p className="text-muted-foreground">Estimate battery runtime for any electronic device</p>
-                </a>
-                <a
-                  href="/calculators/power-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Power Calculator</span>
-                  <p className="text-muted-foreground">Calculate electrical power, voltage, and current</p>
-                </a>
-                <a
-                  href="/calculators/charging-cost-ev-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Charging Cost Calculator</span>
-                  <p className="text-muted-foreground">Estimate the cost of charging electric vehicles and devices</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

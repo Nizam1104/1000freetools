@@ -407,23 +407,6 @@ export default function WarehouseStorageVolumeCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/container-load-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Container Load Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate how many boxes fit in shipping containers.</p>
-            </a>
-            <a href="/calculators/pallet-stacking-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Pallet Stacking Calculator</h3>
-              <p className="text-sm text-muted-foreground">Optimize pallet stacking patterns for maximum capacity.</p>
-            </a>
-            <a href="/calculators/cargo-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Cargo Volume Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate cargo space for trucks and trailers.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

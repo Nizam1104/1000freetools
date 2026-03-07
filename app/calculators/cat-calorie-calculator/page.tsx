@@ -449,23 +449,6 @@ export default function CatCalorieCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Pet & Health Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/calories-per-serving-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Calories Per Serving Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate nutrition for homemade pet food recipes and treats.</p>
-              </a>
-              <a href="/calculators/carb-intake-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carb Intake Calculator</h3>
-                <p className="text-muted-foreground text-sm">Understand carbohydrate needs for diabetic cats on special diets.</p>
-              </a>
-              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
-                <p className="text-muted-foreground text-sm">Measure the environmental impact of your pet's diet and care.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

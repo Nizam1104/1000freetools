@@ -199,23 +199,6 @@ export default function FastenerLoadCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 mb-8">
-        <h2 className="text-2xl font-semibold mb-6">Related Engineering Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/bolt-torque-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Bolt Torque Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate proper tightening torque for bolts based on preload requirements.</p>
-          </a>
-          <a href="/calculators/safety-factor-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Safety Factor Calculator</h3>
-            <p className="text-sm text-muted-foreground">Determine safety factors for structural and mechanical designs.</p>
-          </a>
-          <a href="/calculators/shear-strength-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Shear Strength Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate shear stress and capacity for various materials and configurations.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

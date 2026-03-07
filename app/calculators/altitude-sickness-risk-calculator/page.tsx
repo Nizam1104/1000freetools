@@ -695,48 +695,6 @@ export default function AltitudeSicknessRiskCalculatorPage() {
           </Card>
 
           {/* Related Tools Section */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">
-                Related Tools
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a
-                  href="/calculators/air-density-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted/50 transition-colors group"
-                >
-                  <h3 className="font-medium text-foreground group-hover:text-primary text-sm">
-                    Air Density Calculator
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Calculate air density at different altitudes and conditions
-                  </p>
-                </a>
-                <a
-                  href="/calculators/hiking-pace-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted/50 transition-colors group"
-                >
-                  <h3 className="font-medium text-foreground group-hover:text-primary text-sm">
-                    Hiking Pace Calculator
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Estimate hiking time based on distance and elevation gain
-                  </p>
-                </a>
-                <a
-                  href="/calculators/water-requirement-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted/50 transition-colors group"
-                >
-                  <h3 className="font-medium text-foreground group-hover:text-primary text-sm">
-                    Water Requirement Calculator
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Calculate daily water needs for outdoor activities
-                  </p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

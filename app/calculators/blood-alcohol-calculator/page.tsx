@@ -384,36 +384,6 @@ export default function BloodAlcoholCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/calorie-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Calorie Calculator</span>
-                <p className="text-muted-foreground">Calculate daily calorie needs based on age, weight, height, and activity level</p>
-              </a>
-              <a
-                href="/calculators/water-intake-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Water Intake Calculator</span>
-                <p className="text-muted-foreground">Determine your daily water intake needs based on weight and activity</p>
-              </a>
-              <a
-                href="/calculators/sleep-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Sleep Calculator</span>
-                <p className="text-muted-foreground">Calculate optimal bedtimes and wake times for better rest</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -279,36 +279,6 @@ export default function RmsValueCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/peak-to-peak-voltage-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Peak-to-Peak Voltage Calculator</span>
-                <p className="text-muted-foreground">Convert between RMS, peak, and peak-to-peak voltages</p>
-              </a>
-              <a
-                href="/calculators/ac-power-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">AC Power Calculator</span>
-                <p className="text-muted-foreground">Calculate real, reactive, and apparent power</p>
-              </a>
-              <a
-                href="/calculators/signal-generator-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Signal Generator Calculator</span>
-                <p className="text-muted-foreground">Generate waveforms with specified frequency and amplitude</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

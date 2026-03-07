@@ -260,25 +260,6 @@ export default function ProteinAbsorptionCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/protein-intake-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Protein Intake Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate daily protein needs for your goals.</p>
-              </a>
-              <a href="/calculators/calorie-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Calorie Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find your daily calorie requirements.</p>
-              </a>
-              <a href="/calculators/macro-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Macro Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate macronutrient ratios for diet.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

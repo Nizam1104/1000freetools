@@ -246,7 +246,7 @@ export default function SavingsGoalCalculatorPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground mb-3">
-              Try our other financial tools: the <a href="/calculators/emergency-fund-calculator" className="text-primary hover:underline">emergency fund calculator</a> for safety nets, the <a href="/calculators/compound-interest-calculator" className="text-primary hover:underline">compound interest calculator</a> for investment growth, and the <a href="/calculators/budget-calculator" className="text-primary hover:underline">budget calculator</a> for expense planning.
+              Try our other financial tools: the <a href="/calculators/emergency-fund-calculator" className="text-primary hover:underline">emergency fund calculator</a> for safety nets and the <a href="/calculators/compound-interest-calculator" className="text-primary hover:underline">compound interest calculator</a> for investment growth.
             </p>
           </CardContent>
         </Card>

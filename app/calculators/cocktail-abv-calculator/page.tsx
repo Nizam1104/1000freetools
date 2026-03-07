@@ -526,36 +526,6 @@ export default function CocktailABVCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/beer-abv-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Beer ABV Calculator</span>
-                  <p className="text-muted-foreground">Calculate alcohol content of homemade beer from gravity readings</p>
-                </a>
-                <a
-                  href="/calculators/wine-abv-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Wine ABV Calculator</span>
-                  <p className="text-muted-foreground">Determine wine alcohol content from specific gravity measurements</p>
-                </a>
-                <a
-                  href="/calculators/blood-alcohol-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Blood Alcohol Calculator</span>
-                  <p className="text-muted-foreground">Estimate blood alcohol content based on drinks consumed</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

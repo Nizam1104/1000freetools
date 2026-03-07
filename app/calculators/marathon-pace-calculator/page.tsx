@@ -492,36 +492,6 @@ export default function MarathonPaceCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/running-pace-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Running Pace Calculator</span>
-                  <p className="text-muted-foreground">Calculate pace, time, or distance for any running workout</p>
-                </a>
-                <a
-                  href="/calculators/heart-rate-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Heart Rate Calculator</span>
-                  <p className="text-muted-foreground">Calculate target heart rate zones for different training intensities</p>
-                </a>
-                <a
-                  href="/calculators/vo2-max-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">VO2 Max Calculator</span>
-                  <p className="text-muted-foreground">Estimate your VO2 max from race times or fitness tests</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -390,36 +390,6 @@ export default function InductorCalculations() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/resistor-color-code-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Resistor Color Code Calculator</span>
-                <p className="text-muted-foreground">Decode resistor values from color bands</p>
-              </a>
-              <a
-                href="/calculators/capacitor-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Capacitor Calculator</span>
-                <p className="text-muted-foreground">Calculate capacitance and reactance values</p>
-              </a>
-              <a
-                href="/calculators/ohms-law-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ohm's Law Calculator</span>
-                <p className="text-muted-foreground">Calculate voltage, current, resistance, and power</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

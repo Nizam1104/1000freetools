@@ -302,23 +302,6 @@ export default function WaterRequirementCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/water-flow-rate-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Water Flow Rate Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate water flow through pipes for plumbing and irrigation.</p>
-          </a>
-          <a href="/calculators/water-tank-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Water Tank Volume Calculator</h3>
-            <p className="text-sm text-muted-foreground">Find water tank capacity in gallons or liters.</p>
-          </a>
-          <a href="/calculators/bmi-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">BMI Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate body mass index for health assessment.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

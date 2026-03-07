@@ -343,36 +343,6 @@ export default function BreakEvenDiscountCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/break-even-point-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Break-Even Point Calculator</span>
-                  <p className="text-muted-foreground">Calculate how many units you need to sell to cover all costs</p>
-                </a>
-                <a
-                  href="/calculators/profit-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Profit Margin Calculator</span>
-                  <p className="text-muted-foreground">Calculate gross and net profit margins from revenue and costs</p>
-                </a>
-                <a
-                  href="/calculators/markup-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Markup Calculator</span>
-                  <p className="text-muted-foreground">Determine selling price from cost and desired markup percentage</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

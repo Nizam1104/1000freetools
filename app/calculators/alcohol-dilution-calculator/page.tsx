@@ -546,25 +546,6 @@ export default function AlcoholDilutionCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">Related Tools</h2>
-              <div className="space-y-2">
-                <a href="/calculators/dilution-calculator" className="block p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors">
-                  <p className="font-medium text-foreground text-sm">Dilution Calculator</p>
-                  <p className="text-xs text-muted-foreground">General-purpose dilution calculator for any solution</p>
-                </a>
-                <a href="/calculators/dilution-factor-calculator" className="block p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors">
-                  <p className="font-medium text-foreground text-sm">Dilution Factor Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate dilution factors and serial dilutions</p>
-                </a>
-                <a href="/calculators/beer-abv-calculator" className="block p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors">
-                  <p className="font-medium text-foreground text-sm">Beer ABV Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate alcohol content in homemade beer</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

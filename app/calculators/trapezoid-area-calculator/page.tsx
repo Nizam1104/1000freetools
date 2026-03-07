@@ -159,23 +159,6 @@ export default function TrapezoidAreaCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/triangle-area-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Triangle Area Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate the area of any triangle using base and height or side lengths.</p>
-          </a>
-          <a href="/calculators/rectangle-area-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Rectangle Area Calculator</h3>
-            <p className="text-sm text-muted-foreground">Find the area and perimeter of rectangles for flooring and painting projects.</p>
-          </a>
-          <a href="/calculators/parallelogram-area-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Parallelogram Area Calculator</h3>
-            <p className="text-sm text-muted-foreground">Compute the area of parallelograms using base and height measurements.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

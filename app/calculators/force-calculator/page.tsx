@@ -310,25 +310,6 @@ export default function ForceCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/acceleration-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Acceleration Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate acceleration from velocity and time.</p>
-              </a>
-              <a href="/calculators/pressure-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Pressure Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate pressure from force and area.</p>
-              </a>
-              <a href="/calculators/work-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Work Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate work done by force over distance.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

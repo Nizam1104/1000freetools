@@ -445,25 +445,6 @@ export default function PalletStackingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-6">Related Logistics and Shipping Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/container-load-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Container Load Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate how many boxes fit in shipping containers for ocean freight planning.</p>
-                </a>
-                <a href="/calculators/dimensional-weight-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Dimensional Weight Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate DIM weight for shipping costs based on package dimensions.</p>
-                </a>
-                <a href="/calculators/volumetric-weight-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Volumetric Weight Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Convert package volume to weight for courier and freight pricing.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

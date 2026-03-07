@@ -451,36 +451,6 @@ export default function RichterScaleToEnergyCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/tsunami-travel-time-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Tsunami Travel Time Calculator</span>
-                  <p className="text-muted-foreground">Calculate how long a tsunami takes to reach different locations</p>
-                </a>
-                <a
-                  href="/calculators/earthquake-intensity-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Earthquake Intensity Calculator</span>
-                  <p className="text-muted-foreground">Convert between magnitude and Mercalli intensity scales</p>
-                </a>
-                <a
-                  href="/calculators/tnt-equivalent-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">TNT Equivalent Calculator</span>
-                  <p className="text-muted-foreground">Convert energy values to explosive equivalents</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

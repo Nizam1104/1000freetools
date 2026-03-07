@@ -467,23 +467,6 @@ export default function AnniversaryCalculator() {
         </section>
 
         {/* Related Tools Section */}
-        <section>
-          <h2 className="text-2xl font-bold mb-6">Related Tools</h2>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <a href="/calculators/date-difference-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block">
-              <h3 className="font-semibold mb-1">Date Difference Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the exact time between any two dates</p>
-            </a>
-            <a href="/calculators/age-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block">
-              <h3 className="font-semibold mb-1">Age Calculator</h3>
-              <p className="text-sm text-muted-foreground">Find out your exact age in years, months, and days</p>
-            </a>
-            <a href="/calculators/countdown-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block">
-              <h3 className="font-semibold mb-1">Countdown Calculator</h3>
-              <p className="text-sm text-muted-foreground">Count down days until any special event or date</p>
-            </a>
-          </div>
-        </section>
 
       </div>
     </div>

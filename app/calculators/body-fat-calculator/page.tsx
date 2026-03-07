@@ -400,36 +400,6 @@ export default function BodyFatCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/bmi-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMI Calculator</span>
-                <p className="text-muted-foreground">Calculate body mass index and determine healthy weight range</p>
-              </a>
-              <a
-                href="/calculators/body-surface-area-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Body Surface Area Calculator</span>
-                <p className="text-muted-foreground">Calculate BSA for medical dosing and clinical assessments</p>
-              </a>
-              <a
-                href="/calculators/calorie-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Calorie Calculator</span>
-                <p className="text-muted-foreground">Calculate daily calorie needs for weight loss, maintenance, or gain</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

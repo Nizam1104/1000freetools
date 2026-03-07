@@ -551,36 +551,6 @@ export default function DiaperUsageEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/baby-age-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Baby Age Calculator</span>
-                  <p className="text-muted-foreground">Calculate your baby's exact age in weeks, months, and days</p>
-                </a>
-                <a
-                  href="/calculators/baby-feeding-chart-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Baby Feeding Chart Calculator</span>
-                  <p className="text-muted-foreground">Track feeding schedules and amounts based on baby's age and weight</p>
-                </a>
-                <a
-                  href="/calculators/child-care-cost-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Child Care Cost Calculator</span>
-                  <p className="text-muted-foreground">Estimate daycare and babysitting expenses</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

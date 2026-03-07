@@ -332,36 +332,6 @@ export default function ChildHeightPredictor() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/bmi-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMI Calculator</span>
-                <p className="text-muted-foreground">Calculate body mass index to assess healthy weight for height</p>
-              </a>
-              <a
-                href="/calculators/ideal-weight-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ideal Weight Calculator</span>
-                <p className="text-muted-foreground">Find healthy weight ranges based on height and body frame</p>
-              </a>
-              <a
-                href="/calculators/toddler-growth-chart-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Toddler Growth Chart Calculator</span>
-                <p className="text-muted-foreground">Track your child&apos;s growth percentiles over time</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

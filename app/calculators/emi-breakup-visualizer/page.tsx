@@ -366,23 +366,6 @@ export default function EMIBreakupVisualizerPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-12 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Related Loan Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/emi-for-home-loan-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Home Loan EMI Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate monthly EMI for home loans with visual charts showing principal vs interest distribution.</p>
-            </a>
-            <a href="/calculators/loan-amortization-visualizer" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Loan Amortization Schedule</h3>
-              <p className="text-sm text-muted-foreground">Generate a complete amortization table showing every payment throughout your loan term.</p>
-            </a>
-            <a href="/calculators/loan-prepayment-impact-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Loan Prepayment Calculator</h3>
-              <p className="text-sm text-muted-foreground">See how extra payments can reduce your loan tenure and total interest burden.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

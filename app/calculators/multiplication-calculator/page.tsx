@@ -281,36 +281,6 @@ export default function MultiplicationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/long-multiplication-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Long Multiplication Calculator</span>
-                <p className="text-muted-foreground">See step-by-step long multiplication with work shown</p>
-              </a>
-              <a
-                href="/calculators/division-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Division Calculator</span>
-                <p className="text-muted-foreground">Divide numbers and see quotient with remainder</p>
-              </a>
-              <a
-                href="/calculators/exponent-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Exponent Calculator</span>
-                <p className="text-muted-foreground">Calculate powers and exponential expressions</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

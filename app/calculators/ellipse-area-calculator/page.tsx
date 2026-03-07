@@ -238,25 +238,6 @@ export default function EllipseAreaCalculator() {
         </Card>
 
         {/* Related Tools */}
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold mb-6">Related Geometry Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/circle-area-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Circle Area Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate area and circumference of circles using radius or diameter.</p>
-              </a>
-              <a href="/calculators/rectangle-area-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Rectangle Area Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find area and perimeter of rectangles for flooring, painting, and construction projects.</p>
-              </a>
-              <a href="/calculators/triangle-area-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Triangle Area Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate triangle area using base and height, or three sides with Heron&apos;s formula.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

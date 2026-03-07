@@ -209,23 +209,6 @@ export default function ExpressionEvaluator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 mb-8">
-        <h2 className="text-2xl font-semibold mb-6">Related Math Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/exponent-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Exponent Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate base numbers raised to any power.</p>
-          </a>
-          <a href="/calculators/scientific-notation-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Scientific Notation Calculator</h3>
-            <p className="text-sm text-muted-foreground">Convert numbers to and from scientific notation format.</p>
-          </a>
-          <a href="/calculators/factorial-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Factorial Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate factorials for combinatorics and probability.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

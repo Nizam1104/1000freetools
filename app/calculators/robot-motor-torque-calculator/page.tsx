@@ -362,23 +362,6 @@ export default function RobotMotorTorqueCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-xl font-semibold mb-4">Related Engineering Calculators</h2>
-          <div className="space-y-3">
-            <div>
-              <a href="/calculators/gear-ratio-calculator" className="text-primary hover:underline font-medium">Gear Ratio Calculator</a>
-              <p className="text-muted-foreground text-sm">Calculate gear ratios, output speed, and torque multiplication for your robot drivetrain or actuator system.</p>
-            </div>
-            <div>
-              <a href="/calculators/power-consumption-calculator" className="text-primary hover:underline font-medium">Battery Power Consumption Calculator</a>
-              <p className="text-muted-foreground text-sm">Estimate runtime and power requirements for your robot based on motor specifications and battery capacity.</p>
-            </div>
-            <div>
-              <a href="/calculators/speed-distance-time-calculator" className="text-primary hover:underline font-medium">Speed Distance Time Calculator</a>
-              <p className="text-muted-foreground text-sm">Plan robot movement profiles and calculate travel times based on speed and distance requirements.</p>
-            </div>
-          </div>
-        </div>
 
         {/* Reference Table: Motor Types */}
         <div className="mt-8 p-6 bg-card rounded-lg border">

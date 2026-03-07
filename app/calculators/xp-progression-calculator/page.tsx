@@ -413,23 +413,6 @@ export default function XPProgressionCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Gaming Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/gacha-pull-probability-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Gacha Pull Probability Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate your odds of getting desired characters or items.</p>
-            </a>
-            <a href="/calculators/loot-probability-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Loot Probability Calculator</h3>
-              <p className="text-sm text-muted-foreground">Estimate drop rates and expected attempts for rare items.</p>
-            </a>
-            <a href="/calculators/screen-time-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Screen Time Calculator</h3>
-              <p className="text-sm text-muted-foreground">Track and manage your daily gaming and screen time.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

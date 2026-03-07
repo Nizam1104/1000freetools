@@ -608,23 +608,6 @@ export default function ContainerLoadCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Shipping & Logistics Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/cargo-volume-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Cargo Volume Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate total shipment volume and chargeable weight for freight.</p>
-              </a>
-              <a href="/calculators/camping-gear-weight-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Camping Gear Weight Calculator</h3>
-                <p className="text-muted-foreground text-sm">Plan pack weight distribution for outdoor adventures.</p>
-              </a>
-              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
-                <p className="text-muted-foreground text-sm">Measure environmental impact of shipping and logistics operations.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

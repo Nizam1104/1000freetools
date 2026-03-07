@@ -461,23 +461,6 @@ export default function VentilationRateCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related HVAC Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/hvac-btu-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">HVAC BTU Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate heating and cooling capacity for your space.</p>
-            </a>
-            <a href="/calculators/hvac-airflow-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">HVAC Airflow Calculator</h3>
-              <p className="text-sm text-muted-foreground">Determine proper airflow rates for HVAC systems.</p>
-            </a>
-            <a href="/calculators/humidity-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Humidity Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate relative humidity and dew point for indoor air quality.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

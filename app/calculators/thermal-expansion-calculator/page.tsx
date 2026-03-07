@@ -275,27 +275,6 @@ export default function ThermalExpansionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <h3 className="text-lg font-semibold">Related Tools</h3>
-          </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a href="/calculators/density-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Density Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate mass, volume, density</p>
-              </a>
-              <a href="/calculators/force-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Force Calculator</p>
-                <p className="text-xs text-muted-foreground">Physics force calculations</p>
-              </a>
-              <a href="/calculators/pressure-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Pressure Calculator</p>
-                <p className="text-xs text-muted-foreground">Pressure and stress calculations</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

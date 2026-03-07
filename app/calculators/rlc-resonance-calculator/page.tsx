@@ -266,36 +266,6 @@ export default function RlcResonanceCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/rc-time-constant-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">RC Time Constant Calculator</span>
-                <p className="text-muted-foreground">Calculate time constant for RC circuits</p>
-              </a>
-              <a
-                href="/calculators/inductive-reactance-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Inductive Reactance Calculator</span>
-                <p className="text-muted-foreground">Calculate inductor impedance at frequency</p>
-              </a>
-              <a
-                href="/calculators/capacitive-reactance-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Capacitive Reactance Calculator</span>
-                <p className="text-muted-foreground">Calculate capacitor impedance at frequency</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

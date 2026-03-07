@@ -167,23 +167,6 @@ export default function VolumeOfConeCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/volume-of-cylinder-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Volume of Cylinder Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate volume and surface area of cylinders for tanks and pipes.</p>
-          </a>
-          <a href="/calculators/volume-of-sphere-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Volume of Sphere Calculator</h3>
-            <p className="text-sm text-muted-foreground">Find the volume and surface area of spheres for balls and domes.</p>
-          </a>
-          <a href="/calculators/volume-of-pyramid-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Volume of Pyramid Calculator</h3>
-            <p className="text-sm text-muted-foreground">Compute the volume of rectangular pyramids for architecture and design.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

@@ -262,36 +262,6 @@ export default function RandomNumberGenerator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/dice-roller"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Dice Roller</span>
-                <p className="text-muted-foreground">Roll virtual dice for board games and tabletop RPGs</p>
-              </a>
-              <a
-                href="/calculators/coin-flipper"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Coin Flipper</span>
-                <p className="text-muted-foreground">Flip a coin for quick yes/no decisions</p>
-              </a>
-              <a
-                href="/calculators/password-generator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Password Generator</span>
-                <p className="text-muted-foreground">Create secure random passwords for your accounts</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

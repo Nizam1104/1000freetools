@@ -253,36 +253,6 @@ export default function RefractionIndexCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/snell-law-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Snell's Law Calculator</span>
-                <p className="text-muted-foreground">Calculate refraction angles at material interfaces</p>
-              </a>
-              <a
-                href="/calculators/critical-angle-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Critical Angle Calculator</span>
-                <p className="text-muted-foreground">Find the angle for total internal reflection</p>
-              </a>
-              <a
-                href="/calculators/lens-maker-equation-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Lens Maker Equation Calculator</span>
-                <p className="text-muted-foreground">Design lenses with specific focal lengths</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

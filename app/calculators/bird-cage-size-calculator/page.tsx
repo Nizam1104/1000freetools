@@ -505,36 +505,6 @@ export default function BirdCageSizeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/pet-calorie-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Pet Calorie Calculator</span>
-                  <p className="text-muted-foreground">Calculate daily calorie needs for dogs and cats based on weight and activity</p>
-                </a>
-                <a
-                  href="/calculators/fish-tank-volume-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Fish Tank Volume Calculator</span>
-                  <p className="text-muted-foreground">Calculate aquarium volume and determine appropriate fish stocking levels</p>
-                </a>
-                <a
-                  href="/calculators/dog-age-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Dog Age Calculator</span>
-                  <p className="text-muted-foreground">Convert dog years to human years based on breed and size</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

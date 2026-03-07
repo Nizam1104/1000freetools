@@ -357,36 +357,6 @@ export default function FutureValueCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/compound-interest-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Compound Interest Calculator</span>
-                  <p className="text-muted-foreground">Calculate compound growth with regular contributions over time</p>
-                </a>
-                <a
-                  href="/calculators/retirement-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Retirement Calculator</span>
-                  <p className="text-muted-foreground">Plan your retirement savings with detailed projections</p>
-                </a>
-                <a
-                  href="/calculators/inflation-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Inflation Calculator</span>
-                  <p className="text-muted-foreground">Calculate the impact of inflation on purchasing power</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

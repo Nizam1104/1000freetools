@@ -260,23 +260,6 @@ export default function WealthGrowthProjectionCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/compound-interest-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Compound Interest Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate compound interest growth for savings and investments.</p>
-            </a>
-            <a href="/calculators/4-percent-rule-retirement-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">4% Rule Retirement Calculator</h3>
-              <p className="text-sm text-muted-foreground">Determine safe withdrawal rates for retirement income planning.</p>
-            </a>
-            <a href="/calculators/fire-number-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">FIRE Number Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate your financial independence retirement number.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

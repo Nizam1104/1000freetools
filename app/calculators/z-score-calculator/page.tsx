@@ -235,27 +235,6 @@ export default function ZScoreCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <h3 className="text-lg font-semibold">Related Tools</h3>
-          </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a href="/calculators/standard-deviation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Standard Deviation Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate mean and standard deviation</p>
-              </a>
-              <a href="/calculators/average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Average Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate mean, median, mode</p>
-              </a>
-              <a href="/calculators/variance-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Variance Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate data variance</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -243,25 +243,6 @@ export default function StartupEquityCalculatorPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Business Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/valuation-cap-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Valuation Cap Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate convertible note conversion prices and caps.</p>
-                </a>
-                <a href="/calculators/break-even-point-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Break-Even Point Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Determine when your startup will become profitable.</p>
-                </a>
-                <a href="/calculators/runway-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Runway Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Estimate how long your funding will last.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

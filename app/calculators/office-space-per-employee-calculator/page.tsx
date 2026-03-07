@@ -450,25 +450,6 @@ export default function OfficeSpacePerEmployeeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-6">Related Business and Finance Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/break-even-point-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Break Even Point Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate when your business revenue covers all fixed and variable costs.</p>
-                </a>
-                <a href="/calculators/customer-acquisition-cost-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Customer Acquisition Cost Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Determine how much you spend to acquire each new customer.</p>
-                </a>
-                <a href="/calculators/working-capital-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Working Capital Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate your business working capital and assess financial health.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

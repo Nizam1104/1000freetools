@@ -389,36 +389,6 @@ export default function CholesterolRatioCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/bmi-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMI Calculator</span>
-                <p className="text-muted-foreground">Calculate body mass index to assess weight-related health risks</p>
-              </a>
-              <a
-                href="/calculators/bmr-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMR Calculator</span>
-                <p className="text-muted-foreground">Estimate your basal metabolic rate and daily calorie needs</p>
-              </a>
-              <a
-                href="/calculators/body-fat-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Body Fat Calculator</span>
-                <p className="text-muted-foreground">Calculate body fat percentage using US Navy method</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

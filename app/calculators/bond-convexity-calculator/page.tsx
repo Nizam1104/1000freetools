@@ -394,36 +394,6 @@ export default function BondConvexityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/bond-yield-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Yield Calculator</span>
-                  <p className="text-muted-foreground">Calculate current yield, yield to maturity, and yield to call for bonds</p>
-                </a>
-                <a
-                  href="/calculators/bond-price-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Price Calculator</span>
-                  <p className="text-muted-foreground">Calculate bond price from yield or yield from price</p>
-                </a>
-                <a
-                  href="/calculators/bond-duration-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Duration Calculator</span>
-                  <p className="text-muted-foreground">Calculate Macaulay and modified duration for interest rate sensitivity</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

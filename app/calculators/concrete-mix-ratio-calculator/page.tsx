@@ -218,23 +218,6 @@ export default function ConcreteMixRatioCalculator() {
         </section>
 
         {/* Related Tools */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Construction Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/ceiling-tile-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Ceiling Tile Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate materials needed for ceiling installation in buildings.</p>
-            </a>
-            <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate usable floor area for flooring and real estate purposes.</p>
-            </a>
-            <a href="/calculators/container-load-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Container Load Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate shipping container capacity for material delivery.</p>
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   );

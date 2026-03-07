@@ -366,36 +366,6 @@ export default function FrequencyCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/wavelength-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Wavelength Calculator</span>
-                <p className="text-muted-foreground">Calculate wavelength from frequency for electromagnetic and sound waves</p>
-              </a>
-              <a
-                href="/calculators/period-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Period Calculator</span>
-                <p className="text-muted-foreground">Find the period of oscillation from frequency or angular frequency</p>
-              </a>
-              <a
-                href="/calculators/wave-speed-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Wave Speed Calculator</span>
-                <p className="text-muted-foreground">Calculate wave velocity from frequency and wavelength</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -403,36 +403,6 @@ export default function BusinessLoanEMICalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/loan-amortization-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Loan Amortization Calculator</span>
-                  <p className="text-muted-foreground">See the full payment schedule with principal and interest breakdown</p>
-                </a>
-                <a
-                  href="/calculators/simple-interest-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Simple Interest Calculator</span>
-                  <p className="text-muted-foreground">Calculate interest on loans and investments using simple interest</p>
-                </a>
-                <a
-                  href="/calculators/debt-to-income-ratio-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Debt-to-Income Ratio Calculator</span>
-                  <p className="text-muted-foreground">Check if your debt levels are within healthy limits for lenders</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

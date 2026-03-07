@@ -291,27 +291,6 @@ export default function SWPCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/retirement-corpus-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Retirement Corpus Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate retirement savings needed</p>
-                </a>
-                <a href="/calculators/4-percent-rule-retirement-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">4% Rule Retirement Calculator</p>
-                  <p className="text-xs text-muted-foreground">Safe withdrawal rate planner</p>
-                </a>
-                <a href="/calculators/sip-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">SIP Calculator</p>
-                  <p className="text-xs text-muted-foreground">Systematic investment planner</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

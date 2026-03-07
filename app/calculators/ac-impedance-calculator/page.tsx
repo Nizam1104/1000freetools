@@ -272,32 +272,6 @@ export default function AcImpedanceCalculator() {
         </section>
 
         {/* Related Tools Section */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Related Tools</h2>
-          <div className="grid gap-3 md:grid-cols-3">
-            <a
-              href="/calculators/ohms-law-calculator"
-              className="p-4 border rounded-lg hover:bg-muted transition-colors block"
-            >
-              <h3 className="font-semibold">Ohm's Law Calculator</h3>
-              <p className="text-sm text-muted-foreground mt-1">Calculate voltage, current, resistance, and power</p>
-            </a>
-            <a
-              href="/calculators/resistor-color-code-calculator"
-              className="p-4 border rounded-lg hover:bg-muted transition-colors block"
-            >
-              <h3 className="font-semibold">Resistor Color Code Calculator</h3>
-              <p className="text-sm text-muted-foreground mt-1">Decode resistor color bands to resistance values</p>
-            </a>
-            <a
-              href="/calculators/frequency-calculator"
-              className="p-4 border rounded-lg hover:bg-muted transition-colors block"
-            >
-              <h3 className="font-semibold">Frequency Calculator</h3>
-              <p className="text-sm text-muted-foreground mt-1">Convert between frequency, period, and wavelength</p>
-            </a>
-          </div>
-        </section>
 
       </div>
     </div>

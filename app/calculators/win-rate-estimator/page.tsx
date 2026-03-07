@@ -345,23 +345,6 @@ export default function WinRateEstimatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/tennis-win-probability-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Tennis Win Probability Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate match win probability based on point win rates.</p>
-            </a>
-            <a href="/calculators/gpa-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">GPA Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate grade point average for academic performance tracking.</p>
-            </a>
-            <a href="/calculators/percentage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Percentage Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate percentages for various applications and comparisons.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -368,36 +368,6 @@ export default function BondYieldCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/bond-price-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Price Calculator</span>
-                  <p className="text-muted-foreground">Calculate fair market price from coupon rate and market yield</p>
-                </a>
-                <a
-                  href="/calculators/bond-duration-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Duration Calculator</span>
-                  <p className="text-muted-foreground">Measure interest rate sensitivity with Macaulay and Modified Duration</p>
-                </a>
-                <a
-                  href="/calculators/yield-to-call-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Yield to Call Calculator</span>
-                  <p className="text-muted-foreground">Calculate return on callable bonds if redeemed at the call date</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

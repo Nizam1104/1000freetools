@@ -475,25 +475,6 @@ export default function CustomerAcquisitionCostCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Business Calculators</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/customer-lifetime-value-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Customer Lifetime Value Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate CLV to understand total customer worth and determine sustainable acquisition spending.</p>
-                </a>
-                <a href="/calculators/churn-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Churn Rate Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Measure customer churn rate to understand retention and its impact on LTV and growth.</p>
-                </a>
-                <a href="/calculators/roi-calculator-ad" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Advertising ROI Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate return on ad spend to optimize marketing channel performance and CAC.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

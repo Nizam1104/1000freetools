@@ -271,36 +271,6 @@ export default function RhombusAreaCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/rectangle-area-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Rectangle Area Calculator</span>
-                <p className="text-muted-foreground">Calculate area and perimeter of rectangles</p>
-              </a>
-              <a
-                href="/calculators/triangle-area-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Triangle Area Calculator</span>
-                <p className="text-muted-foreground">Find area of triangles using various methods</p>
-              </a>
-              <a
-                href="/calculators/parallelogram-area-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Parallelogram Area Calculator</span>
-                <p className="text-muted-foreground">Calculate area of parallelograms</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

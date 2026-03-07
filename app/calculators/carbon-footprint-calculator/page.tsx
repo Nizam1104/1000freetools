@@ -302,23 +302,6 @@ export default function CarbonFootprintCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Environmental & Finance Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/charging-cost-ev-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">EV Charging Cost Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate the cost to charge your electric vehicle and compare to gasoline expenses.</p>
-              </a>
-              <a href="/calculators/camping-gear-weight-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Camping Gear Weight Calculator</h3>
-                <p className="text-muted-foreground text-sm">Plan your outdoor adventures with optimized gear weight for minimal environmental impact.</p>
-              </a>
-              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
-                <p className="text-muted-foreground text-sm">Evaluate green investment decisions with proper cost of capital analysis.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

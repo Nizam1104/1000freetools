@@ -401,36 +401,6 @@ export default function EBITDACalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/net-profit-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Net Profit Margin Calculator</span>
-                  <p className="text-muted-foreground">Calculate your net profit margin and assess overall profitability</p>
-                </a>
-                <a
-                  href="/calculators/operating-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Operating Margin Calculator</span>
-                  <p className="text-muted-foreground">Measure operating efficiency with operating margin analysis</p>
-                </a>
-                <a
-                  href="/calculators/roi-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">ROI Calculator</span>
-                  <p className="text-muted-foreground">Calculate return on investment for business decisions</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

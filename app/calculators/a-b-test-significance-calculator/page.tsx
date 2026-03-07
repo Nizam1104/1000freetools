@@ -583,34 +583,6 @@ export default function ABTestSignificanceCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">Related Tools</h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a
-                  href="/calculators/sample-size-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
-                >
-                  <h4 className="font-semibold mb-1">Sample Size Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate how many visitors you need before running your A/B test.</p>
-                </a>
-                <a
-                  href="/calculators/statistical-power-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
-                >
-                  <h4 className="font-semibold mb-1">Statistical Power Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Determine the probability your test will detect a real effect.</p>
-                </a>
-                <a
-                  href="/calculators/probability-calculator"
-                  className="p-4 rounded-lg border hover:bg-muted transition-colors"
-                >
-                  <h4 className="font-semibold mb-1">Probability Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate probabilities for various statistical distributions.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

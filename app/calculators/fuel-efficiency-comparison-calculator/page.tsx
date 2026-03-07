@@ -494,36 +494,6 @@ export default function FuelEfficiencyComparisonCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/fuel-cost-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Fuel Cost Calculator</span>
-                  <p className="text-muted-foreground">Calculate fuel cost for a specific trip distance</p>
-                </a>
-                <a
-                  href="/calculators/mpg-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">MPG Calculator</span>
-                  <p className="text-muted-foreground">Calculate your vehicle's actual fuel economy from fill-up data</p>
-                </a>
-                <a
-                  href="/calculators/lease-vs-buy-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Lease vs Buy Calculator</span>
-                  <p className="text-muted-foreground">Compare the total cost of leasing versus buying a vehicle</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

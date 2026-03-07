@@ -304,36 +304,6 @@ export default function BrewsterAngleCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/snells-law-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Snell's Law Calculator</span>
-                <p className="text-muted-foreground">Calculate refraction angles when light passes between different media</p>
-              </a>
-              <a
-                href="/calculators/critical-angle-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Critical Angle Calculator</span>
-                <p className="text-muted-foreground">Find the angle for total internal reflection in optical fibers</p>
-              </a>
-              <a
-                href="/calculators/refractive-index-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Refractive Index Calculator</span>
-                <p className="text-muted-foreground">Determine refractive index from speed of light in a material</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

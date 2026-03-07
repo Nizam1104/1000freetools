@@ -284,27 +284,6 @@ export default function SwimmingCalorieCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <h3 className="text-lg font-semibold">Related Tools</h3>
-          </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a href="/calculators/swimming-lap-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Swimming Lap Pace Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate swim speed per 100m</p>
-              </a>
-              <a href="/calculators/bmr-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">BMR Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate basal metabolic rate</p>
-              </a>
-              <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">TDEE Calculator</p>
-                <p className="text-xs text-muted-foreground">Daily calorie needs calculator</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

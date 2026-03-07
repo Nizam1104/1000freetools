@@ -276,27 +276,6 @@ export default function TempoToDelayTimeConverterPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/note-frequency-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Note Frequency Calculator</p>
-                  <p className="text-xs text-muted-foreground">Convert musical notes to Hz</p>
-                </a>
-                <a href="/calculators/audio-dynamic-range-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Audio Dynamic Range Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate dB headroom</p>
-                </a>
-                <a href="/calculators/db-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Decibel Calculator</p>
-                  <p className="text-xs text-muted-foreground">Convert dB to power ratios</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

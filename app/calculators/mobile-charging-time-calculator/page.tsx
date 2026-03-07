@@ -276,36 +276,6 @@ export default function MobileChargingTimeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/electricity-cost-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Electricity Cost Calculator</span>
-                  <p className="text-muted-foreground">Calculate energy costs for appliances and devices</p>
-                </a>
-                <a
-                  href="/calculators/battery-life-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Battery Life Calculator</span>
-                  <p className="text-muted-foreground">Estimate how long your battery will last</p>
-                </a>
-                <a
-                  href="/calculators/watts-to-amps-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Watts to Amps Calculator</span>
-                  <p className="text-muted-foreground">Convert between electrical power units</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

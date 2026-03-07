@@ -192,23 +192,6 @@ export default function WaterFlowRateCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/pipe-friction-loss-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Pipe Friction Loss Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate pressure drop due to friction in pipes.</p>
-          </a>
-          <a href="/calculators/water-requirement-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Water Requirement Calculator</h3>
-            <p className="text-sm text-muted-foreground">Estimate daily water needs for household or irrigation.</p>
-          </a>
-          <a href="/calculators/water-tank-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Water Tank Volume Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate water tank capacity in gallons or liters.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

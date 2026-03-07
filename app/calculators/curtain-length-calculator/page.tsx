@@ -489,25 +489,6 @@ export default function CurtainLengthCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Home Improvement Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/paint-coverage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Paint Coverage Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate paint needed for walls based on room dimensions and number of coats.</p>
-                </a>
-                <a href="/calculators/flooring-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Flooring Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Estimate flooring material needed for rooms with waste factor calculations.</p>
-                </a>
-                <a href="/calculators/wallpaper-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Wallpaper Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Determine wallpaper rolls needed based on wall dimensions and pattern repeat.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

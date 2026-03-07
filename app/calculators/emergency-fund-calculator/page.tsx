@@ -222,23 +222,6 @@ export default function EmergencyFundCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-12 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Related Financial Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/50-30-20-budget-rule-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">50/30/20 Budget Calculator</h3>
-              <p className="text-sm text-muted-foreground">Create a balanced budget that includes emergency savings with this simple budgeting rule calculator.</p>
-            </a>
-            <a href="/calculators/monthly-budget-breakdown-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Monthly Budget Breakdown</h3>
-              <p className="text-sm text-muted-foreground">Track your monthly expenses to accurately calculate how much you need in emergency savings.</p>
-            </a>
-            <a href="/calculators/savings-goal-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Savings Goal Calculator</h3>
-              <p className="text-sm text-muted-foreground">Plan how long it will take to reach your emergency fund target based on your savings rate.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

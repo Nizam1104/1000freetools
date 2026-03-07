@@ -348,23 +348,6 @@ export default function ROICalculatorAdPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-xl font-semibold mb-4">Related Marketing Calculators</h2>
-          <div className="space-y-3">
-            <div>
-              <a href="/calculators/cpc-calculator" className="text-primary hover:underline font-medium">CPC Calculator for Paid Ads</a>
-              <p className="text-muted-foreground text-sm">Calculate your cost per click and estimate campaign budgets for Google Ads, Facebook Ads, and other PPC platforms.</p>
-            </div>
-            <div>
-              <a href="/calculators/conversion-rate-calculator" className="text-primary hover:underline font-medium">Conversion Rate Calculator</a>
-              <p className="text-muted-foreground text-sm">Measure your website or landing page conversion rate and identify opportunities to improve campaign performance.</p>
-            </div>
-            <div>
-              <a href="/calculators/profit-margin-calculator" className="text-primary hover:underline font-medium">Profit Margin Calculator</a>
-              <p className="text-muted-foreground text-sm">Calculate gross and net profit margins to understand your true profitability before running ad campaigns.</p>
-            </div>
-          </div>
-        </div>
 
         {/* Reference Table: ROI Benchmarks */}
         <div className="mt-8 p-6 bg-card rounded-lg border">

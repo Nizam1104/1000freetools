@@ -363,36 +363,6 @@ export default function HVACBtuCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/hvac-airflow-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">HVAC Airflow Calculator</span>
-                <p className="text-muted-foreground">Calculate required CFM for room ventilation</p>
-              </a>
-              <a
-                href="/calculators/humidity-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Humidity Calculator</span>
-                <p className="text-muted-foreground">Calculate relative and absolute humidity levels</p>
-              </a>
-              <a
-                href="/calculators/ideal-bedtime-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ideal Bedtime Calculator</span>
-                <p className="text-muted-foreground">Find the best sleep time based on wake schedule</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

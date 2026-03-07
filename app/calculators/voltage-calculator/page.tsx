@@ -365,23 +365,6 @@ export default function VoltageCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/ohms-law-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Ohm&apos;s Law Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate voltage, current, resistance, and power for complete circuit analysis.</p>
-          </a>
-          <a href="/calculators/power-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Power Calculator</h3>
-            <p className="text-sm text-muted-foreground">Compute electrical power from voltage, current, or resistance values.</p>
-          </a>
-          <a href="/calculators/resistance-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Resistance Calculator</h3>
-            <p className="text-sm text-muted-foreground">Find resistance from voltage and current or from conductor properties.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

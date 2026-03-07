@@ -298,25 +298,6 @@ export default function PasswordStrengthScorerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-6">Related Security and Privacy Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/hash-brute-force-time-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Hash Brute Force Time Estimator</h3>
-                  <p className="text-sm text-muted-foreground">Estimate how long it takes to crack password hashes with different algorithms.</p>
-                </a>
-                <a href="/calculators/rsa-key-strength-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">RSA Key Strength Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Evaluate the security level of RSA encryption keys by bit length.</p>
-                </a>
-                <a href="/calculators/aes-key-size-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">AES Key Size Estimator</h3>
-                  <p className="text-sm text-muted-foreground">Compare AES-128, AES-192, and AES-256 encryption security levels.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

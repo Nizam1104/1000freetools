@@ -408,36 +408,6 @@ export default function RSAKeyStrengthCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/encryption-strength-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Encryption Strength Calculator</span>
-                  <p className="text-muted-foreground">Compare security levels across encryption algorithms</p>
-                </a>
-                <a
-                  href="/calculators/password-strength-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Password Strength Calculator</span>
-                  <p className="text-muted-foreground">Estimate password cracking time and entropy</p>
-                </a>
-                <a
-                  href="/calculators/sha-hash-generator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">SHA Hash Generator</span>
-                  <p className="text-muted-foreground">Generate SHA-256 and SHA-512 hashes</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -544,36 +544,6 @@ export default function ClothingShrinkageEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/fabric-yardage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Fabric Yardage Calculator</span>
-                  <p className="text-muted-foreground">Calculate how much fabric you need for sewing projects</p>
-                </a>
-                <a
-                  href="/calculators/washing-machine-capacity-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Washing Machine Capacity Calculator</span>
-                  <p className="text-muted-foreground">Determine optimal load sizes for your washing machine</p>
-                </a>
-                <a
-                  href="/calculators/dryer-time-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Dryer Time Estimator</span>
-                  <p className="text-muted-foreground">Estimate drying time based on fabric type and load size</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

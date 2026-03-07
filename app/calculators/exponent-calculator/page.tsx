@@ -182,23 +182,6 @@ export default function ExponentCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 mb-8">
-        <h2 className="text-2xl font-semibold mb-6">Related Math Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/factorial-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Factorial Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate factorials (n!) for combinatorics and probability problems.</p>
-          </a>
-          <a href="/calculators/logarithm-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Logarithm Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate logarithms, the inverse operation of exponentiation.</p>
-          </a>
-          <a href="/calculators/expression-evaluator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Expression Evaluator</h3>
-            <p className="text-sm text-muted-foreground">Evaluate complex mathematical expressions with multiple operations.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

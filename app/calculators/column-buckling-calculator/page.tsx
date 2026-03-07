@@ -356,25 +356,6 @@ export default function ColumnBucklingCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/force-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Force Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate force, mass, and acceleration using Newton's laws.</p>
-              </a>
-              <a href="/calculators/pressure-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Pressure Calculator</h3>
-                <p className="text-sm text-muted-foreground">Convert and calculate pressure in various units.</p>
-              </a>
-              <a href="/calculators/density-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Density Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate density from mass and volume measurements.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

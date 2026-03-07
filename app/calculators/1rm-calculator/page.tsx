@@ -314,23 +314,6 @@ export default function OneRMCalculator() {
       </div>
 
       {/* Related Tools */}
-      <div className="mt-8 mb-12">
-        <h2 className="text-2xl font-bold mb-6">Related Tools</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <a href="/calculators/bmi-calculator" className="block p-4 border rounded-md hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">BMI Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate your Body Mass Index to assess weight status.</p>
-          </a>
-          <a href="/calculators/tdee-calculator" className="block p-4 border rounded-md hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">TDEE Calculator</h3>
-            <p className="text-sm text-muted-foreground">Estimate your Total Daily Energy Expenditure for calorie planning.</p>
-          </a>
-          <a href="/calculators/body-fat-calculator" className="block p-4 border rounded-md hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Body Fat Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate body fat percentage using multiple measurement methods.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

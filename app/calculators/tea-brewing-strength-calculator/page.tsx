@@ -432,27 +432,6 @@ export default function TeaBrewingStrengthCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/coffee-to-water-ratio-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Coffee to Water Ratio Calculator</p>
-                  <p className="text-xs text-muted-foreground">Perfect coffee brewing ratios</p>
-                </a>
-                <a href="/calculators/recipe-scaler-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Recipe Scaler Calculator</p>
-                  <p className="text-xs text-muted-foreground">Scale recipes up or down</p>
-                </a>
-                <a href="/calculators/kitchen-measurement-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Kitchen Measurement Converter</p>
-                  <p className="text-xs text-muted-foreground">Convert cooking measurements</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

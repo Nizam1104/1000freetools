@@ -329,25 +329,6 @@ export default function MetCalorieCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/calorie-deficit-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Calorie Deficit Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate daily calorie needs for weight loss.</p>
-              </a>
-              <a href="/calculators/bmr-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">BMR Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find your basal metabolic rate at rest.</p>
-              </a>
-              <a href="/calculators/tdee-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">TDEE Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate total daily energy expenditure.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

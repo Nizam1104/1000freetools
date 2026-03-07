@@ -377,25 +377,6 @@ export default function WindChillCalculatorPage() {
         </Card>
 
         {/* Related Tools Section */}
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Weather Calculators</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/heat-index-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Heat Index Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate how hot it feels when humidity combines with high temperatures.</p>
-              </a>
-              <a href="/calculators/dew-point-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Dew Point Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find the temperature at which air becomes saturated and dew forms.</p>
-              </a>
-              <a href="/calculators/humidity-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Humidity Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate relative humidity, absolute humidity, and moisture content in air.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

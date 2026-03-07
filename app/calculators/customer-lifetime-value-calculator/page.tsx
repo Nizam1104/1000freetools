@@ -434,25 +434,6 @@ export default function CustomerLifetimeValueCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Business Calculators</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/customer-acquisition-cost-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Customer Acquisition Cost Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate CAC to compare against CLV and ensure profitable customer acquisition.</p>
-                </a>
-                <a href="/calculators/churn-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Churn Rate Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Measure customer churn to understand retention impact on lifetime value.</p>
-                </a>
-                <a href="/calculators/profit-margin-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Profit Margin Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate gross and net profit margins for accurate CLV calculations.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

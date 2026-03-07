@@ -588,36 +588,6 @@ export default function AsphaltQuantityCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">
-                Related Tools
-              </h2>
-              <p className="text-sm text-muted-foreground mb-4">
-                Planning a paving or construction project? These calculators can help:
-              </p>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/calculators/concrete-volume-calculator" className="text-sm text-primary hover:underline">
-                    Concrete Volume Calculator
-                  </a>
-                  <p className="text-xs text-muted-foreground">Calculate concrete needed for slabs, footings, and foundations</p>
-                </li>
-                <li>
-                  <a href="/calculators/gravel-quantity-calculator" className="text-sm text-primary hover:underline">
-                    Gravel Quantity Calculator
-                  </a>
-                  <p className="text-xs text-muted-foreground">Estimate gravel for driveways, paths, and base layers</p>
-                </li>
-                <li>
-                  <a href="/calculators/sand-quantity-calculator" className="text-sm text-primary hover:underline">
-                    Sand Quantity Calculator
-                  </a>
-                  <p className="text-xs text-muted-foreground">Calculate sand for bedding, leveling, and landscaping projects</p>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

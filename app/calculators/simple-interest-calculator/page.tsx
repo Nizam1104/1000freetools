@@ -221,25 +221,6 @@ export default function SimpleInterestCalculatorPage() {
         </Card>
 
         {/* Related Tools Section */}
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Finance Calculators</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/compound-interest-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Compound Interest Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate interest with compounding for more accurate long-term projections.</p>
-              </a>
-              <a href="/calculators/future-value-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Future Value Calculator</h3>
-                <p className="text-sm text-muted-foreground">Determine the future value of investments with regular contributions.</p>
-              </a>
-              <a href="/calculators/loan-emi-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Loan EMI Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate monthly loan payments with principal and interest breakdown.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

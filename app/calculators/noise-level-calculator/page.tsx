@@ -320,36 +320,6 @@ export default function NoiseLevelCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/noise-exposure-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Noise Exposure Calculator</span>
-                <p className="text-muted-foreground">Calculate safe exposure time and noise dose percentage</p>
-              </a>
-              <a
-                href="/calculators/sound-pressure-level-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Sound Pressure Level Calculator</span>
-                <p className="text-muted-foreground">Convert between sound pressure and decibels</p>
-              </a>
-              <a
-                href="/calculators/reverberation-time-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Reverberation Time Calculator</span>
-                <p className="text-muted-foreground">Calculate room acoustics and decay time</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );
