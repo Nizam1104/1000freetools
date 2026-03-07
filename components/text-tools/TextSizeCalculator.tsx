@@ -25,7 +25,7 @@ export default function TextSizeCalculator() {
 
     const encoder = new TextEncoder();
     const utf8Bytes = encoder.encode(text).length;
-    
+
     let asciiBytes = 0;
     for (let i = 0; i < text.length; i++) {
       asciiBytes += text.charCodeAt(i) <= 127 ? 1 : 2;
@@ -67,7 +67,7 @@ export default function TextSizeCalculator() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Paste your text here to calculate its size..."
-          className="min-h-[150px] font-mono text-sm"
+          className="min-h-[150px] max-h-[500px] overflow-y-auto font-mono text-sm"
         />
       </div>
 

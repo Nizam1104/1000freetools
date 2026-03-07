@@ -173,7 +173,7 @@ const CALC_STYLE = `
   }
 
   .calc-wrap .btn {
-    height: 52px;
+    height: 36px;
     border-radius: 12px;
     border: 1px solid var(--calc-border);
     cursor: pointer;
@@ -578,6 +578,13 @@ export default function ScientificCalculator() {
     <>
       <style>{CALC_STYLE}</style>
       <div className="calc-wrap flex flex-col">
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold mb-2">Free Online Scientific Calculator – Advanced Math Functions</h1>
+          <p className="text-muted-foreground">
+            Perform complex scientific calculations online with our free scientific calculator. Supports trigonometry, logarithms, exponents, roots, and more – ideal for students and professionals.
+          </p>
+        </div>
+
         <div className="calc">
           {/* Header */}
           <div className="calc-header">

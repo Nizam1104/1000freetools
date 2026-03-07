@@ -109,16 +109,7 @@ export default function WordCounter() {
   };
 
   return (
-    <main className="w-full max-w-3xl mx-auto py-10">
-      <header className="mb-8">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
-          Word Counter
-        </h1>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
-          Count words, characters, and analyze your text in real-time.
-        </p>
-      </header>
-
+    <div>
       <section className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <label htmlFor="text-input" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
@@ -255,6 +246,6 @@ export default function WordCounter() {
           </div>
         </div>
       )}
-    </main>
+    </div>
   );
 }

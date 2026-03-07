@@ -312,7 +312,7 @@
             {
                 "name": "BMI Calculator",
                 "description": "Calculate Body Mass Index with health category.",
-                "href": "/calculators/bmi-calculator"
+                "href": "/unit-converters/bmi-calculator"
             },
             {
                 "name": "Age Calculator",
@@ -322,22 +322,22 @@
             {
                 "name": "Percentage Calculator",
                 "description": "Calculate percentages and percentage changes.",
-                "href": "/calculators/percentage-calculator"
+                "href": "/math-tools/percentage-calculator"
             },
             {
                 "name": "Loan Calculator",
                 "description": "Calculate loan payments and interest.",
-                "href": "/calculators/loan-calculator"
+                "href": "/calculators/loan-emi-calculator"
             },
             {
                 "name": "Tip Calculator",
                 "description": "Split bills and calculate tips easily.",
-                "href": "/calculators/tip-calculator"
+                "href": "/math-tools/tip-calculator"
             },
             {
                 "name": "Date Difference Calculator",
                 "description": "Find the difference between two dates.",
-                "href": "/calculators/date-difference-calculator"
+                "href": "/unit-converters/date-difference-calculator"
             }
         ]
     },
@@ -366,7 +366,7 @@
             {
                 "name": "Matrix Calculator",
                 "description": "Perform matrix operations and calculations.",
-                "href": "/math-tools/matrix-calculator"
+                "href": "/math-tools/matrix-determinant-calculator"
             },
             {
                 "name": "Standard Deviation Calculator",
@@ -390,32 +390,32 @@
             {
                 "name": "Length Converter",
                 "description": "Convert between meters, feet, inches, and more.",
-                "href": "/unit-converters/length-converter"
+                "href": "/unit-converters/length"
             },
             {
                 "name": "Weight Converter",
                 "description": "Convert between kg, lbs, oz, and other units.",
-                "href": "/unit-converters/weight-converter"
+                "href": "/unit-converters/weight-and-mass"
             },
             {
                 "name": "Temperature Converter",
                 "description": "Convert between Celsius, Fahrenheit, and Kelvin.",
-                "href": "/unit-converters/temperature-converter"
+                "href": "/unit-converters/temperature"
             },
             {
                 "name": "Volume Converter",
                 "description": "Convert between liters, gallons, cups, and more.",
-                "href": "/unit-converters/volume-converter"
+                "href": "/unit-converters/volume"
             },
             {
                 "name": "Speed Converter",
                 "description": "Convert between mph, km/h, m/s, and knots.",
-                "href": "/unit-converters/speed-converter"
+                "href": "/unit-converters/speed"
             },
             {
                 "name": "Area Converter",
                 "description": "Convert between square meters, feet, acres, and more.",
-                "href": "/unit-converters/area-converter"
+                "href": "/math-tools/area-converter"
             }
         ]
     },
@@ -434,7 +434,7 @@
             {
                 "name": "Color Converter",
                 "description": "Convert between RGB, HEX, HSL, and HSV formats.",
-                "href": "/color-tools/color-converter"
+                "href": "/css-tools/color-converter"
             },
             {
                 "name": "Contrast Checker",
@@ -471,19 +471,19 @@
                 "href": "/text-tools/case-converter"
             },
             {
-                "name": "Text Formatter",
-                "description": "Format and beautify text with proper indentation and spacing.",
-                "href": "/text-tools/text-formatter"
+                "name": "Text Size Calculator",
+                "description": "Calculate text size in bytes, KB, and MB with encoding breakdown.",
+                "href": "/text-tools/text-size-calculator"
             },
             {
                 "name": "Find and Replace",
                 "description": "Search and replace text with regex support and global options.",
-                "href": "/text-tools/find-and-replace"
+                "href": "/text-tools/find-and-replace-text"
             },
             {
-                "name": "Text Diff Checker",
-                "description": "Compare two texts and highlight differences side by side.",
-                "href": "/text-tools/text-diff-checker"
+                "name": "Duplicate Word Remover",
+                "description": "Remove duplicate words from text while preserving order.",
+                "href": "/text-tools/duplicate-word-remover"
             },
             {
                 "name": "Lorem Ipsum Generator",
@@ -493,7 +493,7 @@
             {
                 "name": "Text to Slug",
                 "description": "Convert text into URL-friendly slugs for web use.",
-                "href": "/text-tools/text-to-slug"
+                "href": "/text-tools/text-to-slug-converter"
             },
             {
                 "name": "Remove Duplicate Lines",
@@ -506,9 +506,9 @@
                 "href": "/text-tools/text-reverser"
             },
             {
-                "name": "Character Encoding Converter",
+                "name": "Text to Binary Converter",
                 "description": "Convert text between different character encodings like UTF-8, ASCII, Base64.",
-                "href": "/text-tools/character-encoding-converter"
+                "href": "/text-tools/text-to-binary-converter"
             }
         ]
     }

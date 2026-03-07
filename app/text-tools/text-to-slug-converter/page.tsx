@@ -33,7 +33,7 @@ const faqsData = [
   {
     question: "Should I use hyphens or underscores?",
     answer:
-      "Hyphens are recommended for SEO. Google treats hyphens as word separators, so "my-page" is read as two words. Underscores connect words, so "my_page" is read as one word.",
+      "Hyphens are recommended for SEO. Google treats hyphens as word separators, so 'my-page' is read as two words. Underscores connect words, so 'my_page' is read as one word.",
   },
   {
     question: "Is my data private?",
