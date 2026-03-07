@@ -244,7 +244,7 @@ export default function Home() {
             style={{ animationFillMode: "both" }}
           >
             {[
-              { label: "Tools Available", value: "100+" },
+              { label: "Tools Available", value: "1000+" },
               { label: "Files Processed", value: "Private" },
               { label: "Registration Required", value: "None" },
               { label: "Cost", value: "$0.00" },
@@ -332,59 +332,59 @@ export default function Home() {
                     >
                       <IconComponent className="h-5 w-5" />
                     </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                    {category.categoryName}
-                  </h2>
-                  <span className="ml-1 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                    {category.tools.length}
-                  </span>
-                  {category.categoryHref && (
-                    <Link
-                      href={category.categoryHref}
-                      className="ml-auto text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
-                    >
-                      View all
-                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
-                    </Link>
-                  )}
-                </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                      {category.categoryName}
+                    </h2>
+                    <span className="ml-1 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                      {category.tools.length}
+                    </span>
+                    {category.categoryHref && (
+                      <Link
+                        href={category.categoryHref}
+                        className="ml-auto text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
+                      >
+                        View all
+                        <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    )}
+                  </div>
 
-                {/* Tools grid - improved cards with better accessibility */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {category.tools.map((tool, ti) => (
-                    <Link
-                      key={ti}
-                      href={tool.href}
-                      className="group relative flex flex-col gap-2 rounded-xl border border-border bg-card/80 dark:bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:focus:ring-offset-background"
-                      style={
-                        {
-                          "--tool-accent": category.accent,
-                        } as React.CSSProperties
-                      }
-                    >
-                      {/* Hover accent line */}
-                      <div
-                        className="absolute inset-x-0 top-0 h-0.5 rounded-t-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                        style={{ background: category.accent }}
-                        aria-hidden="true"
-                      />
-                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-200 text-sm md:text-base leading-snug">
-                        {tool.name}
-                      </h3>
-                      <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1">
-                        {tool.description}
-                      </p>
-                      <span className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0.5">
-                        Open tool{" "}
-                        <ChevronRight
-                          className="h-3.5 w-3.5"
+                  {/* Tools grid - improved cards with better accessibility */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {category.tools.map((tool, ti) => (
+                      <Link
+                        key={ti}
+                        href={tool.href}
+                        className="group relative flex flex-col gap-2 rounded-xl border border-border bg-card/80 dark:bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:focus:ring-offset-background"
+                        style={
+                          {
+                            "--tool-accent": category.accent,
+                          } as React.CSSProperties
+                        }
+                      >
+                        {/* Hover accent line */}
+                        <div
+                          className="absolute inset-x-0 top-0 h-0.5 rounded-t-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                          style={{ background: category.accent }}
                           aria-hidden="true"
                         />
-                      </span>
-                    </Link>
-                  ))}
+                        <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-200 text-sm md:text-base leading-snug">
+                          {tool.name}
+                        </h3>
+                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1">
+                          {tool.description}
+                        </p>
+                        <span className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0.5">
+                          Open tool{" "}
+                          <ChevronRight
+                            className="h-3.5 w-3.5"
+                            aria-hidden="true"
+                          />
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
               );
             })}
           </div>

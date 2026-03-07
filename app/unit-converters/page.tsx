@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useMemo } from "react";
 import {
   Card,
   CardHeader,
@@ -8,6 +11,9 @@ import {
 import convertersData from "./all.json";
 
 export default function UnitConvertersPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   // Group converters by category
   const categories: Record<string, typeof convertersData> = {
     Common: [],
@@ -220,12 +226,41 @@ export default function UnitConvertersPage() {
     }
   });
 
+  // Filter and search converters
+  const filteredCategories = useMemo(() => {
+    const result: Record<string, typeof convertersData> = {};
+
+    for (const [category, items] of Object.entries(categories)) {
+      const filteredItems = items.filter((converter) => {
+        const matchesSearch =
+          searchQuery === "" ||
+          converter.converterUnit.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          converter.h1.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          converter.p.toLowerCase().includes(searchQuery.toLowerCase());
+
+        const matchesCategory = !selectedCategory || category === selectedCategory;
+
+        return matchesSearch && matchesCategory;
+      });
+
+      if (filteredItems.length > 0) {
+        result[category] = filteredItems;
+      }
+    }
+
+    return result;
+  }, [categories, searchQuery, selectedCategory]);
+
   function getSlug(name: string): string {
     return name
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "");
   }
+
+  const categoryList = Object.keys(categories).filter(
+    (cat) => categories[cat].length > 0
+  );
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
@@ -237,7 +272,71 @@ export default function UnitConvertersPage() {
         </p>
       </div>
 
-      {Object.entries(categories).map(([category, items]) => {
+      {/* Search and Filter Section */}
+      <div className="mb-8 space-y-4">
+        {/* Search Input */}
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search converters..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full px-4 py-3 pl-10 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+          <svg
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
+
+        {/* Category Filter Buttons */}
+        <div className="flex flex-wrap gap-2">
+          <button
+            onClick={() => setSelectedCategory(null)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              selectedCategory === null
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
+            }`}
+          >
+            All
+          </button>
+          {categoryList.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                selectedCategory === category
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {Object.entries(filteredCategories).map(([category, items]) => {
         if (items.length === 0) return null;
 
         return (
