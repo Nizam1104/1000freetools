@@ -379,18 +379,6 @@ export default function JsonToYamlConverterPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/yaml-to-json" className="text-primary hover:underline">YAML to JSON</a> – Convert YAML configuration back to JSON
-          </li>
-          <li>
-            <a href="/json-tools/json-to-xml" className="text-primary hover:underline">JSON to XML</a> – Convert JSON to XML format
-          </li>
-          <li>
-            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format and beautify JSON with indentation
-          </li>
-        </ul>
       </div>
     </div>
   );

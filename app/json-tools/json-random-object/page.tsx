@@ -279,18 +279,6 @@ export default function JsonRandomObjectGeneratorPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-array-generator" className="text-primary hover:underline">JSON Array Generator</a> – Generate JSON arrays with custom structures
-          </li>
-          <li>
-            <a href="/json-tools/json-datetime-generator" className="text-primary hover:underline">JSON Datetime Generator</a> – Generate date and time values for JSON
-          </li>
-          <li>
-            <a href="/json-tools/json-playground" className="text-primary hover:underline">JSON Playground</a> – Experiment with JSON data interactively
-          </li>
-        </ul>
       </div>
     </div>
   );

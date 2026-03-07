@@ -312,36 +312,6 @@ export default function JsonFormatterBeautifierPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-minifier"
-                className="text-primary hover:underline"
-              >
-                JSON Minifier
-              </a>{" "}
-              – Compress formatted JSON back into a single line
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Check if your JSON is valid without formatting
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-error-explanation"
-                className="text-primary hover:underline"
-              >
-                JSON Error Explanation
-              </a>{" "}
-              – Get plain-language explanations of JSON syntax errors
-            </li>
-          </ul>
         </div>
       </div>
     </div>

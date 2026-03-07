@@ -319,36 +319,6 @@ export default function JsonEmptyFieldFinderPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Validate JSON syntax
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-duplicate-key-finder"
-                className="text-primary hover:underline"
-              >
-                JSON Duplicate Key Finder
-              </a>{" "}
-              – Find duplicate keys
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-cleaner"
-                className="text-primary hover:underline"
-              >
-                JSON Cleaner
-              </a>{" "}
-              – Remove null and empty values
-            </li>
-          </ul>
         </div>
       </div>
     </div>

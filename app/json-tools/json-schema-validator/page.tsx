@@ -502,36 +502,6 @@ export default function JsonSchemaValidatorPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a
-              href="/json-tools/json-validator"
-              className="text-primary hover:underline"
-            >
-              JSON Validator
-            </a>{" "}
-            – Check JSON syntax
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-schema-example-generator"
-              className="text-primary hover:underline"
-            >
-              JSON Schema Example Generator
-            </a>{" "}
-            – Generate example data
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-config-validator"
-              className="text-primary hover:underline"
-            >
-              JSON Config Validator
-            </a>{" "}
-            – Validate config files
-          </li>
-        </ul>
       </div>
     </div>
   );

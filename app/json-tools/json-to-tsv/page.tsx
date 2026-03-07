@@ -235,18 +235,6 @@ export default function JsonToTsvConverterPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Comma-separated values format
-          </li>
-          <li>
-            <a href="/json-tools/json-to-excel" className="text-primary hover:underline">JSON to Excel</a> – Direct XLSX export
-          </li>
-          <li>
-            <a href="/json-tools/json-to-text" className="text-primary hover:underline">JSON to Text</a> – Plain text key-value format
-          </li>
-        </ul>
       </div>
     </div>
   );

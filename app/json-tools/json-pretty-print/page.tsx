@@ -368,36 +368,6 @@ export default function JsonPrettyPrintPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-minifier"
-                className="text-primary hover:underline"
-              >
-                JSON Minifier
-              </a>{" "}
-              – Compress JSON by removing whitespace
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Check JSON syntax and find errors
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-formatter-beautifier"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter Beautifier
-              </a>{" "}
-              – Format and beautify JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

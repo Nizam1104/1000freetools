@@ -597,36 +597,6 @@ export default function JsonLinterPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a
-              href="/json-tools/json-validator"
-              className="text-primary hover:underline"
-            >
-              JSON Validator
-            </a>{" "}
-            – Quick validation check for JSON
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-formatter-beautifier"
-              className="text-primary hover:underline"
-            >
-              JSON Formatter
-            </a>{" "}
-            – Format JSON with proper indentation
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-error-explanation"
-              className="text-primary hover:underline"
-            >
-              JSON Error Explanation
-            </a>{" "}
-            – Plain-language error explanations
-          </li>
-        </ul>
       </div>
     </div>
   );

@@ -376,36 +376,6 @@ export default function JsonRenameKeysPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-transformer"
-                className="text-primary hover:underline"
-              >
-                JSON Transformer
-              </a>{" "}
-              – Reshape JSON structures with custom rules
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-pretty-print"
-                className="text-primary hover:underline"
-              >
-                JSON Pretty Print
-              </a>{" "}
-              – Format JSON with customizable indentation
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-remove-keys"
-                className="text-primary hover:underline"
-              >
-                JSON Remove Keys
-              </a>{" "}
-              – Delete unwanted keys from JSON objects
-            </li>
-          </ul>
         </div>
       </div>
     </div>

@@ -300,36 +300,6 @@ export default function JsonEscapeUnescapePage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-encode-decode"
-                className="text-primary hover:underline"
-              >
-                JSON Encode & Decode
-              </a>{" "}
-              – URI encode/decode
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Validate JSON syntax
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-stringifier"
-                className="text-primary hover:underline"
-              >
-                JSON Stringifier
-              </a>{" "}
-              – Convert values to JSON strings
-            </li>
-          </ul>
         </div>
       </div>
     </div>

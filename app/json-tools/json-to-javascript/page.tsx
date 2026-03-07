@@ -343,18 +343,6 @@ export default function JsonToJavaScriptPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-to-python" className="text-primary hover:underline">JSON to Python</a> – Convert JSON to Python dictionary syntax
-          </li>
-          <li>
-            <a href="/json-tools/json-to-typescript" className="text-primary hover:underline">JSON to TypeScript</a> – Generate TypeScript interfaces from JSON
-          </li>
-          <li>
-            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format and beautify JSON with indentation
-          </li>
-        </ul>
       </div>
     </div>
   );

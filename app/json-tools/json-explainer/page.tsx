@@ -295,36 +295,6 @@ export default function JsonExplainerPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-key-extractor"
-                className="text-primary hover:underline"
-              >
-                JSON Key Extractor
-              </a>{" "}
-              – List all keys
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-array-object-counter"
-                className="text-primary hover:underline"
-              >
-                JSON Array & Object Counter
-              </a>{" "}
-              – Count elements
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-tree-viewer"
-                className="text-primary hover:underline"
-              >
-                JSON Tree Viewer
-              </a>{" "}
-              – Visual tree view
-            </li>
-          </ul>
         </div>
       </div>
     </div>

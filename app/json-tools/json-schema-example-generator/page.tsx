@@ -342,36 +342,6 @@ export default function JsonSchemaExampleGeneratorPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-schema-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Schema Validator
-              </a>{" "}
-              – Validate JSON against a schema
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Generator
-              </a>{" "}
-              – Create random mock JSON data
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Check JSON syntax validity
-            </li>
-          </ul>
         </div>
       </div>
     </div>

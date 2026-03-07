@@ -374,36 +374,6 @@ export default function JsonToMarkdownTablePage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-to-csv"
-                className="text-primary hover:underline"
-              >
-                JSON to CSV
-              </a>{" "}
-              – Convert JSON to spreadsheet format
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-to-excel"
-                className="text-primary hover:underline"
-              >
-                JSON to Excel
-              </a>{" "}
-              – Generate XLSX files from JSON arrays
-            </li>
-            <li>
-              <a
-                href="/json-tools/markdown-to-json"
-                className="text-primary hover:underline"
-              >
-                Markdown to JSON
-              </a>{" "}
-              – Parse tables back to JSON format
-            </li>
-          </ul>
         </div>
       </div>
     </div>

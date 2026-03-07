@@ -415,18 +415,6 @@ settings:
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-to-yaml"
-                className="text-primary hover:underline"
-              >
-                JSON to YAML
-              </a>{" "}
-              – Convert JSON back to YAML format
-            </li>
-          </ul>
         </div>
       </div>
     </div>

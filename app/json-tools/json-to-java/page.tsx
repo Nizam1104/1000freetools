@@ -447,36 +447,6 @@ export default function JsonToJavaPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-to-csharp"
-                className="text-primary hover:underline"
-              >
-                JSON to C#
-              </a>{" "}
-              – Generate C# classes with properties
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-to-go"
-                className="text-primary hover:underline"
-              >
-                JSON to Go
-              </a>{" "}
-              – Create Go structs with JSON tags
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-to-typescript"
-                className="text-primary hover:underline"
-              >
-                JSON to TypeScript
-              </a>{" "}
-              – Generate TypeScript interfaces from JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

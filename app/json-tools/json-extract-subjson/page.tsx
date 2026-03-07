@@ -356,36 +356,6 @@ export default function JsonExtractSubjsonPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/jmespath-query"
-                className="text-primary hover:underline"
-              >
-                JMESPath Query Tool
-              </a>{" "}
-              – Advanced JSON queries
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-filter"
-                className="text-primary hover:underline"
-              >
-                JSON Filter
-              </a>{" "}
-              – Filter arrays by conditions
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-key-extractor"
-                className="text-primary hover:underline"
-              >
-                JSON Key Extractor
-              </a>{" "}
-              – List all keys
-            </li>
-          </ul>
         </div>
       </div>
     </div>

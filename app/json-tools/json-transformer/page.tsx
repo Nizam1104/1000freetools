@@ -426,36 +426,6 @@ export default function JsonTransformerPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-path-finder"
-                className="text-primary hover:underline"
-              >
-                JSON Path Finder
-              </a>{" "}
-              – Extract values using path expressions
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-flattener"
-                className="text-primary hover:underline"
-              >
-                JSON Flattener
-              </a>{" "}
-              – Flatten nested JSON structures
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-merger"
-                className="text-primary hover:underline"
-              >
-                JSON Merger
-              </a>{" "}
-              – Combine multiple JSON objects
-            </li>
-          </ul>
         </div>
       </div>
     </div>

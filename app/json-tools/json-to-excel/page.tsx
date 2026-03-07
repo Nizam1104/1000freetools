@@ -347,36 +347,6 @@ export default function JsonToExcelConverterPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-to-csv"
-                className="text-primary hover:underline"
-              >
-                JSON to CSV
-              </a>{" "}
-              – Convert JSON to comma-separated values
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-to-markdown-table"
-                className="text-primary hover:underline"
-              >
-                JSON to Markdown Table
-              </a>{" "}
-              – Create Markdown tables from JSON arrays
-            </li>
-            <li>
-              <a
-                href="/json-tools/csv-to-json"
-                className="text-primary hover:underline"
-              >
-                CSV to JSON
-              </a>{" "}
-              – Convert spreadsheet data to JSON format
-            </li>
-          </ul>
         </div>
       </div>
     </div>

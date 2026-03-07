@@ -271,36 +271,6 @@ export default function JsonMinifierPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a
-              href="/json-tools/json-pretty-print"
-              className="text-primary hover:underline"
-            >
-              JSON Pretty Print
-            </a>{" "}
-            – Format minified JSON
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-size-calculator"
-              className="text-primary hover:underline"
-            >
-              JSON Size Calculator
-            </a>{" "}
-            – Compare file sizes
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-validator"
-              className="text-primary hover:underline"
-            >
-              JSON Validator
-            </a>{" "}
-            – Check JSON syntax
-          </li>
-        </ul>
       </div>
     </div>
   );

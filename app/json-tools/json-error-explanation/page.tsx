@@ -339,36 +339,6 @@ export default function JsonErrorExplanationPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a
-              href="/json-tools/json-formatter-beautifier"
-              className="text-primary hover:underline"
-            >
-              JSON Formatter
-            </a>{" "}
-            – Format and beautify valid JSON with proper indentation
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-validator"
-              className="text-primary hover:underline"
-            >
-              JSON Validator
-            </a>{" "}
-            – Quick validation check without detailed explanations
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-schema-validator"
-              className="text-primary hover:underline"
-            >
-              JSON Schema Validator
-            </a>{" "}
-            – Validate JSON structure against a schema definition
-          </li>
-        </ul>
       </div>
     </div>
   );
