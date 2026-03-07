@@ -225,8 +225,6 @@ export default function LinearRegressionCalculator() {
         )}
       </div>
 
-      <section className="border-t pt-8 space-y-4">
-      </section>
     </div>
   );
 }

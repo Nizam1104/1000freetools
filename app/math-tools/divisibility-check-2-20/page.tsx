@@ -210,8 +210,6 @@ export default function DivisibilityCheck2to20() {
         )}
       </div>
 
-      <section className="border-t pt-8 space-y-4">
-      </section>
     </div>
   );
 }

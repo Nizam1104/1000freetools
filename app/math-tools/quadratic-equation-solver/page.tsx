@@ -184,8 +184,6 @@ export default function QuadraticEquationSolver() {
           </div>
         </div>
 
-        <section className="mb-12 border-t pt-8">
-        </section>
       </div>
     </div>
   );

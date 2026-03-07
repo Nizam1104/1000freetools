@@ -186,8 +186,6 @@ export default function EMILoanCalculator() {
         )}
       </div>
 
-      <section className="border-t pt-8 space-y-4">
-      </section>
     </div>
   );
 }

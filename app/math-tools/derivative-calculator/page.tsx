@@ -336,8 +336,6 @@ export default function DerivativeCalculator() {
         )}
       </div>
 
-      <section className="border-t pt-8 space-y-4">
-      </section>
     </div>
   );
 }

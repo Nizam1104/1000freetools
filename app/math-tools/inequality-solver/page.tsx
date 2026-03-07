@@ -236,8 +236,6 @@ export default function InequalitySolver() {
           </div>
         </div>
 
-        <section className="mb-12 border-t pt-8">
-        </section>
       </div>
     </div>
   );
