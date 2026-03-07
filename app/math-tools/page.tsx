@@ -32,6 +32,7 @@ import {
   Copy,
   Check,
   AlertTriangle,
+  Search,
 } from "lucide-react";
 
 import mathToolsData from "@/json-assets/math-tools-links.json";
@@ -109,17 +110,32 @@ const categorySlugMap: Record<string, string> = {
 
 export default function MathToolsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const categories: Category[] = mathToolsData.categories;
 
   const allTools: Tool[] = mathToolsData.tools;
 
   const filteredTools = useMemo(() => {
-    if (selectedCategory === "all") {
-      return allTools;
+    let result = allTools;
+
+    // Filter by category
+    if (selectedCategory !== "all") {
+      result = result.filter(tool => tool.category === selectedCategory);
     }
-    return allTools.filter(tool => tool.category === selectedCategory);
-  }, [selectedCategory, allTools]);
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      result = result.filter(
+        tool =>
+          tool.name.toLowerCase().includes(query) ||
+          tool.description.toLowerCase().includes(query)
+      );
+    }
+
+    return result;
+  }, [selectedCategory, searchQuery, allTools]);
 
   const totalTools = allTools.length;
 
@@ -211,45 +227,78 @@ export default function MathToolsPage() {
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            <button
-              onClick={() => setSelectedCategory("all")}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                selectedCategory === "all"
+          <div className="relative flex-1 max-w-md my-4">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="Search tools..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              >
+                ×
+              </button>
+            )}
+          </div>
+
+          {/* Search and Category Filter */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+
+            {/* Category Filter Buttons */}
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setSelectedCategory("all")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedCategory === "all"
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-secondary-foreground hover:bg-accent"
-              }`}
-            >
-              All Tools
-            </button>
-            {categories.map((category) => {
-              const slug = categorySlugMap[category.name];
-              const isActive = selectedCategory === slug;
-              return (
-                <button
-                  key={category.name}
-                  onClick={() => setSelectedCategory(slug)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    isActive
+                  }`}
+              >
+                All Tools
+              </button>
+              {categories.map((category) => {
+                const slug = categorySlugMap[category.name];
+                const isActive = selectedCategory === slug;
+                return (
+                  <button
+                    key={category.name}
+                    onClick={() => setSelectedCategory(slug)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isActive
                       ? "bg-primary text-primary-foreground"
                       : "bg-secondary text-secondary-foreground hover:bg-accent"
-                  }`}
-                >
-                  {category.name}
-                </button>
-              );
-            })}
+                      }`}
+                  >
+                    {category.name}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Tools Grid */}
           {filteredTools.length === 0 ? (
             <div className="text-center py-16">
               <AlertTriangle className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">No tools found</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                {searchQuery ? "No matching tools found" : "No tools found"}
+              </h3>
               <p className="text-muted-foreground">
-                No tools available in this category
+                {searchQuery
+                  ? `No tools match your search "${searchQuery}". Try a different term or clear the search.`
+                  : "No tools available in this category"}
               </p>
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="mt-4 px-4 py-2 text-sm font-medium text-primary hover:underline"
+                >
+                  Clear search
+                </button>
+              )}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,543 +1,969 @@
-"use client";
+"use client"
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+// ── Fonts & Base Styles ──────────────────────────────────────────────────────
+const GLOBAL_STYLE = `
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0d0d0f;
+    --surface:  #16161a;
+    --surface2: #1e1e24;
+    --border:   #2a2a35;
+    --accent:   #00e5a0;
+    --accent2:  #7c5cfc;
+    --warn:     #ff6b6b;
+    --text:     #f0f0f5;
+    --muted:    #6b6b80;
+    --btn-num:  #1a1a20;
+    --btn-op:   #1e1a2e;
+    --btn-fn:   #131820;
+    --btn-eq:   #00e5a0;
+    --glow: 0 0 20px rgba(0,229,160,0.15);
+    --shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  body { background: var(--bg); }
+
+  .calc-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    padding: 20px;
+  }
+
+  .calc {
+    width: 420px;
+    background: var(--surface);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.05);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .calc::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    border-radius: 0 0 4px 4px;
+  }
+
+  /* ── Header ── */
+  .calc-header {
+    padding: 16px 20px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .calc-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .mode-pills {
+    display: flex;
+    gap: 4px;
+    background: var(--bg);
+    padding: 3px;
+    border-radius: 8px;
+  }
+  .mode-pill {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    transition: all 0.15s;
+    color: var(--muted);
+    background: transparent;
+  }
+  .mode-pill.active {
+    background: var(--accent);
+    color: #000;
+  }
+
+  /* ── Display ── */
+  .display {
+    padding: 16px 20px 12px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .display-history {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: right;
+    min-height: 18px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .display-expr {
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    color: var(--muted);
+    text-align: right;
+    min-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 4px;
+  }
+  .display-main {
+    font-family: 'Space Mono', monospace;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+    text-align: right;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.15s;
+  }
+  .display-main.error { color: var(--warn); font-size: 22px; }
+  .display-cursor {
+    display: inline-block;
+    width: 2px; height: 1em;
+    background: var(--accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  .memory-badge {
+    position: absolute;
+    top: 12px; left: 20px;
+    font-size: 10px;
+    font-family: 'Space Mono', monospace;
+    color: var(--accent2);
+    background: rgba(124,92,252,0.15);
+    border: 1px solid rgba(124,92,252,0.3);
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  /* ── Buttons ── */
+  .btn-grid {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .btn-row {
+    display: grid;
+    gap: 6px;
+  }
+
+  .btn {
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.1s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1px;
+    color: var(--text);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    background: rgba(255,255,255,0.08);
+    transition: opacity 0.1s;
+  }
+  .btn:hover::after { opacity: 1; }
+  .btn:active { transform: scale(0.94); }
+  .btn:active::after { opacity: 0.15; }
+
+  .btn-sub {
+    font-size: 9px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--muted);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  /* variants */
+  .btn-num  { background: var(--btn-num); }
+  .btn-op   { background: var(--btn-op); color: var(--accent2); border-color: rgba(124,92,252,0.2); }
+  .btn-fn   { background: var(--btn-fn); color: #9be0ff; border-color: rgba(155,224,255,0.12); }
+  .btn-fn2  { background: var(--btn-fn); color: #ffb86c; border-color: rgba(255,184,108,0.15); }
+  .btn-mem  { background: var(--btn-fn); color: var(--muted); font-size: 11px; }
+  .btn-util { background: var(--surface2); color: var(--muted); }
+  .btn-clear { background: rgba(255,107,107,0.1); color: var(--warn); border-color: rgba(255,107,107,0.2); }
+  .btn-eq {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(0,229,160,0.25);
+    font-size: 20px;
+  }
+  .btn-eq:hover::after { opacity: 0.2; }
+  .btn-zero { grid-column: span 2; }
+  .btn-2nd-active { background: rgba(255,184,108,0.1); color: #ffb86c; border-color: rgba(255,184,108,0.3); }
+
+  /* press ripple */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-anim 0.4s linear;
+    background: rgba(255,255,255,0.12);
+    pointer-events: none;
+  }
+  @keyframes ripple-anim {
+    to { transform: scale(4); opacity: 0; }
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { display: none; }
+`;
+
+// ── Math Engine ──────────────────────────────────────────────────────────────
+function evaluate(expr, isDeg) {
+  // Replace display tokens with JS math
+  let e = expr
+    .replace(/×/g, "*")
+    .replace(/÷/g, "/")
+    .replace(/−/g, "-")
+    .replace(/π/g, String(Math.PI))
+    .replace(/e(?![0-9])/g, String(Math.E));
+
+  // trig
+  const toRad = isDeg ? `*(Math.PI/180)` : ``;
+  const fromRad = isDeg ? `*(180/Math.PI)` : ``;
+
+  e = e
+    .replace(/sin⁻¹\(/g, `(Math.asin(`)
+    .replace(/cos⁻¹\(/g, `(Math.acos(`)
+    .replace(/tan⁻¹\(/g, `(Math.atan(`)
+    .replace(/sinh\(/g, `(Math.sinh(`)
+    .replace(/cosh\(/g, `(Math.cosh(`)
+    .replace(/tanh\(/g, `(Math.tanh(`)
+    .replace(/sin\(/g, `(Math.sin(`)
+    .replace(/cos\(/g, `(Math.cos(`)
+    .replace(/tan\(/g, `(Math.tan(`)
+    .replace(/log₂\(/g, `(Math.log2(`)
+    .replace(/log\(/g, `(Math.log10(`)
+    .replace(/ln\(/g, `(Math.log(`)
+    .replace(/√\(/g, `(Math.sqrt(`)
+    .replace(/∛\(/g, `(Math.cbrt(`)
+    .replace(/abs\(/g, `(Math.abs(`);
+
+  // Apply deg/rad conversion inside trig functions
+  if (isDeg) {
+    e = e
+      .replace(/Math\.sin\(/g, `Math.sin((`)
+      .replace(/Math\.cos\(/g, `Math.cos((`)
+      .replace(/Math\.tan\(/g, `Math.tan((`)
+      // asin/acos/atan return radians, convert to deg
+      .replace(/Math\.asin\(/g, `(180/Math.PI)*Math.asin(`)
+      .replace(/Math\.acos\(/g, `(180/Math.PI)*Math.acos(`)
+      .replace(/Math\.atan\(/g, `(180/Math.PI)*Math.atan(`);
+    // Insert deg->rad after opening trig parens
+    e = e.replace(/Math\.(sin|cos|tan)\(\(/g, (m, fn) =>
+      `Math.${fn}(((Math.PI/180)*((`
+    );
+    // We need to close the extra parens — this approach is complex, use a different method
+  }
+
+  return e;
+}
+
+// Simpler, safer evaluator using function-based approach
+function safeEval(expr, isDeg) {
+  try {
+    // Degree/radian conversion helpers
+    const toRad = (x) => isDeg ? x * Math.PI / 180 : x;
+    const fromRad = (x) => isDeg ? x * 180 / Math.PI : x;
+
+    // Degree-aware trig functions
+    const __sin__ = (x) => Math.sin(toRad(x));
+    const __cos__ = (x) => Math.cos(toRad(x));
+    const __tan__ = (x) => Math.tan(toRad(x));
+    const __asin__ = (x) => fromRad(Math.asin(x));
+    const __acos__ = (x) => fromRad(Math.acos(x));
+    const __atan__ = (x) => fromRad(Math.atan(x));
+    const __sinh__ = (x) => Math.sinh(x);
+    const __cosh__ = (x) => Math.cosh(x);
+    const __tanh__ = (x) => Math.tanh(x);
+
+    let e = expr
+      .replace(/×/g, "*")
+      .replace(/÷/g, "/")
+      .replace(/−/g, "-")
+      .replace(/π/g, "(Math.PI)")
+      .replace(/\be\b/g, "(Math.E)")
+      .replace(/sin⁻¹\(/g, "__asin__(")
+      .replace(/cos⁻¹\(/g, "__acos__(")
+      .replace(/tan⁻¹\(/g, "__atan__(")
+      .replace(/sinh\(/g, "__sinh__(")
+      .replace(/cosh\(/g, "__cosh__(")
+      .replace(/tanh\(/g, "__tanh__(")
+      .replace(/sin\(/g, "__sin__(")
+      .replace(/cos\(/g, "__cos__(")
+      .replace(/tan\(/g, "__tan__(")
+      .replace(/log₂\(/g, "(Math.log2(")
+      .replace(/log\(/g, "(Math.log10(")
+      .replace(/ln\(/g, "(Math.log(")
+      .replace(/√\(/g, "(Math.sqrt(")
+      .replace(/∛\(/g, "(Math.cbrt(")
+      .replace(/abs\(/g, "(Math.abs(")
+      .replace(/\^/g, "**");
+
+    // Handle implicit multiplication: 2π → 2*(Math.PI), 2(3) → 2*(3)
+    e = e.replace(/(\d)\s*\(/g, "$1*(");
+
+    // Create function with helpers in scope
+    // eslint-disable-next-line no-new-func
+    const result = Function(
+      "__sin__", "__cos__", "__tan__",
+      "__asin__", "__acos__", "__atan__",
+      "__sinh__", "__cosh__", "__tanh__",
+      `"use strict"; return (${e})`
+    )(
+      __sin__, __cos__, __tan__,
+      __asin__, __acos__, __atan__,
+      __sinh__, __cosh__, __tanh__
+    );
+    if (!isFinite(result)) return "Infinity";
+    if (isNaN(result)) return "Error";
+    return result;
+  } catch {
+    return "Error";
+  }
+}
+
+function factorial(n) {
+  if (n < 0 || !Number.isInteger(n)) return NaN;
+  if (n > 170) return Infinity;
+  let r = 1;
+  for (let i = 2; i <= n; i++) r *= i;
+  return r;
+}
+
+function formatResult(val) {
+  if (typeof val === "string") return val;
+  if (!isFinite(val)) return val > 0 ? "∞" : "-∞";
+  if (isNaN(val)) return "Error";
+  // Avoid floating point ugliness
+  const s = parseFloat(val.toPrecision(12));
+  return String(s);
+}
+
+// ── Main Component ───────────────────────────────────────────────────────────
 export default function ScientificCalculator() {
-  const [display, setDisplay] = useState<string>("0");
-  const [previousValue, setPreviousValue] = useState<string | null>(null);
-  const [operation, setOperation] = useState<string | null>(null);
-  const [waitingForOperand, setWaitingForOperand] = useState<boolean>(false);
-  const [isDegree, setIsDegree] = useState<boolean>(true);
-  const [memory, setMemory] = useState<number>(0);
-  const [history, setHistory] = useState<string>("");
-  const [showSecondFunction, setShowSecondFunction] = useState<boolean>(false);
+  const [expr, setExpr] = useState("");           // expression being built
+  const [result, setResult] = useState("0");      // live preview result
+  const [history, setHistory] = useState("");     // last completed expression
+  const [isDeg, setIsDeg] = useState(true);
+  const [is2nd, setIs2nd] = useState(false);
+  const [memory, setMemory] = useState(0);
+  const [justEvaluated, setJustEvaluated] = useState(false);
+  const [error, setError] = useState(false);
+  const [openParens, setOpenParens] = useState(0); // track unmatched (
 
+  // Live preview
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key >= "0" && e.key <= "9") inputDigit(e.key);
-      if (e.key === ".") inputDecimal();
-      if (e.key === "+") performOperation("+");
-      if (e.key === "-") performOperation("-");
-      if (e.key === "*" || e.key === "x") performOperation("×");
-      if (e.key === "/") performOperation("÷");
-      if (e.key === "Enter" || e.key === "=") handleEquals();
-      if (e.key === "Escape") clear();
-      if (e.key === "Backspace") handleBackspace();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [display, previousValue, operation, waitingForOperand]);
-
-  const inputDigit = (digit: string) => {
-    if (waitingForOperand) {
-      setDisplay(digit);
-      setWaitingForOperand(false);
+    if (!expr) { setResult("0"); setError(false); return; }
+    const val = safeEval(expr, isDeg);
+    if (val === "Error") {
+      setError(false); // don't show red until equals is pressed
     } else {
-      setDisplay(display === "0" ? digit : display + digit);
+      setResult(formatResult(val));
+      setError(false);
     }
+  }, [expr, isDeg]);
+
+  const addToExpr = useCallback((token) => {
+    setExpr(prev => {
+      if (justEvaluated) {
+        // If last action was '=', start fresh unless it's an operator
+        const isOp = ["+", "−", "×", "÷", "^"].includes(token);
+        const newExpr = isOp ? result + token : token;
+        setJustEvaluated(false);
+        return newExpr;
+      }
+      return prev + token;
+    });
+  }, [justEvaluated, result]);
+
+  const handleDigit = (d) => {
+    setJustEvaluated(false);
+    setExpr(prev => {
+      if (justEvaluated && !["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."].includes(d)) {
+        return result + d;
+      }
+      if (justEvaluated) { setJustEvaluated(false); return d; }
+      return prev + d;
+    });
   };
 
-  const inputDecimal = () => {
-    if (waitingForOperand) {
-      setDisplay("0.");
-      setWaitingForOperand(false);
-    } else if (!display.includes(".")) {
-      setDisplay(display + ".");
+  const handleOperator = (op) => {
+    if (expr === "" && result !== "0") {
+      setExpr(result + op);
+      setJustEvaluated(false);
+      return;
     }
+    // Replace last operator if expr ends with one
+    setExpr(prev => {
+      const ops = ["+", "−", "×", "÷"];
+      if (prev.length > 0 && ops.includes(prev[prev.length - 1])) {
+        return prev.slice(0, -1) + op;
+      }
+      if (justEvaluated) { setJustEvaluated(false); return result + op; }
+      return prev + op;
+    });
+    setJustEvaluated(false);
   };
 
-  const clear = () => {
-    setDisplay("0");
-    setPreviousValue(null);
-    setOperation(null);
-    setWaitingForOperand(false);
-    setHistory("");
-  };
-
-  const handleBackspace = () => {
-    if (display.length === 1 || (display.length === 2 && display.startsWith("-"))) {
-      setDisplay("0");
-    } else {
-      setDisplay(display.slice(0, -1));
-    }
-  };
-
-  const toggleSign = () => {
-    const value = parseFloat(display);
-    setDisplay(String(value * -1));
-  };
-
-  const inputPercent = () => {
-    const value = parseFloat(display);
-    setDisplay(String(value / 100));
-  };
-
-  const performOperation = (nextOperation: string) => {
-    const inputValue = parseFloat(display);
-    if (previousValue === null) {
-      setPreviousValue(display);
-    } else if (operation) {
-      const currentValue = parseFloat(previousValue);
-      const result = calculate(currentValue, inputValue, operation);
-      setDisplay(String(result));
-      setPreviousValue(String(result));
-    }
-    setWaitingForOperand(true);
-    setOperation(nextOperation);
-    setHistory(`${display} ${nextOperation}`);
-  };
-
-  const calculate = (left: number, right: number, op: string): number => {
-    switch (op) {
-      case "+": return left + right;
-      case "-": return left - right;
-      case "×": return left * right;
-      case "÷": return right !== 0 ? left / right : 0;
-      case "^": return Math.pow(left, right);
-      default: return right;
-    }
+  const handleFunction = (fn) => {
+    // Functions append "fn(" so user types argument then closes
+    setJustEvaluated(false);
+    setExpr(prev => {
+      if (justEvaluated) return fn + "(";
+      return prev + fn + "(";
+    });
+    setOpenParens(p => p + 1);
   };
 
   const handleEquals = () => {
-    if (!operation || previousValue === null) return;
-    const inputValue = parseFloat(display);
-    const currentValue = parseFloat(previousValue);
-    const result = calculate(currentValue, inputValue, operation);
-    setHistory(`${previousValue} ${operation} ${display} =`);
-    setDisplay(String(result));
-    setPreviousValue(null);
-    setOperation(null);
-    setWaitingForOperand(true);
+    const evalExpr = expr || result;
+    if (!evalExpr) return;
+    const val = safeEval(evalExpr, isDeg);
+    const isErr = val === "Error";
+    setHistory(evalExpr + " =");
+    setResult(isErr ? "Error" : formatResult(val));
+    setError(isErr);
+    setExpr("");
+    setJustEvaluated(true);
+    setOpenParens(0);
   };
 
-  const performScientificFunction = (func: string) => {
-    const value = parseFloat(display);
-    let result = 0;
-    let funcName = func;
+  const handleClear = () => {
+    setExpr(""); setResult("0"); setHistory(""); setError(false);
+    setJustEvaluated(false); setOpenParens(0);
+  };
 
-    switch (func) {
-      case "sin":
-        result = isDegree ? Math.sin(value * Math.PI / 180) : Math.sin(value);
-        funcName = `sin(${value})`;
-        break;
-      case "cos":
-        result = isDegree ? Math.cos(value * Math.PI / 180) : Math.cos(value);
-        funcName = `cos(${value})`;
-        break;
-      case "tan":
-        result = isDegree ? Math.tan(value * Math.PI / 180) : Math.tan(value);
-        funcName = `tan(${value})`;
-        break;
-      case "asin":
-        result = isDegree ? Math.asin(value) * 180 / Math.PI : Math.asin(value);
-        funcName = `asin(${value})`;
-        break;
-      case "acos":
-        result = isDegree ? Math.acos(value) * 180 / Math.PI : Math.acos(value);
-        funcName = `acos(${value})`;
-        break;
-      case "atan":
-        result = isDegree ? Math.atan(value) * 180 / Math.PI : Math.atan(value);
-        funcName = `atan(${value})`;
-        break;
-      case "log":
-        result = Math.log10(value);
-        funcName = `log(${value})`;
-        break;
-      case "ln":
-        result = Math.log(value);
-        funcName = `ln(${value})`;
-        break;
-      case "log10":
-        result = Math.log10(value);
-        funcName = `log10(${value})`;
-        break;
-      case "sqrt":
-        result = Math.sqrt(value);
-        funcName = `√(${value})`;
-        break;
-      case "cbrt":
-        result = Math.cbrt(value);
-        funcName = `∛(${value})`;
-        break;
-      case "x²":
-        result = Math.pow(value, 2);
-        funcName = `${value}²`;
-        break;
-      case "x³":
-        result = Math.pow(value, 3);
-        funcName = `${value}³`;
-        break;
-      case "1/x":
-        result = 1 / value;
-        funcName = `1/${value}`;
-        break;
-      case "e^x":
-        result = Math.exp(value);
-        funcName = `e^${value}`;
-        break;
-      case "10^x":
-        result = Math.pow(10, value);
-        funcName = `10^${value}`;
-        break;
-      case "n!":
-        result = factorial(value);
-        funcName = `${value}!`;
-        break;
-      case "exp":
-        result = Math.exp(value);
-        funcName = `exp(${value})`;
-        break;
-      default:
-        return;
+  const handleBackspace = () => {
+    if (justEvaluated) { setExpr(""); setResult("0"); setJustEvaluated(false); return; }
+    setExpr(prev => {
+      if (!prev) return prev;
+      // Remove multi-char tokens
+      const multiTokens = ["sin⁻¹(", "cos⁻¹(", "tan⁻¹(", "sinh(", "cosh(", "tanh(", "sin(", "cos(", "tan(", "log₂(", "log(", "ln(", "√(", "∛(", "abs("];
+      for (const t of multiTokens) {
+        if (prev.endsWith(t)) {
+          setOpenParens(p => Math.max(0, p - 1));
+          return prev.slice(0, -t.length);
+        }
+      }
+      const lastChar = prev[prev.length - 1];
+      if (lastChar === "(") setOpenParens(p => Math.max(0, p - 1));
+      if (lastChar === ")") setOpenParens(p => p + 1);
+      return prev.slice(0, -1);
+    });
+  };
+
+  const handleParen = () => {
+    if (openParens > 0) {
+      setExpr(prev => prev + ")");
+      setOpenParens(p => p - 1);
+    } else {
+      setExpr(prev => prev + "(");
+      setOpenParens(p => p + 1);
     }
-
-    setDisplay(String(result));
-    setHistory(`${funcName} =`);
-    setWaitingForOperand(true);
   };
 
-  const factorial = (n: number): number => {
-    if (n < 0) return NaN;
-    if (n === 0 || n === 1) return 1;
-    let result = 1;
-    for (let i = 2; i <= n; i++) result *= i;
-    return result;
+  const handlePercent = () => {
+    // Convert last number in expr to percentage
+    setExpr(prev => {
+      const num = parseFloat(prev);
+      if (!isNaN(num) && String(num) === prev) return String(num / 100);
+      return prev + "/100";
+    });
   };
 
-  const memoryClear = () => setMemory(0);
-  const memoryRecall = () => {
-    setDisplay(String(memory));
-    setWaitingForOperand(true);
-  };
-  const memoryAdd = () => {
-    setMemory(memory + parseFloat(display));
-    setWaitingForOperand(true);
-  };
-  const memorySubtract = () => {
-    setMemory(memory - parseFloat(display));
-    setWaitingForOperand(true);
-  };
-  const memoryStore = () => {
-    setMemory(parseFloat(display));
-    setWaitingForOperand(true);
+  const handleToggleSign = () => {
+    setExpr(prev => {
+      if (!prev) return "-";
+      if (prev.startsWith("-")) return prev.slice(1);
+      return "(-" + prev + ")";
+    });
   };
 
-  const ScientificButton = ({ onClick, label, secondLabel, className = "" }: any) => (
-    <Button
-      variant="outline"
-      onClick={onClick}
-      className={`h-12 text-sm font-medium ${className}`}
+  const handleConstant = (c) => {
+    setJustEvaluated(false);
+    setExpr(prev => {
+      if (justEvaluated) return c;
+      return prev + c;
+    });
+  };
+
+  // Factorial: apply to current expression result
+  const handleFactorial = () => {
+    const val = expr ? safeEval(expr, isDeg) : parseFloat(result);
+    const n = typeof val === "string" ? parseFloat(val) : val;
+    const r = factorial(n);
+    setHistory((expr || result) + "! =");
+    setResult(formatResult(r));
+    setExpr("");
+    setJustEvaluated(true);
+  };
+
+  // Power of y
+  const handlePower = () => handleOperator("^");
+
+  // Memory
+  const curVal = () => {
+    if (expr) {
+      const v = safeEval(expr, isDeg);
+      return typeof v === "number" ? v : parseFloat(result);
+    }
+    return parseFloat(result) || 0;
+  };
+
+  // Keyboard
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.target.tagName === "INPUT") return;
+      const k = e.key;
+      if (k >= "0" && k <= "9") { e.preventDefault(); handleDigit(k); }
+      else if (k === ".") { e.preventDefault(); handleDigit("."); }
+      else if (k === "+") { e.preventDefault(); handleOperator("+"); }
+      else if (k === "-") { e.preventDefault(); handleOperator("−"); }
+      else if (k === "*") { e.preventDefault(); handleOperator("×"); }
+      else if (k === "/") { e.preventDefault(); handleOperator("÷"); }
+      else if (k === "^") { e.preventDefault(); handleOperator("^"); }
+      else if (k === "(") { e.preventDefault(); setExpr(p => p + "("); setOpenParens(p => p + 1); }
+      else if (k === ")") { e.preventDefault(); setExpr(p => p + ")"); setOpenParens(p => Math.max(0, p - 1)); }
+      else if (k === "Enter" || k === "=") { e.preventDefault(); handleEquals(); }
+      else if (k === "Backspace") { e.preventDefault(); handleBackspace(); }
+      else if (k === "Escape") { e.preventDefault(); handleClear(); }
+      else if (k === "%") { e.preventDefault(); handlePercent(); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
+  // Ripple effect
+  const ripple = (e) => {
+    const btn = e.currentTarget;
+    const circle = document.createElement("span");
+    const diameter = Math.max(btn.clientWidth, btn.clientHeight);
+    const radius = diameter / 2;
+    const rect = btn.getBoundingClientRect();
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${e.clientX - rect.left - radius}px`;
+    circle.style.top = `${e.clientY - rect.top - radius}px`;
+    circle.classList.add("ripple");
+    btn.querySelector(".ripple")?.remove();
+    btn.appendChild(circle);
+  };
+
+  // Display value
+  const displayVal = justEvaluated ? result : (
+    result !== "0" && expr === "" ? result :
+      result === "0" && expr === "" ? "0" :
+        expr ? (error ? "Error" : result) : result
+  );
+  const displayExpr = justEvaluated ? "" : expr;
+
+  // ── Render ──
+  const Btn = ({ label, sub, variant = "btn-num", onClick, wide, style }) => (
+    <button
+      className={`btn ${variant} ${wide ? "btn-zero" : ""}`}
+      onClick={(e) => { ripple(e); onClick(); }}
+      style={style}
     >
-      {showSecondFunction && secondLabel ? secondLabel : label}
-    </Button>
+      <span>{label}</span>
+      {sub && <span className="btn-sub">{sub}</span>}
+    </button>
   );
 
+  const fnLabel = (primary, secondary) => is2nd ? secondary : primary;
+  const fnAct = (primary, secondary) => is2nd ? secondary : primary;
+
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">Free Online Scientific Calculator – Advanced Math Functions</h1>
-        <p className="text-muted-foreground">
-          Perform complex scientific calculations online with our free scientific calculator. Supports trigonometry, logarithms, exponents, roots, and more – ideal for students and professionals.
-        </p>
-      </div>
-      <Card>
-        <CardHeader>
-          <CardTitle>Scientific Calculator</CardTitle>
-          <CardDescription>
-            Advanced scientific calculator with trigonometric functions, logarithms, exponents, and more.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <Switch checked={isDegree} onCheckedChange={setIsDegree} id="deg-mode" />
-                <Label htmlFor="deg-mode" className="text-sm">DEG</Label>
-                <span className="text-xs text-muted-foreground ml-2">
-                  {isDegree ? "Degrees" : "Radians"}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Switch checked={showSecondFunction} onCheckedChange={setShowSecondFunction} id="2nd-func" />
-                <Label htmlFor="2nd-func" className="text-sm">2nd</Label>
-                <span className="text-xs text-muted-foreground ml-2">Secondary functions</span>
-              </div>
+    <>
+      <style>{GLOBAL_STYLE}</style>
+      <div className="calc-wrap flex flex-col">
+        <div className="calc">
+          {/* Header */}
+          <div className="calc-header">
+            <span className="calc-title">CALC — SCI</span>
+            <div className="mode-pills">
+              <button className={`mode-pill ${isDeg ? "active" : ""}`} onClick={() => setIsDeg(true)}>DEG</button>
+              <button className={`mode-pill ${!isDeg ? "active" : ""}`} onClick={() => setIsDeg(false)}>RAD</button>
+            </div>
+          </div>
+
+          {/* Display */}
+          <div className="display">
+            {memory !== 0 && <span className="memory-badge">M: {formatResult(memory)}</span>}
+            <div className="display-history">{history}</div>
+            <div className="display-expr">
+              {displayExpr}
+              {openParens > 0 && <span style={{ color: "var(--accent2)" }}>{")".repeat(0)}</span>}
+            </div>
+            <div className={`display-main ${error ? "error" : ""}`}>
+              {error ? "Error" : displayVal}
+              {!justEvaluated && <span className="display-cursor" />}
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="btn-grid">
+            {/* Memory row */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(5,1fr)" }}>
+              <Btn label="MC" variant="btn-mem" onClick={() => setMemory(0)} />
+              <Btn label="MR" variant="btn-mem" onClick={() => { setExpr(p => p + String(memory)); setJustEvaluated(false); }} />
+              <Btn label="M+" variant="btn-mem" onClick={() => setMemory(m => m + curVal())} />
+              <Btn label="M−" variant="btn-mem" onClick={() => setMemory(m => m - curVal())} />
+              <Btn label="MS" variant="btn-mem" onClick={() => setMemory(curVal())} />
             </div>
 
-            <div className="p-4 bg-muted rounded-lg">
-              <div className="text-right text-sm text-muted-foreground h-6 mb-1 truncate">
-                {history}
-              </div>
-              <div className="text-right text-3xl font-bold truncate">
-                {parseFloat(display).toPrecision(12).replace(/\.?0+$/, "")}
-              </div>
-              {memory !== 0 && (
-                <div className="text-right text-xs text-muted-foreground mt-1">
-                  M = {memory}
+            {/* 2nd + trig row */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(5,1fr)" }}>
+              <Btn
+                label="2nd"
+                variant={is2nd ? "btn-2nd-active" : "btn-util"}
+                onClick={() => setIs2nd(f => !f)}
+              />
+              <Btn
+                label={fnLabel("sin", "sin⁻¹")}
+                sub={fnLabel("", "sin")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("sin", "sin⁻¹"))}
+              />
+              <Btn
+                label={fnLabel("cos", "cos⁻¹")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("cos", "cos⁻¹"))}
+              />
+              <Btn
+                label={fnLabel("tan", "tan⁻¹")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("tan", "tan⁻¹"))}
+              />
+              <Btn
+                label={fnLabel("√(", "∛(")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("√", "∛"))}
+              />
+            </div>
+
+            {/* Hyp + log row */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(5,1fr)" }}>
+              <Btn
+                label={fnLabel("sinh", "asinh")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("sinh", "asinh"))}
+              />
+              <Btn
+                label={fnLabel("cosh", "acosh")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("cosh", "acosh"))}
+              />
+              <Btn
+                label={fnLabel("tanh", "atanh")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("tanh", "atanh"))}
+              />
+              <Btn
+                label={fnLabel("log", "log₂")}
+                variant="btn-fn"
+                onClick={() => handleFunction(fnAct("log", "log₂"))}
+              />
+              <Btn label="ln" variant="btn-fn" onClick={() => handleFunction("ln")} />
+            </div>
+
+            {/* Power + constants */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(5,1fr)" }}>
+              <Btn label="x²" variant="btn-fn" onClick={() => { addToExpr("^2"); }} />
+              <Btn label="xʸ" variant="btn-fn" onClick={() => handleOperator("^")} />
+              <Btn label="n!" variant="btn-fn" onClick={handleFactorial} />
+              <Btn label="π" variant="btn-fn" onClick={() => handleConstant("π")} />
+              <Btn label="e" variant="btn-fn" onClick={() => handleConstant("e")} />
+            </div>
+
+            {/* Row: AC ± % ( ) ÷ */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(5,1fr)" }}>
+              <Btn label="AC" variant="btn-clear" onClick={handleClear} />
+              <Btn label="±" variant="btn-util" onClick={handleToggleSign} />
+              <Btn label="%" variant="btn-util" onClick={handlePercent} />
+              <Btn
+                label={openParens > 0 ? ")" : "("}
+                sub={openParens > 0 ? `${openParens} open` : ""}
+                variant="btn-util"
+                onClick={handleParen}
+              />
+              <Btn label="÷" variant="btn-op" onClick={() => handleOperator("÷")} />
+            </div>
+
+            {/* 7 8 9 × */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(4,1fr)" }}>
+              <Btn label="7" onClick={() => handleDigit("7")} />
+              <Btn label="8" onClick={() => handleDigit("8")} />
+              <Btn label="9" onClick={() => handleDigit("9")} />
+              <Btn label="×" variant="btn-op" onClick={() => handleOperator("×")} />
+            </div>
+
+            {/* 4 5 6 − */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(4,1fr)" }}>
+              <Btn label="4" onClick={() => handleDigit("4")} />
+              <Btn label="5" onClick={() => handleDigit("5")} />
+              <Btn label="6" onClick={() => handleDigit("6")} />
+              <Btn label="−" variant="btn-op" onClick={() => handleOperator("−")} />
+            </div>
+
+            {/* 1 2 3 + */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(4,1fr)" }}>
+              <Btn label="1" onClick={() => handleDigit("1")} />
+              <Btn label="2" onClick={() => handleDigit("2")} />
+              <Btn label="3" onClick={() => handleDigit("3")} />
+              <Btn label="+" variant="btn-op" onClick={() => handleOperator("+")} />
+            </div>
+
+            {/* 0 . ⌫ = */}
+            <div className="btn-row" style={{ gridTemplateColumns: "repeat(4,1fr)" }}>
+              <Btn label="0" wide onClick={() => handleDigit("0")} />
+              <Btn label="." onClick={() => handleDigit(".")} />
+              <Btn label="⌫" variant="btn-util" onClick={handleBackspace} />
+              <Btn label="=" variant="btn-eq" onClick={handleEquals} />
+            </div>
+          </div>
+
+          {/* Footer hint */}
+          <div style={{ textAlign: "center", padding: "8px 0 14px", fontSize: "10px", fontFamily: "Space Mono, monospace", color: "var(--muted)", letterSpacing: "0.1em" }}>
+            KEYBOARD SUPPORTED · {openParens > 0 ? `${openParens} UNCLOSED PAREN${openParens > 1 ? "S" : ""}` : "ALL SYSTEMS GO"}
+          </div>
+        </div>
+
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "40px 20px", display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
+          <Card>
+            <CardHeader>
+              <CardTitle>Free Online Scientific Calculator – Advanced Math Functions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                Perform complex scientific calculations online with our free scientific calculator. Supports trigonometry, logarithms, exponents, roots, and more – ideal for students and professionals.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Switch between degrees and radians for trig functions. Use memory functions to store and recall values. The 2nd function toggle gives you access to inverse trig functions and additional operations.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Engineering students, physics researchers, and anyone working with advanced math can rely on this calculator. It handles everything from basic arithmetic to complex exponential and logarithmic calculations.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Scientific Functions Explained</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-semibold text-sm mb-3">Trigonometric Functions</h4>
+                  <div className="space-y-2 text-xs text-muted-foreground">
+                    <div><strong className="text-foreground">sin/cos/tan:</strong> Calculate sine, cosine, and tangent of angles</div>
+                    <div><strong className="text-foreground">sin⁻¹/cos⁻¹/tan⁻¹:</strong> Inverse functions – find angle from ratio</div>
+                    <div><strong className="text-foreground">DEG/RAD:</strong> Toggle between degrees and radians mode</div>
+                  </div>
                 </div>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <div className="grid grid-cols-5 gap-2">
-                <ScientificButton onClick={memoryClear} label="MC" className="bg-muted" />
-                <ScientificButton onClick={memoryRecall} label="MR" className="bg-muted" />
-                <ScientificButton onClick={memoryAdd} label="M+" className="bg-muted" />
-                <ScientificButton onClick={memorySubtract} label="M−" className="bg-muted" />
-                <ScientificButton onClick={memoryStore} label="MS" className="bg-muted" />
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-semibold text-sm mb-3">Logarithmic Functions</h4>
+                  <div className="space-y-2 text-xs text-muted-foreground">
+                    <div><strong className="text-foreground">log:</strong> Base-10 logarithm</div>
+                    <div><strong className="text-foreground">ln:</strong> Natural logarithm (base e)</div>
+                    <div><strong className="text-foreground">10ˣ / eˣ:</strong> Antilog – inverse of log functions</div>
+                  </div>
+                </div>
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-semibold text-sm mb-3">Exponential & Powers</h4>
+                  <div className="space-y-2 text-xs text-muted-foreground">
+                    <div><strong className="text-foreground">x² / x³:</strong> Square and cube a number</div>
+                    <div><strong className="text-foreground">x^y:</strong> Raise x to any power y</div>
+                    <div><strong className="text-foreground">√ / ∛:</strong> Square root and cube root</div>
+                  </div>
+                </div>
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-semibold text-sm mb-3">Other Functions</h4>
+                  <div className="space-y-2 text-xs text-muted-foreground">
+                    <div><strong className="text-foreground">n!:</strong> Factorial – product of all integers up to n</div>
+                    <div><strong className="text-foreground">1/x:</strong> Reciprocal of x</div>
+                    <div><strong className="text-foreground">EXP:</strong> Scientific notation exponent entry</div>
+                  </div>
+                </div>
               </div>
+            </CardContent>
+          </Card>
 
-              <div className="grid grid-cols-5 gap-2">
-                <ScientificButton onClick={() => performScientificFunction(showSecondFunction ? "asin" : "sin")} label="sin" secondLabel="sin⁻¹" />
-                <ScientificButton onClick={() => performScientificFunction(showSecondFunction ? "acos" : "cos")} label="cos" secondLabel="cos⁻¹" />
-                <ScientificButton onClick={() => performScientificFunction(showSecondFunction ? "atan" : "tan")} label="tan" secondLabel="tan⁻¹" />
-                <ScientificButton onClick={() => performOperation("^")} label="x^y" />
-                <ScientificButton onClick={() => performScientificFunction(showSecondFunction ? "cbrt" : "sqrt")} label="√" secondLabel="∛" />
+          <Card>
+            <CardHeader>
+              <CardTitle>Memory Functions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-5 gap-3">
+                <div className="p-3 bg-muted rounded-lg">
+                  <div className="font-semibold text-sm mb-1">MS</div>
+                  <div className="text-xs text-muted-foreground">Store current display value in memory</div>
+                </div>
+                <div className="p-3 bg-muted rounded-lg">
+                  <div className="font-semibold text-sm mb-1">MR</div>
+                  <div className="text-xs text-muted-foreground">Recall value from memory to display</div>
+                </div>
+                <div className="p-3 bg-muted rounded-lg">
+                  <div className="font-semibold text-sm mb-1">M+</div>
+                  <div className="text-xs text-muted-foreground">Add current value to memory</div>
+                </div>
+                <div className="p-3 bg-muted rounded-lg">
+                  <div className="font-semibold text-sm mb-1">M−</div>
+                  <div className="text-xs text-muted-foreground">Subtract current value from memory</div>
+                </div>
+                <div className="p-3 bg-muted rounded-lg">
+                  <div className="font-semibold text-sm mb-1">MC</div>
+                  <div className="text-xs text-muted-foreground">Clear memory to zero</div>
+                </div>
               </div>
+            </CardContent>
+          </Card>
 
-              <div className="grid grid-cols-5 gap-2">
-                <ScientificButton onClick={() => performScientificFunction("log")} label="log" />
-                <ScientificButton onClick={() => performScientificFunction("ln")} label="ln" />
-                <ScientificButton onClick={() => performScientificFunction("e^x")} label="eˣ" />
-                <ScientificButton onClick={() => performScientificFunction(showSecondFunction ? "10^x" : "log10")} label="10ˣ" secondLabel="log₂" />
-                <ScientificButton onClick={() => performScientificFunction("n!")} label="n!" />
+          <Card>
+            <CardHeader>
+              <CardTitle>Common Scientific Calculations</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                <div className="p-3 border rounded-lg">
+                  <div className="font-semibold text-sm mb-1">Find sin(30°)</div>
+                  <div className="font-mono text-xs text-muted-foreground">sin(30) = 0.5</div>
+                  <p className="text-xs text-muted-foreground mt-1">Make sure DEG mode is selected for degree calculations.</p>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <div className="font-semibold text-sm mb-1">Calculate log₁₀(1000)</div>
+                  <div className="font-mono text-xs text-muted-foreground">log(1000) = 3</div>
+                  <p className="text-xs text-muted-foreground mt-1">10 raised to what power equals 1000? Answer: 3.</p>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <div className="font-semibold text-sm mb-1">Compute 5 factorial</div>
+                  <div className="font-mono text-xs text-muted-foreground">5! = 5 × 4 × 3 × 2 × 1 = 120</div>
+                  <p className="text-xs text-muted-foreground mt-1">Factorials grow very quickly – useful in probability.</p>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <div className="font-semibold text-sm mb-1">Square root of 144</div>
+                  <div className="font-mono text-xs text-muted-foreground">√144 = 12</div>
+                  <p className="text-xs text-muted-foreground mt-1">What number times itself equals 144?</p>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <div className="font-semibold text-sm mb-1">Calculate 2⁵</div>
+                  <div className="font-mono text-xs text-muted-foreground">2 ^ 5 = 32</div>
+                  <p className="text-xs text-muted-foreground mt-1">Use x^y button: enter 2, press x^y, enter 5, press =</p>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <div className="font-semibold text-sm mb-1">Natural log of e (2.718...)</div>
+                  <div className="font-mono text-xs text-muted-foreground">ln(e) = 1</div>
+                  <p className="text-xs text-muted-foreground mt-1">The natural log of Euler's number e is exactly 1.</p>
+                </div>
               </div>
+            </CardContent>
+          </Card>
 
-              <div className="grid grid-cols-5 gap-2">
-                <ScientificButton onClick={() => performScientificFunction("x²")} label="x²" />
-                <ScientificButton onClick={() => performScientificFunction("x³")} label="x³" />
-                <ScientificButton onClick={() => performScientificFunction("1/x")} label="1/x" />
-                <ScientificButton onClick={() => performScientificFunction("exp")} label="EXP" />
-                <Button variant="outline" onClick={handleBackspace} className="h-12 text-sm font-medium">⌫</Button>
+          <Card>
+            <CardHeader>
+              <CardTitle>Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What's the difference between DEG and RAD mode?</h4>
+                <p className="text-xs text-muted-foreground">
+                  DEG (degrees) divides a circle into 360°. RAD (radians) uses the radius – a full circle is 2π radians. Use DEG for basic geometry and navigation. Use RAD for calculus and advanced physics.
+                </p>
               </div>
-
-              <div className="grid grid-cols-5 gap-2">
-                <Button variant="outline" onClick={clear} className="h-12 text-sm font-medium">AC</Button>
-                <Button variant="outline" onClick={toggleSign} className="h-12 text-sm font-medium">±</Button>
-                <Button variant="outline" onClick={inputPercent} className="h-12 text-sm font-medium">%</Button>
-                <Button variant="outline" onClick={() => performOperation("÷")} className="h-12 text-sm font-medium bg-primary/10">÷</Button>
-                <Button variant="outline" onClick={() => inputDigit("7")} className="h-12 text-sm font-medium">7</Button>
-
-                <Button variant="outline" onClick={() => inputDigit("8")} className="h-12 text-sm font-medium">8</Button>
-                <Button variant="outline" onClick={() => inputDigit("9")} className="h-12 text-sm font-medium">9</Button>
-                <Button variant="outline" onClick={() => performOperation("×")} className="h-12 text-sm font-medium bg-primary/10">×</Button>
-                <Button variant="outline" onClick={() => inputDigit("4")} className="h-12 text-sm font-medium">4</Button>
-
-                <Button variant="outline" onClick={() => inputDigit("5")} className="h-12 text-sm font-medium">5</Button>
-                <Button variant="outline" onClick={() => inputDigit("6")} className="h-12 text-sm font-medium">6</Button>
-                <Button variant="outline" onClick={() => performOperation("-")} className="h-12 text-sm font-medium bg-primary/10">−</Button>
-                <Button variant="outline" onClick={() => inputDigit("1")} className="h-12 text-sm font-medium">1</Button>
-
-                <Button variant="outline" onClick={() => inputDigit("2")} className="h-12 text-sm font-medium">2</Button>
-                <Button variant="outline" onClick={() => inputDigit("3")} className="h-12 text-sm font-medium">3</Button>
-                <Button variant="outline" onClick={() => performOperation("+")} className="h-12 text-sm font-medium bg-primary/10">+</Button>
-                <Button variant="outline" onClick={inputDecimal} className="h-12 text-sm font-medium">.</Button>
-
-                <Button variant="outline" onClick={() => inputDigit("0")} className="h-12 text-sm font-medium">0</Button>
-                <Button onClick={handleEquals} className="h-12 text-sm font-medium bg-primary text-primary-foreground col-span-2">=</Button>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">How do I calculate cube roots?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Press the 2nd toggle to access the cube root (∛) function, or use x^y with 1/3 as the exponent. For example, ∛27 = 3 because 3³ = 27.
+                </p>
               </div>
-            </div>
-
-            <div className="text-xs text-muted-foreground text-center pt-2">
-              Keyboard: 0-9 numbers, + - * / operations, Enter = equals, Escape = clear
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Free Online Scientific Calculator – Advanced Math Functions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            Perform complex scientific calculations online with our free scientific calculator. Supports trigonometry, logarithms, exponents, roots, and more – ideal for students and professionals.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Switch between degrees and radians for trig functions. Use memory functions to store and recall values. The 2nd function toggle gives you access to inverse trig functions and additional operations.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Engineering students, physics researchers, and anyone working with advanced math can rely on this calculator. It handles everything from basic arithmetic to complex exponential and logarithmic calculations.
-          </p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Scientific Functions Explained</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold text-sm mb-3">Trigonometric Functions</h4>
-              <div className="space-y-2 text-xs text-muted-foreground">
-                <div><strong className="text-foreground">sin/cos/tan:</strong> Calculate sine, cosine, and tangent of angles</div>
-                <div><strong className="text-foreground">sin⁻¹/cos⁻¹/tan⁻¹:</strong> Inverse functions – find angle from ratio</div>
-                <div><strong className="text-foreground">DEG/RAD:</strong> Toggle between degrees and radians mode</div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">What does the EXP button do?</h4>
+                <p className="text-xs text-muted-foreground">
+                  EXP lets you enter numbers in scientific notation. To enter 6.02 × 10²³ (Avogadro's number), type 6.02, press EXP, then 23. The display shows it as 6.02e+23.
+                </p>
               </div>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold text-sm mb-3">Logarithmic Functions</h4>
-              <div className="space-y-2 text-xs text-muted-foreground">
-                <div><strong className="text-foreground">log:</strong> Base-10 logarithm</div>
-                <div><strong className="text-foreground">ln:</strong> Natural logarithm (base e)</div>
-                <div><strong className="text-foreground">10ˣ / eˣ:</strong> Antilog – inverse of log functions</div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Can I calculate negative exponents?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Yes. Use the ± button to make the exponent negative. For example, 2^(-3) = 1/8 = 0.125. Enter 2, press x^y, enter 3, press ±, then =
+                </p>
               </div>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold text-sm mb-3">Exponential & Powers</h4>
-              <div className="space-y-2 text-xs text-muted-foreground">
-                <div><strong className="text-foreground">x² / x³:</strong> Square and cube a number</div>
-                <div><strong className="text-foreground">x^y:</strong> Raise x to any power y</div>
-                <div><strong className="text-foreground">√ / ∛:</strong> Square root and cube root</div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Why am I getting unexpected trig results?</h4>
+                <p className="text-xs text-muted-foreground">
+                  Check your angle mode. sin(30) in DEG mode gives 0.5, but sin(30) in RAD mode gives -0.988. Make sure you're in the right mode for your problem.
+                </p>
               </div>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold text-sm mb-3">Other Functions</h4>
-              <div className="space-y-2 text-xs text-muted-foreground">
-                <div><strong className="text-foreground">n!:</strong> Factorial – product of all integers up to n</div>
-                <div><strong className="text-foreground">1/x:</strong> Reciprocal of x</div>
-                <div><strong className="text-foreground">EXP:</strong> Scientific notation exponent entry</div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Related Math Tools</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Standard Calculator</p>
+                  <p className="text-xs text-muted-foreground">Basic arithmetic operations</p>
+                </a>
+                <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Fraction Calculator</p>
+                  <p className="text-xs text-muted-foreground">Work with fractions</p>
+                </a>
+                <a href="/math-tools/logarithm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+                  <p className="font-semibold text-sm">Logarithm Calculator</p>
+                  <p className="text-xs text-muted-foreground">Dedicated log calculations</p>
+                </a>
               </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Memory Functions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-5 gap-3">
-            <div className="p-3 bg-muted rounded-lg">
-              <div className="font-semibold text-sm mb-1">MS</div>
-              <div className="text-xs text-muted-foreground">Store current display value in memory</div>
-            </div>
-            <div className="p-3 bg-muted rounded-lg">
-              <div className="font-semibold text-sm mb-1">MR</div>
-              <div className="text-xs text-muted-foreground">Recall value from memory to display</div>
-            </div>
-            <div className="p-3 bg-muted rounded-lg">
-              <div className="font-semibold text-sm mb-1">M+</div>
-              <div className="text-xs text-muted-foreground">Add current value to memory</div>
-            </div>
-            <div className="p-3 bg-muted rounded-lg">
-              <div className="font-semibold text-sm mb-1">M−</div>
-              <div className="text-xs text-muted-foreground">Subtract current value from memory</div>
-            </div>
-            <div className="p-3 bg-muted rounded-lg">
-              <div className="font-semibold text-sm mb-1">MC</div>
-              <div className="text-xs text-muted-foreground">Clear memory to zero</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Common Scientific Calculations</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">Find sin(30°)</div>
-              <div className="font-mono text-xs text-muted-foreground">sin(30) = 0.5</div>
-              <p className="text-xs text-muted-foreground mt-1">Make sure DEG mode is selected for degree calculations.</p>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">Calculate log₁₀(1000)</div>
-              <div className="font-mono text-xs text-muted-foreground">log(1000) = 3</div>
-              <p className="text-xs text-muted-foreground mt-1">10 raised to what power equals 1000? Answer: 3.</p>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">Compute 5 factorial</div>
-              <div className="font-mono text-xs text-muted-foreground">5! = 5 × 4 × 3 × 2 × 1 = 120</div>
-              <p className="text-xs text-muted-foreground mt-1">Factorials grow very quickly – useful in probability.</p>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">Square root of 144</div>
-              <div className="font-mono text-xs text-muted-foreground">√144 = 12</div>
-              <p className="text-xs text-muted-foreground mt-1">What number times itself equals 144?</p>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">Calculate 2⁵</div>
-              <div className="font-mono text-xs text-muted-foreground">2 ^ 5 = 32</div>
-              <p className="text-xs text-muted-foreground mt-1">Use x^y button: enter 2, press x^y, enter 5, press =</p>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">Natural log of e (2.718...)</div>
-              <div className="font-mono text-xs text-muted-foreground">ln(e) = 1</div>
-              <p className="text-xs text-muted-foreground mt-1">The natural log of Euler's number e is exactly 1.</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between DEG and RAD mode?</h4>
-            <p className="text-xs text-muted-foreground">
-              DEG (degrees) divides a circle into 360°. RAD (radians) uses the radius – a full circle is 2π radians. Use DEG for basic geometry and navigation. Use RAD for calculus and advanced physics.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate cube roots?</h4>
-            <p className="text-xs text-muted-foreground">
-              Press the 2nd toggle to access the cube root (∛) function, or use x^y with 1/3 as the exponent. For example, ∛27 = 3 because 3³ = 27.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What does the EXP button do?</h4>
-            <p className="text-xs text-muted-foreground">
-              EXP lets you enter numbers in scientific notation. To enter 6.02 × 10²³ (Avogadro's number), type 6.02, press EXP, then 23. The display shows it as 6.02e+23.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I calculate negative exponents?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Use the ± button to make the exponent negative. For example, 2^(-3) = 1/8 = 0.125. Enter 2, press x^y, enter 3, press ±, then =
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why am I getting unexpected trig results?</h4>
-            <p className="text-xs text-muted-foreground">
-              Check your angle mode. sin(30) in DEG mode gives 0.5, but sin(30) in RAD mode gives -0.988. Make sure you're in the right mode for your problem.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Standard Calculator</p>
-              <p className="text-xs text-muted-foreground">Basic arithmetic operations</p>
-            </a>
-            <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fraction Calculator</p>
-              <p className="text-xs text-muted-foreground">Work with fractions</p>
-            </a>
-            <a href="/math-tools/logarithm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Logarithm Calculator</p>
-              <p className="text-xs text-muted-foreground">Dedicated log calculations</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </>
   );
 }
