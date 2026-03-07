@@ -3,83 +3,80 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // ── Fonts & Base Styles ──────────────────────────────────────────────────────
-const GLOBAL_STYLE = `
+const CALC_STYLE = `
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg:       #0d0d0f;
-    --surface:  #16161a;
-    --surface2: #1e1e24;
-    --border:   #2a2a35;
-    --accent:   #00e5a0;
-    --accent2:  #7c5cfc;
-    --warn:     #ff6b6b;
-    --text:     #f0f0f5;
-    --muted:    #6b6b80;
-    --btn-num:  #1a1a20;
-    --btn-op:   #1e1a2e;
-    --btn-fn:   #131820;
-    --btn-eq:   #00e5a0;
-    --glow: 0 0 20px rgba(0,229,160,0.15);
-    --shadow: 0 8px 32px rgba(0,0,0,0.5);
-  }
-
-  body { background: var(--bg); }
-
   .calc-wrap {
-    min-height: 100vh;
+    --calc-bg:       #0d0d0f;
+    --calc-surface:  #16161a;
+    --calc-surface2: #1e1e24;
+    --calc-border:   #2a2a35;
+    --calc-accent:   #00e5a0;
+    --calc-accent2:  #7c5cfc;
+    --calc-warn:     #ff6b6b;
+    --calc-text:     #f0f0f5;
+    --calc-muted:    #6b6b80;
+    --calc-btn-num:  #1a1a20;
+    --calc-btn-op:   #1e1a2e;
+    --calc-btn-fn:   #131820;
+    --calc-btn-eq:   #00e5a0;
+    --calc-glow:     0 0 20px rgba(0,229,160,0.15);
+    --calc-shadow:   0 8px 32px rgba(0,0,0,0.5);
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--bg);
     font-family: 'DM Sans', sans-serif;
     padding: 20px;
   }
 
-  .calc {
+  .calc-wrap *, .calc-wrap *::before, .calc-wrap *::after {
+    box-sizing: border-box;
+  }
+
+  .calc-wrap .calc {
     width: 420px;
-    background: var(--surface);
+    background: var(--calc-surface);
     border-radius: 24px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.05);
+    border: 1px solid var(--calc-border);
+    box-shadow: var(--calc-shadow), inset 0 1px 0 rgba(255,255,255,0.05);
     overflow: hidden;
     position: relative;
   }
 
-  .calc::before {
+  .calc-wrap .calc::before {
     content: '';
     position: absolute;
     top: 0; left: 50%; transform: translateX(-50%);
     width: 200px; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    background: linear-gradient(90deg, transparent, var(--calc-accent), transparent);
     border-radius: 0 0 4px 4px;
   }
 
   /* ── Header ── */
-  .calc-header {
+  .calc-wrap .calc-header {
     padding: 16px 20px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--calc-border);
   }
-  .calc-title {
+  .calc-wrap .calc-title {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.15em;
-    color: var(--accent);
+    color: var(--calc-accent);
     text-transform: uppercase;
   }
-  .mode-pills {
+  .calc-wrap .mode-pills {
     display: flex;
     gap: 4px;
-    background: var(--bg);
+    background: var(--calc-bg);
     padding: 3px;
     border-radius: 8px;
   }
-  .mode-pill {
+  .calc-wrap .mode-pill {
     font-size: 11px;
     padding: 3px 10px;
     border-radius: 5px;
@@ -88,29 +85,29 @@ const GLOBAL_STYLE = `
     font-family: 'Space Mono', monospace;
     font-weight: 700;
     transition: all 0.15s;
-    color: var(--muted);
+    color: var(--calc-muted);
     background: transparent;
   }
-  .mode-pill.active {
-    background: var(--accent);
+  .calc-wrap .mode-pill.active {
+    background: var(--calc-accent);
     color: #000;
   }
 
   /* ── Display ── */
-  .display {
+  .calc-wrap .display {
     padding: 16px 20px 12px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    background: var(--calc-bg);
+    border-bottom: 1px solid var(--calc-border);
     min-height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
   }
-  .display-history {
+  .calc-wrap .display-history {
     font-family: 'Space Mono', monospace;
     font-size: 12px;
-    color: var(--muted);
+    color: var(--calc-muted);
     text-align: right;
     min-height: 18px;
     margin-bottom: 4px;
@@ -118,10 +115,10 @@ const GLOBAL_STYLE = `
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .display-expr {
+  .calc-wrap .display-expr {
     font-family: 'Space Mono', monospace;
     font-size: 15px;
-    color: var(--muted);
+    color: var(--calc-muted);
     text-align: right;
     min-height: 22px;
     overflow: hidden;
@@ -129,11 +126,11 @@ const GLOBAL_STYLE = `
     white-space: nowrap;
     margin-bottom: 4px;
   }
-  .display-main {
+  .calc-wrap .display-main {
     font-family: 'Space Mono', monospace;
     font-size: 36px;
     font-weight: 700;
-    color: var(--text);
+    color: var(--calc-text);
     text-align: right;
     line-height: 1;
     overflow: hidden;
@@ -141,22 +138,22 @@ const GLOBAL_STYLE = `
     white-space: nowrap;
     transition: color 0.15s;
   }
-  .display-main.error { color: var(--warn); font-size: 22px; }
-  .display-cursor {
+  .calc-wrap .display-main.error { color: var(--calc-warn); font-size: 22px; }
+  .calc-wrap .display-cursor {
     display: inline-block;
     width: 2px; height: 1em;
-    background: var(--accent);
+    background: var(--calc-accent);
     margin-left: 2px;
     vertical-align: middle;
-    animation: blink 1s step-end infinite;
+    animation: calc-blink 1s step-end infinite;
   }
-  @keyframes blink { 50% { opacity: 0; } }
-  .memory-badge {
+  @keyframes calc-blink { 50% { opacity: 0; } }
+  .calc-wrap .memory-badge {
     position: absolute;
     top: 12px; left: 20px;
     font-size: 10px;
     font-family: 'Space Mono', monospace;
-    color: var(--accent2);
+    color: var(--calc-accent2);
     background: rgba(124,92,252,0.15);
     border: 1px solid rgba(124,92,252,0.3);
     padding: 2px 7px;
@@ -164,21 +161,21 @@ const GLOBAL_STYLE = `
   }
 
   /* ── Buttons ── */
-  .btn-grid {
+  .calc-wrap .btn-grid {
     padding: 14px;
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
-  .btn-row {
+  .calc-wrap .btn-row {
     display: grid;
     gap: 6px;
   }
 
-  .btn {
+  .calc-wrap .btn {
     height: 52px;
     border-radius: 12px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--calc-border);
     cursor: pointer;
     font-family: 'Space Mono', monospace;
     font-size: 13px;
@@ -191,12 +188,12 @@ const GLOBAL_STYLE = `
     justify-content: center;
     flex-direction: column;
     gap: 1px;
-    color: var(--text);
+    color: var(--calc-text);
     user-select: none;
     -webkit-tap-highlight-color: transparent;
   }
 
-  .btn::after {
+  .calc-wrap .btn::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -205,122 +202,73 @@ const GLOBAL_STYLE = `
     background: rgba(255,255,255,0.08);
     transition: opacity 0.1s;
   }
-  .btn:hover::after { opacity: 1; }
-  .btn:active { transform: scale(0.94); }
-  .btn:active::after { opacity: 0.15; }
+  .calc-wrap .btn:hover::after { opacity: 1; }
+  .calc-wrap .btn:active { transform: scale(0.94); }
+  .calc-wrap .btn:active::after { opacity: 0.15; }
 
-  .btn-sub {
+  .calc-wrap .btn-sub {
     font-size: 9px;
     font-family: 'DM Sans', sans-serif;
-    color: var(--muted);
+    color: var(--calc-muted);
     font-weight: 400;
     line-height: 1;
   }
 
   /* variants */
-  .btn-num  { background: var(--btn-num); }
-  .btn-op   { background: var(--btn-op); color: var(--accent2); border-color: rgba(124,92,252,0.2); }
-  .btn-fn   { background: var(--btn-fn); color: #9be0ff; border-color: rgba(155,224,255,0.12); }
-  .btn-fn2  { background: var(--btn-fn); color: #ffb86c; border-color: rgba(255,184,108,0.15); }
-  .btn-mem  { background: var(--btn-fn); color: var(--muted); font-size: 11px; }
-  .btn-util { background: var(--surface2); color: var(--muted); }
-  .btn-clear { background: rgba(255,107,107,0.1); color: var(--warn); border-color: rgba(255,107,107,0.2); }
-  .btn-eq {
-    background: var(--accent);
+  .calc-wrap .btn-num  { background: var(--calc-btn-num); }
+  .calc-wrap .btn-op   { background: var(--calc-btn-op); color: var(--calc-accent2); border-color: rgba(124,92,252,0.2); }
+  .calc-wrap .btn-fn   { background: var(--calc-btn-fn); color: #9be0ff; border-color: rgba(155,224,255,0.12); }
+  .calc-wrap .btn-fn2  { background: var(--calc-btn-fn); color: #ffb86c; border-color: rgba(255,184,108,0.15); }
+  .calc-wrap .btn-mem  { background: var(--calc-btn-fn); color: var(--calc-muted); font-size: 11px; }
+  .calc-wrap .btn-util { background: var(--calc-surface2); color: var(--calc-muted); }
+  .calc-wrap .btn-clear { background: rgba(255,107,107,0.1); color: var(--calc-warn); border-color: rgba(255,107,107,0.2); }
+  .calc-wrap .btn-eq {
+    background: var(--calc-accent);
     color: #000;
-    border-color: var(--accent);
+    border-color: var(--calc-accent);
     box-shadow: 0 4px 16px rgba(0,229,160,0.25);
     font-size: 20px;
   }
-  .btn-eq:hover::after { opacity: 0.2; }
-  .btn-zero { grid-column: span 2; }
-  .btn-2nd-active { background: rgba(255,184,108,0.1); color: #ffb86c; border-color: rgba(255,184,108,0.3); }
+  .calc-wrap .btn-eq:hover::after { opacity: 0.2; }
+  .calc-wrap .btn-zero { grid-column: span 2; }
+  .calc-wrap .btn-2nd-active { background: rgba(255,184,108,0.1); color: #ffb86c; border-color: rgba(255,184,108,0.3); }
 
   /* press ripple */
-  .ripple {
+  .calc-wrap .ripple {
     position: absolute;
     border-radius: 50%;
     transform: scale(0);
-    animation: ripple-anim 0.4s linear;
+    animation: calc-ripple-anim 0.4s linear;
     background: rgba(255,255,255,0.12);
     pointer-events: none;
   }
-  @keyframes ripple-anim {
+  @keyframes calc-ripple-anim {
     to { transform: scale(4); opacity: 0; }
   }
 
-  /* scrollbar */
-  ::-webkit-scrollbar { display: none; }
+  /* scrollbar — scoped to the calculator only */
+  .calc-wrap ::-webkit-scrollbar { display: none; }
 `;
 
 // ── Math Engine ──────────────────────────────────────────────────────────────
-function evaluate(expr, isDeg) {
-  // Replace display tokens with JS math
-  let e = expr
-    .replace(/×/g, "*")
-    .replace(/÷/g, "/")
-    .replace(/−/g, "-")
-    .replace(/π/g, String(Math.PI))
-    .replace(/e(?![0-9])/g, String(Math.E));
-
-  // trig
-  const toRad = isDeg ? `*(Math.PI/180)` : ``;
-  const fromRad = isDeg ? `*(180/Math.PI)` : ``;
-
-  e = e
-    .replace(/sin⁻¹\(/g, `(Math.asin(`)
-    .replace(/cos⁻¹\(/g, `(Math.acos(`)
-    .replace(/tan⁻¹\(/g, `(Math.atan(`)
-    .replace(/sinh\(/g, `(Math.sinh(`)
-    .replace(/cosh\(/g, `(Math.cosh(`)
-    .replace(/tanh\(/g, `(Math.tanh(`)
-    .replace(/sin\(/g, `(Math.sin(`)
-    .replace(/cos\(/g, `(Math.cos(`)
-    .replace(/tan\(/g, `(Math.tan(`)
-    .replace(/log₂\(/g, `(Math.log2(`)
-    .replace(/log\(/g, `(Math.log10(`)
-    .replace(/ln\(/g, `(Math.log(`)
-    .replace(/√\(/g, `(Math.sqrt(`)
-    .replace(/∛\(/g, `(Math.cbrt(`)
-    .replace(/abs\(/g, `(Math.abs(`);
-
-  // Apply deg/rad conversion inside trig functions
-  if (isDeg) {
-    e = e
-      .replace(/Math\.sin\(/g, `Math.sin((`)
-      .replace(/Math\.cos\(/g, `Math.cos((`)
-      .replace(/Math\.tan\(/g, `Math.tan((`)
-      // asin/acos/atan return radians, convert to deg
-      .replace(/Math\.asin\(/g, `(180/Math.PI)*Math.asin(`)
-      .replace(/Math\.acos\(/g, `(180/Math.PI)*Math.acos(`)
-      .replace(/Math\.atan\(/g, `(180/Math.PI)*Math.atan(`);
-    // Insert deg->rad after opening trig parens
-    e = e.replace(/Math\.(sin|cos|tan)\(\(/g, (m, fn) =>
-      `Math.${fn}(((Math.PI/180)*((`
-    );
-    // We need to close the extra parens — this approach is complex, use a different method
-  }
-
-  return e;
-}
 
 // Simpler, safer evaluator using function-based approach
-function safeEval(expr, isDeg) {
+function safeEval(expr: string, isDeg: boolean): number | string {
   try {
     // Degree/radian conversion helpers
-    const toRad = (x) => isDeg ? x * Math.PI / 180 : x;
-    const fromRad = (x) => isDeg ? x * 180 / Math.PI : x;
+    const toRad = (x: number): number => isDeg ? x * Math.PI / 180 : x;
+    const fromRad = (x: number): number => isDeg ? x * 180 / Math.PI : x;
 
     // Degree-aware trig functions
-    const __sin__ = (x) => Math.sin(toRad(x));
-    const __cos__ = (x) => Math.cos(toRad(x));
-    const __tan__ = (x) => Math.tan(toRad(x));
-    const __asin__ = (x) => fromRad(Math.asin(x));
-    const __acos__ = (x) => fromRad(Math.acos(x));
-    const __atan__ = (x) => fromRad(Math.atan(x));
-    const __sinh__ = (x) => Math.sinh(x);
-    const __cosh__ = (x) => Math.cosh(x);
-    const __tanh__ = (x) => Math.tanh(x);
+    const __sin__ = (x: number): number => Math.sin(toRad(x));
+    const __cos__ = (x: number): number => Math.cos(toRad(x));
+    const __tan__ = (x: number): number => Math.tan(toRad(x));
+    const __asin__ = (x: number): number => fromRad(Math.asin(x));
+    const __acos__ = (x: number): number => fromRad(Math.acos(x));
+    const __atan__ = (x: number): number => fromRad(Math.atan(x));
+    const __sinh__ = (x: number): number => Math.sinh(x);
+    const __cosh__ = (x: number): number => Math.cosh(x);
+    const __tanh__ = (x: number): number => Math.tanh(x);
 
     let e = expr
       .replace(/×/g, "*")
@@ -359,7 +307,7 @@ function safeEval(expr, isDeg) {
       __sin__, __cos__, __tan__,
       __asin__, __acos__, __atan__,
       __sinh__, __cosh__, __tanh__
-    );
+    ) as number;
     if (!isFinite(result)) return "Infinity";
     if (isNaN(result)) return "Error";
     return result;
@@ -368,7 +316,7 @@ function safeEval(expr, isDeg) {
   }
 }
 
-function factorial(n) {
+function factorial(n: number): number {
   if (n < 0 || !Number.isInteger(n)) return NaN;
   if (n > 170) return Infinity;
   let r = 1;
@@ -376,7 +324,7 @@ function factorial(n) {
   return r;
 }
 
-function formatResult(val) {
+function formatResult(val: number | string): string {
   if (typeof val === "string") return val;
   if (!isFinite(val)) return val > 0 ? "∞" : "-∞";
   if (isNaN(val)) return "Error";
@@ -409,7 +357,7 @@ export default function ScientificCalculator() {
     }
   }, [expr, isDeg]);
 
-  const addToExpr = useCallback((token) => {
+  const addToExpr = useCallback((token: string) => {
     setExpr(prev => {
       if (justEvaluated) {
         // If last action was '=', start fresh unless it's an operator
@@ -422,7 +370,7 @@ export default function ScientificCalculator() {
     });
   }, [justEvaluated, result]);
 
-  const handleDigit = (d) => {
+  const handleDigit = (d: string): void => {
     setJustEvaluated(false);
     setExpr(prev => {
       if (justEvaluated && !["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."].includes(d)) {
@@ -433,7 +381,7 @@ export default function ScientificCalculator() {
     });
   };
 
-  const handleOperator = (op) => {
+  const handleOperator = (op: string): void => {
     if (expr === "" && result !== "0") {
       setExpr(result + op);
       setJustEvaluated(false);
@@ -451,7 +399,7 @@ export default function ScientificCalculator() {
     setJustEvaluated(false);
   };
 
-  const handleFunction = (fn) => {
+  const handleFunction = (fn: string): void => {
     // Functions append "fn(" so user types argument then closes
     setJustEvaluated(false);
     setExpr(prev => {
@@ -525,7 +473,7 @@ export default function ScientificCalculator() {
     });
   };
 
-  const handleConstant = (c) => {
+  const handleConstant = (c: string): void => {
     setJustEvaluated(false);
     setExpr(prev => {
       if (justEvaluated) return c;
@@ -558,8 +506,8 @@ export default function ScientificCalculator() {
 
   // Keyboard
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.target.tagName === "INPUT") return;
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.target instanceof HTMLElement && e.target.tagName === "INPUT") return;
       const k = e.key;
       if (k >= "0" && k <= "9") { e.preventDefault(); handleDigit(k); }
       else if (k === ".") { e.preventDefault(); handleDigit("."); }
@@ -580,7 +528,7 @@ export default function ScientificCalculator() {
   });
 
   // Ripple effect
-  const ripple = (e) => {
+  const ripple = (e: React.MouseEvent<HTMLButtonElement>): void => {
     const btn = e.currentTarget;
     const circle = document.createElement("span");
     const diameter = Math.max(btn.clientWidth, btn.clientHeight);
@@ -603,10 +551,19 @@ export default function ScientificCalculator() {
   const displayExpr = justEvaluated ? "" : expr;
 
   // ── Render ──
-  const Btn = ({ label, sub, variant = "btn-num", onClick, wide, style }) => (
+  interface BtnProps {
+    label: string;
+    sub?: string;
+    variant?: string;
+    onClick: () => void;
+    wide?: boolean;
+    style?: React.CSSProperties;
+  }
+
+  const Btn = ({ label, sub, variant = "btn-num", onClick, wide, style }: BtnProps) => (
     <button
       className={`btn ${variant} ${wide ? "btn-zero" : ""}`}
-      onClick={(e) => { ripple(e); onClick(); }}
+      onClick={(e: React.MouseEvent<HTMLButtonElement>) => { ripple(e); onClick(); }}
       style={style}
     >
       <span>{label}</span>
@@ -614,12 +571,12 @@ export default function ScientificCalculator() {
     </button>
   );
 
-  const fnLabel = (primary, secondary) => is2nd ? secondary : primary;
-  const fnAct = (primary, secondary) => is2nd ? secondary : primary;
+  const fnLabel = (primary: string, secondary: string): string => is2nd ? secondary : primary;
+  const fnAct = (primary: string, secondary: string): string => is2nd ? secondary : primary;
 
   return (
     <>
-      <style>{GLOBAL_STYLE}</style>
+      <style>{CALC_STYLE}</style>
       <div className="calc-wrap flex flex-col">
         <div className="calc">
           {/* Header */}
