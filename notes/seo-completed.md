@@ -7,3 +7,4 @@ humanizer seo completed
 5. unit converters
 6. image tools
 7. math tools
+8. facicon
