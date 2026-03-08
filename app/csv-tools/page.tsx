@@ -42,11 +42,6 @@ const csvTools = [
     href: "/csv-tools/csv-to-json",
   },
   {
-    name: "JSON to CSV",
-    description: "Flatten JSON arrays of objects into CSV with nested object handling",
-    href: "/csv-tools/json-to-csv",
-  },
-  {
     name: "CSV to Excel",
     description: "Convert CSV to formatted .xlsx spreadsheets with styled headers",
     href: "/csv-tools/csv-to-excel",
@@ -60,11 +55,6 @@ const csvTools = [
     name: "CSV to TSV",
     description: "Convert comma-delimited CSV to tab-separated values (TSV)",
     href: "/csv-tools/csv-to-tsv",
-  },
-  {
-    name: "TSV to CSV",
-    description: "Convert tab-separated value files to standard CSV",
-    href: "/csv-tools/tsv-to-csv",
   },
   {
     name: "CSV to XML",
@@ -413,7 +403,7 @@ export default function CsvToolsPage() {
             <h2 className="text-2xl font-semibold mb-4">
               Tool Categories
             </h2>
-            
+
             <h3 className="text-xl font-semibold mb-3">Viewing and Editing</h3>
             <p className="text-muted-foreground mb-4">
               CSV Viewer displays files with sorting and pagination. CSV Editor provides a spreadsheet-like interface for cell-by-cell editing. CSV Validator checks structure, column consistency, and encoding issues.
