@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Decimal to Fraction Converter – Convert Decimals to Fractions",
   description: "Convert any decimal to a fraction instantly with our free online decimal to fraction converter. Returns fully simplified fractions with clear step-by-step conversion process.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/decimal-to-fraction-converter",
+    canonical: "https://1000freetools.com/calculators/decimal-to-fraction-calculator",
   },
   openGraph: {
     title: "Decimal to Fraction Converter – Convert Decimals to Fractions",
     description: "Convert any decimal to a fraction instantly with our free online decimal to fraction converter. Returns fully simplified fractions with clear step-by-step conversion process.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/decimal-to-fraction-converter",
+    url: "https://1000freetools.com/calculators/decimal-to-fraction-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

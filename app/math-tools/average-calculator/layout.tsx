@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Average Calculator – Find the Mean of Any Numbers",
   description: "Calculate the average or arithmetic mean of any set of numbers with our free online mean calculator. Enter your values and get instant results – great for students, teachers, and analysts.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/average-calculator",
+    canonical: "https://1000freetools.com/calculators/average-calculator",
   },
   openGraph: {
     title: "Average Calculator – Find the Mean of Any Numbers",
     description: "Calculate the average or arithmetic mean of any set of numbers with our free online mean calculator. Enter your values and get instant results – great for students, teachers, and analysts.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/average-calculator",
+    url: "https://1000freetools.com/calculators/average-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

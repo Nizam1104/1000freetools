@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Percentage Change Calculator – Find % Increase or Decrease",
   description: "Calculate the percentage change between any two values with our free online percentage change calculator. Instantly find percentage increase or decrease with the formula shown.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/percentage-change-calculator",
+    canonical: "https://1000freetools.com/calculators/percentage-change-calculator",
   },
   openGraph: {
     title: "Percentage Change Calculator – Find % Increase or Decrease",
     description: "Calculate the percentage change between any two values with our free online percentage change calculator. Instantly find percentage increase or decrease with the formula shown.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/percentage-change-calculator",
+    url: "https://1000freetools.com/calculators/percentage-change-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

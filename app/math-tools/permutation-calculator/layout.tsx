@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Permutation Calculator – Calculate nPr Online",
   description: "Calculate permutations (nPr) instantly with our free online permutation calculator. Find the number of ways r items can be arranged from n items with formula and solution shown.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/permutation-calculator",
+    canonical: "https://1000freetools.com/calculators/permutation-calculator",
   },
   openGraph: {
     title: "Permutation Calculator – Calculate nPr Online",
     description: "Calculate permutations (nPr) instantly with our free online permutation calculator. Find the number of ways r items can be arranged from n items with formula and solution shown.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/permutation-calculator",
+    url: "https://1000freetools.com/calculators/permutation-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

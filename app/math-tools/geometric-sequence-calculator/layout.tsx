@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Geometric Sequence Calculator – Find Terms & Sum Online",
   description: "Calculate any term, common ratio, or sum of a geometric sequence with our free online calculator. Solve geometric progressions for any number of terms with full solutions.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/geometric-sequence-calculator",
+    canonical: "https://1000freetools.com/calculators/geometric-sequence-calculator",
   },
   openGraph: {
     title: "Geometric Sequence Calculator – Find Terms & Sum Online",
     description: "Calculate any term, common ratio, or sum of a geometric sequence with our free online calculator. Solve geometric progressions for any number of terms with full solutions.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/geometric-sequence-calculator",
+    url: "https://1000freetools.com/calculators/geometric-sequence-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

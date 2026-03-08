@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Law of Sines Calculator – Solve Triangles Using Sine Rule",
   description: "Solve any triangle using the Law of Sines with our free online calculator. Find missing sides and angles for ASA, AAS, and SSA triangle configurations with step-by-step solutions.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/law-of-sines-calculator",
+    canonical: "https://1000freetools.com/calculators/law-of-sines-calculator",
   },
   openGraph: {
     title: "Law of Sines Calculator – Solve Triangles Using Sine Rule",
     description: "Solve any triangle using the Law of Sines with our free online calculator. Find missing sides and angles for ASA, AAS, and SSA triangle configurations with step-by-step solutions.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/law-of-sines-calculator",
+    url: "https://1000freetools.com/calculators/law-of-sines-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

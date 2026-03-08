@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Linear Equation Solver – Solve ax + b = c Online",
   description: "Solve any linear equation of the form ax + b = c instantly with our free online linear equation solver. Get step-by-step solutions for one-variable linear equations.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/linear-equation-solver",
+    canonical: "https://1000freetools.com/calculators/linear-equation-solver",
   },
   openGraph: {
     title: "Linear Equation Solver – Solve ax + b = c Online",
     description: "Solve any linear equation of the form ax + b = c instantly with our free online linear equation solver. Get step-by-step solutions for one-variable linear equations.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/linear-equation-solver",
+    url: "https://1000freetools.com/calculators/linear-equation-solver",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

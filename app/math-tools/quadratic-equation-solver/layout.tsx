@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Quadratic Equation Solver – Find Roots of ax² + bx + c = 0",
   description: "Solve any quadratic equation instantly with our free online quadratic equation solver. Find real and complex roots using the quadratic formula with detailed step-by-step solutions.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/quadratic-equation-solver",
+    canonical: "https://1000freetools.com/calculators/quadratic-equation-solver",
   },
   openGraph: {
     title: "Quadratic Equation Solver – Find Roots of ax² + bx + c = 0",
     description: "Solve any quadratic equation instantly with our free online quadratic equation solver. Find real and complex roots using the quadratic formula with detailed step-by-step solutions.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/quadratic-equation-solver",
+    url: "https://1000freetools.com/calculators/quadratic-equation-solver",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

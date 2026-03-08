@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Present Value Calculator – Compute PV of Future Money",
   description: "Determine the present value of any future amount with our free online present value calculator. Discount future cash flows to their current worth using any interest rate.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/present-value-calculator",
+    canonical: "https://1000freetools.com/calculators/present-value-calculator",
   },
   openGraph: {
     title: "Present Value Calculator – Compute PV of Future Money",
     description: "Determine the present value of any future amount with our free online present value calculator. Discount future cash flows to their current worth using any interest rate.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/present-value-calculator",
+    url: "https://1000freetools.com/calculators/present-value-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Weighted Average Calculator – Compute Weighted Mean Online",
   description: "Calculate the weighted average or weighted mean of any set of values with our free online calculator. Enter values and weights to get the accurate weighted result instantly.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/weighted-average-calculator",
+    canonical: "https://1000freetools.com/calculators/weighted-average-calculator",
   },
   openGraph: {
     title: "Weighted Average Calculator – Compute Weighted Mean Online",
     description: "Calculate the weighted average or weighted mean of any set of values with our free online calculator. Enter values and weights to get the accurate weighted result instantly.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/weighted-average-calculator",
+    url: "https://1000freetools.com/calculators/weighted-average-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

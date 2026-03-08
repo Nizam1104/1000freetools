@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "LCM Calculator – Find Least Common Multiple Online",
   description: "Calculate the Least Common Multiple (LCM) of two or more numbers instantly with our free online LCM calculator. Get accurate results with step-by-step explanations.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/lcm-calculator",
+    canonical: "https://1000freetools.com/calculators/lcm-calculator",
   },
   openGraph: {
     title: "LCM Calculator – Find Least Common Multiple Online",
     description: "Calculate the Least Common Multiple (LCM) of two or more numbers instantly with our free online LCM calculator. Get accurate results with step-by-step explanations.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/lcm-calculator",
+    url: "https://1000freetools.com/calculators/lcm-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

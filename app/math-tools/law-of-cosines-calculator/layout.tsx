@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Law of Cosines Calculator – Solve Triangles Using Cosine Rule",
   description: "Solve triangles using the Law of Cosines with our free online calculator. Find missing sides and angles for SSS and SAS configurations with detailed step-by-step solutions.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/law-of-cosines-calculator",
+    canonical: "https://1000freetools.com/calculators/law-of-cosines-calculator",
   },
   openGraph: {
     title: "Law of Cosines Calculator – Solve Triangles Using Cosine Rule",
     description: "Solve triangles using the Law of Cosines with our free online calculator. Find missing sides and angles for SSS and SAS configurations with detailed step-by-step solutions.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/law-of-cosines-calculator",
+    url: "https://1000freetools.com/calculators/law-of-cosines-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

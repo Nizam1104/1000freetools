@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Standard Deviation Calculator – Variance & SD Online",
   description: "Calculate standard deviation and variance for any dataset with our free online calculator. Supports both population and sample standard deviation with step-by-step workings.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/standard-deviation-variance-calculator",
+    canonical: "https://1000freetools.com/calculators/standard-deviation-calculator",
   },
   openGraph: {
     title: "Standard Deviation Calculator – Variance & SD Online",
     description: "Calculate standard deviation and variance for any dataset with our free online calculator. Supports both population and sample standard deviation with step-by-step workings.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/standard-deviation-variance-calculator",
+    url: "https://1000freetools.com/calculators/standard-deviation-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

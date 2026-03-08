@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Time Duration Calculator",
   description: "Calculate the exact duration between two times or add and subtract time intervals easily. Free online time duration calculator for work hours, project planning, and scheduling.",
   alternates: {
-    canonical: "https://1000freetools.com/unit-converters/time-duration-calculator",
+    canonical: "https://1000freetools.com/calculators/time-duration-calculator",
   },
 };
 

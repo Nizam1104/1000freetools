@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Matrix Multiplication Calculator",
   description: "Multiply two matrices (A × B)",
   alternates: {
-    canonical: "https://1000freetools.com/calculators/matrix-multiplication-calculator",
+    canonical: "https://1000freetools.com/math-tools/matrix-multiplication-calculator",
   },
 };
 

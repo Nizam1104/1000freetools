@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Pythagorean Theorem Calculator – Find Any Side of a Right Triangle",
   description: "Solve for any missing side of a right triangle using the Pythagorean theorem with our free online calculator. Enter two sides and instantly find the third with step-by-step working.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/pythagorean-theorem-calculator",
+    canonical: "https://1000freetools.com/calculators/pythagorean-theorem-calculator",
   },
   openGraph: {
     title: "Pythagorean Theorem Calculator – Find Any Side of a Right Triangle",
     description: "Solve for any missing side of a right triangle using the Pythagorean theorem with our free online calculator. Enter two sides and instantly find the third with step-by-step working.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/pythagorean-theorem-calculator",
+    url: "https://1000freetools.com/calculators/pythagorean-theorem-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

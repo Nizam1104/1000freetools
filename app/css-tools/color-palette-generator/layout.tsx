@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "CSS Color Palette Generator",
   description: "Generate harmonious color palettes from images or color theory rules. Export CSS variables and Tailwind config. Free online color palette generator for web design.",
   alternates: {
-    canonical: "https://1000freetools.com/css-tools/color-palette-generator",
+    canonical: "https://1000freetools.com/color-tools/color-palette-generator",
   },
 };
 

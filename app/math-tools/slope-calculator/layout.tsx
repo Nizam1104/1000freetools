@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Slope Calculator – Find the Slope of a Line Online",
   description: "Calculate the slope or gradient of any line using two points or a linear equation with our free online slope calculator. Find slope, intercepts, and line equations easily.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/slope-calculator",
+    canonical: "https://1000freetools.com/calculators/slope-calculator",
   },
   openGraph: {
     title: "Slope Calculator – Find the Slope of a Line Online",
     description: "Calculate the slope or gradient of any line using two points or a linear equation with our free online slope calculator. Find slope, intercepts, and line equations easily.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/slope-calculator",
+    url: "https://1000freetools.com/calculators/slope-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Rounding Calculator – Round to Decimal Places or Sig Figs",
   description: "Round any number to a specified number of decimal places or significant figures with our free online rounding calculator. Supports standard and scientific rounding rules.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/rounding-calculator",
+    canonical: "https://1000freetools.com/calculators/rounding-calculator",
   },
   openGraph: {
     title: "Rounding Calculator – Round to Decimal Places or Sig Figs",
     description: "Round any number to a specified number of decimal places or significant figures with our free online rounding calculator. Supports standard and scientific rounding rules.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/rounding-calculator",
+    url: "https://1000freetools.com/calculators/rounding-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

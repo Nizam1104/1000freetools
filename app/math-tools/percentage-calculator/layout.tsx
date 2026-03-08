@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Percentage Calculator – Find % of Any Number Instantly",
   description: "Calculate any percentage instantly with our free online percentage calculator. Find what percent a number is, calculate percentage increase or decrease, and solve all percent-related problems easily.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/percentage-calculator",
+    canonical: "https://1000freetools.com/calculators/percentage-calculator",
   },
   openGraph: {
     title: "Percentage Calculator – Find % of Any Number Instantly",
     description: "Calculate any percentage instantly with our free online percentage calculator. Find what percent a number is, calculate percentage increase or decrease, and solve all percent-related problems easily.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/percentage-calculator",
+    url: "https://1000freetools.com/calculators/percentage-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

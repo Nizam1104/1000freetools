@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Factorial Calculator – Compute n! Instantly Online",
   description: "Calculate the factorial of any non-negative integer instantly with our free online factorial calculator. Supports large factorials with exact results.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/factorial-calculator",
+    canonical: "https://1000freetools.com/calculators/factorial-calculator",
   },
   openGraph: {
     title: "Factorial Calculator – Compute n! Instantly Online",
     description: "Calculate the factorial of any non-negative integer instantly with our free online factorial calculator. Supports large factorials with exact results.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/factorial-calculator",
+    url: "https://1000freetools.com/calculators/factorial-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

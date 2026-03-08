@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Time Duration Calculator – Find Time Between Two Times",
   description: "Calculate the exact duration between any two times with our free online time duration calculator. Find hours, minutes, and seconds elapsed for any start and end time.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/time-duration-calculator",
+    canonical: "https://1000freetools.com/calculators/time-duration-calculator",
   },
   openGraph: {
     title: "Time Duration Calculator – Find Time Between Two Times",
     description: "Calculate the exact duration between any two times with our free online time duration calculator. Find hours, minutes, and seconds elapsed for any start and end time.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/time-duration-calculator",
+    url: "https://1000freetools.com/calculators/time-duration-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

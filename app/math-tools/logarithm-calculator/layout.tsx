@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Logarithm Calculator – Compute Log of Any Base Online",
   description: "Calculate logarithms of any number for any base with our free online logarithm calculator. Supports log base 10, natural log (ln), and custom base logarithms with instant results.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/logarithm-calculator",
+    canonical: "https://1000freetools.com/calculators/logarithm-calculator",
   },
   openGraph: {
     title: "Logarithm Calculator – Compute Log of Any Base Online",
     description: "Calculate logarithms of any number for any base with our free online logarithm calculator. Supports log base 10, natural log (ln), and custom base logarithms with instant results.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/logarithm-calculator",
+    url: "https://1000freetools.com/calculators/logarithm-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Combination Calculator – Calculate nCr Online",
   description: "Calculate combinations (nCr) instantly with our free online combination calculator. Find how many ways r items can be chosen from n items using the combination formula.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/combination-calculator",
+    canonical: "https://1000freetools.com/calculators/combination-calculator",
   },
   openGraph: {
     title: "Combination Calculator – Calculate nCr Online",
     description: "Calculate combinations (nCr) instantly with our free online combination calculator. Find how many ways r items can be chosen from n items using the combination formula.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/combination-calculator",
+    url: "https://1000freetools.com/calculators/combination-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

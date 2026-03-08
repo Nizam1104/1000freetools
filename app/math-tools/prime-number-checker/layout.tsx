@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Prime Number Checker – Is It Prime? Find Out Instantly",
   description: "Check if any number is prime or composite instantly with our free online prime number checker. Fast, accurate prime testing for any positive integer with a clear explanation.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/prime-number-checker",
+    canonical: "https://1000freetools.com/calculators/prime-checker",
   },
   openGraph: {
     title: "Prime Number Checker – Is It Prime? Find Out Instantly",
     description: "Check if any number is prime or composite instantly with our free online prime number checker. Fast, accurate prime testing for any positive integer with a clear explanation.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/prime-number-checker",
+    url: "https://1000freetools.com/calculators/prime-checker",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

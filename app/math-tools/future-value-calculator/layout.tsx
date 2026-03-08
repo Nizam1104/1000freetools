@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Future Value Calculator – Compute FV of Investment Online",
   description: "Calculate the future value of any investment or savings with our free online future value calculator. Account for compound interest and time to see how your money grows.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/future-value-calculator",
+    canonical: "https://1000freetools.com/calculators/future-value-calculator",
   },
   openGraph: {
     title: "Future Value Calculator – Compute FV of Investment Online",
     description: "Calculate the future value of any investment or savings with our free online future value calculator. Account for compound interest and time to see how your money grows.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/future-value-calculator",
+    url: "https://1000freetools.com/calculators/future-value-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

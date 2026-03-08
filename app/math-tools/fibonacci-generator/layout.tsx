@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Fibonacci Sequence Generator – Calculate Fibonacci Numbers Online",
   description: "Generate the Fibonacci sequence up to any number of terms or find the nth Fibonacci number with our free online Fibonacci calculator. Fast and accurate for any value of n.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/fibonacci-generator",
+    canonical: "https://1000freetools.com/calculators/fibonacci-generator",
   },
   openGraph: {
     title: "Fibonacci Sequence Generator – Calculate Fibonacci Numbers Online",
     description: "Generate the Fibonacci sequence up to any number of terms or find the nth Fibonacci number with our free online Fibonacci calculator. Fast and accurate for any value of n.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/fibonacci-generator",
+    url: "https://1000freetools.com/calculators/fibonacci-generator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

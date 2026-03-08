@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Break-Even Point Calculator – Find BEP for Your Business",
   description: "Calculate the break-even point in units and sales revenue with our free online break-even calculator. Enter fixed costs, variable costs, and selling price for instant BEP analysis.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/break-even-point-calculator",
+    canonical: "https://1000freetools.com/calculators/break-even-point-calculator",
   },
   openGraph: {
     title: "Break-Even Point Calculator – Find BEP for Your Business",
     description: "Calculate the break-even point in units and sales revenue with our free online break-even calculator. Enter fixed costs, variable costs, and selling price for instant BEP analysis.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/break-even-point-calculator",
+    url: "https://1000freetools.com/calculators/break-even-point-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

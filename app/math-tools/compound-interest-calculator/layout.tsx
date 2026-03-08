@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Compound Interest Calculator – Compute CI with Compounding",
   description: "Calculate compound interest for daily, monthly, quarterly, or annual compounding with our free online calculator. See total interest earned and growth over time with a breakdown.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/compound-interest-calculator",
+    canonical: "https://1000freetools.com/calculators/compound-interest-calculator",
   },
   openGraph: {
     title: "Compound Interest Calculator – Compute CI with Compounding",
     description: "Calculate compound interest for daily, monthly, quarterly, or annual compounding with our free online calculator. See total interest earned and growth over time with a breakdown.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/compound-interest-calculator",
+    url: "https://1000freetools.com/calculators/compound-interest-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

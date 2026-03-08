@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Simple Interest Calculator – Compute SI Online Instantly",
   description: "Calculate simple interest, total amount, principal, rate, or time with our free online simple interest calculator. Uses the SI = PRT formula with clear step-by-step results.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/simple-interest-calculator",
+    canonical: "https://1000freetools.com/calculators/simple-interest-calculator",
   },
   openGraph: {
     title: "Simple Interest Calculator – Compute SI Online Instantly",
     description: "Calculate simple interest, total amount, principal, rate, or time with our free online simple interest calculator. Uses the SI = PRT formula with clear step-by-step results.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/simple-interest-calculator",
+    url: "https://1000freetools.com/calculators/simple-interest-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

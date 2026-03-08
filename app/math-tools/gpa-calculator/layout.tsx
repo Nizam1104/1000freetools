@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "GPA Calculator – Calculate Your Grade & GPA Online",
   description: "Calculate your GPA and overall grade from multiple subject scores and credit hours with our free online GPA calculator. Supports weighted and unweighted GPA calculations.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/gpa-calculator",
+    canonical: "https://1000freetools.com/calculators/gpa-calculator",
   },
   openGraph: {
     title: "GPA Calculator – Calculate Your Grade & GPA Online",
     description: "Calculate your GPA and overall grade from multiple subject scores and credit hours with our free online GPA calculator. Supports weighted and unweighted GPA calculations.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/gpa-calculator",
+    url: "https://1000freetools.com/calculators/gpa-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

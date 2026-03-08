@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Roman Numeral Converter – Convert Numbers to Roman Numerals",
   description: "Convert any integer to Roman numerals or translate Roman numerals back to numbers with our free online Roman numeral converter. Instant, accurate conversions for any value.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/roman-numeral-converter",
+    canonical: "https://1000freetools.com/calculators/roman-numerals-converter",
   },
   openGraph: {
     title: "Roman Numeral Converter – Convert Numbers to Roman Numerals",
     description: "Convert any integer to Roman numerals or translate Roman numerals back to numbers with our free online Roman numeral converter. Instant, accurate conversions for any value.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/roman-numeral-converter",
+    url: "https://1000freetools.com/calculators/roman-numerals-converter",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

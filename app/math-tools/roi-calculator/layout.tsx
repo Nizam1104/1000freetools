@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "ROI Calculator – Calculate Return on Investment Online",
   description: "Calculate your Return on Investment (ROI) quickly with our free online ROI calculator. Enter cost and return values to get the ROI percentage and net profit instantly.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/roi-calculator",
+    canonical: "https://1000freetools.com/calculators/roi-calculator",
   },
   openGraph: {
     title: "ROI Calculator – Calculate Return on Investment Online",
     description: "Calculate your Return on Investment (ROI) quickly with our free online ROI calculator. Enter cost and return values to get the ROI percentage and net profit instantly.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/roi-calculator",
+    url: "https://1000freetools.com/calculators/roi-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

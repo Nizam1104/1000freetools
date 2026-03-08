@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Color Contrast Checker",
   description: "Test color combinations for WCAG AA and AAA accessibility compliance. Ensure readable text and UI colors. Free online color contrast checker for web designers.",
   alternates: {
-    canonical: "https://1000freetools.com/css-tools/color-contrast-checker",
+    canonical: "https://1000freetools.com/color-tools/contrast-checker",
   },
 };
 

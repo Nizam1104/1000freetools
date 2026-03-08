@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Modulo Calculator – Find the Remainder of Division",
   description: "Calculate the modulo or remainder of any division instantly with our free online modulo calculator. Essential for programming, number theory, and cryptography applications.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/modulo-calculator",
+    canonical: "https://1000freetools.com/calculators/modulo-calculator",
   },
   openGraph: {
     title: "Modulo Calculator – Find the Remainder of Division",
     description: "Calculate the modulo or remainder of any division instantly with our free online modulo calculator. Essential for programming, number theory, and cryptography applications.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/modulo-calculator",
+    url: "https://1000freetools.com/calculators/modulo-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

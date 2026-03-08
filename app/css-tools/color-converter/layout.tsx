@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "CSS Color Converter",
   description: "Convert colors between HEX, RGB, HSL, HSV, OKLCH, and more. Get CSS-ready color values instantly. Free online CSS color converter for designers and developers.",
   alternates: {
-    canonical: "https://1000freetools.com/css-tools/color-converter",
+    canonical: "https://1000freetools.com/color-tools/hex-to-rgb-converter",
   },
 };
 

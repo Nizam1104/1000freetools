@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Z-Score Calculator – Find Standard Score Online",
   description: "Calculate the Z-score of any data point with our free online Z-score calculator. Enter the value, mean, and standard deviation to get the standardized score instantly.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/z-score-calculator",
+    canonical: "https://1000freetools.com/calculators/z-score-calculator",
   },
   openGraph: {
     title: "Z-Score Calculator – Find Standard Score Online",
     description: "Calculate the Z-score of any data point with our free online Z-score calculator. Enter the value, mean, and standard deviation to get the standardized score instantly.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/z-score-calculator",
+    url: "https://1000freetools.com/calculators/z-score-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

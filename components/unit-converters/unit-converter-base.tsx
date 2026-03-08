@@ -72,10 +72,6 @@ export function UnitConverterBase({
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>{title}</CardTitle>
-          <CardDescription>{description}</CardDescription>
-        </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <div>

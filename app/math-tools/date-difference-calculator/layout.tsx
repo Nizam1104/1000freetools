@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Date Difference Calculator – Find Days Between Two Dates",
   description: "Calculate the exact difference between any two dates in days, weeks, months, and years with our free online date difference calculator. Instant and accurate date comparison.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/date-difference-calculator",
+    canonical: "https://1000freetools.com/calculators/date-difference-calculator",
   },
   openGraph: {
     title: "Date Difference Calculator – Find Days Between Two Dates",
     description: "Calculate the exact difference between any two dates in days, weeks, months, and years with our free online date difference calculator. Instant and accurate date comparison.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/date-difference-calculator",
+    url: "https://1000freetools.com/calculators/date-difference-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

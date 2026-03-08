@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Prime Factorization Calculator – Find Prime Factors Instantly",
   description: "Find the prime factorization of any number with our free online calculator. Displays all prime factors in exponential form and as a factor tree for easy understanding.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/prime-factorization-calculator",
+    canonical: "https://1000freetools.com/calculators/prime-factorization-calculator",
   },
   openGraph: {
     title: "Prime Factorization Calculator – Find Prime Factors Instantly",
     description: "Find the prime factorization of any number with our free online calculator. Displays all prime factors in exponential form and as a factor tree for easy understanding.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/prime-factorization-calculator",
+    url: "https://1000freetools.com/calculators/prime-factorization-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "GCD / HCF Calculator – Find Greatest Common Divisor Online",
   description: "Calculate the GCD or HCF of two or more numbers instantly with our free online calculator. Uses the Euclidean algorithm to find the greatest common divisor with step-by-step solutions.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/gcd-hcf-calculator",
+    canonical: "https://1000freetools.com/calculators/gcd-calculator",
   },
   openGraph: {
     title: "GCD / HCF Calculator – Find Greatest Common Divisor Online",
     description: "Calculate the GCD or HCF of two or more numbers instantly with our free online calculator. Uses the Euclidean algorithm to find the greatest common divisor with step-by-step solutions.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/gcd-hcf-calculator",
+    url: "https://1000freetools.com/calculators/gcd-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

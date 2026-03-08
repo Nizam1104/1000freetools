@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Age Calculator – Find Your Exact Age in Years & Days",
   description: "Calculate your exact age in years, months, and days with our free online age calculator. Enter your birthdate to find your precise age as of today or any specific date.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/age-calculator",
+    canonical: "https://1000freetools.com/calculators/age-calculator",
   },
   openGraph: {
     title: "Age Calculator – Find Your Exact Age in Years & Days",
     description: "Calculate your exact age in years, months, and days with our free online age calculator. Enter your birthdate to find your precise age as of today or any specific date.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/age-calculator",
+    url: "https://1000freetools.com/calculators/age-calculator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },

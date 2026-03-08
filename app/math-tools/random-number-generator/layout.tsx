@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Random Number Generator – Generate Random Numbers Online",
   description: "Generate random numbers within any range with our free online random number generator. Useful for games, statistics, lotteries, and any application requiring random values.",
   alternates: {
-    canonical: "https://1000freetools.com/math-tools/random-number-generator",
+    canonical: "https://1000freetools.com/calculators/random-number-generator",
   },
   openGraph: {
     title: "Random Number Generator – Generate Random Numbers Online",
     description: "Generate random numbers within any range with our free online random number generator. Useful for games, statistics, lotteries, and any application requiring random values.",
     type: "website",
-    url: "https://1000freetools.com/math-tools/random-number-generator",
+    url: "https://1000freetools.com/calculators/random-number-generator",
     siteName: "1000 Free Tools",
     locale: "en_US",
   },
