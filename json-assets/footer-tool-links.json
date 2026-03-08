@@ -8,67 +8,54 @@
       },
       {
         "name": "Image Compressor",
-        "description": "Compress images online - reduce file size while maintaining quality",
         "href": "/image-tools/image-compressor"
       },
       {
         "name": "Image Editor",
-        "description": "Edit images online with powerful editing tools",
         "href": "/image-tools/image-editor"
       },
       {
         "name": "Pick Color Code from Image",
-        "description": "Extract color codes from images - get HEX, RGB, HSL values",
         "href": "/image-tools/pick-color-code-from-image"
       },
       {
         "name": "Image Format Conversions",
-        "description": "Convert images between different formats - JPEG, PNG, WebP, AVIF and more",
         "href": "/image-tools/image-format-conversions"
       },
       {
         "name": "Background Remover",
-        "description": "Remove background from images automatically",
         "href": "/image-tools/background-remover"
       },
       {
         "name": "Image to GIF",
-        "description": "Convert images to animated GIF format",
         "href": "/image-tools/image-to-gif"
       },
       {
         "name": "Image Filters",
-        "description": "Apply beautiful filters and effects to your images",
         "href": "/image-tools/image-filters"
       },
       {
         "name": "Crop Image",
-        "description": "Crop images to your desired size and aspect ratio",
         "href": "/image-tools/crop-image"
       },
       {
         "name": "Sharpen Image",
-        "description": "Enhance image sharpness and clarity online",
         "href": "/image-tools/sharpen-image"
       },
       {
         "name": "Resize Image Dimensions",
-        "description": "Resize images by changing width and height dimensions",
         "href": "/image-tools/resize-image-dimensions"
       },
       {
         "name": "Image to PDF",
-        "description": "Convert images to PDF documents",
         "href": "/image-tools/image-to-pdf"
       },
       {
         "name": "Add Watermark on Image",
-        "description": "Add text or image watermarks to protect your photos",
         "href": "/image-tools/add-watermark-on-image"
       },
       {
         "name": "Blur Image",
-        "description": "Apply blur effect to images or specific areas",
         "href": "/image-tools/blur-image"
       }
     ]
@@ -112,72 +99,58 @@
       },
       {
         "name": "Video Compressor",
-        "description": "Compress videos online - reduce file size, No size limit",
         "href": "/video-tools/video-compressor"
       },
       {
         "name": "Video MetaData Viewer",
-        "description": "See Video or Audio files metadata",
         "href": "/video-tools/video-metadata-viewer"
       },
       {
         "name": "Video Player",
-        "description": "Play any video file format instantly, Supports subtitles",
         "href": "/video-tools/video-player"
       },
       {
         "name": "Video Format Converter",
-        "description": "Convert between video formats, Supports wide range of video formats",
         "href": "/video-tools/video-format-converter"
       },
       {
         "name": "Change Video FPS",
-        "description": "Change video frame rate to 24fps, 30fps, 60fps or custom FPS",
         "href": "/video-tools/change-video-fps"
       },
       {
         "name": "Crop Video",
-        "description": "Crop videos online - remove unwanted edges and reframe",
         "href": "/video-tools/crop-video"
       },
       {
         "name": "Enhance Video Quality",
-        "description": "Upscale, sharpen, denoise and improve video quality",
         "href": "/video-tools/enhance-video-quality"
       },
       {
         "name": "Extract Audio from Video",
-        "description": "Extract audio from video files - save as MP3, AAC, or WAV",
         "href": "/video-tools/extract-audio-from-video"
       },
       {
         "name": "Resize Video Dimensions",
-        "description": "Resize video to 4K, 1080p, 720p or custom dimensions",
         "href": "/video-tools/resize-video-dimensions"
       },
       {
         "name": "Rotate Video",
-        "description": "Rotate videos 90°, 180° or 270° - fix orientation",
         "href": "/video-tools/rotate-video"
       },
       {
         "name": "Video Color Space Transformation",
-        "description": "Adjust brightness, contrast, saturation, hue and more",
         "href": "/video-tools/video-color-space-transformation"
       },
       {
         "name": "Video Grayscale",
-        "description": "Convert videos to black and white instantly",
         "href": "/video-tools/video-grayscale"
       },
       {
         "name": "Video Overlays",
-        "description": "Add watermarks, logos or image overlays to videos",
         "href": "/video-tools/video-overlays"
       },
       {
         "name": "Video Transparency Maker",
-        "description": "Adjust video opacity and transparency with custom background",
         "href": "/video-tools/video-transparency-maker"
       }
     ]
@@ -191,97 +164,78 @@
       },
       {
         "name": "JSON Formatter / Beautifier",
-        "description": "Formats raw JSON into a readable, indented structure with configurable spacing, collapsible nodes, and copy/download support.",
         "href": "/json-tools/json-formatter-beautifier"
       },
       {
         "name": "JSON Minifier",
-        "description": "Removes whitespace, line breaks, and unnecessary characters to reduce JSON size while preserving validity.",
         "href": "/json-tools/json-minifier"
       },
       {
         "name": "JSON Validator",
-        "description": "Validates JSON syntax, highlights errors with line and column numbers, and explains parsing issues.",
         "href": "/json-tools/json-validator"
       },
       {
         "name": "JSON Viewer",
-        "description": "Displays JSON in a tree view with expand/collapse, search, and raw view toggle.",
         "href": "/json-tools/json-viewer"
       },
       {
         "name": "JSON Linter",
-        "description": "Detects syntax errors, duplicate keys, trailing commas, and structural issues in JSON.",
         "href": "/json-tools/json-linter"
       },
       {
         "name": "JSON to CSV Converter",
-        "description": "Converts JSON arrays into CSV format with header detection and delimiter options.",
         "href": "/json-tools/json-to-csv"
       },
       {
         "name": "CSV to JSON Converter",
-        "description": "Parses CSV files or text and converts them into structured JSON objects or arrays.",
         "href": "/json-tools/csv-to-json"
       },
       {
         "name": "JSON to XML Converter",
-        "description": "Transforms JSON into equivalent XML structure with configurable root and attribute handling.",
         "href": "/json-tools/json-to-xml"
       },
       {
         "name": "XML to JSON Converter",
-        "description": "Parses XML input and converts it into JSON while preserving hierarchy.",
         "href": "/json-tools/xml-to-json"
       },
       {
         "name": "JSON to YAML Converter",
-        "description": "Converts JSON into YAML format with clean indentation and readable syntax.",
         "href": "/json-tools/json-to-yaml"
       },
       {
         "name": "YAML to JSON Converter",
-        "description": "Parses YAML input and converts it into valid JSON.",
         "href": "/json-tools/yaml-to-json"
       },
       {
         "name": "JSON to Excel Converter",
-        "description": "Exports JSON data into XLSX format using client-side spreadsheet generation.",
         "href": "/json-tools/json-to-excel"
       },
       {
         "name": "JSON to TypeScript Interface",
-        "description": "Generates TypeScript interfaces from JSON including optional fields and nested types.",
         "href": "/json-tools/json-to-typescript"
       },
       {
         "name": "JSON to Python Dict",
-        "description": "Converts JSON into Python dictionary syntax.",
         "href": "/json-tools/json-to-python"
       },
       {
         "name": "JSON to Java POJO",
-        "description": "Generates Java POJO classes with fields, getters, and setters from JSON.",
         "href": "/json-tools/json-to-java"
       },
       {
         "name": "JSON Schema Generator",
-        "description": "Automatically generates JSON Schema definitions from sample JSON data.",
         "href": "/json-tools/json-schema-example-generator"
       },
       {
         "name": "JSON Diff Tool",
-        "description": "Compares two JSON objects and highlights added, removed, and changed fields.",
         "href": "/json-tools/json-diff"
       },
       {
         "name": "JSON Path Query Tool",
-        "description": "Runs JSONPath queries against JSON data and displays matching results.",
         "href": "/json-tools/jsonpath-query"
       },
       {
         "name": "JSON Playground",
-        "description": "Live editor to modify JSON and instantly see formatted output.",
         "href": "/json-tools/json-playground"
       }
     ]
@@ -295,97 +249,78 @@
       },
       {
         "name": "Color Picker",
-        "description": "Simple and intuitive color picker tool",
         "href": "/color-tools/color-picker"
       },
       {
         "name": "Color Wheel",
-        "description": "Interactive color wheel for exploring color relationships",
         "href": "/color-tools/color-wheel"
       },
       {
         "name": "Color Palette Generator",
-        "description": "Generate complete color palettes for your projects",
         "href": "/color-tools/color-palette-generator"
       },
       {
         "name": "Gradient Palette Generator",
-        "description": "Create beautiful gradient palettes for your designs",
         "href": "/color-tools/gradient-palette-generator"
       },
       {
         "name": "Contrast Checker",
-        "description": "Check color contrast ratios for WCAG accessibility compliance",
         "href": "/color-tools/contrast-checker"
       },
       {
         "name": "HEX to RGB Converter",
-        "description": "Convert HEX color codes to RGB values instantly",
         "href": "/color-tools/hex-to-rgb-converter"
       },
       {
         "name": "RGB to HEX Converter",
-        "description": "Convert RGB color values to HEX format instantly",
         "href": "/color-tools/rgb-to-hex-converter"
       },
       {
         "name": "HEX to HSL Converter",
-        "description": "Convert HEX color codes to HSL values",
         "href": "/color-tools/hex-to-hsl-converter"
       },
       {
         "name": "HSL to HEX Converter",
-        "description": "Convert HSL color values to HEX format instantly",
         "href": "/color-tools/hsl-to-hex-converter"
       },
       {
         "name": "RGB to CMYK Converter",
-        "description": "Convert RGB colors to CMYK for print production",
         "href": "/color-tools/rgb-to-cmyk-converter"
       },
       {
         "name": "HEX to CMYK Converter",
-        "description": "Convert HEX colors to CMYK for print design",
         "href": "/color-tools/hex-to-cmyk-converter"
       },
       {
         "name": "Extract Colors from Image",
-        "description": "Extract all colors from uploaded images",
         "href": "/color-tools/extract-colors-from-image"
       },
       {
         "name": "Dominant Color Finder",
-        "description": "Extract dominant colors from images automatically",
         "href": "/color-tools/dominant-color-finder"
       },
       {
         "name": "Color Harmony Generator",
-        "description": "Create harmonious color schemes (complementary, analogous, etc.)",
         "href": "/color-tools/color-harmony-generator"
       },
       {
         "name": "Complementary Color Finder",
-        "description": "Find complementary colors that pair well together",
         "href": "/color-tools/complementary-color-finder"
       },
       {
         "name": "CSS Gradient Generator",
-        "description": "Generate CSS gradient code for linear and radial gradients",
         "href": "/color-tools/css-gradient-generator"
       },
       {
         "name": "CSS Variables Generator",
-        "description": "Generate CSS custom properties for your color schemes",
         "href": "/color-tools/css-variables-generator"
       },
       {
         "name": "Dark Light Mode Preview",
-        "description": "Preview how colors look in dark and light modes",
         "href": "/color-tools/dark-light-mode-preview"
       },
       {
         "name": "Web Safe Color Picker",
-        "description": "Pick from 216 web-safe colors that display consistently",
         "href": "/color-tools/web-safe-color-picker"
       }
     ]
@@ -569,98 +504,249 @@
       },
       {
         "name": "Standard Calculator",
-        "description": "A basic calculator that performs addition, subtraction, multiplication, and division operations",
         "href": "/math-tools/standard-calculator"
       },
       {
         "name": "Scientific Calculator",
-        "description": "An advanced calculator supporting trigonometric functions, logarithms, exponents, and complex scientific computations",
         "href": "/math-tools/scientific-calculator"
       },
       {
         "name": "Fraction Calculator",
-        "description": "Calculates addition, subtraction, multiplication, and division of fractions and mixed numbers with simplified results",
         "href": "/math-tools/fraction-calculator"
       },
       {
         "name": "Percentage Calculator",
-        "description": "Calculates percentages, percentage increase/decrease, and what percent one number is of another",
         "href": "/math-tools/percentage-calculator"
       },
       {
         "name": "Ratio Calculator",
-        "description": "Simplifies ratios and solves for missing values in proportional ratio equations",
         "href": "/math-tools/ratio-calculator"
       },
       {
         "name": "Average / Mean Calculator",
-        "description": "Computes the arithmetic mean of a set of numbers instantly",
         "href": "/math-tools/average-calculator"
       },
       {
         "name": "Square Root Calculator",
-        "description": "Calculates the square root of any positive number with high precision",
         "href": "/math-tools/square-root-calculator"
       },
       {
         "name": "Quadratic Equation Solver",
-        "description": "Solves quadratic equations of the form ax² + bx + c = 0 using the quadratic formula, showing all roots",
         "href": "/math-tools/quadratic-equation-solver"
       },
       {
         "name": "Prime Number Checker",
-        "description": "Determines whether a given integer is a prime number or composite number",
         "href": "/math-tools/prime-number-checker"
       },
       {
         "name": "Prime Factorization",
-        "description": "Breaks down any integer into its prime factors and displays the prime factor tree",
         "href": "/math-tools/prime-factorization-calculator"
       },
       {
         "name": "GCD / HCF Calculator",
-        "description": "Finds the Greatest Common Divisor (GCD) or Highest Common Factor (HCF) of two or more numbers",
         "href": "/math-tools/gcd-hcf-calculator"
       },
       {
         "name": "LCM Calculator",
-        "description": "Calculates the Least Common Multiple (LCM) of two or more numbers",
         "href": "/math-tools/lcm-calculator"
       },
       {
         "name": "Number Base Converter",
-        "description": "Converts numbers between binary, octal, decimal, and hexadecimal number systems",
         "href": "/math-tools/number-base-converter"
       },
       {
         "name": "Area Calculator",
-        "description": "Calculates the area of common 2D shapes including circle, rectangle, triangle, trapezoid, and more",
         "href": "/math-tools/area-calculator"
       },
       {
         "name": "Volume Calculator",
-        "description": "Calculates the volume of common 3D shapes including cube, sphere, cylinder, cone, and pyramid",
         "href": "/math-tools/volume-calculator"
       },
       {
         "name": "Pythagorean Theorem Calculator",
-        "description": "Solves for any side of a right triangle using the Pythagorean theorem (a² + b² = c²)",
         "href": "/math-tools/pythagorean-theorem-calculator"
       },
       {
         "name": "Slope Calculator",
-        "description": "Calculates the slope (gradient) of a line given two points or an equation",
         "href": "/math-tools/slope-calculator"
       },
       {
         "name": "Simple Interest Calculator",
-        "description": "Calculates simple interest, principal, rate, or time using the SI formula",
         "href": "/math-tools/simple-interest-calculator"
       },
       {
         "name": "Compound Interest Calculator",
-        "description": "Calculates compound interest and total amount for various compounding periods",
         "href": "/math-tools/compound-interest-calculator"
+      }
+    ]
+  },
+  {
+    "categoryName": "Text Tools",
+    "tools": [
+      {
+        "name": "All Text Tools",
+        "href": "/text-tools"
+      },
+      {
+        "name": "Word Counter",
+        "href": "/text-tools/word-counter"
+      },
+      {
+        "name": "Character Counter",
+        "href": "/text-tools/character-counter"
+      },
+      {
+        "name": "Case Converter",
+        "href": "/text-tools/case-converter"
+      },
+      {
+        "name": "Remove Duplicate Lines",
+        "href": "/text-tools/remove-duplicate-lines"
+      },
+      {
+        "name": "Text to Slug Converter",
+        "href": "/text-tools/text-to-slug-converter"
+      },
+      {
+        "name": "Lorem Ipsum Generator",
+        "href": "/text-tools/lorem-ipsum-generator"
+      },
+      {
+        "name": "Find and Replace Text",
+        "href": "/text-tools/find-and-replace-text"
+      },
+      {
+        "name": "Text Reverser",
+        "href": "/text-tools/text-reverser"
+      },
+      {
+        "name": "Word Frequency Counter",
+        "href": "/text-tools/word-frequency-counter"
+      },
+      {
+        "name": "Text to Binary Converter",
+        "href": "/text-tools/text-to-binary-converter"
+      },
+      {
+        "name": "Text Size Calculator",
+        "href": "/text-tools/text-size-calculator"
+      },
+      {
+        "name": "Duplicate Word Remover",
+        "href": "/text-tools/duplicate-word-remover"
+      },
+      {
+        "name": "Text Line Sorter",
+        "href": "/text-tools/text-line-sorter"
+      },
+      {
+        "name": "Whitespace Remover",
+        "href": "/text-tools/whitespace-remover"
+      },
+      {
+        "name": "Sentence Counter",
+        "href": "/text-tools/sentence-counter"
+      },
+      {
+        "name": "Text to Hashtags Generator",
+        "href": "/text-tools/text-to-hashtags-generator"
+      },
+      {
+        "name": "Text Repeater",
+        "href": "/text-tools/text-repeater"
+      },
+      {
+        "name": "String Length Calculator",
+        "href": "/text-tools/string-length-calculator"
+      },
+      {
+        "name": "Text to List Converter",
+        "href": "/text-tools/text-to-list-converter"
+      }
+    ]
+  },
+  {
+    "categoryName": "CSV Tools",
+    "tools": [
+      {
+        "name": "All CSV Tools",
+        "href": "/csv-tools"
+      },
+      {
+        "name": "CSV Viewer",
+        "href": "/csv-tools/csv-viewer"
+      },
+      {
+        "name": "CSV Editor",
+        "href": "/csv-tools/csv-editor"
+      },
+      {
+        "name": "CSV Validator",
+        "href": "/csv-tools/csv-validator"
+      },
+      {
+        "name": "CSV Formatter",
+        "href": "/csv-tools/csv-formatter"
+      },
+      {
+        "name": "CSV to JSON Converter",
+        "href": "/csv-tools/csv-to-json"
+      },
+      {
+        "name": "JSON to CSV Converter",
+        "href": "/csv-tools/json-to-csv"
+      },
+      {
+        "name": "CSV to Excel Converter",
+        "href": "/csv-tools/csv-to-excel"
+      },
+      {
+        "name": "Excel to CSV Converter",
+        "href": "/csv-tools/excel-to-csv"
+      },
+      {
+        "name": "CSV to TSV Converter",
+        "href": "/csv-tools/csv-to-tsv"
+      },
+      {
+        "name": "CSV to SQL Converter",
+        "href": "/csv-tools/csv-to-sql"
+      },
+      {
+        "name": "CSV to HTML Table",
+        "href": "/csv-tools/csv-to-html"
+      },
+      {
+        "name": "CSV to Markdown Table",
+        "href": "/csv-tools/csv-to-markdown"
+      },
+      {
+        "name": "CSV Column Extractor",
+        "href": "/csv-tools/csv-column-extractor"
+      },
+      {
+        "name": "CSV Column Remover",
+        "href": "/csv-tools/csv-column-remover"
+      },
+      {
+        "name": "CSV Row Filter",
+        "href": "/csv-tools/csv-row-filter"
+      },
+      {
+        "name": "CSV Duplicate Remover",
+        "href": "/csv-tools/csv-duplicate-remover"
+      },
+      {
+        "name": "CSV Join / Merge Tool",
+        "href": "/csv-tools/csv-join-merge"
+      },
+      {
+        "name": "CSV Splitter",
+        "href": "/csv-tools/csv-splitter"
+      },
+      {
+        "name": "CSV Cleaner",
+        "href": "/csv-tools/csv-cleaner"
       }
     ]
   }

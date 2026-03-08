@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const BASE_URL = "https://1000freetools.com";
-const APP_DIR = path.join(__dirname, "app");
+const APP_DIR = path.join(__dirname, "..", "app");
 const OUTPUT_FILE = path.join(__dirname, "pageUrls.js");
 
 const urls = [];
