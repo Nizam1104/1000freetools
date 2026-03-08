@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Cleaner
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Automatically fix common CSV issues. Trim whitespace, remove blank 
-            rows, strip BOM markers, and normalize line endings.
-          </p>
-        </div>
+        
 
         <CsvCleaner />
 
@@ -66,21 +58,21 @@ export default function Page() {
             <strong>Leading/trailing spaces:</strong> From fixed-width exports, manual editing, or copy-paste.
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Before: "  Alice  ", " 30 ", " New York "
+            {`Before: "  Alice  ", " 30 ", " New York "
 After:  "Alice", "30", "New York"`}
           </pre>
           <p className="text-muted-foreground mb-4">
             <strong>Blank rows at end:</strong> Excel and other tools often add trailing blank rows.
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Before: 105 rows (100 data + 5 blank)
+            {`Before: 105 rows (100 data + 5 blank)
 After:  100 rows`}
           </pre>
           <p className="text-muted-foreground mb-4">
             <strong>BOM markers:</strong> Windows Excel adds BOM that breaks some parsers.
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Before: ï»¿name,email
+            {`Before: ï»¿name,email
 After:  name,email`}
           </pre>
           <p className="text-muted-foreground mb-6">
@@ -91,7 +83,7 @@ After:  name,email`}
             Example Cleaning Report
           </h2>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-6">
-{`Cleaning Report:
+            {`Cleaning Report:
 - BOM removed: Yes
 - Blank rows removed: 3
 - Fields trimmed: 47

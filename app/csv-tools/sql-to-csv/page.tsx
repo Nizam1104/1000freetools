@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            SQL to CSV Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Extract data from SQL INSERT statements and convert to CSV format. 
-            Parse database dumps or backup scripts into spreadsheet-ready data.
-          </p>
-        </div>
+        
 
         <SqlToCsv />
 

@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Splitter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Split large CSV files into multiple smaller files. 
-            Split by row count, file size, or group by column values.
-          </p>
-        </div>
+        
 
         <CsvSplitter />
 

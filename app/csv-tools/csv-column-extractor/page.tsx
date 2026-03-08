@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Column Extractor
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Extract specific columns from CSV files by name or index. 
-            Reorder columns and rename headers in the output.
-          </p>
-        </div>
+        
 
         <CsvColumnExtractor />
 

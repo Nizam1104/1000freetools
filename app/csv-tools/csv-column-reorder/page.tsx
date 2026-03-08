@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Column Reorder
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Rearrange CSV columns using drag-and-drop or arrow buttons. 
-            Move columns to new positions and export with the new order.
-          </p>
-        </div>
+        
 
         <CsvColumnReorder />
 

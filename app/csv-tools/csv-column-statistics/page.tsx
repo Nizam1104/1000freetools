@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Column Statistics
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Calculate descriptive statistics for every column in your CSV. 
-            Get count, unique values, null rate, min, max, mean, median, mode, and frequency distribution.
-          </p>
-        </div>
+
 
         <CsvColumnStatistics />
 
@@ -72,7 +64,7 @@ export default function Page() {
           </h2>
           <p className="text-muted-foreground mb-4">Input CSV:</p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`name,age,salary,department
+            {`name,age,salary,department
 Alice,30,50000,Engineering
 Bob,25,45000,Marketing
 Charlie,35,60000,Engineering
@@ -81,7 +73,7 @@ Eve,28,52000,Marketing`}
           </pre>
           <p className="text-muted-foreground mb-4">Statistics output:</p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-6">
-{`Column: name
+            {`Column: name
   Count: 5, Nulls: 0 (0%), Unique: 5 (100%)
   Top values: Alice(1), Bob(1), Charlie(1)...
 
@@ -124,12 +116,12 @@ Column: department
             <strong>Mean vs Median:</strong> Mean is the average. Median is the middle value. Median is less affected by outliers.
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Salaries: [30k, 35k, 40k, 45k, 500k]
+            {`Salaries: [30k, 35k, 40k, 45k, 500k]
 Mean: 130k (skewed by 500k)
 Median: 40k (more representative)`}
           </pre>
           <p className="text-muted-foreground mb-4">
-            <strong>Null rate:</strong> High null rates (>50%) may indicate columns that aren't being used or data collection issues.
+            <strong>Null rate:</strong> High null rates (&gt;50%) may indicate columns that aren't being used or data collection issues.
           </p>
           <p className="text-muted-foreground mb-4">
             <strong>Unique rate:</strong> 100% unique suggests an ID column. Low unique rate suggests a categorical column.
@@ -145,7 +137,7 @@ Median: 40k (more representative)`}
             Shows the most common values in each column:
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-6">
-{`Column: status
+            {`Column: status
   Top 5 values:
   - Active: 450 (75%)
   - Inactive: 100 (17%)

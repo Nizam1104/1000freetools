@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV to XML Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Convert CSV data to XML format with configurable element names. 
-            Choose between child elements or attributes for data representation.
-          </p>
-        </div>
+
 
         <CsvToXml />
 
@@ -56,7 +48,7 @@ export default function Page() {
             <strong>Attributes mode:</strong> Columns become XML attributes like {"<row name=\"Alice\" age=\"30\" />"}.
           </p>
           <p className="text-muted-foreground mb-6">
-            <strong>XML declaration:</strong> Output includes <?xml version="1.0" encoding="UTF-8"?> for proper XML parsing.
+            <strong>XML declaration:</strong> Output includes {'<?xml version="1.0" encoding="UTF-8"?>'} for proper XML parsing.
           </p>
 
           <h2 className="text-2xl font-semibold mb-4">
@@ -64,13 +56,13 @@ export default function Page() {
           </h2>
           <p className="text-muted-foreground mb-4">Input CSV:</p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`name,age,city
+            {`name,age,city
 Alice,30,New York
 Bob,25,Los Angeles`}
           </pre>
           <p className="text-muted-foreground mb-4">Output XML (child elements):</p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`<?xml version="1.0" encoding="UTF-8"?>
+            {`<?xml version="1.0" encoding="UTF-8"?>
 <data>
   <row>
     <name>Alice</name>
@@ -86,7 +78,7 @@ Bob,25,Los Angeles`}
           </pre>
           <p className="text-muted-foreground mb-4">Output XML (attributes):</p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-6">
-{`<?xml version="1.0" encoding="UTF-8"?>
+            {`<?xml version="1.0" encoding="UTF-8"?>
 <data>
   <row name="Alice" age="30" city="New York"/>
   <row name="Bob" age="25" city="Los Angeles"/>

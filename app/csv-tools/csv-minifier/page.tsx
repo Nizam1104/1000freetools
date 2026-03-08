@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Minifier
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Strip unnecessary whitespace, blank lines, redundant quotes, and BOM 
-            markers from CSV files. Reduce file size for faster uploads and data transfers.
-          </p>
-        </div>
+        
 
         <CsvMinifier />
 

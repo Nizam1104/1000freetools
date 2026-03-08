@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Random Row Generator
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Generate realistic fake CSV data for testing. Configure column types 
-            including names, emails, dates, numbers, booleans, and UUIDs.
-          </p>
-        </div>
+        
 
         <CsvRandomRowGenerator />
 

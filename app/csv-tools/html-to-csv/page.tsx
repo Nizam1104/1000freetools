@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            HTML Table to CSV Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Extract data from HTML tables and convert to CSV format. 
-            Paste HTML from web pages or HTML files to scrape table data.
-          </p>
-        </div>
+        
 
         <HtmlToCsv />
 

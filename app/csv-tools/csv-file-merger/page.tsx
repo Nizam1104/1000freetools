@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV File Merger
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Combine multiple CSV files into a single file. 
-            Align columns by name with union, intersection, or first-file schema.
-          </p>
-        </div>
+        
 
         <CsvFileMerger />
 

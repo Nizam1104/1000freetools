@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            TSV to CSV Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Convert tab-separated TSV files to comma-separated CSV format. 
-            Automatically quotes fields containing commas, quotes, or newlines.
-          </p>
-        </div>
+        
 
         <TsvToCsv />
 

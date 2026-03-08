@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV to Excel Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Convert CSV files to Excel .xlsx format with styled headers, 
-            auto-fit columns, and custom sheet names. Download ready-to-share spreadsheets.
-          </p>
-        </div>
+        
 
         <CsvToExcel />
 

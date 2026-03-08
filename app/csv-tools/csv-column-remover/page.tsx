@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Column Remover
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Remove unwanted columns from CSV files. Select columns to delete 
-            by name or index, or invert selection to keep only specific columns.
-          </p>
-        </div>
+        
 
         <CsvColumnRemover />
 

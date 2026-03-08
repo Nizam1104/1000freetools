@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Row Filter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Filter CSV rows using conditions. Match text, numbers, and dates 
-            with equals, contains, regex, comparisons, and more.
-          </p>
-        </div>
+        
 
         <CsvRowFilter />
 

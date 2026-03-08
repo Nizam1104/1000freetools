@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV to YAML Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Convert CSV data to YAML list of mappings. Supports type inference 
-            and configurable indentation for clean, readable output.
-          </p>
-        </div>
+        
 
         <CsvToYaml />
 

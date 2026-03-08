@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Column Merger
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Combine multiple CSV columns into a single column. 
-            Choose columns to merge and specify a separator between values.
-          </p>
-        </div>
+        
 
         <CsvColumnMerger />
 

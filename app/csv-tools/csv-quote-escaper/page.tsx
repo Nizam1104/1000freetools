@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Quote Escaper
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Apply proper quoting to CSV fields according to RFC 4180 standards. 
-            Quote fields containing special characters or quote all fields.
-          </p>
-        </div>
+        
 
         <CsvQuoteEscaper />
 

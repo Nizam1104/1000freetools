@@ -20,15 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV to Array Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Convert CSV data to programming language arrays. 
-            Generate JavaScript, Python, PHP, or Ruby array literals ready to paste into code.
-          </p>
-        </div>
+        
 
         <CsvToArray />
 

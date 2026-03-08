@@ -20,16 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV to JSON Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Convert CSV files to JSON array of objects. Supports type inference, 
-            nested object output from dot notation headers, and array mode for 
-            value-only output.
-          </p>
-        </div>
+        
 
         <CsvToJson />
 

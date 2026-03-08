@@ -5,12 +5,6 @@ export const metadata: Metadata = {
   title: "Text to CSV Converter - Parse Unstructured Text to Structured CSV",
   description:
     "Convert plain text to CSV format. Parse by lines, regex patterns, or fixed-width columns. Free online text to CSV converter.",
-  unstructured: {
-    title: "Text to CSV Converter - Parse Unstructured Text to Structured CSV",
-    description:
-      "Parse plain text into structured CSV using lines, regex, or fixed-width.",
-    type: "website",
-  },
   alternates: {
     canonical: "https://1000freetools.com/csv-tools/text-to-csv",
   },
@@ -20,15 +14,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Text to CSV Converter
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Parse unstructured plain text and convert to structured CSV format. 
-            Split by lines, extract with regex patterns, or parse fixed-width data.
-          </p>
-        </div>
+
 
         <TextToCsv />
 
@@ -47,7 +33,7 @@ export default function Page() {
             <strong>By Lines (whitespace):</strong> Each line becomes a CSV row. Words separated by spaces or tabs become columns.
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Input:
+            {`Input:
 Alice 30 New York
 Bob 25 Los Angeles
 
@@ -59,7 +45,7 @@ Bob,25,Los Angeles`}
             <strong>By Regex (capture groups):</strong> Define a regex pattern with capture groups. Each match becomes a row, each group becomes a column.
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Input:
+            {`Input:
 Name: Alice, Age: 30
 Name: Bob, Age: 25
 
@@ -73,7 +59,7 @@ Bob,25`}
             <strong>Fixed Width:</strong> Specify column start positions and widths. Extracts data at exact character positions.
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Input:
+            {`Input:
 Alice     30New York   
 Bob       25Los Angeles
 
@@ -116,7 +102,7 @@ Bob,25,Los Angeles`}
             <strong>Common patterns:</strong>
           </p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">
-{`Email: ([\w.-]+@[\w.-]+)
+            {`Email: ([\w.-]+@[\w.-]+)
 Date: (\d{4}-\d{2}-\d{2})
 Key-Value: (\w+): (\S+)
 IP Address: (\d+\.\d+\.\d+\.\d+)`}

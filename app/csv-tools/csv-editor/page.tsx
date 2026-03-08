@@ -20,16 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            CSV Editor
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Edit CSV files directly in your browser with a spreadsheet-like interface. 
-            Add or delete rows and columns, modify cell values, sort data, and export 
-            your changes instantly.
-          </p>
-        </div>
+        
 
         <CSVEditor />
 
