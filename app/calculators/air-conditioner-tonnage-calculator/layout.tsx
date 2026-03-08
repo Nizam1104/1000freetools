@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Chiller Tonnage Calculator",
     "description": "Chiller Tonnage Calculator – Calculate Cooling Capacity",
-    "href": "/chiller-tonnage-calculator"
+    "href": "/calculators/chiller-tonnage-calculator"
   },
   {
     "name": "Hvac Airflow Calculator",
     "description": "HVAC Airflow Calculator – Calculate Required CFM",
-    "href": "/hvac-airflow-calculator"
+    "href": "/calculators/hvac-airflow-calculator"
   },
   {
     "name": "Hvac Btu Calculator",
     "description": "HVAC BTU Calculator – What Size Air Conditioner Do You Need?",
-    "href": "/hvac-btu-calculator"
+    "href": "/calculators/hvac-btu-calculator"
   },
   {
     "name": "Heat Pump Cop Calculator",
     "description": "Heat Pump COP Calculator – Coefficient of Performance",
-    "href": "/heat-pump-cop-calculator"
+    "href": "/calculators/heat-pump-cop-calculator"
   },
   {
     "name": "Room Heater Wattage Calculator",
     "description": "Room Heater Wattage Calculator – Find the Right Heater Size for Your Room",
-    "href": "/room-heater-wattage-calculator"
+    "href": "/calculators/room-heater-wattage-calculator"
   },
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   }
 ];
 

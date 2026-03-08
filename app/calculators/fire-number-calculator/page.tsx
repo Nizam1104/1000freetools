@@ -270,23 +270,6 @@ export default function FIRENumberCalculatorPage() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Financial Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/compound-interest-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Compound Interest Calculator</h3>
-            <p className="text-sm text-muted-foreground">Project investment growth over time with compound returns.</p>
-          </a>
-          <a href="/calculators/savings-goal-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Savings Goal Calculator</h3>
-            <p className="text-sm text-muted-foreground">Determine monthly savings needed to reach your target.</p>
-          </a>
-          <a href="/calculators/retirement-corpus-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Retirement Corpus Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate the total retirement fund you&apos;ll need.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

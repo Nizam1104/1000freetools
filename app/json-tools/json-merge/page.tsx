@@ -251,18 +251,6 @@ export default function JsonMergePage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-diff" className="text-primary hover:underline">JSON Diff</a> – Compare two JSON objects and see the differences
-          </li>
-          <li>
-            <a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Transform JSON structure with custom rules
-          </li>
-          <li>
-            <a href="/json-tools/json-rename-keys" className="text-primary hover:underline">JSON Rename Keys</a> – Rename keys in your JSON objects
-          </li>
-        </ul>
       </div>
     </div>
   );

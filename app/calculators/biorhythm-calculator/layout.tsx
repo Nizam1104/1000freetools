@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Zodiac Sign Calculator",
     "description": "Zodiac Sign Calculator – Free Western Astrology Sign Finder",
-    "href": "/zodiac-sign-calculator"
+    "href": "/calculators/zodiac-sign-calculator"
   },
   {
     "name": "Age Calculator",
     "description": "Age Calculator – Calculate Your Exact Age in Years, Months & Days",
-    "href": "/age-calculator"
+    "href": "/calculators/age-calculator"
   },
   {
     "name": "Anniversary Calculator",
     "description": "Anniversary Calculator – Free Anniversary Date Counter",
-    "href": "/anniversary-calculator"
+    "href": "/calculators/anniversary-calculator"
   },
   {
     "name": "Dopamine Detox Planner",
     "description": "Dopamine Detox Planner – Plan a Digital Detox & Reset Your Dopamine Levels",
-    "href": "/dopamine-detox-planner"
+    "href": "/calculators/dopamine-detox-planner"
   },
   {
     "name": "Meditation Timer Scheduler",
     "description": "Meditation Timer Scheduler – Set Up & Time Your Daily Meditation Sessions",
-    "href": "/meditation-timer-scheduler"
+    "href": "/calculators/meditation-timer-scheduler"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

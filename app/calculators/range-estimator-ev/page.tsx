@@ -346,36 +346,6 @@ export default function RangeEstimatorEvPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/ev-charging-time-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">EV Charging Time Calculator</span>
-                <p className="text-muted-foreground">Calculate how long it takes to charge your electric vehicle</p>
-              </a>
-              <a
-                href="/calculators/fuel-cost-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Fuel Cost Calculator</span>
-                <p className="text-muted-foreground">Compare fuel costs between gas and electric vehicles</p>
-              </a>
-              <a
-                href="/calculators/trip-cost-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Trip Cost Calculator</span>
-                <p className="text-muted-foreground">Estimate total cost for road trips including charging</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

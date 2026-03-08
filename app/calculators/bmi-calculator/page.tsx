@@ -367,28 +367,6 @@ export default function BMICalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/waist-to-hip-ratio-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Waist-to-Hip Ratio</p>
-              <p className="text-xs text-muted-foreground">Assess fat distribution</p>
-            </a>
-            <a href="/calculators/body-fat-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Body Fat Calculator</p>
-              <p className="text-xs text-muted-foreground">Estimate body fat percentage</p>
-            </a>
-            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">TDEE Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate daily calorie needs</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

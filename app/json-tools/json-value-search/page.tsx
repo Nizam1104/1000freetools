@@ -520,36 +520,6 @@ export default function JsonValueSearchPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-path-finder"
-                className="text-primary hover:underline"
-              >
-                JSON Path Finder
-              </a>{" "}
-              – Extract values using JSONPath expressions
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-viewer"
-                className="text-primary hover:underline"
-              >
-                JSON Viewer
-              </a>{" "}
-              – Interactive tree view for exploring JSON
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-filter"
-                className="text-primary hover:underline"
-              >
-                JSON Filter
-              </a>{" "}
-              – Filter arrays based on conditions
-            </li>
-          </ul>
         </div>
       </div>
     </div>

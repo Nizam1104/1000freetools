@@ -396,23 +396,6 @@ export default function OvenTemperatureConverterPage() {
           </div>
 
           {/* Related Tools Section */}
-          <div className="mt-8 mb-8">
-            <h2 className="text-2xl font-semibold mb-6">Related Kitchen Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/recipe-scaler-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Recipe Scaler Calculator</h3>
-                <p className="text-sm text-muted-foreground">Adjust recipe ingredients for different serving sizes.</p>
-              </a>
-              <a href="/calculators/kitchen-measurement-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Kitchen Measurement Converter</h3>
-                <p className="text-sm text-muted-foreground">Convert between cups, tablespoons, grams, and more.</p>
-              </a>
-              <a href="/calculators/baking-time-adjustment-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Baking Time Adjustment Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate baking time for different pan sizes.</p>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

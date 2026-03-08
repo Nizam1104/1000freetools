@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Compound Interest Calculator",
     "description": "Compound Interest Calculator",
-    "href": "/compound-interest-calculator"
+    "href": "/calculators/compound-interest-calculator"
   },
   {
     "name": "Simple Interest Calculator",
     "description": "Simple Interest Calculator",
-    "href": "/simple-interest-calculator"
+    "href": "/calculators/simple-interest-calculator"
   },
   {
     "name": "Future Value Calculator",
     "description": "Future Value Calculator",
-    "href": "/future-value-calculator"
+    "href": "/calculators/future-value-calculator"
   },
   {
     "name": "Present Value Calculator",
     "description": "Present Value Calculator",
-    "href": "/present-value-calculator"
+    "href": "/calculators/present-value-calculator"
   },
   {
     "name": "Rule Of 72 Calculator",
     "description": "Rule of 72 Calculator",
-    "href": "/rule-of-72-calculator"
+    "href": "/calculators/rule-of-72-calculator"
   },
   {
     "name": "Investment Return Rate Calculator",
     "description": "Investment Return Rate Calculator",
-    "href": "/investment-return-rate-calculator"
+    "href": "/calculators/investment-return-rate-calculator"
   }
 ];
 

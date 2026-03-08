@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ideal Gas Law Calculator",
     "description": "Ideal Gas Law Calculator – Solve PV = nRT for Any Variable",
-    "href": "/ideal-gas-law-calculator"
+    "href": "/calculators/ideal-gas-law-calculator"
   },
   {
     "name": "Vapor Pressure Calculator",
     "description": "Vapor Pressure Calculator – Calculate Vapor Pressure at Any Temperature",
-    "href": "/vapor-pressure-calculator"
+    "href": "/calculators/vapor-pressure-calculator"
   },
   {
     "name": "Concentration Calculator",
     "description": "Concentration Calculator – Convert Solution Concentration Units",
-    "href": "/concentration-calculator"
+    "href": "/calculators/concentration-calculator"
   },
   {
     "name": "Molarity Calculator",
     "description": "Molarity Calculator – Calculate Molar Concentration Instantly",
-    "href": "/molarity-calculator"
+    "href": "/calculators/molarity-calculator"
   },
   {
     "name": "Molality Calculator",
     "description": "Molality Calculator – Find Molality of Any Solution",
-    "href": "/molality-calculator"
+    "href": "/calculators/molality-calculator"
   },
   {
     "name": "Molecular Mass Calculator",
     "description": "Molecular Mass Calculator – Calculate Molar Mass of Any Compound",
-    "href": "/molecular-mass-calculator"
+    "href": "/calculators/molecular-mass-calculator"
   }
 ];
 

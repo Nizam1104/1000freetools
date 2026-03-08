@@ -332,36 +332,6 @@ export default function JsonPlaygroundPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Format JSON with customizable indentation
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-minifier"
-                className="text-primary hover:underline"
-              >
-                JSON Minifier
-              </a>{" "}
-              – Compress JSON by removing whitespace
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Check JSON for syntax errors
-            </li>
-          </ul>
         </div>
       </div>
     </div>

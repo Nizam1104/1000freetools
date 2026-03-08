@@ -434,36 +434,6 @@ export default function RingSizeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/engagement-ring-budget-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Engagement Ring Budget Calculator</span>
-                  <p className="text-muted-foreground">Determine how much to spend on an engagement ring</p>
-                </a>
-                <a
-                  href="/calculators/gold-weight-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Gold Weight Calculator</span>
-                  <p className="text-muted-foreground">Calculate gold jewelry weight and value</p>
-                </a>
-                <a
-                  href="/calculators/gemstone-size-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Gemstone Size Calculator</span>
-                  <p className="text-muted-foreground">Convert gemstone carat weight to millimeter dimensions</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

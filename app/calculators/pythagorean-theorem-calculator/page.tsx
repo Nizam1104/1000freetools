@@ -376,23 +376,6 @@ export default function PythagoreanTheoremCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/calculators/distance-formula-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Distance Formula Calculator</p>
-            <p className="text-xs text-muted-foreground">Distance between points</p>
-          </a>
-          <a href="/math-tools/triangle-area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Triangle Area Calculator</p>
-            <p className="text-xs text-muted-foreground">Triangle area</p>
-          </a>
-          <a href="/calculators/triangle-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Triangle Calculator</p>
-            <p className="text-xs text-muted-foreground">Complete triangle solver</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

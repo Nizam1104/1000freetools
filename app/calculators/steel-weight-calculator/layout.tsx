@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Welding Strength Calculator",
     "description": "Welding Strength Calculator – Calculate Weld Strength",
-    "href": "/welding-strength-calculator"
+    "href": "/calculators/welding-strength-calculator"
   },
   {
     "name": "Safety Factor Calculator",
     "description": "Safety Factor Calculator – Factor of Safety Calculator",
-    "href": "/safety-factor-calculator"
+    "href": "/calculators/safety-factor-calculator"
   },
   {
     "name": "Stress Strain Calculator",
     "description": "Stress/Strain Calculator – Mechanical Properties Calculator",
-    "href": "/stress-strain-calculator"
+    "href": "/calculators/stress-strain-calculator"
   },
   {
     "name": "Fastener Load Calculator",
     "description": "Fastener Load Calculator – Calculate Fastener Capacity",
-    "href": "/fastener-load-calculator"
+    "href": "/calculators/fastener-load-calculator"
   },
   {
     "name": "Beam Bending Calculator",
     "description": "Beam Bending Calculator – Stress & Deflection for Structural Beams",
-    "href": "/beam-bending-calculator"
+    "href": "/calculators/beam-bending-calculator"
   },
   {
     "name": "Bolt Torque Calculator",
     "description": "Bolt Torque Calculator – Calculate Bolt Tightening Torque",
-    "href": "/bolt-torque-calculator"
+    "href": "/calculators/bolt-torque-calculator"
   }
 ];
 

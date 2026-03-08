@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Audio Dynamic Range Calculator",
     "description": "Audio Dynamic Range Calculator – Calculate dB Dynamic Range of Audio Signals",
-    "href": "/audio-dynamic-range-calculator"
+    "href": "/calculators/audio-dynamic-range-calculator"
   },
   {
     "name": "Db Calculator",
     "description": "dB Calculator – Decibel to Ratio Converter for Audio and RF",
-    "href": "/db-calculator"
+    "href": "/calculators/db-calculator"
   },
   {
     "name": "Decibel To Power Converter",
     "description": "Decibel to Power Converter – Convert dB to Watts & Sound Pressure Level",
-    "href": "/decibel-to-power-converter"
+    "href": "/calculators/decibel-to-power-converter"
   },
   {
     "name": "Doppler Effect Calculator",
     "description": "Doppler Effect Calculator – Calculate Frequency Shift",
-    "href": "/doppler-effect-calculator"
+    "href": "/calculators/doppler-effect-calculator"
   },
   {
     "name": "Noise Exposure Calculator",
     "description": "Noise Exposure Calculator – Calculate Safe Noise Levels & Exposure Time Limits",
-    "href": "/noise-exposure-calculator"
+    "href": "/calculators/noise-exposure-calculator"
   },
   {
     "name": "Noise Level Calculator",
     "description": "Noise Level Calculator – Combine Multiple Sound Sources",
-    "href": "/noise-level-calculator"
+    "href": "/calculators/noise-level-calculator"
   }
 ];
 

@@ -367,23 +367,6 @@ export default function ExamScoringCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-12 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Related Grade & Education Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/exam-correction-curve-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Exam Curve Calculator</h3>
-              <p className="text-sm text-muted-foreground">Apply grade curves to exam scores using multiple curving methods.</p>
-            </a>
-            <a href="/calculators/gpa-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">GPA Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate grade point average from course grades and credit hours.</p>
-            </a>
-            <a href="/calculators/cgpa-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">CGPA Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate cumulative GPA across multiple semesters of study.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

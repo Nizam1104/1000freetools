@@ -366,36 +366,6 @@ export default function MonthlyBudgetBreakdownCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/emergency-fund-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Emergency Fund Calculator</span>
-                  <p className="text-muted-foreground">Calculate how much you need in emergency savings</p>
-                </a>
-                <a
-                  href="/calculators/debt-payoff-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Debt Payoff Calculator</span>
-                  <p className="text-muted-foreground">Plan your debt-free journey</p>
-                </a>
-                <a
-                  href="/calculators/net-worth-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Net Worth Calculator</span>
-                  <p className="text-muted-foreground">Track your assets minus liabilities</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -384,28 +384,6 @@ export default function PercentageCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/percentage-change-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Change Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate percent increase/decrease</p>
-            </a>
-            <a href="/calculators/discount-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Discount Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate sale prices</p>
-            </a>
-            <a href="/calculators/grade-percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Grade Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">Convert marks to percentage</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

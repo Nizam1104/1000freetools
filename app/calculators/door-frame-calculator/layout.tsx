@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Flooring Calculator",
     "description": "Flooring Calculator – How Much Flooring Do You Need?",
-    "href": "/flooring-calculator"
+    "href": "/calculators/flooring-calculator"
   },
   {
     "name": "Staircase Rise Run Calculator",
     "description": "Staircase Rise & Run Calculator – Design Safe & Comfortable Stairs",
-    "href": "/staircase-rise-run-calculator"
+    "href": "/calculators/staircase-rise-run-calculator"
   },
   {
     "name": "Ramp Slope Calculator",
     "description": "Ramp Slope Calculator – Calculate Ramp Angle, Gradient & Length",
-    "href": "/ramp-slope-calculator"
+    "href": "/calculators/ramp-slope-calculator"
   },
   {
     "name": "Carpet Area Calculator",
     "description": "Carpet Area Calculator – Calculate Carpet Area from Built-Up Area",
-    "href": "/carpet-area-calculator"
+    "href": "/calculators/carpet-area-calculator"
   },
   {
     "name": "Window Area Calculator",
     "description": "Window Area Calculator – Calculate Total Window Size for Glass & Heat Loss",
-    "href": "/window-area-calculator"
+    "href": "/calculators/window-area-calculator"
   },
   {
     "name": "Ceiling Tile Calculator",
     "description": "Ceiling Tile Calculator – How Many Ceiling Tiles Do You Need?",
-    "href": "/ceiling-tile-calculator"
+    "href": "/calculators/ceiling-tile-calculator"
   }
 ];
 

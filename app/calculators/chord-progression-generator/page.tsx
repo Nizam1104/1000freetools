@@ -588,36 +588,6 @@ export default function ChordProgressionGeneratorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/guitar-chord-finder"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Guitar Chord Finder</span>
-                  <p className="text-muted-foreground">Look up guitar chord diagrams and fingerings for any chord</p>
-                </a>
-                <a
-                  href="/calculators/bpm-tap-tempo-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">BPM Tap Tempo Calculator</span>
-                  <p className="text-muted-foreground">Find the tempo of a song by tapping along to the beat</p>
-                </a>
-                <a
-                  href="/calculators/music-interval-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Music Interval Calculator</span>
-                  <p className="text-muted-foreground">Calculate musical intervals between notes and understand chord construction</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

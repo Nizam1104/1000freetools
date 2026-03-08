@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Aquarium Co Calculator",
     "description": "Aquarium CO₂ Calculator – Calculate CO₂ Injection Rate for Planted Tanks",
-    "href": "/aquarium-co-calculator"
+    "href": "/calculators/aquarium-co-calculator"
   },
   {
     "name": "Aquarium Volume Calculator",
     "description": "Aquarium Volume Calculator – Calculate Fish Tank Water Capacity",
-    "href": "/aquarium-volume-calculator"
+    "href": "/calculators/aquarium-volume-calculator"
   },
   {
     "name": "Bird Cage Size Calculator",
     "description": "Bird Cage Size Calculator – Find the Minimum Cage Size for Your Bird",
-    "href": "/bird-cage-size-calculator"
+    "href": "/calculators/bird-cage-size-calculator"
   },
   {
     "name": "Cat Calorie Calculator",
     "description": "Cat Calorie Calculator – Calculate Your Cat&apos;s Daily Calorie Requirements",
-    "href": "/cat-calorie-calculator"
+    "href": "/calculators/cat-calorie-calculator"
   },
   {
     "name": "Dog Calorie Calculator",
     "description": "Dog Calorie Calculator – Find Out How Many Calories Your Dog Needs Per Day",
-    "href": "/dog-calorie-calculator"
+    "href": "/calculators/dog-calorie-calculator"
   },
   {
     "name": "Water Requirement Calculator",
     "description": "Water Intake Calculator – How Much Water Should You Drink Per Day?",
-    "href": "/water-requirement-calculator"
+    "href": "/calculators/water-requirement-calculator"
   }
 ];
 

@@ -483,23 +483,6 @@ export default function CargoVolumeCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Shipping & Logistics Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/container-load-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Container Load Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate how many boxes fit in 20ft or 40ft shipping containers.</p>
-              </a>
-              <a href="/calculators/camping-gear-weight-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Camping Gear Weight Calculator</h3>
-                <p className="text-muted-foreground text-sm">Plan your pack weight for backpacking and outdoor adventures.</p>
-              </a>
-              <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
-                <p className="text-muted-foreground text-sm">Convert between different area measurements for real estate.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

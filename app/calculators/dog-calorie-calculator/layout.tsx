@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Cat Calorie Calculator",
     "description": "Cat Calorie Calculator – Calculate Your Cat&apos;s Daily Calorie Requirements",
-    "href": "/cat-calorie-calculator"
+    "href": "/calculators/cat-calorie-calculator"
   },
   {
     "name": "Bird Cage Size Calculator",
     "description": "Bird Cage Size Calculator – Find the Minimum Cage Size for Your Bird",
-    "href": "/bird-cage-size-calculator"
+    "href": "/calculators/bird-cage-size-calculator"
   },
   {
     "name": "Horse Feed Calculator",
     "description": "Horse Feed Calculator – Calculate Daily Feed Requirements for Your Horse",
-    "href": "/horse-feed-calculator"
+    "href": "/calculators/horse-feed-calculator"
   },
   {
     "name": "Livestock Feed Calculator",
     "description": "Livestock Feed Calculator – Calculate Daily Feed Requirements for Farm Animals",
-    "href": "/livestock-feed-calculator"
+    "href": "/calculators/livestock-feed-calculator"
   },
   {
     "name": "Pet Age Calculator",
     "description": "Pet Age Calculator – Convert Dog & Cat Age to Human Years",
-    "href": "/pet-age-calculator"
+    "href": "/calculators/pet-age-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

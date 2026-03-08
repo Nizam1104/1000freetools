@@ -255,25 +255,6 @@ export default function CountdownCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/time-duration-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Time Duration Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate the duration between two dates or times.</p>
-              </a>
-              <a href="/calculators/date-difference-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Date Difference Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find the number of days between any two dates.</p>
-              </a>
-              <a href="/calculators/age-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Age Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate age from birthdate with years, months, and days.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

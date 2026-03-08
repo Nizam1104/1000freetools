@@ -308,25 +308,6 @@ export default function DividendPayoutCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Investment Calculators</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/dividend-reinvestment-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Dividend Reinvestment Calculator</h3>
-                  <p className="text-sm text-muted-foreground">See how reinvesting dividends compounds your portfolio growth over time with DRIP.</p>
-                </a>
-                <a href="/calculators/dividend-yield-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Dividend Yield Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate dividend yield percentage to compare income potential across stocks.</p>
-                </a>
-                <a href="/calculators/compound-interest-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Compound Interest Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Project investment growth with compound interest for long-term wealth building.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

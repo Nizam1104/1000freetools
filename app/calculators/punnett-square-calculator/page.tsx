@@ -455,36 +455,6 @@ export default function PunnettSquareCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/probability-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Probability Calculator</span>
-                <p className="text-muted-foreground">Calculate probabilities for various events and scenarios</p>
-              </a>
-              <a
-                href="/calculators/blood-type-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Blood Type Calculator</span>
-                <p className="text-muted-foreground">Predict possible blood types for offspring based on parents</p>
-              </a>
-              <a
-                href="/calculators/genetic-inheritance-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Genetic Inheritance Calculator</span>
-                <p className="text-muted-foreground">Explore more complex inheritance patterns and pedigrees</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

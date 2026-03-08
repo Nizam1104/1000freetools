@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Exam Scoring Calculator",
     "description": "Exam Scoring Calculator – Calculate Weighted Exam Scores & Final Grades",
-    "href": "/exam-scoring-calculator"
+    "href": "/calculators/exam-scoring-calculator"
   },
   {
     "name": "Grade Percentage Calculator",
     "description": "Grade Percentage Calculator – Convert Marks to Percentage & Letter Grade",
-    "href": "/grade-percentage-calculator"
+    "href": "/calculators/grade-percentage-calculator"
   },
   {
     "name": "Cgpa Calculator",
     "description": "CGPA Calculator – Calculate Your Cumulative GPA Across All Semesters",
-    "href": "/cgpa-calculator"
+    "href": "/calculators/cgpa-calculator"
   },
   {
     "name": "Gpa Calculator",
     "description": "GPA Calculator – Calculate Your Grade Point Average Instantly",
-    "href": "/gpa-calculator"
+    "href": "/calculators/gpa-calculator"
   },
   {
     "name": "Gpa Weight Distribution Calculator",
     "description": "GPA Weight Distribution Calculator – See How Each Course Impacts Your GPA",
-    "href": "/gpa-weight-distribution-calculator"
+    "href": "/calculators/gpa-weight-distribution-calculator"
   },
   {
     "name": "Attendance Percentage Calculator",
     "description": "Attendance Percentage Calculator – Check If You Meet the Minimum Attendance Requirement",
-    "href": "/attendance-percentage-calculator"
+    "href": "/calculators/attendance-percentage-calculator"
   }
 ];
 

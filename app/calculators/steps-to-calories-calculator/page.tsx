@@ -381,34 +381,6 @@ export default function StepsToCaloriesCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li>
-              <a href="/calculators/walking-calorie-calculator" className="text-primary hover:underline">
-                Walking Calorie Calculator
-              </a>{" "}
-              — Calculate calories burned during walks based on time, distance, and pace
-            </li>
-            <li>
-              <a href="/calculators/daily-calorie-needs-calculator" className="text-primary hover:underline">
-                Daily Calorie Needs Calculator
-              </a>{" "}
-              — Find your total daily energy expenditure for weight management
-            </li>
-            <li>
-              <a href="/calculators/bmi-calculator" className="text-primary hover:underline">
-                BMI Calculator
-              </a>{" "}
-              — Check your body mass index and health category
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

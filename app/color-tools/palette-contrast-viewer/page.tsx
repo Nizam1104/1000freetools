@@ -20,7 +20,7 @@ export const relatedTools = [
   { name: "Contrast Checker", href: "/color-tools/contrast-checker", description: "Check contrast ratios for accessibility" },
   { name: "Text Color Suggestion Tool", href: "/color-tools/text-color-suggestion-tool", description: "Get readable text color suggestions" },
   { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties from colors" },
-  { name: "Palette Export Tool", href: "/color-tools/palette-export", description: "Export palettes in multiple formats" },
+  { name: "Palette Export Tool", href: "/color-tools/palette-export-tool", description: "Export palettes in multiple formats" },
 ];
 
 export default function PaletteContrastViewerPage() {
@@ -301,20 +301,6 @@ export default function PaletteContrastViewerPage() {
                       className="rounded-lg p-4 flex items-center justify-between"
                       style={{ backgroundColor: color.color }}
                     >
-                      <div>
-                        <p
-                          className="font-semibold"
-                          style={{ color: textColor }}
-                        >
-                          Color {index + 1}
-                        </p>
-                        <p
-                          className="text-sm opacity-80"
-                          style={{ color: textColor }}
-                        >
-                          {color.color}
-                        </p>
-                      </div>
                       <Button
                         variant="outline"
                         size="sm"

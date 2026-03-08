@@ -271,18 +271,6 @@ export default function JsonFetchCodeGeneratorPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-axios-code-generator" className="text-primary hover:underline">JSON Axios Code Generator</a> – Generate Axios request code
-          </li>
-          <li>
-            <a href="/json-tools/json-api-formatter" className="text-primary hover:underline">JSON API Formatter</a> – Standardize API responses
-          </li>
-          <li>
-            <a href="/json-tools/json-api-response-generator" className="text-primary hover:underline">JSON API Response Generator</a> – Mock API responses
-          </li>
-        </ul>
       </div>
     </div>
   );

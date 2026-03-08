@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Water Tank Volume Calculator",
     "description": "Water Tank Volume Calculator – Calculate Tank Capacity in Liters & Gallons",
-    "href": "/water-tank-volume-calculator"
+    "href": "/calculators/water-tank-volume-calculator"
   },
   {
     "name": "Wavelength Calculator",
     "description": "Wavelength Calculator – Calculate Wavelength from Frequency",
-    "href": "/wavelength-calculator"
+    "href": "/calculators/wavelength-calculator"
   },
   {
     "name": "Wealth Growth Projection Calculator",
     "description": "Wealth Growth Projection Calculator",
-    "href": "/wealth-growth-projection-calculator"
+    "href": "/calculators/wealth-growth-projection-calculator"
   },
   {
     "name": "Week Number Calculator",
     "description": "Week Number Calculator – Find ISO Week Number for Any Date",
-    "href": "/week-number-calculator"
+    "href": "/calculators/week-number-calculator"
   },
   {
     "name": "Weight Distribution Calculator",
     "description": "Weight Distribution Calculator – Calculate Load Distribution Across Axles & Points",
-    "href": "/weight-distribution-calculator"
+    "href": "/calculators/weight-distribution-calculator"
   },
   {
     "name": "Weighted Average Calculator",
     "description": "Weighted Average Calculator",
-    "href": "/weighted-average-calculator"
+    "href": "/calculators/weighted-average-calculator"
   }
 ];
 

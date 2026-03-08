@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Swimming Calorie Calculator",
     "description": "Swimming Calorie Calculator – How Many Calories Does Swimming Burn?",
-    "href": "/swimming-calorie-calculator"
+    "href": "/calculators/swimming-calorie-calculator"
   },
   {
     "name": "Swimming Lap Pace Calculator",
     "description": "Swimming Lap Pace Calculator – Calculate Your Swim Speed Per 100m",
-    "href": "/swimming-lap-pace-calculator"
+    "href": "/calculators/swimming-lap-pace-calculator"
   },
   {
     "name": "Swp Calculator",
     "description": "SWP Calculator – Systematic Withdrawal Plan",
-    "href": "/swp-calculator"
+    "href": "/calculators/swp-calculator"
   },
   {
     "name": "Tdee Calculator",
     "description": "TDEE Calculator – Calculate Your Total Daily Energy Expenditure",
-    "href": "/tdee-calculator"
+    "href": "/calculators/tdee-calculator"
   },
   {
     "name": "Tea Brewing Strength Calculator",
     "description": "Tea Brewing Strength Calculator – Get the Perfect Steep Time & Leaf Ratio",
-    "href": "/tea-brewing-strength-calculator"
+    "href": "/calculators/tea-brewing-strength-calculator"
   },
   {
     "name": "Tempo To Delay Time Converter",
     "description": "Tempo to Delay Time Converter – Convert BPM to Delay & Echo Times in ms",
-    "href": "/tempo-to-delay-time-converter"
+    "href": "/calculators/tempo-to-delay-time-converter"
   }
 ];
 

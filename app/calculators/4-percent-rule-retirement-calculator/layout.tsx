@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Fire Number Calculator",
     "description": "FIRE Number Calculator – Financial Independence",
-    "href": "/fire-number-calculator"
+    "href": "/calculators/fire-number-calculator"
   },
   {
     "name": "Retirement Age Calculator",
     "description": "Retirement Age Calculator – Free Retirement Date Calculator",
-    "href": "/retirement-age-calculator"
+    "href": "/calculators/retirement-age-calculator"
   },
   {
     "name": "Retirement Corpus Calculator",
     "description": "Retirement Corpus Calculator",
-    "href": "/retirement-corpus-calculator"
+    "href": "/calculators/retirement-corpus-calculator"
   },
   {
     "name": "Retirement Withdrawal Rate Calculator",
     "description": "Retirement Withdrawal Rate Calculator",
-    "href": "/retirement-withdrawal-rate-calculator"
+    "href": "/calculators/retirement-withdrawal-rate-calculator"
   },
   {
     "name": "Rule Of 72 Calculator",
     "description": "Rule of 72 Calculator",
-    "href": "/rule-of-72-calculator"
+    "href": "/calculators/rule-of-72-calculator"
   },
   {
     "name": "50 30 20 Budget Rule Calculator",
     "description": "50/30/20 Budget Rule Calculator",
-    "href": "/50-30-20-budget-rule-calculator"
+    "href": "/calculators/50-30-20-budget-rule-calculator"
   }
 ];
 

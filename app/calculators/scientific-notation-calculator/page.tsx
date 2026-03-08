@@ -266,34 +266,6 @@ export default function ScientificNotationCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/exponent-calculator" className="text-primary hover:underline">
-                Exponent Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Calculate powers and exponents</span>
-            </li>
-            <li>
-              <a href="/calculators/logarithm-calculator" className="text-primary hover:underline">
-                Logarithm Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Calculate logarithms with any base</span>
-            </li>
-            <li>
-              <a href="/calculators/decimal-to-fraction-calculator" className="text-primary hover:underline">
-                Decimal to Fraction Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Convert decimals to fractions</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

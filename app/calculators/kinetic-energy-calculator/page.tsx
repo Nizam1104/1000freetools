@@ -407,28 +407,6 @@ export default function KineticEnergyCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/potential-energy-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Potential Energy Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate gravitational PE</p>
-            </a>
-            <a href="/calculators/velocity-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Velocity Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate velocity from displacement</p>
-            </a>
-            <a href="/calculators/momentum-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Momentum Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate momentum</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

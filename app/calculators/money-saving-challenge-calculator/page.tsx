@@ -474,36 +474,6 @@ export default function MoneySavingChallengeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/savings-goal-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Savings Goal Calculator</span>
-                  <p className="text-muted-foreground">Calculate how much to save monthly to reach a target</p>
-                </a>
-                <a
-                  href="/calculators/compound-interest-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Compound Interest Calculator</span>
-                  <p className="text-muted-foreground">See how your savings grow with compound interest</p>
-                </a>
-                <a
-                  href="/calculators/budget-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Budget Calculator</span>
-                  <p className="text-muted-foreground">Plan your monthly income and expenses</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

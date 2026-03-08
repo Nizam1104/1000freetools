@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Arithmetic Sequence Calculator",
     "description": "Arithmetic Sequence Calculator",
-    "href": "/arithmetic-sequence-calculator"
+    "href": "/calculators/arithmetic-sequence-calculator"
   },
   {
     "name": "Geometric Sequence Calculator",
     "description": "Geometric Sequence Calculator",
-    "href": "/geometric-sequence-calculator"
+    "href": "/calculators/geometric-sequence-calculator"
   },
   {
     "name": "Pascals Triangle Calculator",
     "description": "Pascal's Triangle Calculator",
-    "href": "/pascals-triangle-calculator"
+    "href": "/calculators/pascals-triangle-calculator"
   },
   {
     "name": "Factorial Calculator",
     "description": "Factorial Calculator",
-    "href": "/factorial-calculator"
+    "href": "/calculators/factorial-calculator"
   },
   {
     "name": "Combination Calculator",
     "description": "Combination Calculator",
-    "href": "/combination-calculator"
+    "href": "/calculators/combination-calculator"
   },
   {
     "name": "Permutation Calculator",
     "description": "Permutation Calculator",
-    "href": "/permutation-calculator"
+    "href": "/calculators/permutation-calculator"
   }
 ];
 

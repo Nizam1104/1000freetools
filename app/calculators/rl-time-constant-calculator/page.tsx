@@ -251,36 +251,6 @@ export default function RlTimeConstantCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/rc-time-constant-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">RC Time Constant Calculator</span>
-                <p className="text-muted-foreground">Calculate time constant for resistor-capacitor circuits</p>
-              </a>
-              <a
-                href="/calculators/inductive-reactance-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Inductive Reactance Calculator</span>
-                <p className="text-muted-foreground">Calculate inductor impedance at different frequencies</p>
-              </a>
-              <a
-                href="/calculators/rlc-resonance-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">RLC Resonance Calculator</span>
-                <p className="text-muted-foreground">Find resonant frequency and Q factor of RLC circuits</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

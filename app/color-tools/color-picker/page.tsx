@@ -23,8 +23,7 @@ import { ColorPickerSEO } from "@/components/seo-content/color-tools/ColorPicker
 export const relatedTools = [
   { name: "Advanced Color Picker", href: "/color-tools/advanced-color-picker", description: "Full color wheel with sliders" },
   { name: "Web Safe Color Picker", href: "/color-tools/web-safe-color-picker", description: "216 cross-browser safe colors" },
-  { name: "Color History Tool", href: "/color-tools/color-history", description: "Track your color history" },
-  { name: "Favorite Colors Manager", href: "/color-tools/favorite-colors", description: "Save and organize colors" },
+  { name: "Color History Tool", href: "/color-tools/color-history-tool", description: "Track your color history" },
 ];
 
 interface ColorState {
@@ -605,8 +604,8 @@ export default function ColorPickerPage() {
                     <button
                       key={presetHex}
                       className={`aspect-square rounded-md border-2 transition-all hover:scale-110  ${hex.toLowerCase() === presetHex.toLowerCase()
-                          ? "border-primary ring-2 ring-primary ring-offset-2"
-                          : "border-border"
+                        ? "border-primary ring-2 ring-primary ring-offset-2"
+                        : "border-border"
                         }`}
                       style={{ backgroundColor: presetHex }}
                       onClick={() => {

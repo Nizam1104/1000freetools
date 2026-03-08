@@ -392,23 +392,6 @@ export default function TypographyScaleCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Design Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/golden-ratio-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Golden Ratio Calculator</h3>
-              <p className="text-sm text-muted-foreground">Apply the divine proportion to your designs and layouts.</p>
-            </a>
-            <a href="/calculators/line-height-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Line Height Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate optimal line spacing for any font size.</p>
-            </a>
-            <a href="/calculators/golden-ratio-layout-generator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Golden Ratio Layout Generator</h3>
-              <p className="text-sm text-muted-foreground">Create balanced page layouts using golden ratio principles.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

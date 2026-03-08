@@ -447,27 +447,6 @@ export default function TirePressureAdjustmentCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/fuel-cost-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Fuel Cost Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate trip fuel expenses</p>
-                </a>
-                <a href="/calculators/mileage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Mileage Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate fuel efficiency MPG</p>
-                </a>
-                <a href="/calculators/trip-cost-estimator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Trip Cost Estimator</p>
-                  <p className="text-xs text-muted-foreground">Estimate total travel costs</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

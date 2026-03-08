@@ -493,27 +493,6 @@ export default function ZodiacSignCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <h3 className="text-lg font-semibold">Related Tools</h3>
-          </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a href="/calculators/age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Age Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate exact age from birth date</p>
-              </a>
-              <a href="/calculators/anniversary-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Anniversary Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate relationship milestones</p>
-              </a>
-              <a href="/calculators/baby-age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Baby Age Calculator</p>
-                <p className="text-xs text-muted-foreground">Track infant age in weeks/months</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

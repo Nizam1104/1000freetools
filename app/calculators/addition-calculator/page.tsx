@@ -284,32 +284,6 @@ export default function AdditionCalculator() {
         </CardContent>
       </Card>
 
-      {/* Related Tools */}
-      <Card className="mt-6 mb-8">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-          <CardDescription>Explore more calculators</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/subtraction-calculator" className="text-primary hover:underline">
-                Subtraction Calculator
-              </a>
-            </li>
-            <li>
-              <a href="/calculators/multiplication-calculator" className="text-primary hover:underline">
-                Multiplication Calculator
-              </a>
-            </li>
-            <li>
-              <a href="/calculators/average-calculator" className="text-primary hover:underline">
-                Average Calculator
-              </a>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-    </div>
+      {/* Related Tools */}    </div>
   );
 }

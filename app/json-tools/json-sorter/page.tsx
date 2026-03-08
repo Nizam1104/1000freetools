@@ -546,36 +546,6 @@ export default function JsonSorterPage() {
             ))}
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-formatter-beautifier"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Format JSON with proper indentation
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-diff"
-                className="text-primary hover:underline"
-              >
-                JSON Diff
-              </a>{" "}
-              – Compare two JSON objects
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-minifier"
-                className="text-primary hover:underline"
-              >
-                JSON Minifier
-              </a>{" "}
-              – Compress JSON to single line
-            </li>
-          </ul>
         </div>
       </div>
     </div>

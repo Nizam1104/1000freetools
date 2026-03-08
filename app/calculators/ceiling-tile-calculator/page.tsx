@@ -449,23 +449,6 @@ export default function CeilingTileCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Home Improvement Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate usable floor area for flooring and real estate purposes.</p>
-              </a>
-              <a href="/calculators/concrete-mix-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Concrete Mix Ratio Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate cement, sand, and aggregate for home construction projects.</p>
-              </a>
-              <a href="/calculators/canvas-aspect-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Canvas Aspect Ratio Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate dimensions for wall art and interior design layouts.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

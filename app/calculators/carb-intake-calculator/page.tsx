@@ -344,23 +344,6 @@ export default function CarbIntakeCalculator() {
         </section>
 
         {/* Related Tools */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Health & Nutrition Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/calories-per-serving-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Calories Per Serving Calculator</h3>
-              <p className="text-muted-foreground text-sm">Calculate nutrition information for your homemade recipes and meal prep.</p>
-            </a>
-            <a href="/calculators/cat-calorie-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Cat Calorie Calculator</h3>
-              <p className="text-muted-foreground text-sm">Determine the right daily calorie intake for your feline companion.</p>
-            </a>
-            <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
-              <p className="text-muted-foreground text-sm">Measure your environmental impact from diet and lifestyle choices.</p>
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   );

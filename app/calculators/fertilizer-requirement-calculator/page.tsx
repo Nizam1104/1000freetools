@@ -439,23 +439,6 @@ export default function FertilizerRequirementCalculatorPage() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Agriculture Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/seed-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Seed Rate Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate the optimal seed quantity needed for your field area.</p>
-          </a>
-          <a href="/calculators/irrigation-water-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Irrigation Water Calculator</h3>
-            <p className="text-sm text-muted-foreground">Determine water requirements for crop irrigation based on evapotranspiration.</p>
-          </a>
-          <a href="/calculators/crop-yield-estimator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Crop Yield Estimator</h3>
-            <p className="text-sm text-muted-foreground">Estimate expected crop yield based on field conditions and inputs.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

@@ -277,23 +277,6 @@ export default function CaloriesPerServingCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Nutrition & Health Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/carb-intake-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carb Intake Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate your daily carbohydrate needs based on your diet goals and activity level.</p>
-              </a>
-              <a href="/calculators/cat-calorie-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Cat Calorie Calculator</h3>
-                <p className="text-muted-foreground text-sm">Find the right daily calorie intake for your feline friend based on weight and age.</p>
-              </a>
-              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
-                <p className="text-muted-foreground text-sm">Measure your environmental impact and discover ways to reduce your CO₂ emissions.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

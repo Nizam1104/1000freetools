@@ -301,22 +301,9 @@ export default function TextColorSuggestionToolPage() {
                     {suggestions.slice(0, 4).map((s) => (
                       <div
                         key={s.hex}
-                        className="p-3 rounded-lg border text-center"
-                        style={{ backgroundColor: bgColor }}
-                      >
-                        <p
-                          className="text-sm font-medium"
-                          style={{ color: s.hex }}
-                        >
-                          Sample Text
-                        </p>
-                        <p
-                          className="text-xs mt-1"
-                          style={{ color: s.hex, opacity: 0.7 }}
-                        >
-                          {s.contrastRatio.toFixed(1)}:1
-                        </p>
-                      </div>
+                        className="h-8 rounded"
+                        style={{ backgroundColor: s.hex }}
+                      />
                     ))}
                   </div>
                 </div>

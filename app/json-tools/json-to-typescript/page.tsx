@@ -430,36 +430,6 @@ export default function JsonToTypeScriptPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-to-csharp"
-                className="text-primary hover:underline"
-              >
-                JSON to C#
-              </a>{" "}
-              – Generate C# classes from JSON
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-to-go"
-                className="text-primary hover:underline"
-              >
-                JSON to Go
-              </a>{" "}
-              – Create Go structs with JSON tags
-            </li>
-            <li>
-              <a
-                href="/json-tools/typescript-to-json"
-                className="text-primary hover:underline"
-              >
-                TypeScript to JSON
-              </a>{" "}
-              – Convert TypeScript types to sample JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

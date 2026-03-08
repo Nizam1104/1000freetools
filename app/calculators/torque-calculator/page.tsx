@@ -204,23 +204,6 @@ export default function TorqueCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/torque-to-power-converter" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Torque to Power Converter</h3>
-            <p className="text-sm text-muted-foreground">Convert engine torque and RPM to horsepower or kilowatts instantly.</p>
-          </a>
-          <a href="/calculators/power-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Power Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate mechanical or electrical power from various input parameters.</p>
-          </a>
-          <a href="/calculators/force-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Force Calculator</h3>
-            <p className="text-sm text-muted-foreground">Compute force using Newton&apos;s second law (F = ma) for physics problems.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

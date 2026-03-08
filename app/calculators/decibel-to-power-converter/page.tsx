@@ -457,36 +457,6 @@ export default function DecibelToPowerConverterPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/db-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">dB Calculator</span>
-                  <p className="text-muted-foreground">Convert between decibels, power ratios, and voltage ratios</p>
-                </a>
-                <a
-                  href="/calculators/frequency-wavelength-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Frequency Wavelength Calculator</span>
-                  <p className="text-muted-foreground">Calculate wavelength from frequency for sound and RF waves</p>
-                </a>
-                <a
-                  href="/calculators/sound-pressure-level-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Sound Pressure Level Calculator</span>
-                  <p className="text-muted-foreground">Calculate SPL from pressure measurements in various units</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -273,25 +273,6 @@ export default function WaterIntakeActivityCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/bmi-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">BMI Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate body mass index.</p>
-              </a>
-              <a href="/calculators/calorie-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Calorie Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find your daily calorie needs.</p>
-              </a>
-              <a href="/calculators/sweat-rate-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Sweat Rate Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate fluid loss during exercise.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

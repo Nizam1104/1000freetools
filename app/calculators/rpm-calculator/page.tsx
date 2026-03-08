@@ -335,36 +335,6 @@ export default function RpmCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/gear-ratio-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Gear Ratio Calculator</span>
-                <p className="text-muted-foreground">Calculate gear ratios and output speeds</p>
-              </a>
-              <a
-                href="/calculators/belt-length-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Belt Length Calculator</span>
-                <p className="text-muted-foreground">Determine required belt length for pulley systems</p>
-              </a>
-              <a
-                href="/calculators/torque-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Torque Calculator</span>
-                <p className="text-muted-foreground">Calculate torque from power and RPM</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

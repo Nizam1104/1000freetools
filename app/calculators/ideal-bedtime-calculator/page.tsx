@@ -324,36 +324,6 @@ export default function IdealBedtimeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/baby-sleep-schedule-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Baby Sleep Schedule Calculator</span>
-                <p className="text-muted-foreground">Create age-appropriate sleep schedules for infants and toddlers</p>
-              </a>
-              <a
-                href="/calculators/humidity-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Humidity Calculator</span>
-                <p className="text-muted-foreground">Check bedroom humidity for optimal sleep conditions</p>
-              </a>
-              <a
-                href="/calculators/ideal-weight-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ideal Weight Calculator</span>
-                <p className="text-muted-foreground">Calculate healthy weight targets based on height</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

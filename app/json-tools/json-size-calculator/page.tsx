@@ -478,36 +478,6 @@ ${savings ? `Savings: ${savings.saved.toLocaleString()} bytes (${savings.percent
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-minifier"
-                className="text-primary hover:underline"
-              >
-                JSON Minifier
-              </a>{" "}
-              – Remove whitespace to reduce JSON size
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Beautify JSON with proper indentation
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-compressor"
-                className="text-primary hover:underline"
-              >
-                JSON Compressor
-              </a>{" "}
-              – Estimate gzip compression ratios
-            </li>
-          </ul>
         </div>
       </div>
     </div>

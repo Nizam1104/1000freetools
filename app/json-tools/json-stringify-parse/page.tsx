@@ -286,36 +286,6 @@ export default function JsonStringifyParsePage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Beautify JSON with proper indentation
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-minifier"
-                className="text-primary hover:underline"
-              >
-                JSON Minifier
-              </a>{" "}
-              – Compress JSON by removing whitespace
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-playground"
-                className="text-primary hover:underline"
-              >
-                JSON Playground
-              </a>{" "}
-              – Interactive JSON editor and validator
-            </li>
-          </ul>
         </div>
       </div>
     </div>

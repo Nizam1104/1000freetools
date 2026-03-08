@@ -161,23 +161,6 @@ export default function VolumeOfCylinderCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/volume-of-cone-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Volume of Cone Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate volume and surface area of cones for funnels and hoppers.</p>
-          </a>
-          <a href="/calculators/volume-of-sphere-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Volume of Sphere Calculator</h3>
-            <p className="text-sm text-muted-foreground">Find the volume and surface area of spheres for tanks and domes.</p>
-          </a>
-          <a href="/calculators/water-tank-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Water Tank Volume Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate water tank capacity in gallons or liters for storage planning.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

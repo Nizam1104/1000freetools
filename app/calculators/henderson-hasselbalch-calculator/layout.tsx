@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ph Calculator",
     "description": "pH Calculator – Calculate pH from H⁺ Concentration",
-    "href": "/ph-calculator"
+    "href": "/calculators/ph-calculator"
   },
   {
     "name": "Pka Pkb Calculator",
     "description": "pKa and pKb Calculator – Convert Ka, Kb, pKa, and pKb",
-    "href": "/pka-pkb-calculator"
+    "href": "/calculators/pka-pkb-calculator"
   },
   {
     "name": "Poh Calculator",
     "description": "pOH Calculator – Calculate pOH and Convert to pH",
-    "href": "/poh-calculator"
+    "href": "/calculators/poh-calculator"
   },
   {
     "name": "Electrochemical Cell Potential Calculator",
     "description": "Electrochemical Cell Potential Calculator – Calculate EMF of Galvanic Cells",
-    "href": "/electrochemical-cell-potential-calculator"
+    "href": "/calculators/electrochemical-cell-potential-calculator"
   },
   {
     "name": "Titration Calculator",
     "description": "Titration Calculator – Find Unknown Concentration from Titration Data",
-    "href": "/titration-calculator"
+    "href": "/calculators/titration-calculator"
   },
   {
     "name": "Concentration Calculator",
     "description": "Concentration Calculator – Convert Solution Concentration Units",
-    "href": "/concentration-calculator"
+    "href": "/calculators/concentration-calculator"
   }
 ];
 

@@ -311,18 +311,6 @@ export default function JsonToXmlConverterPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/xml-to-json" className="text-primary hover:underline">XML to JSON</a> – Convert XML back to JSON format
-          </li>
-          <li>
-            <a href="/json-tools/json-to-yaml" className="text-primary hover:underline">JSON to YAML</a> – Convert JSON to YAML configuration
-          </li>
-          <li>
-            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format and beautify JSON
-          </li>
-        </ul>
       </div>
     </div>
   );

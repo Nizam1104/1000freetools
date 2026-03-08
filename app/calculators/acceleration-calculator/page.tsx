@@ -374,23 +374,6 @@ export default function AccelerationCalculator() {
         </section>
 
         {/* Related Tools Section */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Related Tools</h2>
-          <div className="grid gap-3 md:grid-cols-1">
-            <a href="/calculators/force-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold">Force Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate force using Newton's second law (F = ma)</p>
-            </a>
-            <a href="/calculators/velocity-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold">Velocity Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate velocity, speed, and displacement</p>
-            </a>
-            <a href="/calculators/kinetic-energy-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold">Kinetic Energy Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the energy of motion (KE = ½mv²)</p>
-            </a>
-          </div>
-        </section>
 
       </div>
     </div>

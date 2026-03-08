@@ -418,23 +418,6 @@ export default function EntropyCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Related Security Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/password-strength-scorer" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Password Strength Scorer</h3>
-              <p className="text-sm text-muted-foreground">Evaluate password strength using multiple criteria including patterns and common passwords.</p>
-            </a>
-            <a href="/calculators/aes-key-size-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">AES Key Size Estimator</h3>
-              <p className="text-sm text-muted-foreground">Compare encryption key sizes and estimate brute-force resistance for AES encryption.</p>
-            </a>
-            <a href="/calculators/hash-brute-force-time-estimator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Hash Brute Force Time Estimator</h3>
-              <p className="text-sm text-muted-foreground">Calculate how long it would take to crack hashed passwords with different hardware.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

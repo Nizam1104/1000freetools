@@ -301,36 +301,6 @@ export default function OrbitalPeriodCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/escape-velocity-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Escape Velocity Calculator</span>
-                <p className="text-muted-foreground">Calculate velocity needed to escape a planet's gravity</p>
-              </a>
-              <a
-                href="/calculators/gravitational-force-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Gravitational Force Calculator</span>
-                <p className="text-muted-foreground">Calculate gravitational attraction between two masses</p>
-              </a>
-              <a
-                href="/calculators/kepler-law-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Kepler's Law Calculator</span>
-                <p className="text-muted-foreground">Explore relationships between orbital parameters</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -355,18 +355,6 @@
       "description": "Calculates monthly EMI payments for loans based on principal, interest rate, and tenure"
     },
     {
-      "name": "Energy Converter",
-      "href": "/math-tools/energy-converter",
-      "category": "unit-converters",
-      "description": "Converts between energy units including joules, calories, kilowatt-hours, BTU, and more"
-    },
-    {
-      "name": "Equation Balancer (simple)",
-      "href": "/math-tools/equation-balancer-simple",
-      "category": "algebra",
-      "description": "Balances simple chemical or algebraic equations by finding correct coefficients"
-    },
-    {
       "name": "Estimation Rounding Tool",
       "href": "/math-tools/estimation-rounding-tool",
       "category": "other-tools",
@@ -653,18 +641,6 @@
       "href": "/math-tools/modular-arithmetic-calculator",
       "category": "other-calculators",
       "description": "Performs modular arithmetic operations including addition, subtraction, multiplication, and exponentiation under a modulus"
-    },
-    {
-      "name": "Modulo Calculator",
-      "href": "/math-tools/modulo-calculator",
-      "category": "roots-powers",
-      "description": "Calculates the remainder when one number is divided by another using modulo operation"
-    },
-    {
-      "name": "Multiplication Table Generator",
-      "href": "/math-tools/multiplication-table-generator",
-      "category": "other-calculators",
-      "description": "Generates multiplication tables for any number up to a specified range"
     },
     {
       "name": "Normal Distribution Calculator",

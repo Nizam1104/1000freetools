@@ -279,36 +279,6 @@ export default function JsonToGraphqlPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-to-typescript"
-                className="text-primary hover:underline"
-              >
-                JSON to TypeScript
-              </a>{" "}
-              – Generate TypeScript interfaces from JSON
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-schema-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Schema Validator
-              </a>{" "}
-              – Validate JSON against a schema
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-to-python"
-                className="text-primary hover:underline"
-              >
-                JSON to Python
-              </a>{" "}
-              – Convert JSON to Python dataclasses
-            </li>
-          </ul>
         </div>
       </div>
     </div>

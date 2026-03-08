@@ -210,23 +210,6 @@ export default function WarmUpCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/1rm-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">1RM Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate your one-rep max for strength training programs.</p>
-          </a>
-          <a href="/calculators/workout-volume-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Workout Volume Calculator</h3>
-            <p className="text-sm text-muted-foreground">Track total training volume for progressive overload.</p>
-          </a>
-          <a href="/calculators/workout-max-reps-estimator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Max Reps Estimator</h3>
-            <p className="text-sm text-muted-foreground">Estimate how many reps you can do at a given weight.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

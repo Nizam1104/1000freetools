@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Distance Formula Calculator",
     "description": "Distance Formula Calculator – Find Distance Between Two Points",
-    "href": "/distance-formula-calculator"
+    "href": "/calculators/distance-formula-calculator"
   },
   {
     "name": "Pythagorean Theorem Calculator",
     "description": "Pythagorean Theorem Calculator",
-    "href": "/pythagorean-theorem-calculator"
+    "href": "/calculators/pythagorean-theorem-calculator"
   },
   {
     "name": "Ramp Slope Calculator",
     "description": "Ramp Slope Calculator – Calculate Ramp Angle, Gradient & Length",
-    "href": "/ramp-slope-calculator"
+    "href": "/calculators/ramp-slope-calculator"
   },
   {
     "name": "Staircase Rise Run Calculator",
     "description": "Staircase Rise & Run Calculator – Design Safe & Comfortable Stairs",
-    "href": "/staircase-rise-run-calculator"
+    "href": "/calculators/staircase-rise-run-calculator"
   },
   {
     "name": "Linear Equation Solver",
     "description": "Linear Equation Solver – Solve ax + b = 0",
-    "href": "/linear-equation-solver"
+    "href": "/calculators/linear-equation-solver"
   },
   {
     "name": "Circle Area Calculator",
     "description": "Circle Area Calculator",
-    "href": "/circle-area-calculator"
+    "href": "/calculators/circle-area-calculator"
   }
 ];
 

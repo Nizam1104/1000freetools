@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Boat Speed Calculator",
     "description": "Boat Speed Calculator – Calculate Maximum Hull Speed for Any Boat",
-    "href": "/boat-speed-calculator"
+    "href": "/calculators/boat-speed-calculator"
   },
   {
     "name": "Gear Ratio Calculator",
     "description": "Gear Ratio Calculator – Calculate Gear Train Ratio",
-    "href": "/gear-ratio-calculator"
+    "href": "/calculators/gear-ratio-calculator"
   },
   {
     "name": "Rpm Calculator",
     "description": "RPM Calculator – Calculate Rotational Speed and Gear Ratios",
-    "href": "/rpm-calculator"
+    "href": "/calculators/rpm-calculator"
   },
   {
     "name": "Torque Calculator",
     "description": "Torque Calculator",
-    "href": "/torque-calculator"
+    "href": "/calculators/torque-calculator"
   },
   {
     "name": "Velocity Calculator",
     "description": "Velocity Calculator – Calculate Speed with Direction",
-    "href": "/velocity-calculator"
+    "href": "/calculators/velocity-calculator"
   },
   {
     "name": "Acceleration Calculator",
     "description": "Acceleration Calculator",
-    "href": "/acceleration-calculator"
+    "href": "/calculators/acceleration-calculator"
   }
 ];
 

@@ -398,36 +398,6 @@ export default function JsonStepByStepParserPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Check JSON for syntax errors
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-parser"
-                className="text-primary hover:underline"
-              >
-                JSON Parser
-              </a>{" "}
-              – Parse and analyze JSON structure
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-path"
-                className="text-primary hover:underline"
-              >
-                JSON Path Finder
-              </a>{" "}
-              – Extract values using path expressions
-            </li>
-          </ul>
         </div>
       </div>
     </div>

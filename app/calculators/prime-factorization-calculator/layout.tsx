@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Prime Checker",
     "description": "Prime Number Checker – Is This Number Prime?",
-    "href": "/prime-checker"
+    "href": "/calculators/prime-checker"
   },
   {
     "name": "Gcd Calculator",
     "description": "GCD / HCF Calculator",
-    "href": "/gcd-calculator"
+    "href": "/calculators/gcd-calculator"
   },
   {
     "name": "Lcm Calculator",
     "description": "LCM Calculator – Find Least Common Multiple Online",
-    "href": "/lcm-calculator"
+    "href": "/calculators/lcm-calculator"
   },
   {
     "name": "Factorial Calculator",
     "description": "Factorial Calculator",
-    "href": "/factorial-calculator"
+    "href": "/calculators/factorial-calculator"
   },
   {
     "name": "Combination Calculator",
     "description": "Combination Calculator",
-    "href": "/combination-calculator"
+    "href": "/calculators/combination-calculator"
   },
   {
     "name": "Pascals Triangle Calculator",
     "description": "Pascal's Triangle Calculator",
-    "href": "/pascals-triangle-calculator"
+    "href": "/calculators/pascals-triangle-calculator"
   }
 ];
 

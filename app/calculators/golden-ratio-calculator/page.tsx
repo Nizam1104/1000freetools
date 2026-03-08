@@ -248,28 +248,6 @@ export default function GoldenRatioCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/fibonacci-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fibonacci Generator</p>
-              <p className="text-xs text-muted-foreground">Generate Fibonacci sequence</p>
-            </a>
-            <a href="/calculators/aspect-ratio-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Aspect Ratio Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate screen and image proportions</p>
-            </a>
-            <a href="/calculators/geometric-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Geometric Sequence Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate geometric progressions</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

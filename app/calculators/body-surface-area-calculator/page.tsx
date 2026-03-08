@@ -367,36 +367,6 @@ export default function BodySurfaceAreaCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/body-fat-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Body Fat Calculator</span>
-                <p className="text-muted-foreground">Estimate body fat percentage using the US Navy method</p>
-              </a>
-              <a
-                href="/calculators/bmi-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMI Calculator</span>
-                <p className="text-muted-foreground">Calculate body mass index and assess weight status</p>
-              </a>
-              <a
-                href="/calculators/ideal-weight-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ideal Weight Calculator</span>
-                <p className="text-muted-foreground">Determine healthy weight range based on height and frame size</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

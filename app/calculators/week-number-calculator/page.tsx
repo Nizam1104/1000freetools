@@ -168,23 +168,6 @@ export default function WeekNumberCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/date-difference-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Date Difference Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate days between two dates for planning and scheduling.</p>
-          </a>
-          <a href="/calculators/business-days-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Business Days Calculator</h3>
-            <p className="text-sm text-muted-foreground">Count working days excluding weekends and holidays.</p>
-          </a>
-          <a href="/calculators/countdown-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Countdown Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate time remaining until a future date or event.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

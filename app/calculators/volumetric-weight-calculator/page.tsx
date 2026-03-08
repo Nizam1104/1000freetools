@@ -426,23 +426,6 @@ export default function VolumetricWeightCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Shipping Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/dimensional-weight-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Dimensional Weight Calculator</h3>
-              <p className="text-sm text-muted-foreground">Alternative dimensional weight calculation for shipping.</p>
-            </a>
-            <a href="/calculators/container-load-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Container Load Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate how many boxes fit in a shipping container.</p>
-            </a>
-            <a href="/calculators/cargo-volume-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Cargo Volume Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate cargo space and volume for shipping needs.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

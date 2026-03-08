@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Customer Acquisition Cost Calculator",
     "description": "Customer Acquisition Cost (CAC) Calculator – Find Out How Much Each New Customer Costs",
-    "href": "/customer-acquisition-cost-calculator"
+    "href": "/calculators/customer-acquisition-cost-calculator"
   },
   {
     "name": "Funnel Drop Off Calculator",
     "description": "Funnel Drop-off Calculator – Identify Where You&apos;re Losing Customers in Your Sales Funnel",
-    "href": "/funnel-drop-off-calculator"
+    "href": "/calculators/funnel-drop-off-calculator"
   },
   {
     "name": "Cpc Cpm Ctr Calculator",
     "description": "CPC, CPM & CTR Calculator – Measure Your Digital Ad Campaign Performance",
-    "href": "/cpc-cpm-ctr-calculator"
+    "href": "/calculators/cpc-cpm-ctr-calculator"
   },
   {
     "name": "Nps Score Calculator",
     "description": "NPS Score Calculator – Calculate Your Net Promoter Score from Survey Results",
-    "href": "/nps-score-calculator"
+    "href": "/calculators/nps-score-calculator"
   },
   {
     "name": "Lead Conversion Calculator",
     "description": "Lead Conversion Calculator – Calculate Your Sales Conversion Rate & Cost Per Lead",
-    "href": "/lead-conversion-calculator"
+    "href": "/calculators/lead-conversion-calculator"
   },
   {
     "name": "Roi Calculator Ad",
     "description": "Ad ROI Calculator – Calculate Return on Investment for Your Ad Campaigns",
-    "href": "/roi-calculator-ad"
+    "href": "/calculators/roi-calculator-ad"
   }
 ];
 

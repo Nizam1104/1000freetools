@@ -232,36 +232,6 @@ export default function PumpHorsepowerCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/flow-rate-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Flow Rate Calculator</span>
-                <p className="text-muted-foreground">Calculate fluid flow rate through pipes and channels</p>
-              </a>
-              <a
-                href="/calculators/pipe-pressure-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Pipe Pressure Calculator</span>
-                <p className="text-muted-foreground">Calculate pressure drop and head loss in piping systems</p>
-              </a>
-              <a
-                href="/calculators/electric-power-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Electric Power Calculator</span>
-                <p className="text-muted-foreground">Calculate electrical power, current, and energy consumption</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

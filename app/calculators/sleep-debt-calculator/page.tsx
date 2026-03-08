@@ -323,34 +323,6 @@ export default function SleepDebtCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li>
-              <a href="/calculators/bmi-calculator" className="text-primary hover:underline">
-                BMI Calculator
-              </a>{" "}
-              — Calculate your body mass index and understand health risks
-            </li>
-            <li>
-              <a href="/calculators/daily-calorie-needs-calculator" className="text-primary hover:underline">
-                Daily Calorie Needs Calculator
-              </a>{" "}
-              — Find out how many calories you need based on activity level
-            </li>
-            <li>
-              <a href="/calculators/bmr-calculator" className="text-primary hover:underline">
-                BMR Calculator
-              </a>{" "}
-              — Calculate your basal metabolic rate for personalized health planning
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

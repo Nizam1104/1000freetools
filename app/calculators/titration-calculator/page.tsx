@@ -320,27 +320,6 @@ export default function TitrationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <h3 className="text-lg font-semibold">Related Tools</h3>
-          </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a href="/calculators/molarity-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Molarity Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate solution molarity</p>
-              </a>
-              <a href="/calculators/dilution-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Dilution Calculator</p>
-                <p className="text-xs text-muted-foreground">Solution dilution calculations</p>
-              </a>
-              <a href="/calculators/ph-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">pH Calculator</p>
-                <p className="text-xs text-muted-foreground">Calculate pH and pOH values</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

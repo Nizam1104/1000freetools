@@ -258,36 +258,6 @@ export default function ProteinDistributionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/protein-intake-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Protein Intake Calculator</span>
-                <p className="text-muted-foreground">Calculate your daily protein needs based on weight and activity</p>
-              </a>
-              <a
-                href="/calculators/macro-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Macro Calculator</span>
-                <p className="text-muted-foreground">Calculate complete macronutrient breakdown for your goals</p>
-              </a>
-              <a
-                href="/calculators/calorie-deficit-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Calorie Deficit Calculator</span>
-                <p className="text-muted-foreground">Determine calorie needs for weight loss while preserving muscle</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

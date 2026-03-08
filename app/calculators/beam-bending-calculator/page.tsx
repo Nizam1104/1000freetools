@@ -343,35 +343,6 @@ export default function BeamBendingCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <a
-            href="/calculators/moment-of-inertia-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Moment of Inertia Calculator</span>
-            <p className="text-muted-foreground">Calculate moment of inertia for various cross-section shapes</p>
-          </a>
-          <a
-            href="/calculators/stress-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Stress Calculator</span>
-            <p className="text-muted-foreground">Calculate bending stress, shear stress, and von Mises stress</p>
-          </a>
-          <a
-            href="/calculators/deflection-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Deflection Calculator</span>
-            <p className="text-muted-foreground">Calculate beam deflection for various load cases</p>
-          </a>
-        </CardContent>
-      </Card>
     </div>
   );
 }

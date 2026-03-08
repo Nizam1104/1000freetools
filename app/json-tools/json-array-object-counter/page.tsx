@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy } from "lucide-react";
@@ -306,37 +314,6 @@ export default function JsonArrayObjectCounterPage() {
               </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-depth-analyzer"
-                className="text-primary hover:underline"
-              >
-                JSON Depth Analyzer
-              </a>{" "}
-              – Check nesting depth
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-key-frequency"
-                className="text-primary hover:underline"
-              >
-                JSON Key Frequency Analyzer
-              </a>{" "}
-              – Count key occurrences
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-explainer"
-                className="text-primary hover:underline"
-              >
-                JSON Explainer
-              </a>{" "}
-              – Understand JSON structure
-            </li>
-          </ul>
         </div>
       </div>
     </div>

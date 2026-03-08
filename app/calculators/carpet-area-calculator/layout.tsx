@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Flooring Calculator",
     "description": "Flooring Calculator – How Much Flooring Do You Need?",
-    "href": "/flooring-calculator"
+    "href": "/calculators/flooring-calculator"
   },
   {
     "name": "Tile Calculator",
     "description": "Tile Calculator – How Many Tiles Do You Need?",
-    "href": "/tile-calculator"
+    "href": "/calculators/tile-calculator"
   },
   {
     "name": "Ceiling Tile Calculator",
     "description": "Ceiling Tile Calculator – How Many Ceiling Tiles Do You Need?",
-    "href": "/ceiling-tile-calculator"
+    "href": "/calculators/ceiling-tile-calculator"
   },
   {
     "name": "Paint Coverage Calculator",
     "description": "Paint Calculator – How Much Paint Do You Need to Cover a Room?",
-    "href": "/paint-coverage-calculator"
+    "href": "/calculators/paint-coverage-calculator"
   },
   {
     "name": "Plastering Calculator",
     "description": "Plastering Calculator – How Much Plaster Do You Need?",
-    "href": "/plastering-calculator"
+    "href": "/calculators/plastering-calculator"
   },
   {
     "name": "Wallpaper Calculator",
     "description": "Wallpaper Calculator – Calculate How Many Rolls You Need for Your Room",
-    "href": "/wallpaper-calculator"
+    "href": "/calculators/wallpaper-calculator"
   }
 ];
 

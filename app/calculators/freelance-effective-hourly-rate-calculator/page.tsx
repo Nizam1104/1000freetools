@@ -390,36 +390,6 @@ export default function FreelanceEffectiveHourlyRateCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/freelance-rate-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Freelance Rate Calculator</span>
-                  <p className="text-muted-foreground">Determine what hourly rate you should charge based on income goals</p>
-                </a>
-                <a
-                  href="/calculators/self-employment-tax-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Self-Employment Tax Calculator</span>
-                  <p className="text-muted-foreground">Estimate your self-employment tax obligation for the year</p>
-                </a>
-                <a
-                  href="/calculators/hourly-to-salary-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Hourly to Salary Calculator</span>
-                  <p className="text-muted-foreground">Convert hourly rates to equivalent annual salary for comparison</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

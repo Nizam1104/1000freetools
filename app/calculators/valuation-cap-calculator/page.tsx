@@ -277,23 +277,6 @@ export default function ValuationCapCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Finance Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/startup-equity-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Startup Equity Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate ownership dilution through funding rounds.</p>
-            </a>
-            <a href="/calculators/stock-split-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Stock Split Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate share count and price after stock splits.</p>
-            </a>
-            <a href="/calculators/rsu-vesting-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">RSU Vesting Calculator</h3>
-              <p className="text-sm text-muted-foreground">Track your equity vesting schedule and value.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

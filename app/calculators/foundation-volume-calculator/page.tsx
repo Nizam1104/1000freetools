@@ -305,36 +305,6 @@ export default function FoundationVolumeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/concrete-block-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Concrete Block Calculator</span>
-                <p className="text-muted-foreground">Calculate the number of concrete blocks needed for your wall project</p>
-              </a>
-              <a
-                href="/calculators/cement-sand-aggregate-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Cement Sand Aggregate Calculator</span>
-                <p className="text-muted-foreground">Mix ratios for concrete and mortar with material quantities</p>
-              </a>
-              <a
-                href="/calculators/steel-weight-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Steel Weight Calculator</span>
-                <p className="text-muted-foreground">Calculate rebar and steel plate weights for structural projects</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

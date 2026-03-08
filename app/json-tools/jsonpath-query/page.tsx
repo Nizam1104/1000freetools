@@ -383,36 +383,6 @@ export default function JsonpathQueryPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/jmespath-query"
-                className="text-primary hover:underline"
-              >
-                JMESPath Query
-              </a>{" "}
-              – Advanced JSON querying
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-filter"
-                className="text-primary hover:underline"
-              >
-                JSON Filter
-              </a>{" "}
-              – Filter arrays by conditions
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-extract-subjson"
-                className="text-primary hover:underline"
-              >
-                JSON Extract Sub-JSON
-              </a>{" "}
-              – Extract by path
-            </li>
-          </ul>
         </div>
       </div>
     </div>

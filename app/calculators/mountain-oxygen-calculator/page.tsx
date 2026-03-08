@@ -420,36 +420,6 @@ export default function MountainOxygenCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/air-pressure-altitude-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Air Pressure Altitude Calculator</span>
-                  <p className="text-muted-foreground">Calculate atmospheric pressure at any elevation</p>
-                </a>
-                <a
-                  href="/calculators/boiling-point-altitude-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Boiling Point Altitude Calculator</span>
-                  <p className="text-muted-foreground">Find water boiling point at different elevations</p>
-                </a>
-                <a
-                  href="/calculators/hiking-time-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Hiking Time Calculator</span>
-                  <p className="text-muted-foreground">Estimate hiking duration including elevation gain</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

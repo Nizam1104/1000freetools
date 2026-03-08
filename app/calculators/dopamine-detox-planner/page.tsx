@@ -510,36 +510,6 @@ export default function DopamineDetoxPlannerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/meditation-timer-scheduler"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Meditation Timer and Scheduler</span>
-                  <p className="text-muted-foreground">Build a consistent meditation practice with guided timers</p>
-                </a>
-                <a
-                  href="/calculators/screen-time-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Screen Time Calculator</span>
-                  <p className="text-muted-foreground">Track and understand your daily screen usage</p>
-                </a>
-                <a
-                  href="/calculators/sleep-cycle-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Sleep Cycle Calculator</span>
-                  <p className="text-muted-foreground">Plan optimal sleep times for better rest</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

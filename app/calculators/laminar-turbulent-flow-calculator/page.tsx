@@ -236,28 +236,6 @@ export default function LaminarTurbulentFlowCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/reynolds-number-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Reynolds Number Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate Reynolds number directly</p>
-            </a>
-            <a href="/calculators/head-loss-darcy-weisbach-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Head Loss Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate pipe friction losses</p>
-            </a>
-            <a href="/calculators/pipe-flow-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Pipe Flow Calculator</p>
-              <p className="text-xs text-muted-foreground">Analyze flow rate and velocity</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

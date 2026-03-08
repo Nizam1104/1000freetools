@@ -386,36 +386,6 @@ export default function BondPriceCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/bond-duration-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Duration Calculator</span>
-                  <p className="text-muted-foreground">Measure interest rate sensitivity with Macaulay and Modified Duration</p>
-                </a>
-                <a
-                  href="/calculators/bond-yield-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Bond Yield Calculator</span>
-                  <p className="text-muted-foreground">Calculate current yield and yield to maturity from market price</p>
-                </a>
-                <a
-                  href="/calculators/current-yield-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Current Yield Calculator</span>
-                  <p className="text-muted-foreground">Find the annual return on a bond based on its current market price</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

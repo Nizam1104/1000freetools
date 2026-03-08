@@ -294,18 +294,6 @@ export default function JsonToTextConverterPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Convert JSON to spreadsheet format
-          </li>
-          <li>
-            <a href="/json-tools/json-to-tsv" className="text-primary hover:underline">JSON to TSV</a> – Tab-separated values output
-          </li>
-          <li>
-            <a href="/json-tools/json-explainer" className="text-primary hover:underline">JSON Explainer</a> – Understand JSON in plain English
-          </li>
-        </ul>
       </div>
     </div>
   );

@@ -484,27 +484,6 @@ export default function TennisWinProbabilityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/basketball-shooting-percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Basketball Shooting Percentage Calculator</p>
-                  <p className="text-xs text-muted-foreground">Sports statistics calculator</p>
-                </a>
-                <a href="/calculators/cricket-strike-rate-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Cricket Strike Rate Calculator</p>
-                  <p className="text-xs text-muted-foreground">Cricket statistics calculator</p>
-                </a>
-                <a href="/calculators/win-rate-estimator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Win Rate Estimator</p>
-                  <p className="text-xs text-muted-foreground">General win probability tool</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

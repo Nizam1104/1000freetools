@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Fuel Cost Calculator",
     "description": "Fuel Cost Calculator – Estimate Your Trip Fuel Expenses Instantly",
-    "href": "/fuel-cost-calculator"
+    "href": "/calculators/fuel-cost-calculator"
   },
   {
     "name": "Mileage Calculator",
     "description": "Mileage Calculator – Calculate Your Car's Fuel Efficiency (MPG & km/L)",
-    "href": "/mileage-calculator"
+    "href": "/calculators/mileage-calculator"
   },
   {
     "name": "Car Loan Calculator",
     "description": "Car Loan Calculator – Calculate Auto Loan Payments",
-    "href": "/car-loan-calculator"
+    "href": "/calculators/car-loan-calculator"
   },
   {
     "name": "Trip Cost Estimator",
     "description": "Trip Cost Estimator – Plan Your Road Trip Budget with Ease",
-    "href": "/trip-cost-estimator"
+    "href": "/calculators/trip-cost-estimator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   }
 ];
 

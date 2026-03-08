@@ -355,23 +355,6 @@ export default function ChargingCostEvCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related EV & Finance Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/carbon-footprint-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carbon Footprint Calculator</h3>
-                <p className="text-muted-foreground text-sm">Compare the environmental impact of EV vs gasoline vehicles.</p>
-              </a>
-              <a href="/calculators/car-loan-affordability-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate how much electric vehicle you can afford with financing.</p>
-              </a>
-              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
-                <p className="text-muted-foreground text-sm">Evaluate EV investment decisions and total cost of ownership.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

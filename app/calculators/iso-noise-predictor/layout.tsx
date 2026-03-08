@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Aperture Depth Of Field Calculator",
     "description": "Depth of Field Calculator – Calculate DOF from Aperture, Focal Length & Distance",
-    "href": "/aperture-depth-of-field-calculator"
+    "href": "/calculators/aperture-depth-of-field-calculator"
   },
   {
     "name": "Camera Exposure Calculator",
     "description": "Camera Exposure Calculator – Find the Perfect Aperture, Shutter Speed & ISO",
-    "href": "/camera-exposure-calculator"
+    "href": "/calculators/camera-exposure-calculator"
   },
   {
     "name": "Shutter Speed Calculator",
     "description": "Shutter Speed Calculator – Find the Right Shutter Speed for Sharp or Blurred Shots",
-    "href": "/shutter-speed-calculator"
+    "href": "/calculators/shutter-speed-calculator"
   },
   {
     "name": "Focal Length Calculator",
     "description": "Focal Length Calculator – Lensmaker's Equation",
-    "href": "/focal-length-calculator"
+    "href": "/calculators/focal-length-calculator"
   },
   {
     "name": "Lens Equation Calculator",
     "description": "Lens Equation Calculator – Thin Lens Formula Calculator",
-    "href": "/lens-equation-calculator"
+    "href": "/calculators/lens-equation-calculator"
   },
   {
     "name": "Perspective Angle Calculator",
     "description": "Perspective Angle Calculator – Calculate Vanishing Points for Technical Drawing",
-    "href": "/perspective-angle-calculator"
+    "href": "/calculators/perspective-angle-calculator"
   }
 ];
 

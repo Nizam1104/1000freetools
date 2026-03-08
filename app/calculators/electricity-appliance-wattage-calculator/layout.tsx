@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   },
   {
     "name": "Ohms Law Calculator",
     "description": "Ohm's Law Calculator",
-    "href": "/ohms-law-calculator"
+    "href": "/calculators/ohms-law-calculator"
   },
   {
     "name": "Room Heater Wattage Calculator",
     "description": "Room Heater Wattage Calculator – Find the Right Heater Size for Your Room",
-    "href": "/room-heater-wattage-calculator"
+    "href": "/calculators/room-heater-wattage-calculator"
   },
   {
     "name": "Electric Power Calculator",
     "description": "Electric Power Calculator",
-    "href": "/electric-power-calculator"
+    "href": "/calculators/electric-power-calculator"
   },
   {
     "name": "Resistance Calculator",
     "description": "Resistance Calculator – Calculate Resistance with Ohm's Law",
-    "href": "/resistance-calculator"
+    "href": "/calculators/resistance-calculator"
   },
   {
     "name": "Inverter Capacity Calculator",
     "description": "Inverter Capacity Calculator – Size Your Inverter",
-    "href": "/inverter-capacity-calculator"
+    "href": "/calculators/inverter-capacity-calculator"
   }
 ];
 

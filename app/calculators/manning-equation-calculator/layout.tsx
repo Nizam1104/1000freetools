@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Head Loss Darcy Weisbach Calculator",
     "description": "Head Loss (Darcy-Weisbach) Calculator – Pipe Friction Loss",
-    "href": "/head-loss-darcy-weisbach-calculator"
+    "href": "/calculators/head-loss-darcy-weisbach-calculator"
   },
   {
     "name": "Laminar Turbulent Flow Calculator",
     "description": "Laminar/Turbulent Flow Calculator – Flow Regime Calculator",
-    "href": "/laminar-turbulent-flow-calculator"
+    "href": "/calculators/laminar-turbulent-flow-calculator"
   },
   {
     "name": "Pipe Flow Reynolds Number Calculator",
     "description": "Reynolds Number Calculator – Pipe Flow Reynolds Number",
-    "href": "/pipe-flow-reynolds-number-calculator"
+    "href": "/calculators/pipe-flow-reynolds-number-calculator"
   },
   {
     "name": "Pipe Friction Loss Calculator",
     "description": "Pipe Friction Loss Calculator – Head Loss in Pipe Flow",
-    "href": "/pipe-friction-loss-calculator"
+    "href": "/calculators/pipe-friction-loss-calculator"
   },
   {
     "name": "Water Flow Rate Calculator",
     "description": "Water Flow Rate Calculator – Calculate Flow Rate in Pipes",
-    "href": "/water-flow-rate-calculator"
+    "href": "/calculators/water-flow-rate-calculator"
   },
   {
     "name": "Pipe Water Tank Pressure Calculator",
     "description": "Pipe Water Pressure Calculator – Calculate Static Pressure from Water Tank Height",
-    "href": "/pipe-water-tank-pressure-calculator"
+    "href": "/calculators/pipe-water-tank-pressure-calculator"
   }
 ];
 

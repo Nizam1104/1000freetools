@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Electric Power Calculator",
     "description": "Electric Power Calculator",
-    "href": "/electric-power-calculator"
+    "href": "/calculators/electric-power-calculator"
   },
   {
     "name": "Ohms Law Calculator",
     "description": "Ohm's Law Calculator",
-    "href": "/ohms-law-calculator"
+    "href": "/calculators/ohms-law-calculator"
   },
   {
     "name": "Resistance Calculator",
     "description": "Resistance Calculator – Calculate Resistance with Ohm's Law",
-    "href": "/resistance-calculator"
+    "href": "/calculators/resistance-calculator"
   },
   {
     "name": "Current Calculator",
     "description": "Current Calculator – Calculate Electrical Current (Amps)",
-    "href": "/current-calculator"
+    "href": "/calculators/current-calculator"
   },
   {
     "name": "Voltage Calculator",
     "description": "Voltage Calculator",
-    "href": "/voltage-calculator"
+    "href": "/calculators/voltage-calculator"
   },
   {
     "name": "Room Heater Wattage Calculator",
     "description": "Room Heater Wattage Calculator – Find the Right Heater Size for Your Room",
-    "href": "/room-heater-wattage-calculator"
+    "href": "/calculators/room-heater-wattage-calculator"
   }
 ];
 

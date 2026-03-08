@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Dividend Payout Calculator",
     "description": "Dividend Payout Calculator",
-    "href": "/dividend-payout-calculator"
+    "href": "/calculators/dividend-payout-calculator"
   },
   {
     "name": "Dollar Cost Averaging Calculator",
     "description": "Dollar-Cost Averaging (DCA) Calculator",
-    "href": "/dollar-cost-averaging-calculator"
+    "href": "/calculators/dollar-cost-averaging-calculator"
   },
   {
     "name": "Stock Cagr Calculator",
     "description": "Stock CAGR Calculator",
-    "href": "/stock-cagr-calculator"
+    "href": "/calculators/stock-cagr-calculator"
   },
   {
     "name": "Stock Split Calculator",
     "description": "Stock Split Calculator",
-    "href": "/stock-split-calculator"
+    "href": "/calculators/stock-split-calculator"
   },
   {
     "name": "Reverse Stock Split Calculator",
     "description": "Reverse Stock Split Calculator",
-    "href": "/reverse-stock-split-calculator"
+    "href": "/calculators/reverse-stock-split-calculator"
   },
   {
     "name": "Investment Return Rate Calculator",
     "description": "Investment Return Rate Calculator",
-    "href": "/investment-return-rate-calculator"
+    "href": "/calculators/investment-return-rate-calculator"
   }
 ];
 

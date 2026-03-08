@@ -420,25 +420,6 @@ export default function ScreenTimeAllowanceCalculatorPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Parenting Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/baby-sleep-schedule-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Baby Sleep Schedule Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Plan healthy sleep routines for infants and toddlers.</p>
-                </a>
-                <a href="/calculators/ideal-bedtime-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Ideal Bedtime Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Find the perfect bedtime based on wake time and sleep cycles.</p>
-                </a>
-                <a href="/calculators/child-height-predictor" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Child Height Predictor</h4>
-                  <p className="text-sm text-muted-foreground">Estimate your child&apos;s adult height based on parent heights.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

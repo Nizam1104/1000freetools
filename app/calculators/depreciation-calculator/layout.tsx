@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Vehicle Depreciation Calculator",
     "description": "Vehicle Depreciation Calculator – Find Out How Much Your Car Has Lost in Value",
-    "href": "/vehicle-depreciation-calculator"
+    "href": "/calculators/vehicle-depreciation-calculator"
   },
   {
     "name": "Payback Period Calculator",
     "description": "Payback Period Calculator",
-    "href": "/payback-period-calculator"
+    "href": "/calculators/payback-period-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   },
   {
     "name": "4 Percent Rule Retirement Calculator",
     "description": "4% Rule Retirement Calculator",
-    "href": "/4-percent-rule-retirement-calculator"
+    "href": "/calculators/4-percent-rule-retirement-calculator"
   },
   {
     "name": "50 30 20 Budget Rule Calculator",
     "description": "50/30/20 Budget Rule Calculator",
-    "href": "/50-30-20-budget-rule-calculator"
+    "href": "/calculators/50-30-20-budget-rule-calculator"
   }
 ];
 

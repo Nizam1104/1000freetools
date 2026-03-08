@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Acceleration Calculator",
     "description": "Acceleration Calculator",
-    "href": "/acceleration-calculator"
+    "href": "/calculators/acceleration-calculator"
   },
   {
     "name": "Boat Speed Calculator",
     "description": "Boat Speed Calculator – Calculate Maximum Hull Speed for Any Boat",
-    "href": "/boat-speed-calculator"
+    "href": "/calculators/boat-speed-calculator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   },
   {
     "name": "Velocity Calculator",
     "description": "Velocity Calculator – Calculate Speed with Direction",
-    "href": "/velocity-calculator"
+    "href": "/calculators/velocity-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Escape Velocity Calculator",
     "description": "Escape Velocity Calculator – Calculate Escape Velocity",
-    "href": "/escape-velocity-calculator"
+    "href": "/calculators/escape-velocity-calculator"
   }
 ];
 

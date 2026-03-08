@@ -351,35 +351,6 @@ export default function BeerABVCalculatorPage() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2 text-sm">
-            <a
-              href="/calculators/hydrometer-temperature-correction-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Hydrometer Temperature Correction Calculator</span>
-              <p className="text-muted-foreground">Correct specific gravity readings for sample temperature</p>
-            </a>
-            <a
-              href="/calculators/priming-sugar-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Priming Sugar Calculator</span>
-              <p className="text-muted-foreground">Calculate sugar needed for bottle carbonation</p>
-            </a>
-            <a
-              href="/calculators/beer-color-srm-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Beer Color (SRM) Calculator</span>
-              <p className="text-muted-foreground">Estimate beer color from grain bill</p>
-            </a>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

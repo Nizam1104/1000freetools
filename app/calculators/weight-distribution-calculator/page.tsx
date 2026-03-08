@@ -401,23 +401,6 @@ export default function WeightDistributionCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/beam-bending-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Beam Bending Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate beam deflection and stress under load.</p>
-            </a>
-            <a href="/calculators/force-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Force Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate force using Newton&apos;s laws for physics problems.</p>
-            </a>
-            <a href="/calculators/torque-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Torque Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate torque and rotational force for mechanical systems.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Bmi Calculator",
     "description": "BMI Calculator – Free Body Mass Index Calculator Online",
-    "href": "/bmi-calculator"
+    "href": "/calculators/bmi-calculator"
   },
   {
     "name": "Bmr Calculator",
     "description": "BMR Calculator",
-    "href": "/bmr-calculator"
+    "href": "/calculators/bmr-calculator"
   },
   {
     "name": "Body Fat Calculator",
     "description": "Body Fat Percentage Calculator – Estimate Your Body Fat Instantly",
-    "href": "/body-fat-calculator"
+    "href": "/calculators/body-fat-calculator"
   },
   {
     "name": "Body Surface Area Calculator",
     "description": "Body Surface Area Calculator – BSA Calculation for Medical Use",
-    "href": "/body-surface-area-calculator"
+    "href": "/calculators/body-surface-area-calculator"
   },
   {
     "name": "Ideal Weight Calculator",
     "description": "Ideal Weight Calculator – What Is Your Ideal Body Weight?",
-    "href": "/ideal-weight-calculator"
+    "href": "/calculators/ideal-weight-calculator"
   },
   {
     "name": "Waist To Height Ratio Calculator",
     "description": "Waist-to-Height Ratio Calculator – Assess Your Health Risk",
-    "href": "/waist-to-height-ratio-calculator"
+    "href": "/calculators/waist-to-height-ratio-calculator"
   }
 ];
 

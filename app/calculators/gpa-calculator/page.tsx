@@ -492,28 +492,6 @@ export default function GpaCalculatorPage() {
               </div>
             </CardContent>
           </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Related Tools</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/final-grade-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Final Grade Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate what you need on the final exam</p>
-                </a>
-                <a href="/calculators/grade-percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Grade Percentage Calculator</p>
-                  <p className="text-xs text-muted-foreground">Convert scores to letter grades</p>
-                </a>
-                <a href="/calculators/weighted-average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Weighted Average Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate weighted averages</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

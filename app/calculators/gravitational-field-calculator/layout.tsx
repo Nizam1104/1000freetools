@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Gravitational Force Calculator",
     "description": "Gravitational Force Calculator – Newton's Law of Gravitation",
-    "href": "/gravitational-force-calculator"
+    "href": "/calculators/gravitational-force-calculator"
   },
   {
     "name": "Escape Velocity Calculator",
     "description": "Escape Velocity Calculator – Calculate Escape Velocity",
-    "href": "/escape-velocity-calculator"
+    "href": "/calculators/escape-velocity-calculator"
   },
   {
     "name": "Orbital Period Calculator",
     "description": "Orbital Period Calculator – Calculate Orbital Period",
-    "href": "/orbital-period-calculator"
+    "href": "/calculators/orbital-period-calculator"
   },
   {
     "name": "Acceleration Calculator",
     "description": "Acceleration Calculator",
-    "href": "/acceleration-calculator"
+    "href": "/calculators/acceleration-calculator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   },
   {
     "name": "Velocity Calculator",
     "description": "Velocity Calculator – Calculate Speed with Direction",
-    "href": "/velocity-calculator"
+    "href": "/calculators/velocity-calculator"
   }
 ];
 

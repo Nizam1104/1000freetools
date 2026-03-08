@@ -213,23 +213,6 @@ export default function WorkingCapitalCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/current-ratio-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Current Ratio Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate current ratio for liquidity analysis.</p>
-            </a>
-            <a href="/calculators/cash-flow-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Cash Flow Calculator</h3>
-              <p className="text-sm text-muted-foreground">Track cash inflows and outflows for business planning.</p>
-            </a>
-            <a href="/calculators/break-even-point-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Break-Even Point Calculator</h3>
-              <p className="text-sm text-muted-foreground">Find the sales volume needed to cover all costs.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

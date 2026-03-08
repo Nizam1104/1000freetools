@@ -441,36 +441,6 @@ export default function AudioDynamicRangeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">
-                Related Tools
-              </h2>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/db-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-primary hover:underline"
-                >
-                  <span className="font-medium">dB Calculator</span>
-                  <p className="text-xs text-muted-foreground mt-1">Calculate decibel values for audio and electronics</p>
-                </a>
-                <a
-                  href="/calculators/signal-to-noise-ratio-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-primary hover:underline"
-                >
-                  <span className="font-medium">Signal-to-Noise Ratio Calculator</span>
-                  <p className="text-xs text-muted-foreground mt-1">Measure SNR for audio systems and recordings</p>
-                </a>
-                <a
-                  href="/calculators/decibel-to-power-converter"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-primary hover:underline"
-                >
-                  <span className="font-medium">Decibel to Power Converter</span>
-                  <p className="text-xs text-muted-foreground mt-1">Convert between dB and power ratios</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

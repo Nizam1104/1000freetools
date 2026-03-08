@@ -271,34 +271,6 @@ export default function TriangleAreaCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/pythagorean-theorem-calculator" className="text-primary hover:underline">
-                Pythagorean Theorem Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Find missing sides of right triangles</span>
-            </li>
-            <li>
-              <a href="/calculators/rectangle-area-calculator" className="text-primary hover:underline">
-                Rectangle Area Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Calculate area and perimeter of rectangles</span>
-            </li>
-            <li>
-              <a href="/calculators/circle-area-calculator" className="text-primary hover:underline">
-                Circle Area Calculator
-              </a>
-              <span className="text-muted-foreground ml-2">– Find area and circumference of circles</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -527,36 +527,6 @@ export default function MortarVolumeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/brick-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Brick Calculator</span>
-                  <p className="text-muted-foreground">Calculate the number of bricks needed for your wall project</p>
-                </a>
-                <a
-                  href="/calculators/concrete-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Concrete Calculator</span>
-                  <p className="text-muted-foreground">Estimate concrete volume for slabs, footings, and foundations</p>
-                </a>
-                <a
-                  href="/calculators/cement-sand-ratio-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Cement Sand Ratio Calculator</span>
-                  <p className="text-muted-foreground">Calculate material quantities for different mortar mixes</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

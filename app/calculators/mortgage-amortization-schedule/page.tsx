@@ -424,36 +424,6 @@ export default function MortgageAmortizationSchedulePage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/mortgage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Mortgage Calculator</span>
-                  <p className="text-muted-foreground">Calculate monthly mortgage payments with taxes and insurance</p>
-                </a>
-                <a
-                  href="/calculators/refinance-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Refinance Calculator</span>
-                  <p className="text-muted-foreground">Determine if refinancing your mortgage makes financial sense</p>
-                </a>
-                <a
-                  href="/calculators/extra-payment-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Extra Payment Calculator</span>
-                  <p className="text-muted-foreground">See how additional payments affect your loan payoff date</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

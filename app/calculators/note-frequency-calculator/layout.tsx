@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Frequency Calculator",
     "description": "Frequency Calculator – Calculate Frequency from Period and More",
-    "href": "/frequency-calculator"
+    "href": "/calculators/frequency-calculator"
   },
   {
     "name": "Scale Finder",
     "description": "Scale Finder – Find the Right Musical Scale for Any Key or Note Set",
-    "href": "/scale-finder"
+    "href": "/calculators/scale-finder"
   },
   {
     "name": "Tempo To Delay Time Converter",
     "description": "Tempo to Delay Time Converter – Convert BPM to Delay & Echo Times in ms",
-    "href": "/tempo-to-delay-time-converter"
+    "href": "/calculators/tempo-to-delay-time-converter"
   },
   {
     "name": "Tuning Frequency Converter",
     "description": "Tuning Frequency Converter – Convert Between Standard & Alternative Concert Pitch",
-    "href": "/tuning-frequency-converter"
+    "href": "/calculators/tuning-frequency-converter"
   },
   {
     "name": "Chord Progression Generator",
     "description": "Chord Progression Generator – Create Chord Progressions in Any Key & Scale",
-    "href": "/chord-progression-generator"
+    "href": "/calculators/chord-progression-generator"
   },
   {
     "name": "Doppler Effect Calculator",
     "description": "Doppler Effect Calculator – Calculate Frequency Shift",
-    "href": "/doppler-effect-calculator"
+    "href": "/calculators/doppler-effect-calculator"
   }
 ];
 

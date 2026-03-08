@@ -324,36 +324,6 @@ export default function DecimalToFractionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/fraction-to-decimal-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Fraction to Decimal Calculator</span>
-                <p className="text-muted-foreground">Convert fractions to decimal form with step-by-step division</p>
-              </a>
-              <a
-                href="/calculators/fraction-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Fraction Calculator</span>
-                <p className="text-muted-foreground">Add, subtract, multiply, and divide fractions with detailed steps</p>
-              </a>
-              <a
-                href="/calculators/percent-to-fraction-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Percent to Fraction Calculator</span>
-                <p className="text-muted-foreground">Convert percentages to simplified fractions</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Refraction Index Calculator",
     "description": "Refraction Index Calculator – Calculate Refractive Index",
-    "href": "/refraction-index-calculator"
+    "href": "/calculators/refraction-index-calculator"
   },
   {
     "name": "Snells Law Calculator",
     "description": "Snell's Law Calculator – Refraction Calculator",
-    "href": "/snells-law-calculator"
+    "href": "/calculators/snells-law-calculator"
   },
   {
     "name": "Lens Equation Calculator",
     "description": "Lens Equation Calculator – Thin Lens Formula Calculator",
-    "href": "/lens-equation-calculator"
+    "href": "/calculators/lens-equation-calculator"
   },
   {
     "name": "Focal Length Calculator",
     "description": "Focal Length Calculator – Lensmaker's Equation",
-    "href": "/focal-length-calculator"
+    "href": "/calculators/focal-length-calculator"
   },
   {
     "name": "Aperture Depth Of Field Calculator",
     "description": "Depth of Field Calculator – Calculate DOF from Aperture, Focal Length & Distance",
-    "href": "/aperture-depth-of-field-calculator"
+    "href": "/calculators/aperture-depth-of-field-calculator"
   },
   {
     "name": "Perspective Angle Calculator",
     "description": "Perspective Angle Calculator – Calculate Vanishing Points for Technical Drawing",
-    "href": "/perspective-angle-calculator"
+    "href": "/calculators/perspective-angle-calculator"
   }
 ];
 

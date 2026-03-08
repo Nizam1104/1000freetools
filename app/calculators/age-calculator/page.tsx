@@ -320,28 +320,6 @@ export default function AgeCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/date-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Date Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate days between dates</p>
-            </a>
-            <a href="/calculators/anniversary-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Anniversary Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate anniversary dates</p>
-            </a>
-            <a href="/calculators/week-number-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Week Number Calculator</p>
-              <p className="text-xs text-muted-foreground">Find week of year</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

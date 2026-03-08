@@ -350,36 +350,6 @@ export default function JsonRemoveKeysPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-filter"
-                className="text-primary hover:underline"
-              >
-                JSON Filter
-              </a>{" "}
-              – Filter JSON arrays by field conditions
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-obfuscator"
-                className="text-primary hover:underline"
-              >
-                JSON Obfuscator
-              </a>{" "}
-              – Replace sensitive values with random data
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-key-extractor"
-                className="text-primary hover:underline"
-              >
-                JSON Key Extractor
-              </a>{" "}
-              – List all property names from a JSON object
-            </li>
-          </ul>
         </div>
       </div>
     </div>

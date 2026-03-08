@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ring Size Calculator",
     "description": "Ring Size Calculator – Find Your Ring Size in US, UK & EU Sizes",
-    "href": "/ring-size-calculator"
+    "href": "/calculators/ring-size-calculator"
   },
   {
     "name": "Clothing Shrinkage Estimator",
     "description": "Clothing Shrinkage Estimator – Predict How Much Your Clothes Will Shrink",
-    "href": "/clothing-shrinkage-estimator"
+    "href": "/calculators/clothing-shrinkage-estimator"
   },
   {
     "name": "Laundry Detergent Calculator",
     "description": "Laundry Detergent Calculator – How Much Detergent Should You Use Per Wash?",
-    "href": "/laundry-detergent-calculator"
+    "href": "/calculators/laundry-detergent-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   },
   {
     "name": "4 Percent Rule Retirement Calculator",
     "description": "4% Rule Retirement Calculator",
-    "href": "/4-percent-rule-retirement-calculator"
+    "href": "/calculators/4-percent-rule-retirement-calculator"
   }
 ];
 

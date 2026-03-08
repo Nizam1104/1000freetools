@@ -379,23 +379,6 @@ export default function VaporPressureCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Chemistry Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/ideal-gas-law-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Ideal Gas Law Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate pressure, volume, temperature, and moles for ideal gases.</p>
-          </a>
-          <a href="/calculators/boiling-point-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Boiling Point Calculator</h3>
-            <p className="text-sm text-muted-foreground">Determine boiling points at different pressures and altitudes.</p>
-          </a>
-          <a href="/calculators/humidity-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Humidity Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate relative humidity, dew point, and water vapor pressure.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

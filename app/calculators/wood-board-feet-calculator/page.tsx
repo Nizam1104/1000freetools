@@ -443,23 +443,6 @@ export default function WoodBoardFeetCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/volume-of-cylinder-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Volume of Cylinder Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate volume for round stock and logs.</p>
-            </a>
-            <a href="/calculators/volume-of-cuboid-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Volume of Cuboid Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate volume for rectangular objects.</p>
-            </a>
-            <a href="/calculators/flooring-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Flooring Calculator</h3>
-              <p className="text-sm text-muted-foreground">Estimate flooring materials for home projects.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

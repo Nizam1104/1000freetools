@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Fuel Cost Calculator",
     "description": "Fuel Cost Calculator – Estimate Your Trip Fuel Expenses Instantly",
-    "href": "/fuel-cost-calculator"
+    "href": "/calculators/fuel-cost-calculator"
   },
   {
     "name": "Fuel Efficiency Comparison Calculator",
     "description": "Fuel Efficiency Comparison Calculator – Compare Cars by MPG & Running Cost",
-    "href": "/fuel-efficiency-comparison-calculator"
+    "href": "/calculators/fuel-efficiency-comparison-calculator"
   },
   {
     "name": "Mileage Calculator",
     "description": "Mileage Calculator – Calculate Your Car's Fuel Efficiency (MPG & km/L)",
-    "href": "/mileage-calculator"
+    "href": "/calculators/mileage-calculator"
   },
   {
     "name": "Map Scale Calculator",
     "description": "Map Scale Calculator – Convert Map Distances to Real-World Measurements",
-    "href": "/map-scale-calculator"
+    "href": "/calculators/map-scale-calculator"
   },
   {
     "name": "Boat Speed Calculator",
     "description": "Boat Speed Calculator – Calculate Maximum Hull Speed for Any Boat",
-    "href": "/boat-speed-calculator"
+    "href": "/calculators/boat-speed-calculator"
   },
   {
     "name": "Car Loan Calculator",
     "description": "Car Loan Calculator – Calculate Auto Loan Payments",
-    "href": "/car-loan-calculator"
+    "href": "/calculators/car-loan-calculator"
   }
 ];
 

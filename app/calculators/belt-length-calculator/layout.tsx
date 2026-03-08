@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Belt Tension Calculator",
     "description": "Belt Tension Calculator – Calculate Belt Drive Tension",
-    "href": "/belt-tension-calculator"
+    "href": "/calculators/belt-tension-calculator"
   },
   {
     "name": "Gear Ratio Calculator",
     "description": "Gear Ratio Calculator – Calculate Gear Train Ratio",
-    "href": "/gear-ratio-calculator"
+    "href": "/calculators/gear-ratio-calculator"
   },
   {
     "name": "Rpm Calculator",
     "description": "RPM Calculator – Calculate Rotational Speed and Gear Ratios",
-    "href": "/rpm-calculator"
+    "href": "/calculators/rpm-calculator"
   },
   {
     "name": "Torque Calculator",
     "description": "Torque Calculator",
-    "href": "/torque-calculator"
+    "href": "/calculators/torque-calculator"
   },
   {
     "name": "Pulley System Calculator",
     "description": "Pulley System Calculator – Block and Tackle Calculator",
-    "href": "/pulley-system-calculator"
+    "href": "/calculators/pulley-system-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

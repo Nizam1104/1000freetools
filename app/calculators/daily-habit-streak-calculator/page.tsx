@@ -482,36 +482,6 @@ export default function DailyHabitStreakCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/goal-tracker-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Goal Tracker Calculator</span>
-                  <p className="text-muted-foreground">Track progress toward any goal with visual milestones</p>
-                </a>
-                <a
-                  href="/calculators/time-management-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Time Management Calculator</span>
-                  <p className="text-muted-foreground">Plan your day and optimize productivity with time blocking</p>
-                </a>
-                <a
-                  href="/calculators/stress-level-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Stress Level Calculator</span>
-                  <p className="text-muted-foreground">Assess your stress levels and get personalized coping strategies</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

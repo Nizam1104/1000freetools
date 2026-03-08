@@ -429,28 +429,6 @@ export default function CarLoanCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/loan-emi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Loan EMI Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate any loan payment</p>
-            </a>
-            <a href="/calculators/car-loan-affordability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Car Affordability</p>
-              <p className="text-xs text-muted-foreground">How much car can you afford</p>
-            </a>
-            <a href="/calculators/lease-vs-buy-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Lease vs Buy</p>
-              <p className="text-xs text-muted-foreground">Compare leasing vs buying</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

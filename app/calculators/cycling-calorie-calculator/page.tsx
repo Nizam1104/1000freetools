@@ -356,36 +356,6 @@ export default function CyclingCalorieCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/calorie-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Calorie Calculator</span>
-                <p className="text-muted-foreground">Calculate your daily calorie needs for weight loss, maintenance, or gain</p>
-              </a>
-              <a
-                href="/calculators/heart-rate-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Heart Rate Calculator</span>
-                <p className="text-muted-foreground">Find your target heart rate zones for optimal cardio training</p>
-              </a>
-              <a
-                href="/calculators/bmi-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMI Calculator</span>
-                <p className="text-muted-foreground">Calculate your body mass index and assess healthy weight range</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

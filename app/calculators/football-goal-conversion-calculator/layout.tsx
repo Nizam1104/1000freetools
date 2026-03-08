@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Basketball Shooting Percentage Calculator",
     "description": "Basketball Shooting Percentage Calculator – Calculate FG%, 3P% & FT%",
-    "href": "/basketball-shooting-percentage-calculator"
+    "href": "/calculators/basketball-shooting-percentage-calculator"
   },
   {
     "name": "Cricket Economy Rate Calculator",
     "description": "Cricket Economy Rate Calculator – Calculate Bowling Economy Rate",
-    "href": "/cricket-economy-rate-calculator"
+    "href": "/calculators/cricket-economy-rate-calculator"
   },
   {
     "name": "Cricket Strike Rate Calculator",
     "description": "Cricket Strike Rate Calculator – Calculate Batting Strike Rate Instantly",
-    "href": "/cricket-strike-rate-calculator"
+    "href": "/calculators/cricket-strike-rate-calculator"
   },
   {
     "name": "Golf Handicap Calculator",
     "description": "Golf Handicap Calculator – Calculate Your Official Golf Handicap Index",
-    "href": "/golf-handicap-calculator"
+    "href": "/calculators/golf-handicap-calculator"
   },
   {
     "name": "Tennis Win Probability Calculator",
     "description": "Tennis Win Probability Calculator – Predict Match Outcome from Player Stats",
-    "href": "/tennis-win-probability-calculator"
+    "href": "/calculators/tennis-win-probability-calculator"
   },
   {
     "name": "Win Rate Estimator",
     "description": "Win Rate Calculator – Calculate Your Gaming Win Rate & Win/Loss Ratio",
-    "href": "/win-rate-estimator"
+    "href": "/calculators/win-rate-estimator"
   }
 ];
 

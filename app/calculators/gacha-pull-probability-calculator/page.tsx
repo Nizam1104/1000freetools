@@ -534,36 +534,6 @@ export default function GachaPullProbabilityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/probability-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Probability Calculator</span>
-                  <p className="text-muted-foreground">Calculate probabilities for various events and scenarios</p>
-                </a>
-                <a
-                  href="/calculators/percentage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Percentage Calculator</span>
-                  <p className="text-muted-foreground">Calculate percentages, discounts, and percentage changes</p>
-                </a>
-                <a
-                  href="/calculators/expected-value-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Expected Value Calculator</span>
-                  <p className="text-muted-foreground">Calculate expected value for probability-based decisions</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

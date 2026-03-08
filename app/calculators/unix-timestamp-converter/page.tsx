@@ -275,25 +275,6 @@ export default function UnixTimestampConverterPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/date-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Date Calculator</h3>
-                <p className="text-sm text-muted-foreground">Add or subtract days from dates.</p>
-              </a>
-              <a href="/calculators/time-duration-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Time Duration Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate time between two times.</p>
-              </a>
-              <a href="/calculators/timezone-converter" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Timezone Converter</h3>
-                <p className="text-sm text-muted-foreground">Convert times between timezones.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

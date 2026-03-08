@@ -301,40 +301,6 @@ export default function ArithmeticSequenceCalculator() {
         </CardContent>
       </Card>
 
-      {/* Related Tools */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/calculators/geometric-sequence-calculator" className="text-primary hover:underline">
-                Geometric Sequence Calculator
-              </a>
-              <p className="text-muted-foreground text-xs mt-1">
-                Calculate terms and sums for geometric sequences with constant ratios.
-              </p>
-            </li>
-            <li>
-              <a href="/calculators/fibonacci-generator" className="text-primary hover:underline">
-                Fibonacci Generator
-              </a>
-              <p className="text-muted-foreground text-xs mt-1">
-                Generate Fibonacci numbers where each term is the sum of the two preceding terms.
-              </p>
-            </li>
-            <li>
-              <a href="/calculators/linear-equation-solver" className="text-primary hover:underline">
-                Linear Equation Solver
-              </a>
-              <p className="text-muted-foreground text-xs mt-1">
-                Solve linear equations and understand the connection to arithmetic progressions.
-              </p>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-    </div>
+      {/* Related Tools */}    </div>
   );
 }

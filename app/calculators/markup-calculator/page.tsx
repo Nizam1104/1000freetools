@@ -341,36 +341,6 @@ export default function MarkupCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/profit-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Profit Margin Calculator</span>
-                  <p className="text-muted-foreground">Calculate gross and net profit margins from revenue and costs</p>
-                </a>
-                <a
-                  href="/calculators/discount-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Discount Calculator</span>
-                  <p className="text-muted-foreground">Calculate sale prices and percentage discounts</p>
-                </a>
-                <a
-                  href="/calculators/sales-tax-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Sales Tax Calculator</span>
-                  <p className="text-muted-foreground">Add or remove sales tax from prices</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

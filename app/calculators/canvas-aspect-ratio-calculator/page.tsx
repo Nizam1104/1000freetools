@@ -457,23 +457,6 @@ export default function CanvasAspectRatioCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Design & Media Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/camera-exposure-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Camera Exposure Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate perfect camera settings for photography with exposure value analysis.</p>
-              </a>
-              <a href="/calculators/ceiling-tile-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Ceiling Tile Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate materials needed for ceiling installation with waste allowance.</p>
-              </a>
-              <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
-                <p className="text-muted-foreground text-sm">Convert between different real estate area measurements accurately.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

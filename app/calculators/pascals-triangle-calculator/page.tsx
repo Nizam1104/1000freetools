@@ -276,28 +276,6 @@ export default function PascalsTriangleCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/combinations-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Combinations Calculator</span>
-                <p className="text-muted-foreground">Calculate n choose k for probability and statistics</p>
-              </a>
-              <a href="/calculators/factorial-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Factorial Calculator</span>
-                <p className="text-muted-foreground">Calculate factorials for combinatorics</p>
-              </a>
-              <a href="/calculators/binomial-distribution-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Binomial Distribution Calculator</span>
-                <p className="text-muted-foreground">Calculate binomial probabilities</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

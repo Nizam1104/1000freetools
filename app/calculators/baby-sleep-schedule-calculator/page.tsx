@@ -567,36 +567,6 @@ export default function BabySleepScheduleCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/baby-age-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Baby Age Calculator</span>
-                  <p className="text-muted-foreground">Calculate your baby&apos;s exact age in weeks, months, and days</p>
-                </a>
-                <a
-                  href="/calculators/baby-feeding-chart-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Baby Feeding Chart Calculator</span>
-                  <p className="text-muted-foreground">Track feeding schedules and amounts based on baby&apos;s age and weight</p>
-                </a>
-                <a
-                  href="/calculators/ideal-bedtime-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Ideal Bedtime Calculator</span>
-                  <p className="text-muted-foreground">Find the perfect bedtime based on wake time and sleep needs</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

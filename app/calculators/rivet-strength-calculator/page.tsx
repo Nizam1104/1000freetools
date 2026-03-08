@@ -264,36 +264,6 @@ export default function RivetStrengthCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/bolt-shear-strength-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Bolt Shear Strength Calculator</span>
-                <p className="text-muted-foreground">Calculate bolt capacity in shear and tension</p>
-              </a>
-              <a
-                href="/calculators/weld-strength-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Weld Strength Calculator</span>
-                <p className="text-muted-foreground">Determine weld capacity for various joint types</p>
-              </a>
-              <a
-                href="/calculators/steel-weight-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Steel Weight Calculator</span>
-                <p className="text-muted-foreground">Calculate weight of steel plates and sections</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

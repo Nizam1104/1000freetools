@@ -475,36 +475,6 @@ export default function MacroCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/tdee-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">TDEE Calculator</span>
-                <p className="text-muted-foreground">Calculate your total daily energy expenditure to determine calorie needs</p>
-              </a>
-              <a
-                href="/calculators/bmi-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">BMI Calculator</span>
-                <p className="text-muted-foreground">Calculate your body mass index and assess weight category</p>
-              </a>
-              <a
-                href="/calculators/body-fat-percentage-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Body Fat Percentage Calculator</span>
-                <p className="text-muted-foreground">Estimate your body fat percentage using US Navy method</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

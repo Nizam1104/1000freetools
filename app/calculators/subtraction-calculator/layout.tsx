@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Addition Calculator",
     "description": "Addition Calculator",
-    "href": "/addition-calculator"
+    "href": "/calculators/addition-calculator"
   },
   {
     "name": "Division Calculator",
     "description": "Division Calculator",
-    "href": "/division-calculator"
+    "href": "/calculators/division-calculator"
   },
   {
     "name": "Multiplication Calculator",
     "description": "Multiplication Calculator",
-    "href": "/multiplication-calculator"
+    "href": "/calculators/multiplication-calculator"
   },
   {
     "name": "Percentage Calculator",
     "description": "Percentage Calculator – Calculate Percentages Instantly",
-    "href": "/percentage-calculator"
+    "href": "/calculators/percentage-calculator"
   },
   {
     "name": "Average Calculator",
     "description": "Average Calculator – Calculate Mean, Median & More",
-    "href": "/average-calculator"
+    "href": "/calculators/average-calculator"
   },
   {
     "name": "Weighted Average Calculator",
     "description": "Weighted Average Calculator",
-    "href": "/weighted-average-calculator"
+    "href": "/calculators/weighted-average-calculator"
   }
 ];
 

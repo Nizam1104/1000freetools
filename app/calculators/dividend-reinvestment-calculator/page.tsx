@@ -359,25 +359,6 @@ export default function DividendReinvestmentCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Investment Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/dividend-payout-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Dividend Payout Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate your total annual dividend income from stock holdings based on shares and DPS.</p>
-                </a>
-                <a href="/calculators/dividend-yield-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Dividend Yield Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Compute dividend yield percentage to evaluate income potential of dividend stocks.</p>
-                </a>
-                <a href="/calculators/stock-average-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Stock Average Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate average cost per share when buying stocks at different prices over time.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

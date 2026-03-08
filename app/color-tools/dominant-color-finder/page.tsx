@@ -33,7 +33,7 @@ export const relatedTools = [
   { name: "Extract Colors from Image", href: "/color-tools/extract-colors-from-image", description: "Extract full color palettes from any image" },
   { name: "Color Picker", href: "/color-tools/color-picker", description: "Pick and convert colors in multiple formats" },
   { name: "CSS Variables Generator", href: "/color-tools/css-variables-generator", description: "Generate CSS custom properties from colors" },
-  { name: "Color History Tool", href: "/color-tools/color-history", description: "Track and manage your color history" },
+  { name: "Color History Tool", href: "/color-tools/color-history-tool", description: "Track and manage your color history" },
 ];
 
 export default function DominantColorFinderPage() {
@@ -377,11 +377,8 @@ export default function DominantColorFinderPage() {
                   </div>
                 </>
               ) : (
-                <div className="text-center py-12 text-muted-foreground">
-                  <p>No color found yet</p>
-                  <p className="text-sm mt-1">
-                    Upload an image to find the dominant color
-                  </p>
+                <div className="flex flex-col items-center justify-center h-48 text-muted-foreground">
+                  <p>Upload an image to see the dominant color</p>
                 </div>
               )}
             </CardContent>

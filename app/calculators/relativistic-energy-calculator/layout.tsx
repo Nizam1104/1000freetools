@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Photon Energy Calculator",
     "description": "Photon Energy Calculator – Calculate Energy of a Photon",
-    "href": "/photon-energy-calculator"
+    "href": "/calculators/photon-energy-calculator"
   },
   {
     "name": "Energy Calculator",
     "description": "Energy Calculator",
-    "href": "/energy-calculator"
+    "href": "/calculators/energy-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Escape Velocity Calculator",
     "description": "Escape Velocity Calculator – Calculate Escape Velocity",
-    "href": "/escape-velocity-calculator"
+    "href": "/calculators/escape-velocity-calculator"
   },
   {
     "name": "Gravitational Force Calculator",
     "description": "Gravitational Force Calculator – Newton's Law of Gravitation",
-    "href": "/gravitational-force-calculator"
+    "href": "/calculators/gravitational-force-calculator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   }
 ];
 

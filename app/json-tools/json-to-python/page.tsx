@@ -271,18 +271,6 @@ export default function JsonToPythonPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-to-javascript" className="text-primary hover:underline">JSON to JavaScript</a> – Convert JSON to JavaScript object notation
-          </li>
-          <li>
-            <a href="/json-tools/json-to-java" className="text-primary hover:underline">JSON to Java</a> – Generate Java class definitions from JSON
-          </li>
-          <li>
-            <a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Convert JSON arrays to CSV format
-          </li>
-        </ul>
       </div>
     </div>
   );

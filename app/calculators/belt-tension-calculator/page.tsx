@@ -299,36 +299,6 @@ export default function BeltTensionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/bolt-torque-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Bolt Torque Calculator</span>
-                <p className="text-muted-foreground">Calculate recommended tightening torque for bolts based on size and grade</p>
-              </a>
-              <a
-                href="/calculators/pulley-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Pulley Calculator</span>
-                <p className="text-muted-foreground">Calculate pulley speeds, ratios, and belt length for belt drive systems</p>
-              </a>
-              <a
-                href="/calculators/torque-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Torque Calculator</span>
-                <p className="text-muted-foreground">Calculate torque from force and distance for mechanical applications</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -376,36 +376,6 @@ export default function DeepSleepCyclePlanner() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/baby-sleep-schedule-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Baby Sleep Schedule Calculator</span>
-                <p className="text-muted-foreground">Create age-appropriate sleep schedules for infants and toddlers</p>
-              </a>
-              <a
-                href="/calculators/ideal-bedtime-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ideal Bedtime Calculator</span>
-                <p className="text-muted-foreground">Find your perfect bedtime based on wake time and sleep needs</p>
-              </a>
-              <a
-                href="/calculators/sleep-debt-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Sleep Debt Calculator</span>
-                <p className="text-muted-foreground">Calculate accumulated sleep debt and recovery time needed</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

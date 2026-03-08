@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Canvas Aspect Ratio Calculator",
     "description": "Canvas Aspect Ratio Calculator – Resize Canvas While Keeping Proportions",
-    "href": "/canvas-aspect-ratio-calculator"
+    "href": "/calculators/canvas-aspect-ratio-calculator"
   },
   {
     "name": "Car Loan Affordability Calculator",
     "description": "Car Loan Affordability Calculator – Find Out What Car You Can Afford",
-    "href": "/car-loan-affordability-calculator"
+    "href": "/calculators/car-loan-affordability-calculator"
   },
   {
     "name": "Car Loan Calculator",
     "description": "Car Loan Calculator – Calculate Auto Loan Payments",
-    "href": "/car-loan-calculator"
+    "href": "/calculators/car-loan-calculator"
   },
   {
     "name": "Carb Intake Calculator",
     "description": "Carb Intake Calculator – Daily Carbohydrate Needs Calculator",
-    "href": "/carb-intake-calculator"
+    "href": "/calculators/carb-intake-calculator"
   },
   {
     "name": "Carbon Footprint Calculator",
     "description": "Carbon Footprint Calculator – Calculate Your Personal Annual CO₂ Footprint",
-    "href": "/carbon-footprint-calculator"
+    "href": "/calculators/carbon-footprint-calculator"
   },
   {
     "name": "Carpet Area Calculator",
     "description": "Carpet Area Calculator – Calculate Carpet Area from Built-Up Area",
-    "href": "/carpet-area-calculator"
+    "href": "/calculators/carpet-area-calculator"
   }
 ];
 

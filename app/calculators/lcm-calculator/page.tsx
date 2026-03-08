@@ -245,28 +245,6 @@ export default function LCMCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/gcd-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">GCD Calculator</p>
-              <p className="text-xs text-muted-foreground">Find greatest common divisor</p>
-            </a>
-            <a href="/calculators/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Prime Factorization Calculator</p>
-              <p className="text-xs text-muted-foreground">Break numbers into prime factors</p>
-            </a>
-            <a href="/calculators/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fraction Calculator</p>
-              <p className="text-xs text-muted-foreground">Add and compare fractions</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

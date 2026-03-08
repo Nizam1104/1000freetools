@@ -216,28 +216,6 @@ export default function ModuloCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/gcd-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">GCD Calculator</p>
-              <p className="text-xs text-muted-foreground">Find greatest common divisor</p>
-            </a>
-            <a href="/calculators/lcm-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">LCM Calculator</p>
-              <p className="text-xs text-muted-foreground">Find least common multiple</p>
-            </a>
-            <a href="/calculators/prime-factorization-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Prime Factorization</p>
-              <p className="text-xs text-muted-foreground">Factor numbers into primes</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -279,35 +279,6 @@ export default function BeltLengthCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <a
-            href="/calculators/pulley-speed-ratio-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Pulley Speed Ratio Calculator</span>
-            <p className="text-muted-foreground">Calculate RPM and speed ratios for belt-driven pulleys</p>
-          </a>
-          <a
-            href="/calculators/conveyor-belt-speed-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Conveyor Belt Speed Calculator</span>
-            <p className="text-muted-foreground">Calculate conveyor belt speed from pulley diameter and RPM</p>
-          </a>
-          <a
-            href="/calculators/sprocket-center-distance-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Sprocket Center Distance Calculator</span>
-            <p className="text-muted-foreground">Calculate chain length and center distance for sprocket systems</p>
-          </a>
-        </CardContent>
-      </Card>
     </div>
   );
 }

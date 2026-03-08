@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Bolt Torque Calculator",
     "description": "Bolt Torque Calculator – Calculate Bolt Tightening Torque",
-    "href": "/bolt-torque-calculator"
+    "href": "/calculators/bolt-torque-calculator"
   },
   {
     "name": "Shaft Torque Calculator",
     "description": "Shaft Torque Calculator – Calculate Shaft Torque",
-    "href": "/shaft-torque-calculator"
+    "href": "/calculators/shaft-torque-calculator"
   },
   {
     "name": "Robot Motor Torque Calculator",
     "description": "Robot Motor Torque Calculator – Calculate Required Torque for Motors & Actuators",
-    "href": "/robot-motor-torque-calculator"
+    "href": "/calculators/robot-motor-torque-calculator"
   },
   {
     "name": "Pump Horsepower Calculator",
     "description": "Pump Horsepower Calculator – Calculate Required Pump Power",
-    "href": "/pump-horsepower-calculator"
+    "href": "/calculators/pump-horsepower-calculator"
   },
   {
     "name": "Gear Ratio Calculator",
     "description": "Gear Ratio Calculator – Calculate Gear Train Ratio",
-    "href": "/gear-ratio-calculator"
+    "href": "/calculators/gear-ratio-calculator"
   },
   {
     "name": "Rpm Calculator",
     "description": "RPM Calculator – Calculate Rotational Speed and Gear Ratios",
-    "href": "/rpm-calculator"
+    "href": "/calculators/rpm-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Age Calculator",
     "description": "Age Calculator – Calculate Your Exact Age in Years, Months & Days",
-    "href": "/age-calculator"
+    "href": "/calculators/age-calculator"
   },
   {
     "name": "Date Add Subtract Calculator",
     "description": "Date Calculator – Add or Subtract Days, Weeks & Months from a Date",
-    "href": "/date-add-subtract-calculator"
+    "href": "/calculators/date-add-subtract-calculator"
   },
   {
     "name": "Date Difference Calculator",
     "description": "Date Difference Calculator – Days Between Two Dates",
-    "href": "/date-difference-calculator"
+    "href": "/calculators/date-difference-calculator"
   },
   {
     "name": "Business Days Calculator",
     "description": "Business Days Calculator – Count Working Days Between Dates",
-    "href": "/business-days-calculator"
+    "href": "/calculators/business-days-calculator"
   },
   {
     "name": "Week Number Calculator",
     "description": "Week Number Calculator – Find ISO Week Number for Any Date",
-    "href": "/week-number-calculator"
+    "href": "/calculators/week-number-calculator"
   },
   {
     "name": "Baby Age Calculator",
     "description": "Baby Age Calculator – Free Infant Age Calculator in Weeks and Months",
-    "href": "/baby-age-calculator"
+    "href": "/calculators/baby-age-calculator"
   }
 ];
 

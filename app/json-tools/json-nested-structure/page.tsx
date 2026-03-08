@@ -255,36 +255,6 @@ export default function JsonNestedStructureGeneratorPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-array-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Array Generator
-              </a>{" "}
-              – Generate test arrays
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-depth-analyzer"
-                className="text-primary hover:underline"
-              >
-                JSON Depth Analyzer
-              </a>{" "}
-              – Check nesting depth
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-tree-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Tree Generator
-              </a>{" "}
-              – Generate tree structures
-            </li>
-          </ul>
         </div>
       </div>
     </div>

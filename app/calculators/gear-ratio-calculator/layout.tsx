@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Gear Shifting Rpms Calculator",
     "description": "Gear Shifting RPMs Calculator – Find the Perfect RPM to Shift Gears",
-    "href": "/gear-shifting-rpms-calculator"
+    "href": "/calculators/gear-shifting-rpms-calculator"
   },
   {
     "name": "Gear Train Efficiency Calculator",
     "description": "Gear Train Efficiency Calculator – Calculate Power Loss",
-    "href": "/gear-train-efficiency-calculator"
+    "href": "/calculators/gear-train-efficiency-calculator"
   },
   {
     "name": "Rpm Calculator",
     "description": "RPM Calculator – Calculate Rotational Speed and Gear Ratios",
-    "href": "/rpm-calculator"
+    "href": "/calculators/rpm-calculator"
   },
   {
     "name": "Belt Tension Calculator",
     "description": "Belt Tension Calculator – Calculate Belt Drive Tension",
-    "href": "/belt-tension-calculator"
+    "href": "/calculators/belt-tension-calculator"
   },
   {
     "name": "Belt Length Calculator",
     "description": "Belt Length Calculator – Calculate V-Belt Length",
-    "href": "/belt-length-calculator"
+    "href": "/calculators/belt-length-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

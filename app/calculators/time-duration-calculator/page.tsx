@@ -296,25 +296,6 @@ export default function TimeDurationCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/countdown-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Countdown Calculator</h3>
-                <p className="text-sm text-muted-foreground">Count down days until an event.</p>
-              </a>
-              <a href="/calculators/date-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Date Calculator</h3>
-                <p className="text-sm text-muted-foreground">Add or subtract days from a date.</p>
-              </a>
-              <a href="/calculators/work-hours-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Work Hours Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate work hours and overtime pay.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

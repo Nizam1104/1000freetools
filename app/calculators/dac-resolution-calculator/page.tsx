@@ -311,36 +311,6 @@ export default function DacResolutionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/adc-resolution-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">ADC Resolution Calculator</span>
-                <p className="text-muted-foreground">Calculate analog-to-digital converter resolution and step size</p>
-              </a>
-              <a
-                href="/calculators/decibel-to-power-converter"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Decibel to Power Converter</span>
-                <p className="text-muted-foreground">Convert between dB, power ratios, and voltage levels</p>
-              </a>
-              <a
-                href="/calculators/ohms-law-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ohm&apos;s Law Calculator</span>
-                <p className="text-muted-foreground">Calculate voltage, current, resistance, and power in electrical circuits</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

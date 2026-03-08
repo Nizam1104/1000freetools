@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Emi Breakup Visualizer",
     "description": "EMI Breakup Visualizer",
-    "href": "/emi-breakup-visualizer"
+    "href": "/calculators/emi-breakup-visualizer"
   },
   {
     "name": "Emi For Home Loan Calculator",
     "description": "Home Loan EMI Calculator – Calculate Monthly EMI and Interest",
-    "href": "/emi-for-home-loan-calculator"
+    "href": "/calculators/emi-for-home-loan-calculator"
   },
   {
     "name": "Empirical Formula Calculator",
     "description": "Empirical Formula Calculator – Find Empirical Formula from Percent Composition",
-    "href": "/empirical-formula-calculator"
+    "href": "/calculators/empirical-formula-calculator"
   },
   {
     "name": "Energy Calculator",
     "description": "Energy Calculator",
-    "href": "/energy-calculator"
+    "href": "/calculators/energy-calculator"
   },
   {
     "name": "Energy Consumption Breakdown Calculator",
     "description": "Energy Consumption Breakdown Calculator – See Where Your Energy Is Being Used",
-    "href": "/energy-consumption-breakdown-calculator"
+    "href": "/calculators/energy-consumption-breakdown-calculator"
   },
   {
     "name": "Entropy Calculator",
     "description": "Entropy Calculator – Calculate Password & Data Entropy in Bits",
-    "href": "/entropy-calculator"
+    "href": "/calculators/entropy-calculator"
   }
 ];
 

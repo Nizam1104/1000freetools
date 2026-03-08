@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Paint Cost Estimate Calculator",
     "description": "Paint Cost Estimate Calculator – How Much Paint Do You Need for a Room?",
-    "href": "/paint-cost-estimate-calculator"
+    "href": "/calculators/paint-cost-estimate-calculator"
   },
   {
     "name": "Flooring Calculator",
     "description": "Flooring Calculator – How Much Flooring Do You Need?",
-    "href": "/flooring-calculator"
+    "href": "/calculators/flooring-calculator"
   },
   {
     "name": "Carpet Area Calculator",
     "description": "Carpet Area Calculator – Calculate Carpet Area from Built-Up Area",
-    "href": "/carpet-area-calculator"
+    "href": "/calculators/carpet-area-calculator"
   },
   {
     "name": "Wallpaper Calculator",
     "description": "Wallpaper Calculator – Calculate How Many Rolls You Need for Your Room",
-    "href": "/wallpaper-calculator"
+    "href": "/calculators/wallpaper-calculator"
   },
   {
     "name": "Tile Calculator",
     "description": "Tile Calculator – How Many Tiles Do You Need?",
-    "href": "/tile-calculator"
+    "href": "/calculators/tile-calculator"
   },
   {
     "name": "Ceiling Tile Calculator",
     "description": "Ceiling Tile Calculator – How Many Ceiling Tiles Do You Need?",
-    "href": "/ceiling-tile-calculator"
+    "href": "/calculators/ceiling-tile-calculator"
   }
 ];
 

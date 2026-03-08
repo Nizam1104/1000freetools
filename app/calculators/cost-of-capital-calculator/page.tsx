@@ -287,23 +287,6 @@ export default function CostOfCapitalCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Finance Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/compounding-frequency-comparison" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Compounding Frequency Calculator</h3>
-                <p className="text-muted-foreground text-sm">Compare investment returns with different compounding periods.</p>
-              </a>
-              <a href="/calculators/car-loan-affordability-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate loan costs and affordability for vehicle financing.</p>
-              </a>
-              <a href="/calculators/cpc-cpm-ctr-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">CPC CPM CTR Calculator</h3>
-                <p className="text-muted-foreground text-sm">Analyze marketing campaign ROI and advertising efficiency.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

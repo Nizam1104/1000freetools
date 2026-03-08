@@ -362,25 +362,6 @@ export default function SleepWakeEfficiencyCalculatorPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Sleep Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/sleep-cycle-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Sleep Cycle Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Find optimal bedtimes and wake times based on 90-minute sleep cycles.</p>
-                </a>
-                <a href="/calculators/ideal-bedtime-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Ideal Bedtime Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate the perfect bedtime to wake up refreshed.</p>
-                </a>
-                <a href="/calculators/deep-sleep-cycle-planner" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Deep Sleep Cycle Planner</h4>
-                  <p className="text-sm text-muted-foreground">Plan your sleep phases for maximum restorative rest.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -549,36 +549,6 @@ export default function DrywallAreaCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/paint-coverage-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Paint Coverage Calculator</span>
-                <p className="text-muted-foreground">Determine how much paint you need for your walls and ceilings</p>
-              </a>
-              <a
-                href="/calculators/flooring-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Flooring Calculator</span>
-                <p className="text-muted-foreground">Estimate flooring material quantities and costs</p>
-              </a>
-              <a
-                href="/calculators/tile-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Tile Calculator</span>
-                <p className="text-muted-foreground">Calculate tile quantities for floors and walls</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

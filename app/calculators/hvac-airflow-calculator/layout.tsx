@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Hvac Btu Calculator",
     "description": "HVAC BTU Calculator – What Size Air Conditioner Do You Need?",
-    "href": "/hvac-btu-calculator"
+    "href": "/calculators/hvac-btu-calculator"
   },
   {
     "name": "Air Conditioner Tonnage Calculator",
     "description": "AC Tonnage Calculator – Find the Right Air Conditioner Size for Your Room",
-    "href": "/air-conditioner-tonnage-calculator"
+    "href": "/calculators/air-conditioner-tonnage-calculator"
   },
   {
     "name": "Chiller Tonnage Calculator",
     "description": "Chiller Tonnage Calculator – Calculate Cooling Capacity",
-    "href": "/chiller-tonnage-calculator"
+    "href": "/calculators/chiller-tonnage-calculator"
   },
   {
     "name": "Heat Pump Cop Calculator",
     "description": "Heat Pump COP Calculator – Coefficient of Performance",
-    "href": "/heat-pump-cop-calculator"
+    "href": "/calculators/heat-pump-cop-calculator"
   },
   {
     "name": "Boiler Efficiency Calculator",
     "description": "Boiler Efficiency Calculator – Calculate Boiler Efficiency",
-    "href": "/boiler-efficiency-calculator"
+    "href": "/calculators/boiler-efficiency-calculator"
   },
   {
     "name": "Ventilation Rate Calculator",
     "description": "Ventilation Rate Calculator – Calculate Required Airflow (ACH & CFM) per ASHRAE",
-    "href": "/ventilation-rate-calculator"
+    "href": "/calculators/ventilation-rate-calculator"
   }
 ];
 

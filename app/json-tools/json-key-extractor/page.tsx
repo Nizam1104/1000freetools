@@ -399,36 +399,6 @@ export default function JsonKeyExtractorPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-key-frequency"
-                className="text-primary hover:underline"
-              >
-                JSON Key Frequency Analyzer
-              </a>{" "}
-              – Count key occurrences
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-explainer"
-                className="text-primary hover:underline"
-              >
-                JSON Explainer
-              </a>{" "}
-              – Understand JSON structure
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-schema-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Schema Generator
-              </a>{" "}
-              – Generate schemas
-            </li>
-          </ul>
         </div>
       </div>
     </div>

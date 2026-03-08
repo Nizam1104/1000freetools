@@ -304,23 +304,6 @@ export default function CompoundingFrequencyComparisonPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Finance Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/cost-of-capital-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate cost of equity and debt for business investment decisions.</p>
-              </a>
-              <a href="/calculators/car-loan-affordability-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Car Loan Affordability Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate auto loan payments with compound interest over the loan term.</p>
-              </a>
-              <a href="/calculators/cpc-cpm-ctr-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">CPC CPM CTR Calculator</h3>
-                <p className="text-muted-foreground text-sm">Analyze advertising ROI and campaign performance metrics.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

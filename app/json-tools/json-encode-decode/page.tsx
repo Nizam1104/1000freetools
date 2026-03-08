@@ -281,36 +281,6 @@ export default function JsonEncodeDecodePage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-escape-unescape"
-                className="text-primary hover:underline"
-              >
-                JSON Escape & Unescape
-              </a>{" "}
-              – Escape special characters
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-url-encoder"
-                className="text-primary hover:underline"
-              >
-                JSON URL Encoder
-              </a>{" "}
-              – Encode for URLs
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-base64"
-                className="text-primary hover:underline"
-              >
-                JSON Base64
-              </a>{" "}
-              – Base64 encode/decode JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

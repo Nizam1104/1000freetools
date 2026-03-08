@@ -342,28 +342,6 @@ export default function WalkingCalorieCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/steps-to-calories-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Steps to Calories</p>
-              <p className="text-xs text-muted-foreground">Convert steps to calories burned</p>
-            </a>
-            <a href="/calculators/weight-loss-time-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Weight Loss Time</p>
-              <p className="text-xs text-muted-foreground">Calculate time to reach goal weight</p>
-            </a>
-            <a href="/calculators/calorie-deficit-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Calorie Deficit Calculator</p>
-              <p className="text-xs text-muted-foreground">Plan your daily calorie target</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

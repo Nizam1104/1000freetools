@@ -248,28 +248,6 @@ export default function LinearEquationSolver() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/quadratic-equation-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Quadratic Equation Solver</p>
-              <p className="text-xs text-muted-foreground">Solve ax² + bx + c = 0</p>
-            </a>
-            <a href="/calculators/system-of-equations-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">System of Equations Calculator</p>
-              <p className="text-xs text-muted-foreground">Solve multiple equations</p>
-            </a>
-            <a href="/calculators/algebra-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Algebra Calculator</p>
-              <p className="text-xs text-muted-foreground">General algebra solver</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -247,28 +247,6 @@ export default function ParallelogramAreaCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/rectangle-area-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Rectangle Area Calculator</span>
-                <p className="text-muted-foreground">Calculate area and perimeter of rectangles</p>
-              </a>
-              <a href="/calculators/triangle-area-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Triangle Area Calculator</span>
-                <p className="text-muted-foreground">Calculate area of triangles using various methods</p>
-              </a>
-              <a href="/calculators/trapezoid-area-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Trapezoid Area Calculator</span>
-                <p className="text-muted-foreground">Calculate area and perimeter of trapezoids</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

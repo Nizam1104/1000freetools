@@ -242,28 +242,6 @@ export default function PrimeChecker() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Prime Factorization Calculator</p>
-              <p className="text-xs text-muted-foreground">Break numbers into prime factors</p>
-            </a>
-            <a href="/calculators/gcd-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">GCD Calculator</p>
-              <p className="text-xs text-muted-foreground">Find greatest common divisor</p>
-            </a>
-            <a href="/calculators/lcm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">LCM Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate least common multiple</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

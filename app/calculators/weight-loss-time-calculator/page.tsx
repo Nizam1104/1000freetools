@@ -295,28 +295,6 @@ export default function WeightLossTimeCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">TDEE Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate your daily calorie needs</p>
-            </a>
-            <a href="/calculators/calorie-deficit-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Calorie Deficit Calculator</p>
-              <p className="text-xs text-muted-foreground">Find your optimal deficit</p>
-            </a>
-            <a href="/calculators/weight-loss-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Weight Loss Calculator</p>
-              <p className="text-xs text-muted-foreground">Track your weight loss progress</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

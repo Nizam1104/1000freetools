@@ -436,36 +436,6 @@ export default function FuelCostCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/fuel-efficiency-comparison-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Fuel Efficiency Comparison Calculator</span>
-                  <p className="text-muted-foreground">Compare two vehicles side-by-side to see which costs less to operate</p>
-                </a>
-                <a
-                  href="/calculators/mpg-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">MPG Calculator</span>
-                  <p className="text-muted-foreground">Calculate your vehicle's actual miles per gallon from fill-up data</p>
-                </a>
-                <a
-                  href="/calculators/trip-cost-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Trip Cost Calculator</span>
-                  <p className="text-muted-foreground">Estimate total trip costs including fuel, tolls, and accommodations</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

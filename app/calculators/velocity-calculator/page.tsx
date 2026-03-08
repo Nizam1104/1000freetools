@@ -382,28 +382,6 @@ export default function VelocityCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/acceleration-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Acceleration Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate acceleration</p>
-            </a>
-            <a href="/calculators/kinetic-energy-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Kinetic Energy Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate energy of motion</p>
-            </a>
-            <a href="/calculators/displacement-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Displacement Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate displacement</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Carb Intake Calculator",
     "description": "Carb Intake Calculator – Daily Carbohydrate Needs Calculator",
-    "href": "/carb-intake-calculator"
+    "href": "/calculators/carb-intake-calculator"
   },
   {
     "name": "Macro Calculator",
     "description": "Macro Calculator – Calculate Your Daily Macros for Any Goal",
-    "href": "/macro-calculator"
+    "href": "/calculators/macro-calculator"
   },
   {
     "name": "Ketogenic Macro Calculator",
     "description": "Keto Macro Calculator – Perfect Macros for a Ketogenic Diet",
-    "href": "/ketogenic-macro-calculator"
+    "href": "/calculators/ketogenic-macro-calculator"
   },
   {
     "name": "Protein Distribution Calculator",
     "description": "Protein Distribution Calculator – Optimize Protein Timing Per Meal",
-    "href": "/protein-distribution-calculator"
+    "href": "/calculators/protein-distribution-calculator"
   },
   {
     "name": "Protein Intake Calculator",
     "description": "Protein Intake Calculator – How Much Protein Do You Need Per Day?",
-    "href": "/protein-intake-calculator"
+    "href": "/calculators/protein-intake-calculator"
   },
   {
     "name": "Calorie Deficit Calculator",
     "description": "Calorie Deficit Calculator – How Many Calories to Cut to Lose Weight?",
-    "href": "/calorie-deficit-calculator"
+    "href": "/calculators/calorie-deficit-calculator"
   }
 ];
 

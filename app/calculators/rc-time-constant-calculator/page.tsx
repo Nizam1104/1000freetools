@@ -242,36 +242,6 @@ export default function RcTimeConstantCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/capacitor-charge-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Capacitor Charge Calculator</span>
-                <p className="text-muted-foreground">Calculate charge and energy stored in capacitors</p>
-              </a>
-              <a
-                href="/calculators/low-pass-filter-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Low Pass Filter Calculator</span>
-                <p className="text-muted-foreground">Design RC filters with specific cutoff frequencies</p>
-              </a>
-              <a
-                href="/calculators/ohms-law-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Ohm's Law Calculator</span>
-                <p className="text-muted-foreground">Calculate voltage, current, resistance, and power</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

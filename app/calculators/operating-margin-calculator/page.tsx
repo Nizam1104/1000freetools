@@ -368,36 +368,6 @@ export default function OperatingMarginCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/net-profit-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Net Profit Margin Calculator</span>
-                  <p className="text-muted-foreground">Calculate net profit margin after all expenses and taxes</p>
-                </a>
-                <a
-                  href="/calculators/gross-profit-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Gross Profit Margin Calculator</span>
-                  <p className="text-muted-foreground">Calculate gross margin from revenue and COGS</p>
-                </a>
-                <a
-                  href="/calculators/ebitda-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">EBITDA Calculator</span>
-                  <p className="text-muted-foreground">Calculate earnings before interest, taxes, depreciation and amortization</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

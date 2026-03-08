@@ -312,37 +312,6 @@ export default function JsonDepthAnalyzerPage() {
               </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-array-object-counter"
-                className="text-primary hover:underline"
-              >
-                JSON Array & Object Counter
-              </a>{" "}
-              – Count JSON elements
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-flattener"
-                className="text-primary hover:underline"
-              >
-                JSON Flattener
-              </a>{" "}
-              – Reduce nesting depth
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-explainer"
-                className="text-primary hover:underline"
-              >
-                JSON Explainer
-              </a>{" "}
-              – Understand JSON structure
-            </li>
-          </ul>
         </div>
       </div>
     </div>

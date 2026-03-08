@@ -260,28 +260,6 @@ export default function PeakToPeakVoltageCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/pcb-trace-width-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">PCB Trace Width Calculator</span>
-                <p className="text-muted-foreground">Calculate trace width for current capacity</p>
-              </a>
-              <a href="/calculators/ohms-law-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Ohm's Law Calculator</span>
-                <p className="text-muted-foreground">Calculate voltage, current, resistance, and power</p>
-              </a>
-              <a href="/calculators/power-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Power Calculator</span>
-                <p className="text-muted-foreground">Calculate electrical power in DC and AC circuits</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

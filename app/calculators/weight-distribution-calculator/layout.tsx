@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Water Requirement Calculator",
     "description": "Water Intake Calculator – How Much Water Should You Drink Per Day?",
-    "href": "/water-requirement-calculator"
+    "href": "/calculators/water-requirement-calculator"
   },
   {
     "name": "Water Tank Volume Calculator",
     "description": "Water Tank Volume Calculator – Calculate Tank Capacity in Liters & Gallons",
-    "href": "/water-tank-volume-calculator"
+    "href": "/calculators/water-tank-volume-calculator"
   },
   {
     "name": "Wavelength Calculator",
     "description": "Wavelength Calculator – Calculate Wavelength from Frequency",
-    "href": "/wavelength-calculator"
+    "href": "/calculators/wavelength-calculator"
   },
   {
     "name": "Wealth Growth Projection Calculator",
     "description": "Wealth Growth Projection Calculator",
-    "href": "/wealth-growth-projection-calculator"
+    "href": "/calculators/wealth-growth-projection-calculator"
   },
   {
     "name": "Week Number Calculator",
     "description": "Week Number Calculator – Find ISO Week Number for Any Date",
-    "href": "/week-number-calculator"
+    "href": "/calculators/week-number-calculator"
   },
   {
     "name": "Weight Loss Time Calculator",
     "description": "Weight Loss Time Calculator – How Long Will It Take to Lose Weight?",
-    "href": "/weight-loss-time-calculator"
+    "href": "/calculators/weight-loss-time-calculator"
   }
 ];
 

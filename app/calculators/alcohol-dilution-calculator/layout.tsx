@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Beer Abv Calculator",
     "description": "Beer ABV Calculator – Calculate Alcohol Content of Your Home Brew",
-    "href": "/beer-abv-calculator"
+    "href": "/calculators/beer-abv-calculator"
   },
   {
     "name": "Cocktail Abv Calculator",
     "description": "Cocktail ABV Calculator – Calculate the Alcohol Content of Any Mixed Drink",
-    "href": "/cocktail-abv-calculator"
+    "href": "/calculators/cocktail-abv-calculator"
   },
   {
     "name": "Wine Abv Calculator",
     "description": "Wine ABV Calculator – Calculate Alcohol Content in Homemade Wine",
-    "href": "/wine-abv-calculator"
+    "href": "/calculators/wine-abv-calculator"
   },
   {
     "name": "Coffee To Water Ratio Calculator",
     "description": "Coffee to Water Ratio Calculator – Perfect Coffee Every Time",
-    "href": "/coffee-to-water-ratio-calculator"
+    "href": "/calculators/coffee-to-water-ratio-calculator"
   },
   {
     "name": "Tea Brewing Strength Calculator",
     "description": "Tea Brewing Strength Calculator – Get the Perfect Steep Time & Leaf Ratio",
-    "href": "/tea-brewing-strength-calculator"
+    "href": "/calculators/tea-brewing-strength-calculator"
   },
   {
     "name": "Baking Time Adjustment Calculator",
     "description": "Baking Time Adjustment Calculator – Adjust Oven Time When Changing Pan Sizes",
-    "href": "/baking-time-adjustment-calculator"
+    "href": "/calculators/baking-time-adjustment-calculator"
   }
 ];
 

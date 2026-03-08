@@ -268,25 +268,6 @@ export default function SpeedCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/pace-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Pace Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate running pace per km or mile.</p>
-              </a>
-              <a href="/calculators/distance-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Distance Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find distance from speed and time.</p>
-              </a>
-              <a href="/calculators/time-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Time Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate time from distance and speed.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -292,36 +292,6 @@ export default function RootCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/square-root-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Square Root Calculator</span>
-                <p className="text-muted-foreground">Quickly calculate square roots of any number</p>
-              </a>
-              <a
-                href="/calculators/exponent-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Exponent Calculator</span>
-                <p className="text-muted-foreground">Calculate powers and exponential expressions</p>
-              </a>
-              <a
-                href="/calculators/radical-simplifier"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Radical Simplifier</span>
-                <p className="text-muted-foreground">Simplify square roots and radical expressions</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

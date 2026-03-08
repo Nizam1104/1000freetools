@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Boiler Efficiency Calculator",
     "description": "Boiler Efficiency Calculator – Calculate Boiler Efficiency",
-    "href": "/boiler-efficiency-calculator"
+    "href": "/calculators/boiler-efficiency-calculator"
   },
   {
     "name": "Air Conditioner Tonnage Calculator",
     "description": "AC Tonnage Calculator – Find the Right Air Conditioner Size for Your Room",
-    "href": "/air-conditioner-tonnage-calculator"
+    "href": "/calculators/air-conditioner-tonnage-calculator"
   },
   {
     "name": "Hvac Btu Calculator",
     "description": "HVAC BTU Calculator – What Size Air Conditioner Do You Need?",
-    "href": "/hvac-btu-calculator"
+    "href": "/calculators/hvac-btu-calculator"
   },
   {
     "name": "Hvac Airflow Calculator",
     "description": "HVAC Airflow Calculator – Calculate Required CFM",
-    "href": "/hvac-airflow-calculator"
+    "href": "/calculators/hvac-airflow-calculator"
   },
   {
     "name": "Chiller Tonnage Calculator",
     "description": "Chiller Tonnage Calculator – Calculate Cooling Capacity",
-    "href": "/chiller-tonnage-calculator"
+    "href": "/calculators/chiller-tonnage-calculator"
   },
   {
     "name": "Heat Transfer Calculator",
     "description": "Heat Transfer Calculator – Conduction, Convection & Radiation",
-    "href": "/heat-transfer-calculator"
+    "href": "/calculators/heat-transfer-calculator"
   }
 ];
 

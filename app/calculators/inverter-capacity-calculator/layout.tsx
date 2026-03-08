@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   },
   {
     "name": "Battery Backup Time Calculator",
     "description": "Battery Backup Time Calculator – How Long Will Your Battery Last?",
-    "href": "/battery-backup-time-calculator"
+    "href": "/calculators/battery-backup-time-calculator"
   },
   {
     "name": "Battery Life Calculator",
     "description": "Battery Life Calculator – Calculate Battery Runtime",
-    "href": "/battery-life-calculator"
+    "href": "/calculators/battery-life-calculator"
   },
   {
     "name": "Battery C Rate Calculator",
     "description": "Battery C-Rate Calculator – Calculate Charge/Discharge Rate",
-    "href": "/battery-c-rate-calculator"
+    "href": "/calculators/battery-c-rate-calculator"
   },
   {
     "name": "Electric Power Calculator",
     "description": "Electric Power Calculator",
-    "href": "/electric-power-calculator"
+    "href": "/calculators/electric-power-calculator"
   },
   {
     "name": "Ups Generator Runtime Calculator",
     "description": "UPS & Generator Runtime Calculator – How Long Will Your Backup Power Last?",
-    "href": "/ups-generator-runtime-calculator"
+    "href": "/calculators/ups-generator-runtime-calculator"
   }
 ];
 

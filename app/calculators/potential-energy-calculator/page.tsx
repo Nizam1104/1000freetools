@@ -337,23 +337,6 @@ export default function PotentialEnergyCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 mb-8">
-        <h2 className="text-2xl font-semibold mb-6">Related Physics Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/kinetic-energy-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Kinetic Energy Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate the energy of moving objects.</p>
-          </a>
-          <a href="/calculators/force-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Force Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate force using Newton's second law (F = ma).</p>
-          </a>
-          <a href="/calculators/work-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Work Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate work done by forces over distances.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

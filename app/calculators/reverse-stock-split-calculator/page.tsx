@@ -354,36 +354,6 @@ export default function ReverseStockSplitCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/stock-average-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Stock Average Calculator</span>
-                  <p className="text-muted-foreground">Calculate your average cost per share across multiple purchases</p>
-                </a>
-                <a
-                  href="/calculators/stock-split-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Stock Split Calculator</span>
-                  <p className="text-muted-foreground">Calculate share count and price after forward stock splits</p>
-                </a>
-                <a
-                  href="/calculators/dividend-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Dividend Calculator</span>
-                  <p className="text-muted-foreground">Estimate dividend income and reinvestment growth over time</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

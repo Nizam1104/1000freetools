@@ -536,36 +536,6 @@ export default function CoffeeToWaterRatioCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/tea-brewing-strength-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Tea Brewing Strength Calculator</span>
-                  <p className="text-muted-foreground">Calculate optimal tea to water ratios for different tea types</p>
-                </a>
-                <a
-                  href="/calculators/caffeine-intake-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Caffeine Intake Calculator</span>
-                  <p className="text-muted-foreground">Track your daily caffeine consumption from coffee and other sources</p>
-                </a>
-                <a
-                  href="/calculators/water-intake-activity-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Water Intake Calculator</span>
-                  <p className="text-muted-foreground">Determine daily hydration needs based on activity level</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

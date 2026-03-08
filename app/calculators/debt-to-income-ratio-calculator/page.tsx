@@ -346,36 +346,6 @@ export default function DebtToIncomeRatioCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/mortgage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Mortgage Calculator</span>
-                  <p className="text-muted-foreground">Calculate monthly mortgage payments including taxes and insurance</p>
-                </a>
-                <a
-                  href="/calculators/loan-payment-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Loan Payment Calculator</span>
-                  <p className="text-muted-foreground">Estimate monthly payments for personal loans, auto loans, and more</p>
-                </a>
-                <a
-                  href="/calculators/budget-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Budget Calculator</span>
-                  <p className="text-muted-foreground">Create a monthly budget and track income versus expenses</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

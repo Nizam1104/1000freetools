@@ -509,23 +509,6 @@ export default function AquariumVolumeCalculatorPage() {
           </section>
 
           {/* Related Tools Section */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">Related Tools</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/aquarium-filtration-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Aquarium Filtration Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate proper filter flow rate and turnover for your tank size.</p>
-              </a>
-              <a href="/calculators/water-tank-volume-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Water Tank Volume Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate volume for large water storage tanks and cisterns.</p>
-              </a>
-              <a href="/calculators/volume-of-cuboid-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Volume of Cuboid Calculator</h3>
-                <p className="text-sm text-muted-foreground">General-purpose rectangular volume calculator for any application.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

@@ -470,36 +470,6 @@ export default function MarkToGradeConverterPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/gpa-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">GPA Calculator</span>
-                  <p className="text-muted-foreground">Calculate your cumulative GPA from multiple courses and credits</p>
-                </a>
-                <a
-                  href="/calculators/final-grade-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Final Grade Calculator</span>
-                  <p className="text-muted-foreground">Find out what score you need on your final exam to reach your target grade</p>
-                </a>
-                <a
-                  href="/calculators/percentage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Percentage Calculator</span>
-                  <p className="text-muted-foreground">Calculate percentages, percentage changes, and percentage of a number</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

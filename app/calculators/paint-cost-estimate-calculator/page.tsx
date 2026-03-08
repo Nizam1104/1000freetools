@@ -463,25 +463,6 @@ export default function PaintCostEstimateCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Tools</h3>
-              <div className="space-y-2 text-sm">
-                <a href="/calculators/paint-coverage-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <span className="font-medium text-foreground">Paint Coverage Calculator</span>
-                  <p className="text-muted-foreground">Calculate paint needed based on room dimensions and coverage rate</p>
-                </a>
-                <a href="/calculators/floor-area-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <span className="font-medium text-foreground">Floor Area Calculator</span>
-                  <p className="text-muted-foreground">Calculate square footage for flooring projects</p>
-                </a>
-                <a href="/calculators/wallpaper-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <span className="font-medium text-foreground">Wallpaper Calculator</span>
-                  <p className="text-muted-foreground">Estimate wallpaper rolls needed for your room</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

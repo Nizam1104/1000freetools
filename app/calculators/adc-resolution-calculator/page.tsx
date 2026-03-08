@@ -345,34 +345,6 @@ export default function AdcResolutionCalculator() {
         </Card>
 
         {/* Related Tools Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>
-                <a href="/calculators/voltage-calculator" className="hover:text-foreground underline">
-                  Voltage Calculator
-                </a>
-                <span className="ml-2">– Calculate voltage drops, dividers, and power supply requirements</span>
-              </li>
-              <li>
-                <a href="/calculators/dac-resolution-calculator" className="hover:text-foreground underline">
-                  DAC Resolution Calculator
-                </a>
-                <span className="ml-2">– Calculate resolution for Digital-to-Analog Converters</span>
-              </li>
-              <li>
-                <a href="/calculators/signal-to-noise-ratio-calculator" className="hover:text-foreground underline">
-                  Signal-to-Noise Ratio Calculator
-                </a>
-                <span className="ml-2">– Analyze signal quality and noise performance</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-
       </div>
     </div>
   );

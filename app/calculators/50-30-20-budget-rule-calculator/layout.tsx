@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Monthly Budget Breakdown Calculator",
     "description": "Monthly Budget Breakdown Calculator",
-    "href": "/monthly-budget-breakdown-calculator"
+    "href": "/calculators/monthly-budget-breakdown-calculator"
   },
   {
     "name": "Debt To Income Ratio Calculator",
     "description": "Debt-to-Income Ratio Calculator",
-    "href": "/debt-to-income-ratio-calculator"
+    "href": "/calculators/debt-to-income-ratio-calculator"
   },
   {
     "name": "Gross Vs Net Income Calculator",
     "description": "Gross vs Net Income Calculator",
-    "href": "/gross-vs-net-income-calculator"
+    "href": "/calculators/gross-vs-net-income-calculator"
   },
   {
     "name": "Emergency Fund Calculator",
     "description": "Emergency Fund Calculator",
-    "href": "/emergency-fund-calculator"
+    "href": "/calculators/emergency-fund-calculator"
   },
   {
     "name": "Savings Goal Calculator",
     "description": "Savings Goal Calculator",
-    "href": "/savings-goal-calculator"
+    "href": "/calculators/savings-goal-calculator"
   },
   {
     "name": "4 Percent Rule Retirement Calculator",
     "description": "4% Rule Retirement Calculator",
-    "href": "/4-percent-rule-retirement-calculator"
+    "href": "/calculators/4-percent-rule-retirement-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Mortgage Amortization Schedule",
     "description": "Mortgage Amortization Schedule Calculator",
-    "href": "/mortgage-amortization-schedule"
+    "href": "/calculators/mortgage-amortization-schedule"
   },
   {
     "name": "Loan Emi Calculator",
     "description": "Loan EMI Calculator – Calculate Monthly Loan Payments",
-    "href": "/loan-emi-calculator"
+    "href": "/calculators/loan-emi-calculator"
   },
   {
     "name": "Loan Payoff Time Calculator",
     "description": "Loan Payoff Time Calculator",
-    "href": "/loan-payoff-time-calculator"
+    "href": "/calculators/loan-payoff-time-calculator"
   },
   {
     "name": "Loan Prepayment Impact Calculator",
     "description": "Loan Prepayment Impact Calculator",
-    "href": "/loan-prepayment-impact-calculator"
+    "href": "/calculators/loan-prepayment-impact-calculator"
   },
   {
     "name": "Loan Refinancing Calculator",
     "description": "Loan Refinancing Calculator",
-    "href": "/loan-refinancing-calculator"
+    "href": "/calculators/loan-refinancing-calculator"
   },
   {
     "name": "Business Loan Emi Calculator",
     "description": "Business Loan EMI Calculator",
-    "href": "/business-loan-emi-calculator"
+    "href": "/calculators/business-loan-emi-calculator"
   }
 ];
 

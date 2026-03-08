@@ -538,36 +538,6 @@ export default function DewPointCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/heat-index-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Heat Index Calculator</span>
-                  <p className="text-muted-foreground">Calculate how hot it feels with humidity</p>
-                </a>
-                <a
-                  href="/calculators/humidity-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Humidity Calculator</span>
-                  <p className="text-muted-foreground">Convert between relative and absolute humidity</p>
-                </a>
-                <a
-                  href="/calculators/wind-chill-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Wind Chill Calculator</span>
-                  <p className="text-muted-foreground">Calculate how cold it feels with wind</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

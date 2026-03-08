@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Hourly Wage To Salary Calculator",
     "description": "Hourly Wage to Annual Salary Calculator",
-    "href": "/hourly-wage-to-salary-calculator"
+    "href": "/calculators/hourly-wage-to-salary-calculator"
   },
   {
     "name": "Salary To Hourly Calculator",
     "description": "Salary to Hourly Rate Calculator",
-    "href": "/salary-to-hourly-calculator"
+    "href": "/calculators/salary-to-hourly-calculator"
   },
   {
     "name": "Freelance Effective Hourly Rate Calculator",
     "description": "Freelance Effective Hourly Rate Calculator",
-    "href": "/freelance-effective-hourly-rate-calculator"
+    "href": "/calculators/freelance-effective-hourly-rate-calculator"
   },
   {
     "name": "Debt To Income Ratio Calculator",
     "description": "Debt-to-Income Ratio Calculator",
-    "href": "/debt-to-income-ratio-calculator"
+    "href": "/calculators/debt-to-income-ratio-calculator"
   },
   {
     "name": "50 30 20 Budget Rule Calculator",
     "description": "50/30/20 Budget Rule Calculator",
-    "href": "/50-30-20-budget-rule-calculator"
+    "href": "/calculators/50-30-20-budget-rule-calculator"
   },
   {
     "name": "Monthly Budget Breakdown Calculator",
     "description": "Monthly Budget Breakdown Calculator",
-    "href": "/monthly-budget-breakdown-calculator"
+    "href": "/calculators/monthly-budget-breakdown-calculator"
   }
 ];
 

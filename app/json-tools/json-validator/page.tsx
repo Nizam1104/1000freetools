@@ -253,18 +253,6 @@ export default function JsonValidatorPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-schema-validator" className="text-primary hover:underline">JSON Schema Validator</a> – Validate against a schema
-          </li>
-          <li>
-            <a href="/json-tools/json-linter" className="text-primary hover:underline">JSON Linter</a> – Lint and fix JSON issues
-          </li>
-          <li>
-            <a href="/json-tools/json-pretty-print" className="text-primary hover:underline">JSON Pretty Print</a> – Format valid JSON
-          </li>
-        </ul>
       </div>
     </div>
   );

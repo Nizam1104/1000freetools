@@ -260,36 +260,6 @@ export default function RentPerSquareFootCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardContent className="p-6">
-          <h3 className="text-lg font-semibold mb-4">
-            Related Tools
-          </h3>
-          <div className="space-y-2 text-sm">
-            <a
-              href="/calculators/rental-yield-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Rental Yield Calculator</span>
-              <p className="text-muted-foreground">Calculate gross and net rental yield for investment properties</p>
-            </a>
-            <a
-              href="/calculators/rental-roi-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Rental ROI Calculator</span>
-              <p className="text-muted-foreground">Calculate return on investment including appreciation</p>
-            </a>
-            <a
-              href="/calculators/mortgage-calculator"
-              className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="font-medium text-foreground">Mortgage Calculator</span>
-              <p className="text-muted-foreground">Calculate monthly mortgage payments for home purchases</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

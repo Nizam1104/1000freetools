@@ -459,35 +459,6 @@ export default function BakingTimeAdjustmentCalculatorPage() {
               </div>
             </CardContent>
           </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Related Tools</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2 text-sm">
-              <a
-                href="/calculators/cake-pan-converter"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Cake Pan Converter</span>
-                <p className="text-muted-foreground">Convert recipes between different pan sizes and shapes</p>
-              </a>
-              <a
-                href="/calculators/oven-temperature-converter"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Oven Temperature Converter</span>
-                <p className="text-muted-foreground">Convert between Fahrenheit, Celsius, and Gas Mark</p>
-              </a>
-              <a
-                href="/calculators/recipe-scaling-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Recipe Scaling Calculator</span>
-                <p className="text-muted-foreground">Scale ingredient amounts up or down for different serving sizes</p>
-              </a>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -313,28 +313,6 @@ export default function ElectrochemicalCellPotentialCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/ph-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">pH Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate acidity and alkalinity</p>
-            </a>
-            <a href="/calculators/molarity-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Molarity Calculator</p>
-              <p className="text-xs text-muted-foreground">Find solution concentrations</p>
-            </a>
-            <a href="/calculators/concentration-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Concentration Calculator</p>
-              <p className="text-xs text-muted-foreground">Convert between concentration units</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

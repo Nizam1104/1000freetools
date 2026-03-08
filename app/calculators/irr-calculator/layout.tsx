@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Npv Calculator",
     "description": "NPV Calculator – Net Present Value",
-    "href": "/npv-calculator"
+    "href": "/calculators/npv-calculator"
   },
   {
     "name": "Payback Period Calculator",
     "description": "Payback Period Calculator",
-    "href": "/payback-period-calculator"
+    "href": "/calculators/payback-period-calculator"
   },
   {
     "name": "Roi Calculator",
     "description": "ROI Calculator – Calculate Return on Investment Percentage",
-    "href": "/roi-calculator"
+    "href": "/calculators/roi-calculator"
   },
   {
     "name": "Cost Of Capital Calculator",
     "description": "Cost of Capital Calculator",
-    "href": "/cost-of-capital-calculator"
+    "href": "/calculators/cost-of-capital-calculator"
   },
   {
     "name": "Wacc Calculator",
     "description": "WACC Calculator – Weighted Average Cost of Capital",
-    "href": "/wacc-calculator"
+    "href": "/calculators/wacc-calculator"
   },
   {
     "name": "Ebitda Calculator",
     "description": "EBITDA Calculator",
-    "href": "/ebitda-calculator"
+    "href": "/calculators/ebitda-calculator"
   }
 ];
 

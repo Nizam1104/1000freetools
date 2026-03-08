@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Battery Life Calculator",
     "description": "Battery Life Calculator – Calculate Battery Runtime",
-    "href": "/battery-life-calculator"
+    "href": "/calculators/battery-life-calculator"
   },
   {
     "name": "Battery Backup Time Calculator",
     "description": "Battery Backup Time Calculator – How Long Will Your Battery Last?",
-    "href": "/battery-backup-time-calculator"
+    "href": "/calculators/battery-backup-time-calculator"
   },
   {
     "name": "Battery C Rate Calculator",
     "description": "Battery C-Rate Calculator – Calculate Charge/Discharge Rate",
-    "href": "/battery-c-rate-calculator"
+    "href": "/calculators/battery-c-rate-calculator"
   },
   {
     "name": "Screen Time Allowance Calculator",
     "description": "Screen-Time Allowance Calculator – Set Healthy Screen Time Limits for Kids",
-    "href": "/screen-time-allowance-calculator"
+    "href": "/calculators/screen-time-allowance-calculator"
   },
   {
     "name": "Screen Time Calculator",
     "description": "Screen Time Calculator – Track & Manage Your Digital Wellness",
-    "href": "/screen-time-calculator"
+    "href": "/calculators/screen-time-calculator"
   },
   {
     "name": "Mobile Charging Time Calculator",
     "description": "Phone Charging Time Calculator – How Long Will It Take to Charge Your Phone?",
-    "href": "/mobile-charging-time-calculator"
+    "href": "/calculators/mobile-charging-time-calculator"
   }
 ];
 

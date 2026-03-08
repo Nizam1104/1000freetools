@@ -505,36 +505,6 @@ export default function DoorFrameCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/drywall-area-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Drywall Area Calculator</span>
-                  <p className="text-muted-foreground">Calculate how many drywall sheets you need for your room</p>
-                </a>
-                <a
-                  href="/calculators/flooring-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Flooring Calculator</span>
-                  <p className="text-muted-foreground">Estimate flooring material quantities and costs</p>
-                </a>
-                <a
-                  href="/calculators/paint-coverage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Paint Coverage Calculator</span>
-                  <p className="text-muted-foreground">Determine how much paint you need for your walls</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

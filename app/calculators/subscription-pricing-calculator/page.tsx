@@ -493,27 +493,6 @@ export default function SubscriptionPricingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/subscription-profit-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Subscription Profit Calculator</p>
-                  <p className="text-xs text-muted-foreground">Analyze MRR, ARR, and profitability</p>
-                </a>
-                <a href="/calculators/customer-lifetime-value-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Customer Lifetime Value Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate CLV and LTV:CAC ratio</p>
-                </a>
-                <a href="/calculators/break-even-point-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Break-Even Point Calculator</p>
-                  <p className="text-xs text-muted-foreground">Find your break-even sales volume</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

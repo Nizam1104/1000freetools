@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "Velocity Calculator",
     "description": "Velocity Calculator – Calculate Speed with Direction",
-    "href": "/velocity-calculator"
+    "href": "/calculators/velocity-calculator"
   },
   {
     "name": "Momentum Calculator",
     "description": "Momentum Calculator",
-    "href": "/momentum-calculator"
+    "href": "/calculators/momentum-calculator"
   },
   {
     "name": "Kinetic Energy Calculator",
     "description": "Kinetic Energy Calculator – Calculate Energy of Motion",
-    "href": "/kinetic-energy-calculator"
+    "href": "/calculators/kinetic-energy-calculator"
   },
   {
     "name": "Escape Velocity Calculator",
     "description": "Escape Velocity Calculator – Calculate Escape Velocity",
-    "href": "/escape-velocity-calculator"
+    "href": "/calculators/escape-velocity-calculator"
   },
   {
     "name": "Potential Energy Calculator",
     "description": "Potential Energy Calculator",
-    "href": "/potential-energy-calculator"
+    "href": "/calculators/potential-energy-calculator"
   }
 ];
 

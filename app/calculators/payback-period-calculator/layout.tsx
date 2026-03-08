@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Irr Calculator",
     "description": "IRR Calculator – Internal Rate of Return",
-    "href": "/irr-calculator"
+    "href": "/calculators/irr-calculator"
   },
   {
     "name": "Npv Calculator",
     "description": "NPV Calculator – Net Present Value",
-    "href": "/npv-calculator"
+    "href": "/calculators/npv-calculator"
   },
   {
     "name": "Roi Calculator",
     "description": "ROI Calculator – Calculate Return on Investment Percentage",
-    "href": "/roi-calculator"
+    "href": "/calculators/roi-calculator"
   },
   {
     "name": "Cost Of Capital Calculator",
     "description": "Cost of Capital Calculator",
-    "href": "/cost-of-capital-calculator"
+    "href": "/calculators/cost-of-capital-calculator"
   },
   {
     "name": "Wacc Calculator",
     "description": "WACC Calculator – Weighted Average Cost of Capital",
-    "href": "/wacc-calculator"
+    "href": "/calculators/wacc-calculator"
   },
   {
     "name": "Ebitda Calculator",
     "description": "EBITDA Calculator",
-    "href": "/ebitda-calculator"
+    "href": "/calculators/ebitda-calculator"
   }
 ];
 

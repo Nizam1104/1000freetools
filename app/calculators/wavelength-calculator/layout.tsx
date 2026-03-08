@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Frequency Calculator",
     "description": "Frequency Calculator – Calculate Frequency from Period and More",
-    "href": "/frequency-calculator"
+    "href": "/calculators/frequency-calculator"
   },
   {
     "name": "Photon Energy Calculator",
     "description": "Photon Energy Calculator – Calculate Energy of a Photon",
-    "href": "/photon-energy-calculator"
+    "href": "/calculators/photon-energy-calculator"
   },
   {
     "name": "Doppler Effect Calculator",
     "description": "Doppler Effect Calculator – Calculate Frequency Shift",
-    "href": "/doppler-effect-calculator"
+    "href": "/calculators/doppler-effect-calculator"
   },
   {
     "name": "Sound Speed Calculator",
     "description": "Sound Speed Calculator – Calculate Speed of Sound",
-    "href": "/sound-speed-calculator"
+    "href": "/calculators/sound-speed-calculator"
   },
   {
     "name": "Note Frequency Calculator",
     "description": "Note Frequency Calculator – Find the Hz Frequency of Any Musical Note",
-    "href": "/note-frequency-calculator"
+    "href": "/calculators/note-frequency-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

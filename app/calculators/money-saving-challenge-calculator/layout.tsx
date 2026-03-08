@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Savings Goal Calculator",
     "description": "Savings Goal Calculator",
-    "href": "/savings-goal-calculator"
+    "href": "/calculators/savings-goal-calculator"
   },
   {
     "name": "50 30 20 Budget Rule Calculator",
     "description": "50/30/20 Budget Rule Calculator",
-    "href": "/50-30-20-budget-rule-calculator"
+    "href": "/calculators/50-30-20-budget-rule-calculator"
   },
   {
     "name": "Monthly Budget Breakdown Calculator",
     "description": "Monthly Budget Breakdown Calculator",
-    "href": "/monthly-budget-breakdown-calculator"
+    "href": "/calculators/monthly-budget-breakdown-calculator"
   },
   {
     "name": "Emergency Fund Calculator",
     "description": "Emergency Fund Calculator",
-    "href": "/emergency-fund-calculator"
+    "href": "/calculators/emergency-fund-calculator"
   },
   {
     "name": "Fire Number Calculator",
     "description": "FIRE Number Calculator – Financial Independence",
-    "href": "/fire-number-calculator"
+    "href": "/calculators/fire-number-calculator"
   },
   {
     "name": "4 Percent Rule Retirement Calculator",
     "description": "4% Rule Retirement Calculator",
-    "href": "/4-percent-rule-retirement-calculator"
+    "href": "/calculators/4-percent-rule-retirement-calculator"
   }
 ];
 

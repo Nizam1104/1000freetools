@@ -303,36 +303,6 @@ export default function RomanNumeralsConverter() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/number-to-words-converter"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Number to Words Converter</span>
-                <p className="text-muted-foreground">Convert numbers to written English words</p>
-              </a>
-              <a
-                href="/calculators/base-converter"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Base Converter Calculator</span>
-                <p className="text-muted-foreground">Convert between binary, decimal, hex, and other bases</p>
-              </a>
-              <a
-                href="/calculators/fraction-to-decimal-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Fraction to Decimal Calculator</span>
-                <p className="text-muted-foreground">Convert fractions to decimal numbers instantly</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

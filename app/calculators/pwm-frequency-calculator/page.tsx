@@ -233,28 +233,6 @@ export default function PwmFrequencyCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/duty-cycle-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Duty Cycle Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate PWM duty cycle and on-time</p>
-            </a>
-            <a href="/calculators/frequency-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Frequency Calculator</p>
-              <p className="text-xs text-muted-foreground">Convert between frequency and period</p>
-            </a>
-            <a href="/calculators/rc-time-constant-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">RC Time Constant Calculator</p>
-              <p className="text-xs text-muted-foreground">Design PWM filter circuits</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -262,18 +262,6 @@ export default function JsonToSqlInsertPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-to-csv" className="text-primary hover:underline">JSON to CSV</a> – Convert JSON arrays to CSV format for spreadsheets
-          </li>
-          <li>
-            <a href="/json-tools/json-to-excel" className="text-primary hover:underline">JSON to Excel</a> – Export JSON data to Excel spreadsheets
-          </li>
-          <li>
-            <a href="/json-tools/csv-to-json" className="text-primary hover:underline">CSV to JSON</a> – Convert CSV files to JSON format
-          </li>
-        </ul>
       </div>
     </div>
   );

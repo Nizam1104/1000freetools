@@ -571,42 +571,6 @@ export default function AquariumFiltrationCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">
-                Related Tools
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a
-                  href="/calculators/aquarium-volume-calculator"
-                  className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block"
-                >
-                  <p className="font-medium text-sm mb-1">Aquarium Volume Calculator</p>
-                  <p className="text-xs text-muted-foreground">
-                    Calculate tank volume from dimensions
-                  </p>
-                </a>
-                <a
-                  href="/calculators/aquarium-co-calculator"
-                  className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block"
-                >
-                  <p className="font-medium text-sm mb-1">Aquarium CO2 Calculator</p>
-                  <p className="text-xs text-muted-foreground">
-                    Optimize CO2 levels for planted tanks
-                  </p>
-                </a>
-                <a
-                  href="/calculators/water-flow-rate-calculator"
-                  className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors block"
-                >
-                  <p className="font-medium text-sm mb-1">Water Flow Rate Calculator</p>
-                  <p className="text-xs text-muted-foreground">
-                    Calculate flow rates for plumbing
-                  </p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

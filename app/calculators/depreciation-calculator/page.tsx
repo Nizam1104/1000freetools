@@ -454,36 +454,6 @@ export default function DepreciationCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/roi-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">ROI Calculator</span>
-                  <p className="text-muted-foreground">Calculate return on investment for business assets</p>
-                </a>
-                <a
-                  href="/calculators/business-loan-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Business Loan Calculator</span>
-                  <p className="text-muted-foreground">Plan financing for equipment and asset purchases</p>
-                </a>
-                <a
-                  href="/calculators/break-even-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Break-Even Calculator</span>
-                  <p className="text-muted-foreground">Determine when an investment becomes profitable</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

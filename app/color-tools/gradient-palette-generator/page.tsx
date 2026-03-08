@@ -713,22 +713,6 @@ export default function GradientPaletteGeneratorPage() {
                         </div>
 
                         {/* Text Gradient */}
-                        <div>
-                          <h2
-                            className="text-2xl font-bold"
-                            style={{
-                              background: `linear-gradient(to right, ${stops.map((s) => s.color).join(", ")})`,
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              backgroundClip: "text",
-                            }}
-                          >
-                            Gradient Text
-                          </h2>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            Gradient text effect
-                          </p>
-                        </div>
 
                         {/* Badges */}
                         <div className="flex flex-wrap gap-2">

@@ -617,25 +617,6 @@ export default function DynamicPricingCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Business Calculators</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/profit-margin-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Profit Margin Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate gross and net profit margins to ensure your pricing covers costs and generates profit.</p>
-                </a>
-                <a href="/calculators/markup-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Markup Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Determine the right markup percentage to apply to your costs for target selling prices.</p>
-                </a>
-                <a href="/calculators/break-even-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Break-Even Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Find the sales volume needed to cover costs at different price points.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

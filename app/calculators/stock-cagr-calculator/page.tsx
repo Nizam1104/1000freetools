@@ -234,25 +234,6 @@ export default function StockCAGRCalculatorPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Investment Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/roi-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">ROI Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate return on investment percentage.</p>
-                </a>
-                <a href="/calculators/compound-interest-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Compound Interest Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Model compound growth over time.</p>
-                </a>
-                <a href="/calculators/investment-return-rate-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Investment Return Rate Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Analyze investment performance metrics.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -461,25 +461,6 @@ export default function CricketEconomyRateCalculatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Cricket Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/cricket-strike-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Cricket Strike Rate Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate batting strike rate to measure scoring speed and aggression in T20, ODI, and Test cricket.</p>
-                </a>
-                <a href="/calculators/batting-average-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Batting Average Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Compute batting average to evaluate a batsman&apos;s consistency and run-scoring ability across formats.</p>
-                </a>
-                <a href="/calculators/bowling-average-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Bowling Average Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate bowling average to assess a bowler&apos;s wicket-taking efficiency and overall performance.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

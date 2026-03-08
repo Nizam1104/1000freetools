@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Golden Ratio Layout Generator",
     "description": "Golden Ratio Layout Generator – Design Perfectly Proportioned Layouts",
-    "href": "/golden-ratio-layout-generator"
+    "href": "/calculators/golden-ratio-layout-generator"
   },
   {
     "name": "Grid Layout Calculator",
     "description": "Grid Layout Calculator – Calculate Column Widths, Gutters & Margins for Web Design",
-    "href": "/grid-layout-calculator"
+    "href": "/calculators/grid-layout-calculator"
   },
   {
     "name": "Line Height Calculator",
     "description": "Line-Height Calculator – Find the Optimal Line Spacing for Your Typography",
-    "href": "/line-height-calculator"
+    "href": "/calculators/line-height-calculator"
   },
   {
     "name": "Typography Scale Calculator",
     "description": "Typography Scale Calculator – Generate a Harmonious Font Size Scale",
-    "href": "/typography-scale-calculator"
+    "href": "/calculators/typography-scale-calculator"
   },
   {
     "name": "Canvas Aspect Ratio Calculator",
     "description": "Canvas Aspect Ratio Calculator – Resize Canvas While Keeping Proportions",
-    "href": "/canvas-aspect-ratio-calculator"
+    "href": "/calculators/canvas-aspect-ratio-calculator"
   },
   {
     "name": "Perspective Angle Calculator",
     "description": "Perspective Angle Calculator – Calculate Vanishing Points for Technical Drawing",
-    "href": "/perspective-angle-calculator"
+    "href": "/calculators/perspective-angle-calculator"
   }
 ];
 

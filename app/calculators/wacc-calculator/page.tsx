@@ -247,23 +247,6 @@ export default function WACCCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/npv-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">NPV Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate net present value of investments using WACC as discount rate.</p>
-            </a>
-            <a href="/calculators/cost-of-capital-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">Cost of Capital Calculator</h3>
-              <p className="text-sm text-muted-foreground">Determine the cost of equity and debt for your business financing.</p>
-            </a>
-            <a href="/calculators/irr-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-              <h3 className="font-semibold mb-1">IRR Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate internal rate of return to compare against your WACC.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

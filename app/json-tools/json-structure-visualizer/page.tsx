@@ -288,18 +288,6 @@ export default function JsonStructureVisualizerPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-viewer" className="text-primary hover:underline">JSON Viewer</a> – View JSON with syntax highlighting
-          </li>
-          <li>
-            <a href="/json-tools/json-playground" className="text-primary hover:underline">JSON Playground</a> – Interactive JSON editor
-          </li>
-          <li>
-            <a href="/json-tools/json-formatter-beautifier" className="text-primary hover:underline">JSON Formatter</a> – Format JSON with indentation
-          </li>
-        </ul>
       </div>
     </div>
   );

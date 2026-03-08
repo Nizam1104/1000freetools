@@ -251,25 +251,6 @@ export default function DivisionCalculator() {
         </Card>
 
         {/* Related Tools */}
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold mb-6">Related Math Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/multiplication-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Multiplication Calculator</h3>
-                <p className="text-sm text-muted-foreground">Multiply numbers quickly and accurately with our online multiplication tool.</p>
-              </a>
-              <a href="/calculators/percentage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Percentage Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate percentages, percentage changes, and percentage of numbers easily.</p>
-              </a>
-              <a href="/calculators/fraction-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Fraction Calculator</h3>
-                <p className="text-sm text-muted-foreground">Add, subtract, multiply, and divide fractions with step-by-step solutions.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

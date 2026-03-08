@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Bond Duration Calculator",
     "description": "Bond Duration Calculator",
-    "href": "/bond-duration-calculator"
+    "href": "/calculators/bond-duration-calculator"
   },
   {
     "name": "Bond Price Calculator",
     "description": "Bond Price Calculator",
-    "href": "/bond-price-calculator"
+    "href": "/calculators/bond-price-calculator"
   },
   {
     "name": "Bond Yield Calculator",
     "description": "Bond Yield Calculator",
-    "href": "/bond-yield-calculator"
+    "href": "/calculators/bond-yield-calculator"
   },
   {
     "name": "Yield To Maturity Calculator",
     "description": "Yield-to-Maturity (YTM) Calculator",
-    "href": "/yield-to-maturity-calculator"
+    "href": "/calculators/yield-to-maturity-calculator"
   },
   {
     "name": "Npv Calculator",
     "description": "NPV Calculator – Net Present Value",
-    "href": "/npv-calculator"
+    "href": "/calculators/npv-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

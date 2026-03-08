@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Circle Area Calculator",
     "description": "Circle Area Calculator",
-    "href": "/circle-area-calculator"
+    "href": "/calculators/circle-area-calculator"
   },
   {
     "name": "Ellipse Area Calculator",
     "description": "Ellipse Area Calculator",
-    "href": "/ellipse-area-calculator"
+    "href": "/calculators/ellipse-area-calculator"
   },
   {
     "name": "Parallelogram Area Calculator",
     "description": "Parallelogram Area Calculator",
-    "href": "/parallelogram-area-calculator"
+    "href": "/calculators/parallelogram-area-calculator"
   },
   {
     "name": "Rectangle Area Calculator",
     "description": "Rectangle Area Calculator",
-    "href": "/rectangle-area-calculator"
+    "href": "/calculators/rectangle-area-calculator"
   },
   {
     "name": "Square Area Calculator",
     "description": "Square Area Calculator – Find Area, Perimeter and Diagonal",
-    "href": "/square-area-calculator"
+    "href": "/calculators/square-area-calculator"
   },
   {
     "name": "Triangle Area Calculator",
     "description": "Triangle Area Calculator – Find Area from Base and Height",
-    "href": "/triangle-area-calculator"
+    "href": "/calculators/triangle-area-calculator"
   }
 ];
 

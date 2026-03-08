@@ -403,36 +403,6 @@ export default function LoanPrepaymentImpactCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/loan-refinancing-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Loan Refinancing Calculator</span>
-                  <p className="text-muted-foreground">Compare your current loan against a refinanced offer to see monthly and total savings</p>
-                </a>
-                <a
-                  href="/calculators/emi-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">EMI Calculator</span>
-                  <p className="text-muted-foreground">Calculate your monthly loan payment and total interest for any loan amount and term</p>
-                </a>
-                <a
-                  href="/calculators/debt-payoff-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Debt Payoff Calculator</span>
-                  <p className="text-muted-foreground">Create a payoff plan for multiple debts using avalanche or snowball methods</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

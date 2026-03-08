@@ -581,27 +581,6 @@ export default function ToddlerGrowthChartCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/baby-age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Baby Age Calculator</p>
-                  <p className="text-xs text-muted-foreground">Track infant age in weeks/months</p>
-                </a>
-                <a href="/calculators/bmi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">BMI Calculator</p>
-                  <p className="text-xs text-muted-foreground">Calculate body mass index</p>
-                </a>
-                <a href="/calculators/child-height-predictor" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Child Height Predictor</p>
-                  <p className="text-xs text-muted-foreground">Predict adult height</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -424,23 +424,6 @@ export default function EVBatteryCapacityEstimatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-12 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Related EV & Energy Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/charging-cost-ev-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">EV Charging Cost Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the cost to charge your electric vehicle at home or public stations.</p>
-            </a>
-            <a href="/calculators/range-estimator-ev" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">EV Range Estimator</h3>
-              <p className="text-sm text-muted-foreground">Estimate your electric vehicle's driving range based on speed, temperature, and terrain.</p>
-            </a>
-            <a href="/calculators/battery-life-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Battery Life Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate battery runtime and lifespan for various devices and applications.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

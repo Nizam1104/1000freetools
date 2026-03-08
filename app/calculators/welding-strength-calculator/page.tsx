@@ -165,23 +165,6 @@ export default function WeldingStrengthCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/bolt-torque-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Bolt Torque Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate proper bolt tightening torque for secure connections.</p>
-          </a>
-          <a href="/calculators/fastener-load-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Fastener Load Calculator</h3>
-            <p className="text-sm text-muted-foreground">Determine load capacity of bolts, screws, and rivets.</p>
-          </a>
-          <a href="/calculators/shear-strength-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Shear Strength Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate shear strength for materials and fasteners.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

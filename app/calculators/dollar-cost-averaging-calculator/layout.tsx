@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Dividend Payout Calculator",
     "description": "Dividend Payout Calculator",
-    "href": "/dividend-payout-calculator"
+    "href": "/calculators/dividend-payout-calculator"
   },
   {
     "name": "Dividend Reinvestment Calculator",
     "description": "Dividend Reinvestment (DRIP) Calculator",
-    "href": "/dividend-reinvestment-calculator"
+    "href": "/calculators/dividend-reinvestment-calculator"
   },
   {
     "name": "Lump Sum Vs Sip Analyzer",
     "description": "Lump Sum vs SIP Analyzer",
-    "href": "/lump-sum-vs-sip-analyzer"
+    "href": "/calculators/lump-sum-vs-sip-analyzer"
   },
   {
     "name": "Sip Calculator",
     "description": "SIP Calculator",
-    "href": "/sip-calculator"
+    "href": "/calculators/sip-calculator"
   },
   {
     "name": "Sip Step Up Calculator",
     "description": "SIP Step-Up Calculator",
-    "href": "/sip-step-up-calculator"
+    "href": "/calculators/sip-step-up-calculator"
   },
   {
     "name": "Step Down Sip Calculator",
     "description": "Step-Down SIP Calculator",
-    "href": "/step-down-sip-calculator"
+    "href": "/calculators/step-down-sip-calculator"
   }
 ];
 

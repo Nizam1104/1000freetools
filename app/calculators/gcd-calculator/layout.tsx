@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Lcm Calculator",
     "description": "LCM Calculator – Find Least Common Multiple Online",
-    "href": "/lcm-calculator"
+    "href": "/calculators/lcm-calculator"
   },
   {
     "name": "Prime Factorization Calculator",
     "description": "Prime Factorization Calculator – Find Prime Factors",
-    "href": "/prime-factorization-calculator"
+    "href": "/calculators/prime-factorization-calculator"
   },
   {
     "name": "Prime Checker",
     "description": "Prime Number Checker – Is This Number Prime?",
-    "href": "/prime-checker"
+    "href": "/calculators/prime-checker"
   },
   {
     "name": "Factorial Calculator",
     "description": "Factorial Calculator",
-    "href": "/factorial-calculator"
+    "href": "/calculators/factorial-calculator"
   },
   {
     "name": "Combination Calculator",
     "description": "Combination Calculator",
-    "href": "/combination-calculator"
+    "href": "/calculators/combination-calculator"
   },
   {
     "name": "Permutation Calculator",
     "description": "Permutation Calculator",
-    "href": "/permutation-calculator"
+    "href": "/calculators/permutation-calculator"
   }
 ];
 

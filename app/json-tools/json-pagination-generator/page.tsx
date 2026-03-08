@@ -312,36 +312,6 @@ export default function JsonPaginationGeneratorPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Generator
-              </a>{" "}
-              – Create mock JSON data with custom schemas
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-transformer"
-                className="text-primary hover:underline"
-              >
-                JSON Transformer
-              </a>{" "}
-              – Reshape and restructure JSON data
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-to-typescript"
-                className="text-primary hover:underline"
-              >
-                JSON to TypeScript
-              </a>{" "}
-              – Generate TypeScript interfaces from JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

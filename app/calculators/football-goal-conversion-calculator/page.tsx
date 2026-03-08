@@ -389,23 +389,6 @@ export default function FootballGoalConversionCalculatorPage() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Sports Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/basketball-shooting-percentage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Basketball Shooting Percentage</h3>
-            <p className="text-sm text-muted-foreground">Calculate field goal, 3-point, and free throw percentages.</p>
-          </a>
-          <a href="/calculators/cricket-strike-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Cricket Strike Rate Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate batting strike rate and economy rate for cricket.</p>
-          </a>
-          <a href="/calculators/tennis-win-probability-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Tennis Win Probability</h3>
-            <p className="text-sm text-muted-foreground">Estimate match win probability based on serve statistics.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

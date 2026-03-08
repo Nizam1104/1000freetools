@@ -432,23 +432,6 @@ export default function RoomHeaterWattageCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-xl font-semibold mb-4">Related Calculators</h2>
-          <div className="space-y-3">
-            <div>
-              <a href="/calculators/electricity-cost-calculator" className="text-primary hover:underline font-medium">Electricity Cost Calculator</a>
-              <p className="text-muted-foreground text-sm">Calculate the running costs of any electrical appliance based on wattage and your local electricity rates.</p>
-            </div>
-            <div>
-              <a href="/calculators/btu-calculator" className="text-primary hover:underline font-medium">BTU Calculator for Air Conditioners</a>
-              <p className="text-muted-foreground text-sm">Find the right cooling capacity for your room with our BTU sizing tool for AC units.</p>
-            </div>
-            <div>
-              <a href="/calculators/energy-consumption-calculator" className="text-primary hover:underline font-medium">Home Energy Consumption Calculator</a>
-              <p className="text-muted-foreground text-sm">Estimate your total household energy usage and identify opportunities to reduce your electricity bills.</p>
-            </div>
-          </div>
-        </div>
 
         {/* Reference Table: Heater Size by Room */}
         <div className="mt-8 p-6 bg-card rounded-lg border">

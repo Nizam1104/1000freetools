@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Camping Gear Weight Calculator",
     "description": "Camping Gear Weight Calculator – Plan Your Pack Weight for Any Trip",
-    "href": "/camping-gear-weight-calculator"
+    "href": "/calculators/camping-gear-weight-calculator"
   },
   {
     "name": "Altitude Sickness Risk Calculator",
     "description": "Altitude Sickness Risk Calculator – Assess Your Risk of AMS Before Climbing",
-    "href": "/altitude-sickness-risk-calculator"
+    "href": "/calculators/altitude-sickness-risk-calculator"
   },
   {
     "name": "Trail Difficulty Estimator",
     "description": "Trail Difficulty Estimator – Calculate How Hard a Hiking Trail Really Is",
-    "href": "/trail-difficulty-estimator"
+    "href": "/calculators/trail-difficulty-estimator"
   },
   {
     "name": "Hiking Pace Calculator",
     "description": "Hiking Pace Calculator – Estimate Trail Time with Naismith's Rule",
-    "href": "/hiking-pace-calculator"
+    "href": "/calculators/hiking-pace-calculator"
   },
   {
     "name": "Wind Chill Calculator",
     "description": "Wind Chill Calculator – Find Out What the Temperature Really Feels Like",
-    "href": "/wind-chill-calculator"
+    "href": "/calculators/wind-chill-calculator"
   },
   {
     "name": "Mountain Oxygen Calculator",
     "description": "Mountain Oxygen Calculator – Calculate Available Oxygen at Any Altitude",
-    "href": "/mountain-oxygen-calculator"
+    "href": "/calculators/mountain-oxygen-calculator"
   }
 ];
 

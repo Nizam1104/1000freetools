@@ -536,36 +536,6 @@ export default function JsonViewerPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Beautify JSON with proper indentation
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-search"
-                className="text-primary hover:underline"
-              >
-                JSON Search
-              </a>{" "}
-              – Find values in JSON by key or content
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Check JSON for syntax errors
-            </li>
-          </ul>
         </div>
       </div>
     </div>

@@ -208,23 +208,6 @@ export default function FocalLengthCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Physics & Optics Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/mirror-equation-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Mirror Equation Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate image position and magnification for spherical mirrors.</p>
-          </a>
-          <a href="/calculators/snells-law-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Snell&apos;s Law Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate light refraction angles at material boundaries.</p>
-          </a>
-          <a href="/calculators/magnification-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Magnification Calculator</h3>
-            <p className="text-sm text-muted-foreground">Determine image size and orientation for lens systems.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

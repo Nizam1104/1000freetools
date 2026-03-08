@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ac Impedance Calculator",
     "description": "AC Impedance Calculator – Calculate Impedance in AC Circuits",
-    "href": "/ac-impedance-calculator"
+    "href": "/calculators/ac-impedance-calculator"
   },
   {
     "name": "Ohms Law Calculator",
     "description": "Ohm's Law Calculator",
-    "href": "/ohms-law-calculator"
+    "href": "/calculators/ohms-law-calculator"
   },
   {
     "name": "Rc Time Constant Calculator",
     "description": "RC Time Constant Calculator – Calculate RC Circuit Time Constant",
-    "href": "/rc-time-constant-calculator"
+    "href": "/calculators/rc-time-constant-calculator"
   },
   {
     "name": "Rl Time Constant Calculator",
     "description": "RL Time Constant Calculator – Calculate RL Circuit Time Constant",
-    "href": "/rl-time-constant-calculator"
+    "href": "/calculators/rl-time-constant-calculator"
   },
   {
     "name": "Rlc Resonance Calculator",
     "description": "RLC Resonance Calculator – Calculate Resonant Frequency",
-    "href": "/rlc-resonance-calculator"
+    "href": "/calculators/rlc-resonance-calculator"
   },
   {
     "name": "Series Parallel Capacitor Calculator",
     "description": "Capacitor Calculator – Series and Parallel Capacitance Calculator",
-    "href": "/series-parallel-capacitor-calculator"
+    "href": "/calculators/series-parallel-capacitor-calculator"
   }
 ];
 

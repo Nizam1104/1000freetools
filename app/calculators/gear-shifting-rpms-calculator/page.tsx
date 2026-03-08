@@ -369,25 +369,6 @@ export default function GearShiftingRPMsCalculatorPage() {
         </Card>
 
         {/* Related Tools Section */}
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Automotive Calculators</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/gear-ratio-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Gear Ratio Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate gear ratios and output speeds for any gear combination.</p>
-              </a>
-              <a href="/calculators/rpm-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">RPM Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate RPM for pulleys, gears, and rotating machinery.</p>
-              </a>
-              <a href="/calculators/fuel-cost-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Fuel Cost Calculator</h3>
-                <p className="text-sm text-muted-foreground">Estimate fuel expenses for trips based on distance and vehicle efficiency.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

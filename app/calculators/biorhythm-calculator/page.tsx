@@ -438,36 +438,6 @@ export default function BiorhythmCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/age-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Age Calculator</span>
-                  <p className="text-muted-foreground">Calculate your exact age in years, months, weeks, and days</p>
-                </a>
-                <a
-                  href="/calculators/ideal-bedtime-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Ideal Bedtime Calculator</span>
-                  <p className="text-muted-foreground">Find the perfect bedtime based on wake time and sleep needs</p>
-                </a>
-                <a
-                  href="/calculators/days-between-dates-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Days Between Dates Calculator</span>
-                  <p className="text-muted-foreground">Calculate the number of days between any two dates</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Resistance Calculator",
     "description": "Resistance Calculator – Calculate Resistance with Ohm's Law",
-    "href": "/resistance-calculator"
+    "href": "/calculators/resistance-calculator"
   },
   {
     "name": "Current Calculator",
     "description": "Current Calculator – Calculate Electrical Current (Amps)",
-    "href": "/current-calculator"
+    "href": "/calculators/current-calculator"
   },
   {
     "name": "Electric Power Calculator",
     "description": "Electric Power Calculator",
-    "href": "/electric-power-calculator"
+    "href": "/calculators/electric-power-calculator"
   },
   {
     "name": "Voltage Calculator",
     "description": "Voltage Calculator",
-    "href": "/voltage-calculator"
+    "href": "/calculators/voltage-calculator"
   },
   {
     "name": "Ac Impedance Calculator",
     "description": "AC Impedance Calculator – Calculate Impedance in AC Circuits",
-    "href": "/ac-impedance-calculator"
+    "href": "/calculators/ac-impedance-calculator"
   },
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   }
 ];
 

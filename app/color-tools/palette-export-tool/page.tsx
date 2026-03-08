@@ -434,7 +434,7 @@ ${colors.map((c) => `        '${c.name.toLowerCase().replace(/\s+/g, "-")}': '${
                   {colors.map((swatch) => (
                     <div key={swatch.id} className="text-center">
                       <div
-                        className="w-full aspect-square rounded-lg border mb-2"
+                        className="w-full aspect-square rounded-md border mb-2"
                         style={{ backgroundColor: swatch.color }}
                       />
                       <p className="text-xs font-medium truncate">{swatch.name}</p>

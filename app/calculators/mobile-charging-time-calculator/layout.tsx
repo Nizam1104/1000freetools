@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Battery Life Calculator",
     "description": "Battery Life Calculator – Calculate Battery Runtime",
-    "href": "/battery-life-calculator"
+    "href": "/calculators/battery-life-calculator"
   },
   {
     "name": "Battery Backup Time Calculator",
     "description": "Battery Backup Time Calculator – How Long Will Your Battery Last?",
-    "href": "/battery-backup-time-calculator"
+    "href": "/calculators/battery-backup-time-calculator"
   },
   {
     "name": "Battery C Rate Calculator",
     "description": "Battery C-Rate Calculator – Calculate Charge/Discharge Rate",
-    "href": "/battery-c-rate-calculator"
+    "href": "/calculators/battery-c-rate-calculator"
   },
   {
     "name": "Screen Brightness Battery Calculator",
     "description": "Screen Brightness Battery Calculator – How Brightness Affects Your Battery Life",
-    "href": "/screen-brightness-battery-calculator"
+    "href": "/calculators/screen-brightness-battery-calculator"
   },
   {
     "name": "Charging Cost Ev Calculator",
     "description": "EV Charging Cost Calculator – Calculate the Cost to Charge Your Electric Car",
-    "href": "/charging-cost-ev-calculator"
+    "href": "/calculators/charging-cost-ev-calculator"
   },
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   }
 ];
 

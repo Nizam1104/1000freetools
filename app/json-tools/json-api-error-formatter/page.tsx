@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { FileJson, RotateCcw, Trash2, Copy, Download } from "lucide-react";
@@ -221,10 +229,7 @@ export default function JsonApiErrorFormatterPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Error Response
               </Label>
-              <JsonEditor
-                value={result}
-                readOnly
-              />
+              <JsonEditor value={result} readOnly />
             </CardContent>
           </Card>
         )}
@@ -418,37 +423,6 @@ export default function JsonApiErrorFormatterPage() {
             </p>
           </div>
         </div>
-
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a
-              href="/json-tools/json-api-formatter"
-              className="text-primary hover:underline"
-            >
-              JSON API Formatter
-            </a>{" "}
-            – Format and beautify API response JSON
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-api-response-generator"
-              className="text-primary hover:underline"
-            >
-              JSON API Response Generator
-            </a>{" "}
-            – Generate complete API response examples
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-validator"
-              className="text-primary hover:underline"
-            >
-              JSON Validator
-            </a>{" "}
-            – Validate your JSON error responses
-          </li>
-        </ul>
       </div>
     </div>
   );

@@ -587,37 +587,6 @@ export default function CsvToJsonConverterPage() {
             </p>
           </div>
         </div>
-
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a
-              href="/json-tools/json-to-csv"
-              className="text-primary hover:underline"
-            >
-              JSON to CSV
-            </a>{" "}
-            – Convert JSON arrays to CSV format
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-to-excel"
-              className="text-primary hover:underline"
-            >
-              JSON to Excel
-            </a>{" "}
-            – Export JSON data to Excel spreadsheets
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-to-tsv"
-              className="text-primary hover:underline"
-            >
-              JSON to TSV
-            </a>{" "}
-            – Convert JSON to tab-separated values
-          </li>
-        </ul>
       </div>
     </div>
   );

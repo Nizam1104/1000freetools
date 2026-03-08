@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Mortgage Amortization Schedule",
     "description": "Mortgage Amortization Schedule Calculator",
-    "href": "/mortgage-amortization-schedule"
+    "href": "/calculators/mortgage-amortization-schedule"
   },
   {
     "name": "Loan Amortization Visualizer",
     "description": "Loan Amortization Visualizer",
-    "href": "/loan-amortization-visualizer"
+    "href": "/calculators/loan-amortization-visualizer"
   },
   {
     "name": "Mortgage Refinance Break Even Calculator",
     "description": "Mortgage Refinance Break-Even Calculator",
-    "href": "/mortgage-refinance-break-even-calculator"
+    "href": "/calculators/mortgage-refinance-break-even-calculator"
   },
   {
     "name": "Buy Vs Rent Calculator",
     "description": "Buy vs Rent Calculator",
-    "href": "/buy-vs-rent-calculator"
+    "href": "/calculators/buy-vs-rent-calculator"
   },
   {
     "name": "Housing Affordability Calculator",
     "description": "Housing Affordability Calculator",
-    "href": "/housing-affordability-calculator"
+    "href": "/calculators/housing-affordability-calculator"
   },
   {
     "name": "Rent Per Square Foot Calculator",
     "description": "Rent per Square Foot Calculator – Compare Property Rental Rates",
-    "href": "/rent-per-square-foot-calculator"
+    "href": "/calculators/rent-per-square-foot-calculator"
   }
 ];
 

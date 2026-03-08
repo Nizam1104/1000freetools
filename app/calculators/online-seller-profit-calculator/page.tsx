@@ -440,25 +440,6 @@ export default function OnlineSellerProfitCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-6">Related Ecommerce and Business Tools</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/profit-margin-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Profit Margin Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate gross and net profit margins for any business or product.</p>
-              </a>
-              <a href="/calculators/markup-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Markup Calculator</h3>
-                <p className="text-sm text-muted-foreground">Determine the right markup percentage to achieve your target profit margin.</p>
-              </a>
-              <a href="/calculators/break-even-point-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Break Even Point Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find out how many units you need to sell to cover all your costs.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

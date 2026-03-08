@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Cholesterol Ratio Calculator",
     "description": "Cholesterol Ratio Calculator – Free Heart Health Risk Assessment",
-    "href": "/cholesterol-ratio-calculator"
+    "href": "/calculators/cholesterol-ratio-calculator"
   },
   {
     "name": "Kidney Function Egfr Calculator",
     "description": "Kidney Function eGFR Calculator – Free CKD-EPI Calculator",
-    "href": "/kidney-function-egfr-calculator"
+    "href": "/calculators/kidney-function-egfr-calculator"
   },
   {
     "name": "Bmi Calculator",
     "description": "BMI Calculator – Free Body Mass Index Calculator Online",
-    "href": "/bmi-calculator"
+    "href": "/calculators/bmi-calculator"
   },
   {
     "name": "Body Fat Calculator",
     "description": "Body Fat Percentage Calculator – Estimate Your Body Fat Instantly",
-    "href": "/body-fat-calculator"
+    "href": "/calculators/body-fat-calculator"
   },
   {
     "name": "Body Surface Area Calculator",
     "description": "Body Surface Area Calculator – BSA Calculation for Medical Use",
-    "href": "/body-surface-area-calculator"
+    "href": "/calculators/body-surface-area-calculator"
   },
   {
     "name": "Ideal Weight Calculator",
     "description": "Ideal Weight Calculator – What Is Your Ideal Body Weight?",
-    "href": "/ideal-weight-calculator"
+    "href": "/calculators/ideal-weight-calculator"
   }
 ];
 

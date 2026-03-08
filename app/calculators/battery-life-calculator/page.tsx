@@ -319,35 +319,6 @@ export default function BatteryLifeCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <a
-            href="/calculators/battery-backup-time-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Battery Backup Time Calculator</span>
-            <p className="text-muted-foreground">Calculate backup runtime including inverter efficiency</p>
-          </a>
-          <a
-            href="/calculators/battery-c-rate-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Battery C-Rate Calculator</span>
-            <p className="text-muted-foreground">Calculate charge and discharge C-rates</p>
-          </a>
-          <a
-            href="/calculators/amp-hours-to-watt-hours-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Amp Hours to Watt Hours Calculator</span>
-            <p className="text-muted-foreground">Convert between Ah and Wh for battery capacity</p>
-          </a>
-        </CardContent>
-      </Card>
     </div>
   );
 }

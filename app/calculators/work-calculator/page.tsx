@@ -216,23 +216,6 @@ export default function WorkCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/force-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Force Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate force using Newton&apos;s second law (F = ma).</p>
-          </a>
-          <a href="/calculators/power-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Power Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate power as work done per unit time.</p>
-          </a>
-          <a href="/calculators/kinetic-energy-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Kinetic Energy Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate kinetic energy of moving objects.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

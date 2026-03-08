@@ -234,36 +234,6 @@ export default function RangeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/mean-median-mode-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Mean Median Mode Calculator</span>
-                <p className="text-muted-foreground">Find central tendency measures for your dataset</p>
-              </a>
-              <a
-                href="/calculators/standard-deviation-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Standard Deviation Calculator</span>
-                <p className="text-muted-foreground">Calculate variance and standard deviation</p>
-              </a>
-              <a
-                href="/calculators/interquartile-range-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Interquartile Range Calculator</span>
-                <p className="text-muted-foreground">Find IQR and identify outliers in your data</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

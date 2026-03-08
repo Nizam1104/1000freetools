@@ -289,36 +289,6 @@ export default function JsonKeyFrequencyPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-key-extractor"
-                className="text-primary hover:underline"
-              >
-                JSON Key Extractor
-              </a>{" "}
-              – List unique keys
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-array-object-counter"
-                className="text-primary hover:underline"
-              >
-                JSON Array & Object Counter
-              </a>{" "}
-              – Count elements
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-schema-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Schema Generator
-              </a>{" "}
-              – Infer schemas
-            </li>
-          </ul>
         </div>
       </div>
     </div>

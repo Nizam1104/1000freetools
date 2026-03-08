@@ -383,25 +383,6 @@ export default function ScreenBrightnessBatteryCalculatorPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/battery-life-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Battery Life Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Estimate total battery runtime based on usage patterns and apps.</p>
-                </a>
-                <a href="/calculators/mobile-charging-time-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Mobile Charging Time Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate how long it takes to fully charge your device.</p>
-                </a>
-                <a href="/calculators/power-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Power Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate electrical power consumption for any device.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

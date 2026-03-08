@@ -514,36 +514,6 @@ export default function DogCalorieCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/pet-age-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Pet Age Calculator</span>
-                  <p className="text-muted-foreground">Convert your dog or cat age to human years based on size and species</p>
-                </a>
-                <a
-                  href="/calculators/cat-calorie-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Cat Calorie Calculator</span>
-                  <p className="text-muted-foreground">Calculate daily calorie requirements for cats of all ages</p>
-                </a>
-                <a
-                  href="/calculators/bmi-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">BMI Calculator</span>
-                  <p className="text-muted-foreground">Check your own body mass index and understand your health status</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

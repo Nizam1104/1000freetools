@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Baby Age Calculator",
     "description": "Baby Age Calculator – Free Infant Age Calculator in Weeks and Months",
-    "href": "/baby-age-calculator"
+    "href": "/calculators/baby-age-calculator"
   },
   {
     "name": "Baby Feeding Chart Calculator",
     "description": "Baby Feeding Chart Calculator – How Much & How Often to Feed Your Baby",
-    "href": "/baby-feeding-chart-calculator"
+    "href": "/calculators/baby-feeding-chart-calculator"
   },
   {
     "name": "Diaper Usage Estimator",
     "description": "Diaper Usage Estimator – Calculate Monthly Diaper Costs for Your Baby",
-    "href": "/diaper-usage-estimator"
+    "href": "/calculators/diaper-usage-estimator"
   },
   {
     "name": "Child Height Predictor",
     "description": "Child Height Predictor – Free Adult Height Calculator",
-    "href": "/child-height-predictor"
+    "href": "/calculators/child-height-predictor"
   },
   {
     "name": "Toddler Growth Chart Calculator",
     "description": "Toddler Growth Chart Calculator – Track Height & Weight Percentiles for Your Child",
-    "href": "/toddler-growth-chart-calculator"
+    "href": "/calculators/toddler-growth-chart-calculator"
   },
   {
     "name": "Sleep Cycle Calculator",
     "description": "Sleep Cycle Calculator – Wake Up Refreshed Every Morning",
-    "href": "/sleep-cycle-calculator"
+    "href": "/calculators/sleep-cycle-calculator"
   }
 ];
 

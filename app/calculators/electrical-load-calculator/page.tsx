@@ -337,28 +337,6 @@ export default function ElectricalLoadCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/electric-power-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Electric Power Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate power from voltage and current</p>
-            </a>
-            <a href="/calculators/ohms-law-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Ohm's Law Calculator</p>
-              <p className="text-xs text-muted-foreground">Find voltage, current, or resistance</p>
-            </a>
-            <a href="/calculators/energy-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Energy Calculator</p>
-              <p className="text-xs text-muted-foreground">Convert energy units and estimate costs</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

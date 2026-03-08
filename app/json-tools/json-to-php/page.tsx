@@ -332,36 +332,6 @@ export default function JsonToPhpPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-to-typescript"
-                className="text-primary hover:underline"
-              >
-                JSON to TypeScript
-              </a>{" "}
-              – Generate TypeScript interfaces from JSON
-            </li>
-            <li>
-              <a
-                href="/json-tools/php-to-json"
-                className="text-primary hover:underline"
-              >
-                PHP to JSON
-              </a>{" "}
-              – Convert PHP arrays back to JSON
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-formatter"
-                className="text-primary hover:underline"
-              >
-                JSON Formatter
-              </a>{" "}
-              – Beautify JSON before conversion
-            </li>
-          </ul>
         </div>
       </div>
     </div>

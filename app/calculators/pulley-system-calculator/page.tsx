@@ -225,28 +225,6 @@ export default function PulleySystemCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/force-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Force Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate force, mass, and acceleration</p>
-            </a>
-            <a href="/calculators/belt-length-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Belt Length Calculator</p>
-              <p className="text-xs text-muted-foreground">Find belt length for pulley systems</p>
-            </a>
-            <a href="/calculators/mechanical-advantage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mechanical Advantage Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate advantage for simple machines</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -355,34 +355,6 @@ export default function SolarPanelRequirementCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li>
-              <a href="/calculators/ohms-law-calculator" className="text-primary hover:underline">
-                Ohm's Law Calculator
-              </a>{" "}
-              — Calculate voltage, current, resistance, and power for electrical circuits
-            </li>
-            <li>
-              <a href="/calculators/steel-weight-calculator" className="text-primary hover:underline">
-                Steel Weight Calculator
-              </a>{" "}
-              — Calculate weight of steel materials for structural planning
-            </li>
-            <li>
-              <a href="/calculators/concrete-volume-calculator" className="text-primary hover:underline">
-                Concrete Volume Calculator
-              </a>{" "}
-              — Estimate concrete needed for slabs, footings, and foundations
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   );
 }

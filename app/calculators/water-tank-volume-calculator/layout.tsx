@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Water Flow Rate Calculator",
     "description": "Water Flow Rate Calculator – Calculate Flow Rate in Pipes",
-    "href": "/water-flow-rate-calculator"
+    "href": "/calculators/water-flow-rate-calculator"
   },
   {
     "name": "Pipe Water Tank Pressure Calculator",
     "description": "Pipe Water Pressure Calculator – Calculate Static Pressure from Water Tank Height",
-    "href": "/pipe-water-tank-pressure-calculator"
+    "href": "/calculators/pipe-water-tank-pressure-calculator"
   },
   {
     "name": "Water Requirement Calculator",
     "description": "Water Intake Calculator – How Much Water Should You Drink Per Day?",
-    "href": "/water-requirement-calculator"
+    "href": "/calculators/water-requirement-calculator"
   },
   {
     "name": "Aquarium Filtration Calculator",
     "description": "Aquarium Filtration Calculator – Find the Right Filter Size for Your Fish Tank",
-    "href": "/aquarium-filtration-calculator"
+    "href": "/calculators/aquarium-filtration-calculator"
   },
   {
     "name": "Aquarium Volume Calculator",
     "description": "Aquarium Volume Calculator – Calculate Fish Tank Water Capacity",
-    "href": "/aquarium-volume-calculator"
+    "href": "/calculators/aquarium-volume-calculator"
   },
   {
     "name": "Manning Equation Calculator",
     "description": "Manning Equation Calculator – Open Channel Flow",
-    "href": "/manning-equation-calculator"
+    "href": "/calculators/manning-equation-calculator"
   }
 ];
 

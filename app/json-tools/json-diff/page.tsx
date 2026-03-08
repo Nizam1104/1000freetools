@@ -226,12 +226,13 @@ export default function JsonDiffPage() {
         <div className="flex items-center gap-2">
           <span className="font-mono text-sm font-medium">{item.key}</span>
           <span
-            className={`text-xs px-2 py-0.5 rounded-full ${item.type === "added"
+            className={`text-xs px-2 py-0.5 rounded-full ${
+              item.type === "added"
                 ? "bg-green-500 text-white"
                 : item.type === "removed"
                   ? "bg-red-500 text-white"
                   : "bg-yellow-500 text-white"
-              }`}
+            }`}
           >
             {typeLabel}
           </span>
@@ -485,37 +486,6 @@ export default function JsonDiffPage() {
               </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-merge"
-                className="text-primary hover:underline"
-              >
-                JSON Merge
-              </a>{" "}
-              – Combine two JSON objects
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-validator"
-                className="text-primary hover:underline"
-              >
-                JSON Validator
-              </a>{" "}
-              – Validate JSON syntax
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-pretty-print"
-                className="text-primary hover:underline"
-              >
-                JSON Pretty Print
-              </a>{" "}
-              – Format JSON for comparison
-            </li>
-          </ul>
         </div>
       </div>
     </div>

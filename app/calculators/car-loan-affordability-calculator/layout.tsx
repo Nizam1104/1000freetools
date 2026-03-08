@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Car Loan Calculator",
     "description": "Car Loan Calculator – Calculate Auto Loan Payments",
-    "href": "/car-loan-calculator"
+    "href": "/calculators/car-loan-calculator"
   },
   {
     "name": "Fuel Cost Calculator",
     "description": "Fuel Cost Calculator – Estimate Your Trip Fuel Expenses Instantly",
-    "href": "/fuel-cost-calculator"
+    "href": "/calculators/fuel-cost-calculator"
   },
   {
     "name": "Fuel Efficiency Comparison Calculator",
     "description": "Fuel Efficiency Comparison Calculator – Compare Cars by MPG & Running Cost",
-    "href": "/fuel-efficiency-comparison-calculator"
+    "href": "/calculators/fuel-efficiency-comparison-calculator"
   },
   {
     "name": "Housing Affordability Calculator",
     "description": "Housing Affordability Calculator",
-    "href": "/housing-affordability-calculator"
+    "href": "/calculators/housing-affordability-calculator"
   },
   {
     "name": "Buy Vs Rent Calculator",
     "description": "Buy vs Rent Calculator",
-    "href": "/buy-vs-rent-calculator"
+    "href": "/calculators/buy-vs-rent-calculator"
   },
   {
     "name": "Loan Refinancing Calculator",
     "description": "Loan Refinancing Calculator",
-    "href": "/loan-refinancing-calculator"
+    "href": "/calculators/loan-refinancing-calculator"
   }
 ];
 

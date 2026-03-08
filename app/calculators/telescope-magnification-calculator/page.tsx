@@ -365,27 +365,6 @@ export default function TelescopeMagnificationCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Related Tools</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/calculators/focal-length-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Focal Length Calculator</p>
-                  <p className="text-xs text-muted-foreground">Lens and optics calculations</p>
-                </a>
-                <a href="/calculators/aperture-depth-of-field-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Aperture & Depth of Field Calculator</p>
-                  <p className="text-xs text-muted-foreground">Photography optics calculator</p>
-                </a>
-                <a href="/calculators/magnification-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Magnification Calculator</p>
-                  <p className="text-xs text-muted-foreground">General magnification tools</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

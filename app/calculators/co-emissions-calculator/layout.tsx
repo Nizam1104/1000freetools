@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Carbon Footprint Calculator",
     "description": "Carbon Footprint Calculator – Calculate Your Personal Annual CO₂ Footprint",
-    "href": "/carbon-footprint-calculator"
+    "href": "/calculators/carbon-footprint-calculator"
   },
   {
     "name": "Energy Consumption Breakdown Calculator",
     "description": "Energy Consumption Breakdown Calculator – See Where Your Energy Is Being Used",
-    "href": "/energy-consumption-breakdown-calculator"
+    "href": "/calculators/energy-consumption-breakdown-calculator"
   },
   {
     "name": "Solar Irradiance Calculator",
     "description": "Solar Irradiance Calculator – Estimate Solar Energy at Your Location",
-    "href": "/solar-irradiance-calculator"
+    "href": "/calculators/solar-irradiance-calculator"
   },
   {
     "name": "Solar Panel Requirement Calculator",
     "description": "Solar Panel Requirement Calculator – Size Your Solar System",
-    "href": "/solar-panel-requirement-calculator"
+    "href": "/calculators/solar-panel-requirement-calculator"
   },
   {
     "name": "Electricity Appliance Wattage Calculator",
     "description": "Appliance Wattage & Electricity Cost Calculator – See What's Draining Your Power Bill",
-    "href": "/electricity-appliance-wattage-calculator"
+    "href": "/calculators/electricity-appliance-wattage-calculator"
   },
   {
     "name": "Electrical Load Calculator",
     "description": "Electrical Load Calculator – Calculate Circuit Load",
-    "href": "/electrical-load-calculator"
+    "href": "/calculators/electrical-load-calculator"
   }
 ];
 

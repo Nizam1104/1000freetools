@@ -301,28 +301,6 @@ export default function MomentumCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/kinetic-energy-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Kinetic Energy</p>
-              <p className="text-xs text-muted-foreground">Calculate KE = ½mv²</p>
-            </a>
-            <a href="/calculators/force-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Force Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate F = ma</p>
-            </a>
-            <a href="/calculators/velocity-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Velocity Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate speed and velocity</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

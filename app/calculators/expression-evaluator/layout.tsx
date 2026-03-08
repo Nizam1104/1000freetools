@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Quadratic Equation Solver",
     "description": "Quadratic Equation Solver",
-    "href": "/quadratic-equation-solver"
+    "href": "/calculators/quadratic-equation-solver"
   },
   {
     "name": "Linear Equation Solver",
     "description": "Linear Equation Solver – Solve ax + b = 0",
-    "href": "/linear-equation-solver"
+    "href": "/calculators/linear-equation-solver"
   },
   {
     "name": "Addition Calculator",
     "description": "Addition Calculator",
-    "href": "/addition-calculator"
+    "href": "/calculators/addition-calculator"
   },
   {
     "name": "Division Calculator",
     "description": "Division Calculator",
-    "href": "/division-calculator"
+    "href": "/calculators/division-calculator"
   },
   {
     "name": "Multiplication Calculator",
     "description": "Multiplication Calculator",
-    "href": "/multiplication-calculator"
+    "href": "/calculators/multiplication-calculator"
   },
   {
     "name": "Subtraction Calculator",
     "description": "Subtraction Calculator – Subtract Numbers Instantly",
-    "href": "/subtraction-calculator"
+    "href": "/calculators/subtraction-calculator"
   }
 ];
 

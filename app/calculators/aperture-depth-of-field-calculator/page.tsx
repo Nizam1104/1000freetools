@@ -526,39 +526,6 @@ export default function ApertureDepthOfFieldCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">
-                Related Tools
-              </h2>
-              <div className="space-y-2">
-                <div>
-                  <a href="/calculators/focal-length-calculator" className="text-primary hover:underline font-medium">
-                    Focal Length Calculator
-                  </a>
-                  <p className="text-sm text-muted-foreground">
-                    Calculate equivalent focal lengths across different sensor formats and understand field of view.
-                  </p>
-                </div>
-                <div>
-                  <a href="/calculators/camera-exposure-calculator" className="text-primary hover:underline font-medium">
-                    Camera Exposure Calculator
-                  </a>
-                  <p className="text-sm text-muted-foreground">
-                    Master the exposure triangle - balance aperture, shutter speed, and ISO for perfect exposures.
-                  </p>
-                </div>
-                <div>
-                  <a href="/calculators/shutter-speed-calculator" className="text-primary hover:underline font-medium">
-                    Shutter Speed Calculator
-                  </a>
-                  <p className="text-sm text-muted-foreground">
-                    Determine optimal shutter speeds to freeze motion or create intentional blur in your photos.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -354,36 +354,6 @@ export default function NetProfitMarginCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/gross-profit-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Gross Profit Margin Calculator</span>
-                  <p className="text-muted-foreground">Calculate gross margin from revenue and cost of goods sold</p>
-                </a>
-                <a
-                  href="/calculators/operating-margin-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Operating Margin Calculator</span>
-                  <p className="text-muted-foreground">Find operating profit margin before interest and taxes</p>
-                </a>
-                <a
-                  href="/calculators/break-even-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Break-Even Calculator</span>
-                  <p className="text-muted-foreground">Determine the sales volume needed to cover all costs</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

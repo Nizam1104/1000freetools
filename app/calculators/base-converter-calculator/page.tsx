@@ -349,35 +349,6 @@ export default function BaseConverterCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <a
-            href="/calculators/binary-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Binary Calculator</span>
-            <p className="text-muted-foreground">Perform arithmetic operations on binary numbers</p>
-          </a>
-          <a
-            href="/calculators/hex-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Hex Calculator</span>
-            <p className="text-muted-foreground">Add, subtract, multiply, and divide hexadecimal numbers</p>
-          </a>
-          <a
-            href="/calculators/bitwise-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Bitwise Calculator</span>
-            <p className="text-muted-foreground">Perform AND, OR, XOR, and shift operations on binary values</p>
-          </a>
-        </CardContent>
-      </Card>
     </div>
   );
 }

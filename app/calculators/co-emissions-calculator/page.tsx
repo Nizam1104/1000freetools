@@ -449,36 +449,6 @@ export default function COEmissionsCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/carbon-footprint-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Carbon Footprint Calculator</span>
-                  <p className="text-muted-foreground">Calculate your complete personal carbon footprint across all categories</p>
-                </a>
-                <a
-                  href="/calculators/fuel-cost-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Fuel Cost Calculator</span>
-                  <p className="text-muted-foreground">Estimate fuel costs for trips and compare vehicle efficiency</p>
-                </a>
-                <a
-                  href="/calculators/solar-panel-requirement-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Solar Panel Calculator</span>
-                  <p className="text-muted-foreground">Determine how many solar panels you need to power your home</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

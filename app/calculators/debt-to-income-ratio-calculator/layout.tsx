@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "50 30 20 Budget Rule Calculator",
     "description": "50/30/20 Budget Rule Calculator",
-    "href": "/50-30-20-budget-rule-calculator"
+    "href": "/calculators/50-30-20-budget-rule-calculator"
   },
   {
     "name": "Credit Card Payoff Calculator",
     "description": "Credit Card Payoff Calculator",
-    "href": "/credit-card-payoff-calculator"
+    "href": "/calculators/credit-card-payoff-calculator"
   },
   {
     "name": "Gross Vs Net Income Calculator",
     "description": "Gross vs Net Income Calculator",
-    "href": "/gross-vs-net-income-calculator"
+    "href": "/calculators/gross-vs-net-income-calculator"
   },
   {
     "name": "Emergency Fund Calculator",
     "description": "Emergency Fund Calculator",
-    "href": "/emergency-fund-calculator"
+    "href": "/calculators/emergency-fund-calculator"
   },
   {
     "name": "Monthly Budget Breakdown Calculator",
     "description": "Monthly Budget Breakdown Calculator",
-    "href": "/monthly-budget-breakdown-calculator"
+    "href": "/calculators/monthly-budget-breakdown-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

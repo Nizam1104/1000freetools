@@ -345,25 +345,6 @@ export default function BuyVsRentCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/mortgage-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-semibold">Mortgage Calculator</p>
-                  <p className="text-sm text-muted-foreground">Calculate monthly mortgage payments with taxes and insurance.</p>
-                </a>
-                <a href="/calculators/rental-yield-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-semibold">Rental Yield Calculator</p>
-                  <p className="text-sm text-muted-foreground">Analyze investment property returns and rental income.</p>
-                </a>
-                <a href="/calculators/home-affordability-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <p className="font-semibold">Home Affordability Calculator</p>
-                  <p className="text-sm text-muted-foreground">Determine how much house you can afford based on income.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

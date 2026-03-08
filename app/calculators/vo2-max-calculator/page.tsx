@@ -318,28 +318,6 @@ export default function VO2MaxCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/heart-rate-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Heart Rate Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate target heart rate zones</p>
-            </a>
-            <a href="/calculators/running-pace-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Running Pace Calculator</p>
-              <p className="text-xs text-muted-foreground">Plan your race pace</p>
-            </a>
-            <a href="/calculators/calorie-burn-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Calorie Burn Calculator</p>
-              <p className="text-xs text-muted-foreground">Track calories burned during exercise</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

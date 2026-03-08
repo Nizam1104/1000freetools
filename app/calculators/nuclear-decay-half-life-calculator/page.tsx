@@ -294,36 +294,6 @@ export default function NuclearDecayHalfLifeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/radioactive-decay-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Radioactive Decay Calculator</span>
-                <p className="text-muted-foreground">Calculate decay activity and radiation levels</p>
-              </a>
-              <a
-                href="/calculators/exponential-decay-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Exponential Decay Calculator</span>
-                <p className="text-muted-foreground">Model exponential decay for any quantity</p>
-              </a>
-              <a
-                href="/calculators/carbon-dating-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Carbon Dating Calculator</span>
-                <p className="text-muted-foreground">Estimate age of organic materials using C-14</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

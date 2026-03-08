@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ventilation Rate Calculator",
     "description": "Ventilation Rate Calculator – Calculate Required Airflow (ACH & CFM) per ASHRAE",
-    "href": "/ventilation-rate-calculator"
+    "href": "/calculators/ventilation-rate-calculator"
   },
   {
     "name": "Hvac Airflow Calculator",
     "description": "HVAC Airflow Calculator – Calculate Required CFM",
-    "href": "/hvac-airflow-calculator"
+    "href": "/calculators/hvac-airflow-calculator"
   },
   {
     "name": "Hvac Btu Calculator",
     "description": "HVAC BTU Calculator – What Size Air Conditioner Do You Need?",
-    "href": "/hvac-btu-calculator"
+    "href": "/calculators/hvac-btu-calculator"
   },
   {
     "name": "Greenhouse Ventilation Calculator",
     "description": "Greenhouse Ventilation Calculator – Calculate Fan Size & Airflow for Your Greenhouse",
-    "href": "/greenhouse-ventilation-calculator"
+    "href": "/calculators/greenhouse-ventilation-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   },
   {
     "name": "1rm Calculator",
     "description": "1RM Calculator – Calculate Your One Rep Max for Any Lift",
-    "href": "/1rm-calculator"
+    "href": "/calculators/1rm-calculator"
   }
 ];
 

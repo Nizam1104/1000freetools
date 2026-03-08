@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Wavelength Calculator",
     "description": "Wavelength Calculator – Calculate Wavelength from Frequency",
-    "href": "/wavelength-calculator"
+    "href": "/calculators/wavelength-calculator"
   },
   {
     "name": "Photon Energy Calculator",
     "description": "Photon Energy Calculator – Calculate Energy of a Photon",
-    "href": "/photon-energy-calculator"
+    "href": "/calculators/photon-energy-calculator"
   },
   {
     "name": "Sound Speed Calculator",
     "description": "Sound Speed Calculator – Calculate Speed of Sound",
-    "href": "/sound-speed-calculator"
+    "href": "/calculators/sound-speed-calculator"
   },
   {
     "name": "Doppler Effect Calculator",
     "description": "Doppler Effect Calculator – Calculate Frequency Shift",
-    "href": "/doppler-effect-calculator"
+    "href": "/calculators/doppler-effect-calculator"
   },
   {
     "name": "Note Frequency Calculator",
     "description": "Note Frequency Calculator – Find the Hz Frequency of Any Musical Note",
-    "href": "/note-frequency-calculator"
+    "href": "/calculators/note-frequency-calculator"
   },
   {
     "name": "Pwm Frequency Calculator",
     "description": "PWM Frequency Calculator – Calculate PWM Output Frequency",
-    "href": "/pwm-frequency-calculator"
+    "href": "/calculators/pwm-frequency-calculator"
   }
 ];
 

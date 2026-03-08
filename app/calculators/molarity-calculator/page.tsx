@@ -397,28 +397,6 @@ export default function MolarityCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/ph-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">pH Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate pH from [H⁺]</p>
-            </a>
-            <a href="/calculators/stoichiometry-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Stoichiometry Calculator</p>
-              <p className="text-xs text-muted-foreground">Balance chemical equations</p>
-            </a>
-            <a href="/calculators/dilution-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Dilution Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate dilution ratios</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

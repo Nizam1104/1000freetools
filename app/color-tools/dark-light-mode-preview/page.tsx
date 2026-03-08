@@ -451,12 +451,6 @@ export default function DarkLightModePreviewPage() {
                     <strong>Dark Mode:</strong> Invert your approach - use lighter text on darker backgrounds. Avoid pure black (#000000) as it can cause eye strain.
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
-                  <Check className="h-4 w-4 mt-0.5 text-green-600" />
-                  <p>
-                    <strong>Accent Colors:</strong> Bright accent colors work well in both modes, but may need slight adjustments for optimal visibility.
-                  </p>
-                </div>
               </CardContent>
             </Card>
           </div>

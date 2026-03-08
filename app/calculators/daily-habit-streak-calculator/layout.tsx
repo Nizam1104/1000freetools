@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Productivity Streak Calculator",
     "description": "Productivity Streak Calculator – Track Your Daily Productivity Streaks & Consistency",
-    "href": "/productivity-streak-calculator"
+    "href": "/calculators/productivity-streak-calculator"
   },
   {
     "name": "Goal Tracker Calculator",
     "description": "Goal Tracker Calculator – Track Your Progress Toward Any Goal",
-    "href": "/goal-tracker-calculator"
+    "href": "/calculators/goal-tracker-calculator"
   },
   {
     "name": "Business Days Calculator",
     "description": "Business Days Calculator – Count Working Days Between Dates",
-    "href": "/business-days-calculator"
+    "href": "/calculators/business-days-calculator"
   },
   {
     "name": "Date Add Subtract Calculator",
     "description": "Date Calculator – Add or Subtract Days, Weeks & Months from a Date",
-    "href": "/date-add-subtract-calculator"
+    "href": "/calculators/date-add-subtract-calculator"
   },
   {
     "name": "Date Difference Calculator",
     "description": "Date Difference Calculator – Days Between Two Dates",
-    "href": "/date-difference-calculator"
+    "href": "/calculators/date-difference-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

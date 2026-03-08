@@ -1,36 +1,44 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef, useCallback } from 'react';
-import Editor, { EditorProps } from '@monaco-editor/react';
-import type * as monaco from 'monaco-editor';
-import { Play, RotateCcw, Copy, Check, Download, Trash2, Terminal, Save, FolderOpen, Maximize2, Minimize2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Faqs from '@/components/utils/Faqs';
-import ToolLinkCards from '@/components/utils/ToolLinkCards';
+import { useState, useEffect, useRef, useCallback } from "react";
+import Editor, { EditorProps } from "@monaco-editor/react";
+import type * as monaco from "monaco-editor";
+import {
+  Play,
+  RotateCcw,
+  Copy,
+  Check,
+  Download,
+  Trash2,
+  Terminal,
+  Save,
+  FolderOpen,
+  Maximize2,
+  Minimize2,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 
 const relatedTools = [
   {
-    name: "JSON Formatter",
-    description: "Format and validate JSON online",
-    href: "/developer-tools/json-formatter",
-  },
-  {
-    name: "Base64 Encoder Decoder",
-    description: "Encode and decode Base64 strings",
-    href: "/developer-tools/base64-encoder-decoder",
-  },
-  {
-    name: "Regex Tester",
-    description: "Test and debug regular expressions",
-    href: "/developer-tools/regex-tester",
+    name: "Mock Data Generator",
+    description: "Generate mock data for testing",
+    href: "/developer-tools/mock-data-generator",
   },
 ];
 
 interface ConsoleOutput {
-  type: 'log' | 'error' | 'warn' | 'info';
+  type: "log" | "error" | "warn" | "info";
   content: string;
   timestamp: number;
 }
@@ -60,9 +68,9 @@ export default function JSOnlineCompiler() {
   const [isRunning, setIsRunning] = useState(false);
   const [copied, setCopied] = useState(false);
   const [savedSnippets, setSavedSnippets] = useState<SavedCode[]>([]);
-  const [snippetName, setSnippetName] = useState('');
+  const [snippetName, setSnippetName] = useState("");
   const [showSaveInput, setShowSaveInput] = useState(false);
-  const [activeTab, setActiveTab] = useState<'console' | 'snippets'>('console');
+  const [activeTab, setActiveTab] = useState<"console" | "snippets">("console");
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const consoleRef = useRef<HTMLDivElement>(null);
@@ -70,13 +78,13 @@ export default function JSOnlineCompiler() {
 
   // Load saved snippets from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('js-playground-snippets');
+    const saved = localStorage.getItem("js-playground-snippets");
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
         setSavedSnippets(parsed);
       } catch {
-        console.error('Failed to load snippets');
+        console.error("Failed to load snippets");
       }
     }
   }, []);
@@ -94,31 +102,36 @@ export default function JSOnlineCompiler() {
     const originalWarn = console.warn;
     const originalInfo = console.info;
 
-    const createWriter = (type: ConsoleOutput['type']) => {
+    const createWriter = (type: ConsoleOutput["type"]) => {
       return (...args: unknown[]) => {
-        const content = args.map(arg => {
-          if (typeof arg === 'object' && arg !== null) {
-            try {
-              return JSON.stringify(arg, null, 2);
-            } catch {
-              return String(arg);
+        const content = args
+          .map((arg) => {
+            if (typeof arg === "object" && arg !== null) {
+              try {
+                return JSON.stringify(arg, null, 2);
+              } catch {
+                return String(arg);
+              }
             }
-          }
-          return String(arg);
-        }).join(' ');
+            return String(arg);
+          })
+          .join(" ");
 
-        setOutput(prev => [...prev, {
-          type,
-          content,
-          timestamp: Date.now()
-        }]);
+        setOutput((prev) => [
+          ...prev,
+          {
+            type,
+            content,
+            timestamp: Date.now(),
+          },
+        ]);
       };
     };
 
-    console.log = createWriter('log');
-    console.error = createWriter('error');
-    console.warn = createWriter('warn');
-    console.info = createWriter('info');
+    console.log = createWriter("log");
+    console.error = createWriter("error");
+    console.warn = createWriter("warn");
+    console.info = createWriter("info");
 
     return () => {
       console.log = originalLog;
@@ -135,22 +148,28 @@ export default function JSOnlineCompiler() {
     const restoreConsole = captureConsole();
 
     try {
-      const asyncFn = new Function('return (async () => {\n' + code + '\n})()');
+      const asyncFn = new Function("return (async () => {\n" + code + "\n})()");
       const result = await asyncFn();
 
       if (result !== undefined) {
-        setOutput(prev => [...prev, {
-          type: 'info',
-          content: `→ ${String(result)}`,
-          timestamp: Date.now()
-        }]);
+        setOutput((prev) => [
+          ...prev,
+          {
+            type: "info",
+            content: `→ ${String(result)}`,
+            timestamp: Date.now(),
+          },
+        ]);
       }
     } catch (error) {
-      setOutput(prev => [...prev, {
-        type: 'error',
-        content: error instanceof Error ? error.message : String(error),
-        timestamp: Date.now()
-      }]);
+      setOutput((prev) => [
+        ...prev,
+        {
+          type: "error",
+          content: error instanceof Error ? error.message : String(error),
+          timestamp: Date.now(),
+        },
+      ]);
     } finally {
       restoreConsole();
       setIsRunning(false);
@@ -168,11 +187,11 @@ export default function JSOnlineCompiler() {
   };
 
   const downloadCode = () => {
-    const blob = new Blob([code], { type: 'text/javascript' });
+    const blob = new Blob([code], { type: "text/javascript" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'snippet.js';
+    a.download = "snippet.js";
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -184,33 +203,33 @@ export default function JSOnlineCompiler() {
       id: Date.now().toString(),
       code,
       name: snippetName.trim(),
-      createdAt: Date.now()
+      createdAt: Date.now(),
     };
 
     const updated = [newSnippet, ...savedSnippets];
     setSavedSnippets(updated);
-    localStorage.setItem('js-playground-snippets', JSON.stringify(updated));
-    setSnippetName('');
+    localStorage.setItem("js-playground-snippets", JSON.stringify(updated));
+    setSnippetName("");
     setShowSaveInput(false);
   };
 
   const loadSnippet = (snippet: SavedCode) => {
     setCode(snippet.code);
-    setActiveTab('console');
+    setActiveTab("console");
   };
 
   const deleteSnippet = (id: string) => {
-    const updated = savedSnippets.filter(s => s.id !== id);
+    const updated = savedSnippets.filter((s) => s.id !== id);
     setSavedSnippets(updated);
-    localStorage.setItem('js-playground-snippets', JSON.stringify(updated));
+    localStorage.setItem("js-playground-snippets", JSON.stringify(updated));
   };
 
   const formatTime = (timestamp: number) => {
     const date = new Date(timestamp);
-    return date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
+    return date.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
     });
   };
 
@@ -224,12 +243,12 @@ export default function JSOnlineCompiler() {
     editor.updateOptions({
       minimap: { enabled: false },
       fontSize: 14,
-      lineNumbers: 'on',
+      lineNumbers: "on",
       automaticLayout: true,
       scrollBeyondLastLine: false,
       padding: { top: 16, bottom: 16 },
-      renderWhitespace: 'none',
-      wordWrap: 'on',
+      renderWhitespace: "none",
+      wordWrap: "on",
       tabSize: 2,
       bracketPairColorization: { enabled: true },
       suggestOnTriggerCharacters: true,
@@ -241,14 +260,14 @@ export default function JSOnlineCompiler() {
     });
   };
 
-  const editorOptions: EditorProps['options'] = {
+  const editorOptions: EditorProps["options"] = {
     minimap: { enabled: false },
     fontSize: 14,
-    lineNumbers: 'on',
+    lineNumbers: "on",
     automaticLayout: true,
     scrollBeyondLastLine: false,
-    renderWhitespace: 'none',
-    wordWrap: 'on',
+    renderWhitespace: "none",
+    wordWrap: "on",
     tabSize: 2,
     bracketPairColorization: { enabled: true },
     suggestOnTriggerCharacters: true,
@@ -260,18 +279,28 @@ export default function JSOnlineCompiler() {
   };
 
   return (
-    <div className={`${isFullscreen ? 'fixed inset-0 z-50 bg-background' : 'min-h-screen bg-background'} w-screen`}>
-      <div className={`${isFullscreen ? 'h-screen p-0' : 'mx-auto py-8'} w-screen`}>
+    <div
+      className={`${isFullscreen ? "fixed inset-0 z-50 bg-background" : "min-h-screen bg-background"} w-screen`}
+    >
+      <div
+        className={`${isFullscreen ? "h-screen p-0" : "mx-auto py-8"} w-screen`}
+      >
         {!isFullscreen && (
           <div className="mb-6">
-            <h1 className="text-3xl font-semibold mb-2">JavaScript Online Compiler</h1>
+            <h1 className="text-3xl font-semibold mb-2">
+              JavaScript Online Compiler
+            </h1>
             <p className="text-muted-foreground">
               Write, run, and test JavaScript code directly in your browser
             </p>
           </div>
         )}
 
-        <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'console' | 'snippets')} className={`${isFullscreen ? 'hidden' : 'space-y-4'}`}>
+        <Tabs
+          value={activeTab}
+          onValueChange={(v) => setActiveTab(v as "console" | "snippets")}
+          className={`${isFullscreen ? "hidden" : "space-y-4"}`}
+        >
           <TabsList>
             <TabsTrigger value="console">Console</TabsTrigger>
             <TabsTrigger value="snippets">
@@ -319,19 +348,15 @@ export default function JSOnlineCompiler() {
                       </Button>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Button
-                        variant="ghost"
-                        size="xs"
-                        onClick={copyCode}
-                      >
-                        {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                        {copied ? 'Copied' : 'Copy'}
+                      <Button variant="ghost" size="xs" onClick={copyCode}>
+                        {copied ? (
+                          <Check className="w-3.5 h-3.5" />
+                        ) : (
+                          <Copy className="w-3.5 h-3.5" />
+                        )}
+                        {copied ? "Copied" : "Copy"}
                       </Button>
-                      <Button
-                        variant="ghost"
-                        size="xs"
-                        onClick={downloadCode}
-                      >
+                      <Button variant="ghost" size="xs" onClick={downloadCode}>
                         <Download className="w-3.5 h-3.5" />
                         Download
                       </Button>
@@ -352,17 +377,19 @@ export default function JSOnlineCompiler() {
                         value={snippetName}
                         onChange={(e) => setSnippetName(e.target.value)}
                         placeholder="Snippet name..."
-                        onKeyDown={(e) => e.key === 'Enter' && saveSnippet()}
+                        onKeyDown={(e) => e.key === "Enter" && saveSnippet()}
                         className="flex-1 h-8"
                         autoFocus
                       />
-                      <Button size="sm" onClick={saveSnippet}>Save</Button>
+                      <Button size="sm" onClick={saveSnippet}>
+                        Save
+                      </Button>
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => {
                           setShowSaveInput(false);
-                          setSnippetName('');
+                          setSnippetName("");
                         }}
                       >
                         Cancel
@@ -377,7 +404,7 @@ export default function JSOnlineCompiler() {
                       language="javascript"
                       theme="vs-dark"
                       value={code}
-                      onChange={(value) => setCode(value || '')}
+                      onChange={(value) => setCode(value || "")}
                       onMount={handleEditorMount}
                       options={editorOptions}
                     />
@@ -391,18 +418,16 @@ export default function JSOnlineCompiler() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Terminal className="w-4 h-4 text-muted-foreground" />
-                      <CardTitle className="text-base">Console Output</CardTitle>
+                      <CardTitle className="text-base">
+                        Console Output
+                      </CardTitle>
                       {output.length > 0 && (
                         <span className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded-full">
                           {output.length}
                         </span>
                       )}
                     </div>
-                    <Button
-                      variant="ghost"
-                      size="xs"
-                      onClick={clearConsole}
-                    >
+                    <Button variant="ghost" size="xs" onClick={clearConsole}>
                       <Trash2 className="w-3.5 h-3.5" />
                       Clear
                     </Button>
@@ -416,7 +441,9 @@ export default function JSOnlineCompiler() {
                     {output.length === 0 ? (
                       <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
                         <Terminal className="w-12 h-12 mb-3 opacity-30" />
-                        <p className="text-sm">Run your code to see output here</p>
+                        <p className="text-sm">
+                          Run your code to see output here
+                        </p>
                       </div>
                     ) : (
                       <div className="space-y-1">
@@ -428,20 +455,36 @@ export default function JSOnlineCompiler() {
                             <span className="flex-shrink-0 text-xs text-muted-foreground">
                               {formatTime(item.timestamp)}
                             </span>
-                            <span className={`flex-shrink-0 ${
-                              item.type === 'error' ? 'text-destructive' :
-                              item.type === 'warn' ? 'text-yellow-500 dark:text-yellow-400' :
-                              item.type === 'info' ? 'text-accent-foreground' :
-                              'text-muted-foreground'
-                            }`}>
-                              {item.type === 'error' ? '✕' : item.type === 'warn' ? '⚠' : item.type === 'info' ? 'ℹ' : '●'}
+                            <span
+                              className={`flex-shrink-0 ${
+                                item.type === "error"
+                                  ? "text-destructive"
+                                  : item.type === "warn"
+                                    ? "text-yellow-500 dark:text-yellow-400"
+                                    : item.type === "info"
+                                      ? "text-accent-foreground"
+                                      : "text-muted-foreground"
+                              }`}
+                            >
+                              {item.type === "error"
+                                ? "✕"
+                                : item.type === "warn"
+                                  ? "⚠"
+                                  : item.type === "info"
+                                    ? "ℹ"
+                                    : "●"}
                             </span>
-                            <pre className={`flex-1 whitespace-pre-wrap break-words ${
-                              item.type === 'error' ? 'text-destructive' :
-                              item.type === 'warn' ? 'text-yellow-500 dark:text-yellow-400' :
-                              item.type === 'info' ? 'text-accent-foreground' :
-                              'text-foreground'
-                            }`}>
+                            <pre
+                              className={`flex-1 whitespace-pre-wrap break-words ${
+                                item.type === "error"
+                                  ? "text-destructive"
+                                  : item.type === "warn"
+                                    ? "text-yellow-500 dark:text-yellow-400"
+                                    : item.type === "info"
+                                      ? "text-accent-foreground"
+                                      : "text-foreground"
+                              }`}
+                            >
                               {item.content}
                             </pre>
                           </div>
@@ -474,7 +517,9 @@ export default function JSOnlineCompiler() {
                   <div className="flex flex-col items-center justify-center py-12 text-muted-foreground">
                     <FolderOpen className="w-12 h-12 mb-3 opacity-30" />
                     <p>No saved snippets yet</p>
-                    <p className="text-sm mt-1">Save your code from the editor to see it here</p>
+                    <p className="text-sm mt-1">
+                      Save your code from the editor to see it here
+                    </p>
                   </div>
                 ) : (
                   <div className="grid gap-2">
@@ -491,7 +536,8 @@ export default function JSOnlineCompiler() {
                             {snippet.name}
                           </div>
                           <div className="text-xs text-muted-foreground mt-1">
-                            {new Date(snippet.createdAt).toLocaleDateString()} {formatTime(snippet.createdAt)}
+                            {new Date(snippet.createdAt).toLocaleDateString()}{" "}
+                            {formatTime(snippet.createdAt)}
                           </div>
                         </button>
                         <Button
@@ -515,64 +561,96 @@ export default function JSOnlineCompiler() {
             {/* Intro Section */}
             <section>
               <p className="text-muted-foreground leading-relaxed">
-                Need to test a quick JavaScript function but don't want to fire up your entire development environment? This JavaScript online compiler lets you write, run, and debug code instantly in your browser. No installation, no setup, no sign-up required. Everything runs locally on your machine, so your code never leaves your browser.
+                Need to test a quick JavaScript function but don't want to fire
+                up your entire development environment? This JavaScript online
+                compiler lets you write, run, and debug code instantly in your
+                browser. No installation, no setup, no sign-up required.
+                Everything runs locally on your machine, so your code never
+                leaves your browser.
               </p>
             </section>
 
             {/* How It Works */}
             <section>
-              <h2 className="text-2xl font-semibold mb-4">How to Use This JavaScript Compiler</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                How to Use This JavaScript Compiler
+              </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Step 1:</strong> Write your JavaScript code in the editor on the left. You get full IntelliSense, syntax highlighting, and error detection powered by Monaco Editor.
+                  <strong className="text-foreground">Step 1:</strong> Write
+                  your JavaScript code in the editor on the left. You get full
+                  IntelliSense, syntax highlighting, and error detection powered
+                  by Monaco Editor.
                 </p>
                 <p>
-                  <strong className="text-foreground">Step 2:</strong> Click the "Run Code" button or use the keyboard shortcut to execute your code instantly.
+                  <strong className="text-foreground">Step 2:</strong> Click the
+                  "Run Code" button or use the keyboard shortcut to execute your
+                  code instantly.
                 </p>
                 <p>
-                  <strong className="text-foreground">Step 3:</strong> Check the console output panel on the right to see results, logs, errors, and warnings in real time.
+                  <strong className="text-foreground">Step 3:</strong> Check the
+                  console output panel on the right to see results, logs,
+                  errors, and warnings in real time.
                 </p>
               </div>
             </section>
 
             {/* Features Section */}
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Why Use This Online JS Editor?</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                Why Use This Online JS Editor?
+              </h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
-                  <h3 className="font-medium text-lg mb-2">No Installation Required</h3>
+                  <h3 className="font-medium text-lg mb-2">
+                    No Installation Required
+                  </h3>
                   <p className="text-muted-foreground">
-                    Skip the Node.js setup and package installations. Open the page and start coding immediately.
+                    Skip the Node.js setup and package installations. Open the
+                    page and start coding immediately.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-lg mb-2">Full ES6+ Support</h3>
+                  <h3 className="font-medium text-lg mb-2">
+                    Full ES6+ Support
+                  </h3>
                   <p className="text-muted-foreground">
-                    Write modern JavaScript with async/await, arrow functions, destructuring, classes, and modules syntax.
+                    Write modern JavaScript with async/await, arrow functions,
+                    destructuring, classes, and modules syntax.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-lg mb-2">Real-Time Console Output</h3>
+                  <h3 className="font-medium text-lg mb-2">
+                    Real-Time Console Output
+                  </h3>
                   <p className="text-muted-foreground">
-                    See console.log, console.error, console.warn, and console.info output instantly with timestamps.
+                    See console.log, console.error, console.warn, and
+                    console.info output instantly with timestamps.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-lg mb-2">Save Snippets Locally</h3>
+                  <h3 className="font-medium text-lg mb-2">
+                    Save Snippets Locally
+                  </h3>
                   <p className="text-muted-foreground">
-                    Store code snippets in your browser's localStorage for quick access later. They persist between sessions.
+                    Store code snippets in your browser's localStorage for quick
+                    access later. They persist between sessions.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-medium text-lg mb-2">Privacy First</h3>
                   <p className="text-muted-foreground">
-                    Your code runs entirely in your browser. Nothing is sent to servers or stored remotely.
+                    Your code runs entirely in your browser. Nothing is sent to
+                    servers or stored remotely.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-lg mb-2">VS Code Experience</h3>
+                  <h3 className="font-medium text-lg mb-2">
+                    VS Code Experience
+                  </h3>
                   <p className="text-muted-foreground">
-                    Powered by Monaco Editor, you get the same IntelliSense and syntax highlighting as VS Code.
+                    Powered by Monaco Editor, you get the same IntelliSense and
+                    syntax highlighting as VS Code.
                   </p>
                 </div>
               </div>
@@ -580,36 +658,46 @@ export default function JSOnlineCompiler() {
 
             {/* FAQ Section */}
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-semibold mb-6">
+                Frequently Asked Questions
+              </h2>
               <Faqs
                 faqs={[
                   {
                     question: "Is this JavaScript compiler free to use?",
-                    answer: "Yes, this JavaScript online compiler is completely free. No sign-up, no limits, and it runs entirely in your browser."
+                    answer:
+                      "Yes, this JavaScript online compiler is completely free. No sign-up, no limits, and it runs entirely in your browser.",
                   },
                   {
-                    question: "Do I need to install anything to use this JS editor?",
-                    answer: "No installation required. This online JavaScript compiler runs 100% in your browser using Monaco Editor (the same engine behind VS Code)."
+                    question:
+                      "Do I need to install anything to use this JS editor?",
+                    answer:
+                      "No installation required. This online JavaScript compiler runs 100% in your browser using Monaco Editor (the same engine behind VS Code).",
                   },
                   {
                     question: "Does this support async/await and ES6 features?",
-                    answer: "Yes, the compiler supports modern JavaScript including async/await, arrow functions, destructuring, modules syntax, and all ES6+ features."
+                    answer:
+                      "Yes, the compiler supports modern JavaScript including async/await, arrow functions, destructuring, modules syntax, and all ES6+ features.",
                   },
                   {
                     question: "Is my code saved or sent to a server?",
-                    answer: "No. Your code runs locally in your browser and is never sent to any server. You can optionally save snippets to your browser's localStorage."
+                    answer:
+                      "No. Your code runs locally in your browser and is never sent to any server. You can optionally save snippets to your browser's localStorage.",
                   },
                   {
                     question: "Can I save my JavaScript code for later?",
-                    answer: "Yes, you can save code snippets directly in the editor. They're stored in your browser's localStorage and persist between sessions."
-                  }
+                    answer:
+                      "Yes, you can save code snippets directly in the editor. They're stored in your browser's localStorage and persist between sessions.",
+                  },
                 ]}
               />
             </section>
 
             {/* Related Tools */}
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Related Developer Tools</h2>
+              <h2 className="text-2xl font-semibold mb-6">
+                Related Developer Tools
+              </h2>
               <ToolLinkCards tools={relatedTools} />
             </section>
           </div>
@@ -651,19 +739,15 @@ export default function JSOnlineCompiler() {
                       </Button>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Button
-                        variant="ghost"
-                        size="xs"
-                        onClick={copyCode}
-                      >
-                        {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                        {copied ? 'Copied' : 'Copy'}
+                      <Button variant="ghost" size="xs" onClick={copyCode}>
+                        {copied ? (
+                          <Check className="w-3.5 h-3.5" />
+                        ) : (
+                          <Copy className="w-3.5 h-3.5" />
+                        )}
+                        {copied ? "Copied" : "Copy"}
                       </Button>
-                      <Button
-                        variant="ghost"
-                        size="xs"
-                        onClick={downloadCode}
-                      >
+                      <Button variant="ghost" size="xs" onClick={downloadCode}>
                         <Download className="w-3.5 h-3.5" />
                         Download
                       </Button>
@@ -684,17 +768,19 @@ export default function JSOnlineCompiler() {
                         value={snippetName}
                         onChange={(e) => setSnippetName(e.target.value)}
                         placeholder="Snippet name..."
-                        onKeyDown={(e) => e.key === 'Enter' && saveSnippet()}
+                        onKeyDown={(e) => e.key === "Enter" && saveSnippet()}
                         className="flex-1 h-8"
                         autoFocus
                       />
-                      <Button size="sm" onClick={saveSnippet}>Save</Button>
+                      <Button size="sm" onClick={saveSnippet}>
+                        Save
+                      </Button>
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => {
                           setShowSaveInput(false);
-                          setSnippetName('');
+                          setSnippetName("");
                         }}
                       >
                         Cancel
@@ -709,7 +795,7 @@ export default function JSOnlineCompiler() {
                       language="javascript"
                       theme="vs-dark"
                       value={code}
-                      onChange={(value) => setCode(value || '')}
+                      onChange={(value) => setCode(value || "")}
                       onMount={handleEditorMount}
                       options={editorOptions}
                     />
@@ -723,18 +809,16 @@ export default function JSOnlineCompiler() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Terminal className="w-4 h-4 text-muted-foreground" />
-                      <CardTitle className="text-base">Console Output</CardTitle>
+                      <CardTitle className="text-base">
+                        Console Output
+                      </CardTitle>
                       {output.length > 0 && (
                         <span className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded-full">
                           {output.length}
                         </span>
                       )}
                     </div>
-                    <Button
-                      variant="ghost"
-                      size="xs"
-                      onClick={clearConsole}
-                    >
+                    <Button variant="ghost" size="xs" onClick={clearConsole}>
                       <Trash2 className="w-3.5 h-3.5" />
                       Clear
                     </Button>
@@ -748,7 +832,9 @@ export default function JSOnlineCompiler() {
                     {output.length === 0 ? (
                       <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
                         <Terminal className="w-12 h-12 mb-3 opacity-30" />
-                        <p className="text-sm">Run your code to see output here</p>
+                        <p className="text-sm">
+                          Run your code to see output here
+                        </p>
                       </div>
                     ) : (
                       <div className="space-y-1">
@@ -760,20 +846,36 @@ export default function JSOnlineCompiler() {
                             <span className="flex-shrink-0 text-xs text-muted-foreground">
                               {formatTime(item.timestamp)}
                             </span>
-                            <span className={`flex-shrink-0 ${
-                              item.type === 'error' ? 'text-destructive' :
-                              item.type === 'warn' ? 'text-yellow-500 dark:text-yellow-400' :
-                              item.type === 'info' ? 'text-accent-foreground' :
-                              'text-muted-foreground'
-                            }`}>
-                              {item.type === 'error' ? '✕' : item.type === 'warn' ? '⚠' : item.type === 'info' ? 'ℹ' : '●'}
+                            <span
+                              className={`flex-shrink-0 ${
+                                item.type === "error"
+                                  ? "text-destructive"
+                                  : item.type === "warn"
+                                    ? "text-yellow-500 dark:text-yellow-400"
+                                    : item.type === "info"
+                                      ? "text-accent-foreground"
+                                      : "text-muted-foreground"
+                              }`}
+                            >
+                              {item.type === "error"
+                                ? "✕"
+                                : item.type === "warn"
+                                  ? "⚠"
+                                  : item.type === "info"
+                                    ? "ℹ"
+                                    : "●"}
                             </span>
-                            <pre className={`flex-1 whitespace-pre-wrap break-words ${
-                              item.type === 'error' ? 'text-destructive' :
-                              item.type === 'warn' ? 'text-yellow-500 dark:text-yellow-400' :
-                              item.type === 'info' ? 'text-accent-foreground' :
-                              'text-foreground'
-                            }`}>
+                            <pre
+                              className={`flex-1 whitespace-pre-wrap break-words ${
+                                item.type === "error"
+                                  ? "text-destructive"
+                                  : item.type === "warn"
+                                    ? "text-yellow-500 dark:text-yellow-400"
+                                    : item.type === "info"
+                                      ? "text-accent-foreground"
+                                      : "text-foreground"
+                              }`}
+                            >
                               {item.content}
                             </pre>
                           </div>

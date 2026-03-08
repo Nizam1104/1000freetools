@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Bond Convexity Calculator",
     "description": "Bond Convexity Calculator",
-    "href": "/bond-convexity-calculator"
+    "href": "/calculators/bond-convexity-calculator"
   },
   {
     "name": "Bond Duration Calculator",
     "description": "Bond Duration Calculator",
-    "href": "/bond-duration-calculator"
+    "href": "/calculators/bond-duration-calculator"
   },
   {
     "name": "Bond Yield Calculator",
     "description": "Bond Yield Calculator",
-    "href": "/bond-yield-calculator"
+    "href": "/calculators/bond-yield-calculator"
   },
   {
     "name": "Yield To Maturity Calculator",
     "description": "Yield-to-Maturity (YTM) Calculator",
-    "href": "/yield-to-maturity-calculator"
+    "href": "/calculators/yield-to-maturity-calculator"
   },
   {
     "name": "Npv Calculator",
     "description": "NPV Calculator – Net Present Value",
-    "href": "/npv-calculator"
+    "href": "/calculators/npv-calculator"
   },
   {
     "name": "Payback Period Calculator",
     "description": "Payback Period Calculator",
-    "href": "/payback-period-calculator"
+    "href": "/calculators/payback-period-calculator"
   }
 ];
 

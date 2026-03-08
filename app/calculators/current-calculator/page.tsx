@@ -274,25 +274,6 @@ export default function CurrentCalculator() {
         </Card>
 
         {/* Related Tools */}
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold mb-6">Related Electrical Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/ohms-law-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Ohm&apos;s Law Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate voltage, current, resistance, and power for DC circuits using Ohm&apos;s Law.</p>
-              </a>
-              <a href="/calculators/electric-power-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Electric Power Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate electrical power in watts from voltage, current, and resistance values.</p>
-              </a>
-              <a href="/calculators/voltage-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-2">Voltage Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate voltage drop and potential difference in electrical circuits.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

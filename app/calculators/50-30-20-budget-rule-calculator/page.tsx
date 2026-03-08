@@ -447,28 +447,6 @@ export default function FiftyThirtyTwentyBudgetRuleCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/monthly-budget-breakdown-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Monthly Budget Breakdown</p>
-              <p className="text-xs text-muted-foreground">Detailed budget planning</p>
-            </a>
-            <a href="/calculators/emergency-fund-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Emergency Fund Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate your safety net</p>
-            </a>
-            <a href="/calculators/debt-payoff-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Debt Payoff Calculator</p>
-              <p className="text-xs text-muted-foreground">Plan your debt-free journey</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -314,36 +314,6 @@ export default function GCDCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/lcm-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">LCM Calculator</span>
-                <p className="text-muted-foreground">Find the Least Common Multiple of two or more numbers</p>
-              </a>
-              <a
-                href="/calculators/fraction-simplifier"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Fraction Simplifier</span>
-                <p className="text-muted-foreground">Reduce fractions to lowest terms using GCD</p>
-              </a>
-              <a
-                href="/calculators/prime-factorization-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Prime Factorization Calculator</span>
-                <p className="text-muted-foreground">Break down numbers into their prime factors</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

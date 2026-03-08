@@ -326,28 +326,6 @@ export default function CalorieDeficitCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/daily-calorie-needs-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Daily Calorie Needs</p>
-              <p className="text-xs text-muted-foreground">Calculate your TDEE</p>
-            </a>
-            <a href="/calculators/weight-loss-time-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Weight Loss Time</p>
-              <p className="text-xs text-muted-foreground">Calculate time to goal</p>
-            </a>
-            <a href="/calculators/tdee-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">TDEE Calculator</p>
-              <p className="text-xs text-muted-foreground">Total daily energy expenditure</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

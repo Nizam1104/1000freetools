@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Lens Equation Calculator",
     "description": "Lens Equation Calculator – Thin Lens Formula Calculator",
-    "href": "/lens-equation-calculator"
+    "href": "/calculators/lens-equation-calculator"
   },
   {
     "name": "Focal Length Calculator",
     "description": "Focal Length Calculator – Lensmaker's Equation",
-    "href": "/focal-length-calculator"
+    "href": "/calculators/focal-length-calculator"
   },
   {
     "name": "Brewster Angle Calculator",
     "description": "Brewster Angle Calculator – Polarization Angle Calculator",
-    "href": "/brewster-angle-calculator"
+    "href": "/calculators/brewster-angle-calculator"
   },
   {
     "name": "Refraction Index Calculator",
     "description": "Refraction Index Calculator – Calculate Refractive Index",
-    "href": "/refraction-index-calculator"
+    "href": "/calculators/refraction-index-calculator"
   },
   {
     "name": "Snells Law Calculator",
     "description": "Snell's Law Calculator – Refraction Calculator",
-    "href": "/snells-law-calculator"
+    "href": "/calculators/snells-law-calculator"
   },
   {
     "name": "Perspective Angle Calculator",
     "description": "Perspective Angle Calculator – Calculate Vanishing Points for Technical Drawing",
-    "href": "/perspective-angle-calculator"
+    "href": "/calculators/perspective-angle-calculator"
   }
 ];
 

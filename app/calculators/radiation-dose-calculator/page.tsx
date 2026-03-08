@@ -297,36 +297,6 @@ export default function RadiationDoseCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/half-life-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Half-Life Calculator</span>
-                <p className="text-muted-foreground">Calculate radioactive decay and remaining activity over time</p>
-              </a>
-              <a
-                href="/calculators/radiation-exposure-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Radiation Exposure Calculator</span>
-                <p className="text-muted-foreground">Estimate cumulative radiation exposure from multiple sources</p>
-              </a>
-              <a
-                href="/calculators/decay-chain-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Decay Chain Calculator</span>
-                <p className="text-muted-foreground">Track radioactive decay series and daughter products</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

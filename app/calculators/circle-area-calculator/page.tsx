@@ -284,36 +284,6 @@ export default function CircleAreaCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/volume-of-sphere-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Volume of Sphere Calculator</span>
-                <p className="text-muted-foreground">Calculate the volume of a sphere from its radius</p>
-              </a>
-              <a
-                href="/calculators/volume-of-cylinder-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Volume of Cylinder Calculator</span>
-                <p className="text-muted-foreground">Find cylinder volume using radius and height</p>
-              </a>
-              <a
-                href="/calculators/pythagorean-theorem-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Pythagorean Theorem Calculator</span>
-                <p className="text-muted-foreground">Calculate sides of right triangles</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

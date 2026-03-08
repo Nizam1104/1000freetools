@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Power Factor Calculator",
     "description": "Power Factor Calculator – Calculate PF and Phase Angle",
-    "href": "/power-factor-calculator"
+    "href": "/calculators/power-factor-calculator"
   },
   {
     "name": "Pregnancy Due Date Calculator",
     "description": "Pregnancy Due Date Calculator – When Is My Baby Due?",
-    "href": "/pregnancy-due-date-calculator"
+    "href": "/calculators/pregnancy-due-date-calculator"
   },
   {
     "name": "Pregnancy Week Calculator",
     "description": "Pregnancy Week Calculator – Free Due Date & Pregnancy Tracker",
-    "href": "/pregnancy-week-calculator"
+    "href": "/calculators/pregnancy-week-calculator"
   },
   {
     "name": "Pregnancy Weight Gain Calculator",
     "description": "Pregnancy Weight Gain Calculator – Free Pregnancy BMI Calculator",
-    "href": "/pregnancy-weight-gain-calculator"
+    "href": "/calculators/pregnancy-weight-gain-calculator"
   },
   {
     "name": "Present Value Calculator",
     "description": "Present Value Calculator",
-    "href": "/present-value-calculator"
+    "href": "/calculators/present-value-calculator"
   },
   {
     "name": "Prime Checker",
     "description": "Prime Number Checker – Is This Number Prime?",
-    "href": "/prime-checker"
+    "href": "/calculators/prime-checker"
   }
 ];
 

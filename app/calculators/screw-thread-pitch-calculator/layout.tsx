@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Belt Length Calculator",
     "description": "Belt Length Calculator – Calculate V-Belt Length",
-    "href": "/belt-length-calculator"
+    "href": "/calculators/belt-length-calculator"
   },
   {
     "name": "Rivet Strength Calculator",
     "description": "Rivet Strength Calculator – Calculate Rivet Shear Capacity",
-    "href": "/rivet-strength-calculator"
+    "href": "/calculators/rivet-strength-calculator"
   },
   {
     "name": "Safety Factor Calculator",
     "description": "Safety Factor Calculator – Factor of Safety Calculator",
-    "href": "/safety-factor-calculator"
+    "href": "/calculators/safety-factor-calculator"
   },
   {
     "name": "Fastener Load Calculator",
     "description": "Fastener Load Calculator – Calculate Fastener Capacity",
-    "href": "/fastener-load-calculator"
+    "href": "/calculators/fastener-load-calculator"
   },
   {
     "name": "Beam Bending Calculator",
     "description": "Beam Bending Calculator – Stress & Deflection for Structural Beams",
-    "href": "/beam-bending-calculator"
+    "href": "/calculators/beam-bending-calculator"
   },
   {
     "name": "Bolt Torque Calculator",
     "description": "Bolt Torque Calculator – Calculate Bolt Tightening Torque",
-    "href": "/bolt-torque-calculator"
+    "href": "/calculators/bolt-torque-calculator"
   }
 ];
 

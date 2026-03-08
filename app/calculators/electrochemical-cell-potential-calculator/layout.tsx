@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ph Calculator",
     "description": "pH Calculator – Calculate pH from H⁺ Concentration",
-    "href": "/ph-calculator"
+    "href": "/calculators/ph-calculator"
   },
   {
     "name": "Henderson Hasselbalch Calculator",
     "description": "Henderson-Hasselbalch Calculator – Buffer pH Made Easy",
-    "href": "/henderson-hasselbalch-calculator"
+    "href": "/calculators/henderson-hasselbalch-calculator"
   },
   {
     "name": "Pka Pkb Calculator",
     "description": "pKa and pKb Calculator – Convert Ka, Kb, pKa, and pKb",
-    "href": "/pka-pkb-calculator"
+    "href": "/calculators/pka-pkb-calculator"
   },
   {
     "name": "Poh Calculator",
     "description": "pOH Calculator – Calculate pOH and Convert to pH",
-    "href": "/poh-calculator"
+    "href": "/calculators/poh-calculator"
   },
   {
     "name": "Titration Calculator",
     "description": "Titration Calculator – Find Unknown Concentration from Titration Data",
-    "href": "/titration-calculator"
+    "href": "/calculators/titration-calculator"
   },
   {
     "name": "Concentration Calculator",
     "description": "Concentration Calculator – Convert Solution Concentration Units",
-    "href": "/concentration-calculator"
+    "href": "/calculators/concentration-calculator"
   }
 ];
 

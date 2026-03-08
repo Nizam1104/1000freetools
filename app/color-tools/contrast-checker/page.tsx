@@ -370,12 +370,6 @@ export default function ContrastCheckerPage() {
                     <strong>AAA Normal:</strong> Enhanced 7:1 for regular text
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
-                  <Check className="h-4 w-4 mt-0.5 text-green-600" />
-                  <p>
-                    <strong>AAA Large:</strong> Enhanced 4.5:1 for large text
-                  </p>
-                </div>
               </CardContent>
             </Card>
           </div>

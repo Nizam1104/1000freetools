@@ -459,25 +459,6 @@ export default function ScreenTimeCalculatorPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Health Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/sleep-cycle-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Sleep Cycle Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Optimize your sleep schedule for better rest and recovery.</p>
-                </a>
-                <a href="/calculators/meditation-timer-scheduler" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Meditation Timer & Scheduler</h4>
-                  <p className="text-sm text-muted-foreground">Build mindfulness habits to counter digital stress.</p>
-                </a>
-                <a href="/calculators/breathing-exercise-timer" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Breathing Exercise Timer</h4>
-                  <p className="text-sm text-muted-foreground">Take healthy breaks with guided breathing exercises.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

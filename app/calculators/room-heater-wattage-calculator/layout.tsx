@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Robot Motor Torque Calculator",
     "description": "Robot Motor Torque Calculator – Calculate Required Torque for Motors & Actuators",
-    "href": "/robot-motor-torque-calculator"
+    "href": "/calculators/robot-motor-torque-calculator"
   },
   {
     "name": "Roi Calculator Ad",
     "description": "Ad ROI Calculator – Calculate Return on Investment for Your Ad Campaigns",
-    "href": "/roi-calculator-ad"
+    "href": "/calculators/roi-calculator-ad"
   },
   {
     "name": "Roi Calculator",
     "description": "ROI Calculator – Calculate Return on Investment Percentage",
-    "href": "/roi-calculator"
+    "href": "/calculators/roi-calculator"
   },
   {
     "name": "Roman Numerals Converter",
     "description": "Roman Numerals Converter",
-    "href": "/roman-numerals-converter"
+    "href": "/calculators/roman-numerals-converter"
   },
   {
     "name": "Roofing Sheets Calculator",
     "description": "Roofing Calculator – How Many Roofing Sheets Do You Need?",
-    "href": "/roofing-sheets-calculator"
+    "href": "/calculators/roofing-sheets-calculator"
   },
   {
     "name": "Root Calculator",
     "description": "Root Calculator – Calculate Square, Cube and Nth Roots",
-    "href": "/root-calculator"
+    "href": "/calculators/root-calculator"
   }
 ];
 

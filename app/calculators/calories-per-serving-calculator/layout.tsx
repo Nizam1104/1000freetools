@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Recipe Scaler Calculator",
     "description": "Recipe Scaler Calculator – Adjust Recipe Servings Instantly",
-    "href": "/recipe-scaler-calculator"
+    "href": "/calculators/recipe-scaler-calculator"
   },
   {
     "name": "Kitchen Measurement Converter",
     "description": "Kitchen Measurement Converter – Convert Cooking Units Instantly",
-    "href": "/kitchen-measurement-converter"
+    "href": "/calculators/kitchen-measurement-converter"
   },
   {
     "name": "Coffee To Water Ratio Calculator",
     "description": "Coffee to Water Ratio Calculator – Perfect Coffee Every Time",
-    "href": "/coffee-to-water-ratio-calculator"
+    "href": "/calculators/coffee-to-water-ratio-calculator"
   },
   {
     "name": "Tea Brewing Strength Calculator",
     "description": "Tea Brewing Strength Calculator – Get the Perfect Steep Time & Leaf Ratio",
-    "href": "/tea-brewing-strength-calculator"
+    "href": "/calculators/tea-brewing-strength-calculator"
   },
   {
     "name": "Carb Intake Calculator",
     "description": "Carb Intake Calculator – Daily Carbohydrate Needs Calculator",
-    "href": "/carb-intake-calculator"
+    "href": "/calculators/carb-intake-calculator"
   },
   {
     "name": "Fat Intake Calculator",
     "description": "Fat Intake Calculator – How Much Fat Should You Eat Daily?",
-    "href": "/fat-intake-calculator"
+    "href": "/calculators/fat-intake-calculator"
   }
 ];
 

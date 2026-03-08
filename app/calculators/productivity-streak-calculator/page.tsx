@@ -408,36 +408,6 @@ export default function ProductivityStreakCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/daily-habit-streak-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Daily Habit Streak Calculator</span>
-                  <p className="text-muted-foreground">Track daily habits and build consistent routines</p>
-                </a>
-                <a
-                  href="/calculators/goal-tracker-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Goal Tracker Calculator</span>
-                  <p className="text-muted-foreground">Set and monitor progress toward your goals</p>
-                </a>
-                <a
-                  href="/calculators/time-duration-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Time Duration Calculator</span>
-                  <p className="text-muted-foreground">Calculate time between dates for habit tracking</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

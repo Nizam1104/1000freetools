@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Interest Rate Finder Calculator",
     "description": "Interest Rate Finder Calculator",
-    "href": "/interest-rate-finder-calculator"
+    "href": "/calculators/interest-rate-finder-calculator"
   },
   {
     "name": "Credit Card Payoff Calculator",
     "description": "Credit Card Payoff Calculator",
-    "href": "/credit-card-payoff-calculator"
+    "href": "/calculators/credit-card-payoff-calculator"
   },
   {
     "name": "Debt To Income Ratio Calculator",
     "description": "Debt-to-Income Ratio Calculator",
-    "href": "/debt-to-income-ratio-calculator"
+    "href": "/calculators/debt-to-income-ratio-calculator"
   },
   {
     "name": "Loan Payoff Time Calculator",
     "description": "Loan Payoff Time Calculator",
-    "href": "/loan-payoff-time-calculator"
+    "href": "/calculators/loan-payoff-time-calculator"
   },
   {
     "name": "Loan Prepayment Impact Calculator",
     "description": "Loan Prepayment Impact Calculator",
-    "href": "/loan-prepayment-impact-calculator"
+    "href": "/calculators/loan-prepayment-impact-calculator"
   },
   {
     "name": "Loan Refinancing Calculator",
     "description": "Loan Refinancing Calculator",
-    "href": "/loan-refinancing-calculator"
+    "href": "/calculators/loan-refinancing-calculator"
   }
 ];
 

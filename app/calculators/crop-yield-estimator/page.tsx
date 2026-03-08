@@ -458,25 +458,6 @@ export default function CropYieldEstimatorPage() {
           </Card>
 
           {/* Related Tools */}
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-6">Related Agriculture Calculators</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/fertilizer-requirement-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Fertilizer Requirement Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate fertilizer needs based on crop type, field area, and soil nutrient requirements.</p>
-                </a>
-                <a href="/calculators/seed-rate-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Seed Rate Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Determine optimal seed quantity for planting based on field area and recommended seeding rates.</p>
-                </a>
-                <a href="/calculators/irrigation-water-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-                  <h3 className="font-semibold mb-2">Irrigation Water Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate water requirements for crops based on field size, crop type, and evapotranspiration rates.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

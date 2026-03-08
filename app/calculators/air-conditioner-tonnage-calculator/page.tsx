@@ -599,26 +599,6 @@ export default function AirConditionerTonnageCalculatorPage() {
           </section>
 
           {/* Related Tools Section */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">Related Tools</h2>
-            <p className="text-muted-foreground mb-6">
-              Explore these calculators to help with your home cooling and energy planning:
-            </p>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/room-heater-wattage-calculator" className="p-4 bg-card rounded-lg border hover:bg-muted/50 transition-colors">
-                <h3 className="font-semibold mb-1">Room Heater Wattage Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate the right heater wattage for your room size and heating needs.</p>
-              </a>
-              <a href="/calculators/hvac-btu-calculator" className="p-4 bg-card rounded-lg border hover:bg-muted/50 transition-colors">
-                <h3 className="font-semibold mb-1">HVAC BTU Calculator</h3>
-                <p className="text-sm text-muted-foreground">Determine BTU requirements for heating and cooling your entire home.</p>
-              </a>
-              <a href="/calculators/electricity-appliance-wattage-calculator" className="p-4 bg-card rounded-lg border hover:bg-muted/50 transition-colors">
-                <h3 className="font-semibold mb-1">Electricity Appliance Wattage Calculator</h3>
-                <p className="text-sm text-muted-foreground">Estimate power consumption and costs for your home appliances.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

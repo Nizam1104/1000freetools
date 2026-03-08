@@ -237,28 +237,6 @@ export default function ModeCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-3">
-            <a href="/calculators/mean-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mean Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate the average</p>
-            </a>
-            <a href="/calculators/median-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Median Calculator</p>
-              <p className="text-xs text-muted-foreground">Find the middle value</p>
-            </a>
-            <a href="/calculators/frequency-distribution-calculator" className="p-3 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Frequency Distribution</p>
-              <p className="text-xs text-muted-foreground">Create frequency tables</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

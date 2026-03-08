@@ -400,36 +400,6 @@ export default function JsonMapReducePage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-filter"
-                className="text-primary hover:underline"
-              >
-                JSON Filter
-              </a>{" "}
-              – Filter arrays by conditions
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-array-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Array Generator
-              </a>{" "}
-              – Generate test arrays
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-transformer"
-                className="text-primary hover:underline"
-              >
-                JSON Transformer
-              </a>{" "}
-              – Advanced transformations
-            </li>
-          </ul>
         </div>
       </div>
     </div>

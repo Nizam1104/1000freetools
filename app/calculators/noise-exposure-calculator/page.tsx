@@ -391,23 +391,6 @@ export default function NoiseExposureCalculatorPage() {
           </div>
 
           {/* Related Tools Section */}
-          <div className="mt-8 mb-8">
-            <h2 className="text-2xl font-semibold mb-6">Related Safety Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/decibel-to-power-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Decibel to Power Converter</h3>
-                <p className="text-sm text-muted-foreground">Convert between dB and power ratios.</p>
-              </a>
-              <a href="/calculators/sound-speed-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Sound Speed Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate the speed of sound in different conditions.</p>
-              </a>
-              <a href="/calculators/signal-to-noise-ratio-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Signal to Noise Ratio Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate SNR for audio and electronic signals.</p>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

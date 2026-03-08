@@ -584,7 +584,7 @@ export default function AreaCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
           <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
             <p className="font-semibold text-sm">Standard Calculator</p>
             <p className="text-xs text-muted-foreground">Basic arithmetic</p>
@@ -592,10 +592,6 @@ export default function AreaCalculator() {
           <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
             <p className="font-semibold text-sm">Fraction Calculator</p>
             <p className="text-xs text-muted-foreground">Fraction operations</p>
-          </a>
-          <a href="/unit-converters/length-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Length Converter</p>
-            <p className="text-xs text-muted-foreground">Unit conversion</p>
           </a>
         </div>
       </section>

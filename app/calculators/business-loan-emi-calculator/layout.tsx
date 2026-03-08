@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Loan Emi Calculator",
     "description": "Loan EMI Calculator – Calculate Monthly Loan Payments",
-    "href": "/loan-emi-calculator"
+    "href": "/calculators/loan-emi-calculator"
   },
   {
     "name": "Loan Amortization Visualizer",
     "description": "Loan Amortization Visualizer",
-    "href": "/loan-amortization-visualizer"
+    "href": "/calculators/loan-amortization-visualizer"
   },
   {
     "name": "Loan Payoff Time Calculator",
     "description": "Loan Payoff Time Calculator",
-    "href": "/loan-payoff-time-calculator"
+    "href": "/calculators/loan-payoff-time-calculator"
   },
   {
     "name": "Loan Prepayment Impact Calculator",
     "description": "Loan Prepayment Impact Calculator",
-    "href": "/loan-prepayment-impact-calculator"
+    "href": "/calculators/loan-prepayment-impact-calculator"
   },
   {
     "name": "Loan Refinancing Calculator",
     "description": "Loan Refinancing Calculator",
-    "href": "/loan-refinancing-calculator"
+    "href": "/calculators/loan-refinancing-calculator"
   },
   {
     "name": "Car Loan Calculator",
     "description": "Car Loan Calculator – Calculate Auto Loan Payments",
-    "href": "/car-loan-calculator"
+    "href": "/calculators/car-loan-calculator"
   }
 ];
 

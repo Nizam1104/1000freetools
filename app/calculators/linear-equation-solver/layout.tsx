@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Quadratic Equation Solver",
     "description": "Quadratic Equation Solver",
-    "href": "/quadratic-equation-solver"
+    "href": "/calculators/quadratic-equation-solver"
   },
   {
     "name": "Determinant Calculator",
     "description": "Determinant Calculator",
-    "href": "/determinant-calculator"
+    "href": "/calculators/determinant-calculator"
   },
   {
     "name": "Matrix Addition Calculator",
     "description": "Matrix Addition Calculator",
-    "href": "/matrix-addition-calculator"
+    "href": "/calculators/matrix-addition-calculator"
   },
   {
     "name": "Matrix Multiplication Calculator",
     "description": "Matrix Multiplication Calculator",
-    "href": "/matrix-multiplication-calculator"
+    "href": "/calculators/matrix-multiplication-calculator"
   },
   {
     "name": "Inverse Matrix Calculator",
     "description": "Inverse Matrix Calculator",
-    "href": "/inverse-matrix-calculator"
+    "href": "/calculators/inverse-matrix-calculator"
   },
   {
     "name": "Expression Evaluator",
     "description": "Expression Evaluator",
-    "href": "/expression-evaluator"
+    "href": "/calculators/expression-evaluator"
   }
 ];
 

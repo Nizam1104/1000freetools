@@ -309,18 +309,6 @@ export default function JsonPatchGeneratorPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a href="/json-tools/json-diff" className="text-primary hover:underline">JSON Diff</a> – Compare two JSON objects visually
-            </li>
-            <li>
-              <a href="/json-tools/json-merge" className="text-primary hover:underline">JSON Merge</a> – Combine multiple JSON documents
-            </li>
-            <li>
-              <a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Reshape JSON with custom rules
-            </li>
-          </ul>
         </div>
       </div>
     </div>

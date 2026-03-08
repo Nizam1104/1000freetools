@@ -318,36 +318,6 @@ export default function DopplerEffectCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/wavelength-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Wavelength Calculator</span>
-                <p className="text-muted-foreground">Calculate wavelength from frequency and wave velocity</p>
-              </a>
-              <a
-                href="/calculators/frequency-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Frequency Calculator</span>
-                <p className="text-muted-foreground">Convert between frequency, period, and angular frequency</p>
-              </a>
-              <a
-                href="/calculators/sound-speed-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Sound Speed Calculator</span>
-                <p className="text-muted-foreground">Calculate the speed of sound in different conditions</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

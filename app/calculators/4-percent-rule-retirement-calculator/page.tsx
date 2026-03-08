@@ -432,28 +432,6 @@ export default function FourPercentRuleRetirementCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/retirement-corpus-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Retirement Corpus Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate your retirement target</p>
-            </a>
-            <a href="/calculators/retirement-withdrawal-rate-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Retirement Withdrawal Rate</p>
-              <p className="text-xs text-muted-foreground">Find your safe withdrawal rate</p>
-            </a>
-            <a href="/calculators/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Compound Interest Calculator</p>
-              <p className="text-xs text-muted-foreground">Project investment growth</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -594,23 +594,6 @@ export default function MatrixMultiplicationCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8">
-        <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/calculators/matrix-addition-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Addition</p>
-            <p className="text-xs text-muted-foreground">Add two matrices</p>
-          </a>
-          <a href="/calculators/determinant-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Determinant</p>
-            <p className="text-xs text-muted-foreground">Calculate determinant</p>
-          </a>
-          <a href="/calculators/inverse-matrix-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Inverse</p>
-            <p className="text-xs text-muted-foreground">Find A⁻¹</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

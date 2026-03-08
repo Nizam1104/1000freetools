@@ -363,36 +363,6 @@ export default function InterestRateFinderPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/interest-vs-principal-split-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Interest vs Principal Split Calculator</span>
-                  <p className="text-muted-foreground">See how each payment is divided between interest and principal</p>
-                </a>
-                <a
-                  href="/calculators/loan-amortization-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Loan Amortization Calculator</span>
-                  <p className="text-muted-foreground">Generate a full payment schedule for your loan</p>
-                </a>
-                <a
-                  href="/calculators/mortgage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Mortgage Calculator</span>
-                  <p className="text-muted-foreground">Calculate monthly mortgage payments with taxes and insurance</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

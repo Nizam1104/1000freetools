@@ -391,25 +391,6 @@ export default function NoteFrequencyCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-6">Related Music and Audio Tools</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/frequency-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Frequency Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate frequency from wavelength, period, or angular velocity for any wave.</p>
-                </a>
-                <a href="/calculators/tempo-to-delay-time-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Tempo to Delay Time Converter</h3>
-                  <p className="text-sm text-muted-foreground">Convert BPM to milliseconds for audio delay effects and music production.</p>
-                </a>
-                <a href="/calculators/sound-speed-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">Sound Speed Calculator</h3>
-                  <p className="text-sm text-muted-foreground">Calculate the speed of sound in different mediums and temperatures.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Trail Difficulty Estimator",
     "description": "Trail Difficulty Estimator – Calculate How Hard a Hiking Trail Really Is",
-    "href": "/trail-difficulty-estimator"
+    "href": "/calculators/trail-difficulty-estimator"
   },
   {
     "name": "Running Pace Calculator",
     "description": "Running Pace Calculator",
-    "href": "/running-pace-calculator"
+    "href": "/calculators/running-pace-calculator"
   },
   {
     "name": "Pace To Speed Converter",
     "description": "Pace to Speed Converter – Convert Running Pace to Speed Instantly",
-    "href": "/pace-to-speed-converter"
+    "href": "/calculators/pace-to-speed-converter"
   },
   {
     "name": "Speed To Pace Converter",
     "description": "Speed to Pace Converter – Convert Speed to Running Pace Online",
-    "href": "/speed-to-pace-converter"
+    "href": "/calculators/speed-to-pace-converter"
   },
   {
     "name": "Backpack Load Calculator",
     "description": "Backpack Load Calculator – Find Your Safe Maximum Pack Weight",
-    "href": "/backpack-load-calculator"
+    "href": "/calculators/backpack-load-calculator"
   },
   {
     "name": "Camping Gear Weight Calculator",
     "description": "Camping Gear Weight Calculator – Plan Your Pack Weight for Any Trip",
-    "href": "/camping-gear-weight-calculator"
+    "href": "/calculators/camping-gear-weight-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Ohms Law Calculator",
     "description": "Ohm's Law Calculator",
-    "href": "/ohms-law-calculator"
+    "href": "/calculators/ohms-law-calculator"
   },
   {
     "name": "Resistance Calculator",
     "description": "Resistance Calculator – Calculate Resistance with Ohm's Law",
-    "href": "/resistance-calculator"
+    "href": "/calculators/resistance-calculator"
   },
   {
     "name": "Current Calculator",
     "description": "Current Calculator – Calculate Electrical Current (Amps)",
-    "href": "/current-calculator"
+    "href": "/calculators/current-calculator"
   },
   {
     "name": "Electric Power Calculator",
     "description": "Electric Power Calculator",
-    "href": "/electric-power-calculator"
+    "href": "/calculators/electric-power-calculator"
   },
   {
     "name": "Ac Impedance Calculator",
     "description": "AC Impedance Calculator – Calculate Impedance in AC Circuits",
-    "href": "/ac-impedance-calculator"
+    "href": "/calculators/ac-impedance-calculator"
   },
   {
     "name": "Peak To Peak Voltage Calculator",
     "description": "Peak-to-Peak Voltage Calculator – Convert AC Voltage Measurements",
-    "href": "/peak-to-peak-voltage-calculator"
+    "href": "/calculators/peak-to-peak-voltage-calculator"
   }
 ];
 

@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Wavelength Calculator",
     "description": "Wavelength Calculator – Calculate Wavelength from Frequency",
-    "href": "/wavelength-calculator"
+    "href": "/calculators/wavelength-calculator"
   },
   {
     "name": "Doppler Effect Calculator",
     "description": "Doppler Effect Calculator – Calculate Frequency Shift",
-    "href": "/doppler-effect-calculator"
+    "href": "/calculators/doppler-effect-calculator"
   },
   {
     "name": "Frequency Calculator",
     "description": "Frequency Calculator – Calculate Frequency from Period and More",
-    "href": "/frequency-calculator"
+    "href": "/calculators/frequency-calculator"
   },
   {
     "name": "Note Frequency Calculator",
     "description": "Note Frequency Calculator – Find the Hz Frequency of Any Musical Note",
-    "href": "/note-frequency-calculator"
+    "href": "/calculators/note-frequency-calculator"
   },
   {
     "name": "Acoustic Impedance Calculator",
     "description": "Acoustic Impedance Calculator – Calculate Z",
-    "href": "/acoustic-impedance-calculator"
+    "href": "/calculators/acoustic-impedance-calculator"
   },
   {
     "name": "Noise Exposure Calculator",
     "description": "Noise Exposure Calculator – Calculate Safe Noise Levels & Exposure Time Limits",
-    "href": "/noise-exposure-calculator"
+    "href": "/calculators/noise-exposure-calculator"
   }
 ];
 

@@ -380,36 +380,6 @@ export default function JsonFlattenPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a
-              href="/json-tools/json-unflatten"
-              className="text-primary hover:underline"
-            >
-              JSON Unflatten
-            </a>{" "}
-            – Convert flat keys back to nested JSON
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-transformer"
-              className="text-primary hover:underline"
-            >
-              JSON Transformer
-            </a>{" "}
-            – Transform JSON structure with custom rules
-          </li>
-          <li>
-            <a
-              href="/json-tools/json-nested-structure"
-              className="text-primary hover:underline"
-            >
-              JSON Nested Structure
-            </a>{" "}
-            – Work with deeply nested JSON
-          </li>
-        </ul>
       </div>
     </div>
   );

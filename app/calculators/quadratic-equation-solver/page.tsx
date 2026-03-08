@@ -328,36 +328,6 @@ export default function QuadraticEquationSolver() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/completing-the-square-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Completing the Square Calculator</span>
-                <p className="text-muted-foreground">Solve quadratic equations by completing the square method</p>
-              </a>
-              <a
-                href="/calculators/factoring-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Factoring Calculator</span>
-                <p className="text-muted-foreground">Factor quadratic expressions and polynomials</p>
-              </a>
-              <a
-                href="/calculators/vertex-form-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Vertex Form Calculator</span>
-                <p className="text-muted-foreground">Convert quadratic equations to vertex form</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

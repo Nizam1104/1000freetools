@@ -306,23 +306,6 @@ export default function TorqueToPowerConverterPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Automotive Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/horsepower-to-kw-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Horsepower to kW Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert engine power between HP and kilowatts instantly.</p>
-            </a>
-            <a href="/calculators/engine-displacement-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Engine Displacement Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate engine CC from bore, stroke, and cylinder count.</p>
-            </a>
-            <a href="/calculators/0-100-acceleration-estimator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">0-100 km/h Acceleration Estimator</h3>
-              <p className="text-sm text-muted-foreground">Estimate your car's acceleration time based on power and weight.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

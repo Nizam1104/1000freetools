@@ -274,25 +274,6 @@ export default function StepDownSIPCalculatorPage() {
 
         {/* Related Tools Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Related Investment Tools</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <a href="/calculators/sip-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">SIP Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate returns for regular monthly investments.</p>
-                </a>
-                <a href="/calculators/sip-step-up-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Step-Up SIP Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Model increasing SIP contributions over time.</p>
-                </a>
-                <a href="/calculators/compound-interest-calculator" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                  <h4 className="font-semibold text-sm mb-1">Compound Interest Calculator</h4>
-                  <p className="text-sm text-muted-foreground">Calculate compound growth on lump sum investments.</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

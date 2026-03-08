@@ -278,28 +278,6 @@ export default function PipeFrictionLossCalculator() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              <a href="/calculators/pipe-flow-reynolds-number-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Reynolds Number Calculator</span>
-                <p className="text-muted-foreground">Determine flow regime (laminar or turbulent)</p>
-              </a>
-              <a href="/calculators/flow-rate-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Flow Rate Calculator</span>
-                <p className="text-muted-foreground">Calculate volumetric and mass flow rates</p>
-              </a>
-              <a href="/calculators/pump-head-calculator" className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                <span className="font-medium text-foreground">Pump Head Calculator</span>
-                <p className="text-muted-foreground">Calculate required pump head for piping systems</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

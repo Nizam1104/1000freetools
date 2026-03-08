@@ -430,28 +430,6 @@ export default function MortgageCalculatorPage() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/mortgage-refinance-break-even-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Mortgage Refinance</p>
-              <p className="text-xs text-muted-foreground">Calculate refinance break-even</p>
-            </a>
-            <a href="/calculators/mortgage-amortization-schedule" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Amortization Schedule</p>
-              <p className="text-xs text-muted-foreground">View payment breakdown</p>
-            </a>
-            <a href="/calculators/loan-emi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Loan EMI Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate any loan payment</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

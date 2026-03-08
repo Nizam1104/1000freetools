@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Gpa Calculator",
     "description": "GPA Calculator – Calculate Your Grade Point Average Instantly",
-    "href": "/gpa-calculator"
+    "href": "/calculators/gpa-calculator"
   },
   {
     "name": "Cgpa Calculator",
     "description": "CGPA Calculator – Calculate Your Cumulative GPA Across All Semesters",
-    "href": "/cgpa-calculator"
+    "href": "/calculators/cgpa-calculator"
   },
   {
     "name": "Grade Percentage Calculator",
     "description": "Grade Percentage Calculator – Convert Marks to Percentage & Letter Grade",
-    "href": "/grade-percentage-calculator"
+    "href": "/calculators/grade-percentage-calculator"
   },
   {
     "name": "Attendance Percentage Calculator",
     "description": "Attendance Percentage Calculator – Check If You Meet the Minimum Attendance Requirement",
-    "href": "/attendance-percentage-calculator"
+    "href": "/calculators/attendance-percentage-calculator"
   },
   {
     "name": "Exam Correction Curve Calculator",
     "description": "Exam Correction Curve Calculator – Apply Grade Curves to Exam Scores",
-    "href": "/exam-correction-curve-calculator"
+    "href": "/calculators/exam-correction-curve-calculator"
   },
   {
     "name": "Exam Scoring Calculator",
     "description": "Exam Scoring Calculator – Calculate Weighted Exam Scores & Final Grades",
-    "href": "/exam-scoring-calculator"
+    "href": "/calculators/exam-scoring-calculator"
   }
 ];
 

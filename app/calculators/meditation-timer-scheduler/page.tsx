@@ -464,36 +464,6 @@ export default function MeditationTimerSchedulerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/breathing-exercise-timer"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Breathing Exercise Timer</span>
-                  <p className="text-muted-foreground">Guided breathing exercises for relaxation and focus</p>
-                </a>
-                <a
-                  href="/calculators/pomodoro-timer"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Pomodoro Timer</span>
-                  <p className="text-muted-foreground">Work-break timer for focused productivity sessions</p>
-                </a>
-                <a
-                  href="/calculators/sleep-cycle-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Sleep Cycle Calculator</span>
-                  <p className="text-muted-foreground">Plan optimal sleep and wake times</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

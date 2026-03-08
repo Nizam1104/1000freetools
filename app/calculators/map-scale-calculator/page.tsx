@@ -403,23 +403,6 @@ export default function MapScaleCalculatorPage() {
           </div>
 
           {/* Related Tools Section */}
-          <div className="mt-8 mb-8">
-            <h2 className="text-2xl font-semibold mb-6">Related Tools You Might Find Useful</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/distance-formula-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Distance Formula Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate the straight-line distance between two coordinate points.</p>
-              </a>
-              <a href="/calculators/land-area-converter" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Land Area Converter</h3>
-                <p className="text-sm text-muted-foreground">Convert land measurements between acres, hectares, square feet, and more.</p>
-              </a>
-              <a href="/calculators/slope-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-semibold mb-2">Slope Calculator</h3>
-                <p className="text-sm text-muted-foreground">Find the slope, angle, and grade of terrain or inclines.</p>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

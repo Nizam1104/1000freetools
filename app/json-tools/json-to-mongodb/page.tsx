@@ -194,12 +194,6 @@ export default function JsonToMongodbPage() {
             <div><p className="font-medium mb-1">Is the Node.js driver required?</p><p className="text-muted-foreground">The generated code uses the official mongodb npm package. Install it with npm install mongodb before running.</p></div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li><a href="/json-tools/json-validator" className="text-primary hover:underline">JSON Validator</a> – Validate JSON before importing</li>
-            <li><a href="/json-tools/json-transformer" className="text-primary hover:underline">JSON Transformer</a> – Reshape JSON for MongoDB schema</li>
-            <li><a href="/json-tools/mongodb-to-json" className="text-primary hover:underline">MongoDB to JSON</a> – Export MongoDB documents to JSON</li>
-          </ul>
         </div>
       </div>
     </div>

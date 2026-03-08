@@ -342,18 +342,6 @@ export default function JsonEnvConverterPage() {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-        <ul className="space-y-2 text-muted-foreground">
-          <li>
-            <a href="/json-tools/json-to-yaml" className="text-primary hover:underline">JSON to YAML</a> – Convert JSON to YAML configuration format
-          </li>
-          <li>
-            <a href="/json-tools/yaml-to-json" className="text-primary hover:underline">YAML to JSON</a> – Convert YAML back to JSON
-          </li>
-          <li>
-            <a href="/json-tools/json-config-validator" className="text-primary hover:underline">JSON Config Validator</a> – Validate your JSON configuration files
-          </li>
-        </ul>
       </div>
     </div>
   );

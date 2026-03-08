@@ -537,28 +537,6 @@ export default function ZeroToHundredAccelerationEstimatorPage() {
             </div>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Related Tools</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a href="/calculators/fuel-cost-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Fuel Cost Calculator</p>
-                <p className="text-xs text-muted-foreground">Estimate fuel expenses</p>
-              </a>
-              <a href="/calculators/vehicle-turning-radius-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Vehicle Turning Radius</p>
-                <p className="text-xs text-muted-foreground">Calculate turning circle</p>
-              </a>
-              <a href="/calculators/tire-pressure-adjustment-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                <p className="font-semibold text-sm">Tire Pressure Adjustment</p>
-                <p className="text-xs text-muted-foreground">Adjust for temperature changes</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

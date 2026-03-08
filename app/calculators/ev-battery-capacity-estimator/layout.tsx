@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Charging Cost Ev Calculator",
     "description": "EV Charging Cost Calculator – Calculate the Cost to Charge Your Electric Car",
-    "href": "/charging-cost-ev-calculator"
+    "href": "/calculators/charging-cost-ev-calculator"
   },
   {
     "name": "Range Estimator Ev",
     "description": "EV Range Estimator – Calculate How Far Your Electric Car Can Go",
-    "href": "/range-estimator-ev"
+    "href": "/calculators/range-estimator-ev"
   },
   {
     "name": "Battery Backup Time Calculator",
     "description": "Battery Backup Time Calculator – How Long Will Your Battery Last?",
-    "href": "/battery-backup-time-calculator"
+    "href": "/calculators/battery-backup-time-calculator"
   },
   {
     "name": "Battery Life Calculator",
     "description": "Battery Life Calculator – Calculate Battery Runtime",
-    "href": "/battery-life-calculator"
+    "href": "/calculators/battery-life-calculator"
   },
   {
     "name": "Vehicle Depreciation Calculator",
     "description": "Vehicle Depreciation Calculator – Find Out How Much Your Car Has Lost in Value",
-    "href": "/vehicle-depreciation-calculator"
+    "href": "/calculators/vehicle-depreciation-calculator"
   },
   {
     "name": "Fuel Cost Calculator",
     "description": "Fuel Cost Calculator – Estimate Your Trip Fuel Expenses Instantly",
-    "href": "/fuel-cost-calculator"
+    "href": "/calculators/fuel-cost-calculator"
   }
 ];
 

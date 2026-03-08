@@ -482,23 +482,6 @@ export default function ExamCorrectionCurveCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-12 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Related Education Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/exam-scoring-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Exam Scoring Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate weighted final grades from multiple exam components and assignments.</p>
-            </a>
-            <a href="/calculators/gpa-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">GPA Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate semester or cumulative GPA from course grades and credit hours.</p>
-            </a>
-            <a href="/calculators/grade-percentage-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">Grade Percentage Calculator</h3>
-              <p className="text-sm text-muted-foreground">Convert raw scores to percentages and determine letter grades instantly.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

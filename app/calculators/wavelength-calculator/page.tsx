@@ -213,23 +213,6 @@ export default function WavelengthCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/frequency-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Frequency Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate frequency from period or wavelength for wave analysis.</p>
-          </a>
-          <a href="/calculators/photon-energy-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Photon Energy Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate photon energy from wavelength or frequency.</p>
-          </a>
-          <a href="/calculators/sound-speed-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Sound Speed Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate speed of sound in different mediums and temperatures.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

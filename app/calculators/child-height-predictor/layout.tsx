@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Toddler Growth Chart Calculator",
     "description": "Toddler Growth Chart Calculator – Track Height & Weight Percentiles for Your Child",
-    "href": "/toddler-growth-chart-calculator"
+    "href": "/calculators/toddler-growth-chart-calculator"
   },
   {
     "name": "Baby Age Calculator",
     "description": "Baby Age Calculator – Free Infant Age Calculator in Weeks and Months",
-    "href": "/baby-age-calculator"
+    "href": "/calculators/baby-age-calculator"
   },
   {
     "name": "Baby Feeding Chart Calculator",
     "description": "Baby Feeding Chart Calculator – How Much & How Often to Feed Your Baby",
-    "href": "/baby-feeding-chart-calculator"
+    "href": "/calculators/baby-feeding-chart-calculator"
   },
   {
     "name": "Diaper Usage Estimator",
     "description": "Diaper Usage Estimator – Calculate Monthly Diaper Costs for Your Baby",
-    "href": "/diaper-usage-estimator"
+    "href": "/calculators/diaper-usage-estimator"
   },
   {
     "name": "Pet Age Calculator",
     "description": "Pet Age Calculator – Convert Dog & Cat Age to Human Years",
-    "href": "/pet-age-calculator"
+    "href": "/calculators/pet-age-calculator"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

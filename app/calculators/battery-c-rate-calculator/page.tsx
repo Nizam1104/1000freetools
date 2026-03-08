@@ -298,35 +298,6 @@ export default function BatteryCRateCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <a
-            href="/calculators/battery-life-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Battery Life Calculator</span>
-            <p className="text-muted-foreground">Estimate battery runtime based on capacity and load</p>
-          </a>
-          <a
-            href="/calculators/battery-backup-time-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Battery Backup Time Calculator</span>
-            <p className="text-muted-foreground">Calculate how long a battery will power your devices</p>
-          </a>
-          <a
-            href="/calculators/amp-hours-calculator"
-            className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-          >
-            <span className="font-medium text-foreground">Amp Hours Calculator</span>
-            <p className="text-muted-foreground">Calculate amp hours from watts, volts, and time</p>
-          </a>
-        </CardContent>
-      </Card>
     </div>
   );
 }

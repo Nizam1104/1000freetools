@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -156,10 +164,7 @@ export default function JsonArrayGeneratorPage() {
               <Label className="text-sm font-medium text-muted-foreground mb-4 block">
                 Generated Array
               </Label>
-              <JsonEditor
-                value={result}
-                readOnly
-              />
+              <JsonEditor value={result} readOnly />
             </CardContent>
           </Card>
         )}
@@ -250,37 +255,6 @@ export default function JsonArrayGeneratorPage() {
               </p>
             </div>
           </div>
-
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-nested-structure"
-                className="text-primary hover:underline"
-              >
-                JSON Nested Structure Generator
-              </a>{" "}
-              – Create deeply nested JSON
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-object-generator"
-                className="text-primary hover:underline"
-              >
-                JSON Object Generator
-              </a>{" "}
-              – Generate mock objects
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-array-object-counter"
-                className="text-primary hover:underline"
-              >
-                JSON Array & Object Counter
-              </a>{" "}
-              – Count elements in JSON
-            </li>
-          </ul>
         </div>
       </div>
     </div>

@@ -310,7 +310,7 @@ export default function PerspectiveAngleCalculatorPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-3">
-                Explore our other creative calculators: the <a href="/calculators/golden-ratio-calculator" className="text-primary hover:underline">golden ratio calculator</a> for harmonious compositions, the <a href="/calculators/aspect-ratio-calculator" className="text-primary hover:underline">aspect ratio calculator</a> for canvas sizing, and the <a href="/calculators/focal-length-calculator" className="text-primary hover:underline">focal length calculator</a> for photography planning.
+                Explore our other creative calculators: the <a href="/calculators/golden-ratio-calculator" className="text-primary hover:underline">golden ratio calculator</a> for harmonious compositions and the <a href="/calculators/focal-length-calculator" className="text-primary hover:underline">focal length calculator</a> for photography planning.
               </p>
             </CardContent>
           </Card>

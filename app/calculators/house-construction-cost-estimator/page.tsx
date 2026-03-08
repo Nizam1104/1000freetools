@@ -329,25 +329,6 @@ export default function HouseConstructionCostEstimatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Tools</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/mortgage-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Mortgage Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate monthly mortgage payments and interest.</p>
-              </a>
-              <a href="/calculators/loan-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Loan Calculator</h3>
-                <p className="text-sm text-muted-foreground">Estimate loan payments and total interest costs.</p>
-              </a>
-              <a href="/calculators/budget-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Budget Calculator</h3>
-                <p className="text-sm text-muted-foreground">Plan your home building budget and expenses.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

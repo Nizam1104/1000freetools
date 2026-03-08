@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Matrix Multiplication Calculator",
     "description": "Matrix Multiplication Calculator",
-    "href": "/matrix-multiplication-calculator"
+    "href": "/calculators/matrix-multiplication-calculator"
   },
   {
     "name": "Determinant Calculator",
     "description": "Determinant Calculator",
-    "href": "/determinant-calculator"
+    "href": "/calculators/determinant-calculator"
   },
   {
     "name": "Inverse Matrix Calculator",
     "description": "Inverse Matrix Calculator",
-    "href": "/inverse-matrix-calculator"
+    "href": "/calculators/inverse-matrix-calculator"
   },
   {
     "name": "Linear Equation Solver",
     "description": "Linear Equation Solver – Solve ax + b = 0",
-    "href": "/linear-equation-solver"
+    "href": "/calculators/linear-equation-solver"
   },
   {
     "name": "Quadratic Equation Solver",
     "description": "Quadratic Equation Solver",
-    "href": "/quadratic-equation-solver"
+    "href": "/calculators/quadratic-equation-solver"
   },
   {
     "name": "0 100 Acceleration Estimator",
     "description": "0-100 Acceleration Estimator – Calculate 0 to 100 km/h Time",
-    "href": "/0-100-acceleration-estimator"
+    "href": "/calculators/0-100-acceleration-estimator"
   }
 ];
 

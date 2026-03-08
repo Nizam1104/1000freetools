@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Law Of Cosines Calculator",
     "description": "Law of Cosines Calculator",
-    "href": "/law-of-cosines-calculator"
+    "href": "/calculators/law-of-cosines-calculator"
   },
   {
     "name": "Law Of Sines Calculator",
     "description": "Law of Sines Calculator",
-    "href": "/law-of-sines-calculator"
+    "href": "/calculators/law-of-sines-calculator"
   },
   {
     "name": "Pythagorean Theorem Calculator",
     "description": "Pythagorean Theorem Calculator",
-    "href": "/pythagorean-theorem-calculator"
+    "href": "/calculators/pythagorean-theorem-calculator"
   },
   {
     "name": "Circle Area Calculator",
     "description": "Circle Area Calculator",
-    "href": "/circle-area-calculator"
+    "href": "/calculators/circle-area-calculator"
   },
   {
     "name": "Ellipse Area Calculator",
     "description": "Ellipse Area Calculator",
-    "href": "/ellipse-area-calculator"
+    "href": "/calculators/ellipse-area-calculator"
   },
   {
     "name": "Parallelogram Area Calculator",
     "description": "Parallelogram Area Calculator",
-    "href": "/parallelogram-area-calculator"
+    "href": "/calculators/parallelogram-area-calculator"
   }
 ];
 

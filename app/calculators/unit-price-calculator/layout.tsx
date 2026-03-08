@@ -13,32 +13,32 @@ const tools = [
   {
     "name": "Trapezoid Area Calculator",
     "description": "Trapezoid Area Calculator",
-    "href": "/trapezoid-area-calculator"
+    "href": "/calculators/trapezoid-area-calculator"
   },
   {
     "name": "Triangle Area Calculator",
     "description": "Triangle Area Calculator – Find Area from Base and Height",
-    "href": "/triangle-area-calculator"
+    "href": "/calculators/triangle-area-calculator"
   },
   {
     "name": "Trip Cost Estimator",
     "description": "Trip Cost Estimator – Plan Your Road Trip Budget with Ease",
-    "href": "/trip-cost-estimator"
+    "href": "/calculators/trip-cost-estimator"
   },
   {
     "name": "Tuning Frequency Converter",
     "description": "Tuning Frequency Converter – Convert Between Standard & Alternative Concert Pitch",
-    "href": "/tuning-frequency-converter"
+    "href": "/calculators/tuning-frequency-converter"
   },
   {
     "name": "Typography Scale Calculator",
     "description": "Typography Scale Calculator – Generate a Harmonious Font Size Scale",
-    "href": "/typography-scale-calculator"
+    "href": "/calculators/typography-scale-calculator"
   },
   {
     "name": "Ups Generator Runtime Calculator",
     "description": "UPS & Generator Runtime Calculator – How Long Will Your Backup Power Last?",
-    "href": "/ups-generator-runtime-calculator"
+    "href": "/calculators/ups-generator-runtime-calculator"
   }
 ];
 

@@ -465,36 +465,6 @@ export default function JsonSensitiveDataMaserPage() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold mb-3">Related tools</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <a
-                href="/json-tools/json-obfuscator"
-                className="text-primary hover:underline"
-              >
-                JSON Obfuscator
-              </a>{" "}
-              – Obfuscate all JSON data
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-remove-keys"
-                className="text-primary hover:underline"
-              >
-                JSON Remove Keys
-              </a>{" "}
-              – Delete sensitive fields entirely
-            </li>
-            <li>
-              <a
-                href="/json-tools/json-filter"
-                className="text-primary hover:underline"
-              >
-                JSON Filter
-              </a>{" "}
-              – Filter JSON arrays by conditions
-            </li>
-          </ul>
         </div>
       </div>
     </div>

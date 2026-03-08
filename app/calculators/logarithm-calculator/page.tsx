@@ -269,36 +269,6 @@ export default function LogarithmCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/exponent-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Exponent Calculator</span>
-                <p className="text-muted-foreground">Calculate powers and exponents with any base and exponent value</p>
-              </a>
-              <a
-                href="/calculators/scientific-notation-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Scientific Notation Calculator</span>
-                <p className="text-muted-foreground">Convert numbers to and from scientific notation format</p>
-              </a>
-              <a
-                href="/calculators/percentage-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Percentage Calculator</span>
-                <p className="text-muted-foreground">Calculate percentages, percentage change, and percentage differences</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

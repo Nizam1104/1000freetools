@@ -380,25 +380,6 @@ export default function GolfHandicapCalculatorPage() {
         </Card>
 
         {/* Related Tools Section */}
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Related Sports Calculators</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/basketball-shooting-percentage-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Basketball Shooting Percentage Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate field goal, three-point, and free throw shooting percentages.</p>
-              </a>
-              <a href="/calculators/running-pace-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">Running Pace Calculator</h3>
-                <p className="text-sm text-muted-foreground">Calculate running pace, finish time, and distance for training and racing.</p>
-              </a>
-              <a href="/calculators/vo2-max-calculator" className="p-5 bg-muted rounded-lg hover:border-primary border transition-colors">
-                <h3 className="font-semibold mb-2">VO2 Max Calculator</h3>
-                <p className="text-sm text-muted-foreground">Estimate your maximum oxygen uptake and cardiovascular fitness level.</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

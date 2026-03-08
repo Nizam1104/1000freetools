@@ -482,23 +482,6 @@ export default function UPSGeneratorRuntimeCalculatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Power Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/ups-load-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">UPS Load Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate total load and required UPS capacity for your equipment.</p>
-            </a>
-            <a href="/calculators/electric-power-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Electric Power Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate power, voltage, current, and resistance relationships.</p>
-            </a>
-            <a href="/calculators/battery-life-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Battery Life Calculator</h3>
-              <p className="text-sm text-muted-foreground">Estimate battery runtime for any device or application.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

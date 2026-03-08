@@ -255,28 +255,6 @@ export default function GearRatioCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/rpm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">RPM Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate rotational speed</p>
-            </a>
-            <a href="/calculators/torque-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Torque Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate torque and force</p>
-            </a>
-            <a href="/calculators/engine-displacement-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Engine Displacement Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate engine specifications</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

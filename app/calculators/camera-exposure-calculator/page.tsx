@@ -416,23 +416,6 @@ export default function CameraExposureCalculatorPage() {
           </section>
 
           {/* Related Tools */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-6">Related Photography & Design Calculators</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <a href="/calculators/canvas-aspect-ratio-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Canvas Aspect Ratio Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate and maintain aspect ratios when resizing images for print or digital media.</p>
-              </a>
-              <a href="/calculators/ceiling-tile-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Ceiling Tile Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate how many ceiling tiles you need for your room with waste allowance included.</p>
-              </a>
-              <a href="/calculators/carpet-area-calculator" className="block p-4 border rounded-lg hover:bg-muted transition-colors">
-                <h3 className="font-semibold mb-1">Carpet Area Calculator</h3>
-                <p className="text-muted-foreground text-sm">Convert between carpet area, built-up area, and super built-up area for real estate.</p>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

@@ -202,28 +202,6 @@ export default function GravitationalFieldCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/calculators/gravitational-force-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Gravitational Force Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate force between two masses</p>
-            </a>
-            <a href="/calculators/escape-velocity-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Escape Velocity Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate escape velocity from gravity</p>
-            </a>
-            <a href="/calculators/force-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Force Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate force from mass and acceleration</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -436,23 +436,6 @@ export default function TrailDifficultyEstimatorPage() {
         </div>
 
         {/* Related Tools Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-6">Related Outdoor Calculators</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/calculators/hiking-pace-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Hiking Pace Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate your hiking speed and estimate trail completion time.</p>
-            </a>
-            <a href="/calculators/backpack-load-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Backpack Load Calculator</h3>
-              <p className="text-sm text-muted-foreground">Determine safe pack weight based on your body weight and fitness.</p>
-            </a>
-            <a href="/calculators/altitude-sickness-risk-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-1">Altitude Sickness Risk Calculator</h3>
-              <p className="text-sm text-muted-foreground">Assess your risk of altitude sickness based on elevation and ascent rate.</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

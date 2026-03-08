@@ -562,36 +562,6 @@ export default function DimensionalWeightCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/shipping-cost-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Shipping Cost Calculator</span>
-                  <p className="text-muted-foreground">Compare shipping rates across carriers</p>
-                </a>
-                <a
-                  href="/calculators/package-size-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Package Size Calculator</span>
-                  <p className="text-muted-foreground">Find optimal box sizes for your products</p>
-                </a>
-                <a
-                  href="/calculators/postage-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Postage Calculator</span>
-                  <p className="text-muted-foreground">Calculate USPS postage rates</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

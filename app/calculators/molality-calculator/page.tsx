@@ -325,23 +325,6 @@ export default function MolalityCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 mb-8">
-        <h2 className="text-2xl font-semibold mb-6">Related Chemistry Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/molarity-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Molarity Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate molar concentration of solutions in mol/L.</p>
-          </a>
-          <a href="/calculators/dilution-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Dilution Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate dilution factors and final concentrations.</p>
-          </a>
-          <a href="/calculators/molecular-mass-calculator" className="p-5 bg-card rounded-lg border hover:border-primary transition-colors">
-            <h3 className="font-semibold mb-2">Molecular Mass Calculator</h3>
-            <p className="text-sm text-muted-foreground">Find the molar mass of chemical compounds.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

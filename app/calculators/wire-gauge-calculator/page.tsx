@@ -209,23 +209,6 @@ export default function WireGaugeCalculator() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="mt-8 p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/voltage-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Voltage Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate voltage using Ohm&apos;s Law for electrical circuits.</p>
-          </a>
-          <a href="/calculators/power-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Power Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate electrical power from voltage, current, or resistance.</p>
-          </a>
-          <a href="/calculators/ohms-law-calculator" className="p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors">
-            <h3 className="font-semibold mb-1">Ohm&apos;s Law Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate voltage, current, resistance, and power relationships.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

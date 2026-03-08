@@ -261,36 +261,6 @@ export default function RecurringDepositCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Related Tools
-            </h3>
-            <div className="space-y-2 text-sm">
-              <a
-                href="/calculators/fixed-deposit-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Fixed Deposit Calculator</span>
-                <p className="text-muted-foreground">Calculate maturity value for lump sum deposits</p>
-              </a>
-              <a
-                href="/calculators/sip-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">SIP Calculator</span>
-                <p className="text-muted-foreground">Estimate returns from mutual fund SIP investments</p>
-              </a>
-              <a
-                href="/calculators/compound-interest-calculator"
-                className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-              >
-                <span className="font-medium text-foreground">Compound Interest Calculator</span>
-                <p className="text-muted-foreground">Calculate compound interest for any investment</p>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

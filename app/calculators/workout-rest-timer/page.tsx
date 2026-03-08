@@ -275,23 +275,6 @@ export default function WorkoutRestTimer() {
       </div>
 
       {/* Related Tools Section */}
-      <div className="p-6 bg-card rounded-lg border">
-        <h2 className="text-2xl font-semibold mb-6">Related Fitness Calculators</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <a href="/calculators/workout-volume-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">Workout Volume Calculator</h3>
-            <p className="text-sm text-muted-foreground">Track your total training volume for progressive overload.</p>
-          </a>
-          <a href="/calculators/1rm-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">1RM Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate your one-rep max from submaximal lifts.</p>
-          </a>
-          <a href="/calculators/tdee-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-            <h3 className="font-semibold mb-1">TDEE Calculator</h3>
-            <p className="text-sm text-muted-foreground">Calculate daily calorie needs for your fitness goals.</p>
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

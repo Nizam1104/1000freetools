@@ -359,36 +359,6 @@ export default function MinimumPaymentCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Related Tools
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="/calculators/credit-card-payoff-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Credit Card Payoff Calculator</span>
-                  <p className="text-muted-foreground">Plan your debt-free date with custom monthly payments</p>
-                </a>
-                <a
-                  href="/calculators/debt-snowball-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Debt Snowball Calculator</span>
-                  <p className="text-muted-foreground">Pay off multiple debts using the snowball method</p>
-                </a>
-                <a
-                  href="/calculators/interest-calculator"
-                  className="block p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                >
-                  <span className="font-medium text-foreground">Interest Calculator</span>
-                  <p className="text-muted-foreground">Calculate simple and compound interest on loans and savings</p>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>
