@@ -47,11 +47,6 @@ const csvTools = [
     href: "/csv-tools/csv-to-excel",
   },
   {
-    name: "Excel to CSV",
-    description: "Extract sheets from .xlsx/.xls files and convert to CSV",
-    href: "/csv-tools/excel-to-csv",
-  },
-  {
     name: "CSV to TSV",
     description: "Convert comma-delimited CSV to tab-separated values (TSV)",
     href: "/csv-tools/csv-to-tsv",
@@ -60,11 +55,6 @@ const csvTools = [
     name: "CSV to XML",
     description: "Transform CSV rows into XML elements with configurable structure",
     href: "/csv-tools/csv-to-xml",
-  },
-  {
-    name: "XML to CSV",
-    description: "Parse XML and extract repeating element structures into CSV",
-    href: "/csv-tools/xml-to-csv",
   },
   {
     name: "CSV to YAML",
@@ -77,19 +67,9 @@ const csvTools = [
     href: "/csv-tools/csv-to-sql",
   },
   {
-    name: "SQL to CSV",
-    description: "Extract row data from SQL INSERT scripts into CSV format",
-    href: "/csv-tools/sql-to-csv",
-  },
-  {
     name: "CSV to HTML Table",
     description: "Convert CSV to styled HTML table with CSS classes and responsive layout",
     href: "/csv-tools/csv-to-html",
-  },
-  {
-    name: "HTML Table to CSV",
-    description: "Scrape HTML tables from pasted HTML and export as CSV",
-    href: "/csv-tools/html-to-csv",
   },
   {
     name: "CSV to Markdown",
@@ -105,11 +85,6 @@ const csvTools = [
     name: "CSV to Text",
     description: "Generate plain text from CSV rows using customizable templates",
     href: "/csv-tools/csv-to-text",
-  },
-  {
-    name: "Text to CSV",
-    description: "Parse unstructured text and convert to structured CSV",
-    href: "/csv-tools/text-to-csv",
   },
   {
     name: "CSV Column Extractor",
