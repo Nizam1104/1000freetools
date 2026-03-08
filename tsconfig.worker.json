@@ -13,6 +13,6 @@
     "noEmit": false,
     "outDir": "./dist"
   },
-  "include": ["public/workers/*.ts"],
+  "include": ["public/workers/*.ts", "lib/workers/*.ts"],
   "exclude": ["node_modules"]
 }

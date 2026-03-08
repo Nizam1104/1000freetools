@@ -184,16 +184,7 @@ const CSVViewerPage = () => {
       </Head>
 
       <div className="mx-auto max-w-6xl flex flex-col min-h-screen">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            CSV Viewer
-          </h1>
-          <p className="text-lg text-muted-foreground mb-6 max-w-3xl">
-            Upload your CSV file and view it instantly in a clean table format.
-            No downloads or installations needed—just drag, drop, and explore
-            your data right here in your browser.
-          </p>
-        </div>
+        
 
         <div className="flex flex-col gap-4">
           <div className="flex flex-col items-center">
