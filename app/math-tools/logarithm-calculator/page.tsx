@@ -6,6 +6,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
+const examples = [
+  { number: "100", mode: "base-10", customBase: "", label: "log₁₀(100)" },
+  { number: "1000", mode: "base-10", customBase: "", label: "log₁₀(1000)" },
+  { number: "8", mode: "base-2", customBase: "", label: "log₂(8)" },
+  { number: "2.718", mode: "natural", customBase: "", label: "ln(e)" },
+  { number: "27", mode: "custom", customBase: "3", label: "log₃(27)" },
+  { number: "0.01", mode: "base-10", customBase: "", label: "log₁₀(0.01)" },
+  { number: "32", mode: "base-2", customBase: "", label: "log₂(32)" },
+];
+
 export default function LogarithmCalculator() {
   const [mode, setMode] = useState<"base-10" | "natural" | "base-2" | "custom">("base-10");
   const [number, setNumber] = useState("");
@@ -73,6 +83,15 @@ export default function LogarithmCalculator() {
     setError("");
   };
 
+  const loadExample = (exampleIndex: number) => {
+    const ex = examples[exampleIndex];
+    setNumber(ex.number);
+    setMode(ex.mode as typeof mode);
+    setCustomBase(ex.customBase);
+    setResult(null);
+    setError("");
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <div className="mb-8">
@@ -120,9 +139,18 @@ export default function LogarithmCalculator() {
           </div>
         )}
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button onClick={calculateLog}>Calculate Log</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground self-center">Examples:</span>
+          {examples.map((ex, i) => (
+            <Button key={i} variant="ghost" size="sm" onClick={() => loadExample(i)}>
+              {ex.label}
+            </Button>
+          ))}
         </div>
 
         {error && (
@@ -142,6 +170,173 @@ export default function LogarithmCalculator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Logarithms</h2>
+        <div className="space-y-4">
+          <p className="text-muted-foreground">
+            A logarithm answers the question: "To what power must I raise the base to get this number?" For example, log₁₀(100) = 2 because 10² = 100. Logarithms are the inverse operation of exponentiation, just as division is the inverse of multiplication.
+          </p>
+          <p className="text-muted-foreground">
+            The notation log_b(x) = y means b^y = x. Three bases are especially common: base 10 (common log, used in science and engineering), base e (natural log, used in calculus and growth models), and base 2 (binary log, used in computer science).
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Logarithm Properties</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Product Rule</h4>
+            <div className="font-mono text-sm bg-muted p-2 rounded mb-2">log_b(xy) = log_b(x) + log_b(y)</div>
+            <p className="text-xs text-muted-foreground">The log of a product equals the sum of the logs</p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Quotient Rule</h4>
+            <div className="font-mono text-sm bg-muted p-2 rounded mb-2">log_b(x/y) = log_b(x) - log_b(y)</div>
+            <p className="text-xs text-muted-foreground">The log of a quotient equals the difference of the logs</p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Power Rule</h4>
+            <div className="font-mono text-sm bg-muted p-2 rounded mb-2">log_b(x^n) = n × log_b(x)</div>
+            <p className="text-xs text-muted-foreground">The log of a power brings the exponent down as a multiplier</p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Change of Base</h4>
+            <div className="font-mono text-sm bg-muted p-2 rounded mb-2">log_b(x) = log_c(x) / log_c(b)</div>
+            <p className="text-xs text-muted-foreground">Convert any log to a different base</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Common Logarithm</h4>
+            <p className="text-sm text-muted-foreground mb-3">Find log₁₀(1000)</p>
+            <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
+              <div>Question: 10 raised to what power equals 1000?</div>
+              <div>10¹ = 10</div>
+              <div>10² = 100</div>
+              <div>10³ = 1000 ✓</div>
+              <div className="pt-2 font-semibold">Answer: log₁₀(1000) = 3</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Natural Logarithm</h4>
+            <p className="text-sm text-muted-foreground mb-3">Find ln(e⁵)</p>
+            <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
+              <div>By definition, ln(x) = logₑ(x)</div>
+              <div>ln(e⁵) asks: e raised to what power equals e⁵?</div>
+              <div>Answer is clearly 5</div>
+              <div className="pt-2 font-semibold">Answer: ln(e⁵) = 5</div>
+              <div className="text-xs text-muted-foreground">General rule: ln(e^x) = x</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Binary Logarithm</h4>
+            <p className="text-sm text-muted-foreground mb-3">Find log₂(64)</p>
+            <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
+              <div>Question: 2 raised to what power equals 64?</div>
+              <div>2¹ = 2, 2² = 4, 2³ = 8, 2⁴ = 16, 2⁵ = 32, 2⁶ = 64 ✓</div>
+              <div className="pt-2 font-semibold">Answer: log₂(64) = 6</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Custom Base</h4>
+            <p className="text-sm text-muted-foreground mb-3">Find log₃(81)</p>
+            <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
+              <div>Question: 3 raised to what power equals 81?</div>
+              <div>3¹ = 3, 3² = 9, 3³ = 27, 3⁴ = 81 ✓</div>
+              <div>Or using change of base: log₃(81) = ln(81)/ln(3) = 4.394/1.099 = 4</div>
+              <div className="pt-2 font-semibold">Answer: log₃(81) = 4</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 5: Log of a Decimal</h4>
+            <p className="text-sm text-muted-foreground mb-3">Find log₁₀(0.01)</p>
+            <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
+              <div>0.01 = 1/100 = 10⁻²</div>
+              <div>So log₁₀(0.01) = log₁₀(10⁻²) = -2</div>
+              <div className="pt-2 font-semibold">Answer: log₁₀(0.01) = -2</div>
+              <div className="text-xs text-muted-foreground">Logs of numbers between 0 and 1 are negative</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-6 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+          <p className="text-sm">
+            John Napier invented logarithms in 1614 to simplify astronomical calculations. Before calculators, scientists used log tables to turn multiplication into addition. The slide rule, based on logarithmic scales, was the primary calculation tool for engineers until electronic calculators arrived in the 1970s.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why can't I take the log of a negative number?</h4>
+            <p className="text-sm text-muted-foreground">
+              No real number raised to any power gives a negative result. For example, there's no power you can raise 10 to that equals -100. (In complex numbers, logs of negatives exist, but that's advanced mathematics.)
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference between log and ln?</h4>
+            <p className="text-sm text-muted-foreground">
+              "log" without a base usually means log₁₀ (base 10). "ln" always means logₑ (base e, where e ≈ 2.718). In higher mathematics, "log" sometimes means natural log – context matters.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is log(1)?</h4>
+            <p className="text-sm text-muted-foreground">
+              log_b(1) = 0 for any valid base b. This is because any number raised to the power 0 equals 1. So log₁₀(1) = 0, ln(1) = 0, log₂(1) = 0, etc.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Where are logarithms used in real life?</h4>
+            <p className="text-sm text-muted-foreground">
+              Logarithms appear everywhere: pH scale (acidity), Richter scale (earthquakes), decibels (sound), musical intervals, compound interest calculations, population growth models, and data compression algorithms.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's special about base e?</h4>
+            <p className="text-sm text-muted-foreground">
+              The number e (≈2.718) is the base for natural growth. Functions like e^x have the unique property that their derivative equals themselves. This makes natural logs essential in calculus, physics, and modeling continuous growth or decay.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I calculate log without a calculator?</h4>
+            <p className="text-sm text-muted-foreground">
+              For simple cases, think about powers: log₁₀(1000) = 3 because 10³ = 1000. For other values, use log tables or the change-of-base formula with known values. Memorize key values like log₁₀(2) ≈ 0.301 and log₁₀(3) ≈ 0.477.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/exponent-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Exponent Calculator</p>
+            <p className="text-xs text-muted-foreground">Calculate powers</p>
+          </a>
+          <a href="/math-tools/scientific-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Scientific Calculator</p>
+            <p className="text-xs text-muted-foreground">Advanced calculations</p>
+          </a>
+          <a href="/math-tools/exponential-growth-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Exponential Growth</p>
+            <p className="text-xs text-muted-foreground">Growth and decay</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

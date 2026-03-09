@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -111,7 +110,7 @@ export default function AreaCalculator() {
 
     const config = shapeConfigs[shape];
     const steps: string[] = [];
-    
+
     steps.push(`Shape: ${config.name}`);
     steps.push(`Formula: ${config.formula}`);
     steps.push("");
@@ -312,117 +311,113 @@ export default function AreaCalculator() {
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Area Calculator</CardTitle>
-          <CardDescription>
-            Select a shape and enter dimensions to calculate area.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <div>
-              <Label>Shape</Label>
-              <Select value={shape} onValueChange={(v) => { setShape(v as Shape); setValues({}); setResult(null); setError(""); }}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="rectangle">Rectangle</SelectItem>
-                  <SelectItem value="square">Square</SelectItem>
-                  <SelectItem value="triangle">Triangle</SelectItem>
-                  <SelectItem value="circle">Circle</SelectItem>
-                  <SelectItem value="trapezoid">Trapezoid</SelectItem>
-                  <SelectItem value="parallelogram">Parallelogram</SelectItem>
-                  <SelectItem value="rhombus">Rhombus</SelectItem>
-                  <SelectItem value="kite">Kite</SelectItem>
-                  <SelectItem value="ellipse">Ellipse</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="p-4 bg-muted rounded-lg">
-              <div className="font-semibold text-sm mb-2">Formula</div>
-              <div className="font-mono text-lg">{shapeConfigs[shape].formulaDisplay}</div>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              {shapeConfigs[shape].inputs.map((input) => (
-                <div key={input.key}>
-                  <Label>{input.label}</Label>
-                  <Input
-                    type="number"
-                    placeholder={input.placeholder}
-                    value={values[input.key] || ""}
-                    onChange={(e) => setValues({ ...values, [input.key]: e.target.value })}
-                    onKeyDown={(e) => e.key === "Enter" && calculateArea()}
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="flex gap-2">
-              <Button onClick={calculateArea}>Calculate Area</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs text-muted-foreground">Examples:</span>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("rectangle", { length: "10", width: "5" })}>
-                Rectangle 10×5
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("circle", { radius: "7" })}>
-                Circle r=7
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("triangle", { base: "8", height: "6" })}>
-                Triangle b=8, h=6
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("trapezoid", { base1: "8", base2: "12", height: "5" })}>
-                Trapezoid
-              </Button>
-            </div>
-
-            {error && (
-              <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
-                {error}
-              </div>
-            )}
-
-            {result && (
-              <div className="space-y-4">
-                <div className="p-6 bg-muted rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground mb-2">Area</p>
-                  <p className="text-5xl font-bold">{result.area.toFixed(4)}</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {Number.isInteger(result.area) ? result.area : `${result.area.toFixed(2)} (rounded)`}
-                  </p>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Calculation Steps</h4>
-                  <div className="space-y-2 text-sm font-mono">
-                    {result.steps.map((step, i) => (
-                      <div key={i} className={step === "" ? "h-2" : ""}>
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      <section className="space-y-6">
+      <div className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold mb-3">Area Calculator – Find Area of Any 2D Shape Online</h2>
+          <Label>Shape</Label>
+          <Select value={shape} onValueChange={(v) => { setShape(v as Shape); setValues({}); setResult(null); setError(""); }}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="rectangle">Rectangle</SelectItem>
+              <SelectItem value="square">Square</SelectItem>
+              <SelectItem value="triangle">Triangle</SelectItem>
+              <SelectItem value="circle">Circle</SelectItem>
+              <SelectItem value="trapezoid">Trapezoid</SelectItem>
+              <SelectItem value="parallelogram">Parallelogram</SelectItem>
+              <SelectItem value="rhombus">Rhombus</SelectItem>
+              <SelectItem value="kite">Kite</SelectItem>
+              <SelectItem value="ellipse">Ellipse</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="p-4 bg-muted rounded-lg">
+          <div className="font-semibold text-sm mb-2">Formula</div>
+          <div className="font-mono text-lg">{shapeConfigs[shape].formulaDisplay}</div>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          {shapeConfigs[shape].inputs.map((input) => (
+            <div key={input.key}>
+              <Label>{input.label}</Label>
+              <Input
+                type="number"
+                placeholder={input.placeholder}
+                value={values[input.key] || ""}
+                onChange={(e) => setValues({ ...values, [input.key]: e.target.value })}
+                onKeyDown={(e) => e.key === "Enter" && calculateArea()}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <Button onClick={calculateArea}>Calculate Area</Button>
+          <Button variant="outline" onClick={reset}>Reset</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("rectangle", { length: "10", width: "5" })}>
+            Rectangle 10×5
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("circle", { radius: "7" })}>
+            Circle r=7
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("triangle", { base: "8", height: "6" })}>
+            Triangle b=8, h=6
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("trapezoid", { base1: "8", base2: "12", height: "5" })}>
+            Trapezoid
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("square", { side: "9" })}>
+            Square s=9
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("parallelogram", { base: "15", height: "8" })}>
+            Parallelogram
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("ellipse", { semiMajor: "10", semiMinor: "6" })}>
+            Ellipse
+          </Button>
+        </div>
+
+        {error && (
+          <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
+            {error}
+          </div>
+        )}
+
+        {result && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg text-center">
+              <p className="text-sm text-muted-foreground mb-2">Area</p>
+              <p className="text-5xl font-bold">{result.area.toFixed(4)}</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                {Number.isInteger(result.area) ? result.area : `${result.area.toFixed(2)} (rounded)`}
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Calculation Steps</h4>
+              <div className="space-y-2 text-sm font-mono">
+                {result.steps.map((step, i) => (
+                  <div key={i} className={step === "" ? "h-2" : ""}>
+                    {step}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Area Calculator – Find Area of Any 2D Shape Online</h2>
+        <div className="space-y-4">
           <p className="text-muted-foreground">
             Area measures the space inside a 2D shape. Whether you're calculating floor space for new carpet, figuring out how much paint you need, or solving geometry homework, this calculator handles the most common shapes with clear formulas and step-by-step solutions.
           </p>
-        </div>
-
-        <div>
           <p className="text-muted-foreground">
             Pick your shape, enter the required dimensions, and get instant results. Each shape uses its specific formula – rectangles multiply length by width, circles use πr², triangles take half the base times height. The calculator shows the formula and walks through each step.
           </p>
@@ -511,38 +506,83 @@ export default function AreaCalculator() {
       </section>
 
       <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Real-World Examples</h3>
-        <div className="space-y-3">
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Room flooring</div>
-            <div className="text-sm text-muted-foreground">
-              Rectangle 15 ft × 12 ft = 180 sq ft. Add 10% for waste: 198 sq ft of flooring needed.
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Rectangle Area</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Find the area of a rectangular garden that is 24 feet long and 15 feet wide.
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>Length = 24 ft, Width = 15 ft</div>
+              <div>A = l × w</div>
+              <div>A = 24 × 15</div>
+              <div>A = 360 square feet</div>
             </div>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Circular garden</div>
-            <div className="text-sm text-muted-foreground">
-              Radius 8 ft: Area = π × 64 ≈ 201 sq ft. At 2 lbs seed per 100 sq ft, need about 4 lbs of grass seed.
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Circle Area</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Calculate the area of a circular pizza with a 14-inch diameter.
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>Diameter = 14 in, so Radius = 7 in</div>
+              <div>A = πr²</div>
+              <div>A = π × 7²</div>
+              <div>A = π × 49</div>
+              <div>A ≈ 3.14159 × 49 = 153.94 square inches</div>
             </div>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Triangular sail</div>
-            <div className="text-sm text-muted-foreground">
-              Base 10 ft, height 15 ft: Area = ½ × 10 × 15 = 75 sq ft of sailcloth.
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Triangle Area</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              A triangular sail has a base of 12 feet and a height of 18 feet. What's its area?
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>Base = 12 ft, Height = 18 ft</div>
+              <div>A = ½ × b × h</div>
+              <div>A = ½ × 12 × 18</div>
+              <div>A = 6 × 18 = 108 square feet</div>
             </div>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Trapezoidal desk</div>
-            <div className="text-sm text-muted-foreground">
-              Bases 30" and 24", height 18": Area = ½(30+24)×18 = 486 sq inches of surface.
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Trapezoid Area</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              A trapezoidal table has parallel sides of 36 inches and 48 inches, with a height of 24 inches.
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>Base₁ = 36 in, Base₂ = 48 in, Height = 24 in</div>
+              <div>A = ½(a + b)h</div>
+              <div>A = ½(36 + 48) × 24</div>
+              <div>A = ½(84) × 24</div>
+              <div>A = 42 × 24 = 1,008 square inches</div>
             </div>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Elliptical table</div>
-            <div className="text-sm text-muted-foreground">
-              Semi-major 4 ft, semi-minor 2.5 ft: Area = π×4×2.5 ≈ 31.4 sq ft tabletop.
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 5: Ellipse Area</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              An elliptical pool table has a semi-major axis of 5 feet and semi-minor axis of 3 feet.
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>a = 5 ft, b = 3 ft</div>
+              <div>A = πab</div>
+              <div>A = π × 5 × 3</div>
+              <div>A = π × 15 ≈ 47.12 square feet</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-muted rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">Quick Fact</h3>
+          <p className="text-sm text-muted-foreground">
+            The formula for circle area (A = πr²) was first rigorously proven by Archimedes around 250 BCE. He used the "method of exhaustion," inscribing and circumscribing polygons with increasing numbers of sides around a circle. His approach anticipated calculus by nearly 2,000 years.
+          </p>
         </div>
       </section>
 
@@ -579,20 +619,18 @@ export default function AreaCalculator() {
               Area measures the space inside a shape (square units). Perimeter measures the distance around the outside (linear units). A 4×4 square has area 16 sq units and perimeter 16 units – same number, different meaning.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-          <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction Calculator</p>
-            <p className="text-xs text-muted-foreground">Fraction operations</p>
-          </a>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I calculate the area of a rhombus without diagonals?</h4>
+            <p className="text-sm text-muted-foreground">
+              If you know the side length and any interior angle, use A = s² × sin(angle). If you know the side and height (perpendicular distance between opposite sides), use A = base × height, same as a parallelogram.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Is a square a rectangle?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes, a square is a special type of rectangle where all four sides are equal. Both formulas work: you can use length × width (where length = width) or side² – they give the same result.
+            </p>
+          </div>
         </div>
       </section>
     </div>

@@ -35,8 +35,8 @@ export default function ArithmeticSequenceCalculator() {
       return;
     }
 
-    if (n > 100) {
-      setError("Please enter 100 or fewer terms for display");
+    if (n > 1000) {
+      setError("Please enter 1000 or fewer terms for display");
       return;
     }
 
@@ -116,7 +116,7 @@ export default function ArithmeticSequenceCalculator() {
           </div>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button onClick={calculate}>Calculate Sequence</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
           <Button variant="outline" onClick={loadExample}>Load Example</Button>
@@ -170,6 +170,122 @@ export default function ArithmeticSequenceCalculator() {
           </div>
         )}
       </div>
+
+      <section className="space-y-6 pt-8 border-t">
+        <h2 className="text-2xl font-semibold">Understanding Arithmetic Sequences</h2>
+        
+        <div className="space-y-4">
+          <p>
+            An arithmetic sequence (or arithmetic progression) is a list of numbers where each term differs from the previous one by a constant amount. That constant is called the common difference.
+          </p>
+
+          <h3 className="text-xl font-semibold">The Arithmetic Sequence Formula</h3>
+          <div className="p-4 bg-muted rounded-lg space-y-2">
+            <code className="text-sm font-mono block">
+              nth Term: aₙ = a₁ + (n-1)d
+            </code>
+            <code className="text-sm font-mono block">
+              Sum: Sₙ = n/2 × (a₁ + aₙ)
+            </code>
+          </div>
+          <p>
+            Where a₁ is the first term, d is the common difference, and n is the position of the term you want to find.
+          </p>
+
+          <h3 className="text-xl font-semibold">Worked Examples</h3>
+          
+          <div className="space-y-4">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 1: Basic Sequence</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                First term a₁ = 2, common difference d = 3, find 10 terms.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                a₁₀ = 2 + (10-1) × 3 = 2 + 27 = 29<br/>
+                S₁₀ = 10/2 × (2 + 29) = 5 × 31 = 155
+              </code>
+              <p className="text-sm mt-2">
+                Sequence: 2, 5, 8, 11, 14, 17, 20, 23, 26, 29
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 2: Negative Difference</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                a₁ = 100, d = -5, find 8 terms.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                a₈ = 100 + (8-1) × (-5) = 100 - 35 = 65<br/>
+                S₈ = 8/2 × (100 + 65) = 4 × 165 = 660
+              </code>
+              <p className="text-sm mt-2">
+                Sequence: 100, 95, 90, 85, 80, 75, 70, 65
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 3: Finding the Sum</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                What's the sum of the first 50 positive integers?
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                a₁ = 1, d = 1, n = 50<br/>
+                a₅₀ = 1 + 49 × 1 = 50<br/>
+                S₅₀ = 50/2 × (1 + 50) = 25 × 51 = 1275
+              </code>
+              <p className="text-sm mt-2">
+                This is the famous formula Gauss supposedly discovered as a schoolboy.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold">A Quick Fact</h3>
+          <div className="p-4 bg-muted rounded-lg">
+            <p className="text-sm">
+              The story goes that 7-year-old Carl Friedrich Gauss was told to add all numbers from 1 to 100 as busywork. He instantly replied 5050. He'd realized 1+100=101, 2+99=101, and so on — 50 pairs of 101. That's the arithmetic series formula in action.
+            </p>
+          </div>
+
+          <h3 className="text-xl font-semibold">Common Questions</h3>
+          
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold mb-2">What if the common difference is zero?</h4>
+              <p className="text-sm">
+                Then every term equals the first term. It's a constant sequence: 5, 5, 5, 5... The sum is just n times the first term.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Can the common difference be negative?</h4>
+              <p className="text-sm">
+                Absolutely. A negative d means the sequence decreases. These show up in real situations like depreciation or countdown patterns.
+            </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">How do I find which term equals a specific value?</h4>
+              <p className="text-sm">
+                Rearrange the nth term formula: n = (aₙ - a₁)/d + 1. If n comes out as a whole number, that value exists in the sequence.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">What's the difference between a sequence and a series?</h4>
+              <p className="text-sm">
+                A sequence is the list of numbers. A series is the sum of those numbers. This calculator gives you both — the sequence itself and its partial sum.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Where do arithmetic sequences appear in real life?</h4>
+              <p className="text-sm">
+                Staircase steps, seating arrangements in theaters, regular salary increases, depreciation schedules — anywhere something changes by a fixed amount each time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

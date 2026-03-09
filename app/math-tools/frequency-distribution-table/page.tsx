@@ -56,7 +56,6 @@ export default function FrequencyDistributionTable() {
     const range = max - min;
     const binWidth = range / numBins;
 
-    // Create bins
     const bins: { lower: number; upper: number; count: number }[] = [];
     for (let i = 0; i < numBins; i++) {
       bins.push({
@@ -66,14 +65,12 @@ export default function FrequencyDistributionTable() {
       });
     }
 
-    // Count frequencies
     numbers.forEach((num) => {
       let binIndex = Math.floor((num - min) / binWidth);
-      if (binIndex >= numBins) binIndex = numBins - 1; // Handle max value
+      if (binIndex >= numBins) binIndex = numBins - 1;
       bins[binIndex].count++;
     });
 
-    // Build frequency table
     const rows: FrequencyRow[] = [];
     let cumulativeFreq = 0;
     bins.forEach((bin) => {
@@ -118,9 +115,9 @@ export default function FrequencyDistributionTable() {
     setError("");
   };
 
-  const loadExample = () => {
-    setInput("45, 52, 38, 49, 55, 42, 48, 51, 39, 47, 53, 44, 50, 46, 41, 54, 43, 48, 52, 40");
-    setNumBins(5);
+  const loadExample = (data: string, bins: number) => {
+    setInput(data);
+    setNumBins(bins);
     setResult(null);
     setSteps([]);
   };
@@ -150,7 +147,7 @@ export default function FrequencyDistributionTable() {
           <Input
             type="number"
             min={2}
-            max={20}
+            max={100}
             value={numBins}
             onChange={(e) => setNumBins(parseInt(e.target.value) || 5)}
             className="w-32"
@@ -160,10 +157,18 @@ export default function FrequencyDistributionTable() {
           </p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button onClick={calculate}>Generate Frequency Table</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
-          <Button variant="outline" onClick={loadExample}>Load Example</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-sm text-muted-foreground self-center">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("45, 52, 38, 49, 55, 42, 48, 51, 39, 47, 53, 44, 50, 46, 41, 54, 43, 48, 52, 40", 5)}>Test scores</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("12, 15, 18, 22, 25, 28, 32, 35, 38, 42, 45, 48, 52, 55, 58, 62, 65, 68, 72, 75", 6)}>Ages</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400", 8)">Weights</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("5.2, 6.1, 7.3, 8.4, 5.8, 6.5, 7.9, 8.1, 5.5, 6.8, 7.2, 8.6, 5.9, 6.3, 7.7", 5)}>Measurements</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61", 7)">Temperatures</Button>
         </div>
 
         {error && (
@@ -261,6 +266,174 @@ export default function FrequencyDistributionTable() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Frequency Distribution Tables</h2>
+        <p className="text-muted-foreground">
+          A frequency distribution table organizes raw data into groups called classes or bins. Instead of looking at individual values, you see how many data points fall into each range. This makes patterns in large datasets much easier to spot.
+        </p>
+        <p className="text-muted-foreground">
+          The table shows several useful columns. Frequency counts how many values land in each bin. Relative frequency expresses this as a proportion of the total. Cumulative frequency keeps a running total, showing how many values fall below each bin's upper boundary.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">How to Create a Frequency Distribution Table</h3>
+        <div className="p-6 bg-muted rounded-lg">
+          <ol className="space-y-4 text-sm">
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">1</span>
+              <div>
+                <p className="font-semibold mb-1">Find the range</p>
+                <p className="text-muted-foreground">
+                  Subtract the minimum value from the maximum value. This tells you the total spread of your data.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">2</span>
+              <div>
+                <p className="font-semibold mb-1">Choose the number of bins</p>
+                <p className="text-muted-foreground">
+                  For most datasets, 5 to 10 bins work well. Too few bins hide patterns. Too many bins make the table hard to read.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">3</span>
+              <div>
+                <p className="font-semibold mb-1">Calculate bin width</p>
+                <p className="text-muted-foreground">
+                  Divide the range by the number of bins. Round up to a convenient number if needed.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">4</span>
+              <div>
+                <p className="font-semibold mb-1">Create the bins</p>
+                <p className="text-muted-foreground">
+                  Start at the minimum value and add the bin width repeatedly to create non-overlapping intervals.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">5</span>
+              <div>
+                <p className="font-semibold mb-1">Count frequencies</p>
+                <p className="text-muted-foreground">
+                  Tally how many data points fall into each bin. Each value goes into exactly one bin.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 1: Test Scores (20 students)</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>Data: 45, 52, 38, 49, 55, 42, 48, 51, 39, 47, 53, 44, 50, 46, 41, 54, 43, 48, 52, 40</div>
+              <div>Min = 38, Max = 55</div>
+              <div>Range = 55 - 38 = 17</div>
+              <div>Using 5 bins: Bin width = 17/5 = 3.4</div>
+              <div>Bins: [38-41.4), [41.4-44.8), [44.8-48.2), [48.2-51.6), [51.6-55]</div>
+              <div className="text-muted-foreground mt-2">Count values in each bin to get frequencies</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 2: Choosing Bin Numbers</h4>
+            <div className="text-sm space-y-2">
+              <p>Sturges' formula suggests: bins = 1 + 3.322 × log₁₀(n)</p>
+              <p>For n = 100: bins ≈ 1 + 3.322 × 2 = 7.6 ≈ 8 bins</p>
+              <p>For n = 50: bins ≈ 1 + 3.322 × 1.7 = 6.6 ≈ 7 bins</p>
+              <p className="text-muted-foreground mt-2">This formula gives a good starting point for most datasets.</p>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 3: Interpreting Relative Frequency</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>If 15 out of 60 values fall in a bin:</div>
+              <div>Relative frequency = 15/60 = 0.25</div>
+              <div>Percentage = 0.25 × 100 = 25%</div>
+              <div className="text-muted-foreground mt-2">This means 25% of all data falls in this range.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-amber-800">Quick Fact</h4>
+          <p className="text-sm text-amber-700">
+            Florence Nightingale was a pioneer in using frequency distributions and visual statistics. During the Crimean War, she created "coxcomb" diagrams (early pie charts) showing that most soldier deaths were from disease, not battle wounds. Her statistical work revolutionized military medicine.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How many bins should I use?</h4>
+            <p className="text-sm text-muted-foreground">
+              For small datasets (under 50 values), use 5-7 bins. For medium datasets (50-200), use 7-10 bins. For large datasets, you can use more. Sturges' formula gives a mathematical guideline, but adjust based on what reveals patterns best.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What if a value falls exactly on a bin boundary?</h4>
+            <p className="text-sm text-muted-foreground">
+              By convention, the left boundary is inclusive and the right is exclusive. So [40-50) includes 40 but not 50. The value 50 goes in the next bin [50-60). This prevents double-counting.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">When should I use relative frequency?</h4>
+            <p className="text-sm text-muted-foreground">
+              Use relative frequency when comparing datasets of different sizes. It converts counts to proportions, making fair comparisons possible. A frequency of 10 means different things in datasets of 20 vs 200 values.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What does cumulative frequency tell me?</h4>
+            <p className="text-sm text-muted-foreground">
+              Cumulative frequency shows how many values fall at or below each bin. It's useful for finding percentiles and answering questions like "What percentage scored below 70?"
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can I use unequal bin widths?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes, but it's more complex. With unequal bins, you need to use frequency density (frequency divided by bin width) for accurate histograms. Equal-width bins are simpler and work for most purposes.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference from a histogram?</h4>
+            <p className="text-sm text-muted-foreground">
+              A frequency distribution table shows the numbers. A histogram is the visual representation of that table using bars. The table gives precise values; the histogram shows patterns at a glance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/histogram-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Histogram Generator</p>
+            <p className="text-xs text-muted-foreground">Visual frequency display</p>
+          </a>
+          <a href="/math-tools/mean-median-mode-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Mean Median Mode</p>
+            <p className="text-xs text-muted-foreground">Central tendency</p>
+          </a>
+          <a href="/math-tools/standard-deviation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Standard Deviation</p>
+            <p className="text-xs text-muted-foreground">Measure of spread</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

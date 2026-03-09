@@ -34,8 +34,8 @@ export default function IdentityMatrixGenerator() {
       return;
     }
 
-    if (num < 1 || num > 20) {
-      setError("Please enter a size between 1 and 20");
+    if (num < 1 || num > 50) {
+      setError("Please enter a size between 1 and 50");
       setResult(null);
       return;
     }
@@ -46,6 +46,12 @@ export default function IdentityMatrixGenerator() {
 
   const reset = () => {
     setSize("");
+    setResult(null);
+    setError("");
+  };
+
+  const loadExample = (s: string) => {
+    setSize(s);
     setResult(null);
     setError("");
   };
@@ -71,9 +77,18 @@ export default function IdentityMatrixGenerator() {
           />
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button onClick={calculate}>Generate Identity Matrix</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-sm text-muted-foreground self-center">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("2")}>2×2</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("3")}>3×3</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("4")}>4×4</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("5")}>5×5</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("10")}>10×10</Button>
         </div>
 
         {error && (
@@ -136,6 +151,160 @@ export default function IdentityMatrixGenerator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Identity Matrices</h2>
+        <p className="text-muted-foreground">
+          An identity matrix is a square matrix with ones on the main diagonal (top-left to bottom-right) and zeros everywhere else. It's denoted by I or Iₙ where n is the size. Just like multiplying by 1 leaves a number unchanged, multiplying by the identity matrix leaves any matrix unchanged.
+        </p>
+        <p className="text-muted-foreground">
+          Identity matrices are fundamental in linear algebra. They serve as the multiplicative identity for matrix multiplication, appear in matrix inverses (A × A⁻¹ = I), and are crucial in solving systems of equations, eigenvalue problems, and transformations.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Properties of Identity Matrices</h3>
+        <div className="p-6 bg-muted rounded-lg">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold text-sm mb-3">Definition</h4>
+              <div className="font-mono text-center p-3 bg-background rounded mb-3">
+                Iₙ[i,j] = 1 if i = j, else 0
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Also written using the Kronecker delta: Iₙ[i,j] = δᵢⱼ
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-3">Key Properties</h4>
+              <ul className="space-y-2 text-sm">
+                <li>• A × I = I × A = A (identity property)</li>
+                <li>• I × I = I (idempotent)</li>
+                <li>• det(I) = 1 (determinant is 1)</li>
+                <li>• I⁻¹ = I (self-inverse)</li>
+                <li>• Iᵀ = I (symmetric)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 1: 2×2 Identity Matrix</h4>
+            <div className="font-mono text-sm">
+              <div>I₂ = [1  0]</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  1]</div>
+              <div className="text-muted-foreground mt-2">The smallest non-trivial identity matrix.</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 2: 3×3 Identity Matrix</h4>
+            <div className="font-mono text-sm">
+              <div>I₃ = [1  0  0]</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  1  0]</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  0  1]</div>
+              <div className="text-muted-foreground mt-2">Common in 3D graphics transformations.</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 3: Matrix Multiplication with Identity</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>Let A = [2  3]</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4  5]</div>
+              <div className="mt-2">A × I₂ = [2  3] × [1  0]</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4  5]&nbsp;&nbsp;&nbsp;[0  1]</div>
+              <div className="mt-2">= [2×1+3×0  2×0+3×1]</div>
+              <div>&nbsp;&nbsp;&nbsp;[4×1+5×0  4×0+5×1]</div>
+              <div>= [2  3] = A ✓</div>
+              <div>&nbsp;&nbsp;&nbsp;[4  5]</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 4: Identity in Matrix Inverse</h4>
+            <div className="text-sm space-y-2">
+              <p>If A × B = I, then B is the inverse of A (B = A⁻¹).</p>
+              <div className="font-mono">For A = [2  1], A⁻¹ = [1  -0.5]</div>
+              <div className="font-mono">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1  1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1  1]</div>
+              <div className="font-mono mt-2">A × A⁻¹ = [1  0] = I₂</div>
+              <div className="font-mono">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  1]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-amber-800">Quick Fact</h4>
+          <p className="text-sm text-amber-700">
+            The identity matrix is sometimes called the "unit matrix." In Einstein's summation convention, the Kronecker delta δᵢⱼ (which equals 1 when i=j and 0 otherwise) is used to represent identity matrix elements compactly in tensor notation.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is it called the "identity" matrix?</h4>
+            <p className="text-sm text-muted-foreground">
+              Because it acts as the identity element for matrix multiplication. Just as 1 is the multiplicative identity for numbers (a × 1 = a), the identity matrix I is the multiplicative identity for matrices (A × I = A).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can identity matrices be rectangular?</h4>
+            <p className="text-sm text-muted-foreground">
+              No, identity matrices must be square (same number of rows and columns). The concept requires the diagonal from top-left to bottom-right, which only exists in square matrices.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the determinant of an identity matrix?</h4>
+            <p className="text-sm text-muted-foreground">
+              Always 1, regardless of size. This makes sense because the identity matrix represents "no change" – it doesn't scale space at all.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Is the identity matrix invertible?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes, and it's its own inverse! I × I = I, so I⁻¹ = I. This is unique – most matrices have different inverses.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What are identity matrices used for?</h4>
+            <p className="text-sm text-muted-foreground">
+              Solving systems of equations (Gaussian elimination produces identity), finding matrix inverses, representing "no transformation" in computer graphics, defining orthogonality, and as starting points in iterative algorithms.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can you have a 1×1 identity matrix?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes! I₁ = [1]. It's just the number 1, which makes sense since 1×1 matrices behave like scalars.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/matrix-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Calculator</p>
+            <p className="text-xs text-muted-foreground">Matrix operations</p>
+          </a>
+          <a href="/math-tools/matrix-inverse-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Matrix Inverse</p>
+            <p className="text-xs text-muted-foreground">Find A⁻¹</p>
+          </a>
+          <a href="/math-tools/determinant-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Determinant</p>
+            <p className="text-xs text-muted-foreground">Calculate det(A)</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

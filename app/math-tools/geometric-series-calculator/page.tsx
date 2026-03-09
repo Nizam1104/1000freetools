@@ -35,8 +35,8 @@ export default function GeometricSeriesCalculator() {
         setError("Please enter at least 1 term");
         return;
       }
-      if (n > 50) {
-        setError("Please enter 50 or fewer terms");
+      if (n > 1000) {
+        setError("Please enter 1000 or fewer terms");
         return;
       }
     }
@@ -51,7 +51,6 @@ export default function GeometricSeriesCalculator() {
           setError("For infinite series, |r| must be less than 1 for convergence");
           return;
         }
-        // S∞ = a₁ / (1 - r)
         sum = a1 / (1 - r);
         steps.push(`Infinite Geometric Series`);
         steps.push(`Given: a₁ = ${a1}, r = ${r}`);
@@ -65,13 +64,11 @@ export default function GeometricSeriesCalculator() {
         steps.push(`S∞ = ${a1} / ${1 - r}`);
         steps.push(`S∞ = ${Math.round(sum * 1000000) / 1000000}`);
 
-        // Generate first 10 terms for display
         for (let i = 0; i < 10; i++) {
           terms.push(a1 * Math.pow(r, i));
         }
       } else {
         const n = parseInt(numTerms);
-        // Sn = a₁ × (1 - r^n) / (1 - r)
         if (r === 1) {
           sum = a1 * n;
           steps.push(`Special case: r = 1`);
@@ -89,7 +86,6 @@ export default function GeometricSeriesCalculator() {
           steps.push(`Sₙ = ${Math.round(sum * 1000000) / 1000000}`);
         }
 
-        // Generate terms for display
         for (let i = 0; i < Math.min(n, 15); i++) {
           terms.push(a1 * Math.pow(r, i));
         }
@@ -114,11 +110,11 @@ export default function GeometricSeriesCalculator() {
     setError("");
   };
 
-  const loadExample = () => {
-    setFirstTerm("1");
-    setCommonRatio("0.5");
-    setNumTerms("10");
-    setIsInfinite(false);
+  const loadExample = (a1: string, r: string, n: string, infinite: boolean) => {
+    setFirstTerm(a1);
+    setCommonRatio(r);
+    setNumTerms(n);
+    setIsInfinite(infinite);
     setResult(null);
     setError("");
   };
@@ -178,10 +174,19 @@ export default function GeometricSeriesCalculator() {
           )}
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button onClick={calculate}>Calculate Sum</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
-          <Button variant="outline" onClick={loadExample}>Load Example</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-sm text-muted-foreground self-center">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1", "0.5", "10", false)}>1 + 1/2 + 1/4...</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1", "0.5", "100", true)}>Infinite: 1/(1-0.5)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("2", "3", "6", false)}>2 + 6 + 18...</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("3", "0.25", "8", false)}>3 + 0.75 + 0.1875...</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1", "0.1", "50", true)}>Infinite: 1/(1-0.1)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("5", "1.2", "10", false)}>5 + 6 + 7.2... (growth)</Button>
         </div>
 
         {error && (
@@ -227,6 +232,161 @@ export default function GeometricSeriesCalculator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Geometric Series</h2>
+        <p className="text-muted-foreground">
+          A geometric series is the sum of the terms of a geometric sequence. While a sequence lists the numbers (2, 6, 18, 54...), a series adds them together (2 + 6 + 18 + 54 + ...). Geometric series appear in finance (present value of annuities), physics (total distance of bouncing ball), and pure mathematics.
+        </p>
+        <p className="text-muted-foreground">
+          Infinite geometric series are fascinating – they can sum to a finite value even though they have infinitely many terms. This happens when the common ratio is between -1 and 1, causing terms to shrink toward zero fast enough that the sum converges.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Geometric Series Formulas</h3>
+        <div className="p-6 bg-muted rounded-lg">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold text-sm mb-3">Finite Series Sum</h4>
+              <div className="font-mono text-center p-3 bg-background rounded mb-3">
+                Sₙ = a₁(1 - r^n) / (1 - r), for r ≠ 1
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Sum of the first n terms. When r = 1, all terms equal a₁, so Sₙ = n × a₁.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-3">Infinite Series Sum</h4>
+              <div className="font-mono text-center p-3 bg-background rounded mb-3">
+                S∞ = a₁ / (1 - r), for |r| &lt; 1
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Only converges when the absolute value of r is less than 1. Otherwise, the sum diverges.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 1: Finite Series (r = 0.5)</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>Find: 1 + 1/2 + 1/4 + 1/8 + ... (10 terms)</div>
+              <div>a₁ = 1, r = 0.5, n = 10</div>
+              <div>S₁₀ = 1 × (1 - 0.5^10) / (1 - 0.5)</div>
+              <div>S₁₀ = (1 - 0.0009766) / 0.5</div>
+              <div>S₁₀ = 0.9990234 / 0.5 = 1.998</div>
+              <div className="text-muted-foreground mt-2">Approaches 2 as n increases</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 2: Infinite Series</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>Find: 1 + 1/2 + 1/4 + 1/8 + ... (forever)</div>
+              <div>a₁ = 1, r = 0.5</div>
+              <div>|r| = 0.5 &lt; 1 ✓ (converges)</div>
+              <div>S∞ = 1 / (1 - 0.5) = 1 / 0.5 = 2</div>
+              <div className="text-muted-foreground mt-2">The infinite sum equals exactly 2!</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 3: Growing Series (r = 3)</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>Find: 2 + 6 + 18 + 54 + 162 + 486 (6 terms)</div>
+              <div>a₁ = 2, r = 3, n = 6</div>
+              <div>S₆ = 2 × (1 - 3^6) / (1 - 3)</div>
+              <div>S₆ = 2 × (1 - 729) / (-2)</div>
+              <div>S₆ = 2 × (-728) / (-2) = 728</div>
+              <div className="text-muted-foreground mt-2">Verify: 2+6+18+54+162+486 = 728 ✓</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 4: Zeno's Paradox</h4>
+            <div className="text-sm space-y-2">
+              <p>To walk across a room, you must first go halfway, then half of remaining, etc.</p>
+              <div className="font-mono">1/2 + 1/4 + 1/8 + 1/16 + ...</div>
+              <div className="font-mono">a₁ = 0.5, r = 0.5</div>
+              <div className="font-mono">S∞ = 0.5 / (1 - 0.5) = 0.5 / 0.5 = 1</div>
+              <p className="text-muted-foreground mt-2">You DO reach the other side! The infinite sum equals 1 (the whole distance).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-amber-800">Quick Fact</h4>
+          <p className="text-sm text-amber-700">
+            Archimedes used geometric series around 250 BCE to calculate the area of a parabola. He showed that the area is 4/3 times the area of a certain triangle – essentially summing an infinite geometric series centuries before the formal concept existed.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why does the infinite series only work for |r| &lt; 1?</h4>
+            <p className="text-sm text-muted-foreground">
+              When |r| ≥ 1, terms don't shrink – they stay the same size or grow. Adding infinitely many non-shrinking terms gives infinity. When |r| &lt; 1, terms approach zero fast enough that the sum converges to a finite value.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What if r is negative?</h4>
+            <p className="text-sm text-muted-foreground">
+              For infinite series, we need |r| &lt; 1, so -1 &lt; r &lt; 1. With negative r, terms alternate signs but still converge. For example, 1 - 1/2 + 1/4 - 1/8 + ... = 1/(1-(-0.5)) = 2/3.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How is this used in finance?</h4>
+            <p className="text-sm text-muted-foreground">
+              Present value calculations use geometric series. If you receive $100 yearly forever (a perpetuity) and discount at 5%, the present value is $100/0.05 = $2000. This is an infinite geometric series.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the connection to repeating decimals?</h4>
+            <p className="text-sm text-muted-foreground">
+              Repeating decimals are geometric series! 0.333... = 3/10 + 3/100 + 3/1000 + ... = (3/10)/(1-1/10) = 3/9 = 1/3. Every repeating decimal equals a fraction.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can I find the sum starting from a term other than the first?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes. Find which term you're starting from, treat it as your new a₁, and adjust n accordingly. Or calculate the full sum and subtract the terms you don't want.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What happens when r = 1?</h4>
+            <p className="text-sm text-muted-foreground">
+              Every term equals a₁. The finite sum is n × a₁. The infinite series diverges (goes to infinity) unless a₁ = 0. The standard formula doesn't work because it divides by (1-r) = 0.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/geometric-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Geometric Sequence</p>
+            <p className="text-xs text-muted-foreground">Find individual terms</p>
+          </a>
+          <a href="/math-tools/arithmetic-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Arithmetic Series</p>
+            <p className="text-xs text-muted-foreground">Sum of arithmetic terms</p>
+          </a>
+          <a href="/math-tools/infinite-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Infinite Series</p>
+            <p className="text-xs text-muted-foreground">Convergence tests</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

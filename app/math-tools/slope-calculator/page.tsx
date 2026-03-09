@@ -111,6 +111,20 @@ export default function SlopeCalculator() {
     setError("");
   };
 
+  const loadExample = (
+    mode: "two-points" | "equation",
+    vals: { x1?: string; y1?: string; x2?: string; y2?: string; eq?: string }
+  ) => {
+    setMode(mode);
+    if (vals.x1) setX1(vals.x1);
+    if (vals.y1) setY1(vals.y1);
+    if (vals.x2) setX2(vals.x2);
+    if (vals.y2) setY2(vals.y2);
+    if (vals.eq) setEquation(vals.eq);
+    setResult(null);
+    setError("");
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <div className="mb-8">
@@ -187,6 +201,17 @@ export default function SlopeCalculator() {
           <Button variant="outline" onClick={reset}>Reset</Button>
         </div>
 
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", { x1: "1", y1: "2", x2: "4", y2: "8" })}>(1,2) to (4,8)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", { x1: "-3", y1: "5", x2: "2", y2: "-1" })}>(-3,5) to (2,-1)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", { x1: "0", y1: "0", x2: "5", y2: "3" })}>(0,0) to (5,3)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("equation", { eq: "y = 3x + 2" })}>y = 3x + 2</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("equation", { eq: "y = -2x + 5" })}>y = -2x + 5</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("equation", { eq: "2x + 3y = 12" })}>2x + 3y = 12</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", { x1: "1.5", y1: "2.5", x2: "4.5", y2: "7.5" })}>(1.5,2.5) to (4.5,7.5)</Button>
+        </div>
+
         {error && (
           <div className="p-4 bg-destructive/10 text-destructive rounded-md">
             <p className="text-sm">{error}</p>
@@ -231,6 +256,226 @@ export default function SlopeCalculator() {
         )}
       </div>
 
+      <section className="space-y-6">
+        <div>
+          <h2 className="text-2xl font-semibold mb-3">Understanding Slope</h2>
+          <p className="text-muted-foreground">
+            Slope measures how steep a line is. It tells you how much the line rises (or falls) for every unit it moves horizontally. A positive slope goes uphill from left to right. A negative slope goes downhill. A slope of zero is perfectly flat (horizontal). And a vertical line? Its slope is undefined – you'd be dividing by zero.
+          </p>
+        </div>
+
+        <div>
+          <p className="text-muted-foreground">
+            Think of slope as "rise over run." If you're walking up a ramp that rises 1 foot for every 10 feet forward, the slope is 1/10 = 0.1. Steeper ramps have higher slopes. This concept shows up everywhere – roof pitches, road grades, wheelchair ramp requirements, and even in economics when analyzing supply and demand curves.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">The Slope Formula</h3>
+        <div className="p-4 bg-muted rounded-lg">
+          <p className="text-lg font-mono text-center mb-4">m = (y₂ - y₁) / (x₂ - x₁)</p>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p className="font-semibold mb-1">What it means:</p>
+              <ul className="space-y-1 text-muted-foreground">
+                <li><strong>m</strong> = slope (gradient)</li>
+                <li><strong>(x₁, y₁)</strong> = first point</li>
+                <li><strong>(x₂, y₂)</strong> = second point</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Slope-Intercept Form:</p>
+              <p className="text-muted-foreground font-mono">y = mx + b</p>
+              <p className="text-muted-foreground mt-2">Where b is the y-intercept</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Positive slope</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the slope through points (1, 2) and (4, 8)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: m = (8 - 2) / (4 - 1) = 6 / 3 = 2
+            </p>
+            <p className="text-sm text-muted-foreground">
+              The line rises 2 units for every 1 unit it moves right.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Negative slope</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the slope through points (-3, 5) and (2, -1)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: m = (-1 - 5) / (2 - (-3)) = -6 / 5 = -1.2
+            </p>
+            <p className="text-sm text-muted-foreground">
+              The line falls 1.2 units for every 1 unit it moves right.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Zero slope (horizontal line)</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the slope through points (1, 4) and (7, 4)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: m = (4 - 4) / (7 - 1) = 0 / 6 = 0
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Horizontal lines have zero slope – no rise, only run.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: From equation y = -3x + 7</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Identify the slope from y = -3x + 7
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: In y = mx + b form, m = -3
+            </p>
+            <p className="text-sm text-muted-foreground">
+              The slope is -3, and the y-intercept is (0, 7).
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 5: From standard form 2x + 3y = 12</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the slope from 2x + 3y = 12
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: Convert to slope-intercept form:
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              3y = -2x + 12 → y = (-2/3)x + 4
+            </p>
+            <p className="text-sm text-muted-foreground">
+              The slope is -2/3 ≈ -0.667
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+          <p className="text-sm">
+            The concept of slope dates back to ancient Greece. Archimedes (287-212 BCE) used early forms of slope in his work on levers and inclined planes. The modern notation "m" for slope first appeared in the mid-1800s, though mathematicians still debate why "m" was chosen. Some say it stands for "modulus of slope," others suggest it comes from the French "monter" (to climb).
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Interpreting Slope Values</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Positive Slope (m &gt; 0)</h4>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Line rises from left to right</li>
+              <li>• As x increases, y increases</li>
+              <li>• Example: m = 2 means rise 2, run 1</li>
+              <li>• Real-world: climbing a hill, increasing profits</li>
+            </ul>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Negative Slope (m &lt; 0)</h4>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Line falls from left to right</li>
+              <li>• As x increases, y decreases</li>
+              <li>• Example: m = -3 means fall 3, run 1</li>
+              <li>• Real-world: descending stairs, depreciation</li>
+            </ul>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Zero Slope (m = 0)</h4>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Horizontal line</li>
+              <li>• y stays constant regardless of x</li>
+              <li>• Equation: y = b (no x term)</li>
+              <li>• Real-world: flat ground, constant temperature</li>
+            </ul>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Undefined Slope</h4>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Vertical line</li>
+              <li>• Division by zero (x₂ - x₁ = 0)</li>
+              <li>• Equation: x = a (no y term)</li>
+              <li>• Real-world: a wall, elevator shaft</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What does a slope of 1/2 mean?</h4>
+            <p className="text-sm text-muted-foreground">
+              A slope of 1/2 means the line rises 1 unit for every 2 units it moves right. It's a gentle incline – less steep than a 45° angle (which would be slope = 1). In percentage terms, that's a 50% grade.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can slope be a decimal or fraction?</h4>
+            <p className="text-sm text-muted-foreground">
+              Absolutely. Slopes are often fractions (like 3/4) or decimals (like 0.75). Both represent the same thing: rise over run. A slope of 0.75 means the line rises 0.75 units for every 1 unit forward.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How is slope related to angle?</h4>
+            <p className="text-sm text-muted-foreground">
+              Slope equals the tangent of the angle the line makes with the horizontal. If a line makes a 30° angle, its slope is tan(30°) ≈ 0.577. A 45° angle gives slope = 1. A 60° angle gives slope ≈ 1.732.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference between slope and gradient?</h4>
+            <p className="text-sm text-muted-foreground">
+              In basic algebra, they're the same thing. "Gradient" is more common in physics and engineering, while "slope" is standard in math class. In advanced calculus, gradient refers to a vector of partial derivatives, but that's beyond basic line slope.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I find slope from a graph?</h4>
+            <p className="text-sm text-muted-foreground">
+              Pick any two points on the line. Count the vertical change (rise) and horizontal change (run) between them. Slope = rise/run. You can use grid squares if the graph has them. The slope is the same no matter which two points you pick on a straight line.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is vertical slope undefined?</h4>
+            <p className="text-sm text-muted-foreground">
+              For a vertical line, x doesn't change, so x₂ - x₁ = 0. The slope formula becomes (y₂ - y₁) / 0, and division by zero is undefined in mathematics. You can think of it as "infinitely steep" – the line goes straight up with no horizontal movement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/distance-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Distance Calculator</p>
+            <p className="text-xs text-muted-foreground">Distance between points</p>
+          </a>
+          <a href="/math-tools/midpoint-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Midpoint Calculator</p>
+            <p className="text-xs text-muted-foreground">Find midpoints</p>
+          </a>
+          <a href="/math-tools/line-equation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Line Equation Calculator</p>
+            <p className="text-xs text-muted-foreground">Find line equations</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

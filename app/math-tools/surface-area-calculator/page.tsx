@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -312,109 +311,91 @@ export default function SurfaceAreaCalculator() {
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Surface Area Calculator</CardTitle>
-          <CardDescription>
-            Select a 3D shape and enter dimensions to calculate total surface area.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <div>
-              <Label>3D Shape</Label>
-              <Select value={shape} onValueChange={(v) => { setShape(v as Shape); setValues({}); setResult(null); setError(""); }}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="cube">Cube</SelectItem>
-                  <SelectItem value="cuboid">Cuboid (Rectangular Prism)</SelectItem>
-                  <SelectItem value="sphere">Sphere</SelectItem>
-                  <SelectItem value="cylinder">Cylinder</SelectItem>
-                  <SelectItem value="cone">Cone</SelectItem>
-                  <SelectItem value="pyramid">Square Pyramid</SelectItem>
-                  <SelectItem value="hemisphere">Hemisphere</SelectItem>
-                  <SelectItem value="triangularPrism">Triangular Prism</SelectItem>
-                </SelectContent>
-              </Select>
+      <div className="space-y-6">
+        <div>
+          <Label>3D Shape</Label>
+          <Select value={shape} onValueChange={(v) => { setShape(v as Shape); setValues({}); setResult(null); setError(""); }}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="cube">Cube</SelectItem>
+              <SelectItem value="cuboid">Cuboid (Rectangular Prism)</SelectItem>
+              <SelectItem value="sphere">Sphere</SelectItem>
+              <SelectItem value="cylinder">Cylinder</SelectItem>
+              <SelectItem value="cone">Cone</SelectItem>
+              <SelectItem value="pyramid">Square Pyramid</SelectItem>
+              <SelectItem value="hemisphere">Hemisphere</SelectItem>
+              <SelectItem value="triangularPrism">Triangular Prism</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="p-4 bg-muted rounded-lg">
+          <div className="font-semibold text-sm mb-2">Formula</div>
+          <div className="font-mono text-lg">{shapeConfigs[shape].formulaDisplay}</div>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {shapeConfigs[shape].inputs.map((input) => (
+            <div key={input.key}>
+              <Label>{input.label}</Label>
+              <Input
+                type="number"
+                placeholder={input.placeholder}
+                value={values[input.key] || ""}
+                onChange={(e) => setValues({ ...values, [input.key]: e.target.value })}
+                onKeyDown={(e) => e.key === "Enter" && calculateSurfaceArea()}
+              />
             </div>
+          ))}
+        </div>
 
-            <div className="p-4 bg-muted rounded-lg">
-              <div className="font-semibold text-sm mb-2">Formula</div>
-              <div className="font-mono text-lg">{shapeConfigs[shape].formulaDisplay}</div>
-            </div>
+        <div className="flex gap-2">
+          <Button onClick={calculateSurfaceArea}>Calculate Surface Area</Button>
+          <Button variant="outline" onClick={reset}>Reset</Button>
+        </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {shapeConfigs[shape].inputs.map((input) => (
-                <div key={input.key}>
-                  <Label>{input.label}</Label>
-                  <Input
-                    type="number"
-                    placeholder={input.placeholder}
-                    value={values[input.key] || ""}
-                    onChange={(e) => setValues({ ...values, [input.key]: e.target.value })}
-                    onKeyDown={(e) => e.key === "Enter" && calculateSurfaceArea()}
-                  />
-                </div>
-              ))}
-            </div>
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("cube", { side: "6" })}>Cube s=6</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("cuboid", { length: "8", width: "5", height: "4" })}>Cuboid 8×5×4</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sphere", { radius: "5" })}>Sphere r=5</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("cylinder", { radius: "4", height: "10" })}>Cylinder r=4, h=10</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("cone", { radius: "6", height: "8" })}>Cone r=6, h=8</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("pyramid", { base: "8", height: "10" })}>Pyramid b=8, h=10</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("hemisphere", { radius: "7" })}>Hemisphere r=7</Button>
+        </div>
 
-            <div className="flex gap-2">
-              <Button onClick={calculateSurfaceArea}>Calculate Surface Area</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs text-muted-foreground">Examples:</span>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("cube", { side: "6" })}>
-                Cube s=6
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("cuboid", { length: "8", width: "5", height: "4" })}>
-                Cuboid 8×5×4
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("sphere", { radius: "5" })}>
-                Sphere r=5
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("cylinder", { radius: "4", height: "10" })}>
-                Cylinder r=4, h=10
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("cone", { radius: "6", height: "8" })}>
-                Cone r=6, h=8
-              </Button>
-            </div>
-
-            {error && (
-              <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
-                {error}
-              </div>
-            )}
-
-            {result && (
-              <div className="space-y-4">
-                <div className="p-6 bg-muted rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground mb-2">Surface Area</p>
-                  <p className="text-5xl font-bold">{result.surfaceArea.toFixed(4)}</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {Number.isInteger(result.surfaceArea) ? result.surfaceArea : `${result.surfaceArea.toFixed(2)} (rounded)`}
-                  </p>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Calculation Steps</h4>
-                  <div className="space-y-2 text-sm font-mono">
-                    {result.steps.map((step, i) => (
-                      <div key={i} className={step === "" ? "h-2" : ""}>
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
+        {error && (
+          <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
+            {error}
           </div>
-        </CardContent>
-      </Card>
+        )}
+
+        {result && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg text-center">
+              <p className="text-sm text-muted-foreground mb-2">Surface Area</p>
+              <p className="text-5xl font-bold">{result.surfaceArea.toFixed(4)}</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                {Number.isInteger(result.surfaceArea) ? result.surfaceArea : `${result.surfaceArea.toFixed(2)} (rounded)`}
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Calculation Steps</h4>
+              <div className="space-y-2 text-sm font-mono">
+                {result.steps.map((step, i) => (
+                  <div key={i} className={step === "" ? "h-2" : ""}>
+                    {step}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
 
       <section className="space-y-6">
         <div>
@@ -506,38 +487,87 @@ export default function SurfaceAreaCalculator() {
       </section>
 
       <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Practical Surface Area Examples</h3>
-        <div className="space-y-3">
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Gift box wrapping</div>
-            <div className="text-sm text-muted-foreground">
-              Cuboid box: 12" × 8" × 4". SA = 2(96 + 48 + 32) = 352 sq in. Add 10% for overlap: about 387 sq in of wrapping paper.
-            </div>
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Gift box wrapping</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the surface area of a cuboid box 12" × 8" × 4" to determine wrapping paper needed.
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: SA = 2(lw + lh + wh) = 2(12×8 + 12×4 + 8×4)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              SA = 2(96 + 48 + 32) = 2(176) = 352 square inches
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Add 10% for overlap: 352 × 1.1 ≈ 387 sq in of wrapping paper needed.
+            </p>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Paint for a water tank</div>
-            <div className="text-sm text-muted-foreground">
-              Spherical tank, radius 1.5m. SA = 4π × 2.25 ≈ 28.3 m². At 10 m² per liter, need about 3 liters of paint for one coat.
-            </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Paint for a water tank</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: A spherical water tank has radius 1.5 meters. How much paint is needed if 1 liter covers 10 m²?
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: SA = 4πr² = 4 × π × 1.5² = 4π × 2.25 ≈ 28.27 m²
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Paint needed: 28.27 / 10 ≈ 2.83 liters. Buy 3 liters for one coat.
+            </p>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Label for a can</div>
-            <div className="text-sm text-muted-foreground">
-              Cylinder can, radius 4cm, height 12cm. Lateral area only (no top/bottom): 2π × 4 × 12 ≈ 302 cm² label area.
-            </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Label for a can</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: A cylindrical can has radius 4 cm and height 12 cm. What's the label area (lateral surface only)?
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: Lateral area = 2πrh = 2 × π × 4 × 12
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Lateral area = 96π ≈ 301.6 cm². The label should be about 302 square centimeters.
+            </p>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Tent fabric needed</div>
-            <div className="text-sm text-muted-foreground">
-              Square pyramid tent, base 6ft, slant height 5ft. Lateral area = 2 × 6 × 5 = 60 sq ft of fabric (floor not included).
-            </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Tent fabric</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: A square pyramid tent has base 6 ft and slant height 5 ft. How much fabric for the sides (no floor)?
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: Lateral area = 2bs = 2 × 6 × 5 = 60 square feet
+            </p>
+            <p className="text-sm text-muted-foreground">
+              You need 60 sq ft of fabric for the four triangular sides.
+            </p>
           </div>
-          <div className="p-3 border rounded-lg">
-            <div className="font-semibold text-sm mb-1">Dome surface coating</div>
-            <div className="text-sm text-muted-foreground">
-              Hemispherical dome, radius 3m. SA = 3π × 9 ≈ 85 m². For curved surface only (no base): 2πr² ≈ 57 m².
-            </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 5: Ice cream cone</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: An ice cream cone has radius 3 cm and height 10 cm. Find the lateral surface area (the cone part you hold).
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Solution: First find slant height: s = √(r² + h²) = √(9 + 100) = √109 ≈ 10.44 cm
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Lateral area = πrs = π × 3 × 10.44 ≈ 98.4 cm²
+            </p>
+            <p className="text-sm text-muted-foreground">
+              The cone's outer surface is about 98 square centimeters.
+            </p>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+          <p className="text-sm">
+            Archimedes (287-212 BCE) discovered that a sphere's surface area equals exactly 4 times the area of a circle with the same radius. He was so proud of this discovery that he requested a sphere inscribed in a cylinder be carved on his tombstone. The ratio of their surface areas (sphere:cylinder) is exactly 2:3 – a relationship he considered his greatest mathematical achievement.
+          </p>
         </div>
       </section>
 
@@ -572,6 +602,12 @@ export default function SurfaceAreaCalculator() {
             <h4 className="font-semibold text-sm mb-2">What units should I use?</h4>
             <p className="text-sm text-muted-foreground">
               Any consistent linear units work – inches, feet, centimeters, meters. Surface area will be in square units (sq in, sq ft, m², etc.). Don't mix units within the same calculation.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is surface area important in real life?</h4>
+            <p className="text-sm text-muted-foreground">
+              Surface area affects heat transfer (radiators have fins to increase SA), chemical reactions (powders react faster than chunks), and material costs (paint, wrapping, plating). Engineers optimize surface area for efficiency in countless applications.
             </p>
           </div>
         </div>

@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function InverseTrigCalculator() {
   const [value, setValue] = useState<string>("");
@@ -26,10 +24,9 @@ export default function InverseTrigCalculator() {
     }
 
     setError("");
-    
+
     let angleRad: number;
     let angleDeg: number;
-    let isValid = true;
     let domainInfo = "";
 
     if (selectedFunction === "arcsin") {
@@ -94,7 +91,7 @@ export default function InverseTrigCalculator() {
 
       const funcValues = commonValues[selectedFunction];
       const roundedVal = val.toFixed(3);
-      
+
       for (const [key, exact] of Object.entries(funcValues)) {
         if (Math.abs(val - parseFloat(key)) < 0.001) {
           return exact;
@@ -139,6 +136,14 @@ export default function InverseTrigCalculator() {
     setError("");
   };
 
+  const loadExample = (fn: "arcsin" | "arccos" | "arctan", val: string, unit: "degrees" | "radians") => {
+    setSelectedFunction(fn);
+    setValue(val);
+    setOutputUnit(unit);
+    setResult(null);
+    setError("");
+  };
+
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
       <div className="mb-8">
@@ -148,295 +153,286 @@ export default function InverseTrigCalculator() {
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Inverse Trigonometric Functions Calculator</CardTitle>
-          <CardDescription>
-            Enter a value to find the corresponding angle using inverse trig functions.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+      <div className="space-y-6">
+        <div className="grid md:grid-cols-3 gap-4">
+          <div>
+            <Label>Value (x)</Label>
+            <Input
+              type="number"
+              step="0.001"
+              placeholder="e.g., 0.5"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Function</Label>
+            <Select value={selectedFunction} onValueChange={(v) => setSelectedFunction(v as typeof selectedFunction)}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="arcsin">arcsin (sin⁻¹)</SelectItem>
+                <SelectItem value="arccos">arccos (cos⁻¹)</SelectItem>
+                <SelectItem value="arctan">arctan (tan⁻¹)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label>Output Unit</Label>
+            <Select value={outputUnit} onValueChange={(v) => setOutputUnit(v as typeof outputUnit)}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="degrees">Degrees (°)</SelectItem>
+                <SelectItem value="radians">Radians (rad)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        {error && (
+          <div className="p-3 bg-destructive/10 text-destructive text-sm rounded-lg">
+            {error}
+          </div>
+        )}
+
+        <div className="flex gap-2 flex-wrap">
+          <Button onClick={calculate}>Calculate</Button>
+          <Button variant="outline" onClick={reset}>Reset</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-sm text-muted-foreground self-center">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("arcsin", "0.5", "degrees")}>arcsin(0.5)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("arccos", "0.707", "degrees")}>arccos(√2/2)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("arctan", "1", "degrees")}>arctan(1)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("arcsin", "-1", "radians")}>arcsin(-1)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("arctan", "1.732", "degrees")}>arctan(√3)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("arccos", "0", "degrees")}>arccos(0)</Button>
+        </div>
+
+        {result && (
           <div className="space-y-6">
-            <div className="grid md:grid-cols-3 gap-4">
-              <div>
-                <Label>Value (x)</Label>
-                <Input 
-                  type="number" 
-                  step="0.001"
-                  placeholder="e.g., 0.5" 
-                  value={value} 
-                  onChange={(e) => setValue(e.target.value)} 
-                />
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="p-6 bg-muted rounded-lg text-center">
+                <p className="text-sm text-muted-foreground mb-2">Result ({outputUnit})</p>
+                <p className="text-4xl font-bold">{result.outputValue}{result.outputSymbol}</p>
               </div>
-              <div>
-                <Label>Function</Label>
-                <Select value={selectedFunction} onValueChange={(v) => setSelectedFunction(v as typeof selectedFunction)}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="arcsin">arcsin (sin⁻¹)</SelectItem>
-                    <SelectItem value="arccos">arccos (cos⁻¹)</SelectItem>
-                    <SelectItem value="arctan">arctan (tan⁻¹)</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Label>Output Unit</Label>
-                <Select value={outputUnit} onValueChange={(v) => setOutputUnit(v as typeof outputUnit)}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="degrees">Degrees (°)</SelectItem>
-                    <SelectItem value="radians">Radians (rad)</SelectItem>
-                  </SelectContent>
-                </Select>
+              <div className="p-6 bg-muted rounded-lg">
+                <p className="text-sm text-muted-foreground mb-2">Alternative Unit</p>
+                <p className="text-2xl font-mono">
+                  {outputUnit === "degrees" ? result.angleRad.toFixed(4) + " rad" : result.angleDeg.toFixed(2) + "°"}
+                </p>
+                <p className="text-xs text-muted-foreground mt-2">{result.domainInfo}</p>
               </div>
             </div>
 
-            {error && (
-              <div className="p-3 bg-destructive/10 text-destructive text-sm rounded-lg">
-                {error}
-              </div>
-            )}
-
-            <div className="flex gap-2">
-              <Button onClick={calculate}>Calculate</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-
-            {result && (
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-6 bg-muted rounded-lg text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Result ({outputUnit})</p>
-                    <p className="text-4xl font-bold">{result.outputValue}{result.outputSymbol}</p>
-                  </div>
-                  <div className="p-6 bg-muted rounded-lg">
-                    <p className="text-sm text-muted-foreground mb-2">Alternative Unit</p>
-                    <p className="text-2xl font-mono">
-                      {outputUnit === "degrees" ? result.angleRad.toFixed(4) + " rad" : result.angleDeg.toFixed(2) + "°"}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-2">{result.domainInfo}</p>
-                  </div>
-                </div>
-
-                <div className="p-4 bg-muted rounded-lg">
-                  <p className="text-sm text-muted-foreground mb-1">Exact Value</p>
-                  <p className="text-lg font-mono">{result.exactValue}</p>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Step-by-Step Solution</h4>
-                  <div className="space-y-2 text-sm font-mono">
-                    {result.steps.map((step: string, i: number) => (
-                      <div key={i} className={step === "" ? "h-4" : ""}>
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-4 bg-muted rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Understanding the Result</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {selectedFunction === "arcsin" && `arcsin(${value}) = ${result.outputValue}${result.outputSymbol} means that sin(${result.outputValue}${result.outputSymbol}) = ${value}. The angle ${result.outputValue}${result.outputSymbol} is in the range [-90°, 90°].`}
-                    {selectedFunction === "arccos" && `arccos(${value}) = ${result.outputValue}${result.outputSymbol} means that cos(${result.outputValue}${result.outputSymbol}) = ${value}. The angle ${result.outputValue}${result.outputSymbol} is in the range [0°, 180°].`}
-                    {selectedFunction === "arctan" && `arctan(${value}) = ${result.outputValue}${result.outputSymbol} means that tan(${result.outputValue}${result.outputSymbol}) = ${value}. The angle ${result.outputValue}${result.outputSymbol} is in the range (-90°, 90°).`}
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Inverse Trigonometric Functions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            Inverse trig functions answer the question: "What angle gives me this trig value?" If sin(30°) = 0.5, then arcsin(0.5) = 30°. They undo what the regular trig functions do.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            There's a catch though. Sine, cosine, and tangent repeat their values, so there are infinitely many angles with the same trig value. To make the inverses proper functions, we restrict their ranges. Arcsin only returns angles between -90° and 90°. Arccos only returns angles between 0° and 180°. Arctan only returns angles between -90° and 90°.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            You'll see inverse trig functions written two ways: arcsin(x) or sin⁻¹(x). Both mean the same thing. The ⁻¹ doesn't mean reciprocal – it means inverse function.
-          </p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Domain and Range</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold text-sm mb-2">arcsin(x)</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span>Domain:</span>
-                  <span className="font-mono text-xs">[-1, 1]</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Range:</span>
-                  <span className="font-mono text-xs">[-π/2, π/2]</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Range (deg):</span>
-                  <span className="font-mono text-xs">[-90°, 90°]</span>
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-3">
-                Only accepts values from -1 to 1. Returns angles in quadrants I and IV.
-              </p>
+            <div className="p-4 bg-muted rounded-lg">
+              <p className="text-sm text-muted-foreground mb-1">Exact Value</p>
+              <p className="text-lg font-mono">{result.exactValue}</p>
             </div>
 
             <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold text-sm mb-2">arccos(x)</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span>Domain:</span>
-                  <span className="font-mono text-xs">[-1, 1]</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Range:</span>
-                  <span className="font-mono text-xs">[0, π]</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Range (deg):</span>
-                  <span className="font-mono text-xs">[0°, 180°]</span>
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-3">
-                Only accepts values from -1 to 1. Returns angles in quadrants I and II.
-              </p>
-            </div>
-
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold text-sm mb-2">arctan(x)</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span>Domain:</span>
-                  <span className="font-mono text-xs">(-∞, ∞)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Range:</span>
-                  <span className="font-mono text-xs">(-π/2, π/2)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Range (deg):</span>
-                  <span className="font-mono text-xs">(-90°, 90°)</span>
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-3">
-                Accepts any real number. Returns angles in quadrants I and IV.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Common Inverse Trig Values</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left p-2">x</th>
-                  <th className="text-center p-2">arcsin(x)</th>
-                  <th className="text-center p-2">arccos(x)</th>
-                  <th className="text-center p-2">arctan(x)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { x: "-1", arcsin: "-90° (-π/2)", arccos: "180° (π)", arctan: "-45° (-π/4)" },
-                  { x: "-√3/2", arcsin: "-60° (-π/3)", arccos: "150° (5π/6)", arctan: "—" },
-                  { x: "-√2/2", arcsin: "-45° (-π/4)", arccos: "135° (3π/4)", arctan: "—" },
-                  { x: "-1/2", arcsin: "-30° (-π/6)", arccos: "120° (2π/3)", arctan: "—" },
-                  { x: "0", arcsin: "0° (0)", arccos: "90° (π/2)", arctan: "0° (0)" },
-                  { x: "1/2", arcsin: "30° (π/6)", arccos: "60° (π/3)", arctan: "—" },
-                  { x: "√2/2", arcsin: "45° (π/4)", arccos: "45° (π/4)", arctan: "—" },
-                  { x: "√3/2", arcsin: "60° (π/3)", arccos: "30° (π/6)", arctan: "—" },
-                  { x: "1", arcsin: "90° (π/2)", arccos: "0° (0)", arctan: "45° (π/4)" },
-                  { x: "√3", arcsin: "—", arccos: "—", arctan: "60° (π/3)" },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b">
-                    <td className="p-2 font-mono">{row.x}</td>
-                    <td className="text-center p-2 font-mono">{row.arcsin}</td>
-                    <td className="text-center p-2 font-mono">{row.arccos}</td>
-                    <td className="text-center p-2 font-mono">{row.arctan}</td>
-                  </tr>
+              <h4 className="font-semibold text-sm mb-3">Step-by-Step Solution</h4>
+              <div className="space-y-2 text-sm font-mono">
+                {result.steps.map((step: string, i: number) => (
+                  <div key={i} className={step === "" ? "h-4" : ""}>
+                    {step}
+                  </div>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </CardContent>
-      </Card>
+              </div>
+            </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Worked Examples</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">arcsin(0.5)</div>
-              <div className="font-mono text-xs text-muted-foreground">
-                What angle has sine = 0.5?<br />
-                sin(30°) = 0.5<br />
-                arcsin(0.5) = 30° = π/6 rad
-              </div>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">arccos(-1)</div>
-              <div className="font-mono text-xs text-muted-foreground">
-                What angle has cosine = -1?<br />
-                cos(180°) = -1<br />
-                arccos(-1) = 180° = π rad
-              </div>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">arctan(1)</div>
-              <div className="font-mono text-xs text-muted-foreground">
-                What angle has tangent = 1?<br />
-                tan(45°) = 1<br />
-                arctan(1) = 45° = π/4 rad
-              </div>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">arcsin(-√3/2)</div>
-              <div className="font-mono text-xs text-muted-foreground">
-                What angle has sine = -√3/2?<br />
-                sin(-60°) = -√3/2<br />
-                arcsin(-√3/2) = -60° = -π/3 rad
-              </div>
-            </div>
-            <div className="p-3 border rounded-lg">
-              <div className="font-semibold text-sm mb-1">arctan(√3)</div>
-              <div className="font-mono text-xs text-muted-foreground">
-                What angle has tangent = √3?<br />
-                tan(60°) = √3<br />
-                arctan(√3) = 60° = π/3 rad
-              </div>
+            <div className="p-4 bg-muted rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Understanding the Result</h4>
+              <p className="text-sm text-muted-foreground">
+                {selectedFunction === "arcsin" && `arcsin(${value}) = ${result.outputValue}${result.outputSymbol} means that sin(${result.outputValue}${result.outputSymbol}) = ${value}. The angle ${result.outputValue}${result.outputSymbol} is in the range [-90°, 90°].`}
+                {selectedFunction === "arccos" && `arccos(${value}) = ${result.outputValue}${result.outputSymbol} means that cos(${result.outputValue}${result.outputSymbol}) = ${value}. The angle ${result.outputValue}${result.outputSymbol} is in the range [0°, 180°].`}
+                {selectedFunction === "arctan" && `arctan(${value}) = ${result.outputValue}${result.outputSymbol} means that tan(${result.outputValue}${result.outputSymbol}) = ${value}. The angle ${result.outputValue}${result.outputSymbol} is in the range (-90°, 90°).`}
+              </p>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        )}
+      </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Inverse Trigonometric Functions</h2>
+        <p className="text-muted-foreground">
+          Inverse trig functions answer the question: "What angle gives me this trig value?" If sin(30°) = 0.5, then arcsin(0.5) = 30°. They undo what the regular trig functions do.
+        </p>
+        <p className="text-muted-foreground">
+          There's a catch though. Sine, cosine, and tangent repeat their values, so there are infinitely many angles with the same trig value. To make the inverses proper functions, we restrict their ranges. Arcsin only returns angles between -90° and 90°. Arccos only returns angles between 0° and 180°. Arctan only returns angles between -90° and 90°.
+        </p>
+        <p className="text-muted-foreground">
+          You'll see inverse trig functions written two ways: arcsin(x) or sin⁻¹(x). Both mean the same thing. The ⁻¹ doesn't mean reciprocal – it means inverse function.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Domain and Range</h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">arcsin(x)</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span>Domain:</span>
+                <span className="font-mono text-xs">[-1, 1]</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Range:</span>
+                <span className="font-mono text-xs">[-π/2, π/2]</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Range (deg):</span>
+                <span className="font-mono text-xs">[-90°, 90°]</span>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground mt-3">
+              Only accepts values from -1 to 1. Returns angles in quadrants I and IV.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">arccos(x)</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span>Domain:</span>
+                <span className="font-mono text-xs">[-1, 1]</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Range:</span>
+                <span className="font-mono text-xs">[0, π]</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Range (deg):</span>
+                <span className="font-mono text-xs">[0°, 180°]</span>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground mt-3">
+              Only accepts values from -1 to 1. Returns angles in quadrants I and II.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">arctan(x)</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span>Domain:</span>
+                <span className="font-mono text-xs">(-∞, ∞)</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Range:</span>
+                <span className="font-mono text-xs">(-π/2, π/2)</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Range (deg):</span>
+                <span className="font-mono text-xs">(-90°, 90°)</span>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground mt-3">
+              Accepts any real number. Returns angles in quadrants I and IV.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Common Inverse Trig Values</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left p-2">x</th>
+                <th className="text-center p-2">arcsin(x)</th>
+                <th className="text-center p-2">arccos(x)</th>
+                <th className="text-center p-2">arctan(x)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { x: "-1", arcsin: "-90° (-π/2)", arccos: "180° (π)", arctan: "-45° (-π/4)" },
+                { x: "-√3/2", arcsin: "-60° (-π/3)", arccos: "150° (5π/6)", arctan: "—" },
+                { x: "-√2/2", arcsin: "-45° (-π/4)", arccos: "135° (3π/4)", arctan: "—" },
+                { x: "-1/2", arcsin: "-30° (-π/6)", arccos: "120° (2π/3)", arctan: "—" },
+                { x: "0", arcsin: "0° (0)", arccos: "90° (π/2)", arctan: "0° (0)" },
+                { x: "1/2", arcsin: "30° (π/6)", arccos: "60° (π/3)", arctan: "—" },
+                { x: "√2/2", arcsin: "45° (π/4)", arccos: "45° (π/4)", arctan: "—" },
+                { x: "√3/2", arcsin: "60° (π/3)", arccos: "30° (π/6)", arctan: "—" },
+                { x: "1", arcsin: "90° (π/2)", arccos: "0° (0)", arctan: "45° (π/4)" },
+                { x: "√3", arcsin: "—", arccos: "—", arctan: "60° (π/3)" },
+              ].map((row, i) => (
+                <tr key={i} className="border-b">
+                  <td className="p-2 font-mono">{row.x}</td>
+                  <td className="text-center p-2 font-mono">{row.arcsin}</td>
+                  <td className="text-center p-2 font-mono">{row.arccos}</td>
+                  <td className="text-center p-2 font-mono">{row.arctan}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <div className="font-semibold text-sm mb-1">arcsin(0.5)</div>
+            <div className="font-mono text-xs text-muted-foreground">
+              What angle has sine = 0.5?<br />
+              sin(30°) = 0.5<br />
+              arcsin(0.5) = 30° = π/6 rad
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <div className="font-semibold text-sm mb-1">arccos(-1)</div>
+            <div className="font-mono text-xs text-muted-foreground">
+              What angle has cosine = -1?<br />
+              cos(180°) = -1<br />
+              arccos(-1) = 180° = π rad
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <div className="font-semibold text-sm mb-1">arctan(1)</div>
+            <div className="font-mono text-xs text-muted-foreground">
+              What angle has tangent = 1?<br />
+              tan(45°) = 1<br />
+              arctan(1) = 45° = π/4 rad
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <div className="font-semibold text-sm mb-1">arcsin(-√3/2)</div>
+            <div className="font-mono text-xs text-muted-foreground">
+              What angle has sine = -√3/2?<br />
+              sin(-60°) = -√3/2<br />
+              arcsin(-√3/2) = -60° = -π/3 rad
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <div className="font-semibold text-sm mb-1">arctan(√3)</div>
+            <div className="font-mono text-xs text-muted-foreground">
+              What angle has tangent = √3?<br />
+              tan(60°) = √3<br />
+              arctan(√3) = 60° = π/3 rad
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-amber-800">Quick Fact</h4>
+          <p className="text-sm text-amber-700">
+            The notation sin⁻¹ for arcsin was introduced by John Herschel in 1813. He wanted a consistent notation for inverse functions. However, this causes confusion because sin²x means (sin x)², but sin⁻¹x doesn't mean 1/(sin x). Many mathematicians prefer "arcsin" to avoid this confusion.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
           <div>
             <h4 className="font-semibold text-sm mb-2">What's the difference between arcsin and 1/sin?</h4>
             <p className="text-xs text-muted-foreground">
@@ -473,30 +469,26 @@ export default function InverseTrigCalculator() {
               Yes. arcsin and arctan both return negative angles for negative inputs. arcsin(-0.5) = -30°. arctan(-1) = -45°. Arccos never returns negative angles – its range is [0°, 180°].
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Trig Function Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate sin, cos, tan</p>
-            </a>
-            <a href="/math-tools/degrees-radians-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Degrees to Radians</p>
-              <p className="text-xs text-muted-foreground">Convert angle units</p>
-            </a>
-            <a href="/math-tools/triangle-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Triangle Solver</p>
-              <p className="text-xs text-muted-foreground">Solve any triangle</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Trig Function Calculator</p>
+            <p className="text-xs text-muted-foreground">Calculate sin, cos, tan</p>
+          </a>
+          <a href="/math-tools/degrees-radians-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Degrees to Radians</p>
+            <p className="text-xs text-muted-foreground">Convert angle units</p>
+          </a>
+          <a href="/math-tools/triangle-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Triangle Solver</p>
+            <p className="text-xs text-muted-foreground">Solve any triangle</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

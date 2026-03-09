@@ -9,7 +9,7 @@ export default function DefiniteIntegralCalculator() {
   const [functionStr, setFunctionStr] = useState("");
   const [lowerBound, setLowerBound] = useState("");
   const [upperBound, setUpperBound] = useState("");
-  const [intervals, setIntervals] = useState("100");
+  const [intervals, setIntervals] = useState("1000");
   const [result, setResult] = useState<{
     integral: number;
     method: string;
@@ -40,6 +40,11 @@ export default function DefiniteIntegralCalculator() {
       return;
     }
 
+    if (n > 10000) {
+      setError("Please enter up to 10000 intervals for practical computation");
+      return;
+    }
+
     try {
       // Use Simpson's Rule for numerical integration
       const h = (b - a) / n;
@@ -48,7 +53,7 @@ export default function DefiniteIntegralCalculator() {
       for (let i = 1; i < n; i++) {
         const x = a + i * h;
         const fx = evaluateFunction(functionStr, x);
-        
+
         if (i % 2 === 0) {
           sum += 2 * fx;
         } else {
@@ -82,10 +87,10 @@ export default function DefiniteIntegralCalculator() {
 
   const evaluateFunction = (func: string, x: number): number => {
     const clean = func.replace(/\s/g, "").toLowerCase();
-    
+
     // Replace x with actual value
     let expr = clean.replace(/x/g, `(${x})`);
-    
+
     // Handle common functions
     expr = expr.replace(/sin\(/g, "Math.sin(");
     expr = expr.replace(/cos\(/g, "Math.cos(");
@@ -97,10 +102,10 @@ export default function DefiniteIntegralCalculator() {
     expr = expr.replace(/abs\(/g, "Math.abs(");
     expr = expr.replace(/pi/g, Math.PI.toString());
     expr = expr.replace(/e(?![x])/g, Math.E.toString());
-    
+
     // Handle powers
     expr = expr.replace(/\^/g, "**");
-    
+
     try {
       return eval(expr);
     } catch {
@@ -112,16 +117,16 @@ export default function DefiniteIntegralCalculator() {
     setFunctionStr("");
     setLowerBound("");
     setUpperBound("");
-    setIntervals("100");
+    setIntervals("1000");
     setResult(null);
     setError("");
   };
 
-  const loadExample = () => {
-    setFunctionStr("x^2");
-    setLowerBound("0");
-    setUpperBound("1");
-    setIntervals("100");
+  const loadExample = (func: string, a: string, b: string) => {
+    setFunctionStr(func);
+    setLowerBound(a);
+    setUpperBound(b);
+    setIntervals("1000");
     setResult(null);
     setError("");
   };
@@ -153,12 +158,12 @@ export default function DefiniteIntegralCalculator() {
             <Label>Number of Intervals (n):</Label>
             <Input
               type="number"
-              placeholder="100"
+              placeholder="1000"
               value={intervals}
               onChange={(e) => setIntervals(e.target.value)}
             />
             <p className="text-xs text-muted-foreground mt-1">
-              Higher values give more accurate results
+              Higher values give more accurate results (max 10000)
             </p>
           </div>
         </div>
@@ -184,10 +189,14 @@ export default function DefiniteIntegralCalculator() {
           </div>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button onClick={integrate}>Calculate Integral</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
-          <Button variant="outline" onClick={loadExample}>Load Example</Button>
+          <Button variant="outline" onClick={() => loadExample("x^2", "0", "1")}>∫x² dx [0,1]</Button>
+          <Button variant="outline" onClick={() => loadExample("sin(x)", "0", "3.14159")}>∫sin(x) dx [0,π]</Button>
+          <Button variant="outline" onClick={() => loadExample("exp(-x)", "0", "1")}>∫e⁻ˣ dx [0,1]</Button>
+          <Button variant="outline" onClick={() => loadExample("1/x", "1", "2")}>∫1/x dx [1,2]</Button>
+          <Button variant="outline" onClick={() => loadExample("sqrt(x)", "0", "4")}>∫√x dx [0,4]</Button>
         </div>
 
         {error && (
@@ -222,6 +231,128 @@ export default function DefiniteIntegralCalculator() {
           </div>
         )}
       </div>
+
+      <section className="space-y-6 pt-8 border-t">
+        <h2 className="text-2xl font-semibold">Understanding Definite Integrals</h2>
+        
+        <div className="space-y-4">
+          <p>
+            A definite integral calculates the area under a curve between two points. It's one of the two main operations in calculus (the other being differentiation), connected by the Fundamental Theorem of Calculus.
+          </p>
+
+          <h3 className="text-xl font-semibold">What Is a Definite Integral?</h3>
+          <div className="p-4 bg-muted rounded-lg">
+            <code className="text-sm font-mono block">
+              ∫[a to b] f(x) dx = Area under f(x) from x=a to x=b
+            </code>
+          </div>
+          <p>
+            The integral adds up infinitely many infinitely thin rectangles under the curve. The result tells you the net signed area — regions above the x-axis count positive, regions below count negative.
+          </p>
+
+          <h3 className="text-xl font-semibold">Simpson's Rule for Numerical Integration</h3>
+          <p>
+            Not all integrals can be solved with a neat formula. For those, we use numerical methods. This calculator uses Simpson's Rule, which approximates the curve with parabolas instead of rectangles.
+          </p>
+          <div className="p-4 bg-muted rounded-lg">
+            <code className="text-sm font-mono block">
+              ∫f(x)dx ≈ (h/3) × [f(a) + 4f(x₁) + 2f(x₂) + 4f(x₃) + ... + f(b)]
+            </code>
+          </div>
+          <p>
+            The pattern 1, 4, 2, 4, 2, ..., 4, 1 weights the function values. More intervals mean better accuracy.
+          </p>
+
+          <h3 className="text-xl font-semibold">Worked Examples</h3>
+          
+          <div className="space-y-4">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 1: ∫x² dx from 0 to 1</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                The exact answer is 1/3 ≈ 0.333...
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                ∫[0 to 1] x² dx = [x³/3][0 to 1] = 1/3 - 0 = 0.333...
+              </code>
+              <p className="text-sm mt-2">
+                This represents the area under the parabola y = x² from x=0 to x=1.
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 2: ∫sin(x) dx from 0 to π</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                The area under one hump of the sine curve.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                ∫[0 to π] sin(x) dx = [-cos(x)][0 to π] = -(-1) - (-1) = 2
+              </code>
+              <p className="text-sm mt-2">
+                The result is exactly 2 — the area of the region bounded by y=sin(x) and the x-axis.
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 3: ∫(1/x) dx from 1 to 2</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                This gives us ln(2).
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                ∫[1 to 2] (1/x) dx = [ln(x)][1 to 2] = ln(2) - ln(1) ≈ 0.693
+              </code>
+              <p className="text-sm mt-2">
+                The natural logarithm is defined as this integral.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold">A Quick Fact</h3>
+          <div className="p-4 bg-muted rounded-lg">
+            <p className="text-sm">
+              The integral symbol ∫ was introduced by Gottfried Wilhelm Leibniz in 1675. It's an elongated "S" standing for "summa" (Latin for sum) — because integration is fundamentally about summing infinitely many infinitesimal pieces.
+            </p>
+          </div>
+
+          <h3 className="text-xl font-semibold">Common Questions</h3>
+          
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold mb-2">Why use numerical integration instead of exact formulas?</h4>
+              <p className="text-sm">
+                Many functions don't have elementary antiderivatives. Functions like e^(-x²), sin(x)/x, or 1/ln(x) can't be integrated in closed form. Numerical methods work for any continuous function.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">How accurate is Simpson's Rule?</h4>
+              <p className="text-sm">
+                The error is proportional to 1/n⁴, where n is the number of intervals. Doubling the intervals reduces error by about 16x. With 1000 intervals, you typically get 6+ decimal places of accuracy.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">What if the function goes below the x-axis?</h4>
+              <p className="text-sm">
+                The integral gives the net signed area. Regions below the axis subtract from the total. If you want total area (ignoring signs), you'd integrate the absolute value.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Can I integrate functions with discontinuities?</h4>
+              <p className="text-sm">
+                Not directly with this tool. Improper integrals (with infinite discontinuities or infinite bounds) require special handling. The numerical method may fail or give incorrect results near singularities.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Where do definite integrals appear in real applications?</h4>
+              <p className="text-sm">
+                Everywhere in physics and engineering: computing work done by a variable force, finding centers of mass, calculating probabilities from density functions, determining total growth from a rate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

@@ -42,8 +42,6 @@ export default function TangentLineCalculator() {
       const slope = Math.round(derivative * 1000000) / 1000000;
       const yRounded = Math.round(y * 1000000) / 1000000;
 
-      // y - y1 = m(x - x1)
-      // y = mx - mx1 + y1
       const intercept = yRounded - slope * x;
       const interceptRounded = Math.round(intercept * 1000000) / 1000000;
 
@@ -94,7 +92,7 @@ export default function TangentLineCalculator() {
   const evaluateFunction = (func: string, x: number): number => {
     const clean = func.replace(/\s/g, "").toLowerCase();
     let expr = clean.replace(/x/g, `(${x})`);
-    
+
     expr = expr.replace(/sin\(/g, "Math.sin(");
     expr = expr.replace(/cos\(/g, "Math.cos(");
     expr = expr.replace(/tan\(/g, "Math.tan(");
@@ -106,7 +104,7 @@ export default function TangentLineCalculator() {
     expr = expr.replace(/pi/g, Math.PI.toString());
     expr = expr.replace(/e(?![x])/g, Math.E.toString());
     expr = expr.replace(/\^/g, "**");
-    
+
     try {
       return eval(expr);
     } catch {
@@ -115,7 +113,6 @@ export default function TangentLineCalculator() {
   };
 
   const numericalDerivative = (func: string, x: number, h: number = 0.000001): number => {
-    // Central difference method for better accuracy
     const f1 = evaluateFunction(func, x + h);
     const f2 = evaluateFunction(func, x - h);
     return (f1 - f2) / (2 * h);
@@ -128,9 +125,9 @@ export default function TangentLineCalculator() {
     setError("");
   };
 
-  const loadExample = () => {
-    setFunctionStr("x^2");
-    setXValue("2");
+  const loadExample = (func: string, x: string) => {
+    setFunctionStr(func);
+    setXValue(x);
     setResult(null);
     setError("");
   };
@@ -172,7 +169,17 @@ export default function TangentLineCalculator() {
         <div className="flex gap-2">
           <Button onClick={calculateTangent}>Calculate Tangent Line</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
-          <Button variant="outline" onClick={loadExample}>Load Example</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("x^2", "2")}>f(x)=x² at x=2</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("x^3", "1")}>f(x)=x³ at x=1</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sin(x)", "0")}>f(x)=sin(x) at x=0</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sqrt(x)", "4")}>f(x)=√x at x=4</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("ln(x)", "1")}>f(x)=ln(x) at x=1</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("exp(x)", "0")}>f(x)=eˣ at x=0</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("x^2-4x+3", "3")}>f(x)=x²-4x+3 at x=3</Button>
         </div>
 
         {error && (
@@ -188,7 +195,7 @@ export default function TangentLineCalculator() {
                 <p className="text-sm text-muted-foreground mb-2">Tangent Line Equation</p>
                 <p className="text-3xl font-bold font-mono">{result.equation}</p>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 bg-background rounded border text-center">
                   <p className="text-xs text-muted-foreground mb-1">Point of Tangency</p>
@@ -215,6 +222,283 @@ export default function TangentLineCalculator() {
         )}
       </div>
 
+      <section className="space-y-6">
+        <div>
+          <h2 className="text-2xl font-semibold mb-3">Understanding Tangent Lines</h2>
+          <p className="text-muted-foreground">
+            A tangent line touches a curve at exactly one point and has the same slope as the curve at that point. It's the best linear approximation of the function near the point of tangency. Think of it as the direction the curve is heading at that exact moment.
+          </p>
+        </div>
+
+        <div>
+          <p className="text-muted-foreground">
+            The derivative of a function gives you the slope of the tangent line at any point. This is why calculus is essential for finding tangent lines – the derivative f'(x) tells you the instantaneous rate of change, which is exactly the slope you need.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">How to Find a Tangent Line</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Step 1: Find the point</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Evaluate the function at the given x-value to get the y-coordinate.
+            </p>
+            <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
+              Point: (x₀, f(x₀))
+            </code>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Step 2: Find the derivative</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Calculate f'(x), the derivative function that gives the slope at any point.
+            </p>
+            <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
+              f'(x) = d/dx[f(x)]
+            </code>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Step 3: Evaluate the slope</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Plug the x-value into the derivative to get the slope at that point.
+            </p>
+            <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
+              m = f'(x₀)
+            </code>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Step 4: Write the equation</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Use point-slope form, then convert to slope-intercept form.
+            </p>
+            <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
+              y - y₀ = m(x - x₀)<br />
+              y = mx + b
+            </code>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Parabola</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the tangent line to f(x) = x² at x = 2
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: Point: f(2) = 4, so point is (2, 4)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 2: Derivative: f'(x) = 2x
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 3: Slope: f'(2) = 2(2) = 4
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 4: Equation: y - 4 = 4(x - 2) → y = 4x - 4
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Cubic function</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the tangent line to f(x) = x³ at x = 1
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: Point: f(1) = 1, so point is (1, 1)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 2: Derivative: f'(x) = 3x²
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 3: Slope: f'(1) = 3(1)² = 3
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 4: Equation: y - 1 = 3(x - 1) → y = 3x - 2
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Sine function</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the tangent line to f(x) = sin(x) at x = 0
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: Point: f(0) = sin(0) = 0, so point is (0, 0)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 2: Derivative: f'(x) = cos(x)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 3: Slope: f'(0) = cos(0) = 1
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 4: Equation: y - 0 = 1(x - 0) → y = x
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Square root function</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the tangent line to f(x) = √x at x = 4
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: Point: f(4) = 2, so point is (4, 2)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 2: Derivative: f'(x) = 1/(2√x)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 3: Slope: f'(4) = 1/(2×2) = 1/4 = 0.25
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 4: Equation: y - 2 = 0.25(x - 4) → y = 0.25x + 1
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 5: Natural logarithm</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Find the tangent line to f(x) = ln(x) at x = 1
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: Point: f(1) = ln(1) = 0, so point is (1, 0)
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 2: Derivative: f'(x) = 1/x
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 3: Slope: f'(1) = 1/1 = 1
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 4: Equation: y - 0 = 1(x - 1) → y = x - 1
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+          <p className="text-sm">
+            The word "tangent" comes from Latin "tangere," meaning "to touch." Gottfried Wilhelm Leibniz coined the term in 1684 when he published his work on differential calculus. The tangent line problem – finding a line that just touches a curve – was one of the key motivations that led Newton and Leibniz to independently develop calculus in the 17th century.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Common Derivatives Reference</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="p-3 bg-muted rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Power Rule</h4>
+            <code className="text-xs font-mono bg-background px-2 py-1 rounded block">
+              d/dx(xⁿ) = nxⁿ⁻¹
+            </code>
+            <p className="text-xs text-muted-foreground mt-1">
+              Example: d/dx(x³) = 3x²
+            </p>
+          </div>
+          <div className="p-3 bg-muted rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Sine</h4>
+            <code className="text-xs font-mono bg-background px-2 py-1 rounded block">
+              d/dx(sin x) = cos x
+            </code>
+          </div>
+          <div className="p-3 bg-muted rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Cosine</h4>
+            <code className="text-xs font-mono bg-background px-2 py-1 rounded block">
+              d/dx(cos x) = -sin x
+            </code>
+          </div>
+          <div className="p-3 bg-muted rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Exponential</h4>
+            <code className="text-xs font-mono bg-background px-2 py-1 rounded block">
+              d/dx(eˣ) = eˣ
+            </code>
+            <p className="text-xs text-muted-foreground mt-1">
+              eˣ is its own derivative!
+            </p>
+          </div>
+          <div className="p-3 bg-muted rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Natural Log</h4>
+            <code className="text-xs font-mono bg-background px-2 py-1 rounded block">
+              d/dx(ln x) = 1/x
+            </code>
+          </div>
+          <div className="p-3 bg-muted rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Square Root</h4>
+            <code className="text-xs font-mono bg-background px-2 py-1 rounded block">
+              d/dx(√x) = 1/(2√x)
+            </code>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference between tangent and secant lines?</h4>
+            <p className="text-sm text-muted-foreground">
+              A secant line passes through two points on a curve. A tangent line touches at exactly one point and has the same slope as the curve there. As the two secant points get closer together, the secant line approaches the tangent line – this is the foundation of the derivative.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can a tangent line cross the curve?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes! Despite the name "tangent" meaning "to touch," a tangent line can cross the curve at the point of tangency. This happens with inflection points, like the tangent to y = x³ at x = 0, which is the x-axis (y = 0).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What if the derivative is zero?</h4>
+            <p className="text-sm text-muted-foreground">
+              A zero derivative means a horizontal tangent line. This occurs at local maxima, minima, and some inflection points. The tangent equation becomes y = constant (the y-value at that point).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What if the derivative is undefined?</h4>
+            <p className="text-sm text-muted-foreground">
+              An undefined derivative means a vertical tangent line (infinite slope). This happens at sharp corners or cusps. The tangent equation is x = constant (the x-value at that point).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How is this used in real applications?</h4>
+            <p className="text-sm text-muted-foreground">
+              Tangent lines approximate complex functions with simple linear ones. Engineers use this for small-signal analysis in circuits. Economists use it for marginal analysis. Physicists use it for instantaneous velocity. Linear approximation is everywhere in science and engineering.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the normal line?</h4>
+            <p className="text-sm text-muted-foreground">
+              The normal line is perpendicular to the tangent line at the point of tangency. If the tangent slope is m, the normal slope is -1/m (negative reciprocal). Normal lines are used in optics, computer graphics, and physics for reflection calculations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/derivative-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Derivative Calculator</p>
+            <p className="text-xs text-muted-foreground">Find derivatives</p>
+          </a>
+          <a href="/math-tools/normal-line-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Normal Line Calculator</p>
+            <p className="text-xs text-muted-foreground">Perpendicular lines</p>
+          </a>
+          <a href="/math-tools/graphing-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Graphing Calculator</p>
+            <p className="text-xs text-muted-foreground">Plot functions</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

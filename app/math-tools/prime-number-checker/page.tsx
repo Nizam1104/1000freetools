@@ -52,8 +52,8 @@ export default function PrimeNumberChecker() {
       return;
     }
 
-    if (num > 1000000000) {
-      setError("Please enter a number up to 1,000,000,000 for performance reasons");
+    if (num > 10000000000000) {
+      setError("Please enter a number up to 10 trillion for performance reasons");
       setResult(null);
       return;
     }
@@ -67,7 +67,12 @@ export default function PrimeNumberChecker() {
     } else if (prime) {
       explanation = `${num} is prime. It has exactly two factors: 1 and itself.`;
     } else {
-      explanation = `${num} is not prime (composite). It can be divided evenly by ${factors.slice(1, -1).join(", ")}.`;
+      const properFactors = factors.slice(1, -1);
+      if (properFactors.length <= 6) {
+        explanation = `${num} is not prime (composite). It can be divided evenly by ${properFactors.join(", ")}.`;
+      } else {
+        explanation = `${num} is not prime (composite). It has ${factors.length} total factors.`;
+      }
     }
 
     setResult({
@@ -79,6 +84,12 @@ export default function PrimeNumberChecker() {
 
   const reset = () => {
     setNumber("");
+    setResult(null);
+    setError("");
+  };
+
+  const loadExample = (num: string) => {
+    setNumber(num);
     setResult(null);
     setError("");
   };
@@ -103,9 +114,14 @@ export default function PrimeNumberChecker() {
           />
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button onClick={checkPrime}>Check if Prime</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
+          <Button variant="outline" onClick={() => loadExample("17")}>17</Button>
+          <Button variant="outline" onClick={() => loadExample("100")}>100</Button>
+          <Button variant="outline" onClick={() => loadExample("997")}>997</Button>
+          <Button variant="outline" onClick={() => loadExample("1000003")}>1000003</Button>
+          <Button variant="outline" onClick={() => loadExample("7919")}>7919</Button>
         </div>
 
         {error && (
@@ -135,6 +151,115 @@ export default function PrimeNumberChecker() {
           </div>
         )}
       </div>
+
+      <section className="space-y-6 pt-8 border-t">
+        <h2 className="text-2xl font-semibold">Understanding Prime Numbers</h2>
+        
+        <div className="space-y-4">
+          <p>
+            A prime number is a whole number greater than 1 that can only be divided evenly by 1 and itself. The first few primes are 2, 3, 5, 7, 11, 13, 17, 19... Everything else greater than 1 is called composite.
+          </p>
+
+          <h3 className="text-xl font-semibold">How Prime Testing Works</h3>
+          <p>
+            This checker uses trial division — the most straightforward primality test. We check if the number is divisible by any integer from 2 up to its square root. If we find a divisor, it's composite. If we don't, it's prime.
+          </p>
+          <p>
+            Why only up to the square root? If n = a × b, then at least one of a or b must be ≤ √n. So if no divisor exists below √n, none exists above it either.
+          </p>
+
+          <h3 className="text-xl font-semibold">Worked Examples</h3>
+          
+          <div className="space-y-4">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 1: Is 17 prime?</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Check divisibility by 2, 3, and 4 (since √17 ≈ 4.1).
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                17 ÷ 2 = 8.5 (not divisible)<br/>
+                17 ÷ 3 = 5.67 (not divisible)<br/>
+                17 ÷ 4 = 4.25 (not divisible)
+              </code>
+              <p className="text-sm mt-2">
+                No divisors found, so 17 is prime.
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 2: Is 100 prime?</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                100 is even, so it's immediately divisible by 2.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                100 = 2 × 50 = 4 × 25 = 5 × 20 = 10 × 10
+              </code>
+              <p className="text-sm mt-2">
+                Factors: 1, 2, 4, 5, 10, 20, 25, 50, 100. Not prime.
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 3: Is 997 prime?</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                √997 ≈ 31.6, so we check primes up to 31.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                Check: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31
+              </code>
+              <p className="text-sm mt-2">
+                None divide 997 evenly. It's prime — and it's actually the largest 3-digit prime.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold">A Quick Fact</h3>
+          <div className="p-4 bg-muted rounded-lg">
+            <p className="text-sm">
+              The largest known prime number as of 2024 is 2^82,589,933 − 1, a Mersenne prime with 24,862,048 digits. It was discovered in December 2018 by the Great Internet Mersenne Prime Search (GIMPS), a distributed computing project.
+            </p>
+          </div>
+
+          <h3 className="text-xl font-semibold">Common Questions</h3>
+          
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold mb-2">Why isn't 1 considered prime?</h4>
+              <p className="text-sm">
+                It's a convention that makes math cleaner. If 1 were prime, the Fundamental Theorem of Arithmetic (every number has a unique prime factorization) would break. You could write 6 = 2×3 = 1×2×3 = 1×1×2×3, and so on.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Is 2 the only even prime?</h4>
+              <p className="text-sm">
+                Yes. Every other even number is divisible by 2, so it has at least three factors: 1, 2, and itself. That makes it composite by definition.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">How many prime numbers are there?</h4>
+              <p className="text-sm">
+                Infinitely many. Euclid proved this around 300 BCE. His proof: assume there's a largest prime, multiply all primes together, add 1 — the result is either prime itself or divisible by a prime not on your list. Either way, contradiction.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">What's the largest prime this checker can handle?</h4>
+              <p className="text-sm">
+                This tool checks numbers up to 10 trillion. The trial division algorithm runs in O(√n) time, so larger numbers would take noticeably longer to verify.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Why are prime numbers useful?</h4>
+              <p className="text-sm">
+                Modern cryptography depends on primes. RSA encryption, which secures most online transactions, relies on the fact that multiplying two large primes is easy, but factoring their product back is extremely hard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

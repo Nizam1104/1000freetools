@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,6 +18,28 @@ export default function AngleCalculator() {
   const [sideC, setSideC] = useState<string>("");
   const [result, setResult] = useState<{ angles: { A: number; B: number; C: number }; sides?: { a: number; b: number; c: number }; steps: string[] } | null>(null);
   const [error, setError] = useState<string>("");
+
+  const loadExample = (exampleNum?: number) => {
+    const examples = [
+      { mode: "angles", angleA: "60", angleB: "70", angleC: "", sideA: "", sideB: "", sideC: "" },
+      { mode: "angles", angleA: "45", angleB: "45", angleC: "", sideA: "", sideB: "", sideC: "" },
+      { mode: "angles", angleA: "90", angleB: "30", angleC: "", sideA: "", sideB: "", sideC: "" },
+      { mode: "sides", angleA: "", angleB: "", angleC: "", sideA: "5", sideB: "7", sideC: "8" },
+      { mode: "sides", angleA: "", angleB: "", angleC: "", sideA: "3", sideB: "4", sideC: "5" },
+      { mode: "twoSidesOneAngle", angleA: "", angleB: "", angleC: "60", sideA: "6", sideB: "8", sideC: "" },
+      { mode: "twoSidesOneAngle", angleA: "", angleB: "", angleC: "45", sideA: "10", sideB: "10", sideC: "" },
+    ];
+    const example = examples[exampleNum !== undefined ? exampleNum % examples.length : 0];
+    setMode(example.mode as Mode);
+    setAngleA(example.angleA);
+    setAngleB(example.angleB);
+    setAngleC(example.angleC);
+    setSideA(example.sideA);
+    setSideB(example.sideB);
+    setSideC(example.sideC);
+    setResult(null);
+    setError("");
+  };
 
   const calculateFromAngles = () => {
     const A = parseFloat(angleA);
@@ -204,246 +225,245 @@ export default function AngleCalculator() {
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Triangle Angle Calculator</CardTitle>
-          <CardDescription>
-            Select a calculation mode and enter known values.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <div>
-              <Label>Calculation Mode</Label>
-              <Select value={mode} onValueChange={(v) => { setMode(v as Mode); setResult(null); setError(""); }}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="angles">Find Missing Angle (from angles)</SelectItem>
-                  <SelectItem value="sides">Find Angles (from 3 sides)</SelectItem>
-                  <SelectItem value="twoSidesOneAngle">Solve Triangle (2 sides + included angle)</SelectItem>
-                </SelectContent>
-              </Select>
+      <div className="space-y-6">
+        <div>
+          <Label>Calculation Mode</Label>
+          <Select value={mode} onValueChange={(v) => { setMode(v as Mode); setResult(null); setError(""); }}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="angles">Find Missing Angle (from angles)</SelectItem>
+              <SelectItem value="sides">Find Angles (from 3 sides)</SelectItem>
+              <SelectItem value="twoSidesOneAngle">Solve Triangle (2 sides + included angle)</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {mode === "angles" && (
+          <>
+            <div className="p-4 bg-muted rounded-lg">
+              <div className="font-semibold text-sm mb-2">Triangle Angle Sum Theorem</div>
+              <div className="font-mono text-lg">A + B + C = 180°</div>
             </div>
 
-            {mode === "angles" && (
-              <>
-                <div className="p-4 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-2">Triangle Angle Sum Theorem</div>
-                  <div className="font-mono text-lg">A + B + C = 180°</div>
-                </div>
-
-                <div className="grid sm:grid-cols-3 gap-4">
-                  <div>
-                    <Label>Angle A (°)</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 60"
-                      step="any"
-                      value={angleA}
-                      onChange={(e) => setAngleA(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label>Angle B (°)</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 70"
-                      step="any"
-                      value={angleB}
-                      onChange={(e) => setAngleB(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label>Angle C (°)</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 50"
-                      step="any"
-                      value={angleC}
-                      onChange={(e) => setAngleC(e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground">
-                  Enter two angles to find the third, or all three to verify.
-                </p>
-              </>
-            )}
-
-            {mode === "sides" && (
-              <>
-                <div className="p-4 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-2">Law of Cosines</div>
-                  <div className="font-mono text-sm">c² = a² + b² - 2ab·cos(C)</div>
-                </div>
-
-                <div className="grid sm:grid-cols-3 gap-4">
-                  <div>
-                    <Label>Side a</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 5"
-                      step="any"
-                      value={sideA}
-                      onChange={(e) => setSideA(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label>Side b</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 7"
-                      step="any"
-                      value={sideB}
-                      onChange={(e) => setSideB(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label>Side c</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 8"
-                      step="any"
-                      value={sideC}
-                      onChange={(e) => setSideC(e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground">
-                  Enter all three sides to calculate all angles.
-                </p>
-              </>
-            )}
-
-            {mode === "twoSidesOneAngle" && (
-              <>
-                <div className="p-4 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-2">SAS Triangle Solution</div>
-                  <div className="font-mono text-xs">Use Law of Cosines to find third side, then Law of Sines for angles</div>
-                </div>
-
-                <div className="grid sm:grid-cols-3 gap-4">
-                  <div>
-                    <Label>Side a</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 6"
-                      step="any"
-                      value={sideA}
-                      onChange={(e) => setSideA(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label>Side b</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 8"
-                      step="any"
-                      value={sideB}
-                      onChange={(e) => setSideB(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label>Included Angle C (°)</Label>
-                    <Input
-                      type="number"
-                      placeholder="e.g., 60"
-                      step="any"
-                      value={angleC}
-                      onChange={(e) => setAngleC(e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground">
-                  Enter two sides and the angle between them.
-                </p>
-              </>
-            )}
-
-            <div className="flex gap-2">
-              <Button onClick={calculate}>Calculate</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div>
+                <Label>Angle A (°)</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 60"
+                  step="any"
+                  value={angleA}
+                  onChange={(e) => setAngleA(e.target.value)}
+                />
+              </div>
+              <div>
+                <Label>Angle B (°)</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 70"
+                  step="any"
+                  value={angleB}
+                  onChange={(e) => setAngleB(e.target.value)}
+                />
+              </div>
+              <div>
+                <Label>Angle C (°)</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 50"
+                  step="any"
+                  value={angleC}
+                  onChange={(e) => setAngleC(e.target.value)}
+                />
+              </div>
             </div>
 
-            {error && (
-              <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
-                {error}
+            <p className="text-sm text-muted-foreground">
+              Enter two angles to find the third, or all three to verify.
+            </p>
+          </>
+        )}
+
+        {mode === "sides" && (
+          <>
+            <div className="p-4 bg-muted rounded-lg">
+              <div className="font-semibold text-sm mb-2">Law of Cosines</div>
+              <div className="font-mono text-sm">c² = a² + b² - 2ab·cos(C)</div>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div>
+                <Label>Side a</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 5"
+                  step="any"
+                  value={sideA}
+                  onChange={(e) => setSideA(e.target.value)}
+                />
               </div>
-            )}
-
-            {result && (
-              <div className="space-y-4">
-                <div className="grid sm:grid-cols-3 gap-4">
-                  <div className="p-4 bg-muted rounded-lg text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Angle A</p>
-                    <p className="text-3xl font-bold">{result.angles.A.toFixed(2)}°</p>
-                  </div>
-                  <div className="p-4 bg-muted rounded-lg text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Angle B</p>
-                    <p className="text-3xl font-bold">{result.angles.B.toFixed(2)}°</p>
-                  </div>
-                  <div className="p-4 bg-muted rounded-lg text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Angle C</p>
-                    <p className="text-3xl font-bold">{result.angles.C.toFixed(2)}°</p>
-                  </div>
-                </div>
-
-                {result.sides && (
-                  <div className="grid sm:grid-cols-3 gap-4">
-                    <div className="p-4 border rounded-lg text-center">
-                      <p className="text-sm text-muted-foreground mb-2">Side a</p>
-                      <p className="text-xl font-semibold">{result.sides.a}</p>
-                    </div>
-                    <div className="p-4 border rounded-lg text-center">
-                      <p className="text-sm text-muted-foreground mb-2">Side b</p>
-                      <p className="text-xl font-semibold">{result.sides.b}</p>
-                    </div>
-                    <div className="p-4 border rounded-lg text-center">
-                      <p className="text-sm text-muted-foreground mb-2">Side c</p>
-                      <p className="text-xl font-semibold">{result.sides.c}</p>
-                    </div>
-                  </div>
-                )}
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Step-by-Step Solution</h4>
-                  <div className="space-y-2 text-sm font-mono">
-                    {result.steps.map((step, i) => (
-                      <div key={i} className={step === "" ? "h-2" : ""}>
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div>
+                <Label>Side b</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 7"
+                  step="any"
+                  value={sideB}
+                  onChange={(e) => setSideB(e.target.value)}
+                />
               </div>
-            )}
+              <div>
+                <Label>Side c</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 8"
+                  step="any"
+                  value={sideC}
+                  onChange={(e) => setSideC(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground">
+              Enter all three sides to calculate all angles.
+            </p>
+          </>
+        )}
+
+        {mode === "twoSidesOneAngle" && (
+          <>
+            <div className="p-4 bg-muted rounded-lg">
+              <div className="font-semibold text-sm mb-2">SAS Triangle Solution</div>
+              <div className="font-mono text-xs">Use Law of Cosines to find third side, then Law of Sines for angles</div>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div>
+                <Label>Side a</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 6"
+                  step="any"
+                  value={sideA}
+                  onChange={(e) => setSideA(e.target.value)}
+                />
+              </div>
+              <div>
+                <Label>Side b</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 8"
+                  step="any"
+                  value={sideB}
+                  onChange={(e) => setSideB(e.target.value)}
+                />
+              </div>
+              <div>
+                <Label>Included Angle C (°)</Label>
+                <Input
+                  type="number"
+                  placeholder="e.g., 60"
+                  step="any"
+                  value={angleC}
+                  onChange={(e) => setAngleC(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground">
+              Enter two sides and the angle between them.
+            </p>
+          </>
+        )}
+
+        <div className="flex gap-2 flex-wrap">
+          <Button onClick={calculate}>Calculate</Button>
+          <Button variant="outline" onClick={reset}>Reset</Button>
+          <Select onValueChange={(v) => loadExample(parseInt(v))}>
+            <SelectTrigger className="w-[200px]">
+              <SelectValue placeholder="Load Example" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="0">Example 1: 60°, 70°, find third</SelectItem>
+              <SelectItem value="1">Example 2: 45°, 45°, isosceles</SelectItem>
+              <SelectItem value="2">Example 3: 90°, 30°, right triangle</SelectItem>
+              <SelectItem value="3">Example 4: Sides 5, 7, 8</SelectItem>
+              <SelectItem value="4">Example 5: Sides 3, 4, 5 (right)</SelectItem>
+              <SelectItem value="5">Example 6: SAS 6, 8, 60°</SelectItem>
+              <SelectItem value="6">Example 7: SAS 10, 10, 45°</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {error && (
+          <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
+            {error}
           </div>
-        </CardContent>
-      </Card>
+        )}
 
-      <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-semibold mb-3">Understanding Triangle Angles</h2>
-          <p className="text-muted-foreground">
-            Every triangle has three angles that always add up to 180 degrees. This fundamental rule – the Triangle Angle Sum Theorem – lets you find any missing angle when you know the other two. But triangles can be solved in multiple ways depending on what information you have.
-          </p>
-        </div>
+        {result && (
+          <div className="space-y-4">
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div className="p-4 bg-muted rounded-lg text-center">
+                <p className="text-sm text-muted-foreground mb-2">Angle A</p>
+                <p className="text-3xl font-bold">{result.angles.A.toFixed(2)}°</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg text-center">
+                <p className="text-sm text-muted-foreground mb-2">Angle B</p>
+                <p className="text-3xl font-bold">{result.angles.B.toFixed(2)}°</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg text-center">
+                <p className="text-sm text-muted-foreground mb-2">Angle C</p>
+                <p className="text-3xl font-bold">{result.angles.C.toFixed(2)}°</p>
+              </div>
+            </div>
 
-        <div>
-          <p className="text-muted-foreground">
-            This calculator handles three common scenarios: finding a missing angle from two known angles, calculating all angles when you know all three sides (using the Law of Cosines), or solving a triangle when you have two sides and the angle between them. Each method is shown step by step.
-          </p>
-        </div>
+            {result.sides && (
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div className="p-4 border rounded-lg text-center">
+                  <p className="text-sm text-muted-foreground mb-2">Side a</p>
+                  <p className="text-xl font-semibold">{result.sides.a}</p>
+                </div>
+                <div className="p-4 border rounded-lg text-center">
+                  <p className="text-sm text-muted-foreground mb-2">Side b</p>
+                  <p className="text-xl font-semibold">{result.sides.b}</p>
+                </div>
+                <div className="p-4 border rounded-lg text-center">
+                  <p className="text-sm text-muted-foreground mb-2">Side c</p>
+                  <p className="text-xl font-semibold">{result.sides.c}</p>
+                </div>
+              </div>
+            )}
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Step-by-Step Solution</h4>
+              <div className="space-y-2 text-sm font-mono">
+                {result.steps.map((step, i) => (
+                  <div key={i} className={step === "" ? "h-2" : ""}>
+                    {step}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Triangle Angles</h2>
+        <p className="text-muted-foreground">
+          Every triangle has three angles that always add up to 180 degrees. This fundamental rule – the Triangle Angle Sum Theorem – lets you find any missing angle when you know the other two. But triangles can be solved in multiple ways depending on what information you have.
+        </p>
+        <p className="text-muted-foreground">
+          This calculator handles three common scenarios: finding a missing angle from two known angles, calculating all angles when you know all three sides (using the Law of Cosines), or solving a triangle when you have two sides and the angle between them. Each method is shown step by step.
+        </p>
       </section>
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Triangle Angle Methods</h3>
-        
+
         <div className="grid md:grid-cols-3 gap-6">
           <div className="p-6 border rounded-lg">
             <h4 className="font-semibold mb-3">AA (Angle-Angle)</h4>
@@ -541,6 +561,76 @@ export default function AngleCalculator() {
       </section>
 
       <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        
+        <div className="space-y-6">
+          <div className="p-5 border rounded-lg">
+            <h4 className="font-semibold mb-2">Example 1: Finding a missing angle</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Given: Angle A = 65°, Angle B = 55°. Find Angle C.
+            </p>
+            <div className="space-y-2 text-sm font-mono bg-muted p-3 rounded">
+              <p>C = 180° - A - B</p>
+              <p>C = 180° - 65° - 55°</p>
+              <p>C = 180° - 120°</p>
+              <p>C = 60°</p>
+            </div>
+            <p className="text-sm text-muted-foreground mt-3">
+              The third angle is 60°. All three angles (65°, 55°, 60°) add up to 180°.
+            </p>
+          </div>
+
+          <div className="p-5 border rounded-lg">
+            <h4 className="font-semibold mb-2">Example 2: Angles from three sides (SSS)</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Given: a = 5, b = 7, c = 8. Find all angles.
+            </p>
+            <div className="space-y-2 text-sm font-mono bg-muted p-3 rounded">
+              <p>Using Law of Cosines for Angle A:</p>
+              <p>cos(A) = (b² + c² - a²) / 2bc</p>
+              <p>cos(A) = (49 + 64 - 25) / (2 × 7 × 8)</p>
+              <p>cos(A) = 88 / 112 = 0.7857</p>
+              <p>A = arccos(0.7857) ≈ 38.21°</p>
+              <p>Similarly: B ≈ 60.00°, C ≈ 81.79°</p>
+            </div>
+            <p className="text-sm text-muted-foreground mt-3">
+              Check: 38.21° + 60.00° + 81.79° = 180° ✓
+            </p>
+          </div>
+
+          <div className="p-5 border rounded-lg">
+            <h4 className="font-semibold mb-2">Example 3: SAS triangle solution</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Given: a = 6, b = 8, Angle C = 60°. Find the rest.
+            </p>
+            <div className="space-y-2 text-sm font-mono bg-muted p-3 rounded">
+              <p>Step 1: Find side c</p>
+              <p>c² = 6² + 8² - 2(6)(8)·cos(60°)</p>
+              <p>c² = 36 + 64 - 96·0.5 = 100 - 48 = 52</p>
+              <p>c = √52 ≈ 7.21</p>
+              <p>Step 2: Find Angle A using Law of Sines</p>
+              <p>sin(A) = a·sin(C)/c = 6·sin(60°)/7.21 ≈ 0.7207</p>
+              <p>A = arcsin(0.7207) ≈ 46.10°</p>
+              <p>Step 3: Find Angle B</p>
+              <p>B = 180° - 60° - 46.10° = 73.90°</p>
+            </div>
+            <p className="text-sm text-muted-foreground mt-3">
+              Complete triangle: A ≈ 46.10°, B ≈ 73.90°, C = 60°, c ≈ 7.21
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-5 bg-accent/10 rounded-lg">
+          <p className="text-muted-foreground">
+            The Triangle Angle Sum Theorem (angles add to 180°) is only true in Euclidean geometry – the flat geometry we learn in school. On a sphere, like Earth's surface, triangle angles add up to MORE than 180°. A triangle drawn from the North Pole to two points on the equator has three right angles, totaling 270°! This "spherical geometry" is what pilots and sailors use for navigation.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
         <div className="space-y-6">
           <div>
@@ -574,7 +664,7 @@ export default function AngleCalculator() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-2">When do I use Law of Cosines vs Law of Sines?</h4>
+            <h4 className="font-semibold text-sm mb-2">When do I use Law of Sines vs Law of Cosines?</h4>
             <p className="text-sm text-muted-foreground">
               Use Law of Cosines for SSS (three sides) or SAS (two sides + included angle). Use Law of Sines for AAS, ASA, or SSA (when you have an angle-side pair and want to find another angle or side).
             </p>

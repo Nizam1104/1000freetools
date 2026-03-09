@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -35,7 +34,7 @@ export default function FractionToDecimalConverter() {
   } => {
     const wholePart = Math.floor(Math.abs(numerator) / denominator);
     let remainder = Math.abs(numerator) % denominator;
-    
+
     if (remainder === 0) {
       return {
         decimal: (numerator < 0 ? "-" : "") + wholePart.toString(),
@@ -100,9 +99,9 @@ export default function FractionToDecimalConverter() {
 
     try {
       const steps: string[] = [];
-      
+
       steps.push(`Mixed number: ${w} ${n}/${d}`);
-      
+
       const improperNumerator = w * d + n;
       steps.push(`\nConvert to improper fraction:`);
       steps.push(`(${w} × ${d}) + ${n} = ${improperNumerator}`);
@@ -111,7 +110,7 @@ export default function FractionToDecimalConverter() {
       const simplifiedGCD = gcd(improperNumerator, d);
       let simpNum = improperNumerator;
       let simpDen = d;
-      
+
       if (simplifiedGCD > 1) {
         simpNum = improperNumerator / simplifiedGCD;
         simpDen = d / simplifiedGCD;
@@ -125,7 +124,7 @@ export default function FractionToDecimalConverter() {
       steps.push(`${simpNum} ÷ ${simpDen}`);
 
       const { decimal, isRepeating, repeatingPart } = findRepeatingDecimal(simpNum, simpDen);
-      
+
       if (isRepeating) {
         steps.push(`Result is a repeating decimal`);
         if (repeatingPart) {
@@ -174,131 +173,118 @@ export default function FractionToDecimalConverter() {
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Fraction to Decimal Converter</CardTitle>
-          <CardDescription>
-            Enter a fraction or mixed number to convert it to a decimal.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <div>
-              <Label>Fraction Input</Label>
-              <div className="flex items-center gap-4 flex-wrap">
-                <div className="w-20">
-                  <Label className="text-xs">Whole (optional)</Label>
-                  <Input
-                    type="number"
-                    value={whole}
-                    onChange={(e) => setWhole(e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col items-center">
-                  <Input
-                    type="number"
-                    placeholder="Num"
-                    value={numerator}
-                    onChange={(e) => setNumerator(e.target.value)}
-                    className="w-20 text-center border-b-0 rounded-b-none"
-                  />
-                  <div className="w-full h-px bg-border my-1" />
-                  <Input
-                    type="number"
-                    placeholder="Den"
-                    value={denominator}
-                    onChange={(e) => setDenominator(e.target.value)}
-                    className="w-20 text-center border-t-0 rounded-t-none"
-                  />
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-2">
-                Leave whole number as 0 for proper fractions
-              </p>
+      <div className="space-y-6">
+        <div>
+          <Label>Fraction Input</Label>
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="w-20">
+              <Label className="text-xs">Whole (optional)</Label>
+              <Input
+                type="number"
+                value={whole}
+                onChange={(e) => setWhole(e.target.value)}
+              />
             </div>
-
-            <div className="flex gap-2">
-              <Button onClick={convert}>Convert</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
+            <div className="flex flex-col items-center">
+              <Input
+                type="number"
+                placeholder="Num"
+                value={numerator}
+                onChange={(e) => setNumerator(e.target.value)}
+                className="w-20 text-center border-b-0 rounded-b-none"
+              />
+              <div className="w-full h-px bg-border my-1" />
+              <Input
+                type="number"
+                placeholder="Den"
+                value={denominator}
+                onChange={(e) => setDenominator(e.target.value)}
+                className="w-20 text-center border-t-0 rounded-t-none"
+              />
             </div>
-
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs text-muted-foreground">Examples:</span>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("0", "1", "2")}>1/2</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("0", "1", "3")}>1/3</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("1", "1", "4")}>1¼</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("0", "22", "7")}>22/7</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("0", "1", "7")}>1/7</Button>
-            </div>
-
-            {error && (
-              <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
-                {error}
-              </div>
-            )}
-
-            {result && (
-              <div className="space-y-4">
-                <div className="p-6 bg-muted rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground mb-2">Decimal Result</p>
-                  <p className="text-4xl font-bold font-mono break-all">
-                    {result.exactDecimal}
-                  </p>
-                  {result.isRepeating ? (
-                    <p className="text-sm text-muted-foreground mt-2">
-                      ≈ {result.decimal.toFixed(6)} (repeating)
-                    </p>
-                  ) : (
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Exact decimal
-                    </p>
-                  )}
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Step-by-Step Conversion</h4>
-                  <div className="space-y-3">
-                    {result.steps.map((step, i) => (
-                      <div key={i} className={`text-sm ${step.startsWith("\n") ? "mt-4 font-semibold" : ""}`}>
-                        {step.startsWith("\n") ? step.slice(1) : step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Verification</h4>
-                  <div className="font-mono text-sm space-y-2">
-                    <div>
-                      Multiply decimal by denominator:
-                    </div>
-                    <div>
-                      {result.decimal.toFixed(6)} × {denominator} ≈ {parseInt(numerator) + parseInt(whole) * parseInt(denominator)}
-                    </div>
-                    <div className="text-muted-foreground">
-                      Should equal numerator (or improper numerator for mixed numbers) ✓
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
-        </CardContent>
-      </Card>
-
-      <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-semibold mb-3">Fraction to Decimal Converter – Convert Fractions to Decimals</h2>
-          <p className="text-muted-foreground">
-            Converting fractions to decimals is straightforward: divide the numerator by the denominator. This calculator handles proper fractions, improper fractions, and mixed numbers. It shows the complete division process and identifies repeating decimals.
+          <p className="text-xs text-muted-foreground mt-2">
+            Leave whole number as 0 for proper fractions
           </p>
         </div>
 
-        <div>
-          <p className="text-muted-foreground">
-            Some fractions produce terminating decimals (like 1/2 = 0.5). Others produce repeating decimals (like 1/3 = 0.333...). The calculator shows both the exact form with repeating notation and an approximate decimal value.
-          </p>
+        <div className="flex gap-2 flex-wrap">
+          <Button onClick={convert}>Convert</Button>
+          <Button variant="outline" onClick={reset}>Reset</Button>
         </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-sm text-muted-foreground self-center">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0", "1", "2")}>1/2</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0", "1", "3")}>1/3</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1", "1", "4")}>1¼</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0", "22", "7")}>22/7</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0", "1", "7")}>1/7</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0", "3", "8")}>3/8</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("2", "1", "3")}>2⅓</Button>
+        </div>
+
+        {error && (
+          <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
+            {error}
+          </div>
+        )}
+
+        {result && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg text-center">
+              <p className="text-sm text-muted-foreground mb-2">Decimal Result</p>
+              <p className="text-4xl font-bold font-mono break-all">
+                {result.exactDecimal}
+              </p>
+              {result.isRepeating ? (
+                <p className="text-sm text-muted-foreground mt-2">
+                  ≈ {result.decimal.toFixed(6)} (repeating)
+                </p>
+              ) : (
+                <p className="text-sm text-muted-foreground mt-2">
+                  Exact decimal
+                </p>
+              )}
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Step-by-Step Conversion</h4>
+              <div className="space-y-3">
+                {result.steps.map((step, i) => (
+                  <div key={i} className={`text-sm ${step.startsWith("\n") ? "mt-4 font-semibold" : ""}`}>
+                    {step.startsWith("\n") ? step.slice(1) : step}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Verification</h4>
+              <div className="font-mono text-sm space-y-2">
+                <div>
+                  Multiply decimal by denominator:
+                </div>
+                <div>
+                  {result.decimal.toFixed(6)} × {denominator} ≈ {parseInt(numerator) + parseInt(whole) * parseInt(denominator)}
+                </div>
+                <div className="text-muted-foreground">
+                  Should equal numerator (or improper numerator for mixed numbers) ✓
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Fraction to Decimal Converter – Convert Fractions to Decimals</h2>
+        <p className="text-muted-foreground">
+          Converting fractions to decimals is straightforward: divide the numerator by the denominator. This calculator handles proper fractions, improper fractions, and mixed numbers. It shows the complete division process and identifies repeating decimals.
+        </p>
+        <p className="text-muted-foreground">
+          Some fractions produce terminating decimals (like 1/2 = 0.5). Others produce repeating decimals (like 1/3 = 0.333...). The calculator shows both the exact form with repeating notation and an approximate decimal value.
+        </p>
       </section>
 
       <section className="border-t pt-8 space-y-6">
@@ -392,101 +378,6 @@ export default function FractionToDecimalConverter() {
       </section>
 
       <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Common Fraction to Decimal Conversions</h3>
-        <div className="grid md:grid-cols-3 gap-4">
-          <div className="p-3 border rounded-lg">
-            <h4 className="font-semibold text-sm mb-2">Halves through Fifths</h4>
-            <div className="space-y-2 text-sm font-mono">
-              <div className="flex justify-between">
-                <span>1/2</span>
-                <span>0.5</span>
-              </div>
-              <div className="flex justify-between">
-                <span>1/3</span>
-                <span>0.(3)</span>
-              </div>
-              <div className="flex justify-between">
-                <span>2/3</span>
-                <span>0.(6)</span>
-              </div>
-              <div className="flex justify-between">
-                <span>1/4</span>
-                <span>0.25</span>
-              </div>
-              <div className="flex justify-between">
-                <span>3/4</span>
-                <span>0.75</span>
-              </div>
-              <div className="flex justify-between">
-                <span>1/5</span>
-                <span>0.2</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-3 border rounded-lg">
-            <h4 className="font-semibold text-sm mb-2">Eighths and Tenths</h4>
-            <div className="space-y-2 text-sm font-mono">
-              <div className="flex justify-between">
-                <span>1/8</span>
-                <span>0.125</span>
-              </div>
-              <div className="flex justify-between">
-                <span>3/8</span>
-                <span>0.375</span>
-              </div>
-              <div className="flex justify-between">
-                <span>5/8</span>
-                <span>0.625</span>
-              </div>
-              <div className="flex justify-between">
-                <span>7/8</span>
-                <span>0.875</span>
-              </div>
-              <div className="flex justify-between">
-                <span>1/10</span>
-                <span>0.1</span>
-              </div>
-              <div className="flex justify-between">
-                <span>3/10</span>
-                <span>0.3</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-3 border rounded-lg">
-            <h4 className="font-semibold text-sm mb-2">Sixteenths and Others</h4>
-            <div className="space-y-2 text-sm font-mono">
-              <div className="flex justify-between">
-                <span>1/16</span>
-                <span>0.0625</span>
-              </div>
-              <div className="flex justify-between">
-                <span>1/12</span>
-                <span>0.08(3)</span>
-              </div>
-              <div className="flex justify-between">
-                <span>1/20</span>
-                <span>0.05</span>
-              </div>
-              <div className="flex justify-between">
-                <span>1/25</span>
-                <span>0.04</span>
-              </div>
-              <div className="flex justify-between">
-                <span>22/7</span>
-                <span>3.(142857)</span>
-              </div>
-              <div className="flex justify-between">
-                <span>π approx</span>
-                <span>3.14159...</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Worked Examples</h3>
         <div className="space-y-4">
           <div className="p-4 border rounded-lg">
@@ -531,6 +422,15 @@ export default function FractionToDecimalConverter() {
       </section>
 
       <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-amber-800">Quick Fact</h4>
+          <p className="text-sm text-amber-700">
+            The decimal system we use today was developed in India around the 6th century and spread to Europe through Arab mathematicians. The decimal point wasn't standardized until the 17th century – before that, mathematicians used various notations including placing a bar over the units digit.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
         <div className="space-y-6">
           <div>
@@ -561,6 +461,12 @@ export default function FractionToDecimalConverter() {
             <h4 className="font-semibold text-sm mb-2">What about negative fractions?</h4>
             <p className="text-sm text-muted-foreground">
               Enter a negative numerator. The decimal will also be negative. -3/4 = -0.75. The calculator handles negative values correctly.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why does 1/7 have such a long repeating pattern?</h4>
+            <p className="text-sm text-muted-foreground">
+              Prime denominators often produce long repeating patterns. For prime p, the maximum repeating length is p-1 digits. For 7, the pattern is 6 digits long (142857), which is the maximum possible.
             </p>
           </div>
         </div>
