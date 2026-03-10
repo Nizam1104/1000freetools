@@ -95,7 +95,7 @@ export default function Page() {
 
           <h3 className="text-xl font-semibold mb-2">How do I add custom colors to the table?</h3>
           <p className="text-muted-foreground mb-4">
-            Write your own CSS targeting the class name you set. For example, if you use "my-table", add <code>.my-table th { background-color: #0066cc; color: white; }</code> to your stylesheet. The tool only generates structure—you control the styling.
+            Write your own CSS targeting the class name you set. For example, if you use "my-table", add <code>.my-table th {'{'} background-color: #0066cc; color: white; {'}'}</code> to your stylesheet. The tool only generates structure—you control the styling.
           </p>
 
           <h3 className="text-xl font-semibold mb-2">Can this handle CSV files with commas inside values?</h3>
