@@ -16,7 +16,10 @@ export default function CsvToHtml() {
   const [output, setOutput] = useState<string>("");
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
+  const [stylingMode, setStylingMode] = useState<"css" | "tailwind">("tailwind");
   const [className, setClassName] = useState<string>("csv-table");
+  const [tailwindClass, setTailwindClass] = useState<string>("min-w-full divide-y divide-gray-200");
+  const [useClassAttribute, setUseClassAttribute] = useState<boolean>(true);
   const [striped, setStriped] = useState<boolean>(true);
   const [bordered, setBordered] = useState<boolean>(true);
   const [responsive, setResponsive] = useState<boolean>(true);
@@ -74,32 +77,73 @@ export default function CsvToHtml() {
     try {
       const { data, headers } = parseCSVIntelligently(inputText);
 
-      const classes = [className];
-      if (striped) classes.push("table-striped");
-      if (bordered) classes.push("table-bordered");
-      if (responsive) classes.push("table-responsive");
+      let html = "";
 
-      let html = `<table class="${classes.join(" ")}">\n`;
+      if (stylingMode === "tailwind") {
+        // Build Tailwind classes
+        let twClasses = tailwindClass;
+        if (bordered) twClasses += " border border-gray-300";
+        if (responsive) twClasses += " overflow-x-auto";
 
-      // Header
-      html += `  <thead>\n    <tr>\n`;
-      headers.forEach((header) => {
-        html += `      <th>${escapeHtml(header)}</th>\n`;
-      });
-      html += `    </tr>\n  </thead>\n`;
+        const classAttr = useClassAttribute ? "className" : "class";
+        
+        if (responsive) {
+          html += `<div class="overflow-x-auto">\n`;
+        }
+        html += `<table ${classAttr}="${twClasses}">\n`;
 
-      // Body
-      html += `  <tbody>\n`;
-      data.forEach((row) => {
-        html += `    <tr>\n`;
+        // Header with Tailwind classes
+        html += `  <thead class="bg-gray-50">\n    <tr>\n`;
         headers.forEach((header) => {
-          html += `      <td>${escapeHtml(String(row[header] || ""))}</td>\n`;
+          html += `      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">${escapeHtml(header)}</th>\n`;
         });
-        html += `    </tr>\n`;
-      });
-      html += `  </tbody>\n`;
+        html += `    </tr>\n  </thead>\n`;
 
-      html += `</table>`;
+        // Body with Tailwind classes
+        html += `  <tbody class="bg-white divide-y divide-gray-200">\n`;
+        data.forEach((row, index) => {
+          const rowClass = striped && index % 2 === 0 ? ` class="bg-gray-50"` : "";
+          html += `    <tr${rowClass}>\n`;
+          headers.forEach((header) => {
+            html += `      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${escapeHtml(String(row[header] || ""))}</td>\n`;
+          });
+          html += `    </tr>\n`;
+        });
+        html += `  </tbody>\n`;
+
+        html += `</table>`;
+        if (responsive) {
+          html += `\n</div>`;
+        }
+      } else {
+        // CSS mode
+        const classes = [className];
+        if (striped) classes.push("table-striped");
+        if (bordered) classes.push("table-bordered");
+        if (responsive) classes.push("table-responsive");
+
+        html = `<table class="${classes.join(" ")}">\n`;
+
+        // Header
+        html += `  <thead>\n    <tr>\n`;
+        headers.forEach((header) => {
+          html += `      <th>${escapeHtml(header)}</th>\n`;
+        });
+        html += `    </tr>\n  </thead>\n`;
+
+        // Body
+        html += `  <tbody>\n`;
+        data.forEach((row) => {
+          html += `    <tr>\n`;
+          headers.forEach((header) => {
+            html += `      <td>${escapeHtml(String(row[header] || ""))}</td>\n`;
+          });
+          html += `    </tr>\n`;
+        });
+        html += `  </tbody>\n`;
+
+        html += `</table>`;
+      }
 
       setOutput(html);
       toast.success("Successfully converted CSV to HTML table");
@@ -108,7 +152,7 @@ export default function CsvToHtml() {
     } finally {
       setIsProcessing(false);
     }
-  }, [inputText, className, striped, bordered, responsive, escapeHtml]);
+  }, [inputText, stylingMode, className, tailwindClass, useClassAttribute, striped, bordered, responsive, escapeHtml]);
 
   const copyToClipboardHandler = useCallback(async () => {
     if (!output) return;
@@ -137,7 +181,10 @@ export default function CsvToHtml() {
   const clearAll = useCallback(() => {
     setInputText("");
     setOutput("");
+    setStylingMode("tailwind");
     setClassName("csv-table");
+    setTailwindClass("min-w-full divide-y divide-gray-200");
+    setUseClassAttribute(true);
     setStriped(true);
     setBordered(true);
     setResponsive(true);
@@ -148,7 +195,7 @@ export default function CsvToHtml() {
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSV to HTML Table Converter</h1>
         <p className="text-muted-foreground">
-          Convert CSV data to HTML table format with styling options
+          Convert CSV data to HTML table format with Tailwind CSS or normal CSS styling options
         </p>
       </div>
 
@@ -200,56 +247,169 @@ export default function CsvToHtml() {
         <section>
           <Label className="text-base mb-3 block">Table Options</Label>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-3 border rounded-md">
-              <Label htmlFor="className" className="text-sm font-medium">
-                CSS Class Name
-              </Label>
-              <Input
-                id="className"
-                value={className}
-                onChange={(e) => setClassName(e.target.value)}
-                className="mt-1"
-                placeholder="csv-table"
-              />
-              <p className="text-xs text-muted-foreground mt-1">
-                Main CSS class for the table
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3 p-3 border rounded-md">
-              <div className="flex items-center space-x-3">
-                <Checkbox
-                  id="striped"
-                  checked={striped}
-                  onCheckedChange={(checked) => setStriped(checked as boolean)}
-                />
-                <Label htmlFor="striped" className="text-sm font-medium cursor-pointer">
-                  Striped Rows
-                </Label>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <Checkbox
-                  id="bordered"
-                  checked={bordered}
-                  onCheckedChange={(checked) => setBordered(checked as boolean)}
-                />
-                <Label htmlFor="bordered" className="text-sm font-medium cursor-pointer">
-                  Bordered
-                </Label>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <Checkbox
-                  id="responsive"
-                  checked={responsive}
-                  onCheckedChange={(checked) => setResponsive(checked as boolean)}
-                />
-                <Label htmlFor="responsive" className="text-sm font-medium cursor-pointer">
-                  Responsive
-                </Label>
+            {/* Styling Mode Selector */}
+            <div className="p-3 border rounded-md md:col-span-2">
+              <Label className="text-sm font-medium mb-2 block">Styling Mode</Label>
+              <div className="flex gap-4">
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="radio"
+                    id="tailwind-mode"
+                    name="stylingMode"
+                    value="tailwind"
+                    checked={stylingMode === "tailwind"}
+                    onChange={(e) => setStylingMode(e.target.value as "css" | "tailwind")}
+                    className="h-4 w-4"
+                  />
+                  <Label htmlFor="tailwind-mode" className="text-sm font-medium cursor-pointer">
+                    Tailwind CSS
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="radio"
+                    id="css-mode"
+                    name="stylingMode"
+                    value="css"
+                    checked={stylingMode === "css"}
+                    onChange={(e) => setStylingMode(e.target.value as "css" | "tailwind")}
+                    className="h-4 w-4"
+                  />
+                  <Label htmlFor="css-mode" className="text-sm font-medium cursor-pointer">
+                    Normal CSS
+                  </Label>
+                </div>
               </div>
             </div>
+
+            {/* CSS Mode Options */}
+            {stylingMode === "css" && (
+              <>
+                <div className="p-3 border rounded-md">
+                  <Label htmlFor="className" className="text-sm font-medium">
+                    CSS Class Name
+                  </Label>
+                  <Input
+                    id="className"
+                    value={className}
+                    onChange={(e) => setClassName(e.target.value)}
+                    className="mt-1"
+                    placeholder="csv-table"
+                  />
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Main CSS class for the table
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 p-3 border rounded-md">
+                  <div className="flex items-center space-x-3">
+                    <Checkbox
+                      id="striped"
+                      checked={striped}
+                      onCheckedChange={(checked) => setStriped(checked as boolean)}
+                    />
+                    <Label htmlFor="striped" className="text-sm font-medium cursor-pointer">
+                      Striped Rows
+                    </Label>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Checkbox
+                      id="bordered"
+                      checked={bordered}
+                      onCheckedChange={(checked) => setBordered(checked as boolean)}
+                    />
+                    <Label htmlFor="bordered" className="text-sm font-medium cursor-pointer">
+                      Bordered
+                    </Label>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Checkbox
+                      id="responsive"
+                      checked={responsive}
+                      onCheckedChange={(checked) => setResponsive(checked as boolean)}
+                    />
+                    <Label htmlFor="responsive" className="text-sm font-medium cursor-pointer">
+                      Responsive
+                    </Label>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* Tailwind Mode Options */}
+            {stylingMode === "tailwind" && (
+              <>
+                <div className="p-3 border rounded-md md:col-span-2">
+                  <Label htmlFor="tailwindClass" className="text-sm font-medium">
+                    Tailwind Classes
+                  </Label>
+                  <Input
+                    id="tailwindClass"
+                    value={tailwindClass}
+                    onChange={(e) => setTailwindClass(e.target.value)}
+                    className="mt-1 font-mono text-xs"
+                    placeholder="min-w-full divide-y divide-gray-200"
+                  />
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Base Tailwind classes for the table
+                  </p>
+                </div>
+
+                <div className="p-3 border rounded-md">
+                  <Label className="text-sm font-medium mb-2 block">HTML Attribute</Label>
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="useClassAttribute"
+                      checked={useClassAttribute}
+                      onCheckedChange={(checked) => setUseClassAttribute(checked as boolean)}
+                    />
+                    <Label htmlFor="useClassAttribute" className="text-sm font-medium cursor-pointer">
+                      Use <code>className</code> (React/JSX)
+                    </Label>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Uncheck to use <code>class</code> instead
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 p-3 border rounded-md">
+                  <div className="flex items-center space-x-3">
+                    <Checkbox
+                      id="tw-striped"
+                      checked={striped}
+                      onCheckedChange={(checked) => setStriped(checked as boolean)}
+                    />
+                    <Label htmlFor="tw-striped" className="text-sm font-medium cursor-pointer">
+                      Striped Rows
+                    </Label>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Checkbox
+                      id="tw-bordered"
+                      checked={bordered}
+                      onCheckedChange={(checked) => setBordered(checked as boolean)}
+                    />
+                    <Label htmlFor="tw-bordered" className="text-sm font-medium cursor-pointer">
+                      Bordered
+                    </Label>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <Checkbox
+                      id="tw-responsive"
+                      checked={responsive}
+                      onCheckedChange={(checked) => setResponsive(checked as boolean)}
+                    />
+                    <Label htmlFor="tw-responsive" className="text-sm font-medium cursor-pointer">
+                      Responsive (with scroll wrapper)
+                    </Label>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </section>
 
