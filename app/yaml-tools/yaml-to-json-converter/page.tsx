@@ -1,0 +1,92 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import YamlToJsonConverterTool from "@/components/yaml-tools/yaml-to-json-converter";
+import YamlToJsonConverterSeo from "@/components/seo-content/yaml-tools/yaml-to-json-converter";
+
+export const metadata: Metadata = {
+  title: `YAML to JSON Converter | Free Online Tool`,
+  description: `Convert YAML to JSON format online for free. Preserve data structure with pretty-print options. Instant conversion with validation. No installation required.`,
+  alternates: {
+    canonical: `https://1000freetools.com/yaml-tools/yaml-to-json-converter`,
+  },
+};
+
+const tools = [
+  {
+    name: `YAML Validator`,
+    description: `Free Online YAML Validator`,
+    href: `/yaml-tools/yaml-validator`,
+  },
+  {
+    name: `JSON to YAML Converter`,
+    description: `Convert JSON to YAML Online`,
+    href: `/yaml-tools/json-to-yaml-converter`,
+  },
+  {
+    name: `YAML Formatter & Beautifier`,
+    description: `YAML Formatter and Beautifier`,
+    href: `/yaml-tools/yaml-formatter-beautifier`,
+  },
+  {
+    name: `YAML Minifier & Compressor`,
+    description: `YAML Minifier and Compressor`,
+    href: `/yaml-tools/yaml-minifier-compressor`,
+  },
+  {
+    name: `YAML Diff Checker`,
+    description: `YAML Diff Checker & Comparator`,
+    href: `/yaml-tools/yaml-diff-checker`,
+  },
+  {
+    name: `ASCII to Hex Converter`,
+    description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
+    href: `/ascii-tools/ascii-to-hex-converter`,
+  },
+  {
+    name: `Barcode Generator`,
+    description: `Free Barcode Generator`,
+    href: `/barcode-tools/barcode-generator`,
+  },
+  {
+    name: `Binary to Text Converter`,
+    description: `Binary to Text Converter`,
+    href: `/binary-tools/binary-to-text-converter`,
+  },
+  {
+    name: `Free Printable Calendar Maker`,
+    description: `Create & Print Your Custom Calendar`,
+    href: `/calendar-tools/printable-calendar-maker`,
+  },
+  {
+    name: `Pie Chart Maker`,
+    description: `Free Pie Chart Maker Online`,
+    href: `/chart-tools/pie-chart-maker`,
+  },
+];
+
+export default function YamlToJsonConverterPage() {
+  return (
+    <div className="flex flex-col gap-y-4">
+      <header className="max-w-3xl">
+        <h1 className="text-3xl font-bold mb-3">Convert YAML to JSON Online</h1>
+        <p className="text-muted-foreground">
+          Quickly and accurately convert your YAML configuration files into JSON
+          format. This free tool preserves your data structure and offers
+          formatting options for clean, usable JSON output.
+        </p>
+      </header>
+      <div className="mt-8">
+        <YamlToJsonConverterTool />
+      </div>
+      <div className="mt-8">
+        <YamlToJsonConverterSeo />
+      </div>
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}
