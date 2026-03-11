@@ -183,10 +183,6 @@
         "href": "/json-tools/json-linter"
       },
       {
-        "name": "JSON to CSV Converter",
-        "href": "/json-tools/json-to-csv"
-      },
-      {
         "name": "CSV to JSON Converter",
         "href": "/json-tools/csv-to-json"
       },
@@ -699,10 +695,6 @@
       {
         "name": "CSV to Excel Converter",
         "href": "/csv-tools/csv-to-excel"
-      },
-      {
-        "name": "Excel to CSV Converter",
-        "href": "/csv-tools/excel-to-csv"
       },
       {
         "name": "CSV to TSV Converter",
