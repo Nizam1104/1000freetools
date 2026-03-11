@@ -200,7 +200,7 @@ export default function IntersectionOfSetsCalculator() {
             <div>
               <h4 className="font-semibold text-sm mb-3">Definition</h4>
               <div className="font-mono text-sm p-3 bg-background rounded mb-3">
-                A ∩ B = {x | x ∈ A and x ∈ B}
+                A ∩ B = {'{'}x {'|'} x ∈ A and x ∈ B{'}'}
               </div>
               <p className="text-sm text-muted-foreground">
                 The set of all elements x such that x is in A AND x is in B.
@@ -226,19 +226,19 @@ export default function IntersectionOfSetsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 1: Basic Intersection</h4>
             <div className="font-mono text-sm space-y-2">
-              <div>A = {1, 2, 3, 4, 5}</div>
-              <div>B = {3, 4, 5, 6, 7}</div>
+              <div>A = {'{'}1, 2, 3, 4, 5{'}'}</div>
+              <div>B = {'{'}3, 4, 5, 6, 7{'}'}</div>
               <div className="mt-2">Find A ∩ B:</div>
               <div>Common elements: 3, 4, 5</div>
-              <div>A ∩ B = {3, 4, 5}</div>
+              <div>A ∩ B = {'{'}3, 4, 5{'}'}</div>
             </div>
           </div>
 
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 2: Disjoint Sets</h4>
             <div className="font-mono text-sm space-y-2">
-              <div>A = {2, 4, 6, 8, 10} (even numbers)</div>
-              <div>B = {1, 3, 5, 7, 9} (odd numbers)</div>
+              <div>A = {'{'}2, 4, 6, 8, 10{'}'} (even numbers)</div>
+              <div>B = {'{'}1, 3, 5, 7, 9{'}'} (odd numbers)</div>
               <div className="mt-2">Find A ∩ B:</div>
               <div>No common elements</div>
               <div>A ∩ B = ∅ (empty set)</div>
@@ -249,12 +249,12 @@ export default function IntersectionOfSetsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 3: Three Sets</h4>
             <div className="font-mono text-sm space-y-2">
-              <div>A = {1, 2, 3, 4, 5}</div>
-              <div>B = {2, 3, 4, 5, 6}</div>
-              <div>C = {3, 4, 5, 6, 7}</div>
+              <div>A = {'{'}1, 2, 3, 4, 5{'}'}</div>
+              <div>B = {'{'}2, 3, 4, 5, 6{'}'}</div>
+              <div>C = {'{'}3, 4, 5, 6, 7{'}'}</div>
               <div className="mt-2">Find A ∩ B ∩ C:</div>
-              <div>A ∩ B = {2, 3, 4, 5}</div>
-              <div>(A ∩ B) ∩ C = {3, 4, 5}</div>
+              <div>A ∩ B = {'{'}2, 3, 4, 5{'}'}</div>
+              <div>(A ∩ B) ∩ C = {'{'}3, 4, 5{'}'}</div>
               <div className="text-muted-foreground mt-2">Only 3, 4, 5 appear in ALL three sets.</div>
             </div>
           </div>
@@ -263,9 +263,9 @@ export default function IntersectionOfSetsCalculator() {
             <h4 className="font-semibold text-sm mb-3">Example 4: Real-World Application</h4>
             <div className="text-sm space-y-2">
               <p>In a survey of 100 students:</p>
-              <div className="font-mono">A = students who like Math = {45}</div>
-              <div className="font-mono">B = students who like Science = {50}</div>
-              <div className="font-mono">A ∩ B = students who like BOTH = {20}</div>
+              <div className="font-mono">A = students who like Math = {'{'}45{'}'}</div>
+              <div className="font-mono">B = students who like Science = {'{'}50{'}'}</div>
+              <div className="font-mono">A ∩ B = students who like BOTH = {'{'}20{'}'}</div>
               <p className="text-muted-foreground mt-2">20 students like both Math and Science.</p>
             </div>
           </div>

@@ -122,6 +122,14 @@ export default function FrequencyDistributionTable() {
     setSteps([]);
   };
 
+  const examples = [
+    { name: "Test scores", data: "45, 52, 38, 49, 55, 42, 48, 51, 39, 47, 53, 44, 50, 46, 41, 54, 43, 48, 52, 40", bins: 5 },
+    { name: "Ages", data: "12, 15, 18, 22, 25, 28, 32, 35, 38, 42, 45, 48, 52, 55, 58, 62, 65, 68, 72, 75", bins: 6 },
+    { name: "Weights", data: "100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400", bins: 8 },
+    { name: "Measurements", data: "5.2, 6.1, 7.3, 8.4, 5.8, 6.5, 7.9, 8.1, 5.5, 6.8, 7.2, 8.6, 5.9, 6.3, 7.7", bins: 5 },
+    { name: "Temperatures", data: "23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61", bins: 7 },
+  ];
+
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <div className="mb-8">
@@ -164,11 +172,9 @@ export default function FrequencyDistributionTable() {
 
         <div className="flex flex-wrap gap-2">
           <span className="text-sm text-muted-foreground self-center">Examples:</span>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("45, 52, 38, 49, 55, 42, 48, 51, 39, 47, 53, 44, 50, 46, 41, 54, 43, 48, 52, 40", 5)}>Test scores</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("12, 15, 18, 22, 25, 28, 32, 35, 38, 42, 45, 48, 52, 55, 58, 62, 65, 68, 72, 75", 6)}>Ages</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400", 8)">Weights</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("5.2, 6.1, 7.3, 8.4, 5.8, 6.5, 7.9, 8.1, 5.5, 6.8, 7.2, 8.6, 5.9, 6.3, 7.7", 5)}>Measurements</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61", 7)">Temperatures</Button>
+          {examples.map((ex, i) => (
+            <Button key={i} variant="ghost" size="sm" onClick={() => loadExample(ex.data, ex.bins)}>{ex.name}</Button>
+          ))}
         </div>
 
         {error && (

@@ -937,4 +937,12 @@ export default function ScientificCalculator() {
             <div>
               <h4 className="font-semibold text-sm mb-2">Can I chain multiple operations?</h4>
               <p className="text-sm text-muted-foreground">
-                Yes. Type the full expression like you'd write it: 2 + 3 × sin(45) − √(16). The calculator respects order of operations – parentheses first, then exponents, then multiplication/div
+                Yes. Type the full expression like you&apos;d write it: 2 + 3 × sin(45) − √(16). The calculator respects order of operations – parentheses first, then exponents, then multiplication/division, then addition/subtraction.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}

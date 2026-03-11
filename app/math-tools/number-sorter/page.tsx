@@ -244,7 +244,7 @@ export default function NumberSorter() {
             <div className="font-mono text-sm space-y-2">
               <div>Unsorted: 3.14, 2.71, 1.41, 3.0, 2.5</div>
               <div>Ascending: 1.41, 2.5, 2.71, 3.0, 3.14</div>
-              <div className="text-muted-foreground">Note: 3.0 = 3, but 3.14 > 3.0</div>
+              <div className="text-muted-foreground">Note: 3.0 = 3, but 3.14 {'>'} 3.0</div>
             </div>
           </div>
           <div className="p-4 border rounded-lg">

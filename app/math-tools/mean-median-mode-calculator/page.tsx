@@ -218,7 +218,7 @@ export default function MeanMedianModeCalculator() {
           <div>
             <h4 className="font-semibold text-sm mb-2">Why is the mean higher than the median?</h4>
             <p className="text-sm text-muted-foreground">
-              When mean > median, your data is right-skewed (positive skew). High outliers pull the mean up while the median stays put. Income data often shows this pattern – a few very high incomes raise the mean above the median.
+              When mean {'>'} median, your data is right-skewed (positive skew). High outliers pull the mean up while the median stays put. Income data often shows this pattern – a few very high incomes raise the mean above the median.
             </p>
           </div>
           <div>

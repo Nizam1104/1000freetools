@@ -115,8 +115,8 @@ export default function PowerSetGenerator() {
 
         <div className="flex flex-wrap gap-2">
           <span className="text-xs text-muted-foreground self-center">Examples:</span>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("1, 2, 3")}>{1, 2, 3}</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("a, b, c, d")}>{a, b, c, d}</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1, 2, 3")}>&#123;1, 2, 3&#125;</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("a, b, c, d")}>&#123;a, b, c, d&#125;</Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("red, green, blue")}>Colors</Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("5, 10, 15, 20, 25")}>Numbers</Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("x, y, z")}>Variables</Button>
@@ -204,7 +204,7 @@ export default function PowerSetGenerator() {
               <li>• The empty set ∅ is always in P(S)</li>
               <li>• The set S itself is always in P(S)</li>
               <li>• Every element of S appears in exactly half the subsets</li>
-              <li>• P(∅) = {∅} (one subset: the empty set)</li>
+              <li>• P(∅) = {'{'}∅{'}'} (one subset: the empty set)</li>
             </ul>
           </div>
         </div>
@@ -214,38 +214,38 @@ export default function PowerSetGenerator() {
         <h3 className="text-xl font-semibold">Worked Examples</h3>
         <div className="space-y-4">
           <div className="p-4 border rounded-lg">
-            <h4 className="font-semibold text-sm mb-2">Example 1: Power Set of {1, 2}</h4>
+            <h4 className="font-semibold text-sm mb-2">Example 1: Power Set of {'{'}1, 2{'}'}</h4>
             <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
-              <div>Original set: S = {1, 2}</div>
+              <div>Original set: S = {'{'}1, 2{'}'}</div>
               <div>Number of elements: n = 2</div>
               <div>Expected subsets: 2² = 4</div>
-              <div>Power set P(S) = {"{"} ∅, {1}, {2}, {1,2} {"}"}</div>
+              <div>Power set P(S) = {"{"} ∅, {'{'}1{'}'}, {'{'}2{'}'}, {'{'}1,2{'}'} {"}"}</div>
               <div className="text-muted-foreground">Breakdown: 1 empty + 2 singletons + 1 full set = 4</div>
             </div>
           </div>
 
           <div className="p-4 border rounded-lg">
-            <h4 className="font-semibold text-sm mb-2">Example 2: Power Set of {a, b, c}</h4>
+            <h4 className="font-semibold text-sm mb-2">Example 2: Power Set of {'{'}a, b, c{'}'}</h4>
             <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
-              <div>Original set: S = {a, b, c}</div>
+              <div>Original set: S = {'{'}a, b, c{'}'}</div>
               <div>Number of elements: n = 3</div>
               <div>Expected subsets: 2³ = 8</div>
               <div>Power set P(S) = {"{"}</div>
               <div className="ml-4">∅,</div>
-              <div className="ml-4">{a}, {b}, {c},</div>
-              <div className="ml-4">{a,b}, {a,c}, {b,c},</div>
-              <div className="ml-4">{a,b,c}</div>
+              <div className="ml-4">{'{'}a{'}'}, {'{'}b{'}'}, {'{'}c{'}'},</div>
+              <div className="ml-4">{'{'}a,b{'}'}, {'{'}a,c{'}'}, {'{'}b,c{'}'},</div>
+              <div className="ml-4">{'{'}a,b,c{'}'}</div>
               <div>{"}"}</div>
               <div className="text-muted-foreground">Breakdown: 1 + 3 + 3 + 1 = 8 subsets</div>
             </div>
           </div>
 
           <div className="p-4 border rounded-lg">
-            <h4 className="font-semibold text-sm mb-2">Example 3: Power Set of {red, blue}</h4>
+            <h4 className="font-semibold text-sm mb-2">Example 3: Power Set of {'{'}red, blue{'}'}</h4>
             <p className="text-sm text-muted-foreground mb-2">Using color names as elements:</p>
             <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
-              <div>S = {red, blue}</div>
-              <div>P(S) = {"{"} ∅, {red}, {blue}, {red,blue} {"}"}</div>
+              <div>S = {'{'}red, blue{'}'}</div>
+              <div>P(S) = {"{"} ∅, {'{'}red{'}'}, {'{'}blue{'}'}, {'{'}red,blue{'}'} {"}"}</div>
               <div className="text-muted-foreground">Elements can be anything: numbers, letters, words, objects...</div>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function PowerSetGenerator() {
               A pizza shop offers 4 toppings: pepperoni, mushrooms, onions, peppers. How many different pizzas can you order (including plain cheese)?
             </p>
             <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
-              <div>This is the power set of {pepperoni, mushrooms, onions, peppers}</div>
+              <div>This is the power set of {'{'}pepperoni, mushrooms, onions, peppers{'}'}</div>
               <div>Number of possible pizzas = 2⁴ = 16</div>
               <div>Breakdown: 1 plain + 4 one-topping + 6 two-topping + 4 three-topping + 1 four-topping = 16</div>
               <div className="text-green-600 font-semibold">You can order 16 different pizza combinations!</div>
@@ -286,7 +286,7 @@ export default function PowerSetGenerator() {
           <div>
             <h4 className="font-semibold text-sm mb-2">What is the power set of the empty set?</h4>
             <p className="text-sm text-muted-foreground">
-              P(∅) = {∅}. The empty set has one subset: itself. So |P(∅)| = 2⁰ = 1. This might seem paradoxical, but the empty set is a subset of every set, including itself.
+              P(∅) = {'{'}∅{'}'}. The empty set has one subset: itself. So |P(∅)| = 2⁰ = 1. This might seem paradoxical, but the empty set is a subset of every set, including itself.
             </p>
           </div>
           <div>
@@ -302,9 +302,9 @@ export default function PowerSetGenerator() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between a subset and an element?</h4>
+            <h4 className="font-semibold text-sm mb-2">What&apos;s the difference between a subset and an element?</h4>
             <p className="text-sm text-muted-foreground">
-              An element is a member of a set (1 ∈ {1,2,3}). A subset is a set whose elements are all in another set ({1,2} ⊆ {1,2,3}). In the power set, the elements ARE subsets of the original set.
+              An element is a member of a set (1 ∈ {'{'}1,2,3{'}'}). A subset is a set whose elements are all in another set ({'{'}1,2{'}'} ⊆ {'{'}1,2,3{'}'}). In the power set, the elements ARE subsets of the original set.
             </p>
           </div>
           <div>

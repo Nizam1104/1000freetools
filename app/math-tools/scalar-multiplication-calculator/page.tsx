@@ -219,6 +219,140 @@ export default function ScalarMultiplicationCalculator() {
         )}
       </div>
 
+      <div className="mt-16 space-y-12">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">How Scalar Multiplication Works</h2>
+          <p className="text-muted-foreground mb-4">
+            Scalar multiplication is one of the fundamental operations in linear algebra. When you multiply a matrix by a scalar (a single number), you multiply <strong>every element</strong> of the matrix by that number. The result is a new matrix with the same dimensions as the original.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            If you have a matrix A and scalar k, the scalar multiplication k·A produces a matrix where each element aᵢⱼ becomes k·aᵢⱼ. This operation scales the entire matrix uniformly—think of it as stretching or shrinking all values by the same factor.
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>If A = [a b; c d] and k = 3, then:</p>
+            <p>k·A = [3a 3b; 3c 3d]</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Example Calculations</h2>
+          
+          <h3 className="text-xl font-semibold mb-3 mt-6">2×2 Matrix Example</h3>
+          <p className="text-muted-foreground mb-2">
+            Multiply matrix A by scalar k = 3:
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-2">
+            <p>A = [1  2]</p>
+            <p>    [3  4]</p>
+            <p className="mt-4">3·A = [3·1  3·2] = [3   6 ]</p>
+            <p>      [3·3  3·4]   [9  12]</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">2×3 Matrix Example</h3>
+          <p className="text-muted-foreground mb-2">
+            Multiply by k = -2:
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-2">
+            <p>A = [1  2  3]</p>
+            <p>    [4  5  6]</p>
+            <p className="mt-4">-2·A = [-2  -4  -6]</p>
+            <p>       [-8 -10 -12]</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Identity Matrix Example</h3>
+          <p className="text-muted-foreground mb-2">
+            Multiplying the identity matrix by 5:
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-2">
+            <p>I = [1  0]</p>
+            <p>    [0  1]</p>
+            <p className="mt-4">5·I = [5  0]</p>
+            <p>      [0  5]</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Quick Fact: Matrices in History</h2>
+          <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg">
+            <p className="text-muted-foreground">
+              The term "matrix" was coined by <strong>James Joseph Sylvester</strong> in 1850, derived from the Latin word for "womb." Sylvester saw matrices as containers that could "give birth" to various mathematical determinants. His colleague <strong>Arthur Cayley</strong> developed the modern theory of matrices in 1858, publishing the first systematic treatment of matrix algebra. Interestingly, matrices were used in Chinese mathematics as early as 300 BCE in the text "Nine Chapters on the Mathematical Art" to solve systems of linear equations—predating European development by over 2000 years.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What is a scalar in mathematics?</h3>
+              <p className="text-muted-foreground">
+                A scalar is a single number (real or complex) used to scale other mathematical objects. Unlike vectors or matrices that have multiple components, a scalar has only magnitude. In scalar multiplication, the scalar acts as a multiplier that uniformly scales every element of the matrix.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Does scalar multiplication change the matrix dimensions?</h3>
+              <p className="text-muted-foreground">
+                No, scalar multiplication preserves the dimensions of the original matrix. If you multiply a 3×4 matrix by any scalar, the result is still a 3×4 matrix. Only the values inside change, not the structure.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What happens when you multiply a matrix by zero?</h3>
+              <p className="text-muted-foreground">
+                Multiplying any matrix by the scalar 0 produces a zero matrix (all elements become 0). This is analogous to multiplying any number by zero in regular arithmetic. The zero matrix plays an important role in linear algebra as the additive identity.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can I multiply a matrix by a negative scalar?</h3>
+              <p className="text-muted-foreground">
+                Yes, negative scalars work the same way as positive ones. Each element gets multiplied by the negative number, which flips the sign of every element. For example, -1·A produces the additive inverse of matrix A.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Is scalar multiplication commutative?</h3>
+              <p className="text-muted-foreground">
+                Yes, scalar multiplication is commutative: k·A = A·k. Since you're multiplying each element by the same scalar, the order doesn't matter. This differs from matrix-matrix multiplication, which is generally not commutative.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What are the properties of scalar multiplication?</h3>
+              <p className="text-muted-foreground">
+                Key properties include: (1) Distributive over matrix addition: k(A+B) = kA + kB, (2) Distributive over scalar addition: (k+m)A = kA + mA, (3) Associative with scalar multiplication: k(mA) = (km)A, and (4) Identity: 1·A = A.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Where is scalar multiplication used in real applications?</h3>
+              <p className="text-muted-foreground">
+                Scalar multiplication appears in computer graphics (scaling objects), physics (scaling force vectors), economics (adjusting price matrices), and machine learning (weight adjustments in neural networks). It's a fundamental operation in any field that uses linear algebra.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/math-tools/matrix-multiplication-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Matrix Multiplication Calculator</h3>
+              <p className="text-sm text-muted-foreground">Multiply two matrices together using the matrix multiplication rule.</p>
+            </a>
+            <a href="/math-tools/matrix-determinant-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Matrix Determinant Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate the determinant of square matrices up to 4×4.</p>
+            </a>
+            <a href="/math-tools/matrix-inverse-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Matrix Inverse Calculator</h3>
+              <p className="text-sm text-muted-foreground">Find the inverse of a matrix using various methods.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

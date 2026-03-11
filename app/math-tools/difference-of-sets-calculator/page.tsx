@@ -235,9 +235,9 @@ export default function DifferenceOfSetsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 1: Basic Number Sets</h4>
             <div className="text-sm space-y-2">
-              <p>A = {1, 2, 3, 4, 5, 6}</p>
-              <p>B = {2, 4, 6, 8}</p>
-              <p>A - B = {1, 3, 5}</p>
+              <p>A = {"{1, 2, 3, 4, 5, 6}"}</p>
+              <p>B = {"{2, 4, 6, 8}"}</p>
+              <p>A - B = {"{1, 3, 5}"}</p>
               <p className="text-muted-foreground">We remove 2, 4, and 6 from A because they appear in B. The result contains only elements unique to A.</p>
             </div>
           </div>
@@ -245,9 +245,9 @@ export default function DifferenceOfSetsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 2: Multiples of 10</h4>
             <div className="text-sm space-y-2">
-              <p>A = {10, 20, 30, 40, 50}</p>
-              <p>B = {15, 20, 25, 30}</p>
-              <p>A - B = {10, 40, 50}</p>
+              <p>A = {"{10, 20, 30, 40, 50}"}</p>
+              <p>B = {"{15, 20, 25, 30}"}</p>
+              <p>A - B = {"{10, 40, 50}"}</p>
               <p className="text-muted-foreground">20 and 30 appear in both sets, so they're removed. 15 and 25 don't affect the result since they're not in A.</p>
             </div>
           </div>
@@ -265,9 +265,9 @@ export default function DifferenceOfSetsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 4: Odd vs Even Numbers</h4>
             <div className="text-sm space-y-2">
-              <p>A = {1, 3, 5, 7, 9, 11} (odd numbers)</p>
-              <p>B = {2, 4, 6, 8, 10} (even numbers)</p>
-              <p>A - B = {1, 3, 5, 7, 9, 11}</p>
+              <p>A = {"{1, 3, 5, 7, 9, 11}"} (odd numbers)</p>
+              <p>B = {"{2, 4, 6, 8, 10}"} (even numbers)</p>
+              <p>A - B = {"{1, 3, 5, 7, 9, 11}"}</p>
               <p className="text-muted-foreground">Since no odd numbers are in B, A - B equals A entirely. The sets are disjoint (no overlap).</p>
             </div>
           </div>
@@ -275,8 +275,8 @@ export default function DifferenceOfSetsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 5: Identical Sets</h4>
             <div className="text-sm space-y-2">
-              <p>A = {1, 2, 3, 4, 5}</p>
-              <p>B = {1, 2, 3, 4, 5}</p>
+              <p>A = {"{1, 2, 3, 4, 5}"}</p>
+              <p>B = {"{1, 2, 3, 4, 5}"}</p>
               <p>A - B = ∅ (empty set)</p>
               <p className="text-muted-foreground">When sets are identical, their difference is empty. Every element in A is also in B, so nothing remains.</p>
             </div>
@@ -285,9 +285,9 @@ export default function DifferenceOfSetsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">Example 6: Primes vs Composites</h4>
             <div className="text-sm space-y-2">
-              <p>A = {2, 3, 5, 7, 11, 13, 17} (primes under 20)</p>
-              <p>B = {4, 6, 8, 9, 10, 12, 14} (composites under 15)</p>
-              <p>A - B = {2, 3, 5, 7, 11, 13, 17}</p>
+              <p>A = {"{2, 3, 5, 7, 11, 13, 17}"} (primes under 20)</p>
+              <p>B = {"{4, 6, 8, 9, 10, 12, 14}"} (composites under 15)</p>
+              <p>A - B = {"{2, 3, 5, 7, 11, 13, 17}"}</p>
               <p className="text-muted-foreground">No prime numbers are composite, so A - B = A. These sets have no common elements.</p>
             </div>
           </div>
@@ -309,7 +309,7 @@ export default function DifferenceOfSetsCalculator() {
           <div>
             <h4 className="font-semibold text-sm mb-2">Is A - B the same as B - A?</h4>
             <p className="text-sm text-muted-foreground">
-              No, set difference is not commutative. A - B gives elements in A but not B. B - A gives elements in B but not A. These are usually different. For example, if A = {1,2} and B = {2,3}, then A - B = {1} but B - A = {3}.
+              No, set difference is not commutative. A - B gives elements in A but not B. B - A gives elements in B but not A. These are usually different. For example, if A = {"{1,2}"} and B = {"{2,3}"}, then A - B = {"{1}"} but B - A = {"{3}"}.
             </p>
           </div>
           <div>
@@ -327,7 +327,7 @@ export default function DifferenceOfSetsCalculator() {
           <div>
             <h4 className="font-semibold text-sm mb-2">Does order matter within a set?</h4>
             <p className="text-sm text-muted-foreground">
-              No. Sets are unordered collections. {1, 2, 3} is the same set as {3, 1, 2}. The calculator sorts results for readability, but mathematically the order doesn't matter.
+              No. Sets are unordered collections. {"{1, 2, 3}"} is the same set as {"{3, 1, 2}"}. The calculator sorts results for readability, but mathematically the order doesn&apos;t matter.
             </p>
           </div>
           <div>

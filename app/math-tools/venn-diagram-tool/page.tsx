@@ -362,6 +362,148 @@ export default function VennDiagramTool() {
         )}
       </div>
 
+      <div className="mt-16 space-y-12">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">How the Venn Diagram Tool Works</h2>
+          <p className="text-muted-foreground mb-4">
+            A Venn diagram uses overlapping circles to visually represent the relationships between sets. Each circle represents a set, and the overlapping regions show where sets share common elements. This tool analyzes your input sets and breaks them down into distinct regions.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            For a <strong>2-set diagram</strong>, there are 4 regions:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+            <li>Only in A (elements unique to set A)</li>
+            <li>Only in B (elements unique to set B)</li>
+            <li>A ∩ B (intersection—elements in both A and B)</li>
+            <li>Outside both (elements in neither set, from the universal set)</li>
+          </ul>
+          <p className="text-muted-foreground mb-4 mt-4">
+            For a <strong>3-set diagram</strong>, there are 8 regions including A ∩ B ∩ C (the center where all three overlap). The tool calculates which elements belong in each region and displays the counts.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Example Venn Diagram Analyses</h2>
+          
+          <h3 className="text-xl font-semibold mb-3 mt-6">2-Set Example: Even vs. Multiples of 3</h3>
+          <p className="text-muted-foreground mb-2">
+            A = {"{2, 4, 6, 8, 10, 12}"}, B = {"{3, 6, 9, 12, 15}"}
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>Only in A: {"{2, 4, 8, 10}"}</p>
+            <p>Only in B: {"{3, 9, 15}"}</p>
+            <p>A ∩ B: {"{6, 12}"} (both even AND multiples of 3)</p>
+            <p className="mt-2 text-muted-foreground">A ∪ B has 9 unique elements total</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">3-Set Example: Student Courses</h3>
+          <p className="text-muted-foreground mb-2">
+            Math = {"{Alice, Bob, Carol, David}"}, Science = {"{Bob, Carol, Eve, Frank}"}, Art = {"{Carol, David, Eve, Grace}"}
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>Only Math: {"{Alice}"}</p>
+            <p>Only Science: {"{Frank}"}</p>
+            <p>Only Art: {"{Grace}"}</p>
+            <p>Math ∩ Science only: {"{Bob}"}</p>
+            <p>Math ∩ Art only: {"{David}"}</p>
+            <p>Science ∩ Art only: {"{Eve}"}</p>
+            <p>All three (A ∩ B ∩ C): {"{Carol}"}</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Disjoint Sets (No Overlap)</h3>
+          <p className="text-muted-foreground mb-2">
+            A = {"{1, 2, 3}"}, B = {"{7, 8, 9}"}
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>Only in A: {"{1, 2, 3}"}</p>
+            <p>Only in B: {"{7, 8, 9}"}</p>
+            <p>A ∩ B: ∅ (empty—no overlap)</p>
+            <p className="mt-2 text-muted-foreground">Circles don&apos;t overlap in the diagram</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Quick Fact: Venn's Visual Revolution</h2>
+          <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg">
+            <p className="text-muted-foreground">
+              <strong>John Venn</strong> (1834-1923), a British logician and philosopher, introduced these diagrams in his 1880 paper "On the Diagrammatic and Mechanical Representation of Propositions and Reasonings." Interestingly, Venn called them "Eulerian Circles" because Swiss mathematician <strong>Leonhard Euler</strong> had used similar diagrams a century earlier. The name "Venn diagram" was coined by philosopher Clarence Irving Lewis in 1918. Venn was also an avid gardener who once won a prize at the Paris Exhibition for growing giant pumpkins, and he built a cricket-bowling machine that bowled out a top Australian player in 1909!
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What does the overlapping region represent?</h3>
+              <p className="text-muted-foreground">
+                The overlapping region (intersection) contains elements that belong to <em>both</em> sets simultaneously. For example, if A = even numbers and B = multiples of 3, the overlap contains numbers that are both even AND multiples of 3 (like 6, 12, 18).
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What's the difference between union and intersection?</h3>
+              <p className="text-muted-foreground">
+                The <strong>union</strong> (A ∪ B) includes everything in either circle—all elements from both sets combined. The <strong>intersection</strong> (A ∩ B) includes only the overlapping region—elements that are in both sets. Union = "or", Intersection = "and".
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">When should I use a 2-set vs. 3-set diagram?</h3>
+              <p className="text-muted-foreground">
+                Use a 2-set diagram when comparing two categories. Use a 3-set diagram when you need to analyze relationships among three categories and want to see the region where all three overlap. Beyond 3 sets, Venn diagrams become visually complex and harder to interpret.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What if my sets have no overlap?</h3>
+              <p className="text-muted-foreground">
+                Sets with no common elements are called <strong>disjoint</strong> or <strong>mutually exclusive</strong>. In a Venn diagram, the circles wouldn't overlap. The intersection would be the empty set (∅), and |A ∪ B| = |A| + |B|.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do I calculate the total number of elements?</h3>
+              <p className="text-muted-foreground">
+                For 2 sets: |A ∪ B| = |A| + |B| - |A ∩ B|. You subtract the intersection because those elements are counted twice. For the tool's output, simply add up all the region counts: Only A + Only B + Intersection = Total.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What is the symmetric difference?</h3>
+              <p className="text-muted-foreground">
+                The symmetric difference (A △ B) contains elements that are in exactly one of the sets—not in both. It's "Only in A" plus "Only in B", excluding the intersection. Formula: A △ B = (A ∪ B) - (A ∩ B).
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Where are Venn diagrams used in real life?</h3>
+              <p className="text-muted-foreground">
+                Venn diagrams appear in data analysis (comparing customer segments), biology (comparing gene sets), marketing (overlapping target audiences), logic (visualizing syllogisms), and education (comparing concepts). They're excellent for any situation requiring visual comparison of groups.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/math-tools/union-of-sets-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Union of Sets Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate the union of two or more sets with detailed results.</p>
+            </a>
+            <a href="/math-tools/intersection-of-sets-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Intersection of Sets Calculator</h3>
+              <p className="text-sm text-muted-foreground">Find common elements shared between multiple sets.</p>
+            </a>
+            <a href="/math-tools/set-difference-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Set Difference Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate elements in one set but not in another.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

@@ -126,8 +126,8 @@ export default function SubsetChecker() {
 
         <div className="flex flex-wrap gap-2">
           <span className="text-xs text-muted-foreground">Examples:</span>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("1, 2, 3", "1, 2, 3, 4, 5")}>{1,2,3} ⊂ {1,2,3,4,5}</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("a, b, c", "a, b, c, d, e")}>{a,b,c} ⊂ {a,b,c,d,e}</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1, 2, 3", "1, 2, 3, 4, 5")}>{"{1,2,3}"} ⊂ {"{1,2,3,4,5}"}</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("a, b, c", "a, b, c, d, e")}>{"{a,b,c}"} ⊂ {"{a,b,c,d,e}"}</Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("1, 2, 3", "1, 2, 3")}>Equal sets</Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("1, 5, 7", "1, 2, 3, 4")}>Not a subset</Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("", "1, 2, 3")}>Empty set</Button>
@@ -214,7 +214,7 @@ export default function SubsetChecker() {
               A ⊆ B means every element of A is also in B. A can equal B.
             </p>
             <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
-              A = {1, 2}, B = {1, 2, 3} → A ⊆ B ✓
+              A = {"{1, 2}"}, B = {"{1, 2, 3}"} → A ⊆ B ✓
             </code>
           </div>
 
@@ -224,7 +224,7 @@ export default function SubsetChecker() {
               A ⊂ B means A is a subset of B, but A ≠ B. A has fewer elements.
             </p>
             <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
-              A = {1, 2}, B = {1, 2, 3} → A ⊂ B ✓
+              A = {"{1, 2}"}, B = {"{1, 2, 3}"} → A ⊂ B ✓
             </code>
           </div>
 
@@ -234,7 +234,7 @@ export default function SubsetChecker() {
               A ⊇ B means B is a subset of A. A contains all elements of B.
             </p>
             <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
-              A = {1, 2, 3}, B = {1, 2} → A ⊇ B ✓
+              A = {"{1, 2, 3}"}, B = {"{1, 2}"} → A ⊇ B ✓
             </code>
           </div>
 
@@ -244,7 +244,7 @@ export default function SubsetChecker() {
               A = B means they contain exactly the same elements.
             </p>
             <code className="text-xs font-mono bg-muted px-2 py-1 rounded block">
-              A = {1, 2, 3}, B = {3, 2, 1} → A = B ✓
+              A = {"{1, 2, 3}"}, B = {"{3, 2, 1}"} → A = B ✓
             </code>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function SubsetChecker() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Example 1: Basic subset</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Problem: Is A = {1, 2, 3} a subset of B = {1, 2, 3, 4, 5}?
+              Problem: Is A = {"{1, 2, 3}"} a subset of B = {"{1, 2, 3, 4, 5}"}?
             </p>
             <p className="text-sm text-muted-foreground mb-2">
               Solution: Check each element of A:
@@ -272,7 +272,7 @@ export default function SubsetChecker() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Example 2: Not a subset</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Problem: Is A = {1, 5, 7} a subset of B = {1, 2, 3, 4}?
+              Problem: Is A = {"{1, 5, 7}"} a subset of B = {"{1, 2, 3, 4}"}?
             </p>
             <p className="text-sm text-muted-foreground mb-2">
               Solution: Check each element of A:
@@ -288,7 +288,7 @@ export default function SubsetChecker() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Example 3: Equal sets</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Problem: Is A = {a, b, c} a subset of B = {c, b, a}?
+              Problem: Is A = {"{a, b, c}"} a subset of B = {"{c, b, a}"}?
             </p>
             <p className="text-sm text-muted-foreground mb-2">
               Solution: Order doesn't matter in sets. Both contain exactly a, b, c.
@@ -304,7 +304,7 @@ export default function SubsetChecker() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Example 4: Empty set</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Problem: Is ∅ (empty set) a subset of B = {1, 2, 3}?
+              Problem: Is ∅ (empty set) a subset of B = {"{1, 2, 3}"}?
             </p>
             <p className="text-sm text-muted-foreground mb-2">
               Solution: The empty set has no elements, so there's nothing to check.
@@ -317,7 +317,7 @@ export default function SubsetChecker() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Example 5: Superset relationship</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Problem: A = {1, 2, 3, 4, 5}, B = {2, 4}. What's the relationship?
+              Problem: A = {"{1, 2, 3, 4, 5}"}, B = {"{2, 4}"}. What's the relationship?
             </p>
             <p className="text-sm text-muted-foreground mb-2">
               Solution: Check if B ⊆ A: 2 ∈ A? Yes. 4 ∈ A? Yes.
@@ -392,7 +392,7 @@ export default function SubsetChecker() {
           <div>
             <h4 className="font-semibold text-sm mb-2">What's the difference between ⊆ and ⊂?</h4>
             <p className="text-sm text-muted-foreground">
-              ⊆ (subset or equal) allows the sets to be identical. ⊂ (proper subset) requires A to be strictly smaller than B. If A = {1,2} and B = {1,2}, then A ⊆ B is true, but A ⊂ B is false.
+              ⊆ (subset or equal) allows the sets to be identical. ⊂ (proper subset) requires A to be strictly smaller than B. If A = {"{1,2}"} and B = {"{1,2}"}, then A ⊆ B is true, but A ⊂ B is false.
             </p>
           </div>
           <div>
@@ -410,7 +410,7 @@ export default function SubsetChecker() {
           <div>
             <h4 className="font-semibold text-sm mb-2">Does order matter in sets?</h4>
             <p className="text-sm text-muted-foreground">
-              No. {1, 2, 3} and {3, 2, 1} are the same set. Sets are defined only by which elements they contain, not the order. This is different from sequences or tuples where order matters.
+              No. {"{1, 2, 3}"} and {"{3, 2, 1}"} are the same set. Sets are defined only by which elements they contain, not the order. This is different from sequences or tuples where order matters.
             </p>
           </div>
           <div>
@@ -422,7 +422,7 @@ export default function SubsetChecker() {
           <div>
             <h4 className="font-semibold text-sm mb-2">How many subsets does a set have?</h4>
             <p className="text-sm text-muted-foreground">
-              A set with n elements has 2ⁿ subsets (the power set). For example, {a, b, c} has 2³ = 8 subsets: ∅, {a}, {b}, {c}, {a,b}, {a,c}, {b,c}, {a,b,c}. This includes the empty set and the set itself.
+              A set with n elements has 2ⁿ subsets (the power set). For example, {"{a, b, c}"} has 2³ = 8 subsets: ∅, {"{a}"}, {"{b}"}, {"{c}"}, {"{a,b}"}, {"{a,c}"}, {"{b,c}"}, {"{a,b,c}"}. This includes the empty set and the set itself.
             </p>
           </div>
         </div>

@@ -346,6 +346,155 @@ export default function SudokuValidator() {
         )}
       </div>
 
+      <div className="mt-16 space-y-12">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">How the Sudoku Validator Works</h2>
+          <p className="text-muted-foreground mb-4">
+            Sudoku is a logic-based number puzzle played on a 9×9 grid. The goal is to fill the grid so that each row, each column, and each of the nine 3×3 boxes contains the digits 1 through 9 exactly once. This validator checks your puzzle against these three fundamental rules.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            When you click "Validate," the tool performs three separate checks:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+            <li><strong>Row Check:</strong> Verifies no number repeats in any horizontal row</li>
+            <li><strong>Column Check:</strong> Verifies no number repeats in any vertical column</li>
+            <li><strong>Box Check:</strong> Verifies no number repeats in any 3×3 subgrid</li>
+          </ul>
+          <p className="text-muted-foreground mt-4">
+            The validator distinguishes between puzzles that are <em>valid but incomplete</em> (no errors but empty cells remain) and puzzles that are <em>correct and complete</em> (all 81 cells filled with no violations).
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Example Sudoku Puzzles</h2>
+          
+          <h3 className="text-xl font-semibold mb-3 mt-6">Easy Puzzle (50+ filled cells)</h3>
+          <p className="text-muted-foreground mb-2">
+            Good for beginners, with many given numbers:
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs overflow-x-auto">
+            <p>5 3 _ | _ 7 _ | _ _ _</p>
+            <p>6 _ _ | 1 9 5 | _ _ _</p>
+            <p>_ 9 8 | _ _ _ | _ 6 _</p>
+            <p>------+-------+------</p>
+            <p>8 _ _ | _ 6 _ | _ _ 3</p>
+            <p>4 _ _ | 8 _ 3 | _ _ 1</p>
+            <p>7 _ _ | _ 2 _ | _ _ 6</p>
+            <p>_ 6 _ | _ _ _ | 2 8 _</p>
+            <p>_ _ _ | 4 1 9 | _ _ 5</p>
+            <p>_ _ _ | _ 8 _ | _ 7 9</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Medium Puzzle (35-45 filled cells)</h3>
+          <p className="text-muted-foreground mb-2">
+            Moderate challenge requiring more strategy:
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs overflow-x-auto">
+            <p>_ _ _ | 6 _ _ | 4 _ _</p>
+            <p>7 _ _ | _ _ 3 | 6 _ _</p>
+            <p>_ _ _ | _ 9 1 | _ 8 _</p>
+            <p>------+-------+------</p>
+            <p>_ _ _ | _ _ _ | _ _ _</p>
+            <p>_ 5 _ | 1 8 _ _ 7 _</p>
+            <p>_ _ 3 | _ _ 6 | _ _ _</p>
+            <p>_ 8 _ | 4 _ _ _ _ _</p>
+            <p>_ 2 _ | 7 _ _ _ _ 9</p>
+            <p>_ _ 6 | _ _ 8 | _ _ _</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Common Error Patterns</h3>
+          <p className="text-muted-foreground mb-2">
+            Watch out for these frequent mistakes:
+          </p>
+          <div className="bg-muted p-4 rounded-lg space-y-2 text-sm">
+            <p><strong>Row duplicate:</strong> Two 7s in row 3</p>
+            <p><strong>Column duplicate:</strong> Two 4s in column 5</p>
+            <p><strong>Box duplicate:</strong> Two 9s in the center 3×3 box</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Quick Fact: Sudoku's Surprising History</h2>
+          <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg">
+            <p className="text-muted-foreground">
+              Despite its Japanese name, Sudoku wasn't invented in Japan. The puzzle was created by American architect <strong>Howard Garns</strong> in 1979 and first published as "Number Place" in Dell Magazines. It was introduced to Japan in 1984 by the puzzle company Nikoli, which gave it the name "Sūji wa dokushin ni kagiru" (numbers must be single), later shortened to "Sudoku." The puzzle became a worldwide phenomenon in 2004 when New Zealand judge <strong>Wayne Gould</strong> convinced The Times of London to publish it, sparking "Sudoku fever" across Europe and eventually the globe.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What are the basic rules of Sudoku?</h3>
+              <p className="text-muted-foreground">
+                Fill the 9×9 grid so that each row contains the numbers 1-9 exactly once, each column contains 1-9 exactly once, and each of the nine 3×3 boxes contains 1-9 exactly once. A proper Sudoku has only one unique solution.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can a Sudoku have multiple solutions?</h3>
+              <p className="text-muted-foreground">
+                A well-constructed Sudoku puzzle should have exactly one unique solution. If a puzzle has multiple valid solutions, it's considered poorly designed. Most newspaper and app puzzles are verified to have a single solution before publication.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What's the minimum number of clues needed?</h3>
+              <p className="text-muted-foreground">
+              Mathematicians proved in 2012 that a valid Sudoku needs at least <strong>17 clues</strong> (pre-filled cells) to guarantee a unique solution. Puzzles with 16 or fewer clues will always have multiple solutions. Most published puzzles have 22-35 clues depending on difficulty.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do I know if my puzzle is solvable?</h3>
+              <p className="text-muted-foreground">
+                A valid Sudoku should be solvable using logic alone, without guessing. If you reach a point where you must guess, either you made an error earlier or the puzzle is poorly constructed. This validator helps catch errors before they cascade through your solution.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What's the best solving strategy for beginners?</h3>
+              <p className="text-muted-foreground">
+                Start with "scanning"—look for rows, columns, or boxes that are nearly complete. Use "cross-hatching" to eliminate possibilities. For each empty cell, ask: "What numbers can go here?" If only one number fits, place it. Repeat until stuck, then look for "naked pairs" or "hidden singles."
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Why does my puzzle show as "valid but incomplete"?</h3>
+              <p className="text-muted-foreground">
+                This means you haven't made any rule violations, but you still have empty cells. This is actually good news—it means your work so far is correct! Keep filling in numbers using logic. The validator will show "Valid &amp; Complete" only when all 81 cells are filled correctly.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can I use this validator for variant Sudoku types?</h3>
+              <p className="text-muted-foreground">
+                This validator checks standard 9×9 Sudoku rules. It won't validate variant puzzles like Killer Sudoku, X-Sudoku (with diagonal rules), or Jigsaw Sudoku (with irregular regions). For those variants, you'd need specialized validators that check their additional constraints.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/math-tools/magic-square-generator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Magic Square Generator</h3>
+              <p className="text-sm text-muted-foreground">Create and verify magic squares where all rows, columns, and diagonals sum to the same value.</p>
+            </a>
+            <a href="/math-tools/permutation-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Permutation Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate permutations and combinations for probability problems.</p>
+            </a>
+            <a href="/math-tools/logic-gate-simulator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Logic Gate Simulator</h3>
+              <p className="text-sm text-muted-foreground">Build and test digital logic circuits with AND, OR, NOT gates.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

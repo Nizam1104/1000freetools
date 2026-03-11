@@ -193,7 +193,7 @@ export default function TaylorSeriesApproximation() {
     setError("");
   };
 
-  const loadExample = (type: "sin" | "cos" | "exp", c: string, o: string, e: string) => {
+  const loadExample = (type: "sin" | "cos" | "exp" | "ln", c: string, o: string, e: string) => {
     setFunctionType(type);
     setCenter(c);
     setOrder(o);

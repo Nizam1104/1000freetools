@@ -80,11 +80,11 @@ export default function BigNumberCalculator() {
         const { quotient, remainder } = divideBigNumbers(num1, num2);
         setResult(`${quotient} R${remainder}`);
       } else if (operation === "power") {
-        if (BigInt(num2) < 0n) {
+        if (BigInt(num2) < BigInt(0)) {
           setError("Exponent must be non-negative for integer results");
           return;
         }
-        if (BigInt(num2) > 10000n) {
+        if (BigInt(num2) > BigInt(10000)) {
           setError("Exponent too large for practical computation");
           return;
         }

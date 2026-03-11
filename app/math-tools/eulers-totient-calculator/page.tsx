@@ -363,7 +363,7 @@ export default function EulersTotientCalculator() {
           <div>
             <h4 className="font-semibold text-sm mb-2">Is φ(n) always even?</h4>
             <p className="text-sm text-muted-foreground">
-              φ(n) is even for all n > 2. The only odd values are φ(1) = 1 and φ(2) = 1. This is because coprime numbers come in pairs: if k is coprime to n, so is n - k.
+              φ(n) is even for all n {'>'} 2. The only odd values are φ(1) = 1 and φ(2) = 1. This is because coprime numbers come in pairs: if k is coprime to n, so is n - k.
             </p>
           </div>
           <div>

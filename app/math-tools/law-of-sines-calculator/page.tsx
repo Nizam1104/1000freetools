@@ -281,9 +281,9 @@ export default function LawOfSinesCalculator() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-2">What if I get sin(A) > 1?</h4>
+            <h4 className="font-semibold text-sm mb-2">What if I get sin(A) {'>'} 1?</h4>
             <p className="text-sm text-muted-foreground">
-              That's impossible – sine values are always between -1 and 1. If your calculation gives sin(A) > 1, no triangle exists with the given measurements. Check your inputs.
+              That&apos;s impossible – sine values are always between -1 and 1. If your calculation gives sin(A) {'>'} 1, no triangle exists with the given measurements. Check your inputs.
             </p>
           </div>
           <div>

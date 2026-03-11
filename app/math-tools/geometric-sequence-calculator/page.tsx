@@ -189,7 +189,7 @@ export default function GeometricSequenceCalculator() {
           A geometric sequence is a list of numbers where each term is found by multiplying the previous term by a constant called the common ratio. If you start with 2 and multiply by 3 each time, you get: 2, 6, 18, 54, 162... This pattern appears everywhere from finance to biology.
         </p>
         <p className="text-muted-foreground">
-          Geometric sequences model exponential growth and decay. Population growth, compound interest, radioactive decay, and the spread of viruses all follow geometric patterns. The common ratio determines whether the sequence grows (r > 1), shrinks (0 < r < 1), or alternates (r < 0).
+          Geometric sequences model exponential growth and decay. Population growth, compound interest, radioactive decay, and the spread of viruses all follow geometric patterns. The common ratio determines whether the sequence grows (r {'>'} 1), shrinks (0 {'<'} r {'<'} 1), or alternates (r {'<'} 0).
         </p>
       </section>
 
@@ -292,13 +292,13 @@ export default function GeometricSequenceCalculator() {
           <div>
             <h4 className="font-semibold text-sm mb-2">Can the ratio be a fraction?</h4>
             <p className="text-sm text-muted-foreground">
-              Yes! When 0 < r < 1, the sequence decays toward zero. For example, with r = 0.5: 100, 50, 25, 12.5, 6.25... This models radioactive decay and depreciation.
+              Yes! When 0 {'<'} r {'<'} 1, the sequence decays toward zero. For example, with r = 0.5: 100, 50, 25, 12.5, 6.25... This models radioactive decay and depreciation.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-2">What's an infinite geometric series?</h4>
+            <h4 className="font-semibold text-sm mb-2">What&apos;s an infinite geometric series?</h4>
             <p className="text-sm text-muted-foreground">
-              When |r| < 1, the infinite sum converges to a finite value: S∞ = a₁ / (1 - r). For example, 1 + 1/2 + 1/4 + 1/8 + ... = 2. If |r| ≥ 1, the sum diverges to infinity.
+              When |r| {'<'} 1, the infinite sum converges to a finite value: S∞ = a₁ / (1 - r). For example, 1 + 1/2 + 1/4 + 1/8 + ... = 2. If |r| ≥ 1, the sum diverges to infinity.
             </p>
           </div>
           <div>

@@ -210,10 +210,10 @@ export default function BitwiseOperationsCalculator() {
             NOT 42
           </Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("5", "2", "lshift")}>
-            5 << 2
+            5 &lt;&lt; 2
           </Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("20", "2", "rshift")}>
-            20 >> 2
+            20 &gt;&gt; 2
           </Button>
           <Button variant="ghost" size="sm" onClick={() => loadExample("255", "15", "and")}>
             255 AND 15 (mask)
@@ -291,7 +291,7 @@ export default function BitwiseOperationsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">AND (&)</h4>
             <div className="font-mono text-xs bg-muted p-2 rounded mb-2">
-              1 & 1 = 1, otherwise 0
+              1 &amp; 1 = 1, otherwise 0
             </div>
             <p className="text-sm text-muted-foreground mb-2">
               Returns 1 only when both bits are 1. Commonly used for masking – extracting specific bits from a number.
@@ -305,7 +305,7 @@ export default function BitwiseOperationsCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">OR (|)</h4>
             <div className="font-mono text-xs bg-muted p-2 rounded mb-2">
-              0 | 0 = 0, otherwise 1
+              0 &#124; 0 = 0, otherwise 1
             </div>
             <p className="text-sm text-muted-foreground mb-2">
               Returns 1 if either bit is 1. Used for setting bits – turning specific flags on without affecting others.
@@ -353,8 +353,8 @@ export default function BitwiseOperationsCalculator() {
               Moves all bits left by specified positions. Equivalent to multiplying by 2^n. Used for fast multiplication.
             </p>
             <div className="font-mono text-xs bg-muted p-2 rounded">
-              Example: 5 << 2 = 20<br />
-              000101 << 2 = 010100 (5 × 4 = 20)
+              Example: 5 &lt;&lt; 2 = 20<br />
+              000101 &lt;&lt; 2 = 010100 (5 × 4 = 20)
             </div>
           </div>
 
@@ -367,8 +367,8 @@ export default function BitwiseOperationsCalculator() {
               Moves all bits right by specified positions. Equivalent to dividing by 2^n (floor division). Used for fast division.
             </p>
             <div className="font-mono text-xs bg-muted p-2 rounded">
-              Example: 20 >> 2 = 5<br />
-              010100 >> 2 = 000101 (20 ÷ 4 = 5)
+              Example: 20 &gt;&gt; 2 = 5<br />
+              010100 &gt;&gt; 2 = 000101 (20 ÷ 4 = 5)
             </div>
           </div>
         </div>
@@ -421,10 +421,10 @@ export default function BitwiseOperationsCalculator() {
               Left shift multiplies by powers of 2. Right shift divides by powers of 2. Faster than multiplication on many processors.
             </p>
             <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
-              <div>x << 1 = x × 2</div>
-              <div>x << 3 = x × 8</div>
-              <div>x >> 1 = x ÷ 2 (floor)</div>
-              <div>x >> 4 = x ÷ 16 (floor)</div>
+              <div>x &lt;&lt; 1 = x × 2</div>
+              <div>x &lt;&lt; 3 = x × 8</div>
+              <div>x &gt;&gt; 1 = x ÷ 2 (floor)</div>
+              <div>x &gt;&gt; 4 = x ÷ 16 (floor)</div>
             </div>
           </div>
         </div>
@@ -492,7 +492,7 @@ export default function BitwiseOperationsCalculator() {
             <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
               <div>5 in binary: 000101</div>
               <div>Shift left by 2 positions:</div>
-              <div>000101 << 2 = 010100</div>
+              <div>000101 {'<<'} 2 = 010100</div>
               <div>010100 = 16 + 4 = 20</div>
               <div>Verification: 5 × 2^2 = 5 × 4 = 20 ✓</div>
             </div>
@@ -506,7 +506,7 @@ export default function BitwiseOperationsCalculator() {
             <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
               <div>20 in binary: 010100</div>
               <div>Shift right by 2 positions:</div>
-              <div>010100 >> 2 = 000101</div>
+              <div>010100 {'>>'} 2 = 000101</div>
               <div>000101 = 4 + 1 = 5</div>
               <div>Verification: floor(20 / 2^2) = floor(20/4) = 5 ✓</div>
             </div>
@@ -561,19 +561,19 @@ export default function BitwiseOperationsCalculator() {
           <div>
             <h4 className="font-semibold text-sm mb-2">What happens with negative numbers?</h4>
             <p className="text-sm text-muted-foreground">
-              Negative numbers use two's complement representation. Bitwise operations work the same way on the bit patterns. Right shift (>>) preserves the sign bit (arithmetic shift), so negative numbers stay negative. Left shift can overflow and change the sign.
+              Negative numbers use two&apos;s complement representation. Bitwise operations work the same way on the bit patterns. Right shift ({'>>'}) preserves the sign bit (arithmetic shift), so negative numbers stay negative. Left shift can overflow and change the sign.
             </p>
           </div>
           <div>
             <h4 className="font-semibold text-sm mb-2">How do I check if a specific bit is set?</h4>
             <p className="text-sm text-muted-foreground">
-              Use AND with a mask that has 1 only at the bit position you care about. To check bit 3 (value 8 or 1000 in binary): if (number & 8) !== 0, then bit 3 is set. For bit n, use (number & (1 << n)) !== 0.
+              Use AND with a mask that has 1 only at the bit position you care about. To check bit 3 (value 8 or 1000 in binary): if (number & 8) !== 0, then bit 3 is set. For bit n, use (number & (1 {'<<'} n)) !== 0.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between >> and >>>?</h4>
+            <h4 className="font-semibold text-sm mb-2">What&apos;s the difference between {">>"} and {">>>"}?</h4>
             <p className="text-sm text-muted-foreground">
-              >> is arithmetic right shift – it preserves the sign bit, so negative numbers stay negative. >>> is logical right shift – it always fills with 0, treating the number as unsigned. In JavaScript, >>> converts to unsigned 32-bit.
+              {'>>'} is arithmetic right shift – it preserves the sign bit, so negative numbers stay negative. {'>>>'} is logical right shift – it always fills with 0, treating the number as unsigned. In JavaScript, {'>>>'} converts to unsigned 32-bit.
             </p>
           </div>
           <div>

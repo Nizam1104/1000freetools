@@ -336,6 +336,138 @@ export default function DerivativeCalculator() {
         )}
       </div>
 
+      <div className="mt-16 space-y-12">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">How the Derivative Calculator Works</h2>
+          <p className="text-muted-foreground mb-4">
+            This calculator applies the fundamental rules of differentiation to find the derivative of your function. The derivative represents the instantaneous rate of change of a function at any given point, which geometrically corresponds to the slope of the tangent line.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            When you enter a function, the calculator identifies which differentiation rule applies:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+            <li><strong>Power Rule:</strong> For functions like x^n, the derivative is n·x^(n-1)</li>
+            <li><strong>Product Rule:</strong> For u(x)·v(x), the derivative is u'v + uv'</li>
+            <li><strong>Quotient Rule:</strong> For u(x)/v(x), the derivative is (vu' - uv')/v²</li>
+            <li><strong>Chain Rule:</strong> For composite functions f(g(x)), the derivative is f'(g(x))·g'(x)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Example Calculations</h2>
+          
+          <h3 className="text-xl font-semibold mb-3 mt-6">Power Rule Example</h3>
+          <p className="text-muted-foreground mb-2">
+            Find the derivative of f(x) = 3x²
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>f(x) = 3x²</p>
+            <p>f'(x) = 3 · 2 · x^(2-1) = 6x</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Product Rule Example</h3>
+          <p className="text-muted-foreground mb-2">
+            Find the derivative of f(x) = (2x+1)(x-3)
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>Let u = 2x+1, so u' = 2</p>
+            <p>Let v = x-3, so v' = 1</p>
+            <p>f'(x) = u'v + uv' = 2(x-3) + (2x+1)(1) = 2x - 6 + 2x + 1 = 4x - 5</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Chain Rule Example</h3>
+          <p className="text-muted-foreground mb-2">
+            Find the derivative of f(x) = (3x+2)⁴
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>Outer function: u⁴, derivative: 4u³</p>
+            <p>Inner function: 3x+2, derivative: 3</p>
+            <p>f'(x) = 4(3x+2)³ · 3 = 12(3x+2)³</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Quick Fact: The Birth of Calculus</h2>
+          <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg">
+            <p className="text-muted-foreground">
+              The derivative was independently developed by both <strong>Isaac Newton</strong> and <strong>Gottfried Wilhelm Leibniz</strong> in the late 17th century. Newton called it the "method of fluxions" and used it to describe rates of change in physics, while Leibniz developed the notation dy/dx that we still use today. Their rivalry over who invented calculus first became one of the most famous disputes in the history of mathematics. Leibniz's notation proved more practical and is the standard we use in modern calculus.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What is a derivative in calculus?</h3>
+              <p className="text-muted-foreground">
+                A derivative measures how a function changes as its input changes. It represents the instantaneous rate of change or the slope of the tangent line at any point on the function's graph. For example, if you have a function describing position over time, its derivative gives you velocity.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">When do I use the product rule?</h3>
+              <p className="text-muted-foreground">
+                Use the product rule when differentiating two functions multiplied together, like f(x) = u(x)·v(x). The formula is: d/dx[u·v] = u'v + uv'. A common mistake is to think the derivative of a product is just the product of derivatives, which is incorrect.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What's the difference between the quotient and product rule?</h3>
+              <p className="text-muted-foreground">
+                The product rule handles multiplication: d/dx[u·v] = u'v + uv'. The quotient rule handles division: d/dx[u/v] = (vu' - uv')/v². Notice the quotient rule has subtraction in the numerator and the denominator squared, making it slightly more complex.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do I know when to use the chain rule?</h3>
+              <p className="text-muted-foreground">
+                Use the chain rule for composite functions—when one function is "inside" another. Examples include (3x+2)⁴, sin(2x), or e^(x²). If you can identify an "outer" function and an "inner" function, you need the chain rule: d/dx[f(g(x))] = f'(g(x))·g'(x).
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What does the derivative tell me about a graph?</h3>
+              <p className="text-muted-foreground">
+                The derivative at a point gives the slope of the tangent line at that point. When f'(x) &gt; 0, the function is increasing. When f'(x) &lt; 0, the function is decreasing. When f'(x) = 0, you have a critical point that could be a maximum, minimum, or inflection point.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can this calculator handle trigonometric functions?</h3>
+              <p className="text-muted-foreground">
+                Yes, the chain rule mode supports sin(ax+b) and cos(ax+b) functions. The derivatives follow standard rules: d/dx[sin(x)] = cos(x) and d/dx[cos(x)] = -sin(x), combined with the chain rule for the inner function.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Why does the derivative of a constant equal zero?</h3>
+              <p className="text-muted-foreground">
+                A constant doesn't change, so its rate of change is zero. Geometrically, a constant function graphs as a horizontal line, which has a slope of 0. This is why d/dx[5] = 0 and why the derivative of any constant term disappears during differentiation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/math-tools/tangent-line-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Tangent Line Calculator</h3>
+              <p className="text-sm text-muted-foreground">Find the equation of a tangent line at any point on a curve using derivatives.</p>
+            </a>
+            <a href="/math-tools/critical-point-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Critical Point Calculator</h3>
+              <p className="text-sm text-muted-foreground">Locate maximum, minimum, and inflection points by finding where the derivative equals zero.</p>
+            </a>
+            <a href="/math-tools/integral-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Integral Calculator</h3>
+              <p className="text-sm text-muted-foreground">Compute antiderivatives and definite integrals—the reverse operation of differentiation.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

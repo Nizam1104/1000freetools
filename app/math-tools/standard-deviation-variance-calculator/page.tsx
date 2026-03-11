@@ -182,7 +182,7 @@ export default function StandardDeviationVarianceCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Example 1: Small dataset</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Problem: Find standard deviation of {2, 4, 6, 8, 10}
+              Problem: Find standard deviation of {"{2, 4, 6, 8, 10}"}
             </p>
             <p className="text-sm text-muted-foreground mb-2">
               Step 1: Mean = (2+4+6+8+10)/5 = 30/5 = 6
@@ -204,7 +204,7 @@ export default function StandardDeviationVarianceCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Example 2: Sample vs Population</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Problem: Same data {2, 4, 6, 8, 10}, but treat as a sample
+              Problem: Same data {"{2, 4, 6, 8, 10}"}, but treat as a sample
             </p>
             <p className="text-sm text-muted-foreground mb-2">
               Steps 1-3 are identical. Sum of squared differences = 40
