@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function MatrixTraceCalculator() {
@@ -63,8 +62,8 @@ export default function MatrixTraceCalculator() {
     const rowCount = parsedRows.length;
     const colCount = parsedRows[0].length;
 
-    if (rowCount > 10) {
-      return { matrix: [], size: 0, error: "Maximum supported matrix size is 10×10" };
+    if (rowCount > 50) {
+      return { matrix: [], size: 0, error: "Maximum supported matrix size is 50x50" };
     }
 
     if (rowCount !== colCount) {
@@ -165,18 +164,28 @@ export default function MatrixTraceCalculator() {
     setTextareaError("");
   };
 
-  const loadExample = () => {
-    const examples: Record<number, number[][]> = {
-      2: [[1, 2], [3, 4]],
-      3: [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
-      4: [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
-    };
-    setMatrix(examples[size]);
+  const examples = [
+    { name: "Simple 2x2", matrix: [[1, 2], [3, 4]] },
+    { name: "3x3 Standard", matrix: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] },
+    { name: "4x4 Pattern", matrix: [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]] },
+    { name: "Identity 3x3", matrix: [[1, 0, 0], [0, 1, 0], [0, 0, 1]] },
+    { name: "Diagonal Matrix", matrix: [[5, 0, 0], [0, 3, 0], [0, 0, 2]] },
+    { name: "With Negatives", matrix: [[-2, 5], [3, -4]] },
+    { name: "Large Numbers", matrix: [[100, 50], [25, 200]] }
+  ];
+
+  const loadExample = (index: number) => {
+    const example = examples[index];
+    const exampleMatrix = example.matrix;
+    const newSize = exampleMatrix.length;
+    
+    setSize(newSize);
+    setMatrix(exampleMatrix);
 
     if (inputMode === "textarea") {
-      setTextareaValue(examples[size].map(row => row.join(" ")).join("\n"));
+      setTextareaValue(exampleMatrix.map(row => row.join(" ")).join("\n"));
     } else {
-      setRowInputs(examples[size].map(row => row.join(", ")));
+      setRowInputs(exampleMatrix.map(row => row.join(", ")));
     }
 
     setResult(null);
@@ -247,82 +256,86 @@ export default function MatrixTraceCalculator() {
       </div>
 
       <div className="space-y-4">
-        <Card>
-          <CardContent className="pt-6 space-y-4">
-            <div className="flex flex-wrap items-center gap-4">
-              <Label>Matrix Size:</Label>
-              <div className="flex gap-2">
-                {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                  <Button
-                    key={n}
-                    variant={size === n ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => handleSizeChange(n)}
-                    className="w-10"
-                  >
-                    {n}
-                  </Button>
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <Label>Matrix Size:</Label>
+            <div className="flex gap-2 flex-wrap">
+              {[2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20].map((n) => (
+                <Button
+                  key={n}
+                  variant={size === n ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => handleSizeChange(n)}
+                  className="w-10"
+                >
+                  {n}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            <span className="text-sm text-muted-foreground">Examples:</span>
+            {examples.map((ex, idx) => (
+              <Button key={idx} variant="outline" size="sm" onClick={() => loadExample(idx)}>{ex.name}</Button>
+            ))}
+            <Button variant="outline" size="sm" onClick={loadIdentityMatrix}>Identity</Button>
+            <Button variant="outline" size="sm" onClick={loadDiagonalMatrix}>Diagonal</Button>
+          </div>
+
+          <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
+            <TabsList>
+              <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
+              <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="textarea" className="space-y-4">
+              <div>
+                <Label>Enter matrix values (each row on a new line, values separated by spaces or commas)</Label>
+                <Textarea
+                  value={textareaValue}
+                  onChange={(e) => handleTextareaChange(e.target.value)}
+                  placeholder={`Example for 3x3 matrix:\n1 2 3\n4 5 6\n7 8 9\n\nor\n\n1, 2, 3\n4, 5, 6\n7, 8, 9`}
+                  className="min-h-[150px] font-mono"
+                />
+                {textareaError && (
+                  <p className="text-xs text-destructive mt-2">{textareaError}</p>
+                )}
+                <p className="text-xs text-muted-foreground mt-2">
+                  Current matrix: {size}x{size} | Detected from your input
+                </p>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="row" className="space-y-4">
+              <div className="space-y-3">
+                <Label>Enter each row (comma or space separated values)</Label>
+                {rowInputs.map((rowValue, rowIndex) => (
+                  <div key={rowIndex} className="flex items-center gap-2">
+                    <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
+                    <Input
+                      value={rowValue}
+                      onChange={(e) => parseRowInput(rowIndex, e.target.value)}
+                      placeholder={`Enter ${size} values for row ${rowIndex + 1}`}
+                      className="flex-1 font-mono"
+                    />
+                  </div>
                 ))}
               </div>
-              <Button variant="outline" size="sm" onClick={loadExample}>Load Example</Button>
-              <Button variant="outline" size="sm" onClick={loadIdentityMatrix}>Identity</Button>
-              <Button variant="outline" size="sm" onClick={loadDiagonalMatrix}>Diagonal</Button>
+            </TabsContent>
+          </Tabs>
+
+          {error && (
+            <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
+              {error}
             </div>
+          )}
 
-            <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
-              <TabsList>
-                <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
-                <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="textarea" className="space-y-4">
-                <div>
-                  <Label>Enter matrix values (each row on a new line, values separated by spaces or commas)</Label>
-                  <Textarea
-                    value={textareaValue}
-                    onChange={(e) => handleTextareaChange(e.target.value)}
-                    placeholder={`Example for 3×3 matrix:\n1 2 3\n4 5 6\n7 8 9\n\nor\n\n1, 2, 3\n4, 5, 6\n7, 8, 9`}
-                    className="min-h-[150px] font-mono"
-                  />
-                  {textareaError && (
-                    <p className="text-xs text-destructive mt-2">{textareaError}</p>
-                  )}
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Current matrix: {size}×{size} | Detected from your input
-                  </p>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="row" className="space-y-4">
-                <div className="space-y-3">
-                  <Label>Enter each row (comma or space separated values)</Label>
-                  {rowInputs.map((rowValue, rowIndex) => (
-                    <div key={rowIndex} className="flex items-center gap-2">
-                      <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
-                      <Input
-                        value={rowValue}
-                        onChange={(e) => parseRowInput(rowIndex, e.target.value)}
-                        placeholder={`Enter ${size} values for row ${rowIndex + 1}`}
-                        className="flex-1 font-mono"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-            </Tabs>
-
-            {error && (
-              <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
-                {error}
-              </div>
-            )}
-
-            <div className="flex gap-2">
-              <Button onClick={calculateTrace} disabled={matrix.length === 0}>Calculate Trace</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-          </CardContent>
-        </Card>
+          <div className="flex gap-2">
+            <Button onClick={calculateTrace} disabled={matrix.length === 0}>Calculate Trace</Button>
+            <Button variant="outline" onClick={reset}>Reset</Button>
+          </div>
+        </div>
 
         {result !== null && (
           <div className="space-y-4">
@@ -351,6 +364,132 @@ export default function MatrixTraceCalculator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Matrix Trace</h2>
+        <p className="text-muted-foreground">
+          The trace of a square matrix is simply the sum of its diagonal elements – those running from the top-left corner to the bottom-right. Despite its simplicity, the trace appears throughout mathematics and physics, from quantum mechanics to differential equations.
+        </p>
+        <p className="text-muted-foreground">
+          The trace has remarkable properties: it's invariant under similarity transformations, equals the sum of eigenvalues, and satisfies tr(AB) = tr(BA) even when AB ≠ BA. These properties make it a powerful tool in theoretical work.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Trace Formula and Properties</h3>
+        <div className="p-4 bg-muted rounded-lg">
+          <h4 className="font-semibold text-sm mb-3">Definition</h4>
+          <code className="text-sm font-mono block">
+            For A = [aᵢⱼ], tr(A) = a₁₁ + a₂₂ + ... + aₙₙ = Σ aᵢᵢ
+          </code>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Linearity</h4>
+            <p className="text-sm text-muted-foreground">tr(A + B) = tr(A) + tr(B)</p>
+            <p className="text-sm text-muted-foreground">tr(cA) = c·tr(A)</p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Cyclic Property</h4>
+            <p className="text-sm text-muted-foreground">tr(AB) = tr(BA)</p>
+            <p className="text-sm text-muted-foreground">tr(ABC) = tr(BCA) = tr(CAB)</p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Transpose</h4>
+            <p className="text-sm text-muted-foreground">tr(Aᵀ) = tr(A)</p>
+            <p className="text-sm text-muted-foreground">Same diagonal elements</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 1: 2x2 Matrix</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>A = [[1, 2], [3, 4]]</div>
+              <div>Diagonal elements: 1, 4</div>
+              <div>tr(A) = 1 + 4 = 5</div>
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 2: 3x3 Matrix</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</div>
+              <div>Diagonal elements: 1, 5, 9</div>
+              <div>tr(A) = 1 + 5 + 9 = 15</div>
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 3: Identity Matrix</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>I₃ = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]</div>
+              <div>Diagonal elements: 1, 1, 1</div>
+              <div>tr(I₃) = 1 + 1 + 1 = 3</div>
+              <div className="text-muted-foreground">For any n×n identity: tr(Iₙ) = n</div>
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 4: Diagonal Matrix</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>D = [[5, 0, 0], [0, 3, 0], [0, 0, 2]]</div>
+              <div>For diagonal matrices, trace = sum of diagonal entries</div>
+              <div>tr(D) = 5 + 3 + 2 = 10</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-4 bg-primary/10 border border-primary/20 rounded-lg">
+          <p className="text-sm">
+            The trace equals the sum of eigenvalues! This deep connection links a simple arithmetic operation (adding diagonal elements) to the fundamental spectral properties of a matrix. In quantum mechanics, the trace of a density matrix always equals 1, representing total probability.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is it called "trace"?</h4>
+            <p className="text-sm text-muted-foreground">
+              The term comes from the German "Spur" (track or trace), used by mathematicians in the early 20th century. It suggests the diagonal leaves a "trace" through the matrix from corner to corner.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can non-square matrices have a trace?</h4>
+            <p className="text-sm text-muted-foreground">
+              No. The trace requires a main diagonal from top-left to bottom-right, which only exists for square matrices. Rectangular matrices don't have this complete diagonal.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the trace of a zero matrix?</h4>
+            <p className="text-sm text-muted-foreground">
+              Zero! All diagonal elements are 0, so their sum is 0. This holds for any size zero matrix.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How is trace used in physics?</h4>
+            <p className="text-sm text-muted-foreground">
+              In quantum mechanics, the trace gives expectation values and probabilities. The trace of the density matrix equals 1 (total probability). In statistical mechanics, partition functions involve traces of operators.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Is trace the same as determinant?</h4>
+            <p className="text-sm text-muted-foreground">
+              No, they're different. Trace is the sum of diagonal elements (and eigenvalues). Determinant is the product of eigenvalues. Both are important matrix invariants but capture different properties.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the trace of AB vs BA?</h4>
+            <p className="text-sm text-muted-foreground">
+              They're equal! tr(AB) = tr(BA) even though AB ≠ BA in general. This cyclic property extends: tr(ABC) = tr(BCA) = tr(CAB), but not necessarily tr(ACB).
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

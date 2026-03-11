@@ -307,6 +307,161 @@ export default function TwosComplementCalculator() {
         )}
       </div>
 
+      <div className="mt-16 space-y-12">
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">How Two's Complement Works</h2>
+          <p className="text-muted-foreground mb-4">
+            Two's complement is the standard method computers use to represent signed integers in binary. It allows the same hardware circuits to perform addition and subtraction on both positive and negative numbers, making it essential for computer arithmetic.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            <strong>To convert a positive number:</strong> Simply write it in binary and pad to the desired bit width. The leftmost bit (sign bit) will be 0.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            <strong>To convert a negative number:</strong> 
+          </p>
+          <ol className="list-decimal list-inside space-y-2 text-muted-foreground ml-4">
+            <li>Start with the absolute value in binary</li>
+            <li>Invert all bits (0→1, 1→0) to get the one's complement</li>
+            <li>Add 1 to get the two's complement</li>
+          </ol>
+          <p className="text-muted-foreground mt-4">
+            The leftmost bit indicates the sign: 0 for positive, 1 for negative. In an 8-bit system, you can represent numbers from -128 to +127.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Example Conversions</h2>
+          
+          <h3 className="text-xl font-semibold mb-3 mt-6">Converting +42 to 8-bit Two's Complement</h3>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-2">
+            <p>Step 1: Convert 42 to binary</p>
+            <p>42 ÷ 2 = 21 remainder 0</p>
+            <p>21 ÷ 2 = 10 remainder 1</p>
+            <p>10 ÷ 2 = 5  remainder 0</p>
+            <p>5 ÷ 2 = 2   remainder 1</p>
+            <p>2 ÷ 2 = 1   remainder 0</p>
+            <p>1 ÷ 2 = 0   remainder 1</p>
+            <p className="mt-2">42 in binary = 101010</p>
+            <p>Pad to 8 bits: <strong>00101010</strong></p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Converting -42 to 8-bit Two's Complement</h3>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-2">
+            <p>Step 1: Start with |−42| = 42 = 00101010</p>
+            <p>Step 2: Invert all bits (one's complement)</p>
+            <p>00101010 → 11010101</p>
+            <p>Step 3: Add 1</p>
+            <p>11010101 + 1 = <strong>11010110</strong></p>
+            <p className="mt-2 text-muted-foreground">So -42 in 8-bit two's complement = 11010110</p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">Converting Two's Complement Back to Decimal</h3>
+          <p className="text-muted-foreground mb-2">
+            Decode: 11010110 (8-bit)
+          </p>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-2">
+            <p>Step 1: Check sign bit (leftmost)</p>
+            <p>1 = negative number</p>
+            <p>Step 2: Invert all bits</p>
+            <p>11010110 → 00101001</p>
+            <p>Step 3: Add 1</p>
+            <p>00101001 + 1 = 00101010</p>
+            <p>Step 4: Convert to decimal and negate</p>
+            <p>00101010 = 42, so result = <strong>-42</strong></p>
+          </div>
+
+          <h3 className="text-xl font-semibold mb-3 mt-6">16-bit Example: -1000</h3>
+          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+            <p>1000 in binary = 1111101000</p>
+            <p>Pad to 16 bits: 0000001111101000</p>
+            <p>Invert: 1111110000010111</p>
+            <p>Add 1: 1111110000011000</p>
+            <p className="mt-2">-1000 in 16-bit = <strong>1111110000011000</strong> = 0xFC18</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Quick Fact: Why Two's Complement Won</h2>
+          <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg">
+            <p className="text-muted-foreground">
+              Early computers used different methods for negative numbers. The IBM 704 (1954) used <strong>one's complement</strong>, which had a strange quirk: it had both +0 (00000000) and -0 (11111111)! This wasted a representation and complicated arithmetic. <strong>Two's complement</strong> was proposed by John von Neumann in 1945 and has only one zero, simpler arithmetic circuits, and the same addition hardware works for both positive and negative numbers. By the 1970s, two's complement became universal. The PDP-8 minicomputer helped popularize it, and today every modern processor uses two's complement for integer arithmetic.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Why do computers use two's complement?</h3>
+              <p className="text-muted-foreground">
+                Two's complement allows the same addition circuit to handle both positive and negative numbers. For example, 5 + (-3) works the same as regular binary addition. This simplifies hardware design and improves speed. It also avoids the problem of having both +0 and -0.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What's the range of an 8-bit two's complement number?</h3>
+              <p className="text-muted-foreground">
+                An 8-bit two's complement can represent -128 to +127. Notice the asymmetry: there's one more negative number than positive. This is because 0 takes up one of the "positive" patterns (00000000). For n bits, the range is -2^(n-1) to 2^(n-1)-1.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What does the sign bit tell me?</h3>
+              <p className="text-muted-foreground">
+                The leftmost bit indicates the sign: 0 means positive (or zero), 1 means negative. In 8-bit, any number starting with 0 (00000000 to 01111111) is 0 to 127. Any number starting with 1 (10000000 to 11111111) is -128 to -1.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do I detect overflow in two's complement?</h3>
+              <p className="text-muted-foreground">
+                Overflow occurs when adding two positives gives a negative, or adding two negatives gives a positive. More precisely: overflow happens when the carry into the sign bit differs from the carry out of the sign bit. For 8-bit: 100 + 50 = 150 overflows because 150 &gt; 127.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What is one's complement and why isn't it used?</h3>
+              <p className="text-muted-foreground">
+                One's complement simply inverts all bits to negate a number. The problem: it has two representations of zero (00000000 and 11111111), which complicates comparisons. Also, addition requires an "end-around carry" step. Two's complement fixes both issues.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do I convert two's complement to hexadecimal?</h3>
+              <p className="text-muted-foreground">
+                Group the binary digits into sets of 4 (starting from the right), then convert each group to hex. For example, 11010110 becomes 1101 0110 = D6 in hex. The hex value 0xD6 represents -42 in 8-bit two's complement.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What happens if I try to represent -129 in 8-bit?</h3>
+              <p className="text-muted-foreground">
+                You can't—this causes overflow. The minimum 8-bit value is -128 (10000000). Trying to represent -129 would wrap around to +127 due to overflow. This is why choosing the right bit width matters: use 16-bit for values outside -128 to 127.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/math-tools/binary-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Binary Converter</h3>
+              <p className="text-sm text-muted-foreground">Convert between decimal, binary, octal, and hexadecimal number systems.</p>
+            </a>
+            <a href="/math-tools/bitwise-operations-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Bitwise Operations Calculator</h3>
+              <p className="text-sm text-muted-foreground">Perform AND, OR, XOR, NOT, and shift operations on binary numbers.</p>
+            </a>
+            <a href="/math-tools/hex-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <h3 className="font-semibold mb-2">Hex Calculator</h3>
+              <p className="text-sm text-muted-foreground">Add, subtract, multiply, and divide hexadecimal numbers.</p>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

@@ -28,8 +28,8 @@ export default function HarmonicSeriesCalculator() {
       return;
     }
 
-    if (nValue > 10000) {
-      setError("Please enter n ≤ 10000 for practical computation");
+    if (nValue > 100000) {
+      setError("Please enter n ≤ 100,000 for practical computation");
       return;
     }
 
@@ -42,7 +42,6 @@ export default function HarmonicSeriesCalculator() {
       sum += term;
     }
 
-    // Approximation using Euler-Mascheroni constant
     const gamma = 0.5772156649015328606;
     const n_end = startValue + nValue - 1;
     const approxSum = Math.log(n_end) + gamma - (Math.log(startValue - 1) + gamma);
@@ -52,7 +51,7 @@ export default function HarmonicSeriesCalculator() {
       start: startValue,
       end: startValue + nValue - 1,
       sum: Math.round(sum * 1000000) / 1000000,
-      terms: terms.slice(0, 20), // Show first 20 terms
+      terms: terms.slice(0, 20),
       moreTerms: terms.length > 20,
       approximation: Math.round(approxSum * 1000000) / 1000000,
       formula: `H_n = 1 + 1/2 + 1/3 + ... + 1/n`
@@ -107,9 +106,16 @@ export default function HarmonicSeriesCalculator() {
         <div className="flex gap-2 flex-wrap">
           <Button onClick={calculate}>Calculate Sum</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
-          <Button variant="outline" onClick={() => loadExample("10", "1")}>H₁₀</Button>
-          <Button variant="outline" onClick={() => loadExample("100", "1")}>H₁₀₀</Button>
-          <Button variant="outline" onClick={() => loadExample("1000", "1")}>H₁₀₀₀</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-sm text-muted-foreground self-center">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("10", "1")}>H₁₀</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("100", "1")}>H₁₀₀</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1000", "1")}>H₁₀₀₀</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("10000", "1")}>H₁₀₀₀₀</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("50", "5")}>Start at 5</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("20", "10")}>Start at 10</Button>
         </div>
 
         {error && (
@@ -186,6 +192,145 @@ export default function HarmonicSeriesCalculator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding the Harmonic Series</h2>
+        <p className="text-muted-foreground">
+          The harmonic series is the sum of reciprocals of all positive integers: 1 + 1/2 + 1/3 + 1/4 + ... Despite the terms getting smaller and smaller, this series never stops growing – it diverges to infinity. However, it grows extremely slowly.
+        </p>
+        <p className="text-muted-foreground">
+          The partial sum Hₙ (the sum of the first n terms) is called the nth harmonic number. These numbers appear in many areas of mathematics, from number theory to analysis of algorithms. The harmonic series grows approximately like the natural logarithm of n.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Harmonic Series Formula</h3>
+        <div className="p-6 bg-muted rounded-lg">
+          <div className="font-mono text-center text-lg p-4 bg-background rounded mb-4">
+            Hₙ = 1 + 1/2 + 1/3 + ... + 1/n = Σ(k=1 to n) 1/k
+          </div>
+          <p className="text-sm mb-4">For large n, the harmonic number can be approximated by:</p>
+          <div className="font-mono text-center p-3 bg-background rounded mb-4">
+            Hₙ ≈ ln(n) + γ
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Where γ (gamma) ≈ 0.5772 is the Euler-Mascheroni constant. This approximation becomes more accurate as n increases.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 1: H₅ (First 5 Terms)</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>H₅ = 1 + 1/2 + 1/3 + 1/4 + 1/5</div>
+              <div>H₅ = 1 + 0.5 + 0.333... + 0.25 + 0.2</div>
+              <div>H₅ = 2.283333...</div>
+              <div className="text-muted-foreground mt-2">Exact fraction: 137/60</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 2: H₁₀</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>H₁₀ = 1 + 1/2 + 1/3 + ... + 1/10</div>
+              <div>H₁₀ ≈ 2.928968</div>
+              <div>Approximation: ln(10) + 0.5772 ≈ 2.3026 + 0.5772 = 2.8798</div>
+              <div className="text-muted-foreground mt-2">The approximation underestimates slightly for small n.</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 3: H₁₀₀₀</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>H₁₀₀₀ ≈ 7.485471</div>
+              <div>Approximation: ln(1000) + 0.5772 ≈ 6.9078 + 0.5772 = 7.485</div>
+              <div className="text-muted-foreground mt-2">Very close! The approximation improves for larger n.</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 4: How Large for Hₙ &gt; 10?</h4>
+            <div className="text-sm space-y-2">
+              <p>Using the approximation Hₙ ≈ ln(n) + γ:</p>
+              <div className="font-mono">ln(n) + 0.5772 &gt; 10</div>
+              <div className="font-mono">ln(n) &gt; 9.4228</div>
+              <div className="font-mono">n &gt; e^9.4228 ≈ 12,367</div>
+              <p className="text-muted-foreground mt-2">You need over 12,000 terms just to exceed 10!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-amber-800">Quick Fact</h4>
+          <p className="text-sm text-amber-700">
+            Despite diverging to infinity, the harmonic series grows so slowly that H₁₀₀₀₀₀₀₀₀₀ (one billion terms) is only about 21.3. Nicole Oresme proved the series diverges around 1350 – one of the first rigorous proofs of divergence in mathematics.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why does the harmonic series diverge?</h4>
+            <p className="text-sm text-muted-foreground">
+              Even though terms approach zero, they don't approach zero fast enough. Oresme's proof groups terms: (1) + (1/2) + (1/3+1/4) + (1/5+...+1/8) + ... Each group sums to at least 1/2, so the total exceeds any bound.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is the Euler-Mascheroni constant?</h4>
+            <p className="text-sm text-muted-foreground">
+              γ ≈ 0.5772 is the limiting difference between Hₙ and ln(n). It appears throughout mathematics but remains mysterious – we don't even know if it's irrational! It's named after the two mathematicians who studied it extensively.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Where does the harmonic series appear in real life?</h4>
+            <p className="text-sm text-muted-foreground">
+              In the "coupon collector problem" – how many purchases to collect all n different coupons? Expected value is n × Hₙ. Also in analysis of quicksort algorithm, harmonic numbers determine average-case complexity.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference from geometric series?</h4>
+            <p className="text-sm text-muted-foreground">
+              Geometric series have a constant ratio between terms (1, 1/2, 1/4, 1/8...). Harmonic series have denominators increasing by 1 (1, 1/2, 1/3, 1/4...). Geometric series with |r|&lt;1 converge; harmonic series diverges.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can I calculate Hₙ for very large n?</h4>
+            <p className="text-sm text-muted-foreground">
+              For very large n, use the approximation Hₙ ≈ ln(n) + γ + 1/(2n) - 1/(12n²). This is much faster than adding millions of terms and is extremely accurate for large n.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What are harmonic numbers used for?</h4>
+            <p className="text-sm text-muted-foreground">
+              Beyond the coupon collector problem, harmonic numbers appear in number theory (divisor sums), combinatorics (Stirling numbers), physics (quantum mechanics), and computer science (algorithm analysis).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/geometric-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Geometric Series</p>
+            <p className="text-xs text-muted-foreground">Sum of geometric terms</p>
+          </a>
+          <a href="/math-tools/arithmetic-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Arithmetic Series</p>
+            <p className="text-xs text-muted-foreground">Sum of arithmetic terms</p>
+          </a>
+          <a href="/math-tools/infinite-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Infinite Series</p>
+            <p className="text-xs text-muted-foreground">Convergence tests</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

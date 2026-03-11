@@ -12,14 +12,14 @@ export default function BinomialExpansionCalculator() {
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState("");
 
-  const factorial = (num: number): number => {
-    if (num <= 1) return 1;
-    let result = 1;
-    for (let i = 2; i <= num; i++) result *= i;
+  const factorial = (num: number): bigint => {
+    if (num <= 1) return BigInt(1);
+    let result = BigInt(1);
+    for (let i = 2; i <= num; i++) result *= BigInt(i);
     return result;
   };
 
-  const binomialCoefficient = (n: number, k: number): number => {
+  const binomialCoefficient = (n: number, k: number): bigint => {
     return factorial(n) / (factorial(k) * factorial(n - k));
   };
 
@@ -33,8 +33,8 @@ export default function BinomialExpansionCalculator() {
       return;
     }
 
-    if (nValue > 15) {
-      setError("Please enter n ≤ 15 for practical computation");
+    if (nValue > 25) {
+      setError("Please enter n ≤ 25 for practical computation");
       return;
     }
 
@@ -47,7 +47,7 @@ export default function BinomialExpansionCalculator() {
       const bPower = k;
 
       let term = "";
-      let coeffStr = coeff === 1 && (aPower > 0 || bPower > 0) ? "" : coeff.toString();
+      let coeffStr = coeff === BigInt(1) && (aPower > 0 || bPower > 0) ? "" : coeff.toString();
 
       // Build the term
       if (aPower === 0 && bPower === 0) {
@@ -181,6 +181,8 @@ export default function BinomialExpansionCalculator() {
           <Button variant="outline" onClick={() => loadExample("x", "1", "3")}>(x+1)³</Button>
           <Button variant="outline" onClick={() => loadExample("x", "y", "4")}>(x+y)⁴</Button>
           <Button variant="outline" onClick={() => loadExample("2x", "3", "5")}>(2x+3)⁵</Button>
+          <Button variant="outline" onClick={() => loadExample("a", "b", "6")}>(a+b)⁶</Button>
+          <Button variant="outline" onClick={() => loadExample("x", "-2", "4")}>(x-2)⁴</Button>
         </div>
 
         {error && (
@@ -208,7 +210,7 @@ export default function BinomialExpansionCalculator() {
               <div className="flex flex-wrap gap-2 mb-3">
                 {result.terms.map((_: string, i: number) => (
                   <span key={i} className="px-3 py-1 bg-muted rounded-full text-sm font-mono">
-                    C({result.n},{i}) = {binomialCoefficient(result.n, i)}
+                    C({result.n},{i}) = {binomialCoefficient(result.n, i).toString()}
                   </span>
                 ))}
               </div>
@@ -233,6 +235,118 @@ export default function BinomialExpansionCalculator() {
           </div>
         )}
       </div>
+
+      <section className="space-y-6 pt-8 border-t">
+        <h2 className="text-2xl font-semibold">Understanding Binomial Expansion</h2>
+        
+        <div className="space-y-4">
+          <p>
+            The binomial expansion lets you multiply out expressions like (a + b)^n without doing all the algebra by hand. It's one of those tools that shows up everywhere — from probability to calculus to physics.
+          </p>
+
+          <h3 className="text-xl font-semibold">How the Binomial Theorem Works</h3>
+          <p>
+            The formula behind this calculator is:
+          </p>
+          <div className="p-4 bg-muted rounded-lg">
+            <code className="text-sm font-mono block">
+              (a + b)^n = Σ(k=0 to n) C(n,k) × a^(n-k) × b^k
+            </code>
+          </div>
+          <p>
+            Breaking that down: C(n,k) is the binomial coefficient — the number of ways to choose k items from n. You'll also see it written as "n choose k" or <span className="font-mono">nCk</span>. Each term in the expansion picks a different value of k, starting from 0 and going up to n.
+          </p>
+
+          <h3 className="text-xl font-semibold">Worked Examples</h3>
+          
+          <div className="space-y-4">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 1: Expanding (x + 1)³</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                This is the classic introductory example. With n=3, we get 4 terms.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                (x + 1)³ = x³ + 3x² + 3x + 1
+              </code>
+              <p className="text-sm mt-2">
+                The coefficients 1, 3, 3, 1 come from row 3 of Pascal's triangle.
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 2: Expanding (x + y)⁴</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Now with two variables, the powers split between them.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                (x + y)⁴ = x⁴ + 4x³y + 6x²y² + 4xy³ + y⁴
+              </code>
+              <p className="text-sm mt-2">
+                Notice how the powers of x decrease (4→3→2→1→0) while powers of y increase (0→1→2→3→4). The coefficients 1, 4, 6, 4, 1 are symmetric.
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Example 3: Expanding (2x - 3)⁵</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                When one term has a coefficient or is negative, you carry it through each term.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                (2x - 3)⁵ = 32x⁵ - 240x⁴ + 360x³ - 270x² + 135x - 27
+              </code>
+              <p className="text-sm mt-2">
+                The alternating signs come from the negative term. The coefficients get multiplied by powers of 2 and 3.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold">A Quick Fact</h3>
+          <div className="p-4 bg-muted rounded-lg">
+            <p className="text-sm">
+              The binomial theorem for positive integer exponents was known to mathematicians in the 10th century, but Blaise Pascal's 1653 treatise on the arithmetic triangle made it widely known in Europe. Isaac Newton later generalized it to work with fractional and negative exponents — a key step in developing calculus.
+            </p>
+          </div>
+
+          <h3 className="text-xl font-semibold">Common Questions</h3>
+          
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold mb-2">What does the binomial coefficient represent?</h4>
+              <p className="text-sm">
+                C(n,k) counts the number of ways to pick k items from a set of n. In the expansion, it tells you how many different ways you can grab "a" exactly (n-k) times and "b" exactly k times when multiplying out (a+b)×(a+b)×...×(a+b).
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Why do the coefficients form Pascal's triangle?</h4>
+              <p className="text-sm">
+                Each row of Pascal's triangle gives you the coefficients for a specific power. Row 0 is (a+b)⁰, row 1 is (a+b)¹, and so on. The pattern emerges because C(n,k) = C(n-1,k-1) + C(n-1,k) — the same rule that builds Pascal's triangle.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Can this calculator handle negative or fractional powers?</h4>
+              <p className="text-sm">
+                This tool handles non-negative integer exponents. For negative or fractional powers, you'd need the generalized binomial theorem, which produces infinite series instead of finite expansions.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">What's the largest n I can use?</h4>
+              <p className="text-sm">
+                The calculator supports n up to 25. Beyond that, the coefficients get extremely large and the expansion becomes unwieldy to display. For reference, (a+b)^25 has 26 terms and the middle coefficient is over 26 billion.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">How do I use this for probability?</h4>
+              <p className="text-sm">
+                The binomial expansion is the foundation of the binomial distribution. If you have a coin with probability p of heads, the expansion of (p + (1-p))^n gives you the probabilities of getting 0, 1, 2, ..., n heads in n flips.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

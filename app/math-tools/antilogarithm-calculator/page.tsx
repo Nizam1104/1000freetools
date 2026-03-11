@@ -73,6 +73,14 @@ export default function AntilogarithmCalculator() {
     setError("");
   };
 
+  const loadExample = (exampleMode: typeof mode, value: string, base?: string) => {
+    setMode(exampleMode);
+    setLogValue(value);
+    setCustomBase(base || "");
+    setResult(null);
+    setError("");
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <div className="mb-8">
@@ -120,9 +128,34 @@ export default function AntilogarithmCalculator() {
           </div>
         )}
 
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button onClick={calculateAntilog}>Calculate Antilog</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("base-10", "2")}>
+            log₁₀(x) = 2
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("base-10", "-3")}>
+            log₁₀(x) = -3
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("natural", "1")}>
+            ln(x) = 1
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("natural", "2.5")}>
+            ln(x) = 2.5
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("base-2", "8")}>
+            log₂(x) = 8
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("base-2", "-4")}>
+            log₂(x) = -4
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("custom", "3", "5")}>
+            log₅(x) = 3
+          </Button>
         </div>
 
         {error && (
@@ -142,6 +175,177 @@ export default function AntilogarithmCalculator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Antilogarithms</h2>
+        <div className="space-y-4">
+          <p className="text-muted-foreground">
+            An antilogarithm – often shortened to "antilog" – is simply the inverse operation of a logarithm. If you know that log₁₀(100) = 2, then the antilog of 2 (base 10) is 100. In other words, antilog asks: "10 raised to what power gives me this number?" The answer is your log value, and the result is the original number.
+          </p>
+          <p className="text-muted-foreground">
+            This relationship shows up constantly in science and engineering. pH calculations flip between logarithmic pH values and actual hydrogen ion concentrations. The Richter scale compresses earthquake energies logarithmically – finding the actual energy requires an antilog. Decibels, stellar magnitudes, and radioactive decay all use this log-antilog pair.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">The Math Behind Antilogs</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">The Core Relationship</h4>
+            <div className="font-mono text-sm bg-muted p-3 rounded mb-3">
+              If log_b(x) = y, then antilog_b(y) = x = b^y
+            </div>
+            <p className="text-sm text-muted-foreground">
+              This is the fundamental definition. The antilog undoes the logarithm by raising the base to the power of the log value. Base 10 antilogs use 10^y, natural antilogs use e^y (where e ≈ 2.71828), and base 2 antilogs use 2^y.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Common Bases</h4>
+            <div className="space-y-2 text-sm">
+              <div className="font-mono bg-muted p-2 rounded">Base 10: antilog₁₀(y) = 10^y</div>
+              <p className="text-muted-foreground ml-2">
+                Used in scientific notation, pH calculations, and the Richter scale. A log value of 3 means the original number was 1,000.
+              </p>
+              <div className="font-mono bg-muted p-2 rounded mt-2">Natural (base e): antilogₑ(y) = e^y</div>
+              <p className="text-muted-foreground ml-2">
+                Appears in continuous growth models, compound interest, and probability distributions. The natural antilog of 1 equals e ≈ 2.718.
+              </p>
+              <div className="font-mono bg-muted p-2 rounded mt-2">Base 2: antilog₂(y) = 2^y</div>
+              <p className="text-muted-foreground ml-2">
+                Common in computer science for data sizes and algorithm complexity. An antilog of 10 gives 1,024 – one kilobyte in binary.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Base 10 Antilog</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Find the antilog of 2.5 (base 10).
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>antilog₁₀(2.5) = 10^2.5</div>
+              <div>10^2.5 = 10^2 × 10^0.5</div>
+              <div>10^2 = 100</div>
+              <div>10^0.5 = √10 ≈ 3.162</div>
+              <div>100 × 3.162 = 316.2</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Natural Antilog</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Find e^1.5 (the natural antilog of 1.5).
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>antilogₑ(1.5) = e^1.5</div>
+              <div>e ≈ 2.71828</div>
+              <div>e^1.5 ≈ 2.71828^1.5</div>
+              <div>e^1.5 ≈ 4.4817</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Base 2 Antilog</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Find the antilog of 12 (base 2).
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>antilog₂(12) = 2^12</div>
+              <div>2^10 = 1,024</div>
+              <div>2^12 = 2^10 × 2^2 = 1,024 × 4</div>
+              <div>2^12 = 4,096</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Negative Log Value</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Find the antilog of -2 (base 10).
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>antilog₁₀(-2) = 10^(-2)</div>
+              <div>10^(-2) = 1 / 10^2</div>
+              <div>10^(-2) = 1 / 100</div>
+              <div>10^(-2) = 0.01</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 5: Custom Base</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Find the antilog of 3 with base 5.
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>antilog₅(3) = 5^3</div>
+              <div>5^3 = 5 × 5 × 5</div>
+              <div>5^3 = 125</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-muted rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">Quick Fact</h3>
+          <p className="text-sm text-muted-foreground">
+            Before electronic calculators, mathematicians and engineers used printed antilog tables to reverse logarithmic calculations. These tables listed antilog values for inputs from 0.000 to 0.999, and users would adjust for the integer part by moving the decimal point. A typical 7-place antilog table had over 1,000 pages.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference between antilog and inverse log?</h4>
+            <p className="text-sm text-muted-foreground">
+              They're the same thing. "Antilog" is shorthand for "antilogarithm," which means the inverse function of a logarithm. Some textbooks say "inverse log" or "exponential form" – all refer to raising the base to the power of the log value.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can antilog values be negative?</h4>
+            <p className="text-sm text-muted-foreground">
+              No. When you raise a positive base to any real power, the result is always positive. Even 10^(-5) = 0.00001, which is small but still positive. The antilog function's range is (0, ∞) for any positive base.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What happens with antilog of zero?</h4>
+            <p className="text-sm text-muted-foreground">
+              Any base raised to the power of 0 equals 1. So antilog_b(0) = b^0 = 1 for any valid base. This makes sense because log_b(1) = 0 for any base – the logarithm of 1 is always zero.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I calculate antilog without a calculator?</h4>
+            <p className="text-sm text-muted-foreground">
+              For integer exponents, just multiply the base by itself that many times. For fractional exponents like 10^2.5, break it into 10^2 × 10^0.5, where 10^0.5 is the square root of 10. For more complex values, you'd historically use log tables or a slide rule.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is e used for natural antilogs?</h4>
+            <p className="text-sm text-muted-foreground">
+              The number e ≈ 2.71828 is the base of natural logarithms because it arises naturally in continuous growth processes. When something grows continuously at 100% per time period, it grows by a factor of e each period. This makes e^x the natural choice for modeling population growth, radioactive decay, and compound interest.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Where do antilogs appear in real applications?</h4>
+            <p className="text-sm text-muted-foreground">
+              Chemistry uses antilogs to convert pH back to hydrogen ion concentration: [H⁺] = 10^(-pH). Seismology converts Richter magnitudes to energy using antilogs. Finance uses natural antilogs in continuous compounding formulas. Signal processing converts decibel levels back to power ratios. Any field using logarithmic scales needs antilogs to recover actual values.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What if my log value is very large?</h4>
+            <p className="text-sm text-muted-foreground">
+              Large log values produce enormous antilogs. For example, antilog₁₀(100) = 10^100, which is a googol – a 1 followed by 100 zeros. Most calculators overflow around 10^308. This calculator handles large values but may display results in scientific notation for readability.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

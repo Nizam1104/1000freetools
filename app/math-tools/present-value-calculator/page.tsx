@@ -84,19 +84,19 @@ export default function PresentValueCalculator() {
     setError("");
   };
 
-  const loadExample = () => {
-    setFutureValue("50000");
-    setRate("6");
-    setTime("10");
-    setTimeUnit("years");
-    setCompounding("annual");
+  const loadExample = (fv: string, r: string, t: string, unit: "years" | "months", comp: typeof compounding) => {
+    setFutureValue(fv);
+    setRate(r);
+    setTime(t);
+    setTimeUnit(unit);
+    setCompounding(comp);
     setResult(null);
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">Present Value Calculator – Compute PV of Future Money</h1>
+        <h1 className="text-3xl font-semibold mb-2">Present Value Calculator - Compute PV of Future Money</h1>
         <p className="text-muted-foreground">
           Determine the present value of any future amount with our free online present value calculator. Discount future cash flows to their current worth using any interest rate.
         </p>
@@ -161,10 +161,19 @@ export default function PresentValueCalculator() {
           </Select>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button onClick={calculate}>Calculate Present Value</Button>
           <Button variant="outline" onClick={reset}>Reset</Button>
-          <Button variant="outline" onClick={loadExample}>Load Example</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground self-center">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("50000", "6", "10", "years", "annual")}>$50k in 10 yrs @ 6%</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("100000", "5", "20", "years", "annual")}>$100k retirement</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("10000", "4", "3", "years", "quarterly")}>$10k quarterly</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("5000", "3.5", "24", "months", "monthly")}>$5k in 2 yrs</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1000000", "7", "30", "years", "annual")}>$1M in 30 yrs</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("25000", "8", "5", "years", "daily")}>$25k daily comp</Button>
         </div>
 
         {error && (
@@ -211,6 +220,166 @@ export default function PresentValueCalculator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Present Value</h2>
+        <p className="text-muted-foreground">
+          Present value answers a fundamental financial question: What is a future sum of money worth today? The answer depends on the time value of money - the principle that money available now is worth more than the same amount in the future because it can earn interest.
+        </p>
+        <p className="text-muted-foreground">
+          This concept is crucial for investment decisions, retirement planning, loan comparisons, and business valuation. If someone promises you $10,000 in 5 years, present value tells you what that promise is worth right now.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">The Present Value Formula</h3>
+        <div className="p-4 bg-muted rounded-lg">
+          <p className="font-mono text-center text-lg mb-3">
+            PV = FV / (1 + r/n)^(nt)
+          </p>
+          <div className="text-sm text-muted-foreground space-y-1">
+            <p>Where:</p>
+            <p>• PV = Present Value (what we're solving for)</p>
+            <p>• FV = Future Value (the amount you'll receive later)</p>
+            <p>• r = Annual interest rate (as a decimal)</p>
+            <p>• n = Compounding frequency per year</p>
+            <p>• t = Time in years</p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4 mt-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Why Discount Future Money?</h4>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Opportunity cost - money today can be invested</li>
+              <li>• Inflation erodes purchasing power over time</li>
+              <li>• Risk - future payments aren't guaranteed</li>
+              <li>• Preference for immediate consumption</li>
+            </ul>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Compounding Impact</h4>
+            <p className="text-sm text-muted-foreground mb-2">More frequent compounding means:</p>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li>• Higher effective interest rate</li>
+              <li>• Lower present value (more discounting)</li>
+              <li>• Daily vs annual can make a real difference</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Simple Present Value</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              What's the present value of $50,000 to be received in 10 years, assuming a 6% annual return?
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>FV = $50,000, r = 6%, n = 1 (annual), t = 10 years</div>
+              <div>PV = 50,000 / (1 + 0.06/1)^(1×10)</div>
+              <div>PV = 50,000 / (1.06)^10</div>
+              <div>PV = 50,000 / 1.7908</div>
+              <div className="text-green-600 font-semibold">PV = $27,919.74</div>
+              <div className="text-muted-foreground">You'd need to invest $27,920 today to have $50,000 in 10 years at 6%</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Retirement Planning</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              You want $1,000,000 for retirement in 30 years. At 7% annual return, how much do you need today?
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>FV = $1,000,000, r = 7%, t = 30 years</div>
+              <div>PV = 1,000,000 / (1.07)^30</div>
+              <div>PV = 1,000,000 / 7.6123</div>
+              <div className="text-green-600 font-semibold">PV = $131,367.12</div>
+              <div className="text-muted-foreground">Invest $131k now at 7% and you'll have $1M in 30 years</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Comparing Payment Options</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Should you take $8,000 today or $10,000 in 3 years? Assume you can earn 5% annually.
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>PV of $10,000 in 3 years:</div>
+              <div>PV = 10,000 / (1.05)^3 = 10,000 / 1.1576</div>
+              <div>PV = $8,638.38</div>
+              <div className="text-green-600 font-semibold">Take the $10,000 in 3 years - it's worth $8,638 today!</div>
+              <div className="text-muted-foreground">The future payment has higher present value</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Effect of Compounding Frequency</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              PV of $10,000 in 5 years at 5% with different compounding:
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>Annual (n=1): PV = $7,835.26</div>
+              <div>Quarterly (n=4): PV = $7,800.22</div>
+              <div>Monthly (n=12): PV = $7,792.06</div>
+              <div>Daily (n=365): PV = $7,788.08</div>
+              <div className="text-muted-foreground">More frequent compounding = slightly lower PV</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-4 bg-primary/10 border border-primary/30 rounded-lg">
+          <p className="text-sm">
+            The concept of present value dates back to the 13th century when Italian mathematician Leonardo Fibonacci wrote about it in Liber Abaci (1202). However, the formal mathematical treatment wasn't developed until the 17th century by Dutch mathematician Christiaan Huygens, who used it to value annuities. Today, PV calculations underpin everything from mortgage payments to stock valuations to lottery payout decisions.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's a good discount rate to use?</h4>
+            <p className="text-sm text-muted-foreground">
+              It depends on your situation. For personal finance, use your expected investment return (8-10% for stocks, 4-5% for bonds). For business, use the weighted average cost of capital (WACC). For risk-free calculations, use Treasury bond rates. Higher rates mean lower present values.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How does inflation affect present value?</h4>
+            <p className="text-sm text-muted-foreground">
+              Inflation is one reason future money is worth less. If you want to account for inflation specifically, use a "real" discount rate: real rate = nominal rate - inflation rate. At 6% nominal return and 3% inflation, your real return is about 3%.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can present value be negative?</h4>
+            <p className="text-sm text-muted-foreground">
+              No, present value of a positive future amount is always positive. However, in investment analysis, "net present value" (NPV) can be negative if the initial cost exceeds the present value of future cash flows - indicating a bad investment.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference between PV and NPV?</h4>
+            <p className="text-sm text-muted-foreground">
+              PV calculates the current worth of a single future amount or stream of cash flows. NPV subtracts the initial investment cost from the PV of future cash flows. Positive NPV means the investment creates value; negative NPV means it destroys value.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why does compounding frequency matter?</h4>
+            <p className="text-sm text-muted-foreground">
+              More frequent compounding means interest earns interest sooner. $1,000 at 6% compounded daily earns more than compounded annually. The difference seems small short-term but grows over time. The theoretical limit is "continuous compounding" using e (Euler's number).
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">When would I use present value in real life?</h4>
+            <p className="text-sm text-muted-foreground">
+              Comparing job offers with different signing bonuses, deciding between lump-sum and annuity lottery payouts, evaluating whether to pay off a loan early, calculating how much to save for retirement, valuing a business, or determining if a rental property is worth the purchase price.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

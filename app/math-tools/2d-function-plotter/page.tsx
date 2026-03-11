@@ -171,40 +171,40 @@ export default function FunctionPlotter() {
                     <line x1="0" y1={pos} x2="100" y2={pos} stroke="currentColor" strokeWidth="0.3" className="text-muted" strokeDasharray="1,1" />
                   </g>
                 ))}
-                
+
                 {/* Axes */}
                 <line x1="10" y1="90" x2="95" y2="90" stroke="currentColor" strokeWidth="0.5" className="text-foreground" />
                 <line x1="10" y1="10" x2="10" y2="95" stroke="currentColor" strokeWidth="0.5" className="text-foreground" />
-                
+
                 {/* Zero lines if in range */}
                 {parseFloat(yMin) < 0 && parseFloat(yMax) > 0 && (
-                  <line 
-                    x1="10" 
+                  <line
+                    x1="10"
                     y1={90 - ((0 - parseFloat(yMin)) / (parseFloat(yMax) - parseFloat(yMin))) * 70 - 10}
-                    x2="95" 
+                    x2="95"
                     y2={90 - ((0 - parseFloat(yMin)) / (parseFloat(yMax) - parseFloat(yMin))) * 70 - 10}
-                    stroke="currentColor" 
-                    strokeWidth="0.5" 
+                    stroke="currentColor"
+                    strokeWidth="0.5"
                     className="text-muted"
                     strokeDasharray="2,2"
                   />
                 )}
                 {parseFloat(xMin) < 0 && parseFloat(xMax) > 0 && (
-                  <line 
+                  <line
                     x1={10 + ((0 - parseFloat(xMin)) / (parseFloat(xMax) - parseFloat(xMin))) * 80}
                     y1="10"
                     x2={10 + ((0 - parseFloat(xMin)) / (parseFloat(xMax) - parseFloat(xMin))) * 80}
                     y2="90"
-                    stroke="currentColor" 
-                    strokeWidth="0.5" 
+                    stroke="currentColor"
+                    strokeWidth="0.5"
                     className="text-muted"
                     strokeDasharray="2,2"
                   />
                 )}
-                
+
                 {/* Function path */}
                 <path d={pathD} fill="none" stroke="currentColor" strokeWidth="1.5" className="text-primary" />
-                
+
                 {/* Labels */}
                 <text x="95" y="88" textAnchor="end" className="text-xs fill-muted-foreground">x</text>
                 <text x="12" y="14" textAnchor="start" className="text-xs fill-muted-foreground">y</text>
@@ -220,6 +220,198 @@ export default function FunctionPlotter() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Graph Any Mathematical Function in 2D</h2>
+        <p className="text-muted-foreground">
+          This 2D function plotter lets you visualize any mathematical function y = f(x) instantly. Type in your function, set the x and y range, and see the graph appear. No sign-up, no installation — it runs entirely in your browser.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">How to Plot a Function</h2>
+        <div className="space-y-4">
+          <p className="text-muted-foreground">
+            Enter your function in the f(x) field using standard math notation. The plotter understands powers (x^2, x^3), trig functions (sin, cos, tan), logarithms (log for base-10, ln for natural log), square roots (sqrt), and constants like pi and e.
+          </p>
+          <p className="text-muted-foreground">
+            Adjust the viewing window by setting X Min, X Max, Y Min, and Y Max. The default range of -10 to 10 works for many functions, but you will want to zoom in or out depending on what you are studying.
+          </p>
+          <p className="text-muted-foreground">
+            Click "Plot Function" and the graph appears below. The x-axis runs horizontally, the y-axis vertically. Where the curve crosses the x-axis, y = 0 — these are the roots or x-intercepts of your function.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Supported Functions and Syntax</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Basic Operations</h3>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li><code className="bg-muted px-1">+</code> Addition</li>
+              <li><code className="bg-muted px-1">-</code> Subtraction</li>
+              <li><code className="bg-muted px-1">*</code> Multiplication</li>
+              <li><code className="bg-muted px-1">/</code> Division</li>
+              <li><code className="bg-muted px-1">^</code> Power (x^2 means x²)</li>
+            </ul>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Trigonometric Functions</h3>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li><code className="bg-muted px-1">sin(x)</code> Sine (x in radians)</li>
+              <li><code className="bg-muted px-1">cos(x)</code> Cosine</li>
+              <li><code className="bg-muted px-1">tan(x)</code> Tangent</li>
+            </ul>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Logarithmic &amp; Exponential</h3>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li><code className="bg-muted px-1">log(x)</code> Base-10 logarithm</li>
+              <li><code className="bg-muted px-1">ln(x)</code> Natural logarithm (base e)</li>
+              <li><code className="bg-muted px-1">exp(x)</code> e^x</li>
+            </ul>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Other Functions</h3>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li><code className="bg-muted px-1">sqrt(x)</code> Square root</li>
+              <li><code className="bg-muted px-1">abs(x)</code> Absolute value</li>
+              <li><code className="bg-muted px-1">pi</code> π ≈ 3.14159</li>
+              <li><code className="bg-muted px-1">e</code> Euler's number ≈ 2.71828</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Example Functions to Try</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Quadratic: x^2</h3>
+            <p className="text-sm text-muted-foreground">
+              The classic parabola. Opens upward, vertex at origin. Try x^2 - 4 to see it shift down, or (x-2)^2 to shift right.
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Cubic: x^3 - 3*x</h3>
+            <p className="text-sm text-muted-foreground">
+              An S-shaped curve with two turning points. This specific cubic has local max and min — good for studying calculus.
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Sine Wave: sin(x)</h3>
+            <p className="text-sm text-muted-foreground">
+              The fundamental periodic function. Try 2*sin(x) for double amplitude, or sin(2*x) for double frequency.
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Exponential: exp(x)</h3>
+            <p className="text-sm text-muted-foreground">
+              Rapid growth curve. Compare with exp(-x) for exponential decay. Both appear in physics and finance.
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Square Root: sqrt(x)</h3>
+            <p className="text-sm text-muted-foreground">
+              Defined only for x ≥ 0. The curve starts at origin and grows slower as x increases.
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-semibold text-sm mb-2">Rational: 1/x</h3>
+            <p className="text-sm text-muted-foreground">
+              Hyperbola with two branches. Has vertical asymptote at x=0 and horizontal asymptote at y=0.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Function Graphs</h2>
+        <div className="space-y-4">
+          <p className="text-muted-foreground">
+            A function graph shows the relationship between input (x) and output (y). Each point on the curve represents one input-output pair. If you pick any x-value and draw a vertical line, it hits the curve at exactly one point — that is what makes it a function.
+          </p>
+          <p className="text-muted-foreground">
+            The shape of the graph tells you about the function's behavior. Where the curve goes up as you move right, the function is increasing. Where it goes down, the function is decreasing. Flat spots (horizontal tangents) often mark maximum or minimum values.
+          </p>
+          <p className="text-muted-foreground">
+            Intercepts matter. The y-intercept (where x=0) shows the starting value. X-intercepts (where y=0) are the function's roots — solutions to f(x) = 0. These points have practical meaning in physics, economics, and engineering problems.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Quick Fact: The Language of Functions</h2>
+        <p className="text-muted-foreground">
+          The term "function" was coined by German mathematician Gottfried Wilhelm Leibniz in 1694, from the Latin "functio" meaning "performance" or "execution." Swiss mathematician Leonhard Euler introduced the notation f(x) in 1734, which we still use today. Euler also popularized using letters like f, g, h for functions and x, y, z for variables. Before this standardization, mathematicians described relationships in verbose prose — imagine writing "the square of the number" every time instead of just x².
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold text-sm mb-2">What types of functions can this plotter graph?</h3>
+            <p className="text-sm text-muted-foreground">
+              This tool handles most single-variable functions you encounter in high school and early college math: polynomials, rational functions, trigonometric functions, exponential and logarithmic functions, and combinations of these. It plots any function y = f(x) where f can be evaluated numerically.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm mb-2">Why does my graph look choppy or disconnected?</h3>
+            <p className="text-sm text-muted-foreground">
+              Some functions have discontinuities or vertical asymptotes (like 1/x at x=0). The plotter samples 200 points across your range — if the function shoots to infinity between samples, you will see gaps. Try narrowing the x-range around the problem area for a clearer view.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm mb-2">Can I plot multiple functions on the same graph?</h3>
+            <p className="text-sm text-muted-foreground">
+              This version plots one function at a time. To compare functions, plot the first one, note key points, then enter the second function. For serious multi-function work, tools like Desmos or GeoGebra offer that capability.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm mb-2">What should I do if the graph doesn't appear?</h3>
+            <p className="text-sm text-muted-foreground">
+              First, check that your function uses valid syntax — use * for multiplication (write 2*x, not 2x). Second, adjust your viewing window. If you plot x^2 with Y Max = 5, nothing shows because x^2 exceeds 5 for most x values. Try Y Max = 100 instead.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm mb-2">Does this work for parametric or polar equations?</h3>
+            <p className="text-sm text-muted-foreground">
+              No, this plotter only handles standard Cartesian functions y = f(x). Parametric equations (x(t), y(t)) and polar equations (r = f(θ)) require different plotting logic. Those are available in specialized graphing tools.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm mb-2">How accurate is the plotted curve?</h3>
+            <p className="text-sm text-muted-foreground">
+              The plotter evaluates your function at 200 evenly-spaced x-values and connects the points with straight lines. For smooth functions like polynomials, the result is visually indistinguishable from the true curve. For rapidly oscillating functions, increase detail by zooming in on a smaller range.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm mb-2">Can I use this on my phone or tablet?</h3>
+            <p className="text-sm text-muted-foreground">
+              Yes, the plotter runs in any modern browser on any device. The graph scales to fit your screen. Touch devices work fine — just tap the input fields and use the on-screen keyboard.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Related Math Tools</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/derivative-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Derivative Calculator</p>
+            <p className="text-xs text-muted-foreground">Find derivatives step by step</p>
+          </a>
+          <a href="/math-tools/quadratic-equation-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Quadratic Equation Solver</p>
+            <p className="text-xs text-muted-foreground">Solve ax² + bx + c = 0</p>
+          </a>
+          <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Trig Function Calculator</p>
+            <p className="text-xs text-muted-foreground">Calculate sin, cos, tan values</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

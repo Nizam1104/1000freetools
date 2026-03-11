@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function MatrixInverseCalculator() {
@@ -61,8 +60,8 @@ export default function MatrixInverseCalculator() {
     const rowCount = parsedRows.length;
     const colCount = parsedRows[0].length;
 
-    if (rowCount > 10) {
-      return { matrix: [], size: 0, error: "Maximum supported matrix size is 10×10" };
+    if (rowCount > 20) {
+      return { matrix: [], size: 0, error: "Maximum supported matrix size is 20x20" };
     }
 
     if (rowCount !== colCount) {
@@ -157,19 +156,19 @@ export default function MatrixInverseCalculator() {
     ];
 
     const steps = [
-      `For a 2×2 matrix [[a,b],[c,d]], the inverse is (1/det) × [[d,-b],[-c,a]]`,
+      `For a 2x2 matrix [[a,b],[c,d]], the inverse is (1/det) x [[d,-b],[-c,a]]`,
       ``,
       `Step 1: Calculate determinant`,
-      `det = ad - bc = ${a}×${d} - ${b}×${c} = ${a*d} - ${b*c} = ${det}`,
+      `det = ad - bc = ${a}x${d} - ${b}x${c} = ${a*d} - ${b*c} = ${det}`,
       ``,
       `Step 2: Find the adjugate matrix`,
-      `Swap diagonal elements: a↔d`,
-      `Negate off-diagonal elements: b→-${b}, c→-${c}`,
+      `Swap diagonal elements: a<->d`,
+      `Negate off-diagonal elements: b->-${b}, c->-${c}`,
       `Adjugate = [[${d}, ${-b}], [${-c}, ${a}]]`,
       ``,
       `Step 3: Multiply by 1/det`,
-      `A⁻¹ = (1/${det}) × [[${d}, ${-b}], [${-c}, ${a}]]`,
-      `A⁻¹ = [[${round(inv[0][0])}, ${round(inv[0][1])}], [${round(inv[1][0])}, ${round(inv[1][1])}]]`
+      `A^-1 = (1/${det}) x [[${d}, ${-b}], [${-c}, ${a}]]`,
+      `A^-1 = [[${round(inv[0][0])}, ${round(inv[0][1])}], [${round(inv[1][0])}, ${round(inv[1][1])}]]`
     ];
 
     setInverse(inv);
@@ -209,15 +208,15 @@ export default function MatrixInverseCalculator() {
     const inv = adjugate.map(row => row.map(val => val * invDet));
 
     const steps = [
-      `For a 3×3 matrix, A⁻¹ = (1/det(A)) × adj(A)`,
+      `For a 3x3 matrix, A^-1 = (1/det(A)) x adj(A)`,
       ``,
       `Step 1: Calculate determinant`,
       `det = ${det}`,
       ``,
       `Step 2: Find the matrix of cofactors`,
-      `C₀₀ = +(${cofactors[0][0]}), C₀₁ = ${cofactors[0][1] < 0 ? "" : "+"}${cofactors[0][1]}, C₀₂ = ${cofactors[0][2] < 0 ? "" : "+"}${cofactors[0][2]}`,
-      `C₁₀ = ${cofactors[1][0] < 0 ? "" : "+"}${cofactors[1][0]}, C₁₁ = +(${cofactors[1][1]}), C₁₂ = ${cofactors[1][2] < 0 ? "" : "+"}${cofactors[1][2]}`,
-      `C₂₀ = ${cofactors[2][0] < 0 ? "" : "+"}${cofactors[2][0]}, C₂₁ = ${cofactors[2][1] < 0 ? "" : "+"}${cofactors[2][1]}, C₂₂ = +(${cofactors[2][2]})`,
+      `C00 = +(${cofactors[0][0]}), C01 = ${cofactors[0][1] < 0 ? "" : "+"}${cofactors[0][1]}, C02 = ${cofactors[0][2] < 0 ? "" : "+"}${cofactors[0][2]}`,
+      `C10 = ${cofactors[1][0] < 0 ? "" : "+"}${cofactors[1][0]}, C11 = +(${cofactors[1][1]}), C12 = ${cofactors[1][2] < 0 ? "" : "+"}${cofactors[1][2]}`,
+      `C20 = ${cofactors[2][0] < 0 ? "" : "+"}${cofactors[2][0]}, C21 = ${cofactors[2][1] < 0 ? "" : "+"}${cofactors[2][1]}, C22 = +(${cofactors[2][2]})`,
       ``,
       `Step 3: Transpose to get adjugate`,
       `adj(A) = [[${adjugate[0][0]}, ${adjugate[0][1]}, ${adjugate[0][2]}],`,
@@ -225,7 +224,7 @@ export default function MatrixInverseCalculator() {
       `          [${adjugate[2][0]}, ${adjugate[2][1]}, ${adjugate[2][2]}]]`,
       ``,
       `Step 4: Multiply by 1/det = 1/${det}`,
-      `A⁻¹ computed successfully`
+      `A^-1 computed successfully`
     ];
 
     setInverse(inv);
@@ -262,7 +261,7 @@ export default function MatrixInverseCalculator() {
     } else if (size === 3) {
       calculateInverse3x3();
     } else {
-      setError("Inverse calculation is only supported for 2×2 and 3×3 matrices");
+      setError("Inverse calculation is only supported for 2x2 and 3x3 matrices");
     }
   };
 
@@ -276,13 +275,22 @@ export default function MatrixInverseCalculator() {
     setTextareaError("");
   };
 
-  const fillExample = () => {
-    let exampleMatrix: number[][];
-    if (size === 2) {
-      exampleMatrix = [[4, 7], [2, 6]];
-    } else {
-      exampleMatrix = [[1, 2, 3], [0, 1, 4], [5, 6, 0]];
-    }
+  const examples = [
+    { name: "2x2 Simple", matrix: [[4, 7], [2, 6]] },
+    { name: "2x2 With Negatives", matrix: [[3, -1], [-2, 5]] },
+    { name: "2x2 Identity", matrix: [[1, 0], [0, 1]] },
+    { name: "3x3 Standard", matrix: [[1, 2, 3], [0, 1, 4], [5, 6, 0]] },
+    { name: "3x3 Diagonal", matrix: [[2, 0, 0], [0, 3, 0], [0, 0, 4]] },
+    { name: "3x3 Complex", matrix: [[2, 1, 1], [1, 3, 2], [1, 0, 0]] },
+    { name: "2x2 Fractions", matrix: [[1, 2], [3, 4]] }
+  ];
+
+  const fillExample = (index: number) => {
+    const example = examples[index];
+    const exampleMatrix = example.matrix;
+    const newSize = exampleMatrix.length;
+    
+    setSize(newSize);
     setMatrix(exampleMatrix);
 
     if (inputMode === "textarea") {
@@ -322,90 +330,94 @@ export default function MatrixInverseCalculator() {
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Inverse Calculator – Find Inverse of Any Matrix</h1>
         <p className="text-muted-foreground">
-          Find the inverse of any invertible square matrix with our free online matrix inverse calculator. Uses the adjugate method with step-by-step solution for 2×2 and 3×3 matrices.
+          Find the inverse of any invertible square matrix with our free online matrix inverse calculator. Uses the adjugate method with step-by-step solution for 2x2 and 3x3 matrices.
         </p>
       </div>
 
       <div className="space-y-4">
-        <Card>
-          <CardContent className="pt-6 space-y-4">
-            <div className="flex flex-wrap items-center gap-4">
-              <Label>Matrix Size:</Label>
-              <div className="flex gap-2">
-                {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                  <Button
-                    key={n}
-                    variant={size === n ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => handleSizeChange(n)}
-                    className="w-10"
-                  >
-                    {n}
-                  </Button>
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <Label>Matrix Size:</Label>
+            <div className="flex gap-2 flex-wrap">
+              {[2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20].map((n) => (
+                <Button
+                  key={n}
+                  variant={size === n ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => handleSizeChange(n)}
+                  className="w-10"
+                >
+                  {n}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            <span className="text-sm text-muted-foreground">Examples:</span>
+            {examples.map((ex, idx) => (
+              <Button key={idx} variant="outline" size="sm" onClick={() => fillExample(idx)}>{ex.name}</Button>
+            ))}
+          </div>
+
+          <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
+            <TabsList>
+              <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
+              <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="textarea" className="space-y-4">
+              <div>
+                <Label>Enter matrix values (each row on a new line, values separated by spaces or commas)</Label>
+                <Textarea
+                  value={textareaValue}
+                  onChange={(e) => handleTextareaChange(e.target.value)}
+                  placeholder={`Example for 2x2 matrix:\n4 7\n2 6\n\nor\n\n4, 7\n2, 6`}
+                  className="min-h-[150px] font-mono"
+                />
+                {textareaError && (
+                  <p className="text-xs text-destructive mt-2">{textareaError}</p>
+                )}
+                <p className="text-xs text-muted-foreground mt-2">
+                  Current matrix: {size}x{size} | Detected from your input
+                </p>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="row" className="space-y-4">
+              <div className="space-y-3">
+                <Label>Enter each row (comma or space separated values)</Label>
+                {rowInputs.map((rowValue, rowIndex) => (
+                  <div key={rowIndex} className="flex items-center gap-2">
+                    <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
+                    <Input
+                      value={rowValue}
+                      onChange={(e) => parseRowInput(rowIndex, e.target.value)}
+                      placeholder={`Enter ${size} values for row ${rowIndex + 1}`}
+                      className="flex-1 font-mono"
+                    />
+                  </div>
                 ))}
               </div>
-              <Button variant="outline" size="sm" onClick={fillExample}>Load Example</Button>
+            </TabsContent>
+          </Tabs>
+
+          {error && (
+            <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
+              {error}
             </div>
+          )}
 
-            <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as "textarea" | "row")}>
-              <TabsList>
-                <TabsTrigger value="textarea">Text Area Input</TabsTrigger>
-                <TabsTrigger value="row">Row-by-Row Input</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="textarea" className="space-y-4">
-                <div>
-                  <Label>Enter matrix values (each row on a new line, values separated by spaces or commas)</Label>
-                  <Textarea
-                    value={textareaValue}
-                    onChange={(e) => handleTextareaChange(e.target.value)}
-                    placeholder={`Example for 2×2 matrix:\n4 7\n2 6\n\nor\n\n4, 7\n2, 6`}
-                    className="min-h-[150px] font-mono"
-                  />
-                  {textareaError && (
-                    <p className="text-xs text-destructive mt-2">{textareaError}</p>
-                  )}
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Current matrix: {size}×{size} | Detected from your input
-                  </p>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="row" className="space-y-4">
-                <div className="space-y-3">
-                  <Label>Enter each row (comma or space separated values)</Label>
-                  {rowInputs.map((rowValue, rowIndex) => (
-                    <div key={rowIndex} className="flex items-center gap-2">
-                      <Label className="w-16 text-right">Row {rowIndex + 1}:</Label>
-                      <Input
-                        value={rowValue}
-                        onChange={(e) => parseRowInput(rowIndex, e.target.value)}
-                        placeholder={`Enter ${size} values for row ${rowIndex + 1}`}
-                        className="flex-1 font-mono"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-            </Tabs>
-
-            {error && (
-              <div className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive text-sm">
-                {error}
-              </div>
-            )}
-
-            <div className="flex gap-2">
-              <Button onClick={calculate} disabled={matrix.length === 0}>Calculate Inverse</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-          </CardContent>
-        </Card>
+          <div className="flex gap-2">
+            <Button onClick={calculate} disabled={matrix.length === 0}>Calculate Inverse</Button>
+            <Button variant="outline" onClick={reset}>Reset</Button>
+          </div>
+        </div>
 
         {inverse && (
           <div className="space-y-4">
             <div className="p-6 bg-muted rounded-lg">
-              <p className="text-sm text-muted-foreground mb-4 text-center">Inverse Matrix A⁻¹</p>
+              <p className="text-sm text-muted-foreground mb-4 text-center">Inverse Matrix A^-1</p>
               <div className="overflow-x-auto">
                 <div className="inline-block">
                   <div className="flex items-center">
@@ -437,7 +449,7 @@ export default function MatrixInverseCalculator() {
             </div>
 
             <div className="p-4 border rounded-lg bg-muted/50">
-              <h4 className="font-semibold text-sm mb-2">Verification: A × A⁻¹ = I</h4>
+              <h4 className="font-semibold text-sm mb-2">Verification: A x A^-1 = I</h4>
               <p className="text-xs text-muted-foreground">
                 Multiply the original matrix by its inverse to verify you get the identity matrix.
               </p>
@@ -446,6 +458,134 @@ export default function MatrixInverseCalculator() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Matrix Inverses</h2>
+        <p className="text-muted-foreground">
+          The inverse of a matrix A, denoted A^-1, is the matrix that when multiplied by A gives the identity matrix. Just like 1/5 is the multiplicative inverse of 5 (because 5 x 1/5 = 1), the matrix inverse "undoes" the transformation represented by the original matrix.
+        </p>
+        <p className="text-muted-foreground">
+          Not all matrices have inverses. Only square matrices with non-zero determinants are invertible. A matrix without an inverse is called "singular" or "non-invertible."
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">How to Find the Inverse</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">2x2 Matrix Formula</h4>
+            <code className="text-sm font-mono block">
+              A = [[a, b], [c, d]]<br/>
+              A^-1 = (1/det(A)) x [[d, -b], [-c, a]]
+            </code>
+            <p className="text-xs text-muted-foreground mt-2">
+              Swap diagonals, negate off-diagonals, divide by determinant
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">3x3 Matrix Method</h4>
+            <code className="text-sm font-mono block">
+              A^-1 = (1/det(A)) x adj(A)
+            </code>
+            <p className="text-xs text-muted-foreground mt-2">
+              Find cofactor matrix, transpose it, divide by determinant
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 1: 2x2 Matrix</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>A = [[4, 7], [2, 6]]</div>
+              <div>det(A) = 4(6) - 7(2) = 24 - 14 = 10</div>
+              <div>adj(A) = [[6, -7], [-2, 4]]</div>
+              <div>A^-1 = (1/10) x [[6, -7], [-2, 4]]</div>
+              <div>A^-1 = [[0.6, -0.7], [-0.2, 0.4]]</div>
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 2: 2x2 with Negatives</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>A = [[3, -1], [-2, 5]]</div>
+              <div>det(A) = 3(5) - (-1)(-2) = 15 - 2 = 13</div>
+              <div>adj(A) = [[5, 1], [2, 3]]</div>
+              <div>A^-1 = (1/13) x [[5, 1], [2, 3]]</div>
+              <div>A^-1 = [[5/13, 1/13], [2/13, 3/13]]</div>
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 3: Identity Matrix</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>I = [[1, 0], [0, 1]]</div>
+              <div>det(I) = 1(1) - 0(0) = 1</div>
+              <div>The inverse of the identity is itself!</div>
+              <div>I^-1 = [[1, 0], [0, 1]]</div>
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 4: Diagonal Matrix</h4>
+            <div className="font-mono text-sm space-y-2">
+              <div>D = [[2, 0, 0], [0, 3, 0], [0, 0, 4]]</div>
+              <div>For diagonal matrices, invert each diagonal element</div>
+              <div>D^-1 = [[1/2, 0, 0], [0, 1/3, 0], [0, 0, 1/4]]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-4 bg-primary/10 border border-primary/20 rounded-lg">
+          <p className="text-sm">
+            The concept of matrix inverses was developed alongside matrix theory in the mid-1800s. Arthur Cayley, who formalized matrix algebra, proved that a matrix has an inverse if and only if its determinant is non-zero. This fundamental result connects two seemingly different matrix properties.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">When does a matrix not have an inverse?</h4>
+            <p className="text-sm text-muted-foreground">
+              A matrix has no inverse when its determinant equals zero. This happens when the rows (or columns) are linearly dependent – one row can be expressed as a combination of others. Such matrices are called "singular."
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Is the inverse unique?</h4>
+            <p className="text-sm text-muted-foreground">
+              Yes! If a matrix has an inverse, it has exactly one. There's no such thing as "multiple inverses" for a given matrix. This uniqueness is crucial for solving systems of equations.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What is (A^-1)^-1?</h4>
+            <p className="text-sm text-muted-foreground">
+              The inverse of an inverse gives you back the original matrix: (A^-1)^-1 = A. This makes intuitive sense – if A^-1 "undoes" A, then undoing the undo brings you back to where you started.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Does (AB)^-1 = A^-1 B^-1?</h4>
+            <p className="text-sm text-muted-foreground">
+              No! The correct formula is (AB)^-1 = B^-1 A^-1. The order reverses, similar to how you put on socks before shoes, but take off shoes before socks. This is called the "socks and shoes" property.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How are inverses used in real applications?</h4>
+            <p className="text-sm text-muted-foreground">
+              Matrix inverses solve systems of linear equations (Ax = b becomes x = A^-1 b), compute transformations in computer graphics, analyze electrical circuits, optimize portfolios in finance, and decode encrypted messages in cryptography.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can non-square matrices have inverses?</h4>
+            <p className="text-sm text-muted-foreground">
+              Traditional inverses only exist for square matrices. However, non-square matrices can have "pseudo-inverses" (Moore-Penrose inverses) that serve similar purposes in least-squares problems and data fitting.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -23,13 +23,12 @@ export default function EquationBalancer() {
 
     while (i < formula.length) {
       if (formula[i] === '(') {
-        // Handle parentheses (simplified - only one level)
         const closeParen = formula.indexOf(')', i);
         if (closeParen === -1) break;
-        
+
         const innerFormula = formula.substring(i + 1, closeParen);
         const innerElements = parseFormula(innerFormula);
-        
+
         let multiplier = 1;
         let j = closeParen + 1;
         let numStr = '';
@@ -38,28 +37,26 @@ export default function EquationBalancer() {
           j++;
         }
         if (numStr) multiplier = parseInt(numStr);
-        
+
         for (const [elem, count] of Object.entries(innerElements)) {
           elements[elem] = (elements[elem] || 0) + count * multiplier;
         }
         i = j;
       } else if (formula[i] >= 'A' && formula[i] <= 'Z') {
-        // Element symbol
         let elem = formula[i];
         i++;
         while (i < formula.length && formula[i] >= 'a' && formula[i] <= 'z') {
           elem += formula[i];
           i++;
         }
-        
-        // Count
+
         let countStr = '';
         while (i < formula.length && formula[i] >= '0' && formula[i] <= '9') {
           countStr += formula[i];
           i++;
         }
         const count = countStr ? parseInt(countStr) : 1;
-        
+
         elements[elem] = (elements[elem] || 0) + count;
       } else {
         i++;
@@ -108,10 +105,6 @@ export default function EquationBalancer() {
     return b === 0 ? a : gcd(b, a % b);
   };
 
-  const lcm = (a: number, b: number): number => {
-    return (a * b) / gcd(a, b);
-  };
-
   const balanceEquation = () => {
     setError("");
     setResult(null);
@@ -127,7 +120,6 @@ export default function EquationBalancer() {
     const nProducts = productStrings.length;
     const nCompounds = nReactants + nProducts;
 
-    // Get all elements
     const allElements = new Set<string>();
     for (const r of reactantStrings) {
       const elements = parseFormula(r.replace(/^\d+/, ''));
@@ -146,27 +138,19 @@ export default function EquationBalancer() {
       return;
     }
 
-    // Build matrix for linear system
-    // For each element: sum(reactant_coeffs * counts) = sum(product_coeffs * counts)
-    // This gives us nElements equations with nCompounds unknowns
-    
-    // Use null space method (simplified brute force for small systems)
     const maxCoeff = 20;
-    
-    // Try all combinations of coefficients
     const formulas = [...reactantStrings.map(s => s.replace(/^\d+/, '')), ...productStrings.map(s => s.replace(/^\d+/, ''))];
-    
+
     for (let total = nCompounds; total <= maxCoeff * nCompounds; total++) {
       const coeffs = findCoefficients(total, nCompounds, formulas, elements, parseFormula, nReactants);
       if (coeffs) {
-        // Verify and simplify
         const simplified = simplifyCoefficients(coeffs);
-        
+
         const balancedReactants = reactantStrings.map((r, i) => {
           const formula = r.replace(/^\d+/, '');
           return simplified[i] === 1 ? formula : `${simplified[i]}${formula}`;
         });
-        
+
         const balancedProducts = productStrings.map((p, i) => {
           const formula = p.replace(/^\d+/, '');
           return simplified[nReactants + i] === 1 ? formula : `${simplified[nReactants + i]}${formula}`;
@@ -201,42 +185,41 @@ export default function EquationBalancer() {
     parseFormula: (f: string) => { [key: string]: number },
     nReactants: number
   ): number[] | null => {
-    // Generate all coefficient combinations that sum to total
     const combinations = generateCombinations(total, n);
-    
+
     for (const coeffs of combinations) {
       if (coeffs.some(c => c === 0)) continue;
-      
+
       let balanced = true;
       for (const elem of elements) {
         let reactantCount = 0;
         let productCount = 0;
-        
+
         for (let i = 0; i < nReactants; i++) {
           const elements_in_formula = parseFormula(formulas[i]);
           reactantCount += coeffs[i] * (elements_in_formula[elem] || 0);
         }
-        
+
         for (let i = nReactants; i < n; i++) {
           const elements_in_formula = parseFormula(formulas[i]);
           productCount += coeffs[i] * (elements_in_formula[elem] || 0);
         }
-        
+
         if (reactantCount !== productCount) {
           balanced = false;
           break;
         }
       }
-      
+
       if (balanced) return coeffs;
     }
-    
+
     return null;
   };
 
   const generateCombinations = (sum: number, n: number): number[][] => {
     if (n === 1) return [[sum]];
-    
+
     const result: number[][] = [];
     for (let i = 1; i <= sum - n + 1; i++) {
       const subCombinations = generateCombinations(sum - i, n - 1);
@@ -269,7 +252,7 @@ export default function EquationBalancer() {
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Chemical Equation Balancer – Balance Chemical Reactions</h1>
         <p className="text-muted-foreground">
-          Balance any chemical equation with our free online equation balancer. Get balanced equations with coefficients and step-by-step solutions for chemistry homework.
+          Balance any chemical equation with our free online equation balancer. Get balanced equations with coefficients and step-by-step solutions for chemistry homework and stoichiometry calculations.
         </p>
       </div>
 
@@ -293,6 +276,9 @@ export default function EquationBalancer() {
           <Button variant="outline" onClick={() => loadExample("CH4 + O2 -> CO2 + H2O")}>CH₄ + O₂ → CO₂ + H₂O</Button>
           <Button variant="outline" onClick={() => loadExample("Fe + O2 -> Fe2O3")}>Fe + O₂ → Fe₂O₃</Button>
           <Button variant="outline" onClick={() => loadExample("C6H12O6 + O2 -> CO2 + H2O")}>C₆H₁₂O₆ + O₂ → CO₂ + H₂O</Button>
+          <Button variant="outline" onClick={() => loadExample("N2 + H2 -> NH3")}>N₂ + H₂ → NH₃</Button>
+          <Button variant="outline" onClick={() => loadExample("Al + HCl -> AlCl3 + H2")}>Al + HCl → AlCl₃ + H₂</Button>
+          <Button variant="outline" onClick={() => loadExample("Ca(OH)2 + H3PO4 -> Ca3(PO4)2 + H2O")}>Complex</Button>
         </div>
 
         {error && (
@@ -340,6 +326,205 @@ export default function EquationBalancer() {
         )}
       </div>
 
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Understanding Chemical Equation Balancing</h2>
+        <p className="text-muted-foreground">
+          Chemical equations represent reactions, showing what substances react (reactants) and what substances form (products). But an equation isn't complete until it's balanced – meaning the same number of atoms of each element appears on both sides. This reflects the law of conservation of mass: matter cannot be created or destroyed in a chemical reaction.
+        </p>
+        <p className="text-muted-foreground">
+          Balancing works by adjusting coefficients – the numbers in front of chemical formulas. You never change the subscripts within formulas (that would change the substance itself). The goal is finding the smallest whole-number coefficients that make atom counts equal on both sides.
+        </p>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">How to Balance Chemical Equations</h3>
+        <div className="p-6 bg-muted rounded-lg">
+          <ol className="space-y-4 text-sm">
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">1</span>
+              <div>
+                <p className="font-semibold mb-1">Write the unbalanced equation</p>
+                <p className="text-muted-foreground">
+                  List reactants on the left, products on the right, separated by an arrow. Use correct chemical formulas.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">2</span>
+              <div>
+                <p className="font-semibold mb-1">Count atoms of each element</p>
+                <p className="text-muted-foreground">
+                  List how many atoms of each element appear on both sides. Remember: subscripts multiply, coefficients multiply everything in the formula.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">3</span>
+              <div>
+                <p className="font-semibold mb-1">Add coefficients to balance</p>
+                <p className="text-muted-foreground">
+                  Start with elements that appear in only one compound on each side. Save hydrogen and oxygen for last. Adjust coefficients until counts match.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">4</span>
+              <div>
+                <p className="font-semibold mb-1">Simplify coefficients</p>
+                <p className="text-muted-foreground">
+                  Reduce to the smallest whole numbers. If all coefficients are divisible by 2, divide them. Check that all atom counts still balance.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 1: Water Formation (H₂ + O₂ → H₂O)</h4>
+            <div className="text-sm space-y-2">
+              <p>Unbalanced: H₂ + O₂ → H₂O</p>
+              <p>Count: Left has 2 H, 2 O. Right has 2 H, 1 O.</p>
+              <p>Balance oxygen: H₂ + O₂ → 2H₂O (now 2 O on right)</p>
+              <p>Balance hydrogen: 2H₂ + O₂ → 2H₂O (now 4 H on both sides)</p>
+              <p>Balanced: 2H₂ + O₂ → 2H₂O</p>
+              <p className="text-muted-foreground">Two molecules of hydrogen react with one molecule of oxygen to form two molecules of water.</p>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 2: Methane Combustion (CH₄ + O₂ → CO₂ + H₂O)</h4>
+            <div className="text-sm space-y-2">
+              <p>Unbalanced: CH₄ + O₂ → CO₂ + H₂O</p>
+              <p>Balance C: Already balanced (1 on each side)</p>
+              <p>Balance H: CH₄ + O₂ → CO₂ + 2H₂O (4 H on each side)</p>
+              <p>Balance O: CH₄ + 2O₂ → CO₂ + 2H₂O (4 O on each side)</p>
+              <p>Balanced: CH₄ + 2O₂ → CO₂ + 2H₂O</p>
+              <p className="text-muted-foreground">Complete combustion of methane produces carbon dioxide and water. This is the reaction in natural gas burning.</p>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 3: Rust Formation (Fe + O₂ → Fe₂O₃)</h4>
+            <div className="text-sm space-y-2">
+              <p>Unbalanced: Fe + O₂ → Fe₂O₃</p>
+              <p>Balance Fe: 2Fe + O₂ → Fe₂O₃</p>
+              <p>Balance O: Need 3 O on left, but O₂ comes in pairs</p>
+              <p>Use fraction: 2Fe + 1.5O₂ → Fe₂O₃</p>
+              <p>Multiply by 2: 4Fe + 3O₂ → 2Fe₂O₃</p>
+              <p>Balanced: 4Fe + 3O₂ → 2Fe₂O₃</p>
+              <p className="text-muted-foreground">Iron rusting requires oxygen from air. The balanced equation shows 4 iron atoms react with 3 oxygen molecules.</p>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 4: Photosynthesis (C₆H₁₂O₆ + O₂ → CO₂ + H₂O)</h4>
+            <div className="text-sm space-y-2">
+              <p>Actually, photosynthesis is: CO₂ + H₂O → C₆H₁₂O₆ + O₂</p>
+              <p>Balance C: 6CO₂ + H₂O → C₆H₁₂O₆ + O₂</p>
+              <p>Balance H: 6CO₂ + 6H₂O → C₆H₁₂O₆ + O₂</p>
+              <p>Balance O: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</p>
+              <p>Balanced: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</p>
+              <p className="text-muted-foreground">Plants use sunlight to convert carbon dioxide and water into glucose and oxygen. This reaction sustains life on Earth.</p>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 5: Ammonia Synthesis (N₂ + H₂ → NH₃)</h4>
+            <div className="text-sm space-y-2">
+              <p>Unbalanced: N₂ + H₂ → NH₃</p>
+              <p>Balance N: N₂ + H₂ → 2NH₃ (2 N on each side)</p>
+              <p>Balance H: N₂ + 3H₂ → 2NH₃ (6 H on each side)</p>
+              <p>Balanced: N₂ + 3H₂ → 2NH₃</p>
+              <p className="text-muted-foreground">The Haber process produces ammonia from nitrogen and hydrogen. This reaction is crucial for fertilizer production.</p>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-3">Example 6: Complex Equation (Ca(OH)₂ + H₃PO₄ → Ca₃(PO₄)₂ + H₂O)</h4>
+            <div className="text-sm space-y-2">
+              <p>Balance Ca: 3Ca(OH)₂ + H₃PO₄ → Ca₃(PO₄)₂ + H₂O</p>
+              <p>Balance PO₄: 3Ca(OH)₂ + 2H₃PO₄ → Ca₃(PO₄)₂ + H₂O</p>
+              <p>Balance H: 3Ca(OH)₂ + 2H₃PO₄ → Ca₃(PO₄)₂ + 6H₂O</p>
+              <p>Check O: 6 + 8 = 14 on left, 8 + 6 = 14 on right ✓</p>
+              <p>Balanced: 3Ca(OH)₂ + 2H₃PO₄ → Ca₃(PO₄)₂ + 6H₂O</p>
+              <p className="text-muted-foreground">This acid-base reaction forms calcium phosphate (a precipitate) and water. Parentheses in formulas mean the subscript applies to everything inside.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-6 bg-primary/10 rounded-lg border border-primary/20">
+          <p className="text-sm">
+            <strong>Antoine Lavoisier established the law of conservation of mass in 1789.</strong> His careful measurements showed that matter is neither created nor destroyed in chemical reactions. This fundamental principle is why we balance equations – the atoms present at the start must all be present at the end, just rearranged into different compounds.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why must chemical equations be balanced?</h4>
+            <p className="text-sm text-muted-foreground">
+              Balanced equations obey the law of conservation of mass. Atoms aren't created or destroyed in chemical reactions – they just rearrange. An unbalanced equation would imply atoms appear or disappear, which violates fundamental physics.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Can I change subscripts to balance equations?</h4>
+            <p className="text-sm text-muted-foreground">
+              Never. Changing subscripts changes the chemical identity of the substance. H₂O is water; H₂O₂ is hydrogen peroxide (very different!). Only coefficients (numbers in front) can be changed when balancing.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What do the coefficients mean?</h4>
+            <p className="text-sm text-muted-foreground">
+              Coefficients represent the mole ratio of reactants and products. In 2H₂ + O₂ → 2H₂O, two moles of hydrogen react with one mole of oxygen to produce two moles of water.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What if I get fractional coefficients?</h4>
+            <p className="text-sm text-muted-foreground">
+              Fractions are mathematically correct but conventionally we use whole numbers. Multiply all coefficients by the denominator to eliminate fractions. For example, if you get 1, 1.5, 1, multiply by 2 to get 2, 3, 2.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How do I handle polyatomic ions?</h4>
+            <p className="text-sm text-muted-foreground">
+              If a polyatomic ion (like SO₄²⁻ or NO₃⁻) appears unchanged on both sides, treat it as a unit. Balance the ion as a whole rather than counting individual atoms within it.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the inspection method for balancing?</h4>
+            <p className="text-sm text-muted-foreground">
+              Inspection means balancing by trial and error, adjusting coefficients until counts match. Start with complex molecules, save simple elements (like O₂) for last. For difficult equations, use the algebraic method with variables.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Related Math Tools</h3>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <a href="/math-tools/molar-mass-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Molar Mass Calculator</p>
+            <p className="text-xs text-muted-foreground">Calculate molecular weight</p>
+          </a>
+          <a href="/math-tools/stoichiometry-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Stoichiometry Calculator</p>
+            <p className="text-xs text-muted-foreground">Reaction calculations</p>
+          </a>
+          <a href="/math-tools/limiting-reagent-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
+            <p className="font-semibold text-sm">Limiting Reagent</p>
+            <p className="text-xs text-muted-foreground">Find limiting reactant</p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

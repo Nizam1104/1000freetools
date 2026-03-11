@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +15,7 @@ export default function SignificantFiguresCalculator() {
 
   const countSignificantFigures = (numStr: string): { count: number; digits: string[]; explanation: string } => {
     const clean = numStr.trim().toLowerCase();
-    
+
     if (!clean) {
       throw new Error("Please enter a number");
     }
@@ -36,27 +35,27 @@ export default function SignificantFiguresCalculator() {
 
     const absNum = Math.abs(num);
     const str = clean.replace(/^-/, "").replace(/^[eE][+-]?/, "").replace(/\.?0*$/, "");
-    
+
     let sigFigDigits: string[] = [];
     let explanationParts: string[] = [];
 
     const hasDecimal = clean.includes(".");
     const normalized = absNum.toExponential(20).replace(/\.?0+e/, "e");
-    
+
     const match = clean.match(/^(-?)(0*)\.?(0*)(\d+)(e[+-]?\d+)?$/i);
     if (match) {
       const [, sign, leadingZerosBeforeDot, zerosAfterDot, significantPart] = match;
-      
+
       if (leadingZerosBeforeDot && leadingZerosBeforeDot.length > 0) {
         explanationParts.push("Leading zeros before the decimal don't count");
       }
-      
+
       if (zerosAfterDot && zerosAfterDot.length > 0) {
         explanationParts.push(`Leading zeros after decimal (${zerosAfterDot.length} zeros) don't count`);
       }
-      
+
       sigFigDigits = significantPart.split("");
-      
+
       if (hasDecimal && clean.match(/\d+\.0+$/) && !clean.match(/^0*\./)) {
         const trailingZeros = clean.match(/0+$/)?.[0] || "";
         if (trailingZeros) {
@@ -88,7 +87,7 @@ export default function SignificantFiguresCalculator() {
 
   const roundToSigFigs = (numStr: string, sigFigs: number): { rounded: string; original: string; sigFigs: number } => {
     const num = parseFloat(numStr);
-    
+
     if (isNaN(num)) {
       throw new Error("Please enter a valid number");
     }
@@ -99,7 +98,7 @@ export default function SignificantFiguresCalculator() {
 
     const magnitude = Math.floor(Math.log10(Math.abs(num)));
     const decimalPlaces = sigFigs - magnitude - 1;
-    
+
     const multiplier = Math.pow(10, decimalPlaces);
     const rounded = Math.round(num * multiplier) / multiplier;
 
@@ -180,146 +179,138 @@ export default function SignificantFiguresCalculator() {
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Significant Figures Calculator</CardTitle>
-          <CardDescription>
-            Count significant figures or round to a specified number of sig figs.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <Tabs defaultValue="count" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="count">Count Sig Figs</TabsTrigger>
-                <TabsTrigger value="round">Round to Sig Figs</TabsTrigger>
-              </TabsList>
+      <div className="space-y-6">
+        <Tabs defaultValue="count" className="w-full">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="count">Count Sig Figs</TabsTrigger>
+            <TabsTrigger value="round">Round to Sig Figs</TabsTrigger>
+          </TabsList>
 
-              <TabsContent value="count" className="space-y-4">
-                <div>
-                  <Label>Enter a number</Label>
-                  <Input
-                    type="text"
-                    placeholder="e.g., 0.00123 or 123.45"
-                    value={number}
-                    onChange={(e) => setNumber(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && handleCount()}
-                  />
-                </div>
-                <div className="flex gap-2">
-                  <Button onClick={handleCount}>Count</Button>
-                  <Button variant="outline" onClick={reset}>Reset</Button>
-                </div>
-              </TabsContent>
+          <TabsContent value="count" className="space-y-4 mt-4">
+            <div>
+              <Label>Enter a number</Label>
+              <Input
+                type="text"
+                placeholder="e.g., 0.00123 or 123.45"
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleCount()}
+              />
+            </div>
+            <div className="flex gap-2">
+              <Button onClick={handleCount}>Count</Button>
+              <Button variant="outline" onClick={reset}>Reset</Button>
+            </div>
+          </TabsContent>
 
-              <TabsContent value="round" className="space-y-4">
-                <div>
-                  <Label>Enter a number</Label>
-                  <Input
-                    type="text"
-                    placeholder="e.g., 0.0012345"
-                    value={number}
-                    onChange={(e) => setNumber(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <Label>Round to how many significant figures?</Label>
-                  <Input
-                    type="number"
-                    min="1"
-                    max="20"
-                    value={targetSigFigs}
-                    onChange={(e) => setTargetSigFigs(e.target.value)}
-                  />
-                </div>
-                <div className="flex gap-2">
-                  <Button onClick={handleRound}>Round</Button>
-                  <Button variant="outline" onClick={reset}>Reset</Button>
-                </div>
-              </TabsContent>
-            </Tabs>
+          <TabsContent value="round" className="space-y-4 mt-4">
+            <div>
+              <Label>Enter a number</Label>
+              <Input
+                type="text"
+                placeholder="e.g., 0.0012345"
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label>Round to how many significant figures?</Label>
+              <Input
+                type="number"
+                min="1"
+                max="100"
+                value={targetSigFigs}
+                onChange={(e) => setTargetSigFigs(e.target.value)}
+              />
+            </div>
+            <div className="flex gap-2">
+              <Button onClick={handleRound}>Round</Button>
+              <Button variant="outline" onClick={reset}>Reset</Button>
+            </div>
+          </TabsContent>
+        </Tabs>
 
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs text-muted-foreground">Examples:</span>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("0.00123")}>0.00123</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("123.45")}>123.45</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("100.0")}>100.0</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("0.0001")}>0.0001</Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("1.00e-5")}>1.00×10⁻⁵</Button>
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0.00123")}>0.00123</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("123.45")}>123.45</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("100.0")}>100.0</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0.0001")}>0.0001</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1.00e-5")}>1.00×10⁻⁵</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("6.022e23")}>6.022×10²³</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("0.05050")}>0.05050</Button>
+        </div>
+
+        {error && (
+          <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
+            {error}
+          </div>
+        )}
+
+        {countResult && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg text-center">
+              <p className="text-sm text-muted-foreground mb-2">Significant Figures</p>
+              <p className="text-5xl font-bold">{countResult.count}</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                {number} has {countResult.count} significant figure{countResult.count !== 1 ? "s" : ""}
+              </p>
             </div>
 
-            {error && (
-              <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
-                {error}
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Significant Digits</h4>
+              <div className="flex flex-wrap gap-2">
+                {countResult.digits.map((digit, i) => (
+                  <span key={i} className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-mono font-bold">
+                    {digit}
+                  </span>
+                ))}
               </div>
-            )}
+            </div>
 
-            {countResult && (
-              <div className="space-y-4">
-                <div className="p-6 bg-muted rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground mb-2">Significant Figures</p>
-                  <p className="text-5xl font-bold">{countResult.count}</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {number} has {countResult.count} significant figure{countResult.count !== 1 ? "s" : ""}
-                  </p>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-2">Significant Digits</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {countResult.digits.map((digit, i) => (
-                      <span key={i} className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-mono font-bold">
-                        {digit}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-2">Explanation</h4>
-                  <p className="text-sm text-muted-foreground">{countResult.explanation}</p>
-                </div>
-              </div>
-            )}
-
-            {roundResult && (
-              <div className="space-y-4">
-                <div className="p-6 bg-muted rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground mb-2">Rounded Result</p>
-                  <p className="text-5xl font-bold">{roundResult.rounded}</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {roundResult.original} → {roundResult.rounded} ({roundResult.sigFigs} sig fig{roundResult.sigFigs !== 1 ? "s" : ""})
-                  </p>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Comparison</h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Original:</span>
-                      <span className="font-mono">{roundResult.original}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Rounded:</span>
-                      <span className="font-mono">{roundResult.rounded}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Sig Figs:</span>
-                      <span className="font-mono">{roundResult.sigFigs}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Explanation</h4>
+              <p className="text-sm text-muted-foreground">{countResult.explanation}</p>
+            </div>
           </div>
-        </CardContent>
-      </Card>
+        )}
+
+        {roundResult && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg text-center">
+              <p className="text-sm text-muted-foreground mb-2">Rounded Result</p>
+              <p className="text-5xl font-bold">{roundResult.rounded}</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                {roundResult.original} → {roundResult.rounded} ({roundResult.sigFigs} sig fig{roundResult.sigFigs !== 1 ? "s" : ""})
+              </p>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-3">Comparison</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Original:</span>
+                  <span className="font-mono">{roundResult.original}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Rounded:</span>
+                  <span className="font-mono">{roundResult.rounded}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Sig Figs:</span>
+                  <span className="font-mono">{roundResult.sigFigs}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
 
       <section className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold mb-3">Significant Figures Calculator – Count and Round Sig Figs</h2>
+          <h2 className="text-2xl font-semibold mb-3">Understanding Significant Figures</h2>
           <p className="text-muted-foreground">
-            Significant figures tell you how precise a measurement is. They count all the digits that carry real information about a value's accuracy. This calculator counts sig figs in any number and rounds values to your specified precision.
+            Significant figures tell you how precise a measurement is. They count all the digits that carry real information about a value's accuracy. When you measure something in a lab, your instrument has limits – a balance might read to 0.01 grams, a ruler to 1 millimeter. Those limits show up in your numbers as significant figures.
           </p>
         </div>
 
@@ -331,7 +322,7 @@ export default function SignificantFiguresCalculator() {
       </section>
 
       <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Rules for Counting Significant Figures</h3>
+        <h3 className="text-xl font-semibold">How to Count Significant Figures</h3>
         <div className="space-y-4">
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">1. Non-zero digits are always significant</h4>
@@ -393,6 +384,82 @@ export default function SignificantFiguresCalculator() {
       </section>
 
       <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Counting sig figs in 0.004050</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: Identify leading zeros – the first three zeros (0.00) don't count.
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 2: Count from the first non-zero digit – 4, 0, 5, 0.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 3: The trailing zero after the decimal IS significant. Answer: 4 significant figures.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Rounding 12345 to 3 sig figs</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: Identify the first 3 significant digits – 1, 2, 3.
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 2: Look at the next digit (4) – it's less than 5, so round down.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 3: Replace remaining digits with zeros. Answer: 12300 (or 1.23 × 10⁴).
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Sig figs in multiplication</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: 2.5 × 3.42 = ?
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: 2.5 has 2 sig figs, 3.42 has 3 sig figs.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 2: Answer must have the fewest sig figs (2). Calculator gives 8.55, round to 8.6.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Scientific notation clarity</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: Express 5000 with exactly 3 sig figs.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Answer: 5.00 × 10³. The scientific notation removes all ambiguity – every digit in 5.00 is significant.
+            </p>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 5: Addition with sig figs</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Problem: 12.34 + 5.6 = ?
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Step 1: 12.34 has 2 decimal places, 5.6 has 1 decimal place.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Step 2: Answer must have the fewest decimal places (1). Calculator gives 17.94, round to 17.9.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Quick Fact</h3>
+        <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+          <p className="text-sm">
+            The concept of significant figures emerged from practical measurement needs in the 18th and 19th centuries. Before calculators, scientists using slide rules naturally worked with limited precision. The formal rules we use today were standardized in the early 20th century to ensure consistent reporting of experimental results across laboratories worldwide.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Sig Figs in Calculations</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-4 border rounded-lg">
@@ -416,87 +483,6 @@ export default function SignificantFiguresCalculator() {
               <div>12.34 + 5.6 = 17.9 (1 decimal)</div>
               <div>100 - 1.234 = 99 (0 decimals)</div>
               <div>0.001 + 0.1 = 0.1 (1 decimal)</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Examples</h3>
-        <div className="space-y-3">
-          <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-semibold text-sm">Avogadro's number</span>
-              <span className="font-mono text-xs">6.022 × 10²³ → 4 sig figs</span>
-            </div>
-          </div>
-          <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-semibold text-sm">Speed of light</span>
-              <span className="font-mono text-xs">299,792,458 m/s → 9 sig figs (exact)</span>
-            </div>
-          </div>
-          <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-semibold text-sm">pH measurement</span>
-              <span className="font-mono text-xs">pH 7.00 → 2 sig figs (decimal places count)</span>
-            </div>
-          </div>
-          <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-semibold text-sm">Lab balance reading</span>
-              <span className="font-mono text-xs">12.345 g → 5 sig figs</span>
-            </div>
-          </div>
-          <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-semibold text-sm">Graduated cylinder</span>
-              <span className="font-mono text-xs">25.0 mL → 3 sig figs</span>
-            </div>
-          </div>
-          <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-semibold text-sm">Integer counts</span>
-              <span className="font-mono text-xs">23 students → infinite sig figs (exact)</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Scientific Notation</h3>
-        <div className="p-4 bg-muted rounded-lg">
-          <p className="text-sm text-muted-foreground mb-4">
-            Scientific notation removes ambiguity. Every digit in the coefficient is significant.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 text-sm">
-            <div className="space-y-2">
-              <div className="flex justify-between p-2 border rounded">
-                <span>1.2 × 10³</span>
-                <span className="text-muted-foreground">2 sig figs</span>
-              </div>
-              <div className="flex justify-between p-2 border rounded">
-                <span>1.20 × 10³</span>
-                <span className="text-muted-foreground">3 sig figs</span>
-              </div>
-              <div className="flex justify-between p-2 border rounded">
-                <span>1.200 × 10³</span>
-                <span className="text-muted-foreground">4 sig figs</span>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between p-2 border rounded">
-                <span>5 × 10⁻³</span>
-                <span className="text-muted-foreground">1 sig fig</span>
-              </div>
-              <div className="flex justify-between p-2 border rounded">
-                <span>5.00 × 10⁻³</span>
-                <span className="text-muted-foreground">3 sig figs</span>
-              </div>
-              <div className="flex justify-between p-2 border rounded">
-                <span>9.999 × 10⁸</span>
-                <span className="text-muted-foreground">4 sig figs</span>
-              </div>
             </div>
           </div>
         </div>
@@ -533,6 +519,12 @@ export default function SignificantFiguresCalculator() {
             <h4 className="font-semibold text-sm mb-2">What about constants like π or e?</h4>
             <p className="text-sm text-muted-foreground">
               Mathematical constants have infinite precision. Use as many digits as needed for your calculation. They don't limit sig figs in your answer.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">How many sig figs should I use in lab reports?</h4>
+            <p className="text-sm text-muted-foreground">
+              Match your least precise measurement. If your balance reads to 0.01 g and your graduated cylinder to 0.1 mL, your final answer can't have more than 2-3 sig figs. Never report more precision than your instruments provide.
             </p>
           </div>
         </div>

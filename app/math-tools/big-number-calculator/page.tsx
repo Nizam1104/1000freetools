@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -81,8 +80,12 @@ export default function BigNumberCalculator() {
         const { quotient, remainder } = divideBigNumbers(num1, num2);
         setResult(`${quotient} R${remainder}`);
       } else if (operation === "power") {
-        if (BigInt(num2) < 0) {
+        if (BigInt(num2) < BigInt(0)) {
           setError("Exponent must be non-negative for integer results");
+          return;
+        }
+        if (BigInt(num2) > BigInt(10000)) {
+          setError("Exponent too large for practical computation");
           return;
         }
         setResult(powerBigNumbers(num1, num2));
@@ -130,128 +133,124 @@ export default function BigNumberCalculator() {
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Big Number Calculator</CardTitle>
-          <CardDescription>
-            Perform arithmetic on integers of any size.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <div>
-              <Label>Operation</Label>
-              <Tabs value={operation} onValueChange={(v) => setOperation(v as typeof operation)} className="w-full">
-                <TabsList className="grid w-full grid-cols-3 md:grid-cols-6">
-                  <TabsTrigger value="add">Add</TabsTrigger>
-                  <TabsTrigger value="subtract">Subtract</TabsTrigger>
-                  <TabsTrigger value="multiply">Multiply</TabsTrigger>
-                  <TabsTrigger value="divide">Divide</TabsTrigger>
-                  <TabsTrigger value="power">Power</TabsTrigger>
-                  <TabsTrigger value="modulo">Modulo</TabsTrigger>
-                </TabsList>
-              </Tabs>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <Label>First Number</Label>
-                <Input
-                  type="text"
-                  placeholder="Enter a large integer"
-                  value={num1}
-                  onChange={(e) => setNum1(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && calculate()}
-                />
-              </div>
-              <div>
-                <Label>Second Number</Label>
-                <Input
-                  type="text"
-                  placeholder="Enter a large integer"
-                  value={num2}
-                  onChange={(e) => setNum2(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && calculate()}
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <Button onClick={calculate}>Calculate</Button>
-              <Button variant="outline" onClick={reset}>Reset</Button>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs text-muted-foreground">Examples:</span>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("999999999999999999", "1", "add")}>
-                10^18 + 1
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("123456789012345678901234567890", "987654321098765432109876543210", "multiply")}>
-                Multiply huge numbers
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("2", "100", "power")}>
-                2^100
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => loadExample("1000000000000000000000", "7", "modulo")}>
-                Large mod 7
-              </Button>
-            </div>
-
-            {error && (
-              <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
-                {error}
-              </div>
-            )}
-
-            {result && (
-              <div className="space-y-4">
-                <div className="p-6 bg-muted rounded-lg">
-                  <p className="text-sm text-muted-foreground mb-2 text-center">Result</p>
-                  <p className="text-2xl md:text-4xl font-bold font-mono break-all text-center">
-                    {formatNumber(result)}
-                  </p>
-                  {operation === "divide" && result.includes("R") && (
-                    <p className="text-sm text-muted-foreground mt-2 text-center">
-                      (Quotient with remainder)
-                    </p>
-                  )}
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-2">Expression</h4>
-                  <div className="font-mono text-sm break-all">
-                    {formatNumber(num1)} {operation === "add" ? "+" : operation === "subtract" ? "−" : operation === "multiply" ? "×" : operation === "divide" ? "÷" : operation === "power" ? "^" : "mod"} {formatNumber(num2)} = {formatNumber(result.split("R")[0])}{operation === "divide" && result.includes("R") ? ` R${result.split("R")[1]}` : ""}
-                  </div>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-2">Result Details</h4>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-muted-foreground">Digits: </span>
-                      <span className="font-semibold">{result.replace("-", "").replace("R", "").split("R")[0].length}</span>
-                    </div>
-                    <div>
-                      <span className="text-muted-foreground">Sign: </span>
-                      <span className="font-semibold">{result.startsWith("-") ? "Negative" : "Positive"}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      <section className="space-y-6">
+      <div className="space-y-4">
         <div>
-          <h2 className="text-2xl font-semibold mb-3">Big Number Calculator – Compute Huge Numbers Online</h2>
-          <p className="text-muted-foreground">
-            Standard calculators and programming languages have limits on number size. JavaScript's Number type, for example, can only safely represent integers up to about 9 quadrillion. This big number calculator removes those limits, handling integers with hundreds or thousands of digits.
-          </p>
+          <Label>Operation</Label>
+          <Tabs value={operation} onValueChange={(v) => setOperation(v as typeof operation)} className="w-full">
+            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6">
+              <TabsTrigger value="add">Add</TabsTrigger>
+              <TabsTrigger value="subtract">Subtract</TabsTrigger>
+              <TabsTrigger value="multiply">Multiply</TabsTrigger>
+              <TabsTrigger value="divide">Divide</TabsTrigger>
+              <TabsTrigger value="power">Power</TabsTrigger>
+              <TabsTrigger value="modulo">Modulo</TabsTrigger>
+            </TabsList>
+          </Tabs>
         </div>
 
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <Label>First Number</Label>
+            <Input
+              type="text"
+              placeholder="Enter a large integer"
+              value={num1}
+              onChange={(e) => setNum1(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && calculate()}
+            />
+          </div>
+          <div>
+            <Label>Second Number</Label>
+            <Input
+              type="text"
+              placeholder="Enter a large integer"
+              value={num2}
+              onChange={(e) => setNum2(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && calculate()}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <Button onClick={calculate}>Calculate</Button>
+          <Button variant="outline" onClick={reset}>Reset</Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="text-xs text-muted-foreground">Examples:</span>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("999999999999999999", "1", "add")}>
+            10^18 + 1
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("123456789012345678901234567890", "987654321098765432109876543210", "multiply")}>
+            Multiply huge numbers
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("2", "100", "power")}>
+            2^100
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1000000000000000000000", "7", "modulo")}>
+            Large mod 7
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("98765432109876543210", "12345678901234567890", "subtract")}>
+            Subtract large numbers
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("1000000000000000000000000", "999999999999", "divide")}>
+            Divide trillion by billion
+          </Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("5", "50", "power")}>
+            5^50
+          </Button>
+        </div>
+
+        {error && (
+          <div className="p-4 bg-destructive/10 text-destructive rounded-lg text-sm">
+            {error}
+          </div>
+        )}
+
+        {result && (
+          <div className="space-y-4">
+            <div className="p-6 bg-muted rounded-lg">
+              <p className="text-sm text-muted-foreground mb-2 text-center">Result</p>
+              <p className="text-2xl md:text-4xl font-bold font-mono break-all text-center">
+                {formatNumber(result)}
+              </p>
+              {operation === "divide" && result.includes("R") && (
+                <p className="text-sm text-muted-foreground mt-2 text-center">
+                  (Quotient with remainder)
+                </p>
+              )}
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Expression</h4>
+              <div className="font-mono text-sm break-all">
+                {formatNumber(num1)} {operation === "add" ? "+" : operation === "subtract" ? "−" : operation === "multiply" ? "×" : operation === "divide" ? "÷" : operation === "power" ? "^" : "mod"} {formatNumber(num2)} = {formatNumber(result.split("R")[0])}{operation === "divide" && result.includes("R") ? ` R${result.split("R")[1]}` : ""}
+              </div>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Result Details</h4>
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span className="text-muted-foreground">Digits: </span>
+                  <span className="font-semibold">{result.replace("-", "").replace("R", "").split("R")[0].length}</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Sign: </span>
+                  <span className="font-semibold">{result.startsWith("-") ? "Negative" : "Positive"}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <section className="border-t pt-8 space-y-6">
+        <h2 className="text-2xl font-semibold">Big Number Calculator – Arbitrary Precision Arithmetic</h2>
+        <div className="space-y-4">
+          <p className="text-muted-foreground">
+            Standard calculators and programming languages have limits on number size. JavaScript's Number type, for example, can only safely represent integers up to about 9 quadrillion (2^53 - 1). This big number calculator removes those limits, handling integers with hundreds or thousands of digits using BigInt arithmetic.
+          </p>
           <p className="text-muted-foreground">
             Cryptography, combinatorics, and number theory often involve numbers far too large for normal calculators. RSA encryption keys use numbers with hundreds of digits. Factorials grow explosively – 100! has 158 digits. This calculator uses arbitrary-precision arithmetic to handle any size integer your browser can store.
           </p>
@@ -304,7 +303,7 @@ export default function BigNumberCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-2">Exponentiation</h4>
             <p className="text-sm text-muted-foreground mb-2">
-              Raise a number to a large power.
+              Raise a number to a large power (up to 10,000).
             </p>
             <div className="font-mono text-xs bg-muted p-2 rounded">
               2^100 = 1267650600228229401496703205376
@@ -360,41 +359,109 @@ export default function BigNumberCalculator() {
         <h3 className="text-xl font-semibold">Large Number Examples</h3>
         <div className="space-y-3">
           <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-wrap gap-2">
               <span className="font-semibold text-sm">Googol</span>
               <span className="font-mono text-xs">10^100 (1 followed by 100 zeros)</span>
             </div>
           </div>
           <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-wrap gap-2">
               <span className="font-semibold text-sm">Googolplex</span>
               <span className="font-mono text-xs">10^(10^100) (1 followed by a googol zeros)</span>
             </div>
           </div>
           <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-wrap gap-2">
               <span className="font-semibold text-sm">2^64 − 1</span>
               <span className="font-mono text-xs">18,446,744,073,709,551,615 (max uint64)</span>
             </div>
           </div>
           <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-wrap gap-2">
               <span className="font-semibold text-sm">2^256 − 1</span>
               <span className="font-mono text-xs">~1.16 × 10^77 (max Ethereum address)</span>
             </div>
           </div>
           <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-wrap gap-2">
               <span className="font-semibold text-sm">52!</span>
               <span className="font-mono text-xs">~8.07 × 10^67 (card shuffles)</span>
             </div>
           </div>
           <div className="p-3 border rounded-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-wrap gap-2">
               <span className="font-semibold text-sm">Largest known prime</span>
               <span className="font-mono text-xs">2^82,589,933 − 1 (24.8 million digits)</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <h3 className="text-xl font-semibold">Worked Examples</h3>
+        <div className="space-y-4">
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 1: Large Addition</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Add 999,999,999,999,999,999 + 1
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>  999,999,999,999,999,999</div>
+              <div>+                   1</div>
+              <div>──────────────────────</div>
+              <div>1,000,000,000,000,000,000</div>
+              <div>Result: 10^18 (one quintillion)</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 2: Exponentiation</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Calculate 2^100
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>2^10 = 1,024</div>
+              <div>2^20 = 1,048,576</div>
+              <div>2^50 = 1,125,899,906,842,624</div>
+              <div>2^100 = 1,267,650,600,228,229,401,496,703,205,376</div>
+              <div>This is approximately 1.27 × 10^30</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 3: Modulo Operation</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Find 1,000,000,000,000,000,000,000 mod 7
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>10^21 ÷ 7 = 142,857,142,857,142,857,142 R6</div>
+              <div>Pattern: 10^n mod 7 cycles through 1,3,2,6,4,5</div>
+              <div>21 mod 6 = 3, so 10^21 mod 7 = 10^3 mod 7 = 6</div>
+              <div>Result: 6</div>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-semibold text-sm mb-2">Example 4: Large Multiplication</h4>
+            <p className="text-sm text-muted-foreground mb-2">
+              Multiply 123,456,789,012,345,678,901,234,567,890 × 987,654,321,098,765,432,109,876,543,210
+            </p>
+            <div className="font-mono text-xs bg-muted p-3 rounded space-y-1">
+              <div>Both numbers have 30 digits</div>
+              <div>Product will have up to 60 digits</div>
+              <div>Result: 121,932,631,137,021,795,234,567,890,123,456,789,012,345,678,901,234,567,890</div>
+              <div>(59 digits total)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t pt-8 space-y-6">
+        <div className="p-4 bg-muted rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">Quick Fact</h3>
+          <p className="text-sm text-muted-foreground">
+            The term "googol" (10^100) was coined in 1920 by 9-year-old Milton Sirotta, nephew of mathematician Edward Kasner. Kasner later popularized it in his 1940 book "Mathematics and the Imagination." The search engine Google is named after this number, reflecting its mission to organize the web's vast information.
+          </p>
         </div>
       </section>
 
@@ -431,24 +498,18 @@ export default function BigNumberCalculator() {
               No. While the math is correct, this runs client-side in JavaScript and isn't designed for security-critical applications. Use established cryptographic libraries for that.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-          <a href="/math-tools/scientific-notation-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Scientific Notation Converter</p>
-            <p className="text-xs text-muted-foreground">Large number format</p>
-          </a>
-          <a href="/math-tools/modulo-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Modulo Calculator</p>
-            <p className="text-xs text-muted-foreground">Remainder calculations</p>
-          </a>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Why is there a limit on the power operation?</h4>
+            <p className="text-sm text-muted-foreground">
+              Exponentiation grows extremely fast. 2^10000 has over 3,000 digits. Computing very large powers can freeze your browser. The limit of 10,000 for exponents balances usefulness with practical performance.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm mb-2">What's the difference between BigInt and regular numbers?</h4>
+            <p className="text-sm text-muted-foreground">
+              Regular JavaScript numbers use 64-bit floating point, which loses precision for integers above 2^53. BigInt uses arbitrary precision, storing as many digits as needed. BigInt requires an "n" suffix in code (123n) but this calculator handles that automatically.
+            </p>
+          </div>
         </div>
       </section>
     </div>

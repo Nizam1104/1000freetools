@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // ── Fonts & Base Styles ──────────────────────────────────────────────────────
 const CALC_STYLE = `
@@ -252,14 +251,11 @@ const CALC_STYLE = `
 
 // ── Math Engine ──────────────────────────────────────────────────────────────
 
-// Simpler, safer evaluator using function-based approach
 function safeEval(expr: string, isDeg: boolean): number | string {
   try {
-    // Degree/radian conversion helpers
     const toRad = (x: number): number => isDeg ? x * Math.PI / 180 : x;
     const fromRad = (x: number): number => isDeg ? x * 180 / Math.PI : x;
 
-    // Degree-aware trig functions
     const __sin__ = (x: number): number => Math.sin(toRad(x));
     const __cos__ = (x: number): number => Math.cos(toRad(x));
     const __tan__ = (x: number): number => Math.tan(toRad(x));
@@ -293,10 +289,8 @@ function safeEval(expr: string, isDeg: boolean): number | string {
       .replace(/abs\(/g, "(Math.abs(")
       .replace(/\^/g, "**");
 
-    // Handle implicit multiplication: 2π → 2*(Math.PI), 2(3) → 2*(3)
     e = e.replace(/(\d)\s*\(/g, "$1*(");
 
-    // Create function with helpers in scope
     // eslint-disable-next-line no-new-func
     const result = Function(
       "__sin__", "__cos__", "__tan__",
@@ -328,29 +322,27 @@ function formatResult(val: number | string): string {
   if (typeof val === "string") return val;
   if (!isFinite(val)) return val > 0 ? "∞" : "-∞";
   if (isNaN(val)) return "Error";
-  // Avoid floating point ugliness
-  const s = parseFloat(val.toPrecision(12));
+  const s = parseFloat(val.toPrecision(15));
   return String(s);
 }
 
 // ── Main Component ───────────────────────────────────────────────────────────
 export default function ScientificCalculator() {
-  const [expr, setExpr] = useState("");           // expression being built
-  const [result, setResult] = useState("0");      // live preview result
-  const [history, setHistory] = useState("");     // last completed expression
+  const [expr, setExpr] = useState("");
+  const [result, setResult] = useState("0");
+  const [history, setHistory] = useState("");
   const [isDeg, setIsDeg] = useState(true);
   const [is2nd, setIs2nd] = useState(false);
   const [memory, setMemory] = useState(0);
   const [justEvaluated, setJustEvaluated] = useState(false);
   const [error, setError] = useState(false);
-  const [openParens, setOpenParens] = useState(0); // track unmatched (
+  const [openParens, setOpenParens] = useState(0);
 
-  // Live preview
   useEffect(() => {
     if (!expr) { setResult("0"); setError(false); return; }
     const val = safeEval(expr, isDeg);
     if (val === "Error") {
-      setError(false); // don't show red until equals is pressed
+      setError(false);
     } else {
       setResult(formatResult(val));
       setError(false);
@@ -360,7 +352,6 @@ export default function ScientificCalculator() {
   const addToExpr = useCallback((token: string) => {
     setExpr(prev => {
       if (justEvaluated) {
-        // If last action was '=', start fresh unless it's an operator
         const isOp = ["+", "−", "×", "÷", "^"].includes(token);
         const newExpr = isOp ? result + token : token;
         setJustEvaluated(false);
@@ -387,7 +378,6 @@ export default function ScientificCalculator() {
       setJustEvaluated(false);
       return;
     }
-    // Replace last operator if expr ends with one
     setExpr(prev => {
       const ops = ["+", "−", "×", "÷"];
       if (prev.length > 0 && ops.includes(prev[prev.length - 1])) {
@@ -400,7 +390,6 @@ export default function ScientificCalculator() {
   };
 
   const handleFunction = (fn: string): void => {
-    // Functions append "fn(" so user types argument then closes
     setJustEvaluated(false);
     setExpr(prev => {
       if (justEvaluated) return fn + "(";
@@ -431,7 +420,6 @@ export default function ScientificCalculator() {
     if (justEvaluated) { setExpr(""); setResult("0"); setJustEvaluated(false); return; }
     setExpr(prev => {
       if (!prev) return prev;
-      // Remove multi-char tokens
       const multiTokens = ["sin⁻¹(", "cos⁻¹(", "tan⁻¹(", "sinh(", "cosh(", "tanh(", "sin(", "cos(", "tan(", "log₂(", "log(", "ln(", "√(", "∛(", "abs("];
       for (const t of multiTokens) {
         if (prev.endsWith(t)) {
@@ -457,7 +445,6 @@ export default function ScientificCalculator() {
   };
 
   const handlePercent = () => {
-    // Convert last number in expr to percentage
     setExpr(prev => {
       const num = parseFloat(prev);
       if (!isNaN(num) && String(num) === prev) return String(num / 100);
@@ -481,7 +468,6 @@ export default function ScientificCalculator() {
     });
   };
 
-  // Factorial: apply to current expression result
   const handleFactorial = () => {
     const val = expr ? safeEval(expr, isDeg) : parseFloat(result);
     const n = typeof val === "string" ? parseFloat(val) : val;
@@ -492,10 +478,8 @@ export default function ScientificCalculator() {
     setJustEvaluated(true);
   };
 
-  // Power of y
   const handlePower = () => handleOperator("^");
 
-  // Memory
   const curVal = () => {
     if (expr) {
       const v = safeEval(expr, isDeg);
@@ -504,7 +488,6 @@ export default function ScientificCalculator() {
     return parseFloat(result) || 0;
   };
 
-  // Keyboard
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
       if (e.target instanceof HTMLElement && e.target.tagName === "INPUT") return;
@@ -527,7 +510,6 @@ export default function ScientificCalculator() {
     return () => window.removeEventListener("keydown", onKey);
   });
 
-  // Ripple effect
   const ripple = (e: React.MouseEvent<HTMLButtonElement>): void => {
     const btn = e.currentTarget;
     const circle = document.createElement("span");
@@ -542,7 +524,6 @@ export default function ScientificCalculator() {
     btn.appendChild(circle);
   };
 
-  // Display value
   const displayVal = justEvaluated ? result : (
     result !== "0" && expr === "" ? result :
       result === "0" && expr === "" ? "0" :
@@ -550,7 +531,6 @@ export default function ScientificCalculator() {
   );
   const displayExpr = justEvaluated ? "" : expr;
 
-  // ── Render ──
   interface BtnProps {
     label: string;
     sub?: string;
@@ -573,6 +553,14 @@ export default function ScientificCalculator() {
 
   const fnLabel = (primary: string, secondary: string): string => is2nd ? secondary : primary;
   const fnAct = (primary: string, secondary: string): string => is2nd ? secondary : primary;
+
+  const loadExample = (exampleExpr: string) => {
+    setExpr(exampleExpr);
+    setResult("0");
+    setHistory("");
+    setJustEvaluated(false);
+    setError(false);
+  };
 
   return (
     <>
@@ -722,211 +710,238 @@ export default function ScientificCalculator() {
               <Btn label="+" variant="btn-op" onClick={() => handleOperator("+")} />
             </div>
 
-            {/* 0 . ⌫ = */}
+            {/* 0 . = */}
             <div className="btn-row" style={{ gridTemplateColumns: "repeat(4,1fr)" }}>
               <Btn label="0" wide onClick={() => handleDigit("0")} />
               <Btn label="." onClick={() => handleDigit(".")} />
-              <Btn label="⌫" variant="btn-util" onClick={handleBackspace} />
               <Btn label="=" variant="btn-eq" onClick={handleEquals} />
             </div>
           </div>
+        </div>
 
-          {/* Footer hint */}
-          <div style={{ textAlign: "center", padding: "8px 0 14px", fontSize: "10px", fontFamily: "Space Mono, monospace", color: "var(--muted)", letterSpacing: "0.1em" }}>
-            KEYBOARD SUPPORTED · {openParens > 0 ? `${openParens} UNCLOSED PAREN${openParens > 1 ? "S" : ""}` : "ALL SYSTEMS GO"}
+        {/* Example buttons */}
+        <div className="mt-6 flex flex-wrap gap-2 justify-center">
+          <span className="text-sm text-muted-foreground self-center">Load Example:</span>
+          <button
+            className="px-3 py-1.5 text-sm border rounded hover:bg-muted transition-colors"
+            onClick={() => loadExample("sin(30) + cos(60)")}
+          >
+            Trig Example
+          </button>
+          <button
+            className="px-3 py-1.5 text-sm border rounded hover:bg-muted transition-colors"
+            onClick={() => loadExample("log(100) + ln(e)")}
+          >
+            Log Example
+          </button>
+          <button
+            className="px-3 py-1.5 text-sm border rounded hover:bg-muted transition-colors"
+            onClick={() => loadExample("√(144) + ∛(27)")}
+          >
+            Roots Example
+          </button>
+          <button
+            className="px-3 py-1.5 text-sm border rounded hover:bg-muted transition-colors"
+            onClick={() => loadExample("2^10 + 5!")}
+          >
+            Power/Factorial
+          </button>
+          <button
+            className="px-3 py-1.5 text-sm border rounded hover:bg-muted transition-colors"
+            onClick={() => loadExample("(3+4) × (5-2)")}
+          >
+            Parentheses
+          </button>
+          <button
+            className="px-3 py-1.5 text-sm border rounded hover:bg-muted transition-colors"
+            onClick={() => loadExample("sinh(1) + cosh(1)")}
+          >
+            Hyperbolic
+          </button>
+        </div>
+
+        {/* SEO Content */}
+        <section className="border-t pt-8 space-y-6">
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">Understanding Scientific Calculators</h2>
+            <p className="text-muted-foreground">
+              A scientific calculator handles far more than basic arithmetic. It computes trigonometric functions like sine, cosine, and tangent for any angle. It calculates logarithms in base 10, base 2, and natural log (base e). It handles exponents, roots, and factorials. Engineers, scientists, and students rely on these tools daily because they turn complex math into simple button presses.
+            </p>
           </div>
-        </div>
 
-        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "40px 20px", display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
-          <Card>
-            <CardHeader>
-              <CardTitle>Free Online Scientific Calculator – Advanced Math Functions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-sm text-muted-foreground">
-                Perform complex scientific calculations online with our free scientific calculator. Supports trigonometry, logarithms, exponents, roots, and more – ideal for students and professionals.
+          <div>
+            <p className="text-muted-foreground">
+              This calculator works in both degrees and radians. Switch between them with the DEG/RAD toggle. Degrees feel natural for geometry – a right angle is 90°. Radians connect directly to the unit circle – a right angle is π/2 radians. Calculus and higher math almost always use radians.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t pt-8 space-y-6">
+          <h3 className="text-xl font-semibold">How to Use This Calculator</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Basic Operations</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Type numbers and operators just like writing on paper. The display shows your expression as you build it. Press equals to see the result.
               </p>
-              <p className="text-sm text-muted-foreground">
-                Switch between degrees and radians for trig functions. Use memory functions to store and recall values. The 2nd function toggle gives you access to inverse trig functions and additional operations.
+              <div className="text-xs font-mono bg-muted p-2 rounded">
+                12 + 34 × 5 = 182
+              </div>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Functions</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Press a function button like sin, then type the argument, then close the parenthesis. The calculator evaluates the function when you press equals.
               </p>
-              <p className="text-sm text-muted-foreground">
-                Engineering students, physics researchers, and anyone working with advanced math can rely on this calculator. It handles everything from basic arithmetic to complex exponential and logarithmic calculations.
+              <div className="text-xs font-mono bg-muted p-2 rounded">
+                sin(30) = 0.5 (in degrees)
+              </div>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Memory Functions</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                MS stores the current value. MR recalls it. M+ adds to memory. M− subtracts from memory. MC clears memory completely.
               </p>
-            </CardContent>
-          </Card>
+              <div className="text-xs font-mono bg-muted p-2 rounded">
+                50 MS, 30 M+, MR shows 80
+              </div>
+            </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Scientific Functions Explained</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Trigonometric Functions</h4>
-                  <div className="space-y-2 text-xs text-muted-foreground">
-                    <div><strong className="text-foreground">sin/cos/tan:</strong> Calculate sine, cosine, and tangent of angles</div>
-                    <div><strong className="text-foreground">sin⁻¹/cos⁻¹/tan⁻¹:</strong> Inverse functions – find angle from ratio</div>
-                    <div><strong className="text-foreground">DEG/RAD:</strong> Toggle between degrees and radians mode</div>
-                  </div>
-                </div>
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Logarithmic Functions</h4>
-                  <div className="space-y-2 text-xs text-muted-foreground">
-                    <div><strong className="text-foreground">log:</strong> Base-10 logarithm</div>
-                    <div><strong className="text-foreground">ln:</strong> Natural logarithm (base e)</div>
-                    <div><strong className="text-foreground">10ˣ / eˣ:</strong> Antilog – inverse of log functions</div>
-                  </div>
-                </div>
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Exponential & Powers</h4>
-                  <div className="space-y-2 text-xs text-muted-foreground">
-                    <div><strong className="text-foreground">x² / x³:</strong> Square and cube a number</div>
-                    <div><strong className="text-foreground">x^y:</strong> Raise x to any power y</div>
-                    <div><strong className="text-foreground">√ / ∛:</strong> Square root and cube root</div>
-                  </div>
-                </div>
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-sm mb-3">Other Functions</h4>
-                  <div className="space-y-2 text-xs text-muted-foreground">
-                    <div><strong className="text-foreground">n!:</strong> Factorial – product of all integers up to n</div>
-                    <div><strong className="text-foreground">1/x:</strong> Reciprocal of x</div>
-                    <div><strong className="text-foreground">EXP:</strong> Scientific notation exponent entry</div>
-                  </div>
-                </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Second Functions</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Press 2nd to access inverse functions. sin becomes sin⁻¹ (arcsin). √ becomes ∛. log becomes log₂. Press 2nd again to return to normal.
+              </p>
+              <div className="text-xs font-mono bg-muted p-2 rounded">
+                2nd, sin, 0.5, ) = 30°
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+        </section>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Memory Functions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-5 gap-3">
-                <div className="p-3 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-1">MS</div>
-                  <div className="text-xs text-muted-foreground">Store current display value in memory</div>
-                </div>
-                <div className="p-3 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-1">MR</div>
-                  <div className="text-xs text-muted-foreground">Recall value from memory to display</div>
-                </div>
-                <div className="p-3 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-1">M+</div>
-                  <div className="text-xs text-muted-foreground">Add current value to memory</div>
-                </div>
-                <div className="p-3 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-1">M−</div>
-                  <div className="text-xs text-muted-foreground">Subtract current value from memory</div>
-                </div>
-                <div className="p-3 bg-muted rounded-lg">
-                  <div className="font-semibold text-sm mb-1">MC</div>
-                  <div className="text-xs text-muted-foreground">Clear memory to zero</div>
-                </div>
+        <section className="border-t pt-8 space-y-6">
+          <h3 className="text-xl font-semibold">Worked Examples</h3>
+          <div className="space-y-4">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Example 1: Right Triangle Side Length</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Find the hypotenuse of a right triangle with legs 3 and 4 using the Pythagorean theorem.
+              </p>
+              <div className="text-sm font-mono bg-muted p-3 rounded space-y-1">
+                <div>Expression: √(3² + 4²)</div>
+                <div>Calculation: √(9 + 16) = √25</div>
+                <div>Result: 5</div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Common Scientific Calculations</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 border rounded-lg">
-                  <div className="font-semibold text-sm mb-1">Find sin(30°)</div>
-                  <div className="font-mono text-xs text-muted-foreground">sin(30) = 0.5</div>
-                  <p className="text-xs text-muted-foreground mt-1">Make sure DEG mode is selected for degree calculations.</p>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <div className="font-semibold text-sm mb-1">Calculate log₁₀(1000)</div>
-                  <div className="font-mono text-xs text-muted-foreground">log(1000) = 3</div>
-                  <p className="text-xs text-muted-foreground mt-1">10 raised to what power equals 1000? Answer: 3.</p>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <div className="font-semibold text-sm mb-1">Compute 5 factorial</div>
-                  <div className="font-mono text-xs text-muted-foreground">5! = 5 × 4 × 3 × 2 × 1 = 120</div>
-                  <p className="text-xs text-muted-foreground mt-1">Factorials grow very quickly – useful in probability.</p>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <div className="font-semibold text-sm mb-1">Square root of 144</div>
-                  <div className="font-mono text-xs text-muted-foreground">√144 = 12</div>
-                  <p className="text-xs text-muted-foreground mt-1">What number times itself equals 144?</p>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <div className="font-semibold text-sm mb-1">Calculate 2⁵</div>
-                  <div className="font-mono text-xs text-muted-foreground">2 ^ 5 = 32</div>
-                  <p className="text-xs text-muted-foreground mt-1">Use x^y button: enter 2, press x^y, enter 5, press =</p>
-                </div>
-                <div className="p-3 border rounded-lg">
-                  <div className="font-semibold text-sm mb-1">Natural log of e (2.718...)</div>
-                  <div className="font-mono text-xs text-muted-foreground">ln(e) = 1</div>
-                  <p className="text-xs text-muted-foreground mt-1">The natural log of Euler's number e is exactly 1.</p>
-                </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Example 2: Compound Interest</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Calculate $1000 growing at 5% annual interest for 10 years: A = P(1 + r)^t
+              </p>
+              <div className="text-sm font-mono bg-muted p-3 rounded space-y-1">
+                <div>Expression: 1000 × (1.05)^10</div>
+                <div>Calculation: 1000 × 1.62889...</div>
+                <div>Result: $1,628.89</div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What's the difference between DEG and RAD mode?</h4>
-                <p className="text-xs text-muted-foreground">
-                  DEG (degrees) divides a circle into 360°. RAD (radians) uses the radius – a full circle is 2π radians. Use DEG for basic geometry and navigation. Use RAD for calculus and advanced physics.
-                </p>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Example 3: Trigonometric Identity</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Verify sin²(45°) + cos²(45°) = 1
+              </p>
+              <div className="text-sm font-mono bg-muted p-3 rounded space-y-1">
+                <div>Expression: sin(45)² + cos(45)²</div>
+                <div>Calculation: (0.7071...)² + (0.7071...)²</div>
+                <div>Result: 1 (exact)</div>
               </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How do I calculate cube roots?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Press the 2nd toggle to access the cube root (∛) function, or use x^y with 1/3 as the exponent. For example, ∛27 = 3 because 3³ = 27.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What does the EXP button do?</h4>
-                <p className="text-xs text-muted-foreground">
-                  EXP lets you enter numbers in scientific notation. To enter 6.02 × 10²³ (Avogadro's number), type 6.02, press EXP, then 23. The display shows it as 6.02e+23.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Can I calculate negative exponents?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Yes. Use the ± button to make the exponent negative. For example, 2^(-3) = 1/8 = 0.125. Enter 2, press x^y, enter 3, press ±, then =
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Why am I getting unexpected trig results?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Check your angle mode. sin(30) in DEG mode gives 0.5, but sin(30) in RAD mode gives -0.988. Make sure you're in the right mode for your problem.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+            </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Related Math Tools</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Standard Calculator</p>
-                  <p className="text-xs text-muted-foreground">Basic arithmetic operations</p>
-                </a>
-                <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Fraction Calculator</p>
-                  <p className="text-xs text-muted-foreground">Work with fractions</p>
-                </a>
-                <a href="/math-tools/logarithm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-                  <p className="font-semibold text-sm">Logarithm Calculator</p>
-                  <p className="text-xs text-muted-foreground">Dedicated log calculations</p>
-                </a>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Example 4: Logarithm Calculation</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Find log₂(1024) – how many times do you multiply 2 to get 1024?
+              </p>
+              <div className="text-sm font-mono bg-muted p-3 rounded space-y-1">
+                <div>Expression: log₂(1024)</div>
+                <div>Press: 2nd, log, 1024, )</div>
+                <div>Result: 10 (because 2¹⁰ = 1024)</div>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Example 5: Factorial Probability</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                How many ways can you arrange 5 books on a shelf? Calculate 5!
+              </p>
+              <div className="text-sm font-mono bg-muted p-3 rounded space-y-1">
+                <div>Expression: 5!</div>
+                <div>Calculation: 5 × 4 × 3 × 2 × 1</div>
+                <div>Result: 120 arrangements</div>
+              </div>
+            </div>
+
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold text-sm mb-2">Example 6: Hyperbolic Functions</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Calculate cosh(1) – the hyperbolic cosine appears in catenary curves (hanging cables).
+              </p>
+              <div className="text-sm font-mono bg-muted p-3 rounded space-y-1">
+                <div>Expression: cosh(1)</div>
+                <div>Calculation: (e¹ + e⁻¹) / 2</div>
+                <div>Result: 1.5430806...</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t pt-8 space-y-6">
+          <h3 className="text-xl font-semibold">Quick Fact</h3>
+          <div className="p-4 bg-muted rounded-lg">
+            <p className="text-sm">
+              The first handheld scientific calculator was the HP-35, introduced in 1972. It cost $395 (about $2,800 today) and could compute any scientific function in seconds – tasks that previously required bulky slide rules or tables. Engineers lined up around the block to buy one. Within a decade, slide rules were obsolete.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t pt-8 space-y-6">
+          <h3 className="text-xl font-semibold">Frequently Asked Questions</h3>
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What's the difference between DEG and RAD mode?</h4>
+              <p className="text-sm text-muted-foreground">
+                DEG mode measures angles in degrees (360° in a circle). RAD mode uses radians (2π radians in a circle). Use DEG for geometry and navigation. Use RAD for calculus, physics, and anything involving circular motion or waves.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Why does sin(30) give different answers sometimes?</h4>
+              <p className="text-sm text-muted-foreground">
+                Check your angle mode. In DEG mode, sin(30) = 0.5. In RAD mode, sin(30) = -0.988... because 30 radians is about 1719°, which lands in a different quadrant. Always verify your mode before trig calculations.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">What does the "2nd" button do?</h4>
+              <p className="text-sm text-muted-foreground">
+                The 2nd button accesses inverse and alternate functions. sin becomes arcsin (sin⁻¹), which finds the angle from a ratio. √ becomes cube root (∛). log becomes log base 2. It's like having two calculators in one.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">How accurate is this calculator?</h4>
+              <p className="text-sm text-muted-foreground">
+                Results use JavaScript's double-precision floating point, giving about 15-17 significant digits. That's enough for virtually all engineering and scientific work. For extreme precision (100+ digits), you'd need specialized software.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Can I chain multiple operations?</h4>
+              <p className="text-sm text-muted-foreground">
+                Yes. Type the full expression like you&apos;d write it: 2 + 3 × sin(45) − √(16). The calculator respects order of operations – parentheses first, then exponents, then multiplication/division, then addition/subtraction.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
