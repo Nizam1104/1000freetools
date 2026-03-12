@@ -136,7 +136,7 @@ export default function AddIdToJsonPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
+      <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">
@@ -336,7 +336,7 @@ export default function AddIdToJsonPage() {
           <h2 className="text-2xl font-semibold mb-6">
             Add Unique IDs to JSON Arrays Instantly
           </h2>
-          
+
           <div className="space-y-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
               This tool adds unique identifiers to each object in a JSON array. Paste your data, pick an ID format (UUID, sequential numbers, random strings, or custom patterns), and get back valid JSON ready for databases, APIs, or testing. Everything runs in your browser—no data leaves your machine.

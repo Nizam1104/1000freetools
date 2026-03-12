@@ -192,7 +192,7 @@ export default function XmlToJsonConverterPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">XML to JSON Converter – Free Online Tool</h1>

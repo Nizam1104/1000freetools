@@ -1,6 +1,13 @@
 import { PickColorCodeFromImage } from "@/components/image-tools/pick-color-code-from-image/PickColorCodeFromImage";
 import { PickColorCodeFromImageSEO } from "@/components/seo-content/image-tools/PickColorCodeFromImage";
 import { Metadata } from "next";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Pick Color Code from Image - Get HEX and RGB Values Online",
@@ -25,7 +32,31 @@ export default function PickColorCodeFromImagePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/" className="text-foreground">
+                Home
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/image-tools" className="text-foreground">
+                Image Tools
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink
+                href="/image-tools/pick-color-code-from-image"
+                className="text-foreground"
+              >
+                Pick Color Code from Image
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 mt-4">
           Online Image Color Picker
         </h1>
         <p className="text-base sm:text-lg md:text-xl max-w-4xl text-muted-foreground">
