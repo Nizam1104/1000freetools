@@ -65,7 +65,7 @@ export default function BorderRadiusGeneratorPage() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Border Radius Generator</h1>
         <p className="text-muted-foreground">
@@ -299,12 +299,12 @@ border-bottom-left-radius: ${bottomLeft}px;`}
         <section>
           <h2 className="text-2xl font-semibold mb-4">Understanding Border Radius</h2>
           <p className="text-muted-foreground mb-4">
-            Border radius rounds element corners. You can use one value for all corners, or different 
-            values for each. The property accepts pixels, percentages, or even elliptical values for 
+            Border radius rounds element corners. You can use one value for all corners, or different
+            values for each. The property accepts pixels, percentages, or even elliptical values for
             asymmetric curves.
           </p>
           <p className="text-muted-foreground">
-            This generator lets you adjust each corner independently and see the result before 
+            This generator lets you adjust each corner independently and see the result before
             copying the CSS. Toggle uniform mode when you want all corners the same.
           </p>
         </section>
@@ -343,7 +343,7 @@ border-bottom-left-radius: ${bottomLeft}px;`}
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What value makes a perfect circle?</h3>
                 <p className="text-sm text-muted-foreground">
-                  For a square element, use <code className="bg-muted px-1 rounded">border-radius: 50%</code> or 
+                  For a square element, use <code className="bg-muted px-1 rounded">border-radius: 50%</code> or
                   any value ≥ half the element's width. For rectangles, elliptical values create pill shapes.
                 </p>
               </CardContent>
@@ -352,7 +352,7 @@ border-bottom-left-radius: ${bottomLeft}px;`}
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Can I animate border radius?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Yes, border-radius is animatable. Transitions work smoothly between different values. 
+                  Yes, border-radius is animatable. Transitions work smoothly between different values.
                   Performance is good on modern browsers.
                 </p>
               </CardContent>
@@ -361,7 +361,7 @@ border-bottom-left-radius: ${bottomLeft}px;`}
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Why do my rounded corners look jagged?</h3>
                 <p className="text-sm text-muted-foreground">
-                  This is usually an anti-aliasing issue. Try adding a 1px transparent border or using 
+                  This is usually an anti-aliasing issue. Try adding a 1px transparent border or using
                   <code className="bg-muted px-1 rounded">outline: 1px solid transparent</code> to smooth edges.
                 </p>
               </CardContent>

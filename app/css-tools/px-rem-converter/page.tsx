@@ -50,7 +50,7 @@ export default function PxRemConverterPage() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">PX to REM Converter</h1>
         <p className="text-muted-foreground">
@@ -241,11 +241,11 @@ export default function PxRemConverterPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Why Use REM Units?</h2>
           <p className="text-muted-foreground mb-4">
-            REM units are relative to the root font size (html element). This makes your entire 
+            REM units are relative to the root font size (html element). This makes your entire
             design scalable - change one value and everything adjusts proportionally.
           </p>
           <p className="text-muted-foreground">
-            More importantly, REM respects user preferences. If someone sets their browser to 
+            More importantly, REM respects user preferences. If someone sets their browser to
             larger text, REM-based designs scale up. Pixel-based designs don't.
           </p>
         </section>
@@ -255,7 +255,7 @@ export default function PxRemConverterPage() {
           <Card>
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4">
-                The formula is simple: <code className="bg-muted px-1 rounded">rem = pixels / rootSize</code>. 
+                The formula is simple: <code className="bg-muted px-1 rounded">rem = pixels / rootSize</code>.
                 With the default 16px root, 24px becomes 1.5rem.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
@@ -295,7 +295,7 @@ export default function PxRemConverterPage() {
             html {`{ font-size: 16px; }`}
           </code>
           <p className="text-muted-foreground mt-4">
-            Some teams use 62.5% (10px) to make mental math easier - then 14px becomes 1.4rem 
+            Some teams use 62.5% (10px) to make mental math easier - then 14px becomes 1.4rem
             instead of 0.875rem. This works but breaks native browser scaling.
           </p>
         </section>
@@ -307,8 +307,8 @@ export default function PxRemConverterPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">REM vs EM?</h3>
                 <p className="text-sm text-muted-foreground">
-                  EM is relative to the parent element's font size, which can compound unexpectedly. 
-                  REM is always relative to root. Use REM for consistency, EM when you specifically 
+                  EM is relative to the parent element's font size, which can compound unexpectedly.
+                  REM is always relative to root. Use REM for consistency, EM when you specifically
                   want inheritance.
                 </p>
               </CardContent>
@@ -317,7 +317,7 @@ export default function PxRemConverterPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What about responsive design?</h3>
                 <p className="text-sm text-muted-foreground">
-                  REM scales automatically when you change the root size with media queries. 
+                  REM scales automatically when you change the root size with media queries.
                   Combine with fluid typography techniques for fully responsive designs.
                 </p>
               </CardContent>
@@ -326,7 +326,7 @@ export default function PxRemConverterPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Do I need to convert everything?</h3>
                 <p className="text-sm text-muted-foreground">
-                  No. Use REM for user-facing sizes (fonts, spacing). Keep pixels for decorative 
+                  No. Use REM for user-facing sizes (fonts, spacing). Keep pixels for decorative
                   elements (borders, shadows, icons) where exact sizing matters.
                 </p>
               </CardContent>

@@ -52,15 +52,15 @@ export default function CssButtonGeneratorPage() {
     }
 
     const hoverStyles: string[] = [];
-    
+
     if (gradientEnabled) {
       hoverStyles.push(`background: linear-gradient(${gradientAngle}deg, ${hoverBgColor}, ${gradientEndColor})`);
     } else {
       hoverStyles.push(`background: ${hoverBgColor}`);
     }
-    
+
     hoverStyles.push(`color: ${hoverTextColor}`);
-    
+
     if (transformHover === "scale") {
       hoverStyles.push(`transform: scale(${transformValue})`);
     } else if (transformHover === "translate") {
@@ -116,7 +116,7 @@ export default function CssButtonGeneratorPage() {
 
   const getHoverStyles = () => {
     const hover: React.CSSProperties = {};
-    
+
     if (transformHover === "scale") {
       hover.transform = `scale(${transformValue})`;
     } else if (transformHover === "translate") {
@@ -135,7 +135,7 @@ export default function CssButtonGeneratorPage() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Button Generator</h1>
         <p className="text-muted-foreground">
@@ -416,11 +416,11 @@ export default function CssButtonGeneratorPage() {
           <h2 className="text-2xl font-semibold mb-4">About CSS Buttons</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Buttons are one of the most important interactive elements in web design. A well-designed button 
+              Buttons are one of the most important interactive elements in web design. A well-designed button
               communicates its purpose, invites interaction, and provides visual feedback to users.
             </p>
             <p>
-              Modern CSS buttons use a combination of properties including padding, border-radius, box-shadow, 
+              Modern CSS buttons use a combination of properties including padding, border-radius, box-shadow,
               gradients, and transitions to create polished, professional-looking call-to-action elements.
             </p>
           </div>
@@ -434,7 +434,7 @@ export default function CssButtonGeneratorPage() {
                 <CardTitle className="text-lg">Clear Hierarchy</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Use different button styles for primary, secondary, and tertiary actions. Primary buttons should 
+                Use different button styles for primary, secondary, and tertiary actions. Primary buttons should
                 be the most visually prominent.
               </CardContent>
             </Card>
@@ -443,7 +443,7 @@ export default function CssButtonGeneratorPage() {
                 <CardTitle className="text-lg">Hover Feedback</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Always provide hover states to indicate interactivity. Use color changes, shadows, or transforms 
+                Always provide hover states to indicate interactivity. Use color changes, shadows, or transforms
                 to signal the button is clickable.
               </CardContent>
             </Card>
@@ -452,7 +452,7 @@ export default function CssButtonGeneratorPage() {
                 <CardTitle className="text-lg">Accessibility</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Ensure sufficient color contrast (4.5:1 minimum). Add focus states for keyboard navigation and 
+                Ensure sufficient color contrast (4.5:1 minimum). Add focus states for keyboard navigation and
                 screen reader support.
               </CardContent>
             </Card>

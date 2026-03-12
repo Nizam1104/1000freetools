@@ -57,7 +57,7 @@ export default function CssSpecificityCalculatorPage() {
     // Count pseudo-elements (::before, ::after, etc.)
     const pseudoElements = sel.match(/::?[a-zA-Z-]+/g);
     if (pseudoElements) {
-      const onlyPseudoElements = pseudoElements.filter((p) => 
+      const onlyPseudoElements = pseudoElements.filter((p) =>
         p.startsWith("::") || [":before", ":after", ":first-line", ":first-letter"].includes(p)
       );
       c += onlyPseudoElements.length;
@@ -106,7 +106,7 @@ export default function CssSpecificityCalculatorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Specificity Calculator</h1>
         <p className="text-muted-foreground">

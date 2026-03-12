@@ -62,9 +62,9 @@ export default function GradientGeneratorPage() {
     const newPosition =
       colorStops.length > 0
         ? Math.min(
-            100,
-            Math.max(0, colorStops[colorStops.length - 1].position + 10),
-          )
+          100,
+          Math.max(0, colorStops[colorStops.length - 1].position + 10),
+        )
         : 50;
     const newStop: ColorStop = {
       id: Date.now().toString(),
@@ -129,7 +129,7 @@ export default function GradientGeneratorPage() {
   const gradientCSS = generateGradient();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Gradient Generator</h1>
         <p className="text-muted-foreground">

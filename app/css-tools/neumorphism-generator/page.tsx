@@ -21,14 +21,14 @@ export default function NeumorphismGeneratorPage() {
   const generateNeumorphismCSS = () => {
     const lightColor = adjustColor(baseColor, Math.round(100 * intensity));
     const darkColor = adjustColor(baseColor, Math.round(-100 * intensity));
-    
+
     const shadow1 = `${-distance}px ${-distance}px ${blur}px ${lightColor}`;
     const shadow2 = `${distance}px ${distance}px ${blur}px ${darkColor}`;
-    
+
     if (shape === "pressed") {
       return `box-shadow: inset ${-distance}px ${-distance}px ${blur}px ${lightColor}, inset ${distance}px ${distance}px ${blur}px ${darkColor};`;
     }
-    
+
     return `box-shadow: ${shadow1}, ${shadow2};`;
   };
 
@@ -96,7 +96,7 @@ export default function NeumorphismGeneratorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Neumorphism Generator</h1>
         <p className="text-muted-foreground">
@@ -355,12 +355,12 @@ export default function NeumorphismGeneratorPage() {
           <h2 className="text-2xl font-semibold mb-4">About Neumorphism</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Neumorphism (or soft UI) is a design trend that creates the illusion of extruded shapes through 
-              carefully placed light and dark shadows. Elements appear to be pushed out from or pressed into 
+              Neumorphism (or soft UI) is a design trend that creates the illusion of extruded shapes through
+              carefully placed light and dark shadows. Elements appear to be pushed out from or pressed into
               the background.
             </p>
             <p>
-              The key to neumorphism is using two shadows: a light shadow on the top-left and a dark shadow 
+              The key to neumorphism is using two shadows: a light shadow on the top-left and a dark shadow
               on the bottom-right. This mimics how light would interact with a physically extruded surface.
             </p>
           </div>
@@ -374,7 +374,7 @@ export default function NeumorphismGeneratorPage() {
                 <CardTitle className="text-lg">Color Choice</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Use low-saturation colors for the best effect. Gray-blue tones like #e0e5ec work beautifully. 
+                Use low-saturation colors for the best effect. Gray-blue tones like #e0e5ec work beautifully.
                 Avoid highly saturated colors.
               </CardContent>
             </Card>
@@ -383,7 +383,7 @@ export default function NeumorphismGeneratorPage() {
                 <CardTitle className="text-lg">Accessibility</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Neumorphism can have contrast issues. Ensure interactive elements have clear visual indicators 
+                Neumorphism can have contrast issues. Ensure interactive elements have clear visual indicators
                 and consider adding borders for focus states.
               </CardContent>
             </Card>

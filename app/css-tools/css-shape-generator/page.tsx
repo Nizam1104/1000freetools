@@ -227,7 +227,7 @@ clip-path: polygon(
 
   const getShapeStyles = () => {
     const base: React.CSSProperties = {};
-    
+
     switch (shapeType) {
       case "triangle":
         base.width = 0;
@@ -250,21 +250,21 @@ clip-path: polygon(
           base.borderLeft = `${size}px solid ${color}`;
         }
         break;
-      
+
       case "circle":
         base.width = `${size}px`;
         base.height = `${size}px`;
         base.backgroundColor = color;
         base.borderRadius = "50%";
         break;
-      
+
       case "ellipse":
         base.width = `${size * 1.5}px`;
         base.height = `${size * 0.75}px`;
         base.backgroundColor = color;
         base.borderRadius = "50%";
         break;
-      
+
       case "heart":
         base.width = `${size}px`;
         base.height = `${size}px`;
@@ -272,14 +272,14 @@ clip-path: polygon(
         base.position = "relative";
         base.transform = "rotate(-45deg)";
         break;
-      
+
       case "star":
         base.width = `${size}px`;
         base.height = `${size}px`;
         base.backgroundColor = color;
         base.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
         break;
-      
+
       case "speech-bubble":
         base.width = `${size}px`;
         base.height = `${size * 0.75}px`;
@@ -287,7 +287,7 @@ clip-path: polygon(
         base.borderRadius = `${size / 10}px`;
         base.position = "relative";
         break;
-      
+
       case "arrow":
         base.width = 0;
         base.height = 0;
@@ -310,12 +310,12 @@ clip-path: polygon(
         }
         break;
     }
-    
+
     return base;
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Shape Generator</h1>
         <p className="text-muted-foreground">
@@ -361,7 +361,7 @@ clip-path: polygon(
                   <Input type="text" value={color} onChange={(e) => setColor(e.target.value)} className="font-mono text-sm" />
                 </div>
               </div>
-              
+
               {shapeType === "triangle" && (
                 <div>
                   <Label>Direction</Label>
@@ -378,7 +378,7 @@ clip-path: polygon(
                   </Select>
                 </div>
               )}
-              
+
               {shapeType === "arrow" && (
                 <div>
                   <Label>Direction</Label>
@@ -395,7 +395,7 @@ clip-path: polygon(
                   </Select>
                 </div>
               )}
-              
+
               {shapeType === "speech-bubble" && (
                 <div>
                   <Label>Tail Position</Label>
@@ -589,13 +589,13 @@ ${cssCode.split("\n").map((l) => "  " + l).join("\n")}
           <h2 className="text-2xl font-semibold mb-4">About CSS Shapes</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              CSS shapes are geometric figures created using CSS properties like borders, border-radius, 
-              and clip-path. They're lightweight alternatives to images for common UI elements like 
+              CSS shapes are geometric figures created using CSS properties like borders, border-radius,
+              and clip-path. They're lightweight alternatives to images for common UI elements like
               arrows, tooltips, and decorative shapes.
             </p>
             <p>
-              Different techniques create different shapes: border tricks for triangles and arrows, 
-              border-radius for circles and ellipses, pseudo-elements for complex shapes like hearts, 
+              Different techniques create different shapes: border tricks for triangles and arrows,
+              border-radius for circles and ellipses, pseudo-elements for complex shapes like hearts,
               and clip-path for polygons like stars.
             </p>
           </div>
@@ -609,7 +609,7 @@ ${cssCode.split("\n").map((l) => "  " + l).join("\n")}
                 <CardTitle className="text-lg">Border Method</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Triangles and arrows use transparent borders with one colored border. The element has 
+                Triangles and arrows use transparent borders with one colored border. The element has
                 zero width/height, and the borders create the shape.
               </CardContent>
             </Card>
@@ -618,7 +618,7 @@ ${cssCode.split("\n").map((l) => "  " + l).join("\n")}
                 <CardTitle className="text-lg">Border-Radius</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Circles and ellipses use 50% border-radius on square or rectangular elements. Simple 
+                Circles and ellipses use 50% border-radius on square or rectangular elements. Simple
                 and widely supported.
               </CardContent>
             </Card>
@@ -627,7 +627,7 @@ ${cssCode.split("\n").map((l) => "  " + l).join("\n")}
                 <CardTitle className="text-lg">Pseudo-elements</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Complex shapes like hearts and speech bubbles combine the main element with ::before 
+                Complex shapes like hearts and speech bubbles combine the main element with ::before
                 and ::after pseudo-elements.
               </CardContent>
             </Card>
@@ -636,7 +636,7 @@ ${cssCode.split("\n").map((l) => "  " + l).join("\n")}
                 <CardTitle className="text-lg">Clip-path</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Stars and polygons use clip-path to cut elements into specific shapes. Modern browsers 
+                Stars and polygons use clip-path to cut elements into specific shapes. Modern browsers
                 support this well.
               </CardContent>
             </Card>

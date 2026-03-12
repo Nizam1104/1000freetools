@@ -171,7 +171,7 @@ const tools = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-y-4">
+    <div className="flex flex-col gap-y-4 max-w-6xl">
       <div>
         <Breadcrumb>
           <BreadcrumbList>
@@ -190,7 +190,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </Breadcrumb>
       </div>
       {children}
-      <div className="mt-16 max-w-6xl">
+      <div className="mt-16">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />
       </div>

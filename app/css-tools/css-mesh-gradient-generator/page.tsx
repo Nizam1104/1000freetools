@@ -31,7 +31,7 @@ export default function CssMeshGradientGeneratorPage() {
       id: Date.now().toString(),
       x: 50 + (Math.random() - 0.5) * 60,
       y: 50 + (Math.random() - 0.5) * 60,
-      color: "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0"),
+      color: "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0"),
       radius: 40 + Math.random() * 30,
     };
     setPoints([...points, newPoint]);
@@ -53,13 +53,13 @@ export default function CssMeshGradientGeneratorPage() {
     const radialGradients = points.map((point) => {
       return `radial-gradient(${point.radius}% at ${point.x}% ${point.y}%, ${point.color} 0%, transparent 100%)`;
     });
-    
+
     return radialGradients.join(",\n");
   };
 
   const generateCSS = () => {
     const gradients = generateMeshGradient();
-    
+
     return `.mesh-gradient {
   background: 
 ${gradients};
@@ -79,7 +79,7 @@ ${gradients};
   const randomizeColors = () => {
     const randomized = points.map((p) => ({
       ...p,
-      color: "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0"),
+      color: "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0"),
     }));
     setPoints(randomized);
   };
@@ -87,7 +87,7 @@ ${gradients};
   const cssCode = generateCSS();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Mesh Gradient Generator</h1>
         <p className="text-muted-foreground">

@@ -46,7 +46,7 @@ export default function CubicBezierEditorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Cubic Bezier Editor</h1>
         <p className="text-muted-foreground">
@@ -161,14 +161,14 @@ export default function CubicBezierEditorPage() {
               <CardTitle>Bezier Curve</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="relative w-full aspect-square max-w-md mx-auto">
+              <div className="relative w-full aspect-square mx-auto">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
                   {/* Grid */}
                   <line x1="0" y1="100" x2="100" y2="100" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
                   <line x1="0" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
                   <line x1="100" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
                   <line x1="0" y1="0" x2="0" y2="0" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
-                  
+
                   {/* Control lines */}
                   <line
                     x1="0"
@@ -190,7 +190,7 @@ export default function CubicBezierEditorPage() {
                     strokeDasharray="2"
                     className="text-muted-foreground"
                   />
-                  
+
                   {/* Bezier curve */}
                   <path
                     d={`M 0 100 C ${p1x * 100} ${100 - p1y * 100}, ${p2x * 100} ${100 - p2y * 100}, 100 0`}
@@ -199,11 +199,11 @@ export default function CubicBezierEditorPage() {
                     strokeWidth="2"
                     className="text-primary"
                   />
-                  
+
                   {/* Control points */}
                   <circle cx={p1x * 100} cy={100 - p1y * 100} r="3" fill="currentColor" className="text-blue-500" />
                   <circle cx={p2x * 100} cy={100 - p2y * 100} r="3" fill="currentColor" className="text-green-500" />
-                  
+
                   {/* Labels */}
                   <text x={p1x * 100 + 3} y={100 - p1y * 100 - 3} fontSize="4" className="fill-blue-500">P1</text>
                   <text x={p2x * 100 + 3} y={100 - p2y * 100 - 3} fontSize="4" className="fill-green-500">P2</text>
@@ -224,9 +224,9 @@ export default function CubicBezierEditorPage() {
               </Button>
             </CardHeader>
             <CardContent>
-              <div className="h-32 bg-muted rounded-lg flex items-center p-4">
+              <div className="h-32 bg-muted rounded-lg relative overflow-hidden">
                 <div
-                  className={`w-12 h-12 bg-primary rounded-lg ${isPlaying ? "animate-custom-bezier" : ""}`}
+                  className="w-12 h-12 bg-primary rounded-lg absolute top-1/2 -translate-y-1/2 left-4"
                   style={{
                     animation: isPlaying ? `slide 2s ${cubicBezier} infinite` : "none",
                   }}
@@ -234,9 +234,8 @@ export default function CubicBezierEditorPage() {
               </div>
               <style>{`
                 @keyframes slide {
-                  0% { transform: translateX(0); }
-                  50% { transform: translateX(calc(100% - 3rem)); }
-                  100% { transform: translateX(0); }
+                  0%, 100% { left: 1rem; }
+                  50% { left: calc(100% - 3rem); }
                 }
               `}</style>
             </CardContent>
@@ -290,11 +289,11 @@ export default function CubicBezierEditorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">What Is Cubic Bezier?</h2>
           <p className="text-muted-foreground mb-4">
-            Cubic bezier curves define custom easing functions for CSS transitions and animations. 
+            Cubic bezier curves define custom easing functions for CSS transitions and animations.
             Instead of linear or ease, you create your own acceleration curve.
           </p>
           <p className="text-muted-foreground">
-            The curve has four values: two control points that shape the curve. This editor lets 
+            The curve has four values: two control points that shape the curve. This editor lets
             you drag the points and see the result in real-time.
           </p>
         </section>

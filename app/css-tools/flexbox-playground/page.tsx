@@ -42,7 +42,7 @@ gap: ${gap}px;`;
   const items = Array.from({ length: itemCount }, (_, i) => i + 1);
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Flexbox Playground</h1>
         <p className="text-muted-foreground">
@@ -247,13 +247,13 @@ gap: ${gap}px;`;
         <section>
           <h2 className="text-2xl font-semibold mb-4">Flexbox Without the Confusion</h2>
           <p className="text-muted-foreground mb-4">
-            Flexbox arranges items in a single dimension - either a row or a column. It's perfect for 
-            navigation bars, button groups, card layouts, and anything that needs to distribute space 
+            Flexbox arranges items in a single dimension - either a row or a column. It's perfect for
+            navigation bars, button groups, card layouts, and anything that needs to distribute space
             or align items.
           </p>
           <p className="text-muted-foreground">
-            The confusion usually comes from mixing up parent properties (flex-direction, justify-content) 
-            with child properties (flex-grow, flex-shrink). This playground separates them so you can 
+            The confusion usually comes from mixing up parent properties (flex-direction, justify-content)
+            with child properties (flex-grow, flex-shrink). This playground separates them so you can
             see what each one does.
           </p>
         </section>
@@ -264,7 +264,7 @@ gap: ${gap}px;`;
             <Card>
               <CardHeader><CardTitle className="text-lg">flex-direction</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <code className="bg-muted px-1 rounded">row</code> | <code className="bg-muted px-1 rounded">row-reverse</code> | 
+                <code className="bg-muted px-1 rounded">row</code> | <code className="bg-muted px-1 rounded">row-reverse</code> |
                 <code className="bg-muted px-1 rounded">column</code> | <code className="bg-muted px-1 rounded">column-reverse</code>
                 <p className="mt-2">Controls the main axis. Row is horizontal, column is vertical.</p>
               </CardContent>
@@ -272,8 +272,8 @@ gap: ${gap}px;`;
             <Card>
               <CardHeader><CardTitle className="text-lg">justify-content</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <code className="bg-muted px-1 rounded">flex-start</code> | <code className="bg-muted px-1 rounded">center</code> | 
-                <code className="bg-muted px-1 rounded">flex-end</code> | <code className="bg-muted px-1 rounded">space-between</code> | 
+                <code className="bg-muted px-1 rounded">flex-start</code> | <code className="bg-muted px-1 rounded">center</code> |
+                <code className="bg-muted px-1 rounded">flex-end</code> | <code className="bg-muted px-1 rounded">space-between</code> |
                 <code className="bg-muted px-1 rounded">space-around</code>
                 <p className="mt-2">Distributes items along the main axis.</p>
               </CardContent>
@@ -281,8 +281,8 @@ gap: ${gap}px;`;
             <Card>
               <CardHeader><CardTitle className="text-lg">align-items</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <code className="bg-muted px-1 rounded">stretch</code> | <code className="bg-muted px-1 rounded">flex-start</code> | 
-                <code className="bg-muted px-1 rounded">center</code> | <code className="bg-muted px-1 rounded">flex-end</code> | 
+                <code className="bg-muted px-1 rounded">stretch</code> | <code className="bg-muted px-1 rounded">flex-start</code> |
+                <code className="bg-muted px-1 rounded">center</code> | <code className="bg-muted px-1 rounded">flex-end</code> |
                 <code className="bg-muted px-1 rounded">baseline</code>
                 <p className="mt-2">Aligns items along the cross axis (perpendicular to main axis).</p>
               </CardContent>

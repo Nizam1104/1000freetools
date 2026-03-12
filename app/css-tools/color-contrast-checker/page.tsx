@@ -20,7 +20,7 @@ export default function ColorContrastCheckerPage() {
   const checkContrast = useCallback(() => {
     const fgRgb = hexToRgb(foregroundColor);
     const bgRgb = hexToRgb(backgroundColor);
-    
+
     if (!fgRgb || !bgRgb) return null;
 
     const ratio = getContrastRatio(fgRgb, bgRgb);
@@ -70,7 +70,7 @@ export default function ColorContrastCheckerPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Color Contrast Checker</h1>
         <p className="text-muted-foreground">
@@ -163,8 +163,8 @@ export default function ColorContrastCheckerPage() {
                   <Badge
                     variant={
                       getContrastLevel() === "AAA" ? "default" :
-                      getContrastLevel() === "AA" ? "secondary" :
-                      getContrastLevel() === "AA Large" ? "outline" : "destructive"
+                        getContrastLevel() === "AA" ? "secondary" :
+                          getContrastLevel() === "AA Large" ? "outline" : "destructive"
                     }
                     className="text-lg px-4 py-2"
                   >

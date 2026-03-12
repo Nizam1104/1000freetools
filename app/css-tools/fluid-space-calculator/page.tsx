@@ -19,13 +19,13 @@ export default function FluidSpaceCalculatorPage() {
   const generateFluidSpace = () => {
     const slope = (maxSpace - minSpace) / (maxViewport - minViewport);
     const yIntercept = minSpace - slope * minViewport;
-    
+
     return `clamp(${minSpace}px, ${slope.toFixed(4)}vw + ${yIntercept.toFixed(2)}px, ${maxSpace}px)`;
   };
 
   const generateCSS = () => {
     const fluidValue = generateFluidSpace();
-    
+
     return `:root {
   --${propertyName}: ${fluidValue};
 }
@@ -66,7 +66,7 @@ export default function FluidSpaceCalculatorPage() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Fluid Space Calculator</h1>
         <p className="text-muted-foreground">
@@ -265,8 +265,8 @@ export default function FluidSpaceCalculatorPage() {
           <h2 className="text-2xl font-semibold mb-4">About Fluid Spacing</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Fluid spacing uses CSS <code>clamp()</code> to create spacing values that scale smoothly 
-              with the viewport. This eliminates the need for multiple media queries and provides 
+              Fluid spacing uses CSS <code>clamp()</code> to create spacing values that scale smoothly
+              with the viewport. This eliminates the need for multiple media queries and provides
               consistent visual rhythm across all screen sizes.
             </p>
             <p>

@@ -45,7 +45,7 @@ border: ${borderWidth}px solid ${borderRgba};`;
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Glassmorphism Generator</h1>
         <p className="text-muted-foreground">
@@ -147,7 +147,7 @@ border: ${borderWidth}px solid ${borderRgba};`;
                 {/* Decorative circles */}
                 <div className="absolute w-32 h-32 bg-white/30 rounded-full -top-4 -left-4" />
                 <div className="absolute w-24 h-24 bg-white/20 rounded-full -bottom-4 -right-4" />
-                
+
                 {/* Glass card */}
                 <div
                   className="p-8 rounded-2xl w-64 text-center"
@@ -215,11 +215,11 @@ border: ${borderWidth}px solid ${borderRgba};`;
         <section>
           <h2 className="text-2xl font-semibold mb-4">What Is Glassmorphism?</h2>
           <p className="text-muted-foreground mb-4">
-            Glassmorphism creates a frosted glass effect using backdrop blur and semi-transparent 
+            Glassmorphism creates a frosted glass effect using backdrop blur and semi-transparent
             backgrounds. It became popular with macOS Big Sur and Windows 11 design languages.
           </p>
           <p className="text-muted-foreground">
-            The effect works by blurring what's behind an element, creating depth and visual 
+            The effect works by blurring what's behind an element, creating depth and visual
             hierarchy without heavy shadows.
           </p>
         </section>
@@ -232,7 +232,7 @@ border: ${borderWidth}px solid ${borderRgba};`;
                 <h3 className="font-semibold mb-2">Backdrop Filter</h3>
                 <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">backdrop-filter: blur(10px);</code>
                 <p className="text-sm text-muted-foreground">
-                  Blurs the background behind the element. Requires a semi-transparent background 
+                  Blurs the background behind the element. Requires a semi-transparent background
                   to see the effect.
                 </p>
               </CardContent>
@@ -242,7 +242,7 @@ border: ${borderWidth}px solid ${borderRgba};`;
                 <h3 className="font-semibold mb-2">Semi-transparent Background</h3>
                 <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">background: rgba(255, 255, 255, 0.2);</code>
                 <p className="text-sm text-muted-foreground">
-                  Low opacity background (10-30%) lets the blur show through. White for light 
+                  Low opacity background (10-30%) lets the blur show through. White for light
                   glass, dark for night mode.
                 </p>
               </CardContent>
@@ -252,7 +252,7 @@ border: ${borderWidth}px solid ${borderRgba};`;
                 <h3 className="font-semibold mb-2">Subtle Border</h3>
                 <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">border: 1px solid rgba(255, 255, 255, 0.3);</code>
                 <p className="text-sm text-muted-foreground">
-                  A faint border defines the edge of the glass. Use white with low opacity for 
+                  A faint border defines the edge of the glass. Use white with low opacity for
                   the light-catching effect.
                 </p>
               </CardContent>
