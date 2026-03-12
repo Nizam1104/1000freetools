@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function RingSizeConverterPage() {
   const config = converterMappings["Ring Size Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function RingSizeConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Ring Size Converter</h1>
         <p className="text-muted-foreground">Convert ring sizes between US, UK, EU, French, Swiss, and Japanese standards. Free online ring size converter for jewelry shopping, gifting, and custom ring orders worldwide.</p>
@@ -158,9 +158,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Ring Sizer Tool</p>
               <p className="text-muted-foreground">
-                Use plastic or metal ring sizer set<br/>
-                Slide rings onto finger<br/>
-                Find comfortable fit<br/>
+                Use plastic or metal ring sizer set<br />
+                Slide rings onto finger<br />
+                Find comfortable fit<br />
                 Most accurate method
               </p>
             </div>
@@ -168,9 +168,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Measure Existing Ring</p>
               <p className="text-muted-foreground">
-                Measure inside diameter of well-fitting ring<br/>
-                Use ruler or caliper<br/>
-                Compare to size chart<br/>
+                Measure inside diameter of well-fitting ring<br />
+                Use ruler or caliper<br />
+                Compare to size chart<br />
                 Measure multiple rings for accuracy
               </p>
             </div>
@@ -178,9 +178,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">String or Paper Method</p>
               <p className="text-muted-foreground">
-                Wrap string around finger base<br/>
-                Mark where string overlaps<br/>
-                Measure length in mm<br/>
+                Wrap string around finger base<br />
+                Mark where string overlaps<br />
+                Measure length in mm<br />
                 This is circumference
               </p>
             </div>
@@ -188,9 +188,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Best Measurement Practices</p>
               <p className="text-muted-foreground">
-                Measure at end of day<br/>
-                Fingers swell in heat<br/>
-                Measure 3-4 times<br/>
+                Measure at end of day<br />
+                Fingers swell in heat<br />
+                Measure 3-4 times<br />
                 Consider knuckle size
               </p>
             </div>
@@ -204,9 +204,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: US to EU</p>
               <p className="text-muted-foreground">
-                US Size: 7<br/>
-                UK Size: N<br/>
-                EU Size: 54<br/>
+                US Size: 7<br />
+                UK Size: N<br />
+                EU Size: 54<br />
                 Circumference: 54.4 mm
               </p>
             </div>
@@ -214,9 +214,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: EU to US</p>
               <p className="text-muted-foreground">
-                EU Size: 57<br/>
-                US Size: 8<br/>
-                UK Size: P<br/>
+                EU Size: 57<br />
+                US Size: 8<br />
+                UK Size: P<br />
                 Diameter: 18.1 mm
               </p>
             </div>
@@ -224,9 +224,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Circumference to Size</p>
               <p className="text-muted-foreground">
-                Circumference: 52 mm<br/>
-                US Size: 6<br/>
-                EU Size: 52<br/>
+                Circumference: 52 mm<br />
+                US Size: 6<br />
+                EU Size: 52<br />
                 UK Size: L
               </p>
             </div>
@@ -234,9 +234,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Diameter to Size</p>
               <p className="text-muted-foreground">
-                Diameter: 19 mm<br/>
-                Circumference: 19 × 3.14 = 59.7 mm<br/>
-                US Size: 9<br/>
+                Diameter: 19 mm<br />
+                Circumference: 19 × 3.14 = 59.7 mm<br />
+                US Size: 9<br />
                 EU Size: 60
               </p>
             </div>
@@ -250,9 +250,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Finger Variations</p>
               <p className="text-muted-foreground">
-                Dominant hand: Slightly larger<br/>
-                Morning: Fingers smallest<br/>
-                Evening: Fingers largest<br/>
+                Dominant hand: Slightly larger<br />
+                Morning: Fingers smallest<br />
+                Evening: Fingers largest<br />
                 Temperature affects size
               </p>
             </div>
@@ -260,9 +260,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Ring Width Effect</p>
               <p className="text-muted-foreground">
-                Wide bands feel tighter<br/>
-                Add 0.25-0.5 for wide rings<br/>
-                Thin bands fit looser<br/>
+                Wide bands feel tighter<br />
+                Add 0.25-0.5 for wide rings<br />
+                Thin bands fit looser<br />
                 Consider ring style
               </p>
             </div>
@@ -270,9 +270,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Knuckle Considerations</p>
               <p className="text-muted-foreground">
-                Ring must pass over knuckle<br/>
-                Size for knuckle if large<br/>
-                Add sizing beads for fit<br/>
+                Ring must pass over knuckle<br />
+                Size for knuckle if large<br />
+                Add sizing beads for fit<br />
                 Consider adjustable settings
               </p>
             </div>
@@ -280,9 +280,9 @@ export default function RingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Seasonal Changes</p>
               <p className="text-muted-foreground">
-                Summer: Fingers swell<br/>
-                Winter: Fingers shrink<br/>
-                Average for year-round wear<br/>
+                Summer: Fingers swell<br />
+                Winter: Fingers shrink<br />
+                Average for year-round wear<br />
                 Resizing may be needed
               </p>
             </div>

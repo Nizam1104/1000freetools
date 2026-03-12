@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function ShoeSizeConverterPage() {
   const config = converterMappings["Shoe Size Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function ShoeSizeConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Shoe Size Converter</h1>
         <p className="text-muted-foreground">Convert shoe sizes between US, UK, EU, and international standards for men, women, and kids. Free online shoe size converter for global shopping and footwear retail.</p>
@@ -209,9 +209,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Using the Brannock Device</p>
               <p className="text-muted-foreground">
-                Stand with full weight on foot<br/>
-                Heel against back of device<br/>
-                Slide marker to longest toe<br/>
+                Stand with full weight on foot<br />
+                Heel against back of device<br />
+                Slide marker to longest toe<br />
                 Read length and width measurements
               </p>
             </div>
@@ -219,9 +219,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Home Measurement Method</p>
               <p className="text-muted-foreground">
-                Place foot on paper<br/>
-                Trace around foot with pencil<br/>
-                Measure heel to longest toe<br/>
+                Place foot on paper<br />
+                Trace around foot with pencil<br />
+                Measure heel to longest toe<br />
                 Compare to size chart
               </p>
             </div>
@@ -229,9 +229,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Width Measurement</p>
               <p className="text-muted-foreground">
-                Measure widest part of foot<br/>
-                Usually across ball of foot<br/>
-                Compare to width chart<br/>
+                Measure widest part of foot<br />
+                Usually across ball of foot<br />
+                Compare to width chart<br />
                 US widths: AAA (narrow) to EEE (wide)
               </p>
             </div>
@@ -239,9 +239,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Best Measurement Practices</p>
               <p className="text-muted-foreground">
-                Measure at end of day<br/>
-                Feet swell throughout day<br/>
-                Measure both feet<br/>
+                Measure at end of day<br />
+                Feet swell throughout day<br />
+                Measure both feet<br />
                 Use larger foot for sizing
               </p>
             </div>
@@ -255,9 +255,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: US Men's to EU</p>
               <p className="text-muted-foreground">
-                US Men's: 10<br/>
-                UK: 9.5<br/>
-                EU: 44<br/>
+                US Men's: 10<br />
+                UK: 9.5<br />
+                EU: 44<br />
                 CM: 28
               </p>
             </div>
@@ -265,9 +265,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: US Women's to UK</p>
               <p className="text-muted-foreground">
-                US Women's: 8<br/>
-                UK: 6<br/>
-                EU: 38.5<br/>
+                US Women's: 8<br />
+                UK: 6<br />
+                EU: 38.5<br />
                 CM: 25
               </p>
             </div>
@@ -275,9 +275,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Kids to Adult</p>
               <p className="text-muted-foreground">
-                US Kids 4 = US Women's 6<br/>
-                US Kids 4 = US Men's 4.5<br/>
-                Transition at size 4<br/>
+                US Kids 4 = US Women's 6<br />
+                US Kids 4 = US Men's 4.5<br />
+                Transition at size 4<br />
                 Check specific brand charts
               </p>
             </div>
@@ -285,9 +285,9 @@ export default function ShoeSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Athletic Shoe Sizing</p>
               <p className="text-muted-foreground">
-                Running shoes: Size up 0.5<br/>
-                Basketball: True to size<br/>
-                Soccer cleats: Snug fit<br/>
+                Running shoes: Size up 0.5<br />
+                Basketball: True to size<br />
+                Soccer cleats: Snug fit<br />
                 Hiking boots: Room for thick socks
               </p>
             </div>

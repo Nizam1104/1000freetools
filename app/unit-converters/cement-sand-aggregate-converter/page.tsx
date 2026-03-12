@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function CementSandAggregateConverterPage() {
   const config = converterMappings["Cement-Sand-Aggregate Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function CementSandAggregateConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Cement, Sand & Aggregate Calculator</h1>
         <p className="text-muted-foreground">Calculate exact quantities of cement, sand, and aggregate needed for your concrete mix. Enter volume and mix ratio to get material amounts in kg, bags, and cubic meters. Free construction material calculator.</p>
@@ -113,9 +113,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Concrete Mixes</p>
               <p className="text-muted-foreground">
-                M10: 1:3:6 (cement:sand:aggregate)<br/>
-                M15: 1:2:4 for foundations and floors<br/>
-                M20: 1:1.5:3 for structural elements<br/>
+                M10: 1:3:6 (cement:sand:aggregate)<br />
+                M15: 1:2:4 for foundations and floors<br />
+                M20: 1:1.5:3 for structural elements<br />
                 M25: 1:1:2 for heavy-duty applications
               </p>
             </div>
@@ -123,9 +123,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Mortar Mixes</p>
               <p className="text-muted-foreground">
-                Brick mortar: 1:4 to 1:6 (cement:sand)<br/>
-                Plaster mortar: 1:3 to 1:4 (cement:sand)<br/>
-                Pointing mortar: 1:2 to 1:3 (cement:sand)<br/>
+                Brick mortar: 1:4 to 1:6 (cement:sand)<br />
+                Plaster mortar: 1:3 to 1:4 (cement:sand)<br />
+                Pointing mortar: 1:2 to 1:3 (cement:sand)<br />
                 Add lime for workability
               </p>
             </div>
@@ -133,9 +133,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Material Ordering</p>
               <p className="text-muted-foreground">
-                Cement: Order in 50 kg bags<br/>
-                Sand: Order by cubic meter or truck load<br/>
-                Aggregate: Order by cubic meter or ton<br/>
+                Cement: Order in 50 kg bags<br />
+                Sand: Order by cubic meter or truck load<br />
+                Aggregate: Order by cubic meter or ton<br />
                 Add 10% for waste and spillage
               </p>
             </div>
@@ -149,11 +149,11 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: M20 Concrete (1 m³)</p>
               <p className="text-muted-foreground">
-                Mix ratio: 1:1.5:3<br/>
-                Dry volume: 1 × 1.54 = 1.54 m³<br/>
-                Total parts: 5.5<br/>
-                Cement: (1/5.5) × 1.54 × 1440 = 403 kg (8 bags)<br/>
-                Sand: (1.5/5.5) × 1.54 = 0.42 m³ (672 kg)<br/>
+                Mix ratio: 1:1.5:3<br />
+                Dry volume: 1 × 1.54 = 1.54 m³<br />
+                Total parts: 5.5<br />
+                Cement: (1/5.5) × 1.54 × 1440 = 403 kg (8 bags)<br />
+                Sand: (1.5/5.5) × 1.54 = 0.42 m³ (672 kg)<br />
                 Aggregate: (3/5.5) × 1.54 = 0.84 m³ (1344 kg)
               </p>
             </div>
@@ -161,10 +161,10 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Brick Mortar (1 m³)</p>
               <p className="text-muted-foreground">
-                Mix ratio: 1:4 (cement:sand)<br/>
-                Dry volume: 1 × 1.33 = 1.33 m³<br/>
-                Total parts: 5<br/>
-                Cement: (1/5) × 1.33 × 1440 = 383 kg (7.7 bags)<br/>
+                Mix ratio: 1:4 (cement:sand)<br />
+                Dry volume: 1 × 1.33 = 1.33 m³<br />
+                Total parts: 5<br />
+                Cement: (1/5) × 1.33 × 1440 = 383 kg (7.7 bags)<br />
                 Sand: (4/5) × 1.33 = 1.06 m³ (1700 kg)
               </p>
             </div>
@@ -172,9 +172,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Floor Slab (100 sq ft × 4 inch)</p>
               <p className="text-muted-foreground">
-                Wet volume: 100 × 0.33 = 33 cu ft = 0.93 m³<br/>
-                Dry volume: 0.93 × 1.54 = 1.43 m³<br/>
-                M15 mix (1:2:4): Cement = 5.8 bags<br/>
+                Wet volume: 100 × 0.33 = 33 cu ft = 0.93 m³<br />
+                Dry volume: 0.93 × 1.54 = 1.43 m³<br />
+                M15 mix (1:2:4): Cement = 5.8 bags<br />
                 Sand: 0.38 m³, Aggregate: 0.76 m³
               </p>
             </div>
@@ -188,9 +188,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Cement Selection</p>
               <p className="text-muted-foreground">
-                OPC 43: General construction<br/>
-                OPC 53: High strength work<br/>
-                PPC: Mass concrete, marine work<br/>
+                OPC 43: General construction<br />
+                OPC 53: High strength work<br />
+                PPC: Mass concrete, marine work<br />
                 Check manufacturing date, use within 3 months
               </p>
             </div>
@@ -198,9 +198,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Sand Quality</p>
               <p className="text-muted-foreground">
-                Use river sand or manufactured sand<br/>
-                Avoid clay and silt content<br/>
-                Fineness modulus: 2.5-3.5<br/>
+                Use river sand or manufactured sand<br />
+                Avoid clay and silt content<br />
+                Fineness modulus: 2.5-3.5<br />
                 Wash if salt or organic content present
               </p>
             </div>
@@ -208,9 +208,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Aggregate Quality</p>
               <p className="text-muted-foreground">
-                Use crushed stone or gravel<br/>
-                Size: 10mm for slabs, 20mm for beams<br/>
-                Clean, hard, angular particles<br/>
+                Use crushed stone or gravel<br />
+                Size: 10mm for slabs, 20mm for beams<br />
+                Clean, hard, angular particles<br />
                 Avoid flaky or elongated pieces
               </p>
             </div>
@@ -218,9 +218,9 @@ export default function CementSandAggregateConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Water Quality</p>
               <p className="text-muted-foreground">
-                Use potable water for mixing<br/>
-                pH: 6-8<br/>
-                Avoid seawater for reinforced concrete<br/>
+                Use potable water for mixing<br />
+                pH: 6-8<br />
+                Avoid seawater for reinforced concrete<br />
                 Test if using non-potable sources
               </p>
             </div>

@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function DewPointCalculatorPage() {
   const config = converterMappings["Dew Point Calculator"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function DewPointCalculatorPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Dew Point Calculator</h1>
         <p className="text-muted-foreground">Calculate dew point temperature from relative humidity and air temperature instantly. Free online dew point calculator for weather forecasting, HVAC design, and condensation analysis.</p>
@@ -139,9 +139,9 @@ export default function DewPointCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Moderate Conditions</p>
               <p className="text-muted-foreground">
-                Temperature: 25°C (77°F)<br/>
-                Relative Humidity: 60%<br/>
-                Dew Point: approximately 17°C (63°F)<br/>
+                Temperature: 25°C (77°F)<br />
+                Relative Humidity: 60%<br />
+                Dew Point: approximately 17°C (63°F)<br />
                 Comfort: Slightly humid but acceptable
               </p>
             </div>
@@ -149,9 +149,9 @@ export default function DewPointCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: High Humidity</p>
               <p className="text-muted-foreground">
-                Temperature: 30°C (86°F)<br/>
-                Relative Humidity: 80%<br/>
-                Dew Point: approximately 26°C (79°F)<br/>
+                Temperature: 30°C (86°F)<br />
+                Relative Humidity: 80%<br />
+                Dew Point: approximately 26°C (79°F)<br />
                 Comfort: Very uncomfortable, oppressive
               </p>
             </div>
@@ -159,9 +159,9 @@ export default function DewPointCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Dry Conditions</p>
               <p className="text-muted-foreground">
-                Temperature: 35°C (95°F)<br/>
-                Relative Humidity: 20%<br/>
-                Dew Point: approximately 8°C (46°F)<br/>
+                Temperature: 35°C (95°F)<br />
+                Relative Humidity: 20%<br />
+                Dew Point: approximately 8°C (46°F)<br />
                 Comfort: Dry heat, comfortable despite high temperature
               </p>
             </div>

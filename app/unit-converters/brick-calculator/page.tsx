@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function BrickCalculatorPage() {
   const config = converterMappings["Brick Calculator"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function BrickCalculatorPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Brick Calculator</h1>
         <p className="text-muted-foreground">Calculate how many bricks you need for any wall or project. Enter wall dimensions and brick size to get an accurate brick count with mortar allowance. Free online brick quantity estimator.</p>
@@ -109,7 +109,7 @@ export default function BrickCalculatorPage() {
                 Mortar fills joints between bricks. Calculate volume based on joint thickness and total joint length. Typical mortar joint is 3/8 inch thick.
               </p>
               <p className="text-muted-foreground font-mono text-sm mt-2">
-                Mortar per 1000 bricks ≈ 7-8 cubic feet<br/>
+                Mortar per 1000 bricks ≈ 7-8 cubic feet<br />
                 Mortar per 100 bricks ≈ 0.7-0.8 cubic feet
               </p>
             </div>
@@ -117,9 +117,9 @@ export default function BrickCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Mortar Mix Ratios</p>
               <p className="text-muted-foreground">
-                Type M: 1 cement : 1/4 lime : 3 sand (high strength)<br/>
-                Type S: 1 cement : 1/2 lime : 4.5 sand (general purpose)<br/>
-                Type N: 1 cement : 1 lime : 6 sand (standard walls)<br/>
+                Type M: 1 cement : 1/4 lime : 3 sand (high strength)<br />
+                Type S: 1 cement : 1/2 lime : 4.5 sand (general purpose)<br />
+                Type N: 1 cement : 1 lime : 6 sand (standard walls)<br />
                 Type O: 1 cement : 2 lime : 9 sand (interior non-load bearing)
               </p>
             </div>
@@ -127,8 +127,8 @@ export default function BrickCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Cement Bags Required</p>
               <p className="text-muted-foreground">
-                1 cubic foot mortar requires approximately 0.5 bags cement<br/>
-                1000 bricks need about 3-4 bags cement<br/>
+                1 cubic foot mortar requires approximately 0.5 bags cement<br />
+                1000 bricks need about 3-4 bags cement<br />
                 Add 10% extra for waste and variations
               </p>
             </div>
@@ -142,9 +142,9 @@ export default function BrickCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Garden Wall</p>
               <p className="text-muted-foreground">
-                Wall: 20 ft long × 6 ft high = 120 sq ft<br/>
-                Modular bricks: 6.55 bricks/sq ft<br/>
-                Base quantity: 786 bricks<br/>
+                Wall: 20 ft long × 6 ft high = 120 sq ft<br />
+                Modular bricks: 6.55 bricks/sq ft<br />
+                Base quantity: 786 bricks<br />
                 With 10% waste: 865 bricks
               </p>
             </div>
@@ -152,9 +152,9 @@ export default function BrickCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: House Exterior</p>
               <p className="text-muted-foreground">
-                Perimeter: 120 ft × 10 ft height = 1,200 sq ft<br/>
-                Subtract openings (doors/windows): 200 sq ft<br/>
-                Net area: 1,000 sq ft<br/>
+                Perimeter: 120 ft × 10 ft height = 1,200 sq ft<br />
+                Subtract openings (doors/windows): 200 sq ft<br />
+                Net area: 1,000 sq ft<br />
                 Standard bricks: 6,260 + 10% waste = 6,886 bricks
               </p>
             </div>
@@ -162,9 +162,9 @@ export default function BrickCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Double Brick Wall</p>
               <p className="text-muted-foreground">
-                Wall: 30 ft × 8 ft = 240 sq ft<br/>
-                Double wythe (two layers): 240 × 2 = 480 sq ft<br/>
-                Engineer bricks: 4.85/sq ft<br/>
+                Wall: 30 ft × 8 ft = 240 sq ft<br />
+                Double wythe (two layers): 240 × 2 = 480 sq ft<br />
+                Engineer bricks: 4.85/sq ft<br />
                 Total: 2,328 + 10% = 2,561 bricks
               </p>
             </div>

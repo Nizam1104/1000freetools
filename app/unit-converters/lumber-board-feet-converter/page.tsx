@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function LumberBoardFeetConverterPage() {
   const config = converterMappings["Lumber Board Feet Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function LumberBoardFeetConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Lumber Board Feet Calculator</h1>
         <p className="text-muted-foreground">Calculate board feet of lumber instantly. Enter thickness, width, and length to get total board footage for any wood project. Free online lumber board feet converter for construction and carpentry.</p>
@@ -123,9 +123,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Price per Board Foot</p>
               <p className="text-muted-foreground">
-                Common hardwoods (oak, maple): $3-8 per BF<br/>
-                Premium hardwoods (walnut, cherry): $8-15 per BF<br/>
-                Exotic woods: $15-50+ per BF<br/>
+                Common hardwoods (oak, maple): $3-8 per BF<br />
+                Premium hardwoods (walnut, cherry): $8-15 per BF<br />
+                Exotic woods: $15-50+ per BF<br />
                 Softwoods typically sold by linear foot
               </p>
             </div>
@@ -133,9 +133,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Volume Discounts</p>
               <p className="text-muted-foreground">
-                Retail (under 100 BF): Full price<br/>
-                Small wholesale (100-500 BF): 10-15% discount<br/>
-                Large wholesale (500+ BF): 20-30% discount<br/>
+                Retail (under 100 BF): Full price<br />
+                Small wholesale (100-500 BF): 10-15% discount<br />
+                Large wholesale (500+ BF): 20-30% discount<br />
                 Full bundle pricing varies by species
               </p>
             </div>
@@ -143,9 +143,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Grade Impact on Price</p>
               <p className="text-muted-foreground">
-                FAS (Firsts and Seconds): Highest price, minimal defects<br/>
-                Select: Good quality, small defects allowed<br/>
-                #1 Common: Utility grade, more defects<br/>
+                FAS (Firsts and Seconds): Highest price, minimal defects<br />
+                Select: Good quality, small defects allowed<br />
+                #1 Common: Utility grade, more defects<br />
                 #2 Common: Economy grade, significant defects
               </p>
             </div>
@@ -159,8 +159,8 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Single Board</p>
               <p className="text-muted-foreground">
-                Dimensions: 2×6×8 feet<br/>
-                Board feet: (2 × 6 × 8) / 12 = 8 BF<br/>
+                Dimensions: 2×6×8 feet<br />
+                Board feet: (2 × 6 × 8) / 12 = 8 BF<br />
                 At $5/BF: 8 × $5 = $40
               </p>
             </div>
@@ -168,9 +168,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Multiple Boards</p>
               <p className="text-muted-foreground">
-                10 boards of 1×8×6 feet<br/>
-                Per board: (1 × 8 × 6) / 12 = 4 BF<br/>
-                Total: 10 × 4 = 40 BF<br/>
+                10 boards of 1×8×6 feet<br />
+                Per board: (1 × 8 × 6) / 12 = 4 BF<br />
+                Total: 10 × 4 = 40 BF<br />
                 At $6/BF: 40 × $6 = $240
               </p>
             </div>
@@ -178,9 +178,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Mixed Lumber Order</p>
               <p className="text-muted-foreground">
-                20 pieces 2×4×10: 20 × 6.67 = 133.4 BF<br/>
-                15 pieces 2×6×8: 15 × 8 = 120 BF<br/>
-                10 pieces 1×12×6: 10 × 6 = 60 BF<br/>
+                20 pieces 2×4×10: 20 × 6.67 = 133.4 BF<br />
+                15 pieces 2×6×8: 15 × 8 = 120 BF<br />
+                10 pieces 1×12×6: 10 × 6 = 60 BF<br />
                 Total: 313.4 board feet
               </p>
             </div>
@@ -188,9 +188,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Metric Conversion</p>
               <p className="text-muted-foreground">
-                Board: 50 mm × 150 mm × 3 m<br/>
-                Convert to inches: 2×6×10 feet<br/>
-                Board feet: (2 × 6 × 10) / 12 = 10 BF<br/>
+                Board: 50 mm × 150 mm × 3 m<br />
+                Convert to inches: 2×6×10 feet<br />
+                Board feet: (2 × 6 × 10) / 12 = 10 BF<br />
                 1 BF = 0.00236 m³
               </p>
             </div>
@@ -204,9 +204,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Board Foot Equivalents</p>
               <p className="text-muted-foreground">
-                1 BF = 144 cubic inches<br/>
-                1 BF = 2,360 cubic cm<br/>
-                1 BF = 0.00236 cubic meters<br/>
+                1 BF = 144 cubic inches<br />
+                1 BF = 2,360 cubic cm<br />
+                1 BF = 0.00236 cubic meters<br />
                 1 cubic meter = 423.7 BF
               </p>
             </div>
@@ -214,9 +214,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Thousand Board Feet</p>
               <p className="text-muted-foreground">
-                1 MBF = 1,000 board feet<br/>
-                Used for large commercial orders<br/>
-                1 MBF ≈ 2.36 cubic meters<br/>
+                1 MBF = 1,000 board feet<br />
+                Used for large commercial orders<br />
+                1 MBF ≈ 2.36 cubic meters<br />
                 Common in wholesale trading
               </p>
             </div>
@@ -224,9 +224,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Cord Measurement</p>
               <p className="text-muted-foreground">
-                1 cord = 128 cubic feet<br/>
-                Firewood measurement<br/>
-                Approximately 800-900 BF<br/>
+                1 cord = 128 cubic feet<br />
+                Firewood measurement<br />
+                Approximately 800-900 BF<br />
                 Varies by wood species
               </p>
             </div>
@@ -234,9 +234,9 @@ export default function LumberBoardFeetConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Shipping Weight</p>
               <p className="text-muted-foreground">
-                Oak: 4-5 lb per BF (green)<br/>
-                Maple: 3-4 lb per BF (green)<br/>
-                Pine: 2-3 lb per BF (green)<br/>
+                Oak: 4-5 lb per BF (green)<br />
+                Maple: 3-4 lb per BF (green)<br />
+                Pine: 2-3 lb per BF (green)<br />
                 Kiln-dried weighs 30-40% less
               </p>
             </div>

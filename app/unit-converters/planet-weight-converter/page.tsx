@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function PlanetWeightConverterPage() {
   const config = converterMappings["Planet Weight Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function PlanetWeightConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Planet Weight Calculator</h1>
         <p className="text-muted-foreground">Find out how much you would weigh on Mars, Jupiter, the Moon, and other planets. Free online planet weight calculator based on surface gravity for astronomy and science education.</p>
@@ -154,9 +154,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Weight on Mars</p>
               <p className="text-muted-foreground">
-                Earth weight: 70 kg (154 lb)<br/>
-                Mars gravity: 3.71 m/s²<br/>
-                Ratio: 3.71 / 9.807 = 0.378<br/>
+                Earth weight: 70 kg (154 lb)<br />
+                Mars gravity: 3.71 m/s²<br />
+                Ratio: 3.71 / 9.807 = 0.378<br />
                 Mars weight: 70 × 0.378 = 26.5 kg (58 lb)
               </p>
             </div>
@@ -164,9 +164,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Weight on Jupiter</p>
               <p className="text-muted-foreground">
-                Earth weight: 70 kg (154 lb)<br/>
-                Jupiter gravity: 24.79 m/s²<br/>
-                Ratio: 24.79 / 9.807 = 2.53<br/>
+                Earth weight: 70 kg (154 lb)<br />
+                Jupiter gravity: 24.79 m/s²<br />
+                Ratio: 24.79 / 9.807 = 2.53<br />
                 Jupiter weight: 70 × 2.53 = 177 kg (389 lb)
               </p>
             </div>
@@ -174,9 +174,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Weight on the Moon</p>
               <p className="text-muted-foreground">
-                Earth weight: 80 kg (176 lb)<br/>
-                Moon gravity: 1.62 m/s²<br/>
-                Ratio: 1.62 / 9.807 = 0.165<br/>
+                Earth weight: 80 kg (176 lb)<br />
+                Moon gravity: 1.62 m/s²<br />
+                Ratio: 1.62 / 9.807 = 0.165<br />
                 Moon weight: 80 × 0.165 = 13.2 kg (29 lb)
               </p>
             </div>
@@ -184,9 +184,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Weight on Europa</p>
               <p className="text-muted-foreground">
-                Earth weight: 70 kg<br/>
-                Europa gravity: 1.31 m/s²<br/>
-                Ratio: 1.31 / 9.807 = 0.134<br/>
+                Earth weight: 70 kg<br />
+                Europa gravity: 1.31 m/s²<br />
+                Ratio: 1.31 / 9.807 = 0.134<br />
                 Europa weight: 70 × 0.134 = 9.4 kg (21 lb)
               </p>
             </div>
@@ -200,9 +200,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Why Gravity Varies</p>
               <p className="text-muted-foreground">
-                More mass = stronger gravity<br/>
-                Larger radius = weaker surface gravity<br/>
-                Dense planets have higher gravity<br/>
+                More mass = stronger gravity<br />
+                Larger radius = weaker surface gravity<br />
+                Dense planets have higher gravity<br />
                 Gas giants have deep gravity wells
               </p>
             </div>
@@ -210,9 +210,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Jump Height Comparison</p>
               <p className="text-muted-foreground">
-                Earth: 0.5 m (baseline)<br/>
-                Moon: 3.0 m (6× higher)<br/>
-                Mars: 1.3 m (2.6× higher)<br/>
+                Earth: 0.5 m (baseline)<br />
+                Moon: 3.0 m (6× higher)<br />
+                Mars: 1.3 m (2.6× higher)<br />
                 Jupiter: 0.2 m (impossible to stand)
               </p>
             </div>
@@ -220,9 +220,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Escape Velocity</p>
               <p className="text-muted-foreground">
-                Earth: 11.2 km/s<br/>
-                Moon: 2.4 km/s<br/>
-                Mars: 5.0 km/s<br/>
+                Earth: 11.2 km/s<br />
+                Moon: 2.4 km/s<br />
+                Mars: 5.0 km/s<br />
                 Jupiter: 59.5 km/s
               </p>
             </div>
@@ -230,9 +230,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Human Survival Limits</p>
               <p className="text-muted-foreground">
-                Long-term: 0.3-1.0 g optimal<br/>
-                Short-term: Up to 3 g possible<br/>
-                Mars (0.38 g): Possible long-term<br/>
+                Long-term: 0.3-1.0 g optimal<br />
+                Short-term: Up to 3 g possible<br />
+                Mars (0.38 g): Possible long-term<br />
                 Jupiter (2.53 g): Not survivable
               </p>
             </div>
@@ -260,9 +260,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Weight on Asteroids</p>
               <p className="text-muted-foreground">
-                Ceres (largest asteroid): 0.029× Earth<br/>
-                70 kg person weighs 2 kg (4.4 lb)<br/>
-                Easy to jump into space<br/>
+                Ceres (largest asteroid): 0.029× Earth<br />
+                70 kg person weighs 2 kg (4.4 lb)<br />
+                Easy to jump into space<br />
                 Escape velocity: 0.51 km/s
               </p>
             </div>
@@ -270,9 +270,9 @@ export default function PlanetWeightConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Neutron Star Gravity</p>
               <p className="text-muted-foreground">
-                Surface gravity: 2 × 10¹¹ × Earth<br/>
-                70 kg person would weigh 14 billion kg<br/>
-                Spaghettification occurs<br/>
+                Surface gravity: 2 × 10¹¹ × Earth<br />
+                70 kg person would weigh 14 billion kg<br />
+                Spaghettification occurs<br />
                 Escape velocity: 0.4× speed of light
               </p>
             </div>

@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function HeatDensityPage() {
   const config = converterMappings["Heat Density"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function HeatDensityPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Heat Density Converter</h1>
         <p className="text-muted-foreground">Convert heat density units including J/m³, BTU/ft³, and cal/cm³. Free online heat density converter for combustion engineering, fuel analysis, and thermodynamic systems.</p>

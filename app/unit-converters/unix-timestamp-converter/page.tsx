@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function UnixTimestampConverterPage() {
   const config = converterMappings["Unix Timestamp Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function UnixTimestampConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Unix Timestamp Converter</h1>
         <p className="text-muted-foreground">Convert Unix timestamps to readable dates and times — and back again. Free online epoch time converter for developers, database administrators, and system engineers.</p>
@@ -104,8 +104,8 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Timestamp to Date</p>
               <p className="text-muted-foreground">
-                Timestamp: 1609459200<br/>
-                Calculation: 1609459200 seconds after Jan 1, 1970<br/>
+                Timestamp: 1609459200<br />
+                Calculation: 1609459200 seconds after Jan 1, 1970<br />
                 Result: January 1, 2021 00:00:00 UTC
               </p>
             </div>
@@ -113,8 +113,8 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Date to Timestamp</p>
               <p className="text-muted-foreground">
-                Date: July 4, 2024 12:00:00 UTC<br/>
-                Days from epoch: 19,908<br/>
+                Date: July 4, 2024 12:00:00 UTC<br />
+                Days from epoch: 19,908<br />
                 Result: 1720094400
               </p>
             </div>
@@ -122,8 +122,8 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Millisecond Timestamps</p>
               <p className="text-muted-foreground">
-                JavaScript uses milliseconds: 1704067200000<br/>
-                Convert to seconds: divide by 1000<br/>
+                JavaScript uses milliseconds: 1704067200000<br />
+                Convert to seconds: divide by 1000<br />
                 Result: 1704067200 (January 1, 2024)
               </p>
             </div>
@@ -131,8 +131,8 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Time Zone Adjustment</p>
               <p className="text-muted-foreground">
-                UTC Timestamp: 1704067200<br/>
-                EST (UTC-5): Same timestamp, displays as Dec 31, 2023 7:00 PM<br/>
+                UTC Timestamp: 1704067200<br />
+                EST (UTC-5): Same timestamp, displays as Dec 31, 2023 7:00 PM<br />
                 JST (UTC+9): Same timestamp, displays as Jan 1, 2024 9:00 AM
               </p>
             </div>
@@ -146,11 +146,11 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">JavaScript</p>
               <p className="text-muted-foreground font-mono text-sm">
-                // Current timestamp (ms)<br/>
-                Date.now()<br/><br/>
-                // Current timestamp (seconds)<br/>
-                Math.floor(Date.now() / 1000)<br/><br/>
-                // Timestamp to date<br/>
+                // Current timestamp (ms)<br />
+                Date.now()<br /><br />
+                // Current timestamp (seconds)<br />
+                Math.floor(Date.now() / 1000)<br /><br />
+                // Timestamp to date<br />
                 new Date(1704067200 * 1000)
               </p>
             </div>
@@ -158,11 +158,11 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Python</p>
               <p className="text-muted-foreground font-mono text-sm">
-                import time<br/>
-                from datetime import datetime<br/><br/>
-                # Current timestamp<br/>
-                time.time()<br/><br/>
-                # Timestamp to date<br/>
+                import time<br />
+                from datetime import datetime<br /><br />
+                # Current timestamp<br />
+                time.time()<br /><br />
+                # Timestamp to date<br />
                 datetime.fromtimestamp(1704067200)
               </p>
             </div>
@@ -170,11 +170,11 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">PHP</p>
               <p className="text-muted-foreground font-mono text-sm">
-                // Current timestamp<br/>
-                time();<br/><br/>
-                // Timestamp to date<br/>
-                date('Y-m-d H:i:s', 1704067200);<br/><br/>
-                // Date to timestamp<br/>
+                // Current timestamp<br />
+                time();<br /><br />
+                // Timestamp to date<br />
+                date('Y-m-d H:i:s', 1704067200);<br /><br />
+                // Date to timestamp<br />
                 strtotime('2024-01-01');
               </p>
             </div>
@@ -182,11 +182,11 @@ export default function UnixTimestampConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">SQL</p>
               <p className="text-muted-foreground font-mono text-sm">
-                -- PostgreSQL<br/>
-                SELECT EXTRACT(EPOCH FROM NOW());<br/>
-                SELECT to_timestamp(1704067200);<br/><br/>
-                -- MySQL<br/>
-                SELECT UNIX_TIMESTAMP();<br/>
+                -- PostgreSQL<br />
+                SELECT EXTRACT(EPOCH FROM NOW());<br />
+                SELECT to_timestamp(1704067200);<br /><br />
+                -- MySQL<br />
+                SELECT UNIX_TIMESTAMP();<br />
                 SELECT FROM_UNIXTIME(1704067200);
               </p>
             </div>

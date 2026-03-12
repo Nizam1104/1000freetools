@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function ThreadCountConverterPage() {
   const config = converterMappings["Thread Count Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function ThreadCountConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Thread Count Converter</h1>
         <p className="text-muted-foreground">Convert and compare thread count values across different measurement standards for bed sheets and fabrics. Free online thread count converter for textile buyers and bedding shoppers.</p>
@@ -111,9 +111,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Percale Weave</p>
               <p className="text-muted-foreground">
-                One-over-one-under pattern<br/>
-                Crisp, cool feel<br/>
-                Typical TC: 180-300<br/>
+                One-over-one-under pattern<br />
+                Crisp, cool feel<br />
+                Typical TC: 180-300<br />
                 Best for: Hot sleepers, summer
               </p>
             </div>
@@ -121,9 +121,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Sateen Weave</p>
               <p className="text-muted-foreground">
-                Three-over-one-under pattern<br/>
-                Silky, lustrous surface<br/>
-                Typical TC: 300-600<br/>
+                Three-over-one-under pattern<br />
+                Silky, lustrous surface<br />
+                Typical TC: 300-600<br />
                 Best for: Luxury feel, warmth
               </p>
             </div>
@@ -131,9 +131,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Twill Weave</p>
               <p className="text-muted-foreground">
-                Diagonal rib pattern<br/>
-                Durable, drapes well<br/>
-                Typical TC: 200-400<br/>
+                Diagonal rib pattern<br />
+                Durable, drapes well<br />
+                Typical TC: 200-400<br />
                 Best for: Durability, wrinkles resist
               </p>
             </div>
@@ -141,9 +141,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Jersey Knit</p>
               <p className="text-muted-foreground">
-                Knitted, not woven<br/>
-                T-shirt feel, stretchy<br/>
-                Thread count not applicable<br/>
+                Knitted, not woven<br />
+                T-shirt feel, stretchy<br />
+                Thread count not applicable<br />
                 Best for: Casual, cozy feel
               </p>
             </div>
@@ -157,9 +157,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: TC per in² to TC per cm²</p>
               <p className="text-muted-foreground">
-                Thread count: 300 TC/in²<br/>
-                Conversion: 300 / 6.45 = 46.5 TC/cm²<br/>
-                Quality: Very good bedding<br/>
+                Thread count: 300 TC/in²<br />
+                Conversion: 300 / 6.45 = 46.5 TC/cm²<br />
+                Quality: Very good bedding<br />
                 Feel: Soft and smooth
               </p>
             </div>
@@ -167,9 +167,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: TC per cm² to TC per in²</p>
               <p className="text-muted-foreground">
-                Thread count: 80 TC/cm²<br/>
-                Conversion: 80 × 6.45 = 516 TC/in²<br/>
-                Quality: Excellent luxury<br/>
+                Thread count: 80 TC/cm²<br />
+                Conversion: 80 × 6.45 = 516 TC/in²<br />
+                Quality: Excellent luxury<br />
                 Feel: Silky smooth
               </p>
             </div>
@@ -177,9 +177,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Multi-ply Thread Count</p>
               <p className="text-muted-foreground">
-                Single-ply: 200 threads each direction<br/>
-                Actual TC: 400<br/>
-                Two-ply marketing: 800 TC<br/>
+                Single-ply: 200 threads each direction<br />
+                Actual TC: 400<br />
+                Two-ply marketing: 800 TC<br />
                 Quality same as 400 TC single-ply
               </p>
             </div>
@@ -187,9 +187,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Fiber Quality Impact</p>
               <p className="text-muted-foreground">
-                300 TC Egyptian cotton: Excellent<br/>
-                300 TC regular cotton: Good<br/>
-                600 TC polyester blend: Marketing<br/>
+                300 TC Egyptian cotton: Excellent<br />
+                300 TC regular cotton: Good<br />
+                600 TC polyester blend: Marketing<br />
                 Fiber quality matters more than TC
               </p>
             </div>
@@ -203,9 +203,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Higher is Not Always Better</p>
               <p className="text-muted-foreground">
-                300-500 TC is optimal range<br/>
-                Above 600 may use multi-ply tricks<br/>
-                1000+ TC often marketing gimmick<br/>
+                300-500 TC is optimal range<br />
+                Above 600 may use multi-ply tricks<br />
+                1000+ TC often marketing gimmick<br />
                 Focus on fiber quality instead
               </p>
             </div>
@@ -213,9 +213,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Multi-Ply Inflation</p>
               <p className="text-muted-foreground">
-                Two-ply threads count doubled<br/>
-                400 TC two-ply = 800 marketed<br/>
-                Same quality as 400 single-ply<br/>
+                Two-ply threads count doubled<br />
+                400 TC two-ply = 800 marketed<br />
+                Same quality as 400 single-ply<br />
                 Check if TC is single or multi-ply
               </p>
             </div>
@@ -223,9 +223,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Fiber Quality Matters</p>
               <p className="text-muted-foreground">
-                Long-staple cotton = better sheets<br/>
-                Egyptian, Pima, Supima are premium<br/>
-                300 TC Egyptian beats 600 TC regular<br/>
+                Long-staple cotton = better sheets<br />
+                Egyptian, Pima, Supima are premium<br />
+                300 TC Egyptian beats 600 TC regular<br />
                 Fiber length affects softness
               </p>
             </div>
@@ -233,9 +233,9 @@ export default function ThreadCountConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Weave Affects Feel</p>
               <p className="text-muted-foreground">
-                Percale: Crisp and cool<br/>
-                Sateen: Silky and warm<br/>
-                Same TC, different feel<br/>
+                Percale: Crisp and cool<br />
+                Sateen: Silky and warm<br />
+                Same TC, different feel<br />
                 Choose weave for preference
               </p>
             </div>

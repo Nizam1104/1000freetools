@@ -15,7 +15,7 @@ export default function ConcentrationSolutionPage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Solution Concentration Converter</h1>
         <p className="text-muted-foreground">Convert solution concentration units — ppm, ppb, mg/L, percent, g/L, and more. Accurate online concentration converter for chemistry, water treatment, and environmental testing.</p>
@@ -291,7 +291,7 @@ export default function ConcentrationSolutionPage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">Is ppm the same as mg/L?</h3>
             <p className="text-muted-foreground">

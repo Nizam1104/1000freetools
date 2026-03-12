@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function ConcreteMixRatioConverterPage() {
   const config = converterMappings["Concrete Mix Ratio Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function ConcreteMixRatioConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Concrete Mix Ratio Calculator</h1>
         <p className="text-muted-foreground">Convert concrete mix ratios and calculate exact cement, sand, and aggregate quantities for any volume. Free online concrete mix calculator for M10, M15, M20, M25, and custom mix designs.</p>
@@ -118,10 +118,10 @@ export default function ConcreteMixRatioConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">M15 Mix (1:2:4) per Cubic Meter</p>
               <p className="text-muted-foreground">
-                Total parts: 1+2+4 = 7<br/>
-                Cement: 1/7 × 1.54 = 0.22 m³<br/>
-                Cement bags: 0.22 / 0.035 = 6.3 bags<br/>
-                Sand: 0.22 × 2 = 0.44 m³<br/>
+                Total parts: 1+2+4 = 7<br />
+                Cement: 1/7 × 1.54 = 0.22 m³<br />
+                Cement bags: 0.22 / 0.035 = 6.3 bags<br />
+                Sand: 0.22 × 2 = 0.44 m³<br />
                 Aggregate: 0.22 × 4 = 0.88 m³
               </p>
             </div>
@@ -129,10 +129,10 @@ export default function ConcreteMixRatioConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">M20 Mix (1:1.5:3) per Cubic Meter</p>
               <p className="text-muted-foreground">
-                Total parts: 1+1.5+3 = 5.5<br/>
-                Cement: 1/5.5 × 1.54 = 0.28 m³<br/>
-                Cement bags: 0.28 / 0.035 = 8 bags<br/>
-                Sand: 0.28 × 1.5 = 0.42 m³<br/>
+                Total parts: 1+1.5+3 = 5.5<br />
+                Cement: 1/5.5 × 1.54 = 0.28 m³<br />
+                Cement bags: 0.28 / 0.035 = 8 bags<br />
+                Sand: 0.28 × 1.5 = 0.42 m³<br />
                 Aggregate: 0.28 × 3 = 0.84 m³
               </p>
             </div>
@@ -140,10 +140,10 @@ export default function ConcreteMixRatioConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">M25 Mix (1:1:2) per Cubic Meter</p>
               <p className="text-muted-foreground">
-                Total parts: 1+1+2 = 4<br/>
-                Cement: 1/4 × 1.54 = 0.385 m³<br/>
-                Cement bags: 0.385 / 0.035 = 11 bags<br/>
-                Sand: 0.385 × 1 = 0.385 m³<br/>
+                Total parts: 1+1+2 = 4<br />
+                Cement: 1/4 × 1.54 = 0.385 m³<br />
+                Cement bags: 0.385 / 0.035 = 11 bags<br />
+                Sand: 0.385 × 1 = 0.385 m³<br />
                 Aggregate: 0.385 × 2 = 0.77 m³
               </p>
             </div>
@@ -200,10 +200,10 @@ export default function ConcreteMixRatioConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Recommended W/C Ratios</p>
               <p className="text-muted-foreground">
-                M10: 0.50-0.55<br/>
-                M15: 0.45-0.50<br/>
-                M20: 0.40-0.45<br/>
-                M25: 0.35-0.40<br/>
+                M10: 0.50-0.55<br />
+                M15: 0.45-0.50<br />
+                M20: 0.40-0.45<br />
+                M25: 0.35-0.40<br />
                 M30+: 0.30-0.35
               </p>
             </div>
@@ -211,9 +211,9 @@ export default function ConcreteMixRatioConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Water per Bag (50 kg)</p>
               <p className="text-muted-foreground">
-                W/C 0.40: 20 liters<br/>
-                W/C 0.45: 22.5 liters<br/>
-                W/C 0.50: 25 liters<br/>
+                W/C 0.40: 20 liters<br />
+                W/C 0.45: 22.5 liters<br />
+                W/C 0.50: 25 liters<br />
                 W/C 0.55: 27.5 liters
               </p>
             </div>
@@ -221,9 +221,9 @@ export default function ConcreteMixRatioConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Workability Guidelines</p>
               <p className="text-muted-foreground">
-                Low slump (25-50 mm): Foundations<br/>
-                Medium slump (50-100 mm): Slabs, beams<br/>
-                High slump (100-150 mm): Pumped concrete<br/>
+                Low slump (25-50 mm): Foundations<br />
+                Medium slump (50-100 mm): Slabs, beams<br />
+                High slump (100-150 mm): Pumped concrete<br />
                 Add plasticizers for high workability
               </p>
             </div>
@@ -231,9 +231,9 @@ export default function ConcreteMixRatioConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Curing Requirements</p>
               <p className="text-muted-foreground">
-                Minimum curing: 7 days<br/>
-                Recommended: 14 days<br/>
-                Optimal: 28 days<br/>
+                Minimum curing: 7 days<br />
+                Recommended: 14 days<br />
+                Optimal: 28 days<br />
                 Keep moist, protect from sun and wind
               </p>
             </div>
