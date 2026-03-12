@@ -67,7 +67,7 @@ export default function EulersTotientCalculator() {
         `Step 2: Apply Euler's totient formula`,
         `φ(n) = n × ∏(1 - 1/p) for each prime p`,
         `φ(${n}) = ${n} × ${primeFactors.map(p => `(1 - 1/${p})`).join(' × ')}`,
-        `φ(${n}) = ${n} × ${primeFactors.map(p => `${p-1}/${p}`).join(' × ')}`,
+        `φ(${n}) = ${n} × ${primeFactors.map(p => `${p - 1}/${p}`).join(' × ')}`,
         `φ(${n}) = ${totient}`,
         ``,
         `Step 3: Verify by counting coprimes`,
@@ -108,7 +108,7 @@ export default function EulersTotientCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Euler's Totient Function Calculator – Compute φ(n) Online</h1>
         <p className="text-muted-foreground">

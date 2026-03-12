@@ -128,7 +128,7 @@ export default function InequalitySolver() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="w-full mx-auto space-y-8">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4">

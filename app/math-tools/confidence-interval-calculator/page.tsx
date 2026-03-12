@@ -30,16 +30,16 @@ function inverseStandardNormalCDF(p: number): number {
   if (p < pLow) {
     q = Math.sqrt(-2 * Math.log(p));
     x = (((((a[0] * q + a[1]) * q + a[2]) * q + a[3]) * q + a[4]) * q + a[5]) /
-        ((((a[0] * 0 + b[1]) * q + b[2]) * q + b[3]) * q + b[4]) * q + 1;
+      ((((a[0] * 0 + b[1]) * q + b[2]) * q + b[3]) * q + b[4]) * q + 1;
   } else if (p <= pHigh) {
     q = p - 0.5;
     r = q * q;
     x = (((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q /
-        (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
+      (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
   } else {
     q = Math.sqrt(-2 * Math.log(1 - p));
     x = -(((((a[0] * q + a[1]) * q + a[2]) * q + a[3]) * q + a[4]) * q + a[5]) /
-         ((((b[0] * q + b[1]) * q + b[2]) * q + b[3]) * q + 1);
+      ((((b[0] * q + b[1]) * q + b[2]) * q + b[3]) * q + 1);
   }
 
   return x;
@@ -130,7 +130,7 @@ export default function ConfidenceIntervalCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Confidence Interval Calculator – Find CI for Mean Online</h1>
         <p className="text-muted-foreground">

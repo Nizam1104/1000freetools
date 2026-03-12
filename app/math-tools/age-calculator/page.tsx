@@ -109,7 +109,7 @@ export default function AgeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Age Calculator – Find Your Exact Age in Years & Days</h1>
         <p className="text-muted-foreground">
@@ -223,8 +223,8 @@ export default function AgeCalculator() {
         <h3 className="text-xl font-semibold">How Age Is Calculated</h3>
         <div className="p-4 bg-muted rounded-lg">
           <p className="text-sm text-muted-foreground text-center">
-            Years = target year − birth year (adjusted if birthday hasn't occurred)<br/>
-            Months = target month − birth month (adjusted if day hasn't occurred)<br/>
+            Years = target year − birth year (adjusted if birthday hasn't occurred)<br />
+            Months = target month − birth month (adjusted if day hasn't occurred)<br />
             Days = target day − birth day (borrowing from previous month if needed)
           </p>
         </div>
@@ -235,7 +235,7 @@ export default function AgeCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Worked Examples</h3>
-        
+
         <div className="space-y-6">
           <div className="p-5 border rounded-lg">
             <h4 className="font-semibold mb-2">Example 1: Age as of today</h4>

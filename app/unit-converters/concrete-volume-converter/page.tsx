@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function ConcreteVolumeConverterPage() {
   const config = converterMappings["Concrete Volume Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function ConcreteVolumeConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Concrete Volume Calculator & Converter</h1>
         <p className="text-muted-foreground">Calculate concrete volume for slabs, columns, beams, and footings — and convert between cubic meters, cubic feet, and cubic yards. Free online concrete volume calculator for construction projects.</p>
@@ -101,8 +101,8 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">4-Inch Thick Slab</p>
               <p className="text-muted-foreground">
-                Coverage per cubic yard: 81 sq ft<br/>
-                Coverage per cubic meter: 24.4 sq m<br/>
+                Coverage per cubic yard: 81 sq ft<br />
+                Coverage per cubic meter: 24.4 sq m<br />
                 Formula: Area (sq ft) × 0.33 ft / 27 = cubic yards
               </p>
             </div>
@@ -110,8 +110,8 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">6-Inch Thick Slab</p>
               <p className="text-muted-foreground">
-                Coverage per cubic yard: 54 sq ft<br/>
-                Coverage per cubic meter: 16.3 sq m<br/>
+                Coverage per cubic yard: 54 sq ft<br />
+                Coverage per cubic meter: 16.3 sq m<br />
                 Formula: Area (sq ft) × 0.5 ft / 27 = cubic yards
               </p>
             </div>
@@ -119,8 +119,8 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Driveway Slab (5-inch)</p>
               <p className="text-muted-foreground">
-                Coverage per cubic yard: 65 sq ft<br/>
-                Typical 2-car driveway (20×24 ft): 1.85 cubic yards<br/>
+                Coverage per cubic yard: 65 sq ft<br />
+                Typical 2-car driveway (20×24 ft): 1.85 cubic yards<br />
                 Order 2-2.5 yards with waste factor
               </p>
             </div>
@@ -134,9 +134,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Garage Slab</p>
               <p className="text-muted-foreground">
-                Dimensions: 24 ft × 24 ft × 6 inches<br/>
-                Volume: 24 × 24 × 0.5 = 288 cubic feet<br/>
-                Cubic yards: 288 / 27 = 10.67<br/>
+                Dimensions: 24 ft × 24 ft × 6 inches<br />
+                Volume: 24 × 24 × 0.5 = 288 cubic feet<br />
+                Cubic yards: 288 / 27 = 10.67<br />
                 Order: 11 cubic yards (add 5% waste)
               </p>
             </div>
@@ -144,9 +144,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Concrete Columns</p>
               <p className="text-muted-foreground">
-                4 columns, 12 inch diameter, 10 ft height<br/>
-                Radius: 0.5 ft<br/>
-                Volume per column: π × 0.5² × 10 = 7.85 cu ft<br/>
+                4 columns, 12 inch diameter, 10 ft height<br />
+                Radius: 0.5 ft<br />
+                Volume per column: π × 0.5² × 10 = 7.85 cu ft<br />
                 Total: 4 × 7.85 = 31.4 cu ft = 1.16 cubic yards
               </p>
             </div>
@@ -154,9 +154,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Footings</p>
               <p className="text-muted-foreground">
-                Perimeter footing: 120 ft × 2 ft × 1 ft<br/>
-                Volume: 120 × 2 × 1 = 240 cubic feet<br/>
-                Cubic yards: 240 / 27 = 8.89<br/>
+                Perimeter footing: 120 ft × 2 ft × 1 ft<br />
+                Volume: 120 × 2 × 1 = 240 cubic feet<br />
+                Cubic yards: 240 / 27 = 8.89<br />
                 Order: 9.5 cubic yards with waste
               </p>
             </div>
@@ -164,9 +164,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Metric Slab</p>
               <p className="text-muted-foreground">
-                Slab: 5 m × 4 m × 150 mm<br/>
-                Volume: 5 × 4 × 0.15 = 3 cubic meters<br/>
-                Ready-mix bags: 3 / 0.02 = 150 bags (20kg each)<br/>
+                Slab: 5 m × 4 m × 150 mm<br />
+                Volume: 5 × 4 × 0.15 = 3 cubic meters<br />
+                Ready-mix bags: 3 / 0.02 = 150 bags (20kg each)<br />
                 Or order 3 m³ ready-mix concrete
               </p>
             </div>
@@ -180,9 +180,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Ready-Mix Concrete</p>
               <p className="text-muted-foreground">
-                Minimum order: 1 cubic yard<br/>
-                Truck capacity: 8-12 cubic yards<br/>
-                Short load fee: applies under minimum<br/>
+                Minimum order: 1 cubic yard<br />
+                Truck capacity: 8-12 cubic yards<br />
+                Short load fee: applies under minimum<br />
                 Delivery time: 90 minutes after batching
               </p>
             </div>
@@ -190,9 +190,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Pre-Mix Bags</p>
               <p className="text-muted-foreground">
-                80 lb bag: 0.6 cubic feet<br/>
-                60 lb bag: 0.45 cubic feet<br/>
-                40 lb bag: 0.3 cubic feet<br/>
+                80 lb bag: 0.6 cubic feet<br />
+                60 lb bag: 0.45 cubic feet<br />
+                40 lb bag: 0.3 cubic feet<br />
                 50 bags = 1 cubic yard (80 lb bags)
               </p>
             </div>
@@ -200,9 +200,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Waste Factors</p>
               <p className="text-muted-foreground">
-                Simple slabs: 5%<br/>
-                Complex forms: 10%<br/>
-                Irregular shapes: 15%<br/>
+                Simple slabs: 5%<br />
+                Complex forms: 10%<br />
+                Irregular shapes: 15%<br />
                 Pumped concrete: add 5%
               </p>
             </div>
@@ -210,9 +210,9 @@ export default function ConcreteVolumeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Concrete Strength</p>
               <p className="text-muted-foreground">
-                Residential slabs: 3,000-4,000 psi<br/>
-                Driveways: 4,000-5,000 psi<br/>
-                Structural: 4,000-6,000 psi<br/>
+                Residential slabs: 3,000-4,000 psi<br />
+                Driveways: 4,000-5,000 psi<br />
+                Structural: 4,000-6,000 psi<br />
                 High strength: 8,000+ psi
               </p>
             </div>

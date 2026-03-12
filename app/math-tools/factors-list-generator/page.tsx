@@ -78,7 +78,7 @@ export default function FactorsListGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Factors List Generator – Find All Factors of a Number</h1>
         <p className="text-muted-foreground">

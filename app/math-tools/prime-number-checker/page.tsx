@@ -95,7 +95,7 @@ export default function PrimeNumberChecker() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Prime Number Checker – Is It Prime? Find Out Instantly</h1>
         <p className="text-muted-foreground">
@@ -154,7 +154,7 @@ export default function PrimeNumberChecker() {
 
       <section className="space-y-6 pt-8 border-t">
         <h2 className="text-2xl font-semibold">Understanding Prime Numbers</h2>
-        
+
         <div className="space-y-4">
           <p>
             A prime number is a whole number greater than 1 that can only be divided evenly by 1 and itself. The first few primes are 2, 3, 5, 7, 11, 13, 17, 19... Everything else greater than 1 is called composite.
@@ -169,7 +169,7 @@ export default function PrimeNumberChecker() {
           </p>
 
           <h3 className="text-xl font-semibold">Worked Examples</h3>
-          
+
           <div className="space-y-4">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: Is 17 prime?</h4>
@@ -177,8 +177,8 @@ export default function PrimeNumberChecker() {
                 Check divisibility by 2, 3, and 4 (since √17 ≈ 4.1).
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
-                17 ÷ 2 = 8.5 (not divisible)<br/>
-                17 ÷ 3 = 5.67 (not divisible)<br/>
+                17 ÷ 2 = 8.5 (not divisible)<br />
+                17 ÷ 3 = 5.67 (not divisible)<br />
                 17 ÷ 4 = 4.25 (not divisible)
               </code>
               <p className="text-sm mt-2">
@@ -221,7 +221,7 @@ export default function PrimeNumberChecker() {
           </div>
 
           <h3 className="text-xl font-semibold">Common Questions</h3>
-          
+
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold mb-2">Why isn't 1 considered prime?</h4>

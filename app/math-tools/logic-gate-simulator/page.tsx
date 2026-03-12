@@ -117,7 +117,7 @@ export default function LogicGateSimulator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Logic Gate Simulator – Simulate Digital Logic Gates</h1>
         <p className="text-muted-foreground">
@@ -148,11 +148,10 @@ export default function LogicGateSimulator() {
               <Label className="mb-2 block">Input A</Label>
               <button
                 onClick={() => { setInputA(!inputA); setResult(null); }}
-                className={`w-20 h-20 rounded-full text-2xl font-bold transition-all ${
-                  inputA
+                className={`w-20 h-20 rounded-full text-2xl font-bold transition-all ${inputA
                     ? 'bg-green-500 text-white shadow-lg shadow-green-500/50'
                     : 'bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300'
-                }`}
+                  }`}
               >
                 {inputA ? '1' : '0'}
               </button>
@@ -164,11 +163,10 @@ export default function LogicGateSimulator() {
                 <Label className="mb-2 block">Input B</Label>
                 <button
                   onClick={() => { setInputB(!inputB); setResult(null); }}
-                  className={`w-20 h-20 rounded-full text-2xl font-bold transition-all ${
-                    inputB
+                  className={`w-20 h-20 rounded-full text-2xl font-bold transition-all ${inputB
                       ? 'bg-green-500 text-white shadow-lg shadow-green-500/50'
                       : 'bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300'
-                  }`}
+                    }`}
                 >
                   {inputB ? '1' : '0'}
                 </button>
@@ -201,11 +199,10 @@ export default function LogicGateSimulator() {
                   <span className="text-2xl font-bold">{getGateSymbol(gateType)}</span>
                 </div>
 
-                <div className={`w-20 h-20 rounded-full text-2xl font-bold flex items-center justify-center transition-all ${
-                  result.output
+                <div className={`w-20 h-20 rounded-full text-2xl font-bold flex items-center justify-center transition-all ${result.output
                     ? 'bg-green-500 text-white shadow-lg shadow-green-500/50'
                     : 'bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300'
-                }`}>
+                  }`}>
                   {result.output ? '1' : '0'}
                 </div>
               </div>
@@ -227,11 +224,10 @@ export default function LogicGateSimulator() {
                     {result.truthTable.map((row: any, i: number) => (
                       <tr
                         key={i}
-                        className={`border-b ${
-                          row.a === (result.inputA ? 1 : 0) && (gateType === "NOT" || row.b === (result.inputB ? 1 : 0))
+                        className={`border-b ${row.a === (result.inputA ? 1 : 0) && (gateType === "NOT" || row.b === (result.inputB ? 1 : 0))
                             ? 'bg-primary/10 font-semibold'
                             : ''
-                        }`}
+                          }`}
                       >
                         <td className="p-2 text-center">{row.a}</td>
                         {gateType !== "NOT" && <td className="p-2 text-center">{row.b}</td>}

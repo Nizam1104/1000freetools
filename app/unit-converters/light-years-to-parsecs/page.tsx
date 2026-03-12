@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function LightYearstoParsecsPage() {
   const config = converterMappings["Light Years to Parsecs"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function LightYearstoParsecsPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Light-Years to Parsecs Converter</h1>
         <p className="text-muted-foreground">Convert astronomical distances between light-years, parsecs, astronomical units, and kilometers. Free online space distance converter for astronomy, astrophysics, and science education.</p>
@@ -112,9 +112,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Radar Ranging (Solar System)</p>
               <p className="text-muted-foreground">
-                Range: Up to 50 AU<br/>
-                Method: Radio wave reflection<br/>
-                Accuracy: Meters to kilometers<br/>
+                Range: Up to 50 AU<br />
+                Method: Radio wave reflection<br />
+                Accuracy: Meters to kilometers<br />
                 Used for: Planets, asteroids
               </p>
             </div>
@@ -122,9 +122,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Stellar Parallax (Nearby Stars)</p>
               <p className="text-muted-foreground">
-                Range: Up to 1,000 parsecs<br/>
-                Method: Apparent position shift<br/>
-                Accuracy: 1-10%<br/>
+                Range: Up to 1,000 parsecs<br />
+                Method: Apparent position shift<br />
+                Accuracy: 1-10%<br />
                 Used for: Distance to nearby stars
               </p>
             </div>
@@ -132,9 +132,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Standard Candles (Galaxies)</p>
               <p className="text-muted-foreground">
-                Range: Up to 100 megaparsecs<br/>
-                Method: Cepheid variables, supernovae<br/>
-                Accuracy: 10-20%<br/>
+                Range: Up to 100 megaparsecs<br />
+                Method: Cepheid variables, supernovae<br />
+                Accuracy: 10-20%<br />
                 Used for: Galaxy distances
               </p>
             </div>
@@ -142,9 +142,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Redshift (Universe Scale)</p>
               <p className="text-muted-foreground">
-                Range: Billions of light-years<br/>
-                Method: Hubble's Law<br/>
-                Accuracy: 10-30%<br/>
+                Range: Billions of light-years<br />
+                Method: Hubble's Law<br />
+                Accuracy: 10-30%<br />
                 Used for: Distant galaxies, quasars
               </p>
             </div>
@@ -158,9 +158,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Nearest Star</p>
               <p className="text-muted-foreground">
-                Proxima Centauri: 4.24 light-years<br/>
-                Parsecs: 4.24 / 3.262 = 1.30 pc<br/>
-                Kilometers: 4.24 × 9.461 × 10¹² = 4.01 × 10¹³ km<br/>
+                Proxima Centauri: 4.24 light-years<br />
+                Parsecs: 4.24 / 3.262 = 1.30 pc<br />
+                Kilometers: 4.24 × 9.461 × 10¹² = 4.01 × 10¹³ km<br />
                 AU: 4.24 × 63,241 = 268,142 AU
               </p>
             </div>
@@ -168,9 +168,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Andromeda Galaxy</p>
               <p className="text-muted-foreground">
-                Distance: 2.537 million light-years<br/>
-                Megaparsecs: 2.537 / 3.262 = 0.778 Mpc<br/>
-                Kilometers: 2.4 × 10¹⁹ km<br/>
+                Distance: 2.537 million light-years<br />
+                Megaparsecs: 2.537 / 3.262 = 0.778 Mpc<br />
+                Kilometers: 2.4 × 10¹⁹ km<br />
                 Light travel time: 2.537 million years
               </p>
             </div>
@@ -178,9 +178,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Galactic Center</p>
               <p className="text-muted-foreground">
-                Distance: 8 kiloparsecs<br/>
-                Light-years: 8 × 3,262 = 26,096 ly<br/>
-                Kilometers: 2.47 × 10¹⁷ km<br/>
+                Distance: 8 kiloparsecs<br />
+                Light-years: 8 × 3,262 = 26,096 ly<br />
+                Kilometers: 2.47 × 10¹⁷ km<br />
                 From Earth to Milky Way center
               </p>
             </div>
@@ -188,9 +188,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Observable Universe</p>
               <p className="text-muted-foreground">
-                Radius: 46.5 billion light-years<br/>
-                Gigaparsecs: 46.5 × 10⁹ / 3.262 × 10⁹ = 14.26 Gpc<br/>
-                Diameter: 93 billion light-years<br/>
+                Radius: 46.5 billion light-years<br />
+                Gigaparsecs: 46.5 × 10⁹ / 3.262 × 10⁹ = 14.26 Gpc<br />
+                Diameter: 93 billion light-years<br />
                 Comoving distance includes expansion
               </p>
             </div>
@@ -204,9 +204,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Solar System Distances</p>
               <p className="text-muted-foreground">
-                Earth to Sun: 1 AU (8.3 light-minutes)<br/>
-                Earth to Pluto: 39 AU (5.5 light-hours)<br/>
-                Voyager 1: 160 AU (22 light-hours)<br/>
+                Earth to Sun: 1 AU (8.3 light-minutes)<br />
+                Earth to Pluto: 39 AU (5.5 light-hours)<br />
+                Voyager 1: 160 AU (22 light-hours)<br />
                 Heliopause: 120 AU
               </p>
             </div>
@@ -214,9 +214,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Nearby Stars</p>
               <p className="text-muted-foreground">
-                Proxima Centauri: 4.24 ly (1.3 pc)<br/>
-                Alpha Centauri: 4.37 ly (1.34 pc)<br/>
-                Barnard's Star: 5.96 ly (1.83 pc)<br/>
+                Proxima Centauri: 4.24 ly (1.3 pc)<br />
+                Alpha Centauri: 4.37 ly (1.34 pc)<br />
+                Barnard's Star: 5.96 ly (1.83 pc)<br />
                 Sirius: 8.6 ly (2.64 pc)
               </p>
             </div>
@@ -224,9 +224,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Deep Sky Objects</p>
               <p className="text-muted-foreground">
-                Orion Nebula: 1,344 ly (412 pc)<br/>
-                Pleiades: 444 ly (136 pc)<br/>
-                Crab Nebula: 6,523 ly (2,000 pc)<br/>
+                Orion Nebula: 1,344 ly (412 pc)<br />
+                Pleiades: 444 ly (136 pc)<br />
+                Crab Nebula: 6,523 ly (2,000 pc)<br />
                 Whirlpool Galaxy: 23 Mly (7 Mpc)
               </p>
             </div>
@@ -234,9 +234,9 @@ export default function LightYearstoParsecsPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Cosmic Distances</p>
               <p className="text-muted-foreground">
-                Virgo Cluster: 54 Mly (16.5 Mpc)<br/>
-                Coma Cluster: 321 Mly (98 Mpc)<br/>
-                Hubble Deep Field: 12 Gly (3.7 Gpc)<br/>
+                Virgo Cluster: 54 Mly (16.5 Mpc)<br />
+                Coma Cluster: 321 Mly (98 Mpc)<br />
+                Hubble Deep Field: 12 Gly (3.7 Gpc)<br />
                 CMB: 46 Gly (14 Gpc)
               </p>
             </div>

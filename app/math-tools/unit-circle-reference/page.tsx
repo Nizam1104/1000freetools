@@ -32,7 +32,7 @@ export default function UnitCircleReference() {
   const selectedData = selectedAngle !== null ? unitCircleData.find(d => d.deg === selectedAngle) : null;
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Unit Circle Reference Tool – Interactive Unit Circle Chart</h1>
         <p className="text-muted-foreground">

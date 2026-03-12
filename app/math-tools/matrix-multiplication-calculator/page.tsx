@@ -224,7 +224,7 @@ export default function MatrixMultiplicationCalculator() {
     }
 
     if (matrixA.length === 0 || matrixA.some(row => row.length === 0) ||
-        matrixB.length === 0 || matrixB.some(row => row.length === 0)) {
+      matrixB.length === 0 || matrixB.some(row => row.length === 0)) {
       setError("Please enter both matrices");
       return;
     }
@@ -353,7 +353,7 @@ export default function MatrixMultiplicationCalculator() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Multiplication Calculator – Multiply Matrices Online</h1>
         <p className="text-muted-foreground">
@@ -630,7 +630,7 @@ export default function MatrixMultiplicationCalculator() {
         <div className="p-4 bg-muted rounded-lg">
           <h4 className="font-semibold text-sm mb-3">The Formula</h4>
           <code className="text-sm font-mono block">
-            If A is m x n and B is n x p, then C = AB is m x p<br/>
+            If A is m x n and B is n x p, then C = AB is m x p<br />
             C[i,j] = sum of (A[i,k] x B[k,j]) for k = 1 to n
           </code>
         </div>

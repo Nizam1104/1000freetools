@@ -31,9 +31,9 @@ export default function MeanMedianModeCalculator() {
 
     let median: number;
     if (n % 2 === 0) {
-      median = (sorted[n/2 - 1] + sorted[n/2]) / 2;
+      median = (sorted[n / 2 - 1] + sorted[n / 2]) / 2;
     } else {
-      median = sorted[Math.floor(n/2)];
+      median = sorted[Math.floor(n / 2)];
     }
 
     const freq: Record<number, number> = {};
@@ -41,18 +41,18 @@ export default function MeanMedianModeCalculator() {
     const maxFreq = Math.max(...Object.values(freq));
     const modes = Object.keys(freq).filter(k => freq[parseInt(k)] === maxFreq).map(Number);
 
-    const range = sorted[n-1] - sorted[0];
+    const range = sorted[n - 1] - sorted[0];
 
     const q1Index = Math.floor((n + 1) / 4) - 1;
     const q3Index = Math.floor(3 * (n + 1) / 4) - 1;
     const q1 = sorted[Math.max(0, q1Index)];
-    const q3 = sorted[Math.min(n-1, q3Index)];
+    const q3 = sorted[Math.min(n - 1, q3Index)];
     const iqr = q3 - q1;
 
     setResult({
       count: n,
       mean, median, modes: modes.length === n ? [] : modes, range,
-      min: sorted[0], max: sorted[n-1], sum: sorted.reduce((a,b)=>a+b,0),
+      min: sorted[0], max: sorted[n - 1], sum: sorted.reduce((a, b) => a + b, 0),
       q1, q3, iqr, sorted, freq
     });
   };
@@ -65,7 +65,7 @@ export default function MeanMedianModeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Mean, Median, Mode Calculator – Statistics Calculator Online</h1>
         <p className="text-muted-foreground">

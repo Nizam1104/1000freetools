@@ -15,7 +15,7 @@ export default function FuelEfficiencyMassPage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Fuel Efficiency by Mass Converter</h1>
         <p className="text-muted-foreground">Convert fuel efficiency by mass units — km/kg, miles/lb, and more. Free online mass-based fuel efficiency converter for rocket propulsion and alternative fuel vehicles.</p>
@@ -215,7 +215,7 @@ export default function FuelEfficiencyMassPage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">Why use mass-based efficiency for hydrogen vehicles?</h3>
             <p className="text-muted-foreground">

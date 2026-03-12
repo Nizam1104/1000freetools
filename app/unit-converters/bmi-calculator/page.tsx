@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function BMICalculatorPage() {
   const config = converterMappings["BMI Calculator"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function BMICalculatorPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">BMI Calculator — Body Mass Index</h1>
         <p className="text-muted-foreground">Calculate your Body Mass Index (BMI) from height and weight. Find out if you're underweight, normal weight, overweight, or obese. Free online BMI calculator for adults and children.</p>
@@ -50,9 +50,9 @@ export default function BMICalculatorPage() {
           <div className="bg-muted p-4 rounded-lg">
             <p className="font-semibold mb-2">Calculation Example</p>
             <p className="text-muted-foreground">
-              Weight: 70 kg (154 lb)<br/>
-              Height: 1.75 m (5 ft 9 in)<br/>
-              BMI = 70 / (1.75 × 1.75) = 22.86<br/>
+              Weight: 70 kg (154 lb)<br />
+              Height: 1.75 m (5 ft 9 in)<br />
+              BMI = 70 / (1.75 × 1.75) = 22.86<br />
               Result: Normal weight range
             </p>
           </div>

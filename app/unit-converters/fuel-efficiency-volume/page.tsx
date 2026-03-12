@@ -15,7 +15,7 @@ export default function FuelEfficiencyVolumePage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Fuel Efficiency by Volume Converter</h1>
         <p className="text-muted-foreground">Convert volumetric fuel efficiency units — L/100km, MPG, km/L, and more. Accurate online fuel economy converter for vehicles, fleet management, and emissions calculations.</p>
@@ -313,7 +313,7 @@ export default function FuelEfficiencyVolumePage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">Why does Europe use L/100km instead of MPG?</h3>
             <p className="text-muted-foreground">

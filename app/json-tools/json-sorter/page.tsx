@@ -196,7 +196,7 @@ export default function JsonSorterPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">
@@ -239,8 +239,8 @@ export default function JsonSorterPage() {
                       key={value}
                       onClick={() => setSortMode(value)}
                       className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium border transition-all ${sortMode === value
-                          ? "bg-primary text-primary-foreground border-primary shadow-sm"
-                          : "bg-background border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
+                        ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                        : "bg-background border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
                         }`}
                     >
                       <Icon className="h-3.5 w-3.5" />
@@ -261,8 +261,8 @@ export default function JsonSorterPage() {
                 <Select value={selectedKey} onValueChange={setSelectedKey}>
                   <SelectTrigger
                     className={`w-[200px] ${isValueSort && selectedKey === "__all__"
-                        ? "border-orange-400 text-orange-500"
-                        : ""
+                      ? "border-orange-400 text-orange-500"
+                      : ""
                       }`}
                   >
                     <SelectValue placeholder="Select a key…" />

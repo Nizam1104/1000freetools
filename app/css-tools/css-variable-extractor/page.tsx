@@ -21,12 +21,12 @@ export default function CssVariableExtractorPage() {
     // Match CSS custom properties (variables)
     const varRegex = /--([a-zA-Z0-9-]+)\s*:\s*([^;]+);/g;
     const matches = [...cssInput.matchAll(varRegex)];
-    
+
     const vars = matches.map((match) => {
       const name = `--${match[1]}`;
       const value = match[2].trim();
       let category = "Other";
-      
+
       if (value.includes("#") || value.includes("rgb") || value.includes("hsl") || value.includes("rgba") || value.includes("hsla")) {
         category = "Color";
       } else if (value.includes("px") || value.includes("rem") || value.includes("em") || value.includes("%") || value.includes("vw") || value.includes("vh")) {
@@ -38,12 +38,12 @@ export default function CssVariableExtractorPage() {
       } else if (value.includes("blur") || value.includes("shadow") || value.includes("radius")) {
         category = "Effect";
       }
-      
+
       return { name, value, category };
     });
 
     setExtractedVars(vars);
-    
+
     if (vars.length === 0) {
       toast.info("No CSS variables found in the input");
     } else {
@@ -53,11 +53,11 @@ export default function CssVariableExtractorPage() {
 
   const generateCSS = () => {
     if (extractedVars.length === 0) return "";
-    
+
     const categories = [...new Set(extractedVars.map((v) => v.category))];
-    
+
     let output = ":root {\n";
-    
+
     categories.forEach((category) => {
       const varsInCategory = extractedVars.filter((v) => v.category === category);
       if (varsInCategory.length > 0) {
@@ -67,9 +67,9 @@ export default function CssVariableExtractorPage() {
         });
       }
     });
-    
+
     output += "}\n";
-    
+
     return output;
   };
 
@@ -90,7 +90,7 @@ export default function CssVariableExtractorPage() {
   const cssOutput = generateCSS();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Variable Extractor</h1>
         <p className="text-muted-foreground">
@@ -164,7 +164,7 @@ export default function CssVariableExtractorPage() {
                   {["Color", "Spacing", "Typography", "Animation", "Effect", "Other"].map((category) => {
                     const varsInCategory = extractedVars.filter((v) => v.category === category);
                     if (varsInCategory.length === 0) return null;
-                    
+
                     return (
                       <div key={category}>
                         <h4 className="text-sm font-medium mb-2">{category}</h4>
@@ -193,17 +193,17 @@ export default function CssVariableExtractorPage() {
                 <pre className="flex-1 p-3 bg-muted rounded-lg text-sm font-mono overflow-x-auto whitespace-pre max-h-[400px] overflow-y-auto">
                   {cssOutput || "/* Extracted CSS will appear here */"}
                 </pre>
-                <Button 
-                  variant="outline" 
-                  size="icon" 
+                <Button
+                  variant="outline"
+                  size="icon"
                   onClick={() => copyToClipboard(cssOutput, "CSS Variables")}
                   disabled={!cssOutput}
                 >
                   <Copy className="w-4 h-4" />
                 </Button>
               </div>
-              <Button 
-                className="w-full" 
+              <Button
+                className="w-full"
                 onClick={() => copyToClipboard(cssOutput, "CSS Variables")}
                 disabled={!cssOutput}
               >
@@ -221,12 +221,12 @@ export default function CssVariableExtractorPage() {
           <h2 className="text-2xl font-semibold mb-4">About CSS Variables</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              CSS custom properties (also known as CSS variables) are entities defined by CSS authors that contain 
-              specific values to be reused throughout a document. They are set using custom property notation 
+              CSS custom properties (also known as CSS variables) are entities defined by CSS authors that contain
+              specific values to be reused throughout a document. They are set using custom property notation
               (e.g., <code>--main-color: #6366f1;</code>) and accessed using the <code>var()</code> function.
             </p>
             <p>
-              CSS variables enable you to reuse values, make global changes easily, and create more maintainable 
+              CSS variables enable you to reuse values, make global changes easily, and create more maintainable
               stylesheets. They're particularly useful for design tokens, theming, and consistent styling.
             </p>
           </div>
@@ -267,7 +267,7 @@ export default function CssVariableExtractorPage() {
           <Card>
             <CardContent className="pt-6">
               <pre className="p-4 bg-muted rounded-lg text-sm font-mono overflow-x-auto">
-{`/* Define variables */
+                {`/* Define variables */
 :root {
   --primary: #6366f1;
   --spacing-md: 16px;

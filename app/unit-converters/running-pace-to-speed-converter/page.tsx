@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function RunningPacetoSpeedConverterPage() {
   const config = converterMappings["Running Pace to Speed Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function RunningPacetoSpeedConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Running Pace to Speed Converter</h1>
         <p className="text-muted-foreground">Convert running pace (min/km or min/mile) to speed (km/h or mph) instantly. Free online running pace converter for athletes, marathon runners, and fitness tracking.</p>
@@ -39,7 +39,7 @@ export default function RunningPacetoSpeedConverterPage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Common Running Pace Conversions</h2>
-        <div className="overflow-x-auto">
+          <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="border-b">

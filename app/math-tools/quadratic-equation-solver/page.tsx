@@ -91,7 +91,7 @@ export default function QuadraticEquationSolver() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Quadratic Equation Solver – Find Roots of ax² + bx + c = 0</h1>
         <p className="text-muted-foreground">
@@ -104,7 +104,7 @@ export default function QuadraticEquationSolver() {
           <p className="text-sm font-medium mb-2">Equation Format:</p>
           <p className="text-lg font-mono">ax² + bx + c = 0</p>
         </div>
-        
+
         <div className="grid grid-cols-3 gap-4">
           <div>
             <Label>a</Label>
@@ -194,7 +194,7 @@ export default function QuadraticEquationSolver() {
 
       <section className="space-y-6 pt-8 border-t">
         <h2 className="text-2xl font-semibold">Understanding Quadratic Equations</h2>
-        
+
         <div className="space-y-4">
           <p>
             A quadratic equation is any equation that can be written in the form ax² + bx + c = 0, where a ≠ 0. The name comes from "quadratus," Latin for square — the variable is squared.
@@ -227,7 +227,7 @@ export default function QuadraticEquationSolver() {
           </div>
 
           <h3 className="text-xl font-semibold">Worked Examples</h3>
-          
+
           <div className="space-y-4">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: x² - 5x + 6 = 0</h4>
@@ -235,8 +235,8 @@ export default function QuadraticEquationSolver() {
                 Here a=1, b=-5, c=6. The discriminant is Δ = 25 - 24 = 1.
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
-                x = (5 ± √1) / 2 = (5 ± 1) / 2<br/>
-                x₁ = 6/2 = 3<br/>
+                x = (5 ± √1) / 2 = (5 ± 1) / 2<br />
+                x₁ = 6/2 = 3<br />
                 x₂ = 4/2 = 2
               </code>
               <p className="text-sm mt-2">
@@ -263,8 +263,8 @@ export default function QuadraticEquationSolver() {
                 Here a=1, b=2, c=5. The discriminant is Δ = 4 - 20 = -16.
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
-                x = (-2 ± √(-16)) / 2 = (-2 ± 4i) / 2<br/>
-                x₁ = -1 + 2i<br/>
+                x = (-2 ± √(-16)) / 2 = (-2 ± 4i) / 2<br />
+                x₁ = -1 + 2i<br />
                 x₂ = -1 - 2i
               </code>
               <p className="text-sm mt-2">
@@ -281,7 +281,7 @@ export default function QuadraticEquationSolver() {
           </div>
 
           <h3 className="text-xl font-semibold">Common Questions</h3>
-          
+
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold mb-2">What if a = 0?</h4>

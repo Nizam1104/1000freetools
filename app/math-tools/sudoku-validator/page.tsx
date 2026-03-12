@@ -224,7 +224,7 @@ export default function SudokuValidator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Sudoku Validator – Check Sudoku Grid Validity</h1>
         <p className="text-muted-foreground">
@@ -254,8 +254,8 @@ export default function SudokuValidator() {
                       }
                     }}
                     className={`w-10 h-10 text-center text-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary ${status === "error" ? "bg-red-100 dark:bg-red-900/30 text-red-600" :
-                        status === "valid" ? "bg-green-100 dark:bg-green-900/30" :
-                          "bg-background"
+                      status === "valid" ? "bg-green-100 dark:bg-green-900/30" :
+                        "bg-background"
                       } ${boxBorderRight} ${boxBorderBottom}`}
                   />
                 );
@@ -286,8 +286,8 @@ export default function SudokuValidator() {
         {result && (
           <div className="space-y-4">
             <div className={`p-6 rounded-lg text-center ${result.isCorrect ? "bg-green-100 dark:bg-green-900/30" :
-                result.isValid ? "bg-amber-100 dark:bg-amber-900/30" :
-                  "bg-red-100 dark:bg-red-900/30"
+              result.isValid ? "bg-amber-100 dark:bg-amber-900/30" :
+                "bg-red-100 dark:bg-red-900/30"
               }`}>
               <p className="text-2xl font-bold mb-2">
                 {result.isCorrect ? "✓ Valid & Complete Sudoku!" :

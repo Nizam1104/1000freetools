@@ -138,7 +138,7 @@ export default function BinomialExpansionCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Binomial Expansion Calculator – Expand (a+b)^n</h1>
         <p className="text-muted-foreground">
@@ -238,7 +238,7 @@ export default function BinomialExpansionCalculator() {
 
       <section className="space-y-6 pt-8 border-t">
         <h2 className="text-2xl font-semibold">Understanding Binomial Expansion</h2>
-        
+
         <div className="space-y-4">
           <p>
             The binomial expansion lets you multiply out expressions like (a + b)^n without doing all the algebra by hand. It's one of those tools that shows up everywhere — from probability to calculus to physics.
@@ -258,7 +258,7 @@ export default function BinomialExpansionCalculator() {
           </p>
 
           <h3 className="text-xl font-semibold">Worked Examples</h3>
-          
+
           <div className="space-y-4">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: Expanding (x + 1)³</h4>
@@ -308,7 +308,7 @@ export default function BinomialExpansionCalculator() {
           </div>
 
           <h3 className="text-xl font-semibold">Common Questions</h3>
-          
+
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold mb-2">What does the binomial coefficient represent?</h4>

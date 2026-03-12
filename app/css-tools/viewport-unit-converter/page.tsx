@@ -21,7 +21,7 @@ export default function ViewportUnitConverterPage() {
   const convertValue = () => {
     // First convert to px
     let pxValue: number;
-    
+
     switch (fromUnit) {
       case "px":
         pxValue = value;
@@ -97,7 +97,7 @@ calc(${value}${fromUnit})`;
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Viewport Unit Converter</h1>
         <p className="text-muted-foreground">
@@ -324,7 +324,7 @@ calc(${value}${fromUnit})`;
           <h2 className="text-2xl font-semibold mb-4">Understanding Viewport Units</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Viewport units are relative to the size of the browser window. They're essential for creating 
+              Viewport units are relative to the size of the browser window. They're essential for creating
               responsive designs that adapt to different screen sizes without media queries.
             </p>
           </div>
@@ -365,7 +365,7 @@ calc(${value}${fromUnit})`;
                 <CardTitle className="text-lg">rem (Root EM)</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                1rem equals the root element's font size (typically 16px). Scales with user 
+                1rem equals the root element's font size (typically 16px). Scales with user
                 preferences and is accessible by default.
               </CardContent>
             </Card>

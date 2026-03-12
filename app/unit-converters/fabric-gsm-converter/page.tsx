@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function FabricGSMConverterPage() {
   const config = converterMappings["Fabric GSM Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function FabricGSMConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Fabric GSM Converter</h1>
         <p className="text-muted-foreground">Convert fabric weight between GSM, oz/yd², and other textile units. Free online fabric GSM converter for fashion designers, garment manufacturers, and textile buyers.</p>
@@ -106,9 +106,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">T-Shirt Fabrics</p>
               <p className="text-muted-foreground">
-                Lightweight: 130-150 GSM (4-4.5 oz/yd²)<br/>
-                Standard: 150-180 GSM (4.5-5.5 oz/yd²)<br/>
-                Heavy: 180-220 GSM (5.5-6.5 oz/yd²)<br/>
+                Lightweight: 130-150 GSM (4-4.5 oz/yd²)<br />
+                Standard: 150-180 GSM (4.5-5.5 oz/yd²)<br />
+                Heavy: 180-220 GSM (5.5-6.5 oz/yd²)<br />
                 Premium: 220-250 GSM (6.5-7.5 oz/yd²)
               </p>
             </div>
@@ -116,9 +116,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Hoodie and Sweatshirt Fabrics</p>
               <p className="text-muted-foreground">
-                Lightweight: 250-280 GSM (7.5-8.5 oz/yd²)<br/>
-                Standard: 280-320 GSM (8.5-9.5 oz/yd²)<br/>
-                Heavy: 320-380 GSM (9.5-11 oz/yd²)<br/>
+                Lightweight: 250-280 GSM (7.5-8.5 oz/yd²)<br />
+                Standard: 280-320 GSM (8.5-9.5 oz/yd²)<br />
+                Heavy: 320-380 GSM (9.5-11 oz/yd²)<br />
                 Premium: 380-450 GSM (11-13 oz/yd²)
               </p>
             </div>
@@ -126,9 +126,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Denim Fabrics</p>
               <p className="text-muted-foreground">
-                Lightweight: 200-250 GSM (6-7.5 oz/yd²)<br/>
-                Standard: 250-350 GSM (7.5-10 oz/yd²)<br/>
-                Heavy: 350-450 GSM (10-13 oz/yd²)<br/>
+                Lightweight: 200-250 GSM (6-7.5 oz/yd²)<br />
+                Standard: 250-350 GSM (7.5-10 oz/yd²)<br />
+                Heavy: 350-450 GSM (10-13 oz/yd²)<br />
                 Selvedge: 400-500+ GSM (12-15 oz/yd²)
               </p>
             </div>
@@ -136,9 +136,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Bed Sheet Fabrics</p>
               <p className="text-muted-foreground">
-                Percale: 100-130 GSM (3-4 oz/yd²)<br/>
-                Sateen: 130-180 GSM (4-5.5 oz/yd²)<br/>
-                Flannel: 150-200 GSM (4.5-6 oz/yd²)<br/>
+                Percale: 100-130 GSM (3-4 oz/yd²)<br />
+                Sateen: 130-180 GSM (4-5.5 oz/yd²)<br />
+                Flannel: 150-200 GSM (4.5-6 oz/yd²)<br />
                 Higher GSM = warmer, more durable
               </p>
             </div>
@@ -152,9 +152,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: GSM to oz/yd²</p>
               <p className="text-muted-foreground">
-                Fabric: 200 GSM<br/>
-                Conversion: 200 × 0.02949 = 5.9 oz/yd²<br/>
-                Use: Standard t-shirt weight<br/>
+                Fabric: 200 GSM<br />
+                Conversion: 200 × 0.02949 = 5.9 oz/yd²<br />
+                Use: Standard t-shirt weight<br />
                 Suitable for: Year-round wear
               </p>
             </div>
@@ -162,9 +162,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: oz/yd² to GSM</p>
               <p className="text-muted-foreground">
-                Fabric: 8 oz/yd²<br/>
-                Conversion: 8 × 33.906 = 271 GSM<br/>
-                Use: Light hoodie weight<br/>
+                Fabric: 8 oz/yd²<br />
+                Conversion: 8 × 33.906 = 271 GSM<br />
+                Use: Light hoodie weight<br />
                 Suitable for: Spring/fall sweatshirts
               </p>
             </div>
@@ -172,9 +172,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Calculate GSM from Sample</p>
               <p className="text-muted-foreground">
-                Sample: 10 cm × 10 cm = 0.01 m²<br/>
-                Weight: 2.5 grams<br/>
-                GSM: 2.5 / 0.01 = 250 GSM<br/>
+                Sample: 10 cm × 10 cm = 0.01 m²<br />
+                Weight: 2.5 grams<br />
+                GSM: 2.5 / 0.01 = 250 GSM<br />
                 Use: Heavy t-shirt or light hoodie
               </p>
             </div>
@@ -182,9 +182,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Fabric Order Calculation</p>
               <p className="text-muted-foreground">
-                Order: 1000 t-shirts at 180 GSM<br/>
-                Fabric per shirt: 1.5 m²<br/>
-                Total fabric: 1,500 m²<br/>
+                Order: 1000 t-shirts at 180 GSM<br />
+                Fabric per shirt: 1.5 m²<br />
+                Total fabric: 1,500 m²<br />
                 Total weight: 1,500 × 180 = 270 kg
               </p>
             </div>
@@ -198,9 +198,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Cut and Weigh Method</p>
               <p className="text-muted-foreground">
-                Cut 100 cm² sample<br/>
-                Weigh on precision scale<br/>
-                Multiply by 100 for GSM<br/>
+                Cut 100 cm² sample<br />
+                Weigh on precision scale<br />
+                Multiply by 100 for GSM<br />
                 Most accurate method
               </p>
             </div>
@@ -208,9 +208,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">GSM Cutter</p>
               <p className="text-muted-foreground">
-                Use circular cutter (100 cm²)<br/>
-                Weigh sample directly<br/>
-                Reading = GSM<br/>
+                Use circular cutter (100 cm²)<br />
+                Weigh sample directly<br />
+                Reading = GSM<br />
                 Industry standard tool
               </p>
             </div>
@@ -218,9 +218,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Fabric Balance</p>
               <p className="text-muted-foreground">
-                Specialized scale for GSM<br/>
-                Direct reading in GSM<br/>
-                Quick and convenient<br/>
+                Specialized scale for GSM<br />
+                Direct reading in GSM<br />
+                Quick and convenient<br />
                 Requires calibration
               </p>
             </div>
@@ -228,9 +228,9 @@ export default function FabricGSMConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Online Conversion</p>
               <p className="text-muted-foreground">
-                Enter known weight and area<br/>
-                Automatic calculation<br/>
-                Convert between units<br/>
+                Enter known weight and area<br />
+                Automatic calculation<br />
+                Convert between units<br />
                 Useful for quick estimates
               </p>
             </div>

@@ -68,7 +68,7 @@ export default function ArmstrongNumberChecker() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Armstrong Number Checker – Verify Narcissistic Numbers</h1>
         <p className="text-muted-foreground">
@@ -141,7 +141,7 @@ export default function ArmstrongNumberChecker() {
 
       <section className="space-y-6 pt-8 border-t">
         <h2 className="text-2xl font-semibold">Understanding Armstrong Numbers</h2>
-        
+
         <div className="space-y-4">
           <p>
             An Armstrong number (also called a narcissistic number) is a number that equals the sum of its own digits, each raised to the power of the total number of digits. It's a curious mathematical property that's more recreational than practical — but fascinating nonetheless.
@@ -158,7 +158,7 @@ export default function ArmstrongNumberChecker() {
           </p>
 
           <h3 className="text-xl font-semibold">Worked Examples</h3>
-          
+
           <div className="space-y-4">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: Is 153 an Armstrong number?</h4>
@@ -208,7 +208,7 @@ export default function ArmstrongNumberChecker() {
           </div>
 
           <h3 className="text-xl font-semibold">Common Questions</h3>
-          
+
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold mb-2">Are there infinitely many Armstrong numbers?</h4>

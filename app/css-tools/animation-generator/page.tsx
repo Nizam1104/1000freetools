@@ -53,27 +53,33 @@ export default function CssAnimationGeneratorPage() {
   const customTiming = `cubic-bezier(0.68, -0.55, 0.265, 1.55)`;
 
   const presetAnimations = [
-    { name: "Fade In", keyframes: `@keyframes fadeIn {
+    {
+      name: "Fade In", keyframes: `@keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }` },
-    { name: "Slide In", keyframes: `@keyframes slideIn {
+    {
+      name: "Slide In", keyframes: `@keyframes slideIn {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(0); }
 }` },
-    { name: "Scale Up", keyframes: `@keyframes scaleUp {
+    {
+      name: "Scale Up", keyframes: `@keyframes scaleUp {
   0% { transform: scale(0); }
   100% { transform: scale(1); }
 }` },
-    { name: "Rotate", keyframes: `@keyframes rotate {
+    {
+      name: "Rotate", keyframes: `@keyframes rotate {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }` },
-    { name: "Bounce", keyframes: `@keyframes bounce {
+    {
+      name: "Bounce", keyframes: `@keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }` },
-    { name: "Pulse", keyframes: `@keyframes pulse {
+    {
+      name: "Pulse", keyframes: `@keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }` },
@@ -84,7 +90,7 @@ export default function CssAnimationGeneratorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Animation Generator</h1>
         <p className="text-muted-foreground">
@@ -323,12 +329,12 @@ export default function CssAnimationGeneratorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">CSS Animation Basics</h2>
           <p className="text-muted-foreground mb-4">
-            CSS animations have two parts: the <code className="bg-muted px-1 rounded">@keyframes</code> rule 
-            that defines what happens, and the <code className="bg-muted px-1 rounded">animation</code> property 
+            CSS animations have two parts: the <code className="bg-muted px-1 rounded">@keyframes</code> rule
+            that defines what happens, and the <code className="bg-muted px-1 rounded">animation</code> property
             that applies it to an element.
           </p>
           <p className="text-muted-foreground">
-            This generator builds both. Define your animation name, set the timing, and get the 
+            This generator builds both. Define your animation name, set the timing, and get the
             complete CSS to copy.
           </p>
         </section>
@@ -339,46 +345,46 @@ export default function CssAnimationGeneratorPage() {
             <Card>
               <CardHeader><CardTitle className="text-lg">duration</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                How long one cycle takes. <code className="bg-muted px-1 rounded">0.5s</code> is fast, 
-                <code className="bg-muted px-1 rounded">2s</code> is slow. Most UI animations work well 
+                How long one cycle takes. <code className="bg-muted px-1 rounded">0.5s</code> is fast,
+                <code className="bg-muted px-1 rounded">2s</code> is slow. Most UI animations work well
                 between 0.2s and 0.5s.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">timing-function</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Controls acceleration. <code className="bg-muted px-1 rounded">ease</code> starts slow, 
-                speeds up, slows down. <code className="bg-muted px-1 rounded">linear</code> is constant. 
+                Controls acceleration. <code className="bg-muted px-1 rounded">ease</code> starts slow,
+                speeds up, slows down. <code className="bg-muted px-1 rounded">linear</code> is constant.
                 <code className="bg-muted px-1 rounded">ease-in-out</code> is smoother.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">iteration-count</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                How many times to repeat. <code className="bg-muted px-1 rounded">infinite</code> loops 
+                How many times to repeat. <code className="bg-muted px-1 rounded">infinite</code> loops
                 forever. Use specific numbers for one-off animations.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">direction</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                <code className="bg-muted px-1 rounded">normal</code> runs forward, 
-                <code className="bg-muted px-1 rounded">reverse</code> backward, 
+                <code className="bg-muted px-1 rounded">normal</code> runs forward,
+                <code className="bg-muted px-1 rounded">reverse</code> backward,
                 <code className="bg-muted px-1 rounded">alternate</code> goes back and forth.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">fill-mode</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                What happens before/after animation. <code className="bg-muted px-1 rounded">forwards</code> 
-                keeps the final state. <code className="bg-muted px-1 rounded">backwards</code> applies 
+                What happens before/after animation. <code className="bg-muted px-1 rounded">forwards</code>
+                keeps the final state. <code className="bg-muted px-1 rounded">backwards</code> applies
                 the first keyframe during delay.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">delay</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Wait time before animation starts. Useful for staggering multiple elements or 
+                Wait time before animation starts. Useful for staggering multiple elements or
                 creating sequences.
               </CardContent>
             </Card>
@@ -442,7 +448,7 @@ export default function CssAnimationGeneratorPage() {
               <div>
                 <h3 className="font-semibold mb-1">Keep it subtle</h3>
                 <p className="text-sm text-muted-foreground">
-                  UI animations should enhance, not distract. 200-500ms is usually enough. 
+                  UI animations should enhance, not distract. 200-500ms is usually enough.
                   Save the flashy stuff for marketing pages.
                 </p>
               </div>
@@ -454,8 +460,8 @@ export default function CssAnimationGeneratorPage() {
               <div>
                 <h3 className="font-semibold mb-1">Respect reduced motion</h3>
                 <p className="text-sm text-muted-foreground">
-                  Some users get motion sickness from animations. Use 
-                  <code className="bg-muted px-1 rounded">@media (prefers-reduced-motion)</code> to 
+                  Some users get motion sickness from animations. Use
+                  <code className="bg-muted px-1 rounded">@media (prefers-reduced-motion)</code> to
                   disable or simplify animations for affected users.
                 </p>
               </div>

@@ -68,21 +68,27 @@ export default function TextShadowGeneratorPage() {
 
   const presets = [
     { name: "Simple", shadows: [{ offsetX: 2, offsetY: 2, blur: 4, color: "rgba(0, 0, 0, 0.3)" }] as Partial<TextShadowLayer>[] },
-    { name: "3D", shadows: [
-      { offsetX: 1, offsetY: 1, blur: 0, color: "#999" },
-      { offsetX: 2, offsetY: 2, blur: 0, color: "#999" },
-      { offsetX: 3, offsetY: 3, blur: 0, color: "#999" },
-      { offsetX: 4, offsetY: 4, blur: 6, color: "rgba(0, 0, 0, 0.4)" },
-    ] as Partial<TextShadowLayer>[] },
-    { name: "Glow", shadows: [
-      { offsetX: 0, offsetY: 0, blur: 10, color: "rgba(255, 255, 255, 0.8)" },
-      { offsetX: 0, offsetY: 0, blur: 20, color: "rgba(255, 255, 255, 0.5)" },
-    ] as Partial<TextShadowLayer>[] },
-    { name: "Neon", shadows: [
-      { offsetX: 0, offsetY: 0, blur: 10, color: "#ff00de" },
-      { offsetX: 0, offsetY: 0, blur: 20, color: "#ff00de" },
-      { offsetX: 0, offsetY: 0, blur: 40, color: "#ff00de" },
-    ] as Partial<TextShadowLayer>[] },
+    {
+      name: "3D", shadows: [
+        { offsetX: 1, offsetY: 1, blur: 0, color: "#999" },
+        { offsetX: 2, offsetY: 2, blur: 0, color: "#999" },
+        { offsetX: 3, offsetY: 3, blur: 0, color: "#999" },
+        { offsetX: 4, offsetY: 4, blur: 6, color: "rgba(0, 0, 0, 0.4)" },
+      ] as Partial<TextShadowLayer>[]
+    },
+    {
+      name: "Glow", shadows: [
+        { offsetX: 0, offsetY: 0, blur: 10, color: "rgba(255, 255, 255, 0.8)" },
+        { offsetX: 0, offsetY: 0, blur: 20, color: "rgba(255, 255, 255, 0.5)" },
+      ] as Partial<TextShadowLayer>[]
+    },
+    {
+      name: "Neon", shadows: [
+        { offsetX: 0, offsetY: 0, blur: 10, color: "#ff00de" },
+        { offsetX: 0, offsetY: 0, blur: 20, color: "#ff00de" },
+        { offsetX: 0, offsetY: 0, blur: 40, color: "#ff00de" },
+      ] as Partial<TextShadowLayer>[]
+    },
   ];
 
   const applyPreset = (preset: typeof presets[0]) => {
@@ -90,7 +96,7 @@ export default function TextShadowGeneratorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Text Shadow Generator</h1>
         <p className="text-muted-foreground">
@@ -291,11 +297,11 @@ export default function TextShadowGeneratorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Text Shadow Basics</h2>
           <p className="text-muted-foreground mb-4">
-            Text-shadow adds depth or effects to text. Unlike box-shadow, it doesn't support spread 
+            Text-shadow adds depth or effects to text. Unlike box-shadow, it doesn't support spread
             or inset. The syntax is: offset-x, offset-y, blur, color.
           </p>
           <p className="text-muted-foreground">
-            Use text shadow sparingly. It's easy to make text harder to read. Subtle shadows work 
+            Use text shadow sparingly. It's easy to make text harder to read. Subtle shadows work
             better than obvious ones.
           </p>
         </section>
@@ -306,28 +312,28 @@ export default function TextShadowGeneratorPage() {
             <Card>
               <CardHeader><CardTitle className="text-lg">Text on images</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                A subtle shadow (1-2px blur, low opacity) improves readability when text overlays 
+                A subtle shadow (1-2px blur, low opacity) improves readability when text overlays
                 variable backgrounds.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">Retro/glow effects</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Stack multiple shadows with the same color for a neon glow. Works well for dark 
+                Stack multiple shadows with the same color for a neon glow. Works well for dark
                 mode headers.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">3D text</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Layer shadows with increasing offsets to create depth. Combine with bold fonts 
+                Layer shadows with increasing offsets to create depth. Combine with bold fonts
                 for best results.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">Accessibility</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Light text on dark backgrounds sometimes needs a subtle shadow to maintain contrast 
+                Light text on dark backgrounds sometimes needs a subtle shadow to maintain contrast
                 at small sizes.
               </CardContent>
             </Card>

@@ -14,7 +14,7 @@ export default function ExponentCalculator() {
   const calculate = () => {
     const b = parseFloat(base);
     const e = parseFloat(exponent);
-    
+
     if (isNaN(b) || isNaN(e)) {
       setResult(null);
       setSteps([]);
@@ -71,7 +71,7 @@ export default function ExponentCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Exponent Calculator – Calculate Base to the Power of n</h1>
         <p className="text-muted-foreground">

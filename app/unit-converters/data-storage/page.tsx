@@ -15,7 +15,7 @@ export default function DataStoragePage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Data Storage Converter</h1>
         <p className="text-muted-foreground">Convert digital storage units — bytes, kilobytes, megabytes, gigabytes, terabytes, and beyond. Free online data storage converter for computing, cloud storage, and IT professionals.</p>
@@ -365,7 +365,7 @@ export default function DataStoragePage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">Why does my 1 TB drive show only 931 GB?</h3>
             <p className="text-muted-foreground">

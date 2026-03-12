@@ -137,7 +137,7 @@ background-size: ${size * waveFrequency}px ${size * 2}px;`;
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Pattern Generator</h1>
         <p className="text-muted-foreground">
@@ -321,7 +321,7 @@ background-size: ${size * waveFrequency}px ${size * 2}px;`;
                     className="h-20 rounded border"
                     style={{
                       backgroundColor: baseColor,
-                      backgroundImage: patternType === "dots" 
+                      backgroundImage: patternType === "dots"
                         ? `radial-gradient(${patternColor} ${dotRadius}px, transparent ${dotRadius}px)`
                         : undefined,
                       backgroundSize: patternType === "dots" ? `${s}px ${s}px` : undefined,
@@ -362,13 +362,13 @@ ${patternCSS.split("\n").map((l) => "  " + l).join("\n")}
           <h2 className="text-2xl font-semibold mb-4">About CSS Patterns</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              CSS patterns are lightweight, scalable background designs created using CSS gradients and 
-              background properties. Unlike image backgrounds, CSS patterns are resolution-independent 
+              CSS patterns are lightweight, scalable background designs created using CSS gradients and
+              background properties. Unlike image backgrounds, CSS patterns are resolution-independent
               and don't require HTTP requests.
             </p>
             <p>
-              By combining <code>linear-gradient</code>, <code>radial-gradient</code>, and 
-              <code>repeating-gradient</code> with background-size and background-position, you can 
+              By combining <code>linear-gradient</code>, <code>radial-gradient</code>, and
+              <code>repeating-gradient</code> with background-size and background-position, you can
               create a wide variety of repeating patterns.
             </p>
           </div>

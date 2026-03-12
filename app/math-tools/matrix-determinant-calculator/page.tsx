@@ -136,7 +136,7 @@ export default function MatrixDeterminantCalculator() {
         steps: [
           `For a 2x2 matrix:`,
           `det = ad - bc`,
-          `det = ${a}x${d} - ${b}x${c} = ${a*d} - ${b*c} = ${det}`
+          `det = ${a}x${d} - ${b}x${c} = ${a * d} - ${b * c} = ${det}`
         ]
       };
     }
@@ -213,7 +213,7 @@ export default function MatrixDeterminantCalculator() {
     const example = examples[index];
     const exampleMatrix = example.matrix;
     const newSize = exampleMatrix.length;
-    
+
     setSize(newSize);
     setMatrix(exampleMatrix);
 
@@ -250,7 +250,7 @@ export default function MatrixDeterminantCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Determinant Calculator – Compute Det of Any Matrix</h1>
         <p className="text-muted-foreground">
@@ -385,7 +385,7 @@ export default function MatrixDeterminantCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">2x2 Matrix</h4>
             <code className="text-sm font-mono block">
-              |a b|<br/>
+              |a b|<br />
               |c d| = ad - bc
             </code>
             <p className="text-xs text-muted-foreground mt-2">

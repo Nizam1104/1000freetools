@@ -31,7 +31,7 @@ export default function ScrollSnapBuilderPage() {
 
   const generateContainerCSS = () => {
     const lines: string[] = [];
-    
+
     if (snapType === "y") {
       lines.push("scroll-snap-type: y var(--snap-strictness);");
     } else if (snapType === "x") {
@@ -41,14 +41,14 @@ export default function ScrollSnapBuilderPage() {
     } else {
       lines.push("scroll-snap-type: none;");
     }
-    
+
     if (hasPadding) {
       lines.push(`scroll-padding: ${paddingValue}px;`);
     }
-    
+
     lines.push("overflow: auto;");
     lines.push("height: 100vh;");
-    
+
     return lines.join("\n");
   };
 
@@ -60,7 +60,7 @@ scroll-snap-stop: ${snapStop};`;
 
   const generateFullCSS = () => {
     const strictnessVar = `--snap-strictness: ${snapStop};`;
-    
+
     return `:root {
   ${strictnessVar}
 }
@@ -103,7 +103,7 @@ ${generateSectionCSS().split("\n").map((l) => "  " + l).join("\n")}
   const cssCode = generateFullCSS();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Scroll Snap Builder</h1>
         <p className="text-muted-foreground">
@@ -327,7 +327,7 @@ ${generateSectionCSS().split("\n").map((l) => "  " + l).join("\n")}
             </CardHeader>
             <CardContent>
               <pre className="p-3 bg-muted rounded-lg text-sm font-mono overflow-x-auto">
-{`<div class="scroll-container">
+                {`<div class="scroll-container">
 ${sections.map((s) => `  <div class="section">${s.name}</div>`).join("\n")}
 </div>`}
               </pre>
@@ -383,7 +383,7 @@ ${sections.map((s) => `  <div class="section">${s.name}</div>`).join("\n")}
           <Card>
             <CardContent className="pt-6">
               <p className="text-muted-foreground">
-                Scroll Snap is well-supported in all modern browsers including Chrome 69+, Firefox 68+, Safari 11+, 
+                Scroll Snap is well-supported in all modern browsers including Chrome 69+, Firefox 68+, Safari 11+,
                 and Edge 79+. For older browsers, consider providing a fallback or progressive enhancement.
               </p>
             </CardContent>

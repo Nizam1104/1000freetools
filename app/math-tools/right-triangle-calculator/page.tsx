@@ -27,26 +27,26 @@ export default function RightTriangleCalculator() {
         const a = parseFloat(sideA);
         const b = parseFloat(sideB);
         if (a <= 0 || b <= 0) { setError("Sides must be positive"); return; }
-        const c = Math.sqrt(a*a + b*b);
-        const A = toDeg(Math.atan(a/b));
+        const c = Math.sqrt(a * a + b * b);
+        const A = toDeg(Math.atan(a / b));
         const B = 90 - A;
-        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5*a*b, perimeter: a+b+c });
+        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5 * a * b, perimeter: a + b + c });
       } else if (sideA && hypotenuse) {
         const a = parseFloat(sideA);
         const c = parseFloat(hypotenuse);
         if (a <= 0 || c <= 0 || a >= c) { setError("Invalid values"); return; }
-        const b = Math.sqrt(c*c - a*a);
-        const A = toDeg(Math.asin(a/c));
+        const b = Math.sqrt(c * c - a * a);
+        const A = toDeg(Math.asin(a / c));
         const B = 90 - A;
-        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5*a*b, perimeter: a+b+c });
+        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5 * a * b, perimeter: a + b + c });
       } else if (sideB && hypotenuse) {
         const b = parseFloat(sideB);
         const c = parseFloat(hypotenuse);
         if (b <= 0 || c <= 0 || b >= c) { setError("Invalid values"); return; }
-        const a = Math.sqrt(c*c - b*b);
-        const B = toDeg(Math.asin(b/c));
+        const a = Math.sqrt(c * c - b * b);
+        const B = toDeg(Math.asin(b / c));
         const A = 90 - B;
-        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5*a*b, perimeter: a+b+c });
+        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5 * a * b, perimeter: a + b + c });
       } else {
         setError("Enter any two sides");
       }
@@ -58,7 +58,7 @@ export default function RightTriangleCalculator() {
         const B = 90 - A;
         const b = a / Math.tan(toRad(A));
         const c = a / Math.sin(toRad(A));
-        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5*a*b, perimeter: a+b+c });
+        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5 * a * b, perimeter: a + b + c });
       } else if (sideB && angle) {
         const b = parseFloat(sideB);
         const A = parseFloat(angle);
@@ -66,7 +66,7 @@ export default function RightTriangleCalculator() {
         const B = 90 - A;
         const a = b * Math.tan(toRad(A));
         const c = b / Math.cos(toRad(A));
-        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5*a*b, perimeter: a+b+c });
+        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5 * a * b, perimeter: a + b + c });
       } else if (hypotenuse && angle) {
         const c = parseFloat(hypotenuse);
         const A = parseFloat(angle);
@@ -74,7 +74,7 @@ export default function RightTriangleCalculator() {
         const B = 90 - A;
         const a = c * Math.sin(toRad(A));
         const b = c * Math.cos(toRad(A));
-        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5*a*b, perimeter: a+b+c });
+        setResult({ sides: { a, b, c }, angles: { A, B, C: 90 }, area: 0.5 * a * b, perimeter: a + b + c });
       } else {
         setError("Enter one side and one acute angle");
       }
@@ -94,7 +94,7 @@ export default function RightTriangleCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Right Triangle Calculator - Solve Right Triangles Online</h1>
         <p className="text-muted-foreground">
@@ -149,14 +149,14 @@ export default function RightTriangleCalculator() {
           <div className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-muted rounded-lg"><h4 className="font-semibold text-sm mb-2">Sides</h4>
-                <div className="font-mono">a = {result.sides.a.toFixed(4)}<br/>b = {result.sides.b.toFixed(4)}<br/>c = {result.sides.c.toFixed(4)}</div></div>
+                <div className="font-mono">a = {result.sides.a.toFixed(4)}<br />b = {result.sides.b.toFixed(4)}<br />c = {result.sides.c.toFixed(4)}</div></div>
               <div className="p-4 bg-muted rounded-lg"><h4 className="font-semibold text-sm mb-2">Angles</h4>
-                <div className="font-mono">A = {result.angles.A.toFixed(2)}°<br/>B = {result.angles.B.toFixed(2)}°<br/>C = 90°</div></div>
+                <div className="font-mono">A = {result.angles.A.toFixed(2)}°<br />B = {result.angles.B.toFixed(2)}°<br />C = 90°</div></div>
             </div>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="p-4 bg-muted rounded-lg text-center"><p className="text-sm text-muted-foreground">Area</p><p className="text-2xl font-bold">{result.area.toFixed(4)}</p></div>
               <div className="p-4 bg-muted rounded-lg text-center"><p className="text-sm text-muted-foreground">Perimeter</p><p className="text-2xl font-bold">{result.perimeter.toFixed(4)}</p></div>
-              <div className="p-4 bg-muted rounded-lg text-center"><p className="text-sm text-muted-foreground">Semiperimeter</p><p className="text-2xl font-bold">{(result.perimeter/2).toFixed(4)}</p></div>
+              <div className="p-4 bg-muted rounded-lg text-center"><p className="text-sm text-muted-foreground">Semiperimeter</p><p className="text-2xl font-bold">{(result.perimeter / 2).toFixed(4)}</p></div>
             </div>
           </div>
         )}

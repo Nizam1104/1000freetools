@@ -52,7 +52,7 @@ export default function DiceRoller() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Dice Roller Simulator – Roll Any Dice Online</h1>
         <p className="text-muted-foreground">
@@ -118,14 +118,13 @@ export default function DiceRoller() {
                 {results.map((result, i) => (
                   <div
                     key={i}
-                    className={`w-20 h-20 flex items-center justify-center rounded-xl text-3xl font-bold shadow-lg transition-all ${
-                      numSides === 20 ? 'bg-purple-500' :
-                      numSides === 12 ? 'bg-blue-500' :
-                      numSides === 10 ? 'bg-indigo-500' :
-                      numSides === 8 ? 'bg-green-500' :
-                      numSides === 6 ? 'bg-red-500' :
-                      'bg-orange-500'
-                    } text-white`}
+                    className={`w-20 h-20 flex items-center justify-center rounded-xl text-3xl font-bold shadow-lg transition-all ${numSides === 20 ? 'bg-purple-500' :
+                        numSides === 12 ? 'bg-blue-500' :
+                          numSides === 10 ? 'bg-indigo-500' :
+                            numSides === 8 ? 'bg-green-500' :
+                              numSides === 6 ? 'bg-red-500' :
+                                'bg-orange-500'
+                      } text-white`}
                   >
                     {result}
                   </div>

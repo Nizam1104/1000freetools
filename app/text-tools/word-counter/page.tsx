@@ -64,7 +64,7 @@ const faqsData = [
 
 export default function WordCounterPage() {
   return (
-    <main className="w-full max-w-3xl mx-auto py-10">
+    <main className="w-full max-w-4xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <Breadcrumb>
           <BreadcrumbList>

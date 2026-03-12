@@ -52,7 +52,7 @@ export default function TintShadeGeneratorPage() {
   const generateScale = () => {
     const hsl = hexToHsl(baseColor);
     if (!hsl) return [];
-    
+
     const scale = [];
     for (let i = 100; i >= 0; i -= 10) {
       scale.push(hslToHex(hsl.h, hsl.s, i));
@@ -63,7 +63,7 @@ export default function TintShadeGeneratorPage() {
   const fullScale = generateScale();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Tint, Shade & Tone Generator</h1>
         <p className="text-muted-foreground">
@@ -326,28 +326,28 @@ export default function TintShadeGeneratorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Tints, Shades, and Tones</h2>
           <p className="text-muted-foreground mb-4">
-            These three terms describe how you modify a base color. Understanding the difference 
+            These three terms describe how you modify a base color. Understanding the difference
             helps you create cohesive color systems.
           </p>
           <div className="grid gap-4 md:grid-cols-3 mt-4">
             <Card>
               <CardHeader><CardTitle className="text-lg">Tints</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Base color + white. Lighter versions. Use for backgrounds, hover states, 
+                Base color + white. Lighter versions. Use for backgrounds, hover states,
                 and subtle highlights.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">Shades</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Base color + black. Darker versions. Use for text, borders, shadows, 
+                Base color + black. Darker versions. Use for text, borders, shadows,
                 and depth.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">Tones</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Base color + gray. Muted versions. Use for sophisticated, professional 
+                Base color + gray. Muted versions. Use for sophisticated, professional
                 designs with reduced saturation.
               </CardContent>
             </Card>
@@ -357,7 +357,7 @@ export default function TintShadeGeneratorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Building Color Scales</h2>
           <p className="text-muted-foreground mb-4">
-            Design systems use color scales - typically 10 steps from lightest to darkest. 
+            Design systems use color scales - typically 10 steps from lightest to darkest.
             This generator creates scales you can use directly in CSS variables or design tokens.
           </p>
           <Card>

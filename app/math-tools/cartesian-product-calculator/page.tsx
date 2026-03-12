@@ -83,7 +83,7 @@ export default function CartesianProductCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Cartesian Product Calculator – Find A × B Online</h1>
         <p className="text-muted-foreground">
@@ -270,7 +270,7 @@ export default function CartesianProductCalculator() {
               <div><strong>Total outcomes:</strong> 6 × 6 = 36</div>
               <div className="pt-2 border-t font-semibold">Sample Space (A × A):</div>
               <div className="grid grid-cols-6 gap-1 text-xs mt-2">
-                {Array.from({ length: 6 }, (_, i) => i + 1).flatMap(row => 
+                {Array.from({ length: 6 }, (_, i) => i + 1).flatMap(row =>
                   Array.from({ length: 6 }, (_, col) => (
                     <div key={`${row}-${col}`} className="text-center p-1 bg-background rounded">({row},{col + 1})</div>
                   ))

@@ -59,7 +59,7 @@ export default function LongDivisionCalculator() {
 
     for (let i = 0; i < digits.length; i++) {
       currentDividend = currentDividend * 10 + digits[i];
-      
+
       if (currentDividend < div && i < digits.length - 1) {
         if (started) {
           quotient += "0";
@@ -82,9 +82,9 @@ export default function LongDivisionCalculator() {
       const digitQuotient = Math.floor(currentDividend / div);
       const product = digitQuotient * div;
       const difference = currentDividend - product;
-      
+
       quotient += digitQuotient.toString();
-      
+
       divisionSteps.push({
         dividend: divi,
         divisor: div,
@@ -101,7 +101,7 @@ export default function LongDivisionCalculator() {
     }
 
     remainder = currentDividend;
-    
+
     if (quotient === "") quotient = "0";
 
     setSteps(divisionSteps);
@@ -122,7 +122,7 @@ export default function LongDivisionCalculator() {
     if (steps.length === 0 || finalQuotient === null) return null;
 
     const divisorNum = parseInt(divisor);
-    
+
     return (
       <div className="font-mono text-sm overflow-x-auto">
         <div className="flex items-center gap-4 mb-4">
@@ -146,7 +146,7 @@ export default function LongDivisionCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Long Division Calculator – Step-by-Step Division with Remainder</h1>
         <p className="text-muted-foreground">

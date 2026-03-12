@@ -217,7 +217,7 @@ export default function AngleCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Triangle Angle Calculator – Find Missing Angles in a Triangle</h1>
         <p className="text-muted-foreground">
@@ -562,7 +562,7 @@ export default function AngleCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Worked Examples</h3>
-        
+
         <div className="space-y-6">
           <div className="p-5 border rounded-lg">
             <h4 className="font-semibold mb-2">Example 1: Finding a missing angle</h4>

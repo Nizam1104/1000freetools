@@ -86,7 +86,7 @@ export default function CssFilterGeneratorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Filter Generator</h1>
         <p className="text-muted-foreground">
@@ -266,11 +266,11 @@ export default function CssFilterGeneratorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">CSS Filters Explained</h2>
           <p className="text-muted-foreground mb-4">
-            CSS filters apply graphical effects like blurring, color shifting, or inverting to 
+            CSS filters apply graphical effects like blurring, color shifting, or inverting to
             elements. They're the same filters you'd use in image editing software, but in CSS.
           </p>
           <p className="text-muted-foreground">
-            Filters work on images, backgrounds, text, and any HTML element. Stack multiple 
+            Filters work on images, backgrounds, text, and any HTML element. Stack multiple
             filters for complex effects.
           </p>
         </section>
@@ -281,42 +281,42 @@ export default function CssFilterGeneratorPage() {
             <Card>
               <CardHeader><CardTitle className="text-lg">blur()</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Softens the image. <code className="bg-muted px-1 rounded">blur(5px)</code> - higher 
+                Softens the image. <code className="bg-muted px-1 rounded">blur(5px)</code> - higher
                 values create more blur. Good for backgrounds behind modals.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">brightness()</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Adjusts lightness. <code className="bg-muted px-1 rounded">100%</code> is normal, 
+                Adjusts lightness. <code className="bg-muted px-1 rounded">100%</code> is normal,
                 <code className="bg-muted px-1 rounded">0%</code> is black, <code className="bg-muted px-1 rounded">200%</code> is double bright.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">contrast()</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Adjusts the difference between light and dark. <code className="bg-muted px-1 rounded">100%</code> is normal, 
+                Adjusts the difference between light and dark. <code className="bg-muted px-1 rounded">100%</code> is normal,
                 higher values increase contrast.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">grayscale()</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Removes color. <code className="bg-muted px-1 rounded">100%</code> is fully grayscale, 
+                Removes color. <code className="bg-muted px-1 rounded">100%</code> is fully grayscale,
                 <code className="bg-muted px-1 rounded">0%</code> is unchanged. Good for hover effects.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">hue-rotate()</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Rotates colors around the color wheel. <code className="bg-muted px-1 rounded">180deg</code> 
+                Rotates colors around the color wheel. <code className="bg-muted px-1 rounded">180deg</code>
                 inverts colors. <code className="bg-muted px-1 rounded">360deg</code> returns to original.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">saturate()</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Intensifies or dulls colors. <code className="bg-muted px-1 rounded">100%</code> is normal, 
+                Intensifies or dulls colors. <code className="bg-muted px-1 rounded">100%</code> is normal,
                 <code className="bg-muted px-1 rounded">0%</code> is grayscale, higher values are more vivid.
               </CardContent>
             </Card>

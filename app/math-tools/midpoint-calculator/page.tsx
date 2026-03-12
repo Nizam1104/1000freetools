@@ -73,7 +73,7 @@ export default function MidpointCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Midpoint Calculator – Find the Midpoint of a Line Segment</h1>
         <p className="text-muted-foreground">
@@ -219,7 +219,7 @@ export default function MidpointCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">The Midpoint Formula</h3>
-        
+
         <div className="p-6 bg-muted rounded-lg">
           <div className="font-mono text-2xl text-center mb-4">M = ((x₁ + x₂)/2, (y₁ + y₂)/2)</div>
           <p className="text-sm text-muted-foreground text-center">

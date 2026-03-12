@@ -35,7 +35,7 @@ export default function RoundingCalculator() {
     const scaled = num * multiplier;
     const floor = Math.floor(scaled);
     const frac = scaled - floor;
-    
+
     if (frac === 0.5) {
       return (floor % 2 === 0 ? floor : floor + 1) / multiplier;
     }
@@ -124,7 +124,7 @@ export default function RoundingCalculator() {
       }
 
       const roundedStr = rounded.toFixed(mode === "decimal" ? p : mode === "sigfigs" ? Math.max(0, p - Math.floor(Math.log10(Math.abs(rounded)) - 1)) : 0);
-      
+
       setResult({
         rounded: parseFloat(roundedStr).toString(),
         explanation
@@ -152,7 +152,7 @@ export default function RoundingCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Rounding Calculator – Round to Decimal Places or Sig Figs</h1>
         <p className="text-muted-foreground">

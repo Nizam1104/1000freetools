@@ -45,12 +45,12 @@ export default function CssCalcBuilderPage() {
 
   const generateCalcExpression = () => {
     let expression = `${baseValue}${baseUnit}`;
-    
+
     operations.forEach((op) => {
       const operator = op.type === "add" ? "+" : op.type === "subtract" ? "-" : op.type === "multiply" ? "*" : "/";
       expression += ` ${operator} ${op.value}${op.unit}`;
     });
-    
+
     return expression;
   };
 
@@ -74,7 +74,7 @@ export default function CssCalcBuilderPage() {
   const commonUnits = ["px", "rem", "em", "%", "vw", "vh", "vmin", "vmax"];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS calc() Builder</h1>
         <p className="text-muted-foreground">
@@ -356,7 +356,7 @@ export default function CssCalcBuilderPage() {
           <h2 className="text-2xl font-semibold mb-4">About CSS calc()</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              The CSS <code>calc()</code> function allows you to perform mathematical calculations when defining CSS 
+              The CSS <code>calc()</code> function allows you to perform mathematical calculations when defining CSS
               property values. It's incredibly powerful for creating responsive layouts and combining different units.
             </p>
             <p>

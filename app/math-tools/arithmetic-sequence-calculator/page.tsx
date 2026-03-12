@@ -77,7 +77,7 @@ export default function ArithmeticSequenceCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Arithmetic Sequence Calculator – Find Terms & Sum Online</h1>
         <p className="text-muted-foreground">
@@ -173,7 +173,7 @@ export default function ArithmeticSequenceCalculator() {
 
       <section className="space-y-6 pt-8 border-t">
         <h2 className="text-2xl font-semibold">Understanding Arithmetic Sequences</h2>
-        
+
         <div className="space-y-4">
           <p>
             An arithmetic sequence (or arithmetic progression) is a list of numbers where each term differs from the previous one by a constant amount. That constant is called the common difference.
@@ -193,7 +193,7 @@ export default function ArithmeticSequenceCalculator() {
           </p>
 
           <h3 className="text-xl font-semibold">Worked Examples</h3>
-          
+
           <div className="space-y-4">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: Basic Sequence</h4>
@@ -201,7 +201,7 @@ export default function ArithmeticSequenceCalculator() {
                 First term a₁ = 2, common difference d = 3, find 10 terms.
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
-                a₁₀ = 2 + (10-1) × 3 = 2 + 27 = 29<br/>
+                a₁₀ = 2 + (10-1) × 3 = 2 + 27 = 29<br />
                 S₁₀ = 10/2 × (2 + 29) = 5 × 31 = 155
               </code>
               <p className="text-sm mt-2">
@@ -215,7 +215,7 @@ export default function ArithmeticSequenceCalculator() {
                 a₁ = 100, d = -5, find 8 terms.
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
-                a₈ = 100 + (8-1) × (-5) = 100 - 35 = 65<br/>
+                a₈ = 100 + (8-1) × (-5) = 100 - 35 = 65<br />
                 S₈ = 8/2 × (100 + 65) = 4 × 165 = 660
               </code>
               <p className="text-sm mt-2">
@@ -229,8 +229,8 @@ export default function ArithmeticSequenceCalculator() {
                 What's the sum of the first 50 positive integers?
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
-                a₁ = 1, d = 1, n = 50<br/>
-                a₅₀ = 1 + 49 × 1 = 50<br/>
+                a₁ = 1, d = 1, n = 50<br />
+                a₅₀ = 1 + 49 × 1 = 50<br />
                 S₅₀ = 50/2 × (1 + 50) = 25 × 51 = 1275
               </code>
               <p className="text-sm mt-2">
@@ -247,7 +247,7 @@ export default function ArithmeticSequenceCalculator() {
           </div>
 
           <h3 className="text-xl font-semibold">Common Questions</h3>
-          
+
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold mb-2">What if the common difference is zero?</h4>
@@ -260,7 +260,7 @@ export default function ArithmeticSequenceCalculator() {
               <h4 className="font-semibold mb-2">Can the common difference be negative?</h4>
               <p className="text-sm">
                 Absolutely. A negative d means the sequence decreases. These show up in real situations like depreciation or countdown patterns.
-            </p>
+              </p>
             </div>
 
             <div>

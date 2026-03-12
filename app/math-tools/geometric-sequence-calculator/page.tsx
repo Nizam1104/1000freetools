@@ -79,7 +79,7 @@ export default function GeometricSequenceCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Geometric Sequence Calculator – Find Terms & Sum Online</h1>
         <p className="text-muted-foreground">

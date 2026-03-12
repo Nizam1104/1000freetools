@@ -23,7 +23,7 @@ export default function DarkModeCssGeneratorPage() {
 
   const generateCSS = () => {
     const lines: string[] = [];
-    
+
     if (generateVariables) {
       lines.push("/* CSS Custom Properties for theming */");
       lines.push(":root {");
@@ -41,7 +41,7 @@ export default function DarkModeCssGeneratorPage() {
       lines.push("}");
       lines.push("");
     }
-    
+
     if (generateClasses) {
       lines.push("/* Manual dark mode class */");
       lines.push(".dark {");
@@ -50,7 +50,7 @@ export default function DarkModeCssGeneratorPage() {
       lines.push("}");
       lines.push("");
     }
-    
+
     lines.push("/* Base styles using variables */");
     lines.push("body {");
     lines.push("  background-color: var(--bg-primary);");
@@ -60,7 +60,7 @@ export default function DarkModeCssGeneratorPage() {
     }
     lines.push("}");
     lines.push("");
-    
+
     lines.push("/* Example component */");
     lines.push(".card {");
     lines.push("  background-color: var(--bg-primary);");
@@ -68,13 +68,13 @@ export default function DarkModeCssGeneratorPage() {
     lines.push("  opacity: 0.1;");
     lines.push("}");
     lines.push("");
-    
+
     lines.push("/* Links */");
     lines.push("a {");
     lines.push("  color: var(--color-primary);");
     lines.push("}");
     lines.push("");
-    
+
     if (transitionEnabled) {
       lines.push("/* Smooth transitions for theme switching */");
       lines.push("* {");
@@ -83,7 +83,7 @@ export default function DarkModeCssGeneratorPage() {
       lines.push(`    border-color ${transitionDuration}ms ease;`);
       lines.push("}");
     }
-    
+
     return lines.join("\n");
   };
 
@@ -122,7 +122,7 @@ if (!savedDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)
   const jsCode = generateJS();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Dark Mode CSS Generator</h1>
         <p className="text-muted-foreground">
@@ -345,13 +345,13 @@ if (!savedDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)
           <h2 className="text-2xl font-semibold mb-4">About Dark Mode</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Dark mode has become an expected feature in modern websites and applications. It reduces eye strain 
-              in low-light conditions, saves battery on OLED screens, and provides users with choice over their 
+              Dark mode has become an expected feature in modern websites and applications. It reduces eye strain
+              in low-light conditions, saves battery on OLED screens, and provides users with choice over their
               viewing experience.
             </p>
             <p>
-              CSS dark mode can be implemented using the <code>prefers-color-scheme</code> media query for 
-              automatic system-based switching, or with CSS custom properties and JavaScript for manual toggle 
+              CSS dark mode can be implemented using the <code>prefers-color-scheme</code> media query for
+              automatic system-based switching, or with CSS custom properties and JavaScript for manual toggle
               functionality.
             </p>
           </div>
@@ -365,7 +365,7 @@ if (!savedDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)
                 <CardTitle className="text-lg">System Preference</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Uses <code>@media (prefers-color-scheme: dark)</code> to automatically match the user's 
+                Uses <code>@media (prefers-color-scheme: dark)</code> to automatically match the user's
                 system settings. No JavaScript required, respects user's OS-level preference.
               </CardContent>
             </Card>
@@ -374,7 +374,7 @@ if (!savedDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)
                 <CardTitle className="text-lg">Manual Toggle</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Uses a <code>.dark</code> class on the document root with JavaScript toggle. Gives users 
+                Uses a <code>.dark</code> class on the document root with JavaScript toggle. Gives users
                 explicit control and can persist preference across sessions.
               </CardContent>
             </Card>

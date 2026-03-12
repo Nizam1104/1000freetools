@@ -94,7 +94,7 @@ export default function FutureValueCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Future Value Calculator – Compute FV of Investment Online</h1>
         <p className="text-muted-foreground">
@@ -203,7 +203,7 @@ export default function FutureValueCalculator() {
               <h4 className="font-semibold text-sm mb-2">Formula & Calculation</h4>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
                 FV = PV × (1 + r/n)^(nt)<br />
-                FV = ${presentValue} × (1 + {(parseFloat(rate.toString())/100).toFixed(4)}/{getCompoundingFrequency()})^({getCompoundingFrequency()} × {timeUnit === "months" ? `${time}/12` : time})<br />
+                FV = ${presentValue} × (1 + {(parseFloat(rate.toString()) / 100).toFixed(4)}/{getCompoundingFrequency()})^({getCompoundingFrequency()} × {timeUnit === "months" ? `${time}/12` : time})<br />
                 FV = ${result.futureValue.toLocaleString()}<br />
                 <br />
                 Interest Earned = FV - PV = ${result.futureValue.toLocaleString()} - ${presentValue} = ${result.interestEarned.toLocaleString()}

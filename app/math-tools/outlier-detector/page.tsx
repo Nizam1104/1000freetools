@@ -114,7 +114,7 @@ export default function OutlierDetector() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Outlier Detector – Find Outliers Using IQR Method Online</h1>
         <p className="text-muted-foreground">
