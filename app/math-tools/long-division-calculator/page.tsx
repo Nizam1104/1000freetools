@@ -59,7 +59,7 @@ export default function LongDivisionCalculator() {
 
     for (let i = 0; i < digits.length; i++) {
       currentDividend = currentDividend * 10 + digits[i];
-      
+
       if (currentDividend < div && i < digits.length - 1) {
         if (started) {
           quotient += "0";
@@ -82,9 +82,9 @@ export default function LongDivisionCalculator() {
       const digitQuotient = Math.floor(currentDividend / div);
       const product = digitQuotient * div;
       const difference = currentDividend - product;
-      
+
       quotient += digitQuotient.toString();
-      
+
       divisionSteps.push({
         dividend: divi,
         divisor: div,
@@ -101,7 +101,7 @@ export default function LongDivisionCalculator() {
     }
 
     remainder = currentDividend;
-    
+
     if (quotient === "") quotient = "0";
 
     setSteps(divisionSteps);
@@ -122,7 +122,7 @@ export default function LongDivisionCalculator() {
     if (steps.length === 0 || finalQuotient === null) return null;
 
     const divisorNum = parseInt(divisor);
-    
+
     return (
       <div className="font-mono text-sm overflow-x-auto">
         <div className="flex items-center gap-4 mb-4">
@@ -146,7 +146,7 @@ export default function LongDivisionCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Long Division Calculator – Step-by-Step Division with Remainder</h1>
         <p className="text-muted-foreground">
@@ -448,23 +448,6 @@ export default function LongDivisionCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/long-multiplication-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Long Multiplication Calculator</p>
-            <p className="text-xs text-muted-foreground">Multiply with steps</p>
-          </a>
-          <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction Calculator</p>
-            <p className="text-xs text-muted-foreground">Fraction operations</p>
-          </a>
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

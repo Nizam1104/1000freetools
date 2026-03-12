@@ -25,17 +25,17 @@ export default function PrintCssHelperPage() {
 
   const generateCSS = () => {
     const lines: string[] = [];
-    
+
     lines.push("@print {");
     lines.push("");
-    
+
     // Page setup
     lines.push("  @page {");
     lines.push(`    size: ${paperSize};`);
     lines.push(`    margin: ${margins};`);
     lines.push("  }");
     lines.push("");
-    
+
     // Body styles
     lines.push("  body {");
     if (optimizeFonts) {
@@ -49,7 +49,7 @@ export default function PrintCssHelperPage() {
     }
     lines.push("  }");
     lines.push("");
-    
+
     // Color adjustments
     if (ensureColors) {
       lines.push("  /* Ensure black text on white background */");
@@ -59,14 +59,14 @@ export default function PrintCssHelperPage() {
       lines.push("    box-shadow: none !important;");
       lines.push("  }");
       lines.push("");
-      
+
       lines.push("  /* Make links distinguishable */");
       lines.push("  a, a:visited {");
       lines.push("    color: #000;");
       lines.push("    text-decoration: underline;");
       lines.push("  }");
       lines.push("");
-      
+
       if (showUrls) {
         lines.push("  /* Show URLs for links */");
         lines.push("  a[href]::after {");
@@ -75,13 +75,13 @@ export default function PrintCssHelperPage() {
         lines.push("");
       }
     }
-    
+
     // Hidden elements
     const hiddenSelectors: string[] = [];
     if (hideNavigation) hiddenSelectors.push("nav", ".nav", ".navigation", "header");
     if (hideButtons) hiddenSelectors.push("button", ".btn", ".button", "[role=\"button\"]");
     if (hideSidebar) hiddenSelectors.push("aside", ".sidebar", ".side-nav");
-    
+
     if (hiddenSelectors.length > 0) {
       lines.push("  /* Hide non-essential elements */");
       lines.push(`  ${hiddenSelectors.join(", ")} {`);
@@ -89,7 +89,7 @@ export default function PrintCssHelperPage() {
       lines.push("  }");
       lines.push("");
     }
-    
+
     // Page breaks
     if (addPageBreaks) {
       lines.push("  /* Prevent awkward page breaks */");
@@ -98,12 +98,12 @@ export default function PrintCssHelperPage() {
       lines.push("    page-break-inside: avoid;");
       lines.push("  }");
       lines.push("");
-      
+
       lines.push("  img, figure, table {");
       lines.push("    page-break-inside: avoid;");
       lines.push("  }");
       lines.push("");
-      
+
       lines.push("  pre, code {");
       lines.push("    page-break-inside: avoid;");
       lines.push("    white-space: pre-wrap;");
@@ -111,7 +111,7 @@ export default function PrintCssHelperPage() {
       lines.push("  }");
       lines.push("");
     }
-    
+
     // Images
     lines.push("  /* Image adjustments */");
     lines.push("  img {");
@@ -119,7 +119,7 @@ export default function PrintCssHelperPage() {
     lines.push("    height: auto;");
     lines.push("  }");
     lines.push("");
-    
+
     // Tables
     lines.push("  /* Table styling */");
     lines.push("  table {");
@@ -127,13 +127,13 @@ export default function PrintCssHelperPage() {
     lines.push("    width: 100%;");
     lines.push("  }");
     lines.push("");
-    
+
     lines.push("  th, td {");
     lines.push("    border: 1px solid #000;");
     lines.push("    padding: 8px;");
     lines.push("  }");
     lines.push("");
-    
+
     // Utility classes
     lines.push("  /* Print utilities */");
     lines.push("  .no-print {");
@@ -143,9 +143,9 @@ export default function PrintCssHelperPage() {
     lines.push("  .print-only {");
     lines.push("    display: block !important;");
     lines.push("  }");
-    
+
     lines.push("}");
-    
+
     return lines.join("\n");
   };
 
@@ -161,7 +161,7 @@ export default function PrintCssHelperPage() {
   const cssCode = generateCSS();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Print CSS Helper</h1>
         <p className="text-muted-foreground">
@@ -347,12 +347,12 @@ export default function PrintCssHelperPage() {
           <h2 className="text-2xl font-semibold mb-4">About Print Stylesheets</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Print stylesheets optimize your website for printing by removing unnecessary elements, 
+              Print stylesheets optimize your website for printing by removing unnecessary elements,
               adjusting typography for readability on paper, and ensuring content fits properly on pages.
             </p>
             <p>
-              The <code>@print</code> media query contains styles that only apply when printing or 
-              viewing print preview. This is essential for creating professional printed documents 
+              The <code>@print</code> media query contains styles that only apply when printing or
+              viewing print preview. This is essential for creating professional printed documents
               from web pages.
             </p>
           </div>
@@ -366,7 +366,7 @@ export default function PrintCssHelperPage() {
                 <CardTitle className="text-lg">Hide Non-Essential Elements</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Remove navigation, buttons, ads, and other interactive elements that don't make sense 
+                Remove navigation, buttons, ads, and other interactive elements that don't make sense
                 in print. Focus on the main content.
               </CardContent>
             </Card>
@@ -375,7 +375,7 @@ export default function PrintCssHelperPage() {
                 <CardTitle className="text-lg">Optimize Colors</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Use high contrast (black on white) to save ink and improve readability. Remove 
+                Use high contrast (black on white) to save ink and improve readability. Remove
                 background colors and images.
               </CardContent>
             </Card>
@@ -384,7 +384,7 @@ export default function PrintCssHelperPage() {
                 <CardTitle className="text-lg">Adjust Typography</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Use print-friendly fonts (serif often works better), increase font size slightly, 
+                Use print-friendly fonts (serif often works better), increase font size slightly,
                 and ensure proper line height.
               </CardContent>
             </Card>
@@ -393,7 +393,7 @@ export default function PrintCssHelperPage() {
                 <CardTitle className="text-lg">Control Page Breaks</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Prevent awkward breaks in headings, images, and tables. Use page-break-inside: avoid 
+                Prevent awkward breaks in headings, images, and tables. Use page-break-inside: avoid
                 to keep elements together.
               </CardContent>
             </Card>
@@ -405,7 +405,7 @@ export default function PrintCssHelperPage() {
           <Card>
             <CardContent className="pt-6">
               <pre className="p-4 bg-muted rounded-lg text-sm font-mono overflow-x-auto">
-{`/* Add to HTML for print-specific content */
+                {`/* Add to HTML for print-specific content */
 &lt;div class="no-print"&gt;Hidden when printing&lt;/div&gt;
 &lt;div class="print-only"&gt;Only visible when printing&lt;/div&gt;
 

@@ -35,7 +35,7 @@ export default function RoundingCalculator() {
     const scaled = num * multiplier;
     const floor = Math.floor(scaled);
     const frac = scaled - floor;
-    
+
     if (frac === 0.5) {
       return (floor % 2 === 0 ? floor : floor + 1) / multiplier;
     }
@@ -124,7 +124,7 @@ export default function RoundingCalculator() {
       }
 
       const roundedStr = rounded.toFixed(mode === "decimal" ? p : mode === "sigfigs" ? Math.max(0, p - Math.floor(Math.log10(Math.abs(rounded)) - 1)) : 0);
-      
+
       setResult({
         rounded: parseFloat(roundedStr).toString(),
         explanation
@@ -152,7 +152,7 @@ export default function RoundingCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Rounding Calculator – Round to Decimal Places or Sig Figs</h1>
         <p className="text-muted-foreground">
@@ -491,23 +491,6 @@ export default function RoundingCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/significant-figures-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Significant Figures Calculator</p>
-            <p className="text-xs text-muted-foreground">Count and round sig figs</p>
-          </a>
-          <a href="/math-tools/scientific-notation-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Scientific Notation Converter</p>
-            <p className="text-xs text-muted-foreground">Standard to scientific form</p>
-          </a>
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

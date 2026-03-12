@@ -62,9 +62,11 @@ const ToolLinkCards: React.FC<ToolLinkCardsProps> = ({ tools }) => {
             <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               {tool.name}
             </h3>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1.5 line-clamp-2">
-              {tool.description}
-            </p>
+            {tool.description && (
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1.5 line-clamp-2">
+                {tool.description}
+              </p>
+            )}
           </Link>
         ))}
       </div>

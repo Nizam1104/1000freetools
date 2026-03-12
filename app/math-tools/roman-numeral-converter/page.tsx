@@ -56,7 +56,7 @@ export default function RomanNumeralConverter() {
 
   const toNumber = (roman: string): { result: number; steps: string[] } => {
     const cleanRoman = roman.toUpperCase().replace(/\s/g, "");
-    
+
     if (!cleanRoman) {
       throw new Error("Please enter a Roman numeral");
     }
@@ -91,7 +91,7 @@ export default function RomanNumeralConverter() {
   const convertNumberToRoman = () => {
     setError("");
     setResult(null);
-    
+
     const num = parseInt(numberInput);
     if (isNaN(num)) {
       setError("Please enter a valid number");
@@ -109,7 +109,7 @@ export default function RomanNumeralConverter() {
   const convertRomanToNumber = () => {
     setError("");
     setResult(null);
-    
+
     if (!romanInput.trim()) {
       setError("Please enter a Roman numeral");
       return;
@@ -131,7 +131,7 @@ export default function RomanNumeralConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Roman Numeral Converter – Convert Numbers to Roman Numerals</h1>
         <p className="text-muted-foreground">
@@ -433,23 +433,6 @@ export default function RomanNumeralConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/number-word-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Number Word Converter</p>
-            <p className="text-xs text-muted-foreground">Numbers to words</p>
-          </a>
-          <a href="/math-tools/scientific-notation-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Scientific Notation Converter</p>
-            <p className="text-xs text-muted-foreground">Standard to scientific form</p>
-          </a>
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

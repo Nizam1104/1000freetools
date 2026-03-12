@@ -77,7 +77,7 @@ export default function WeightConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Weight Converter – Convert kg, lbs, grams, oz Online</h1>
         <p className="text-muted-foreground">
@@ -171,7 +171,7 @@ export default function WeightConverter() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Weight Conversions</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Body Weight: Pounds to Kilograms</h3>
           <p className="text-muted-foreground mb-2">
             Common body weight conversions:
@@ -228,7 +228,7 @@ export default function WeightConverter() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What's the difference between weight and mass?</h3>
@@ -278,24 +278,6 @@ export default function WeightConverter() {
                 Most countries adopted the metric system (kg) during the 19th-20th centuries for its simplicity. The US, Liberia, and Myanmar still primarily use imperial units (lbs). The UK uses a mix: kg in shops, but stone/lbs for body weight. Science worldwide uses metric exclusively.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/volume-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Volume Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert between liters, gallons, milliliters, and other volume units.</p>
-            </a>
-            <a href="/math-tools/length-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Length Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert between meters, feet, inches, kilometers, miles, and more.</p>
-            </a>
-            <a href="/math-tools/bmi-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">BMI Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate Body Mass Index using height and weight measurements.</p>
-            </a>
           </div>
         </section>
       </div>

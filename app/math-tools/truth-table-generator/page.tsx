@@ -50,10 +50,10 @@ export default function TruthTableGenerator() {
         evalExpr = evalExpr.replace(/\bNOR\b/g, '!(||)');
         evalExpr = evalExpr.replace(/\bIMPLIES\b/g, 'IMPLIES');
         evalExpr = evalExpr.replace(/\bIFF\b/g, '===');
-        
+
         // Handle IMPLIES (A -> B = !A || B)
         evalExpr = evalExpr.replace(/IMPLIES/g, '||');
-        
+
         // Handle parentheses for NAND/NOR
         evalExpr = evalExpr.replace(/!\(&&\)/g, '&&');
         evalExpr = evalExpr.replace(/!\(\|\|\)/g, '||');
@@ -65,19 +65,19 @@ export default function TruthTableGenerator() {
           if (parts.length === 2) {
             const leftExpr = parts[0].trim();
             const rightExpr = parts[1].trim();
-            
+
             let leftEval = leftExpr;
             let rightEval = rightExpr;
-            
+
             for (let j = 0; j < numVariables; j++) {
               const regex = new RegExp(`\\b${variables[j]}\\b`, 'g');
               leftEval = leftEval.replace(regex, inputs[j].toString());
               rightEval = rightEval.replace(regex, inputs[j].toString());
             }
-            
+
             leftEval = leftEval.replace(/\bAND\b/g, '&&').replace(/\bOR\b/g, '||').replace(/\bNOT\b/g, '!');
             rightEval = rightEval.replace(/\bAND\b/g, '&&').replace(/\bOR\b/g, '||').replace(/\bNOT\b/g, '!');
-            
+
             const left = eval(leftEval);
             const right = eval(rightEval);
             output = !left || right;
@@ -120,7 +120,7 @@ export default function TruthTableGenerator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Truth Table Generator – Create Logic Truth Tables Online</h1>
         <p className="text-muted-foreground">
@@ -256,7 +256,7 @@ export default function TruthTableGenerator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Logical Expressions</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Basic AND Operation</h3>
           <p className="text-muted-foreground mb-2">
             Expression: A AND B
@@ -324,7 +324,7 @@ export default function TruthTableGenerator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What is a truth table used for?</h3>
@@ -374,24 +374,6 @@ export default function TruthTableGenerator() {
                 Yes! Parentheses control the order of operations, just like in regular math. "(A AND B) OR C" is different from "A AND (B OR C)". Use parentheses to make your intended grouping clear, especially in complex expressions with multiple operators.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/boolean-algebra-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Boolean Algebra Calculator</h3>
-              <p className="text-sm text-muted-foreground">Simplify boolean expressions and verify logical equivalences.</p>
-            </a>
-            <a href="/math-tools/karnaugh-map-solver" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Karnaugh Map Solver</h3>
-              <p className="text-sm text-muted-foreground">Minimize boolean expressions using K-map visualization.</p>
-            </a>
-            <a href="/math-tools/logic-gate-simulator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Logic Gate Simulator</h3>
-              <p className="text-sm text-muted-foreground">Build and test digital circuits with logic gates.</p>
-            </a>
           </div>
         </section>
       </div>

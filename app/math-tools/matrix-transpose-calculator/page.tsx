@@ -166,7 +166,7 @@ export default function MatrixTransposeCalculator() {
     const exampleMatrix = example.matrix;
     const newRows = exampleMatrix.length;
     const newCols = exampleMatrix[0].length;
-    
+
     setRows(newRows);
     setCols(newCols);
     setMatrix(exampleMatrix);
@@ -208,7 +208,7 @@ export default function MatrixTransposeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Transpose Calculator – Find Transpose of Any Matrix</h1>
         <p className="text-muted-foreground">

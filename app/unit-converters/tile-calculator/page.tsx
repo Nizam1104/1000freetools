@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function TileCalculatorPage() {
   const config = converterMappings["Tile Calculator"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function TileCalculatorPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Tile Calculator</h1>
         <p className="text-muted-foreground">Calculate how many tiles you need for any floor or wall area. Enter room and tile dimensions to get an accurate tile count with waste factor included. Free online tile quantity calculator.</p>
@@ -167,9 +167,9 @@ export default function TileCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Simple Floor</p>
               <p className="text-muted-foreground">
-                Room: 10 ft × 12 ft = 120 sq ft<br/>
-                Tile: 12×12 inch (1 sq ft each)<br/>
-                Base tiles: 120 tiles<br/>
+                Room: 10 ft × 12 ft = 120 sq ft<br />
+                Tile: 12×12 inch (1 sq ft each)<br />
+                Base tiles: 120 tiles<br />
                 With 10% waste: 132 tiles
               </p>
             </div>
@@ -177,9 +177,9 @@ export default function TileCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Bathroom Wall</p>
               <p className="text-muted-foreground">
-                Wall: 8 ft × 10 ft = 80 sq ft<br/>
-                Subtract window: 3×4 ft = 12 sq ft<br/>
-                Net area: 68 sq ft<br/>
+                Wall: 8 ft × 10 ft = 80 sq ft<br />
+                Subtract window: 3×4 ft = 12 sq ft<br />
+                Net area: 68 sq ft<br />
                 Subway tile 3×6 inch: 646 tiles + 15% waste = 743 tiles
               </p>
             </div>
@@ -187,9 +187,9 @@ export default function TileCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Diagonal Kitchen</p>
               <p className="text-muted-foreground">
-                Kitchen: 15 ft × 12 ft = 180 sq ft<br/>
-                Tile: 18×18 inch (2.25 sq ft)<br/>
-                Base tiles: 80 tiles<br/>
+                Kitchen: 15 ft × 12 ft = 180 sq ft<br />
+                Tile: 18×18 inch (2.25 sq ft)<br />
+                Base tiles: 80 tiles<br />
                 Diagonal pattern 20% waste: 96 tiles
               </p>
             </div>

@@ -45,7 +45,7 @@ export default function ArithmeticSeriesCalculator() {
     try {
       // Calculate last term if not provided
       const last = an !== null ? an : a1 + (n - 1) * d;
-      
+
       // Calculate sum: Sn = n/2 * (a1 + an)
       const sum = (n / 2) * (a1 + last);
 
@@ -65,7 +65,7 @@ export default function ArithmeticSeriesCalculator() {
         `Step 2: Apply the sum formula`,
         `Sₙ = n/2 × (a₁ + aₙ)`,
         `Sₙ = ${n}/2 × (${a1} + ${last})`,
-        `Sₙ = ${n/2} × ${a1 + last}`,
+        `Sₙ = ${n / 2} × ${a1 + last}`,
         `Sₙ = ${sum}`,
         ``,
         `Final Answer: The sum of ${n} terms is ${sum}`
@@ -108,7 +108,7 @@ export default function ArithmeticSeriesCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Sum of Arithmetic Series Calculator</h1>
         <p className="text-muted-foreground">
@@ -244,7 +244,7 @@ export default function ArithmeticSeriesCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Worked Examples</h3>
-        
+
         <div className="space-y-6">
           <div className="p-5 border rounded-lg">
             <h4 className="font-semibold mb-2">Example 1: Sum of the first 15 terms starting at 5 with difference 3</h4>

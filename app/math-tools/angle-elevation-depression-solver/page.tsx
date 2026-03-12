@@ -43,8 +43,8 @@ export default function AngleElevationDepressionSolver() {
       const h = parseFloat(height);
       const d = parseFloat(distance);
       if (isNaN(h) || isNaN(d) || h <= 0 || d <= 0) { setError("Enter positive values"); return; }
-      const angleVal = toDeg(Math.atan(h/d));
-      setResult({ angle: angleVal, steps: [`tan(θ) = height/distance = ${h}/${d}`, `θ = arctan(${(h/d).toFixed(4)})`, `θ = ${angleVal.toFixed(2)}°`] });
+      const angleVal = toDeg(Math.atan(h / d));
+      setResult({ angle: angleVal, steps: [`tan(θ) = height/distance = ${h}/${d}`, `θ = arctan(${(h / d).toFixed(4)})`, `θ = ${angleVal.toFixed(2)}°`] });
     } else if (calcType === "find-height") {
       const d = parseFloat(distance);
       const a = parseFloat(angle);
@@ -63,7 +63,7 @@ export default function AngleElevationDepressionSolver() {
   const reset = () => { setHeight(""); setDistance(""); setAngle(""); setResult(null); setError(""); };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Angle of Elevation & Depression Calculator – Solve Word Problems</h1>
         <p className="text-muted-foreground">
@@ -129,7 +129,7 @@ export default function AngleElevationDepressionSolver() {
               {result.height && <><p className="text-sm text-muted-foreground">Height</p><p className="text-4xl font-bold">{result.height.toFixed(4)}</p></>}
               {result.distance && <><p className="text-sm text-muted-foreground">Distance</p><p className="text-4xl font-bold">{result.distance.toFixed(4)}</p></>}
             </div>
-            <div className="p-4 border rounded-lg"><h4 className="font-semibold text-sm mb-3">Solution</h4><div className="space-y-2 text-sm font-mono">{result.steps.map((s:string,i:number)=><div key={i}>{s}</div>)}</div></div>
+            <div className="p-4 border rounded-lg"><h4 className="font-semibold text-sm mb-3">Solution</h4><div className="space-y-2 text-sm font-mono">{result.steps.map((s: string, i: number) => <div key={i}>{s}</div>)}</div></div>
           </div>
         )}
       </div>
@@ -159,7 +159,7 @@ export default function AngleElevationDepressionSolver() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Worked Examples</h3>
-        
+
         <div className="space-y-6">
           <div className="p-5 border rounded-lg">
             <h4 className="font-semibold mb-2">Example 1: Finding the angle of elevation</h4>
@@ -298,14 +298,6 @@ export default function AngleElevationDepressionSolver() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/right-triangle-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors"><p className="font-semibold text-sm">Right Triangle Calculator</p><p className="text-xs text-muted-foreground">Solve right triangles</p></a>
-          <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors"><p className="font-semibold text-sm">Trig Function Calculator</p><p className="text-xs text-muted-foreground">Calculate sin, cos, tan</p></a>
-          <a href="/math-tools/triangle-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors"><p className="font-semibold text-sm">Triangle Solver</p><p className="text-xs text-muted-foreground">Solve any triangle</p></a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -64,7 +64,7 @@ export default function PascalsTriangleGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Pascal's Triangle Generator – Build the Triangle</h1>
         <p className="text-muted-foreground">
@@ -118,12 +118,11 @@ export default function PascalsTriangleGenerator() {
                       {row.map((val, j) => (
                         <div
                           key={j}
-                          className={`w-10 h-10 flex items-center justify-center font-mono text-sm rounded ${
-                            val === 1 ? 'bg-primary/20 text-primary font-semibold' :
-                            val > 100 ? 'bg-purple-500/20 text-purple-700 font-semibold' :
-                            val > 20 ? 'bg-blue-500/20 text-blue-700 font-semibold' :
-                            'bg-muted-foreground/10'
-                          }`}
+                          className={`w-10 h-10 flex items-center justify-center font-mono text-sm rounded ${val === 1 ? 'bg-primary/20 text-primary font-semibold' :
+                              val > 100 ? 'bg-purple-500/20 text-purple-700 font-semibold' :
+                                val > 20 ? 'bg-blue-500/20 text-blue-700 font-semibold' :
+                                  'bg-muted-foreground/10'
+                            }`}
                         >
                           {val}
                         </div>
@@ -339,23 +338,6 @@ export default function PascalsTriangleGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/combinations-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combinations Calculator</p>
-            <p className="text-xs text-muted-foreground">nCr calculations</p>
-          </a>
-          <a href="/math-tools/factorial-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factorial Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate n!</p>
-          </a>
-          <a href="/math-tools/binomial-expansion-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Binomial Expansion</p>
-            <p className="text-xs text-muted-foreground">Expand (x+y)^n</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

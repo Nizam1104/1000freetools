@@ -63,7 +63,7 @@ gap: ${gap}px;`;
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Grid Generator</h1>
         <p className="text-muted-foreground">
@@ -181,9 +181,8 @@ gap: ${gap}px;`;
                 {Array.from({ length: columns * rows }).map((_, i) => (
                   <div
                     key={i}
-                    className={`bg-primary/20 border-2 rounded-lg flex items-center justify-center cursor-pointer transition-all hover:bg-primary/40 ${
-                      selectedCells.includes(i) ? "border-primary bg-primary/40" : "border-primary/60"
-                    }`}
+                    className={`bg-primary/20 border-2 rounded-lg flex items-center justify-center cursor-pointer transition-all hover:bg-primary/40 ${selectedCells.includes(i) ? "border-primary bg-primary/40" : "border-primary/60"
+                      }`}
                     onClick={() => toggleCell(i)}
                     style={{ aspectRatio: "1" }}
                   >
@@ -247,12 +246,12 @@ gap: ${gap}px;`;
         <section>
           <h2 className="text-2xl font-semibold mb-4">CSS Grid in Plain English</h2>
           <p className="text-muted-foreground mb-4">
-            CSS Grid creates two-dimensional layouts with rows and columns. You define the grid structure 
-            on a parent container, then place child elements into grid cells. It's the most powerful 
+            CSS Grid creates two-dimensional layouts with rows and columns. You define the grid structure
+            on a parent container, then place child elements into grid cells. It's the most powerful
             layout system CSS offers.
           </p>
           <p className="text-muted-foreground">
-            This generator builds the basic grid structure. Adjust columns, rows, and gap, then copy 
+            This generator builds the basic grid structure. Adjust columns, rows, and gap, then copy
             the CSS. The visual preview shows exactly what you're getting.
           </p>
         </section>
@@ -263,29 +262,29 @@ gap: ${gap}px;`;
             <Card>
               <CardHeader><CardTitle className="text-lg">grid-template-columns</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Defines column widths. Use <code className="bg-muted px-1 rounded">repeat(3, 1fr)</code> for 
-                three equal columns, or <code className="bg-muted px-1 rounded">200px 1fr 2fr</code> for 
+                Defines column widths. Use <code className="bg-muted px-1 rounded">repeat(3, 1fr)</code> for
+                three equal columns, or <code className="bg-muted px-1 rounded">200px 1fr 2fr</code> for
                 mixed widths.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">grid-template-rows</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Defines row heights. Same syntax as columns. Often set to <code className="bg-muted px-1 rounded">auto</code> to 
+                Defines row heights. Same syntax as columns. Often set to <code className="bg-muted px-1 rounded">auto</code> to
                 let content determine height.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">gap</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Space between grid cells. Replaces the old margin hack. Use one value for uniform gap, 
+                Space between grid cells. Replaces the old margin hack. Use one value for uniform gap,
                 or two for row-gap and column-gap.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">fr units</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Fraction units distribute available space. <code className="bg-muted px-1 rounded">1fr 2fr</code> means 
+                Fraction units distribute available space. <code className="bg-muted px-1 rounded">1fr 2fr</code> means
                 the second column gets twice the space of the first.
               </CardContent>
             </Card>
@@ -300,7 +299,7 @@ gap: ${gap}px;`;
                 <h3 className="font-semibold mb-2">Responsive auto-fit</h3>
                 <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</code>
                 <p className="text-sm text-muted-foreground">
-                  Creates as many columns as fit, each at least 250px wide. Automatically adjusts to 
+                  Creates as many columns as fit, each at least 250px wide. Automatically adjusts to
                   screen size without media queries.
                 </p>
               </CardContent>
@@ -310,7 +309,7 @@ gap: ${gap}px;`;
                 <h3 className="font-semibold mb-2">Holy grail layout</h3>
                 <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">grid-template-columns: 200px 1fr 200px;</code>
                 <p className="text-sm text-muted-foreground">
-                  Classic three-column layout with fixed sidebars and flexible content area. Stack 
+                  Classic three-column layout with fixed sidebars and flexible content area. Stack
                   vertically on mobile with a media query.
                 </p>
               </CardContent>
@@ -320,7 +319,7 @@ gap: ${gap}px;`;
                 <h3 className="font-semibold mb-2">12-column grid</h3>
                 <code className="block p-3 bg-muted rounded-lg text-sm font-mono mb-2">grid-template-columns: repeat(12, 1fr);</code>
                 <p className="text-sm text-muted-foreground">
-                  Flexible foundation for complex layouts. Place items across multiple columns using 
+                  Flexible foundation for complex layouts. Place items across multiple columns using
                   grid-column spans.
                 </p>
               </CardContent>

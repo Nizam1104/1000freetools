@@ -91,7 +91,7 @@ export default function SquareRootCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Square Root Calculator – Compute √ of Any Number</h1>
         <p className="text-muted-foreground">
@@ -475,19 +475,6 @@ export default function SquareRootCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <a href="/math-tools/scientific-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Scientific Calculator</p>
-            <p className="text-xs text-muted-foreground">Advanced math functions</p>
-          </a>
-          <a href="/math-tools/exponent-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Exponent Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate powers</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

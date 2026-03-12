@@ -111,7 +111,7 @@ const toolCategories = [
 
 export default function CssToolsPage() {
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-12">
         <h1 className="text-4xl font-semibold mb-4">CSS Tools</h1>
         <p className="text-lg text-muted-foreground">
@@ -152,8 +152,8 @@ export default function CssToolsPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">About These CSS Tools</h2>
           <p className="text-muted-foreground mb-4">
-            I built this collection after wasting too many hours tweaking box-shadow values by hand and 
-            refreshing CSS gradient generators that wanted me to sign up for a newsletter. Every tool here 
+            I built this collection after wasting too many hours tweaking box-shadow values by hand and
+            refreshing CSS gradient generators that wanted me to sign up for a newsletter. Every tool here
             does one thing: generates the CSS you need, shows you what it looks like, and gets out of the way.
           </p>
           <p className="text-muted-foreground">
@@ -168,7 +168,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">You're stuck on a specific CSS problem</h3>
                 <p className="text-sm text-muted-foreground">
-                  Need a neumorphic button that doesn't look terrible? Want to see what 17px border-radius 
+                  Need a neumorphic button that doesn't look terrible? Want to see what 17px border-radius
                   actually does? These tools skip the theory and show you the code.
                 </p>
               </CardContent>
@@ -177,7 +177,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">You're learning CSS layouts</h3>
                 <p className="text-sm text-muted-foreground">
-                  Grid and flexbox make sense until you need them. The visual builders here let you 
+                  Grid and flexbox make sense until you need them. The visual builders here let you
                   poke at values and see what breaks before you paste it into production.
                 </p>
               </CardContent>
@@ -186,7 +186,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">You need accessible color combinations</h3>
                 <p className="text-sm text-muted-foreground">
-                  The contrast checker runs WCAG math so you don't have to. Plug in your colors, 
+                  The contrast checker runs WCAG math so you don't have to. Plug in your colors,
                   see if they pass, adjust until they do.
                 </p>
               </CardContent>
@@ -195,7 +195,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">You're building a design system</h3>
                 <p className="text-sm text-muted-foreground">
-                  Spacing scales, fluid typography, color palettes - these generators output 
+                  Spacing scales, fluid typography, color palettes - these generators output
                   consistent values you can drop into tokens or CSS variables.
                 </p>
               </CardContent>
@@ -224,7 +224,7 @@ export default function CssToolsPage() {
               <div>
                 <h3 className="font-semibold mb-1">Code you can actually use</h3>
                 <p className="text-sm text-muted-foreground">
-                  The output isn't some abstract example. You get the exact CSS property, a complete class, 
+                  The output isn't some abstract example. You get the exact CSS property, a complete class,
                   and Tailwind equivalents where it makes sense.
                 </p>
               </div>
@@ -236,7 +236,7 @@ export default function CssToolsPage() {
               <div>
                 <h3 className="font-semibold mb-1">Built for how you work</h3>
                 <p className="text-sm text-muted-foreground">
-                  Tweak values, watch the preview update, copy, paste. If you need to come back later, 
+                  Tweak values, watch the preview update, copy, paste. If you need to come back later,
                   the URL preserves your settings for most tools.
                 </p>
               </div>
@@ -251,7 +251,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Are these really free?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Yes. No paywall, no premium tier, no "upgrade for more gradients." If you find them 
+                  Yes. No paywall, no premium tier, no "upgrade for more gradients." If you find them
                   useful, that's payment enough.
                 </p>
               </CardContent>
@@ -260,7 +260,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Can I use the generated CSS in commercial projects?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Absolutely. The CSS is yours. Use it in client work, side projects, whatever. 
+                  Absolutely. The CSS is yours. Use it in client work, side projects, whatever.
                   No attribution required.
                 </p>
               </CardContent>
@@ -269,7 +269,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Do these work offline?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Once the page loads, yes. Everything runs in your browser - no server calls, 
+                  Once the page loads, yes. Everything runs in your browser - no server calls,
                   no API requests. Your settings stay local.
                 </p>
               </CardContent>
@@ -278,7 +278,7 @@ export default function CssToolsPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Something broken or missing a feature?</h3>
                 <p className="text-sm text-muted-foreground">
-                  These tools are actively maintained. If a generator doesn't cover your use case 
+                  These tools are actively maintained. If a generator doesn't cover your use case
                   or you spot a bug, it's worth reporting.
                 </p>
               </CardContent>

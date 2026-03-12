@@ -52,7 +52,7 @@ export default function DiceRoller() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Dice Roller Simulator – Roll Any Dice Online</h1>
         <p className="text-muted-foreground">
@@ -118,14 +118,13 @@ export default function DiceRoller() {
                 {results.map((result, i) => (
                   <div
                     key={i}
-                    className={`w-20 h-20 flex items-center justify-center rounded-xl text-3xl font-bold shadow-lg transition-all ${
-                      numSides === 20 ? 'bg-purple-500' :
-                      numSides === 12 ? 'bg-blue-500' :
-                      numSides === 10 ? 'bg-indigo-500' :
-                      numSides === 8 ? 'bg-green-500' :
-                      numSides === 6 ? 'bg-red-500' :
-                      'bg-orange-500'
-                    } text-white`}
+                    className={`w-20 h-20 flex items-center justify-center rounded-xl text-3xl font-bold shadow-lg transition-all ${numSides === 20 ? 'bg-purple-500' :
+                        numSides === 12 ? 'bg-blue-500' :
+                          numSides === 10 ? 'bg-indigo-500' :
+                            numSides === 8 ? 'bg-green-500' :
+                              numSides === 6 ? 'bg-red-500' :
+                                'bg-orange-500'
+                      } text-white`}
                   >
                     {result}
                   </div>
@@ -344,23 +343,6 @@ export default function DiceRoller() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/probability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Probability Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate odds and chances</p>
-          </a>
-          <a href="/math-tools/random-number-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Random Number Generator</p>
-            <p className="text-xs text-muted-foreground">Generate random numbers</p>
-          </a>
-          <a href="/math-tools/combinations-permutations" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combinations & Permutations</p>
-            <p className="text-xs text-muted-foreground">Counting principles</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -248,7 +248,7 @@ export default function EquationBalancer() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Chemical Equation Balancer – Balance Chemical Reactions</h1>
         <p className="text-muted-foreground">
@@ -508,23 +508,6 @@ export default function EquationBalancer() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/molar-mass-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Molar Mass Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate molecular weight</p>
-          </a>
-          <a href="/math-tools/stoichiometry-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Stoichiometry Calculator</p>
-            <p className="text-xs text-muted-foreground">Reaction calculations</p>
-          </a>
-          <a href="/math-tools/limiting-reagent-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Limiting Reagent</p>
-            <p className="text-xs text-muted-foreground">Find limiting reactant</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

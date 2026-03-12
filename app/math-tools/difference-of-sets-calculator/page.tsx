@@ -74,7 +74,7 @@ export default function DifferenceOfSetsCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Set Difference Calculator – Find A - B Online</h1>
         <p className="text-muted-foreground">
@@ -196,7 +196,7 @@ export default function DifferenceOfSetsCalculator() {
           <p className="text-sm text-muted-foreground text-center">
             "A minus B equals the set of all x such that x is in A and x is not in B"
           </p>
-          
+
           <div className="grid md:grid-cols-2 gap-4 mt-6">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold text-sm mb-2">Notation Variants</h4>
@@ -345,23 +345,6 @@ export default function DifferenceOfSetsCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/union-of-sets-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Union of Sets Calculator</p>
-            <p className="text-xs text-muted-foreground">Combine sets (A ∪ B)</p>
-          </a>
-          <a href="/math-tools/intersection-of-sets-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Intersection Calculator</p>
-            <p className="text-xs text-muted-foreground">Find common elements (A ∩ B)</p>
-          </a>
-          <a href="/math-tools/venn-diagram-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Venn Diagram Generator</p>
-            <p className="text-xs text-muted-foreground">Visualize set relationships</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

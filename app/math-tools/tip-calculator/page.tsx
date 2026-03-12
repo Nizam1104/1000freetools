@@ -67,7 +67,7 @@ export default function TipCalculator() {
   const quickTips = [10, 15, 18, 20, 25];
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Tip Calculator – Calculate Tip & Split Bill Online</h1>
         <p className="text-muted-foreground">
@@ -372,23 +372,6 @@ export default function TipCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Percentage Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate any percentage</p>
-          </a>
-          <a href="/math-tools/split-bill-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Split Bill Calculator</p>
-            <p className="text-xs text-muted-foreground">Divide bills evenly</p>
-          </a>
-          <a href="/math-tools/discount-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Discount Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate sale prices</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

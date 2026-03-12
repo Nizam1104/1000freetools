@@ -26,19 +26,19 @@ export default function CssCounterGeneratorPage() {
 
   const generateCSS = () => {
     const lines: string[] = [];
-    
+
     if (hasReset) {
       lines.push(`${resetSelector} {`);
       lines.push(`  counter-reset: ${counterName} ${resetValue};`);
       lines.push(`}`);
       lines.push("");
     }
-    
+
     lines.push(`${incrementSelector} {`);
     lines.push(`  counter-increment: ${counterName} ${incrementValue};`);
     lines.push(`}`);
     lines.push("");
-    
+
     let contentValue = "";
     if (customPrefix) contentValue += `"${customPrefix}" `;
     contentValue += `counter(${counterName}`;
@@ -47,11 +47,11 @@ export default function CssCounterGeneratorPage() {
     }
     contentValue += ")";
     if (customSuffix) contentValue += ` "${customSuffix}"`;
-    
+
     lines.push(`${displaySelector} {`);
     lines.push(`  content: ${contentValue};`);
     lines.push(`}`);
-    
+
     return lines.join("\n");
   };
 
@@ -97,7 +97,7 @@ export default function CssCounterGeneratorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Counter Generator</h1>
         <p className="text-muted-foreground">
@@ -289,7 +289,7 @@ export default function CssCounterGeneratorPage() {
             </CardHeader>
             <CardContent>
               <pre className="p-3 bg-muted rounded-lg text-sm font-mono overflow-x-auto">
-{`<body>
+                {`<body>
   <h2>Introduction</h2>
   <h2>Getting Started</h2>
   <h2>Advanced Usage</h2>
@@ -307,12 +307,12 @@ export default function CssCounterGeneratorPage() {
           <h2 className="text-2xl font-semibold mb-4">About CSS Counters</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              CSS counters are variables that can be incremented by CSS to automatically number elements like 
-              headings, list items, or sections. They're controlled by three main properties: 
+              CSS counters are variables that can be incremented by CSS to automatically number elements like
+              headings, list items, or sections. They're controlled by three main properties:
               <code> counter-reset</code>, <code>counter-increment</code>, and the <code>counter()</code> function.
             </p>
             <p>
-              CSS counters are perfect for creating automatic section numbering, multi-level lists, and custom 
+              CSS counters are perfect for creating automatic section numbering, multi-level lists, and custom
               numbering schemes without JavaScript or manual updates.
             </p>
           </div>

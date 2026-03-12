@@ -118,7 +118,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Color Converter</h1>
         <p className="text-muted-foreground">
@@ -416,12 +416,12 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
         <section>
           <h2 className="text-2xl font-semibold mb-4">Why Color Formats Matter</h2>
           <p className="text-muted-foreground mb-4">
-            Different tools and contexts need different color formats. Designers think in HSL. 
-            Developers copy hex codes from Figma. Print designers need CMYK. Modern CSS supports 
+            Different tools and contexts need different color formats. Designers think in HSL.
+            Developers copy hex codes from Figma. Print designers need CMYK. Modern CSS supports
             OKLCH for perceptually uniform color spaces.
           </p>
           <p className="text-muted-foreground">
-            This converter shows you all formats at once. Change one value and everything updates. 
+            This converter shows you all formats at once. Change one value and everything updates.
             No mental math, no switching between tabs.
           </p>
         </section>
@@ -436,7 +436,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="space-y-2">
                 <code className="block p-2 bg-muted rounded text-sm font-mono">#6366f1</code>
                 <p className="text-sm text-muted-foreground">
-                  Six-digit code representing red, green, and blue values. The standard for web design. 
+                  Six-digit code representing red, green, and blue values. The standard for web design.
                   Short form (#63f) works when pairs repeat (#6633ff).
                 </p>
               </CardContent>
@@ -449,7 +449,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="space-y-2">
                 <code className="block p-2 bg-muted rounded text-sm font-mono">rgb(99, 102, 241)</code>
                 <p className="text-sm text-muted-foreground">
-                  Additive color model - screens mix red, green, and blue light. Each channel ranges 
+                  Additive color model - screens mix red, green, and blue light. Each channel ranges
                   from 0 to 255. Add alpha for transparency: <code className="bg-muted px-1">rgba(99, 102, 241, 0.5)</code>
                 </p>
               </CardContent>
@@ -462,7 +462,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="space-y-2">
                 <code className="block p-2 bg-muted rounded text-sm font-mono">hsl(239, 84%, 67%)</code>
                 <p className="text-sm text-muted-foreground">
-                  More intuitive than RGB. Hue is the color (0-360 degrees), saturation is intensity 
+                  More intuitive than RGB. Hue is the color (0-360 degrees), saturation is intensity
                   (0-100%), lightness is brightness (0-100%). Easier to adjust mentally.
                 </p>
               </CardContent>
@@ -475,7 +475,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="space-y-2">
                 <code className="block p-2 bg-muted rounded text-sm font-mono">oklch(0.55, 0.2, 280)</code>
                 <p className="text-sm text-muted-foreground">
-                  Modern color space designed for perceptual uniformity. Equal changes in values 
+                  Modern color space designed for perceptual uniformity. Equal changes in values
                   produce equal perceived changes. Best for smooth transitions and accessible palettes.
                 </p>
               </CardContent>
@@ -488,7 +488,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="space-y-2">
                 <code className="block p-2 bg-muted rounded text-sm font-mono">hsv(239, 59%, 95%)</code>
                 <p className="text-sm text-muted-foreground">
-                  Similar to HSL but "value" represents brightness differently. Common in color 
+                  Similar to HSL but "value" represents brightness differently. Common in color
                   pickers and design tools. Value is the maximum RGB component.
                 </p>
               </CardContent>
@@ -501,7 +501,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="space-y-2">
                 <code className="block p-2 bg-muted rounded text-sm font-mono">cmyk(59%, 58%, 0%, 5%)</code>
                 <p className="text-sm text-muted-foreground">
-                  Subtractive color model for print. Ink absorbs light - more color means darker 
+                  Subtractive color model for print. Ink absorbs light - more color means darker
                   results. The "key" (black) channel adds depth and saves on colored ink.
                 </p>
               </CardContent>
@@ -519,7 +519,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <div>
                 <h3 className="font-semibold mb-1">HEX for quick styling</h3>
                 <p className="text-sm text-muted-foreground">
-                  Short, copy-paste friendly, universally supported. Use for solid colors in CSS 
+                  Short, copy-paste friendly, universally supported. Use for solid colors in CSS
                   and when sharing colors with other developers.
                 </p>
               </div>
@@ -531,7 +531,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <div>
                 <h3 className="font-semibold mb-1">HSL for adjustments</h3>
                 <p className="text-sm text-muted-foreground">
-                  Need a darker version? Reduce lightness. Want it less saturated? Lower the 
+                  Need a darker version? Reduce lightness. Want it less saturated? Lower the
                   saturation. Much easier than guessing hex values.
                 </p>
               </div>
@@ -543,7 +543,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <div>
                 <h3 className="font-semibold mb-1">RGB/RGBA for transparency</h3>
                 <p className="text-sm text-muted-foreground">
-                  When you need alpha channels and older browser support. RGBA works everywhere, 
+                  When you need alpha channels and older browser support. RGBA works everywhere,
                   unlike the newer hex-with-alpha syntax.
                 </p>
               </div>
@@ -555,7 +555,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <div>
                 <h3 className="font-semibold mb-1">OKLCH for modern projects</h3>
                 <p className="text-sm text-muted-foreground">
-                  If you're building something new and don't need legacy support, OKLCH produces 
+                  If you're building something new and don't need legacy support, OKLCH produces
                   more natural color scales and gradients.
                 </p>
               </div>
@@ -570,8 +570,8 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Why do colors look different on different screens?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Monitor calibration, color profiles, and display technology all affect how colors 
-                  appear. sRGB is the web standard, but wide-gamut displays show more saturated colors. 
+                  Monitor calibration, color profiles, and display technology all affect how colors
+                  appear. sRGB is the web standard, but wide-gamut displays show more saturated colors.
                   Always test on multiple devices.
                 </p>
               </CardContent>
@@ -580,8 +580,8 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What's the deal with OKLCH?</h3>
                 <p className="text-sm text-muted-foreground">
-                  OKLCH is based on human color perception, not how screens emit light. Two colors 
-                  with the same L value appear equally light to human eyes. This makes it ideal for 
+                  OKLCH is based on human color perception, not how screens emit light. Two colors
+                  with the same L value appear equally light to human eyes. This makes it ideal for
                   generating accessible color scales.
                 </p>
               </CardContent>
@@ -590,7 +590,7 @@ OKLCH: oklch(${oklch.l}, ${oklch.c}, ${oklch.h})`;
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Can I convert CMYK back to RGB perfectly?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Not exactly. CMYK has a smaller color gamut than RGB. Some vibrant screen colors 
+                  Not exactly. CMYK has a smaller color gamut than RGB. Some vibrant screen colors
                   can't be reproduced in print. The conversion is an approximation.
                 </p>
               </CardContent>

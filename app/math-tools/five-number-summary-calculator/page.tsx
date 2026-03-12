@@ -99,7 +99,7 @@ export default function FiveNumberSummaryCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Five Number Summary Calculator – Min Q1 Median Q3 Max</h1>
         <p className="text-muted-foreground">
@@ -398,23 +398,6 @@ export default function FiveNumberSummaryCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/mean-median-mode-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Mean Median Mode</p>
-            <p className="text-xs text-muted-foreground">Central tendency measures</p>
-          </a>
-          <a href="/math-tools/standard-deviation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Deviation</p>
-            <p className="text-xs text-muted-foreground">Measure of spread</p>
-          </a>
-          <a href="/math-tools/box-plot-maker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Box Plot Maker</p>
-            <p className="text-xs text-muted-foreground">Visualize distributions</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

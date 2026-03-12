@@ -143,13 +143,13 @@ export default function MixedNumberCalculator() {
 
     steps.push(`\nSimplify by dividing by GCD(${Math.abs(resultNum)}, ${resultDen}) = ${gcd(resultNum, resultDen)}:`);
     steps.push(`  ${simplified.numerator}/${simplified.denominator}`);
-    
+
     if (mixed.whole !== 0 || (mixed.numerator !== simplified.numerator && mixed.numerator !== 0)) {
       steps.push(`\nConvert to mixed number:`);
       steps.push(`  ${simplified.numerator} ÷ ${simplified.denominator} = ${mixed.whole} R${mixed.numerator}`);
       steps.push(`  = ${mixed.whole} ${mixed.numerator}/${mixed.denominator}`);
     }
-    
+
     steps.push(`\nDecimal: ${decimal.toFixed(6)}`);
 
     setResult({
@@ -170,14 +170,14 @@ export default function MixedNumberCalculator() {
     setError("");
   };
 
-  const MixedNumberInput = ({ 
-    value, 
-    onChange, 
-    label 
-  }: { 
-    value: MixedNumber; 
-    onChange: (m: MixedNumber) => void; 
-    label: string 
+  const MixedNumberInput = ({
+    value,
+    onChange,
+    label
+  }: {
+    value: MixedNumber;
+    onChange: (m: MixedNumber) => void;
+    label: string
   }) => (
     <div className="flex items-center gap-2">
       <div className="w-16">
@@ -209,7 +209,7 @@ export default function MixedNumberCalculator() {
   );
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Mixed Number Calculator – Add, Subtract, Multiply Mixed Numbers</h1>
         <p className="text-muted-foreground">
@@ -512,23 +512,6 @@ export default function MixedNumberCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction Calculator</p>
-            <p className="text-xs text-muted-foreground">Fraction operations</p>
-          </a>
-          <a href="/math-tools/decimal-to-fraction-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Decimal to Fraction Converter</p>
-            <p className="text-xs text-muted-foreground">Decimals to fractions</p>
-          </a>
-          <a href="/math-tools/fraction-to-decimal-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction to Decimal Converter</p>
-            <p className="text-xs text-muted-foreground">Fractions to decimals</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

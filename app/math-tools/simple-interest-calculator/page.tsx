@@ -63,7 +63,7 @@ export default function SimpleInterestCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Simple Interest Calculator – Compute SI Online Instantly</h1>
         <p className="text-muted-foreground">
@@ -353,23 +353,6 @@ export default function SimpleInterestCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Compound Interest Calculator</p>
-            <p className="text-xs text-muted-foreground">Interest on interest</p>
-          </a>
-          <a href="/math-tools/loan-payment-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Loan Payment Calculator</p>
-            <p className="text-xs text-muted-foreground">Monthly payments</p>
-          </a>
-          <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Percentage Calculator</p>
-            <p className="text-xs text-muted-foreground">Percent calculations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

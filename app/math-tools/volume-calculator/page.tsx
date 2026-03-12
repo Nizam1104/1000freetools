@@ -158,7 +158,7 @@ export default function VolumeCalculator() {
           setError("Radius must be positive");
           return;
         }
-        volume = (4/3) * Math.PI * Math.pow(radius, 3);
+        volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
         steps.push(`Radius (r) = ${radius}`);
         steps.push(`V = (4/3)πr³ = (4/3) × π × ${radius}³`);
         steps.push(`V = (4/3) × π × ${Math.pow(radius, 3)} ≈ ${volume}`);
@@ -195,7 +195,7 @@ export default function VolumeCalculator() {
           setError("Radius and height must be positive");
           return;
         }
-        volume = (1/3) * Math.PI * radius * radius * height;
+        volume = (1 / 3) * Math.PI * radius * radius * height;
         steps.push(`Radius (r) = ${radius}`);
         steps.push(`Height (h) = ${height}`);
         steps.push(`V = (1/3)πr²h = (1/3) × π × ${radius}² × ${height}`);
@@ -215,7 +215,7 @@ export default function VolumeCalculator() {
           setError("All dimensions must be positive");
           return;
         }
-        volume = (1/3) * length * width * height;
+        volume = (1 / 3) * length * width * height;
         steps.push(`Base Length (l) = ${length}`);
         steps.push(`Base Width (w) = ${width}`);
         steps.push(`Height (h) = ${height}`);
@@ -255,7 +255,7 @@ export default function VolumeCalculator() {
           setError("Radius must be positive");
           return;
         }
-        volume = (2/3) * Math.PI * Math.pow(radius, 3);
+        volume = (2 / 3) * Math.PI * Math.pow(radius, 3);
         steps.push(`Radius (r) = ${radius}`);
         steps.push(`V = (2/3)πr³ = (2/3) × π × ${radius}³`);
         steps.push(`V = (2/3) × π × ${Math.pow(radius, 3)} ≈ ${volume}`);
@@ -284,7 +284,7 @@ export default function VolumeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Volume Calculator – Compute Volume of 3D Shapes Online</h1>
         <p className="text-muted-foreground">
@@ -557,19 +557,6 @@ export default function VolumeCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <a href="/math-tools/surface-area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Surface Area Calculator</p>
-            <p className="text-xs text-muted-foreground">3D surface area</p>
-          </a>
-          <a href="/math-tools/perimeter-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Perimeter Calculator</p>
-            <p className="text-xs text-muted-foreground">2D perimeter</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

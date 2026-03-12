@@ -66,7 +66,7 @@ export default function PercentageChangeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Percentage Change Calculator - Increase & Decrease</h1>
         <p className="text-muted-foreground">
@@ -122,16 +122,14 @@ export default function PercentageChangeCalculator() {
 
         {result && (
           <div className="space-y-4">
-            <div className={`p-6 rounded-lg text-center ${
-              result.direction === "increase" ? "bg-green-500/10 border border-green-500/30" :
-              result.direction === "decrease" ? "bg-red-500/10 border border-red-500/30" :
-              "bg-muted"
-            }`}>
-              <p className={`text-5xl font-bold mb-2 ${
-                result.direction === "increase" ? "text-green-600" :
-                result.direction === "decrease" ? "text-red-600" :
-                ""
+            <div className={`p-6 rounded-lg text-center ${result.direction === "increase" ? "bg-green-500/10 border border-green-500/30" :
+                result.direction === "decrease" ? "bg-red-500/10 border border-red-500/30" :
+                  "bg-muted"
               }`}>
+              <p className={`text-5xl font-bold mb-2 ${result.direction === "increase" ? "text-green-600" :
+                  result.direction === "decrease" ? "text-red-600" :
+                    ""
+                }`}>
                 {result.direction === "increase" ? "+" : ""}{result.percentageChange.toFixed(2)}%
               </p>
               <p className="text-sm text-muted-foreground">{result.explanation}</p>
@@ -169,11 +167,10 @@ export default function PercentageChangeCalculator() {
                   <span className="text-xs text-muted-foreground w-16">To:</span>
                   <div className="flex-1 h-8 bg-background border rounded overflow-hidden">
                     <div
-                      className={`h-full transition-all duration-300 ${
-                        result.direction === "increase" ? "bg-green-500/50" :
-                        result.direction === "decrease" ? "bg-red-500/50" :
-                        "bg-muted-foreground/30"
-                      }`}
+                      className={`h-full transition-all duration-300 ${result.direction === "increase" ? "bg-green-500/50" :
+                          result.direction === "decrease" ? "bg-red-500/50" :
+                            "bg-muted-foreground/30"
+                        }`}
                       style={{ width: `${Math.min(100, (parseFloat(toValue) / Math.max(parseFloat(fromValue), parseFloat(toValue))) * 100)}%` }}
                     />
                   </div>

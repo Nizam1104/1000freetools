@@ -55,7 +55,7 @@ export default function AspectRatioCalculatorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Aspect Ratio Calculator</h1>
         <p className="text-muted-foreground">
@@ -238,11 +238,11 @@ export default function AspectRatioCalculatorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">What Aspect Ratio Is</h2>
           <p className="text-muted-foreground mb-4">
-            Aspect ratio is the proportional relationship between width and height. 
+            Aspect ratio is the proportional relationship between width and height.
             It's expressed as two numbers separated by a colon (16:9, 4:3, 1:1).
           </p>
           <p className="text-muted-foreground">
-            In CSS, aspect ratio ensures elements maintain their proportions regardless of screen size. 
+            In CSS, aspect ratio ensures elements maintain their proportions regardless of screen size.
             This is crucial for responsive images, videos, and containers that need to scale uniformly.
           </p>
         </section>
@@ -297,14 +297,14 @@ export default function AspectRatioCalculatorPage() {
                 Modern CSS has a dedicated <code className="bg-muted px-1 rounded">aspect-ratio</code> property:
               </p>
               <code className="block p-4 bg-muted rounded-lg text-sm font-mono mb-4">
-{`.video-container {
+                {`.video-container {
   aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
 }`}
               </code>
               <p className="text-sm text-muted-foreground">
-                The old padding hack (using padding-top percentage) still works if you need older 
+                The old padding hack (using padding-top percentage) still works if you need older
                 browser support, but the native property is cleaner and easier to maintain.
               </p>
             </CardContent>

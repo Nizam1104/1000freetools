@@ -190,7 +190,7 @@ export default function FractionCalculator() {
   );
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Fraction Calculator – Add, Subtract, Multiply & Divide Fractions</h1>
         <p className="text-muted-foreground">
@@ -455,23 +455,6 @@ export default function FractionCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/fraction-to-decimal-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction to Decimal</p>
-            <p className="text-xs text-muted-foreground">Convert fractions</p>
-          </a>
-          <a href="/math-tools/simplifying-fractions-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Simplify Fractions</p>
-            <p className="text-xs text-muted-foreground">Reduce to lowest terms</p>
-          </a>
-          <a href="/math-tools/least-common-denominator-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">LCD Calculator</p>
-            <p className="text-xs text-muted-foreground">Find common denominators</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

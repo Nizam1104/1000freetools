@@ -11,7 +11,7 @@ export default function FunctionPlotter() {
   const [xMax, setXMax] = useState("10");
   const [yMin, setYMin] = useState("-10");
   const [yMax, setYMax] = useState("10");
-  const [points, setPoints] = useState<{x: number; y: number; xNorm: number; yNorm: number}[]>([]);
+  const [points, setPoints] = useState<{ x: number; y: number; xNorm: number; yNorm: number }[]>([]);
   const [error, setError] = useState("");
 
   const evaluateFunction = (expr: string, x: number): number | null => {
@@ -28,7 +28,7 @@ export default function FunctionPlotter() {
         .replace(/exp/g, "Math.exp")
         .replace(/pi/g, "Math.PI")
         .replace(/e(?![xp])/g, "Math.E");
-      
+
       const func = new Function("x", `return ${cleanExpr}`);
       const result = func(x);
       return isFinite(result) ? result : null;
@@ -56,18 +56,18 @@ export default function FunctionPlotter() {
       return;
     }
 
-    const plotPoints: {x: number; y: number; xNorm: number; yNorm: number}[] = [];
+    const plotPoints: { x: number; y: number; xNorm: number; yNorm: number }[] = [];
     const numPoints = 200;
     const step = (xmax - xmin) / numPoints;
 
     for (let i = 0; i <= numPoints; i++) {
       const x = xmin + i * step;
       const y = evaluateFunction(expression, x);
-      
+
       if (y !== null && isFinite(y)) {
         const xNorm = ((x - xmin) / (xmax - xmin)) * 80 + 10;
         const yNorm = 90 - ((y - ymin) / (ymax - ymin)) * 70 - 10;
-        
+
         if (yNorm >= 0 && yNorm <= 100) {
           plotPoints.push({ x, y, xNorm, yNorm });
         }
@@ -98,12 +98,12 @@ export default function FunctionPlotter() {
     setError("");
   };
 
-  const pathD = points.length > 0 ? points.map((p, i) => 
+  const pathD = points.length > 0 ? points.map((p, i) =>
     `${i === 0 ? "M" : "L"} ${p.xNorm} ${p.yNorm}`
   ).join(" ") : "";
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">2D Function Plotter – Graph Functions Online Free</h1>
         <p className="text-muted-foreground">
@@ -395,23 +395,6 @@ export default function FunctionPlotter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h2 className="text-2xl font-semibold">Related Math Tools</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/derivative-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Derivative Calculator</p>
-            <p className="text-xs text-muted-foreground">Find derivatives step by step</p>
-          </a>
-          <a href="/math-tools/quadratic-equation-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Quadratic Equation Solver</p>
-            <p className="text-xs text-muted-foreground">Solve ax² + bx + c = 0</p>
-          </a>
-          <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Trig Function Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate sin, cos, tan values</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

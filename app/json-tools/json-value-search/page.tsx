@@ -227,7 +227,7 @@ export default function JsonValueSearchPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">
@@ -414,10 +414,10 @@ export default function JsonValueSearchPage() {
                             <div className="p-3">
                               <span
                                 className={`inline-block px-2 py-1 rounded text-xs font-medium ${match.matchType === "both"
-                                    ? "bg-purple-500/20 text-purple-600 dark:text-purple-400"
-                                    : match.matchType === "key"
-                                      ? "bg-blue-500/20 text-blue-600 dark:text-blue-400"
-                                      : "bg-green-500/20 text-green-600 dark:text-green-400"
+                                  ? "bg-purple-500/20 text-purple-600 dark:text-purple-400"
+                                  : match.matchType === "key"
+                                    ? "bg-blue-500/20 text-blue-600 dark:text-blue-400"
+                                    : "bg-green-500/20 text-green-600 dark:text-green-400"
                                   }`}
                               >
                                 {match.matchType}

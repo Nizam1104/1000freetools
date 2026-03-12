@@ -14,7 +14,7 @@ export default function ExponentCalculator() {
   const calculate = () => {
     const b = parseFloat(base);
     const e = parseFloat(exponent);
-    
+
     if (isNaN(b) || isNaN(e)) {
       setResult(null);
       setSteps([]);
@@ -71,7 +71,7 @@ export default function ExponentCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Exponent Calculator – Calculate Base to the Power of n</h1>
         <p className="text-muted-foreground">
@@ -353,23 +353,6 @@ export default function ExponentCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/square-root-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Square Root Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate square roots</p>
-          </a>
-          <a href="/math-tools/logarithm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Logarithm Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate logarithms</p>
-          </a>
-          <a href="/math-tools/scientific-notation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Scientific Notation</p>
-            <p className="text-xs text-muted-foreground">Convert to/from scientific notation</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

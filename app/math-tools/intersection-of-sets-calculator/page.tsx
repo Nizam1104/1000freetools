@@ -77,7 +77,7 @@ export default function IntersectionOfSetsCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Intersection of Sets Calculator – Find A ∩ B Online</h1>
         <p className="text-muted-foreground">
@@ -323,23 +323,6 @@ export default function IntersectionOfSetsCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/union-of-sets-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Union of Sets</p>
-            <p className="text-xs text-muted-foreground">Combine sets</p>
-          </a>
-          <a href="/math-tools/set-difference-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Set Difference</p>
-            <p className="text-xs text-muted-foreground">A - B calculator</p>
-          </a>
-          <a href="/math-tools/venn-diagram-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Venn Diagram</p>
-            <p className="text-xs text-muted-foreground">Visual set operations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

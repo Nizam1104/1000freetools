@@ -163,7 +163,7 @@ export default function ColorPaletteGeneratorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Color Palette Generator</h1>
         <p className="text-muted-foreground">

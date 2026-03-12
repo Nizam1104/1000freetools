@@ -163,7 +163,7 @@ export default function RiemannSumCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Riemann Sum Calculator - Approximate Integral with Rectangles</h1>
         <p className="text-muted-foreground">
@@ -436,23 +436,6 @@ export default function RiemannSumCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/integral-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Integral Calculator</p>
-            <p className="text-xs text-muted-foreground">Find exact integrals</p>
-          </a>
-          <a href="/math-tools/area-under-curve" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Area Under Curve</p>
-            <p className="text-xs text-muted-foreground">Visual integration</p>
-          </a>
-          <a href="/math-tools/trapezoidal-rule" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Trapezoidal Rule</p>
-            <p className="text-xs text-muted-foreground">Numerical integration</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -84,7 +84,7 @@ export default function FibonacciGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Fibonacci Sequence Generator – Calculate Fibonacci Numbers Online</h1>
         <p className="text-muted-foreground">
@@ -305,23 +305,6 @@ export default function FibonacciGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/geometric-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Geometric Sequence</p>
-            <p className="text-xs text-muted-foreground">Another number pattern</p>
-          </a>
-          <a href="/math-tools/arithmetic-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Arithmetic Sequence</p>
-            <p className="text-xs text-muted-foreground">Linear number patterns</p>
-          </a>
-          <a href="/math-tools/golden-ratio-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Golden Ratio</p>
-            <p className="text-xs text-muted-foreground">Calculate φ</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

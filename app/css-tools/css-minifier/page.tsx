@@ -90,13 +90,13 @@ export default function CssMinifierPage() {
   const stats = {
     original: input.length,
     minified: output.length,
-    saved: input.length > 0 && output.length > 0 
-      ? Math.round(((input.length - output.length) / input.length) * 100) 
+    saved: input.length > 0 && output.length > 0
+      ? Math.round(((input.length - output.length) / input.length) * 100)
       : 0,
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Minifier & Beautifier</h1>
         <p className="text-muted-foreground">

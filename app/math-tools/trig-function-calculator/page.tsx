@@ -283,7 +283,7 @@ export default function TrigFunctionCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">
           Trig Function Calculator – Calculate Sin Cos Tan Online
@@ -806,43 +806,6 @@ export default function TrigFunctionCalculator() {
               values are precise; decimals are easier to compare but lose
               precision.
             </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a
-              href="/math-tools/inverse-trig-calculator"
-              className="p-4 rounded-lg border hover:bg-muted transition-colors"
-            >
-              <p className="font-semibold text-sm">Inverse Trig Calculator</p>
-              <p className="text-xs text-muted-foreground">
-                Find arcsin, arccos, arctan
-              </p>
-            </a>
-            <a
-              href="/math-tools/degrees-radians-converter"
-              className="p-4 rounded-lg border hover:bg-muted transition-colors"
-            >
-              <p className="font-semibold text-sm">Degrees to Radians</p>
-              <p className="text-xs text-muted-foreground">
-                Convert angle units
-              </p>
-            </a>
-            <a
-              href="/math-tools/right-triangle-calculator"
-              className="p-4 rounded-lg border hover:bg-muted transition-colors"
-            >
-              <p className="font-semibold text-sm">Right Triangle Calculator</p>
-              <p className="text-xs text-muted-foreground">
-                Solve right triangles
-              </p>
-            </a>
           </div>
         </CardContent>
       </Card>

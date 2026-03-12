@@ -93,7 +93,7 @@ export default function DivisibilityChecker() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Divisibility Checker – Test Divisibility Rules Instantly</h1>
         <p className="text-muted-foreground">
@@ -359,23 +359,6 @@ export default function DivisibilityChecker() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/divisibility-check-2-20" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Divisibility Check (2-20)</p>
-            <p className="text-xs text-muted-foreground">Check all divisors 2-20</p>
-          </a>
-          <a href="/math-tools/factor-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factor Calculator</p>
-            <p className="text-xs text-muted-foreground">Find all factors</p>
-          </a>
-          <a href="/math-tools/long-division-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Long Division Calculator</p>
-            <p className="text-xs text-muted-foreground">Step-by-step division</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

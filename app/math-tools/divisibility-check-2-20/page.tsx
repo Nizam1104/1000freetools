@@ -80,7 +80,7 @@ export default function DivisibilityCheck2to20() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Divisibility Check (2-20) – Test Number Divisibility</h1>
         <p className="text-muted-foreground">
@@ -131,9 +131,8 @@ export default function DivisibilityCheck2to20() {
               {result.checks.map((check: any) => (
                 <div
                   key={check.divisor}
-                  className={`p-3 rounded-lg text-center ${
-                    check.divisible ? 'bg-green-100 dark:bg-green-900/30' : 'bg-red-100 dark:bg-red-900/30'
-                  }`}
+                  className={`p-3 rounded-lg text-center ${check.divisible ? 'bg-green-100 dark:bg-green-900/30' : 'bg-red-100 dark:bg-red-900/30'
+                    }`}
                 >
                   <p className="text-sm font-semibold">÷ {check.divisor}</p>
                   <p className={`text-lg font-bold ${check.divisible ? 'text-green-600' : 'text-red-600'}`}>
@@ -385,23 +384,6 @@ export default function DivisibilityCheck2to20() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/divisibility-checker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Divisibility Checker</p>
-            <p className="text-xs text-muted-foreground">Check single divisor</p>
-          </a>
-          <a href="/math-tools/factor-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factor Calculator</p>
-            <p className="text-xs text-muted-foreground">Find all factors</p>
-          </a>
-          <a href="/math-tools/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Prime Factorization</p>
-            <p className="text-xs text-muted-foreground">Break into primes</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

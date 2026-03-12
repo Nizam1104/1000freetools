@@ -156,7 +156,7 @@ export default function GradientSlopeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Gradient/Slope Calculator – Find Gradient at a Point</h1>
         <p className="text-muted-foreground">
@@ -221,12 +221,12 @@ export default function GradientSlopeCalculator() {
 
         <div className="flex flex-wrap gap-2">
           <span className="text-sm text-muted-foreground self-center">Examples:</span>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", {x1: "1", y1: "2", x2: "4", y2: "8"})}>(1,2) to (4,8)</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", {x1: "-3", y1: "5", x2: "2", y2: "-1"})}>(-3,5) to (2,-1)</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("function", {fn: "x^2", x: "2"})}>x² at x=2</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("function", {fn: "x^3 - 2x", x: "1"})}>x³-2x at x=1</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("function", {fn: "sin(x)", x: "0"})}>sin(x) at x=0</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("function", {fn: "sqrt(x)", x: "4"})}>√x at x=4</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", { x1: "1", y1: "2", x2: "4", y2: "8" })}>(1,2) to (4,8)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("two-points", { x1: "-3", y1: "5", x2: "2", y2: "-1" })}>(-3,5) to (2,-1)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("function", { fn: "x^2", x: "2" })}>x² at x=2</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("function", { fn: "x^3 - 2x", x: "1" })}>x³-2x at x=1</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("function", { fn: "sin(x)", x: "0" })}>sin(x) at x=0</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("function", { fn: "sqrt(x)", x: "4" })}>√x at x=4</Button>
         </div>
 
         {error && (
@@ -434,23 +434,6 @@ export default function GradientSlopeCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/line-equation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Line Equation</p>
-            <p className="text-xs text-muted-foreground">Find line equations</p>
-          </a>
-          <a href="/math-tools/derivative-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Derivative Calculator</p>
-            <p className="text-xs text-muted-foreground">Find derivatives</p>
-          </a>
-          <a href="/math-tools/tangent-line-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Tangent Line</p>
-            <p className="text-xs text-muted-foreground">Tangent equations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

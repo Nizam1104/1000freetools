@@ -54,7 +54,7 @@ export default function TrigIdentityVerifier() {
     for (const angle of testAngles) {
       const leftVal = evaluateExpression(leftSide, angle);
       const rightVal = evaluateExpression(rightSide, angle);
-      
+
       if (leftVal === null || rightVal === null || !isFinite(leftVal) || !isFinite(rightVal)) {
         results.push({ angle, left: leftVal, right: rightVal, match: false });
         continue;
@@ -70,7 +70,7 @@ export default function TrigIdentityVerifier() {
       results,
       leftSide,
       rightSide,
-      message: allMatch 
+      message: allMatch
         ? "The equation appears to be a valid trigonometric identity (verified for multiple angles)."
         : "The equation is NOT a trigonometric identity - the two sides give different values."
     });
@@ -90,7 +90,7 @@ export default function TrigIdentityVerifier() {
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Trig Identity Verifier – Verify Trigonometric Identities Online</h1>
         <p className="text-muted-foreground">
@@ -110,18 +110,18 @@ export default function TrigIdentityVerifier() {
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label>Left Side</Label>
-                <Input 
-                  placeholder="e.g., sin^2 + cos^2" 
-                  value={leftSide} 
-                  onChange={(e) => setLeftSide(e.target.value)} 
+                <Input
+                  placeholder="e.g., sin^2 + cos^2"
+                  value={leftSide}
+                  onChange={(e) => setLeftSide(e.target.value)}
                 />
               </div>
               <div>
                 <Label>Right Side</Label>
-                <Input 
-                  placeholder="e.g., 1" 
-                  value={rightSide} 
-                  onChange={(e) => setRightSide(e.target.value)} 
+                <Input
+                  placeholder="e.g., 1"
+                  value={rightSide}
+                  onChange={(e) => setRightSide(e.target.value)}
                 />
               </div>
             </div>
@@ -182,9 +182,9 @@ export default function TrigIdentityVerifier() {
                 <h4 className="font-semibold text-sm mb-3">Try These Examples</h4>
                 <div className="grid gap-2">
                   {examples.map((ex, i) => (
-                    <Button 
-                      key={i} 
-                      variant="outline" 
+                    <Button
+                      key={i}
+                      variant="outline"
                       className="justify-start"
                       onClick={() => { setLeftSide(ex.left); setRightSide(ex.right); }}
                     >
@@ -264,28 +264,6 @@ export default function TrigIdentityVerifier() {
             <p className="text-xs text-muted-foreground">
               Some identities have restrictions. For example, tan is undefined at 90°. The verifier skips angles where either side is undefined.
             </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Trig Function Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate sin, cos, tan</p>
-            </a>
-            <a href="/math-tools/law-of-sines-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Law of Sines Calculator</p>
-              <p className="text-xs text-muted-foreground">Solve triangles</p>
-            </a>
-            <a href="/math-tools/law-of-cosines-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Law of Cosines Calculator</p>
-              <p className="text-xs text-muted-foreground">Solve triangles</p>
-            </a>
           </div>
         </CardContent>
       </Card>

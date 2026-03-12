@@ -15,6 +15,11 @@
     "href": "/json-tools/json-validator"
   },
   {
+    "name": "Add Ids to JSON",
+    "description": "Need to add ids to your large json data set? you can do that here",
+    "href": "/json-tools/add-id-to-json"
+  },
+  {
     "name": "JSON Viewer",
     "description": "Displays JSON in a tree view with expand/collapse, search, and raw view toggle.",
     "href": "/json-tools/json-viewer"

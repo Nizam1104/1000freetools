@@ -31,10 +31,10 @@ export default function CssSpacingScaleGeneratorPage() {
     }
 
     const scale: { step: number; value: number }[] = [];
-    
+
     for (let i = 0; i <= steps; i++) {
       let value: number;
-      
+
       if (scaleType === "linear") {
         value = baseUnit * i;
       } else if (scaleType === "geometric") {
@@ -45,10 +45,10 @@ export default function CssSpacingScaleGeneratorPage() {
       } else {
         value = baseUnit * i;
       }
-      
+
       scale.push({ step: i, value: Math.round(value * 100) / 100 });
     }
-    
+
     return scale;
   };
 
@@ -76,7 +76,7 @@ ${scale.map((item) => `  ${cssVarName(item.step)}: ${cssValue(item.value)};`).jo
 
   const generateTailwind = () => {
     const scale = generateScale();
-    
+
     return `// tailwind.config.js
 module.exports = {
   theme: {
@@ -101,7 +101,7 @@ ${scale.map((item) => `      '${item.step}': '${unit === "rem" ? (item.value / 1
   const tailwindCode = generateTailwind();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Spacing Scale Generator</h1>
         <p className="text-muted-foreground">

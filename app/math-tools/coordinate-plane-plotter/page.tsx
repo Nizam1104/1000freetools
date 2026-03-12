@@ -154,33 +154,33 @@ export default function CoordinatePlanePlotter() {
 
   const loadExample = (type: string) => {
     const examples: Record<string, { points: string; xMin: string; xMax: string; yMin: string; yMax: string }> = {
-      quadrants: { 
-        points: "(5, 5) Q1\n(-5, 5) Q2\n(-5, -5) Q3\n(5, -5) Q4\n(0, 0) Origin", 
-        xMin: "-10", xMax: "10", yMin: "-10", yMax: "10" 
+      quadrants: {
+        points: "(5, 5) Q1\n(-5, 5) Q2\n(-5, -5) Q3\n(5, -5) Q4\n(0, 0) Origin",
+        xMin: "-10", xMax: "10", yMin: "-10", yMax: "10"
       },
-      triangle: { 
-        points: "(0, 0) A\n(6, 0) B\n(3, 5) C", 
-        xMin: "-2", xMax: "8", yMin: "-2", yMax: "7" 
+      triangle: {
+        points: "(0, 0) A\n(6, 0) B\n(3, 5) C",
+        xMin: "-2", xMax: "8", yMin: "-2", yMax: "7"
       },
-      rectangle: { 
-        points: "(2, 2)\n(8, 2)\n(8, 6)\n(2, 6)", 
-        xMin: "0", xMax: "10", yMin: "0", yMax: "8" 
+      rectangle: {
+        points: "(2, 2)\n(8, 2)\n(8, 6)\n(2, 6)",
+        xMin: "0", xMax: "10", yMin: "0", yMax: "8"
       },
-      line: { 
-        points: "(-5, -5)\n(-3, -2)\n(-1, 1)\n(1, 4)\n(3, 7)\n(5, 10)", 
-        xMin: "-6", xMax: "6", yMin: "-6", yMax: "12" 
+      line: {
+        points: "(-5, -5)\n(-3, -2)\n(-1, 1)\n(1, 4)\n(3, 7)\n(5, 10)",
+        xMin: "-6", xMax: "6", yMin: "-6", yMax: "12"
       },
-      scatter: { 
-        points: "(1, 2)\n(2, 4)\n(3, 3)\n(4, 6)\n(5, 5)\n(6, 8)\n(7, 7)\n(8, 10)", 
-        xMin: "0", xMax: "10", yMin: "0", yMax: "12" 
+      scatter: {
+        points: "(1, 2)\n(2, 4)\n(3, 3)\n(4, 6)\n(5, 5)\n(6, 8)\n(7, 7)\n(8, 10)",
+        xMin: "0", xMax: "10", yMin: "0", yMax: "12"
       },
-      polygon: { 
-        points: "(0, 3) A\n(2, 5) B\n(5, 5) C\n(7, 3) D\n(5, 0) E\n(2, 0) F", 
-        xMin: "-1", xMax: "8", yMin: "-1", yMax: "6" 
+      polygon: {
+        points: "(0, 3) A\n(2, 5) B\n(5, 5) C\n(7, 3) D\n(5, 0) E\n(2, 0) F",
+        xMin: "-1", xMax: "8", yMin: "-1", yMax: "6"
       },
-      symmetry: { 
-        points: "(2, 3)\n(-2, 3)\n(2, -3)\n(-2, -3)\n(3, 2)\n(-3, 2)\n(3, -2)\n(-3, -2)", 
-        xMin: "-5", xMax: "5", yMin: "-5", yMax: "5" 
+      symmetry: {
+        points: "(2, 3)\n(-2, 3)\n(2, -3)\n(-2, -3)\n(3, 2)\n(-3, 2)\n(3, -2)\n(-3, -2)",
+        xMin: "-5", xMax: "5", yMin: "-5", yMax: "5"
       }
     };
     const ex = examples[type] || examples.quadrants;
@@ -193,7 +193,7 @@ export default function CoordinatePlanePlotter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Coordinate Plane Plotter – Plot Points on Cartesian Plane</h1>
         <p className="text-muted-foreground">

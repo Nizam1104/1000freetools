@@ -104,7 +104,7 @@ export default function CompoundInterestCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Compound Interest Calculator – Compute CI with Compounding</h1>
         <p className="text-muted-foreground">
@@ -214,7 +214,7 @@ export default function CompoundInterestCalculator() {
               <h4 className="font-semibold text-sm mb-2">Formula & Calculation</h4>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
                 A = P(1 + r/n)^(nt)<br />
-                A = ${principal}(1 + {(parseFloat(rate.toString())/100).toFixed(4)}/{getCompoundingFrequency()})^({getCompoundingFrequency()} × {timeUnit === "months" ? `${time}/12` : time})<br />
+                A = ${principal}(1 + {(parseFloat(rate.toString()) / 100).toFixed(4)}/{getCompoundingFrequency()})^({getCompoundingFrequency()} × {timeUnit === "months" ? `${time}/12` : time})<br />
                 A = ${result.totalAmount.toLocaleString()}<br />
                 <br />
                 Compound Interest = A - P = ${result.totalAmount.toLocaleString()} - ${principal} = ${result.compoundInterest.toLocaleString()}

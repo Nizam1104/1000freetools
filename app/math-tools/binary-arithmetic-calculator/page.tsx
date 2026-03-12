@@ -106,7 +106,7 @@ export default function BinaryArithmeticCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Binary Addition & Subtraction Calculator – Compute in Base 2</h1>
         <p className="text-muted-foreground">
@@ -239,10 +239,10 @@ export default function BinaryArithmeticCalculator() {
               <h4 className="font-semibold text-sm mb-3">Binary {operation === 'add' ? 'Addition' : 'Subtraction'} Layout</h4>
               <div className="font-mono text-lg bg-muted p-4 rounded text-center">
                 <pre className="whitespace-pre">
-  {binary1.padStart(Math.max(binary1.length, binary2.length) + 2)}
-{operation === 'add' ? '+' : '-'} {binary2.padStart(Math.max(binary1.length, binary2.length) + 1)}
-  {'─'.repeat(Math.max(binary1.length, binary2.length) + 2)}
-  {result.binaryResult.padStart(Math.max(binary1.length, binary2.length) + 2)}
+                  {binary1.padStart(Math.max(binary1.length, binary2.length) + 2)}
+                  {operation === 'add' ? '+' : '-'} {binary2.padStart(Math.max(binary1.length, binary2.length) + 1)}
+                  {'─'.repeat(Math.max(binary1.length, binary2.length) + 2)}
+                  {result.binaryResult.padStart(Math.max(binary1.length, binary2.length) + 2)}
                 </pre>
               </div>
             </div>

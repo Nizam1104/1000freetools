@@ -106,7 +106,7 @@ export default function ScientificNotationConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Scientific Notation Converter – Standard to Scientific Form</h1>
         <p className="text-muted-foreground">
@@ -312,14 +312,6 @@ export default function ScientificNotationConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/roman-numeral-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors"><p className="font-semibold text-sm">Roman Numeral Converter</p><p className="text-xs text-muted-foreground">Numbers to Roman numerals</p></a>
-          <a href="/math-tools/significant-figures-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors"><p className="font-semibold text-sm">Significant Figures Calculator</p><p className="text-xs text-muted-foreground">Count and round sig figs</p></a>
-          <a href="/math-tools/rounding-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors"><p className="font-semibold text-sm">Rounding Calculator</p><p className="text-xs text-muted-foreground">Round to decimal places</p></a>
-        </div>
-      </section>
     </div>
   );
 }

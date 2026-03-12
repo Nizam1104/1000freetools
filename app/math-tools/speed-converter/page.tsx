@@ -84,7 +84,7 @@ export default function SpeedConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Speed Converter – Convert mph, km/h, m/s Online</h1>
         <p className="text-muted-foreground">
@@ -432,23 +432,6 @@ export default function SpeedConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/distance-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Distance Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate distances</p>
-          </a>
-          <a href="/math-tools/time-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Time Calculator</p>
-            <p className="text-xs text-muted-foreground">Time calculations</p>
-          </a>
-          <a href="/math-tools/velocity-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Velocity Calculator</p>
-            <p className="text-xs text-muted-foreground">Velocity & acceleration</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

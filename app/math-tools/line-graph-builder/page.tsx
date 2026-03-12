@@ -141,7 +141,7 @@ export default function LineGraphBuilder() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Line Graph Builder – Create Line Charts Online Free</h1>
         <p className="text-muted-foreground">
@@ -363,10 +363,9 @@ export default function LineGraphBuilder() {
               </div>
               <div className="p-4 bg-muted rounded-lg text-center">
                 <p className="text-sm text-muted-foreground mb-2">Trend</p>
-                <p className={`text-xl font-bold ${
-                  result.stats.trend === 'up' ? 'text-green-600' :
-                  result.stats.trend === 'down' ? 'text-red-600' : ''
-                }`}>
+                <p className={`text-xl font-bold ${result.stats.trend === 'up' ? 'text-green-600' :
+                    result.stats.trend === 'down' ? 'text-red-600' : ''
+                  }`}>
                   {result.stats.trend === 'up' ? '↑ Up' : result.stats.trend === 'down' ? '↓ Down' : '→ Flat'}
                 </p>
               </div>
@@ -515,23 +514,6 @@ export default function LineGraphBuilder() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/bar-chart-maker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Bar Chart Maker</p>
-            <p className="text-xs text-muted-foreground">Create bar graphs</p>
-          </a>
-          <a href="/math-tools/pie-chart-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Pie Chart Generator</p>
-            <p className="text-xs text-muted-foreground">Create pie charts</p>
-          </a>
-          <a href="/math-tools/scatter-plot-maker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Scatter Plot Maker</p>
-            <p className="text-xs text-muted-foreground">Plot data points</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

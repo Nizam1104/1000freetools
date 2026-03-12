@@ -32,7 +32,7 @@ export default function UnitCircleReference() {
   const selectedData = selectedAngle !== null ? unitCircleData.find(d => d.deg === selectedAngle) : null;
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Unit Circle Reference Tool – Interactive Unit Circle Chart</h1>
         <p className="text-muted-foreground">
@@ -127,8 +127,8 @@ export default function UnitCircleReference() {
               </thead>
               <tbody>
                 {unitCircleData.map((item) => (
-                  <tr 
-                    key={item.deg} 
+                  <tr
+                    key={item.deg}
                     className={`border-b cursor-pointer hover:bg-muted ${selectedAngle === item.deg ? 'bg-muted' : ''}`}
                     onClick={() => setSelectedAngle(item.deg)}
                   >
@@ -160,28 +160,6 @@ export default function UnitCircleReference() {
           <p className="text-sm text-muted-foreground">
             Notice the patterns. In quadrant I, all values are positive. In quadrant II, only sine is positive. In quadrant III, only tangent is positive. In quadrant IV, only cosine is positive. Remember "All Students Take Calculus" for the positive functions.
           </p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Trig Function Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate sin, cos, tan</p>
-            </a>
-            <a href="/math-tools/degrees-radians-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Degrees to Radians</p>
-              <p className="text-xs text-muted-foreground">Convert angle units</p>
-            </a>
-            <a href="/math-tools/right-triangle-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Right Triangle Calculator</p>
-              <p className="text-xs text-muted-foreground">Solve right triangles</p>
-            </a>
-          </div>
         </CardContent>
       </Card>
     </div>

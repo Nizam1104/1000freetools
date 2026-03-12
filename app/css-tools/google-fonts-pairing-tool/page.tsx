@@ -55,7 +55,7 @@ export default function GoogleFontsPairingToolPage() {
   const generateFontPairingCSS = () => {
     const headingFontObj = googleFonts.find((f) => f.name === headingFont);
     const bodyFontObj = googleFonts.find((f) => f.name === bodyFont);
-    
+
     return `@import url('https://fonts.googleapis.com/css2?family=${headingFont?.replace(/ /g, "+")}:wght@${headingWeight}&family=${bodyFont?.replace(/ /g, "+")}:wght@${bodyWeight}&display=swap');
 
 :root {
@@ -91,10 +91,10 @@ body {
   const randomizePairing = () => {
     const sansFonts = googleFonts.filter((f) => f.category === "sans-serif");
     const serifFonts = googleFonts.filter((f) => f.category === "serif");
-    
+
     const randomSans = sansFonts[Math.floor(Math.random() * sansFonts.length)];
     const randomSerif = serifFonts[Math.floor(Math.random() * serifFonts.length)];
-    
+
     if (Math.random() > 0.5) {
       setHeadingFont(randomSerif.name);
       setBodyFont(randomSans.name);
@@ -112,7 +112,7 @@ body {
   const fontCSS = generateFontPairingCSS();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Google Fonts Pairing Tool</h1>
         <p className="text-muted-foreground">
@@ -271,15 +271,15 @@ body {
                   The Quick Brown Fox
                 </h1>
                 <p>
-                  Typography is the art and technique of arranging type to make written language legible, readable, 
-                  and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, 
+                  Typography is the art and technique of arranging type to make written language legible, readable,
+                  and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes,
                   line lengths, line-spacing, and letter-spacing.
                 </p>
                 <h2 style={{ fontFamily: headingFont, fontSize: `${headingSize * 0.75}px`, fontWeight: headingWeight }}>
                   Subheading Example
                 </h2>
                 <p>
-                  Good typography establishes a strong visual hierarchy, provides graphic balance, and helps set 
+                  Good typography establishes a strong visual hierarchy, provides graphic balance, and helps set
                   the overall mood and visual tone of your design.
                 </p>
               </div>
@@ -335,12 +335,12 @@ body {
           <h2 className="text-2xl font-semibold mb-4">About Font Pairing</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Font pairing is the art of combining two or more fonts in a way that creates visual harmony and enhances 
+              Font pairing is the art of combining two or more fonts in a way that creates visual harmony and enhances
               readability. Good font pairing establishes hierarchy, creates interest, and improves the overall user experience.
             </p>
             <p>
-              The most successful pairings often combine fonts from different categories—such as a serif heading font 
-              with a sans-serif body font, or vice versa. The key is finding fonts that complement each other while 
+              The most successful pairings often combine fonts from different categories—such as a serif heading font
+              with a sans-serif body font, or vice versa. The key is finding fonts that complement each other while
               maintaining enough contrast to create visual interest.
             </p>
           </div>
@@ -354,7 +354,7 @@ body {
                 <CardTitle className="text-lg">Contrast Categories</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Pair serif with sans-serif, or display fonts with simple body fonts. Contrast creates visual interest 
+                Pair serif with sans-serif, or display fonts with simple body fonts. Contrast creates visual interest
                 and helps establish hierarchy.
               </CardContent>
             </Card>
@@ -371,7 +371,7 @@ body {
                 <CardTitle className="text-lg">Consider Mood</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Choose fonts that match your brand personality. A playful brand might use rounded sans-serifs, 
+                Choose fonts that match your brand personality. A playful brand might use rounded sans-serifs,
                 while a luxury brand might prefer elegant serifs.
               </CardContent>
             </Card>
@@ -380,7 +380,7 @@ body {
                 <CardTitle className="text-lg">Test Readability</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Always test your font pairings with real content. What looks good in headings might not work 
+                Always test your font pairings with real content. What looks good in headings might not work
                 for body text at smaller sizes.
               </CardContent>
             </Card>

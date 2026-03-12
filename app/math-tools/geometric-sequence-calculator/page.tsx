@@ -79,7 +79,7 @@ export default function GeometricSequenceCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Geometric Sequence Calculator – Find Terms & Sum Online</h1>
         <p className="text-muted-foreground">
@@ -316,23 +316,6 @@ export default function GeometricSequenceCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/geometric-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Geometric Series</p>
-            <p className="text-xs text-muted-foreground">Sum of geometric terms</p>
-          </a>
-          <a href="/math-tools/arithmetic-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Arithmetic Sequence</p>
-            <p className="text-xs text-muted-foreground">Linear patterns</p>
-          </a>
-          <a href="/math-tools/fibonacci-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fibonacci Sequence</p>
-            <p className="text-xs text-muted-foreground">Famous number pattern</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

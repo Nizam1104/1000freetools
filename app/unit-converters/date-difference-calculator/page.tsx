@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function DateDifferenceCalculatorPage() {
   const config = converterMappings["Date Difference Calculator"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function DateDifferenceCalculatorPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Date Difference Calculator</h1>
         <p className="text-muted-foreground">Calculate the exact number of days, weeks, months, and years between any two dates. Free online date difference calculator for deadlines, anniversaries, and event planning.</p>
@@ -136,8 +136,8 @@ export default function DateDifferenceCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: One Year Period</p>
               <p className="text-muted-foreground">
-                Start: January 1, 2024<br/>
-                End: January 1, 2025<br/>
+                Start: January 1, 2024<br />
+                End: January 1, 2025<br />
                 Result: 366 days (leap year), 52 weeks, 12 months, 1 year
               </p>
             </div>
@@ -145,8 +145,8 @@ export default function DateDifferenceCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Cross-Month Calculation</p>
               <p className="text-muted-foreground">
-                Start: March 15, 2024<br/>
-                End: May 20, 2024<br/>
+                Start: March 15, 2024<br />
+                End: May 20, 2024<br />
                 Result: 66 days, 9 weeks, 2 months, 5 days
               </p>
             </div>
@@ -154,8 +154,8 @@ export default function DateDifferenceCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Multi-Year Span</p>
               <p className="text-muted-foreground">
-                Start: June 1, 2020<br/>
-                End: December 31, 2024<br/>
+                Start: June 1, 2020<br />
+                End: December 31, 2024<br />
                 Result: 1,674 days, 239 weeks, approximately 4 years, 7 months
               </p>
             </div>

@@ -82,7 +82,7 @@ export default function PermutationCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">
           Permutation Calculator - Calculate nPr Online
@@ -332,23 +332,6 @@ export default function PermutationCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/combination-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combination Calculator</p>
-            <p className="text-xs text-muted-foreground">nCr - when order doesn't matter</p>
-          </a>
-          <a href="/math-tools/probability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Probability Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate event probabilities</p>
-          </a>
-          <a href="/math-tools/factorial-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factorial Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate n!</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -15,7 +15,7 @@ export default function FuelConsumptionPage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Fuel Consumption Converter</h1>
         <p className="text-muted-foreground">Convert fuel consumption and efficiency units — MPG, L/100km, km/L, and more. Free online fuel economy converter for cars, trucks, and fleet management.</p>
@@ -320,7 +320,7 @@ export default function FuelConsumptionPage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">Why is highway MPG higher than city MPG?</h3>
             <p className="text-muted-foreground">

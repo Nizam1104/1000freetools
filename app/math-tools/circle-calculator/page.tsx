@@ -99,7 +99,7 @@ export default function CircleCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Circle Calculator – Find Radius, Diameter, Area & Circumference</h1>
         <p className="text-muted-foreground">
@@ -153,9 +153,9 @@ export default function CircleCalculator() {
             type="number"
             placeholder={
               inputType === "radius" ? "e.g., 5" :
-              inputType === "diameter" ? "e.g., 10" :
-              inputType === "area" ? "e.g., 78.54" :
-              "e.g., 31.42"
+                inputType === "diameter" ? "e.g., 10" :
+                  inputType === "area" ? "e.g., 78.54" :
+                    "e.g., 31.42"
             }
             step="any"
             value={value}
@@ -472,23 +472,6 @@ export default function CircleCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h2 className="text-2xl font-semibold">Related Math Tools</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/perimeter-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Perimeter Calculator</p>
-            <p className="text-xs text-muted-foreground">2D perimeter</p>
-          </a>
-          <a href="/math-tools/area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Area Calculator</p>
-            <p className="text-xs text-muted-foreground">2D area calculations</p>
-          </a>
-          <a href="/math-tools/volume-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Volume Calculator</p>
-            <p className="text-xs text-muted-foreground">3D volume (sphere, cylinder)</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

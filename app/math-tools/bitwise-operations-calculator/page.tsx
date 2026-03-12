@@ -137,7 +137,7 @@ export default function BitwiseOperationsCalculator() {
   const showBitVisual = operation !== "not" && operation !== "lshift" && operation !== "rshift";
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Bitwise Operations Calculator – Compute AND OR XOR NOT Shifts</h1>
         <p className="text-muted-foreground">
@@ -250,10 +250,10 @@ export default function BitwiseOperationsCalculator() {
                 <h4 className="font-semibold text-sm mb-3">Bit Visualization</h4>
                 <div className="font-mono text-sm bg-muted p-4 rounded overflow-x-auto">
                   <pre>
-{num1.padStart(result.binaryResult.length)}  ({num1})
-{operation === 'and' ? '&' : operation === 'or' ? '|' : '^'} {num2.padStart(result.binaryResult.length - 2)}  ({num2})
-{'─'.repeat(result.binaryResult.length)}
-{result.binaryResult.trim()}  ({result.decimalResult})
+                    {num1.padStart(result.binaryResult.length)}  ({num1})
+                    {operation === 'and' ? '&' : operation === 'or' ? '|' : '^'} {num2.padStart(result.binaryResult.length - 2)}  ({num2})
+                    {'─'.repeat(result.binaryResult.length)}
+                    {result.binaryResult.trim()}  ({result.decimalResult})
                   </pre>
                 </div>
               </div>

@@ -15,7 +15,7 @@ export default function ExposureDoseConverterPage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Radiation Exposure Dose Converter</h1>
         <p className="text-muted-foreground">Convert radiation exposure dose units — roentgens, coulombs/kg, milliroentgens, and more. Free online exposure dose converter for radiology, health physics, and radiation protection.</p>
@@ -308,7 +308,7 @@ export default function ExposureDoseConverterPage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">What is the difference between exposure and dose?</h3>
             <p className="text-muted-foreground">

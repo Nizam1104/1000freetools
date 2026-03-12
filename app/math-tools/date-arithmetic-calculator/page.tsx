@@ -65,33 +65,33 @@ export default function DateArithmeticCalculator() {
   const loadExample = (type: string) => {
     const today = new Date();
     const examples: Record<string, { date: string; value: number; op: "add" | "subtract"; unit: "days" | "weeks" | "months" | "years" }> = {
-      month: { 
-        date: today.toISOString().split("T")[0], 
-        value: 30, op: "add", unit: "days" 
+      month: {
+        date: today.toISOString().split("T")[0],
+        value: 30, op: "add", unit: "days"
       },
-      quarter: { 
-        date: today.toISOString().split("T")[0], 
-        value: 90, op: "add", unit: "days" 
+      quarter: {
+        date: today.toISOString().split("T")[0],
+        value: 90, op: "add", unit: "days"
       },
-      year: { 
-        date: today.toISOString().split("T")[0], 
-        value: 1, op: "add", unit: "years" 
+      year: {
+        date: today.toISOString().split("T")[0],
+        value: 1, op: "add", unit: "years"
       },
-      weeks: { 
-        date: today.toISOString().split("T")[0], 
-        value: 12, op: "add", unit: "weeks" 
+      weeks: {
+        date: today.toISOString().split("T")[0],
+        value: 12, op: "add", unit: "weeks"
       },
-      months: { 
-        date: today.toISOString().split("T")[0], 
-        value: 6, op: "add", unit: "months" 
+      months: {
+        date: today.toISOString().split("T")[0],
+        value: 6, op: "add", unit: "months"
       },
-      past: { 
-        date: today.toISOString().split("T")[0], 
-        value: 365, op: "subtract", unit: "days" 
+      past: {
+        date: today.toISOString().split("T")[0],
+        value: 365, op: "subtract", unit: "days"
       },
-      retirement: { 
-        date: today.toISOString().split("T")[0], 
-        value: 30, op: "add", unit: "years" 
+      retirement: {
+        date: today.toISOString().split("T")[0],
+        value: 30, op: "add", unit: "years"
       }
     };
     const ex = examples[type] || examples.month;
@@ -119,7 +119,7 @@ export default function DateArithmeticCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Date Arithmetic Calculator – Add or Subtract Days, Weeks, Months, Years</h1>
         <p className="text-muted-foreground">

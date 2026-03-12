@@ -73,7 +73,7 @@ export default function LinearEquationSolver() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Linear Equation Solver – Solve ax + b = c Online</h1>
         <p className="text-muted-foreground">
@@ -326,23 +326,6 @@ export default function LinearEquationSolver() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/quadratic-equation-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Quadratic Equation Solver</p>
-            <p className="text-xs text-muted-foreground">Solve ax² + bx + c = 0</p>
-          </a>
-          <a href="/math-tools/system-of-equations-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">System of Equations</p>
-            <p className="text-xs text-muted-foreground">Multiple equations</p>
-          </a>
-          <a href="/math-tools/inequality-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Inequality Solver</p>
-            <p className="text-xs text-muted-foreground">Solve inequalities</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

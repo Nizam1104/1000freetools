@@ -90,7 +90,7 @@ line-height: clamp(${minLineHeight}, ${lhSlope.toFixed(4)}vw + ${lhIntercept.toF
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Fluid Typography Calculator</h1>
         <p className="text-muted-foreground">
@@ -271,12 +271,12 @@ line-height: clamp(${minLineHeight}, ${lhSlope.toFixed(4)}vw + ${lhIntercept.toF
           <h2 className="text-2xl font-semibold mb-4">About Fluid Typography</h2>
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
-              Fluid typography uses CSS <code>clamp()</code> to create font sizes that scale smoothly between 
-              viewport breakpoints. This eliminates the need for multiple media queries and provides a more 
+              Fluid typography uses CSS <code>clamp()</code> to create font sizes that scale smoothly between
+              viewport breakpoints. This eliminates the need for multiple media queries and provides a more
               natural reading experience across all devices.
             </p>
             <p>
-              The <code>clamp(min, preferred, max)</code> function ensures your text never goes below a minimum 
+              The <code>clamp(min, preferred, max)</code> function ensures your text never goes below a minimum
               size or above a maximum size, while scaling fluidly in between based on viewport width.
             </p>
           </div>
@@ -295,7 +295,7 @@ line-height: clamp(${minLineHeight}, ${lhSlope.toFixed(4)}vw + ${lhIntercept.toF
                 {"slope = (maxFont - minFont) / (maxView - minView)"}
               </code>
               <p className="text-muted-foreground mt-4">
-                This creates a linear relationship between viewport size and font size, ensuring smooth scaling 
+                This creates a linear relationship between viewport size and font size, ensuring smooth scaling
                 across all screen sizes.
               </p>
             </CardContent>
@@ -310,7 +310,7 @@ line-height: clamp(${minLineHeight}, ${lhSlope.toFixed(4)}vw + ${lhIntercept.toF
                 <CardTitle className="text-lg">Accessibility First</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Always set reasonable minimum and maximum values. Text should never be too small to read 
+                Always set reasonable minimum and maximum values. Text should never be too small to read
                 or so large it breaks the layout.
               </CardContent>
             </Card>
@@ -319,7 +319,7 @@ line-height: clamp(${minLineHeight}, ${lhSlope.toFixed(4)}vw + ${lhIntercept.toF
                 <CardTitle className="text-lg">Respect User Preferences</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Consider using relative units (rem) alongside clamp() to respect browser font size preferences 
+                Consider using relative units (rem) alongside clamp() to respect browser font size preferences
                 and accessibility settings.
               </CardContent>
             </Card>

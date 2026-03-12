@@ -136,7 +136,7 @@ export default function RatioCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Ratio Calculator – Simplify & Solve Ratios Online</h1>
         <p className="text-muted-foreground">
@@ -489,28 +489,6 @@ export default function RatioCalculator() {
             <p className="text-xs text-muted-foreground">
               Yes. First, find a common denominator for both terms, then treat the numerators as a whole number ratio. For 1/2 : 3/4, convert to 2/4 : 3/4, giving 2:3.
             </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fraction Calculator</p>
-              <p className="text-xs text-muted-foreground">Work with fractions</p>
-            </a>
-            <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate percentages</p>
-            </a>
-            <a href="/math-tools/average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Average Calculator</p>
-              <p className="text-xs text-muted-foreground">Find the mean</p>
-            </a>
           </div>
         </CardContent>
       </Card>

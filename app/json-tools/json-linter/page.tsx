@@ -274,7 +274,7 @@ export default function JsonLinterPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">
@@ -472,8 +472,8 @@ export default function JsonLinterPage() {
                         <div
                           key={index}
                           className={`rounded-md p-4 border ${issue.type === "error"
-                              ? "bg-destructive/10 border-destructive/20"
-                              : "bg-yellow-500/10 border-yellow-500/20"
+                            ? "bg-destructive/10 border-destructive/20"
+                            : "bg-yellow-500/10 border-yellow-500/20"
                             }`}
                         >
                           <div className="flex items-start gap-3">
@@ -486,8 +486,8 @@ export default function JsonLinterPage() {
                               <div className="flex items-center gap-2 mb-1">
                                 <span
                                   className={`text-sm font-semibold ${issue.type === "error"
-                                      ? "text-destructive"
-                                      : "text-yellow-600 dark:text-yellow-400"
+                                    ? "text-destructive"
+                                    : "text-yellow-600 dark:text-yellow-400"
                                     }`}
                                 >
                                   {issue.type === "error" ? "Error" : "Warning"}

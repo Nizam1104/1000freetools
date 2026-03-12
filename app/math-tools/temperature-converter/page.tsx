@@ -44,22 +44,22 @@ export default function TemperatureConverter() {
       converted = val;
       formulaStr = `No conversion needed: ${val}°${fromUnit.charAt(0).toUpperCase()} = ${val}°${toUnit.charAt(0).toUpperCase()}`;
     } else if (fromUnit === "celsius" && toUnit === "fahrenheit") {
-      converted = (val * 9/5) + 32;
+      converted = (val * 9 / 5) + 32;
       formulaStr = `°F = (°C × 9/5) + 32 = (${val} × 9/5) + 32 = ${converted.toFixed(2)}°F`;
     } else if (fromUnit === "celsius" && toUnit === "kelvin") {
       converted = val + 273.15;
       formulaStr = `K = °C + 273.15 = ${val} + 273.15 = ${converted.toFixed(2)} K`;
     } else if (fromUnit === "fahrenheit" && toUnit === "celsius") {
-      converted = (val - 32) * 5/9;
+      converted = (val - 32) * 5 / 9;
       formulaStr = `°C = (°F - 32) × 5/9 = (${val} - 32) × 5/9 = ${converted.toFixed(2)}°C`;
     } else if (fromUnit === "fahrenheit" && toUnit === "kelvin") {
-      converted = (val - 32) * 5/9 + 273.15;
+      converted = (val - 32) * 5 / 9 + 273.15;
       formulaStr = `K = (°F - 32) × 5/9 + 273.15 = (${val} - 32) × 5/9 + 273.15 = ${converted.toFixed(2)} K`;
     } else if (fromUnit === "kelvin" && toUnit === "celsius") {
       converted = val - 273.15;
       formulaStr = `°C = K - 273.15 = ${val} - 273.15 = ${converted.toFixed(2)}°C`;
     } else {
-      converted = (val - 273.15) * 9/5 + 32;
+      converted = (val - 273.15) * 9 / 5 + 32;
       formulaStr = `°F = (K - 273.15) × 9/5 + 32 = (${val} - 273.15) × 9/5 + 32 = ${converted.toFixed(2)}°F`;
     }
 
@@ -98,7 +98,7 @@ export default function TemperatureConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Temperature Converter – Celsius to Fahrenheit & Kelvin</h1>
         <p className="text-muted-foreground">
@@ -192,19 +192,19 @@ export default function TemperatureConverter() {
                 <div>
                   <p className="text-xs text-muted-foreground">Celsius</p>
                   <p className="text-xl font-semibold">
-                    {fromUnit === "celsius" ? value : toUnit === "celsius" ? result : ((fromUnit === "fahrenheit" ? (parseFloat(value) - 32) * 5/9 : (parseFloat(value) - 273.15)).toFixed(2))}°C
+                    {fromUnit === "celsius" ? value : toUnit === "celsius" ? result : ((fromUnit === "fahrenheit" ? (parseFloat(value) - 32) * 5 / 9 : (parseFloat(value) - 273.15)).toFixed(2))}°C
                   </p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Fahrenheit</p>
                   <p className="text-xl font-semibold">
-                    {fromUnit === "fahrenheit" ? value : toUnit === "fahrenheit" ? result : ((fromUnit === "celsius" ? (parseFloat(value) * 9/5) + 32 : (parseFloat(value) - 273.15) * 9/5 + 32).toFixed(2))}°F
+                    {fromUnit === "fahrenheit" ? value : toUnit === "fahrenheit" ? result : ((fromUnit === "celsius" ? (parseFloat(value) * 9 / 5) + 32 : (parseFloat(value) - 273.15) * 9 / 5 + 32).toFixed(2))}°F
                   </p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Kelvin</p>
                   <p className="text-xl font-semibold">
-                    {fromUnit === "kelvin" ? value : toUnit === "kelvin" ? result : ((fromUnit === "celsius" ? parseFloat(value) + 273.15 : (parseFloat(value) - 32) * 5/9 + 273.15).toFixed(2))} K
+                    {fromUnit === "kelvin" ? value : toUnit === "kelvin" ? result : ((fromUnit === "celsius" ? parseFloat(value) + 273.15 : (parseFloat(value) - 32) * 5 / 9 + 273.15).toFixed(2))} K
                   </p>
                 </div>
               </div>
@@ -451,23 +451,6 @@ export default function TemperatureConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/unit-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Unit Converter</p>
-            <p className="text-xs text-muted-foreground">All unit conversions</p>
-          </a>
-          <a href="/math-tools/speed-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Speed Converter</p>
-            <p className="text-xs text-muted-foreground">Speed units</p>
-          </a>
-          <a href="/math-tools/energy-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Energy Converter</p>
-            <p className="text-xs text-muted-foreground">Energy units</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -93,7 +93,7 @@ export default function WeightedAverageCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Weighted Average Calculator – Compute Weighted Mean Online</h1>
         <p className="text-muted-foreground">
@@ -191,7 +191,7 @@ export default function WeightedAverageCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Weighted Average Calculations</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Course Grade Calculation</h3>
           <p className="text-muted-foreground mb-2">
             Calculate final grade with different assignment weights:
@@ -256,7 +256,7 @@ export default function WeightedAverageCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">When should I use weighted average instead of regular average?</h3>
@@ -306,24 +306,6 @@ export default function WeightedAverageCalculator() {
                 Yes! Time-weighted averages use time periods as weights. For example, if a temperature was 20°C for 3 hours and 30°C for 1 hour, the time-weighted average is (20×3 + 30×1) / 4 = 22.5°C, not the simple average of 25°C.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/mean-median-mode-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Mean, Median, Mode Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate measures of central tendency for data sets.</p>
-            </a>
-            <a href="/math-tools/standard-deviation-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Standard Deviation Calculator</h3>
-              <p className="text-sm text-muted-foreground">Measure the spread or variability of your data.</p>
-            </a>
-            <a href="/math-tools/gpa-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">GPA Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate grade point average weighted by credit hours.</p>
-            </a>
           </div>
         </section>
       </div>

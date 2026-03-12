@@ -35,7 +35,7 @@ export default function DistanceBetweenTwoPointsCalculator() {
     }
 
     const steps: string[] = [];
-    
+
     if (mode === "2d") {
       const dx = x2Val - x1Val;
       const dy = y2Val - y1Val;
@@ -124,7 +124,7 @@ export default function DistanceBetweenTwoPointsCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Distance Between Two Points Calculator – Find Distance Online</h1>
         <p className="text-muted-foreground">
@@ -309,7 +309,7 @@ export default function DistanceBetweenTwoPointsCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">The Distance Formula Explained</h3>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 border rounded-lg">
             <h4 className="font-semibold mb-3">2D Distance Formula</h4>
@@ -458,23 +458,6 @@ export default function DistanceBetweenTwoPointsCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/midpoint-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Midpoint Calculator</p>
-            <p className="text-xs text-muted-foreground">Find midpoints</p>
-          </a>
-          <a href="/calculators/pythagorean-theorem-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Pythagorean Theorem</p>
-            <p className="text-xs text-muted-foreground">Right triangle solver</p>
-          </a>
-          <a href="/calculators/slope-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Slope Calculator</p>
-            <p className="text-xs text-muted-foreground">Line slope and equation</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

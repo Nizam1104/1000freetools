@@ -138,7 +138,7 @@ export default function StandardCalculator() {
   );
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Free Online Standard Calculator – Fast & Easy Math</h1>
         <p className="text-muted-foreground">
@@ -363,28 +363,6 @@ export default function StandardCalculator() {
             <p className="text-xs text-muted-foreground">
               Once the page loads, the calculator works without an internet connection. It runs entirely in your browser – no server calls needed for calculations.
             </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/scientific-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Scientific Calculator</p>
-              <p className="text-xs text-muted-foreground">Advanced math with trig functions</p>
-            </a>
-            <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate percentages instantly</p>
-            </a>
-            <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fraction Calculator</p>
-              <p className="text-xs text-muted-foreground">Add, subtract, multiply fractions</p>
-            </a>
           </div>
         </CardContent>
       </Card>

@@ -35,7 +35,7 @@ word-spacing: ${wordSpacing}em;`;
   const cssCode = generateCSS();
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Letter Spacing & Line Height Visualizer</h1>
         <p className="text-muted-foreground">
@@ -264,7 +264,7 @@ word-spacing: ${wordSpacing}em;`;
                 <CardTitle className="text-lg">Letter Spacing</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Also known as tracking, letter spacing adjusts the space between all characters. 
+                Also known as tracking, letter spacing adjusts the space between all characters.
                 Positive values add breathing room, negative values create tighter text.
               </CardContent>
             </Card>
@@ -273,7 +273,7 @@ word-spacing: ${wordSpacing}em;`;
                 <CardTitle className="text-lg">Line Height</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                The vertical space between lines of text. Critical for readability—too tight causes 
+                The vertical space between lines of text. Critical for readability—too tight causes
                 crowding, too loose disconnects lines.
               </CardContent>
             </Card>
@@ -282,7 +282,7 @@ word-spacing: ${wordSpacing}em;`;
                 <CardTitle className="text-lg">Word Spacing</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Controls the space between words. Useful for justified text or creating specific 
+                Controls the space between words. Useful for justified text or creating specific
                 visual rhythms in typography.
               </CardContent>
             </Card>

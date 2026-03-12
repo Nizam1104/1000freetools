@@ -37,8 +37,8 @@ export default function LawOfCosinesCalculator() {
         return;
       }
 
-      const A = toDeg(Math.acos((b*b + c*c - a*a) / (2*b*c)));
-      const B = toDeg(Math.acos((a*a + c*c - b*b) / (2*a*c)));
+      const A = toDeg(Math.acos((b * b + c * c - a * a) / (2 * b * c)));
+      const B = toDeg(Math.acos((a * a + c * c - b * b) / (2 * a * c)));
       const C = 180 - A - B;
 
       const s = (a + b + c) / 2;
@@ -54,7 +54,7 @@ export default function LawOfCosinesCalculator() {
           `Using Law of Cosines to find ∠A:`,
           `  cos(A) = (b² + c² - a²) / (2bc)`,
           `  cos(A) = (${b}² + ${c}² - ${a}²) / (2 × ${b} × ${c})`,
-          `  A = arccos(${((b*b + c*c - a*a) / (2*b*c)).toFixed(4)})`,
+          `  A = arccos(${((b * b + c * c - a * a) / (2 * b * c)).toFixed(4)})`,
           `  A = ${A.toFixed(2)}°`,
           ``,
           `Using Law of Cosines to find ∠B:`,
@@ -77,8 +77,8 @@ export default function LawOfCosinesCalculator() {
         return;
       }
 
-      const a = Math.sqrt(b*b + c*c - 2*b*c*Math.cos(toRad(A)));
-      const B = toDeg(Math.acos((a*a + c*c - b*b) / (2*a*c)));
+      const a = Math.sqrt(b * b + c * c - 2 * b * c * Math.cos(toRad(A)));
+      const B = toDeg(Math.acos((a * a + c * c - b * b) / (2 * a * c)));
       const C = 180 - A - B;
       const area = 0.5 * b * c * Math.sin(toRad(A));
 
@@ -130,7 +130,7 @@ export default function LawOfCosinesCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Law of Cosines Calculator – Solve Triangles Using Cosine Rule</h1>
         <p className="text-muted-foreground">
@@ -173,11 +173,11 @@ export default function LawOfCosinesCalculator() {
 
         <div className="flex flex-wrap gap-2">
           <span className="text-sm text-muted-foreground self-center">Examples:</span>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("sss", {a: "7", b: "5", c: "8"})}>SSS: 7,5,8</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("sss", {a: "13", b: "14", c: "15"})}>SSS: 13,14,15</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("sas", {b: "10", A: "60", c: "8"})}>SAS: b=10,A=60°,c=8</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("sas", {b: "5", A: "45", c: "7"})}>SAS: b=5,A=45°,c=7</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("sss", {a: "3", b: "4", c: "5"})}>SSS: 3,4,5 (right)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sss", { a: "7", b: "5", c: "8" })}>SSS: 7,5,8</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sss", { a: "13", b: "14", c: "15" })}>SSS: 13,14,15</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sas", { b: "10", A: "60", c: "8" })}>SAS: b=10,A=60°,c=8</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sas", { b: "5", A: "45", c: "7" })}>SAS: b=5,A=45°,c=7</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("sss", { a: "3", b: "4", c: "5" })}>SSS: 3,4,5 (right)</Button>
         </div>
 
         {result && (
@@ -319,23 +319,6 @@ export default function LawOfCosinesCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/law-of-sines-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Law of Sines Calculator</p>
-            <p className="text-xs text-muted-foreground">Solve ASA and AAS triangles</p>
-          </a>
-          <a href="/math-tools/triangle-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Triangle Solver</p>
-            <p className="text-xs text-muted-foreground">Solve any triangle</p>
-          </a>
-          <a href="/math-tools/right-triangle-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Right Triangle Calculator</p>
-            <p className="text-xs text-muted-foreground">Solve right triangles</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

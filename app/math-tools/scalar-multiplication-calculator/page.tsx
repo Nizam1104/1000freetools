@@ -74,7 +74,7 @@ export default function ScalarMultiplicationCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Scalar Multiplication Calculator – Multiply Matrix by Scalar</h1>
         <p className="text-muted-foreground">
@@ -236,7 +236,7 @@ export default function ScalarMultiplicationCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Calculations</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">2×2 Matrix Example</h3>
           <p className="text-muted-foreground mb-2">
             Multiply matrix A by scalar k = 3:
@@ -282,7 +282,7 @@ export default function ScalarMultiplicationCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What is a scalar in mathematics?</h3>
@@ -332,24 +332,6 @@ export default function ScalarMultiplicationCalculator() {
                 Scalar multiplication appears in computer graphics (scaling objects), physics (scaling force vectors), economics (adjusting price matrices), and machine learning (weight adjustments in neural networks). It's a fundamental operation in any field that uses linear algebra.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/matrix-multiplication-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Matrix Multiplication Calculator</h3>
-              <p className="text-sm text-muted-foreground">Multiply two matrices together using the matrix multiplication rule.</p>
-            </a>
-            <a href="/math-tools/matrix-determinant-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Matrix Determinant Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the determinant of square matrices up to 4×4.</p>
-            </a>
-            <a href="/math-tools/matrix-inverse-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Matrix Inverse Calculator</h3>
-              <p className="text-sm text-muted-foreground">Find the inverse of a matrix using various methods.</p>
-            </a>
           </div>
         </section>
       </div>

@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function ThermalExpansionPage() {
   const config = converterMappings["Thermal Expansion"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function ThermalExpansionPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Thermal Expansion Converter</h1>
         <p className="text-muted-foreground">Convert thermal expansion coefficient units — per Kelvin, per Celsius, per Fahrenheit, and more. Free online thermal expansion converter for materials science and engineering.</p>
@@ -217,7 +217,7 @@ export default function ThermalExpansionPage() {
             <div>
               <h3 className="text-lg font-semibold mb-2">How does thermal expansion affect bimetallic strips</h3>
               <p className="text-muted-foreground">
-              Bimetallic strips use two metals with different expansion coefficients bonded together. Temperature changes cause the strip to bend. You find these in thermostats, circuit breakers, and temperature gauges.
+                Bimetallic strips use two metals with different expansion coefficients bonded together. Temperature changes cause the strip to bend. You find these in thermostats, circuit breakers, and temperature gauges.
               </p>
             </div>
 

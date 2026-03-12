@@ -133,7 +133,7 @@ export default function TangentLineCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Tangent Line Calculator – Find Tangent Line Equation Online</h1>
         <p className="text-muted-foreground">
@@ -482,23 +482,6 @@ export default function TangentLineCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/derivative-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Derivative Calculator</p>
-            <p className="text-xs text-muted-foreground">Find derivatives</p>
-          </a>
-          <a href="/math-tools/normal-line-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Normal Line Calculator</p>
-            <p className="text-xs text-muted-foreground">Perpendicular lines</p>
-          </a>
-          <a href="/math-tools/graphing-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Graphing Calculator</p>
-            <p className="text-xs text-muted-foreground">Plot functions</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

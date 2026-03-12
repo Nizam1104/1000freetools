@@ -209,9 +209,9 @@ const csvTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free CSV Tools Online - 47 Tools for CSV Editing, Conversion & Analysis",
+  title: "Free CSV Tools Online - 47 Tools for CSV Editing, sortings etc",
   description:
-    "Free online CSV tools for viewing, editing, converting, and analyzing CSV files. Convert CSV to JSON, Excel, SQL, XML, YAML. Clean, format, filter, and transform CSV data in your browser.",
+    "ever struct working with csv files? like editing, sorting etc, then you are at right place, we offer many css tools and more will be added in future",
   openGraph: {
     title: "Free CSV Tools Online - 47 Tools for CSV Editing, Conversion & Analysis",
     description:
@@ -382,11 +382,6 @@ export default function CsvToolsPage() {
             <h3 className="text-xl font-semibold mb-3">Viewing and Editing</h3>
             <p className="text-muted-foreground mb-4">
               CSV Viewer displays files with sorting and pagination. CSV Editor provides a spreadsheet-like interface for cell-by-cell editing. CSV Validator checks structure, column consistency, and encoding issues.
-            </p>
-
-            <h3 className="text-xl font-semibold mb-3">Format Conversion</h3>
-            <p className="text-muted-foreground mb-4">
-              Convert CSV to JSON (with type inference options), Excel (.xlsx), SQL INSERT statements for MySQL/PostgreSQL/SQLite, XML, YAML, HTML tables, Markdown tables, TSV, plain text, or programming language arrays (JavaScript, Python, PHP). Reverse conversions work too — JSON to CSV, Excel to CSV, SQL to CSV, XML to CSV, HTML table to CSV.
             </p>
 
             <h3 className="text-xl font-semibold mb-3">Column Operations</h3>

@@ -182,7 +182,7 @@ export default function CssLoaderGeneratorPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Loader Generator</h1>
         <p className="text-muted-foreground">
@@ -314,11 +314,11 @@ export default function CssLoaderGeneratorPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">CSS Loaders Without Images</h2>
           <p className="text-muted-foreground mb-4">
-            CSS loaders are pure CSS animations that show while content loads. No GIFs, no SVGs, 
+            CSS loaders are pure CSS animations that show while content loads. No GIFs, no SVGs,
             no JavaScript libraries - just CSS keyframes and transforms.
           </p>
           <p className="text-muted-foreground">
-            This generator creates common loader patterns: spinners, dots, bars, and pulses. 
+            This generator creates common loader patterns: spinners, dots, bars, and pulses.
             Customize the colors and speed, then copy the CSS.
           </p>
         </section>
@@ -329,28 +329,28 @@ export default function CssLoaderGeneratorPage() {
             <Card>
               <CardHeader><CardTitle className="text-lg">Spinner</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Classic rotating circle. Uses border with one side transparent, spinning with 
+                Classic rotating circle. Uses border with one side transparent, spinning with
                 keyframes. Works everywhere.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">Dots</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Three bouncing dots. Each dot animates with a delay for the wave effect. 
+                Three bouncing dots. Each dot animates with a delay for the wave effect.
                 Common for "loading..." states.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">Bars</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Vertical bars that scale up and down. Stagger the animation delay for 
+                Vertical bars that scale up and down. Stagger the animation delay for
                 the wave effect.
               </CardContent>
             </Card>
             <Card>
               <CardHeader><CardTitle className="text-lg">Pulse</CardTitle></CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                Expanding and fading circles. Creates a subtle "breathing" effect. Good 
+                Expanding and fading circles. Creates a subtle "breathing" effect. Good
                 for background loading states.
               </CardContent>
             </Card>

@@ -67,7 +67,7 @@ export default function EulersTotientCalculator() {
         `Step 2: Apply Euler's totient formula`,
         `φ(n) = n × ∏(1 - 1/p) for each prime p`,
         `φ(${n}) = ${n} × ${primeFactors.map(p => `(1 - 1/${p})`).join(' × ')}`,
-        `φ(${n}) = ${n} × ${primeFactors.map(p => `${p-1}/${p}`).join(' × ')}`,
+        `φ(${n}) = ${n} × ${primeFactors.map(p => `${p - 1}/${p}`).join(' × ')}`,
         `φ(${n}) = ${totient}`,
         ``,
         `Step 3: Verify by counting coprimes`,
@@ -108,7 +108,7 @@ export default function EulersTotientCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Euler's Totient Function Calculator – Compute φ(n) Online</h1>
         <p className="text-muted-foreground">
@@ -381,23 +381,6 @@ export default function EulersTotientCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/gcd-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">GCD Calculator</p>
-            <p className="text-xs text-muted-foreground">Find greatest common divisor</p>
-          </a>
-          <a href="/math-tools/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Prime Factorization</p>
-            <p className="text-xs text-muted-foreground">Break into prime factors</p>
-          </a>
-          <a href="/math-tools/modular-arithmetic-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Modular Arithmetic</p>
-            <p className="text-xs text-muted-foreground">Mod operations calculator</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

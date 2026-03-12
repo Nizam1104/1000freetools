@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function AgeCalculatorPage() {
   const config = converterMappings["Age Calculator"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function AgeCalculatorPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Age Calculator</h1>
         <p className="text-muted-foreground">Calculate your exact age in years, months, and days from your date of birth. Free online age calculator — also find the age on any past or future date.</p>
@@ -126,9 +126,9 @@ export default function AgeCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Basic Age Calculation</p>
               <p className="text-muted-foreground">
-                Birth Date: March 15, 1990<br/>
-                Target Date: January 20, 2025<br/>
-                Calculation: 2025 - 1990 = 35 years, but January comes before March<br/>
+                Birth Date: March 15, 1990<br />
+                Target Date: January 20, 2025<br />
+                Calculation: 2025 - 1990 = 35 years, but January comes before March<br />
                 Result: 34 years, 10 months, 5 days
               </p>
             </div>
@@ -136,8 +136,8 @@ export default function AgeCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Leap Year Birthday</p>
               <p className="text-muted-foreground">
-                Birth Date: February 29, 2000<br/>
-                Target Date: February 28, 2025<br/>
+                Birth Date: February 29, 2000<br />
+                Target Date: February 28, 2025<br />
                 Result: 24 years, 11 months, 30 days (or 25 years minus 1 day)
               </p>
             </div>
@@ -145,8 +145,8 @@ export default function AgeCalculatorPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Age in Seconds</p>
               <p className="text-muted-foreground">
-                Age: 30 years<br/>
-                Seconds = 30 × 365.25 × 24 × 60 × 60<br/>
+                Age: 30 years<br />
+                Seconds = 30 × 365.25 × 24 × 60 × 60<br />
                 Result: 946,728,000 seconds
               </p>
             </div>

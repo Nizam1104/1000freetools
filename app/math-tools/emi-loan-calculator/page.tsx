@@ -46,12 +46,12 @@ export default function EMILoanCalculator() {
     // Generate amortization schedule
     const amortization: { month: number; payment: number; principal: number; interest: number; balance: number }[] = [];
     let balance = P;
-    
+
     for (let month = 1; month <= Math.min(tenureInMonths, 60); month++) {
       const interestPayment = balance * monthlyRate;
       const principalPayment = emi - interestPayment;
       balance -= principalPayment;
-      
+
       amortization.push({
         month,
         payment: emi,
@@ -88,7 +88,7 @@ export default function EMILoanCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">EMI Calculator – Calculate Monthly Loan EMI Online</h1>
         <p className="text-muted-foreground">
@@ -181,7 +181,7 @@ export default function EMILoanCalculator() {
                 <br />
                 Where:<br />
                 P = {parseFloat(principal).toLocaleString()} (Principal)<br />
-                r = {(parseFloat(rate)/12/100).toFixed(6)} (Monthly interest rate)<br />
+                r = {(parseFloat(rate) / 12 / 100).toFixed(6)} (Monthly interest rate)<br />
                 n = {tenureUnit === "years" ? `${tenure} × 12 = ${parseFloat(tenure) * 12}` : tenure} (Months)
               </code>
             </div>
@@ -416,23 +416,6 @@ export default function EMILoanCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Compound Interest</p>
-            <p className="text-xs text-muted-foreground">Calculate investment growth</p>
-          </a>
-          <a href="/math-tools/simple-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Simple Interest</p>
-            <p className="text-xs text-muted-foreground">Basic interest calculation</p>
-          </a>
-          <a href="/math-tools/loan-amortization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Amortization Schedule</p>
-            <p className="text-xs text-muted-foreground">Full payment breakdown</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

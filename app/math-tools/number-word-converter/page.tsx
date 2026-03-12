@@ -27,52 +27,52 @@ export default function NumberWordConverter() {
 
   const convertChunkToWords = (num: number): string => {
     if (num === 0) return "";
-    
+
     let result = "";
-    
+
     if (num >= 100) {
       result += ones[Math.floor(num / 100)] + " hundred";
       num %= 100;
       if (num > 0) result += " ";
     }
-    
+
     if (num >= 20) {
       result += tens[Math.floor(num / 10)];
       if (num % 10 > 0) result += "-" + ones[num % 10];
     } else if (num > 0) {
       result += ones[num];
     }
-    
+
     return result;
   };
 
   const numberToWords = (num: number): string => {
     if (num === 0) return "zero";
-    
+
     const isNegative = num < 0;
     num = Math.abs(num);
-    
+
     let result = "";
     let scaleIndex = 0;
-    
+
     while (num > 0) {
       const chunk = num % 1000;
       if (chunk > 0) {
         const chunkWords = convertChunkToWords(chunk);
         const scale = scales[scaleIndex];
         const chunkWithScale = scale ? `${chunkWords} ${scale}` : chunkWords;
-        
+
         if (result) {
           result = `${chunkWithScale} ${result}`;
         } else {
           result = chunkWithScale;
         }
       }
-      
+
       num = Math.floor(num / 1000);
       scaleIndex++;
     }
-    
+
     return isNegative ? "negative " + result : result;
   };
 
@@ -81,22 +81,22 @@ export default function NumberWordConverter() {
       const num = parseInt(d);
       return ones[num] || d;
     });
-    
+
     return digits.join(" ");
   };
 
   const convertToCurrency = (num: number, decimalPart: string | null): string => {
     const dollars = Math.floor(num);
     const cents = decimalPart ? parseInt(decimalPart.padEnd(2, "0").slice(0, 2)) : 0;
-    
+
     let result = "";
-    
+
     if (dollars === 1) {
       result = "one dollar";
     } else {
       result = `${numberToWords(dollars)} dollars`;
     }
-    
+
     if (cents > 0) {
       if (cents === 1) {
         result += " and one cent";
@@ -106,7 +106,7 @@ export default function NumberWordConverter() {
     } else {
       result += " exactly";
     }
-    
+
     return result;
   };
 
@@ -120,14 +120,14 @@ export default function NumberWordConverter() {
     }
 
     const numStr = number.trim().replace(/,/g, "");
-    
+
     if (!/^-?\d+(\.\d+)?$/.test(numStr)) {
       setError("Please enter a valid number");
       return;
     }
 
     const num = parseFloat(numStr);
-    
+
     if (isNaN(num)) {
       setError("Invalid number");
       return;
@@ -152,9 +152,9 @@ export default function NumberWordConverter() {
         const parts = numStr.split(".");
         const integerPart = parseFloat(parts[0]);
         const decimalPart = parts[1];
-        
+
         result = numberToWords(integerPart);
-        
+
         if (decimalPart) {
           result += " point " + decimalToWords(decimalPart);
         }
@@ -190,7 +190,7 @@ export default function NumberWordConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Number to Words Converter – Convert Numbers to English Words</h1>
         <p className="text-muted-foreground">
@@ -509,23 +509,6 @@ export default function NumberWordConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/roman-numeral-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Roman Numeral Converter</p>
-            <p className="text-xs text-muted-foreground">Numbers to Roman numerals</p>
-          </a>
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-          <a href="/math-tools/decimal-to-fraction-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Decimal to Fraction Converter</p>
-            <p className="text-xs text-muted-foreground">Decimal to fraction</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

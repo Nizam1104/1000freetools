@@ -26,7 +26,7 @@ export default function ProbabilityCalculator() {
       if (isNaN(fav) || isNaN(tot) || fav < 0 || tot <= 0 || fav > tot) { setError("Invalid values"); return; }
       const prob = fav / tot;
       const percent = prob * 100;
-      const odds = fav > 0 ? `${fav}:${tot-fav}` : `0:${tot}`;
+      const odds = fav > 0 ? `${fav}:${tot - fav}` : `0:${tot}`;
       setResult({
         probability: prob, percent, odds,
         steps: [`P(Event) = Favorable Outcomes / Total Outcomes`, `P = ${fav} / ${tot}`, `P = ${prob.toFixed(4)} (${percent.toFixed(2)}%)`, `Odds in favor: ${odds}`]
@@ -64,7 +64,7 @@ export default function ProbabilityCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Probability Calculator - Calculate Probability of Events Online</h1>
         <p className="text-muted-foreground">
@@ -124,7 +124,7 @@ export default function ProbabilityCalculator() {
               {result.conditional !== undefined && <><p className="text-sm text-muted-foreground">P(B|A)</p><p className="text-4xl font-bold">{result.conditional.toFixed(4)}</p><p className="text-sm text-muted-foreground mt-2">{result.percent.toFixed(2)}%</p></>}
               {result.odds && <p className="text-sm text-muted-foreground mt-2">Odds: {result.odds}</p>}
             </div>
-            <div className="p-4 border rounded-lg"><h4 className="font-semibold text-sm mb-3">Solution</h4><div className="space-y-2 text-sm font-mono">{result.steps.map((s:string,i:number)=><div key={i}>{s}</div>)}</div></div>
+            <div className="p-4 border rounded-lg"><h4 className="font-semibold text-sm mb-3">Solution</h4><div className="space-y-2 text-sm font-mono">{result.steps.map((s: string, i: number) => <div key={i}>{s}</div>)}</div></div>
           </div>
         )}
       </div>
@@ -281,23 +281,6 @@ export default function ProbabilityCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/permutation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Permutation Calculator</p>
-            <p className="text-xs text-muted-foreground">nPr - arrangements where order matters</p>
-          </a>
-          <a href="/math-tools/combination-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combination Calculator</p>
-            <p className="text-xs text-muted-foreground">nCr - selections where order doesn't matter</p>
-          </a>
-          <a href="/math-tools/mean-median-mode-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Statistics Calculator</p>
-            <p className="text-xs text-muted-foreground">Mean, median, mode, and more</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

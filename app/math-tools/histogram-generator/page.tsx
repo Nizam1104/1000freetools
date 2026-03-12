@@ -66,8 +66,8 @@ export default function HistogramGenerator() {
     const mean = values.reduce((a, b) => a + b, 0) / n;
     const sortedValues = [...values].sort((a, b) => a - b);
     const median = n % 2 === 0
-      ? (sortedValues[n/2 - 1] + sortedValues[n/2]) / 2
-      : sortedValues[Math.floor(n/2)];
+      ? (sortedValues[n / 2 - 1] + sortedValues[n / 2]) / 2
+      : sortedValues[Math.floor(n / 2)];
 
     setResult({
       bins,
@@ -106,7 +106,7 @@ export default function HistogramGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Histogram Generator – Create Histograms Online Free</h1>
         <p className="text-muted-foreground">
@@ -392,23 +392,6 @@ export default function HistogramGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/frequency-distribution-table" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Frequency Distribution</p>
-            <p className="text-xs text-muted-foreground">Tabular view</p>
-          </a>
-          <a href="/math-tools/box-plot-maker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Box Plot Maker</p>
-            <p className="text-xs text-muted-foreground">Five-number summary</p>
-          </a>
-          <a href="/math-tools/standard-deviation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Deviation</p>
-            <p className="text-xs text-muted-foreground">Measure of spread</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -167,35 +167,6 @@ export default function CropImageLayout({
   return (
     <div className="crop-image-layout">
       {children}
-
-      {/* Hidden SEO content for search engines */}
-      <div className="sr-only">
-        <h2>Professional Image Cropping Features</h2>
-        <p>
-          Our advanced image cropper offers professional-grade features
-          including: precise pixel-perfect cropping, multiple selection tools,
-          instant preview, high-quality output, and support for all image
-          formats. Perfect for social media, e-commerce, web design, and
-          professional photo editing.
-        </p>
-
-        <h3>Why Choose Our Online Image Cropper?</h3>
-        <p>
-          Free forever, no watermarks, secure local processing, no registration
-          required, instant results, mobile-friendly, professional tools, and
-          excellent customer support.
-        </p>
-
-        <h3>How to Crop Images Online</h3>
-        <ol>
-          <li>Upload your image by clicking the file input</li>
-          <li>Choose rectangle or freehand selection tool</li>
-          <li>Select the area you want to crop</li>
-          <li>Adjust selection using handles or drag to reposition</li>
-          <li>Click "Crop Image" to process</li>
-          <li>Download your cropped image instantly</li>
-        </ol>
-      </div>
     </div>
   );
 }

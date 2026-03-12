@@ -217,7 +217,7 @@ export default function AngleCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Triangle Angle Calculator – Find Missing Angles in a Triangle</h1>
         <p className="text-muted-foreground">
@@ -562,7 +562,7 @@ export default function AngleCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">Worked Examples</h3>
-        
+
         <div className="space-y-6">
           <div className="p-5 border rounded-lg">
             <h4 className="font-semibold mb-2">Example 1: Finding a missing angle</h4>
@@ -672,19 +672,6 @@ export default function AngleCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <a href="/calculators/pythagorean-theorem-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Pythagorean Theorem</p>
-            <p className="text-xs text-muted-foreground">Right triangle solver</p>
-          </a>
-          <a href="/calculators/law-of-cosines-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Law of Cosines Calculator</p>
-            <p className="text-xs text-muted-foreground">SAS and SSS triangles</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

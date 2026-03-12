@@ -34,8 +34,8 @@ export default function StandardDeviationVarianceCalculator() {
         `Sum of squared differences from mean:`,
         `  Σ(x - μ)² = ${sumSquaredDiffs.toFixed(4)}`,
         ``,
-        `${isPopulation ? "Population" : "Sample"} ${isPopulation ? "" : "(n-1 = " + (n-1) + ")" }:`,
-        `  Variance (σ²) = ${sumSquaredDiffs.toFixed(4)} / ${isPopulation ? n : n-1}`,
+        `${isPopulation ? "Population" : "Sample"} ${isPopulation ? "" : "(n-1 = " + (n - 1) + ")"}:`,
+        `  Variance (σ²) = ${sumSquaredDiffs.toFixed(4)} / ${isPopulation ? n : n - 1}`,
         `  Variance = ${variance.toFixed(4)}`,
         ``,
         `Standard Deviation:`,
@@ -56,7 +56,7 @@ export default function StandardDeviationVarianceCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Standard Deviation Calculator – Variance & SD Online</h1>
         <p className="text-muted-foreground">
@@ -347,23 +347,6 @@ export default function StandardDeviationVarianceCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/mean-median-mode-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Mean Median Mode</p>
-            <p className="text-xs text-muted-foreground">Central tendency</p>
-          </a>
-          <a href="/math-tools/probability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Probability Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate probability</p>
-          </a>
-          <a href="/math-tools/average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Average Calculator</p>
-            <p className="text-xs text-muted-foreground">Simple average</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

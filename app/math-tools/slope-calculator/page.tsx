@@ -126,7 +126,7 @@ export default function SlopeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Slope Calculator – Find the Slope of a Line Online</h1>
         <p className="text-muted-foreground">
@@ -459,23 +459,6 @@ export default function SlopeCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/distance-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Distance Calculator</p>
-            <p className="text-xs text-muted-foreground">Distance between points</p>
-          </a>
-          <a href="/math-tools/midpoint-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Midpoint Calculator</p>
-            <p className="text-xs text-muted-foreground">Find midpoints</p>
-          </a>
-          <a href="/math-tools/line-equation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Line Equation Calculator</p>
-            <p className="text-xs text-muted-foreground">Find line equations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

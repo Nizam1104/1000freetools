@@ -34,16 +34,16 @@ export default function PolygonInteriorAngleSumCalculator() {
     }
 
     const steps: string[] = [];
-    
+
     // Sum of interior angles: (n - 2) × 180°
     const sum = (n - 2) * 180;
-    
+
     // Each interior angle (regular polygon): sum / n
     const eachAngle = sum / n;
-    
+
     // Each exterior angle (regular polygon): 360° / n
     const exteriorAngle = 360 / n;
-    
+
     // Number of diagonals: n(n-3)/2
     const diagonals = (n * (n - 3)) / 2;
 
@@ -100,7 +100,7 @@ export default function PolygonInteriorAngleSumCalculator() {
     };
 
     if (n <= 20) return names[n] || `${n}-gon`;
-    
+
     const tens = Math.floor(n / 10);
     const ones = n % 10;
     const tensNames: Record<number, string> = {
@@ -129,7 +129,7 @@ export default function PolygonInteriorAngleSumCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Polygon Interior Angle Sum Calculator – Find Angle Sum of Polygon</h1>
         <p className="text-muted-foreground">
@@ -253,7 +253,7 @@ export default function PolygonInteriorAngleSumCalculator() {
 
       <section className="border-t pt-8 space-y-6">
         <h3 className="text-xl font-semibold">The Formula Explained</h3>
-        
+
         <div className="p-6 bg-muted rounded-lg">
           <div className="font-mono text-2xl text-center mb-4">Sum = (n - 2) × 180°</div>
           <p className="text-sm text-muted-foreground text-center mb-4">
@@ -461,23 +461,6 @@ export default function PolygonInteriorAngleSumCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/perimeter-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Perimeter Calculator</p>
-            <p className="text-xs text-muted-foreground">2D perimeter</p>
-          </a>
-          <a href="/math-tools/area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Area Calculator</p>
-            <p className="text-xs text-muted-foreground">2D area calculations</p>
-          </a>
-          <a href="/math-tools/angle-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Triangle Angle Calculator</p>
-            <p className="text-xs text-muted-foreground">Triangle angles</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

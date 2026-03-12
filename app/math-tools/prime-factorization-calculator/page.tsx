@@ -80,7 +80,7 @@ export default function PrimeFactorizationCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Prime Factorization Calculator - Find Prime Factors Instantly</h1>
         <p className="text-muted-foreground">
@@ -161,7 +161,7 @@ export default function PrimeFactorizationCalculator() {
                 Multiply the prime factors to verify:
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
-                {result.primeFactors.map(({ prime, exponent }) => 
+                {result.primeFactors.map(({ prime, exponent }) =>
                   exponent === 1 ? `${prime}` : `${prime}^${exponent}`
                 ).join(" × ")} = {number}
               </code>

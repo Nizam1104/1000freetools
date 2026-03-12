@@ -104,7 +104,7 @@ export default function ClipPathMakerPage() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Clip Path Maker</h1>
         <p className="text-muted-foreground">
@@ -391,11 +391,11 @@ export default function ClipPathMakerPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">What Clip-Path Does</h2>
           <p className="text-muted-foreground mb-4">
-            Clip-path cuts elements into shapes. Instead of rectangular divs, you can create triangles, 
+            Clip-path cuts elements into shapes. Instead of rectangular divs, you can create triangles,
             polygons, circles, or any custom shape. The clipped area becomes transparent.
           </p>
           <p className="text-muted-foreground">
-            This maker lets you drag points to create custom polygons, then copies the CSS. 
+            This maker lets you drag points to create custom polygons, then copies the CSS.
             No need to manually calculate coordinates.
           </p>
         </section>
@@ -439,8 +439,8 @@ export default function ClipPathMakerPage() {
           <Card>
             <CardContent className="pt-6">
               <p className="text-sm text-muted-foreground">
-                Clip-path has good support in modern browsers (Chrome, Firefox, Safari, Edge). 
-                Internet Explorer doesn't support it - use SVG clips as a fallback if you need 
+                Clip-path has good support in modern browsers (Chrome, Firefox, Safari, Edge).
+                Internet Explorer doesn't support it - use SVG clips as a fallback if you need
                 legacy support.
               </p>
             </CardContent>

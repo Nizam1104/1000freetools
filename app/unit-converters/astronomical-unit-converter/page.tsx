@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function AstronomicalUnitConverterPage() {
   const config = converterMappings["Astronomical Unit Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function AstronomicalUnitConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Astronomical Unit (AU) Converter</h1>
         <p className="text-muted-foreground">Convert astronomical units to light-years, parsecs, kilometers, miles, and more. Free online AU converter for planetary science, astronomy, and space exploration calculations.</p>
@@ -130,9 +130,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">AU to Kilometers</p>
               <p className="text-muted-foreground">
-                1 AU = 149,597,870.7 km<br/>
-                10 AU = 1.496 billion km<br/>
-                100 AU = 14.96 billion km<br/>
+                1 AU = 149,597,870.7 km<br />
+                10 AU = 1.496 billion km<br />
+                100 AU = 14.96 billion km<br />
                 Multiply AU by 149,597,870.7
               </p>
             </div>
@@ -140,9 +140,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">AU to Miles</p>
               <p className="text-muted-foreground">
-                1 AU = 92,955,807 miles<br/>
-                10 AU = 929.6 million miles<br/>
-                100 AU = 9.30 billion miles<br/>
+                1 AU = 92,955,807 miles<br />
+                10 AU = 929.6 million miles<br />
+                100 AU = 9.30 billion miles<br />
                 Multiply AU by 92,955,807
               </p>
             </div>
@@ -150,9 +150,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">AU to Light-Time</p>
               <p className="text-muted-foreground">
-                1 AU = 8.317 light-minutes<br/>
-                1 AU = 499.0 light-seconds<br/>
-                1 light-year = 63,241 AU<br/>
+                1 AU = 8.317 light-minutes<br />
+                1 AU = 499.0 light-seconds<br />
+                1 light-year = 63,241 AU<br />
                 Light time = AU × 499 seconds
               </p>
             </div>
@@ -160,9 +160,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">AU to Parsecs</p>
               <p className="text-muted-foreground">
-                1 AU = 4.848 × 10⁻⁶ parsecs<br/>
-                1 parsec = 206,265 AU<br/>
-                1 kiloparsec = 2.06 × 10⁸ AU<br/>
+                1 AU = 4.848 × 10⁻⁶ parsecs<br />
+                1 parsec = 206,265 AU<br />
+                1 kiloparsec = 2.06 × 10⁸ AU<br />
                 Divide AU by 206,265 for parsecs
               </p>
             </div>
@@ -176,9 +176,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: Earth to Mars</p>
               <p className="text-muted-foreground">
-                Closest approach: 0.52 AU<br/>
-                Kilometers: 0.52 × 149.6 million = 77.8 million km<br/>
-                Miles: 0.52 × 92.96 million = 48.3 million miles<br/>
+                Closest approach: 0.52 AU<br />
+                Kilometers: 0.52 × 149.6 million = 77.8 million km<br />
+                Miles: 0.52 × 92.96 million = 48.3 million miles<br />
                 Light time: 4.3 minutes
               </p>
             </div>
@@ -186,9 +186,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: Voyager 1 Distance</p>
               <p className="text-muted-foreground">
-                Current distance: ~160 AU<br/>
-                Kilometers: 160 × 149.6 million = 23.9 billion km<br/>
-                Light-hours: 160 × 8.3 / 60 = 22.1 hours<br/>
+                Current distance: ~160 AU<br />
+                Kilometers: 160 × 149.6 million = 23.9 billion km<br />
+                Light-hours: 160 × 8.3 / 60 = 22.1 hours<br />
                 Signal round-trip: 44+ hours
               </p>
             </div>
@@ -196,9 +196,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Oort Cloud</p>
               <p className="text-muted-foreground">
-                Inner edge: 2,000 AU<br/>
-                Outer edge: 100,000 AU<br/>
-                Light-years: 100,000 / 63,241 = 1.58 ly<br/>
+                Inner edge: 2,000 AU<br />
+                Outer edge: 100,000 AU<br />
+                Light-years: 100,000 / 63,241 = 1.58 ly<br />
                 Boundary of solar system
               </p>
             </div>
@@ -206,9 +206,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Proxima Centauri</p>
               <p className="text-muted-foreground">
-                Distance: 4.24 light-years<br/>
-                AU: 4.24 × 63,241 = 268,142 AU<br/>
-                Kilometers: 4.01 × 10¹³ km<br/>
+                Distance: 4.24 light-years<br />
+                AU: 4.24 × 63,241 = 268,142 AU<br />
+                Kilometers: 4.01 × 10¹³ km<br />
                 Nearest star to Sun
               </p>
             </div>
@@ -222,9 +222,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Planetary Missions</p>
               <p className="text-muted-foreground">
-                Moon: 0.0026 AU (384,400 km)<br/>
-                Mars rovers: 1.52 AU average<br/>
-                Cassini (Saturn): 9.58 AU<br/>
+                Moon: 0.0026 AU (384,400 km)<br />
+                Mars rovers: 1.52 AU average<br />
+                Cassini (Saturn): 9.58 AU<br />
                 New Horizons (Pluto): 32.9 AU at flyby
               </p>
             </div>
@@ -232,9 +232,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Communication Delays</p>
               <p className="text-muted-foreground">
-                Moon: 1.3 seconds<br/>
-                Mars: 3-22 minutes<br/>
-                Jupiter: 35-52 minutes<br/>
+                Moon: 1.3 seconds<br />
+                Mars: 3-22 minutes<br />
+                Jupiter: 35-52 minutes<br />
                 Pluto: 4.5-6.5 hours
               </p>
             </div>
@@ -242,9 +242,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Travel Times (Current Tech)</p>
               <p className="text-muted-foreground">
-                Moon: 3 days<br/>
-                Mars: 6-9 months<br/>
-                Jupiter: 6 years<br/>
+                Moon: 3 days<br />
+                Mars: 6-9 months<br />
+                Jupiter: 6 years<br />
                 Pluto: 9.5 years (New Horizons)
               </p>
             </div>
@@ -252,9 +252,9 @@ export default function AstronomicalUnitConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Heliopause Boundary</p>
               <p className="text-muted-foreground">
-                Distance: ~120 AU<br/>
-                Voyager 1 crossed: 2012<br/>
-                Voyager 2 crossed: 2018<br/>
+                Distance: ~120 AU<br />
+                Voyager 1 crossed: 2012<br />
+                Voyager 2 crossed: 2018<br />
                 Edge of Sun's influence
               </p>
             </div>

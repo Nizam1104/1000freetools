@@ -111,7 +111,7 @@ export default function RandomNumberGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Random Number Generator</h1>
         <p className="text-muted-foreground">
@@ -365,23 +365,6 @@ export default function RandomNumberGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/probability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Probability Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate event probabilities</p>
-          </a>
-          <a href="/math-tools/combinations-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combinations Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate nCr</p>
-          </a>
-          <a href="/math-tools/statistics-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Statistics Calculator</p>
-            <p className="text-xs text-muted-foreground">Analyze data sets</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

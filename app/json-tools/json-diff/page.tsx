@@ -226,13 +226,12 @@ export default function JsonDiffPage() {
         <div className="flex items-center gap-2">
           <span className="font-mono text-sm font-medium">{item.key}</span>
           <span
-            className={`text-xs px-2 py-0.5 rounded-full ${
-              item.type === "added"
+            className={`text-xs px-2 py-0.5 rounded-full ${item.type === "added"
                 ? "bg-green-500 text-white"
                 : item.type === "removed"
                   ? "bg-red-500 text-white"
                   : "bg-yellow-500 text-white"
-            }`}
+              }`}
           >
             {typeLabel}
           </span>
@@ -260,7 +259,7 @@ export default function JsonDiffPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-2 md:px-4 py-2 md:py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">

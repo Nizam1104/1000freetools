@@ -5,7 +5,7 @@ import { converterMappings } from "@/components/unit-converters/converter-mappin
 
 export default function ClothingSizeConverterPage() {
   const config = converterMappings["Clothing Size Converter"];
-  
+
   if (!config) {
     return (
       <div className="w-full max-w-2xl mx-auto p-4">
@@ -13,9 +13,9 @@ export default function ClothingSizeConverterPage() {
       </div>
     );
   }
-  
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Clothing Size Converter</h1>
         <p className="text-muted-foreground">Convert clothing sizes between US, UK, EU, and Asian standards for men, women, and kids. Free online clothes size converter for international shopping and fashion retail.</p>
@@ -219,9 +219,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Bust/Chest Measurement</p>
               <p className="text-muted-foreground">
-                Measure around fullest part of bust/chest<br/>
-                Keep tape parallel to floor<br/>
-                Don't pull tape too tight<br/>
+                Measure around fullest part of bust/chest<br />
+                Keep tape parallel to floor<br />
+                Don't pull tape too tight<br />
                 Breathe normally during measurement
               </p>
             </div>
@@ -229,9 +229,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Waist Measurement</p>
               <p className="text-muted-foreground">
-                Measure at natural waistline<br/>
-                Usually at narrowest point<br/>
-                Above belly button<br/>
+                Measure at natural waistline<br />
+                Usually at narrowest point<br />
+                Above belly button<br />
                 Keep one finger under tape
               </p>
             </div>
@@ -239,9 +239,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Hip Measurement</p>
               <p className="text-muted-foreground">
-                Measure around fullest part of hips<br/>
-                Usually 7-9 inches below waist<br/>
-                Keep feet together<br/>
+                Measure around fullest part of hips<br />
+                Usually 7-9 inches below waist<br />
+                Keep feet together<br />
                 Important for pants and skirts
               </p>
             </div>
@@ -249,9 +249,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Inseam Measurement</p>
               <p className="text-muted-foreground">
-                Measure from crotch to ankle bone<br/>
-                Stand straight with legs slightly apart<br/>
-                Use well-fitting pants as reference<br/>
+                Measure from crotch to ankle bone<br />
+                Stand straight with legs slightly apart<br />
+                Use well-fitting pants as reference<br />
                 Important for pants length
               </p>
             </div>
@@ -265,9 +265,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 1: US to EU Women's</p>
               <p className="text-muted-foreground">
-                US Size: 8<br/>
-                UK Size: 12<br/>
-                EU Size: 40<br/>
+                US Size: 8<br />
+                UK Size: 12<br />
+                EU Size: 40<br />
                 Italian Size: 44
               </p>
             </div>
@@ -275,9 +275,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 2: EU to US Men's</p>
               <p className="text-muted-foreground">
-                EU Size: 50<br/>
-                US/UK Size: L<br/>
-                Chest: 40-42 inches<br/>
+                EU Size: 50<br />
+                US/UK Size: L<br />
+                Chest: 40-42 inches<br />
                 Waist: 34-36 inches
               </p>
             </div>
@@ -285,9 +285,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 3: Asian Size Conversion</p>
               <p className="text-muted-foreground">
-                Asian L ≈ US M<br/>
-                Asian XL ≈ US L<br/>
-                Asian XXL ≈ US XL<br/>
+                Asian L ≈ US M<br />
+                Asian XL ≈ US L<br />
+                Asian XXL ≈ US XL<br />
                 Always check specific brand charts
               </p>
             </div>
@@ -295,9 +295,9 @@ export default function ClothingSizeConverterPage() {
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-semibold mb-2">Example 4: Plus Size Conversion</p>
               <p className="text-muted-foreground">
-                US 16W = UK 20 = EU 48<br/>
-                US 18W = UK 22 = EU 50<br/>
-                US 20W = UK 24 = EU 52<br/>
+                US 16W = UK 20 = EU 48<br />
+                US 18W = UK 22 = EU 50<br />
+                US 20W = UK 24 = EU 52<br />
                 W indicates women's plus sizing
               </p>
             </div>

@@ -15,7 +15,7 @@ export default function SpecificVolumePage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Specific Volume Converter</h1>
         <p className="text-muted-foreground">Convert specific volume units including m³/kg, L/kg, ft³/lb, and more. Accurate online specific volume converter for thermodynamics and fluid mechanics.</p>
@@ -159,7 +159,7 @@ export default function SpecificVolumePage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">What is the difference between specific volume and density?</h3>
             <p className="text-muted-foreground">

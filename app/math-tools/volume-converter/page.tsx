@@ -102,7 +102,7 @@ export default function VolumeConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Volume Converter – Convert Liters, Gallons, Cubic Meters</h1>
         <p className="text-muted-foreground">
@@ -196,7 +196,7 @@ export default function VolumeConverter() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Volume Conversions</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Cooking: Cups to Milliliters</h3>
           <p className="text-muted-foreground mb-2">
             Converting a recipe from US to metric measurements:
@@ -252,7 +252,7 @@ export default function VolumeConverter() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What's the difference between US and UK gallons?</h3>
@@ -302,24 +302,6 @@ export default function VolumeConverter() {
                 Different units evolved for different purposes: gallons for liquids, bushels for grain, cubic feet for lumber, etc. The metric system simplified this with a single base unit (liter) and prefixes. However, traditional units persist in cooking, automotive, and certain industries due to convention.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/weight-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Weight Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert between kilograms, pounds, grams, ounces, and other mass units.</p>
-            </a>
-            <a href="/math-tools/length-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Length Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert between meters, feet, inches, kilometers, miles, and more.</p>
-            </a>
-            <a href="/math-tools/temperature-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Temperature Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert between Celsius, Fahrenheit, and Kelvin scales.</p>
-            </a>
           </div>
         </section>
       </div>

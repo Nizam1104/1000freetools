@@ -266,6 +266,10 @@
                 "href": "/json-tools/json-validator"
             },
             {
+                "name": "Add Ids to JSON",
+                "href": "/json-tools/add-id-to-json"
+            },
+            {
                 "name": "JSON Formatter",
                 "description": "Format and beautify raw JSON for readability.",
                 "href": "/json-tools/json-formatter-beautifier"

@@ -59,7 +59,7 @@ const faqsData = [
 
 export default function TextReverserPage() {
   return (
-    <div className="min-h-screen max-w-6xl mx-auto">
+    <div className="min-h-screen max-w-6xl mx-auto px-2 md:px-4">
       <div className="mb-4">
         <Breadcrumb>
           <BreadcrumbList>

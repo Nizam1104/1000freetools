@@ -99,33 +99,33 @@ export default function CorrelationCoefficientCalculator() {
 
   const loadExample = (type: string) => {
     const examples: Record<string, { x: string; y: string }> = {
-      positive: { 
-        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10", 
-        y: "2.1, 3.9, 6.2, 7.8, 10.1, 12.3, 14.2, 16.1, 18.2, 20.1" 
+      positive: {
+        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+        y: "2.1, 3.9, 6.2, 7.8, 10.1, 12.3, 14.2, 16.1, 18.2, 20.1"
       },
-      negative: { 
-        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10", 
-        y: "20, 18, 16, 14, 12, 10, 8, 6, 4, 2" 
+      negative: {
+        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+        y: "20, 18, 16, 14, 12, 10, 8, 6, 4, 2"
       },
-      weak: { 
-        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10", 
-        y: "5, 8, 6, 9, 7, 10, 8, 11, 9, 12" 
+      weak: {
+        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+        y: "5, 8, 6, 9, 7, 10, 8, 11, 9, 12"
       },
-      height_weight: { 
-        x: "160, 165, 170, 175, 180, 165, 170, 175, 180, 185", 
-        y: "55, 58, 65, 70, 78, 60, 67, 72, 80, 85" 
+      height_weight: {
+        x: "160, 165, 170, 175, 180, 165, 170, 175, 180, 185",
+        y: "55, 58, 65, 70, 78, 60, 67, 72, 80, 85"
       },
-      study_grades: { 
-        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10", 
-        y: "65, 68, 72, 75, 78, 82, 85, 88, 90, 94" 
+      study_grades: {
+        x: "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+        y: "65, 68, 72, 75, 78, 82, 85, 88, 90, 94"
       },
-      price_demand: { 
-        x: "10, 15, 20, 25, 30, 35, 40, 45, 50, 55", 
-        y: "100, 92, 85, 78, 70, 62, 55, 48, 42, 35" 
+      price_demand: {
+        x: "10, 15, 20, 25, 30, 35, 40, 45, 50, 55",
+        y: "100, 92, 85, 78, 70, 62, 55, 48, 42, 35"
       },
-      perfect: { 
-        x: "1, 2, 3, 4, 5", 
-        y: "2, 4, 6, 8, 10" 
+      perfect: {
+        x: "1, 2, 3, 4, 5",
+        y: "2, 4, 6, 8, 10"
       }
     };
     const ex = examples[type] || examples.positive;
@@ -135,7 +135,7 @@ export default function CorrelationCoefficientCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Correlation Coefficient Calculator – Find Pearson r Online</h1>
         <p className="text-muted-foreground">
@@ -192,10 +192,9 @@ export default function CorrelationCoefficientCalculator() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="p-4 bg-muted rounded-lg text-center">
                 <p className="text-sm text-muted-foreground mb-2">Correlation (r)</p>
-                <p className={`text-2xl font-bold ${
-                  result.r > 0.7 ? 'text-green-600' :
-                  result.r < -0.7 ? 'text-red-600' : ''
-                }`}>{result.r}</p>
+                <p className={`text-2xl font-bold ${result.r > 0.7 ? 'text-green-600' :
+                    result.r < -0.7 ? 'text-red-600' : ''
+                  }`}>{result.r}</p>
               </div>
               <div className="p-4 bg-muted rounded-lg text-center">
                 <p className="text-sm text-muted-foreground mb-2">R²</p>

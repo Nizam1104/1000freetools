@@ -15,7 +15,7 @@ export default function DigitalImageResolutionPage() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-2 md:px-4">
       <div className="mb-6">
         <h1 className="text-3xl font-semibold mb-2">Digital Image Resolution Converter</h1>
         <p className="text-muted-foreground">Convert digital image resolution units — DPI, PPI, dots/cm, pixels/mm, and more. Free online resolution converter for photography, printing, and graphic design.</p>
@@ -443,7 +443,7 @@ export default function DigitalImageResolutionPage() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-2">Is 72 DPI the same as 72 PPI?</h3>
             <p className="text-muted-foreground">

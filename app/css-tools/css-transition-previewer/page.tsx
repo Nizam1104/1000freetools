@@ -29,7 +29,7 @@ export default function CssTransitionPreviewerPage() {
   const [customBezier, setCustomBezier] = useState({ x1: 0.68, y1: -0.55, x2: 0.27, y2: 1.55 });
 
   const generateTransitionCSS = () => {
-    const easingValue = easing === "custom" 
+    const easingValue = easing === "custom"
       ? `cubic-bezier(${customBezier.x1}, ${customBezier.y1}, ${customBezier.x2}, ${customBezier.y2})`
       : easing;
     return `${transitionProperty} ${duration}ms ${easingValue} ${delay}ms`;
@@ -52,7 +52,7 @@ export default function CssTransitionPreviewerPage() {
     backgroundColor: isHovered ? "#6366f1" : "#e0e7ff",
     color: isHovered ? "#fff" : "#333",
     borderRadius: isHovered ? "12px" : "8px",
-    boxShadow: isHovered 
+    boxShadow: isHovered
       ? "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)"
       : "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
   };
@@ -66,7 +66,7 @@ export default function CssTransitionPreviewerPage() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">CSS Transition Previewer</h1>
         <p className="text-muted-foreground">
@@ -227,10 +227,10 @@ export default function CssTransitionPreviewerPage() {
                 <rect width="100" height="100" fill="url(#grid)" />
                 <line x1="0" y1="100" x2="100" y2="100" stroke="#333" strokeWidth="1" />
                 <line x1="0" y1="100" x2="0" y2="0" stroke="#333" strokeWidth="1" />
-                
+
                 {/* Linear */}
                 <path d="M 0 100 L 100 0" stroke="#9ca3af" strokeWidth="1" strokeDasharray="2,2" fill="none" />
-                
+
                 {/* Current easing curve */}
                 {easing === "custom" ? (
                   <path
@@ -245,19 +245,19 @@ export default function CssTransitionPreviewerPage() {
                       easing === "ease-in"
                         ? "M 0 100 C 50 100, 50 0, 100 0"
                         : easing === "ease-out"
-                        ? "M 0 100 C 50 100, 0 0, 100 0"
-                        : easing === "ease-in-out"
-                        ? "M 0 100 C 25 100, 75 0, 100 0"
-                        : easing === "ease"
-                        ? "M 0 100 C 25 100, 25 0, 100 0"
-                        : "M 0 100 L 100 0"
+                          ? "M 0 100 C 50 100, 0 0, 100 0"
+                          : easing === "ease-in-out"
+                            ? "M 0 100 C 25 100, 75 0, 100 0"
+                            : easing === "ease"
+                              ? "M 0 100 C 25 100, 25 0, 100 0"
+                              : "M 0 100 L 100 0"
                     }
                     stroke="#6366f1"
                     strokeWidth="2"
                     fill="none"
                   />
                 )}
-                
+
                 <text x="50" y="115" textAnchor="middle" fontSize="8" fill="#666">Time</text>
                 <text x="-10" y="50" textAnchor="middle" fontSize="8" fill="#666" transform="rotate(-90, -10, 50)">Progress</text>
               </svg>
@@ -307,11 +307,11 @@ export default function CssTransitionPreviewerPage() {
           <div className="prose prose-sm max-w-none text-muted-foreground">
             <p className="mb-4">
               CSS transitions allow you to smoothly interpolate between CSS property values over a specified duration.
-              They're essential for creating polished, professional user interfaces with smooth hover effects, 
+              They're essential for creating polished, professional user interfaces with smooth hover effects,
               state changes, and animations.
             </p>
             <p>
-              The <code>transition</code> shorthand property accepts four values: property, duration, timing function 
+              The <code>transition</code> shorthand property accepts four values: property, duration, timing function
               (easing), and delay. The timing function controls the rate of change during the transition.
             </p>
           </div>
@@ -322,7 +322,7 @@ export default function CssTransitionPreviewerPage() {
           <Card>
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4">
-                Cubic bezier curves define custom easing functions using four control points: P0(0,0), P1(x1,y1), 
+                Cubic bezier curves define custom easing functions using four control points: P0(0,0), P1(x1,y1),
                 P2(x2,y2), and P3(1,1). The first and last points are fixed, so you only control P1 and P2.
               </p>
               <div className="grid gap-4 md:grid-cols-2">

@@ -32,8 +32,8 @@ export default function ModuloCalculator() {
         `Calculate ${a} mod ${n}`,
         ``,
         `Step 1: Find the quotient`,
-        `${a} / ${n} = ${a/n} (exact division)`,
-        `Floor(${a/n}) = ${quotient}`,
+        `${a} / ${n} = ${a / n} (exact division)`,
+        `Floor(${a / n}) = ${quotient}`,
         ``,
         `Step 2: Multiply quotient by divisor`,
         `${quotient} x ${n} = ${quotient * n}`,
@@ -65,7 +65,7 @@ export default function ModuloCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="w-full mx-auto space-y-8">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4">

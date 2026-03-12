@@ -94,7 +94,7 @@ export default function PresentValueCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Present Value Calculator - Compute PV of Future Money</h1>
         <p className="text-muted-foreground">
@@ -203,7 +203,7 @@ export default function PresentValueCalculator() {
               <h4 className="font-semibold text-sm mb-2">Formula & Calculation</h4>
               <code className="text-sm font-mono bg-muted px-3 py-2 rounded block">
                 PV = FV / (1 + r/n)^(nt)<br />
-                PV = ${futureValue} / (1 + {(parseFloat(rate.toString())/100).toFixed(4)}/{getCompoundingFrequency()})^({getCompoundingFrequency()} × {timeUnit === "months" ? `${time}/12` : time})<br />
+                PV = ${futureValue} / (1 + {(parseFloat(rate.toString()) / 100).toFixed(4)}/{getCompoundingFrequency()})^({getCompoundingFrequency()} × {timeUnit === "months" ? `${time}/12` : time})<br />
                 PV = ${result.presentValue.toLocaleString()}<br />
                 <br />
                 Discount = FV - PV = ${futureValue} - ${result.presentValue.toLocaleString()} = ${result.discountAmount.toLocaleString()}

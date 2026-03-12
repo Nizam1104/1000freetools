@@ -144,7 +144,7 @@ export default function SurfaceAreaCalculator() {
         steps.push(`Height (h) = ${height}`);
         steps.push(`SA = 2(lw + lh + wh)`);
         steps.push(`SA = 2(${length}×${width} + ${length}×${height} + ${width}×${height})`);
-        steps.push(`SA = 2(${length*width} + ${length*height} + ${width*height}) = ${surfaceArea}`);
+        steps.push(`SA = 2(${length * width} + ${length * height} + ${width * height}) = ${surfaceArea}`);
         break;
       }
 
@@ -229,7 +229,7 @@ export default function SurfaceAreaCalculator() {
         surfaceArea = baseArea + lateralArea;
         steps.push(`Base side (b) = ${base}`);
         steps.push(`Height (h) = ${height}`);
-        steps.push(`Slant height (s) = √(h² + (b/2)²) = √(${height}² + ${base/2}²) = ${slantHeight.toFixed(4)}`);
+        steps.push(`Slant height (s) = √(h² + (b/2)²) = √(${height}² + ${base / 2}²) = ${slantHeight.toFixed(4)}`);
         steps.push(`Base area = b² = ${base}² = ${baseArea}`);
         steps.push(`Lateral area = 2bs = 2 × ${base} × ${slantHeight.toFixed(4)} = ${lateralArea.toFixed(4)}`);
         steps.push(`SA = ${baseArea} + ${lateralArea.toFixed(4)} ≈ ${surfaceArea}`);
@@ -303,7 +303,7 @@ export default function SurfaceAreaCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Surface Area Calculator – Find Surface Area of Any 3D Shape</h1>
         <p className="text-muted-foreground">
@@ -613,19 +613,6 @@ export default function SurfaceAreaCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <a href="/math-tools/volume-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Volume Calculator</p>
-            <p className="text-xs text-muted-foreground">3D volume calculations</p>
-          </a>
-          <a href="/math-tools/perimeter-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Perimeter Calculator</p>
-            <p className="text-xs text-muted-foreground">2D perimeter</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }
