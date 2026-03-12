@@ -115,7 +115,7 @@ export default function ScatterPlotGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Scatter Plot Generator – Create Scatter Plots Online Free</h1>
         <p className="text-muted-foreground">
@@ -208,7 +208,7 @@ export default function ScatterPlotGenerator() {
               <div className="p-4 bg-muted rounded-lg text-center">
                 <p className="text-sm text-muted-foreground mb-2">Correlation (r)</p>
                 <p className={`text-xl font-bold ${result.r > 0.7 ? 'text-green-600' :
-                    result.r < -0.7 ? 'text-red-600' : ''
+                  result.r < -0.7 ? 'text-red-600' : ''
                   }`}>{result.r}</p>
               </div>
               <div className="p-4 bg-muted rounded-lg text-center">

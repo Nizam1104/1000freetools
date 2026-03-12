@@ -23,7 +23,7 @@ export default function DigitSumCalculator() {
 
     const digits = numStr.split("");
     const steps: string[] = [];
-    
+
     steps.push(`Number: ${numStr}`);
     steps.push(`Digits: ${digits.join(", ")}`);
     steps.push(`Sum: ${digits.join(" + ")} = ${digits.reduce((acc, digit) => acc + parseInt(digit), 0)}`);
@@ -31,13 +31,13 @@ export default function DigitSumCalculator() {
     let sum = digits.reduce((acc, digit) => acc + parseInt(digit), 0);
     let recursiveSum = sum;
     let stepCount = 1;
-    
+
     while (recursiveSum >= 10) {
       const recursiveDigits = String(recursiveSum).split("");
       steps.push(`Step ${++stepCount}: ${recursiveDigits.join(" + ")} = ${recursiveDigits.reduce((acc, d) => acc + parseInt(d), 0)}`);
       recursiveSum = recursiveDigits.reduce((acc, d) => acc + parseInt(d), 0);
     }
-    
+
     steps.push(`Digital root: ${recursiveSum}`);
 
     setResult({ sum, digits, recursiveSum, steps });
@@ -54,7 +54,7 @@ export default function DigitSumCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Digit Sum Calculator – Find Sum of Digits Online</h1>
         <p className="text-muted-foreground">

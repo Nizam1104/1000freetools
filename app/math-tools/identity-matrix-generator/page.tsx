@@ -57,7 +57,7 @@ export default function IdentityMatrixGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Identity Matrix Generator – Create Iₙ Matrices</h1>
         <p className="text-muted-foreground">
@@ -110,9 +110,8 @@ export default function IdentityMatrixGenerator() {
                     row.map((val, j) => (
                       <div
                         key={`${i}-${j}`}
-                        className={`w-12 h-12 flex items-center justify-center font-mono text-lg ${
-                          val === 1 ? "bg-primary text-primary-foreground rounded" : "text-muted-foreground"
-                        }`}
+                        className={`w-12 h-12 flex items-center justify-center font-mono text-lg ${val === 1 ? "bg-primary text-primary-foreground rounded" : "text-muted-foreground"
+                          }`}
                       >
                         {val}
                       </div>

@@ -77,7 +77,7 @@ export default function IntersectionOfSetsCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Intersection of Sets Calculator – Find A ∩ B Online</h1>
         <p className="text-muted-foreground">

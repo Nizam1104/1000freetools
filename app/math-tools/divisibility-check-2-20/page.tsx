@@ -80,7 +80,7 @@ export default function DivisibilityCheck2to20() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Divisibility Check (2-20) – Test Number Divisibility</h1>
         <p className="text-muted-foreground">
@@ -131,9 +131,8 @@ export default function DivisibilityCheck2to20() {
               {result.checks.map((check: any) => (
                 <div
                   key={check.divisor}
-                  className={`p-3 rounded-lg text-center ${
-                    check.divisible ? 'bg-green-100 dark:bg-green-900/30' : 'bg-red-100 dark:bg-red-900/30'
-                  }`}
+                  className={`p-3 rounded-lg text-center ${check.divisible ? 'bg-green-100 dark:bg-green-900/30' : 'bg-red-100 dark:bg-red-900/30'
+                    }`}
                 >
                   <p className="text-sm font-semibold">÷ {check.divisor}</p>
                   <p className={`text-lg font-bold ${check.divisible ? 'text-green-600' : 'text-red-600'}`}>

@@ -40,7 +40,7 @@ export default function LongMultiplicationCalculator() {
     const n1 = parseInt(num1);
     const n2 = parseInt(num2);
     const multiplicationSteps: MultiplicationStep[] = [];
-    
+
     const num2Str = num2.toString();
     let totalProduct = 0;
 
@@ -95,7 +95,7 @@ export default function LongMultiplicationCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Long Multiplication Calculator – Step-by-Step Multiplication</h1>
         <p className="text-muted-foreground">

@@ -131,7 +131,7 @@ export default function EstimationRoundingTool() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Estimation & Rounding Tool – Round to Any Place Value</h1>
         <p className="text-muted-foreground">

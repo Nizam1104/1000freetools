@@ -67,7 +67,7 @@ export default function TipCalculator() {
   const quickTips = [10, 15, 18, 20, 25];
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Tip Calculator – Calculate Tip & Split Bill Online</h1>
         <p className="text-muted-foreground">

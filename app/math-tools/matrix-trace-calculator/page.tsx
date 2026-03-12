@@ -178,7 +178,7 @@ export default function MatrixTraceCalculator() {
     const example = examples[index];
     const exampleMatrix = example.matrix;
     const newSize = exampleMatrix.length;
-    
+
     setSize(newSize);
     setMatrix(exampleMatrix);
 
@@ -247,7 +247,7 @@ export default function MatrixTraceCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Trace Calculator – Find tr(A) Online</h1>
         <p className="text-muted-foreground">

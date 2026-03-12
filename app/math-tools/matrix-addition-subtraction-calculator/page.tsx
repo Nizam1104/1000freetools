@@ -257,7 +257,7 @@ export default function MatrixAdditionSubtractionCalculator() {
   const loadExample = (index: number) => {
     const example = examples[index];
     const matrixSize = example.matrices.a.length;
-    
+
     setSize(matrixSize);
     setMatrixA(example.matrices.a);
     setMatrixB(example.matrices.b);
@@ -319,9 +319,8 @@ export default function MatrixAdditionSubtractionCalculator() {
               row.map((cell, ci) => (
                 <div
                   key={`${ri}-${ci}`}
-                  className={`w-14 h-10 flex items-center justify-center font-mono rounded ${
-                    highlight ? "bg-primary text-primary-foreground" : "bg-muted"
-                  }`}
+                  className={`w-14 h-10 flex items-center justify-center font-mono rounded ${highlight ? "bg-primary text-primary-foreground" : "bg-muted"
+                    }`}
                 >
                   {round(cell)}
                 </div>
@@ -336,7 +335,7 @@ export default function MatrixAdditionSubtractionCalculator() {
   );
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Addition & Subtraction Calculator – Compute Matrices Online</h1>
         <p className="text-muted-foreground">

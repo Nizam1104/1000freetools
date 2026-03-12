@@ -59,9 +59,8 @@ export default function MultiplicationTable() {
                   return (
                     <td
                       key={`${row}-${col}`}
-                      className={`border p-2 text-center cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors ${
-                        isSquare ? 'bg-accent' : isEven ? '' : 'bg-muted/30'
-                      }`}
+                      className={`border p-2 text-center cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors ${isSquare ? 'bg-accent' : isEven ? '' : 'bg-muted/30'
+                        }`}
                       onMouseEnter={() => setHighlight({ row, col })}
                       onMouseLeave={() => setHighlight(null)}
                     >
@@ -86,7 +85,7 @@ export default function MultiplicationTable() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Multiplication Table Generator</h1>
         <p className="text-muted-foreground">

@@ -112,7 +112,7 @@ export default function BoxPlotGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Box Plot Generator – Create Box and Whisker Plots Online</h1>
         <p className="text-muted-foreground">
@@ -162,7 +162,7 @@ export default function BoxPlotGenerator() {
                   <div className="absolute top-0 bottom-0 left-0 w-px bg-border"></div>
                   <div className="absolute top-0 bottom-0 right-0 w-px bg-border"></div>
                   <div className="absolute top-1/2 left-0 right-0 h-16 bg-primary/20 border-2 border-primary rounded"></div>
-                  <div 
+                  <div
                     className="absolute top-0 bottom-0 w-px bg-destructive"
                     style={{ left: `${((result.median - result.whiskerLow) / (result.whiskerHigh - result.whiskerLow)) * 100}%` }}
                   ></div>

@@ -91,7 +91,7 @@ export default function LawOfSinesCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Law of Sines Calculator – Solve Triangles Using Sine Rule</h1>
         <p className="text-muted-foreground">
@@ -137,10 +137,10 @@ export default function LawOfSinesCalculator() {
 
         <div className="flex flex-wrap gap-2">
           <span className="text-sm text-muted-foreground self-center">Examples:</span>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("asa", {A: "45", B: "60", a: "10"})}>ASA: 45°,60°,10</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("asa", {A: "30", B: "45", a: "8"})}>ASA: 30°,45°,8</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("aas", {A: "50", B: "70", a: "12"})}>AAS: 50°,70°,12</Button>
-          <Button variant="ghost" size="sm" onClick={() => loadExample("asa", {A: "60", B: "60", a: "5"})}>ASA: 60°,60°,5 (equil.)</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("asa", { A: "45", B: "60", a: "10" })}>ASA: 45°,60°,10</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("asa", { A: "30", B: "45", a: "8" })}>ASA: 30°,45°,8</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("aas", { A: "50", B: "70", a: "12" })}>AAS: 50°,70°,12</Button>
+          <Button variant="ghost" size="sm" onClick={() => loadExample("asa", { A: "60", B: "60", a: "5" })}>ASA: 60°,60°,5 (equil.)</Button>
         </div>
 
         {result && (

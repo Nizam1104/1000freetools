@@ -159,7 +159,7 @@ export default function MatrixInverseCalculator() {
       `For a 2x2 matrix [[a,b],[c,d]], the inverse is (1/det) x [[d,-b],[-c,a]]`,
       ``,
       `Step 1: Calculate determinant`,
-      `det = ad - bc = ${a}x${d} - ${b}x${c} = ${a*d} - ${b*c} = ${det}`,
+      `det = ad - bc = ${a}x${d} - ${b}x${c} = ${a * d} - ${b * c} = ${det}`,
       ``,
       `Step 2: Find the adjugate matrix`,
       `Swap diagonal elements: a<->d`,
@@ -289,7 +289,7 @@ export default function MatrixInverseCalculator() {
     const example = examples[index];
     const exampleMatrix = example.matrix;
     const newSize = exampleMatrix.length;
-    
+
     setSize(newSize);
     setMatrix(exampleMatrix);
 
@@ -326,7 +326,7 @@ export default function MatrixInverseCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Matrix Inverse Calculator – Find Inverse of Any Matrix</h1>
         <p className="text-muted-foreground">
@@ -474,7 +474,7 @@ export default function MatrixInverseCalculator() {
           <div className="p-4 border rounded-lg">
             <h4 className="font-semibold text-sm mb-3">2x2 Matrix Formula</h4>
             <code className="text-sm font-mono block">
-              A = [[a, b], [c, d]]<br/>
+              A = [[a, b], [c, d]]<br />
               A^-1 = (1/det(A)) x [[d, -b], [-c, a]]
             </code>
             <p className="text-xs text-muted-foreground mt-2">

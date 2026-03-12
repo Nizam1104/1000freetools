@@ -132,7 +132,7 @@ export default function DefiniteIntegralCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Definite Integral Calculator – Compute Integrals Numerically</h1>
         <p className="text-muted-foreground">
@@ -234,7 +234,7 @@ export default function DefiniteIntegralCalculator() {
 
       <section className="space-y-6 pt-8 border-t">
         <h2 className="text-2xl font-semibold">Understanding Definite Integrals</h2>
-        
+
         <div className="space-y-4">
           <p>
             A definite integral calculates the area under a curve between two points. It's one of the two main operations in calculus (the other being differentiation), connected by the Fundamental Theorem of Calculus.
@@ -264,7 +264,7 @@ export default function DefiniteIntegralCalculator() {
           </p>
 
           <h3 className="text-xl font-semibold">Worked Examples</h3>
-          
+
           <div className="space-y-4">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: ∫x² dx from 0 to 1</h4>
@@ -314,7 +314,7 @@ export default function DefiniteIntegralCalculator() {
           </div>
 
           <h3 className="text-xl font-semibold">Common Questions</h3>
-          
+
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold mb-2">Why use numerical integration instead of exact formulas?</h4>

@@ -82,7 +82,7 @@ export default function PermutationCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">
           Permutation Calculator - Calculate nPr Online

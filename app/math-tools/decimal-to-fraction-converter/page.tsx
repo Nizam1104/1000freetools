@@ -34,9 +34,9 @@ export default function DecimalToFractionConverter() {
     const steps: string[] = [];
     const isNegative = decimalStr.startsWith("-");
     const cleanDecimal = decimalStr.replace("-", "").trim();
-    
+
     const num = parseFloat(cleanDecimal);
-    
+
     if (isNaN(num)) {
       throw new Error("Please enter a valid decimal number");
     }
@@ -57,7 +57,7 @@ export default function DecimalToFractionConverter() {
     }
 
     steps.push(`Decimal has ${decimalPlaces} decimal place${decimalPlaces > 1 ? "s" : ""}`);
-    
+
     let denominator = Math.pow(10, decimalPlaces);
     let numerator = Math.round(num * denominator);
 
@@ -66,14 +66,14 @@ export default function DecimalToFractionConverter() {
     steps.push(`Initial fraction: ${numerator}/${denominator}`);
 
     const commonDivisor = gcd(numerator, denominator);
-    
+
     if (commonDivisor > 1) {
       steps.push(`\nFind GCD of ${numerator} and ${denominator}`);
       steps.push(`GCD = ${commonDivisor}`);
       steps.push(`Divide both by ${commonDivisor}:`);
       steps.push(`${numerator} ÷ ${commonDivisor} = ${numerator / commonDivisor}`);
       steps.push(`${denominator} ÷ ${commonDivisor} = ${denominator / commonDivisor}`);
-      
+
       numerator = numerator / commonDivisor;
       denominator = denominator / commonDivisor;
     } else {
@@ -106,15 +106,15 @@ export default function DecimalToFractionConverter() {
 
     try {
       const { numerator, denominator, steps } = decimalToFraction(decimal.trim());
-      
+
       const absNum = Math.abs(numerator);
       let mixedNumber: string | null = null;
-      
+
       if (absNum >= denominator) {
         const whole = Math.floor(absNum / denominator);
         const remainder = absNum % denominator;
         const sign = numerator < 0 ? "-" : "";
-        
+
         if (remainder === 0) {
           mixedNumber = `${sign}${whole}`;
         } else {
@@ -147,7 +147,7 @@ export default function DecimalToFractionConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Decimal to Fraction Converter – Convert Decimals to Fractions</h1>
         <p className="text-muted-foreground">

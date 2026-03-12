@@ -46,12 +46,12 @@ export default function EMILoanCalculator() {
     // Generate amortization schedule
     const amortization: { month: number; payment: number; principal: number; interest: number; balance: number }[] = [];
     let balance = P;
-    
+
     for (let month = 1; month <= Math.min(tenureInMonths, 60); month++) {
       const interestPayment = balance * monthlyRate;
       const principalPayment = emi - interestPayment;
       balance -= principalPayment;
-      
+
       amortization.push({
         month,
         payment: emi,
@@ -88,7 +88,7 @@ export default function EMILoanCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">EMI Calculator – Calculate Monthly Loan EMI Online</h1>
         <p className="text-muted-foreground">
@@ -181,7 +181,7 @@ export default function EMILoanCalculator() {
                 <br />
                 Where:<br />
                 P = {parseFloat(principal).toLocaleString()} (Principal)<br />
-                r = {(parseFloat(rate)/12/100).toFixed(6)} (Monthly interest rate)<br />
+                r = {(parseFloat(rate) / 12 / 100).toFixed(6)} (Monthly interest rate)<br />
                 n = {tenureUnit === "years" ? `${tenure} × 12 = ${parseFloat(tenure) * 12}` : tenure} (Months)
               </code>
             </div>

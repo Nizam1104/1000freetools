@@ -173,7 +173,7 @@ export default function CurrencyExchangeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Currency Exchange Calculator – Convert Currencies Online</h1>
         <p className="text-muted-foreground">
@@ -206,7 +206,7 @@ export default function CurrencyExchangeCalculator() {
 
           <Button variant="outline" size="icon" onClick={swapCurrencies} className="mb-0.5">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
+              <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16" />
             </svg>
           </Button>
 

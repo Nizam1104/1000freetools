@@ -74,7 +74,7 @@ export default function DifferenceOfSetsCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Set Difference Calculator – Find A - B Online</h1>
         <p className="text-muted-foreground">
@@ -196,7 +196,7 @@ export default function DifferenceOfSetsCalculator() {
           <p className="text-sm text-muted-foreground text-center">
             "A minus B equals the set of all x such that x is in A and x is not in B"
           </p>
-          
+
           <div className="grid md:grid-cols-2 gap-4 mt-6">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold text-sm mb-2">Notation Variants</h4>

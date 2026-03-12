@@ -99,7 +99,7 @@ export default function CircleCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Circle Calculator – Find Radius, Diameter, Area & Circumference</h1>
         <p className="text-muted-foreground">
@@ -153,9 +153,9 @@ export default function CircleCalculator() {
             type="number"
             placeholder={
               inputType === "radius" ? "e.g., 5" :
-              inputType === "diameter" ? "e.g., 10" :
-              inputType === "area" ? "e.g., 78.54" :
-              "e.g., 31.42"
+                inputType === "diameter" ? "e.g., 10" :
+                  inputType === "area" ? "e.g., 78.54" :
+                    "e.g., 31.42"
             }
             step="any"
             value={value}

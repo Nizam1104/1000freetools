@@ -66,8 +66,8 @@ export default function HistogramGenerator() {
     const mean = values.reduce((a, b) => a + b, 0) / n;
     const sortedValues = [...values].sort((a, b) => a - b);
     const median = n % 2 === 0
-      ? (sortedValues[n/2 - 1] + sortedValues[n/2]) / 2
-      : sortedValues[Math.floor(n/2)];
+      ? (sortedValues[n / 2 - 1] + sortedValues[n / 2]) / 2
+      : sortedValues[Math.floor(n / 2)];
 
     setResult({
       bins,
@@ -106,7 +106,7 @@ export default function HistogramGenerator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Histogram Generator – Create Histograms Online Free</h1>
         <p className="text-muted-foreground">

@@ -73,33 +73,33 @@ export default function DateDifferenceCalculator() {
   const loadExample = (type: string) => {
     const today = new Date();
     const examples: Record<string, { start: string; end: string }> = {
-      year: { 
-        start: new Date(today.getFullYear() - 1, today.getMonth(), today.getDate()).toISOString().split("T")[0], 
-        end: today.toISOString().split("T")[0] 
+      year: {
+        start: new Date(today.getFullYear() - 1, today.getMonth(), today.getDate()).toISOString().split("T")[0],
+        end: today.toISOString().split("T")[0]
       },
-      month: { 
-        start: new Date(today.getFullYear(), today.getMonth() - 1, today.getDate()).toISOString().split("T")[0], 
-        end: today.toISOString().split("T")[0] 
+      month: {
+        start: new Date(today.getFullYear(), today.getMonth() - 1, today.getDate()).toISOString().split("T")[0],
+        end: today.toISOString().split("T")[0]
       },
-      week: { 
-        start: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7).toISOString().split("T")[0], 
-        end: today.toISOString().split("T")[0] 
+      week: {
+        start: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7).toISOString().split("T")[0],
+        end: today.toISOString().split("T")[0]
       },
-      quarter: { 
-        start: new Date(today.getFullYear(), today.getMonth() - 3, today.getDate()).toISOString().split("T")[0], 
-        end: today.toISOString().split("T")[0] 
+      quarter: {
+        start: new Date(today.getFullYear(), today.getMonth() - 3, today.getDate()).toISOString().split("T")[0],
+        end: today.toISOString().split("T")[0]
       },
-      decade: { 
-        start: new Date(today.getFullYear() - 10, today.getMonth(), today.getDate()).toISOString().split("T")[0], 
-        end: today.toISOString().split("T")[0] 
+      decade: {
+        start: new Date(today.getFullYear() - 10, today.getMonth(), today.getDate()).toISOString().split("T")[0],
+        end: today.toISOString().split("T")[0]
       },
-      project: { 
-        start: new Date(today.getFullYear(), 0, 1).toISOString().split("T")[0], 
-        end: new Date(today.getFullYear(), 11, 31).toISOString().split("T")[0] 
+      project: {
+        start: new Date(today.getFullYear(), 0, 1).toISOString().split("T")[0],
+        end: new Date(today.getFullYear(), 11, 31).toISOString().split("T")[0]
       },
-      vacation: { 
-        start: today.toISOString().split("T")[0], 
-        end: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 14).toISOString().split("T")[0] 
+      vacation: {
+        start: today.toISOString().split("T")[0],
+        end: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 14).toISOString().split("T")[0]
       }
     };
     const ex = examples[type] || examples.year;
@@ -109,7 +109,7 @@ export default function DateDifferenceCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Date Difference Calculator – Find Days Between Two Dates</h1>
         <p className="text-muted-foreground">

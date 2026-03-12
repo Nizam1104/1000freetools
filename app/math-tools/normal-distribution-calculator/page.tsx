@@ -10,12 +10,12 @@ function erf(x: number): number {
   const sign = x >= 0 ? 1 : -1;
   x = Math.abs(x);
 
-  const a1 =  0.254829592;
+  const a1 = 0.254829592;
   const a2 = -0.284496736;
-  const a3 =  1.421413741;
+  const a3 = 1.421413741;
   const a4 = -1.453152027;
-  const a5 =  1.061405429;
-  const p  =  0.3275911;
+  const a5 = 1.061405429;
+  const p = 0.3275911;
 
   const t = 1.0 / (1.0 + p * x);
   const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
@@ -60,16 +60,16 @@ function inverseStandardNormalCDF(p: number): number {
   if (p < pLow) {
     q = Math.sqrt(-2 * Math.log(p));
     x = (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) /
-        ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+      ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
   } else if (p <= pHigh) {
     q = p - 0.5;
     r = q * q;
     x = (((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q /
-        (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
+      (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
   } else {
     q = Math.sqrt(-2 * Math.log(1 - p));
     x = -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) /
-         ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+      ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
   }
 
   return x;
@@ -173,7 +173,7 @@ export default function NormalDistributionCalculator() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Normal Distribution Calculator – Find Probability & Percentile</h1>
         <p className="text-muted-foreground">

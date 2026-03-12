@@ -141,7 +141,7 @@ export default function LineGraphBuilder() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Line Graph Builder – Create Line Charts Online Free</h1>
         <p className="text-muted-foreground">
@@ -363,10 +363,9 @@ export default function LineGraphBuilder() {
               </div>
               <div className="p-4 bg-muted rounded-lg text-center">
                 <p className="text-sm text-muted-foreground mb-2">Trend</p>
-                <p className={`text-xl font-bold ${
-                  result.stats.trend === 'up' ? 'text-green-600' :
-                  result.stats.trend === 'down' ? 'text-red-600' : ''
-                }`}>
+                <p className={`text-xl font-bold ${result.stats.trend === 'up' ? 'text-green-600' :
+                    result.stats.trend === 'down' ? 'text-red-600' : ''
+                  }`}>
                   {result.stats.trend === 'up' ? '↑ Up' : result.stats.trend === 'down' ? '↓ Down' : '→ Flat'}
                 </p>
               </div>

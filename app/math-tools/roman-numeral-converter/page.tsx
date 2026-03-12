@@ -56,7 +56,7 @@ export default function RomanNumeralConverter() {
 
   const toNumber = (roman: string): { result: number; steps: string[] } => {
     const cleanRoman = roman.toUpperCase().replace(/\s/g, "");
-    
+
     if (!cleanRoman) {
       throw new Error("Please enter a Roman numeral");
     }
@@ -91,7 +91,7 @@ export default function RomanNumeralConverter() {
   const convertNumberToRoman = () => {
     setError("");
     setResult(null);
-    
+
     const num = parseInt(numberInput);
     if (isNaN(num)) {
       setError("Please enter a valid number");
@@ -109,7 +109,7 @@ export default function RomanNumeralConverter() {
   const convertRomanToNumber = () => {
     setError("");
     setResult(null);
-    
+
     if (!romanInput.trim()) {
       setError("Please enter a Roman numeral");
       return;
@@ -131,7 +131,7 @@ export default function RomanNumeralConverter() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Roman Numeral Converter – Convert Numbers to Roman Numerals</h1>
         <p className="text-muted-foreground">

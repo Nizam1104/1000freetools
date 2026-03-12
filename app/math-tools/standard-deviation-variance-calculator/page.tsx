@@ -34,8 +34,8 @@ export default function StandardDeviationVarianceCalculator() {
         `Sum of squared differences from mean:`,
         `  Σ(x - μ)² = ${sumSquaredDiffs.toFixed(4)}`,
         ``,
-        `${isPopulation ? "Population" : "Sample"} ${isPopulation ? "" : "(n-1 = " + (n-1) + ")" }:`,
-        `  Variance (σ²) = ${sumSquaredDiffs.toFixed(4)} / ${isPopulation ? n : n-1}`,
+        `${isPopulation ? "Population" : "Sample"} ${isPopulation ? "" : "(n-1 = " + (n - 1) + ")"}:`,
+        `  Variance (σ²) = ${sumSquaredDiffs.toFixed(4)} / ${isPopulation ? n : n - 1}`,
         `  Variance = ${variance.toFixed(4)}`,
         ``,
         `Standard Deviation:`,
@@ -56,7 +56,7 @@ export default function StandardDeviationVarianceCalculator() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-8">
+    <div className="w-full mx-auto space-y-8">
       <div className="mb-8">
         <h1 className="text-3xl font-semibold mb-2">Standard Deviation Calculator – Variance & SD Online</h1>
         <p className="text-muted-foreground">
