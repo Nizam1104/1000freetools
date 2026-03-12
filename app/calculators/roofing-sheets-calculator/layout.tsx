@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Roofing Calculator – How Many Roofing Sheets Do You Need?",
@@ -45,6 +52,23 @@ const tools = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-y-4">
+            <div>
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/calculators">Calculators</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/calculators/roofing-sheets-calculator">Roofing Sheets Calculator</BreadcrumbLink>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
             <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Roofing Calculator – How Many Roofing Sheets Do You Need?</h1>
         <p className="text-muted-foreground">Plan your roofing project with our roofing sheets calculator. Enter roof area and sheet dimensions to calculate the exact number of panels needed with waste included.</p>

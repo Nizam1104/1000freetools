@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Subscription Pricing Calculator – Find the Right Price for Your Subscription Plans",
@@ -45,6 +52,23 @@ const tools = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-y-4">
+      <div>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/calculators">Calculators</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/calculators/subscription-pricing-calculator">Subscription Pricing Calculator</BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       {children}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

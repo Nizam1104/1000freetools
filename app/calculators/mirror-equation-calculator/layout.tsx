@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Mirror Equation Calculator – Spherical Mirror Formula",
@@ -45,6 +52,23 @@ const tools = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-y-4">
+            <div>
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/calculators">Calculators</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/calculators/mirror-equation-calculator">Mirror Equation Calculator</BreadcrumbLink>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
             <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Mirror Equation Calculator – Spherical Mirror Formula</h1>
         <p className="text-muted-foreground">Calculate focal length, object distance, or image distance for spherical mirrors. Our calculator works for both concave and convex mirrors.</p>

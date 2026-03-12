@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Volume of Cube Calculator – Calculate Cube Volume and Surface Area",
@@ -45,6 +52,23 @@ const tools = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-y-4">
+            <div>
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/calculators">Calculators</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/calculators/volume-of-cube-calculator">Volume Of Cube Calculator</BreadcrumbLink>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
             <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Volume of Cube Calculator – Calculate Cube Volume and Surface Area</h1>
         <p className="text-muted-foreground">Calculate volume and surface area of a cube</p>

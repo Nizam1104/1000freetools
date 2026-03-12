@@ -116,7 +116,7 @@ function addBreadcrumbs(layoutPath, categorySlug, toolSlug) {
     // Strategy: find the first occurrence of `{children}` inside the return
     // statement and prepend the block before it (with proper indentation).
 
-    const childrenIdx = src.indexOf(`<div className="mb-8">`);
+    const childrenIdx = src.indexOf(`{children}`);
     if (childrenIdx === -1) {
         console.error(`  ✗  Could not find {children} in: ${layoutPath}`);
         return;
