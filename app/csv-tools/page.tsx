@@ -209,9 +209,9 @@ const csvTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free CSV Tools Online - 47 Tools for CSV Editing, Conversion & Analysis",
+  title: "Free CSV Tools Online - 47 Tools for CSV Editing, sortings etc",
   description:
-    "Free online CSV tools for viewing, editing, converting, and analyzing CSV files. Convert CSV to JSON, Excel, SQL, XML, YAML. Clean, format, filter, and transform CSV data in your browser.",
+    "ever struct working with csv files? like editing, sorting etc, then you are at right place, we offer many css tools and more will be added in future",
   openGraph: {
     title: "Free CSV Tools Online - 47 Tools for CSV Editing, Conversion & Analysis",
     description:
