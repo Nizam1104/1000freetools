@@ -399,23 +399,6 @@ export default function MidpointCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/distance-between-two-points-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Distance Formula Calculator</p>
-            <p className="text-xs text-muted-foreground">Distance between points</p>
-          </a>
-          <a href="/calculators/slope-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Slope Calculator</p>
-            <p className="text-xs text-muted-foreground">Line slope and equation</p>
-          </a>
-          <a href="/calculators/pythagorean-theorem-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Pythagorean Theorem</p>
-            <p className="text-xs text-muted-foreground">Right triangle solver</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

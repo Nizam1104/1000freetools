@@ -370,23 +370,6 @@ export default function GeometricSeriesCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/geometric-sequence-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Geometric Sequence</p>
-            <p className="text-xs text-muted-foreground">Find individual terms</p>
-          </a>
-          <a href="/math-tools/arithmetic-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Arithmetic Series</p>
-            <p className="text-xs text-muted-foreground">Sum of arithmetic terms</p>
-          </a>
-          <a href="/math-tools/infinite-series-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Infinite Series</p>
-            <p className="text-xs text-muted-foreground">Convergence tests</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

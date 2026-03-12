@@ -346,23 +346,6 @@ export default function GcdHcfCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/lcm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">LCM Calculator</p>
-            <p className="text-xs text-muted-foreground">Least common multiple</p>
-          </a>
-          <a href="/math-tools/factor-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factor Calculator</p>
-            <p className="text-xs text-muted-foreground">Find all factors</p>
-          </a>
-          <a href="/math-tools/simplifying-fractions-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Simplify Fractions</p>
-            <p className="text-xs text-muted-foreground">Reduce fractions</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

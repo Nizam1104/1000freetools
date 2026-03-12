@@ -164,7 +164,7 @@ export default function ZScoreCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Z-Score Calculations</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Test Score Example</h3>
           <p className="text-muted-foreground mb-2">
             SAT score analysis (mean = 1050, SD = 200):
@@ -228,7 +228,7 @@ export default function ZScoreCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What does a Z-score of 0 mean?</h3>
@@ -278,24 +278,6 @@ export default function ZScoreCalculator() {
                 Z-scores appear in: standardized testing (SAT, IQ tests), medical diagnostics (bone density T-scores), finance (Z-score bankruptcy prediction), quality control (Six Sigma), and psychology (assessing how far a score deviates from normal). They're essential for statistical inference.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/standard-deviation-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Standard Deviation Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the standard deviation and variance of your data set.</p>
-            </a>
-            <a href="/math-tools/percentile-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Percentile Calculator</h3>
-              <p className="text-sm text-muted-foreground">Find the percentile rank of values in your data set.</p>
-            </a>
-            <a href="/math-tools/normal-distribution-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Normal Distribution Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate probabilities and areas under the normal curve.</p>
-            </a>
           </div>
         </section>
       </div>

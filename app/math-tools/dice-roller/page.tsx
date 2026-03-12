@@ -344,23 +344,6 @@ export default function DiceRoller() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/probability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Probability Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate odds and chances</p>
-          </a>
-          <a href="/math-tools/random-number-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Random Number Generator</p>
-            <p className="text-xs text-muted-foreground">Generate random numbers</p>
-          </a>
-          <a href="/math-tools/combinations-permutations" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combinations & Permutations</p>
-            <p className="text-xs text-muted-foreground">Counting principles</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

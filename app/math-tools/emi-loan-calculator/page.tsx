@@ -416,23 +416,6 @@ export default function EMILoanCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Compound Interest</p>
-            <p className="text-xs text-muted-foreground">Calculate investment growth</p>
-          </a>
-          <a href="/math-tools/simple-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Simple Interest</p>
-            <p className="text-xs text-muted-foreground">Basic interest calculation</p>
-          </a>
-          <a href="/math-tools/loan-amortization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Amortization Schedule</p>
-            <p className="text-xs text-muted-foreground">Full payment breakdown</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

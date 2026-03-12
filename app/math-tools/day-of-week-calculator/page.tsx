@@ -348,23 +348,6 @@ export default function DayOfWeekCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/days-until-since-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Days Until/Since Calculator</p>
-            <p className="text-xs text-muted-foreground">Count days between dates</p>
-          </a>
-          <a href="/math-tools/date-difference-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Date Difference Calculator</p>
-            <p className="text-xs text-muted-foreground">Find time between dates</p>
-          </a>
-          <a href="/math-tools/age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Age Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate exact age</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -410,23 +410,6 @@ export default function InequalitySolver() {
           </div>
         </section>
 
-        <section className="border-t pt-8 space-y-6">
-          <h3 className="text-xl font-semibold">Related Math Tools</h3>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/equation-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Equation Solver</p>
-              <p className="text-xs text-muted-foreground">Solve equations</p>
-            </a>
-            <a href="/math-tools/compound-inequality-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Compound Inequalities</p>
-              <p className="text-xs text-muted-foreground">Multi-part inequalities</p>
-            </a>
-            <a href="/math-tools/system-of-equations-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">System Solver</p>
-              <p className="text-xs text-muted-foreground">Multiple equations</p>
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   );

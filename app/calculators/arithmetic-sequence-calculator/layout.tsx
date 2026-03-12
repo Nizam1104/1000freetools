@@ -45,7 +45,7 @@ const tools = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-y-4">
-            <header className="max-w-3xl">
+      <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Arithmetic Sequence Calculator</h1>
         <p className="text-muted-foreground">Calculate nth term and sum of arithmetic sequence</p>
       </header>

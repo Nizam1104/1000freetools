@@ -415,23 +415,6 @@ export default function GPACalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Percentage Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate percentages</p>
-          </a>
-          <a href="/math-tools/average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Average Calculator</p>
-            <p className="text-xs text-muted-foreground">Find averages</p>
-          </a>
-          <a href="/math-tools/weighted-average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Weighted Average</p>
-            <p className="text-xs text-muted-foreground">Weighted calculations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

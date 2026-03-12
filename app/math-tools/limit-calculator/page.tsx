@@ -487,23 +487,6 @@ export default function LimitCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/derivative-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Derivative Calculator</p>
-            <p className="text-xs text-muted-foreground">Find derivatives</p>
-          </a>
-          <a href="/math-tools/integral-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Integral Calculator</p>
-            <p className="text-xs text-muted-foreground">Compute integrals</p>
-          </a>
-          <a href="/math-tools/function-grapher" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Function Grapher</p>
-            <p className="text-xs text-muted-foreground">Plot functions</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

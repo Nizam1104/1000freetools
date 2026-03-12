@@ -287,23 +287,6 @@ export default function LeapYearChecker() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/date-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Date Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate date differences</p>
-          </a>
-          <a href="/math-tools/day-of-week-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Day of Week</p>
-            <p className="text-xs text-muted-foreground">Find day for any date</p>
-          </a>
-          <a href="/math-tools/age-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Age Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate exact age</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -427,23 +427,6 @@ export default function EstimationRoundingTool() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/significant-figures-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Significant Figures</p>
-            <p className="text-xs text-muted-foreground">Sig fig calculator</p>
-          </a>
-          <a href="/math-tools/arithmetic-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Arithmetic Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic calculations</p>
-          </a>
-          <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Percentage Calculator</p>
-            <p className="text-xs text-muted-foreground">Percent calculations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

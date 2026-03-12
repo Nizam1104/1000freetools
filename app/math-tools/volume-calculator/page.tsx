@@ -557,19 +557,6 @@ export default function VolumeCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <a href="/math-tools/surface-area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Surface Area Calculator</p>
-            <p className="text-xs text-muted-foreground">3D surface area</p>
-          </a>
-          <a href="/math-tools/perimeter-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Perimeter Calculator</p>
-            <p className="text-xs text-muted-foreground">2D perimeter</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

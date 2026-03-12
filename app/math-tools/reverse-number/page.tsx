@@ -310,23 +310,6 @@ export default function ReverseNumber() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/prime-checker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Prime Number Checker</p>
-            <p className="text-xs text-muted-foreground">Test if a number is prime</p>
-          </a>
-          <a href="/math-tools/factorial-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factorial Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate n!</p>
-          </a>
-          <a href="/math-tools/number-sequences" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Number Sequences</p>
-            <p className="text-xs text-muted-foreground">Explore number patterns</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

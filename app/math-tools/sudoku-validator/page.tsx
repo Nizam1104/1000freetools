@@ -23,7 +23,7 @@ export default function SudokuValidator() {
 
     // Parse grid
     const parsedGrid = grid.map(row => row.map(cell => cell.trim() === "" ? 0 : parseInt(cell)));
-    
+
     // Check for invalid values
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
@@ -150,7 +150,7 @@ export default function SudokuValidator() {
 
   const loadExample = (difficulty: "easy" | "medium" | "hard") => {
     let example: string[][];
-    
+
     if (difficulty === "easy") {
       example = [
         ["5", "3", "", "", "7", "", "", "", ""],
@@ -188,7 +188,7 @@ export default function SudokuValidator() {
         ["", "", "", "", "4", "", "", "", "9"]
       ];
     }
-    
+
     setGrid(example);
     setResult(null);
     setError("");
@@ -198,19 +198,19 @@ export default function SudokuValidator() {
     if (!result) return "";
     const val = grid[row][col];
     if (val.trim() === "") return "";
-    
+
     const numVal = parseInt(val);
-    
+
     // Check row
     for (let j = 0; j < 9; j++) {
       if (j !== col && grid[row][j] === val) return "error";
     }
-    
+
     // Check column
     for (let i = 0; i < 9; i++) {
       if (i !== row && grid[i][col] === val) return "error";
     }
-    
+
     // Check box
     const boxRow = Math.floor(row / 3) * 3;
     const boxCol = Math.floor(col / 3) * 3;
@@ -219,7 +219,7 @@ export default function SudokuValidator() {
         if ((i !== row || j !== col) && grid[i][j] === val) return "error";
       }
     }
-    
+
     return "valid";
   };
 
@@ -240,7 +240,7 @@ export default function SudokuValidator() {
                 const status = getCellStatus(ri, ci);
                 const boxBorderRight = (ci + 1) % 3 === 0 && ci < 8 ? "border-r-2 border-r-foreground" : "";
                 const boxBorderBottom = (ri + 1) % 3 === 0 && ri < 8 ? "border-b-2 border-b-foreground" : "";
-                
+
                 return (
                   <input
                     key={`${ri}-${ci}`}
@@ -253,11 +253,10 @@ export default function SudokuValidator() {
                         updateCell(ri, ci, val);
                       }
                     }}
-                    className={`w-10 h-10 text-center text-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary ${
-                      status === "error" ? "bg-red-100 dark:bg-red-900/30 text-red-600" : 
-                      status === "valid" ? "bg-green-100 dark:bg-green-900/30" : 
-                      "bg-background"
-                    } ${boxBorderRight} ${boxBorderBottom}`}
+                    className={`w-10 h-10 text-center text-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary ${status === "error" ? "bg-red-100 dark:bg-red-900/30 text-red-600" :
+                        status === "valid" ? "bg-green-100 dark:bg-green-900/30" :
+                          "bg-background"
+                      } ${boxBorderRight} ${boxBorderBottom}`}
                   />
                 );
               })
@@ -286,24 +285,22 @@ export default function SudokuValidator() {
 
         {result && (
           <div className="space-y-4">
-            <div className={`p-6 rounded-lg text-center ${
-              result.isCorrect ? "bg-green-100 dark:bg-green-900/30" :
-              result.isValid ? "bg-amber-100 dark:bg-amber-900/30" :
-              "bg-red-100 dark:bg-red-900/30"
-            }`}>
+            <div className={`p-6 rounded-lg text-center ${result.isCorrect ? "bg-green-100 dark:bg-green-900/30" :
+                result.isValid ? "bg-amber-100 dark:bg-amber-900/30" :
+                  "bg-red-100 dark:bg-red-900/30"
+              }`}>
               <p className="text-2xl font-bold mb-2">
                 {result.isCorrect ? "✓ Valid & Complete Sudoku!" :
-                 result.isValid ? "⚠ Valid but Incomplete" :
-                 "✗ Invalid Sudoku"}
+                  result.isValid ? "⚠ Valid but Incomplete" :
+                    "✗ Invalid Sudoku"}
               </p>
               <p className="text-sm">
                 Progress: {result.filledCells}/81 cells filled ({result.progress}%)
               </p>
               <div className="mt-4 bg-muted rounded-full h-4">
-                <div 
-                  className={`h-4 rounded-full transition-all ${
-                    result.isCorrect ? "bg-green-500" : "bg-primary"
-                  }`}
+                <div
+                  className={`h-4 rounded-full transition-all ${result.isCorrect ? "bg-green-500" : "bg-primary"
+                    }`}
                   style={{ width: `${result.progress}%` }}
                 />
               </div>
@@ -367,7 +364,7 @@ export default function SudokuValidator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Sudoku Puzzles</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Easy Puzzle (50+ filled cells)</h3>
           <p className="text-muted-foreground mb-2">
             Good for beginners, with many given numbers:
@@ -424,7 +421,7 @@ export default function SudokuValidator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What are the basic rules of Sudoku?</h3>
@@ -443,7 +440,7 @@ export default function SudokuValidator() {
             <div>
               <h3 className="text-lg font-semibold mb-2">What's the minimum number of clues needed?</h3>
               <p className="text-muted-foreground">
-              Mathematicians proved in 2012 that a valid Sudoku needs at least <strong>17 clues</strong> (pre-filled cells) to guarantee a unique solution. Puzzles with 16 or fewer clues will always have multiple solutions. Most published puzzles have 22-35 clues depending on difficulty.
+                Mathematicians proved in 2012 that a valid Sudoku needs at least <strong>17 clues</strong> (pre-filled cells) to guarantee a unique solution. Puzzles with 16 or fewer clues will always have multiple solutions. Most published puzzles have 22-35 clues depending on difficulty.
               </p>
             </div>
 
@@ -474,24 +471,6 @@ export default function SudokuValidator() {
                 This validator checks standard 9×9 Sudoku rules. It won't validate variant puzzles like Killer Sudoku, X-Sudoku (with diagonal rules), or Jigsaw Sudoku (with irregular regions). For those variants, you'd need specialized validators that check their additional constraints.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/magic-square-generator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Magic Square Generator</h3>
-              <p className="text-sm text-muted-foreground">Create and verify magic squares where all rows, columns, and diagonals sum to the same value.</p>
-            </a>
-            <a href="/math-tools/permutation-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Permutation Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate permutations and combinations for probability problems.</p>
-            </a>
-            <a href="/math-tools/logic-gate-simulator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Logic Gate Simulator</h3>
-              <p className="text-sm text-muted-foreground">Build and test digital logic circuits with AND, OR, NOT gates.</p>
-            </a>
           </div>
         </section>
       </div>

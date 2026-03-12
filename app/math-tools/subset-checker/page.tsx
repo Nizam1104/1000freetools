@@ -428,23 +428,6 @@ export default function SubsetChecker() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/set-operations-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Set Operations Calculator</p>
-            <p className="text-xs text-muted-foreground">Union, intersection</p>
-          </a>
-          <a href="/math-tools/venn-diagram-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Venn Diagram Generator</p>
-            <p className="text-xs text-muted-foreground">Visualize sets</p>
-          </a>
-          <a href="/math-tools/power-set-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Power Set Calculator</p>
-            <p className="text-xs text-muted-foreground">All subsets</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

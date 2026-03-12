@@ -360,23 +360,6 @@ export default function LcmCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/gcd-hcf-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">GCD/HCF Calculator</p>
-            <p className="text-xs text-muted-foreground">Greatest common divisor</p>
-          </a>
-          <a href="/math-tools/factor-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factor Calculator</p>
-            <p className="text-xs text-muted-foreground">Find all factors</p>
-          </a>
-          <a href="/math-tools/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Prime Factorization</p>
-            <p className="text-xs text-muted-foreground">Break into primes</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

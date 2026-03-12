@@ -307,23 +307,6 @@ export default function FactorsListGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/factor-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factor Calculator</p>
-            <p className="text-xs text-muted-foreground">Find factors with pairs</p>
-          </a>
-          <a href="/math-tools/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Prime Factorization</p>
-            <p className="text-xs text-muted-foreground">Break into primes</p>
-          </a>
-          <a href="/math-tools/divisibility-test-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Divisibility Test</p>
-            <p className="text-xs text-muted-foreground">Quick divisibility checks</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

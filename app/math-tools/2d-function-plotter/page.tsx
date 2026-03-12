@@ -395,23 +395,6 @@ export default function FunctionPlotter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h2 className="text-2xl font-semibold">Related Math Tools</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/derivative-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Derivative Calculator</p>
-            <p className="text-xs text-muted-foreground">Find derivatives step by step</p>
-          </a>
-          <a href="/math-tools/quadratic-equation-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Quadratic Equation Solver</p>
-            <p className="text-xs text-muted-foreground">Solve ax² + bx + c = 0</p>
-          </a>
-          <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Trig Function Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate sin, cos, tan values</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

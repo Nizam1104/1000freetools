@@ -505,23 +505,6 @@ export default function TimeDurationCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/time-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Time Converter</p>
-            <p className="text-xs text-muted-foreground">Convert time units</p>
-          </a>
-          <a href="/math-tools/date-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Date Calculator</p>
-            <p className="text-xs text-muted-foreground">Date calculations</p>
-          </a>
-          <a href="/math-tools/hours-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Hours Calculator</p>
-            <p className="text-xs text-muted-foreground">Work hours tracking</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

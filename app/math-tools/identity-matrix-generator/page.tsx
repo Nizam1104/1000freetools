@@ -288,23 +288,6 @@ export default function IdentityMatrixGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/matrix-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Calculator</p>
-            <p className="text-xs text-muted-foreground">Matrix operations</p>
-          </a>
-          <a href="/math-tools/matrix-inverse-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Inverse</p>
-            <p className="text-xs text-muted-foreground">Find A⁻¹</p>
-          </a>
-          <a href="/math-tools/determinant-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Determinant</p>
-            <p className="text-xs text-muted-foreground">Calculate det(A)</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

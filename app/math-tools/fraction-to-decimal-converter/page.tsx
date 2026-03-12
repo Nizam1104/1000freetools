@@ -472,23 +472,6 @@ export default function FractionToDecimalConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/decimal-to-fraction-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Decimal to Fraction Converter</p>
-            <p className="text-xs text-muted-foreground">Decimals to fractions</p>
-          </a>
-          <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction Calculator</p>
-            <p className="text-xs text-muted-foreground">Fraction operations</p>
-          </a>
-          <a href="/math-tools/rounding-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Rounding Calculator</p>
-            <p className="text-xs text-muted-foreground">Round decimals</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

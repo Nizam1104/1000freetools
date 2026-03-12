@@ -367,23 +367,6 @@ export default function EnergyConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/power-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Power Converter</p>
-            <p className="text-xs text-muted-foreground">Convert watts, horsepower</p>
-          </a>
-          <a href="/math-tools/unit-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Unit Converter</p>
-            <p className="text-xs text-muted-foreground">All-purpose converter</p>
-          </a>
-          <a href="/math-tools/fuel-efficiency-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fuel Efficiency</p>
-            <p className="text-xs text-muted-foreground">MPG, L/100km converter</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

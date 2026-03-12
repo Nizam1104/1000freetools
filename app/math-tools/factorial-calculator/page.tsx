@@ -23,8 +23,8 @@ export default function FactorialCalculator() {
       return;
     }
 
-    if (num > 500) {
-      setError("Please enter a number up to 500 for practical computation");
+    if (num > 50000) {
+      setError("Please enter a number up to 100000 for practical computation");
       setResult(null);
       return;
     }
@@ -105,21 +105,21 @@ export default function FactorialCalculator() {
 
         {result && (
           <div className="space-y-4">
-            <div className="p-6 bg-muted rounded-lg text-center">
+            {parseInt(number) > 20 && (
+              <p className="break-all text-xs text-muted-foreground mt-2">
+                {result.factorial.toString()}
+              </p>
+            )}
+            <div className="p-6 bg-muted rounded-lg text-center max-h-[400px] overflow-y-auto">
               <p className="text-sm text-muted-foreground mb-2">{number}! (Factorial of {number})</p>
               <p className="text-4xl font-bold break-all">{result.displayValue}</p>
-              {parseInt(number) > 20 && (
-                <p className="text-xs text-muted-foreground mt-2">
-                  Full value: {result.factorial.toString()}
-                </p>
-              )}
             </div>
 
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold text-sm mb-2">Calculation Steps</h4>
-              <div className="space-y-2">
+              <div className="space-y-2 max-h-[400px] overflow-y-auto">
                 {result.steps.map((step, index) => (
-                  <code key={index} className="text-sm font-mono bg-muted px-3 py-2 rounded block">
+                  <code key={index} className="text-sm font-mono bg-muted px-3 py-2 rounded block max-">
                     {step}
                   </code>
                 ))}
@@ -131,7 +131,7 @@ export default function FactorialCalculator() {
 
       <section className="space-y-6 pt-8 border-t">
         <h2 className="text-2xl font-semibold">Understanding Factorials</h2>
-        
+
         <div className="space-y-4">
           <p>
             The factorial of a number n (written as n!) is the product of all positive integers from 1 up to n. It's one of the most fundamental operations in combinatorics, probability, and calculus.
@@ -148,7 +148,7 @@ export default function FactorialCalculator() {
           </p>
 
           <h3 className="text-xl font-semibold">Worked Examples</h3>
-          
+
           <div className="space-y-4">
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold mb-2">Example 1: 5!</h4>
@@ -189,7 +189,7 @@ export default function FactorialCalculator() {
           </div>
 
           <h3 className="text-xl font-semibold">Common Questions</h3>
-          
+
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold mb-2">Why is 0! equal to 1?</h4>

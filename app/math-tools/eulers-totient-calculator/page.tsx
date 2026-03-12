@@ -381,23 +381,6 @@ export default function EulersTotientCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/gcd-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">GCD Calculator</p>
-            <p className="text-xs text-muted-foreground">Find greatest common divisor</p>
-          </a>
-          <a href="/math-tools/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Prime Factorization</p>
-            <p className="text-xs text-muted-foreground">Break into prime factors</p>
-          </a>
-          <a href="/math-tools/modular-arithmetic-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Modular Arithmetic</p>
-            <p className="text-xs text-muted-foreground">Mod operations calculator</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -384,11 +384,6 @@ export default function CsvToolsPage() {
               CSV Viewer displays files with sorting and pagination. CSV Editor provides a spreadsheet-like interface for cell-by-cell editing. CSV Validator checks structure, column consistency, and encoding issues.
             </p>
 
-            <h3 className="text-xl font-semibold mb-3">Format Conversion</h3>
-            <p className="text-muted-foreground mb-4">
-              Convert CSV to JSON (with type inference options), Excel (.xlsx), SQL INSERT statements for MySQL/PostgreSQL/SQLite, XML, YAML, HTML tables, Markdown tables, TSV, plain text, or programming language arrays (JavaScript, Python, PHP). Reverse conversions work too — JSON to CSV, Excel to CSV, SQL to CSV, XML to CSV, HTML table to CSV.
-            </p>
-
             <h3 className="text-xl font-semibold mb-3">Column Operations</h3>
             <p className="text-muted-foreground mb-4">
               Extract specific columns by name or index, remove unwanted columns, reorder with drag-and-drop, split one column into multiple by delimiter, or merge several columns into one with a custom separator.

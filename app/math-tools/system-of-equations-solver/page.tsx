@@ -517,23 +517,6 @@ export default function SystemOfEquationsSolver() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/matrix-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Calculator</p>
-            <p className="text-xs text-muted-foreground">Matrix operations</p>
-          </a>
-          <a href="/math-tools/graphing-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Graphing Calculator</p>
-            <p className="text-xs text-muted-foreground">Plot equations</p>
-          </a>
-          <a href="/math-tools/linear-algebra-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Linear Algebra</p>
-            <p className="text-xs text-muted-foreground">Advanced systems</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

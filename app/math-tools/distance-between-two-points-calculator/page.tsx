@@ -458,23 +458,6 @@ export default function DistanceBetweenTwoPointsCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/midpoint-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Midpoint Calculator</p>
-            <p className="text-xs text-muted-foreground">Find midpoints</p>
-          </a>
-          <a href="/calculators/pythagorean-theorem-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Pythagorean Theorem</p>
-            <p className="text-xs text-muted-foreground">Right triangle solver</p>
-          </a>
-          <a href="/calculators/slope-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Slope Calculator</p>
-            <p className="text-xs text-muted-foreground">Line slope and equation</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

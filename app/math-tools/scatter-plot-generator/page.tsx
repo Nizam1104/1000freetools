@@ -56,8 +56,8 @@ export default function ScatterPlotGenerator() {
     const slope = SSxx !== 0 ? SSxy / SSxx : 0;
     const intercept = meanY - slope * meanX;
 
-    const r = SSxx !== 0 && SSyy !== 0 
-      ? SSxy / Math.sqrt(SSxx * SSyy) 
+    const r = SSxx !== 0 && SSyy !== 0
+      ? SSxy / Math.sqrt(SSxx * SSyy)
       : 0;
 
     const points = xValues.map((x, i) => ({
@@ -165,18 +165,18 @@ export default function ScatterPlotGenerator() {
                 <svg viewBox="0 0 100 100" className="w-full h-full">
                   <line x1="10" y1="90" x2="95" y2="90" stroke="currentColor" strokeWidth="0.5" className="text-border" />
                   <line x1="10" y1="10" x2="10" y2="95" stroke="currentColor" strokeWidth="0.5" className="text-border" />
-                  
-                  <line 
-                    x1={result.lineStartNorm.x} 
-                    y1={result.lineStartNorm.y} 
-                    x2={result.lineEndNorm.x} 
-                    y2={result.lineEndNorm.y} 
-                    stroke="currentColor" 
-                    strokeWidth="0.5" 
+
+                  <line
+                    x1={result.lineStartNorm.x}
+                    y1={result.lineStartNorm.y}
+                    x2={result.lineEndNorm.x}
+                    y2={result.lineEndNorm.y}
+                    stroke="currentColor"
+                    strokeWidth="0.5"
                     strokeDasharray="2,2"
                     className="text-primary"
                   />
-                  
+
                   {result.points.map((point: any, i: number) => (
                     <circle
                       key={i}
@@ -207,10 +207,9 @@ export default function ScatterPlotGenerator() {
               </div>
               <div className="p-4 bg-muted rounded-lg text-center">
                 <p className="text-sm text-muted-foreground mb-2">Correlation (r)</p>
-                <p className={`text-xl font-bold ${
-                  result.r > 0.7 ? 'text-green-600' : 
-                  result.r < -0.7 ? 'text-red-600' : ''
-                }`}>{result.r}</p>
+                <p className={`text-xl font-bold ${result.r > 0.7 ? 'text-green-600' :
+                    result.r < -0.7 ? 'text-red-600' : ''
+                  }`}>{result.r}</p>
               </div>
               <div className="p-4 bg-muted rounded-lg text-center">
                 <p className="text-sm text-muted-foreground mb-2">R²</p>
@@ -258,7 +257,7 @@ export default function ScatterPlotGenerator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Data Sets</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Study Time vs. Test Scores</h3>
           <p className="text-muted-foreground mb-2">
             Track how study hours affect exam performance:
@@ -301,7 +300,7 @@ export default function ScatterPlotGenerator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What does a scatter plot show?</h3>
@@ -351,24 +350,6 @@ export default function ScatterPlotGenerator() {
                 No! Correlation only shows that two variables move together—it doesn't prove one causes the other. For example, ice cream sales and drowning deaths are positively correlated (both increase in summer), but ice cream doesn't cause drowning. A third factor (hot weather) explains both.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/correlation-coefficient-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Correlation Coefficient Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate Pearson's r and other correlation measures for your data.</p>
-            </a>
-            <a href="/math-tools/linear-regression-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Linear Regression Calculator</h3>
-              <p className="text-sm text-muted-foreground">Get detailed regression analysis with confidence intervals and residuals.</p>
-            </a>
-            <a href="/math-tools/mean-median-mode-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Mean, Median, Mode Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate descriptive statistics for your data sets.</p>
-            </a>
           </div>
         </section>
       </div>

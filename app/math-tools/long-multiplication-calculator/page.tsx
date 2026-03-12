@@ -398,23 +398,6 @@ export default function LongMultiplicationCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/long-division-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Long Division Calculator</p>
-            <p className="text-xs text-muted-foreground">Division with steps</p>
-          </a>
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-          <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction Calculator</p>
-            <p className="text-xs text-muted-foreground">Fraction operations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -656,23 +656,6 @@ export default function TriangleSolver() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/right-triangle-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Right Triangle Calculator</p>
-            <p className="text-xs text-muted-foreground">Specialized for right triangles</p>
-          </a>
-          <a href="/math-tools/law-of-sines-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Law of Sines Calculator</p>
-            <p className="text-xs text-muted-foreground">Solve using sine rule</p>
-          </a>
-          <a href="/math-tools/law-of-cosines-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Law of Cosines Calculator</p>
-            <p className="text-xs text-muted-foreground">Solve using cosine rule</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

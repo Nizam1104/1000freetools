@@ -365,23 +365,6 @@ export default function RandomNumberGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/probability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Probability Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate event probabilities</p>
-          </a>
-          <a href="/math-tools/combinations-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combinations Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate nCr</p>
-          </a>
-          <a href="/math-tools/statistics-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Statistics Calculator</p>
-            <p className="text-xs text-muted-foreground">Analyze data sets</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

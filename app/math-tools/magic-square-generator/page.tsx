@@ -321,23 +321,6 @@ export default function MagicSquareGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/sudoku-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Sudoku Solver</p>
-            <p className="text-xs text-muted-foreground">Solve Sudoku puzzles</p>
-          </a>
-          <a href="/math-tools/latin-square-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Latin Square Generator</p>
-            <p className="text-xs text-muted-foreground">Create Latin squares</p>
-          </a>
-          <a href="/math-tools/number-pattern-finder" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Number Pattern Finder</p>
-            <p className="text-xs text-muted-foreground">Find number patterns</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

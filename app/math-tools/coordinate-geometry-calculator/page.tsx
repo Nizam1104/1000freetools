@@ -578,19 +578,6 @@ export default function CoordinateGeometryCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h2 className="text-2xl font-semibold">Related Math Tools</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <a href="/math-tools/slope-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Slope Calculator</p>
-            <p className="text-xs text-muted-foreground">Find slope and angle</p>
-          </a>
-          <a href="/math-tools/midpoint-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Midpoint Calculator</p>
-            <p className="text-xs text-muted-foreground">Find the middle point</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

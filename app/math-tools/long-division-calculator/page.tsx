@@ -448,23 +448,6 @@ export default function LongDivisionCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/long-multiplication-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Long Multiplication Calculator</p>
-            <p className="text-xs text-muted-foreground">Multiply with steps</p>
-          </a>
-          <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Fraction Calculator</p>
-            <p className="text-xs text-muted-foreground">Fraction operations</p>
-          </a>
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

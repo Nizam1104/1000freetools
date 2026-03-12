@@ -215,8 +215,8 @@
         "href": "/json-tools/json-to-python"
       },
       {
-        "name": "JSON to Java POJO",
-        "href": "/json-tools/json-to-java"
+        "name": "Add Ids to JSON",
+        "href": "/json-tools/add-id-to-json"
       },
       {
         "name": "JSON Schema Generator",
@@ -687,10 +687,6 @@
       {
         "name": "CSV to JSON Converter",
         "href": "/csv-tools/csv-to-json"
-      },
-      {
-        "name": "JSON to CSV Converter",
-        "href": "/csv-tools/json-to-csv"
       },
       {
         "name": "CSV to Excel Converter",

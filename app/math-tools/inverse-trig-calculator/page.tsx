@@ -472,23 +472,6 @@ export default function InverseTrigCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Trig Function Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate sin, cos, tan</p>
-          </a>
-          <a href="/math-tools/degrees-radians-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Degrees to Radians</p>
-            <p className="text-xs text-muted-foreground">Convert angle units</p>
-          </a>
-          <a href="/math-tools/triangle-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Triangle Solver</p>
-            <p className="text-xs text-muted-foreground">Solve any triangle</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

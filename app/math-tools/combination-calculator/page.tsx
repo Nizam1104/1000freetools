@@ -365,23 +365,6 @@ export default function CombinationCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h2 className="text-2xl font-semibold">Related Math Tools</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/permutation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Permutation Calculator</p>
-            <p className="text-xs text-muted-foreground">nPr – when order matters</p>
-          </a>
-          <a href="/math-tools/probability-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Probability Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate probability</p>
-          </a>
-          <a href="/math-tools/factorial-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Factorial Calculator</p>
-            <p className="text-xs text-muted-foreground">Compute n!</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

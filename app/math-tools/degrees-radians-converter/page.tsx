@@ -66,7 +66,7 @@ export default function DegreesRadiansConverter() {
 
     const rad = toRad(deg);
     const piMultiple = rad / Math.PI;
-    
+
     for (let den = 1; den <= 12; den++) {
       const num = piMultiple * den;
       if (Math.abs(num - Math.round(num)) < 0.001) {
@@ -128,7 +128,7 @@ export default function DegreesRadiansConverter() {
     if (mode === "to-radians") {
       const radians = toRad(val);
       const exactForm = getExactForm(val);
-      
+
       setResult({
         input: val,
         inputUnit: "degrees",
@@ -156,7 +156,7 @@ export default function DegreesRadiansConverter() {
     } else {
       const degrees = toDeg(val);
       const exactForm = getExactDegForm(val);
-      
+
       setResult({
         input: val,
         inputUnit: "radians",
@@ -226,12 +226,12 @@ export default function DegreesRadiansConverter() {
               <TabsContent value="to-radians" className="space-y-4 mt-6">
                 <div>
                   <Label>Angle in Degrees</Label>
-                  <Input 
-                    type="number" 
+                  <Input
+                    type="number"
                     step="0.01"
-                    placeholder="e.g., 45" 
-                    value={inputValue} 
-                    onChange={(e) => setInputValue(e.target.value)} 
+                    placeholder="e.g., 45"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
                   />
                 </div>
               </TabsContent>
@@ -239,12 +239,12 @@ export default function DegreesRadiansConverter() {
               <TabsContent value="to-degrees" className="space-y-4 mt-6">
                 <div>
                   <Label>Angle in Radians</Label>
-                  <Input 
-                    type="number" 
+                  <Input
+                    type="number"
                     step="0.01"
-                    placeholder="e.g., 1.57 or π/2" 
-                    value={inputValue} 
-                    onChange={(e) => setInputValue(e.target.value)} 
+                    placeholder="e.g., 1.57 or π/2"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
                   />
                   <p className="text-xs text-muted-foreground mt-1">
                     Enter decimal values (e.g., 1.57). For π fractions, calculate the decimal first.
@@ -444,28 +444,6 @@ export default function DegreesRadiansConverter() {
             <p className="text-xs text-muted-foreground">
               They're the same angle in different units. π radians = 180°. It's like asking the difference between 1 kilometer and 1000 meters – same distance, different units.
             </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/trig-function-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Trig Function Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate sin, cos, tan</p>
-            </a>
-            <a href="/math-tools/inverse-trig-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Inverse Trig Calculator</p>
-              <p className="text-xs text-muted-foreground">Find arcsin, arccos, arctan</p>
-            </a>
-            <a href="/math-tools/unit-circle-reference" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Unit Circle Reference</p>
-              <p className="text-xs text-muted-foreground">Interactive unit circle</p>
-            </a>
           </div>
         </CardContent>
       </Card>

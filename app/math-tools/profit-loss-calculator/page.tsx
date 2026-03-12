@@ -273,23 +273,6 @@ export default function ProfitLossCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Percentage Calculator</p>
-            <p className="text-xs text-muted-foreground">General percentage calculations</p>
-          </a>
-          <a href="/math-tools/roi-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">ROI Calculator</p>
-            <p className="text-xs text-muted-foreground">Return on investment</p>
-          </a>
-          <a href="/math-tools/discount-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Discount Calculator</p>
-            <p className="text-xs text-muted-foreground">Sale price calculations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

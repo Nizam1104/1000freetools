@@ -515,23 +515,6 @@ export default function EigenvalueCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/matrix-determinant-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Determinant</p>
-            <p className="text-xs text-muted-foreground">Calculate determinants</p>
-          </a>
-          <a href="/math-tools/matrix-inverse-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Matrix Inverse</p>
-            <p className="text-xs text-muted-foreground">Find inverse matrices</p>
-          </a>
-          <a href="/math-tools/eigenvector-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Eigenvector Calculator</p>
-            <p className="text-xs text-muted-foreground">Find eigenvectors</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

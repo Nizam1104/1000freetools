@@ -809,43 +809,6 @@ export default function TrigFunctionCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a
-              href="/math-tools/inverse-trig-calculator"
-              className="p-4 rounded-lg border hover:bg-muted transition-colors"
-            >
-              <p className="font-semibold text-sm">Inverse Trig Calculator</p>
-              <p className="text-xs text-muted-foreground">
-                Find arcsin, arccos, arctan
-              </p>
-            </a>
-            <a
-              href="/math-tools/degrees-radians-converter"
-              className="p-4 rounded-lg border hover:bg-muted transition-colors"
-            >
-              <p className="font-semibold text-sm">Degrees to Radians</p>
-              <p className="text-xs text-muted-foreground">
-                Convert angle units
-              </p>
-            </a>
-            <a
-              href="/math-tools/right-triangle-calculator"
-              className="p-4 rounded-lg border hover:bg-muted transition-colors"
-            >
-              <p className="font-semibold text-sm">Right Triangle Calculator</p>
-              <p className="text-xs text-muted-foreground">
-                Solve right triangles
-              </p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

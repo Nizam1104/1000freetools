@@ -48,7 +48,7 @@ export default function VennDiagramTool() {
       const b = parseSet(setB);
       const c = mode === "3set" ? parseSet(setC) : [];
 
-      const allElements = [...new Set([...a, ...b, ...c].map(el => 
+      const allElements = [...new Set([...a, ...b, ...c].map(el =>
         typeof el === "number" ? el : String(el)
       ))] as (number | string)[];
 
@@ -329,9 +329,9 @@ export default function VennDiagramTool() {
                     <div className="p-3 border rounded-lg">
                       <p className="text-xs text-muted-foreground mb-1">Total in A ∪ B ∪ C</p>
                       <p className="font-mono text-sm">
-                        {result.onlyA.length + result.onlyB.length + result.onlyC.length + 
-                         result.onlyAB.length + result.onlyAC.length + result.onlyBC.length + 
-                         result.ABC.length} elements
+                        {result.onlyA.length + result.onlyB.length + result.onlyC.length +
+                          result.onlyAB.length + result.onlyAC.length + result.onlyBC.length +
+                          result.ABC.length} elements
                       </p>
                     </div>
                   </>
@@ -384,7 +384,7 @@ export default function VennDiagramTool() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Venn Diagram Analyses</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">2-Set Example: Even vs. Multiples of 3</h3>
           <p className="text-muted-foreground mb-2">
             A = {"{2, 4, 6, 8, 10, 12}"}, B = {"{3, 6, 9, 12, 15}"}
@@ -433,7 +433,7 @@ export default function VennDiagramTool() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What does the overlapping region represent?</h3>
@@ -483,24 +483,6 @@ export default function VennDiagramTool() {
                 Venn diagrams appear in data analysis (comparing customer segments), biology (comparing gene sets), marketing (overlapping target audiences), logic (visualizing syllogisms), and education (comparing concepts). They're excellent for any situation requiring visual comparison of groups.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/union-of-sets-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Union of Sets Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate the union of two or more sets with detailed results.</p>
-            </a>
-            <a href="/math-tools/intersection-of-sets-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Intersection of Sets Calculator</h3>
-              <p className="text-sm text-muted-foreground">Find common elements shared between multiple sets.</p>
-            </a>
-            <a href="/math-tools/set-difference-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Set Difference Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate elements in one set but not in another.</p>
-            </a>
           </div>
         </section>
       </div>

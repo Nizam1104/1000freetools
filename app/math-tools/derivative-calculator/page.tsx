@@ -100,25 +100,25 @@ export default function DerivativeCalculator() {
 
   const parsePowerFunction = (expr: string): { a: number; n: number } | null => {
     const clean = expr.replace(/\s/g, "").toLowerCase();
-    
+
     // Match ax^n format
     const match1 = clean.match(/^(-?\d*\.?\d*)x\^(-?\d+\.?\d*)$/);
     if (match1) {
       return { a: parseFloat(match1[1]) || 1, n: parseFloat(match1[2]) };
     }
-    
+
     // Match ax format (n=1)
     const match2 = clean.match(/^(-?\d*\.?\d*)x$/);
     if (match2) {
       return { a: parseFloat(match2[1]) || 1, n: 1 };
     }
-    
+
     // Match constant
     const match3 = clean.match(/^(-?\d+\.?\d*)$/);
     if (match3) {
       return { a: parseFloat(match3[1]), n: 0 };
     }
-    
+
     return null;
   };
 
@@ -156,7 +156,7 @@ export default function DerivativeCalculator() {
 
   const parseChainFunction = (expr: string): { outer: string; inner: string; innerDeriv: string; result: string } | null => {
     const clean = expr.replace(/\s/g, "");
-    
+
     // Match (ax+b)^n
     const match1 = clean.match(/^\(([^)]+)\)\^(\d+)$/);
     if (match1) {
@@ -199,33 +199,33 @@ export default function DerivativeCalculator() {
 
   const differentiateLinear = (expr: string): string => {
     const clean = expr.replace(/\s/g, "").toLowerCase();
-    
+
     // Match ax+b
     const match1 = clean.match(/^(-?\d*\.?\d*)x\+(-?\d+\.?\d*)$/);
     if (match1) {
       const a = parseFloat(match1[1]) || 1;
       return `${a}`;
     }
-    
+
     // Match ax-b
     const match2 = clean.match(/^(-?\d*\.?\d*)x-(-?\d+\.?\d*)$/);
     if (match2) {
       const a = parseFloat(match2[1]) || 1;
       return `${a}`;
     }
-    
+
     // Match ax
     const match3 = clean.match(/^(-?\d*\.?\d*)x$/);
     if (match3) {
       const a = parseFloat(match3[1]) || 1;
       return `${a}`;
     }
-    
+
     // Match constant
     if (clean.match(/^-?\d+\.?\d*$/)) {
       return "0";
     }
-    
+
     return "1";
   };
 
@@ -291,9 +291,9 @@ export default function DerivativeCalculator() {
             id="expression"
             placeholder={
               functionType === "power" ? "e.g., 3x^2 or x^3" :
-              functionType === "product" ? "e.g., (2x+1)(x-3)" :
-              functionType === "quotient" ? "e.g., (x+1)/(2x-1)" :
-              "e.g., (3x+2)^4 or sin(2x)"
+                functionType === "product" ? "e.g., (2x+1)(x-3)" :
+                  functionType === "quotient" ? "e.g., (x+1)/(2x-1)" :
+                    "e.g., (3x+2)^4 or sin(2x)"
             }
             value={expression}
             onChange={(e) => setExpression(e.target.value)}
@@ -355,7 +355,7 @@ export default function DerivativeCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Calculations</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Power Rule Example</h3>
           <p className="text-muted-foreground mb-2">
             Find the derivative of f(x) = 3x²
@@ -397,7 +397,7 @@ export default function DerivativeCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">What is a derivative in calculus?</h3>
@@ -447,24 +447,6 @@ export default function DerivativeCalculator() {
                 A constant doesn't change, so its rate of change is zero. Geometrically, a constant function graphs as a horizontal line, which has a slope of 0. This is why d/dx[5] = 0 and why the derivative of any constant term disappears during differentiation.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/tangent-line-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Tangent Line Calculator</h3>
-              <p className="text-sm text-muted-foreground">Find the equation of a tangent line at any point on a curve using derivatives.</p>
-            </a>
-            <a href="/math-tools/critical-point-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Critical Point Calculator</h3>
-              <p className="text-sm text-muted-foreground">Locate maximum, minimum, and inflection points by finding where the derivative equals zero.</p>
-            </a>
-            <a href="/math-tools/integral-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Integral Calculator</h3>
-              <p className="text-sm text-muted-foreground">Compute antiderivatives and definite integrals—the reverse operation of differentiation.</p>
-            </a>
           </div>
         </section>
       </div>

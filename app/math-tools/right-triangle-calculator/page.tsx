@@ -316,23 +316,6 @@ export default function RightTriangleCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/pythagorean-theorem-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Pythagorean Theorem</p>
-            <p className="text-xs text-muted-foreground">Find missing sides</p>
-          </a>
-          <a href="/math-tools/triangle-solver" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Triangle Solver</p>
-            <p className="text-xs text-muted-foreground">Solve any triangle</p>
-          </a>
-          <a href="/math-tools/trigonometry-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Trigonometry Calculator</p>
-            <p className="text-xs text-muted-foreground">Sin, cos, tan calculations</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

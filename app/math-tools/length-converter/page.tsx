@@ -295,23 +295,6 @@ export default function LengthConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/area-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Area Converter</p>
-            <p className="text-xs text-muted-foreground">Convert square units</p>
-          </a>
-          <a href="/math-tools/volume-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Volume Converter</p>
-            <p className="text-xs text-muted-foreground">Convert cubic units</p>
-          </a>
-          <a href="/math-tools/weight-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Weight Converter</p>
-            <p className="text-xs text-muted-foreground">Convert mass units</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

@@ -515,23 +515,6 @@ export default function LineGraphBuilder() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/bar-chart-maker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Bar Chart Maker</p>
-            <p className="text-xs text-muted-foreground">Create bar graphs</p>
-          </a>
-          <a href="/math-tools/pie-chart-generator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Pie Chart Generator</p>
-            <p className="text-xs text-muted-foreground">Create pie charts</p>
-          </a>
-          <a href="/math-tools/scatter-plot-maker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Scatter Plot Maker</p>
-            <p className="text-xs text-muted-foreground">Plot data points</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

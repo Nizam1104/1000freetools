@@ -138,7 +138,7 @@ export default function UnionOfSetsCalculator() {
             <div className="p-4 border rounded-lg">
               <h4 className="font-semibold text-sm mb-2">Understanding the Result</h4>
               <p className="text-sm text-muted-foreground">
-                The union contains all unique elements that appear in <strong>any</strong> of the input sets. 
+                The union contains all unique elements that appear in <strong>any</strong> of the input sets.
                 Duplicate elements appear only once in the result.
               </p>
             </div>
@@ -275,24 +275,6 @@ export default function UnionOfSetsCalculator() {
                 Set union appears in database queries (SQL UNION), programming (combining arrays or lists), probability (P(A or B)), search engines (combining result sets), and data analysis (merging datasets). It's a fundamental operation in any field that handles collections of data.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/intersection-of-sets-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Intersection of Sets Calculator</h3>
-              <p className="text-sm text-muted-foreground">Find elements common to all input sets using set intersection.</p>
-            </a>
-            <a href="/math-tools/set-difference-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Set Difference Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate A - B (elements in A but not in B).</p>
-            </a>
-            <a href="/math-tools/venn-diagram-tool" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Venn Diagram Tool</h3>
-              <p className="text-sm text-muted-foreground">Visualize set relationships with interactive 2-set and 3-set diagrams.</p>
-            </a>
           </div>
         </section>
       </div>

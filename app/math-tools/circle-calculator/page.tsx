@@ -472,23 +472,6 @@ export default function CircleCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h2 className="text-2xl font-semibold">Related Math Tools</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/perimeter-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Perimeter Calculator</p>
-            <p className="text-xs text-muted-foreground">2D perimeter</p>
-          </a>
-          <a href="/math-tools/area-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Area Calculator</p>
-            <p className="text-xs text-muted-foreground">2D area calculations</p>
-          </a>
-          <a href="/math-tools/volume-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Volume Calculator</p>
-            <p className="text-xs text-muted-foreground">3D volume (sphere, cylinder)</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

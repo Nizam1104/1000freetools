@@ -50,7 +50,7 @@ export default function TwosComplementCalculator() {
         }
 
         decimal = num;
-        
+
         if (num >= 0) {
           // Positive number: direct binary
           binary = num.toString(2).padStart(bitWidth, '0');
@@ -66,13 +66,13 @@ export default function TwosComplementCalculator() {
           // Negative number: two's complement
           const absNum = Math.abs(num);
           const positiveBinary = absNum.toString(2).padStart(bitWidth, '0');
-          
+
           // Invert bits
           let inverted = '';
           for (const bit of positiveBinary) {
             inverted += bit === '0' ? '1' : '0';
           }
-          
+
           // Add 1
           let carry = 1;
           let twosComplement = '';
@@ -82,9 +82,9 @@ export default function TwosComplementCalculator() {
             twosComplement = (sum % 2) + twosComplement;
             carry = Math.floor(sum / 2);
           }
-          
+
           binary = twosComplement;
-          
+
           steps.push(`Converting ${num} to ${bitWidth}-bit two's complement`);
           steps.push(``);
           steps.push(`Step 1: Start with absolute value`);
@@ -104,14 +104,14 @@ export default function TwosComplementCalculator() {
       } else {
         // Convert two's complement binary to decimal
         binary = inputValue.replace(/[^01]/g, '');
-        
+
         if (binary.length > bitWidth) {
           setError(`Binary value exceeds ${bitWidth} bits`);
           return;
         }
-        
+
         binary = binary.padStart(bitWidth, '0');
-        
+
         steps.push(`Converting ${bitWidth}-bit two's complement to decimal`);
         steps.push(`Input: ${binary}`);
         steps.push(``);
@@ -290,9 +290,8 @@ export default function TwosComplementCalculator() {
                 {result.binary.split('').map((bit, i) => (
                   <div
                     key={i}
-                    className={`w-10 h-12 flex items-center justify-center font-mono font-bold rounded ${
-                      i === 0 ? 'bg-red-100 border-2 border-red-300' : 'bg-muted'
-                    }`}
+                    className={`w-10 h-12 flex items-center justify-center font-mono font-bold rounded ${i === 0 ? 'bg-red-100 border-2 border-red-300' : 'bg-muted'
+                      }`}
                   >
                     {bit}
                     {i === 0 && <span className="absolute -mt-6 text-xs text-red-600">sign</span>}
@@ -317,7 +316,7 @@ export default function TwosComplementCalculator() {
             <strong>To convert a positive number:</strong> Simply write it in binary and pad to the desired bit width. The leftmost bit (sign bit) will be 0.
           </p>
           <p className="text-muted-foreground mb-4">
-            <strong>To convert a negative number:</strong> 
+            <strong>To convert a negative number:</strong>
           </p>
           <ol className="list-decimal list-inside space-y-2 text-muted-foreground ml-4">
             <li>Start with the absolute value in binary</li>
@@ -331,7 +330,7 @@ export default function TwosComplementCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Example Conversions</h2>
-          
+
           <h3 className="text-xl font-semibold mb-3 mt-6">Converting +42 to 8-bit Two's Complement</h3>
           <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-2">
             <p>Step 1: Convert 42 to binary</p>
@@ -391,7 +390,7 @@ export default function TwosComplementCalculator() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">Why do computers use two's complement?</h3>
@@ -441,24 +440,6 @@ export default function TwosComplementCalculator() {
                 You can't—this causes overflow. The minimum 8-bit value is -128 (10000000). Trying to represent -129 would wrap around to +127 due to overflow. This is why choosing the right bit width matters: use 16-bit for values outside -128 to 127.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Related Math Tools</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <a href="/math-tools/binary-converter" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Binary Converter</h3>
-              <p className="text-sm text-muted-foreground">Convert between decimal, binary, octal, and hexadecimal number systems.</p>
-            </a>
-            <a href="/math-tools/bitwise-operations-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Bitwise Operations Calculator</h3>
-              <p className="text-sm text-muted-foreground">Perform AND, OR, XOR, NOT, and shift operations on binary numbers.</p>
-            </a>
-            <a href="/math-tools/hex-calculator" className="p-4 border rounded-lg hover:bg-muted transition-colors">
-              <h3 className="font-semibold mb-2">Hex Calculator</h3>
-              <p className="text-sm text-muted-foreground">Add, subtract, multiply, and divide hexadecimal numbers.</p>
-            </a>
           </div>
         </section>
       </div>

@@ -451,23 +451,6 @@ export default function TemperatureConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/unit-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Unit Converter</p>
-            <p className="text-xs text-muted-foreground">All unit conversions</p>
-          </a>
-          <a href="/math-tools/speed-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Speed Converter</p>
-            <p className="text-xs text-muted-foreground">Speed units</p>
-          </a>
-          <a href="/math-tools/energy-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Energy Converter</p>
-            <p className="text-xs text-muted-foreground">Energy units</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

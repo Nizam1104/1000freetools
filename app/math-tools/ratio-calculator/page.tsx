@@ -492,28 +492,6 @@ export default function RatioCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fraction Calculator</p>
-              <p className="text-xs text-muted-foreground">Work with fractions</p>
-            </a>
-            <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate percentages</p>
-            </a>
-            <a href="/math-tools/average-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Average Calculator</p>
-              <p className="text-xs text-muted-foreground">Find the mean</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

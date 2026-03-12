@@ -281,23 +281,6 @@ export default function ProbabilityCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/permutation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Permutation Calculator</p>
-            <p className="text-xs text-muted-foreground">nPr - arrangements where order matters</p>
-          </a>
-          <a href="/math-tools/combination-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Combination Calculator</p>
-            <p className="text-xs text-muted-foreground">nCr - selections where order doesn't matter</p>
-          </a>
-          <a href="/math-tools/mean-median-mode-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Statistics Calculator</p>
-            <p className="text-xs text-muted-foreground">Mean, median, mode, and more</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

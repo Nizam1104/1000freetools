@@ -313,23 +313,6 @@ export default function HarmonicMeanCalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/geometric-mean-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Geometric Mean</p>
-            <p className="text-xs text-muted-foreground">Multiplicative average</p>
-          </a>
-          <a href="/math-tools/arithmetic-mean-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Arithmetic Mean</p>
-            <p className="text-xs text-muted-foreground">Standard average</p>
-          </a>
-          <a href="/math-tools/mean-median-mode-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Mean Median Mode</p>
-            <p className="text-xs text-muted-foreground">All central tendencies</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

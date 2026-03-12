@@ -54,12 +54,6 @@
     "p": "Not everyone speaks CSV. Convert your data to a properly formatted Excel workbook — with styled headers, auto-sized columns, and .xlsx compatibility that opens perfectly in every version of Excel."
   },
   {
-    "toolName": "Excel to CSV Converter",
-    "description": "Extracts sheets from .xlsx/.xls files and converts them to CSV. Supports sheet selection, merged cell handling, date formatting, and number format normalization.",
-    "h1": "Excel to CSV Converter — Extract Any Excel Sheet Into a Clean CSV File",
-    "p": "Free your data from Excel's proprietary grip. Choose any sheet from an .xlsx file and convert it to a portable, universally compatible CSV — with sensible handling for merged cells and date formats."
-  },
-  {
     "toolName": "CSV to TSV Converter",
     "description": "Converts comma-delimited CSV to tab-separated values (TSV). Handles quoted commas in fields safely, preserves all data, and outputs clean .tsv files.",
     "h1": "CSV to TSV Converter — Switch Delimiters From Commas to Tabs Safely",

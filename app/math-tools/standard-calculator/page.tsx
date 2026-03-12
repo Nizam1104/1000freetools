@@ -366,28 +366,6 @@ export default function StandardCalculator() {
           </div>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Related Math Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/scientific-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Scientific Calculator</p>
-              <p className="text-xs text-muted-foreground">Advanced math with trig functions</p>
-            </a>
-            <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Percentage Calculator</p>
-              <p className="text-xs text-muted-foreground">Calculate percentages instantly</p>
-            </a>
-            <a href="/math-tools/fraction-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Fraction Calculator</p>
-              <p className="text-xs text-muted-foreground">Add, subtract, multiply fractions</p>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

@@ -509,23 +509,6 @@ export default function NumberWordConverter() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/roman-numeral-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Roman Numeral Converter</p>
-            <p className="text-xs text-muted-foreground">Numbers to Roman numerals</p>
-          </a>
-          <a href="/math-tools/standard-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Calculator</p>
-            <p className="text-xs text-muted-foreground">Basic arithmetic</p>
-          </a>
-          <a href="/math-tools/decimal-to-fraction-converter" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Decimal to Fraction Converter</p>
-            <p className="text-xs text-muted-foreground">Decimal to fraction</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

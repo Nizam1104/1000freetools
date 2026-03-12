@@ -339,23 +339,6 @@ export default function FactorCalculator() {
           </div>
         </section>
 
-        <section className="border-t pt-8 space-y-6">
-          <h3 className="text-xl font-semibold">Related Math Tools</h3>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <a href="/math-tools/gcd-hcf-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">GCD/HCF Calculator</p>
-              <p className="text-xs text-muted-foreground">Find greatest common divisor</p>
-            </a>
-            <a href="/math-tools/lcm-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">LCM Calculator</p>
-              <p className="text-xs text-muted-foreground">Find least common multiple</p>
-            </a>
-            <a href="/math-tools/prime-factorization-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-              <p className="font-semibold text-sm">Prime Factorization</p>
-              <p className="text-xs text-muted-foreground">Break down to primes</p>
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   );

@@ -392,23 +392,6 @@ export default function HistogramGenerator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/frequency-distribution-table" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Frequency Distribution</p>
-            <p className="text-xs text-muted-foreground">Tabular view</p>
-          </a>
-          <a href="/math-tools/box-plot-maker" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Box Plot Maker</p>
-            <p className="text-xs text-muted-foreground">Five-number summary</p>
-          </a>
-          <a href="/math-tools/standard-deviation-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Standard Deviation</p>
-            <p className="text-xs text-muted-foreground">Measure of spread</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

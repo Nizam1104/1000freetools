@@ -329,23 +329,6 @@ export default function ROICalculator() {
         </div>
       </section>
 
-      <section className="border-t pt-8 space-y-6">
-        <h3 className="text-xl font-semibold">Related Math Tools</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
-          <a href="/math-tools/profit-loss-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Profit & Loss Calculator</p>
-            <p className="text-xs text-muted-foreground">Calculate profit/loss percentage</p>
-          </a>
-          <a href="/math-tools/percentage-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Percentage Calculator</p>
-            <p className="text-xs text-muted-foreground">General percentage calculations</p>
-          </a>
-          <a href="/math-tools/compound-interest-calculator" className="p-4 rounded-lg border hover:bg-muted transition-colors">
-            <p className="font-semibold text-sm">Compound Interest</p>
-            <p className="text-xs text-muted-foreground">Investment growth over time</p>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }
