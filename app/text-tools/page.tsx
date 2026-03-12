@@ -167,7 +167,7 @@ export default function TextToolsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="min-h-screen max-w-6xl mx-auto">
+      <div className="min-h-screen max-w-6xl mx-auto px-2 md:px-4">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
