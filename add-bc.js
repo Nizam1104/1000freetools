@@ -1,104 +1,200 @@
-import type { Metadata } from "next";
-import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+#!/usr/bin/env node
 
-export const metadata: Metadata = {
-    title: "Age Calculator – Find Your Exact Age in Years & Days",
-    description: "Calculate your exact age in years, months, and days with our free online age calculator. Enter your birthdate to find your precise age as of today or any specific date.",
-    alternates: {
-        canonical: "https://1000freetools.com/calculators/age-calculator",
-    },
-    openGraph: {
-        title: "Age Calculator – Find Your Exact Age in Years & Days",
-        description: "Calculate your exact age in years, months, and days with our free online age calculator. Enter your birthdate to find your precise age as of today or any specific date.",
-        type: "website",
-        url: "https://1000freetools.com/calculators/age-calculator",
-        siteName: "1000 Free Tools",
-        locale: "en_US",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Age Calculator – Find Your Exact Age in Years & Days",
-        description: "Calculate your exact age in years, months, and days with our free online age calculator. Enter your birthdate to find your precise age as of today or any specific date.",
-    },
-};
+/**
+ * add-breadcrumbs.js
+ *
+ * Usage: node add-breadcrumbs.js <folder-path>
+ *
+ * Goes into every immediate subfolder of <folder-path>, finds layout.tsx,
+ * and adds a breadcrumb block if one doesn't already exist.
+ *
+ * Example folder structure:
+ *   app/math-tools/age-calculator/layout.tsx
+ *   app/math-tools/date-calculator/layout.tsx
+ *
+ * Running: node add-breadcrumbs.js app/math-tools
+ *   => breadcrumb: Home > Math Tools > Age Calculator
+ *   => breadcrumb: Home > Math Tools > Date Calculator
+ */
 
-const tools = [
-    {
-        "name": "Date Difference Calculator – Find Days Between Two Dates",
-        "description": "Calculate the exact difference between any two dates in days, weeks, months, and years with our free online date difference calculator. Instant and accurate date comparison.",
-        "href": "/math-tools/date-difference-calculator"
-    },
-    {
-        "name": "Days Until / Since Calculator – Countdown to Any Date",
-        "description": "Find out how many days until or since any date with our free online countdown calculator. Perfect for counting down to events, deadlines, holidays, and special occasions.",
-        "href": "/math-tools/days-until-since-calculator"
-    },
-    {
-        "name": "Leap Year Checker – Is It a Leap Year? Find Out Online",
-        "description": "Check if any year is a leap year with our free online leap year checker. Instantly verify using Gregorian calendar rules with a clear explanation of why it is or isn't a leap year.",
-        "href": "/math-tools/leap-year-checker"
-    },
-    {
-        "name": "Day of the Week Calculator – Find What Day Any Date Falls On",
-        "description": "Find out what day of the week any past, present, or future date falls on with our free online day of the week calculator. Works for any date in history.",
-        "href": "/math-tools/day-of-week-calculator"
-    },
-    {
-        "name": "Time Duration Calculator – Find Time Between Two Times",
-        "description": "Calculate the exact duration between any two times with our free online time duration calculator. Find hours, minutes, and seconds elapsed for any start and end time.",
-        "href": "/math-tools/time-duration-calculator"
-    },
-    {
-        "name": "Date Arithmetic Calculator – Add or Subtract Days from a Date",
-        "description": "Add or subtract days, weeks, or months from any date with our free online date arithmetic calculator. Find past and future dates from any starting date instantly.",
-        "href": "/math-tools/date-arithmetic-calculator"
-    },
-    {
-        "name": "Average Calculator – Find the Mean of Any Numbers",
-        "description": "Calculate the average or arithmetic mean of any set of numbers with our free online mean calculator. Enter your values and get instant results – great for students, teachers, and analysts.",
-        "href": "/math-tools/average-calculator"
-    },
-    {
-        "name": "Free Online Standard Calculator – Fast & Easy Math",
-        "description": "Use our free standard calculator online to perform quick arithmetic operations including addition, subtraction, multiplication, and division. Simple, fast, and accurate for everyday math needs.",
-        "href": "/math-tools/standard-calculator"
-    }
-];
+const fs = require("fs");
+const path = require("path");
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-    return (
-        <div className="flex flex-col gap-y-4 max-w-6xl">
-            <div>
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="/design-tools">Math Tools</BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="/math-tools/age-calculator">
-                                Age Calculator
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb>
-            </div>
-            {children}
-            <div className="mt-16 max-w-6xl">
-                <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
-                <ToolLinkCards tools={tools} />
-            </div>
-        </div>
-    );
+// ─── Helpers ────────────────────────────────────────────────────────────────
+
+/** Convert a kebab-case slug to Title Case label.
+ *  e.g. "age-calculator" → "Age Calculator"
+ */
+function slugToLabel(slug) {
+    return slug
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
 }
+
+/** Build the JSX breadcrumb block from an ordered array of { label, href } */
+function buildBreadcrumbJSX(crumbs) {
+    const items = crumbs
+        .map(
+            ({ label, href }, i) => `            <BreadcrumbItem>
+              <BreadcrumbLink href="${href}">${label}</BreadcrumbLink>
+            </BreadcrumbItem>${i < crumbs.length - 1 ? "\n            <BreadcrumbSeparator />" : ""}`
+        )
+        .join("\n");
+
+    return `      <div>
+        <Breadcrumb>
+          <BreadcrumbList>
+${items}
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>`;
+}
+
+/** The import lines to inject (only if not already present) */
+const BREADCRUMB_IMPORT = `import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";`;
+
+// ─── Core transform ──────────────────────────────────────────────────────────
+
+/**
+ * @param {string} layoutPath   - absolute path to layout.tsx
+ * @param {string} categorySlug - e.g. "math-tools"
+ * @param {string} toolSlug     - e.g. "age-calculator"
+ */
+function addBreadcrumbs(layoutPath, categorySlug, toolSlug) {
+    let src = fs.readFileSync(layoutPath, "utf8");
+
+    // ── Guard: skip if breadcrumbs already present ──
+    if (src.includes("<Breadcrumb>")) {
+        console.log(`  ⚠  Skipping (breadcrumb already exists): ${layoutPath}`);
+        return;
+    }
+
+    // ── 1. Add import (after the last existing import line) ──
+    if (!src.includes("BreadcrumbLink")) {
+        // Find the last import statement and insert after it
+        const lastImportMatch = [...src.matchAll(/^import .+;$/gm)].pop();
+        if (!lastImportMatch) {
+            console.error(`  ✗  Could not find import section in: ${layoutPath}`);
+            return;
+        }
+        const insertAt = lastImportMatch.index + lastImportMatch[0].length;
+        src = src.slice(0, insertAt) + "\n" + BREADCRUMB_IMPORT + src.slice(insertAt);
+    }
+
+    // ── 2. Build crumb data ──
+    const categoryLabel = slugToLabel(categorySlug);
+    const toolLabel = slugToLabel(toolSlug);
+
+    // href for category: derive from the layout file's grandparent folder name
+    // We use the same slug the file lives under, prefixed with /
+    const categoryHref = `/${categorySlug}`;
+    const toolHref = `/${categorySlug}/${toolSlug}`;
+
+    const crumbs = [
+        { label: "Home", href: "/" },
+        { label: categoryLabel, href: categoryHref },
+        { label: toolLabel, href: toolHref },
+    ];
+
+    const breadcrumbBlock = buildBreadcrumbJSX(crumbs);
+
+    // ── 3. Inject breadcrumb block inside the return's top-level container,
+    //       just before {children} ──
+    //
+    // We look for the pattern:
+    //   return (
+    //     <div ...>
+    //       {children}          ← insert before this
+    //
+    // Strategy: find the first occurrence of `{children}` inside the return
+    // statement and prepend the block before it (with proper indentation).
+
+    const childrenIdx = src.indexOf("{children}");
+    if (childrenIdx === -1) {
+        console.error(`  ✗  Could not find {children} in: ${layoutPath}`);
+        return;
+    }
+
+    // Find the start of that line so we can preserve indentation
+    const lineStart = src.lastIndexOf("\n", childrenIdx) + 1;
+    const indentation = src.slice(lineStart, childrenIdx).match(/^(\s*)/)?.[1] ?? "      ";
+
+    // Re-indent the breadcrumb block to match the {children} indentation level.
+    // The block is authored with 6-space base indent; we replace that with
+    // whatever indentation level {children} sits at.
+    const BASE_INDENT = "      "; // 6 spaces — matches buildBreadcrumbJSX
+    const indentedBlock =
+        breadcrumbBlock
+            .split("\n")
+            .map((line) => {
+                if (line.trim() === "") return "";
+                // Replace leading BASE_INDENT with the actual indentation
+                if (line.startsWith(BASE_INDENT)) {
+                    return indentation + line.slice(BASE_INDENT.length);
+                }
+                return indentation + line.trimStart();
+            })
+            .join("\n") + "\n";
+
+    src = src.slice(0, lineStart) + indentedBlock + src.slice(lineStart);
+
+    fs.writeFileSync(layoutPath, src, "utf8");
+    console.log(`  ✓  Updated: ${layoutPath}`);
+}
+
+// ─── Main ────────────────────────────────────────────────────────────────────
+
+function main() {
+    const [, , folderArg] = process.argv;
+
+    if (!folderArg) {
+        console.error("Usage: node add-breadcrumbs.js <folder-path>");
+        process.exit(1);
+    }
+
+    const folderPath = path.resolve(folderArg);
+
+    if (!fs.existsSync(folderPath)) {
+        console.error(`Folder not found: ${folderPath}`);
+        process.exit(1);
+    }
+
+    // The category slug is the name of the folder passed in
+    // e.g. if folderArg = "app/math-tools", categorySlug = "math-tools"
+    const categorySlug = path.basename(folderPath);
+
+    const entries = fs.readdirSync(folderPath, { withFileTypes: true });
+    const subfolders = entries.filter((e) => e.isDirectory());
+
+    if (subfolders.length === 0) {
+        console.log("No subfolders found.");
+        return;
+    }
+
+    console.log(`\nProcessing category: "${categorySlug}" (${subfolders.length} subfolders)\n`);
+
+    let processed = 0;
+    for (const dir of subfolders) {
+        const toolSlug = dir.name;
+        const layoutPath = path.join(folderPath, toolSlug, "layout.tsx");
+
+        if (!fs.existsSync(layoutPath)) {
+            console.log(`  –  No layout.tsx found in: ${toolSlug}/`);
+            continue;
+        }
+
+        addBreadcrumbs(layoutPath, categorySlug, toolSlug);
+        processed++;
+    }
+
+    console.log(`\nDone. Processed ${processed} layout file(s).`);
+}
+
+main();

@@ -83,7 +83,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/design-tools">Math Tools</BreadcrumbLink>
+              <BreadcrumbLink href="/math-tools">Math Tools</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
