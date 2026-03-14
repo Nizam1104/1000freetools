@@ -4,5 +4,9 @@
 	"compatibility_date": "2026-03-13",
 	"observability": {
 		"enabled": true
+	},
+		"vars": {
+		"JWT_SECRET": "a35d-1da29e669517",
+		"TURNSTILE_SECRET_KEY": "0x4AAAAAACqHhRvDK-EP5rFrZBpz3V8ToAY"
 	}
 }

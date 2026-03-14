@@ -23,7 +23,7 @@ interface CannibalizationPage {
 }
 
 /**
- * CannibalizationTable - Displays pages competing for the same keywords
+ * CannibalizationTablnpme - Displays pages competing for the same keywords
  * Helps identify keyword cannibalization issues
  */
 export function CannibalizationTable({ pages }: CannibalizationTableProps) {

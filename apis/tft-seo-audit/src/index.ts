@@ -27,7 +27,7 @@ function corsHeaders(origin: string | null) {
 		'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
 		'Access-Control-Allow-Headers': 'Authorization, Content-Type, x-turnstile-token',
 		'Access-Control-Expose-Headers': 'x-final-url, x-status-code, x-content-type',
-		'Vary': 'Origin',
+		Vary: 'Origin',
 	};
 }
 
@@ -78,32 +78,39 @@ export default {
 
 			// ✅ Also verify the hostname matches your domain to prevent token reuse from other sites
 			// Allow localhost in development, but enforce production domain in production
-			const isDevelopment = origin && isAllowedOrigin(origin);
+			const isDevelopment = origin && new URL(origin).hostname === 'localhost';
 			const expectedHostname = isDevelopment ? 'localhost' : new URL(ALLOWED_ORIGIN).hostname;
-			
+
 			if (!turnstileData.success || turnstileData.hostname !== expectedHostname) {
-				console.log('Turnstile failed:', { 
-					success: turnstileData.success, 
-					expectedHostname, 
+				console.log('Turnstile failed:', {
+					success: turnstileData.success,
+					expectedHostname,
 					actualHostname: turnstileData.hostname,
-					isDevelopment 
+					isDevelopment,
+					origin,
 				});
-				return new Response(JSON.stringify({
-					error: 'Turnstile verification failed',
-					details: turnstileData['error-codes'],
-				}), {
-					status: 403,
-					headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
-				});
+				return new Response(
+					JSON.stringify({
+						error: 'Turnstile verification failed',
+						details: turnstileData['error-codes'],
+					}),
+					{
+						status: 403,
+						headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
+					},
+				);
 			}
 
 			// ✅ Embed clientIp into JWT — this is what binds the token to this specific client
 			const now = Math.floor(Date.now() / 1000);
-			const token = await jwt.sign({
-				iat: now,                    // issued at
-				exp: now + (5 * 60),         // expires in 5 minutes
-				ip: clientIp,               // 🔒 IP claim — verified on every subsequent request
-			}, env.JWT_SECRET);
+			const token = await jwt.sign(
+				{
+					iat: now, // issued at
+					exp: now + 5 * 60, // expires in 5 minutes
+					ip: clientIp, // 🔒 IP claim — verified on every subsequent request
+				},
+				env.JWT_SECRET,
+			);
 
 			return new Response(JSON.stringify({ success: true, token }), {
 				status: 200,
@@ -158,7 +165,7 @@ export default {
 			// Parse URLs from body (POST) or query param (GET)
 			let urls: string[] = [];
 			if (request.method === 'POST') {
-				const body = await request.json() as { urls?: string[] };
+				const body = (await request.json()) as { urls?: string[] };
 				if (!body.urls || !Array.isArray(body.urls) || body.urls.length === 0) {
 					return new Response(JSON.stringify({ error: 'Missing or invalid "urls" array in request body' }), {
 						status: 400,
@@ -177,10 +184,10 @@ export default {
 				urls = [singleUrl];
 			}
 
-			console.log(urls)
+			console.log(urls);
 
 			// ✅ Basic URL validation — prevent SSRF to internal/private addresses
-			const safeUrls = urls.filter(u => {
+			const safeUrls = urls.filter((u) => {
 				try {
 					const parsed = new URL(u);
 					return parsed.protocol === 'https:' || parsed.protocol === 'http:';
@@ -197,7 +204,7 @@ export default {
 			}
 
 			// Check if any URL is localhost
-			const isLocalhost = safeUrls.some(u => {
+			const isLocalhost = safeUrls.some((u) => {
 				try {
 					const parsed = new URL(u);
 					return parsed.hostname === 'localhost' || parsed.hostname === '127.0.0.1' || parsed.hostname === '::1';
@@ -224,19 +231,22 @@ export default {
 
 				const results = await Promise.all(fetchPromises);
 
-				return new Response(JSON.stringify({
-					success: true,
-					timeTakenMs: Date.now() - requestStartTime,
-					isLocalhost,
-					results,
-				}), {
-					status: 200,
-					headers: {
-						'Content-Type': 'application/json',
-						'Cache-Control': 'no-cache, no-store',
-						...corsHeaders(origin),
+				return new Response(
+					JSON.stringify({
+						success: true,
+						timeTakenMs: Date.now() - requestStartTime,
+						isLocalhost,
+						results,
+					}),
+					{
+						status: 200,
+						headers: {
+							'Content-Type': 'application/json',
+							'Cache-Control': 'no-cache, no-store',
+							...corsHeaders(origin),
+						},
 					},
-				});
+				);
 			} catch (error: any) {
 				return new Response(JSON.stringify({ error: 'Failed to fetch HTML content', message: error.message }), {
 					status: 500,
