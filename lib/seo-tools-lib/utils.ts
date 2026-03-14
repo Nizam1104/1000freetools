@@ -12,9 +12,9 @@ export { type CrawlState } from './types';
 
 // Rate limiting constants
 const LOCALHOST_CONCURRENCY = 10; // 10 URLs per second for localhost
-const REMOTE_BATCH_SIZE = 10;     // Process 10 URLs at a time for remote sites
+const REMOTE_BATCH_SIZE = 10;     // Send 10 URLs at a time to worker for remote sites
 const REMOTE_COOLDOWN_MS = 5000;  // 5 second cooldown between batches
-const UI_UPDATE_RATE = 2;         // 2 URLs per second UI update during cooldown
+const UI_UPDATE_RATE = 2;         // 2 UI updates per second during cooldown
 
 export function createCrawlState(startUrl: string): CrawlState {
   return {
@@ -147,6 +147,7 @@ async function fetchUrlsViaWorker(urls: string[], sessionToken: string): Promise
   isLocalhost: boolean;
   error?: string;
 }> {
+  console.log(urls)
   try {
     const resp = await fetch(`${CF_WORKER_BASE_URL}/get-html-page`, {
       method: 'POST',
@@ -277,87 +278,100 @@ async function processLocalhostBatch(
 }
 
 /**
- * Process a single URL for remote sites via the CF worker.
- * Sends one URL at a time to keep things predictable and avoid
- * partial-result edge cases from large batch responses.
+ * Process a batch of URLs for remote sites via the CF worker.
+ * Sends up to REMOTE_BATCH_SIZE URLs at once, then analyzes results
+ * and updates the UI during the cooldown period.
  * Returns the number of new internal links discovered.
  */
-async function processRemoteUrl(
-  url: string,
+async function processRemoteBatch(
+  urls: string[],
   origin: string,
   state: CrawlState,
   onResult: (data: PageData) => void,
   onLog: (msg: string) => void,
   sessionToken: string,
 ): Promise<number> {
-  // Mark visited BEFORE fetching to prevent re-queuing if we get pre-empted
-  state.visited.add(url);
+  if (state.stopped || urls.length === 0) return 0;
 
-  onLog(`Fetching: ${url.substring(0, 80)}`);
+  onLog(`Fetching batch of ${urls.length} URLs...`);
 
   const t0 = Date.now();
-  const fetchResult = await fetchUrlsViaWorker([url], sessionToken);
+  const fetchResult = await fetchUrlsViaWorker(urls, sessionToken);
   const responseTimeMs = Date.now() - t0;
 
   if (fetchResult.error) {
-    onLog(`Worker error for ${url.substring(0, 60)}: ${fetchResult.error}`);
-    // If it's an auth error, surface it prominently — callers can check logs
-    const errData = makeErrorPageData(url, 0, '', responseTimeMs, fetchResult.error);
-    state.results = [...state.results, errData];
-    onResult(errData);
-    return 0;
-  }
-
-  const result = fetchResult.results[0];
-  if (!result) {
-    onLog(`No result returned for ${url.substring(0, 60)}`);
-    const errData = makeErrorPageData(url, 0, '', responseTimeMs, 'Worker returned empty result');
-    state.results = [...state.results, errData];
-    onResult(errData);
-    return 0;
-  }
-
-  if (!result.contentType.includes('text/html')) {
-    const errData = makeErrorPageData(result.url, result.statusCode, result.contentType, responseTimeMs, 'Not an HTML page');
-    state.results = [...state.results, errData];
-    onResult(errData);
-    return 0;
-  }
-
-  // Handle redirect — enqueue the final URL if it's internal and unvisited
-  if (result.finalUrl !== url) {
-    const normFinal = normaliseUrl(result.finalUrl, result.finalUrl);
-    if (normFinal && isInternalUrl(normFinal, origin) && !state.visited.has(normFinal)) {
-      state.queue.push(normFinal);
-      onLog(`Discovered via redirect: ${normFinal.substring(0, 80)}`);
+    onLog(`Worker error for batch: ${fetchResult.error}`);
+    // Create error entries for all URLs in the batch
+    for (const url of urls) {
+      const errData = makeErrorPageData(url, 0, '', responseTimeMs, fetchResult.error);
+      state.visited.add(url);
+      state.results = [...state.results, errData];
+      onResult(errData);
     }
+    return 0;
   }
 
-  const data = analysePage(result.url, result.html, result.statusCode, responseTimeMs, result.contentType);
-  state.results = [...state.results, data];
-  onResult(data);
+  let totalNewLinksFound = 0;
 
-  console.log(data.internalLinksTo)
+  // Process each result in the batch
+  for (const result of fetchResult.results) {
+    if (state.stopped) break;
 
-  // Discover and enqueue new internal links
-  let newLinksFound = 0;
-  for (const target of data.internalLinksTo) {
-    // console.log(target, 'target utils 265 line')
-    if (target && isInternalUrl(target, origin)) {
-      if (!state.referrers[target]) state.referrers[target] = new Set();
-      state.referrers[target].add(url);
-      if (!state.visited.has(target) && !state.queue.includes(target)) {
-        state.queue.push(target);
-        newLinksFound++;
+    const url = result.url;
+    state.visited.add(url);
+    onLog(`Analyzing: ${url.substring(0, 80)}`);
+
+    if (!result.contentType.includes('text/html')) {
+      const errData = makeErrorPageData(result.url, result.statusCode, result.contentType, responseTimeMs, 'Not an HTML page');
+      state.results = [...state.results, errData];
+      onResult(errData);
+      continue;
+    }
+
+    // Handle redirect — enqueue the final URL if it's internal and unvisited
+    if (result.finalUrl !== url) {
+      const normFinal = normaliseUrl(result.finalUrl, result.finalUrl);
+      if (normFinal && isInternalUrl(normFinal, origin) && !state.visited.has(normFinal)) {
+        state.queue.push(normFinal);
+        onLog(`Discovered via redirect: ${normFinal.substring(0, 80)}`);
       }
     }
+
+    const data = analysePage(result.url, result.html, result.statusCode, responseTimeMs, result.contentType);
+    state.results = [...state.results, data];
+    onResult(data);
+
+    // Discover and enqueue new internal links
+    let newLinksFound = 0;
+    for (const target of data.internalLinksTo) {
+      if (target && isInternalUrl(target, origin)) {
+        if (!state.referrers[target]) state.referrers[target] = new Set();
+        state.referrers[target].add(url);
+        if (!state.visited.has(target) && !state.queue.includes(target)) {
+          state.queue.push(target);
+          newLinksFound++;
+        }
+      }
+    }
+
+    if (newLinksFound > 0) {
+      onLog(`Found ${newLinksFound} new internal links on ${url.substring(0, 60)}`);
+      totalNewLinksFound += newLinksFound;
+    }
   }
 
-  if (newLinksFound > 0) {
-    onLog(`Found ${newLinksFound} new internal links on ${url.substring(0, 60)}`);
+  // Handle any URLs that didn't get results (mark as visited with error)
+  const processedUrls = new Set(fetchResult.results.map(r => r.url));
+  for (const url of urls) {
+    if (!processedUrls.has(url) && !state.visited.has(url)) {
+      state.visited.add(url);
+      const errData = makeErrorPageData(url, 0, '', responseTimeMs, 'No result from worker');
+      state.results = [...state.results, errData];
+      onResult(errData);
+    }
   }
 
-  return newLinksFound;
+  return totalNewLinksFound;
 }
 
 /**
@@ -413,12 +427,6 @@ export async function runCrawl(
 
   // ─── Remote path ───────────────────────────────────────────────────────────
   async function runRemoteCrawl() {
-    /**
-     * processedInCurrentWindow counts how many URLs we've sent to the worker
-     * since the last cooldown. Once it hits REMOTE_BATCH_SIZE we pause.
-     */
-    let processedInCurrentWindow = 0;
-
     try {
       while (!s.stopped) {
         // Always drain already-visited entries from the queue first
@@ -429,10 +437,26 @@ export async function runCrawl(
           break;
         }
 
-        // ── Cooldown gate ──────────────────────────────────────────────────
-        if (processedInCurrentWindow >= REMOTE_BATCH_SIZE) {
-          processedInCurrentWindow = 0;
-          onLog(`Rate limit reached — cooling down for ${REMOTE_COOLDOWN_MS / 1000}s...`);
+        // ── Take a batch of up to REMOTE_BATCH_SIZE URLs ────────────────────
+        const batchSize = Math.min(s.queue.length, REMOTE_BATCH_SIZE);
+        const batch = s.queue.slice(0, batchSize);
+
+        // Mark all URLs in batch as visited before fetching
+        for (const url of batch) {
+          s.visited.add(url);
+        }
+        onCountsUpdate(s.visited.size, s.queue.length);
+
+        // ── Fetch and process the batch ─────────────────────────────────────
+        await processRemoteBatch(batch, origin, s, onResult, onLog, sessionToken);
+        onCountsUpdate(s.visited.size, s.queue.length);
+
+        // Remove processed URLs from queue
+        s.queue = s.queue.slice(batchSize);
+
+        // ── Cooldown if there are more URLs to process ──────────────────────
+        if (!s.stopped && s.queue.length > 0) {
+          onLog(`Batch complete — cooling down for ${REMOTE_COOLDOWN_MS / 1000}s...`);
 
           const ticks = UI_UPDATE_RATE * (REMOTE_COOLDOWN_MS / 1000); // e.g. 10 ticks
           for (let i = 0; i < ticks; i++) {
@@ -445,27 +469,10 @@ export async function runCrawl(
           s.queue = s.queue.filter(u => !s.visited.has(u));
           if (s.queue.length === 0 || s.stopped) break;
         }
-
-        // ── Process one URL ────────────────────────────────────────────────
-        const nextUrl = s.queue[0];
-
-        // Safety check — skip if somehow already visited
-        if (s.visited.has(nextUrl)) {
-          s.queue = s.queue.filter(u => !s.visited.has(u));
-          continue;
-        }
-
-        await processRemoteUrl(nextUrl, origin, s, onResult, onLog, sessionToken);
-        processedInCurrentWindow++;
-        onCountsUpdate(s.visited.size, s.queue.length);
-
-        // Small yield between requests so the UI stays responsive
-        await new Promise((r) => setTimeout(r, 50));
       }
     } catch (err: any) {
       onLog(`Remote crawl error: ${err?.message ?? err}`);
     } finally {
-      // ✅ This always runs — even on throw or early break
       finishCrawl();
     }
   }
@@ -474,7 +481,7 @@ export async function runCrawl(
     onLog('Detected localhost — using fast crawl mode (10 URLs/sec)');
     await runLocalhostCrawl();
   } else {
-    onLog(`Detected remote site — using rate-limited crawl mode (${REMOTE_BATCH_SIZE} URLs per ${REMOTE_COOLDOWN_MS / 1000}s)`);
+    onLog(`Detected remote site — using batched crawl mode (${REMOTE_BATCH_SIZE} URLs per batch, ${REMOTE_COOLDOWN_MS / 1000}s cooldown)`);
     await runRemoteCrawl();
   }
 }

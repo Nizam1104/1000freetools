@@ -252,10 +252,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground w-full">
-      <header className="border-b border-border px-4 py-3 flex items-center justify-between">
-        <h1 className="text-sm font-semibold text-foreground tracking-tight">
-          🔍 SEO Site Auditor
-        </h1>
+      <header className="border-b border-border flex items-center justify-between">
         {results.length > 0 && !isCrawling && (
           <button
             onClick={() => {
