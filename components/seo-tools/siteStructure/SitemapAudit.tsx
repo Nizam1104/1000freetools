@@ -9,7 +9,7 @@
 
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { PageData, SitemapAudit } from "@/lib/seo-tools-lib/types";
 import {
   performSitemapAudit,
@@ -33,24 +33,28 @@ export function SitemapAuditPanel({
   const [loading, setLoading] = useState(false);
   const [expanded, setExpanded] = useState<"missing" | "extra" | null>(null);
 
-  // Run audit on mount
-  useMemo(() => {
-    if (pages.length === 0 || !rootUrl) return;
+  // Run audit once when component mounts with valid data
+  useEffect(() => {
+    if (pages.length === 0 || !rootUrl || analysis) return;
+
+    let cancelled = false;
 
     const runAudit = async () => {
       setLoading(true);
       try {
         const result = await performSitemapAudit(rootUrl, pages, sessionToken);
-        setAnalysis(result);
+        if (!cancelled) setAnalysis(result);
       } catch (error) {
         console.error("Sitemap audit failed:", error);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
     runAudit();
-  }, [pages, rootUrl]);
+
+    return () => { cancelled = true; };
+  }, [rootUrl, sessionToken]);
 
   if (loading) {
     return (

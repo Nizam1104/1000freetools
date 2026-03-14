@@ -9,7 +9,7 @@
 
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { PageData } from "@/lib/seo-tools-lib/types";
 import {
   performRobotsAudit,
@@ -34,9 +34,11 @@ export function RobotsAuditPanel({
   const [expandedRules, setExpandedRules] = useState(false);
   const [expandedBlocked, setExpandedBlocked] = useState(false);
 
-  // Run audit on mount
-  useMemo(() => {
-    if (pages.length === 0 || !rootUrl) return;
+  // Run audit once when component mounts with valid data
+  useEffect(() => {
+    if (pages.length === 0 || !rootUrl || analysis) return;
+
+    let cancelled = false;
 
     const runAudit = async () => {
       setLoading(true);
@@ -47,16 +49,18 @@ export function RobotsAuditPanel({
           "*",
           sessionToken,
         );
-        setAnalysis(result);
+        if (!cancelled) setAnalysis(result);
       } catch (error) {
         console.error("Robots audit failed:", error);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
     runAudit();
-  }, [pages, rootUrl]);
+
+    return () => { cancelled = true; };
+  }, [rootUrl, sessionToken]);
 
   if (loading) {
     return (

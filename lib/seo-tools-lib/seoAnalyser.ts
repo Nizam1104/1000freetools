@@ -47,7 +47,11 @@ export function normaliseUrl(raw: string, base: string): string | null {
 
 export function isInternalUrl(urlStr: string, origin: string): boolean {
   try {
-    return new URL(urlStr).origin === origin;
+    const parsedOrigin = new URL(urlStr).origin;
+    // Normalize both origins by removing trailing slashes for comparison
+    const normalizedOrigin = origin.replace(/\/$/, '');
+    const normalizedParsedOrigin = parsedOrigin.replace(/\/$/, '');
+    return normalizedParsedOrigin === normalizedOrigin;
   } catch {
     return false;
   }

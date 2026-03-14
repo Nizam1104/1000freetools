@@ -30,6 +30,8 @@ export interface RobotsAnalysis {
   blockedPages: Array<{ url: string; matchedRule: string }>;
 }
 
+const CF_WORKER_BASE_URL = process.env.NEXT_PUBLIC_CF_WORKER_BASE_URL;
+
 // ─── Helper Functions ─────────────────────────────────────────────────────────
 
 /**
@@ -53,15 +55,15 @@ function normalizePath(url: string): string {
  */
 function matchesPattern(path: string, pattern: string): boolean {
   if (!pattern) return false;
-  
+
   // Exact match for empty pattern (means allow all)
   if (pattern === '/') return path === '/';
-  
+
   // Convert robots.txt pattern to regex
   let regexPattern = pattern
     .replace(/[.+^${}()|[\]\\]/g, '\\$&')  // Escape special regex chars
     .replace(/\*/g, '.*');                  // * becomes .*
-  
+
   // Handle $ at end (exact end match)
   if (regexPattern.endsWith('$')) {
     regexPattern = regexPattern.slice(0, -1) + '$';
@@ -69,7 +71,7 @@ function matchesPattern(path: string, pattern: string): boolean {
     // Pattern matches if it's a prefix
     regexPattern = '^' + regexPattern;
   }
-  
+
   const regex = new RegExp(regexPattern);
   return regex.test(path);
 }
@@ -83,24 +85,24 @@ function parseLine(line: string): {
   comment?: string;
 } {
   const trimmed = line.trim();
-  
+
   // Empty line or comment
   if (!trimmed) return {};
-  
+
   // Extract comment
   const commentIndex = trimmed.indexOf('#');
   const noComment = commentIndex >= 0 ? trimmed.slice(0, commentIndex) : trimmed;
   const comment = commentIndex >= 0 ? trimmed.slice(commentIndex + 1).trim() : undefined;
-  
+
   // Parse directive
   const colonIndex = noComment.indexOf(':');
   if (colonIndex === -1) {
     return { comment };
   }
-  
+
   const directive = noComment.slice(0, colonIndex).trim().toLowerCase();
   const value = noComment.slice(colonIndex + 1).trim();
-  
+
   return { directive, value, comment };
 }
 
@@ -111,27 +113,27 @@ function parseRobotsTxt(content: string): RobotsParseResult {
   const rules: RobotsRule[] = [];
   const sitemaps: string[] = [];
   let currentRule: RobotsRule | null = null;
-  
+
   const lines = content.split('\n');
-  
+
   for (const line of lines) {
     const { directive, value, comment } = parseLine(line);
-    
+
     if (!directive || !value) continue;
-    
+
     // Handle sitemap directive (global, not user-agent specific)
     if (directive === 'sitemap') {
       sitemaps.push(value);
       continue;
     }
-    
+
     // Handle user-agent directive
     if (directive === 'user-agent') {
       // Save previous rule if exists
       if (currentRule) {
         rules.push(currentRule);
       }
-      
+
       // Start new rule
       currentRule = {
         userAgent: value,
@@ -141,7 +143,7 @@ function parseRobotsTxt(content: string): RobotsParseResult {
       };
       continue;
     }
-    
+
     // Handle disallow directive
     if (directive === 'disallow' && currentRule) {
       if (value) {  // Empty value means allow all
@@ -149,19 +151,19 @@ function parseRobotsTxt(content: string): RobotsParseResult {
       }
       continue;
     }
-    
+
     // Handle allow directive
     if (directive === 'allow' && currentRule) {
       currentRule.allow.push(value);
       continue;
     }
   }
-  
+
   // Don't forget the last rule
   if (currentRule) {
     rules.push(currentRule);
   }
-  
+
   return {
     rules,
     raw: content,
@@ -178,12 +180,12 @@ function findRuleForUserAgent(
 ): RobotsRule | undefined {
   // First try exact match
   let rule = rules.find(r => r.userAgent.toLowerCase() === userAgent.toLowerCase());
-  
+
   // Fall back to wildcard
   if (!rule) {
     rule = rules.find(r => r.userAgent === '*');
   }
-  
+
   return rule;
 }
 
@@ -195,23 +197,23 @@ function isUrlAllowed(
   rule?: RobotsRule
 ): { allowed: boolean; matchedRule?: string } {
   if (!rule) return { allowed: true };
-  
+
   const path = normalizePath(url);
-  
+
   // Check allow rules first (more specific)
   for (const allowPattern of rule.allow) {
     if (matchesPattern(path, allowPattern)) {
       return { allowed: true, matchedRule: `Allow: ${allowPattern}` };
     }
   }
-  
+
   // Check disallow rules
   for (const disallowPattern of rule.disallow) {
     if (matchesPattern(path, disallowPattern)) {
       return { allowed: false, matchedRule: `Disallow: ${disallowPattern}` };
     }
   }
-  
+
   // Default: allowed
   return { allowed: true };
 }
@@ -226,15 +228,15 @@ export async function fetchAndParseRobots(
   sessionToken: string
 ): Promise<RobotsParseResult> {
   const robotsUrl = `${origin}/robots.txt`;
-  
+
   try {
-    const response = await fetch(`https://tft-seo-audit.nizam-v.workers.dev/get-html-page?url=${encodeURIComponent(robotsUrl)}`, {
+    const response = await fetch(`${CF_WORKER_BASE_URL}/get-html-page?url=${encodeURIComponent(robotsUrl)}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${sessionToken}`
       }
     });
-    
+
     // 404 means no robots.txt - that's OK, everything is allowed
     if (response.status === 404) {
       return {
@@ -243,7 +245,7 @@ export async function fetchAndParseRobots(
         sitemaps: [],
       };
     }
-    
+
     if (!response.ok) {
       return {
         rules: [],
@@ -252,7 +254,7 @@ export async function fetchAndParseRobots(
         sitemaps: [],
       };
     }
-    
+
     const text = await response.text();
     return parseRobotsTxt(text);
   } catch (error) {
@@ -274,10 +276,10 @@ export function analyzeRobotsTxt(
   userAgent = '*'
 ): RobotsAnalysis {
   const rule = findRuleForUserAgent(parseResult.rules, userAgent);
-  
+
   const blockedPages: Array<{ url: string; matchedRule: string }> = [];
   const disallowedPaths = rule?.disallow || [];
-  
+
   // Check each crawled page
   for (const page of crawledPages) {
     const check = isUrlAllowed(page.url, rule);
@@ -288,7 +290,7 @@ export function analyzeRobotsTxt(
       });
     }
   }
-  
+
   return {
     audit: {
       raw: parseResult.raw,
@@ -311,7 +313,7 @@ export async function performRobotsAudit(
   sessionToken: string
 ): Promise<RobotsAnalysis> {
   const parseResult = await fetchAndParseRobots(origin, sessionToken);
-  
+
   if (parseResult.parseError) {
     return {
       audit: {
@@ -324,7 +326,7 @@ export async function performRobotsAudit(
       blockedPages: [],
     };
   }
-  
+
   return analyzeRobotsTxt(parseResult, crawledPages, userAgent);
 }
 
@@ -333,34 +335,34 @@ export async function performRobotsAudit(
  */
 export function getRobotsIssues(analysis: RobotsAnalysis): string[] {
   const issues: string[] = [];
-  
+
   if (!analysis.audit.raw) {
     issues.push('No robots.txt found - consider adding one for better crawl control');
     return issues;
   }
-  
+
   if (analysis.blockedPages.length > 0) {
     const criticalPages = analysis.blockedPages.filter(b => {
       // Consider pages with good SEO scores as important
       return true; // Could add more sophisticated logic here
     });
-    
+
     if (criticalPages.length > 0) {
       issues.push(
         `${criticalPages.length} crawled page(s) are blocked by robots.txt`
       );
     }
   }
-  
+
   // Check for overly broad disallow rules
   const broadRules = analysis.rules.flatMap(r =>
     r.disallow.filter(d => d === '/' || d === '/*')
   );
-  
+
   if (broadRules.length > 0) {
     issues.push('robots.txt contains broad disallow rules that may block important content');
   }
-  
+
   // Check if sitemap is referenced
   if (analysis.sitemaps.length === 0) {
     const hasSitemapDirective = analysis.rules.some(r => r.sitemap);
@@ -368,7 +370,7 @@ export function getRobotsIssues(analysis: RobotsAnalysis): string[] {
       issues.push('No sitemap referenced in robots.txt');
     }
   }
-  
+
   return issues;
 }
 
@@ -383,7 +385,7 @@ export function isUrlBlockedByRobots(
   const parseResult = parseRobotsTxt(robotsText);
   const rule = findRuleForUserAgent(parseResult.rules, userAgent);
   const check = isUrlAllowed(url, rule);
-  
+
   return {
     blocked: !check.allowed,
     reason: check.matchedRule,

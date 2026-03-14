@@ -44,7 +44,7 @@ import {
 import { ExportPanel, CrawlDiffPanel } from "@/components/seo-tools/reporting";
 
 const CONCURRENCY = 4;
-const WORKER_URL = "https://tft-seo-audit.nizam-v.workers.dev";
+const WORKER_URL = process.env.NEXT_PUBLIC_CF_WORKER_BASE_URL
 
 // ─── Session token stored in memory only (not cookies) ────────────────────────
 // Cookies are readable by JS anyway, so in-memory is equally safe and simpler.
@@ -170,6 +170,7 @@ export default function Home() {
 
     // ✅ Check we have a session token before starting
     const sessionToken = getSessionToken();
+    console.log('session token', sessionToken)
     if (!sessionToken) {
       alert("Please complete the Turnstile verification first.");
       return;
