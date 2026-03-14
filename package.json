@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:worker && next build",
+    "build": "npm run build:worker && next build --turbo",
     "build:worker": "webpack --config webpack.worker.js",
     "start": "next start",
     "lint": "eslint",
     "dev-workers": "node build-workers.js --watch",
     "build:zip": "cd out && zip -r ../1000freetools.zip .",
     "deploy": "npx wrangler pages deploy out --project-name 1000freetools",
-    "build-deploy": "npm run build && npm run deploy"
+    "build-deploy": "npm run build && npm run deploy",
+    "ts-err": "npx tsc --noEmit 2>&1 | tee ts-errors.txt"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",

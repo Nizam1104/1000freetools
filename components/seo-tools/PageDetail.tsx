@@ -1,7 +1,7 @@
 'use client';
 
-import { PageData } from '../lib/seoAnalyser';
-import type { Issue } from '../lib/types';
+import { PageData } from '@/lib/seo-tools-lib/seoAnalyser';
+import type { Issue } from '@/lib/seo-tools-lib/types';
 
 interface Props {
   page: PageData;

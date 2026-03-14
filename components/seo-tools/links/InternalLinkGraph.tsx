@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState, useCallback } from 'react';
-import { PageData } from '../../lib/types';
+import { PageData } from '@/lib/seo-tools-lib/types';
 import { GraphCanvas } from 'reagraph';
 import type { GraphNode, GraphEdge } from 'reagraph';
 

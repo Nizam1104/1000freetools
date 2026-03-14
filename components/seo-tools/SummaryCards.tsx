@@ -1,6 +1,6 @@
 'use client';
 
-import { PageData } from '../lib/seoAnalyser';
+import { PageData } from '@/lib/seo-tools-lib/seoAnalyser';
 
 interface Props {
     results: PageData[];

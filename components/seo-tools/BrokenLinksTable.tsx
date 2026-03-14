@@ -1,6 +1,6 @@
 'use client';
 
-import { BrokenLink } from '../lib/seoAnalyser';
+import type { BrokenLink } from '@/lib/seo-tools-lib/seoAnalyser';
 
 interface Props {
     broken: BrokenLink[];

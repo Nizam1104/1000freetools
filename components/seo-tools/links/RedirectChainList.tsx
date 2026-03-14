@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { PageData } from '../../lib/types';
+import { PageData } from '@/lib/seo-tools-lib/types';
 
 interface RedirectChain {
   fromUrl: string;
@@ -178,11 +178,10 @@ export function RedirectChainList({ pages }: RedirectChainListProps) {
             return (
               <div
                 key={chainKey}
-                className={`border rounded-lg overflow-hidden transition-colors ${
-                  isLongChain
+                className={`border rounded-lg overflow-hidden transition-colors ${isLongChain
                     ? 'border-[var(--chart-3)]/50 bg-[var(--chart-3)]/10'
                     : 'border-border bg-card/30'
-                }`}
+                  }`}
               >
                 {/* Chain Summary */}
                 <button
@@ -191,9 +190,8 @@ export function RedirectChainList({ pages }: RedirectChainListProps) {
                 >
                   <div className="flex items-center gap-3">
                     <span
-                      className={`text-lg font-bold ${
-                        isLongChain ? 'text-[var(--chart-3)]' : 'text-muted-foreground'
-                      }`}
+                      className={`text-lg font-bold ${isLongChain ? 'text-[var(--chart-3)]' : 'text-muted-foreground'
+                        }`}
                     >
                       {chain.hops} hop{chain.hops !== 1 ? 's' : ''}
                     </span>
@@ -206,9 +204,8 @@ export function RedirectChainList({ pages }: RedirectChainListProps) {
                     </span>
                   </div>
                   <span
-                    className={`text-xs transition-transform ${
-                      isExpanded ? 'rotate-180' : ''
-                    }`}
+                    className={`text-xs transition-transform ${isExpanded ? 'rotate-180' : ''
+                      }`}
                   >
                     ▼
                   </span>

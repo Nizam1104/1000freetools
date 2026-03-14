@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { PageData } from '../../lib/types';
+import { PageData } from '@/lib/seo-tools-lib/types';
 
 interface AnchorTextCloudProps {
   pages: PageData[];
@@ -130,21 +130,19 @@ export function AnchorTextCloud({ pages }: AnchorTextCloudProps) {
           <div className="flex border border-border rounded overflow-hidden">
             <button
               onClick={() => setViewMode('cloud')}
-              className={`px-3 py-1 text-xs transition-colors ${
-                viewMode === 'cloud'
+              className={`px-3 py-1 text-xs transition-colors ${viewMode === 'cloud'
                   ? 'bg-accent text-foreground'
                   : 'bg-card text-muted-foreground hover:text-foreground'
-              }`}
+                }`}
             >
               Cloud
             </button>
             <button
               onClick={() => setViewMode('table')}
-              className={`px-3 py-1 text-xs transition-colors ${
-                viewMode === 'table'
+              className={`px-3 py-1 text-xs transition-colors ${viewMode === 'table'
                   ? 'bg-accent text-foreground'
                   : 'bg-card text-muted-foreground hover:text-foreground'
-              }`}
+                }`}
             >
               Table
             </button>
@@ -181,11 +179,10 @@ export function AnchorTextCloud({ pages }: AnchorTextCloudProps) {
             {anchorData.entries.map((entry) => (
               <span
                 key={entry.text}
-                className={`inline-block px-2 py-1 rounded transition-colors cursor-default ${
-                  entry.isGeneric
+                className={`inline-block px-2 py-1 rounded transition-colors cursor-default ${entry.isGeneric
                     ? 'text-[var(--chart-3)] bg-[var(--chart-3)]/10 hover:bg-[var(--chart-3)]/20'
                     : 'text-foreground bg-accent hover:bg-muted'
-                } ${getFontSize(entry.count, maxCount)}`}
+                  } ${getFontSize(entry.count, maxCount)}`}
                 title={`${entry.text}: ${entry.count} (${entry.percentage.toFixed(1)}%)`}
               >
                 {entry.text}

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import type { PageData } from '../../lib/types';
+import type { PageData } from '@/lib/seo-tools-lib/types';
 import { BreakdownRing } from '../shared/ScoreRing';
 
 interface HealthScoreProps {
@@ -31,9 +31,9 @@ export function HealthScore({ pages }: HealthScoreProps) {
     });
 
     const totalIssues = totalCritical + totalWarning + totalNotice;
-    
+
     // Calculate pass count (pages with no critical issues)
-    const passCount = pages.filter((page) => 
+    const passCount = pages.filter((page) =>
       !page.issues.some((issue) => issue.severity === 'critical')
     ).length;
 
@@ -43,7 +43,7 @@ export function HealthScore({ pages }: HealthScoreProps) {
       0,
       100 - (totalCritical * 5) - (totalWarning * 2) - (totalNotice * 0.5)
     );
-    
+
     const score = Math.round(rawScore);
 
     return {
@@ -96,10 +96,9 @@ export function HealthScore({ pages }: HealthScoreProps) {
       <div className="mt-4 pt-4 border-t border-border">
         <div className="flex items-center justify-between">
           <span className="text-xs text-muted-foreground">Overall Score</span>
-          <span className={`text-2xl font-bold ${
-            score >= 80 ? 'text-[var(--chart-1)]' :
-            score >= 50 ? 'text-[var(--chart-3)]' : 'text-destructive'
-          }`}>
+          <span className={`text-2xl font-bold ${score >= 80 ? 'text-[var(--chart-1)]' :
+              score >= 50 ? 'text-[var(--chart-3)]' : 'text-destructive'
+            }`}>
             {score}/100
           </span>
         </div>

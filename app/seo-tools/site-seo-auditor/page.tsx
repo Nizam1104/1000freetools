@@ -250,7 +250,7 @@ export default function Home() {
   const hasData = results.length > 0 || isCrawling;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground w-full">
       <header className="border-b border-border px-4 py-3 flex items-center justify-between">
         <h1 className="text-sm font-semibold text-foreground tracking-tight">
           🔍 SEO Site Auditor
@@ -369,11 +369,10 @@ export default function Home() {
                 <button
                   key={t.id}
                   onClick={() => setActiveTab(t.id)}
-                  className={`text-xs px-3 py-2 border-b-2 transition-colors ${
-                    activeTab === t.id
-                      ? "border-ring text-foreground"
-                      : "border-transparent text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`text-xs px-3 py-2 border-b-2 transition-colors ${activeTab === t.id
+                    ? "border-ring text-foreground"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {t.label}
                   {t.id === "pages" && results.length > 0 && (

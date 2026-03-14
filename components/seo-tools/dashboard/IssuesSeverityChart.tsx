@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import type { PageData } from '../../lib/types';
+import type { PageData } from '@/lib/seo-tools-lib/types';
 
 interface IssuesSeverityChartProps {
   pages: PageData[];

@@ -108,6 +108,19 @@ function sortByValue(
   return result;
 }
 
+type SortOption = {
+  value: SortMode;
+  label: string;
+  Icon: React.ComponentType<{ className?: string }>;
+};
+
+const sortOptions: SortOption[] = [
+  { value: "key-asc", label: "Key A→Z", Icon: ArrowUpAZ },
+  { value: "key-desc", label: "Key Z→A", Icon: ArrowDownAZ },
+  { value: "value-asc", label: "Value ↑", Icon: SortAsc },
+  { value: "value-desc", label: "Value ↓", Icon: SortDesc },
+];
+
 export default function JsonSorterPage() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
@@ -219,22 +232,7 @@ export default function JsonSorterPage() {
                   Sort By
                 </Label>
                 <div className="flex flex-wrap gap-2">
-                  {(
-                    [
-                      { value: "key-asc", label: "Key A→Z", Icon: ArrowUpAZ },
-                      {
-                        value: "key-desc",
-                        label: "Key Z→A",
-                        Icon: ArrowDownAZ,
-                      },
-                      { value: "value-asc", label: "Value ↑", Icon: SortAsc },
-                      { value: "value-desc", label: "Value ↓", Icon: SortDesc },
-                    ] as {
-                      value: SortMode;
-                      label: string;
-                      Icon: React.ElementType;
-                    }[]
-                  ).map(({ value, label, Icon }) => (
+                  {sortOptions.map(({ value, label, Icon }) => (
                     <button
                       key={value}
                       onClick={() => setSortMode(value)}
@@ -258,7 +256,10 @@ export default function JsonSorterPage() {
                   <Hash className="h-3 w-3" />
                   {isValueSort ? "Sort Key (required)" : "Filter Key"}
                 </Label>
-                <Select value={selectedKey} onValueChange={setSelectedKey}>
+                <Select
+                  value={selectedKey}
+                  onValueChange={(value) => setSelectedKey(value)}
+                >
                   <SelectTrigger
                     className={`w-[200px] ${isValueSort && selectedKey === "__all__"
                       ? "border-orange-400 text-orange-500"
@@ -273,7 +274,7 @@ export default function JsonSorterPage() {
                     </SelectItem>
                     {availableKeys.length > 0 ? (
                       availableKeys.map((k) => (
-                        <SelectItem key={k} value={k}>
+                        <SelectItem key={k} value={k as string}>
                           {k}
                         </SelectItem>
                       ))
