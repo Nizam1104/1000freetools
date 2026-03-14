@@ -188,8 +188,6 @@ export class VideoConverter {
       onProgress,
     } = options;
 
-    console.log("remove video", removeVideo);
-
     try {
       // Validate output format
       if (!SUPPORTED_OUTPUT_FORMATS.includes(outputFormat as any)) {

@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:worker && next build",
+    "build": "npm run build:worker && next build --turbo",
     "build:worker": "webpack --config webpack.worker.js",
     "start": "next start",
     "lint": "eslint",
     "dev-workers": "node build-workers.js --watch",
     "build:zip": "cd out && zip -r ../1000freetools.zip .",
     "deploy": "npx wrangler pages deploy out --project-name 1000freetools",
-    "build-deploy": "npm run build && npm run deploy"
+    "build-deploy": "npm run build && npm run deploy",
+    "ts-err": "npx tsc --noEmit 2>&1 | tee ts-errors.txt"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
@@ -20,6 +21,7 @@
     "@imgly/background-removal": "^1.7.0",
     "@jsquash/jxl": "^1.3.0",
     "@jsquash/qoi": "^1.1.0",
+    "@marsidev/react-turnstile": "^1.4.2",
     "@mediabunny/mp3-encoder": "^1.34.4",
     "@monaco-editor/react": "^4.7.0",
     "@pollinations/react": "^2.0.7",
@@ -56,6 +58,7 @@
     "react-player": "^3.4.0",
     "react-resizable-panels": "^3.0.6",
     "react-simple-code-editor": "^0.14.1",
+    "reagraph": "^4.30.8",
     "recharts": "^2.15.4",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
