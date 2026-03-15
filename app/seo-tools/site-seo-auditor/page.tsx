@@ -42,9 +42,9 @@ import {
   PageRankSimulator,
 } from "@/components/seo-tools/siteStructure";
 import { ExportPanel, CrawlDiffPanel } from "@/components/seo-tools/reporting";
+import { useRefreshWarning } from "@/hooks/confirm-refresh";
 
-const CONCURRENCY = 4;
-const WORKER_URL = process.env.NEXT_PUBLIC_CF_WORKER_BASE_URL
+const WORKER_URL = process.env.NEXT_PUBLIC_CF_WORKER_BASE_URL;
 
 // ─── Session token stored in memory only (not cookies) ────────────────────────
 // Cookies are readable by JS anyway, so in-memory is equally safe and simpler.
@@ -70,6 +70,7 @@ type Tab =
   | "reports";
 
 export default function Home() {
+  useRefreshWarning();
   const [inputUrl, setInputUrl] = useState("");
   const [isCrawling, setIsCrawling] = useState(false);
   const [results, setResults] = useState<PageData[]>([]);
@@ -170,7 +171,7 @@ export default function Home() {
 
     // ✅ Check we have a session token before starting
     const sessionToken = getSessionToken();
-    console.log('session token', sessionToken)
+    console.log("session token", sessionToken);
     if (!sessionToken) {
       alert("Please complete the Turnstile verification first.");
       return;
@@ -301,7 +302,7 @@ export default function Home() {
             onChange={(e) => setInputUrl(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && !isCrawling && startCrawl()}
             disabled={isCrawling}
-            className="flex-1 bg-card border border-border rounded px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring disabled:opacity-50 font-mono"
+            className="flex-1 bg-card border border-border rounded px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring disabled:opacity-50 font-mono max-w-xs"
           />
           {!isCrawling ? (
             <button
@@ -367,10 +368,11 @@ export default function Home() {
                 <button
                   key={t.id}
                   onClick={() => setActiveTab(t.id)}
-                  className={`text-xs px-3 py-2 border-b-2 transition-colors ${activeTab === t.id
-                    ? "border-ring text-foreground"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
-                    }`}
+                  className={`text-xs px-3 py-2 border-b-2 transition-colors ${
+                    activeTab === t.id
+                      ? "border-ring text-foreground"
+                      : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {t.label}
                   {t.id === "pages" && results.length > 0 && (
@@ -394,16 +396,15 @@ export default function Home() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                 <HealthScore pages={results} />
-                <IssuesSeverityChart pages={results} />
                 <StatusCodeChart pages={results} />
                 <PageDepthChart pages={results} />
+                <CrawlStats
+                  visitedCount={visitedCount}
+                  queueCount={queueCount}
+                  isCrawling={isCrawling}
+                  elapsedMs={elapsedMs}
+                />
               </div>
-              <CrawlStats
-                visitedCount={visitedCount}
-                queueCount={queueCount}
-                isCrawling={isCrawling}
-                elapsedMs={elapsedMs}
-              />
             </div>
 
             <div

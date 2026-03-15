@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useMemo } from 'react';
-import type { PageData } from '@/lib/seo-tools-lib/types';
+import React, { useMemo } from "react";
+import type { PageData } from "@/lib/seo-tools-lib/types";
 
 interface PageDepthChartProps {
   pages: PageData[];
@@ -38,7 +38,9 @@ export function PageDepthChart({ pages }: PageDepthChartProps) {
 
   return (
     <div className="bg-card border border-border rounded-lg p-4">
-      <h3 className="text-sm font-semibold text-foreground mb-4">Page Depth Distribution</h3>
+      <h3 className="text-sm font-semibold text-foreground mb-4">
+        Page Depth Distribution {JSON.stringify(depthDistribution)}
+      </h3>
 
       {pages.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-8 text-muted-foreground">
@@ -54,11 +56,11 @@ export function PageDepthChart({ pages }: PageDepthChartProps) {
               return (
                 <div
                   key={depth}
-                  className="flex-1 flex flex-col items-center justify-end gap-1"
+                  className="flex-1 flex flex-col items-center justify-end gap-1 h-full"
                 >
                   <div className="w-full relative flex items-end justify-center h-full">
                     <div
-                      className="w-full max-w-[40px] bg-[var(--chart-2)] hover:bg-[var(--chart-2)]/80 transition-all duration-200 rounded-t"
+                      className="w-full max-w-[40px] transition-all duration-200 rounded-t bg-primary"
                       style={{ height: `${heightPercent}%` }}
                     >
                       <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 text-xs text-foreground font-semibold">
@@ -74,13 +76,20 @@ export function PageDepthChart({ pages }: PageDepthChartProps) {
 
           {/* Legend */}
           <div className="pt-3 border-t border-border flex items-center justify-between">
-            <span className="text-xs text-muted-foreground">Depth from homepage</span>
+            <span className="text-xs text-muted-foreground">
+              Depth from homepage
+            </span>
             <div className="flex items-center gap-3">
               <span className="text-xs text-muted-foreground">
-                Avg: {pages.length > 0
-                  ? (entries.reduce((sum, { depth, count }) => sum + depth * count, 0) / pages.length).toFixed(1)
-                  : '0'
-                }
+                Avg:{" "}
+                {pages.length > 0
+                  ? (
+                      entries.reduce(
+                        (sum, { depth, count }) => sum + depth * count,
+                        0,
+                      ) / pages.length
+                    ).toFixed(1)
+                  : "0"}
               </span>
               <span className="text-xs text-muted-foreground">
                 Max: {maxDepth}

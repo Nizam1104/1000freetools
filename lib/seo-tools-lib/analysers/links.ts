@@ -143,7 +143,7 @@ export function analyseLinks(doc: Document, pageUrl: string): LinksResult {
     internalLinksTo,
     externalLinks,
     genericAnchorCount,
-    linkDepthFromRoot: 0, // Will be calculated post-crawl
+    linkDepthFromRoot: 0, // Populated after crawl completes via BFS in utils.ts
     issues,
   };
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ScoreRingProps {
   score: number;
@@ -10,9 +10,9 @@ interface ScoreRingProps {
 }
 
 const getScoreColor = (score: number): string => {
-  if (score >= 80) return 'var(--chart-1)';
-  if (score >= 50) return 'var(--chart-3)';
-  return 'var(--destructive)';
+  if (score >= 80) return "var(--chart-1)";
+  if (score >= 50) return "var(--chart-3)";
+  return "var(--destructive)";
 };
 
 export function ScoreRing({
@@ -21,7 +21,7 @@ export function ScoreRing({
   strokeWidth = 12,
   showLabel = true,
   label,
-  className = '',
+  className = "",
 }: ScoreRingProps) {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
@@ -29,7 +29,9 @@ export function ScoreRing({
   const color = getScoreColor(score);
 
   return (
-    <div className={`inline-flex flex-col items-center justify-center ${className}`}>
+    <div
+      className={`inline-flex flex-col items-center justify-center ${className}`}
+    >
       <svg
         width={size}
         height={size}
@@ -62,7 +64,11 @@ export function ScoreRing({
       {showLabel && (
         <div className="absolute flex flex-col items-center justify-center">
           <span className="text-2xl font-bold text-foreground">{score}</span>
-          {label && <span className="text-xs text-muted-foreground mt-0.5">{label}</span>}
+          {label && (
+            <span className="text-xs text-muted-foreground mt-0.5">
+              {label}
+            </span>
+          )}
         </div>
       )}
     </div>
@@ -89,7 +95,7 @@ export function BreakdownRing({
   pass,
   size = 140,
   strokeWidth = 14,
-  className = '',
+  className = "",
 }: BreakdownRingProps) {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
@@ -100,15 +106,17 @@ export function BreakdownRing({
   let cumulativeOffset = 0;
 
   const segments = [
-    { value: pass, color: 'var(--chart-1)', name: 'Pass' },
-    { value: notice, color: 'var(--chart-2)', name: 'Notice' },
-    { value: warning, color: 'var(--chart-3)', name: 'Warning' },
-    { value: critical, color: 'var(--destructive)', name: 'Critical' },
-  ].filter(s => s.value > 0);
+    { value: pass, color: "var(--chart-1)", name: "Pass" },
+    { value: notice, color: "var(--chart-2)", name: "Notice" },
+    { value: warning, color: "var(--chart-3)", name: "Warning" },
+    { value: critical, color: "var(--destructive)", name: "Critical" },
+  ].filter((s) => s.value > 0);
 
   if (total === 0) {
     return (
-      <div className={`inline-flex flex-col items-center justify-center ${className}`}>
+      <div
+        className={`inline-flex flex-col items-center justify-center ${className}`}
+      >
         <svg width={size} height={size}>
           <circle
             cx={size / 2}
@@ -154,17 +162,6 @@ export function BreakdownRing({
           );
         })}
       </svg>
-      <div className="flex gap-3 mt-3">
-        {segments.map(segment => (
-          <div key={segment.name} className="flex items-center gap-1">
-            <div
-              className="w-2 h-2 rounded-full"
-              style={{ backgroundColor: segment.color }}
-            />
-            <span className="text-xs text-muted-foreground">{segment.name}</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import type {
   ImageInfo as ImageInfoType,
   LinkInfo as LinkInfoType,
   Issue,
-} from './types';
+} from "./types";
 
 import {
   analyseMetaTags,
@@ -23,22 +23,22 @@ import {
   analyseTechnical,
   analyseMobile,
   analyseSecurity,
-} from './analysers';
+} from "./analysers";
 
-import { scorePageData } from './scoring';
+import { scorePageData } from "./scoring";
 
 // Re-export types for backward compatibility
-export type { ImageInfo, LinkInfo } from './types';
-export type { PageData, BrokenLink, UrlTreeNode } from './types';
+export type { ImageInfo, LinkInfo } from "./types";
+export type { PageData, BrokenLink, UrlTreeNode } from "./types";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 export function normaliseUrl(raw: string, base: string): string | null {
   try {
     const u = new URL(raw, base);
-    u.hash = '';
+    u.hash = "";
     let href = u.href;
-    if (href.endsWith('/') && u.pathname !== '/') href = href.slice(0, -1);
+    if (href.endsWith("/") && u.pathname !== "/") href = href.slice(0, -1);
     return href;
   } catch {
     return null;
@@ -49,8 +49,8 @@ export function isInternalUrl(urlStr: string, origin: string): boolean {
   try {
     const parsedOrigin = new URL(urlStr).origin;
     // Normalize both origins by removing trailing slashes for comparison
-    const normalizedOrigin = origin.replace(/\/$/, '');
-    const normalizedParsedOrigin = parsedOrigin.replace(/\/$/, '');
+    const normalizedOrigin = origin.replace(/\/$/, "");
+    const normalizedParsedOrigin = parsedOrigin.replace(/\/$/, "");
     return normalizedParsedOrigin === normalizedOrigin;
   } catch {
     return false;
@@ -66,7 +66,8 @@ export function analysePage(
   responseTimeMs: number,
   contentType: string,
 ): PageData {
-  const doc = new DOMParser().parseFromString(html, 'text/html');
+  console.log("analyze page called");
+  const doc = new DOMParser().parseFromString(html, "text/html");
 
   // Run all analysers
   const metaResult = analyseMetaTags(doc, url);
@@ -169,7 +170,7 @@ export function analysePage(
 
 export function buildBrokenLinks(
   results: PageData[],
-  referrers: Record<string, Set<string>>
+  referrers: Record<string, Set<string>>,
 ): BrokenLink[] {
   return results
     .filter((r) => r.statusCode >= 400 || r.statusCode === 0 || r.error)
@@ -189,10 +190,16 @@ export function buildBrokenLinks(
 // ─── URL Tree ─────────────────────────────────────────────────────────────────
 
 export function buildUrlTree(urls: string[], origin: string): UrlTreeNode {
-  const root: UrlTreeNode = { name: origin, path: '/', children: [], urls: [] };
+  const root: UrlTreeNode = { name: origin, path: "/", children: [], urls: [] };
   const childMap: Record<string, UrlTreeNode> = {};
 
-  function getOrCreate(parent: UrlTreeNode, mapKey: string, name: string, path: string, fullUrl: string): UrlTreeNode {
+  function getOrCreate(
+    parent: UrlTreeNode,
+    mapKey: string,
+    name: string,
+    path: string,
+    fullUrl: string,
+  ): UrlTreeNode {
     if (!childMap[mapKey]) {
       const node: UrlTreeNode = { name, path, fullUrl, children: [], urls: [] };
       childMap[mapKey] = node;
@@ -204,16 +211,18 @@ export function buildUrlTree(urls: string[], origin: string): UrlTreeNode {
   for (const url of urls) {
     try {
       const u = new URL(url);
-      const parts = u.pathname.split('/').filter((p) => p.length > 0);
+      const parts = u.pathname.split("/").filter((p) => p.length > 0);
       let node = root;
-      let currentPath = '';
+      let currentPath = "";
       for (const part of parts) {
-        currentPath += '/' + part;
+        currentPath += "/" + part;
         const key = origin + currentPath;
         node = getOrCreate(node, key, part, currentPath, key);
       }
       node.urls.push(url);
-    } catch { /* skip invalid */ }
+    } catch {
+      /* skip invalid */
+    }
   }
   return root;
 }

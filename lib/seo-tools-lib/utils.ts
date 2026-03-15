@@ -3,18 +3,24 @@
  * Extracted from page.tsx so the component stays thin.
  */
 
-import { analysePage, normaliseUrl, isInternalUrl, type PageData } from './seoAnalyser';
-import type { CrawlState } from './types';
+import {
+  analysePage,
+  normaliseUrl,
+  isInternalUrl,
+  type PageData,
+} from "./seoAnalyser";
+import type { CrawlState } from "./types";
+import { findOrphanPages } from "./siteAnalysis/orphanPages";
 
 const CF_WORKER_BASE_URL = process.env.NEXT_PUBLIC_CF_WORKER_BASE_URL;
 
-export { type CrawlState } from './types';
+export { type CrawlState } from "./types";
 
 // Rate limiting constants
 const LOCALHOST_CONCURRENCY = 10; // 10 URLs per second for localhost
-const REMOTE_BATCH_SIZE = 10;     // Send 10 URLs at a time to worker for remote sites
-const REMOTE_COOLDOWN_MS = 5000;  // 5 second cooldown between batches
-const UI_UPDATE_RATE = 2;         // 2 UI updates per second during cooldown
+const REMOTE_BATCH_SIZE = 10; // Send 10 URLs at a time to worker for remote sites
+const REMOTE_COOLDOWN_MS = 5000; // 5 second cooldown between batches
+const UI_UPDATE_RATE = 2; // 2 UI updates per second during cooldown
 
 export function createCrawlState(startUrl: string): CrawlState {
   return {
@@ -33,7 +39,7 @@ function makeErrorPageData(
   statusCode: number,
   contentType: string,
   responseTimeMs: number,
-  fetchError: string | null
+  fetchError: string | null,
 ): PageData {
   return {
     url,
@@ -43,44 +49,97 @@ function makeErrorPageData(
     crawledAt: new Date().toISOString(),
     error: fetchError,
 
-    title: '', titleLength: 0,
-    metaDescription: '', metaDescriptionLength: 0,
-    metaKeywords: '', canonicalUrl: '', canonicalIsSelf: false,
-    robotsMeta: '', noindex: false, nofollow: false,
-    langAttr: '', charset: '', hreflangTags: [], viewportMeta: '',
-    ogTitle: '', ogDescription: '', ogImage: '', ogType: '',
-    twitterCard: '', twitterTitle: '', twitterImage: '',
+    title: "",
+    titleLength: 0,
+    metaDescription: "",
+    metaDescriptionLength: 0,
+    metaKeywords: "",
+    canonicalUrl: "",
+    canonicalIsSelf: false,
+    robotsMeta: "",
+    noindex: false,
+    nofollow: false,
+    langAttr: "",
+    charset: "",
+    hreflangTags: [],
+    viewportMeta: "",
+    ogTitle: "",
+    ogDescription: "",
+    ogImage: "",
+    ogType: "",
+    twitterCard: "",
+    twitterTitle: "",
+    twitterImage: "",
 
-    h1Count: 0, h1s: [], h2Count: 0, h2s: [],
-    h3Count: 0, h3s: [], h4Count: 0, h4s: [],
-    h5Count: 0, h5s: [], h6Count: 0, h6s: [],
-    headingHierarchyViolations: [], emptyHeadings: [],
+    h1Count: 0,
+    h1s: [],
+    h2Count: 0,
+    h2s: [],
+    h3Count: 0,
+    h3s: [],
+    h4Count: 0,
+    h4s: [],
+    h5Count: 0,
+    h5s: [],
+    h6Count: 0,
+    h6s: [],
+    headingHierarchyViolations: [],
+    emptyHeadings: [],
 
-    wordCount: 0, charCount: 0, paragraphCount: 0,
-    avgSentenceLength: 0, textToHtmlRatio: 0,
-    readabilityScore: null, keywordDensity: [],
+    wordCount: 0,
+    charCount: 0,
+    paragraphCount: 0,
+    avgSentenceLength: 0,
+    textToHtmlRatio: 0,
+    readabilityScore: null,
+    keywordDensity: [],
 
-    imageCount: 0, imagesWithoutAlt: 0, images: [],
+    imageCount: 0,
+    imagesWithoutAlt: 0,
+    images: [],
 
-    totalLinks: 0, internalLinkCount: 0, externalLinkCount: 0,
-    nofollowLinkCount: 0, nofollowInternalCount: 0,
-    internalLinksTo: [], externalLinks: [],
-    genericAnchorCount: 0, linkDepthFromRoot: 0,
+    totalLinks: 0,
+    internalLinkCount: 0,
+    externalLinkCount: 0,
+    nofollowLinkCount: 0,
+    nofollowInternalCount: 0,
+    internalLinksTo: [],
+    externalLinks: [],
+    genericAnchorCount: 0,
+    linkDepthFromRoot: 0,
 
-    urlLength: 0, urlDepth: 0, urlHasParams: false,
-    urlHasUppercase: false, urlHasUnderscores: false, urlHasTrailingSlash: false,
+    urlLength: 0,
+    urlDepth: 0,
+    urlHasParams: false,
+    urlHasUppercase: false,
+    urlHasUnderscores: false,
+    urlHasTrailingSlash: false,
 
-    hasStructuredData: false, schemaTypes: [], schemaRaw: [],
-    hasBreadcrumbSchema: false, hasAmpVersion: false,
-    renderBlockingScripts: 0, inlineStyleCount: 0, externalScriptCount: 0,
-    hasPreload: false, hasPreconnect: false,
-    mixedContent: false, isHttps: url.startsWith('https://'),
+    hasStructuredData: false,
+    schemaTypes: [],
+    schemaRaw: [],
+    hasBreadcrumbSchema: false,
+    hasAmpVersion: false,
+    renderBlockingScripts: 0,
+    inlineStyleCount: 0,
+    externalScriptCount: 0,
+    hasPreload: false,
+    hasPreconnect: false,
+    mixedContent: false,
+    isHttps: url.startsWith("https://"),
 
-    hasMobileViewport: false, hasInterstitials: false,
+    hasMobileViewport: false,
+    hasInterstitials: false,
     pageSizeBytes: 0,
 
     issues: fetchError
-      ? [{ code: 'FETCH_ERROR', message: `Fetch error: ${fetchError}`, severity: 'critical' as const }]
+      ? [
+          {
+            code: "FETCH_ERROR",
+            message: `Fetch error: ${fetchError}`,
+            severity: "critical" as const,
+          },
+        ]
       : [],
     seoScore: 0,
   };
@@ -90,12 +149,14 @@ function makeErrorPageData(
 function isLocalhostUrl(url: string): boolean {
   try {
     const parsed = new URL(url);
-    return parsed.hostname === 'localhost' ||
-      parsed.hostname === '127.0.0.1' ||
-      parsed.hostname === '::1' ||
-      parsed.hostname.startsWith('192.168.') ||
-      parsed.hostname.startsWith('10.') ||
-      parsed.hostname.endsWith('.local');
+    return (
+      parsed.hostname === "localhost" ||
+      parsed.hostname === "127.0.0.1" ||
+      parsed.hostname === "::1" ||
+      parsed.hostname.startsWith("192.168.") ||
+      parsed.hostname.startsWith("10.") ||
+      parsed.hostname.endsWith(".local")
+    );
   } catch {
     return false;
   }
@@ -112,15 +173,15 @@ async function fetchUrlDirectly(url: string): Promise<{
 }> {
   try {
     const response = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; SEOAuditTool/1.0)' },
-      redirect: 'follow',
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; SEOAuditTool/1.0)" },
+      redirect: "follow",
     });
     const html = await response.text();
     return {
       url,
       finalUrl: response.url,
       statusCode: response.status,
-      contentType: response.headers.get('content-type') || '',
+      contentType: response.headers.get("content-type") || "",
       html,
     };
   } catch (err: any) {
@@ -128,15 +189,18 @@ async function fetchUrlDirectly(url: string): Promise<{
       url,
       finalUrl: url,
       statusCode: 0,
-      contentType: '',
-      html: '',
-      error: err.message || 'Network error',
+      contentType: "",
+      html: "",
+      error: err.message || "Network error",
     };
   }
 }
 
 /** Fetch URLs via the worker */
-async function fetchUrlsViaWorker(urls: string[], sessionToken: string): Promise<{
+async function fetchUrlsViaWorker(
+  urls: string[],
+  sessionToken: string,
+): Promise<{
   results: Array<{
     url: string;
     finalUrl: string;
@@ -147,30 +211,33 @@ async function fetchUrlsViaWorker(urls: string[], sessionToken: string): Promise
   isLocalhost: boolean;
   error?: string;
 }> {
-  console.log(urls)
+  console.log(urls);
   try {
     const resp = await fetch(`${CF_WORKER_BASE_URL}/get-html-page`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${sessionToken}`,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${sessionToken}`,
       },
       body: JSON.stringify({ urls }),
     });
 
     if (resp.status === 401) {
-      const body = await resp.json().catch(() => ({})) as { errorCode?: string };
-      const isExpired = body.errorCode === 'AUTH_INVALID' || body.errorCode === 'AUTH_MISSING';
-      const isIpMismatch = body.errorCode === 'AUTH_IP_MISMATCH';
+      const body = (await resp.json().catch(() => ({}))) as {
+        errorCode?: string;
+      };
+      const isExpired =
+        body.errorCode === "AUTH_INVALID" || body.errorCode === "AUTH_MISSING";
+      const isIpMismatch = body.errorCode === "AUTH_IP_MISMATCH";
 
       return {
         results: [],
         isLocalhost: false,
         error: isIpMismatch
-          ? 'Session rejected: IP mismatch. Please refresh and re-verify.'
+          ? "Session rejected: IP mismatch. Please refresh and re-verify."
           : isExpired
-            ? 'Session expired. Please complete Turnstile again.'
-            : 'Authentication failed. Please refresh the page.',
+            ? "Session expired. Please complete Turnstile again."
+            : "Authentication failed. Please refresh the page.",
       };
     }
 
@@ -182,7 +249,7 @@ async function fetchUrlsViaWorker(urls: string[], sessionToken: string): Promise
       };
     }
 
-    const data = await resp.json() as {
+    const data = (await resp.json()) as {
       success: boolean;
       isLocalhost: boolean;
       results?: Array<{
@@ -199,7 +266,7 @@ async function fetchUrlsViaWorker(urls: string[], sessionToken: string): Promise
       return {
         results: [],
         isLocalhost: false,
-        error: `Worker returned no results: ${data.error ?? 'success=false'}`,
+        error: `Worker returned no results: ${data.error ?? "success=false"}`,
       };
     }
 
@@ -211,7 +278,7 @@ async function fetchUrlsViaWorker(urls: string[], sessionToken: string): Promise
     return {
       results: [],
       isLocalhost: false,
-      error: err.message || 'Network error',
+      error: err.message || "Network error",
     };
   }
 }
@@ -223,7 +290,7 @@ async function processLocalhostBatch(
   state: CrawlState,
   onResult: (data: PageData) => void,
   onLog: (msg: string) => void,
-  onCountsUpdate: (visited: number, queue: number) => void
+  onCountsUpdate: (visited: number, queue: number) => void,
 ): Promise<void> {
   if (state.stopped) return;
 
@@ -243,8 +310,14 @@ async function processLocalhostBatch(
     const result = await fetchUrlDirectly(url);
     const responseTimeMs = Date.now() - t0;
 
-    if (result.error || !result.contentType.includes('text/html')) {
-      const errData = makeErrorPageData(url, result.statusCode, result.contentType, responseTimeMs, result.error || null);
+    if (result.error || !result.contentType.includes("text/html")) {
+      const errData = makeErrorPageData(
+        url,
+        result.statusCode,
+        result.contentType,
+        responseTimeMs,
+        result.error || null,
+      );
       state.results = [...state.results, errData];
       onResult(errData);
       return;
@@ -252,12 +325,22 @@ async function processLocalhostBatch(
 
     if (result.finalUrl !== url) {
       const normFinal = normaliseUrl(result.finalUrl, result.finalUrl);
-      if (normFinal && isInternalUrl(normFinal, origin) && !state.visited.has(normFinal)) {
+      if (
+        normFinal &&
+        isInternalUrl(normFinal, origin) &&
+        !state.visited.has(normFinal)
+      ) {
         state.queue.push(normFinal);
       }
     }
 
-    const data = analysePage(url, result.html, result.statusCode, responseTimeMs, result.contentType);
+    const data = analysePage(
+      url,
+      result.html,
+      result.statusCode,
+      responseTimeMs,
+      result.contentType,
+    );
     state.results = [...state.results, data];
     onResult(data);
 
@@ -303,7 +386,13 @@ async function processRemoteBatch(
     onLog(`Worker error for batch: ${fetchResult.error}`);
     // Create error entries for all URLs in the batch
     for (const url of urls) {
-      const errData = makeErrorPageData(url, 0, '', responseTimeMs, fetchResult.error);
+      const errData = makeErrorPageData(
+        url,
+        0,
+        "",
+        responseTimeMs,
+        fetchResult.error,
+      );
       state.visited.add(url);
       state.results = [...state.results, errData];
       onResult(errData);
@@ -321,8 +410,14 @@ async function processRemoteBatch(
     state.visited.add(url);
     onLog(`Analyzing: ${url.substring(0, 80)}`);
 
-    if (!result.contentType.includes('text/html')) {
-      const errData = makeErrorPageData(result.url, result.statusCode, result.contentType, responseTimeMs, 'Not an HTML page');
+    if (!result.contentType.includes("text/html")) {
+      const errData = makeErrorPageData(
+        result.url,
+        result.statusCode,
+        result.contentType,
+        responseTimeMs,
+        "Not an HTML page",
+      );
       state.results = [...state.results, errData];
       onResult(errData);
       continue;
@@ -331,13 +426,24 @@ async function processRemoteBatch(
     // Handle redirect — enqueue the final URL if it's internal and unvisited
     if (result.finalUrl !== url) {
       const normFinal = normaliseUrl(result.finalUrl, result.finalUrl);
-      if (normFinal && isInternalUrl(normFinal, origin) && !state.visited.has(normFinal)) {
+      if (
+        normFinal &&
+        isInternalUrl(normFinal, origin) &&
+        !state.visited.has(normFinal)
+      ) {
         state.queue.push(normFinal);
         onLog(`Discovered via redirect: ${normFinal.substring(0, 80)}`);
       }
     }
 
-    const data = analysePage(result.url, result.html, result.statusCode, responseTimeMs, result.contentType);
+    const data = analysePage(
+      result.url,
+      result.html,
+      result.statusCode,
+      responseTimeMs,
+      result.contentType,
+    );
+    console.log("page data", data);
     state.results = [...state.results, data];
     onResult(data);
 
@@ -355,17 +461,25 @@ async function processRemoteBatch(
     }
 
     if (newLinksFound > 0) {
-      onLog(`Found ${newLinksFound} new internal links on ${url.substring(0, 60)}`);
+      onLog(
+        `Found ${newLinksFound} new internal links on ${url.substring(0, 60)}`,
+      );
       totalNewLinksFound += newLinksFound;
     }
   }
 
   // Handle any URLs that didn't get results (mark as visited with error)
-  const processedUrls = new Set(fetchResult.results.map(r => r.url));
+  const processedUrls = new Set(fetchResult.results.map((r) => r.url));
   for (const url of urls) {
     if (!processedUrls.has(url) && !state.visited.has(url)) {
       state.visited.add(url);
-      const errData = makeErrorPageData(url, 0, '', responseTimeMs, 'No result from worker');
+      const errData = makeErrorPageData(
+        url,
+        0,
+        "",
+        responseTimeMs,
+        "No result from worker",
+      );
       state.results = [...state.results, errData];
       onResult(errData);
     }
@@ -390,17 +504,64 @@ export async function runCrawl(
   setFinalResults: (results: PageData[]) => void,
   setFinalRootUrl: (url: string) => void,
   setBroken: (broken: any[]) => void,
-  buildBrokenLinks: (results: PageData[], referrers: Record<string, Set<string>>) => any[]
+  buildBrokenLinks: (
+    results: PageData[],
+    referrers: Record<string, Set<string>>,
+  ) => any[],
 ): Promise<void> {
   const s = state;
   const isLocalhost = isLocalhostUrl(origin);
 
   /** Shared finish-up logic — called at the end of both crawl paths */
   function finishCrawl() {
+    // Calculate link depths from root using BFS
+    const { pagesWithDepth } = findOrphanPages(s.results, origin);
+    
+    // Create a map for quick lookup: normalized URL -> depth
+    const depthMap = new Map<string, number>();
+    for (const page of pagesWithDepth) {
+      try {
+        const u = new URL(page.url);
+        u.hash = '';
+        let href = u.href;
+        if (href.endsWith('/') && u.pathname !== '/') {
+          href = href.slice(0, -1);
+        }
+        depthMap.set(href.toLowerCase(), page.depth === Infinity ? -1 : page.depth);
+      } catch {
+        depthMap.set(page.url.toLowerCase(), page.depth === Infinity ? -1 : page.depth);
+      }
+    }
+    
+    // Update each PageData with its calculated depth
+    for (const page of s.results) {
+      try {
+        const u = new URL(page.url);
+        u.hash = '';
+        let href = u.href;
+        if (href.endsWith('/') && u.pathname !== '/') {
+          href = href.slice(0, -1);
+        }
+        const normalized = href.toLowerCase();
+        const depth = depthMap.get(normalized);
+        if (depth !== undefined && depth >= 0) {
+          page.linkDepthFromRoot = depth;
+        }
+      } catch {
+        const normalized = page.url.toLowerCase();
+        const depth = depthMap.get(normalized);
+        if (depth !== undefined && depth >= 0) {
+          page.linkDepthFromRoot = depth;
+        }
+      }
+    }
+    
     const bl = buildBrokenLinks(s.results, s.referrers);
     setBroken(bl);
     setIsCrawling(false);
-    onLog(`Done — ${s.visited.size} pages crawled, ${s.results.length} results.`);
+    onLog(
+      `Done — ${s.visited.size} pages crawled, ${s.results.length} results.`,
+    );
     setFinalResults([...s.results]);
     setFinalRootUrl(origin);
   }
@@ -412,8 +573,15 @@ export async function runCrawl(
         if (s.queue.length === 0 && s.active === 0) break;
 
         if (s.queue.length > 0) {
-          await processLocalhostBatch(s.queue, origin, s, onResult, onLog, onCountsUpdate);
-          s.queue = s.queue.filter(u => !s.visited.has(u));
+          await processLocalhostBatch(
+            s.queue,
+            origin,
+            s,
+            onResult,
+            onLog,
+            onCountsUpdate,
+          );
+          s.queue = s.queue.filter((u) => !s.visited.has(u));
         }
 
         await new Promise((r) => setTimeout(r, 100));
@@ -430,10 +598,10 @@ export async function runCrawl(
     try {
       while (!s.stopped) {
         // Always drain already-visited entries from the queue first
-        s.queue = s.queue.filter(u => !s.visited.has(u));
+        s.queue = s.queue.filter((u) => !s.visited.has(u));
 
         if (s.queue.length === 0) {
-          onLog('Queue empty — crawl complete.');
+          onLog("Queue empty — crawl complete.");
           break;
         }
 
@@ -448,7 +616,14 @@ export async function runCrawl(
         onCountsUpdate(s.visited.size, s.queue.length);
 
         // ── Fetch and process the batch ─────────────────────────────────────
-        await processRemoteBatch(batch, origin, s, onResult, onLog, sessionToken);
+        await processRemoteBatch(
+          batch,
+          origin,
+          s,
+          onResult,
+          onLog,
+          sessionToken,
+        );
         onCountsUpdate(s.visited.size, s.queue.length);
 
         // Remove processed URLs from queue
@@ -456,7 +631,9 @@ export async function runCrawl(
 
         // ── Cooldown if there are more URLs to process ──────────────────────
         if (!s.stopped && s.queue.length > 0) {
-          onLog(`Batch complete — cooling down for ${REMOTE_COOLDOWN_MS / 1000}s...`);
+          onLog(
+            `Batch complete — cooling down for ${REMOTE_COOLDOWN_MS / 1000}s...`,
+          );
 
           const ticks = UI_UPDATE_RATE * (REMOTE_COOLDOWN_MS / 1000); // e.g. 10 ticks
           for (let i = 0; i < ticks; i++) {
@@ -466,7 +643,7 @@ export async function runCrawl(
           }
 
           // Re-filter after cooldown in case stop was triggered
-          s.queue = s.queue.filter(u => !s.visited.has(u));
+          s.queue = s.queue.filter((u) => !s.visited.has(u));
           if (s.queue.length === 0 || s.stopped) break;
         }
       }
@@ -478,10 +655,12 @@ export async function runCrawl(
   }
 
   if (isLocalhost) {
-    onLog('Detected localhost — using fast crawl mode (10 URLs/sec)');
+    onLog("Detected localhost — using fast crawl mode (10 URLs/sec)");
     await runLocalhostCrawl();
   } else {
-    onLog(`Detected remote site — using batched crawl mode (${REMOTE_BATCH_SIZE} URLs per batch, ${REMOTE_COOLDOWN_MS / 1000}s cooldown)`);
+    onLog(
+      `Detected remote site — using batched crawl mode (${REMOTE_BATCH_SIZE} URLs per batch, ${REMOTE_COOLDOWN_MS / 1000}s cooldown)`,
+    );
     await runRemoteCrawl();
   }
 }
