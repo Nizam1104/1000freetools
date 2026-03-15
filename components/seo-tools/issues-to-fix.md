@@ -40,8 +40,7 @@ in PageData against what's actually being calculated:
     │ `hasDescriptiveF... │ Calculated but the pattern check is very basic                   │
     └─────────────────────┴──────────────────────────────────────────────────────────────────┘
 
-3 is done
----
+## 3 is done
 
     4. Fields in `LinkInfo` that are incomplete:
 
@@ -52,8 +51,7 @@ in PageData against what's actually being calculated:
     │ width / height │ Not applicable to links, but similar DOM limitations apply │
     └────────────────┴────────────────────────────────────────────────────────────┘
 
-4 is done
----
+## 4 is done
 
     5. `inboundCount` (Not in PageData, but related)
      - Defined in: types.ts:220 (in OrphanPage)
@@ -61,14 +59,16 @@ in PageData against what's actually being calculated:
      - Issue: While referrers are tracked in CrawlState, the PageData.inboundCount field doesn't
        even exist. The OrphanPage interface has it, but it's not integrated back into PageData.
 
-    ---
+5 is done
+---
 
     6. `urlKeywords` (URL section)
      - Defined in: analysers/urlAnalyser.ts:10 (in UrlAnalyserResult)
      - Issue: This is returned by analyseUrl() but NOT included in `PageData` interface at all!
        It's calculated but lost.
 
-    ---
+6 is done
+---
 
     7. `viewportMeta` (Mobile section)
      - Defined in: types.ts:30

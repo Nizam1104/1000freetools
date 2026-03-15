@@ -520,48 +520,25 @@ export async function runCrawl(
   function finishCrawl() {
     // Calculate link depths from root using BFS
     const { pagesWithDepth } = findOrphanPages(s.results, origin);
-    
+
     // Create a map for quick lookup: normalized URL -> depth
     const depthMap = new Map<string, number>();
     for (const page of pagesWithDepth) {
-      try {
-        const u = new URL(page.url);
-        u.hash = '';
-        let href = u.href;
-        if (href.endsWith('/') && u.pathname !== '/') {
-          href = href.slice(0, -1);
-        }
-        depthMap.set(href.toLowerCase(), page.depth === Infinity ? -1 : page.depth);
-      } catch {
-        depthMap.set(page.url.toLowerCase(), page.depth === Infinity ? -1 : page.depth);
-      }
+      const normalized =
+        normaliseUrl(page.url, origin) ?? page.url.toLowerCase();
+      depthMap.set(normalized, page.depth === Infinity ? -1 : page.depth);
     }
-    
+
     // Update each PageData with its calculated depth and inboundCount
     for (const page of s.results) {
-      try {
-        const u = new URL(page.url);
-        u.hash = '';
-        let href = u.href;
-        if (href.endsWith('/') && u.pathname !== '/') {
-          href = href.slice(0, -1);
-        }
-        const normalized = href.toLowerCase();
-        const depth = depthMap.get(normalized);
-        if (depth !== undefined && depth >= 0) {
-          page.linkDepthFromRoot = depth;
-        }
-        // Set inboundCount from referrers map
-        page.inboundCount = s.referrers[normalized]?.size ?? 0;
-      } catch {
-        const normalized = page.url.toLowerCase();
-        const depth = depthMap.get(normalized);
-        if (depth !== undefined && depth >= 0) {
-          page.linkDepthFromRoot = depth;
-        }
-        // Set inboundCount from referrers map
-        page.inboundCount = s.referrers[normalized]?.size ?? 0;
+      const normalized =
+        normaliseUrl(page.url, origin) ?? page.url.toLowerCase();
+      const depth = depthMap.get(normalized);
+      if (depth !== undefined && depth >= 0) {
+        page.linkDepthFromRoot = depth;
       }
+      // Set inboundCount from referrers map
+      page.inboundCount = s.referrers[normalized]?.size ?? 0;
     }
 
     const bl = buildBrokenLinks(s.results, s.referrers);
