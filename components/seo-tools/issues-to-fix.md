@@ -17,6 +17,7 @@ in PageData against what's actually being calculated:
      - Issue: The findOrphanPages() function in siteAnalysis/orphanPages.ts already calculates
        this via BFS, but it's never called after the crawl completes to populate the field.
 
+       1 is done
     ---
 
     2. `hasInterstitials` (Mobile section)
@@ -27,7 +28,7 @@ in PageData against what's actually being calculated:
        window.innerWidth, which don't work in a parsed DOM (no layout engine). This will always
        return false unless the page is rendered in a browser.
 
-    ---
+## 2 is done
 
     3. Fields in `ImageInfo` that are incomplete:
 
@@ -39,8 +40,8 @@ in PageData against what's actually being calculated:
     │ `hasDescriptiveF... │ Calculated but the pattern check is very basic                   │
     └─────────────────────┴──────────────────────────────────────────────────────────────────┘
 
-
-    ---
+3 is done
+---
 
     4. Fields in `LinkInfo` that are incomplete:
 
@@ -51,7 +52,8 @@ in PageData against what's actually being calculated:
     │ width / height │ Not applicable to links, but similar DOM limitations apply │
     └────────────────┴────────────────────────────────────────────────────────────┘
 
-    ---
+4 is done
+---
 
     5. `inboundCount` (Not in PageData, but related)
      - Defined in: types.ts:220 (in OrphanPage)

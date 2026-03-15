@@ -86,6 +86,10 @@ export interface PageData {
   urlHasUppercase: boolean;
   urlHasUnderscores: boolean;
   urlHasTrailingSlash: boolean;
+  urlKeywords: string[];
+
+  // ── Link Graph
+  inboundCount: number;
 
   // ── Technical / Structured Data
   hasStructuredData: boolean;
@@ -100,6 +104,7 @@ export interface PageData {
   hasPreconnect: boolean;
   mixedContent: boolean;
   isHttps: boolean;
+  insecureResourceCount: number;
 
   // ── Mobile
   hasMobileViewport: boolean;

@@ -40,7 +40,8 @@ export function analyseMobile(doc: Document): MobileResult {
   }
 
   // Interstitial/Popup Detection (heuristic)
-  // Look for fixed/sticky position elements with high z-index that cover most of the viewport
+  // Look for fixed/sticky position elements with high z-index that likely cover the viewport
+  // Since we're in a parsed DOM (no layout engine), we check for common interstitial patterns
   const allElements = Array.from(doc.querySelectorAll('*'));
   let hasInterstitials = false;
 
@@ -49,17 +50,40 @@ export function analyseMobile(doc: Document): MobileResult {
     const position = style.position;
     const zIndex = parseInt(style.zIndex || '0', 10);
 
-    if ((position === 'fixed' || position === 'sticky') && zIndex > 999) {
-      const rect = (el as HTMLElement).getBoundingClientRect?.();
-      if (rect && rect.width > window.innerWidth! * 0.8 && rect.height > window.innerHeight! * 0.8) {
+    // Check for fixed/sticky elements with high z-index (common interstitial pattern)
+    if (position === 'fixed' || position === 'sticky') {
+      // High z-index suggests overlay behavior
+      const hasHighZIndex = zIndex > 999;
+      
+      // Check for full-width/height coverage via inline styles
+      const hasFullWidth = style.width === '100%' || style.width === '100vw' || 
+                          style.minWidth === '100%' || style.minWidth === '100vw';
+      const hasFullHeight = style.height === '100%' || style.height === '100vh' ||
+                           style.minHeight === '100%' || style.minHeight === '100vh';
+      
+      // Check for common interstitial indicators
+      const hasOverlayBackground = style.backgroundColor || style.background;
+      const hasTopLeft = style.top === '0' || style.top === '0px';
+      const hasLeftRight = style.left === '0' || style.left === '0px' || 
+                          style.right === '0' || style.right === '0px';
+
+      if (hasHighZIndex && (hasFullWidth || hasTopLeft) && (hasFullHeight || hasLeftRight)) {
         hasInterstitials = true;
         break;
       }
     }
   }
 
-  // Note: hasInterstitials detection is limited in server-side/parsed DOM
-  // More accurate detection would require runtime analysis
+  // Also check for common interstitial HTML patterns (modal overlays, popups)
+  if (!hasInterstitials) {
+    const interstitialIndicators = doc.querySelectorAll(
+      '[class*="modal"], [class*="overlay"], [class*="popup"], [class*="interstitial"], ' +
+      '[class*="lightbox"], [class*="dialog"], [role="dialog"], [aria-modal="true"]'
+    );
+    if (interstitialIndicators.length > 0) {
+      hasInterstitials = true;
+    }
+  }
 
   // Small Tap Targets Detection (heuristic based on inline styles)
   const clickableElements = Array.from(

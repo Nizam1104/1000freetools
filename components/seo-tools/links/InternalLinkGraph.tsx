@@ -17,18 +17,6 @@ interface InternalLinkGraphProps {
 export function InternalLinkGraph({ pages, rootUrl }: InternalLinkGraphProps) {
   const [showEdgeLabels, setShowEdgeLabels] = useState(false);
 
-  // Build inbound link count map
-  const inboundCountMap = useMemo(() => {
-    const map = new Map<string, number>();
-    for (const page of pages) {
-      if (!map.has(page.url)) map.set(page.url, 0);
-      for (const link of page.internalLinksTo) {
-        map.set(link, (map.get(link) || 0) + 1);
-      }
-    }
-    return map;
-  }, [pages]);
-
   // Build nodes and edges for reagraph
   const { nodes, edges } = useMemo(() => {
     const nodeMap = new Map<string, GraphNode>();
@@ -36,7 +24,8 @@ export function InternalLinkGraph({ pages, rootUrl }: InternalLinkGraphProps) {
 
     // Create nodes for all pages
     for (const page of pages) {
-      const inbound = inboundCountMap.get(page.url) || 0;
+      // Use inboundCount from PageData (populated after crawl)
+      const inbound = page.inboundCount ?? 0;
       // Size based on inbound links (more inbound = larger node)
       const size = Math.max(1, Math.min(10, 1 + inbound * 0.5));
 
@@ -77,7 +66,7 @@ export function InternalLinkGraph({ pages, rootUrl }: InternalLinkGraphProps) {
     }
 
     return { nodes: Array.from(nodeMap.values()), edges: edgeList };
-  }, [pages, inboundCountMap]);
+  }, [pages]);
 
   // Handle node click to open page detail
   const handleNodeClick = useCallback((node: unknown) => {

@@ -114,6 +114,7 @@ function makeErrorPageData(
     urlHasUppercase: false,
     urlHasUnderscores: false,
     urlHasTrailingSlash: false,
+    urlKeywords: [],
 
     hasStructuredData: false,
     schemaTypes: [],
@@ -127,10 +128,13 @@ function makeErrorPageData(
     hasPreconnect: false,
     mixedContent: false,
     isHttps: url.startsWith("https://"),
+    insecureResourceCount: 0,
 
     hasMobileViewport: false,
     hasInterstitials: false,
     pageSizeBytes: 0,
+
+    inboundCount: 0,
 
     issues: fetchError
       ? [
@@ -533,7 +537,7 @@ export async function runCrawl(
       }
     }
     
-    // Update each PageData with its calculated depth
+    // Update each PageData with its calculated depth and inboundCount
     for (const page of s.results) {
       try {
         const u = new URL(page.url);
@@ -547,15 +551,19 @@ export async function runCrawl(
         if (depth !== undefined && depth >= 0) {
           page.linkDepthFromRoot = depth;
         }
+        // Set inboundCount from referrers map
+        page.inboundCount = s.referrers[normalized]?.size ?? 0;
       } catch {
         const normalized = page.url.toLowerCase();
         const depth = depthMap.get(normalized);
         if (depth !== undefined && depth >= 0) {
           page.linkDepthFromRoot = depth;
         }
+        // Set inboundCount from referrers map
+        page.inboundCount = s.referrers[normalized]?.size ?? 0;
       }
     }
-    
+
     const bl = buildBrokenLinks(s.results, s.referrers);
     setBroken(bl);
     setIsCrawling(false);

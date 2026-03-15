@@ -110,11 +110,13 @@ export function analysePage(
     ...technicalResult,
     hasMobileViewport: mobileResult.hasMobileViewport,
     hasInterstitials: mobileResult.hasInterstitials,
+    insecureResourceCount: securityResult.insecureResourceCount,
     mixedContent: technicalResult.mixedContent,
     isHttps: technicalResult.isHttps,
     pageSizeBytes: new TextEncoder().encode(html).length,
     issues: allIssues,
     seoScore: 0, // Will be set below
+    inboundCount: 0, // Single-page analysis has no crawl context
   });
 
   // Page size (rough estimate from html string length)
@@ -156,9 +158,13 @@ export function analysePage(
     // Security (merge with technical)
     isHttps: securityResult.isHttps,
     mixedContent: securityResult.mixedContent || technicalResult.mixedContent,
+    insecureResourceCount: securityResult.insecureResourceCount,
 
     // Performance proxy
     pageSizeBytes,
+
+    // Link graph
+    inboundCount: 0, // Single-page analysis has no crawl context
 
     // Issues & Score
     issues,

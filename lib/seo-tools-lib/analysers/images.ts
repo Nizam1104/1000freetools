@@ -12,7 +12,18 @@ export interface ImagesResult {
   issues: Issue[];
 }
 
-const NON_DESCRIPTIVE_PATTERN = /^(img|image|photo|dsc|pic|screenshot|capture)[-_]?\d*$/i;
+const NON_DESCRIPTIVE_PATTERNS = [
+  /^(img|image|photo|dsc|pic|screenshot|capture|untitled|default|placeholder|banner|hero|logo)[-_]?\d*$/i,
+  /^[\da-f]{8,}$/i, // Hash-like filenames (e.g., a1b2c3d4.jpg)
+  /^[_-]{2,}/, // Files starting with multiple underscores or dashes
+  /^\d{4}[-_]?\d{2}[-_]?\d{2}/i, // Date-based filenames (e.g., 2024-01-15)
+  /^copy[\d]*_?/i, // Copy, copy1, copy2, etc.
+  /^new[-_]?/i, // new, new-image, etc.
+  /^temp[-_]?/i, // temp, temp-file, etc.
+  /^test[-_]?/i, // test, test-image, etc.
+  /^upload[-_]?/i, // upload, upload-file, etc.
+  /^download[-_]?/i, // download, download-file, etc.
+];
 
 function getImageFormat(src: string): string {
   try {
@@ -30,7 +41,19 @@ function hasDescriptiveFilename(src: string): boolean {
     const url = new URL(src, 'http://example.com');
     const pathname = url.pathname;
     const filename = pathname.split('/').pop()?.split('.')[0] ?? '';
-    return !NON_DESCRIPTIVE_PATTERN.test(filename) && filename.length > 0;
+    
+    if (!filename || filename.length === 0) {
+      return false;
+    }
+    
+    // Check against all non-descriptive patterns
+    for (const pattern of NON_DESCRIPTIVE_PATTERNS) {
+      if (pattern.test(filename)) {
+        return false;
+      }
+    }
+    
+    return true;
   } catch {
     return false;
   }
@@ -50,8 +73,11 @@ export function analyseImages(doc: Document): ImagesResult {
     const descriptiveFilename = hasDescriptiveFilename(src);
     const hasLazyLoad = el.getAttribute('loading') === 'lazy';
     const format = getImageFormat(src);
-    const width = el.width || undefined;
-    const height = el.height || undefined;
+    // Read width/height from HTML attributes, not DOM properties (which return 0 in parsed DOM)
+    const widthAttr = el.getAttribute('width');
+    const heightAttr = el.getAttribute('height');
+    const width = widthAttr ? parseInt(widthAttr, 10) || undefined : undefined;
+    const height = heightAttr ? parseInt(heightAttr, 10) || undefined : undefined;
 
     return {
       src,
