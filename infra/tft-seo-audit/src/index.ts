@@ -7,6 +7,11 @@ export interface Env {
 
 const ALLOWED_ORIGIN = 'https://1000freetools.com';
 
+const isLocalHost = (origin: string) => {
+	const url = new URL(origin)
+	return url.hostname === 'localhost' || url.hostname === '127.0.0.1' || url.hostname === '::1';
+}
+
 function isAllowedOrigin(origin: string | null): boolean {
 	if (!origin) return false;
 	if (origin === ALLOWED_ORIGIN) return true;
@@ -69,7 +74,7 @@ export default {
 
 			const turnstileData = (await turnstileRes.json()) as any;
 
-			const isDevelopment = origin && isAllowedOrigin(origin);
+			const isDevelopment = origin && isLocalHost(origin)
 			const expectedHostname = isDevelopment ? 'localhost' : new URL(ALLOWED_ORIGIN).hostname;
 
 			if (!turnstileData.success || turnstileData.hostname !== expectedHostname) {
