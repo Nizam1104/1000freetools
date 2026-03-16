@@ -1,0 +1,94 @@
+import type { Metadata } from "next";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import HexAsciiTableGenerator from "@/components/hex-tools/hex-to-ascii-table-generator";
+import HexToAsciiTableGeneratorSeo from "@/components/seo-content/hex-tools/hex-to-ascii-table-generator";
+
+export const metadata: Metadata = {
+  title: `Hex to ASCII Table | Free Reference Generator`,
+  description: `Generate a full hex to ASCII character table. Searchable, exportable. Free reference tool for developers and students.`,
+  alternates: {
+    canonical: `https://1000freetools.com/hex-tools/hex-to-ascii-table-generator`,
+  },
+};
+
+const tools = [
+  {
+    name: `Hex to Text Converter`,
+    description: `Free Hex to Text Converter Online`,
+    href: `/hex-tools/hex-to-text-converter`,
+  },
+  {
+    name: `Text to Hex Converter`,
+    description: `Text to Hex Converter Online`,
+    href: `/hex-tools/text-to-hex-converter`,
+  },
+  {
+    name: `Hex to Decimal Converter`,
+    description: `Hex to Decimal Converter Tool`,
+    href: `/hex-tools/hex-to-decimal-converter`,
+  },
+  {
+    name: `Decimal to Hex Converter`,
+    description: `Decimal to Hex Converter Online`,
+    href: `/hex-tools/decimal-to-hex-converter`,
+  },
+  {
+    name: `Hex to Binary Converter`,
+    description: `Hex to Binary Converter Online`,
+    href: `/hex-tools/hex-to-binary-converter`,
+  },
+  {
+    name: `ASCII to Hex Converter`,
+    description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
+    href: `/ascii-tools/ascii-to-hex-converter`,
+  },
+  {
+    name: `Barcode Generator`,
+    description: `Free Barcode Generator`,
+    href: `/barcode-tools/barcode-generator`,
+  },
+  {
+    name: `Binary to Text Converter`,
+    description: `Binary to Text Converter`,
+    href: `/binary-tools/binary-to-text-converter`,
+  },
+  {
+    name: `Free Printable Calendar Maker`,
+    description: `Create & Print Your Custom Calendar`,
+    href: `/calendar-tools/printable-calendar-maker`,
+  },
+  {
+    name: `Pie Chart Maker`,
+    description: `Free Pie Chart Maker Online`,
+    href: `/chart-tools/pie-chart-maker`,
+  },
+];
+
+export default function HexToAsciiTableGeneratorPage() {
+  return (
+    <div className="flex flex-col gap-y-4">
+      <header className="max-w-3xl">
+        <h1 className="text-3xl font-bold mb-3">
+          Hex to ASCII Table Generator & Reference
+        </h1>
+        <p className="text-muted-foreground">
+          Generate a complete hexadecimal to ASCII character table. Search,
+          filter, and export the data. An invaluable reference for programmers,
+          reverse engineers, and anyone working with character encoding.
+        </p>
+      </header>
+      <div className="mt-8">
+        <HexAsciiTableGenerator />
+      </div>
+      <div className="mt-8">
+        <HexToAsciiTableGeneratorSeo />
+      </div>
+      <div className="mt-16 max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
+        <ToolLinkCards tools={tools} />
+      </div>
+    </div>
+  );
+}
