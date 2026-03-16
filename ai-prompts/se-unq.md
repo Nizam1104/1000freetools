@@ -47,7 +47,7 @@ Read the code and extract:
 
 Produce the following sections. Order and name them based on what makes sense for THIS specific tool (not a generic order):
 
-1. **Hero description** (2–3 sentences): The single most accurate, specific description of what this tool does and why that matters. No fluff.
+1. **Hero description** NO need to make hero section
 
 2. **How it works** (tool-specific): Explain the actual mechanism, not just "upload and click." Reference the real technical process in plain language. Include a step-by-step only if the workflow has genuine steps worth naming.
 
@@ -58,6 +58,8 @@ Produce the following sections. Order and name them based on what makes sense fo
 5. **FAQ** (5–8 questions): Generate questions from the _specific functionality_ of this tool. These should be questions a real user might Google or wonder. Answers should be 2–5 sentences, specific and informative.
 
 6. **Comparison context** (optional, only if meaningful): If this tool differs meaningfully from common alternatives (Photoshop, other online tools, doing it in code), note the differences concisely. Skip if not genuinely useful.
+
+7. Don't make internal linking to other tools
 
 ---
 
