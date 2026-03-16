@@ -14,10 +14,6 @@ interface HealthScoreProps {
  */
 export function HealthScore({ pages }: HealthScoreProps) {
   const { score, critical, warning, notice, pass } = useMemo(() => {
-    if (pages.length === 0) {
-      return { score: 0, critical: 0, warning: 0, notice: 0, pass: 0 };
-    }
-
     let totalCritical = 0;
     let totalWarning = 0;
     let totalNotice = 0;
@@ -30,30 +26,43 @@ export function HealthScore({ pages }: HealthScoreProps) {
       });
     });
 
-    const totalIssues = totalCritical + totalWarning + totalNotice;
-
-    // Calculate pass count (pages with no critical issues)
     const passCount = pages.filter(
       (page) => !page.issues.some((issue) => issue.severity === "critical"),
     ).length;
 
-    // Calculate score: start at 100, deduct based on severity
-    // Critical: -5 pts, Warning: -2 pts, Notice: -0.5 pts
-    const rawScore = Math.max(
-      0,
-      100 - totalCritical * 5 - totalWarning * 2 - totalNotice * 0.5,
-    );
+    // Calculate score per page, then average — prevents score collapsing with more pages
+    const pageScores = pages.map((page) => {
+      let pageCritical = 0;
+      let pageWarning = 0;
+      let pageNotice = 0;
 
-    const score = Math.round(rawScore);
+      page.issues.forEach((issue) => {
+        if (issue.severity === "critical") pageCritical++;
+        else if (issue.severity === "warning") pageWarning++;
+        else if (issue.severity === "notice") pageNotice++;
+      });
+
+      // Cap deductions so a single page can't go below 0
+      // Critical: -20 pts each (max 5 = -100), Warning: -5 pts, Notice: -1 pt
+      return Math.max(
+        0,
+        100 - pageCritical * 20 - pageWarning * 5 - pageNotice * 1,
+      );
+    });
+
+    const avgScore =
+      pages.length > 0
+        ? pageScores.reduce((sum, s) => sum + s, 0) / pages.length
+        : 100;
 
     return {
-      score,
+      score: Math.round(avgScore),
       critical: totalCritical,
       warning: totalWarning,
       notice: totalNotice,
       pass: passCount,
     };
-  }, [pages]);
+  }, [pages.length]);
 
   return (
     <div className="bg-card border border-border rounded-lg p-4">

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useMemo, useState, useCallback } from 'react';
-import { PageData } from '@/lib/seo-tools-lib/types';
-import { GraphCanvas } from 'reagraph';
-import type { GraphNode, GraphEdge } from 'reagraph';
+import { useMemo, useState, useCallback } from "react";
+import { PageData } from "@/lib/seo-tools-lib/types";
+import { GraphCanvas } from "reagraph";
+import type { GraphNode, GraphEdge } from "reagraph";
 
 interface InternalLinkGraphProps {
   pages: PageData[];
@@ -30,11 +30,11 @@ export function InternalLinkGraph({ pages, rootUrl }: InternalLinkGraphProps) {
       const size = Math.max(1, Math.min(10, 1 + inbound * 0.5));
 
       // Color by SEO score
-      let fill = 'var(--chart-1)'; // green for score >= 80
+      let fill = "var(--chart-1)"; // green for score >= 80
       if (page.seoScore < 60) {
-        fill = 'var(--destructive)'; // red
+        fill = "var(--destructive)"; // red
       } else if (page.seoScore < 80) {
-        fill = 'var(--chart-3)'; // amber/yellow
+        fill = "var(--chart-3)"; // amber/yellow
       }
 
       nodeMap.set(page.url, {
@@ -59,21 +59,21 @@ export function InternalLinkGraph({ pages, rootUrl }: InternalLinkGraphProps) {
             id: `${page.url}->${targetUrl}`,
             source: page.url,
             target: targetUrl,
-            fill: 'var(--muted-foreground)', // edge color
+            fill: "var(--muted-foreground)", // edge color
           });
         }
       }
     }
 
     return { nodes: Array.from(nodeMap.values()), edges: edgeList };
-  }, [pages]);
+  }, [pages.length]);
 
   // Handle node click to open page detail
   const handleNodeClick = useCallback((node: unknown) => {
     const nodeObj = node as { id: string; data?: { url?: string } };
     const url = nodeObj.data?.url || nodeObj.id;
     // Dispatch custom event for parent to handle
-    window.dispatchEvent(new CustomEvent('page-select', { detail: { url } }));
+    window.dispatchEvent(new CustomEvent("page-select", { detail: { url } }));
   }, []);
 
   if (nodes.length === 0) {

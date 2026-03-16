@@ -39,7 +39,7 @@ export function PageDepthChart({ pages }: PageDepthChartProps) {
   return (
     <div className="bg-card border border-border rounded-lg p-4">
       <h3 className="text-sm font-semibold text-foreground mb-4">
-        Page Depth Distribution {JSON.stringify(depthDistribution)}
+        Page Depth Distribution
       </h3>
 
       {pages.length === 0 ? (

@@ -356,13 +356,6 @@ export default function Home() {
           </div>
         ) : (
           <>
-            <SummaryCards
-              results={results}
-              visitedCount={visitedCount}
-              queueCount={queueCount}
-              isCrawling={isCrawling}
-            />
-
             <div className="flex gap-1 border-b border-border mb-3">
               {TABS.map((t) => (
                 <button
@@ -398,11 +391,17 @@ export default function Home() {
                 <HealthScore pages={results} />
                 <StatusCodeChart pages={results} />
                 <PageDepthChart pages={results} />
-                <CrawlStats
+                {/* <CrawlStats
                   visitedCount={visitedCount}
                   queueCount={queueCount}
                   isCrawling={isCrawling}
                   elapsedMs={elapsedMs}
+                /> */}
+                <SummaryCards
+                  results={results}
+                  visitedCount={visitedCount}
+                  queueCount={queueCount}
+                  isCrawling={isCrawling}
                 />
               </div>
             </div>
@@ -433,7 +432,7 @@ export default function Home() {
               style={{ display: activeTab === "links" ? undefined : "none" }}
               className="space-y-6"
             >
-              <InternalLinkGraph pages={results} rootUrl={rootUrl} />
+              {/* <InternalLinkGraph pages={results} rootUrl={rootUrl} /> */}
               <AnchorTextCloud pages={results} />
               <RedirectChainList pages={results} />
             </div>

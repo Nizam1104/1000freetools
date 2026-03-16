@@ -1,15 +1,7 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
+import { useState, useCallback, useMemo, useRef, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { JsonEditor } from "@/components/utils/json-editor";
 import { Label } from "@/components/ui/label";
@@ -26,6 +18,7 @@ import {
   Search,
   Eye,
   Code,
+  Upload,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -33,7 +26,7 @@ type JsonValue = string | number | boolean | null | JsonObject | JsonArray;
 interface JsonObject {
   [key: string]: JsonValue;
 }
-interface JsonArray extends Array<JsonValue> { }
+interface JsonArray extends Array<JsonValue> {}
 
 interface TreeNode {
   key: string;
@@ -51,6 +44,33 @@ export default function JsonViewerPage() {
   const [viewMode, setViewMode] = useState<"tree" | "raw">("tree");
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileUpload = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+
+      if (file.size > 10 * 1024 * 1024) {
+        toast.error("File size exceeds 10MB limit");
+        event.target.value = "";
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target?.result as string;
+        setInput(content);
+        toast.success(`Loaded ${file.name}`);
+      };
+      reader.onerror = () => {
+        toast.error("Failed to read file");
+      };
+      reader.readAsText(file);
+      event.target.value = "";
+    },
+    [],
+  );
 
   const parseJson = useCallback(() => {
     if (!input.trim()) {
@@ -191,6 +211,44 @@ export default function JsonViewerPage() {
     [searchQuery],
   );
 
+  const hasMatchingDescendant = useCallback(
+    (value: JsonValue, search: string): boolean => {
+      if (!search) return false;
+      if (typeof value !== "object" || value === null) return false;
+
+      const query = search.toLowerCase();
+      if (Array.isArray(value)) {
+        return value.some((item) => {
+          if (String(item).toLowerCase().includes(query)) return true;
+          if (typeof item === "object" && item !== null) {
+            return hasMatchingDescendant(item, search);
+          }
+          return false;
+        });
+      } else {
+        return Object.entries(value).some(([key, val]) => {
+          if (key.toLowerCase().includes(query)) return true;
+          if (String(val).toLowerCase().includes(query)) return true;
+          if (typeof val === "object" && val !== null) {
+            return hasMatchingDescendant(val, search);
+          }
+          return false;
+        });
+      }
+    },
+    [],
+  );
+
+  const shouldShowNode = useCallback(
+    (node: TreeNode): boolean => {
+      if (!searchQuery) return true;
+      const selfMatch = matchesSearch(node.key, node.value);
+      const descendantMatch = hasMatchingDescendant(node.value, searchQuery);
+      return selfMatch || descendantMatch;
+    },
+    [searchQuery, matchesSearch, hasMatchingDescendant],
+  );
+
   const TreeNodeComponent: React.FC<{
     node: TreeNode;
     isLast: boolean;
@@ -198,10 +256,19 @@ export default function JsonViewerPage() {
     const isExpandable = node.type === "object" || node.type === "array";
     const isExpanded = expandedPaths.has(node.path);
     const hasMatch = matchesSearch(node.key, node.value);
+    const hasDescendantMatch = hasMatchingDescendant(node.value, searchQuery);
+    const shouldShow = shouldShowNode(node);
 
-    if (!hasMatch && searchQuery && !isExpandable) {
+    if (!shouldShow) {
       return null;
     }
+
+    // Auto-expand if descendant matches
+    useEffect(() => {
+      if (hasDescendantMatch && !isExpanded && isExpandable) {
+        toggleExpand(node.path);
+      }
+    }, [searchQuery, hasDescendantMatch, isExpanded, isExpandable, node.path]);
 
     const renderValue = (value: JsonValue) => {
       if (value === null)
@@ -226,7 +293,7 @@ export default function JsonViewerPage() {
     return (
       <div className="font-mono text-sm">
         <div
-          className={`flex items-center gap-1 py-1 hover:bg-muted/50 rounded px-2 cursor-pointer ${!hasMatch && searchQuery ? "opacity-30" : ""}`}
+          className={`flex items-center gap-1 py-1 hover:bg-muted/50 rounded px-2 cursor-pointer`}
           onClick={() => isExpandable && toggleExpand(node.path)}
         >
           {isExpandable && (
@@ -266,33 +333,33 @@ export default function JsonViewerPage() {
           <div className="ml-6 border-l border-border pl-2">
             {node.type === "array"
               ? (node.value as JsonArray).map((item, index) => (
-                <TreeNodeComponent
-                  key={`${node.path}[${index}]`}
-                  node={{
-                    key: String(index),
-                    value: item,
-                    path: `${node.path}[${index}]`,
-                    level: node.level + 1,
-                    type: getValueType(item),
-                  }}
-                  isLast={index === (node.value as JsonArray).length - 1}
-                />
-              ))
-              : Object.entries(node.value as JsonObject).map(
-                ([key, value], index, arr) => (
                   <TreeNodeComponent
-                    key={`${node.path}.${key}`}
+                    key={`${node.path}[${index}]`}
                     node={{
-                      key,
-                      value,
-                      path: `${node.path}.${key}`,
+                      key: String(index),
+                      value: item,
+                      path: `${node.path}[${index}]`,
                       level: node.level + 1,
-                      type: getValueType(value),
+                      type: getValueType(item),
                     }}
-                    isLast={index === arr.length - 1}
+                    isLast={index === (node.value as JsonArray).length - 1}
                   />
-                ),
-              )}
+                ))
+              : Object.entries(node.value as JsonObject).map(
+                  ([key, value], index, arr) => (
+                    <TreeNodeComponent
+                      key={`${node.path}.${key}`}
+                      node={{
+                        key,
+                        value,
+                        path: `${node.path}.${key}`,
+                        level: node.level + 1,
+                        type: getValueType(value),
+                      }}
+                      isLast={index === arr.length - 1}
+                    />
+                  ),
+                )}
           </div>
         )}
       </div>
@@ -352,6 +419,21 @@ export default function JsonViewerPage() {
                   <FileJson className="h-4 w-4 mr-2" />
                   Sample
                 </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => fileInputRef?.current?.click()}
+                >
+                  <Upload className="h-4 w-4 mr-2" />
+                  Upload
+                </Button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".json,application/json"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                />
                 <Button variant="outline" size="sm" onClick={clearAll}>
                   <Trash2 className="h-4 w-4 mr-2" />
                   Clear
@@ -535,7 +617,6 @@ export default function JsonViewerPage() {
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>

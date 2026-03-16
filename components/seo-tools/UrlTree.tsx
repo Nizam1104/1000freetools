@@ -81,7 +81,55 @@ function shortLabel(url: string, origin: string): string {
 /** Stable sanitised node id (reagraph needs string ids without slashes etc.) */
 function nodeId(url: string): string {
   // Use btoa for a compact, stable id
-  return url;
+  return btoa(url);
+}
+
+/**
+ * Resolve a CSS custom property (variable) to its actual computed color value.
+ * Falls back to the original value if it's not a CSS variable or if resolution fails.
+ * Must be called in a browser context (not during SSR).
+ */
+function resolveCssVariable(value: string, element?: HTMLElement): string {
+  if (!value.startsWith("var(--")) {
+    return value;
+  }
+
+  const target = element ?? document.documentElement;
+  const varName = value.match(/var\((--[\w-]+)\)/)?.[1];
+
+  if (!varName) {
+    return value;
+  }
+
+  const computed = getComputedStyle(target).getPropertyValue(varName).trim();
+
+  // If we got a resolved value, return it; otherwise return the original
+  return computed || value;
+}
+
+/**
+ * Hook to resolve CSS custom properties to actual color values.
+ * Returns a function that can be used to resolve color values.
+ */
+function useResolvedColors() {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const resolve = useCallback(
+    (value: string): string => {
+      if (!isMounted) {
+        // During SSR or before mount, return a safe fallback
+        return value.startsWith("var(--") ? "#888888" : value;
+      }
+      return resolveCssVariable(value);
+    },
+    [isMounted],
+  );
+
+  return resolve;
 }
 
 // ─── Graph loading placeholder ────────────────────────────────────────────────
@@ -97,12 +145,89 @@ function GraphLoading() {
 
 // ─── Internal-Link Graph View ─────────────────────────────────────────────────
 
+// ─── Static color palette (replaces useResolvedColors) ───────────────────────
+const COLOR = {
+  canvasBg: "#0f1117",
+  nodeFill: "#6366f1", // indigo-500
+  nodeActive: "#818cf8", // indigo-400
+  scoreGood: "#22c55e", // green-500   ≥ 80
+  scoreFair: "#f59e0b", // amber-500   50–79
+  scorePoor: "#ef4444", // red-500     < 50
+  edgeFill: "#334155", // slate-700
+  edgeActive: "#6366f1",
+  arrowFill: "#64748b", // slate-500
+  arrowActive: "#818cf8",
+  labelColor: "#e2e8f0", // slate-200
+  labelStroke: "#0f1117",
+  labelMuted: "#94a3b8", // slate-400
+  clusterStroke: "#1e293b", // slate-800
+  border: "#1e293b",
+  cardBg: "#1a1f2e",
+} as const;
+
+// ─── Static graph theme (defined once, never re-created) ────────────────────
+const GRAPH_THEME = {
+  canvas: { background: COLOR.canvasBg },
+  node: {
+    fill: COLOR.nodeFill,
+    activeFill: COLOR.nodeActive,
+    opacity: 1,
+    selectedOpacity: 1,
+    inactiveOpacity: 0.15,
+    label: {
+      color: COLOR.labelColor,
+      stroke: COLOR.labelStroke,
+      activeColor: COLOR.labelColor,
+    },
+  },
+  ring: {
+    fill: COLOR.nodeFill,
+    activeFill: COLOR.nodeActive,
+  },
+  lasso: {
+    border: `1px solid ${COLOR.nodeFill}`,
+    background: `${COLOR.nodeFill}1a`,
+  },
+  edge: {
+    fill: COLOR.edgeFill,
+    activeFill: COLOR.edgeActive,
+    opacity: 0.45,
+    selectedOpacity: 1,
+    inactiveOpacity: 0.08,
+    label: {
+      color: COLOR.labelMuted,
+      activeColor: COLOR.labelColor,
+    },
+  },
+  arrow: {
+    fill: COLOR.arrowFill,
+    activeFill: COLOR.arrowActive,
+  },
+  cluster: {
+    stroke: COLOR.clusterStroke,
+    opacity: 1,
+    selectedOpacity: 1,
+    inactiveOpacity: 0.15,
+    label: { color: COLOR.labelMuted },
+  },
+} as const;
+
+// ─── Helpers (module-level, never re-created) ────────────────────────────────
+
+function seoColor(score: number): string {
+  if (score >= 80) return COLOR.scoreGood;
+  if (score >= 50) return COLOR.scoreFair;
+  return COLOR.scorePoor;
+}
+
+// ─── Types ───────────────────────────────────────────────────────────────────
 interface GraphViewProps {
   results: PageData[];
   rootUrl: string;
   isCrawling: boolean;
 }
 
+// ─── Component ───────────────────────────────────────────────────────────────
 const GraphView = memo(function GraphView({
   results,
   rootUrl,
@@ -118,8 +243,16 @@ const GraphView = memo(function GraphView({
 
   const [graphLayout, setGraphLayout] =
     useState<GraphLayout>("forceDirected2d");
+  const [selectedNode, setSelectedNode] = useState<PageData | null>(null);
 
-  // Build nodes + edges from results & their internalLinksTo
+  // ── Stable click handler – avoids GraphCanvas re-render on every state change
+  const handleNodeClick = useCallback((node: { data?: unknown }) => {
+    const data = node.data as PageData | undefined;
+    if (!data) return;
+    setSelectedNode((prev) => (prev?.url === data.url ? null : data));
+  }, []); // no deps – setSelectedNode is stable
+
+  // ── Build graph data – only rebuilds when results or origin change
   const { nodes, edges } = useMemo(() => {
     if (results.length === 0) return { nodes: [], edges: [] };
 
@@ -128,27 +261,16 @@ const GraphView = memo(function GraphView({
     const graphNodes = results.map((r) => ({
       id: nodeId(r.url),
       label: shortLabel(r.url, origin),
-      // colour nodes by SEO score bucket
-      fill:
-        r.seoScore >= 80
-          ? "var(--chart-1)" // green
-          : r.seoScore >= 50
-            ? "var(--chart-3)" // yellow
-            : "var(--destructive)", // red
+      fill: seoColor(r.seoScore),
       data: r,
     }));
 
     const edgeSet = new Set<string>();
-    const graphEdges: {
-      id: string;
-      source: string;
-      target: string;
-      label?: string;
-    }[] = [];
+    const graphEdges: { id: string; source: string; target: string }[] = [];
 
-    results.forEach((r) => {
-      (r.internalLinksTo ?? []).forEach((target) => {
-        if (!crawledSet.has(target)) return; // skip un-crawled targets
+    for (const r of results) {
+      for (const target of r.internalLinksTo ?? []) {
+        if (!crawledSet.has(target)) continue;
         const eid = `${r.url}-->${target}`;
         if (!edgeSet.has(eid)) {
           edgeSet.add(eid);
@@ -158,17 +280,19 @@ const GraphView = memo(function GraphView({
             target: nodeId(target),
           });
         }
-      });
-    });
+      }
+    }
 
     return { nodes: graphNodes, edges: graphEdges };
   }, [results, origin]);
 
-  const [selectedNode, setSelectedNode] = useState<PageData | null>(null);
-
+  // ── Empty state ──────────────────────────────────────────────────────────
   if (nodes.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center h-full text-muted-foreground gap-3">
+      <div
+        className="flex flex-col items-center justify-center h-full gap-3"
+        style={{ color: COLOR.labelMuted }}
+      >
         {isCrawling ? (
           <>
             <span className="text-3xl animate-spin">🕷</span>
@@ -184,6 +308,7 @@ const GraphView = memo(function GraphView({
     );
   }
 
+  // ── Main render ──────────────────────────────────────────────────────────
   return (
     <div
       style={{
@@ -194,101 +319,119 @@ const GraphView = memo(function GraphView({
       }}
     >
       {/* Graph canvas */}
-      <div style={{ flex: 1, height: "100%", background: "transparent" }}>
+      <div style={{ flex: 1, height: "100%" }}>
         <GraphCanvas
           nodes={nodes}
           edges={edges}
           layoutType={graphLayout}
           labelType="nodes"
           edgeArrowPosition="end"
-          theme={{
-            canvas: { background: "var(--card)" },
-            node: {
-              fill: "var(--primary)",
-              activeFill: "var(--primary)",
-              opacity: 1,
-              selectedOpacity: 1,
-              inactiveOpacity: 0.2,
-              label: {
-                color: "var(--foreground)",
-                stroke: "var(--card)",
-                activeColor: "var(--foreground)",
-              },
-            },
-            ring: {
-              fill: "var(--primary)",
-              activeFill: "var(--primary)",
-            },
-            lasso: {
-              border: "1px solid var(--primary)",
-              background: "var(--primary)/10",
-            },
-            edge: {
-              fill: "var(--border)",
-              activeFill: "var(--primary)",
-              opacity: 0.5,
-              selectedOpacity: 1,
-              inactiveOpacity: 0.1,
-              label: {
-                color: "var(--muted-foreground)",
-                activeColor: "var(--foreground)",
-              },
-            },
-            arrow: {
-              fill: "var(--muted-foreground)",
-              activeFill: "var(--primary)",
-            },
-            cluster: {
-              stroke: "var(--border)",
-              opacity: 1,
-              selectedOpacity: 1,
-              inactiveOpacity: 0.2,
-              label: {
-                color: "var(--muted-foreground)",
-              },
-            },
-          }}
-          onNodeClick={(node) => {
-            const data = node.data as PageData;
-            setSelectedNode((prev) => (prev?.url === data.url ? null : data));
-          }}
+          theme={GRAPH_THEME} // static ref → no prop change on re-render
+          onNodeClick={handleNodeClick} // stable ref → no prop change on re-render
         />
       </div>
 
       {/* Legend */}
-      <div className="absolute top-3 left-3 flex flex-col gap-1 bg-card/80 backdrop-blur border border-border rounded-lg p-3 text-xs text-muted-foreground">
-        <span className="text-foreground font-semibold mb-1">SEO Score</span>
-        <LegendItem color="var(--chart-1)" label="≥ 80 (Good)" />
-        <LegendItem color="var(--chart-3)" label="50–79 (Fair)" />
-        <LegendItem color="var(--destructive)" label="< 50 (Poor)" />
-        <div className="mt-2 border-t border-border pt-2 text-muted-foreground">
+      <div
+        style={{
+          position: "absolute",
+          top: 12,
+          left: 12,
+          background: `${COLOR.cardBg}cc`,
+          border: `1px solid ${COLOR.border}`,
+          borderRadius: 10,
+          padding: "10px 12px",
+          fontSize: 12,
+          color: COLOR.labelMuted,
+          backdropFilter: "blur(6px)",
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+        }}
+      >
+        <span
+          style={{ color: COLOR.labelColor, fontWeight: 600, marginBottom: 2 }}
+        >
+          SEO Score
+        </span>
+        <LegendItem color={COLOR.scoreGood} label="≥ 80 — Good" />
+        <LegendItem color={COLOR.scoreFair} label="50–79 — Fair" />
+        <LegendItem color={COLOR.scorePoor} label="&lt; 50 — Poor" />
+        <div
+          style={{
+            marginTop: 8,
+            paddingTop: 8,
+            borderTop: `1px solid ${COLOR.border}`,
+          }}
+        >
           <div>{nodes.length} nodes</div>
           <div>{edges.length} edges</div>
         </div>
       </div>
 
-      {/* Graph Layout Picker */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-card/90 backdrop-blur border border-border rounded-xl p-1 shadow-xl">
-        {GRAPH_LAYOUTS.map((layout) => (
-          <button
-            key={layout.id}
-            onClick={() => setGraphLayout(layout.id)}
-            title={layout.description}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
-              graphLayout === layout.id
-                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/50"
-                : "text-muted-foreground hover:text-foreground hover:bg-accent"
-            }`}
-          >
-            <span>{layout.icon}</span>
-            <span>{layout.label}</span>
-          </button>
-        ))}
+      {/* Layout picker */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 16,
+          left: "50%",
+          transform: "translateX(-50%)",
+          display: "flex",
+          gap: 4,
+          alignItems: "center",
+          background: `${COLOR.cardBg}e6`,
+          border: `1px solid ${COLOR.border}`,
+          borderRadius: 14,
+          padding: 4,
+          backdropFilter: "blur(8px)",
+        }}
+      >
+        {GRAPH_LAYOUTS.map((layout) => {
+          const active = graphLayout === layout.id;
+          return (
+            <button
+              key={layout.id}
+              onClick={() => setGraphLayout(layout.id)}
+              title={layout.description}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "6px 12px",
+                borderRadius: 10,
+                fontSize: 12,
+                fontWeight: 500,
+                border: "none",
+                cursor: "pointer",
+                background: active ? COLOR.nodeFill : "transparent",
+                color: active ? "#fff" : COLOR.labelMuted,
+                boxShadow: active ? `0 2px 8px ${COLOR.nodeFill}66` : "none",
+                transition: "all 0.15s ease",
+              }}
+            >
+              <span>{layout.icon}</span>
+              <span>{layout.label}</span>
+            </button>
+          );
+        })}
       </div>
 
-      {/* Crawling indicator */}
+      {/* Live crawl indicator */}
       {isCrawling && (
-        <div className="absolute top-3 right-3 bg-[var(--chart-3)]/10 border border-[var(--chart-3)]/30 text-[var(--chart-3)] text-xs rounded-full px-3 py-1 animate-pulse">
+        <div
+          style={{
+            position: "absolute",
+            top: 12,
+            right: 12,
+            background: `${COLOR.scoreFair}1a`,
+            border: `1px solid ${COLOR.scoreFair}4d`,
+            color: COLOR.scoreFair,
+            fontSize: 12,
+            borderRadius: 999,
+            padding: "4px 12px",
+            animation: "pulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
+          }}
+        >
           ● Live crawl
         </div>
       )}
@@ -319,7 +462,7 @@ function LegendItem({ color, label }: { color: string; label: string }) {
 
 // ─── Node detail side panel ───────────────────────────────────────────────────
 
-function NodeDetailPanel({
+const NodeDetailPanel = memo(function NodeDetailPanel({
   page,
   origin,
   onClose,
@@ -328,12 +471,7 @@ function NodeDetailPanel({
   origin: string;
   onClose: () => void;
 }) {
-  const scoreColor =
-    page.seoScore >= 80
-      ? "var(--chart-1)"
-      : page.seoScore >= 50
-        ? "var(--chart-3)"
-        : "var(--destructive)";
+  const scoreColor = seoColor(page.seoScore);
 
   return (
     <div className="absolute top-0 right-0 h-full w-72 bg-card/95 backdrop-blur border-l border-border flex flex-col shadow-2xl overflow-hidden">
@@ -416,7 +554,10 @@ function NodeDetailPanel({
       </div>
     </div>
   );
-}
+}, (prev, next) => {
+  // Custom comparison: only re-render if page URL changes or onClose changes
+  return prev.page.url === next.page.url && prev.onClose === next.onClose;
+});
 
 function DetailRow({
   label,
@@ -570,7 +711,7 @@ interface TreeViewProps {
   isCrawling: boolean;
 }
 
-function TreeView({ tree, rootUrl, isCrawling }: TreeViewProps) {
+const TreeView = memo(function TreeView({ tree, rootUrl, isCrawling }: TreeViewProps) {
   const [expanded, setExpanded] = useState<Set<string>>(new Set(["/"]));
 
   const toggle = useCallback((path: string) => {
@@ -658,7 +799,10 @@ function TreeView({ tree, rootUrl, isCrawling }: TreeViewProps) {
       </div>
     </div>
   );
-}
+}, (prev, next) => {
+  // Custom comparison: only re-render if tree structure changes
+  return prev.tree === next.tree && prev.rootUrl === next.rootUrl && prev.isCrawling === next.isCrawling;
+});
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 

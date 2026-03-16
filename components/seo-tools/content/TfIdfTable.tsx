@@ -94,23 +94,23 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
   }, [pages]);
 
   return (
-    <div className="border border-zinc-800 rounded-lg bg-zinc-900/50 p-4">
+    <div className="border border-border rounded-lg bg-card p-4 shadow-sm">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-semibold text-zinc-300">
+        <h3 className="text-sm font-semibold text-foreground">
           TF-IDF Analysis
-          <span className="ml-2 text-xs text-zinc-500">
+          <span className="ml-2 text-xs text-muted-foreground">
             {viewMode === "sitewide" ? "Site-wide terms" : "Per-page terms"}
           </span>
         </h3>
         <div className="flex gap-3 text-xs">
-          <div className="flex border border-zinc-700 rounded overflow-hidden">
+          <div className="flex border border-border rounded overflow-hidden">
             <button
               onClick={() => setViewMode("sitewide")}
               className={`px-3 py-1 transition-colors ${
                 viewMode === "sitewide"
-                  ? "bg-zinc-700 text-zinc-100"
-                  : "bg-zinc-800 text-zinc-500 hover:text-zinc-300"
+                  ? "bg-muted text-foreground"
+                  : "bg-card text-muted-foreground hover:text-foreground"
               }`}
             >
               Site-wide
@@ -119,14 +119,14 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
               onClick={() => setViewMode("page")}
               className={`px-3 py-1 transition-colors ${
                 viewMode === "page"
-                  ? "bg-zinc-700 text-zinc-100"
-                  : "bg-zinc-800 text-zinc-500 hover:text-zinc-300"
+                  ? "bg-muted text-foreground"
+                  : "bg-card text-muted-foreground hover:text-foreground"
               }`}
             >
               Per Page
             </button>
           </div>
-          <label className="flex items-center gap-2 text-zinc-400">
+          <label className="flex items-center gap-2 text-muted-foreground">
             <span>Top N:</span>
             <input
               type="number"
@@ -135,7 +135,7 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
               min={5}
               max={50}
               step={5}
-              className="w-16 bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-zinc-300"
+              className="w-16 bg-card border border-border rounded px-2 py-1 text-foreground"
             />
           </label>
         </div>
@@ -143,13 +143,13 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
 
       {/* Content */}
       {pages.length === 0 ? (
-        <div className="flex items-center justify-center h-48 text-zinc-600">
+        <div className="flex items-center justify-center h-48 text-muted-foreground">
           <p>No pages to analyze</p>
         </div>
       ) : viewMode === "sitewide" ? (
         /* Site-wide View */
         <div>
-          <div className="mb-4 text-xs text-zinc-500">
+          <div className="mb-4 text-xs text-muted-foreground">
             <p>
               Most important terms across all {pages.length} pages, ranked by
               average TF-IDF score. These terms represent the core topics of
@@ -158,7 +158,7 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
-              <thead className="bg-zinc-800 text-zinc-400">
+              <thead className="bg-muted text-muted-foreground">
                 <tr>
                   <th className="text-left px-4 py-2 font-medium">Rank</th>
                   <th className="text-left px-4 py-2 font-medium">Term</th>
@@ -178,33 +178,33 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
                   ) => (
                     <tr
                       key={entry.term}
-                      className="border-t border-zinc-800 hover:bg-zinc-800/30"
+                      className="border-t border-border hover:bg-muted/50"
                     >
-                      <td className="px-4 py-2 text-zinc-400">
-                        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-700 text-zinc-300">
+                      <td className="px-4 py-2 text-muted-foreground">
+                        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-muted text-foreground">
                           {idx + 1}
                         </span>
                       </td>
                       <td className="px-4 py-2">
-                        <span className="text-zinc-300 font-medium">
+                        <span className="text-foreground font-medium">
                           {entry.term}
                         </span>
                       </td>
                       <td className="px-4 py-2 text-right">
-                        <span className="text-emerald-400 font-mono">
+                        <span className="text-primary font-mono">
                           {entry.tfidf.toFixed(4)}
                         </span>
                       </td>
                       <td className="px-4 py-2 text-right">
-                        <span className="text-zinc-400">{entry.pageCount}</span>
+                        <span className="text-muted-foreground">{entry.pageCount}</span>
                       </td>
                       <td className="px-4 py-2 text-right">
-                        <span className="text-zinc-500 font-mono">
+                        <span className="text-muted-foreground/70 font-mono">
                           {entry.avgTf.toFixed(4)}
                         </span>
                       </td>
                       <td className="px-4 py-2 text-right">
-                        <span className="text-zinc-500 font-mono">
+                        <span className="text-muted-foreground/70 font-mono">
                           {entry.idf.toFixed(4)}
                         </span>
                       </td>
@@ -220,13 +220,13 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
         <div>
           {/* Page Selector */}
           <div className="mb-4">
-            <label className="text-xs text-zinc-400 block mb-2">
+            <label className="text-xs text-muted-foreground block mb-2">
               Select Page:
             </label>
             <select
               value={selectedPageUrl}
               onChange={(e) => setSelectedPageUrl(e.target.value)}
-              className="w-full bg-zinc-800 border border-zinc-700 rounded px-3 py-2 text-sm text-zinc-300 focus:outline-none focus:border-zinc-500"
+              className="w-full bg-card border border-border rounded px-3 py-2 text-sm text-foreground focus:outline-none focus:border-ring"
             >
               {pageOptions.map((opt) => (
                 <option key={opt.url} value={opt.url}>
@@ -238,7 +238,7 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
 
           {pageTfIdf ? (
             <div>
-              <div className="mb-4 text-xs text-zinc-500">
+              <div className="mb-4 text-xs text-muted-foreground">
                 <p>
                   Top terms for this page ranked by TF-IDF score. Higher scores
                   indicate terms that are important to this page relative to the
@@ -247,7 +247,7 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
-                  <thead className="bg-zinc-800 text-zinc-400">
+                  <thead className="bg-muted text-muted-foreground">
                     <tr>
                       <th className="text-left px-4 py-2 font-medium">Rank</th>
                       <th className="text-left px-4 py-2 font-medium">Term</th>
@@ -264,30 +264,30 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
                       .map((entry: TfIdfEntry, idx: number) => (
                         <tr
                           key={entry.term}
-                          className="border-t border-zinc-800 hover:bg-zinc-800/30"
+                          className="border-t border-border hover:bg-muted/50"
                         >
-                          <td className="px-4 py-2 text-zinc-400">
-                            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-700 text-zinc-300">
+                          <td className="px-4 py-2 text-muted-foreground">
+                            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-muted text-foreground">
                               {idx + 1}
                             </span>
                           </td>
                           <td className="px-4 py-2">
-                            <span className="text-zinc-300 font-medium">
+                            <span className="text-foreground font-medium">
                               {entry.term}
                             </span>
                           </td>
                           <td className="px-4 py-2 text-right">
-                            <span className="text-emerald-400 font-mono">
+                            <span className="text-primary font-mono">
                               {entry.tfidf.toFixed(4)}
                             </span>
                           </td>
                           <td className="px-4 py-2 text-right">
-                            <span className="text-zinc-500 font-mono">
+                            <span className="text-muted-foreground/70 font-mono">
                               {entry.tf.toFixed(4)}
                             </span>
                           </td>
                           <td className="px-4 py-2 text-right">
-                            <span className="text-zinc-500 font-mono">
+                            <span className="text-muted-foreground/70 font-mono">
                               {entry.idf.toFixed(4)}
                             </span>
                           </td>
@@ -297,17 +297,17 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
                 </table>
               </div>
               {pageTfIdf.topTerms.length > 0 && (
-                <div className="mt-4 p-3 bg-zinc-800/30 rounded text-xs">
-                  <div className="text-zinc-500 mb-2">Top 5 Terms Summary:</div>
+                <div className="mt-4 p-3 bg-muted/30 rounded text-xs">
+                  <div className="text-muted-foreground mb-2">Top 5 Terms Summary:</div>
                   <div className="flex flex-wrap gap-2">
                     {pageTfIdf.topTerms
                       .slice(0, 5)
                       .map((term: string, idx: number) => (
                         <span
                           key={term}
-                          className="px-2 py-1 rounded bg-zinc-700 text-zinc-300"
+                          className="px-2 py-1 rounded bg-muted text-foreground"
                         >
-                          <span className="text-zinc-500 mr-1">#{idx + 1}</span>
+                          <span className="text-muted-foreground mr-1">#{idx + 1}</span>
                           {term}
                         </span>
                       ))}
@@ -316,7 +316,7 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
               )}
             </div>
           ) : (
-            <div className="flex items-center justify-center h-48 text-zinc-600">
+            <div className="flex items-center justify-center h-48 text-muted-foreground">
               <p>Select a page to view TF-IDF analysis</p>
             </div>
           )}
@@ -324,7 +324,7 @@ export function TfIdfTable({ pages }: TfIdfTableProps) {
       )}
 
       {/* Info */}
-      <div className="mt-4 p-3 bg-zinc-800/30 rounded text-xs text-zinc-500">
+      <div className="mt-4 p-3 bg-muted/30 rounded text-xs text-muted-foreground">
         <p>
           <strong>TF-IDF (Term Frequency-Inverse Document Frequency):</strong> A
           statistical measure that evaluates how important a word is to a
