@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 
 export const metadata: Metadata = {
-  title: `Unicode Escape Encoder/Decoder | \uXXXX Tool`,
-  description: `Encode text to Unicode escape sequences (\uXXXX) and decode back. Supports JavaScript, Python, Java, C syntax. Free online encoder/decoder tool.`,
+  title: `Unicode Escape Encoder/Decoder | \\uXXXX Tool`,
+  description: `Encode text to Unicode escape sequences (\\uXXXX) and decode back. Supports JavaScript, Python, Java, C syntax. Free online encoder/decoder tool.`,
   alternates: {
     canonical: `https://1000freetools.com/unicode-tools/unicode-escape-encoder`,
   },

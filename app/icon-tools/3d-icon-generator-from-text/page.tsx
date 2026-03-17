@@ -64,7 +64,7 @@ const tools = [
   },
 ];
 
-export default function 3dIconGeneratorFromTextPage() {
+export default function ThreeDIconGeneratorFromTextPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">

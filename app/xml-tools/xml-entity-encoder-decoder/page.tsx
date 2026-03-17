@@ -67,7 +67,7 @@ export default function XmlEntityEncoderDecoderPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Encode or Decode XML Entities</h1>
-        <p className="text-muted-foreground">Safely encode special characters like <, >, & into XML entities for valid XML. Or decode entities back to their original characters.</p>
+        <p className="text-muted-foreground">Safely encode special characters like &lt;, &gt;, &amp; into XML entities for valid XML. Or decode entities back to their original characters.</p>
       </header>
       {/* TODO: add tool component for xml-entity-encoder-decoder */}
       {/* TODO: add seo component for xml-entity-encoder-decoder */}
