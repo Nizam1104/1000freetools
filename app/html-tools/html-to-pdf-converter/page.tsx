@@ -17,7 +17,6 @@ const tools = [
     description: `Free HTML Formatter & Beautifier`,
     href: `/html-tools/html-formatter-beautifier`,
   },
-
   {
     name: `HTML Entity Encoder/Decoder`,
     description: `HTML Entity Encoder & Decoder`,

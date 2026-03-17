@@ -15,7 +15,6 @@ const tools = [
     description: `Free HTML Formatter & Beautifier`,
     href: `/html-tools/html-formatter-beautifier`,
   },
-
   {
     name: `HTML to PDF Converter`,
     description: `Convert HTML to PDF Online`,

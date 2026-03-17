@@ -27,7 +27,6 @@ const tools = [
     description: `Reverse Text & String Online Tool`,
     href: `/string-tools/string-reverse`,
   },
-
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,

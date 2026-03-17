@@ -27,7 +27,6 @@ const tools = [
     description: `Text Compare & Difference Checker`,
     href: `/string-tools/text-compare-diff-checker`,
   },
-
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,

@@ -15,7 +15,6 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-
   {
     name: `Line Height Generator`,
     description: `Line Height Calculator`,

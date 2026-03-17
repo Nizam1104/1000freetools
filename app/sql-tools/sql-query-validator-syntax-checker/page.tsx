@@ -15,7 +15,6 @@ const tools = [
     description: `Free SQL Formatter & Beautifier Online`,
     href: `/sql-tools/sql-formatter-beautifier`,
   },
-
   {
     name: `SQL to JSON Converter`,
     description: `Convert SQL Query Results to JSON`,

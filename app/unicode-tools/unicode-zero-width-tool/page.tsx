@@ -25,7 +25,6 @@ const tools = [
     description: `Unicode Character Counter`,
     href: `/unicode-tools/unicode-character-counter`,
   },
-
   {
     name: `Unicode Whitespace Remover`,
     description: `Unicode Whitespace Remover`,

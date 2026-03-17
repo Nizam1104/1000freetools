@@ -15,7 +15,6 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,

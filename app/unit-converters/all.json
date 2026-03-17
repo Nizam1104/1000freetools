@@ -137,7 +137,6 @@
     "h1": "Torque Converter",
     "p": "Convert torque units instantly — newton-meters, pound-feet, kilogram-force centimeters, and more. Accurate online torque converter for automotive, mechanical, and industrial engineering."
   },
-
   {
     "converterUnit": "Fuel Efficiency - Mass",
     "description": "Converts between units of fuel efficiency by mass such as km/kg, miles/lb, etc.",
@@ -198,7 +197,6 @@
     "h1": "Heat Transfer Coefficient Converter",
     "p": "Convert heat transfer coefficient units — W/(m²·K), BTU/(h·ft²·°F), and more. Accurate online converter for convection, conduction, and HVAC engineering calculations."
   },
-
   {
     "converterUnit": "Flow",
     "description": "Converts between units of volumetric flow rate such as m³/s, L/min, gallons per minute, CFM, etc.",
@@ -259,7 +257,6 @@
     "h1": "Permeability Converter",
     "p": "Convert permeability units including darcy, millidarcy, m², and more. Free online permeability converter for petroleum engineering, hydrogeology, and porous media analysis."
   },
-
   {
     "converterUnit": "Luminance",
     "description": "Converts between units of luminance such as candela/m², nit, foot-lambert, stilb, etc.",
@@ -296,7 +293,6 @@
     "h1": "Wavelength Converter",
     "p": "Convert wavelength units and calculate frequency across the electromagnetic spectrum — nanometers, micrometers, angstroms, and more. Free online wavelength converter for optics and physics."
   },
-
   {
     "converterUnit": "Charge",
     "description": "Converts between units of electric charge such as coulombs, millicoulombs, microcoulombs, ampere-hours, etc.",
@@ -387,7 +383,6 @@
     "h1": "Inductance Converter",
     "p": "Convert inductance units — henries, millihenries, microhenries, nanohenries, and more. Free online inductance converter for electronics, RF engineering, and coil and transformer design."
   },
-
   {
     "converterUnit": "Magnetomotive Force",
     "description": "Converts between units of magnetomotive force such as ampere-turns, gilberts, kiloampere-turns, etc.",
@@ -412,7 +407,6 @@
     "h1": "Magnetic Flux Density Converter",
     "p": "Convert magnetic flux density units — tesla, millitesla, gauss, microtesla, and more. Free online B-field converter for MRI, motor design, and electromagnetic engineering."
   },
-
   {
     "converterUnit": "Rebar Weight Calculator",
     "description": "Calculates the weight of steel rebar based on diameter, length, and quantity for construction projects.",
@@ -467,7 +461,6 @@
     "h1": "Roofing Sheet Coverage Calculator",
     "p": "Calculate how many roofing sheets you need for your roof area. Enter roof dimensions, sheet size, and overlap to get an accurate sheet count. Free online roofing coverage calculator."
   },
-
   {
     "converterUnit": "Cups to Grams",
     "description": "Converts cooking measurements from cups to grams for common ingredients like flour, sugar, butter, rice, etc.",
@@ -528,7 +521,6 @@
     "h1": "Unix Timestamp Converter",
     "p": "Convert Unix timestamps to readable dates and times — and back again. Free online epoch time converter for developers, database administrators, and system engineers."
   },
-
   {
     "converterUnit": "Time Duration Calculator",
     "description": "Calculates the duration between two times or adds/subtracts time intervals from a given time.",
@@ -547,7 +539,6 @@
     "h1": "Date Difference Calculator",
     "p": "Calculate the exact number of days, weeks, months, and years between any two dates. Free online date difference calculator for deadlines, anniversaries, and event planning."
   },
-
   {
     "converterUnit": "Light Years to Parsecs",
     "description": "Converts astronomical distances between light-years, parsecs, AU, kilometers, and miles.",
@@ -572,7 +563,6 @@
     "h1": "Planet Weight Calculator",
     "p": "Find out how much you would weigh on Mars, Jupiter, the Moon, and other planets. Free online planet weight calculator based on surface gravity for astronomy and science education."
   },
-
   {
     "converterUnit": "Radiation Dose Converter",
     "description": "Converts between units of radiation absorbed dose such as gray, rad, sievert, rem, etc.",
@@ -591,7 +581,6 @@
     "h1": "Radiation Exposure Dose Converter",
     "p": "Convert radiation exposure dose units — roentgens, coulombs/kg, milliroentgens, and more. Free online exposure dose converter for radiology, health physics, and radiation protection."
   },
-
   {
     "converterUnit": "Sound Pressure (Pa to dB)",
     "description": "Converts sound pressure between pascals (Pa) and decibels (dB SPL) and calculates sound levels.",
@@ -604,7 +593,6 @@
     "h1": "Frequency to Musical Note Converter",
     "p": "Convert any frequency in Hz to its corresponding musical note and octave — and back again. Free online pitch frequency converter for musicians, audio engineers, and music theory students."
   },
-
   {
     "converterUnit": "Wind Speed Converter",
     "description": "Converts wind speed between km/h, mph, knots, m/s, and Beaufort scale values.",
@@ -629,7 +617,6 @@
     "h1": "Dew Point Calculator",
     "p": "Calculate dew point temperature from relative humidity and air temperature instantly. Free online dew point calculator for weather forecasting, HVAC design, and condensation analysis."
   },
-
   {
     "converterUnit": "Fabric GSM Converter",
     "description": "Converts fabric weight between GSM (grams per square meter) and other textile weight units.",
@@ -648,7 +635,6 @@
     "h1": "Clothing Size Converter",
     "p": "Convert clothing sizes between US, UK, EU, and Asian standards for men, women, and kids. Free online clothes size converter for international shopping and fashion retail."
   },
-
   {
     "converterUnit": "BMI Calculator",
     "description": "Calculates Body Mass Index (BMI) from height and weight and classifies the result into health categories.",
@@ -667,7 +653,6 @@
     "h1": "Running Pace to Speed Converter",
     "p": "Convert running pace (min/km or min/mile) to speed (km/h or mph) instantly. Free online running pace converter for athletes, marathon runners, and fitness tracking."
   },
-
   {
     "converterUnit": "Height Converter",
     "description": "Converts height between feet and inches, centimeters, and meters for everyday use.",

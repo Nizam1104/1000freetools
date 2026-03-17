@@ -30,7 +30,6 @@ const tools = [
     description: `Daylight Saving Time Calculator & Schedule`,
     href: `/timezone-tools/daylight-saving-time-calculator-schedule`,
   },
-
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,

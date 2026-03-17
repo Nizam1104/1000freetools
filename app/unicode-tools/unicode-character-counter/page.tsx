@@ -22,7 +22,6 @@ const tools = [
     description: `Unicode Text Converter`,
     href: `/unicode-tools/unicode-text-converter`,
   },
-
   {
     name: `Unicode Whitespace Remover`,
     description: `Unicode Whitespace Remover`,

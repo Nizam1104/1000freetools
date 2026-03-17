@@ -15,7 +15,6 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,

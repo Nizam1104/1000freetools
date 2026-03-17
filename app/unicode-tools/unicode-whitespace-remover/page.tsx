@@ -27,7 +27,6 @@ const tools = [
     description: `Unicode Character Counter`,
     href: `/unicode-tools/unicode-character-counter`,
   },
-
   {
     name: `Unicode Regex Tester`,
     description: `Unicode Regex Tester`,

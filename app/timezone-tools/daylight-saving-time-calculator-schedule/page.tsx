@@ -30,7 +30,6 @@ const tools = [
     description: `Time Zone Abbreviation Lookup`,
     href: `/timezone-tools/time-zone-abbreviation-lookup-decoder`,
   },
-
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
