@@ -13,11 +13,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
-  {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,
     href: `/svg-tools/svg-editor-online`,

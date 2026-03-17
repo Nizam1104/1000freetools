@@ -13,29 +13,14 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `EBCDIC to ASCII Converter`,
-    description: `EBCDIC to ASCII Converter: Mainframe Code Converter`,
-    href: `/ascii-tools/ebcdic-to-ascii-converter`,
-  },
-  {
     name: `UTF-8 Validator`,
     description: `UTF-8 Validator: Check and Validate UTF-8 Encoding`,
     href: `/ascii-tools/utf8-validator`,
   },
   {
-    name: `Quoted-Printable Encoder`,
-    description: `Quoted-Printable Encoder: MIME Email Encoder`,
-    href: `/ascii-tools/quoted-printable-encoder`,
-  },
-  {
     name: `Text Differ`,
     description: `Text Differ: Compare Text and Find Differences`,
     href: `/ascii-tools/text-differ`,
-  },
-  {
-    name: `ROT13 Cipher`,
-    description: `ROT13 Cipher: Rotate Text by 13 Letters Online`,
-    href: `/ascii-tools/rot13-cipher`,
   },
   {
     name: `Password Generator`,

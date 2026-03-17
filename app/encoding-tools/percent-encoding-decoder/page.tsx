@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `Base64 Encoder/Decoder`,
     description: `Base64 Encode and Decode Online`,
     href: `/encoding-tools/base64-encoder-decoder`,
@@ -66,13 +61,21 @@ export default function PercentEncodingDecoderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Percent Encoding Decoder - RFC 3986 Compliant</h1>
-        <p className="text-muted-foreground">Encode or decode text using percent-encoding as defined by RFC 3986 for precise URI component handling. Ensures compliance for web APIs, query strings, and path segments.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Percent Encoding Decoder - RFC 3986 Compliant
+        </h1>
+        <p className="text-muted-foreground">
+          Encode or decode text using percent-encoding as defined by RFC 3986
+          for precise URI component handling. Ensures compliance for web APIs,
+          query strings, and path segments.
+        </p>
       </header>
       {/* TODO: add tool component for percent-encoding-decoder */}
       {/* TODO: add seo component for percent-encoding-decoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -17,11 +17,7 @@ const tools = [
     description: `Free HTML Formatter & Beautifier`,
     href: `/html-tools/html-formatter-beautifier`,
   },
-  {
-    name: `HTML Minifier & Compressor`,
-    description: `HTML Minifier & Compressor Tool`,
-    href: `/html-tools/html-minifier-compressor`,
-  },
+
   {
     name: `HTML to PDF Converter`,
     description: `Convert HTML to PDF Online`,

@@ -18,11 +18,6 @@ const tools = [
     href: `/encryption-tools/aes-encryption`,
   },
   {
-    name: `Base64 Encode & Decode`,
-    description: `Base64 Encoder & Decoder Online`,
-    href: `/encryption-tools/base64-encode-decode`,
-  },
-  {
     name: `Text to Binary Converter & Encryptor`,
     description: `Text to Binary Converter with Encryption`,
     href: `/encryption-tools/text-binary-encryptor`,

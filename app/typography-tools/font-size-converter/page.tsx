@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -67,12 +63,18 @@ export default function FontSizeConverterPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Font Size Unit Converter</h1>
-        <p className="text-muted-foreground">Convert font sizes between pixels, points, ems, rems, and more. Essential for web developers and designers working across screen and print.</p>
+        <p className="text-muted-foreground">
+          Convert font sizes between pixels, points, ems, rems, and more.
+          Essential for web developers and designers working across screen and
+          print.
+        </p>
       </header>
       {/* TODO: add tool component for font-size-converter */}
       {/* TODO: add seo component for font-size-converter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

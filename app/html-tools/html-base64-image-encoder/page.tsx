@@ -15,11 +15,7 @@ const tools = [
     description: `Free HTML Formatter & Beautifier`,
     href: `/html-tools/html-formatter-beautifier`,
   },
-  {
-    name: `HTML Minifier & Compressor`,
-    description: `HTML Minifier & Compressor Tool`,
-    href: `/html-tools/html-minifier-compressor`,
-  },
+
   {
     name: `HTML to PDF Converter`,
     description: `Convert HTML to PDF Online`,
@@ -66,13 +62,21 @@ export default function HtmlBase64ImageEncoderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">HTML Base64 Image Encoder & Decoder</h1>
-        <p className="text-muted-foreground">Encode images to Base64 data URIs for inline embedding in HTML, or decode Base64 back to image files. Reduce HTTP requests by embedding images directly.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          HTML Base64 Image Encoder & Decoder
+        </h1>
+        <p className="text-muted-foreground">
+          Encode images to Base64 data URIs for inline embedding in HTML, or
+          decode Base64 back to image files. Reduce HTTP requests by embedding
+          images directly.
+        </p>
       </header>
       {/* TODO: add tool component for html-base64-image-encoder */}
       {/* TODO: add seo component for html-base64-image-encoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `JavaScript Minifier & Compressor`,
-    description: `Minify and Compress JavaScript Code`,
-    href: `/javascript-tools/javascript-minifier-compressor`,
-  },
-  {
     name: `JavaScript Beautifier & Formatter`,
     description: `Beautify and Format JavaScript Code`,
     href: `/javascript-tools/javascript-beautifier-formatter`,
@@ -66,13 +61,21 @@ export default function JsonValidatorFormatterPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Validate and Format JSON Data</h1>
-        <p className="text-muted-foreground">Check your JSON for errors and format it for readability. This validator identifies syntax issues and beautifies valid JSON with customizable indentation.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Validate and Format JSON Data
+        </h1>
+        <p className="text-muted-foreground">
+          Check your JSON for errors and format it for readability. This
+          validator identifies syntax issues and beautifies valid JSON with
+          customizable indentation.
+        </p>
       </header>
       {/* TODO: add tool component for json-validator-formatter */}
       {/* TODO: add seo component for json-validator-formatter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

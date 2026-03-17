@@ -13,11 +13,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `HTML Minifier & Compressor`,
-    description: `HTML Minifier & Compressor Tool`,
-    href: `/html-tools/html-minifier-compressor`,
-  },
-  {
     name: `HTML to PDF Converter`,
     description: `Convert HTML to PDF Online`,
     href: `/html-tools/html-to-pdf-converter`,

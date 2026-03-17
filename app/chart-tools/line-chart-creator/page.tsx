@@ -28,11 +28,6 @@ const tools = [
     href: `/chart-tools/scatter-plot-tool`,
   },
   {
-    name: `Histogram Generator`,
-    description: `Histogram Maker Online`,
-    href: `/chart-tools/histogram-generator`,
-  },
-  {
     name: `Gantt Chart Maker`,
     description: `Free Gantt Chart Maker`,
     href: `/chart-tools/gantt-chart-maker`,

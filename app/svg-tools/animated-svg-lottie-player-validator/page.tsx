@@ -15,11 +15,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,
@@ -66,13 +62,21 @@ export default function AnimatedSvgLottiePlayerValidatorPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Animated SVG & Lottie Player</h1>
-        <p className="text-muted-foreground">Preview and validate your animated SVG or Lottie JSON files right in the browser. Play, pause, adjust speed, and check for errors before using them in your projects.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Animated SVG & Lottie Player
+        </h1>
+        <p className="text-muted-foreground">
+          Preview and validate your animated SVG or Lottie JSON files right in
+          the browser. Play, pause, adjust speed, and check for errors before
+          using them in your projects.
+        </p>
       </header>
       {/* TODO: add tool component for animated-svg-lottie-player-validator */}
       {/* TODO: add seo component for animated-svg-lottie-player-validator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

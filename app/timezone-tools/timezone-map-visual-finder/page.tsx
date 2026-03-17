@@ -30,11 +30,7 @@ const tools = [
     description: `Daylight Saving Time Calculator & Schedule`,
     href: `/timezone-tools/daylight-saving-time-calculator-schedule`,
   },
-  {
-    name: `Unix Timestamp Converter & Epoch Time Tool`,
-    description: `Unix Timestamp & Epoch Time Converter`,
-    href: `/timezone-tools/unix-timestamp-converter-epoch-time`,
-  },
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
@@ -67,12 +63,18 @@ export default function TimezoneMapVisualFinderPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Interactive Time Zone Map</h1>
-        <p className="text-muted-foreground">Find any time zone visually on our interactive map. Click on a country or city to see its current time, UTC offset, and daylight saving rules in a clear, graphical format.</p>
+        <p className="text-muted-foreground">
+          Find any time zone visually on our interactive map. Click on a country
+          or city to see its current time, UTC offset, and daylight saving rules
+          in a clear, graphical format.
+        </p>
       </header>
       {/* TODO: add tool component for timezone-map-visual-finder */}
       {/* TODO: add seo component for timezone-map-visual-finder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

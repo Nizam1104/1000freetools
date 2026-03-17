@@ -15,11 +15,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,
@@ -66,13 +62,21 @@ export default function SvgComparisonDiffToolPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Compare Two SVG Files Online</h1>
-        <p className="text-muted-foreground">Spot the differences between two SVG files. Compare them visually side-by-side and see a detailed diff of their XML code to understand exactly what changed.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Compare Two SVG Files Online
+        </h1>
+        <p className="text-muted-foreground">
+          Spot the differences between two SVG files. Compare them visually
+          side-by-side and see a detailed diff of their XML code to understand
+          exactly what changed.
+        </p>
       </header>
       {/* TODO: add tool component for svg-comparison-diff-tool */}
       {/* TODO: add seo component for svg-comparison-diff-tool */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

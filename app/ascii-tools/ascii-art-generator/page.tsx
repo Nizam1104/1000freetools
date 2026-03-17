@@ -33,11 +33,6 @@ const tools = [
     href: `/ascii-tools/ascii-code-table`,
   },
   {
-    name: `Text to Unicode Converter`,
-    description: `Text to Unicode Converter: Unicode Code Point Translator`,
-    href: `/ascii-tools/text-to-unicode-converter`,
-  },
-  {
     name: `Text Differ`,
     description: `Text Differ: Compare Text and Find Differences`,
     href: `/ascii-tools/text-differ`,
@@ -48,19 +43,9 @@ const tools = [
     href: `/ascii-tools/lorem-ipsum-generator`,
   },
   {
-    name: `Text to Morse Code`,
-    description: `Text to Morse Code: Morse Code Translator Online`,
-    href: `/ascii-tools/text-to-morse-code`,
-  },
-  {
     name: `ASCII to Braille Converter`,
     description: `ASCII to Braille Converter: Text to Braille Translator`,
     href: `/ascii-tools/ascii-to-braille-converter`,
-  },
-  {
-    name: `EBCDIC to ASCII Converter`,
-    description: `EBCDIC to ASCII Converter: Mainframe Code Converter`,
-    href: `/ascii-tools/ebcdic-to-ascii-converter`,
   },
 ];
 

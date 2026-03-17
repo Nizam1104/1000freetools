@@ -15,11 +15,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,
@@ -67,12 +63,17 @@ export default function SvgToBase64EncoderPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">SVG to Base64 Encoder</h1>
-        <p className="text-muted-foreground">Encode your SVG file to a Base64 data URI instantly. Get the string ready to embed directly in your CSS or HTML, reducing HTTP requests.</p>
+        <p className="text-muted-foreground">
+          Encode your SVG file to a Base64 data URI instantly. Get the string
+          ready to embed directly in your CSS or HTML, reducing HTTP requests.
+        </p>
       </header>
       {/* TODO: add tool component for svg-to-base64-encoder */}
       {/* TODO: add seo component for svg-to-base64-encoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -13,19 +13,9 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `ASCII85 Encoder`,
-    description: `ASCII85 Encoder: Base85 Binary to Text Converter`,
-    href: `/ascii-tools/ascii85-encoder`,
-  },
-  {
     name: `UTF-8 Validator`,
     description: `UTF-8 Validator: Check and Validate UTF-8 Encoding`,
     href: `/ascii-tools/utf8-validator`,
-  },
-  {
-    name: `ROT13 Cipher`,
-    description: `ROT13 Cipher: Rotate Text by 13 Letters Online`,
-    href: `/ascii-tools/rot13-cipher`,
   },
   {
     name: `Leet Speak Converter`,

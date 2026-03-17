@@ -13,11 +13,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `JavaScript Minifier & Compressor`,
-    description: `Minify and Compress JavaScript Code`,
-    href: `/javascript-tools/javascript-minifier-compressor`,
-  },
-  {
     name: `JavaScript Beautifier & Formatter`,
     description: `Beautify and Format JavaScript Code`,
     href: `/javascript-tools/javascript-beautifier-formatter`,

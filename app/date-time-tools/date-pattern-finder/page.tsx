@@ -16,11 +16,6 @@ const tools = [
     href: `/date-time-tools/date-calculator`,
   },
   {
-    name: `Time Zone Converter`,
-    description: `World Time Zone Converter & Clock`,
-    href: `/date-time-tools/time-zone-converter`,
-  },
-  {
     name: `Age Calculator`,
     description: `Age Calculator: Find Your Exact Age in Years & Days`,
     href: `/date-time-tools/age-calculator`,
@@ -66,13 +61,21 @@ export default function DatePatternFinderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Date Pattern Finder (e.g., All Fridays the 13th)</h1>
-        <p className="text-muted-foreground">Generate a list of dates that fit a custom pattern. Find all specific weekdays, day-of-month combinations, or recurring dates for event planning or analysis.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Date Pattern Finder (e.g., All Fridays the 13th)
+        </h1>
+        <p className="text-muted-foreground">
+          Generate a list of dates that fit a custom pattern. Find all specific
+          weekdays, day-of-month combinations, or recurring dates for event
+          planning or analysis.
+        </p>
       </header>
       {/* TODO: add tool component for date-pattern-finder */}
       {/* TODO: add seo component for date-pattern-finder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

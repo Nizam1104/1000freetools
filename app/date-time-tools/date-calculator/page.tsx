@@ -13,11 +13,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `Time Zone Converter`,
-    description: `World Time Zone Converter & Clock`,
-    href: `/date-time-tools/time-zone-converter`,
-  },
-  {
     name: `Age Calculator`,
     description: `Age Calculator: Find Your Exact Age in Years & Days`,
     href: `/date-time-tools/age-calculator`,

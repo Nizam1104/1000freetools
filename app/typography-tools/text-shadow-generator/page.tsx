@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -67,12 +63,17 @@ export default function TextShadowGeneratorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">CSS Text Shadow Generator</h1>
-        <p className="text-muted-foreground">Create beautiful text shadow effects for your website headlines. Adjust settings in real-time and copy the CSS code with one click.</p>
+        <p className="text-muted-foreground">
+          Create beautiful text shadow effects for your website headlines.
+          Adjust settings in real-time and copy the CSS code with one click.
+        </p>
       </header>
       {/* TODO: add tool component for text-shadow-generator */}
       {/* TODO: add seo component for text-shadow-generator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

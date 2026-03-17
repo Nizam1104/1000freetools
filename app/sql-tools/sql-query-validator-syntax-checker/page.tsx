@@ -15,11 +15,7 @@ const tools = [
     description: `Free SQL Formatter & Beautifier Online`,
     href: `/sql-tools/sql-formatter-beautifier`,
   },
-  {
-    name: `SQL Minifier and Compressor`,
-    description: `SQL Minifier & Compressor Tool`,
-    href: `/sql-tools/sql-minifier-compressor`,
-  },
+
   {
     name: `SQL to JSON Converter`,
     description: `Convert SQL Query Results to JSON`,
@@ -66,13 +62,21 @@ export default function SqlQueryValidatorSyntaxCheckerPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">SQL Syntax Checker & Query Validator</h1>
-        <p className="text-muted-foreground">Validate your SQL code for syntax errors instantly. This checker helps you find and fix mistakes before running queries, saving time and preventing database errors.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          SQL Syntax Checker & Query Validator
+        </h1>
+        <p className="text-muted-foreground">
+          Validate your SQL code for syntax errors instantly. This checker helps
+          you find and fix mistakes before running queries, saving time and
+          preventing database errors.
+        </p>
       </header>
       {/* TODO: add tool component for sql-query-validator-syntax-checker */}
       {/* TODO: add seo component for sql-query-validator-syntax-checker */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

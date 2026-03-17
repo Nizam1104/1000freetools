@@ -25,11 +25,7 @@ const tools = [
     description: `Unicode Character Counter`,
     href: `/unicode-tools/unicode-character-counter`,
   },
-  {
-    name: `Unicode Case Converter`,
-    description: `Unicode Case Converter`,
-    href: `/unicode-tools/unicode-case-converter`,
-  },
+
   {
     name: `Unicode Whitespace Remover`,
     description: `Unicode Whitespace Remover`,
@@ -67,12 +63,17 @@ export default function UnicodeEmojiPickerPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Unicode Emoji Picker</h1>
-        <p className="text-muted-foreground">Find and copy any emoji from the full Unicode set. Search by name, category, or keyword to get the perfect emoji for your message.</p>
+        <p className="text-muted-foreground">
+          Find and copy any emoji from the full Unicode set. Search by name,
+          category, or keyword to get the perfect emoji for your message.
+        </p>
       </header>
       {/* TODO: add tool component for unicode-emoji-picker */}
       {/* TODO: add seo component for unicode-emoji-picker */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

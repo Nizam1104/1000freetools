@@ -15,11 +15,7 @@ const tools = [
     description: `Free SQL Formatter & Beautifier Online`,
     href: `/sql-tools/sql-formatter-beautifier`,
   },
-  {
-    name: `SQL Minifier and Compressor`,
-    description: `SQL Minifier & Compressor Tool`,
-    href: `/sql-tools/sql-minifier-compressor`,
-  },
+
   {
     name: `SQL Query Validator and Syntax Checker`,
     description: `SQL Syntax Checker & Query Validator`,
@@ -66,13 +62,21 @@ export default function SqlDateFunctionPlaygroundPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">SQL Date & Time Function Playground</h1>
-        <p className="text-muted-foreground">Experiment with SQL date functions in a live playground. Test DATE_ADD, DATEDIFF, EXTRACT, and more with your own inputs and see results instantly for MySQL, PostgreSQL.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          SQL Date & Time Function Playground
+        </h1>
+        <p className="text-muted-foreground">
+          Experiment with SQL date functions in a live playground. Test
+          DATE_ADD, DATEDIFF, EXTRACT, and more with your own inputs and see
+          results instantly for MySQL, PostgreSQL.
+        </p>
       </header>
       {/* TODO: add tool component for sql-date-function-playground */}
       {/* TODO: add seo component for sql-date-function-playground */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

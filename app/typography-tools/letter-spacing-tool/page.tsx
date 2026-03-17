@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Line Height Generator`,
     description: `Line Height Calculator`,
@@ -66,13 +62,20 @@ export default function LetterSpacingToolPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Letter Spacing & Kerning Tool</h1>
-        <p className="text-muted-foreground">Adjust the spacing between letters in your text with real-time preview. Fine-tune kerning for logos, headlines, or any design text.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Letter Spacing & Kerning Tool
+        </h1>
+        <p className="text-muted-foreground">
+          Adjust the spacing between letters in your text with real-time
+          preview. Fine-tune kerning for logos, headlines, or any design text.
+        </p>
       </header>
       {/* TODO: add tool component for letter-spacing-tool */}
       {/* TODO: add seo component for letter-spacing-tool */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

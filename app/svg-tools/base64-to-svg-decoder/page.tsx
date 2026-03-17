@@ -17,11 +17,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,

@@ -15,11 +15,7 @@ const tools = [
     description: `Free SQL Formatter & Beautifier Online`,
     href: `/sql-tools/sql-formatter-beautifier`,
   },
-  {
-    name: `SQL Minifier and Compressor`,
-    description: `SQL Minifier & Compressor Tool`,
-    href: `/sql-tools/sql-minifier-compressor`,
-  },
+
   {
     name: `SQL Query Validator and Syntax Checker`,
     description: `SQL Syntax Checker & Query Validator`,
@@ -66,13 +62,21 @@ export default function SqlQueryToCsvExportPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">SQL to CSV Converter - Export Query Results</h1>
-        <p className="text-muted-foreground">Run a SQL query and export the results directly to a CSV file. Customize delimiters, quotes, and formatting for easy data analysis in spreadsheets.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          SQL to CSV Converter - Export Query Results
+        </h1>
+        <p className="text-muted-foreground">
+          Run a SQL query and export the results directly to a CSV file.
+          Customize delimiters, quotes, and formatting for easy data analysis in
+          spreadsheets.
+        </p>
       </header>
       {/* TODO: add tool component for sql-query-to-csv-export */}
       {/* TODO: add seo component for sql-query-to-csv-export */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

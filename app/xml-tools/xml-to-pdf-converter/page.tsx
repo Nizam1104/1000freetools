@@ -28,7 +28,7 @@ const tools = [
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,
-    href: `/xml-tools/xml-minifier-compressor`,
+    href: ``,
   },
   {
     name: `XML Viewer and Editor`,
@@ -66,13 +66,20 @@ export default function XmlToPdfConverterPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Convert XML Data to PDF Document</h1>
-        <p className="text-muted-foreground">Generate a PDF file directly from your XML data. Use a simple template to control the layout and styling of the resulting document.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Convert XML Data to PDF Document
+        </h1>
+        <p className="text-muted-foreground">
+          Generate a PDF file directly from your XML data. Use a simple template
+          to control the layout and styling of the resulting document.
+        </p>
       </header>
       {/* TODO: add tool component for xml-to-pdf-converter */}
       {/* TODO: add seo component for xml-to-pdf-converter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

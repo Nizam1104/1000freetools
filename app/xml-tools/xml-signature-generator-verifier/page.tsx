@@ -28,7 +28,7 @@ const tools = [
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,
-    href: `/xml-tools/xml-minifier-compressor`,
+    href: ``,
   },
   {
     name: `XML Viewer and Editor`,
@@ -66,13 +66,21 @@ export default function XmlSignatureGeneratorVerifierPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Generate & Verify XML Digital Signatures</h1>
-        <p className="text-muted-foreground">Add secure digital signatures to your XML documents or verify existing ones. This tool implements the W3C XML Signature standard for data integrity and authentication.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Generate & Verify XML Digital Signatures
+        </h1>
+        <p className="text-muted-foreground">
+          Add secure digital signatures to your XML documents or verify existing
+          ones. This tool implements the W3C XML Signature standard for data
+          integrity and authentication.
+        </p>
       </header>
       {/* TODO: add tool component for xml-signature-generator-verifier */}
       {/* TODO: add seo component for xml-signature-generator-verifier */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

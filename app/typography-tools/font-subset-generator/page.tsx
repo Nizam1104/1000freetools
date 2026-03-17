@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -67,12 +63,18 @@ export default function FontSubsetGeneratorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Web Font Subset Generator</h1>
-        <p className="text-muted-foreground">Reduce your web font file sizes by creating subsets. Upload a font and specify characters to generate optimized WOFF2 files for faster websites.</p>
+        <p className="text-muted-foreground">
+          Reduce your web font file sizes by creating subsets. Upload a font and
+          specify characters to generate optimized WOFF2 files for faster
+          websites.
+        </p>
       </header>
       {/* TODO: add tool component for font-subset-generator */}
       {/* TODO: add seo component for font-subset-generator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

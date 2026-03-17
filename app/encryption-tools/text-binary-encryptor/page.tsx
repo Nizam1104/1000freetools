@@ -23,11 +23,6 @@ const tools = [
     href: `/encryption-tools/rsa-key-generator`,
   },
   {
-    name: `Base64 Encode & Decode`,
-    description: `Base64 Encoder & Decoder Online`,
-    href: `/encryption-tools/base64-encode-decode`,
-  },
-  {
     name: `File Checksum & Hash Verifier (MD5, SHA)`,
     description: `File Checksum Calculator & Verifier`,
     href: `/encryption-tools/file-checksum-verifier`,

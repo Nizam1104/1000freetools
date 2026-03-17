@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -67,12 +63,17 @@ export default function TextWatermarkAdderPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Add Text Watermark to Image</h1>
-        <p className="text-muted-foreground">Protect your images by adding a text watermark. Upload a photo, customize the text, position, and opacity, then download the result.</p>
+        <p className="text-muted-foreground">
+          Protect your images by adding a text watermark. Upload a photo,
+          customize the text, position, and opacity, then download the result.
+        </p>
       </header>
       {/* TODO: add tool component for text-watermark-adder */}
       {/* TODO: add seo component for text-watermark-adder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

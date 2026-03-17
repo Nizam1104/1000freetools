@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -67,12 +63,17 @@ export default function TextToAsciiArtGeneratorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Text to ASCII Art Converter</h1>
-        <p className="text-muted-foreground">Turn any text into ASCII art for fun projects, code comments, or signatures. Choose from multiple styles and copy the result instantly.</p>
+        <p className="text-muted-foreground">
+          Turn any text into ASCII art for fun projects, code comments, or
+          signatures. Choose from multiple styles and copy the result instantly.
+        </p>
       </header>
       {/* TODO: add tool component for text-to-ascii-art-generator */}
       {/* TODO: add seo component for text-to-ascii-art-generator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

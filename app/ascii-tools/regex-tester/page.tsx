@@ -13,16 +13,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `ASCII85 Encoder`,
-    description: `ASCII85 Encoder: Base85 Binary to Text Converter`,
-    href: `/ascii-tools/ascii85-encoder`,
-  },
-  {
-    name: `EBCDIC to ASCII Converter`,
-    description: `EBCDIC to ASCII Converter: Mainframe Code Converter`,
-    href: `/ascii-tools/ebcdic-to-ascii-converter`,
-  },
-  {
     name: `UTF-8 Validator`,
     description: `UTF-8 Validator: Check and Validate UTF-8 Encoding`,
     href: `/ascii-tools/utf8-validator`,

@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -67,12 +63,17 @@ export default function TypeScaleCalculatorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Typography Scale Calculator</h1>
-        <p className="text-muted-foreground">Create a balanced type scale for your website. Choose a base size and ratio to generate consistent font sizes for all headings and text.</p>
+        <p className="text-muted-foreground">
+          Create a balanced type scale for your website. Choose a base size and
+          ratio to generate consistent font sizes for all headings and text.
+        </p>
       </header>
       {/* TODO: add tool component for type-scale-calculator */}
       {/* TODO: add seo component for type-scale-calculator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `JavaScript Minifier & Compressor`,
-    description: `Minify and Compress JavaScript Code`,
-    href: `/javascript-tools/javascript-minifier-compressor`,
-  },
-  {
     name: `JavaScript Obfuscator & Protector`,
     description: `Obfuscate JavaScript Code for Protection`,
     href: `/javascript-tools/javascript-obfuscator-protector`,
@@ -66,13 +61,21 @@ export default function JavascriptBeautifierFormatterPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Beautify and Format JavaScript Code</h1>
-        <p className="text-muted-foreground">Make your minified or messy JavaScript readable again. This formatter adds proper indentation and line breaks to improve code clarity and maintainability.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Beautify and Format JavaScript Code
+        </h1>
+        <p className="text-muted-foreground">
+          Make your minified or messy JavaScript readable again. This formatter
+          adds proper indentation and line breaks to improve code clarity and
+          maintainability.
+        </p>
       </header>
       {/* TODO: add tool component for javascript-beautifier-formatter */}
       {/* TODO: add seo component for javascript-beautifier-formatter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

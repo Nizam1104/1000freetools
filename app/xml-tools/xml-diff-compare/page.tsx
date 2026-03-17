@@ -28,7 +28,7 @@ const tools = [
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,
-    href: `/xml-tools/xml-minifier-compressor`,
+    href: ``,
   },
   {
     name: `XML Viewer and Editor`,
@@ -66,13 +66,21 @@ export default function XmlDiffComparePage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Compare Two XML Files for Differences</h1>
-        <p className="text-muted-foreground">Find exactly what changed between two versions of an XML file. This visual diff tool highlights added, removed, and modified elements and attributes.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Compare Two XML Files for Differences
+        </h1>
+        <p className="text-muted-foreground">
+          Find exactly what changed between two versions of an XML file. This
+          visual diff tool highlights added, removed, and modified elements and
+          attributes.
+        </p>
       </header>
       {/* TODO: add tool component for xml-diff-compare */}
       {/* TODO: add seo component for xml-diff-compare */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

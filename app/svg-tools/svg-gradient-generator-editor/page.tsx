@@ -15,11 +15,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,
@@ -67,12 +63,18 @@ export default function SvgGradientGeneratorEditorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">SVG Gradient Generator</h1>
-        <p className="text-muted-foreground">Create beautiful linear and radial gradients for your SVG graphics. Edit colors, stops, and angles visually, then copy the ready-to-use SVG code.</p>
+        <p className="text-muted-foreground">
+          Create beautiful linear and radial gradients for your SVG graphics.
+          Edit colors, stops, and angles visually, then copy the ready-to-use
+          SVG code.
+        </p>
       </header>
       {/* TODO: add tool component for svg-gradient-generator-editor */}
       {/* TODO: add seo component for svg-gradient-generator-editor */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

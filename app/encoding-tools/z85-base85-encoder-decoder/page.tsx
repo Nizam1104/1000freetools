@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `Base64 Encoder/Decoder`,
     description: `Base64 Encode and Decode Online`,
     href: `/encoding-tools/base64-encoder-decoder`,
@@ -66,13 +61,21 @@ export default function Z85Base85EncoderDecoderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Z85 Encoder & Decoder - ZeroMQ Base85</h1>
-        <p className="text-muted-foreground">Encode binary data to Z85, a URL-safe Base85 variant used by ZeroMQ, or decode Z85 back to its original form. Provides compact representation with a human-readable character set.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Z85 Encoder & Decoder - ZeroMQ Base85
+        </h1>
+        <p className="text-muted-foreground">
+          Encode binary data to Z85, a URL-safe Base85 variant used by ZeroMQ,
+          or decode Z85 back to its original form. Provides compact
+          representation with a human-readable character set.
+        </p>
       </header>
       {/* TODO: add tool component for z85-base85-encoder-decoder */}
       {/* TODO: add seo component for z85-base85-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

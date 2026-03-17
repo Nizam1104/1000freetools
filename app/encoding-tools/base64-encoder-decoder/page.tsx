@@ -13,11 +13,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `UTF-8 Encoder/Decoder`,
     description: `UTF-8 Encoder and Decoder`,
     href: `/encoding-tools/utf8-encoder-decoder`,

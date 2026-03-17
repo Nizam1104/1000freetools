@@ -25,11 +25,7 @@ const tools = [
     description: `Unicode Character Counter`,
     href: `/unicode-tools/unicode-character-counter`,
   },
-  {
-    name: `Unicode Case Converter`,
-    description: `Unicode Case Converter`,
-    href: `/unicode-tools/unicode-case-converter`,
-  },
+
   {
     name: `Unicode Whitespace Remover`,
     description: `Unicode Whitespace Remover`,
@@ -67,12 +63,18 @@ export default function UnicodeCsvEscaperPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Unicode CSV & TSV Escaper</h1>
-        <p className="text-muted-foreground">Properly escape Unicode characters for CSV and TSV files. Ensure your delimited data handles commas, quotes, and newlines correctly across all systems.</p>
+        <p className="text-muted-foreground">
+          Properly escape Unicode characters for CSV and TSV files. Ensure your
+          delimited data handles commas, quotes, and newlines correctly across
+          all systems.
+        </p>
       </header>
       {/* TODO: add tool component for unicode-csv-escaper */}
       {/* TODO: add seo component for unicode-csv-escaper */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

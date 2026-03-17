@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `JavaScript Minifier & Compressor`,
-    description: `Minify and Compress JavaScript Code`,
-    href: `/javascript-tools/javascript-minifier-compressor`,
-  },
-  {
     name: `JavaScript Beautifier & Formatter`,
     description: `Beautify and Format JavaScript Code`,
     href: `/javascript-tools/javascript-beautifier-formatter`,
@@ -66,13 +61,20 @@ export default function JavascriptImageBase64DataUrlConverterPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Convert Images to Base64 Data URLs</h1>
-        <p className="text-muted-foreground">Turn any image into a Base64 Data URL string for embedding directly in your HTML or CSS. No external image files needed.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Convert Images to Base64 Data URLs
+        </h1>
+        <p className="text-muted-foreground">
+          Turn any image into a Base64 Data URL string for embedding directly in
+          your HTML or CSS. No external image files needed.
+        </p>
       </header>
       {/* TODO: add tool component for javascript-image-base64-data-url-converter */}
       {/* TODO: add seo component for javascript-image-base64-data-url-converter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -25,11 +25,7 @@ const tools = [
     description: `Unicode Character Counter`,
     href: `/unicode-tools/unicode-character-counter`,
   },
-  {
-    name: `Unicode Case Converter`,
-    description: `Unicode Case Converter`,
-    href: `/unicode-tools/unicode-case-converter`,
-  },
+
   {
     name: `Unicode Whitespace Remover`,
     description: `Unicode Whitespace Remover`,
@@ -66,13 +62,21 @@ export default function UnicodeBidirectionalEditorPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Unicode Bidirectional Text Editor</h1>
-        <p className="text-muted-foreground">Edit text containing both left-to-right and right-to-left scripts. Visualize and control text direction with Unicode formatting characters.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Unicode Bidirectional Text Editor
+        </h1>
+        <p className="text-muted-foreground">
+          Edit text containing both left-to-right and right-to-left scripts.
+          Visualize and control text direction with Unicode formatting
+          characters.
+        </p>
       </header>
       {/* TODO: add tool component for unicode-bidirectional-editor */}
       {/* TODO: add seo component for unicode-bidirectional-editor */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `Base64 Encoder/Decoder`,
     description: `Base64 Encode and Decode Online`,
     href: `/encoding-tools/base64-encoder-decoder`,
@@ -67,12 +62,18 @@ export default function BcdToDecimalConverterPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">BCD to Decimal Converter</h1>
-        <p className="text-muted-foreground">Convert Binary-Coded Decimal (BCD) values to standard decimal numbers, or encode decimal numbers into BCD format. Essential for working with financial data, hardware registers, and embedded systems.</p>
+        <p className="text-muted-foreground">
+          Convert Binary-Coded Decimal (BCD) values to standard decimal numbers,
+          or encode decimal numbers into BCD format. Essential for working with
+          financial data, hardware registers, and embedded systems.
+        </p>
       </header>
       {/* TODO: add tool component for bcd-to-decimal-converter */}
       {/* TODO: add seo component for bcd-to-decimal-converter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

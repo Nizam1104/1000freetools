@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -67,12 +63,17 @@ export default function VerticalTextGeneratorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Vertical Text Creator</h1>
-        <p className="text-muted-foreground">Create vertical text layouts for Asian language styling or design effects. Format text top-to-bottom and copy the result or CSS code.</p>
+        <p className="text-muted-foreground">
+          Create vertical text layouts for Asian language styling or design
+          effects. Format text top-to-bottom and copy the result or CSS code.
+        </p>
       </header>
       {/* TODO: add tool component for vertical-text-generator */}
       {/* TODO: add seo component for vertical-text-generator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

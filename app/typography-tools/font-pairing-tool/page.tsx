@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
-  {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
     href: `/typography-tools/letter-spacing-tool`,
@@ -66,13 +61,21 @@ export default function FontPairingToolPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Font Pairing Tool for Designers</h1>
-        <p className="text-muted-foreground">Choose the perfect font combinations for your website or design project. Browse curated pairs, preview them live, and get the CSS code to use them.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Font Pairing Tool for Designers
+        </h1>
+        <p className="text-muted-foreground">
+          Choose the perfect font combinations for your website or design
+          project. Browse curated pairs, preview them live, and get the CSS code
+          to use them.
+        </p>
       </header>
       {/* TODO: add tool component for font-pairing-tool */}
       {/* TODO: add seo component for font-pairing-tool */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

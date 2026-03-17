@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `JavaScript Minifier & Compressor`,
-    description: `Minify and Compress JavaScript Code`,
-    href: `/javascript-tools/javascript-minifier-compressor`,
-  },
-  {
     name: `JavaScript Beautifier & Formatter`,
     description: `Beautify and Format JavaScript Code`,
     href: `/javascript-tools/javascript-beautifier-formatter`,
@@ -66,13 +61,20 @@ export default function JavascriptRegexTesterDebuggerPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Test and Debug JavaScript Regular Expressions</h1>
-        <p className="text-muted-foreground">Build, test, and debug regex patterns for JavaScript in real-time. See matches, groups, and substitutions instantly against your sample text.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Test and Debug JavaScript Regular Expressions
+        </h1>
+        <p className="text-muted-foreground">
+          Build, test, and debug regex patterns for JavaScript in real-time. See
+          matches, groups, and substitutions instantly against your sample text.
+        </p>
       </header>
       {/* TODO: add tool component for javascript-regex-tester-debugger */}
       {/* TODO: add seo component for javascript-regex-tester-debugger */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

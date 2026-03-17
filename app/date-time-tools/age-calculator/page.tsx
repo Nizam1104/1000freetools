@@ -18,11 +18,6 @@ const tools = [
     href: `/date-time-tools/date-calculator`,
   },
   {
-    name: `Time Zone Converter`,
-    description: `World Time Zone Converter & Clock`,
-    href: `/date-time-tools/time-zone-converter`,
-  },
-  {
     name: `Day of the Week Finder`,
     description: `What Day of the Week Was That? Day Finder Tool`,
     href: `/date-time-tools/day-of-week-finder`,

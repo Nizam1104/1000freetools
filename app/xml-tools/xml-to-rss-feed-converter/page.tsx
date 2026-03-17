@@ -30,7 +30,7 @@ const tools = [
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,
-    href: `/xml-tools/xml-minifier-compressor`,
+    href: ``,
   },
   {
     name: `XML Viewer and Editor`,

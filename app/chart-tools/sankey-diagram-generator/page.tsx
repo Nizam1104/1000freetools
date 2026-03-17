@@ -31,11 +31,6 @@ const tools = [
     href: `/chart-tools/scatter-plot-tool`,
   },
   {
-    name: `Histogram Generator`,
-    description: `Histogram Maker Online`,
-    href: `/chart-tools/histogram-generator`,
-  },
-  {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
     href: `/ascii-tools/ascii-to-hex-converter`,
@@ -67,12 +62,17 @@ export default function SankeyDiagramGeneratorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Sankey Diagram Maker Online</h1>
-        <p className="text-muted-foreground">Visualize flows and transfers with a Sankey diagram. Show how quantities move between different stages or categories in a process.</p>
+        <p className="text-muted-foreground">
+          Visualize flows and transfers with a Sankey diagram. Show how
+          quantities move between different stages or categories in a process.
+        </p>
       </header>
       {/* TODO: add tool component for sankey-diagram-generator */}
       {/* TODO: add seo component for sankey-diagram-generator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

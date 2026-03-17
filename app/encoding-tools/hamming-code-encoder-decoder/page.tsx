@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `Base64 Encoder/Decoder`,
     description: `Base64 Encode and Decode Online`,
     href: `/encoding-tools/base64-encoder-decoder`,
@@ -66,13 +61,21 @@ export default function HammingCodeEncoderDecoderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Hamming Code Encoder and Decoder</h1>
-        <p className="text-muted-foreground">Encode data with Hamming code to add error-correcting bits, or decode Hamming-encoded data to detect and correct single-bit errors. This tool is educational for understanding error-correcting codes.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Hamming Code Encoder and Decoder
+        </h1>
+        <p className="text-muted-foreground">
+          Encode data with Hamming code to add error-correcting bits, or decode
+          Hamming-encoded data to detect and correct single-bit errors. This
+          tool is educational for understanding error-correcting codes.
+        </p>
       </header>
       {/* TODO: add tool component for hamming-code-encoder-decoder */}
       {/* TODO: add seo component for hamming-code-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

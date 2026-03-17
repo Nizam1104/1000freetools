@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `Base64 Encoder/Decoder`,
     description: `Base64 Encode and Decode Online`,
     href: `/encoding-tools/base64-encoder-decoder`,
@@ -66,13 +61,21 @@ export default function QuotedPrintableEncoderDecoderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Quoted-Printable Encoder and Decoder</h1>
-        <p className="text-muted-foreground">Encode text to Quoted-Printable format for safe email transmission, or decode Quoted-Printable text back to readable content. This tool ensures compatibility with email standards and character sets.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Quoted-Printable Encoder and Decoder
+        </h1>
+        <p className="text-muted-foreground">
+          Encode text to Quoted-Printable format for safe email transmission, or
+          decode Quoted-Printable text back to readable content. This tool
+          ensures compatibility with email standards and character sets.
+        </p>
       </header>
       {/* TODO: add tool component for quoted-printable-encoder-decoder */}
       {/* TODO: add seo component for quoted-printable-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

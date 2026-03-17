@@ -15,11 +15,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,
@@ -67,12 +63,18 @@ export default function SvgToPdfConverterPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Convert SVG to PDF Online</h1>
-        <p className="text-muted-foreground">Turn your SVG vector graphics into a PDF document. Combine multiple SVGs into one PDF, perfect for presentations, archiving, or sending to print shops.</p>
+        <p className="text-muted-foreground">
+          Turn your SVG vector graphics into a PDF document. Combine multiple
+          SVGs into one PDF, perfect for presentations, archiving, or sending to
+          print shops.
+        </p>
       </header>
       {/* TODO: add tool component for svg-to-pdf-converter */}
       {/* TODO: add seo component for svg-to-pdf-converter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

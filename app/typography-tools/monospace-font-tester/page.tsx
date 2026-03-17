@@ -15,11 +15,7 @@ const tools = [
     description: `Font Pairing Tool for Designers`,
     href: `/typography-tools/font-pairing-tool`,
   },
-  {
-    name: `Character Counter`,
-    description: `Character & Word Counter`,
-    href: `/typography-tools/character-counter`,
-  },
+
   {
     name: `Letter Spacing Tool`,
     description: `Letter Spacing & Kerning Tool`,
@@ -66,13 +62,20 @@ export default function MonospaceFontTesterPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Monospace Font Comparison Tool</h1>
-        <p className="text-muted-foreground">Test and compare monospace fonts for coding and terminals. See how your code looks in different fixed-width fonts to choose the best one.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Monospace Font Comparison Tool
+        </h1>
+        <p className="text-muted-foreground">
+          Test and compare monospace fonts for coding and terminals. See how
+          your code looks in different fixed-width fonts to choose the best one.
+        </p>
       </header>
       {/* TODO: add tool component for monospace-font-tester */}
       {/* TODO: add seo component for monospace-font-tester */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

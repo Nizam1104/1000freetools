@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `Base64 Encoder/Decoder`,
     description: `Base64 Encode and Decode Online`,
     href: `/encoding-tools/base64-encoder-decoder`,
@@ -66,13 +61,22 @@ export default function ManchesterCodeEncoderDecoderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Manchester Code Encoder and Decoder</h1>
-        <p className="text-muted-foreground">Encode binary data to Manchester code for clock synchronization in data transmission, or decode Manchester-encoded signals back to binary. This tool includes waveform visualization and supports common conventions.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Manchester Code Encoder and Decoder
+        </h1>
+        <p className="text-muted-foreground">
+          Encode binary data to Manchester code for clock synchronization in
+          data transmission, or decode Manchester-encoded signals back to
+          binary. This tool includes waveform visualization and supports common
+          conventions.
+        </p>
       </header>
       {/* TODO: add tool component for manchester-code-encoder-decoder */}
       {/* TODO: add seo component for manchester-code-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -30,11 +30,7 @@ const tools = [
     description: `Daylight Saving Time Calculator & Schedule`,
     href: `/timezone-tools/daylight-saving-time-calculator-schedule`,
   },
-  {
-    name: `Unix Timestamp Converter & Epoch Time Tool`,
-    description: `Unix Timestamp & Epoch Time Converter`,
-    href: `/timezone-tools/unix-timestamp-converter-epoch-time`,
-  },
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
@@ -66,13 +62,21 @@ export default function TimeZoneAbbreviationLookupDecoderPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Time Zone Abbreviation Lookup</h1>
-        <p className="text-muted-foreground">Confused by time zone abbreviations like EST, GMT, or IST? Use our decoder to find out what they mean, their UTC offset, and the regions that use them.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Time Zone Abbreviation Lookup
+        </h1>
+        <p className="text-muted-foreground">
+          Confused by time zone abbreviations like EST, GMT, or IST? Use our
+          decoder to find out what they mean, their UTC offset, and the regions
+          that use them.
+        </p>
       </header>
       {/* TODO: add tool component for time-zone-abbreviation-lookup-decoder */}
       {/* TODO: add seo component for time-zone-abbreviation-lookup-decoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

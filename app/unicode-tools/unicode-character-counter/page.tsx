@@ -22,11 +22,7 @@ const tools = [
     description: `Unicode Text Converter`,
     href: `/unicode-tools/unicode-text-converter`,
   },
-  {
-    name: `Unicode Case Converter`,
-    description: `Unicode Case Converter`,
-    href: `/unicode-tools/unicode-case-converter`,
-  },
+
   {
     name: `Unicode Whitespace Remover`,
     description: `Unicode Whitespace Remover`,

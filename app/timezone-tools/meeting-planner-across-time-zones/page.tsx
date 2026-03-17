@@ -30,11 +30,7 @@ const tools = [
     description: `Daylight Saving Time Calculator & Schedule`,
     href: `/timezone-tools/daylight-saving-time-calculator-schedule`,
   },
-  {
-    name: `Unix Timestamp Converter & Epoch Time Tool`,
-    description: `Unix Timestamp & Epoch Time Converter`,
-    href: `/timezone-tools/unix-timestamp-converter-epoch-time`,
-  },
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
@@ -66,13 +62,21 @@ export default function MeetingPlannerAcrossTimeZonesPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Meeting Planner for Multiple Time Zones</h1>
-        <p className="text-muted-foreground">Schedule meetings across time zones without the headache. Enter participant locations to find common available hours and convert meeting times instantly into everyone's local time.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Meeting Planner for Multiple Time Zones
+        </h1>
+        <p className="text-muted-foreground">
+          Schedule meetings across time zones without the headache. Enter
+          participant locations to find common available hours and convert
+          meeting times instantly into everyone's local time.
+        </p>
       </header>
       {/* TODO: add tool component for meeting-planner-across-time-zones */}
       {/* TODO: add seo component for meeting-planner-across-time-zones */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

@@ -28,7 +28,7 @@ const tools = [
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,
-    href: `/xml-tools/xml-minifier-compressor`,
+    href: ``,
   },
   {
     name: `XML Viewer and Editor`,
@@ -67,12 +67,17 @@ export default function XmlXpathTesterPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Test XPath Queries on XML</h1>
-        <p className="text-muted-foreground">Write and debug XPath expressions directly in your browser. Paste your XML, write a query, and instantly see the matched nodes and results.</p>
+        <p className="text-muted-foreground">
+          Write and debug XPath expressions directly in your browser. Paste your
+          XML, write a query, and instantly see the matched nodes and results.
+        </p>
       </header>
       {/* TODO: add tool component for xml-xpath-tester */}
       {/* TODO: add seo component for xml-xpath-tester */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

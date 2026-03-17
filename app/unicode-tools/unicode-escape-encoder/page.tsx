@@ -25,11 +25,7 @@ const tools = [
     description: `Unicode Character Counter`,
     href: `/unicode-tools/unicode-character-counter`,
   },
-  {
-    name: `Unicode Case Converter`,
-    description: `Unicode Case Converter`,
-    href: `/unicode-tools/unicode-case-converter`,
-  },
+
   {
     name: `Unicode Whitespace Remover`,
     description: `Unicode Whitespace Remover`,

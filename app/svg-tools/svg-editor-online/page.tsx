@@ -15,11 +15,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG to JPG Converter`,
     description: `SVG to JPG Converter Online`,
@@ -67,12 +63,18 @@ export default function SvgEditorOnlinePage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">Free Online SVG Editor</h1>
-        <p className="text-muted-foreground">Create and edit SVG vector graphics directly in your browser. No need for expensive software. Draw shapes, add text, apply colors, and export your design.</p>
+        <p className="text-muted-foreground">
+          Create and edit SVG vector graphics directly in your browser. No need
+          for expensive software. Draw shapes, add text, apply colors, and
+          export your design.
+        </p>
       </header>
       {/* TODO: add tool component for svg-editor-online */}
       {/* TODO: add seo component for svg-editor-online */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

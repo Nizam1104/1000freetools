@@ -15,11 +15,7 @@ const tools = [
     description: `Free HTML Formatter & Beautifier`,
     href: `/html-tools/html-formatter-beautifier`,
   },
-  {
-    name: `HTML Minifier & Compressor`,
-    description: `HTML Minifier & Compressor Tool`,
-    href: `/html-tools/html-minifier-compressor`,
-  },
+
   {
     name: `HTML to PDF Converter`,
     description: `Convert HTML to PDF Online`,
@@ -66,13 +62,20 @@ export default function HtmlDiffCheckerComparatorPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">HTML Diff Checker - Compare HTML Code</h1>
-        <p className="text-muted-foreground">Compare two HTML files or snippets to see exact differences. This tool highlights added, removed, and changed lines for easy code review.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          HTML Diff Checker - Compare HTML Code
+        </h1>
+        <p className="text-muted-foreground">
+          Compare two HTML files or snippets to see exact differences. This tool
+          highlights added, removed, and changed lines for easy code review.
+        </p>
       </header>
       {/* TODO: add tool component for html-diff-checker-comparator */}
       {/* TODO: add seo component for html-diff-checker-comparator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

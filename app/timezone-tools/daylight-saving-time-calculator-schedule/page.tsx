@@ -30,11 +30,7 @@ const tools = [
     description: `Time Zone Abbreviation Lookup`,
     href: `/timezone-tools/time-zone-abbreviation-lookup-decoder`,
   },
-  {
-    name: `Unix Timestamp Converter & Epoch Time Tool`,
-    description: `Unix Timestamp & Epoch Time Converter`,
-    href: `/timezone-tools/unix-timestamp-converter-epoch-time`,
-  },
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
@@ -66,13 +62,21 @@ export default function DaylightSavingTimeCalculatorSchedulePage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Daylight Saving Time Calculator & Schedule</h1>
-        <p className="text-muted-foreground">Check if a location is currently on Daylight Saving Time and see the exact dates for the spring forward and fall back transitions. Never miss a time change again.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Daylight Saving Time Calculator & Schedule
+        </h1>
+        <p className="text-muted-foreground">
+          Check if a location is currently on Daylight Saving Time and see the
+          exact dates for the spring forward and fall back transitions. Never
+          miss a time change again.
+        </p>
       </header>
       {/* TODO: add tool component for daylight-saving-time-calculator-schedule */}
       {/* TODO: add seo component for daylight-saving-time-calculator-schedule */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

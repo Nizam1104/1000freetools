@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `URL Encoder/Decoder`,
-    description: `URL Encoder and Decoder`,
-    href: `/encoding-tools/url-encoder-decoder`,
-  },
-  {
     name: `Base64 Encoder/Decoder`,
     description: `Base64 Encode and Decode Online`,
     href: `/encoding-tools/base64-encoder-decoder`,
@@ -67,12 +62,18 @@ export default function BinhexEncoderDecoderPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">BinHex Encoder and Decoder</h1>
-        <p className="text-muted-foreground">Encode files to BinHex format, commonly used on classic Macintosh systems, or decode BinHex files to extract the original data and resource forks. This tool supports legacy Mac file encoding.</p>
+        <p className="text-muted-foreground">
+          Encode files to BinHex format, commonly used on classic Macintosh
+          systems, or decode BinHex files to extract the original data and
+          resource forks. This tool supports legacy Mac file encoding.
+        </p>
       </header>
       {/* TODO: add tool component for binhex-encoder-decoder */}
       {/* TODO: add seo component for binhex-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

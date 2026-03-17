@@ -33,11 +33,6 @@ const tools = [
     href: `/chart-tools/scatter-plot-tool`,
   },
   {
-    name: `Histogram Generator`,
-    description: `Histogram Maker Online`,
-    href: `/chart-tools/histogram-generator`,
-  },
-  {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
     href: `/ascii-tools/ascii-to-hex-converter`,

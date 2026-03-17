@@ -28,7 +28,7 @@ const tools = [
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,
-    href: `/xml-tools/xml-minifier-compressor`,
+    href: ``,
   },
   {
     name: `XML Viewer and Editor`,
@@ -66,13 +66,21 @@ export default function XmlSchemaXsdGeneratorPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Generate XSD Schema from XML</h1>
-        <p className="text-muted-foreground">Automatically create an XML Schema (XSD) from your XML document. This tool analyzes the structure and data types to build a accurate schema definition.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Generate XSD Schema from XML
+        </h1>
+        <p className="text-muted-foreground">
+          Automatically create an XML Schema (XSD) from your XML document. This
+          tool analyzes the structure and data types to build a accurate schema
+          definition.
+        </p>
       </header>
       {/* TODO: add tool component for xml-schema-xsd-generator */}
       {/* TODO: add seo component for xml-schema-xsd-generator */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

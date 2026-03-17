@@ -28,16 +28,6 @@ const tools = [
     href: `/ascii-tools/ascii-to-braille-converter`,
   },
   {
-    name: `String Escape/Unescape`,
-    description: `String Escape/Unescape: Escape Special Characters for Code`,
-    href: `/ascii-tools/string-escape-unescape`,
-  },
-  {
-    name: `Text to ASCII Art`,
-    description: `Text to ASCII Art: Create ASCII Text Banners Online`,
-    href: `/ascii-tools/text-to-ascii-art`,
-  },
-  {
     name: `Markdown to HTML Converter`,
     description: `Free Markdown to HTML Converter`,
     href: `/markdown-tools/markdown-to-html-converter`,

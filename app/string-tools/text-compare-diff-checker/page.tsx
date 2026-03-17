@@ -27,11 +27,7 @@ const tools = [
     description: `Reverse Text & String Online Tool`,
     href: `/string-tools/string-reverse`,
   },
-  {
-    name: `URL Encode & Decode`,
-    description: `URL Encoder & Decoder Tool`,
-    href: `/string-tools/url-encode-decode`,
-  },
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,

@@ -16,11 +16,6 @@ const tools = [
     href: `/encryption-tools/rsa-key-generator`,
   },
   {
-    name: `Base64 Encode & Decode`,
-    description: `Base64 Encoder & Decoder Online`,
-    href: `/encryption-tools/base64-encode-decode`,
-  },
-  {
     name: `Text to Binary Converter & Encryptor`,
     description: `Text to Binary Converter with Encryption`,
     href: `/encryption-tools/text-binary-encryptor`,
@@ -66,13 +61,22 @@ export default function AesEncryptionPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Free AES Encryption & Decryption Online</h1>
-        <p className="text-muted-foreground">Protect your sensitive data with our free AES encryption tool. It uses the industry-standard AES algorithm to securely encrypt text or files directly in your browser. No data is uploaded, ensuring complete privacy.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Free AES Encryption & Decryption Online
+        </h1>
+        <p className="text-muted-foreground">
+          Protect your sensitive data with our free AES encryption tool. It uses
+          the industry-standard AES algorithm to securely encrypt text or files
+          directly in your browser. No data is uploaded, ensuring complete
+          privacy.
+        </p>
       </header>
       {/* TODO: add tool component for aes-encryption */}
       {/* TODO: add seo component for aes-encryption */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>

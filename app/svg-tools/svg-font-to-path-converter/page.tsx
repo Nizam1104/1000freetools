@@ -15,11 +15,7 @@ const tools = [
     description: `Free SVG to PNG Converter`,
     href: `/svg-tools/svg-to-png-converter`,
   },
-  {
-    name: `SVG Optimizer & Compressor`,
-    description: `SVG Optimizer & Compressor`,
-    href: `/svg-tools/svg-optimizer-compressor`,
-  },
+
   {
     name: `SVG Editor Online`,
     description: `Free Online SVG Editor`,
@@ -66,13 +62,21 @@ export default function SvgFontToPathConverterPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Convert SVG Text to Path Outlines</h1>
-        <p className="text-muted-foreground">Ensure your SVG text looks the same everywhere by converting fonts to vector paths. Upload your SVG, and we'll transform all text elements into outlined shapes.</p>
+        <h1 className="text-3xl font-bold mb-3">
+          Convert SVG Text to Path Outlines
+        </h1>
+        <p className="text-muted-foreground">
+          Ensure your SVG text looks the same everywhere by converting fonts to
+          vector paths. Upload your SVG, and we'll transform all text elements
+          into outlined shapes.
+        </p>
       </header>
       {/* TODO: add tool component for svg-font-to-path-converter */}
       {/* TODO: add seo component for svg-font-to-path-converter */}
       <div className="mt-16 max-w-6xl">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Other Free Tools
+        </h2>
         <ToolLinkCards tools={tools} />
       </div>
     </div>
