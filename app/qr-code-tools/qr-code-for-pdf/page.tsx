@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeForPdf } from "@/components/qr-code-tools/qr-code-for-pdf.tsx";
 
 export const metadata: Metadata = {
   title: `QR Code for PDF | Link PDF File via QR Code`,
@@ -69,7 +70,7 @@ export default function QrCodeForPdfPage() {
         <h1 className="text-3xl font-bold mb-3">QR Code for PDF Files</h1>
         <p className="text-muted-foreground">Generate a QR code that links directly to your PDF. Upload the file, get a scannable code. Perfect for digital menus, catalogs, or instructions.</p>
       </header>
-      {/* TODO: add tool component for qr-code-for-pdf */}
+      {<QrCodeForPdf />}
       {/* TODO: add seo component for qr-code-for-pdf */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

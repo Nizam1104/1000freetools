@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import Base64EncoderDecoder from "@/components/javascript-tools/base64-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Base64 Encoder/Decoder - JavaScript String & File Tool`,
@@ -70,7 +71,9 @@ export default function Base64EncoderDecoderJavascriptPage() {
           development.
         </p>
       </header>
-      {/* TODO: add tool component for base64-encoder-decoder-javascript */}
+      <div className="mt-8">
+        <Base64EncoderDecoder />
+      </div>
       {/* TODO: add seo component for base64-encoder-decoder-javascript */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

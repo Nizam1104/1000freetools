@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiCombinerMixer from "@/components/emoji-tools/emoji-combiner-mixer"
+
 export default function EmojiCombinerMixerPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiCombinerMixerPage() {
         <h1 className="text-3xl font-bold mb-3">Combine & Mix Emojis</h1>
         <p className="text-muted-foreground">Create your own custom emojis by mixing and merging two or more standard ones. Make a pizza heart or a crying-laughing cat. Download your creations or share them online.</p>
       </header>
-      {/* TODO: add tool component for emoji-combiner-mixer */}
+      <EmojiCombinerMixer />
       {/* TODO: add seo component for emoji-combiner-mixer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

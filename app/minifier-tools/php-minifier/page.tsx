@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { PhpMinifier } from "@/components/minifier-tools/php-minifier.tsx";
 
 export const metadata: Metadata = {
   title: `PHP Minifier - Compress & Minify PHP Code Online`,
@@ -69,7 +70,7 @@ export default function PhpMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">PHP Minifier & Code Compressor</h1>
         <p className="text-muted-foreground">Compress PHP files to improve performance and reduce server load. This minifier removes comments and unnecessary spaces from your PHP scripts while ensuring they remain functional.</p>
       </header>
-      {/* TODO: add tool component for php-minifier */}
+      {<PhpMinifier />}
       {/* TODO: add seo component for php-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

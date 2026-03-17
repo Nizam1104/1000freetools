@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlSchemaValidator } from "@/components/yaml-tools/yaml-schema-validator.tsx";
 
 export const metadata: Metadata = {
   title: `YAML Schema Validator | Validate Against JSON Schema`,
@@ -69,7 +70,7 @@ export default function YamlSchemaValidatorPage() {
         <h1 className="text-3xl font-bold mb-3">YAML Schema Validator</h1>
         <p className="text-muted-foreground">Validate your YAML data against a JSON Schema definition. This advanced tool checks for correct structure, data types, and custom constraints, ensuring data integrity.</p>
       </header>
-      {/* TODO: add tool component for yaml-schema-validator */}
+      {<YamlSchemaValidator />}
       {/* TODO: add seo component for yaml-schema-validator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

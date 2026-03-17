@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import AnimatedEmojiGifMaker from "@/components/emoji-tools/animated-emoji-gif-maker"
+
 export default function AnimatedEmojiGifMakerPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function AnimatedEmojiGifMakerPage() {
         <h1 className="text-3xl font-bold mb-3">Animated Emoji & GIF Maker</h1>
         <p className="text-muted-foreground">Turn static emojis into fun animations. Make a laughing emoji bounce or a heart spin. Create custom GIFs for Discord, Slack, or social media in seconds.</p>
       </header>
-      {/* TODO: add tool component for animated-emoji-gif-maker */}
+      <AnimatedEmojiGifMaker />
       {/* TODO: add seo component for animated-emoji-gif-maker */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

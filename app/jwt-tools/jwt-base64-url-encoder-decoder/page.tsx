@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtBase64UrlEncoderDecoder } from "@/components/jwt-tools/jwt-base64-url-encoder-decoder.tsx";
 
 export const metadata: Metadata = {
   title: `JWT Base64Url Encoder/Decoder | Encode Token Parts`,
@@ -69,7 +70,7 @@ export default function JwtBase64UrlEncoderDecoderPage() {
         <h1 className="text-3xl font-bold mb-3">Encode & Decode JWT Base64Url Segments</h1>
         <p className="text-muted-foreground">Encode and decode the Base64Url segments of a JWT. Inspect the raw JSON of the header or payload, fix encoding issues, and understand the JWT structure at a granular level.</p>
       </header>
-      {/* TODO: add tool component for jwt-base64-url-encoder-decoder */}
+      {<JwtBase64UrlEncoderDecoder />}
       {/* TODO: add seo component for jwt-base64-url-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

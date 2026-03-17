@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiPickerCopyPaste from "@/components/emoji-tools/emoji-picker-copy-paste"
+
 export default function EmojiPickerCopyPastePage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiPickerCopyPastePage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Picker & Copy Tool</h1>
         <p className="text-muted-foreground">Find and copy any emoji instantly with our free online picker. Browse categories or search by name to get the perfect emoji for your chat, post, or document. Click to copy and paste anywhere.</p>
       </header>
-      {/* TODO: add tool component for emoji-picker-copy-paste */}
+      <EmojiPickerCopyPaste />
       {/* TODO: add seo component for emoji-picker-copy-paste */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

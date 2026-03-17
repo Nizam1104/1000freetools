@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import PasswordHashStrengthAnalyzer from "@/components/hash-tools/password-hash-strength-analyzer";
 
 export const metadata: Metadata = {
   title: `Bcrypt Hash Generator & Verifier Online | Free Tool`,
@@ -69,7 +70,9 @@ export default function BcryptHashGeneratorVerifierPage() {
         <h1 className="text-3xl font-bold mb-3">Bcrypt Hash Generator & Verifier</h1>
         <p className="text-muted-foreground">Hash passwords securely with bcrypt, including a cost factor for adjustable security. Verify existing bcrypt hashes against plaintext passwords to test login credentials.</p>
       </header>
-      {/* TODO: add tool component for bcrypt-hash-generator-verifier */}
+      <div className="mt-8">
+        <PasswordHashStrengthAnalyzer />
+      </div>
       {/* TODO: add seo component for bcrypt-hash-generator-verifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

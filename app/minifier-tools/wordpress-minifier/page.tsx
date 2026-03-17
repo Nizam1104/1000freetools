@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { WordpressMinifier } from "@/components/minifier-tools/wordpress-minifier.tsx";
 
 export const metadata: Metadata = {
   title: `WordPress Minifier - Compress Themes & Plugins`,
@@ -69,7 +70,7 @@ export default function WordpressMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">WordPress Theme & Plugin Minifier</h1>
         <p className="text-muted-foreground">Optimize your WordPress site by minifying theme and plugin files. This tool compresses PHP, CSS, and JavaScript specific to WordPress structures, improving performance without breaking functionality.</p>
       </header>
-      {/* TODO: add tool component for wordpress-minifier */}
+      {<WordpressMinifier />}
       {/* TODO: add seo component for wordpress-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

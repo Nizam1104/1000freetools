@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { BinhexEncoderDecoder } from "@/components/encoding-tools/binhex-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `BinHex Encoder Decoder | Mac File Encoding Tool`,
@@ -68,7 +69,7 @@ export default function BinhexEncoderDecoderPage() {
           resource forks. This tool supports legacy Mac file encoding.
         </p>
       </header>
-      {/* TODO: add tool component for binhex-encoder-decoder */}
+      {<BinhexEncoderDecoder />}
       {/* TODO: add seo component for binhex-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

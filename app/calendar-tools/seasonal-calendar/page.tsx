@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import SeasonalCalendar from "@/components/calendar-tools/seasonal-calendar";
 
 export const metadata: Metadata = {
   title: `Seasonal Calendar | Solstice & Equinox Dates`,
@@ -69,7 +70,7 @@ export default function SeasonalCalendarPage() {
         <h1 className="text-3xl font-bold mb-3">Seasonal & Astronomical Event Calendar</h1>
         <p className="text-muted-foreground">Track the seasons and major astronomical events. See dates for solstices, equinoxes, meteor showers, and eclipses. Plan around changes in daylight.</p>
       </header>
-      {/* TODO: add tool component for seasonal-calendar */}
+      <div className="mt-8"><SeasonalCalendar /></div>
       {/* TODO: add seo component for seasonal-calendar */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

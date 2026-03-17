@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { Utf16EncoderDecoder } from "@/components/encoding-tools/utf16-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `UTF-16 Converter - Encode/Decode UTF-16 BE/LE`,
@@ -70,7 +71,7 @@ export default function Utf16EncoderDecoderPage() {
           BOM handling for proper encoding identification.
         </p>
       </header>
-      {/* TODO: add tool component for utf16-encoder-decoder */}
+      {<Utf16EncoderDecoder />}
       {/* TODO: add seo component for utf16-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

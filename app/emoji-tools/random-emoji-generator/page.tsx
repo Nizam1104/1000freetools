@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import RandomEmojiGenerator from "@/components/emoji-tools/random-emoji-generator"
+
 export default function RandomEmojiGeneratorPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function RandomEmojiGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Random Emoji Generator</h1>
         <p className="text-muted-foreground">Get random emojis instantly. Spin the wheel or generate a grid for inspiration, games, or creative projects. Filter by category and copy your favorites.</p>
       </header>
-      {/* TODO: add tool component for random-emoji-generator */}
+      <RandomEmojiGenerator />
       {/* TODO: add seo component for random-emoji-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

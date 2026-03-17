@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { RandomTimestampGenerator } from "@/components/timestamp-tools/random-timestamp-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Random Timestamp Generator | Create Fake Timestamps`,
@@ -69,7 +70,7 @@ export default function RandomTimestampGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Random Timestamp Generator</h1>
         <p className="text-muted-foreground">Need random timestamps for testing? Generate realistic Unix timestamps between any two dates. Create one or thousands for your simulations.</p>
       </header>
-      {/* TODO: add tool component for random-timestamp-generator */}
+      {<RandomTimestampGenerator />}
       {/* TODO: add seo component for random-timestamp-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

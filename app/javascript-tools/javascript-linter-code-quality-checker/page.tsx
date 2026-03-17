@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JavascriptLinterCodeQualityChecker } from "@/components/javascript-tools/javascript-linter-code-quality-checker.tsx";
 
 export const metadata: Metadata = {
   title: `JavaScript Linter - Code Quality Checker Online`,
@@ -70,7 +71,7 @@ export default function JavascriptLinterCodeQualityCheckerPage() {
           maintainability.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-linter-code-quality-checker */}
+      {<JavascriptLinterCodeQualityChecker />}
       {/* TODO: add seo component for javascript-linter-code-quality-checker */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

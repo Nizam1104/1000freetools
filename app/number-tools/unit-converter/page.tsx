@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import NumberUnitConverter from "@/components/number-tools/number-unit-converter";
+import NumberUnitConverterSeo from "@/components/seo-content/number-tools/number-unit-converter";
 
 export const metadata: Metadata = {
   title: `Unit Converter | Bytes, Metric, Imperial Prefixes`,
@@ -69,7 +71,12 @@ export default function UnitConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert Number Units Instantly</h1>
         <p className="text-muted-foreground">Switch between digital storage units (KB, MB, GB), metric prefixes, and common measurement units. Our converter updates in real-time as you type.</p>
       </header>
-      {/* TODO: add tool component for unit-converter */}
+      <div className="mt-8">
+        <NumberUnitConverter />
+      </div>
+      <div className="mt-8">
+        <NumberUnitConverterSeo />
+      </div>
       {/* TODO: add seo component for unit-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

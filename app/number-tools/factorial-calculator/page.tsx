@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import NumberFactorialCalculator from "@/components/number-tools/number-factorial-calculator";
+import NumberFactorialCalculatorSeo from "@/components/seo-content/number-tools/number-factorial-calculator";
 
 export const metadata: Metadata = {
   title: `Factorial Calculator | n! Permutations & Combinations`,
@@ -69,7 +71,12 @@ export default function FactorialCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Calculate Factorials (n!) Online</h1>
         <p className="text-muted-foreground">Compute the factorial of any number instantly. Also calculate permutations, combinations, double factorials, and subfactorials for math and statistics.</p>
       </header>
-      {/* TODO: add tool component for factorial-calculator */}
+      <div className="mt-8">
+        <NumberFactorialCalculator />
+      </div>
+      <div className="mt-8">
+        <NumberFactorialCalculatorSeo />
+      </div>
       {/* TODO: add seo component for factorial-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

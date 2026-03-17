@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlKeySorter } from "@/components/yaml-tools/yaml-key-sorter";
 
 export const metadata: Metadata = {
   title: `YAML Key Sorter | Organize YAML Files Online`,
@@ -69,8 +70,9 @@ export default function YamlKeySorterPage() {
         <h1 className="text-3xl font-bold mb-3">Sort & Organize YAML Keys</h1>
         <p className="text-muted-foreground">Keep your YAML files tidy and consistent by sorting keys alphabetically or custom order. This free tool organizes top-level and nested structures, making configuration files easier to read and maintain.</p>
       </header>
-      {/* TODO: add tool component for yaml-key-sorter */}
-      {/* TODO: add seo component for yaml-key-sorter */}
+      <div className="mt-8">
+        <YamlKeySorter />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

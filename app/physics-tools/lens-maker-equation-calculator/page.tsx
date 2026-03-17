@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { LensMakerEquationCalculator } from "@/components/physics-tools/lens-maker-equation-calculator";
 
 export const metadata: Metadata = {
   title: `Lens Maker Equation Calculator | Focal Length Solver`,
@@ -69,7 +70,7 @@ export default function LensMakerEquationCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Lens Maker Equation Calculator</h1>
         <p className="text-muted-foreground">Design and analyze simple lenses. Input the curvature of each surface, the material's refractive index, and thickness to find the focal length.</p>
       </header>
-      {/* TODO: add tool component for lens-maker-equation-calculator */}
+      {<LensMakerEquationCalculator />}
       {/* TODO: add seo component for lens-maker-equation-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

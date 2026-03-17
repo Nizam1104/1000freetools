@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JavascriptUnitTestAssertionGenerator } from "@/components/javascript-tools/javascript-unit-test-assertion-generator.tsx";
 
 export const metadata: Metadata = {
   title: `JavaScript Test Generator - Create Unit Tests Online`,
@@ -70,7 +71,7 @@ export default function JavascriptUnitTestAssertionGeneratorPage() {
           assertion styles.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-unit-test-assertion-generator */}
+      {<JavascriptUnitTestAssertionGenerator />}
       {/* TODO: add seo component for javascript-unit-test-assertion-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

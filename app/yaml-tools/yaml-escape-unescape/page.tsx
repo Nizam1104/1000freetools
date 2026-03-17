@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlEscapeUnescape } from "@/components/yaml-tools/yaml-escape-unescape.tsx";
 
 export const metadata: Metadata = {
   title: `YAML Escape Unescape Tool | Free Online Utility`,
@@ -69,7 +70,7 @@ export default function YamlEscapeUnescapePage() {
         <h1 className="text-3xl font-bold mb-3">YAML Escape and Unescape Tool</h1>
         <p className="text-muted-foreground">Escape special characters in your YAML strings to prevent parsing errors, or unescape them to restore original text. A free utility for handling complex YAML values.</p>
       </header>
-      {/* TODO: add tool component for yaml-escape-unescape */}
+      {<YamlEscapeUnescape />}
       {/* TODO: add seo component for yaml-escape-unescape */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

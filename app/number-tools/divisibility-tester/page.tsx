@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import NumberDivisibilityTester from "@/components/number-tools/number-divisibility-tester";
+import NumberDivisibilityTesterSeo from "@/components/seo-content/number-tools/number-divisibility-tester";
 
 export const metadata: Metadata = {
   title: `Divisibility Tester | Check Division Rules`,
@@ -69,7 +71,12 @@ export default function DivisibilityTesterPage() {
         <h1 className="text-3xl font-bold mb-3">Test Number Divisibility Rules</h1>
         <p className="text-muted-foreground">Check if one number divides evenly into another. Learn and apply common divisibility rules for 2, 3, 5, 9, 10, and 11 with our interactive tester.</p>
       </header>
-      {/* TODO: add tool component for divisibility-tester */}
+      <div className="mt-8">
+        <NumberDivisibilityTester />
+      </div>
+      <div className="mt-8">
+        <NumberDivisibilityTesterSeo />
+      </div>
       {/* TODO: add seo component for divisibility-tester */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

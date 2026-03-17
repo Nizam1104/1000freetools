@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import SqlEscapeString from "@/components/sql-tools/sql-escape-string";
 
 export const metadata: Metadata = {
   title: `SQL Escape Tool Online | Escape/Unescape Strings for SQL`,
@@ -70,7 +71,9 @@ export default function SqlEscapeUnescapeToolPage() {
           queries in MySQL, PostgreSQL, and more.
         </p>
       </header>
-      {/* TODO: add tool component for sql-escape-unescape-tool */}
+      <div className="mt-8">
+        <SqlEscapeString />
+      </div>
       {/* TODO: add seo component for sql-escape-unescape-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

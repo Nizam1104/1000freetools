@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { LetterSpacingTool } from "@/components/font-tools/letter-spacing-tool";
 
 export const metadata: Metadata = {
   title: `Letter Spacing Tool | Adjust Text Tracking Online`,
@@ -69,7 +70,7 @@ export default function LetterSpacingToolPage() {
           preview. Fine-tune kerning for logos, headlines, or any design text.
         </p>
       </header>
-      {/* TODO: add tool component for letter-spacing-tool */}
+      {<LetterSpacingTool />}
       {/* TODO: add seo component for letter-spacing-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

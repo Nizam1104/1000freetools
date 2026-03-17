@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { KineticEnergyCalculator } from "@/components/physics-tools/kinetic-energy-calculator";
 
 export const metadata: Metadata = {
   title: `Kinetic Energy Calculator | Free KE Formula Solver`,
@@ -69,7 +70,7 @@ export default function KineticEnergyCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Kinetic Energy Calculator</h1>
         <p className="text-muted-foreground">Find the kinetic energy of any moving object. Enter the mass and velocity, or work backwards from energy to find speed or mass.</p>
       </header>
-      {/* TODO: add tool component for kinetic-energy-calculator */}
+      {<KineticEnergyCalculator />}
       {/* TODO: add seo component for kinetic-energy-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

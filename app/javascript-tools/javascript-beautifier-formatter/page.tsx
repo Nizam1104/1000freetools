@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptBeautifier from "@/components/javascript-tools/javascript-beautifier";
 
 export const metadata: Metadata = {
   title: `JavaScript Beautifier - Format & Pretty Print JS Code`,
@@ -70,7 +71,9 @@ export default function JavascriptBeautifierFormatterPage() {
           maintainability.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-beautifier-formatter */}
+      <div className="mt-8">
+        <JavascriptBeautifier />
+      </div>
       {/* TODO: add seo component for javascript-beautifier-formatter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

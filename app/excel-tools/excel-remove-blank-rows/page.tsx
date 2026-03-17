@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import ExcelDuplicateRemover from "@/components/excel-tools/excel-duplicate-remover";
 
 export const metadata: Metadata = {
   title: `Remove Blank Rows from Excel | Free Online Cleaner`,
@@ -69,7 +70,9 @@ export default function ExcelRemoveBlankRowsPage() {
         <h1 className="text-3xl font-bold mb-3">Delete All Blank Rows from Excel Automatically</h1>
         <p className="text-muted-foreground">Clean up your spreadsheet by instantly removing every empty row. Upload your Excel file, and our tool strips out all blank rows, leaving you with tight, contiguous data.</p>
       </header>
-      {/* TODO: add tool component for excel-remove-blank-rows */}
+      <div className="mt-8">
+        <ExcelDuplicateRemover />
+      </div>
       {/* TODO: add seo component for excel-remove-blank-rows */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

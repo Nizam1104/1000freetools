@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeEventTicket } from "@/components/qr-code-tools/qr-code-event-ticket.tsx";
 
 export const metadata: Metadata = {
   title: `Event Ticket QR Code Generator | Printable Tickets`,
@@ -69,7 +70,7 @@ export default function QrCodeEventTicketPage() {
         <h1 className="text-3xl font-bold mb-3">Event Ticket QR Code Generator</h1>
         <p className="text-muted-foreground">Create unique QR code tickets for your event. Each ticket has a serial number. Includes a validator tool for checking tickets at the door.</p>
       </header>
-      {/* TODO: add tool component for qr-code-event-ticket */}
+      {<QrCodeEventTicket />}
       {/* TODO: add seo component for qr-code-event-ticket */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UnicodeConfusablesHomoglyphDetector from "@/components/unicode-tools/unicode-confusables-homoglyph-detector";
 
 export const metadata: Metadata = {
   title: `Unicode Confusables Detector | Homoglyph Tool`,
@@ -69,7 +70,9 @@ export default function UnicodeConfusablesDetectorPage() {
           homoglyphs in domains, usernames, or text to prevent spoofing attacks.
         </p>
       </header>
-      {/* TODO: add tool component for unicode-confusables-detector */}
+      <div className="mt-8">
+        <UnicodeConfusablesHomoglyphDetector />
+      </div>
       {/* TODO: add seo component for unicode-confusables-detector */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

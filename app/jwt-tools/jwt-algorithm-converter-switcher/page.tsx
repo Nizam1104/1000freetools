@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtAlgorithmConverterSwitcher } from "@/components/jwt-tools/jwt-algorithm-converter-switcher.tsx";
 
 export const metadata: Metadata = {
   title: `JWT Algorithm Converter | Switch Token Signing Method`,
@@ -69,7 +70,7 @@ export default function JwtAlgorithmConverterSwitcherPage() {
         <h1 className="text-3xl font-bold mb-3">Convert JWT Signing Algorithm</h1>
         <p className="text-muted-foreground">Switch your JWT's signing algorithm seamlessly. Convert tokens from HS256 to RS256, or between other algorithms, by re-signing with a new key—ideal for auth system migration.</p>
       </header>
-      {/* TODO: add tool component for jwt-algorithm-converter-switcher */}
+      {<JwtAlgorithmConverterSwitcher />}
       {/* TODO: add seo component for jwt-algorithm-converter-switcher */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

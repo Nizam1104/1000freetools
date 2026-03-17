@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TomlToRustStructGenerator } from "@/components/toml-tools/toml-to-rust-struct-generator.tsx";
 
 export const metadata: Metadata = {
   title: `TOML to Rust Struct Generator | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function TomlToRustStructGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">TOML to Rust Struct Generator</h1>
         <p className="text-muted-foreground">Automatically generate Rust structs from your TOML configuration files. This tool creates production-ready Rust code with Serde derive attributes, making it easy to deserialize TOML into strongly-typed structs. A must-have for Rust developers working with config files.</p>
       </header>
-      {/* TODO: add tool component for toml-to-rust-struct-generator */}
+      {<TomlToRustStructGenerator />}
       {/* TODO: add seo component for toml-to-rust-struct-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

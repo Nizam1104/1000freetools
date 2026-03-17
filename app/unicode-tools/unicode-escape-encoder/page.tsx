@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UnicodeEscapeSequenceEncoder from "@/components/unicode-tools/unicode-escape-sequence-encoder";
 
 export const metadata: Metadata = {
   title: `Unicode Escape Encoder/Decoder | \\uXXXX Tool`,
@@ -64,7 +65,9 @@ export default function UnicodeEscapeEncoderPage() {
         <h1 className="text-3xl font-bold mb-3">Unicode Escape Encoder & Decoder</h1>
         <p className="text-muted-foreground">Encode text to Unicode escape sequences for programming, or decode escapes back to readable text. Supports syntax for JavaScript, Python, Java, and C.</p>
       </header>
-      {/* TODO: add tool component for unicode-escape-encoder */}
+      <div className="mt-8">
+        <UnicodeEscapeSequenceEncoder />
+      </div>
       {/* TODO: add seo component for unicode-escape-encoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

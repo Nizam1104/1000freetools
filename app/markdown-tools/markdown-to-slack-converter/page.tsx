@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownToSlackConverter } from "@/components/markdown-tools/markdown-to-slack-converter.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown to Slack Converter | Format for Slack`,
@@ -69,7 +70,7 @@ export default function MarkdownToSlackConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Markdown to Slack Message Formatter</h1>
         <p className="text-muted-foreground">Format your Markdown text for Slack messages. Convert bold, italic, code blocks, and lists to Slack's syntax. Preview and copy for perfect posts every time.</p>
       </header>
-      {/* TODO: add tool component for markdown-to-slack-converter */}
+      {<MarkdownToSlackConverter />}
       {/* TODO: add seo component for markdown-to-slack-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

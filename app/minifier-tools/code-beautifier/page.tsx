@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { CodeBeautifier } from "@/components/minifier-tools/code-beautifier";
 
 export const metadata: Metadata = {
   title: `Code Beautifier - Unminify & Format Code Online`,
@@ -69,7 +70,7 @@ export default function CodeBeautifierPage() {
         <h1 className="text-3xl font-bold mb-3">Code Beautifier & Unminifier Tool</h1>
         <p className="text-muted-foreground">Make minified code readable again. This beautifier reformats compressed HTML, CSS, JavaScript, and other code with proper indentation and spacing for easier editing and debugging.</p>
       </header>
-      {/* TODO: add tool component for code-beautifier */}
+      {<CodeBeautifier />}
       {/* TODO: add seo component for code-beautifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

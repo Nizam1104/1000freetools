@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SampleSizeCalculatorSurveys } from "@/components/statistics-tools/sample-size-calculator-surveys";
 
 export const metadata: Metadata = {
   title: `Sample Size Calculator for Surveys | Margin of Error Tool`,
@@ -69,7 +70,7 @@ export default function SampleSizeCalculatorSurveysPage() {
         <h1 className="text-3xl font-bold mb-3">Survey Sample Size Calculator</h1>
         <p className="text-muted-foreground">Find out how many respondents you need for your survey. Calculate the sample size required to achieve a desired margin of error for proportions or means.</p>
       </header>
-      {/* TODO: add tool component for sample-size-calculator-surveys */}
+      {<SampleSizeCalculatorSurveys />}
       {/* TODO: add seo component for sample-size-calculator-surveys */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

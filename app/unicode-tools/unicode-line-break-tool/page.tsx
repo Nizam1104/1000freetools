@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UnicodeLineBreakWordSegmenter from "@/components/unicode-tools/unicode-line-break-word-segmenter";
 
 export const metadata: Metadata = {
   title: `Unicode Line Break Tool | Word Segmentation`,
@@ -69,7 +70,9 @@ export default function UnicodeLineBreakToolPage() {
           wrapping behavior for different languages and complex scripts.
         </p>
       </header>
-      {/* TODO: add tool component for unicode-line-break-tool */}
+      <div className="mt-8">
+        <UnicodeLineBreakWordSegmenter />
+      </div>
       {/* TODO: add seo component for unicode-line-break-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

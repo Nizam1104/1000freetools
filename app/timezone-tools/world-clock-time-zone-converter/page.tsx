@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import TimezoneConverter from "@/components/timezone-tools/timezone-converter";
 
 export const metadata: Metadata = {
   title: `World Clock & Time Zone Converter | Current Time Anywhere`,
@@ -70,7 +71,9 @@ export default function WorldClockTimeZoneConverterPage() {
           converter and interactive world map.
         </p>
       </header>
-      {/* TODO: add tool component for world-clock-time-zone-converter */}
+      <div className="mt-8">
+        <TimezoneConverter />
+      </div>
       {/* TODO: add seo component for world-clock-time-zone-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

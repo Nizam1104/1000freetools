@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SqlPasswordHashGeneratorMd5Sha } from "@/components/sql-tools/sql-password-hash-generator-md5-sha.tsx";
 
 export const metadata: Metadata = {
   title: `SQL Password Hash Generator Online | MD5, SHA1, SHA2`,
@@ -70,7 +71,7 @@ export default function SqlPasswordHashGeneratorMd5ShaPage() {
           UPDATE statements instantly.
         </p>
       </header>
-      {/* TODO: add tool component for sql-password-hash-generator-md5-sha */}
+      {<SqlPasswordHashGeneratorMd5Sha />}
       {/* TODO: add seo component for sql-password-hash-generator-md5-sha */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

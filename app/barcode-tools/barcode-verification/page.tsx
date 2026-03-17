@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import BarcodeValidator from "@/components/barcode-tools/barcode-validator";
 
 export const metadata: Metadata = {
   title: `Barcode Verification - ISO 15416 Quality Grading`,
@@ -69,7 +70,9 @@ export default function BarcodeVerificationPage() {
         <h1 className="text-3xl font-bold mb-3">Barcode Verification Tool (ISO Grading)</h1>
         <p className="text-muted-foreground">Check your barcode's print quality against ISO standards. Get a grade from A to F and a detailed report on contrast, modulation, and decodability.</p>
       </header>
-      {/* TODO: add tool component for barcode-verification */}
+      <div className="mt-8">
+        <BarcodeValidator />
+      </div>
       {/* TODO: add seo component for barcode-verification */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

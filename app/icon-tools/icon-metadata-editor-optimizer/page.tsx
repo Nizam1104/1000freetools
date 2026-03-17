@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { IconMetadataEditorOptimizer } from "@/components/icon-tools/icon-metadata-editor-optimizer.tsx";
 
 export const metadata: Metadata = {
   title: `Icon Metadata Editor | Clean & Optimize Icons`,
@@ -69,7 +70,7 @@ export default function IconMetadataEditorOptimizerPage() {
         <h1 className="text-3xl font-bold mb-3">Edit & Optimize Icon Metadata</h1>
         <p className="text-muted-foreground">Clean and optimize your icon files by editing metadata and removing bloat. Reduce file size for faster loading and add descriptive information where needed.</p>
       </header>
-      {/* TODO: add tool component for icon-metadata-editor-optimizer */}
+      {<IconMetadataEditorOptimizer />}
       {/* TODO: add seo component for icon-metadata-editor-optimizer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

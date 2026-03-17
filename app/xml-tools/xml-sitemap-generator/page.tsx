@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import XmlSitemapGenerator from "@/components/xml-tools/xml-sitemap-generator";
 
 export const metadata: Metadata = {
   title: `Free XML Sitemap Generator | Create Sitemap.xml Online`,
@@ -74,7 +75,7 @@ export default function XmlSitemapGeneratorPage() {
           your website. Add URLs, priorities, and change frequencies easily.
         </p>
       </header>
-      {/* TODO: add tool component for xml-sitemap-generator */}
+      <div className="mt-8"><XmlSitemapGenerator /></div>
       {/* TODO: add seo component for xml-sitemap-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

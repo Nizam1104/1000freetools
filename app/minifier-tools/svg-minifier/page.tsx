@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SvgMinifier } from "@/components/minifier-tools/svg-minifier";
 
 export const metadata: Metadata = {
   title: `SVG Minifier - Compress & Optimize SVG Files Online`,
@@ -69,7 +70,7 @@ export default function SvgMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">SVG Minifier & Optimizer Online</h1>
         <p className="text-muted-foreground">Optimize and compress SVG files for the web. This tool removes redundant data, minifies paths, and reduces file size without affecting visual quality, perfect for icons and graphics.</p>
       </header>
-      {/* TODO: add tool component for svg-minifier */}
+      {<SvgMinifier />}
       {/* TODO: add seo component for svg-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

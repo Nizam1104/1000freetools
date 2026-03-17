@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { IconFontGeneratorFromSvg } from "@/components/icon-tools/icon-font-generator-from-svg.tsx";
 
 export const metadata: Metadata = {
   title: `Icon Font Generator | Create Font from SVG Icons`,
@@ -69,7 +70,7 @@ export default function IconFontGeneratorFromSvgPage() {
         <h1 className="text-3xl font-bold mb-3">Generate a Custom Icon Font</h1>
         <p className="text-muted-foreground">Convert your SVG icons into a lightweight icon font for faster websites. Define your own CSS classes, preview the font, and download all necessary files and code snippets.</p>
       </header>
-      {/* TODO: add tool component for icon-font-generator-from-svg */}
+      {<IconFontGeneratorFromSvg />}
       {/* TODO: add seo component for icon-font-generator-from-svg */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

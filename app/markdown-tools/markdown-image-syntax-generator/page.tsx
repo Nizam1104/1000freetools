@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownImageSyntaxGenerator } from "@/components/markdown-tools/markdown-image-syntax-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown Image Syntax Generator | Online Tool`,
@@ -69,7 +70,7 @@ export default function MarkdownImageSyntaxGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Markdown Image Code Generator</h1>
         <p className="text-muted-foreground">Generate proper Markdown syntax for embedding images. Add alt text, preview the image, and copy the code. Supports custom sizing and batch generation.</p>
       </header>
-      {/* TODO: add tool component for markdown-image-syntax-generator */}
+      {<MarkdownImageSyntaxGenerator />}
       {/* TODO: add seo component for markdown-image-syntax-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

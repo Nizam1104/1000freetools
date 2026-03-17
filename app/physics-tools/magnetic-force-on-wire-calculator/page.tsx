@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MagneticForceOnWireCalculator } from "@/components/physics-tools/magnetic-force-on-wire-calculator";
 
 export const metadata: Metadata = {
   title: `Magnetic Force on Wire Calculator | F = ILB sinθ`,
@@ -69,7 +70,7 @@ export default function MagneticForceOnWireCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Magnetic Force on a Wire Calculator</h1>
         <p className="text-muted-foreground">Calculate the force experienced by a wire carrying current through a magnetic field. Essential for understanding motors and electromagnetism.</p>
       </header>
-      {/* TODO: add tool component for magnetic-force-on-wire-calculator */}
+      {<MagneticForceOnWireCalculator />}
       {/* TODO: add seo component for magnetic-force-on-wire-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

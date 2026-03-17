@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeFrameBorderDesigner } from "@/components/qr-code-tools/qr-code-frame-border-designer.tsx";
 
 export const metadata: Metadata = {
   title: `Free QR Code Frame & Border Designer | Custom QR Code Styles`,
@@ -69,7 +70,7 @@ export default function QrCodeFrameBorderDesignerPage() {
         <h1 className="text-3xl font-bold mb-3">Design a QR Code with Custom Frames & Borders</h1>
         <p className="text-muted-foreground">Make your QR codes stand out with stylish frames, borders, and corner designs. Customize thickness, style, and color to match your brand, all while ensuring perfect scannability.</p>
       </header>
-      {/* TODO: add tool component for qr-code-frame-border-designer */}
+      {<QrCodeFrameBorderDesigner />}
       {/* TODO: add seo component for qr-code-frame-border-designer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

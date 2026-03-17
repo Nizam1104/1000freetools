@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiToTextConverter from "@/components/emoji-tools/emoji-to-text-converter"
+
 export default function EmojiToTextConverterPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiToTextConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Emoji to Text Converter</h1>
         <p className="text-muted-foreground">Translate emoji messages into plain English text. Make emoji strings accessible or decode confusing sequences. Also convert your text back into emojis.</p>
       </header>
-      {/* TODO: add tool component for emoji-to-text-converter */}
+      <EmojiToTextConverter />
       {/* TODO: add seo component for emoji-to-text-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

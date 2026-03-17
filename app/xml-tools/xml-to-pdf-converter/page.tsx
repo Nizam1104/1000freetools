@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import XmlToPdfConverter from "@/components/xml-tools/xml-to-pdf-converter";
 
 export const metadata: Metadata = {
   title: `XML to PDF Converter | Generate PDF from XML Online`,
@@ -74,7 +75,7 @@ export default function XmlToPdfConverterPage() {
           to control the layout and styling of the resulting document.
         </p>
       </header>
-      {/* TODO: add tool component for xml-to-pdf-converter */}
+      <div className="mt-8"><XmlToPdfConverter /></div>
       {/* TODO: add seo component for xml-to-pdf-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

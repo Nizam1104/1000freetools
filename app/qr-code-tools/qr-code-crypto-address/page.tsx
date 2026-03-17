@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeCryptoAddress } from "@/components/qr-code-tools/qr-code-crypto-address.tsx";
 
 export const metadata: Metadata = {
   title: `Crypto QR Code Generator | Bitcoin & Ethereum`,
@@ -69,7 +70,7 @@ export default function QrCodeCryptoAddressPage() {
         <h1 className="text-3xl font-bold mb-3">Crypto Address QR Code Generator</h1>
         <p className="text-muted-foreground">Create a QR code for your Bitcoin or Ethereum address. Add an amount and label for payments. Makes receiving crypto payments simple.</p>
       </header>
-      {/* TODO: add tool component for qr-code-crypto-address */}
+      {<QrCodeCryptoAddress />}
       {/* TODO: add seo component for qr-code-crypto-address */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

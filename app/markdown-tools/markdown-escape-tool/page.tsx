@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownEscapeTool } from "@/components/markdown-tools/markdown-escape-tool.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown Escape Tool | Escape Special Characters`,
@@ -69,7 +70,7 @@ export default function MarkdownEscapeToolPage() {
         <h1 className="text-3xl font-bold mb-3">Escape Markdown Special Characters</h1>
         <p className="text-muted-foreground">Escape characters like asterisks and underscores so they display literally in your Markdown. Also unescape text. A must-have for writing tutorials and code documentation.</p>
       </header>
-      {/* TODO: add tool component for markdown-escape-tool */}
+      {<MarkdownEscapeTool />}
       {/* TODO: add seo component for markdown-escape-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptUrlParser from "@/components/javascript-tools/javascript-url-parser";
 
 export const metadata: Metadata = {
   title: `JavaScript URL Parser - Analyze & Build URLs Online`,
@@ -69,7 +70,9 @@ export default function JavascriptUrlParserQueryStringBuilderPage() {
           scratch. Manipulate query parameters and hash fragments with ease.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-url-parser-query-string-builder */}
+      <div className="mt-8">
+        <JavascriptUrlParser />
+      </div>
       {/* TODO: add seo component for javascript-url-parser-query-string-builder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiKitchenMashup from "@/components/emoji-tools/emoji-kitchen-mashup"
+
 export default function EmojiKitchenMashupPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiKitchenMashupPage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Kitchen Mashup Maker</h1>
         <p className="text-muted-foreground">Mix two emojis to create fun sticker mashups, like a laughing poop or a cowboy ghost. Generate and download unique emoji combinations for messages and social media.</p>
       </header>
-      {/* TODO: add tool component for emoji-kitchen-mashup */}
+      <EmojiKitchenMashup />
       {/* TODO: add seo component for emoji-kitchen-mashup */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

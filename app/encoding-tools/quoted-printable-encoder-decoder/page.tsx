@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QuotedPrintableEncoderDecoder } from "@/components/encoding-tools/quoted-printable-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Quoted-Printable Encoder Decoder | Email Encoding Tool`,
@@ -70,7 +71,7 @@ export default function QuotedPrintableEncoderDecoderPage() {
           ensures compatibility with email standards and character sets.
         </p>
       </header>
-      {/* TODO: add tool component for quoted-printable-encoder-decoder */}
+      {<QuotedPrintableEncoderDecoder />}
       {/* TODO: add seo component for quoted-printable-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

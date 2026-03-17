@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CssMinifier from "@/components/minifier-tools/css-minifier";
 
 export const metadata: Metadata = {
   title: `CSS & JS Minifier - Combine & Compress Online`,
@@ -69,7 +70,9 @@ export default function CssJsCombinedMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">CSS & JavaScript Combined Minifier</h1>
         <p className="text-muted-foreground">Minify and combine your CSS and JavaScript files to reduce HTTP requests. This tool optimizes both styles and scripts, creating a single, compressed asset for faster page loads.</p>
       </header>
-      {/* TODO: add tool component for css-js-combined-minifier */}
+      <div className="mt-8">
+        <CssMinifier />
+      </div>
       {/* TODO: add seo component for css-js-combined-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

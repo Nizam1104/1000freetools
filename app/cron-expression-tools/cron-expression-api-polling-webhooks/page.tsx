@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CronExpressionApiPolling from "@/components/cron-expression-tools/cron-expression-api-polling";
 
 export const metadata: Metadata = {
   title: `CRON for API Polling & Webhooks | Scheduler Tool`,
@@ -69,7 +70,9 @@ export default function CronExpressionApiPollingWebhooksPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expressions for API Polling & Webhooks</h1>
         <p className="text-muted-foreground">Schedule API calls or webhook triggers with CRON. Generate expressions for polling every few minutes, hourly, or at custom intervals. Perfect for integrations and data sync.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-api-polling-webhooks */}
+      <div className="mt-8">
+        <CronExpressionApiPolling />
+      </div>
       {/* TODO: add seo component for cron-expression-api-polling-webhooks */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

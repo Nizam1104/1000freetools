@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeAugmentedReality } from "@/components/qr-code-tools/qr-code-augmented-reality.tsx";
 
 export const metadata: Metadata = {
   title: `AR QR Code Generator | Augmented Reality Trigger`,
@@ -69,7 +70,7 @@ export default function QrCodeAugmentedRealityPage() {
         <h1 className="text-3xl font-bold mb-3">Augmented Reality (AR) QR Code Generator</h1>
         <p className="text-muted-foreground">Create a QR code that launches an AR experience. Link to 3D models, animations, or interactive content. Engage your audience with immersive tech.</p>
       </header>
-      {/* TODO: add tool component for qr-code-augmented-reality */}
+      {<QrCodeAugmentedReality />}
       {/* TODO: add seo component for qr-code-augmented-reality */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

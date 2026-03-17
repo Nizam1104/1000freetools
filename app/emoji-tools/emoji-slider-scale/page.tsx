@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiSliderScale from "@/components/emoji-tools/emoji-slider-scale"
+
 export default function EmojiSliderScalePage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiSliderScalePage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Slider & Rating Scale Creator</h1>
         <p className="text-muted-foreground">Make emoji-based rating scales for polls, feedback, or quizzes. Create a visual slider from sad to happy faces or from 1 to 5 stars. Embed or download your scale.</p>
       </header>
-      {/* TODO: add tool component for emoji-slider-scale */}
+      <EmojiSliderScale />
       {/* TODO: add seo component for emoji-slider-scale */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

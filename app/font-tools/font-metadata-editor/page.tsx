@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { FontMetadataEditor } from "@/components/font-tools/font-metadata-editor.tsx";
 
 export const metadata: Metadata = {
   title: `Font Metadata Editor | Change Font Info`,
@@ -69,7 +70,7 @@ export default function FontMetadataEditorPage() {
         <h1 className="text-3xl font-bold mb-3">Edit Font File Information</h1>
         <p className="text-muted-foreground">Change font names, families, and other metadata directly. Fix font conflicts in Adobe apps and organize your typography library.</p>
       </header>
-      {/* TODO: add tool component for font-metadata-editor */}
+      {<FontMetadataEditor />}
       {/* TODO: add seo component for font-metadata-editor */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

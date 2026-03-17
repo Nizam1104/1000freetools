@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { CliMinifierGenerator } from "@/components/minifier-tools/cli-minifier-generator.tsx";
 
 export const metadata: Metadata = {
   title: `CLI Minifier Generator - Create Minification Scripts`,
@@ -69,7 +70,7 @@ export default function CliMinifierGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">CLI Minifier Command Generator</h1>
         <p className="text-muted-foreground">Generate command-line scripts to minify files on your local machine. This tool creates custom Bash, PowerShell, or Node.js commands for batch minification using industry-standard libraries.</p>
       </header>
-      {/* TODO: add tool component for cli-minifier-generator */}
+      {<CliMinifierGenerator />}
       {/* TODO: add seo component for cli-minifier-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

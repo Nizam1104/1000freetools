@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import NumberSystemRoundingCalculator from "@/components/number-tools/number-system-rounding-calculator";
+import NumberSystemRoundingCalculatorSeo from "@/components/seo-content/number-tools/number-system-rounding-calculator";
 
 export const metadata: Metadata = {
   title: `Rounding Calculator | Decimal & Significant Figures`,
@@ -69,7 +71,12 @@ export default function RoundingCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Round Numbers to Any Precision</h1>
         <p className="text-muted-foreground">Round decimals, integers, or significant figures using different rounding rules. Choose from standard, banker's, or custom methods for precise results.</p>
       </header>
-      {/* TODO: add tool component for rounding-calculator */}
+      <div className="mt-8">
+        <NumberSystemRoundingCalculator />
+      </div>
+      <div className="mt-8">
+        <NumberSystemRoundingCalculatorSeo />
+      </div>
       {/* TODO: add seo component for rounding-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

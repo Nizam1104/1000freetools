@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptEncryptionTool from "@/components/javascript-tools/javascript-encryption-tool";
 
 export const metadata: Metadata = {
   title: `JavaScript Encryption Tool - Encrypt/Decrypt Text Online`,
@@ -70,7 +71,9 @@ export default function JavascriptEncryptionDecryptionToolPage() {
           and learning.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-encryption-decryption-tool */}
+      <div className="mt-8">
+        <JavascriptEncryptionTool />
+      </div>
       {/* TODO: add seo component for javascript-encryption-decryption-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

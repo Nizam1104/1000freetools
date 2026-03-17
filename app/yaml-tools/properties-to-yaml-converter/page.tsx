@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { PropertiesToYamlConverter } from "@/components/yaml-tools/properties-to-yaml-converter.tsx";
 
 export const metadata: Metadata = {
   title: `Properties to YAML Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function PropertiesToYamlConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert .properties File to YAML</h1>
         <p className="text-muted-foreground">Transform flat Java .properties files into structured YAML. This free converter builds nested mappings from dot-notation keys, making configurations more readable and organized.</p>
       </header>
-      {/* TODO: add tool component for properties-to-yaml-converter */}
+      {<PropertiesToYamlConverter />}
       {/* TODO: add seo component for properties-to-yaml-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

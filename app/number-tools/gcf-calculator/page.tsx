@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import GcfLcmCalculator from "@/components/number-tools/gcf-lcm-calculator";
+import GcfLcmCalculatorSeo from "@/components/seo-content/number-tools/gcf-lcm-calculator";
 
 export const metadata: Metadata = {
   title: `GCF and LCM Calculator | Greatest Common Factor`,
@@ -69,7 +71,12 @@ export default function GcfCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Find GCF and LCM Quickly</h1>
         <p className="text-muted-foreground">Calculate the Greatest Common Factor and Least Common Multiple for any set of numbers. Essential for simplifying fractions and solving math problems.</p>
       </header>
-      {/* TODO: add tool component for gcf-calculator */}
+      <div className="mt-8">
+        <GcfLcmCalculator />
+      </div>
+      <div className="mt-8">
+        <GcfLcmCalculatorSeo />
+      </div>
       {/* TODO: add seo component for gcf-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

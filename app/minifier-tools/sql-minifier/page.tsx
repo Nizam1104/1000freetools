@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SqlMinifier } from "@/components/minifier-tools/sql-minifier";
 
 export const metadata: Metadata = {
   title: `SQL Minifier - Compress & Minify SQL Queries Online`,
@@ -69,7 +70,7 @@ export default function SqlMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">SQL Minifier & Compressor Tool</h1>
         <p className="text-muted-foreground">Minify SQL queries to reduce their footprint in application code or logs. This tool removes comments and unnecessary spacing while preserving the query's execution logic.</p>
       </header>
-      {/* TODO: add tool component for sql-minifier */}
+      {<SqlMinifier />}
       {/* TODO: add seo component for sql-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

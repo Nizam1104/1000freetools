@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import XmlToCsvConverter from "@/components/xml-tools/xml-to-csv-converter";
 
 export const metadata: Metadata = {
   title: `XML to CSV Converter | Extract XML Data to Spreadsheet`,
@@ -75,7 +76,7 @@ export default function XmlToCsvConverterPage() {
           rows.
         </p>
       </header>
-      {/* TODO: add tool component for xml-to-csv-converter */}
+      <div className="mt-8"><XmlToCsvConverter /></div>
       {/* TODO: add seo component for xml-to-csv-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { ProjectileMotionSimulator } from "@/components/physics-tools/projectile-motion-simulator";
 
 export const metadata: Metadata = {
   title: `Projectile Motion Simulator | Free Trajectory Calculator`,
@@ -69,7 +70,7 @@ export default function ProjectileMotionSimulatorPage() {
         <h1 className="text-3xl font-bold mb-3">Projectile Motion Simulator</h1>
         <p className="text-muted-foreground">Visualize and analyze the path of any projectile. Adjust launch speed, angle, and height to see how it affects the trajectory, range, and flight time in real-time.</p>
       </header>
-      {/* TODO: add tool component for projectile-motion-simulator */}
+      {<ProjectileMotionSimulator />}
       {/* TODO: add seo component for projectile-motion-simulator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

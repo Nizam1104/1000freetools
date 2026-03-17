@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { BoxPlotGenerator } from "@/components/statistics-tools/box-plot-generator";
 
 export const metadata: Metadata = {
   title: `Free Box Plot Generator | Create Box-and-Whisker Plots`,
@@ -69,7 +70,7 @@ export default function BoxPlotGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Box Plot Generator (Box-and-Whisker)</h1>
         <p className="text-muted-foreground">Create box plots to visualize the distribution and outliers in your data. Compare multiple groups side-by-side with a clear, statistical summary.</p>
       </header>
-      {/* TODO: add tool component for box-plot-generator */}
+      {<BoxPlotGenerator />}
       {/* TODO: add seo component for box-plot-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import SankeyDiagramGenerator from "@/components/chart-tools/sankey-diagram-generator";
 
 export const metadata: Metadata = {
   title: `Sankey Diagram Generator | Create Flow Diagrams`,
@@ -67,7 +68,7 @@ export default function SankeyDiagramGeneratorPage() {
           quantities move between different stages or categories in a process.
         </p>
       </header>
-      {/* TODO: add tool component for sankey-diagram-generator */}
+      <div className="mt-8"><SankeyDiagramGenerator /></div>
       {/* TODO: add seo component for sankey-diagram-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

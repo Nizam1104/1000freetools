@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { VectorIconTracerImageToSvg } from "@/components/icon-tools/vector-icon-tracer-image-to-svg.tsx";
 
 export const metadata: Metadata = {
   title: `Image to SVG Icon Converter | Vector Tracer`,
@@ -69,7 +70,7 @@ export default function VectorIconTracerImageToSvgPage() {
         <h1 className="text-3xl font-bold mb-3">Convert Images to Vector Icons</h1>
         <p className="text-muted-foreground">Turn any logo or simple image into a crisp, scalable SVG icon. Use auto-trace or draw over the image to create clean vector paths perfect for resizing.</p>
       </header>
-      {/* TODO: add tool component for vector-icon-tracer-image-to-svg */}
+      {<VectorIconTracerImageToSvg />}
       {/* TODO: add seo component for vector-icon-tracer-image-to-svg */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

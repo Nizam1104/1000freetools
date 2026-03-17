@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { StatisticalPowerCalculator } from "@/components/statistics-tools/statistical-power-calculator";
 
 export const metadata: Metadata = {
   title: `Statistical Power Calculator | Find Sample Size & Effect Size`,
@@ -69,7 +70,7 @@ export default function StatisticalPowerCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Statistical Power and Sample Size Calculator</h1>
         <p className="text-muted-foreground">Plan your studies effectively. Calculate the statistical power, required sample size, or detectable effect size for common tests like t-tests and proportion tests.</p>
       </header>
-      {/* TODO: add tool component for statistical-power-calculator */}
+      {<StatisticalPowerCalculator />}
       {/* TODO: add seo component for statistical-power-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

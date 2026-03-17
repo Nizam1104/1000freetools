@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MinificationAnalyzer } from "@/components/minifier-tools/minification-analyzer";
 
 export const metadata: Metadata = {
   title: `Minification Analyzer - Report & Savings Calculator`,
@@ -69,7 +70,7 @@ export default function MinificationAnalyzerPage() {
         <h1 className="text-3xl font-bold mb-3">Minification Report & Performance Analyzer</h1>
         <p className="text-muted-foreground">Get a detailed analysis of your code minification. This tool reports exact savings, shows what was removed, and estimates performance gains in load time and bandwidth usage.</p>
       </header>
-      {/* TODO: add tool component for minification-analyzer */}
+      {<MinificationAnalyzer />}
       {/* TODO: add seo component for minification-analyzer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

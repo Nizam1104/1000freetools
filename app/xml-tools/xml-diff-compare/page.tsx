@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import XmlDiffCompare from "@/components/xml-tools/xml-diff-compare";
 
 export const metadata: Metadata = {
   title: `XML Diff Tool | Compare XML Files Online Free`,
@@ -75,7 +76,7 @@ export default function XmlDiffComparePage() {
           attributes.
         </p>
       </header>
-      {/* TODO: add tool component for xml-diff-compare */}
+      <div className="mt-8"><XmlDiffCompare /></div>
       {/* TODO: add seo component for xml-diff-compare */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

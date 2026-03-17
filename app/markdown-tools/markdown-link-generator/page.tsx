@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownLinkGenerator } from "@/components/markdown-tools/markdown-link-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown Link Generator | Create Link Syntax`,
@@ -69,7 +70,7 @@ export default function MarkdownLinkGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Markdown Link Syntax Generator</h1>
         <p className="text-muted-foreground">Generate Markdown link code instantly. Input your URL and link text for perfect syntax every time. Also create reference-style links and validate URLs.</p>
       </header>
-      {/* TODO: add tool component for markdown-link-generator */}
+      {<MarkdownLinkGenerator />}
       {/* TODO: add seo component for markdown-link-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

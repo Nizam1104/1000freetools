@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MinifiedDiffViewer } from "@/components/minifier-tools/minified-diff-viewer";
 
 export const metadata: Metadata = {
   title: `Minified Code Diff Viewer - Compare Changes`,
@@ -69,7 +70,7 @@ export default function MinifiedDiffViewerPage() {
         <h1 className="text-3xl font-bold mb-3">Minified Code Diff Viewer</h1>
         <p className="text-muted-foreground">Compare original and minified code side-by-side with highlighted differences. This diff viewer shows exactly what was removed during minification, ensuring no functional code was altered.</p>
       </header>
-      {/* TODO: add tool component for minified-diff-viewer */}
+      {<MinifiedDiffViewer />}
       {/* TODO: add seo component for minified-diff-viewer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { HtmlSpecialCharactersLibrary } from "@/components/html-tools/html-special-characters-library.tsx";
 
 export const metadata: Metadata = {
   title: `HTML Special Characters | Symbol Entity Codes`,
@@ -70,7 +71,7 @@ export default function HtmlSpecialCharactersLibraryPage() {
           and more.
         </p>
       </header>
-      {/* TODO: add tool component for html-special-characters-library */}
+      {<HtmlSpecialCharactersLibrary />}
       {/* TODO: add seo component for html-special-characters-library */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

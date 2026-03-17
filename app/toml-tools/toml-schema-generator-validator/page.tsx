@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TomlSchemaGeneratorValidator } from "@/components/toml-tools/toml-schema-generator-validator.tsx";
 
 export const metadata: Metadata = {
   title: `TOML Schema Generator & Validator | JSON Schema Tool`,
@@ -69,7 +70,7 @@ export default function TomlSchemaGeneratorValidatorPage() {
         <h1 className="text-3xl font-bold mb-3">Generate and Validate TOML Schemas</h1>
         <p className="text-muted-foreground">Create JSON Schemas from your TOML files to define their structure, or validate existing TOML against a schema to ensure consistency and correctness.</p>
       </header>
-      {/* TODO: add tool component for toml-schema-generator-validator */}
+      {<TomlSchemaGeneratorValidator />}
       {/* TODO: add seo component for toml-schema-generator-validator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

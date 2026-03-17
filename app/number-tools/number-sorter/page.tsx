@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import NumberSorterOrganizer from "@/components/number-tools/number-sorter-organizer";
+import NumberSorterOrganizerSeo from "@/components/seo-content/number-tools/number-sorter-organizer";
 
 export const metadata: Metadata = {
   title: `Number Sorter | Organize and Sort Number Lists`,
@@ -69,7 +71,12 @@ export default function NumberSorterPage() {
         <h1 className="text-3xl font-bold mb-3">Sort and Analyze a List of Numbers</h1>
         <p className="text-muted-foreground">Organize any list of numbers instantly. Sort ascending or descending, remove duplicates, and calculate sum, average, min, max, and other basic statistics.</p>
       </header>
-      {/* TODO: add tool component for number-sorter */}
+      <div className="mt-8">
+        <NumberSorterOrganizer />
+      </div>
+      <div className="mt-8">
+        <NumberSorterOrganizerSeo />
+      </div>
       {/* TODO: add seo component for number-sorter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

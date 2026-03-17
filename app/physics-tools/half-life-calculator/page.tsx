@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { HalfLifeCalculator } from "@/components/physics-tools/half-life-calculator";
 
 export const metadata: Metadata = {
   title: `Half-Life Calculator | Radioactive Decay Calculator`,
@@ -69,7 +70,7 @@ export default function HalfLifeCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Half-Life Calculator</h1>
         <p className="text-muted-foreground">Track radioactive decay. Find how much material remains after a certain time, or calculate how long decay takes, using the half-life.</p>
       </header>
-      {/* TODO: add tool component for half-life-calculator */}
+      {<HalfLifeCalculator />}
       {/* TODO: add seo component for half-life-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

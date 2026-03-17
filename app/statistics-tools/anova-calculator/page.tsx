@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { AnovaCalculator } from "@/components/statistics-tools/anova-calculator";
 
 export const metadata: Metadata = {
   title: `Free ANOVA Calculator | One-Way & Two-Way Analysis of Variance`,
@@ -69,7 +70,7 @@ export default function AnovaCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">ANOVA Calculator: One-Way and Two-Way</h1>
         <p className="text-muted-foreground">Compare means across multiple groups using Analysis of Variance. Our ANOVA calculator tests if group means are significantly different and includes post-hoc analysis to pinpoint where differences lie.</p>
       </header>
-      {/* TODO: add tool component for anova-calculator */}
+      {<AnovaCalculator />}
       {/* TODO: add seo component for anova-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

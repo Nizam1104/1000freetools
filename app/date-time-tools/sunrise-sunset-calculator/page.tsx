@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SunriseSunsetCalculator } from "@/components/date-time-tools/sunrise-sunset-calculator.tsx";
 
 export const metadata: Metadata = {
   title: `Sunrise Sunset Calculator | Day Length & Twilight Times`,
@@ -70,7 +71,7 @@ export default function SunriseSunsetCalculatorPage() {
           Earth, on any date.
         </p>
       </header>
-      {/* TODO: add tool component for sunrise-sunset-calculator */}
+      {<SunriseSunsetCalculator />}
       {/* TODO: add seo component for sunrise-sunset-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { HexToFloatDoubleConverter } from "@/components/hex-tools/hex-to-float-double-converter.tsx";
 
 export const metadata: Metadata = {
   title: `Hex to Float Converter | IEEE 754 Online Tool`,
@@ -69,7 +70,7 @@ export default function HexToFloatDoubleConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Hex to Float & Double Converter Online</h1>
         <p className="text-muted-foreground">Convert hex to IEEE 754 floating-point numbers and back. Visualize the sign, exponent, and mantissa bits. An advanced tool for scientific computing, graphics programming, and binary data analysis.</p>
       </header>
-      {/* TODO: add tool component for hex-to-float-double-converter */}
+      {<HexToFloatDoubleConverter />}
       {/* TODO: add seo component for hex-to-float-double-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

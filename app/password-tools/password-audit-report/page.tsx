@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import PasswordAuditReport from "@/components/password-tools/password-audit-report";
 
 export const metadata: Metadata = {
   title: `Password Audit Tool | Check Password Health & Security`,
@@ -69,7 +70,7 @@ export default function PasswordAuditReportPage() {
         <h1 className="text-3xl font-bold mb-3">Free Password Security Audit</h1>
         <p className="text-muted-foreground">Get a detailed health check on all your passwords. Our audit tool finds duplicates, weak spots, and old passwords that need changing.</p>
       </header>
-      {/* TODO: add tool component for password-audit-report */}
+      <div className="mt-8"><PasswordAuditReport /></div>
       {/* TODO: add seo component for password-audit-report */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

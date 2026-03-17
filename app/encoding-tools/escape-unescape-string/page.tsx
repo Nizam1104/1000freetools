@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { EscapeUnescapeString } from "@/components/encoding-tools/escape-unescape-string";
 
 export const metadata: Metadata = {
   title: `String Escape Tool - Escape/Unescape Online`,
@@ -68,7 +69,7 @@ export default function EscapeUnescapeStringPage() {
           original form. Supports multiple language and format contexts.
         </p>
       </header>
-      {/* TODO: add tool component for escape-unescape-string */}
+      {<EscapeUnescapeString />}
       {/* TODO: add seo component for escape-unescape-string */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

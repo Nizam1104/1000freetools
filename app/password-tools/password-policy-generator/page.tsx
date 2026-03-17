@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import PasswordPolicyGenerator from "@/components/password-tools/password-policy-generator";
 
 export const metadata: Metadata = {
   title: `Password Policy Generator | Create Security Rules`,
@@ -69,7 +70,7 @@ export default function PasswordPolicyGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Organizational Password Policy Builder</h1>
         <p className="text-muted-foreground">Create a balanced and secure password policy for your team or organization. Get rules for length, complexity, expiry, and lockouts.</p>
       </header>
-      {/* TODO: add tool component for password-policy-generator */}
+      <div className="mt-8"><PasswordPolicyGenerator /></div>
       {/* TODO: add seo component for password-policy-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

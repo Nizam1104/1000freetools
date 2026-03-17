@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import XmlToHtmlTableConverter from "@/components/xml-tools/xml-to-html-table-converter";
 
 export const metadata: Metadata = {
   title: `XML to HTML Table Generator | Free Online Tool`,
@@ -73,7 +74,7 @@ export default function XmlToHtmlTableConverterPage() {
           columns.
         </p>
       </header>
-      {/* TODO: add tool component for xml-to-html-table-converter */}
+      <div className="mt-8"><XmlToHtmlTableConverter /></div>
       {/* TODO: add seo component for xml-to-html-table-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

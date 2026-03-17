@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SvgToPdfConverter } from "@/components/svg-tools/svg-to-pdf-converter.tsx";
 
 export const metadata: Metadata = {
   title: `SVG to PDF Converter - Free Online | 1000FreeTools`,
@@ -68,7 +69,7 @@ export default function SvgToPdfConverterPage() {
           print shops.
         </p>
       </header>
-      {/* TODO: add tool component for svg-to-pdf-converter */}
+      {<SvgToPdfConverter />}
       {/* TODO: add seo component for svg-to-pdf-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

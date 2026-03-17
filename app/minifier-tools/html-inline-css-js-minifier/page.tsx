@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import HtmlMinifier from "@/components/minifier-tools/html-minifier";
 
 export const metadata: Metadata = {
   title: `HTML Inline CSS JS Minifier - Full Page Optimizer`,
@@ -69,7 +70,9 @@ export default function HtmlInlineCssJsMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">HTML with Inline CSS/JS Minifier</h1>
         <p className="text-muted-foreground">Minify entire HTML pages, including inline CSS and JavaScript. This tool extracts, compresses, and re-inserts embedded styles and scripts, optimizing the whole document for speed.</p>
       </header>
-      {/* TODO: add tool component for html-inline-css-js-minifier */}
+      <div className="mt-8">
+        <HtmlMinifier />
+      </div>
       {/* TODO: add seo component for html-inline-css-js-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

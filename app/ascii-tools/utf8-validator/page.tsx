@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import Utf8Validator from "@/components/ascii-tools/utf-8-validator";
+import Utf8ValidatorSeo from "@/components/seo-content/ascii-tools/utf-8-validator";
 
 export const metadata: Metadata = {
   title: `UTF-8 Validator: Check UTF-8 Encoding Online Free`,
@@ -61,7 +63,12 @@ export default function Utf8ValidatorPage() {
           web applications and data processing.
         </p>
       </header>
-      {/* TODO: add tool component for utf8-validator */}
+      <div className="mt-8">
+        <Utf8Validator />
+      </div>
+      <div className="mt-8">
+        <Utf8ValidatorSeo />
+      </div>
       {/* TODO: add seo component for utf8-validator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

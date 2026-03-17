@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import DatePickerGenerator from "@/components/calendar-tools/date-picker-generator";
 
 export const metadata: Metadata = {
   title: `Free Date Picker Generator | Embed Calendar Widget`,
@@ -69,7 +70,7 @@ export default function DatePickerGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Generate a Custom Date Picker Widget</h1>
         <p className="text-muted-foreground">Create a clean, responsive date picker for your website. Customize the design, date format, and language, then copy the embed code. Free for developers.</p>
       </header>
-      {/* TODO: add tool component for date-picker-generator */}
+      <div className="mt-8"><DatePickerGenerator /></div>
       {/* TODO: add seo component for date-picker-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

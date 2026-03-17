@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlToCsvConverter } from "@/components/yaml-tools/yaml-to-csv-converter.tsx";
 
 export const metadata: Metadata = {
   title: `YAML to CSV Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function YamlToCsvConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert YAML to CSV Online</h1>
         <p className="text-muted-foreground">Transform YAML data lists into CSV files for spreadsheets or databases. This free tool automatically detects headers and flattens nested structures for easy export.</p>
       </header>
-      {/* TODO: add tool component for yaml-to-csv-converter */}
+      {<YamlToCsvConverter />}
       {/* TODO: add seo component for yaml-to-csv-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

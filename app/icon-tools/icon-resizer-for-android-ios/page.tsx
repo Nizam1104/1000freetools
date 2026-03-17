@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { IconResizerForAndroidIos } from "@/components/icon-tools/icon-resizer-for-android-ios.tsx";
 
 export const metadata: Metadata = {
   title: `App Icon Resizer | Android & iOS Icon Sizes`,
@@ -69,7 +70,7 @@ export default function IconResizerForAndroidIosPage() {
         <h1 className="text-3xl font-bold mb-3">Resize App Icons for Android and iOS</h1>
         <p className="text-muted-foreground">Prepare your app icons for publication with one click. Our tool resizes icons to all required dimensions for Google Play and the Apple App Store, saving you hours of manual work.</p>
       </header>
-      {/* TODO: add tool component for icon-resizer-for-android-ios */}
+      {<IconResizerForAndroidIos />}
       {/* TODO: add seo component for icon-resizer-for-android-ios */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

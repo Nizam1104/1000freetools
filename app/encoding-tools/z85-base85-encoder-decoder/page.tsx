@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import Base85Ascii85EncoderDecoder from "@/components/encoding-tools/base85-ascii85-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Z85 Encoder - ZeroMQ Base85 Converter Online`,
@@ -70,7 +71,9 @@ export default function Z85Base85EncoderDecoderPage() {
           representation with a human-readable character set.
         </p>
       </header>
-      {/* TODO: add tool component for z85-base85-encoder-decoder */}
+      <div className="mt-8">
+        <Base85Ascii85EncoderDecoder />
+      </div>
       {/* TODO: add seo component for z85-base85-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

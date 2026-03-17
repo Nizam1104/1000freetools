@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SvgComparisonDiffTool } from "@/components/svg-tools/svg-comparison-diff-tool.tsx";
 
 export const metadata: Metadata = {
   title: `SVG Comparison Tool - Diff SVG Files Visually & Code`,
@@ -70,7 +71,7 @@ export default function SvgComparisonDiffToolPage() {
           exactly what changed.
         </p>
       </header>
-      {/* TODO: add tool component for svg-comparison-diff-tool */}
+      {<SvgComparisonDiffTool />}
       {/* TODO: add seo component for svg-comparison-diff-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

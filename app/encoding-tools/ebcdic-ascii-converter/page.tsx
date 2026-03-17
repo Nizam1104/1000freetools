@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { EbcdicAsciiConverter } from "@/components/encoding-tools/ebcdic-ascii-converter";
 
 export const metadata: Metadata = {
   title: `EBCDIC ASCII Converter | Mainframe Encoding Tool`,
@@ -68,7 +69,7 @@ export default function EbcdicAsciiConverterPage() {
           code pages for legacy system compatibility.
         </p>
       </header>
-      {/* TODO: add tool component for ebcdic-ascii-converter */}
+      {<EbcdicAsciiConverter />}
       {/* TODO: add seo component for ebcdic-ascii-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

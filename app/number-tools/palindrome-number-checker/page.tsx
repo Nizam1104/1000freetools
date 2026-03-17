@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import NumberPalindromeChecker from "@/components/number-tools/number-palindrome-checker";
+import NumberPalindromeCheckerSeo from "@/components/seo-content/number-tools/number-palindrome-checker";
 
 export const metadata: Metadata = {
   title: `Palindrome Number Checker | Reverse and Add`,
@@ -69,7 +71,12 @@ export default function PalindromeNumberCheckerPage() {
         <h1 className="text-3xl font-bold mb-3">Check for Palindrome Numbers</h1>
         <p className="text-muted-foreground">Determine if a number is a palindrome. For numbers that aren't, see how many reverse-and-add steps it takes to become one and explore nearby palindromes.</p>
       </header>
-      {/* TODO: add tool component for palindrome-number-checker */}
+      <div className="mt-8">
+        <NumberPalindromeChecker />
+      </div>
+      <div className="mt-8">
+        <NumberPalindromeCheckerSeo />
+      </div>
       {/* TODO: add seo component for palindrome-number-checker */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

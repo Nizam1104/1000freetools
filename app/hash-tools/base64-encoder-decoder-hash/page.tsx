@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import HashToHexBase64Converter from "@/components/hash-tools/hash-to-hex-base64-converter";
 
 export const metadata: Metadata = {
   title: `Base64 Encoder Decoder with Hash Online | Free Tool`,
@@ -69,7 +70,9 @@ export default function Base64EncoderDecoderHashPage() {
         <h1 className="text-3xl font-bold mb-3">Base64 Encoder & Decoder (with Hash)</h1>
         <p className="text-muted-foreground">Encode or decode Base64 data and generate hashes simultaneously. This combined tool is perfect for data transmission tasks where encoding and integrity verification are needed together.</p>
       </header>
-      {/* TODO: add tool component for base64-encoder-decoder-hash */}
+      <div className="mt-8">
+        <HashToHexBase64Converter />
+      </div>
       {/* TODO: add seo component for base64-encoder-decoder-hash */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

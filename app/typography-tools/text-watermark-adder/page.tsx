@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TextWatermarkAdder } from "@/components/text-tools/text-watermark-adder.tsx";
 
 export const metadata: Metadata = {
   title: `Text Watermark Tool | Add Watermark to Images Online`,
@@ -67,7 +68,7 @@ export default function TextWatermarkAdderPage() {
           customize the text, position, and opacity, then download the result.
         </p>
       </header>
-      {/* TODO: add tool component for text-watermark-adder */}
+      {<TextWatermarkAdder />}
       {/* TODO: add seo component for text-watermark-adder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

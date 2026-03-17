@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiKeyboardPcMac from "@/components/emoji-tools/emoji-keyboard-pc-mac"
+
 export default function EmojiKeyboardPcMacPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiKeyboardPcMacPage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Keyboard for Computer</h1>
         <p className="text-muted-foreground">Use emojis easily on your PC or Mac. Our virtual keyboard lets you click to insert emojis into any app, website, or document. No special software needed.</p>
       </header>
-      {/* TODO: add tool component for emoji-keyboard-pc-mac */}
+      <EmojiKeyboardPcMac />
       {/* TODO: add seo component for emoji-keyboard-pc-mac */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

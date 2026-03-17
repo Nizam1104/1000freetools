@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import FontPairingTool from "@/components/font-tools/font-pairing-tool";
 
 export const metadata: Metadata = {
   title: `Font Pairing Tool | Best Font Combinations`,
@@ -69,7 +70,9 @@ export default function FontPairingPage() {
         <h1 className="text-3xl font-bold mb-3">Font Pairing Generator</h1>
         <p className="text-muted-foreground">Find beautiful font combinations for websites, posters, and branding. Test and preview pairings in real-time before using them.</p>
       </header>
-      {/* TODO: add tool component for font-pairing */}
+      <div className="mt-8">
+        <FontPairingTool />
+      </div>
       {/* TODO: add seo component for font-pairing */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

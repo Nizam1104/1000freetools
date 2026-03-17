@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { UuidVersionConverter } from "@/components/uuid-tools/uuid-version-converter.tsx";
 
 export const metadata: Metadata = {
   title: `UUID Version Converter | Generate v3/v5 UUIDs`,
@@ -69,7 +70,7 @@ export default function UuidVersionConverterPage() {
         <h1 className="text-3xl font-bold mb-3">UUID Version Converter (v3, v5)</h1>
         <p className="text-muted-foreground">Generate version 3 (MD5) or version 5 (SHA-1) UUIDs from a namespace and a name. This tool creates deterministic UUIDs, perfect for generating consistent identifiers for the same input across different systems.</p>
       </header>
-      {/* TODO: add tool component for uuid-version-converter */}
+      {<UuidVersionConverter />}
       {/* TODO: add seo component for uuid-version-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { AnimatedSvgLottiePlayerValidator } from "@/components/svg-tools/animated-svg-lottie-player-validator.tsx";
 
 export const metadata: Metadata = {
   title: `Animated SVG Player - Preview & Validate Lottie JSON`,
@@ -70,7 +71,7 @@ export default function AnimatedSvgLottiePlayerValidatorPage() {
           using them in your projects.
         </p>
       </header>
-      {/* TODO: add tool component for animated-svg-lottie-player-validator */}
+      {<AnimatedSvgLottiePlayerValidator />}
       {/* TODO: add seo component for animated-svg-lottie-player-validator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

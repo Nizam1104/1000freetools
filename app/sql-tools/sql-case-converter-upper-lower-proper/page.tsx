@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import SqlCaseConverter from "@/components/sql-tools/sql-case-converter";
 
 export const metadata: Metadata = {
   title: `SQL Case Converter Online | Change Keyword Case`,
@@ -70,7 +71,9 @@ export default function SqlCaseConverterUpperLowerProperPage() {
           standards and improve readability.
         </p>
       </header>
-      {/* TODO: add tool component for sql-case-converter-upper-lower-proper */}
+      <div className="mt-8">
+        <SqlCaseConverter />
+      </div>
       {/* TODO: add seo component for sql-case-converter-upper-lower-proper */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { FontBase64Encoder } from "@/components/font-tools/font-base64-encoder.tsx";
 
 export const metadata: Metadata = {
   title: `Font Base64 Encoder | Embed Fonts in CSS`,
@@ -69,7 +70,7 @@ export default function FontBase64EncoderPage() {
         <h1 className="text-3xl font-bold mb-3">Font to Base64 Encoder</h1>
         <p className="text-muted-foreground">Convert font files to Base64 strings for direct use in CSS. Eliminate external font files for emails or simple websites.</p>
       </header>
-      {/* TODO: add tool component for font-base64-encoder */}
+      {<FontBase64Encoder />}
       {/* TODO: add seo component for font-base64-encoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

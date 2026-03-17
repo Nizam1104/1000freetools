@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SvgMetadataViewerRemover } from "@/components/svg-tools/svg-metadata-viewer-remover.tsx";
 
 export const metadata: Metadata = {
   title: `SVG Metadata Remover - View & Clean SVG File Info`,
@@ -70,7 +71,7 @@ export default function SvgMetadataViewerRemoverPage() {
           and shrink your SVG.
         </p>
       </header>
-      {/* TODO: add tool component for svg-metadata-viewer-remover */}
+      {<SvgMetadataViewerRemover />}
       {/* TODO: add seo component for svg-metadata-viewer-remover */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

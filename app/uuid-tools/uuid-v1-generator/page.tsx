@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { UuidV1Generator } from "@/components/uuid-tools/uuid-v1-generator.tsx";
 
 export const metadata: Metadata = {
   title: `UUID v1 Generator | Create Time-Based UUIDs`,
@@ -69,7 +70,7 @@ export default function UuidV1GeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">UUID Version 1 Generator (Time-Based)</h1>
         <p className="text-muted-foreground">Create UUID version 1 identifiers, which embed a precise timestamp and traditionally a network card address. This tool generates time-ordered UUIDs, useful for scenarios where sortable, time-based unique identifiers are required.</p>
       </header>
-      {/* TODO: add tool component for uuid-v1-generator */}
+      {<UuidV1Generator />}
       {/* TODO: add seo component for uuid-v1-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

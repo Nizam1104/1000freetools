@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtDebuggerTester } from "@/components/jwt-tools/jwt-debugger-tester.tsx";
 
 export const metadata: Metadata = {
   title: `JWT Debugger Online | Test & Fix Token Validation`,
@@ -69,7 +70,7 @@ export default function JwtDebuggerTesterPage() {
         <h1 className="text-3xl font-bold mb-3">Debug & Test JWT Tokens Step-by-Step</h1>
         <p className="text-muted-foreground">Debug JWT validation issues and test tokens against custom rules. Our tool simulates verification, highlights errors, and provides code snippets to help you fix authentication problems in your application.</p>
       </header>
-      {/* TODO: add tool component for jwt-debugger-tester */}
+      {<JwtDebuggerTester />}
       {/* TODO: add seo component for jwt-debugger-tester */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

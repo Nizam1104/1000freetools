@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SocialMediaTimestampConverter } from "@/components/timestamp-tools/social-media-timestamp-converter.tsx";
 
 export const metadata: Metadata = {
   title: `Social Media Timestamp Converter | FB, Twitter ID Decoder`,
@@ -69,7 +70,7 @@ export default function SocialMediaTimestampConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Social Media Timestamp Converter</h1>
         <p className="text-muted-foreground">Decode timestamps hidden in social media IDs. Convert Facebook fbid timestamps or Twitter Snowflake IDs to actual dates and times.</p>
       </header>
-      {/* TODO: add tool component for social-media-timestamp-converter */}
+      {<SocialMediaTimestampConverter />}
       {/* TODO: add seo component for social-media-timestamp-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

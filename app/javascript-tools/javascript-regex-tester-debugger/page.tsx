@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptRegexTester from "@/components/javascript-tools/javascript-regex-tester";
 
 export const metadata: Metadata = {
   title: `JavaScript Regex Tester - Debug Regular Expressions`,
@@ -69,7 +70,9 @@ export default function JavascriptRegexTesterDebuggerPage() {
           matches, groups, and substitutions instantly against your sample text.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-regex-tester-debugger */}
+      <div className="mt-8">
+        <JavascriptRegexTester />
+      </div>
       {/* TODO: add seo component for javascript-regex-tester-debugger */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { UnicodeCharacterEncoderDecoder } from "@/components/encoding-tools/unicode-character-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Unicode Encoder Decoder | Character to Code Point Tool`,
@@ -70,7 +71,7 @@ export default function UnicodeCharacterEncoderDecoderPage() {
           character names and supports various Unicode encodings.
         </p>
       </header>
-      {/* TODO: add tool component for unicode-character-encoder-decoder */}
+      {<UnicodeCharacterEncoderDecoder />}
       {/* TODO: add seo component for unicode-character-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

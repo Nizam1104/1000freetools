@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SimpleHarmonicMotionCalculator } from "@/components/physics-tools/simple-harmonic-motion-calculator";
 
 export const metadata: Metadata = {
   title: `Simple Harmonic Motion Calculator | SHM Period & Frequency`,
@@ -69,7 +70,7 @@ export default function SimpleHarmonicMotionCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Simple Harmonic Motion Calculator</h1>
         <p className="text-muted-foreground">Analyze oscillating systems like springs and pendulums. Find the period, frequency, or displacement at any time with this simple calculator.</p>
       </header>
-      {/* TODO: add tool component for simple-harmonic-motion-calculator */}
+      {<SimpleHarmonicMotionCalculator />}
       {/* TODO: add seo component for simple-harmonic-motion-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

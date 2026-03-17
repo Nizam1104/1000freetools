@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtTokenSizeCalculatorOptimizer } from "@/components/jwt-tools/jwt-token-size-calculator-optimizer.tsx";
 
 export const metadata: Metadata = {
   title: `JWT Size Calculator | Optimize Token Size Online`,
@@ -69,7 +70,7 @@ export default function JwtTokenSizeCalculatorOptimizerPage() {
         <h1 className="text-3xl font-bold mb-3">Calculate & Optimize JWT Token Size</h1>
         <p className="text-muted-foreground">Analyze your JWT's size and learn how to reduce it. See byte contributions from header, payload, and signature, and get tips to minimize token size for better performance.</p>
       </header>
-      {/* TODO: add tool component for jwt-token-size-calculator-optimizer */}
+      {<JwtTokenSizeCalculatorOptimizer />}
       {/* TODO: add seo component for jwt-token-size-calculator-optimizer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

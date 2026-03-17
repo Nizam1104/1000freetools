@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import PasswordDisguiser from "@/components/password-tools/password-disguiser";
 
 export const metadata: Metadata = {
   title: `Password Disguiser Tool | Mask Passwords On Screen`,
@@ -69,7 +70,7 @@ export default function PasswordDisguiserPage() {
         <h1 className="text-3xl font-bold mb-3">Password Masking & Disguise Tool</h1>
         <p className="text-muted-foreground">Safely type or review passwords with our disguising tool. Mask characters as you type, with an option to peek when needed.</p>
       </header>
-      {/* TODO: add tool component for password-disguiser */}
+      <div className="mt-8"><PasswordDisguiser /></div>
       {/* TODO: add seo component for password-disguiser */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

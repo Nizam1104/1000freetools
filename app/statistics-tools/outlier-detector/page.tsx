@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { OutlierDetector } from "@/components/statistics-tools/outlier-detector";
 
 export const metadata: Metadata = {
   title: `Outlier Detector | Find & Remove Outliers from Data Online`,
@@ -69,7 +70,7 @@ export default function OutlierDetectorPage() {
         <h1 className="text-3xl font-bold mb-3">Outlier Detector and Remover Tool</h1>
         <p className="text-muted-foreground">Find and handle outliers in your data. Use the IQR or z-score method to identify extreme values, then choose to remove them and see how it affects your statistics.</p>
       </header>
-      {/* TODO: add tool component for outlier-detector */}
+      {<OutlierDetector />}
       {/* TODO: add seo component for outlier-detector */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

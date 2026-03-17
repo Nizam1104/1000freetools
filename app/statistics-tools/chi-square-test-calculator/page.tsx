@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { ChiSquareTestCalculator } from "@/components/statistics-tools/chi-square-test-calculator";
 
 export const metadata: Metadata = {
   title: `Chi-Square Calculator | Goodness of Fit & Independence Test`,
@@ -69,7 +70,7 @@ export default function ChiSquareTestCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Chi-Square Test Calculator</h1>
         <p className="text-muted-foreground">Analyze categorical data with Chi-Square tests for goodness of fit or independence. Enter your observed frequencies into our calculator to get the chi-square statistic and determine statistical significance.</p>
       </header>
-      {/* TODO: add tool component for chi-square-test-calculator */}
+      {<ChiSquareTestCalculator />}
       {/* TODO: add seo component for chi-square-test-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

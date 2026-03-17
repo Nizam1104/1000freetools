@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeAnalyticsTracker } from "@/components/qr-code-tools/qr-code-analytics-tracker.tsx";
 
 export const metadata: Metadata = {
   title: `Free QR Code Analytics Tracker | Dynamic QR Code Scanner Stats`,
@@ -69,7 +70,7 @@ export default function QrCodeAnalyticsTrackerPage() {
         <h1 className="text-3xl font-bold mb-3">Track QR Code Scans with Free Analytics</h1>
         <p className="text-muted-foreground">Generate dynamic QR codes and see exactly when and where they are scanned. Get free, real-time data on device types, locations, and scan times to measure your campaign's success.</p>
       </header>
-      {/* TODO: add tool component for qr-code-analytics-tracker */}
+      {<QrCodeAnalyticsTracker />}
       {/* TODO: add seo component for qr-code-analytics-tracker */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

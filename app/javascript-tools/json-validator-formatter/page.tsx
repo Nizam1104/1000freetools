@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JsonValidator from "@/components/javascript-tools/json-validator";
 
 export const metadata: Metadata = {
   title: `JSON Validator and Formatter - Check & Beautify JSON`,
@@ -70,7 +71,9 @@ export default function JsonValidatorFormatterPage() {
           customizable indentation.
         </p>
       </header>
-      {/* TODO: add tool component for json-validator-formatter */}
+      <div className="mt-8">
+        <JsonValidator />
+      </div>
       {/* TODO: add seo component for json-validator-formatter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

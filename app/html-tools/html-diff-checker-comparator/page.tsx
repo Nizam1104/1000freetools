@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { HtmlDiffCheckerComparator } from "@/components/html-tools/html-diff-checker-comparator.tsx";
 
 export const metadata: Metadata = {
   title: `HTML Diff Checker | Compare HTML Files Online`,
@@ -69,7 +70,7 @@ export default function HtmlDiffCheckerComparatorPage() {
           highlights added, removed, and changed lines for easy code review.
         </p>
       </header>
-      {/* TODO: add tool component for html-diff-checker-comparator */}
+      {<HtmlDiffCheckerComparator />}
       {/* TODO: add seo component for html-diff-checker-comparator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

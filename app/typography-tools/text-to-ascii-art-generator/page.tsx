@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TextToAsciiArtGenerator } from "@/components/text-tools/text-to-ascii-art-generator.tsx";
 
 export const metadata: Metadata = {
   title: `ASCII Art Generator | Convert Text to ASCII Art`,
@@ -67,7 +68,7 @@ export default function TextToAsciiArtGeneratorPage() {
           signatures. Choose from multiple styles and copy the result instantly.
         </p>
       </header>
-      {/* TODO: add tool component for text-to-ascii-art-generator */}
+      {<TextToAsciiArtGenerator />}
       {/* TODO: add seo component for text-to-ascii-art-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

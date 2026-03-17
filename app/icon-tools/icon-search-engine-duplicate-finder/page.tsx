@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { IconSearchEngineDuplicateFinder } from "@/components/icon-tools/icon-search-engine-duplicate-finder.tsx";
 
 export const metadata: Metadata = {
   title: `Icon Search Engine | Find & Remove Duplicate Icons`,
@@ -69,7 +70,7 @@ export default function IconSearchEngineDuplicateFinderPage() {
         <h1 className="text-3xl font-bold mb-3">Search & Find Duplicate Icons</h1>
         <p className="text-muted-foreground">Organize your icon library. Find icons by looks or name, and identify duplicate files to free up space. Scan folders directly from your browser.</p>
       </header>
-      {/* TODO: add tool component for icon-search-engine-duplicate-finder */}
+      {<IconSearchEngineDuplicateFinder />}
       {/* TODO: add seo component for icon-search-engine-duplicate-finder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

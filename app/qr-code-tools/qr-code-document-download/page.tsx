@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeDocumentDownload } from "@/components/qr-code-tools/qr-code-document-download.tsx";
 
 export const metadata: Metadata = {
   title: `Document QR Code | Share Files via QR Code`,
@@ -69,7 +70,7 @@ export default function QrCodeDocumentDownloadPage() {
         <h1 className="text-3xl font-bold mb-3">Document Download QR Code Generator</h1>
         <p className="text-muted-foreground">Upload a document and get a QR code for downloading it. Share Word, Excel, or PowerPoint files easily via print or display.</p>
       </header>
-      {/* TODO: add tool component for qr-code-document-download */}
+      {<QrCodeDocumentDownload />}
       {/* TODO: add seo component for qr-code-document-download */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

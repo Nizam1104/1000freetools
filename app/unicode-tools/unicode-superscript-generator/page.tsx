@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UnicodeSubscriptSuperscriptGenerator from "@/components/unicode-tools/unicode-subscript-superscript-generator";
 
 export const metadata: Metadata = {
   title: `Unicode Superscript Subscript Generator`,
@@ -70,7 +71,9 @@ export default function UnicodeSuperscriptGeneratorPage() {
           formatting.
         </p>
       </header>
-      {/* TODO: add tool component for unicode-superscript-generator */}
+      <div className="mt-8">
+        <UnicodeSubscriptSuperscriptGenerator />
+      </div>
       {/* TODO: add seo component for unicode-superscript-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SqlStoredProcedureGenerator } from "@/components/sql-tools/sql-stored-procedure-generator.tsx";
 
 export const metadata: Metadata = {
   title: `SQL Stored Procedure Generator Online | Create Procedures`,
@@ -70,7 +71,7 @@ export default function SqlStoredProcedureGeneratorPage() {
           statements for MySQL, SQL Server, and more.
         </p>
       </header>
-      {/* TODO: add tool component for sql-stored-procedure-generator */}
+      {<SqlStoredProcedureGenerator />}
       {/* TODO: add seo component for sql-stored-procedure-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

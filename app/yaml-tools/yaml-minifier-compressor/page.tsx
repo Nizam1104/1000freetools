@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlMinifierCompressor } from "@/components/yaml-tools/yaml-minifier-compressor.tsx";
 
 export const metadata: Metadata = {
   title: `YAML Minifier | Compress YAML File Size Online`,
@@ -69,7 +70,7 @@ export default function YamlMinifierCompressorPage() {
         <h1 className="text-3xl font-bold mb-3">YAML Minifier and Compressor</h1>
         <p className="text-muted-foreground">Reduce your YAML file size by removing extra whitespace and comments. This free tool minifies YAML for faster loading and transmission without breaking syntax.</p>
       </header>
-      {/* TODO: add tool component for yaml-minifier-compressor */}
+      {<YamlMinifierCompressor />}
       {/* TODO: add seo component for yaml-minifier-compressor */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

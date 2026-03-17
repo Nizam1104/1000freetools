@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import PasswordHistoryGenerator from "@/components/password-tools/password-history-generator";
 
 export const metadata: Metadata = {
   title: `Password History Generator | See Common Weak Patterns`,
@@ -69,7 +70,7 @@ export default function PasswordHistoryGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Weak Password History Simulator</h1>
         <p className="text-muted-foreground">See how predictable password changes create security risks. This tool generates a typical 'password history' to show common, insecure patterns.</p>
       </header>
-      {/* TODO: add tool component for password-history-generator */}
+      <div className="mt-8"><PasswordHistoryGenerator /></div>
       {/* TODO: add seo component for password-history-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

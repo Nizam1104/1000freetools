@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { ManchesterCodeEncoderDecoder } from "@/components/encoding-tools/manchester-code-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Manchester Code Encoder Decoder | Signal Encoding Tool`,
@@ -71,7 +72,7 @@ export default function ManchesterCodeEncoderDecoderPage() {
           conventions.
         </p>
       </header>
-      {/* TODO: add tool component for manchester-code-encoder-decoder */}
+      {<ManchesterCodeEncoderDecoder />}
       {/* TODO: add seo component for manchester-code-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

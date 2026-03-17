@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtTokenBuilderTemplates } from "@/components/jwt-tools/jwt-token-builder-templates.tsx";
 
 export const metadata: Metadata = {
   title: `JWT Builder with Templates | Create Tokens for OAuth, OIDC`,
@@ -69,7 +70,7 @@ export default function JwtTokenBuilderTemplatesPage() {
         <h1 className="text-3xl font-bold mb-3">Build JWTs with Pre-made Templates</h1>
         <p className="text-muted-foreground">Generate JWTs quickly using templates for OpenID Connect, OAuth 2.0, and API authentication. Customize standard claims and sign tokens instantly for your testing scenarios.</p>
       </header>
-      {/* TODO: add tool component for jwt-token-builder-templates */}
+      {<JwtTokenBuilderTemplates />}
       {/* TODO: add seo component for jwt-token-builder-templates */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

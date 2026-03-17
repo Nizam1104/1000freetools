@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SvgFontToPathConverter } from "@/components/svg-tools/svg-font-to-path-converter.tsx";
 
 export const metadata: Metadata = {
   title: `SVG Font to Path Converter - Create Text Outlines Online`,
@@ -70,7 +71,7 @@ export default function SvgFontToPathConverterPage() {
           into outlined shapes.
         </p>
       </header>
-      {/* TODO: add tool component for svg-font-to-path-converter */}
+      {<SvgFontToPathConverter />}
       {/* TODO: add seo component for svg-font-to-path-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

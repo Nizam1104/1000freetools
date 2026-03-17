@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownToJsonConverter } from "@/components/markdown-tools/markdown-to-json-converter.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown to JSON Converter | Structured Data Tool`,
@@ -69,7 +70,7 @@ export default function MarkdownToJsonConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert Markdown to Structured JSON</h1>
         <p className="text-muted-foreground">Transform Markdown documents into JSON data for developers and applications. Get a structured breakdown of headers, paragraphs, and lists. Perfect for automation.</p>
       </header>
-      {/* TODO: add tool component for markdown-to-json-converter */}
+      {<MarkdownToJsonConverter />}
       {/* TODO: add seo component for markdown-to-json-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

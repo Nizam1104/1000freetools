@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptObjectToJsonConverter from "@/components/javascript-tools/javascript-object-to-json-converter";
 
 export const metadata: Metadata = {
   title: `JS Object to JSON Converter - Stringify & Parse Online`,
@@ -69,7 +70,9 @@ export default function JavascriptObjectJsonConverterPage() {
           back into live objects. Handles complex types and formatting options.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-object-json-converter */}
+      <div className="mt-8">
+        <JavascriptObjectToJsonConverter />
+      </div>
       {/* TODO: add seo component for javascript-object-json-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

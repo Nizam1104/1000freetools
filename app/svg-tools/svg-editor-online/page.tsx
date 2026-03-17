@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SvgEditorOnline } from "@/components/svg-tools/svg-editor-online.tsx";
 
 export const metadata: Metadata = {
   title: `Free Online SVG Editor - Create & Edit Vector Graphics`,
@@ -68,7 +69,7 @@ export default function SvgEditorOnlinePage() {
           export your design.
         </p>
       </header>
-      {/* TODO: add tool component for svg-editor-online */}
+      {<SvgEditorOnline />}
       {/* TODO: add seo component for svg-editor-online */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

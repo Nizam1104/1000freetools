@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { CoulombsLawCalculator } from "@/components/physics-tools/coulombs-law-calculator";
 
 export const metadata: Metadata = {
   title: `Coulomb's Law Calculator | Electric Force Between Charges`,
@@ -69,7 +70,7 @@ export default function CoulombsLawCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Coulomb's Law Calculator</h1>
         <p className="text-muted-foreground">Find the electric force between two charges. Enter their size, how far apart they are, and see if they attract or repel.</p>
       </header>
-      {/* TODO: add tool component for coulombs-law-calculator */}
+      {<CoulombsLawCalculator />}
       {/* TODO: add seo component for coulombs-law-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

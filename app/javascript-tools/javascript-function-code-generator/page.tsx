@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JavascriptFunctionCodeGenerator } from "@/components/javascript-tools/javascript-function-code-generator.tsx";
 
 export const metadata: Metadata = {
   title: `JavaScript Code Generator - Create Functions & Snippets`,
@@ -69,7 +70,7 @@ export default function JavascriptFunctionCodeGeneratorPage() {
           Customize parameters and get production-ready snippets in seconds.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-function-code-generator */}
+      {<JavascriptFunctionCodeGenerator />}
       {/* TODO: add seo component for javascript-function-code-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

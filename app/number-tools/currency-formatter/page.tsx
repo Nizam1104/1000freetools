@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { CurrencyFormatter } from "@/components/number-tools/currency-formatter";
 
 export const metadata: Metadata = {
   title: `Currency Formatter | International Money Format`,
@@ -69,7 +70,7 @@ export default function CurrencyFormatterPage() {
         <h1 className="text-3xl font-bold mb-3">Format Numbers as Currency</h1>
         <p className="text-muted-foreground">Display any number as formatted currency for the US, Europe, UK, Japan, and more. Adjust symbols, separators, and decimal places to match local standards.</p>
       </header>
-      {/* TODO: add tool component for currency-formatter */}
+      {<CurrencyFormatter />}
       {/* TODO: add seo component for currency-formatter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

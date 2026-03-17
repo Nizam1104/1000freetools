@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import Utf8ToUtf16Converter from "@/components/ascii-tools/utf-8-to-utf-16-converter";
+import Utf8ToUtf16ConverterSeo from "@/components/seo-content/ascii-tools/utf-8-to-utf-16-converter";
 
 export const metadata: Metadata = {
   title: `UTF-8 to UTF-16 Converter: Unicode Encoding Converter`,
@@ -66,7 +68,12 @@ export default function Utf8ToUtf16ConverterPage() {
           cross-platform data exchange.
         </p>
       </header>
-      {/* TODO: add tool component for utf8-to-utf16-converter */}
+      <div className="mt-8">
+        <Utf8ToUtf16Converter />
+      </div>
+      <div className="mt-8">
+        <Utf8ToUtf16ConverterSeo />
+      </div>
       {/* TODO: add seo component for utf8-to-utf16-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SvgGradientGeneratorEditor } from "@/components/svg-tools/svg-gradient-generator-editor.tsx";
 
 export const metadata: Metadata = {
   title: `SVG Gradient Generator - Create & Edit Gradients Online`,
@@ -68,7 +69,7 @@ export default function SvgGradientGeneratorEditorPage() {
           SVG code.
         </p>
       </header>
-      {/* TODO: add tool component for svg-gradient-generator-editor */}
+      {<SvgGradientGeneratorEditor />}
       {/* TODO: add seo component for svg-gradient-generator-editor */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

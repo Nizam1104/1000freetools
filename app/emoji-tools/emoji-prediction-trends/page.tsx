@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiPredictionTrends from "@/components/emoji-tools/emoji-prediction-trends"
+
 export default function EmojiPredictionTrendsPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiPredictionTrendsPage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Trends & Prediction Tool</h1>
         <p className="text-muted-foreground">Discover which emojis are trending right now on social media. See historical data and get predictions for upcoming holidays or events. Stay ahead of the emoji curve.</p>
       </header>
-      {/* TODO: add tool component for emoji-prediction-trends */}
+      <EmojiPredictionTrends />
       {/* TODO: add seo component for emoji-prediction-trends */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

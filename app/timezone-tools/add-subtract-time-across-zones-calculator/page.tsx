@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { AddSubtractTimeAcrossZonesCalculator } from "@/components/timezone-tools/add-subtract-time-across-zones-calculator";
 
 export const metadata: Metadata = {
   title: `Add/Subtract Time Calculator | Across Time Zones`,
@@ -69,7 +70,7 @@ export default function AddSubtractTimeAcrossZonesCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Add or Subtract Time Across Time Zones</h1>
         <p className="text-muted-foreground">Need to calculate a deadline or a future time? Add or subtract hours from any starting time and time zone, and see the result in your local time or another zone.</p>
       </header>
-      {/* TODO: add tool component for add-subtract-time-across-zones-calculator */}
+      {<AddSubtractTimeAcrossZonesCalculator />}
       {/* TODO: add seo component for add-subtract-time-across-zones-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

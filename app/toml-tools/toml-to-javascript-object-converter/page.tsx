@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TomlToJavascriptObjectConverter } from "@/components/toml-tools/toml-to-javascript-object-converter.tsx";
 
 export const metadata: Metadata = {
   title: `TOML to JavaScript Object Converter | Free Tool`,
@@ -69,7 +70,7 @@ export default function TomlToJavascriptObjectConverterPage() {
         <h1 className="text-3xl font-bold mb-3">TOML to JavaScript Object Converter</h1>
         <p className="text-muted-foreground">Easily turn TOML configuration files into JavaScript objects for your web or Node.js projects. This tool generates clean JavaScript code from TOML, perfect for frontend configs or backend module settings. It handles complex nested structures with ease.</p>
       </header>
-      {/* TODO: add tool component for toml-to-javascript-object-converter */}
+      {<TomlToJavascriptObjectConverter />}
       {/* TODO: add seo component for toml-to-javascript-object-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

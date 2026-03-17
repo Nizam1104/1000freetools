@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlToMarkdownTable } from "@/components/yaml-tools/yaml-to-markdown-table.tsx";
 
 export const metadata: Metadata = {
   title: `YAML to Markdown Table Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function YamlToMarkdownTablePage() {
         <h1 className="text-3xl font-bold mb-3">Convert YAML to Markdown Table</h1>
         <p className="text-muted-foreground">Transform YAML data lists into clean Markdown tables for documentation. This free converter automatically formats headers and aligns columns for readability.</p>
       </header>
-      {/* TODO: add tool component for yaml-to-markdown-table */}
+      {<YamlToMarkdownTable />}
       {/* TODO: add seo component for yaml-to-markdown-table */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

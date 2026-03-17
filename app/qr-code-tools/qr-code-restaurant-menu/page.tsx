@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeRestaurantMenu } from "@/components/qr-code-tools/qr-code-restaurant-menu.tsx";
 
 export const metadata: Metadata = {
   title: `Restaurant Menu QR Code | Digital Menu Generator`,
@@ -69,7 +70,7 @@ export default function QrCodeRestaurantMenuPage() {
         <h1 className="text-3xl font-bold mb-3">Restaurant Menu QR Code Generator</h1>
         <p className="text-muted-foreground">Create a QR code for your digital restaurant menu. Input items and prices or upload a PDF. Provide a contactless menu experience for diners.</p>
       </header>
-      {/* TODO: add tool component for qr-code-restaurant-menu */}
+      {<QrCodeRestaurantMenu />}
       {/* TODO: add seo component for qr-code-restaurant-menu */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

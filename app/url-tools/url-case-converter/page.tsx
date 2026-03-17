@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UrlCaseConverter from "@/components/url-tools/url-case-converter";
 
 export const metadata: Metadata = {
   title: `Free URL Case Converter | Change URL Letter Case`,
@@ -69,7 +70,7 @@ export default function UrlCaseConverterPage() {
         <h1 className="text-3xl font-bold mb-3">URL Case Converter: Change URL Text Case Instantly</h1>
         <p className="text-muted-foreground">Convert any URL to lowercase, uppercase, or title case with our free tool. Ensure your links follow SEO best practices and work correctly on case-sensitive servers. Paste a URL and choose your case style.</p>
       </header>
-      {/* TODO: add tool component for url-case-converter */}
+      <div className="mt-8"><UrlCaseConverter /></div>
       {/* TODO: add seo component for url-case-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

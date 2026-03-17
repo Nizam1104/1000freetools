@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TomlToRubyHashConverter } from "@/components/toml-tools/toml-to-ruby-hash-converter";
 
 export const metadata: Metadata = {
   title: `TOML to Ruby Hash Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function TomlToRubyHashConverterPage() {
         <h1 className="text-3xl font-bold mb-3">TOML to Ruby Hash Converter</h1>
         <p className="text-muted-foreground">Convert TOML configuration files into Ruby hashes instantly. This tool generates clean Ruby code that you can use directly in your Rails or Ruby projects. It accurately maps TOML data types to Ruby equivalents, including nested structures.</p>
       </header>
-      {/* TODO: add tool component for toml-to-ruby-hash-converter */}
+      {<TomlToRubyHashConverter />}
       {/* TODO: add seo component for toml-to-ruby-hash-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TimezoneDatabaseIanaLookup } from "@/components/timezone-tools/timezone-database-iana-lookup.tsx";
 
 export const metadata: Metadata = {
   title: `IANA Time Zone Lookup | Olson Time Zone Database`,
@@ -69,7 +70,7 @@ export default function TimezoneDatabaseIanaLookupPage() {
         <h1 className="text-3xl font-bold mb-3">IANA Time Zone Database & Identifier Lookup</h1>
         <p className="text-muted-foreground">Look up official IANA time zone identifiers like 'America/Los_Angeles'. Get technical details, UTC offsets, and DST rules used by programmers and systems worldwide.</p>
       </header>
-      {/* TODO: add tool component for timezone-database-iana-lookup */}
+      {<TimezoneDatabaseIanaLookup />}
       {/* TODO: add seo component for timezone-database-iana-lookup */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownToPdfConverter } from "@/components/markdown-tools/markdown-to-pdf-converter.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown to PDF Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function MarkdownToPdfConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert Markdown to PDF Online</h1>
         <p className="text-muted-foreground">Transform your Markdown documents into professional PDFs. Select a template, customize styling, and download. Ideal for creating resumes, reports, and documentation.</p>
       </header>
-      {/* TODO: add tool component for markdown-to-pdf-converter */}
+      {<MarkdownToPdfConverter />}
       {/* TODO: add seo component for markdown-to-pdf-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

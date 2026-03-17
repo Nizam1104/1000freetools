@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownLinterFormatter } from "@/components/markdown-tools/markdown-linter-formatter.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown Linter and Formatter | Clean Your Code`,
@@ -69,7 +70,7 @@ export default function MarkdownLinterFormatterPage() {
         <h1 className="text-3xl font-bold mb-3">Markdown Linter and Code Beautifier</h1>
         <p className="text-muted-foreground">Clean and standardize your Markdown files. This linter identifies style issues and can automatically fix them according to configurable rules. Ensure consistency across your documentation.</p>
       </header>
-      {/* TODO: add tool component for markdown-linter-formatter */}
+      {<MarkdownLinterFormatter />}
       {/* TODO: add seo component for markdown-linter-formatter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

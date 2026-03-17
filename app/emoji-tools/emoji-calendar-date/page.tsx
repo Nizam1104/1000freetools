@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiCalendarDate from "@/components/emoji-tools/emoji-calendar-date"
+
 export default function EmojiCalendarDatePage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiCalendarDatePage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Calendar & Holiday Finder</h1>
         <p className="text-muted-foreground">Find the perfect emoji for any holiday, season, or special date. Get emoji suggestions for Christmas, birthdays, or summer. Generate a full emoji calendar.</p>
       </header>
-      {/* TODO: add tool component for emoji-calendar-date */}
+      <EmojiCalendarDate />
       {/* TODO: add seo component for emoji-calendar-date */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

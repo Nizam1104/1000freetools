@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CronExpressionMonitoring from "@/components/cron-expression-tools/cron-expression-monitoring";
 
 export const metadata: Metadata = {
   title: `CRON for Monitoring & Alerts | System Check Scheduler`,
@@ -69,7 +70,9 @@ export default function CronExpressionMonitoringAlertsPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expressions for Monitoring & Alerts</h1>
         <p className="text-muted-foreground">Set up monitoring scripts with precise CRON schedules. Generate expressions for checking server health, disk space, or services every minute, 5 minutes, or at custom intervals.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-monitoring-alerts */}
+      <div className="mt-8">
+        <CronExpressionMonitoring />
+      </div>
       {/* TODO: add seo component for cron-expression-monitoring-alerts */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

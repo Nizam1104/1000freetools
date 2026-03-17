@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtPublicKeyExtractorJwkGenerator } from "@/components/jwt-tools/jwt-public-key-extractor-jwk-generator.tsx";
 
 export const metadata: Metadata = {
   title: `JWT Public Key Extractor | Generate JWK Online`,
@@ -69,7 +70,7 @@ export default function JwtPublicKeyExtractorJwkGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Extract Public Keys & Generate JWK for JWT</h1>
         <p className="text-muted-foreground">Extract public keys from certificates or private keys and generate JWK (JSON Web Key) sets for JWT verification. Format keys for use in popular authentication servers and OAuth providers.</p>
       </header>
-      {/* TODO: add tool component for jwt-public-key-extractor-jwk-generator */}
+      {<JwtPublicKeyExtractorJwkGenerator />}
       {/* TODO: add seo component for jwt-public-key-extractor-jwk-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UnicodeCharacterLookup from "@/components/unicode-tools/unicode-character-lookup";
 
 export const metadata: Metadata = {
   title: `Unicode Character Map | Browse All Blocks`,
@@ -67,7 +68,9 @@ export default function UnicodeCharacterMapPage() {
           Cyrillic, CJK, Emoji, and hundreds of other blocks visually.
         </p>
       </header>
-      {/* TODO: add tool component for unicode-character-map */}
+      <div className="mt-8">
+        <UnicodeCharacterLookup />
+      </div>
       {/* TODO: add seo component for unicode-character-map */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

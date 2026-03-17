@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { EnvToTomlConverter } from "@/components/toml-tools/env-to-toml-converter.tsx";
 
 export const metadata: Metadata = {
   title: `ENV to TOML Converter | Parse Environment Variables`,
@@ -69,7 +70,7 @@ export default function EnvToTomlConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert ENV to TOML Configuration</h1>
         <p className="text-muted-foreground">Turn environment variables or .env files into a structured TOML configuration. This tool intelligently groups keys with underscores into nested tables for better organization.</p>
       </header>
-      {/* TODO: add tool component for env-to-toml-converter */}
+      {<EnvToTomlConverter />}
       {/* TODO: add seo component for env-to-toml-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

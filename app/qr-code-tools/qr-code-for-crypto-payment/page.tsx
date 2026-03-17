@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeForCryptoPayment } from "@/components/qr-code-tools/qr-code-for-crypto-payment.tsx";
 
 export const metadata: Metadata = {
   title: `Free Crypto Payment QR Code Generator | Bitcoin & Ethereum`,
@@ -69,7 +70,7 @@ export default function QrCodeForCryptoPaymentPage() {
         <h1 className="text-3xl font-bold mb-3">Create a Crypto Payment QR Code</h1>
         <p className="text-muted-foreground">Generate a QR code for Bitcoin, Ethereum, or other cryptocurrency payments. Just add your wallet address and amount to create a code any wallet app can scan to pay.</p>
       </header>
-      {/* TODO: add tool component for qr-code-for-crypto-payment */}
+      {<QrCodeForCryptoPayment />}
       {/* TODO: add seo component for qr-code-for-crypto-payment */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

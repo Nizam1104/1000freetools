@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { ReynoldsNumberCalculator } from "@/components/physics-tools/reynolds-number-calculator";
 
 export const metadata: Metadata = {
   title: `Reynolds Number Calculator | Laminar vs Turbulent Flow`,
@@ -69,7 +70,7 @@ export default function ReynoldsNumberCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Reynolds Number Calculator</h1>
         <p className="text-muted-foreground">Predict if fluid flow is smooth or chaotic. Calculate the Reynolds number for pipes, airfoils, or any system to determine laminar or turbulent flow.</p>
       </header>
-      {/* TODO: add tool component for reynolds-number-calculator */}
+      {<ReynoldsNumberCalculator />}
       {/* TODO: add seo component for reynolds-number-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

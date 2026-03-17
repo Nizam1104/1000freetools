@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import BinaryImageSteganography from "@/components/binary-tools/binary-image-steganography";
 
 export const metadata: Metadata = {
   title: `Image Steganography Tool | Hide Binary in Images Online`,
@@ -69,8 +70,9 @@ export default function BinaryImageSteganographyPage() {
         <h1 className="text-3xl font-bold mb-3">Binary Image Steganography Tool</h1>
         <p className="text-muted-foreground">Hide binary messages inside images using steganography. This tool embeds secret binary data in the least significant bits of image pixels. Also extracts hidden binary from images.</p>
       </header>
-      {/* TODO: add tool component for binary-image-steganography */}
-      {/* TODO: add seo component for binary-image-steganography */}
+      <div className="mt-8">
+        <BinaryImageSteganography />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

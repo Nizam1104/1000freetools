@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import NumberToScientificNotationConverter from "@/components/number-tools/number-to-scientific-notation-converter";
+import NumberToScientificNotationConverterSeo from "@/components/seo-content/number-tools/number-to-scientific-notation-converter";
 
 export const metadata: Metadata = {
   title: `Scientific Notation Converter | Free Online Tool`,
@@ -69,7 +71,12 @@ export default function ScientificNotationConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert to Scientific Notation</h1>
         <p className="text-muted-foreground">Easily convert large or small numbers to compact scientific or engineering notation. Our tool also converts scientific notation back to standard decimal form.</p>
       </header>
-      {/* TODO: add tool component for scientific-notation-converter */}
+      <div className="mt-8">
+        <NumberToScientificNotationConverter />
+      </div>
+      <div className="mt-8">
+        <NumberToScientificNotationConverterSeo />
+      </div>
       {/* TODO: add seo component for scientific-notation-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

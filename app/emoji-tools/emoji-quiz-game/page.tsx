@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiQuizGame from "@/components/emoji-tools/emoji-quiz-game"
+
 export default function EmojiQuizGamePage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiQuizGamePage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Quiz & Guess the Phrase Game</h1>
         <p className="text-muted-foreground">Test your skills with our emoji puzzle game. Guess movies, phrases, or celebrities from emoji clues. Play daily challenges or create your own quizzes to share.</p>
       </header>
-      {/* TODO: add tool component for emoji-quiz-game */}
+      <EmojiQuizGame />
       {/* TODO: add seo component for emoji-quiz-game */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

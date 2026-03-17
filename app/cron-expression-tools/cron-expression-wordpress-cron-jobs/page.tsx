@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CronExpressionWordpress from "@/components/cron-expression-tools/cron-expression-wordpress";
 
 export const metadata: Metadata = {
   title: `CRON for WordPress | WP-Cron Scheduler Tool`,
@@ -69,7 +70,9 @@ export default function CronExpressionWordpressCronJobsPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expressions for WordPress</h1>
         <p className="text-muted-foreground">Generate CRON expressions for WordPress cron jobs. Schedule plugin tasks, update checks, or backups using the correct syntax for wp-cron.php. Essential for WordPress developers.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-wordpress-cron-jobs */}
+      <div className="mt-8">
+        <CronExpressionWordpress />
+      </div>
       {/* TODO: add seo component for cron-expression-wordpress-cron-jobs */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import YamlToEnvironmentVariablesConverter from "@/components/yaml-tools/yaml-to-environment-variables-converter";
+import YamlToEnvironmentVariablesConverterSeo from "@/components/seo-content/yaml-tools/yaml-to-environment-variables-converter";
 
 export const metadata: Metadata = {
   title: `YAML to Env Vars Converter | Free Online Tool`,
@@ -69,7 +71,12 @@ export default function YamlToEnvConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert YAML to Environment Variables</h1>
         <p className="text-muted-foreground">Generate environment variable exports from your YAML configs. This free tool creates shell-compatible commands for Docker, Kubernetes, or local development setups.</p>
       </header>
-      {/* TODO: add tool component for yaml-to-env-converter */}
+      <div className="mt-8">
+        <YamlToEnvironmentVariablesConverter />
+      </div>
+      <div className="mt-8">
+        <YamlToEnvironmentVariablesConverterSeo />
+      </div>
       {/* TODO: add seo component for yaml-to-env-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

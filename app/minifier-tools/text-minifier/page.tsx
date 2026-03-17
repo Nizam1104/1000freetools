@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TextMinifier } from "@/components/minifier-tools/text-minifier.tsx";
 
 export const metadata: Metadata = {
   title: `Text Minifier - Compress & Remove Whitespace Online`,
@@ -69,7 +70,7 @@ export default function TextMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">Text Minifier & Whitespace Remover</h1>
         <p className="text-muted-foreground">Remove unnecessary whitespace and line breaks from any plain text. This tool compresses text into a compact format, ideal for cleaning data, code snippets, or formatted content.</p>
       </header>
-      {/* TODO: add tool component for text-minifier */}
+      {<TextMinifier />}
       {/* TODO: add seo component for text-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

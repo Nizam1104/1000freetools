@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlToSqlInsert } from "@/components/yaml-tools/yaml-to-sql-insert.tsx";
 
 export const metadata: Metadata = {
   title: `YAML to SQL INSERT Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function YamlToSqlInsertPage() {
         <h1 className="text-3xl font-bold mb-3">Convert YAML to SQL INSERT Statements</h1>
         <p className="text-muted-foreground">Generate SQL INSERT queries from YAML data lists. This free tool creates ready-to-run SQL for populating database tables, with support for multiple SQL dialects.</p>
       </header>
-      {/* TODO: add tool component for yaml-to-sql-insert */}
+      {<YamlToSqlInsert />}
       {/* TODO: add seo component for yaml-to-sql-insert */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

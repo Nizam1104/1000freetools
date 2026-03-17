@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TomlToPythonDictionaryConverter } from "@/components/toml-tools/toml-to-python-dictionary-converter.tsx";
 
 export const metadata: Metadata = {
   title: `TOML to Python Dict Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function TomlToPythonDictionaryConverterPage() {
         <h1 className="text-3xl font-bold mb-3">TOML to Python Dictionary Converter</h1>
         <p className="text-muted-foreground">Convert TOML configuration files directly into Python dictionaries. This free tool produces clean Python code that you can copy and paste into your projects. It accurately handles all TOML data types and nested structures, saving you manual parsing time.</p>
       </header>
-      {/* TODO: add tool component for toml-to-python-dictionary-converter */}
+      {<TomlToPythonDictionaryConverter />}
       {/* TODO: add seo component for toml-to-python-dictionary-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

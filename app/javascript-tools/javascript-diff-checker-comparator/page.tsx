@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptDiffChecker from "@/components/javascript-tools/javascript-diff-checker";
 
 export const metadata: Metadata = {
   title: `JavaScript Diff Checker - Compare Code Differences Online`,
@@ -70,7 +71,9 @@ export default function JavascriptDiffCheckerComparatorPage() {
           clearly.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-diff-checker-comparator */}
+      <div className="mt-8">
+        <JavascriptDiffChecker />
+      </div>
       {/* TODO: add seo component for javascript-diff-checker-comparator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

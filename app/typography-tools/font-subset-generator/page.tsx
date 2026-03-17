@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { FontSubsetGenerator } from "@/components/font-tools/font-subset-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Font Subset Generator | Optimize Web Fonts`,
@@ -68,7 +69,7 @@ export default function FontSubsetGeneratorPage() {
           websites.
         </p>
       </header>
-      {/* TODO: add tool component for font-subset-generator */}
+      {<FontSubsetGenerator />}
       {/* TODO: add seo component for font-subset-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeToTextDecoder } from "@/components/qr-code-tools/qr-code-to-text-decoder.tsx";
 
 export const metadata: Metadata = {
   title: `Free QR Code Decoder Online | QR Code to Text / URL`,
@@ -69,7 +70,7 @@ export default function QrCodeToTextDecoderPage() {
         <h1 className="text-3xl font-bold mb-3">Decode a QR Code to See Its Content</h1>
         <p className="text-muted-foreground">Upload a QR code image to instantly see the text, URL, or other data hidden inside. Our free decoder works in your browser for complete privacy—your data never leaves your computer.</p>
       </header>
-      {/* TODO: add tool component for qr-code-to-text-decoder */}
+      {<QrCodeToTextDecoder />}
       {/* TODO: add seo component for qr-code-to-text-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

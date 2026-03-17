@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { UnicodeRegexTester } from "@/components/unicode-tools/unicode-regex-tester.tsx";
 
 export const metadata: Metadata = {
   title: `Unicode Regex Tester | Regular Expression Tool`,
@@ -68,7 +69,7 @@ export default function UnicodeRegexTesterPage() {
           patterns.
         </p>
       </header>
-      {/* TODO: add tool component for unicode-regex-tester */}
+      {<UnicodeRegexTester />}
       {/* TODO: add seo component for unicode-regex-tester */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

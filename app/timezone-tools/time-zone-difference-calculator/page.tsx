@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import TimezoneConverter from "@/components/timezone-tools/timezone-converter";
 
 export const metadata: Metadata = {
   title: `Time Difference Calculator | Hours Between Time Zones`,
@@ -69,7 +70,9 @@ export default function TimeZoneDifferenceCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Time Difference Calculator Between Cities</h1>
         <p className="text-muted-foreground">Quickly calculate the exact time difference between any two cities in the world. See how many hours one is ahead or behind the other, now or on a future date.</p>
       </header>
-      {/* TODO: add tool component for time-zone-difference-calculator */}
+      <div className="mt-8">
+        <TimezoneConverter />
+      </div>
       {/* TODO: add seo component for time-zone-difference-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

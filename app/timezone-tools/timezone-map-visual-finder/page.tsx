@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TimezoneMapVisualFinder } from "@/components/timezone-tools/timezone-map-visual-finder.tsx";
 
 export const metadata: Metadata = {
   title: `Interactive Time Zone Map | Visual Time Zone Finder`,
@@ -68,7 +69,7 @@ export default function TimezoneMapVisualFinderPage() {
           in a clear, graphical format.
         </p>
       </header>
-      {/* TODO: add tool component for timezone-map-visual-finder */}
+      {<TimezoneMapVisualFinder />}
       {/* TODO: add seo component for timezone-map-visual-finder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

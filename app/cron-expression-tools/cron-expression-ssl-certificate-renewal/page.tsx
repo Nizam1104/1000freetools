@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CronExpressionSslRenewal from "@/components/cron-expression-tools/cron-expression-ssl-renewal";
 
 export const metadata: Metadata = {
   title: `CRON for SSL Certificate Renewal | Certbot Scheduler`,
@@ -69,7 +70,9 @@ export default function CronExpressionSslCertificateRenewalPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expressions for SSL Certificate Renewal</h1>
         <p className="text-muted-foreground">Automate your SSL certificate renewals with CRON. Generate expressions to run renewal checks daily or weekly, ensuring your website's HTTPS never breaks due to an expired cert.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-ssl-certificate-renewal */}
+      <div className="mt-8">
+        <CronExpressionSslRenewal />
+      </div>
       {/* TODO: add seo component for cron-expression-ssl-certificate-renewal */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

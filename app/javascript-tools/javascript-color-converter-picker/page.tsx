@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptColorConverter from "@/components/javascript-tools/javascript-color-converter";
 
 export const metadata: Metadata = {
   title: `JavaScript Color Converter - HEX, RGB, HSL & Picker`,
@@ -69,7 +70,9 @@ export default function JavascriptColorConverterPickerPage() {
           and get ready-to-use JavaScript color code snippets.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-color-converter-picker */}
+      <div className="mt-8">
+        <JavascriptColorConverter />
+      </div>
       {/* TODO: add seo component for javascript-color-converter-picker */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

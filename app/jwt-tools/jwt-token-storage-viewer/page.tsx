@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtTokenStorageViewer } from "@/components/jwt-tools/jwt-token-storage-viewer.tsx";
 
 export const metadata: Metadata = {
   title: `Browser JWT Storage Viewer | Inspect Local Tokens`,
@@ -69,7 +70,7 @@ export default function JwtTokenStorageViewerPage() {
         <h1 className="text-3xl font-bold mb-3">View JWT Tokens Stored in Your Browser</h1>
         <p className="text-muted-foreground">Safely inspect JWT tokens stored in your browser's localStorage or sessionStorage. Decode and validate tokens locally without sending them to any server—perfect for frontend debugging.</p>
       </header>
-      {/* TODO: add tool component for jwt-token-storage-viewer */}
+      {<JwtTokenStorageViewer />}
       {/* TODO: add seo component for jwt-token-storage-viewer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

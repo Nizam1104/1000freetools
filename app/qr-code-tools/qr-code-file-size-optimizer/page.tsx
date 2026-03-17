@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeFileSizeOptimizer } from "@/components/qr-code-tools/qr-code-file-size-optimizer.tsx";
 
 export const metadata: Metadata = {
   title: `Free QR Code File Size Optimizer | Compress QR Code Images`,
@@ -69,7 +70,7 @@ export default function QrCodeFileSizeOptimizerPage() {
         <h1 className="text-3xl font-bold mb-3">Reduce QR Code File Size for Web & Print</h1>
         <p className="text-muted-foreground">Upload your QR code image and compress it for faster web loading or smaller print files. Our optimizer maintains scannability while reducing PNG, JPG, or SVG file size.</p>
       </header>
-      {/* TODO: add tool component for qr-code-file-size-optimizer */}
+      {<QrCodeFileSizeOptimizer />}
       {/* TODO: add seo component for qr-code-file-size-optimizer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

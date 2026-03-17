@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { BulkQrCodeGenerator } from "@/components/qr-code-tools/bulk-qr-code-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Bulk QR Code Generator | Mass Create from CSV`,
@@ -69,7 +70,7 @@ export default function BulkQrCodeGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Bulk QR Code Generator</h1>
         <p className="text-muted-foreground">Generate thousands of unique QR codes in one go. Upload a spreadsheet with your data. Download all codes as a ZIP file or a multi-page PDF.</p>
       </header>
-      {/* TODO: add tool component for bulk-qr-code-generator */}
+      {<BulkQrCodeGenerator />}
       {/* TODO: add seo component for bulk-qr-code-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

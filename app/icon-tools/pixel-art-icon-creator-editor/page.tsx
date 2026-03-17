@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { PixelArtIconCreatorEditor } from "@/components/icon-tools/pixel-art-icon-creator-editor.tsx";
 
 export const metadata: Metadata = {
   title: `Pixel Art Icon Maker | Free Online Editor`,
@@ -69,7 +70,7 @@ export default function PixelArtIconCreatorEditorPage() {
         <h1 className="text-3xl font-bold mb-3">Create Pixel Art Icons</h1>
         <p className="text-muted-foreground">Design retro-style pixel art icons from scratch. Use our simple grid editor with classic pixel art tools. Perfect for game assets, favicons, or nostalgic designs.</p>
       </header>
-      {/* TODO: add tool component for pixel-art-icon-creator-editor */}
+      {<PixelArtIconCreatorEditor />}
       {/* TODO: add seo component for pixel-art-icon-creator-editor */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

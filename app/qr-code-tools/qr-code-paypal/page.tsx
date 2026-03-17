@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodePaypal } from "@/components/qr-code-tools/qr-code-paypal.tsx";
 
 export const metadata: Metadata = {
   title: `PayPal QR Code Generator | Request Payments`,
@@ -69,7 +70,7 @@ export default function QrCodePaypalPage() {
         <h1 className="text-3xl font-bold mb-3">PayPal QR Code Generator</h1>
         <p className="text-muted-foreground">Create a QR code for PayPal payments. Set your PayPal.Me link and a fixed amount. Customers scan to pay you instantly—ideal for vendors.</p>
       </header>
-      {/* TODO: add tool component for qr-code-paypal */}
+      {<QrCodePaypal />}
       {/* TODO: add seo component for qr-code-paypal */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

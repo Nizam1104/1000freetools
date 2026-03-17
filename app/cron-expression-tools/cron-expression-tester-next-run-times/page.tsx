@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CronExpressionTester from "@/components/cron-expression-tools/cron-expression-tester";
 
 export const metadata: Metadata = {
   title: `CRON Expression Tester | Find Next Run Times`,
@@ -69,7 +70,9 @@ export default function CronExpressionTesterNextRunTimesPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expression Tester - See Next Run Times</h1>
         <p className="text-muted-foreground">Test your CRON expression by seeing exactly when it will run next. Enter your cron and a start date to get a list of upcoming execution times. Essential for debugging cron schedules.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-tester-next-run-times */}
+      <div className="mt-8">
+        <CronExpressionTester />
+      </div>
       {/* TODO: add seo component for cron-expression-tester-next-run-times */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

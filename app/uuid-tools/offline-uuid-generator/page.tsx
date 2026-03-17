@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { OfflineUuidGenerator } from "@/components/uuid-tools/offline-uuid-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Offline UUID Generator | Private, Client-Side Tool`,
@@ -69,7 +70,7 @@ export default function OfflineUuidGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Client-Side Offline UUID Generator</h1>
         <p className="text-muted-foreground">Generate UUIDs completely offline in your browser. This tool uses JavaScript to create identifiers locally, ensuring maximum privacy and security as no data ever leaves your computer. Works without an internet connection.</p>
       </header>
-      {/* TODO: add tool component for offline-uuid-generator */}
+      {<OfflineUuidGenerator />}
       {/* TODO: add seo component for offline-uuid-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

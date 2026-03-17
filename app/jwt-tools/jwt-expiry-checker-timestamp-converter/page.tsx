@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtExpiryCheckerTimestampConverter } from "@/components/jwt-tools/jwt-expiry-checker-timestamp-converter";
 
 export const metadata: Metadata = {
   title: `JWT Expiry Checker | Convert Token Timestamps Online`,
@@ -69,7 +70,7 @@ export default function JwtExpiryCheckerTimestampConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Check JWT Expiry & Convert Timestamps</h1>
         <p className="text-muted-foreground">Check when your JWT token expires and convert its timestamps. Our tool shows issuance, activation, and expiration times in your local timezone, with a live countdown for active tokens.</p>
       </header>
-      {/* TODO: add tool component for jwt-expiry-checker-timestamp-converter */}
+      {<JwtExpiryCheckerTimestampConverter />}
       {/* TODO: add seo component for jwt-expiry-checker-timestamp-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

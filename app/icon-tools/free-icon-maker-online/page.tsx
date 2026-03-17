@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { FreeIconMakerOnline } from "@/components/icon-tools/free-icon-maker-online.tsx";
 
 export const metadata: Metadata = {
   title: `Free Icon Maker Online | Create Custom Icons`,
@@ -69,7 +70,7 @@ export default function FreeIconMakerOnlinePage() {
         <h1 className="text-3xl font-bold mb-3">Create Custom Icons for Free</h1>
         <p className="text-muted-foreground">Design unique icons in minutes with our free online editor. No design skills needed—use our templates and tools to create perfect icons for your project. Download in SVG, PNG, or ICO formats.</p>
       </header>
-      {/* TODO: add tool component for free-icon-maker-online */}
+      {<FreeIconMakerOnline />}
       {/* TODO: add seo component for free-icon-maker-online */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

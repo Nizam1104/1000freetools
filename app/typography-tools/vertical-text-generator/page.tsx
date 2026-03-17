@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { VerticalTextGenerator } from "@/components/text-tools/vertical-text-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Vertical Text Generator | Make Vertical Text Online`,
@@ -67,7 +68,7 @@ export default function VerticalTextGeneratorPage() {
           effects. Format text top-to-bottom and copy the result or CSS code.
         </p>
       </header>
-      {/* TODO: add tool component for vertical-text-generator */}
+      {<VerticalTextGenerator />}
       {/* TODO: add seo component for vertical-text-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

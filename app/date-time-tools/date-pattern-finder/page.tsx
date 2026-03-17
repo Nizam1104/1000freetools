@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { DatePatternFinder } from "@/components/date-time-tools/date-pattern-finder.tsx";
 
 export const metadata: Metadata = {
   title: `Date Pattern Finder | Find Dates Like All Fridays in a Month`,
@@ -70,7 +71,7 @@ export default function DatePatternFinderPage() {
           planning or analysis.
         </p>
       </header>
-      {/* TODO: add tool component for date-pattern-finder */}
+      {<DatePatternFinder />}
       {/* TODO: add seo component for date-pattern-finder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

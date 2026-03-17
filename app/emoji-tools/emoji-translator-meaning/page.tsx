@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiTranslatorMeaning from "@/components/emoji-tools/emoji-translator-meaning"
+
 export default function EmojiTranslatorMeaningPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiTranslatorMeaningPage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Meaning & Translator</h1>
         <p className="text-muted-foreground">Not sure what an emoji means? Use our translator to get the official definition and real-world usage. Learn the slang, cultural context, and platform differences for any emoji.</p>
       </header>
-      {/* TODO: add tool component for emoji-translator-meaning */}
+      <EmojiTranslatorMeaning />
       {/* TODO: add seo component for emoji-translator-meaning */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

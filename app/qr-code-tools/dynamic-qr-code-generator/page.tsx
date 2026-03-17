@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { DynamicQrCodeGenerator } from "@/components/qr-code-tools/dynamic-qr-code-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Dynamic QR Code Generator | Editable & Trackable`,
@@ -69,7 +70,7 @@ export default function DynamicQrCodeGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Dynamic QR Code Creator</h1>
         <p className="text-muted-foreground">Generate QR codes you can edit after printing. Track scans in real-time, set expiration dates, or add password protection. Perfect for campaigns.</p>
       </header>
-      {/* TODO: add tool component for dynamic-qr-code-generator */}
+      {<DynamicQrCodeGenerator />}
       {/* TODO: add seo component for dynamic-qr-code-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

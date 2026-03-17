@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiStyleConverter from "@/components/emoji-tools/emoji-style-converter"
+
 export default function EmojiStyleConverterPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiStyleConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Style Converter & Comparison</h1>
         <p className="text-muted-foreground">See how emojis look on iPhone, Android, Facebook, and more. Compare designs side-by-side and convert emoji styles for consistent messaging across platforms.</p>
       </header>
-      {/* TODO: add tool component for emoji-style-converter */}
+      <EmojiStyleConverter />
       {/* TODO: add seo component for emoji-style-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

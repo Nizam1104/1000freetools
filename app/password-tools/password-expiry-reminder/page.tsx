@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import PasswordExpiryReminder from "@/components/password-tools/password-expiry-reminder";
 
 export const metadata: Metadata = {
   title: `Password Expiry Reminder | Schedule Password Changes`,
@@ -69,7 +70,7 @@ export default function PasswordExpiryReminderPage() {
         <h1 className="text-3xl font-bold mb-3">Password Change Reminder & Tracker</h1>
         <p className="text-muted-foreground">Never forget to update your passwords again. Set custom expiry dates and get reminders to rotate your credentials securely.</p>
       </header>
-      {/* TODO: add tool component for password-expiry-reminder */}
+      <div className="mt-8"><PasswordExpiryReminder /></div>
       {/* TODO: add seo component for password-expiry-reminder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

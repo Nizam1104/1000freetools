@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TomlToSqlConverter } from "@/components/toml-tools/toml-to-sql-converter";
 
 export const metadata: Metadata = {
   title: `Free TOML to SQL Converter | Generate SQL from TOML`,
@@ -69,7 +70,7 @@ export default function TomlToSqlConverterPage() {
         <h1 className="text-3xl font-bold mb-3">TOML to SQL Converter</h1>
         <p className="text-muted-foreground">Easily transform your TOML configuration data into SQL schemas and insert queries. This free tool generates ready-to-use SQL for MySQL, PostgreSQL, and SQLite from any valid TOML file. Perfect for developers migrating configs to databases or setting up initial data structures.</p>
       </header>
-      {/* TODO: add tool component for toml-to-sql-converter */}
+      {<TomlToSqlConverter />}
       {/* TODO: add seo component for toml-to-sql-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

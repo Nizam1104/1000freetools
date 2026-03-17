@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlPrettifierCustom } from "@/components/yaml-tools/yaml-prettifier-custom.tsx";
 
 export const metadata: Metadata = {
   title: `Custom YAML Prettifier | Format with Your Rules`,
@@ -69,7 +70,7 @@ export default function YamlPrettifierCustomPage() {
         <h1 className="text-3xl font-bold mb-3">Customizable YAML Prettifier</h1>
         <p className="text-muted-foreground">Format YAML files exactly how you want with customizable rules. Set indentation, line width, quoting, and more to enforce consistent styling across your team's configuration files.</p>
       </header>
-      {/* TODO: add tool component for yaml-prettifier-custom */}
+      {<YamlPrettifierCustom />}
       {/* TODO: add seo component for yaml-prettifier-custom */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

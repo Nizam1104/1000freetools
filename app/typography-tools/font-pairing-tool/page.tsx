@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { FontPairingTool } from "@/components/font-tools/font-pairing-tool.tsx";
 
 export const metadata: Metadata = {
   title: `Font Pairing Tool | Find Perfect Font Combinations`,
@@ -70,7 +71,7 @@ export default function FontPairingToolPage() {
           to use them.
         </p>
       </header>
-      {/* TODO: add tool component for font-pairing-tool */}
+      {<FontPairingTool />}
       {/* TODO: add seo component for font-pairing-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import XmlToSqlConverter from "@/components/xml-tools/xml-to-sql-converter";
 
 export const metadata: Metadata = {
   title: `XML to SQL Converter | Generate SQL from XML Data`,
@@ -75,7 +76,7 @@ export default function XmlToSqlConverterPage() {
           your table columns.
         </p>
       </header>
-      {/* TODO: add tool component for xml-to-sql-converter */}
+      <div className="mt-8"><XmlToSqlConverter /></div>
       {/* TODO: add seo component for xml-to-sql-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

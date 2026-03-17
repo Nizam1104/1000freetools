@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CalendarSyncOverlay from "@/components/calendar-tools/calendar-sync-overlay";
 
 export const metadata: Metadata = {
   title: `Calendar Overlay Tool | Sync Multiple Calendars View`,
@@ -69,7 +70,7 @@ export default function CalendarSyncOverlayPage() {
         <h1 className="text-3xl font-bold mb-3">Overlay & Compare Multiple Calendars</h1>
         <p className="text-muted-foreground">See all your calendars in one view. Overlay Google, iCal, and Outlook feeds to find common free time. Perfect for scheduling across teams or personal accounts.</p>
       </header>
-      {/* TODO: add tool component for calendar-sync-overlay */}
+      <div className="mt-8"><CalendarSyncOverlay /></div>
       {/* TODO: add seo component for calendar-sync-overlay */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import ExcelMergeCellsTool from "@/components/excel-tools/excel-merge-cells-tool";
 
 export const metadata: Metadata = {
   title: `Combine Excel Sheets | Merge Multiple Files into One`,
@@ -69,7 +70,9 @@ export default function ExcelCombineMultipleSheetsPage() {
         <h1 className="text-3xl font-bold mb-3">Combine Multiple Excel Sheets into One</h1>
         <p className="text-muted-foreground">Need to consolidate data from several sheets or files? Our tool can stack them on top of each other or merge them side-by-side based on a common key, like an ID column.</p>
       </header>
-      {/* TODO: add tool component for excel-combine-multiple-sheets */}
+      <div className="mt-8">
+        <ExcelMergeCellsTool />
+      </div>
       {/* TODO: add seo component for excel-combine-multiple-sheets */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

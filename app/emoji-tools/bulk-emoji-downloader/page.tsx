@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import BulkEmojiDownloader from "@/components/emoji-tools/bulk-emoji-downloader"
+
 export default function BulkEmojiDownloaderPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function BulkEmojiDownloaderPage() {
         <h1 className="text-3xl font-bold mb-3">Bulk Emoji Downloader & Icon Pack</h1>
         <p className="text-muted-foreground">Download entire emoji sets as PNG or SVG files. Get all smileys, animals, or flags in one ZIP. Choose sizes and skin tones for your design or development projects.</p>
       </header>
-      {/* TODO: add tool component for bulk-emoji-downloader */}
+      <BulkEmojiDownloader />
       {/* TODO: add seo component for bulk-emoji-downloader */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

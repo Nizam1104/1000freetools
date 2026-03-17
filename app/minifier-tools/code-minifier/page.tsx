@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { CodeMinifier } from "@/components/minifier-tools/code-minifier.tsx";
 
 export const metadata: Metadata = {
   title: `Code Minifier - Compress Multiple Languages Online`,
@@ -69,7 +70,7 @@ export default function CodeMinifierPage() {
         <h1 className="text-3xl font-bold mb-3">Multi-Language Code Minifier</h1>
         <p className="text-muted-foreground">Minify code from various programming languages in one place. This versatile tool supports HTML, CSS, JavaScript, JSON, and more, optimizing all your web assets simultaneously.</p>
       </header>
-      {/* TODO: add tool component for code-minifier */}
+      {<CodeMinifier />}
       {/* TODO: add seo component for code-minifier */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

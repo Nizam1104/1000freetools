@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { InternationalPhoneCallTimeFinder } from "@/components/timezone-tools/international-phone-call-time-finder";
 
 export const metadata: Metadata = {
   title: `International Call Time Finder | Best Time to Call Abroad`,
@@ -69,7 +70,7 @@ export default function InternationalPhoneCallTimeFinderPage() {
         <h1 className="text-3xl font-bold mb-3">Best Time for International Phone Calls</h1>
         <p className="text-muted-foreground">Find the perfect time to call abroad. Avoid waking someone up by checking the local business hours and time difference before you dial.</p>
       </header>
-      {/* TODO: add tool component for international-phone-call-time-finder */}
+      {<InternationalPhoneCallTimeFinder />}
       {/* TODO: add seo component for international-phone-call-time-finder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

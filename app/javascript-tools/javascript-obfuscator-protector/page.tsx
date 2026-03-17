@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import JavascriptObfuscator from "@/components/javascript-tools/javascript-obfuscator";
 
 export const metadata: Metadata = {
   title: `JavaScript Obfuscator - Protect JS Source Code Online`,
@@ -70,7 +71,9 @@ export default function JavascriptObfuscatorProtectorPage() {
           unreadable format that still runs perfectly.
         </p>
       </header>
-      {/* TODO: add tool component for javascript-obfuscator-protector */}
+      <div className="mt-8">
+        <JavascriptObfuscator />
+      </div>
       {/* TODO: add seo component for javascript-obfuscator-protector */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

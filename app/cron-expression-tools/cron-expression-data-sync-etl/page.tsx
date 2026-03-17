@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CronExpressionDataSync from "@/components/cron-expression-tools/cron-expression-data-sync";
 
 export const metadata: Metadata = {
   title: `CRON for Data Sync & ETL | Pipeline Scheduler`,
@@ -69,7 +70,9 @@ export default function CronExpressionDataSyncEtlPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expressions for Data Sync & ETL Jobs</h1>
         <p className="text-muted-foreground">Automate your data pipelines with CRON. Generate expressions for nightly ETL jobs, hourly data syncs, or incremental updates. Keep your data fresh on schedule.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-data-sync-etl */}
+      <div className="mt-8">
+        <CronExpressionDataSync />
+      </div>
       {/* TODO: add seo component for cron-expression-data-sync-etl */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

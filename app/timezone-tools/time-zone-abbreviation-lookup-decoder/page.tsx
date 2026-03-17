@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TimeZoneAbbreviationLookupDecoder } from "@/components/timezone-tools/time-zone-abbreviation-lookup-decoder";
 
 export const metadata: Metadata = {
   title: `Time Zone Abbreviation Decoder | PST, GMT, IST Explained`,
@@ -70,7 +71,7 @@ export default function TimeZoneAbbreviationLookupDecoderPage() {
           that use them.
         </p>
       </header>
-      {/* TODO: add tool component for time-zone-abbreviation-lookup-decoder */}
+      {<TimeZoneAbbreviationLookupDecoder />}
       {/* TODO: add seo component for time-zone-abbreviation-lookup-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

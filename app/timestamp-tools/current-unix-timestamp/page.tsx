@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CurrentTimestamp from "@/components/timestamp-tools/current-timestamp";
 
 export const metadata: Metadata = {
   title: `Current Unix Timestamp | Live Clock & Copy Tool`,
@@ -69,7 +70,7 @@ export default function CurrentUnixTimestampPage() {
         <h1 className="text-3xl font-bold mb-3">Current Unix Timestamp</h1>
         <p className="text-muted-foreground">Get the exact current Unix timestamp in seconds and milliseconds, updated live. Copy it instantly for use in your code, APIs, or systems.</p>
       </header>
-      {/* TODO: add tool component for current-unix-timestamp */}
+      <div className="mt-8"><CurrentTimestamp /></div>
       {/* TODO: add seo component for current-unix-timestamp */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import FontColorContrastChecker from "@/components/font-tools/font-color-contrast-checker";
 
 export const metadata: Metadata = {
   title: `Color Contrast Checker | WCAG Compliance`,
@@ -69,7 +70,9 @@ export default function FontContrastCheckerPage() {
         <h1 className="text-3xl font-bold mb-3">Text Color Contrast Checker</h1>
         <p className="text-muted-foreground">Ensure your text is readable by everyone. Test color combinations against WCAG accessibility standards.</p>
       </header>
-      {/* TODO: add tool component for font-contrast-checker */}
+      <div className="mt-8">
+        <FontColorContrastChecker />
+      </div>
       {/* TODO: add seo component for font-contrast-checker */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

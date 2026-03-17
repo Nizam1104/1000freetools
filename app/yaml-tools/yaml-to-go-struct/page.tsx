@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlToGoStruct } from "@/components/yaml-tools/yaml-to-go-struct.tsx";
 
 export const metadata: Metadata = {
   title: `YAML to Go Struct Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function YamlToGoStructPage() {
         <h1 className="text-3xl font-bold mb-3">Convert YAML to Go Struct</h1>
         <p className="text-muted-foreground">Automatically generate Go struct definitions from your YAML files. This free converter creates type-safe Go code with YAML tags, speeding up development when working with YAML configuration in Go projects.</p>
       </header>
-      {/* TODO: add tool component for yaml-to-go-struct */}
+      {<YamlToGoStruct />}
       {/* TODO: add seo component for yaml-to-go-struct */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

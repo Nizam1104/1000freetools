@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { ExcelSortDataTool } from "@/components/utils-tools/excel-sort-data-tool";
 
 export const metadata: Metadata = {
   title: `Sort Excel Data Online | Multi-Column Sorter`,
@@ -69,7 +70,7 @@ export default function ExcelSortDataToolPage() {
         <h1 className="text-3xl font-bold mb-3">Sort Excel Data by Columns Online</h1>
         <p className="text-muted-foreground">Organize your spreadsheet with a multi-level sort. Upload your Excel file, choose which columns to sort by and in what order, and download a neatly organized version.</p>
       </header>
-      {/* TODO: add tool component for excel-sort-data-tool */}
+      {<ExcelSortDataTool />}
       {/* TODO: add seo component for excel-sort-data-tool */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,0 +1,286 @@
+"use client"
+
+import * as React from "react"
+import { useState, useCallback, useRef } from "react"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
+import { Copy, Check, Trash2, Info, Upload, Download, ZoomIn, ZoomOut } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+export function SvgEditorOnline() {
+  const [svgCode, setSvgCode] = useState<string(`<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="80" fill="#4F46E5" />
+  <text x="100" y="110" text-anchor="middle" fill="white" font-size="24">SVG</text>
+</svg>`>)
+  const [copied, setCopied] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [zoom, setZoom] = useState<number>(100)
+  const [showGrid, setShowGrid] = useState<boolean>(true)
+  const svgRef = useRef<HTMLDivElement>(null)
+
+  const handleSvgChange = useCallback((value: string) => {
+    setSvgCode(value)
+    setError(null)
+  }, [])
+
+  const copyToClipboard = useCallback(async (text: string, key: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(key)
+      setTimeout(() => setCopied(null), 1500)
+    } catch (err) {
+      console.error("Failed to copy:", err)
+    }
+  }, [])
+
+  const handleClear = useCallback(() => {
+    setSvgCode("")
+    setError(null)
+  }, [])
+
+  const handleDownload = useCallback(() => {
+    if (svgCode) {
+      const blob = new Blob([svgCode], { type: "image/svg+xml" })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement("a")
+      a.href = url
+      a.download = "edited.svg"
+      a.click()
+      URL.revokeObjectURL(url)
+    }
+  }, [svgCode])
+
+  const handleFileUpload = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        const result = event.target?.result as string
+        setSvgCode(result)
+        setError(null)
+      }
+      reader.readAsText(file)
+    }
+  }, [])
+
+  const formatSvg = useCallback(() => {
+    try {
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(svgCode, "image/svg+xml")
+      const parseError = doc.querySelector("parsererror")
+      if (parseError) {
+        throw new Error("Invalid SVG: " + parseError.textContent)
+      }
+
+      const serializer = new XMLSerializer()
+      let formatted = serializer.serializeToString(doc.documentElement)
+
+      // Simple formatting
+      formatted = formatted
+        .replace(/></g, ">\n<")
+        .replace(/<([^/])/g, "  <$1")
+        .replace(/\n  <\?xml/, "<?xml")
+
+      setSvgCode(formatted)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to format SVG")
+    }
+  }, [svgCode])
+
+  const minifySvg = useCallback(() => {
+    try {
+      const minified = svgCode
+        .replace(/\s+/g, " ")
+        .replace(/>\s+</g, "><")
+        .trim()
+      setSvgCode(minified)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to minify SVG")
+    }
+  }, [svgCode])
+
+  return (
+    <div className="w-full max-w-6xl mx-auto space-y-6">
+      <div className="space-y-2">
+        <h2 className="text-2xl font-semibold tracking-tight">SVG Editor Online</h2>
+        <p className="text-sm text-muted-foreground">
+          Edit, preview, and modify SVG code in real-time
+        </p>
+      </div>
+
+      {/* Toolbar */}
+      <section className="flex flex-wrap items-center gap-2 p-3 rounded-lg border bg-muted/30">
+        <Button
+          variant="ghost"
+          size="xs"
+          onClick={() => document.getElementById("svg-upload")?.click()}
+        >
+          <Upload className="size-3.5 mr-2" />
+          Upload SVG
+        </Button>
+        <input
+          id="svg-upload"
+          type="file"
+          accept=".svg"
+          onChange={handleFileUpload}
+          className="hidden"
+        />
+
+        <Button
+          variant="ghost"
+          size="xs"
+          onClick={handleDownload}
+          disabled={!svgCode}
+        >
+          <Download className="size-3.5 mr-2" />
+          Download
+        </Button>
+
+        <div className="h-4 w-px bg-border mx-2" />
+
+        <Button
+          variant="ghost"
+          size="xs"
+          onClick={formatSvg}
+          disabled={!svgCode}
+        >
+          Format
+        </Button>
+
+        <Button
+          variant="ghost"
+          size="xs"
+          onClick={minifySvg}
+          disabled={!svgCode}
+        >
+          Minify
+        </Button>
+
+        <div className="h-4 w-px bg-border mx-2" />
+
+        <Button
+          variant="ghost"
+          size="xs"
+          onClick={() => setZoom(Math.max(25, zoom - 25))}
+        >
+          <ZoomOut className="size-3.5" />
+        </Button>
+        <span className="text-xs w-12 text-center">{zoom}%</span>
+        <Button
+          variant="ghost"
+          size="xs"
+          onClick={() => setZoom(Math.min(200, zoom + 25))}
+        >
+          <ZoomIn className="size-3.5" />
+        </Button>
+
+        <div className="h-4 w-px bg-border mx-2" />
+
+        <Label className="flex items-center gap-2 text-xs cursor-pointer">
+          <input
+            type="checkbox"
+            checked={showGrid}
+            onChange={(e) => setShowGrid(e.target.checked)}
+            className="rounded border-border"
+          />
+          Show Grid
+        </Label>
+      </section>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Code Editor */}
+        <section className="space-y-3">
+          <div className="flex items-center justify-between">
+            <Label htmlFor="svg-code" className="text-base font-medium">
+              SVG Code
+            </Label>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="xs"
+                onClick={() => copyToClipboard(svgCode, "code")}
+                className="h-7"
+                disabled={!svgCode}
+              >
+                {copied === "code" ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
+                <span className="text-xs">Copy</span>
+              </Button>
+              <Button
+                variant="ghost"
+                size="xs"
+                onClick={handleClear}
+                className="h-7"
+              >
+                <Trash2 className="size-3.5" />
+                <span className="text-xs">Clear</span>
+              </Button>
+            </div>
+          </div>
+
+          <Textarea
+            id="svg-code"
+            value={svgCode}
+            onChange={(e) => handleSvgChange(e.target.value)}
+            className={cn(
+              "font-mono text-sm min-h-[400px]",
+              error ? "border-destructive focus-visible:border-destructive" : ""
+            )}
+            placeholder="Enter or paste SVG code here..."
+          />
+
+          {error && (
+            <p className="text-sm text-destructive flex items-center gap-2">
+              {error}
+            </p>
+          )}
+        </section>
+
+        {/* Preview */}
+        <section className="space-y-3">
+          <Label className="text-base font-medium">Preview</Label>
+
+          <div
+            ref={svgRef}
+            className={cn(
+              "min-h-[400px] rounded-lg border bg-white overflow-auto",
+              showGrid && "bg-[length:20px_20px] bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)]"
+            )}
+            style={{
+              transform: `scale(${zoom / 100})`,
+              transformOrigin: "top left"
+            }}
+          >
+            <div
+              className="p-4"
+              dangerouslySetInnerHTML={{ __html: svgCode }}
+            />
+          </div>
+
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <span>Zoom: <span className="font-medium text-foreground">{zoom}%</span></span>
+            <span>Size: <span className="font-medium text-foreground">{svgCode.length}</span> chars</span>
+          </div>
+        </section>
+      </div>
+
+      {/* Info Section */}
+      <section className="rounded-lg border bg-muted/30 p-4">
+        <div className="flex items-start gap-3">
+          <Info className="size-5 text-muted-foreground mt-0.5" />
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium">SVG Editor Features</h4>
+            <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1">
+              <li>Real-time preview of SVG code changes</li>
+              <li>Upload existing SVG files for editing</li>
+              <li>Download edited SVG files</li>
+              <li>Format (beautify) or minify SVG code</li>
+              <li>Adjustable zoom level for detailed editing</li>
+              <li>Optional grid overlay for alignment</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

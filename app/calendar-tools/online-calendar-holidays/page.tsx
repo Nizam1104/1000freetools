@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import OnlineCalendarHolidays from "@/components/calendar-tools/online-calendar-holidays";
 
 export const metadata: Metadata = {
   title: `Online Calendar with Holidays | Public Holiday Dates`,
@@ -69,7 +70,7 @@ export default function OnlineCalendarHolidaysPage() {
         <h1 className="text-3xl font-bold mb-3">Interactive Calendar with Public Holidays</h1>
         <p className="text-muted-foreground">View an online calendar with all major public holidays marked. Navigate months and years, see holiday details, and customize by country. Perfect for planning around days off.</p>
       </header>
-      {/* TODO: add tool component for online-calendar-holidays */}
+      <div className="mt-8"><OnlineCalendarHolidays /></div>
       {/* TODO: add seo component for online-calendar-holidays */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

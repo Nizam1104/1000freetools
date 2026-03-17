@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MilitaryTimeConverter24HourClock } from "@/components/timezone-tools/military-time-converter-24-hour-clock";
 
 export const metadata: Metadata = {
   title: `Military Time Converter | 24-Hour Clock Tool`,
@@ -69,7 +70,7 @@ export default function MilitaryTimeConverter24HourClockPage() {
         <h1 className="text-3xl font-bold mb-3">Military Time Converter (24-Hour Clock)</h1>
         <p className="text-muted-foreground">Convert between standard AM/PM time and 24-hour military time instantly. Learn how to read military time and use it for scheduling across time zones.</p>
       </header>
-      {/* TODO: add tool component for military-time-converter-24-hour-clock */}
+      {<MilitaryTimeConverter24HourClock />}
       {/* TODO: add seo component for military-time-converter-24-hour-clock */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

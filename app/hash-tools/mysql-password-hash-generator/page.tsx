@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import PasswordHashStrengthAnalyzer from "@/components/hash-tools/password-hash-strength-analyzer";
 
 export const metadata: Metadata = {
   title: `MySQL Password Hash Generator Online | Free Database Tool`,
@@ -69,7 +70,9 @@ export default function MysqlPasswordHashGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">MySQL Password Hash Generator (OLD_PASSWORD, PASSWORD)</h1>
         <p className="text-muted-foreground">Generate MySQL password hashes for older and newer versions. This tool mimics the OLD_PASSWORD() and PASSWORD() functions to create hashes compatible with MySQL user authentication.</p>
       </header>
-      {/* TODO: add tool component for mysql-password-hash-generator */}
+      <div className="mt-8">
+        <PasswordHashStrengthAnalyzer />
+      </div>
       {/* TODO: add seo component for mysql-password-hash-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { AbTestSignificanceCalculator } from "@/components/statistics-tools/ab-test-significance-calculator";
 
 export const metadata: Metadata = {
   title: `A/B Test Significance Calculator | Statistical Significance Tool`,
@@ -69,7 +70,7 @@ export default function AbTestSignificanceCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">A/B Test Statistical Significance Calculator</h1>
         <p className="text-muted-foreground">Analyze your A/B test results. Enter the data for your control and variation groups to calculate the statistical significance and see if one version truly performed better.</p>
       </header>
-      {/* TODO: add tool component for ab-test-significance-calculator */}
+      {<AbTestSignificanceCalculator />}
       {/* TODO: add seo component for ab-test-significance-calculator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

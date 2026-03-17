@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeFeedbackForm } from "@/components/qr-code-tools/qr-code-feedback-form.tsx";
 
 export const metadata: Metadata = {
   title: `Feedback QR Code Generator | Collect Reviews`,
@@ -69,7 +70,7 @@ export default function QrCodeFeedbackFormPage() {
         <h1 className="text-3xl font-bold mb-3">Feedback Form QR Code Generator</h1>
         <p className="text-muted-foreground">Create a QR code that links to a feedback form. Collect reviews, survey responses, or service feedback from customers on-site. Easy to set up.</p>
       </header>
-      {/* TODO: add tool component for qr-code-feedback-form */}
+      {<QrCodeFeedbackForm />}
       {/* TODO: add seo component for qr-code-feedback-form */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

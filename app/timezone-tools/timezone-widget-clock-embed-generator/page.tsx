@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { TimezoneWidgetClockEmbedGenerator } from "@/components/timezone-tools/timezone-widget-clock-embed-generator.tsx";
 
 export const metadata: Metadata = {
   title: `Free Time Zone Widget Generator | Embed Live Clock`,
@@ -69,7 +70,7 @@ export default function TimezoneWidgetClockEmbedGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Free Time Zone Widget & Embed Code Generator</h1>
         <p className="text-muted-foreground">Add a live world clock or time zone converter to your website. Generate free, customizable embed code in seconds with no coding skills required.</p>
       </header>
-      {/* TODO: add tool component for timezone-widget-clock-embed-generator */}
+      {<TimezoneWidgetClockEmbedGenerator />}
       {/* TODO: add seo component for timezone-widget-clock-embed-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import CronExpressionSocialMedia from "@/components/cron-expression-tools/cron-expression-social-media";
 
 export const metadata: Metadata = {
   title: `CRON for Social Media Posting | Scheduler Tool`,
@@ -69,7 +70,9 @@ export default function CronExpressionSocialMediaPostingPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expressions for Social Media Scheduling</h1>
         <p className="text-muted-foreground">Schedule your social media posts automatically with CRON. Generate expressions for posting at optimal times throughout the day or week. Integrate with automation tools easily.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-social-media-posting */}
+      <div className="mt-8">
+        <CronExpressionSocialMedia />
+      </div>
       {/* TODO: add seo component for cron-expression-social-media-posting */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

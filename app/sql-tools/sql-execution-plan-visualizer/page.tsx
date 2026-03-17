@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SqlExecutionPlanVisualizer } from "@/components/sql-tools/sql-execution-plan-visualizer.tsx";
 
 export const metadata: Metadata = {
   title: `SQL Execution Plan Visualizer Online | EXPLAIN Query Tool`,
@@ -70,7 +71,7 @@ export default function SqlExecutionPlanVisualizerPage() {
           joins, and sorts for optimization.
         </p>
       </header>
-      {/* TODO: add tool component for sql-execution-plan-visualizer */}
+      {<SqlExecutionPlanVisualizer />}
       {/* TODO: add seo component for sql-execution-plan-visualizer */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

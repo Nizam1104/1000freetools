@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { QrCodeColorPicker } from "@/components/qr-code-tools/qr-code-color-picker.tsx";
 
 export const metadata: Metadata = {
   title: `QR Code Designer | Custom Colors, Patterns & Gradients`,
@@ -69,7 +70,7 @@ export default function QrCodeColorPickerPage() {
         <h1 className="text-3xl font-bold mb-3">QR Code Color & Design Tool</h1>
         <p className="text-muted-foreground">Design beautiful, scannable QR codes. Use gradients, custom patterns, and background images. Live preview ensures your creative code works.</p>
       </header>
-      {/* TODO: add tool component for qr-code-color-picker */}
+      {<QrCodeColorPicker />}
       {/* TODO: add seo component for qr-code-color-picker */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

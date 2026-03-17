@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { DaylightSavingTimeCalculatorSchedule } from "@/components/timezone-tools/daylight-saving-time-calculator-schedule";
 
 export const metadata: Metadata = {
   title: `Daylight Saving Time Calculator | DST Dates & Changes`,
@@ -70,7 +71,7 @@ export default function DaylightSavingTimeCalculatorSchedulePage() {
           miss a time change again.
         </p>
       </header>
-      {/* TODO: add tool component for daylight-saving-time-calculator-schedule */}
+      {<DaylightSavingTimeCalculatorSchedule />}
       {/* TODO: add seo component for daylight-saving-time-calculator-schedule */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

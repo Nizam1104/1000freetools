@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { Base36EncoderDecoder } from "@/components/encoding-tools/base36-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Base36 Converter - Encode Numbers to Base36`,
@@ -68,7 +69,7 @@ export default function Base36EncoderDecoderPage() {
           original numeric values. Ideal for URL shorteners and compact IDs.
         </p>
       </header>
-      {/* TODO: add tool component for base36-encoder-decoder */}
+      {<Base36EncoderDecoder />}
       {/* TODO: add seo component for base36-encoder-decoder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { CronExpressionKubernetesCronjobs } from "@/components/cron-tools/cron-expression-kubernetes-cronjobs.tsx";
 
 export const metadata: Metadata = {
   title: `CRON for Kubernetes CronJobs | K8s Scheduler`,
@@ -69,7 +70,7 @@ export default function CronExpressionKubernetesCronjobsPage() {
         <h1 className="text-3xl font-bold mb-3">CRON Expressions for Kubernetes CronJobs</h1>
         <p className="text-muted-foreground">Create CRON expressions for Kubernetes CronJobs. Generate schedules for containerized tasks, batch jobs, or cluster maintenance with syntax validated for K8s. A must for Kubernetes users.</p>
       </header>
-      {/* TODO: add tool component for cron-expression-kubernetes-cronjobs */}
+      {<CronExpressionKubernetesCronjobs />}
       {/* TODO: add seo component for cron-expression-kubernetes-cronjobs */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

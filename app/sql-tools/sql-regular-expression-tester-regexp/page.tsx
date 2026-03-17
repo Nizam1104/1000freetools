@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { SqlRegularExpressionTesterRegexp } from "@/components/sql-tools/sql-regular-expression-tester-regexp.tsx";
 
 export const metadata: Metadata = {
   title: `SQL Regex Tester Online | Test REGEXP in SQL Queries`,
@@ -70,7 +71,7 @@ export default function SqlRegularExpressionTesterRegexpPage() {
           in your database.
         </p>
       </header>
-      {/* TODO: add tool component for sql-regular-expression-tester-regexp */}
+      {<SqlRegularExpressionTesterRegexp />}
       {/* TODO: add seo component for sql-regular-expression-tester-regexp */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

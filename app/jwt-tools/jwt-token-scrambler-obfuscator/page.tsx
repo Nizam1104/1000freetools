@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { JwtTokenScramblerObfuscator } from "@/components/jwt-tools/jwt-token-scrambler-obfuscator.tsx";
 
 export const metadata: Metadata = {
   title: `JWT Scrambler Tool | Create Invalid Tokens for Testing`,
@@ -69,7 +70,7 @@ export default function JwtTokenScramblerObfuscatorPage() {
         <h1 className="text-3xl font-bold mb-3">Scramble & Obfuscate JWT Tokens for Testing</h1>
         <p className="text-muted-foreground">Create intentionally invalid or tampered JWTs to test your application's error handling and security. Modify signatures, corrupt claims, or change encoding to simulate attack scenarios.</p>
       </header>
-      {/* TODO: add tool component for jwt-token-scrambler-obfuscator */}
+      {<JwtTokenScramblerObfuscator />}
       {/* TODO: add seo component for jwt-token-scrambler-obfuscator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

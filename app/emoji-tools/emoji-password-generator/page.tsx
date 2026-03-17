@@ -62,6 +62,8 @@ const tools = [
   },
 ];
 
+import EmojiPasswordGenerator from "@/components/emoji-tools/emoji-password-generator"
+
 export default function EmojiPasswordGeneratorPage() {
   return (
     <div className="flex flex-col gap-y-4">
@@ -69,7 +71,7 @@ export default function EmojiPasswordGeneratorPage() {
         <h1 className="text-3xl font-bold mb-3">Emoji Password Generator</h1>
         <p className="text-muted-foreground">Create strong, fun passwords using emojis. Mix symbols, letters, and emojis for a secure and memorable passphrase. Check which apps support emoji passwords.</p>
       </header>
-      {/* TODO: add tool component for emoji-password-generator */}
+      <EmojiPasswordGenerator />
       {/* TODO: add seo component for emoji-password-generator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

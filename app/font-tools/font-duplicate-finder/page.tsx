@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import FontSimilarityFinder from "@/components/font-tools/font-similarity-finder";
 
 export const metadata: Metadata = {
   title: `Duplicate Font Finder | Clean Font Library`,
@@ -69,7 +70,9 @@ export default function FontDuplicateFinderPage() {
         <h1 className="text-3xl font-bold mb-3">Find Duplicate Fonts</h1>
         <p className="text-muted-foreground">Clean up your font collection by finding and removing duplicate files. Save disk space and organize your typography library.</p>
       </header>
-      {/* TODO: add tool component for font-duplicate-finder */}
+      <div className="mt-8">
+        <FontSimilarityFinder />
+      </div>
       {/* TODO: add seo component for font-duplicate-finder */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { YamlToGraphvizDot } from "@/components/yaml-tools/yaml-to-graphviz-dot.tsx";
 
 export const metadata: Metadata = {
   title: `YAML to Graphviz DOT Converter | Free Online Tool`,
@@ -69,7 +70,7 @@ export default function YamlToGraphvizDotPage() {
         <h1 className="text-3xl font-bold mb-3">Convert YAML to Graphviz DOT</h1>
         <p className="text-muted-foreground">Visualize your YAML graph data by converting it to Graphviz DOT format. This free tool helps you create diagrams and flowcharts from structured YAML definitions.</p>
       </header>
-      {/* TODO: add tool component for yaml-to-graphviz-dot */}
+      {<YamlToGraphvizDot />}
       {/* TODO: add seo component for yaml-to-graphviz-dot */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UnicodeBidirectionalTextEditor from "@/components/unicode-tools/unicode-bidirectional-text-editor";
 
 export const metadata: Metadata = {
   title: `Unicode Bidirectional Text Editor | LTR RTL Mix`,
@@ -70,7 +71,9 @@ export default function UnicodeBidirectionalEditorPage() {
           characters.
         </p>
       </header>
-      {/* TODO: add tool component for unicode-bidirectional-editor */}
+      <div className="mt-8">
+        <UnicodeBidirectionalTextEditor />
+      </div>
       {/* TODO: add seo component for unicode-bidirectional-editor */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

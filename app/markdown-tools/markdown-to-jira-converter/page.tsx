@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { MarkdownToJiraConverter } from "@/components/markdown-tools/markdown-to-jira-converter.tsx";
 
 export const metadata: Metadata = {
   title: `Markdown to Jira Converter | Wiki Markup Tool`,
@@ -69,7 +70,7 @@ export default function MarkdownToJiraConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Convert Markdown to Jira Wiki Markup</h1>
         <p className="text-muted-foreground">Translate your Markdown formatting into Jira's wiki markup instantly. Preview the output and copy-paste directly into Jira tickets. Streamlines documentation workflows.</p>
       </header>
-      {/* TODO: add tool component for markdown-to-jira-converter */}
+      {<MarkdownToJiraConverter />}
       {/* TODO: add seo component for markdown-to-jira-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

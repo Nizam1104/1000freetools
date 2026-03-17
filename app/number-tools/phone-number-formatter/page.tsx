@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import { PhoneNumberFormatter } from "@/components/number-tools/phone-number-formatter.tsx";
 
 export const metadata: Metadata = {
   title: `Phone Number Formatter | International Formats`,
@@ -69,7 +70,7 @@ export default function PhoneNumberFormatterPage() {
         <h1 className="text-3xl font-bold mb-3">Format Digits into a Phone Number</h1>
         <p className="text-muted-foreground">Convert a string of numbers into a properly formatted phone number for your country. Validate, extract numbers from text, and create clickable call links.</p>
       </header>
-      {/* TODO: add tool component for phone-number-formatter */}
+      {<PhoneNumberFormatter />}
       {/* TODO: add seo component for phone-number-formatter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
