@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CronExpressionAwsCloudwatchEventsSeo from "@/components/seo-content/cron-expression-tools/cron-expression-aws-cloudwatch-events";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { CronExpressionAwsCloudwatchEvents } from "@/components/cron-tools/cron-expression-aws-cloudwatch-events.tsx";
 
@@ -71,7 +73,9 @@ export default function CronExpressionAwsCloudwatchEventsPage() {
         <p className="text-muted-foreground">Generate CRON expressions for AWS CloudWatch Events (EventBridge) rules. Create schedules to trigger Lambda functions, EC2 actions, or other AWS services automatically.</p>
       </header>
       {<CronExpressionAwsCloudwatchEvents />}
-      {/* TODO: add seo component for cron-expression-aws-cloudwatch-events */}
+      <div className="mt-16">
+        <CronExpressionAwsCloudwatchEventsSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

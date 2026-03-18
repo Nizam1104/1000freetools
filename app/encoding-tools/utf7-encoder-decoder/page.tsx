@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { Utf7EncoderDecoder } from "@/components/encoding-tools/utf7-encoder-decoder";
+import Utf7EncoderDecoderSeo from "@/components/seo-content/encoding-tools/utf7-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `UTF-7 Converter - Encode & Decode UTF-7 Online`,
@@ -70,7 +71,7 @@ export default function Utf7EncoderDecoderPage() {
         </p>
       </header>
       {<Utf7EncoderDecoder />}
-      {/* TODO: add seo component for utf7-encoder-decoder */}
+      <Utf7EncoderDecoderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

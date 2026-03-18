@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptUnitTestAssertionGeneratorSeo from "@/components/seo-content/javascript-tools/javascript-unit-test-assertion-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JavascriptUnitTestAssertionGenerator } from "@/components/javascript-tools/javascript-unit-test-assertion-generator.tsx";
 
@@ -72,7 +74,9 @@ export default function JavascriptUnitTestAssertionGeneratorPage() {
         </p>
       </header>
       {<JavascriptUnitTestAssertionGenerator />}
-      {/* TODO: add seo component for javascript-unit-test-assertion-generator */}
+      <div className="mt-16">
+        <JavascriptUnitTestAssertionGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

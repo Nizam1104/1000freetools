@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlDateFunctionPlayground } from "@/components/sql-tools/sql-date-function-playground.tsx";
+import SqlDateFunctionPlaygroundSeo from "@/components/seo-content/sql-tools/sql-date-function-playground";
 
 export const metadata: Metadata = {
   title: `SQL Date Function Playground Online | Test Date Queries`,
@@ -72,7 +73,7 @@ export default function SqlDateFunctionPlaygroundPage() {
         </p>
       </header>
       {<SqlDateFunctionPlayground />}
-      {/* TODO: add seo component for sql-date-function-playground */}
+      <SqlDateFunctionPlaygroundSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

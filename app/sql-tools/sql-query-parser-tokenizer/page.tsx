@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlQueryParserTokenizer } from "@/components/sql-tools/sql-query-parser-tokenizer.tsx";
+import SqlQueryParserTokenizerSeo from "@/components/seo-content/sql-tools/sql-query-parser-tokenizer";
 
 export const metadata: Metadata = {
   title: `SQL Parser Online | Tokenize & Breakdown SQL Queries`,
@@ -72,7 +73,7 @@ export default function SqlQueryParserTokenizerPage() {
         </p>
       </header>
       {<SqlQueryParserTokenizer />}
-      {/* TODO: add seo component for sql-query-parser-tokenizer */}
+      <SqlQueryParserTokenizerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptDiffCheckerComparatorSeo from "@/components/seo-content/javascript-tools/javascript-diff-checker-comparator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptDiffChecker from "@/components/javascript-tools/javascript-diff-checker";
 
@@ -74,7 +76,9 @@ export default function JavascriptDiffCheckerComparatorPage() {
       <div className="mt-8">
         <JavascriptDiffChecker />
       </div>
-      {/* TODO: add seo component for javascript-diff-checker-comparator */}
+      <div className="mt-16">
+        <JavascriptDiffCheckerComparatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

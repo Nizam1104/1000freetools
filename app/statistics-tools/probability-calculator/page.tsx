@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { ProbabilityCalculator } from "@/components/statistics-tools/probability-calculator";
+import ProbabilityCalculatorSeo from "@/components/seo-content/statistics-tools/probability-calculator";
 
 export const metadata: Metadata = {
   title: `Probability Calculator | For Single & Multiple Events`,
@@ -70,8 +71,12 @@ export default function ProbabilityCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Probability Calculator (Single & Multiple Events)</h1>
         <p className="text-muted-foreground">Calculate the probability of simple or complex events. Our tool handles independent and dependent events, unions, intersections, and even conditional probability.</p>
       </header>
-      {<ProbabilityCalculator />}
-      {/* TODO: add seo component for probability-calculator */}
+      <div className="mt-8">
+        <ProbabilityCalculator />
+      </div>
+      <div className="mt-8">
+        <ProbabilityCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

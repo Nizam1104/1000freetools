@@ -63,6 +63,7 @@ const tools = [
 ];
 
 import EmojiCalendarDate from "@/components/emoji-tools/emoji-calendar-date"
+import EmojiCalendarDateSeo from "@/components/seo-content/emoji-tools/emoji-calendar-date"
 
 export default function EmojiCalendarDatePage() {
   return (
@@ -72,7 +73,9 @@ export default function EmojiCalendarDatePage() {
         <p className="text-muted-foreground">Find the perfect emoji for any holiday, season, or special date. Get emoji suggestions for Christmas, birthdays, or summer. Generate a full emoji calendar.</p>
       </header>
       <EmojiCalendarDate />
-      {/* TODO: add seo component for emoji-calendar-date */}
+      <div className="mt-8">
+        <EmojiCalendarDateSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

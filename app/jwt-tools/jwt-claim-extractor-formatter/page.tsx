@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtClaimExtractorFormatterSeo from "@/components/seo-content/jwt-tools/jwt-claim-extractor-formatter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtClaimExtractorFormatter } from "@/components/jwt-tools/jwt-claim-extractor-formatter.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtClaimExtractorFormatterPage() {
         <p className="text-muted-foreground">Quickly extract and format claims from any JWT payload. View standard and custom claims in a clean, searchable list with human-readable dates for easier debugging and analysis.</p>
       </header>
       {<JwtClaimExtractorFormatter />}
-      {/* TODO: add seo component for jwt-claim-extractor-formatter */}
+      <div className="mt-16">
+        <JwtClaimExtractorFormatterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

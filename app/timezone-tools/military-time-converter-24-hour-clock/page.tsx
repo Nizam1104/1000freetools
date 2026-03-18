@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import MilitaryTimeConverter24HourClockSeo from "@/components/seo-content/timezone-tools/military-time-converter-24-hour-clock";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MilitaryTimeConverter24HourClock } from "@/components/timezone-tools/military-time-converter-24-hour-clock";
 
@@ -71,7 +73,9 @@ export default function MilitaryTimeConverter24HourClockPage() {
         <p className="text-muted-foreground">Convert between standard AM/PM time and 24-hour military time instantly. Learn how to read military time and use it for scheduling across time zones.</p>
       </header>
       {<MilitaryTimeConverter24HourClock />}
-      {/* TODO: add seo component for military-time-converter-24-hour-clock */}
+      <div className="mt-16">
+        <MilitaryTimeConverter24HourClockSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

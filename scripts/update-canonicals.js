@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs");
+const { file } = require("jszip");
 const path = require("path");
 
 // Configuration
@@ -18,22 +19,28 @@ async function fetchCanonical(url) {
     });
 
     if (!response.ok) {
-      console.error(`  ❌ Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+      console.error(
+        `  ❌ Failed to fetch ${url}: ${response.status} ${response.statusText}`,
+      );
       return null;
     }
 
     const html = await response.text();
 
     // Extract canonical URL from <link rel="canonical" href="...">
-    const canonicalMatch = html.match(/<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i);
-    
+    const canonicalMatch = html.match(
+      /<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i,
+    );
+
     if (canonicalMatch && canonicalMatch[1]) {
       return canonicalMatch[1];
     }
 
     // Try alternate format: href before rel
-    const canonicalMatchAlt = html.match(/<link[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["'][^>]*>/i);
-    
+    const canonicalMatchAlt = html.match(
+      /<link[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["'][^>]*>/i,
+    );
+
     if (canonicalMatchAlt && canonicalMatchAlt[1]) {
       return canonicalMatchAlt[1];
     }
@@ -48,52 +55,60 @@ async function fetchCanonical(url) {
 
 // Function to sleep for a given milliseconds
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // Main function
 async function main() {
   console.log("🔧 Reading canonical-fixes.json...\n");
-  
-  const canonicalFixes = JSON.parse(fs.readFileSync(CANONICAL_FIXES_PATH, "utf8"));
+
+  const canonicalFixes = JSON.parse(
+    fs.readFileSync(CANONICAL_FIXES_PATH, "utf8"),
+  );
   const verifiedMapping = {};
-  
+
   const entries = Object.entries(canonicalFixes);
   const totalEntries = entries.length;
-  
+
   console.log(`📊 Found ${totalEntries} tool groups to process\n`);
-  
+
   let processedCount = 0;
   let correctCount = 0;
   let needsFixCount = 0;
-  
+
   for (const [canonicalUrl, duplicateUrls] of entries) {
     processedCount++;
-    console.log(`\n[${processedCount}/${totalEntries}] Processing: ${canonicalUrl}`);
-    
+    console.log(
+      `\n[${processedCount}/${totalEntries}] Processing: ${canonicalUrl}`,
+    );
+
     const verifiedDuplicates = [];
     const needsFix = [];
-    
+
     for (const duplicateUrl of duplicateUrls) {
       console.log(`  📄 Fetching: ${duplicateUrl}`);
-      
+
       const fetchedCanonical = await fetchCanonical(duplicateUrl);
-      
+
       if (fetchedCanonical) {
         // Normalize URLs for comparison (remove trailing slashes)
         const normalizedCanonical = canonicalUrl.replace(/\/$/, "");
         const normalizedFetched = fetchedCanonical.replace(/\/$/, "");
-        
+
         if (normalizedFetched === normalizedCanonical) {
-          console.log(`  ✅ Correct! Canonical already points to: ${fetchedCanonical}`);
+          console.log(
+            `  ✅ Correct! Canonical already points to: ${fetchedCanonical}`,
+          );
           verifiedDuplicates.push(duplicateUrl);
           correctCount++;
         } else {
-          console.log(`  ❌ NEEDS FIX! Current: ${fetchedCanonical}, Should be: ${canonicalUrl}`);
+          console.log(
+            `  ❌ NEEDS FIX! Current: ${fetchedCanonical}, Should be: ${canonicalUrl}`,
+          );
           needsFix.push({
             url: duplicateUrl,
             currentCanonical: fetchedCanonical,
-            targetCanonical: canonicalUrl
+            targetCanonical: canonicalUrl,
           });
           needsFixCount++;
         }
@@ -102,27 +117,31 @@ async function main() {
         needsFix.push({
           url: duplicateUrl,
           currentCanonical: null,
-          targetCanonical: canonicalUrl
+          targetCanonical: canonicalUrl,
         });
         needsFixCount++;
       }
-      
+
       // Rate limiting - wait between requests to avoid being blocked
       await sleep(500);
     }
-    
+
     verifiedMapping[canonicalUrl] = {
       correct: verifiedDuplicates,
-      needsFix: needsFix
+      needsFix: needsFix,
     };
-    
+
     // Additional delay between tool groups
     await sleep(1000);
   }
-  
+
   // Write the verified mapping
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(verifiedMapping, null, 4), "utf8");
-  
+  fs.writeFileSync(
+    OUTPUT_PATH,
+    JSON.stringify(verifiedMapping, null, 4),
+    "utf8",
+  );
+
   console.log("\n" + "=".repeat(60));
   console.log("✅ Verification complete!");
   console.log(`📊 Total tool groups: ${totalEntries}`);
@@ -134,7 +153,21 @@ async function main() {
 }
 
 // Run the script
-main().catch(error => {
+main().catch((error) => {
   console.error("❌ Fatal error:", error);
   process.exit(1);
 });
+
+Task Goal: Completing on page seo content for the remaining new tools
+1. Search which pages has this 'TODO: add seo component' and note all the pages
+2. now we need to create on page seo content for these pages in /components/seo-content/page-path.tsx file
+3. follow these rules for seo content and writing style
+@/Users/nizamvali/myProjects/1000freetools/ai-prompts/se-unq.md
+@/Users/nizamvali/myProjects/1000freetools/ai-prompts/writing-h
+  umanizer.md
+
+4. use proper colors and styles from global.css file
+5. Strict Note: Don't many hero section in seo component, Don't make internal linking, and absolutely Don't make a template like generic structure for the seo components
+6. after completing the seo component import it in the page and then replace the TODO: with component
+
+Now complete the task and don't stop until you complete all the task

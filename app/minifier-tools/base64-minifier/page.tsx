@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Base64MinifierSeo from "@/components/seo-content/minifier-tools/base64-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { Base64Minifier } from "@/components/minifier-tools/base64-minifier.tsx";
 
@@ -71,7 +73,9 @@ export default function Base64MinifierPage() {
         <p className="text-muted-foreground">Minify code and convert it to Base64 in one step. This tool compresses your source code and encodes it for use in data URIs, URLs, or embedded resources.</p>
       </header>
       {<Base64Minifier />}
-      {/* TODO: add seo component for base64-minifier */}
+      <div className="mt-16">
+        <Base64MinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

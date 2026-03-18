@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TomlToJavaPropertiesConverter } from "@/components/toml-tools/toml-to-java-properties-converter.tsx";
+import TomlToJavaPropertiesConverterSeo from "@/components/seo-content/toml-tools/toml-to-java-properties-converter";
 
 export const metadata: Metadata = {
   title: `TOML to Java Properties Converter | Free Online Tool`,
@@ -71,7 +72,7 @@ export default function TomlToJavaPropertiesConverterPage() {
         <p className="text-muted-foreground">Easily convert TOML configuration files into Java .properties format. This tool flattens nested structures into dot-notation keys, making TOML configs compatible with Java's Properties class. Great for migrating or integrating systems.</p>
       </header>
       {<TomlToJavaPropertiesConverter />}
-      {/* TODO: add seo component for toml-to-java-properties-converter */}
+      <div className="mt-8"><TomlToJavaPropertiesConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeAppStore } from "@/components/qr-code-tools/qr-code-app-store.tsx";
+import QrCodeAppStoreSeo from "@/components/seo-content/qr-code-tools/qr-code-app-store";
 
 export const metadata: Metadata = {
   title: `App Store QR Code | Download App via QR Code`,
@@ -71,7 +72,9 @@ export default function QrCodeAppStorePage() {
         <p className="text-muted-foreground">Generate one QR code for your app. It detects iPhone or Android and sends users to the correct app store. Boost downloads from posters and ads.</p>
       </header>
       {<QrCodeAppStore />}
-      {/* TODO: add seo component for qr-code-app-store */}
+      <div className="mt-16">
+        <QrCodeAppStoreSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

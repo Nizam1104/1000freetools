@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import FlightTimeTimeZoneArrivalCalculatorSeo from "@/components/seo-content/timezone-tools/flight-time-time-zone-arrival-calculator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { FlightTimeTimeZoneArrivalCalculator } from "@/components/timezone-tools/flight-time-time-zone-arrival-calculator";
 
@@ -71,7 +73,9 @@ export default function FlightTimeTimeZoneArrivalCalculatorPage() {
         <p className="text-muted-foreground">Calculate what time you'll actually arrive at your destination, factoring in flight duration and the time zone change. Essential for planning layovers and ground transportation.</p>
       </header>
       {<FlightTimeTimeZoneArrivalCalculator />}
-      {/* TODO: add seo component for flight-time-time-zone-arrival-calculator */}
+      <div className="mt-16">
+        <FlightTimeTimeZoneArrivalCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

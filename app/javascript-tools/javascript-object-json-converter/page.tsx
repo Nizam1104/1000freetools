@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptObjectJsonConverterSeo from "@/components/seo-content/javascript-tools/javascript-object-json-converter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptObjectToJsonConverter from "@/components/javascript-tools/javascript-object-to-json-converter";
 
@@ -73,7 +75,9 @@ export default function JavascriptObjectJsonConverterPage() {
       <div className="mt-8">
         <JavascriptObjectToJsonConverter />
       </div>
-      {/* TODO: add seo component for javascript-object-json-converter */}
+      <div className="mt-16">
+        <JavascriptObjectJsonConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

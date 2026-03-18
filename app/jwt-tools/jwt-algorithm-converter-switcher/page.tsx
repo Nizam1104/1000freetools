@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtAlgorithmConverterSwitcherSeo from "@/components/seo-content/jwt-tools/jwt-algorithm-converter-switcher";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtAlgorithmConverterSwitcher } from "@/components/jwt-tools/jwt-algorithm-converter-switcher.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtAlgorithmConverterSwitcherPage() {
         <p className="text-muted-foreground">Switch your JWT's signing algorithm seamlessly. Convert tokens from HS256 to RS256, or between other algorithms, by re-signing with a new key—ideal for auth system migration.</p>
       </header>
       {<JwtAlgorithmConverterSwitcher />}
-      {/* TODO: add seo component for jwt-algorithm-converter-switcher */}
+      <div className="mt-16">
+        <JwtAlgorithmConverterSwitcherSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

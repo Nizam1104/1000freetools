@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlDiffChecker } from "@/components/yaml-tools/yaml-diff-checker.tsx";
+import YamlDiffCheckerSeo from "@/components/seo-content/yaml-tools/yaml-diff-checker";
 
 export const metadata: Metadata = {
   title: `YAML Diff Tool | Compare YAML Files Online`,
@@ -71,7 +72,9 @@ export default function YamlDiffCheckerPage() {
         <p className="text-muted-foreground">Compare two YAML documents and see exactly what changed. This free diff tool highlights structural differences, making it easy to track modifications in configurations.</p>
       </header>
       {<YamlDiffChecker />}
-      {/* TODO: add seo component for yaml-diff-checker */}
+      <div className="mt-8">
+        <YamlDiffCheckerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

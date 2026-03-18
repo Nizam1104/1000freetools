@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { WhirlpoolHashGenerator } from "@/components/hash-tools/whirlpool-hash-generator.tsx";
+import WhirlpoolHashGeneratorSeo from "@/components/seo-content/hash-tools/whirlpool-hash-generator";
 
 export const metadata: Metadata = {
   title: `Whirlpool Hash Generator Online | Free Cryptographic Tool`,
@@ -71,7 +72,9 @@ export default function WhirlpoolHashGeneratorPage() {
         <p className="text-muted-foreground">Generate Whirlpool hashes, a 512-bit cryptographic function. This tool provides an alternative to SHA families for creating secure, fixed-length hash values from any input.</p>
       </header>
       {<WhirlpoolHashGenerator />}
-      {/* TODO: add seo component for whirlpool-hash-generator */}
+      <div className="mt-8">
+        <WhirlpoolHashGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

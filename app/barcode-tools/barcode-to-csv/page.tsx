@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BarcodeToCsv } from "@/components/barcode-tools/barcode-to-csv.tsx";
+import BarcodeToCsvSeo from "@/components/seo-content/barcode-tools/barcode-to-csv";
 
 export const metadata: Metadata = {
   title: `Scan Barcodes to CSV/Excel - Free Data Exporter`,
@@ -71,7 +72,7 @@ export default function BarcodeToCsvPage() {
         <p className="text-muted-foreground">Scan a list of barcodes and export the data to CSV or Excel. Perfect for quick inventory audits, asset tracking, or data entry from physical items.</p>
       </header>
       {<BarcodeToCsv />}
-      {/* TODO: add seo component for barcode-to-csv */}
+      <div className="mt-8"><BarcodeToCsvSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

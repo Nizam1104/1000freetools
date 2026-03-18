@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import TimeZoneAbbreviationLookupDecoderSeo from "@/components/seo-content/timezone-tools/time-zone-abbreviation-lookup-decoder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TimeZoneAbbreviationLookupDecoder } from "@/components/timezone-tools/time-zone-abbreviation-lookup-decoder";
 
@@ -72,7 +74,9 @@ export default function TimeZoneAbbreviationLookupDecoderPage() {
         </p>
       </header>
       {<TimeZoneAbbreviationLookupDecoder />}
-      {/* TODO: add seo component for time-zone-abbreviation-lookup-decoder */}
+      <div className="mt-16">
+        <TimeZoneAbbreviationLookupDecoderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

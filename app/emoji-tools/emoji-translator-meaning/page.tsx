@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import EmojiTranslatorMeaningSeo from "@/components/seo-content/emoji-tools/emoji-translator-meaning";
 
 export const metadata: Metadata = {
   title: `Emoji Meanings & Translator | What Does This Emoji Mean?`,
@@ -72,7 +73,9 @@ export default function EmojiTranslatorMeaningPage() {
         <p className="text-muted-foreground">Not sure what an emoji means? Use our translator to get the official definition and real-world usage. Learn the slang, cultural context, and platform differences for any emoji.</p>
       </header>
       <EmojiTranslatorMeaning />
-      {/* TODO: add seo component for emoji-translator-meaning */}
+      <div className="mt-8">
+        <EmojiTranslatorMeaningSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import FontStatisticsAnalyzerSeo from "@/components/seo-content/font-tools/font-statistics-analyzer";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { FontStatisticsAnalyzer } from "@/components/font-tools/font-statistics-analyzer";
 
@@ -71,7 +73,9 @@ export default function FontStatisticsAnalyzerPage() {
         <p className="text-muted-foreground">Get detailed technical information about any font file. See glyph counts, language support, OpenType features, and licensing details.</p>
       </header>
       {<FontStatisticsAnalyzer />}
-      {/* TODO: add seo component for font-statistics-analyzer */}
+      <div className="mt-16">
+        <FontStatisticsAnalyzerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

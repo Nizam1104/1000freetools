@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TomlToPhpArrayConverter } from "@/components/toml-tools/toml-to-php-array-converter.tsx";
+import TomlToPhpArrayConverterSeo from "@/components/seo-content/toml-tools/toml-to-php-array-converter";
 
 export const metadata: Metadata = {
   title: `TOML to PHP Array Converter | Free Online Tool`,
@@ -71,7 +72,7 @@ export default function TomlToPhpArrayConverterPage() {
         <p className="text-muted-foreground">Quickly convert TOML configuration files into PHP arrays for use in your applications. This online tool generates clean, readable PHP code from any TOML input, handling nested structures and data types correctly. Ideal for PHP developers working with config files.</p>
       </header>
       {<TomlToPhpArrayConverter />}
-      {/* TODO: add seo component for toml-to-php-array-converter */}
+      <div className="mt-8"><TomlToPhpArrayConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

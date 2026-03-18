@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlToXmlConverter } from "@/components/yaml-tools/yaml-to-xml-converter.tsx";
+import YamlToXmlConverterSeo from "@/components/seo-content/yaml-tools/yaml-to-xml-converter";
 
 export const metadata: Metadata = {
   title: `YAML to XML Converter | Free Online Conversion Tool`,
@@ -71,7 +72,9 @@ export default function YamlToXmlConverterPage() {
         <p className="text-muted-foreground">Transform your YAML data into XML format for systems that require it. This free converter handles nested structures and offers customization options for the XML output.</p>
       </header>
       {<YamlToXmlConverter />}
-      {/* TODO: add seo component for yaml-to-xml-converter */}
+      <div className="mt-8">
+        <YamlToXmlConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

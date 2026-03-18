@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlQueryValidatorSyntaxChecker } from "@/components/sql-tools/sql-query-validator-syntax-checker.tsx";
+import SqlQueryValidatorSyntaxCheckerSeo from "@/components/seo-content/sql-tools/sql-query-validator-syntax-checker";
 
 export const metadata: Metadata = {
   title: `SQL Syntax Checker Online | Validate SQL Queries Free`,
@@ -72,7 +73,7 @@ export default function SqlQueryValidatorSyntaxCheckerPage() {
         </p>
       </header>
       {<SqlQueryValidatorSyntaxChecker />}
-      {/* TODO: add seo component for sql-query-validator-syntax-checker */}
+      <SqlQueryValidatorSyntaxCheckerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

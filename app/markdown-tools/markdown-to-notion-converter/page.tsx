@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownToNotionConverter } from "@/components/markdown-tools/markdown-to-notion-converter.tsx";
+import MarkdownToNotionConverterSeo from "@/components/seo-content/markdown-tools/markdown-to-notion-converter";
 
 export const metadata: Metadata = {
   title: `Markdown to Notion Converter | Format for Notion`,
@@ -71,7 +72,7 @@ export default function MarkdownToNotionConverterPage() {
         <p className="text-muted-foreground">Prepare your Markdown content for pasting into Notion. This tool converts formatting to be Notion-friendly, preserving lists, headers, and code. Simplify your content migration.</p>
       </header>
       {<MarkdownToNotionConverter />}
-      {/* TODO: add seo component for markdown-to-notion-converter */}
+      <MarkdownToNotionConverterSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

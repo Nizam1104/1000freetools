@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CodeMinifierSeo from "@/components/seo-content/minifier-tools/code-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { CodeMinifier } from "@/components/minifier-tools/code-minifier.tsx";
 
@@ -71,7 +73,9 @@ export default function CodeMinifierPage() {
         <p className="text-muted-foreground">Minify code from various programming languages in one place. This versatile tool supports HTML, CSS, JavaScript, JSON, and more, optimizing all your web assets simultaneously.</p>
       </header>
       {<CodeMinifier />}
-      {/* TODO: add seo component for code-minifier */}
+      <div className="mt-16">
+        <CodeMinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

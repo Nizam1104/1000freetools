@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownDiffChecker } from "@/components/markdown-tools/markdown-diff-checker.tsx";
+import MarkdownDiffCheckerSeo from "@/components/seo-content/markdown-tools/markdown-diff-checker";
 
 export const metadata: Metadata = {
   title: `Markdown Diff Checker | Compare Documents Online`,
@@ -71,7 +72,7 @@ export default function MarkdownDiffCheckerPage() {
         <p className="text-muted-foreground">Visually compare two Markdown documents to see exact differences. Highlights text and formatting changes in a clear diff view. Essential for collaborative writing and editing.</p>
       </header>
       {<MarkdownDiffChecker />}
-      {/* TODO: add seo component for markdown-diff-checker */}
+      <MarkdownDiffCheckerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

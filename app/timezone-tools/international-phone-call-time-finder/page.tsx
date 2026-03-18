@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import InternationalPhoneCallTimeFinderSeo from "@/components/seo-content/timezone-tools/international-phone-call-time-finder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { InternationalPhoneCallTimeFinder } from "@/components/timezone-tools/international-phone-call-time-finder";
 
@@ -71,7 +73,9 @@ export default function InternationalPhoneCallTimeFinderPage() {
         <p className="text-muted-foreground">Find the perfect time to call abroad. Avoid waking someone up by checking the local business hours and time difference before you dial.</p>
       </header>
       {<InternationalPhoneCallTimeFinder />}
-      {/* TODO: add seo component for international-phone-call-time-finder */}
+      <div className="mt-16">
+        <InternationalPhoneCallTimeFinderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

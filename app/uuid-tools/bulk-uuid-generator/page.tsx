@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import BulkUuidGeneratorSeo from "@/components/seo-content/uuid-tools/bulk-uuid-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BulkUuidGenerator } from "@/components/uuid-tools/bulk-uuid-generator.tsx";
 
@@ -71,7 +73,9 @@ export default function BulkUuidGeneratorPage() {
         <p className="text-muted-foreground">Need thousands or millions of UUIDs? This bulk generator creates massive lists of random UUIDs (v4) for database seeding, testing, or data migration. Export directly to CSV, JSON, or SQL formats.</p>
       </header>
       {<BulkUuidGenerator />}
-      {/* TODO: add seo component for bulk-uuid-generator */}
+      <div className="mt-16">
+        <BulkUuidGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

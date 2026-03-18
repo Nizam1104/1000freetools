@@ -77,7 +77,9 @@ export default function RoundingCalculatorPage() {
       <div className="mt-8">
         <NumberSystemRoundingCalculatorSeo />
       </div>
-      {/* TODO: add seo component for rounding-calculator */}
+      <div className="mt-16">
+        <RoundingCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

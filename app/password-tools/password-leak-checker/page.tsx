@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PasswordLeakChecker from "@/components/password-tools/password-leak-checker";
+import PasswordLeakCheckerSeo from "@/components/seo-content/password-tools/password-leak-checker";
 
 export const metadata: Metadata = {
   title: `Password Leak Checker | Test for Data Breaches`,
@@ -71,7 +72,7 @@ export default function PasswordLeakCheckerPage() {
         <p className="text-muted-foreground">Find out if your password has been compromised in a data breach. Our secure checker keeps your input private while searching known leaks.</p>
       </header>
       <div className="mt-8"><PasswordLeakChecker /></div>
-      {/* TODO: add seo component for password-leak-checker */}
+      <div className="mt-16"><PasswordLeakCheckerSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

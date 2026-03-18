@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlCommentRemover } from "@/components/yaml-tools/yaml-comment-remover.tsx";
+import YamlCommentRemoverSeo from "@/components/seo-content/yaml-tools/yaml-comment-remover";
 
 export const metadata: Metadata = {
   title: `YAML Comment Remover | Strip Comments Online`,
@@ -71,7 +72,9 @@ export default function YamlCommentRemoverPage() {
         <p className="text-muted-foreground">Clean your YAML files by stripping out all comments. This free tool removes inline and full-line comments, leaving only the functional configuration data.</p>
       </header>
       {<YamlCommentRemover />}
-      {/* TODO: add seo component for yaml-comment-remover */}
+      <div className="mt-8">
+        <YamlCommentRemoverSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

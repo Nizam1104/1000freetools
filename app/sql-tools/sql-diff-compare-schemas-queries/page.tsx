@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import SqlDiffChecker from "@/components/sql-tools/sql-diff-checker";
+import SqlDiffCompareSchemasQueriesSeo from "@/components/seo-content/sql-tools/sql-diff-compare-schemas-queries";
 
 export const metadata: Metadata = {
   title: `SQL Diff Tool Online | Compare SQL Scripts & Schemas`,
@@ -74,7 +75,7 @@ export default function SqlDiffCompareSchemasQueriesPage() {
       <div className="mt-8">
         <SqlDiffChecker />
       </div>
-      {/* TODO: add seo component for sql-diff-compare-schemas-queries */}
+      <SqlDiffCompareSchemasQueriesSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

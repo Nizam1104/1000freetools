@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptObfuscatorProtectorSeo from "@/components/seo-content/javascript-tools/javascript-obfuscator-protector";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptObfuscator from "@/components/javascript-tools/javascript-obfuscator";
 
@@ -74,7 +76,9 @@ export default function JavascriptObfuscatorProtectorPage() {
       <div className="mt-8">
         <JavascriptObfuscator />
       </div>
-      {/* TODO: add seo component for javascript-obfuscator-protector */}
+      <div className="mt-16">
+        <JavascriptObfuscatorProtectorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

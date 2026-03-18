@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import XmlMinifierSeo from "@/components/seo-content/minifier-tools/xml-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { XmlMinifier } from "@/components/minifier-tools/xml-minifier.tsx";
 
@@ -71,7 +73,9 @@ export default function XmlMinifierPage() {
         <p className="text-muted-foreground">Compress XML files by removing extra spaces, comments, and line breaks. This minifier reduces file size for faster parsing and transmission while keeping the XML structure intact.</p>
       </header>
       {<XmlMinifier />}
-      {/* TODO: add seo component for xml-minifier */}
+      <div className="mt-16">
+        <XmlMinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

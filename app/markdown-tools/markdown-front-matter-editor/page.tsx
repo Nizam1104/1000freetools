@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownFrontMatterEditor } from "@/components/markdown-tools/markdown-front-matter-editor.tsx";
+import MarkdownFrontMatterEditorSeo from "@/components/seo-content/markdown-tools/markdown-front-matter-editor";
 
 export const metadata: Metadata = {
   title: `Markdown Front Matter Editor | YAML/TOML Tool`,
@@ -71,7 +72,7 @@ export default function MarkdownFrontMatterEditorPage() {
         <p className="text-muted-foreground">Edit the YAML or TOML front matter in your Markdown files easily. Update titles, dates, tags, and custom fields for static site generators.</p>
       </header>
       {<MarkdownFrontMatterEditor />}
-      {/* TODO: add seo component for markdown-front-matter-editor */}
+      <MarkdownFrontMatterEditorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

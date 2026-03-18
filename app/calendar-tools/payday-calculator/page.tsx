@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PaydayCalculator from "@/components/calendar-tools/payday-calculator";
+import PaydayCalculatorSeo from "@/components/seo-content/calender-tools/payday-calculator";
 
 export const metadata: Metadata = {
   title: `Payday Calculator | Salary Date Schedule Generator`,
@@ -71,7 +72,7 @@ export default function PaydayCalculatorPage() {
         <p className="text-muted-foreground">Figure out all your paydates for the year. Enter your pay frequency and start date to get a list of dates, adjusted for weekends and holidays.</p>
       </header>
       <div className="mt-8"><PaydayCalculator /></div>
-      {/* TODO: add seo component for payday-calculator */}
+      <div className="mt-8"><PaydayCalculatorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

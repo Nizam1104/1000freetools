@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeRestaurantMenuSeo from "@/components/seo-content/qr-code-tools/qr-code-restaurant-menu";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeRestaurantMenu } from "@/components/qr-code-tools/qr-code-restaurant-menu.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeRestaurantMenuPage() {
         <p className="text-muted-foreground">Create a QR code for your digital restaurant menu. Input items and prices or upload a PDF. Provide a contactless menu experience for diners.</p>
       </header>
       {<QrCodeRestaurantMenu />}
-      {/* TODO: add seo component for qr-code-restaurant-menu */}
+      <div className="mt-16">
+        <QrCodeRestaurantMenuSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

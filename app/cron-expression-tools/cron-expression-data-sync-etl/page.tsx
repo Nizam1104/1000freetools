@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CronExpressionDataSyncEtlSeo from "@/components/seo-content/cron-expression-tools/cron-expression-data-sync-etl";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CronExpressionDataSync from "@/components/cron-expression-tools/cron-expression-data-sync";
 
@@ -73,7 +75,9 @@ export default function CronExpressionDataSyncEtlPage() {
       <div className="mt-8">
         <CronExpressionDataSync />
       </div>
-      {/* TODO: add seo component for cron-expression-data-sync-etl */}
+      <div className="mt-16">
+        <CronExpressionDataSyncEtlSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

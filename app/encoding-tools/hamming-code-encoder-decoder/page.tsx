@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { HammingCodeEncoderDecoder } from "@/components/encoding-tools/hamming-code-encoder-decoder";
+import HammingCodeEncoderDecoderSeo from "@/components/seo-content/encoding-tools/hamming-code-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Hamming Code Encoder Decoder | Error Correction Tool`,
@@ -72,7 +73,7 @@ export default function HammingCodeEncoderDecoderPage() {
         </p>
       </header>
       {<HammingCodeEncoderDecoder />}
-      {/* TODO: add seo component for hamming-code-encoder-decoder */}
+      <HammingCodeEncoderDecoderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

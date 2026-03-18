@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlVersionConverter } from "@/components/yaml-tools/yaml-version-converter.tsx";
+import YamlVersionConverterSeo from "@/components/seo-content/yaml-tools/yaml-version-converter";
 
 export const metadata: Metadata = {
   title: `YAML Version Converter | Format YAML Files`,
@@ -71,7 +72,9 @@ export default function YamlVersionConverterPage() {
         <p className="text-muted-foreground">Standardize your YAML files by converting between different YAML specifications and formatting styles. Ensure compatibility and consistency across tools and teams with this free version converter.</p>
       </header>
       {<YamlVersionConverter />}
-      {/* TODO: add seo component for yaml-version-converter */}
+      <div className="mt-8">
+        <YamlVersionConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import EventCountdown from "@/components/calendar-tools/event-countdown";
+import EventCountdownSeo from "@/components/seo-content/calendar-tools/event-countdown";
 
 export const metadata: Metadata = {
   title: `Event Countdown Timer | Free Countdown Creator`,
@@ -71,7 +72,7 @@ export default function EventCountdownPage() {
         <p className="text-muted-foreground">Build a live countdown timer for your wedding, holiday, or project deadline. Share the link or embed it on your website. Watch the seconds tick down.</p>
       </header>
       <div className="mt-8"><EventCountdown /></div>
-      {/* TODO: add seo component for event-countdown */}
+      <EventCountdownSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

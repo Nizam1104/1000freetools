@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import HistoricalTimeZoneConverterSeo from "@/components/seo-content/timezone-tools/historical-time-zone-converter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { HistoricalTimeZoneConverter } from "@/components/timezone-tools/historical-time-zone-converter";
 
@@ -71,7 +73,9 @@ export default function HistoricalTimeZoneConverterPage() {
         <p className="text-muted-foreground">Convert times for dates in the past, accurately accounting for historical time zone rules and daylight saving changes that were in effect at that time.</p>
       </header>
       {<HistoricalTimeZoneConverter />}
-      {/* TODO: add seo component for historical-time-zone-converter */}
+      <div className="mt-16">
+        <HistoricalTimeZoneConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -77,7 +77,9 @@ export default function ScientificNotationConverterPage() {
       <div className="mt-8">
         <NumberToScientificNotationConverterSeo />
       </div>
-      {/* TODO: add seo component for scientific-notation-converter */}
+      <div className="mt-16">
+        <ScientificNotationConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

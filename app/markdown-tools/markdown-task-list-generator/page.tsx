@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownTaskListGenerator } from "@/components/markdown-tools/markdown-task-list-generator.tsx";
+import MarkdownTaskListGeneratorSeo from "@/components/seo-content/markdown-tools/markdown-task-list-generator";
 
 export const metadata: Metadata = {
   title: `Markdown Task List Generator | Checklist Tool`,
@@ -71,7 +72,7 @@ export default function MarkdownTaskListGeneratorPage() {
         <p className="text-muted-foreground">Create Markdown checklists for GitHub issues and project boards visually. Add tasks, mark them complete, and generate the syntax instantly.</p>
       </header>
       {<MarkdownTaskListGenerator />}
-      {/* TODO: add seo component for markdown-task-list-generator */}
+      <MarkdownTaskListGeneratorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { VisualSqlQueryBuilder } from "@/components/sql-tools/visual-sql-query-builder.tsx";
+import VisualSqlQueryBuilderSeo from "@/components/seo-content/sql-tools/visual-sql-query-builder";
 
 export const metadata: Metadata = {
   title: `Visual SQL Query Builder Online | Drag & Drop Tool`,
@@ -72,7 +73,7 @@ export default function VisualSqlQueryBuilderPage() {
         </p>
       </header>
       {<VisualSqlQueryBuilder />}
-      {/* TODO: add seo component for visual-sql-query-builder */}
+      <VisualSqlQueryBuilderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

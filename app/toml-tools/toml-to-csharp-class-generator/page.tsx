@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TomlToCsharpClassGenerator } from "@/components/toml-tools/toml-to-csharp-class-generator.tsx";
+import TomlToCsharpClassGeneratorSeo from "@/components/seo-content/toml-tools/toml-to-csharp-class-generator";
 
 export const metadata: Metadata = {
   title: `TOML to C# Class Generator | Free Online Tool`,
@@ -71,7 +72,7 @@ export default function TomlToCsharpClassGeneratorPage() {
         <p className="text-muted-foreground">Automatically generate C# classes from your TOML configuration files. This tool creates ready-to-use POCO classes with JSON serialization attributes, perfect for .NET applications using config files. Supports both Newtonsoft.Json and System.Text.Json.</p>
       </header>
       {<TomlToCsharpClassGenerator />}
-      {/* TODO: add seo component for toml-to-csharp-class-generator */}
+      <div className="mt-8"><TomlToCsharpClassGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

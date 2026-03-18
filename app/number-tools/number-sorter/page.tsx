@@ -77,7 +77,9 @@ export default function NumberSorterPage() {
       <div className="mt-8">
         <NumberSorterOrganizerSeo />
       </div>
-      {/* TODO: add seo component for number-sorter */}
+      <div className="mt-16">
+        <NumberSorterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

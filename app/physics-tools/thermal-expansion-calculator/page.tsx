@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { ThermalExpansionCalculator } from "@/components/physics-tools/thermal-expansion-calculator";
+import ThermalExpansionCalculatorSeo from "@/components/seo-content/physics-tools/thermal-expansion-calculator";
 
 export const metadata: Metadata = {
   title: `Thermal Expansion Calculator | Linear & Volumetric Expansion`,
@@ -70,8 +71,12 @@ export default function ThermalExpansionCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Thermal Expansion Calculator</h1>
         <p className="text-muted-foreground">See how heat changes size. Calculate how much a material expands or contracts when its temperature changes, for length, area, or volume.</p>
       </header>
-      {<ThermalExpansionCalculator />}
-      {/* TODO: add seo component for thermal-expansion-calculator */}
+      <div className="mt-8">
+        <ThermalExpansionCalculator />
+      </div>
+      <div className="mt-8">
+        <ThermalExpansionCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

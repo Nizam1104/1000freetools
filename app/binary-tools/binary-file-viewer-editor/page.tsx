@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import BinaryFileViewerEditor from "@/components/binary-tools/binary-file-viewer-editor";
+import BinaryFileViewerEditorSeo from "@/components/seo-content/binary-tools/binary-file-viewer-editor";
 
 export const metadata: Metadata = {
   title: `Binary File Viewer | Online Hex Editor & File Analyzer`,
@@ -73,7 +74,9 @@ export default function BinaryFileViewerEditorPage() {
       <div className="mt-8">
         <BinaryFileViewerEditor />
       </div>
-      {/* TODO: add seo component for binary-file-viewer-editor */}
+      <div className="mt-8">
+        <BinaryFileViewerEditorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

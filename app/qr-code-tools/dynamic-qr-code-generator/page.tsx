@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import DynamicQrCodeGeneratorSeo from "@/components/seo-content/qr-code-tools/dynamic-qr-code-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { DynamicQrCodeGenerator } from "@/components/qr-code-tools/dynamic-qr-code-generator.tsx";
 
@@ -71,7 +73,9 @@ export default function DynamicQrCodeGeneratorPage() {
         <p className="text-muted-foreground">Generate QR codes you can edit after printing. Track scans in real-time, set expiration dates, or add password protection. Perfect for campaigns.</p>
       </header>
       {<DynamicQrCodeGenerator />}
-      {/* TODO: add seo component for dynamic-qr-code-generator */}
+      <div className="mt-16">
+        <DynamicQrCodeGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

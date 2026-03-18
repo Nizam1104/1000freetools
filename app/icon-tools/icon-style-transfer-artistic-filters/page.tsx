@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { IconStyleTransferArtisticFilters } from "@/components/icon-tools/icon-style-transfer-artistic-filters.tsx";
+import IconStyleTransferArtisticFiltersSeo from "@/components/seo-content/icon-tools/icon-style-transfer-artistic-filters";
 
 export const metadata: Metadata = {
   title: `Icon Style Transfer | Apply Artistic Filters Online`,
@@ -71,7 +72,7 @@ export default function IconStyleTransferArtisticFiltersPage() {
         <p className="text-muted-foreground">Transform your icons with artistic filters. Give them a neon glow, sketch effect, or watercolor look. Upload an icon, pick a style, and download the transformed version.</p>
       </header>
       {<IconStyleTransferArtisticFilters />}
-      {/* TODO: add seo component for icon-style-transfer-artistic-filters */}
+      <IconStyleTransferArtisticFiltersSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

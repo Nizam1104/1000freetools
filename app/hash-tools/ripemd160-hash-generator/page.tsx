@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { Ripemd160HashGenerator } from "@/components/hash-tools/ripemd160-hash-generator.tsx";
+import Ripemd160HashGeneratorSeo from "@/components/seo-content/hash-tools/ripemd160-hash-generator";
 
 export const metadata: Metadata = {
   title: `RIPEMD-160 Hash Generator Online | Free Crypto Hash Tool`,
@@ -71,7 +72,9 @@ export default function Ripemd160HashGeneratorPage() {
         <p className="text-muted-foreground">Generate RIPEMD-160 hashes, commonly used in cryptocurrency applications like Bitcoin. This tool creates a 160-bit hash from your text or file input quickly.</p>
       </header>
       {<Ripemd160HashGenerator />}
-      {/* TODO: add seo component for ripemd160-hash-generator */}
+      <div className="mt-8">
+        <Ripemd160HashGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CliMinifierGeneratorSeo from "@/components/seo-content/minifier-tools/cli-minifier-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { CliMinifierGenerator } from "@/components/minifier-tools/cli-minifier-generator.tsx";
 
@@ -71,7 +73,9 @@ export default function CliMinifierGeneratorPage() {
         <p className="text-muted-foreground">Generate command-line scripts to minify files on your local machine. This tool creates custom Bash, PowerShell, or Node.js commands for batch minification using industry-standard libraries.</p>
       </header>
       {<CliMinifierGenerator />}
-      {/* TODO: add seo component for cli-minifier-generator */}
+      <div className="mt-16">
+        <CliMinifierGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

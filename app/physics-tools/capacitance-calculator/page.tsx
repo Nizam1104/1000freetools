@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { CapacitanceCalculator } from "@/components/physics-tools/capacitance-calculator";
+import CapacitanceCalculatorSeo from "@/components/seo-content/physics-tools/capacitance-calculator";
 
 export const metadata: Metadata = {
   title: `Capacitance Calculator | Parallel Plate & Spherical Capacitor`,
@@ -70,8 +71,12 @@ export default function CapacitanceCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Capacitance Calculator</h1>
         <p className="text-muted-foreground">Design capacitors. Calculate capacitance for parallel plates, spheres, or cylinders based on their dimensions and the insulating material.</p>
       </header>
-      {<CapacitanceCalculator />}
-      {/* TODO: add seo component for capacitance-calculator */}
+      <div className="mt-8">
+        <CapacitanceCalculator />
+      </div>
+      <div className="mt-8">
+        <CapacitanceCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

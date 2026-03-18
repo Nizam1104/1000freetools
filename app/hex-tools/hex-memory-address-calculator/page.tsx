@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { HexMemoryAddressCalculator } from "@/components/hex-tools/hex-memory-address-calculator.tsx";
+import HexMemoryAddressCalculatorSeo from "@/components/seo-content/hex-tools/hex-memory-address-calculator";
 
 export const metadata: Metadata = {
   title: `Hex Memory Address Calculator | Free Online Tool`,
@@ -70,8 +71,8 @@ export default function HexMemoryAddressCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Hex Memory Address & Offset Calculator</h1>
         <p className="text-muted-foreground">Calculate memory addresses by adding or subtracting hex offsets from a base address. Essential for reverse engineering, debugging, and understanding low-level memory layouts in software.</p>
       </header>
-      {<HexMemoryAddressCalculator />}
-      {/* TODO: add seo component for hex-memory-address-calculator */}
+      <div className="mt-8"><HexMemoryAddressCalculator /></div>
+      <div className="mt-16"><HexMemoryAddressCalculatorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

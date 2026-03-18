@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TextReadabilityAnalyzer } from "@/components/text-tools/text-readability-analyzer.tsx";
+import TextReadabilityAnalyzerSeo from "@/components/seo-content/typography-tools/text-readability-analyzer";
 
 export const metadata: Metadata = {
   title: `Readability Analyzer | Check Text Readability Online`,
@@ -70,7 +71,7 @@ export default function TextReadabilityAnalyzerPage() {
         </p>
       </header>
       {<TextReadabilityAnalyzer />}
-      {/* TODO: add seo component for text-readability-analyzer */}
+      <div className="mt-8"><TextReadabilityAnalyzerSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

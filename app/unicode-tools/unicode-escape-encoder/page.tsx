@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import UnicodeEscapeSequenceEncoder from "@/components/unicode-tools/unicode-escape-sequence-encoder";
+import UnicodeEscapeEncoderSeo from "@/components/seo-content/unicode-tools/unicode-escape-encoder";
 
 export const metadata: Metadata = {
   title: `Unicode Escape Encoder/Decoder | \\uXXXX Tool`,
@@ -68,7 +69,7 @@ export default function UnicodeEscapeEncoderPage() {
       <div className="mt-8">
         <UnicodeEscapeSequenceEncoder />
       </div>
-      {/* TODO: add seo component for unicode-escape-encoder */}
+      <UnicodeEscapeEncoderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

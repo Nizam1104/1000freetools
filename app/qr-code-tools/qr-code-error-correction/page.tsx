@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeErrorCorrectionSeo from "@/components/seo-content/qr-code-tools/qr-code-error-correction";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeErrorCorrection } from "@/components/qr-code-tools/qr-code-error-correction.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeErrorCorrectionPage() {
         <p className="text-muted-foreground">Choose the right error correction level (L, M, Q, H) to make your QR codes more durable. See how different levels handle damage or logos while keeping your code scannable.</p>
       </header>
       {<QrCodeErrorCorrection />}
-      {/* TODO: add seo component for qr-code-error-correction */}
+      <div className="mt-16">
+        <QrCodeErrorCorrectionSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

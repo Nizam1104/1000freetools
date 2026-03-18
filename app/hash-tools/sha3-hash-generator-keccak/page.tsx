@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { Sha3HashGeneratorKeccak } from "@/components/hash-tools/sha3-hash-generator-keccak.tsx";
+import Sha3HashGeneratorKeccakSeo from "@/components/seo-content/hash-tools/sha3-hash-generator-keccak";
 
 export const metadata: Metadata = {
   title: `SHA-3 Hash Generator Online | Keccak Algorithm Tool`,
@@ -71,7 +72,9 @@ export default function Sha3HashGeneratorKeccakPage() {
         <p className="text-muted-foreground">Generate SHA-3 hashes using the Keccak algorithm. Choose your hash length for flexibility in security applications. This tool supports the latest NIST-approved standard.</p>
       </header>
       {<Sha3HashGeneratorKeccak />}
-      {/* TODO: add seo component for sha3-hash-generator-keccak */}
+      <div className="mt-8">
+        <Sha3HashGeneratorKeccakSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import BulkEmojiDownloaderSeo from "@/components/seo-content/emoji-tools/bulk-emoji-downloader";
 
 export const metadata: Metadata = {
   title: `Bulk Download Emojis | Get Emoji Packs as PNG/SVG`,
@@ -72,7 +73,9 @@ export default function BulkEmojiDownloaderPage() {
         <p className="text-muted-foreground">Download entire emoji sets as PNG or SVG files. Get all smileys, animals, or flags in one ZIP. Choose sizes and skin tones for your design or development projects.</p>
       </header>
       <BulkEmojiDownloader />
-      {/* TODO: add seo component for bulk-emoji-downloader */}
+      <div className="mt-8">
+        <BulkEmojiDownloaderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

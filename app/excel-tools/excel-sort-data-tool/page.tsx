@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ExcelSortDataToolSeo from "@/components/seo-content/excel-tools/excel-sort-data-tool";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { ExcelSortDataTool } from "@/components/utils-tools/excel-sort-data-tool";
 
@@ -71,7 +73,9 @@ export default function ExcelSortDataToolPage() {
         <p className="text-muted-foreground">Organize your spreadsheet with a multi-level sort. Upload your Excel file, choose which columns to sort by and in what order, and download a neatly organized version.</p>
       </header>
       {<ExcelSortDataTool />}
-      {/* TODO: add seo component for excel-sort-data-tool */}
+      <div className="mt-16">
+        <ExcelSortDataToolSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

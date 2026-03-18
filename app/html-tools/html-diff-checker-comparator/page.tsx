@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import HtmlDiffCheckerComparatorSeo from "@/components/seo-content/html-tools/html-diff-checker-comparator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { HtmlDiffCheckerComparator } from "@/components/html-tools/html-diff-checker-comparator.tsx";
 
@@ -71,7 +73,9 @@ export default function HtmlDiffCheckerComparatorPage() {
         </p>
       </header>
       {<HtmlDiffCheckerComparator />}
-      {/* TODO: add seo component for html-diff-checker-comparator */}
+      <div className="mt-16">
+        <HtmlDiffCheckerComparatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

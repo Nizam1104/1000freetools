@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeToPdfSeo from "@/components/seo-content/qr-code-tools/qr-code-to-pdf";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeToPdf } from "@/components/qr-code-tools/qr-code-to-pdf.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeToPdfPage() {
         <p className="text-muted-foreground">Bundle multiple QR codes into a single, print-ready PDF file. Perfect for inventory sheets, event tickets, or marketing materials. Customize layout and labels.</p>
       </header>
       {<QrCodeToPdf />}
-      {/* TODO: add seo component for qr-code-to-pdf */}
+      <div className="mt-16">
+        <QrCodeToPdfSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

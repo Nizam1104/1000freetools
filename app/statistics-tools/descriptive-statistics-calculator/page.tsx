@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { DescriptiveStatisticsCalculator } from "@/components/statistics-tools/descriptive-statistics-calculator.tsx";
+import DescriptiveStatisticsCalculatorSeo from "@/components/seo-content/statistics-tools/descriptive-statistics-calculator";
 
 export const metadata: Metadata = {
   title: `Free Descriptive Statistics Calculator | Mean, Median, SD`,
@@ -70,8 +71,12 @@ export default function DescriptiveStatisticsCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Descriptive Statistics Calculator</h1>
         <p className="text-muted-foreground">Get a complete summary of your dataset in seconds. Calculate mean, median, mode, range, standard deviation, quartiles, and more to understand the basic features of your data.</p>
       </header>
-      {<DescriptiveStatisticsCalculator />}
-      {/* TODO: add seo component for descriptive-statistics-calculator */}
+      <div className="mt-8">
+        <DescriptiveStatisticsCalculator />
+      </div>
+      <div className="mt-8">
+        <DescriptiveStatisticsCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

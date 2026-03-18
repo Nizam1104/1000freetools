@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlQueryToCsvExport } from "@/components/sql-tools/sql-query-to-csv-export.tsx";
+import SqlQueryToCsvExportSeo from "@/components/seo-content/sql-tools/sql-query-to-csv-export";
 
 export const metadata: Metadata = {
   title: `SQL to CSV Converter Online | Export Query Results as CSV`,
@@ -72,7 +73,7 @@ export default function SqlQueryToCsvExportPage() {
         </p>
       </header>
       {<SqlQueryToCsvExport />}
-      {/* TODO: add seo component for sql-query-to-csv-export */}
+      <SqlQueryToCsvExportSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

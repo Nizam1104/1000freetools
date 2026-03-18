@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { UnicodeSortingTool } from "@/components/unicode-tools/unicode-sorting-tool.tsx";
+import UnicodeSortingToolSeo from "@/components/seo-content/unicode-tools/unicode-sorting-tool";
 
 export const metadata: Metadata = {
   title: `Unicode Sorting Tool | Text Collation Online`,
@@ -72,7 +73,7 @@ export default function UnicodeSortingToolPage() {
         </p>
       </header>
       {<UnicodeSortingTool />}
-      {/* TODO: add seo component for unicode-sorting-tool */}
+      <UnicodeSortingToolSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

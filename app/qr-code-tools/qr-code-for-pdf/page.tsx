@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeForPdfSeo from "@/components/seo-content/qr-code-tools/qr-code-for-pdf";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeForPdf } from "@/components/qr-code-tools/qr-code-for-pdf.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeForPdfPage() {
         <p className="text-muted-foreground">Generate a QR code that links directly to your PDF. Upload the file, get a scannable code. Perfect for digital menus, catalogs, or instructions.</p>
       </header>
       {<QrCodeForPdf />}
-      {/* TODO: add seo component for qr-code-for-pdf */}
+      <div className="mt-16">
+        <QrCodeForPdfSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

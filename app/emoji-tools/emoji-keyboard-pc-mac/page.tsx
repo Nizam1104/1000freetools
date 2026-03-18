@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import EmojiKeyboardPcMacSeo from "@/components/seo-content/emoji-tools/emoji-keyboard-pc-mac";
 
 export const metadata: Metadata = {
   title: `Emoji Keyboard for PC & Mac | Type Emojis on Computer`,
@@ -72,7 +73,9 @@ export default function EmojiKeyboardPcMacPage() {
         <p className="text-muted-foreground">Use emojis easily on your PC or Mac. Our virtual keyboard lets you click to insert emojis into any app, website, or document. No special software needed.</p>
       </header>
       <EmojiKeyboardPcMac />
-      {/* TODO: add seo component for emoji-keyboard-pc-mac */}
+      <div className="mt-8">
+        <EmojiKeyboardPcMacSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

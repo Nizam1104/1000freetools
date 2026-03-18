@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import UnicodeUrlEncoderDecoder from "@/components/unicode-tools/unicode-url-encoder-decoder";
+import UnicodeUrlEncoderSeo from "@/components/seo-content/unicode-tools/unicode-url-encoder";
 
 export const metadata: Metadata = {
   title: `Unicode URL Encoder/Decoder | Percent Encoding`,
@@ -74,7 +75,7 @@ export default function UnicodeUrlEncoderPage() {
       <div className="mt-8">
         <UnicodeUrlEncoderDecoder />
       </div>
-      {/* TODO: add seo component for unicode-url-encoder */}
+      <UnicodeUrlEncoderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PregnancyDueDateCalendar from "@/components/calendar-tools/pregnancy-due-date-calendar";
+import PregnancyDueDateCalendarSeo from "@/components/seo-content/calendar-tools/pregnancy-due-date-calendar";
 
 export const metadata: Metadata = {
   title: `Pregnancy Due Date Calculator | Week by Week Calendar`,
@@ -71,7 +72,7 @@ export default function PregnancyDueDateCalendarPage() {
         <p className="text-muted-foreground">Calculate your baby's due date and track your pregnancy week by week. See key milestones and trimesters. A helpful planner for expecting parents.</p>
       </header>
       <div className="mt-8"><PregnancyDueDateCalendar /></div>
-      {/* TODO: add seo component for pregnancy-due-date-calendar */}
+      <PregnancyDueDateCalendarSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

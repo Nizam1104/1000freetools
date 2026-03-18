@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import XmlFormatterValidator from "@/components/xml-tools/xml-formatter-validator";
+import XmlFormatterValidatorSeo from "@/components/seo-content/xml-tools/xml-formatter-validator";
 
 export const metadata: Metadata = {
   title: `Free XML Formatter & Validator Online | Beautify & Check XML`,
@@ -78,7 +79,9 @@ export default function XmlFormatterValidatorPage() {
         </p>
       </header>
       <div className="mt-8"><XmlFormatterValidator /></div>
-      {/* TODO: add seo component for xml-formatter-validator */}
+      <div className="mt-8">
+        <XmlFormatterValidatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

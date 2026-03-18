@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SvgToBase64EncoderSeo from "@/components/seo-content/svg-tools/svg-to-base64-encoder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgToBase64Encoder } from "@/components/svg-tools/svg-to-base64-encoder.tsx";
 
@@ -69,7 +71,9 @@ export default function SvgToBase64EncoderPage() {
         </p>
       </header>
       {<SvgToBase64Encoder />}
-      {/* TODO: add seo component for svg-to-base64-encoder */}
+      <div className="mt-16">
+        <SvgToBase64EncoderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

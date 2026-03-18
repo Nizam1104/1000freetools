@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { LeapYearTimestampCalculator } from "@/components/timestamp-tools/leap-year-timestamp-calculator.tsx";
+import LeapYearTimestampCalculatorSeo from "@/components/seo-content/timestamp-tools/leap-year-timestamp-calculator";
 
 export const metadata: Metadata = {
   title: `Leap Year Timestamp Calculator | Account for Leap Seconds`,
@@ -70,8 +71,8 @@ export default function LeapYearTimestampCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Leap Year Timestamp Calculator</h1>
         <p className="text-muted-foreground">Handle the quirks of timekeeping. This tool calculates timestamps with leap year and leap second adjustments for applications requiring extreme chronological precision.</p>
       </header>
-      {<LeapYearTimestampCalculator />}
-      {/* TODO: add seo component for leap-year-timestamp-calculator */}
+      <div className="mt-8"><LeapYearTimestampCalculator /></div>
+      <div className="mt-16"><LeapYearTimestampCalculatorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

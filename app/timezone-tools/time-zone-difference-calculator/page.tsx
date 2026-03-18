@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import TimeZoneDifferenceCalculatorSeo from "@/components/seo-content/timezone-tools/time-zone-difference-calculator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import TimezoneConverter from "@/components/timezone-tools/timezone-converter";
 
@@ -73,7 +75,9 @@ export default function TimeZoneDifferenceCalculatorPage() {
       <div className="mt-8">
         <TimezoneConverter />
       </div>
-      {/* TODO: add seo component for time-zone-difference-calculator */}
+      <div className="mt-16">
+        <TimeZoneDifferenceCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

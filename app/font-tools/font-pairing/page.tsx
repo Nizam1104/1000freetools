@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import FontPairingSeo from "@/components/seo-content/font-tools/font-pairing";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import FontPairingTool from "@/components/font-tools/font-pairing-tool";
 
@@ -73,7 +75,9 @@ export default function FontPairingPage() {
       <div className="mt-8">
         <FontPairingTool />
       </div>
-      {/* TODO: add seo component for font-pairing */}
+      <div className="mt-16">
+        <FontPairingSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

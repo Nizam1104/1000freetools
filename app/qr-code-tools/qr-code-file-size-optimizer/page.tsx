@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeFileSizeOptimizerSeo from "@/components/seo-content/qr-code-tools/qr-code-file-size-optimizer";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeFileSizeOptimizer } from "@/components/qr-code-tools/qr-code-file-size-optimizer.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeFileSizeOptimizerPage() {
         <p className="text-muted-foreground">Upload your QR code image and compress it for faster web loading or smaller print files. Our optimizer maintains scannability while reducing PNG, JPG, or SVG file size.</p>
       </header>
       {<QrCodeFileSizeOptimizer />}
-      {/* TODO: add seo component for qr-code-file-size-optimizer */}
+      <div className="mt-16">
+        <QrCodeFileSizeOptimizerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

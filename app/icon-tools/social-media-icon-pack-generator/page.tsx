@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SocialMediaIconPackGenerator } from "@/components/icon-tools/social-media-icon-pack-generator.tsx";
+import SocialMediaIconPackGeneratorSeo from "@/components/seo-content/icon-tools/social-media-icon-pack-generator";
 
 export const metadata: Metadata = {
   title: `Social Media Icon Generator | Free Icon Pack`,
@@ -71,7 +72,7 @@ export default function SocialMediaIconPackGeneratorPage() {
         <p className="text-muted-foreground">Design a matching set of social media icons for your website or app. Pick a style, customize the colors, and download all icons in one pack with multiple sizes included.</p>
       </header>
       {<SocialMediaIconPackGenerator />}
-      {/* TODO: add seo component for social-media-icon-pack-generator */}
+      <SocialMediaIconPackGeneratorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

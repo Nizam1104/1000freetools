@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptFunctionCodeGeneratorSeo from "@/components/seo-content/javascript-tools/javascript-function-code-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JavascriptFunctionCodeGenerator } from "@/components/javascript-tools/javascript-function-code-generator.tsx";
 
@@ -71,7 +73,9 @@ export default function JavascriptFunctionCodeGeneratorPage() {
         </p>
       </header>
       {<JavascriptFunctionCodeGenerator />}
-      {/* TODO: add seo component for javascript-function-code-generator */}
+      <div className="mt-16">
+        <JavascriptFunctionCodeGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

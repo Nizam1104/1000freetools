@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import HashToHexBase64Converter from "@/components/hash-tools/hash-to-hex-base64-converter";
+import Base64EncoderDecoderHashSeo from "@/components/seo-content/hash-tools/base64-encoder-decoder-hash";
 
 export const metadata: Metadata = {
   title: `Base64 Encoder Decoder with Hash Online | Free Tool`,
@@ -73,7 +74,9 @@ export default function Base64EncoderDecoderHashPage() {
       <div className="mt-8">
         <HashToHexBase64Converter />
       </div>
-      {/* TODO: add seo component for base64-encoder-decoder-hash */}
+      <div className="mt-8">
+        <Base64EncoderDecoderHashSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

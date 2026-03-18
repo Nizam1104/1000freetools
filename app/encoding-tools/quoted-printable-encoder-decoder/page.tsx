@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QuotedPrintableEncoderDecoder } from "@/components/encoding-tools/quoted-printable-encoder-decoder";
+import QuotedPrintableEncoderDecoderSeo from "@/components/seo-content/encoding-tools/quoted-printable-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Quoted-Printable Encoder Decoder | Email Encoding Tool`,
@@ -72,7 +73,7 @@ export default function QuotedPrintableEncoderDecoderPage() {
         </p>
       </header>
       {<QuotedPrintableEncoderDecoder />}
-      {/* TODO: add seo component for quoted-printable-encoder-decoder */}
+      <QuotedPrintableEncoderDecoderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

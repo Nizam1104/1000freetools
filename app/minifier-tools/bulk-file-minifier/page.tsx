@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import BulkFileMinifierSeo from "@/components/seo-content/minifier-tools/bulk-file-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BulkFileMinifier } from "@/components/minifier-tools/bulk-file-minifier.tsx";
 
@@ -71,7 +73,9 @@ export default function BulkFileMinifierPage() {
         <p className="text-muted-foreground">Minify multiple files at once by uploading a ZIP archive. This batch tool processes HTML, CSS, JavaScript, and other files, returning a compressed ZIP with all minified versions and a savings report.</p>
       </header>
       {<BulkFileMinifier />}
-      {/* TODO: add seo component for bulk-file-minifier */}
+      <div className="mt-16">
+        <BulkFileMinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

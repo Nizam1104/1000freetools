@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import HtmlSpecialCharactersLibrarySeo from "@/components/seo-content/html-tools/html-special-characters-library";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { HtmlSpecialCharactersLibrary } from "@/components/html-tools/html-special-characters-library.tsx";
 
@@ -72,7 +74,9 @@ export default function HtmlSpecialCharactersLibraryPage() {
         </p>
       </header>
       {<HtmlSpecialCharactersLibrary />}
-      {/* TODO: add seo component for html-special-characters-library */}
+      <div className="mt-16">
+        <HtmlSpecialCharactersLibrarySeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

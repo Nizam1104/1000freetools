@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { PValueCalculator } from "@/components/statistics-tools/p-value-calculator";
+import PValueCalculatorSeo from "@/components/seo-content/statistics-tools/p-value-calculator";
 
 export const metadata: Metadata = {
   title: `P-Value Calculator | For Z, T, Chi-Square, and F Tests`,
@@ -70,8 +71,12 @@ export default function PValueCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">P-Value Calculator (Z, T, Chi-Square, F)</h1>
         <p className="text-muted-foreground">Find the p-value for your hypothesis test quickly. Enter your test statistic from a z, t, chi-square, or F test to get the corresponding significance level.</p>
       </header>
-      {<PValueCalculator />}
-      {/* TODO: add seo component for p-value-calculator */}
+      <div className="mt-8">
+        <PValueCalculator />
+      </div>
+      <div className="mt-8">
+        <PValueCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

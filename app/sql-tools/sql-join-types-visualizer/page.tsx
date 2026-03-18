@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlJoinTypesVisualizer } from "@/components/sql-tools/sql-join-types-visualizer.tsx";
+import SqlJoinTypesVisualizerSeo from "@/components/seo-content/sql-tools/sql-join-types-visualizer";
 
 export const metadata: Metadata = {
   title: `SQL JOIN Visualizer Online | Learn JOIN Types with Examples`,
@@ -72,7 +73,7 @@ export default function SqlJoinTypesVisualizerPage() {
         </p>
       </header>
       {<SqlJoinTypesVisualizer />}
-      {/* TODO: add seo component for sql-join-types-visualizer */}
+      <SqlJoinTypesVisualizerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

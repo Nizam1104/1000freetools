@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtTokenBuilderTemplatesSeo from "@/components/seo-content/jwt-tools/jwt-token-builder-templates";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtTokenBuilderTemplates } from "@/components/jwt-tools/jwt-token-builder-templates.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtTokenBuilderTemplatesPage() {
         <p className="text-muted-foreground">Generate JWTs quickly using templates for OpenID Connect, OAuth 2.0, and API authentication. Customize standard claims and sign tokens instantly for your testing scenarios.</p>
       </header>
       {<JwtTokenBuilderTemplates />}
-      {/* TODO: add seo component for jwt-token-builder-templates */}
+      <div className="mt-16">
+        <JwtTokenBuilderTemplatesSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

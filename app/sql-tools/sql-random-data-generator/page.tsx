@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlRandomDataGenerator } from "@/components/sql-tools/sql-random-data-generator.tsx";
+import SqlRandomDataGeneratorSeo from "@/components/seo-content/sql-tools/sql-random-data-generator";
 
 export const metadata: Metadata = {
   title: `SQL Test Data Generator Online | Fake Data for Databases`,
@@ -72,7 +73,7 @@ export default function SqlRandomDataGeneratorPage() {
         </p>
       </header>
       {<SqlRandomDataGenerator />}
-      {/* TODO: add seo component for sql-random-data-generator */}
+      <SqlRandomDataGeneratorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

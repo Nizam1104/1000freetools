@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import RealTimeMinifierSeo from "@/components/seo-content/minifier-tools/real-time-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { RealTimeMinifier } from "@/components/minifier-tools/real-time-minifier.tsx";
 
@@ -71,7 +73,9 @@ export default function RealTimeMinifierPage() {
         <p className="text-muted-foreground">See minification results instantly as you edit. This live tool compresses your code on-the-fly, showing original and minified versions side-by-side with real-time size savings.</p>
       </header>
       {<RealTimeMinifier />}
-      {/* TODO: add seo component for real-time-minifier */}
+      <div className="mt-16">
+        <RealTimeMinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import XmlSignatureGeneratorVerifier from "@/components/xml-tools/xml-signature-generator-verifier";
+import XmlSignatureGeneratorVerifierSeo from "@/components/seo-content/xml-tools/xml-signature-generator-verifier";
 
 export const metadata: Metadata = {
   title: `XML Digital Signature Tool | Sign & Verify XML Online`,
@@ -77,7 +78,9 @@ export default function XmlSignatureGeneratorVerifierPage() {
         </p>
       </header>
       <div className="mt-8"><XmlSignatureGeneratorVerifier /></div>
-      {/* TODO: add seo component for xml-signature-generator-verifier */}
+      <div className="mt-8">
+        <XmlSignatureGeneratorVerifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

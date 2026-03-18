@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptBeautifierFormatterSeo from "@/components/seo-content/javascript-tools/javascript-beautifier-formatter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptBeautifier from "@/components/javascript-tools/javascript-beautifier";
 
@@ -74,7 +76,9 @@ export default function JavascriptBeautifierFormatterPage() {
       <div className="mt-8">
         <JavascriptBeautifier />
       </div>
-      {/* TODO: add seo component for javascript-beautifier-formatter */}
+      <div className="mt-16">
+        <JavascriptBeautifierFormatterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

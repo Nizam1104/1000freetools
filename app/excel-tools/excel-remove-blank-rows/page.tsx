@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ExcelRemoveBlankRowsSeo from "@/components/seo-content/excel-tools/excel-remove-blank-rows";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import ExcelDuplicateRemover from "@/components/excel-tools/excel-duplicate-remover";
 
@@ -73,7 +75,9 @@ export default function ExcelRemoveBlankRowsPage() {
       <div className="mt-8">
         <ExcelDuplicateRemover />
       </div>
-      {/* TODO: add seo component for excel-remove-blank-rows */}
+      <div className="mt-16">
+        <ExcelRemoveBlankRowsSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

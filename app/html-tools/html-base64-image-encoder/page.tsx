@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import HtmlBase64ImageEncoderSeo from "@/components/seo-content/html-tools/html-base64-image-encoder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HtmlBase64ImageEncoder } from "@/components/html-tools/html-base64-image-encoder.tsx";
+import HtmlBase64ImageEncoder from "@/components/html-tools/html-base64-image-encoder";
 
 export const metadata: Metadata = {
   title: `Base64 Image Encoder | Convert Image to Data URI`,
@@ -72,7 +74,9 @@ export default function HtmlBase64ImageEncoderPage() {
         </p>
       </header>
       {<HtmlBase64ImageEncoder />}
-      {/* TODO: add seo component for html-base64-image-encoder */}
+      <div className="mt-16">
+        <HtmlBase64ImageEncoderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

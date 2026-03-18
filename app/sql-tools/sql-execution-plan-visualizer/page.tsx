@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlExecutionPlanVisualizer } from "@/components/sql-tools/sql-execution-plan-visualizer.tsx";
+import SqlExecutionPlanVisualizerSeo from "@/components/seo-content/sql-tools/sql-execution-plan-visualizer";
 
 export const metadata: Metadata = {
   title: `SQL Execution Plan Visualizer Online | EXPLAIN Query Tool`,
@@ -72,7 +73,7 @@ export default function SqlExecutionPlanVisualizerPage() {
         </p>
       </header>
       {<SqlExecutionPlanVisualizer />}
-      {/* TODO: add seo component for sql-execution-plan-visualizer */}
+      <SqlExecutionPlanVisualizerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

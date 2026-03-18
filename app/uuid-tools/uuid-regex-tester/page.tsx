@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import UuidRegexTesterSeo from "@/components/seo-content/uuid-tools/uuid-regex-tester";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { UuidRegexTester } from "@/components/uuid-tools/uuid-regex-tester.tsx";
 
@@ -71,7 +73,9 @@ export default function UuidRegexTesterPage() {
         <p className="text-muted-foreground">Test and generate regular expressions for matching UUIDs. Get pre-built regex patterns for common formats (with hyphens, without, with braces) and validate your custom patterns against live UUID examples.</p>
       </header>
       {<UuidRegexTester />}
-      {/* TODO: add seo component for uuid-regex-tester */}
+      <div className="mt-16">
+        <UuidRegexTesterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

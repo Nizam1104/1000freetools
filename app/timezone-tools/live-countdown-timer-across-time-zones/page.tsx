@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import LiveCountdownTimerAcrossTimeZonesSeo from "@/components/seo-content/timezone-tools/live-countdown-timer-across-time-zones";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { LiveCountdownTimerAcrossTimeZones } from "@/components/timezone-tools/live-countdown-timer-across-time-zones";
 
@@ -71,7 +73,9 @@ export default function LiveCountdownTimerAcrossTimeZonesPage() {
         <p className="text-muted-foreground">Create a countdown to a global event that everyone can see in their own local time. Perfect for product launches, webinars, or New Year's Eve celebrations worldwide.</p>
       </header>
       {<LiveCountdownTimerAcrossTimeZones />}
-      {/* TODO: add seo component for live-countdown-timer-across-time-zones */}
+      <div className="mt-16">
+        <LiveCountdownTimerAcrossTimeZonesSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

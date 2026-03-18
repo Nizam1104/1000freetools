@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { FileTimestampConverter } from "@/components/timestamp-tools/file-timestamp-converter.tsx";
+import FileTimestampConverterSeo from "@/components/seo-content/timestamp-tools/file-timestamp-converter";
 
 export const metadata: Metadata = {
   title: `File Timestamp Converter | Windows FILETIME, Mac OS Time`,
@@ -70,8 +71,8 @@ export default function FileTimestampConverterPage() {
         <h1 className="text-3xl font-bold mb-3">File & System Timestamp Converter</h1>
         <p className="text-muted-foreground">Decode timestamps from files, metadata, and different operating systems. Convert Windows FILETIME, Mac OS times, and other formats to standard dates.</p>
       </header>
-      {<FileTimestampConverter />}
-      {/* TODO: add seo component for file-timestamp-converter */}
+      <div className="mt-8"><FileTimestampConverter /></div>
+      <div className="mt-16"><FileTimestampConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

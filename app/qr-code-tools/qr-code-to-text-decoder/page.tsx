@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeToTextDecoderSeo from "@/components/seo-content/qr-code-tools/qr-code-to-text-decoder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeToTextDecoder } from "@/components/qr-code-tools/qr-code-to-text-decoder.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeToTextDecoderPage() {
         <p className="text-muted-foreground">Upload a QR code image to instantly see the text, URL, or other data hidden inside. Our free decoder works in your browser for complete privacy—your data never leaves your computer.</p>
       </header>
       {<QrCodeToTextDecoder />}
-      {/* TODO: add seo component for qr-code-to-text-decoder */}
+      <div className="mt-16">
+        <QrCodeToTextDecoderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

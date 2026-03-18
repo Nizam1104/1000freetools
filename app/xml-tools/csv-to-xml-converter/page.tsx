@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CsvToXmlConverter from "@/components/xml-tools/csv-to-xml-converter";
+import CsvToXmlConverterSeo from "@/components/seo-content/xml-tools/csv-to-xml-converter";
 
 export const metadata: Metadata = {
   title: `CSV to XML Converter | Generate XML from Spreadsheet`,
@@ -74,7 +75,9 @@ export default function CsvToXmlConverterPage() {
         </p>
       </header>
       <div className="mt-8"><CsvToXmlConverter /></div>
-      {/* TODO: add seo component for csv-to-xml-converter */}
+      <div className="mt-8">
+        <CsvToXmlConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

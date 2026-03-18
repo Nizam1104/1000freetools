@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import UrlEncoderDecoder from "@/components/encoding-tools/url-encoder-decoder";
+import PercentEncodingDecoderSeo from "@/components/seo-content/encoding-tools/percent-encoding-decoder";
 
 export const metadata: Metadata = {
   title: `Percent Encoding Tool - RFC 3986 Encoder/Decoder`,
@@ -74,7 +75,7 @@ export default function PercentEncodingDecoderPage() {
       <div className="mt-8">
         <UrlEncoderDecoder />
       </div>
-      {/* TODO: add seo component for percent-encoding-decoder */}
+      <PercentEncodingDecoderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import MeetingPlannerAcrossTimeZonesSeo from "@/components/seo-content/timezone-tools/meeting-planner-across-time-zones";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import TimezoneConverter from "@/components/timezone-tools/timezone-converter";
 
@@ -74,7 +76,9 @@ export default function MeetingPlannerAcrossTimeZonesPage() {
       <div className="mt-8">
         <TimezoneConverter />
       </div>
-      {/* TODO: add seo component for meeting-planner-across-time-zones */}
+      <div className="mt-16">
+        <MeetingPlannerAcrossTimeZonesSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

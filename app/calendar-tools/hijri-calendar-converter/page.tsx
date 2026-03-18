@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import HijriCalendarConverter from "@/components/calendar-tools/hijri-calendar-converter";
+import HijriCalendarConverterSeo from "@/components/seo-content/calender-tools/hijri-calendar-converter";
 
 export const metadata: Metadata = {
   title: `Hijri Calendar Converter | Islamic Date Converter`,
@@ -71,7 +72,7 @@ export default function HijriCalendarConverterPage() {
         <p className="text-muted-foreground">Convert dates between the Islamic (Hijri) and Gregorian calendars. View monthly Hijri calendars and find key Islamic dates like Ramadan and Eid.</p>
       </header>
       <div className="mt-8"><HijriCalendarConverter /></div>
-      {/* TODO: add seo component for hijri-calendar-converter */}
+      <div className="mt-8"><HijriCalendarConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

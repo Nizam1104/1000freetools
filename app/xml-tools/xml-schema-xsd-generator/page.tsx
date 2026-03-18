@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import XmlSchemaXsdGenerator from "@/components/xml-tools/xml-schema-xsd-generator";
+import XmlSchemaXsdGeneratorSeo from "@/components/seo-content/xml-tools/xml-schema-xsd-generator";
 
 export const metadata: Metadata = {
   title: `XSD Generator from XML | Free XML Schema Creator`,
@@ -77,7 +78,9 @@ export default function XmlSchemaXsdGeneratorPage() {
         </p>
       </header>
       <div className="mt-8"><XmlSchemaXsdGenerator /></div>
-      {/* TODO: add seo component for xml-schema-xsd-generator */}
+      <div className="mt-8">
+        <XmlSchemaXsdGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

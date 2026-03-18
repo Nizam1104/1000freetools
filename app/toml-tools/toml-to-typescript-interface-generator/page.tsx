@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TomlToTypescriptInterfaceGenerator } from "@/components/toml-tools/toml-to-typescript-interface-generator.tsx";
+import TomlToTypescriptInterfaceGeneratorSeo from "@/components/seo-content/toml-tools/toml-to-typescript-interface-generator";
 
 export const metadata: Metadata = {
   title: `TOML to TypeScript Interface Generator | Free Tool`,
@@ -71,7 +72,7 @@ export default function TomlToTypescriptInterfaceGeneratorPage() {
         <p className="text-muted-foreground">Create TypeScript interfaces directly from your TOML configuration files. This tool generates type-safe TypeScript definitions, helping you maintain consistency between your configs and code. Perfect for full-stack TypeScript developers.</p>
       </header>
       {<TomlToTypescriptInterfaceGenerator />}
-      {/* TODO: add seo component for toml-to-typescript-interface-generator */}
+      <div className="mt-8"><TomlToTypescriptInterfaceGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

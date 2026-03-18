@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownCheatSheetGenerator } from "@/components/markdown-tools/markdown-cheat-sheet-generator.tsx";
+import MarkdownCheatSheetGeneratorSeo from "@/components/seo-content/markdown-tools/markdown-cheat-sheet-generator";
 
 export const metadata: Metadata = {
   title: `Markdown Cheat Sheet Generator | Custom Reference`,
@@ -71,7 +72,7 @@ export default function MarkdownCheatSheetGeneratorPage() {
         <p className="text-muted-foreground">Generate a printable Markdown syntax reference tailored to your needs. Select elements, see examples, and download as PDF. Perfect for learning or team onboarding.</p>
       </header>
       {<MarkdownCheatSheetGenerator />}
-      {/* TODO: add seo component for markdown-cheat-sheet-generator */}
+      <MarkdownCheatSheetGeneratorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

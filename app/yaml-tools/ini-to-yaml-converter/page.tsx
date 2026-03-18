@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { IniToYamlConverter } from "@/components/yaml-tools/ini-to-yaml-converter.tsx";
+import IniToYamlConverterSeo from "@/components/seo-content/yaml-tools/ini-to-yaml-converter";
 
 export const metadata: Metadata = {
   title: `INI to YAML Converter | Free Online Tool`,
@@ -71,7 +72,9 @@ export default function IniToYamlConverterPage() {
         <p className="text-muted-foreground">Easily upgrade your INI configuration files to YAML format. This free tool accurately converts sections and properties into a clean, readable YAML structure, ideal for modern DevOps and development workflows.</p>
       </header>
       {<IniToYamlConverter />}
-      {/* TODO: add seo component for ini-to-yaml-converter */}
+      <div className="mt-8">
+        <IniToYamlConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

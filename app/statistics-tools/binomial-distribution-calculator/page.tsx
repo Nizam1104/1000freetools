@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BinomialDistributionCalculator } from "@/components/statistics-tools/binomial-distribution-calculator";
+import BinomialDistributionCalculatorSeo from "@/components/seo-content/statistics-tools/binomial-distribution-calculator";
 
 export const metadata: Metadata = {
   title: `Binomial Distribution Calculator | Find Probability of Success`,
@@ -70,8 +71,12 @@ export default function BinomialDistributionCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Binomial Probability Distribution Calculator</h1>
         <p className="text-muted-foreground">Calculate exact and cumulative probabilities for binomial experiments. Find the chance of getting a specific number of successes in a fixed number of independent trials.</p>
       </header>
-      {<BinomialDistributionCalculator />}
-      {/* TODO: add seo component for binomial-distribution-calculator */}
+      <div className="mt-8">
+        <BinomialDistributionCalculator />
+      </div>
+      <div className="mt-8">
+        <BinomialDistributionCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

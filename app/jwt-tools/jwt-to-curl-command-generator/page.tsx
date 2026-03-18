@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtToCurlCommandGeneratorSeo from "@/components/seo-content/jwt-tools/jwt-to-curl-command-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtToCurlCommandGenerator } from "@/components/jwt-tools/jwt-to-curl-command-generator.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtToCurlCommandGeneratorPage() {
         <p className="text-muted-foreground">Turn any JWT into a cURL command to test authenticated APIs instantly. Our tool creates the correct Authorization header with your Bearer token, ready to run in your terminal.</p>
       </header>
       {<JwtToCurlCommandGenerator />}
-      {/* TODO: add seo component for jwt-to-curl-command-generator */}
+      <div className="mt-16">
+        <JwtToCurlCommandGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

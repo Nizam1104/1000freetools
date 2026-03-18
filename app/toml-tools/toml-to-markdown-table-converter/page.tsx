@@ -71,7 +71,7 @@ export default function TomlToMarkdownTableConverterPage() {
         <p className="text-muted-foreground">Document your TOML configuration by converting arrays of tables into readable Markdown tables. This tool creates well-formatted tables for READMEs and documentation sites.</p>
       </header>
       {<TomlToMarkdownTableConverter />}
-      {/* TODO: add seo component for toml-to-markdown-table-converter */}
+      <div className="mt-8"><TomlToMarkdownTableConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

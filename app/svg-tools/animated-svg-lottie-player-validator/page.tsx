@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import AnimatedSvgLottiePlayerValidatorSeo from "@/components/seo-content/svg-tools/animated-svg-lottie-player-validator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { AnimatedSvgLottiePlayerValidator } from "@/components/svg-tools/animated-svg-lottie-player-validator.tsx";
 
@@ -72,7 +74,9 @@ export default function AnimatedSvgLottiePlayerValidatorPage() {
         </p>
       </header>
       {<AnimatedSvgLottiePlayerValidator />}
-      {/* TODO: add seo component for animated-svg-lottie-player-validator */}
+      <div className="mt-16">
+        <AnimatedSvgLottiePlayerValidatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PasswordManager from "@/components/password-tools/password-manager";
+import PasswordManagerSeo from "@/components/seo-content/password-tools/password-manager";
 
 export const metadata: Metadata = {
   title: `Free Password Manager | Store & Manage Passwords Securely`,
@@ -71,7 +72,7 @@ export default function PasswordManagerPage() {
         <p className="text-muted-foreground">Store and manage all your passwords securely in your browser. This local tool encrypts your data and helps you log in faster.</p>
       </header>
       <div className="mt-8"><PasswordManager /></div>
-      {/* TODO: add seo component for password-manager */}
+      <div className="mt-16"><PasswordManagerSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

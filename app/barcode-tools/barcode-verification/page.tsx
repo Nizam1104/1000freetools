@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import BarcodeValidator from "@/components/barcode-tools/barcode-validator";
+import BarcodeVerificationSeo from "@/components/seo-content/barcode-tools/barcode-verification";
 
 export const metadata: Metadata = {
   title: `Barcode Verification - ISO 15416 Quality Grading`,
@@ -73,7 +74,7 @@ export default function BarcodeVerificationPage() {
       <div className="mt-8">
         <BarcodeValidator />
       </div>
-      {/* TODO: add seo component for barcode-verification */}
+      <div className="mt-8"><BarcodeVerificationSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

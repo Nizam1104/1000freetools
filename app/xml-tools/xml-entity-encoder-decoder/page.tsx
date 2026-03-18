@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import XmlEntityEncoderDecoder from "@/components/xml-tools/xml-entity-encoder-decoder";
+import XmlEntityEncoderDecoderSeo from "@/components/seo-content/xml-tools/xml-entity-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `XML Entity Encoder & Decoder | Free Online Tool`,
@@ -71,7 +72,9 @@ export default function XmlEntityEncoderDecoderPage() {
         <p className="text-muted-foreground">Safely encode special characters like &lt;, &gt;, &amp; into XML entities for valid XML. Or decode entities back to their original characters.</p>
       </header>
       <div className="mt-8"><XmlEntityEncoderDecoder /></div>
-      {/* TODO: add seo component for xml-entity-encoder-decoder */}
+      <div className="mt-8">
+        <XmlEntityEncoderDecoderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

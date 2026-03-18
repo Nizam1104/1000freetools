@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import BulkQrCodeGeneratorSeo from "@/components/seo-content/qr-code-tools/bulk-qr-code-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BulkQrCodeGenerator } from "@/components/qr-code-tools/bulk-qr-code-generator.tsx";
 
@@ -71,7 +73,9 @@ export default function BulkQrCodeGeneratorPage() {
         <p className="text-muted-foreground">Generate thousands of unique QR codes in one go. Upload a spreadsheet with your data. Download all codes as a ZIP file or a multi-page PDF.</p>
       </header>
       {<BulkQrCodeGenerator />}
-      {/* TODO: add seo component for bulk-qr-code-generator */}
+      <div className="mt-16">
+        <BulkQrCodeGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

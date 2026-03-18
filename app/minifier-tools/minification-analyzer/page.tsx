@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import MinificationAnalyzerSeo from "@/components/seo-content/minifier-tools/minification-analyzer";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MinificationAnalyzer } from "@/components/minifier-tools/minification-analyzer";
 
@@ -71,7 +73,9 @@ export default function MinificationAnalyzerPage() {
         <p className="text-muted-foreground">Get a detailed analysis of your code minification. This tool reports exact savings, shows what was removed, and estimates performance gains in load time and bandwidth usage.</p>
       </header>
       {<MinificationAnalyzer />}
-      {/* TODO: add seo component for minification-analyzer */}
+      <div className="mt-16">
+        <MinificationAnalyzerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

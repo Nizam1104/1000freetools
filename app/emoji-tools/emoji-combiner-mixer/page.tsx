@@ -63,6 +63,7 @@ const tools = [
 ];
 
 import EmojiCombinerMixer from "@/components/emoji-tools/emoji-combiner-mixer"
+import EmojiCombinerMixerSeo from "@/components/seo-content/emoji-tools/emoji-combiner-mixer"
 
 export default function EmojiCombinerMixerPage() {
   return (
@@ -72,7 +73,9 @@ export default function EmojiCombinerMixerPage() {
         <p className="text-muted-foreground">Create your own custom emojis by mixing and merging two or more standard ones. Make a pizza heart or a crying-laughing cat. Download your creations or share them online.</p>
       </header>
       <EmojiCombinerMixer />
-      {/* TODO: add seo component for emoji-combiner-mixer */}
+      <div className="mt-8">
+        <EmojiCombinerMixerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

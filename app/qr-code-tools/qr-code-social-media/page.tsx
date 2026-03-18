@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeSocialMediaSeo from "@/components/seo-content/qr-code-tools/qr-code-social-media";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeSocialMedia } from "@/components/qr-code-tools/qr-code-social-media.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeSocialMediaPage() {
         <p className="text-muted-foreground">Create one QR code for all your social profiles. Link to Instagram, TikTok, YouTube, and more. Drive followers from print materials.</p>
       </header>
       {<QrCodeSocialMedia />}
-      {/* TODO: add seo component for qr-code-social-media */}
+      <div className="mt-16">
+        <QrCodeSocialMediaSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

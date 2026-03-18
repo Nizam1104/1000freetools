@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PerpetualCalendar from "@/components/calendar-tools/perpetual-calendar";
+import PerpetualCalendarSeo from "@/components/seo-content/calendar-tools/perpetual-calendar";
 
 export const metadata: Metadata = {
   title: `Perpetual Calendar | 100 Year Date Lookup`,
@@ -71,7 +72,7 @@ export default function PerpetualCalendarPage() {
         <p className="text-muted-foreground">Look up the day of the week for any past or future date. Explore calendars from 1900 to 2100. A useful reference for historians, planners, and the curious.</p>
       </header>
       <div className="mt-8"><PerpetualCalendar /></div>
-      {/* TODO: add seo component for perpetual-calendar */}
+      <PerpetualCalendarSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptUrlParserQueryStringBuilderSeo from "@/components/seo-content/javascript-tools/javascript-url-parser-query-string-builder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptUrlParser from "@/components/javascript-tools/javascript-url-parser";
 
@@ -73,7 +75,9 @@ export default function JavascriptUrlParserQueryStringBuilderPage() {
       <div className="mt-8">
         <JavascriptUrlParser />
       </div>
-      {/* TODO: add seo component for javascript-url-parser-query-string-builder */}
+      <div className="mt-16">
+        <JavascriptUrlParserQueryStringBuilderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PasswordHashGenerator from "@/components/password-tools/password-hash-generator";
+import PasswordHashGeneratorSeo from "@/components/seo-content/password-tools/password-hash-generator";
 
 export const metadata: Metadata = {
   title: `Hash Generator | Create MD5, SHA256 Hashes Online`,
@@ -71,7 +72,7 @@ export default function PasswordHashGeneratorPage() {
         <p className="text-muted-foreground">Convert any text or password into a cryptographic hash. Supports MD5, SHA-256, bcrypt, and more for development and security purposes.</p>
       </header>
       <div className="mt-8"><PasswordHashGenerator /></div>
-      {/* TODO: add seo component for password-hash-generator */}
+      <div className="mt-16"><PasswordHashGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

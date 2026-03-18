@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import UnicodeConfusablesHomoglyphDetector from "@/components/unicode-tools/unicode-confusables-homoglyph-detector";
+import UnicodeConfusablesDetectorSeo from "@/components/seo-content/unicode-tools/unicode-confusables-detector";
 
 export const metadata: Metadata = {
   title: `Unicode Confusables Detector | Homoglyph Tool`,
@@ -73,7 +74,7 @@ export default function UnicodeConfusablesDetectorPage() {
       <div className="mt-8">
         <UnicodeConfusablesHomoglyphDetector />
       </div>
-      {/* TODO: add seo component for unicode-confusables-detector */}
+      <UnicodeConfusablesDetectorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { NormalDistributionCalculator } from "@/components/statistics-tools/normal-distribution-calculator";
+import NormalDistributionCalculatorSeo from "@/components/seo-content/statistics-tools/normal-distribution-calculator";
 
 export const metadata: Metadata = {
   title: `Normal Distribution Calculator | Probability & Percentile`,
@@ -70,8 +71,12 @@ export default function NormalDistributionCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Normal Distribution Calculator (Bell Curve)</h1>
         <p className="text-muted-foreground">Work with the normal distribution easily. Find probabilities, percentiles, and critical values for any mean and standard deviation, visualized on a classic bell curve.</p>
       </header>
-      {<NormalDistributionCalculator />}
-      {/* TODO: add seo component for normal-distribution-calculator */}
+      <div className="mt-8">
+        <NormalDistributionCalculator />
+      </div>
+      <div className="mt-8">
+        <NormalDistributionCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

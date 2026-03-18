@@ -63,6 +63,7 @@ const tools = [
 ];
 
 import EmojiPasswordGenerator from "@/components/emoji-tools/emoji-password-generator"
+import EmojiPasswordGeneratorSeo from "@/components/seo-content/emoji-tools/emoji-password-generator"
 
 export default function EmojiPasswordGeneratorPage() {
   return (
@@ -72,7 +73,9 @@ export default function EmojiPasswordGeneratorPage() {
         <p className="text-muted-foreground">Create strong, fun passwords using emojis. Mix symbols, letters, and emojis for a secure and memorable passphrase. Check which apps support emoji passwords.</p>
       </header>
       <EmojiPasswordGenerator />
-      {/* TODO: add seo component for emoji-password-generator */}
+      <div className="mt-8">
+        <EmojiPasswordGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

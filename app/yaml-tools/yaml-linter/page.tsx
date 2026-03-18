@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlLinter } from "@/components/yaml-tools/yaml-linter.tsx";
+import YamlLinterSeo from "@/components/seo-content/yaml-tools/yaml-linter";
 
 export const metadata: Metadata = {
   title: `YAML Linter | Style Checker & Validator`,
@@ -71,7 +72,9 @@ export default function YamlLinterPage() {
         <p className="text-muted-foreground">Improve your YAML code quality with this free linter. It detects errors, style issues, and anti-patterns, offering fixes to ensure your YAML files are clean, valid, and follow best practices.</p>
       </header>
       {<YamlLinter />}
-      {/* TODO: add seo component for yaml-linter */}
+      <div className="mt-8">
+        <YamlLinterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

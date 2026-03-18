@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BernoulliEquationCalculator } from "@/components/physics-tools/bernoulli-equation-calculator";
+import BernoulliEquationCalculatorSeo from "@/components/seo-content/physics-tools/bernoulli-equation-calculator";
 
 export const metadata: Metadata = {
   title: `Bernoulli Equation Calculator | Fluid Dynamics Pressure Flow`,
@@ -70,8 +71,12 @@ export default function BernoulliEquationCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Bernoulli Equation Calculator</h1>
         <p className="text-muted-foreground">Understand fluid dynamics. Use pressure, speed, and height at one point in a flow to find conditions at another, assuming ideal fluid behavior.</p>
       </header>
-      {<BernoulliEquationCalculator />}
-      {/* TODO: add seo component for bernoulli-equation-calculator */}
+      <div className="mt-8">
+        <BernoulliEquationCalculator />
+      </div>
+      <div className="mt-8">
+        <BernoulliEquationCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

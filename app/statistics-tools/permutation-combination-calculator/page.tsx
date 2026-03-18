@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { PermutationCombinationCalculator } from "@/components/statistics-tools/permutation-combination-calculator";
+import PermutationCombinationCalculatorSeo from "@/components/seo-content/statistics-tools/permutation-combination-calculator";
 
 export const metadata: Metadata = {
   title: `Permutation Combination Calculator | Find nPr and nCr`,
@@ -70,8 +71,12 @@ export default function PermutationCombinationCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Permutation & Combination Calculator (nPr & nCr)</h1>
         <p className="text-muted-foreground">Solve counting problems instantly. Calculate the number of permutations (order matters) or combinations (order doesn't matter) for selecting items from a set.</p>
       </header>
-      {<PermutationCombinationCalculator />}
-      {/* TODO: add seo component for permutation-combination-calculator */}
+      <div className="mt-8">
+        <PermutationCombinationCalculator />
+      </div>
+      <div className="mt-8">
+        <PermutationCombinationCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

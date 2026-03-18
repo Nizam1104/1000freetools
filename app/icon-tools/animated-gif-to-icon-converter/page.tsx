@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { AnimatedGifToIconConverter } from "@/components/icon-tools/animated-gif-to-icon-converter.tsx";
+import AnimatedGifToIconConverterSeo from "@/components/seo-content/icon-tools/animated-gif-to-icon-converter";
 
 export const metadata: Metadata = {
   title: `Animated GIF to Icon Converter | Free Tool`,
@@ -71,7 +72,7 @@ export default function AnimatedGifToIconConverterPage() {
         <p className="text-muted-foreground">Turn your animated GIFs into animated Windows icons or cursors. Adjust speed, preview the animation, and create unique dynamic icons for your desktop or applications.</p>
       </header>
       {<AnimatedGifToIconConverter />}
-      {/* TODO: add seo component for animated-gif-to-icon-converter */}
+      <AnimatedGifToIconConverterSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

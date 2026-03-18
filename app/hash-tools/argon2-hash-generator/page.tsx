@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { Argon2HashGenerator } from "@/components/hash-tools/argon2-hash-generator.tsx";
+import Argon2HashGeneratorSeo from "@/components/seo-content/hash-tools/argon2-hash-generator";
 
 export const metadata: Metadata = {
   title: `Argon2 Hash Generator Online | Free Password Hash Tool`,
@@ -71,7 +72,9 @@ export default function Argon2HashGeneratorPage() {
         <p className="text-muted-foreground">Generate Argon2 hashes for maximum password security. Choose between Argon2id, Argon2i, and Argon2d variants and tweak security parameters to match your needs.</p>
       </header>
       {<Argon2HashGenerator />}
-      {/* TODO: add seo component for argon2-hash-generator */}
+      <div className="mt-8">
+        <Argon2HashGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

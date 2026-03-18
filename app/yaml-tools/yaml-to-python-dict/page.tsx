@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlToPythonDict } from "@/components/yaml-tools/yaml-to-python-dict.tsx";
+import YamlToPythonDictSeo from "@/components/seo-content/yaml-tools/yaml-to-python-dict";
 
 export const metadata: Metadata = {
   title: `YAML to Python Dict Converter | Free Tool`,
@@ -71,7 +72,9 @@ export default function YamlToPythonDictPage() {
         <p className="text-muted-foreground">Generate Python dictionary code from your YAML configuration instantly. This free tool creates ready-to-use Python structures, simplifying the integration of YAML data into your Python projects and scripts.</p>
       </header>
       {<YamlToPythonDict />}
-      {/* TODO: add seo component for yaml-to-python-dict */}
+      <div className="mt-8">
+        <YamlToPythonDictSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

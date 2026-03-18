@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtTokenStorageViewerSeo from "@/components/seo-content/jwt-tools/jwt-token-storage-viewer";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtTokenStorageViewer } from "@/components/jwt-tools/jwt-token-storage-viewer.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtTokenStorageViewerPage() {
         <p className="text-muted-foreground">Safely inspect JWT tokens stored in your browser's localStorage or sessionStorage. Decode and validate tokens locally without sending them to any server—perfect for frontend debugging.</p>
       </header>
       {<JwtTokenStorageViewer />}
-      {/* TODO: add seo component for jwt-token-storage-viewer */}
+      <div className="mt-16">
+        <JwtTokenStorageViewerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

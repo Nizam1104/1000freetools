@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { LigatureGenerator } from "@/components/font-tools/ligature-generator";
+import LigatureGeneratorSeo from "@/components/seo-content/typography-tools/ligature-generator";
 
 export const metadata: Metadata = {
   title: `Ligature Generator | Preview Typographic Ligatures`,
@@ -69,7 +70,7 @@ export default function LigatureGeneratorPage() {
         </p>
       </header>
       {<LigatureGenerator />}
-      {/* TODO: add seo component for ligature-generator */}
+      <div className="mt-8"><LigatureGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

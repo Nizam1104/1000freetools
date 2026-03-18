@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { PhotoelectricEffectCalculator } from "@/components/physics-tools/photoelectric-effect-calculator";
+import PhotoelectricEffectCalculatorSeo from "@/components/seo-content/physics-tools/photoelectric-effect-calculator";
 
 export const metadata: Metadata = {
   title: `Photoelectric Effect Calculator | Einstein's Equation Tool`,
@@ -70,8 +71,12 @@ export default function PhotoelectricEffectCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Photoelectric Effect Calculator</h1>
         <p className="text-muted-foreground">Explore light as particles. Calculate the energy of electrons knocked out by light, and find the work function of different metals.</p>
       </header>
-      {<PhotoelectricEffectCalculator />}
-      {/* TODO: add seo component for photoelectric-effect-calculator */}
+      <div className="mt-8">
+        <PhotoelectricEffectCalculator />
+      </div>
+      <div className="mt-8">
+        <PhotoelectricEffectCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

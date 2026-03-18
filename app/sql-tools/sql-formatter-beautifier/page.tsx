@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import SqlFormatter from "@/components/sql-tools/sql-formatter";
+import SqlFormatterBeautifierSeo from "@/components/seo-content/sql-tools/sql-formatter-beautifier";
 
 export const metadata: Metadata = {
   title: `SQL Formatter Online | Beautify & Format SQL Code Free`,
@@ -74,7 +75,7 @@ export default function SqlFormatterBeautifierPage() {
       <div className="mt-8">
         <SqlFormatter />
       </div>
-      {/* TODO: add seo component for sql-formatter-beautifier */}
+      <SqlFormatterBeautifierSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

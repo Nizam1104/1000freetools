@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import WordpressMinifierSeo from "@/components/seo-content/minifier-tools/wordpress-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { WordpressMinifier } from "@/components/minifier-tools/wordpress-minifier.tsx";
 
@@ -71,7 +73,9 @@ export default function WordpressMinifierPage() {
         <p className="text-muted-foreground">Optimize your WordPress site by minifying theme and plugin files. This tool compresses PHP, CSS, and JavaScript specific to WordPress structures, improving performance without breaking functionality.</p>
       </header>
       {<WordpressMinifier />}
-      {/* TODO: add seo component for wordpress-minifier */}
+      <div className="mt-16">
+        <WordpressMinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

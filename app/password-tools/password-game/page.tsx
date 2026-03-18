@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PasswordGame from "@/components/password-tools/password-game";
+import PasswordGameSeo from "@/components/seo-content/password-tools/password-game";
 
 export const metadata: Metadata = {
   title: `Password Security Game | Learn Cybersecurity Fun`,
@@ -71,7 +72,7 @@ export default function PasswordGamePage() {
         <p className="text-muted-foreground">Learn password security the fun way. Play interactive challenges that test and teach you how to create and manage secure passwords.</p>
       </header>
       <div className="mt-8"><PasswordGame /></div>
-      {/* TODO: add seo component for password-game */}
+      <div className="mt-16"><PasswordGameSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

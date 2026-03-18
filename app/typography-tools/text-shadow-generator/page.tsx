@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TextShadowGenerator } from "@/components/text-tools/text-shadow-generator.tsx";
+import TextShadowGeneratorSeo from "@/components/seo-content/typography-tools/text-shadow-generator";
 
 export const metadata: Metadata = {
   title: `Text Shadow Generator | Create CSS Text Shadows`,
@@ -69,7 +70,7 @@ export default function TextShadowGeneratorPage() {
         </p>
       </header>
       {<TextShadowGenerator />}
-      {/* TODO: add seo component for text-shadow-generator */}
+      <div className="mt-8"><TextShadowGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

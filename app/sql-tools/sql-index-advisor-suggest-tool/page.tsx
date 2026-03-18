@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlIndexAdvisorSuggestTool } from "@/components/sql-tools/sql-index-advisor-suggest-tool.tsx";
+import SqlIndexAdvisorSuggestToolSeo from "@/components/seo-content/sql-tools/sql-index-advisor-suggest-tool";
 
 export const metadata: Metadata = {
   title: `SQL Index Advisor Online | Suggest Indexes for Queries`,
@@ -72,7 +73,7 @@ export default function SqlIndexAdvisorSuggestToolPage() {
         </p>
       </header>
       {<SqlIndexAdvisorSuggestTool />}
-      {/* TODO: add seo component for sql-index-advisor-suggest-tool */}
+      <SqlIndexAdvisorSuggestToolSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

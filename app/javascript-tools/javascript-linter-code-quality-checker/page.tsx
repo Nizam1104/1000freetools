@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptLinterCodeQualityCheckerSeo from "@/components/seo-content/javascript-tools/javascript-linter-code-quality-checker";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JavascriptLinterCodeQualityChecker } from "@/components/javascript-tools/javascript-linter-code-quality-checker.tsx";
 
@@ -72,7 +74,9 @@ export default function JavascriptLinterCodeQualityCheckerPage() {
         </p>
       </header>
       {<JavascriptLinterCodeQualityChecker />}
-      {/* TODO: add seo component for javascript-linter-code-quality-checker */}
+      <div className="mt-16">
+        <JavascriptLinterCodeQualityCheckerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

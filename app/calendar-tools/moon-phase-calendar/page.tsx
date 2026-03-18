@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import MoonPhaseCalendar from "@/components/calendar-tools/moon-phase-calendar";
+import MoonPhaseCalendarSeo from "@/components/seo-content/calendar-tools/moon-phase-calendar";
 
 export const metadata: Metadata = {
   title: `Moon Phase Calendar | Daily Moon Tracker`,
@@ -71,7 +72,7 @@ export default function MoonPhaseCalendarPage() {
         <p className="text-muted-foreground">Track the moon's phases on a visual calendar. See daily moon phase, illumination, and moonrise times. Find dates for the next full moon or new moon.</p>
       </header>
       <div className="mt-8"><MoonPhaseCalendar /></div>
-      {/* TODO: add seo component for moon-phase-calendar */}
+      <MoonPhaseCalendarSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

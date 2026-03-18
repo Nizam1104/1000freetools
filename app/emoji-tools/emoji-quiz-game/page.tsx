@@ -63,6 +63,7 @@ const tools = [
 ];
 
 import EmojiQuizGame from "@/components/emoji-tools/emoji-quiz-game"
+import EmojiQuizGameSeo from "@/components/seo-content/emoji-tools/emoji-quiz-game"
 
 export default function EmojiQuizGamePage() {
   return (
@@ -72,7 +73,9 @@ export default function EmojiQuizGamePage() {
         <p className="text-muted-foreground">Test your skills with our emoji puzzle game. Guess movies, phrases, or celebrities from emoji clues. Play daily challenges or create your own quizzes to share.</p>
       </header>
       <EmojiQuizGame />
-      {/* TODO: add seo component for emoji-quiz-game */}
+      <div className="mt-8">
+        <EmojiQuizGameSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

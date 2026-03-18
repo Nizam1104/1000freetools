@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Rfc28223339TimestampConverter from "@/components/timestamp-tools/rfc-2822-3339-timestamp-converter";
+import RfcTimestampConverterSeo from "@/components/seo-content/timestamp-tools/rfc-timestamp-converter";
 
 export const metadata: Metadata = {
   title: `RFC 2822 & RFC 3339 Timestamp Converter | Internet Date Tools`,
@@ -71,7 +72,7 @@ export default function RfcTimestampConverterPage() {
         <p className="text-muted-foreground">Convert timestamps to email-friendly RFC 2822 or internet-standard RFC 3339 formats. Essential for parsing dates from emails, HTTP headers, and APIs.</p>
       </header>
       <div className="mt-8"><Rfc28223339TimestampConverter /></div>
-      {/* TODO: add seo component for rfc-timestamp-converter */}
+      <div className="mt-16"><RfcTimestampConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

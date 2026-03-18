@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { FontWeightTester } from "@/components/font-tools/font-weight-tester.tsx";
+import FontWeightTesterSeo from "@/components/seo-content/typography-tools/font-weight-tester";
 
 export const metadata: Metadata = {
   title: `Font Weight Tester | Compare Font Weights Online`,
@@ -69,7 +70,7 @@ export default function FontWeightTesterPage() {
         </p>
       </header>
       {<FontWeightTester />}
-      {/* TODO: add seo component for font-weight-tester */}
+      <div className="mt-8"><FontWeightTesterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

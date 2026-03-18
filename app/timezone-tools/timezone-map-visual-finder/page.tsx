@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import TimezoneMapVisualFinderSeo from "@/components/seo-content/timezone-tools/timezone-map-visual-finder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TimezoneMapVisualFinder } from "@/components/timezone-tools/timezone-map-visual-finder.tsx";
 
@@ -70,7 +72,9 @@ export default function TimezoneMapVisualFinderPage() {
         </p>
       </header>
       {<TimezoneMapVisualFinder />}
-      {/* TODO: add seo component for timezone-map-visual-finder */}
+      <div className="mt-16">
+        <TimezoneMapVisualFinderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

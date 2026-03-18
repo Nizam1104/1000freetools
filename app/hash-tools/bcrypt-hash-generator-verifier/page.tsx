@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PasswordHashStrengthAnalyzer from "@/components/hash-tools/password-hash-strength-analyzer";
+import BcryptHashGeneratorVerifierSeo from "@/components/seo-content/hash-tools/bcrypt-hash-generator-verifier";
 
 export const metadata: Metadata = {
   title: `Bcrypt Hash Generator & Verifier Online | Free Tool`,
@@ -73,7 +74,9 @@ export default function BcryptHashGeneratorVerifierPage() {
       <div className="mt-8">
         <PasswordHashStrengthAnalyzer />
       </div>
-      {/* TODO: add seo component for bcrypt-hash-generator-verifier */}
+      <div className="mt-8">
+        <BcryptHashGeneratorVerifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtTokenScramblerObfuscatorSeo from "@/components/seo-content/jwt-tools/jwt-token-scrambler-obfuscator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtTokenScramblerObfuscator } from "@/components/jwt-tools/jwt-token-scrambler-obfuscator.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtTokenScramblerObfuscatorPage() {
         <p className="text-muted-foreground">Create intentionally invalid or tampered JWTs to test your application's error handling and security. Modify signatures, corrupt claims, or change encoding to simulate attack scenarios.</p>
       </header>
       {<JwtTokenScramblerObfuscator />}
-      {/* TODO: add seo component for jwt-token-scrambler-obfuscator */}
+      <div className="mt-16">
+        <JwtTokenScramblerObfuscatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SvgComparisonDiffToolSeo from "@/components/seo-content/svg-tools/svg-comparison-diff-tool";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgComparisonDiffTool } from "@/components/svg-tools/svg-comparison-diff-tool.tsx";
 
@@ -72,7 +74,9 @@ export default function SvgComparisonDiffToolPage() {
         </p>
       </header>
       {<SvgComparisonDiffTool />}
-      {/* TODO: add seo component for svg-comparison-diff-tool */}
+      <div className="mt-16">
+        <SvgComparisonDiffToolSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

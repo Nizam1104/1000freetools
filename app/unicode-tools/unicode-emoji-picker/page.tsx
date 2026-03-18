@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import UnicodeEmojiPickerFinder from "@/components/unicode-tools/unicode-emoji-picker-finder";
+import UnicodeEmojiPickerSeo from "@/components/seo-content/unicode-tools/unicode-emoji-picker";
 
 export const metadata: Metadata = {
   title: `Unicode Emoji Picker | Find & Copy All Emojis`,
@@ -71,7 +72,7 @@ export default function UnicodeEmojiPickerPage() {
       <div className="mt-8">
         <UnicodeEmojiPickerFinder />
       </div>
-      {/* TODO: add seo component for unicode-emoji-picker */}
+      <UnicodeEmojiPickerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

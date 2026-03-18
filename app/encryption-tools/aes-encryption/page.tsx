@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import AesEncryptionTool from "@/components/encryption-tools/aes-encryption-tool";
+import AesEncryptionSeo from "@/components/seo-content/encryption-tools/aes-encryption";
 
 export const metadata: Metadata = {
   title: `Free AES Encryption Tool | Encrypt Text & Files Online`,
@@ -73,7 +74,7 @@ export default function AesEncryptionPage() {
         </p>
       </header>
       <div className="mt-8"><AesEncryptionTool /></div>
-      {/* TODO: add seo component for aes-encryption */}
+      <div className="mt-16"><AesEncryptionSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtTokenLifespanRenewalSimulatorSeo from "@/components/seo-content/jwt-tools/jwt-token-lifespan-renewal-simulator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtTokenLifespanRenewalSimulator } from "@/components/jwt-tools/jwt-token-lifespan-renewal-simulator.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtTokenLifespanRenewalSimulatorPage() {
         <p className="text-muted-foreground">Simulate the lifecycle of a JWT token. Visualize activation, expiration, and renewal timelines to design better token expiration and refresh strategies for your application.</p>
       </header>
       {<JwtTokenLifespanRenewalSimulator />}
-      {/* TODO: add seo component for jwt-token-lifespan-renewal-simulator */}
+      <div className="mt-16">
+        <JwtTokenLifespanRenewalSimulatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

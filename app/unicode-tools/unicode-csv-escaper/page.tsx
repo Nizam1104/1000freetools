@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import UnicodeCsvTsvEscaper from "@/components/unicode-tools/unicode-csv-tsv-escaper";
+import UnicodeCsvEscaperSeo from "@/components/seo-content/unicode-tools/unicode-csv-escaper";
 
 export const metadata: Metadata = {
   title: `Unicode CSV TSV Escaper | Data Formatting Tool`,
@@ -72,7 +73,7 @@ export default function UnicodeCsvEscaperPage() {
       <div className="mt-8">
         <UnicodeCsvTsvEscaper />
       </div>
-      {/* TODO: add seo component for unicode-csv-escaper */}
+      <UnicodeCsvEscaperSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

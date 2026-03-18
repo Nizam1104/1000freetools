@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CalendarMatrixGenerator from "@/components/calendar-tools/calendar-matrix-generator";
+import CalendarMatrixGeneratorSeo from "@/components/seo-content/calender-tools/calendar-matrix-generator";
 
 export const metadata: Metadata = {
   title: `Calendar Grid Generator | Month Matrix for Excel`,
@@ -71,7 +72,7 @@ export default function CalendarMatrixGeneratorPage() {
         <p className="text-muted-foreground">Create a clean calendar matrix for any month. Copy the grid as CSV, HTML, or text into Excel, Google Sheets, or docs. Customize the starting weekday.</p>
       </header>
       <div className="mt-8"><CalendarMatrixGenerator /></div>
-      {/* TODO: add seo component for calendar-matrix-generator */}
+      <div className="mt-8"><CalendarMatrixGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

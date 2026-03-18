@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import UuidToQrCodeSeo from "@/components/seo-content/uuid-tools/uuid-to-qr-code";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { UuidToQrCode } from "@/components/uuid-tools/uuid-to-qr-code";
 
@@ -71,7 +73,9 @@ export default function UuidToQrCodePage() {
         <p className="text-muted-foreground">Turn any UUID into a scannable QR code. Perfect for attaching unique identifiers to physical items, tickets, or assets. Customize the QR code's appearance and download it for printing or digital use.</p>
       </header>
       {<UuidToQrCode />}
-      {/* TODO: add seo component for uuid-to-qr-code */}
+      <div className="mt-16">
+        <UuidToQrCodeSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

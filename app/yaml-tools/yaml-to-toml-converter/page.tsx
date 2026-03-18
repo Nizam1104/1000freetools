@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlToTomlConverter } from "@/components/yaml-tools/yaml-to-toml-converter.tsx";
+import YamlToTomlConverterSeo from "@/components/seo-content/yaml-tools/yaml-to-toml-converter";
 
 export const metadata: Metadata = {
   title: `YAML to TOML Converter | Free Online Tool`,
@@ -71,7 +72,9 @@ export default function YamlToTomlConverterPage() {
         <p className="text-muted-foreground">Switch from YAML to TOML format with our free conversion tool. Ideal for projects using tools like Cargo or Python's pyproject.toml that prefer TOML configurations.</p>
       </header>
       {<YamlToTomlConverter />}
-      {/* TODO: add seo component for yaml-to-toml-converter */}
+      <div className="mt-8">
+        <YamlToTomlConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

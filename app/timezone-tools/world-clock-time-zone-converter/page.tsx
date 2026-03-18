@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import WorldClockTimeZoneConverterSeo from "@/components/seo-content/timezone-tools/world-clock-time-zone-converter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import TimezoneConverter from "@/components/timezone-tools/timezone-converter";
 
@@ -74,7 +76,9 @@ export default function WorldClockTimeZoneConverterPage() {
       <div className="mt-8">
         <TimezoneConverter />
       </div>
-      {/* TODO: add seo component for world-clock-time-zone-converter */}
+      <div className="mt-16">
+        <WorldClockTimeZoneConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TypeScaleCalculator } from "@/components/text-tools/type-scale-calculator";
+import TypeScaleCalculatorSeo from "@/components/seo-content/typography-tools/type-scale-calculator";
 
 export const metadata: Metadata = {
   title: `Type Scale Calculator | Generate Typography Scales`,
@@ -69,7 +70,7 @@ export default function TypeScaleCalculatorPage() {
         </p>
       </header>
       {<TypeScaleCalculator />}
-      {/* TODO: add seo component for type-scale-calculator */}
+      <div className="mt-8"><TypeScaleCalculatorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

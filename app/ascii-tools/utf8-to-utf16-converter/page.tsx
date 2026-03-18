@@ -74,7 +74,6 @@ export default function Utf8ToUtf16ConverterPage() {
       <div className="mt-8">
         <Utf8ToUtf16ConverterSeo />
       </div>
-      {/* TODO: add seo component for utf8-to-utf16-converter */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

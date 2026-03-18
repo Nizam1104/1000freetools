@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TomlToGoStructConverter } from "@/components/toml-tools/toml-to-go-struct-converter.tsx";
+import TomlToGoStructConverterSeo from "@/components/seo-content/toml-tools/toml-to-go-struct-converter";
 
 export const metadata: Metadata = {
   title: `TOML to Go Struct Converter | Free Online Tool`,
@@ -71,7 +72,7 @@ export default function TomlToGoStructConverterPage() {
         <p className="text-muted-foreground">Convert TOML configuration files into Go structs ready for unmarshaling. This tool generates idiomatic Go code with TOML struct tags, saving you time when working with config files in Go projects. It handles nested tables and arrays correctly.</p>
       </header>
       {<TomlToGoStructConverter />}
-      {/* TODO: add seo component for toml-to-go-struct-converter */}
+      <div className="mt-8"><TomlToGoStructConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

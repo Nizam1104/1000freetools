@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import UnicodeZeroWidthCharacterSteganographyTool from "@/components/unicode-tools/unicode-zero-width-character-steganography-tool";
+import UnicodeZeroWidthToolSeo from "@/components/seo-content/unicode-tools/unicode-zero-width-tool";
 
 export const metadata: Metadata = {
   title: `Unicode Zero-Width Tool | Hide Text Steganography`,
@@ -73,7 +74,7 @@ export default function UnicodeZeroWidthToolPage() {
       <div className="mt-8">
         <UnicodeZeroWidthCharacterSteganographyTool />
       </div>
-      {/* TODO: add seo component for unicode-zero-width-tool */}
+      <UnicodeZeroWidthToolSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

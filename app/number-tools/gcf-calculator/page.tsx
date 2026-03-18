@@ -77,7 +77,9 @@ export default function GcfCalculatorPage() {
       <div className="mt-8">
         <GcfLcmCalculatorSeo />
       </div>
-      {/* TODO: add seo component for gcf-calculator */}
+      <div className="mt-16">
+        <GcfCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

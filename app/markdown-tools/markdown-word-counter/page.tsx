@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownWordCounter } from "@/components/markdown-tools/markdown-word-counter.tsx";
+import MarkdownWordCounterSeo from "@/components/seo-content/markdown-tools/markdown-word-counter";
 
 export const metadata: Metadata = {
   title: `Markdown Word Counter | Online Character Count Tool`,
@@ -71,7 +72,7 @@ export default function MarkdownWordCounterPage() {
         <p className="text-muted-foreground">Get detailed statistics for your Markdown documents. Count words, characters, and estimate reading time. Tracks headers and links for content analysis.</p>
       </header>
       {<MarkdownWordCounter />}
-      {/* TODO: add seo component for markdown-word-counter */}
+      <MarkdownWordCounterSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

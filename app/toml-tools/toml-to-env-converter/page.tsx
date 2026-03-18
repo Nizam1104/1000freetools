@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TomlToEnvConverter } from "@/components/toml-tools/toml-to-env-converter.tsx";
+import TomlToEnvConverterSeo from "@/components/seo-content/toml-tools/toml-to-env-converter";
 
 export const metadata: Metadata = {
   title: `TOML to ENV Converter | Generate Environment Variables`,
@@ -71,7 +72,7 @@ export default function TomlToEnvConverterPage() {
         <p className="text-muted-foreground">Generate environment variable declarations from your TOML config. This tool creates .env or shell script output, perfect for Docker, cloud deployments, and CI/CD pipelines.</p>
       </header>
       {<TomlToEnvConverter />}
-      {/* TODO: add seo component for toml-to-env-converter */}
+      <div className="mt-8"><TomlToEnvConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

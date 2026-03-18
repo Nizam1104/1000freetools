@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtTokenDiffCompareSeo from "@/components/seo-content/jwt-tools/jwt-token-diff-compare";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtTokenDiffCompare } from "@/components/jwt-tools/jwt-token-diff-compare.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtTokenDiffComparePage() {
         <p className="text-muted-foreground">Compare two JSON Web Tokens to spot differences in headers, payloads, or signatures. Perfect for debugging inconsistencies in token generation or verifying claim updates.</p>
       </header>
       {<JwtTokenDiffCompare />}
-      {/* TODO: add seo component for jwt-token-diff-compare */}
+      <div className="mt-16">
+        <JwtTokenDiffCompareSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

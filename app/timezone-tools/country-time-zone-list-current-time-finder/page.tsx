@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CountryTimeZoneListCurrentTimeFinderSeo from "@/components/seo-content/timezone-tools/country-time-zone-list-current-time-finder";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { CountryTimeZoneListCurrentTimeFinder } from "@/components/timezone-tools/country-time-zone-list-current-time-finder";
 
@@ -71,7 +73,9 @@ export default function CountryTimeZoneListCurrentTimeFinderPage() {
         <p className="text-muted-foreground">Find all the time zones used in any country and see the current local time in each. A quick reference for travelers, businesses, and the curious.</p>
       </header>
       {<CountryTimeZoneListCurrentTimeFinder />}
-      {/* TODO: add seo component for country-time-zone-list-current-time-finder */}
+      <div className="mt-16">
+        <CountryTimeZoneListCurrentTimeFinderSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

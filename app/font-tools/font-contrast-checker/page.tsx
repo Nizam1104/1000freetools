@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import FontContrastCheckerSeo from "@/components/seo-content/font-tools/font-contrast-checker";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import FontColorContrastChecker from "@/components/font-tools/font-color-contrast-checker";
 
@@ -73,7 +75,9 @@ export default function FontContrastCheckerPage() {
       <div className="mt-8">
         <FontColorContrastChecker />
       </div>
-      {/* TODO: add seo component for font-contrast-checker */}
+      <div className="mt-16">
+        <FontContrastCheckerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

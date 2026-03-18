@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SvgToPdfConverterSeo from "@/components/seo-content/svg-tools/svg-to-pdf-converter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgToPdfConverter } from "@/components/svg-tools/svg-to-pdf-converter.tsx";
 
@@ -70,7 +72,9 @@ export default function SvgToPdfConverterPage() {
         </p>
       </header>
       {<SvgToPdfConverter />}
-      {/* TODO: add seo component for svg-to-pdf-converter */}
+      <div className="mt-16">
+        <SvgToPdfConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

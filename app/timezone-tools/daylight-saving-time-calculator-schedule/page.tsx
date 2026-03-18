@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import DaylightSavingTimeCalculatorScheduleSeo from "@/components/seo-content/timezone-tools/daylight-saving-time-calculator-schedule";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { DaylightSavingTimeCalculatorSchedule } from "@/components/timezone-tools/daylight-saving-time-calculator-schedule";
 
@@ -72,7 +74,9 @@ export default function DaylightSavingTimeCalculatorSchedulePage() {
         </p>
       </header>
       {<DaylightSavingTimeCalculatorSchedule />}
-      {/* TODO: add seo component for daylight-saving-time-calculator-schedule */}
+      <div className="mt-16">
+        <DaylightSavingTimeCalculatorScheduleSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

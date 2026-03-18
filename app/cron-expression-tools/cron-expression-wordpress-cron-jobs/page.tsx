@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CronExpressionWordpressCronJobsSeo from "@/components/seo-content/cron-expression-tools/cron-expression-wordpress-cron-jobs";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CronExpressionWordpress from "@/components/cron-expression-tools/cron-expression-wordpress";
 
@@ -73,7 +75,9 @@ export default function CronExpressionWordpressCronJobsPage() {
       <div className="mt-8">
         <CronExpressionWordpress />
       </div>
-      {/* TODO: add seo component for cron-expression-wordpress-cron-jobs */}
+      <div className="mt-16">
+        <CronExpressionWordpressCronJobsSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

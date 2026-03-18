@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JwtDebuggerTesterSeo from "@/components/seo-content/jwt-tools/jwt-debugger-tester";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { JwtDebuggerTester } from "@/components/jwt-tools/jwt-debugger-tester.tsx";
 
@@ -71,7 +73,9 @@ export default function JwtDebuggerTesterPage() {
         <p className="text-muted-foreground">Debug JWT validation issues and test tokens against custom rules. Our tool simulates verification, highlights errors, and provides code snippets to help you fix authentication problems in your application.</p>
       </header>
       {<JwtDebuggerTester />}
-      {/* TODO: add seo component for jwt-debugger-tester */}
+      <div className="mt-16">
+        <JwtDebuggerTesterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

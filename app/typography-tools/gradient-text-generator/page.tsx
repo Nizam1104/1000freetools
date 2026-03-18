@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { GradientTextGenerator } from "@/components/font-tools/gradient-text-generator";
+import GradientTextGeneratorSeo from "@/components/seo-content/typography-tools/gradient-text-generator";
 
 export const metadata: Metadata = {
   title: `Gradient Text Generator | Create CSS Gradient Text`,
@@ -69,7 +70,7 @@ export default function GradientTextGeneratorPage() {
         </p>
       </header>
       {<GradientTextGenerator />}
-      {/* TODO: add seo component for gradient-text-generator */}
+      <div className="mt-8"><GradientTextGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

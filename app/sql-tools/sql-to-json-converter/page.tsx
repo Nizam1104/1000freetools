@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlToJsonConverter } from "@/components/sql-tools/sql-to-json-converter.tsx";
+import SqlToJsonConverterSeo from "@/components/seo-content/sql-tools/sql-to-json-converter";
 
 export const metadata: Metadata = {
   title: `SQL to JSON Converter Online | Free Tool`,
@@ -72,7 +73,7 @@ export default function SqlToJsonConverterPage() {
         </p>
       </header>
       {<SqlToJsonConverter />}
-      {/* TODO: add seo component for sql-to-json-converter */}
+      <SqlToJsonConverterSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SvgMetadataViewerRemoverSeo from "@/components/seo-content/svg-tools/svg-metadata-viewer-remover";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgMetadataViewerRemover } from "@/components/svg-tools/svg-metadata-viewer-remover.tsx";
 
@@ -72,7 +74,9 @@ export default function SvgMetadataViewerRemoverPage() {
         </p>
       </header>
       {<SvgMetadataViewerRemover />}
-      {/* TODO: add seo component for svg-metadata-viewer-remover */}
+      <div className="mt-16">
+        <SvgMetadataViewerRemoverSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

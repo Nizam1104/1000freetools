@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { FileHashCalculatorMultiAlgorithm } from "@/components/hash-tools/file-hash-calculator-multi-algorithm.tsx";
+import FileHashCalculatorMultiAlgorithmSeo from "@/components/seo-content/hash-tools/file-hash-calculator-multi-algorithm";
 
 export const metadata: Metadata = {
   title: `File Hash Calculator Online | Multi-Algorithm Hash Tool`,
@@ -71,7 +72,9 @@ export default function FileHashCalculatorMultiAlgorithmPage() {
         <p className="text-muted-foreground">Calculate multiple hash types for any file in one go. Upload a file and get MD5, SHA-1, SHA-256, and more instantly. Ideal for thorough file integrity verification.</p>
       </header>
       {<FileHashCalculatorMultiAlgorithm />}
-      {/* TODO: add seo component for file-hash-calculator-multi-algorithm */}
+      <div className="mt-8">
+        <FileHashCalculatorMultiAlgorithmSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

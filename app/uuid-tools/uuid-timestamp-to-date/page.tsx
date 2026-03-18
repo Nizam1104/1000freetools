@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import UuidTimestampToDateSeo from "@/components/seo-content/uuid-tools/uuid-timestamp-to-date";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { UuidTimestampToDate } from "@/components/uuid-tools/uuid-timestamp-to-date";
 
@@ -71,7 +73,9 @@ export default function UuidTimestampToDatePage() {
         <p className="text-muted-foreground">UUID version 1 contains a precise creation timestamp. This tool extracts that timestamp from any v1 UUID and converts it to a readable date and time, showing both UTC and your local time zone.</p>
       </header>
       {<UuidTimestampToDate />}
-      {/* TODO: add seo component for uuid-timestamp-to-date */}
+      <div className="mt-16">
+        <UuidTimestampToDateSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

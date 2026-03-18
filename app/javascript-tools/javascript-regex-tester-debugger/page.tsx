@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JavascriptRegexTesterDebuggerSeo from "@/components/seo-content/javascript-tools/javascript-regex-tester-debugger";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptRegexTester from "@/components/javascript-tools/javascript-regex-tester";
 
@@ -73,7 +75,9 @@ export default function JavascriptRegexTesterDebuggerPage() {
       <div className="mt-8">
         <JavascriptRegexTester />
       </div>
-      {/* TODO: add seo component for javascript-regex-tester-debugger */}
+      <div className="mt-16">
+        <JavascriptRegexTesterDebuggerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

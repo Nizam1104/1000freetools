@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqliteViewerOnline } from "@/components/sql-tools/sqlite-viewer-online.tsx";
+import SqliteViewerOnlineSeo from "@/components/seo-content/sql-tools/sqlite-viewer-online";
 
 export const metadata: Metadata = {
   title: `SQLite Viewer Online | Open .db Files in Browser`,
@@ -72,7 +73,7 @@ export default function SqliteViewerOnlinePage() {
         </p>
       </header>
       {<SqliteViewerOnline />}
-      {/* TODO: add seo component for sqlite-viewer-online */}
+      <SqliteViewerOnlineSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

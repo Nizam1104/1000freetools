@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import AdventCalendarCreator from "@/components/calendar-tools/advent-calendar-creator";
+import AdventCalendarCreatorSeo from "@/components/seo-content/calendar-tools/advent-calendar-creator";
 
 export const metadata: Metadata = {
   title: `Advent Calendar Creator | Custom Digital Advent`,
@@ -71,7 +72,7 @@ export default function AdventCalendarCreatorPage() {
         <p className="text-muted-foreground">Create a fun, interactive advent calendar online. Upload 24 images or messages, then share the link. A digital treat for friends, family, or marketing.</p>
       </header>
       <div className="mt-8"><AdventCalendarCreator /></div>
-      {/* TODO: add seo component for advent-calendar-creator */}
+      <AdventCalendarCreatorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

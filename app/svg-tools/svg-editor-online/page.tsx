@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SvgEditorOnlineSeo from "@/components/seo-content/svg-tools/svg-editor-online";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgEditorOnline } from "@/components/svg-tools/svg-editor-online.tsx";
 
@@ -70,7 +72,9 @@ export default function SvgEditorOnlinePage() {
         </p>
       </header>
       {<SvgEditorOnline />}
-      {/* TODO: add seo component for svg-editor-online */}
+      <div className="mt-16">
+        <SvgEditorOnlineSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

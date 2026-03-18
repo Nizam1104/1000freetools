@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SvgFontToPathConverterSeo from "@/components/seo-content/svg-tools/svg-font-to-path-converter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgFontToPathConverter } from "@/components/svg-tools/svg-font-to-path-converter.tsx";
 
@@ -72,7 +74,9 @@ export default function SvgFontToPathConverterPage() {
         </p>
       </header>
       {<SvgFontToPathConverter />}
-      {/* TODO: add seo component for svg-font-to-path-converter */}
+      <div className="mt-16">
+        <SvgFontToPathConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TextWatermarkAdder } from "@/components/text-tools/text-watermark-adder.tsx";
+import TextWatermarkAdderSeo from "@/components/seo-content/typography-tools/text-watermark-adder";
 
 export const metadata: Metadata = {
   title: `Text Watermark Tool | Add Watermark to Images Online`,
@@ -69,7 +70,7 @@ export default function TextWatermarkAdderPage() {
         </p>
       </header>
       {<TextWatermarkAdder />}
-      {/* TODO: add seo component for text-watermark-adder */}
+      <div className="mt-8"><TextWatermarkAdderSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

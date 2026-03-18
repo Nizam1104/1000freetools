@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeEventTicketSeo from "@/components/seo-content/qr-code-tools/qr-code-event-ticket";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeEventTicket } from "@/components/qr-code-tools/qr-code-event-ticket.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeEventTicketPage() {
         <p className="text-muted-foreground">Create unique QR code tickets for your event. Each ticket has a serial number. Includes a validator tool for checking tickets at the door.</p>
       </header>
       {<QrCodeEventTicket />}
-      {/* TODO: add seo component for qr-code-event-ticket */}
+      <div className="mt-16">
+        <QrCodeEventTicketSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

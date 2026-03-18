@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import DateDifferenceUnits from "@/components/date-time-tools/date-difference-units";
+import DateDifferenceUnitsSeo from "@/components/seo-content/date-time-tools/date-difference-units";
 
 export const metadata: Metadata = {
   title: `Date Difference Calculator | Years, Months, Weeks, Days`,
@@ -74,7 +75,9 @@ export default function DateDifferenceInUnitsPage() {
       <div className="mt-8">
         <DateDifferenceUnits />
       </div>
-      {/* TODO: add seo component for date-difference-in-units */}
+      <div className="mt-16">
+        <DateDifferenceUnitsSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

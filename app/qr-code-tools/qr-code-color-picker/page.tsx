@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeColorPickerSeo from "@/components/seo-content/qr-code-tools/qr-code-color-picker";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeColorPicker } from "@/components/qr-code-tools/qr-code-color-picker.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeColorPickerPage() {
         <p className="text-muted-foreground">Design beautiful, scannable QR codes. Use gradients, custom patterns, and background images. Live preview ensures your creative code works.</p>
       </header>
       {<QrCodeColorPicker />}
-      {/* TODO: add seo component for qr-code-color-picker */}
+      <div className="mt-16">
+        <QrCodeColorPickerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

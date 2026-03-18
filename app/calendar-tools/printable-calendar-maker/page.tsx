@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import PrintableCalendarMaker from "@/components/calendar-tools/printable-calendar-maker";
+import PrintableCalendarMakerSeo from "@/components/seo-content/calendar-tools/printable-calendar-maker";
 
 export const metadata: Metadata = {
   title: `Free Printable Calendar Maker | Custom PDF Calendars`,
@@ -71,7 +72,7 @@ export default function PrintableCalendarMakerPage() {
         <p className="text-muted-foreground">Design and print your own personalized calendar for free. Choose your year, layout, and style to create a perfect printable calendar for your home, office, or classroom. Download as a PDF or image ready to print.</p>
       </header>
       <div className="mt-8"><PrintableCalendarMaker /></div>
-      {/* TODO: add seo component for printable-calendar-maker */}
+      <PrintableCalendarMakerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

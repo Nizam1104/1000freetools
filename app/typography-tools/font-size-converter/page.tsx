@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { FontSizeConverter } from "@/components/font-tools/font-size-converter.tsx";
+import FontSizeConverterSeo from "@/components/seo-content/typography-tools/font-size-converter";
 
 export const metadata: Metadata = {
   title: `Font Size Converter | PX to PT, EM, REM Converter`,
@@ -70,7 +71,7 @@ export default function FontSizeConverterPage() {
         </p>
       </header>
       {<FontSizeConverter />}
-      {/* TODO: add seo component for font-size-converter */}
+      <div className="mt-8"><FontSizeConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

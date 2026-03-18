@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownToWordpressHtmlConverter } from "@/components/markdown-tools/markdown-to-wordpress-html-converter.tsx";
+import MarkdownToWordpressHtmlConverterSeo from "@/components/seo-content/markdown-tools/markdown-to-wordpress-html-converter";
 
 export const metadata: Metadata = {
   title: `Markdown to WordPress HTML | Converter Tool`,
@@ -71,7 +72,7 @@ export default function MarkdownToWordpressHtmlConverterPage() {
         <p className="text-muted-foreground">Convert your Markdown articles to WordPress-ready HTML. This tool produces clean code compatible with the block editor, making publishing faster.</p>
       </header>
       {<MarkdownToWordpressHtmlConverter />}
-      {/* TODO: add seo component for markdown-to-wordpress-html-converter */}
+      <MarkdownToWordpressHtmlConverterSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

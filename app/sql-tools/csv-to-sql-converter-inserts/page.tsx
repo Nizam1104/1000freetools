@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CsvToSqlConverter from "@/components/sql-tools/csv-to-sql-converter";
+import CsvToSqlConverterInsertsSeo from "@/components/seo-content/sql-tools/csv-to-sql-converter-inserts";
 
 export const metadata: Metadata = {
   title: `CSV to SQL Converter Online | Generate INSERT Statements`,
@@ -74,7 +75,7 @@ export default function CsvToSqlConverterInsertsPage() {
       <div className="mt-8">
         <CsvToSqlConverter />
       </div>
-      {/* TODO: add seo component for csv-to-sql-converter-inserts */}
+      <CsvToSqlConverterInsertsSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

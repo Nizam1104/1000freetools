@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BcdToDecimalConverter } from "@/components/encoding-tools/bcd-to-decimal-converter";
+import BcdToDecimalConverterSeo from "@/components/seo-content/encoding-tools/bcd-to-decimal-converter";
 
 export const metadata: Metadata = {
   title: `BCD Converter - Binary-Coded Decimal to Decimal`,
@@ -70,7 +71,7 @@ export default function BcdToDecimalConverterPage() {
         </p>
       </header>
       {<BcdToDecimalConverter />}
-      {/* TODO: add seo component for bcd-to-decimal-converter */}
+      <BcdToDecimalConverterSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

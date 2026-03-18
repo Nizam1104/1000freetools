@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MarkdownCodeBlockFormatter } from "@/components/markdown-tools/markdown-code-block-formatter.tsx";
+import MarkdownCodeBlockFormatterSeo from "@/components/seo-content/markdown-tools/markdown-code-block-formatter";
 
 export const metadata: Metadata = {
   title: `Markdown Code Block Formatter | Syntax Highlighter`,
@@ -71,7 +72,7 @@ export default function MarkdownCodeBlockFormatterPage() {
         <p className="text-muted-foreground">Format and syntax highlight the code inside your Markdown code blocks. Auto-detect language, fix indentation, and beautify code. Essential for technical documentation.</p>
       </header>
       {<MarkdownCodeBlockFormatter />}
-      {/* TODO: add seo component for markdown-code-block-formatter */}
+      <MarkdownCodeBlockFormatterSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

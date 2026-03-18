@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodePaypalSeo from "@/components/seo-content/qr-code-tools/qr-code-paypal";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodePaypal } from "@/components/qr-code-tools/qr-code-paypal.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodePaypalPage() {
         <p className="text-muted-foreground">Create a QR code for PayPal payments. Set your PayPal.Me link and a fixed amount. Customers scan to pay you instantly—ideal for vendors.</p>
       </header>
       {<QrCodePaypal />}
-      {/* TODO: add seo component for qr-code-paypal */}
+      <div className="mt-16">
+        <QrCodePaypalSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

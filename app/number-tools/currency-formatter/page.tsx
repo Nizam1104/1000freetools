@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CurrencyFormatterSeo from "@/components/seo-content/number-tools/currency-formatter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { CurrencyFormatter } from "@/components/number-tools/currency-formatter";
 
@@ -71,7 +73,9 @@ export default function CurrencyFormatterPage() {
         <p className="text-muted-foreground">Display any number as formatted currency for the US, Europe, UK, Japan, and more. Adjust symbols, separators, and decimal places to match local standards.</p>
       </header>
       {<CurrencyFormatter />}
-      {/* TODO: add seo component for currency-formatter */}
+      <div className="mt-16">
+        <CurrencyFormatterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { NtlmHashGeneratorCracker } from "@/components/hash-tools/ntlm-hash-generator-cracker.tsx";
+import NtlmHashGeneratorCrackerSeo from "@/components/seo-content/hash-tools/ntlm-hash-generator-cracker";
 
 export const metadata: Metadata = {
   title: `NTLM Hash Generator & Cracker Online | Free Security Tool`,
@@ -71,7 +72,9 @@ export default function NtlmHashGeneratorCrackerPage() {
         <p className="text-muted-foreground">Generate NTLM hashes for Windows password testing or try to crack them with our dictionary tool. Useful for security assessments and understanding legacy authentication weaknesses.</p>
       </header>
       {<NtlmHashGeneratorCracker />}
-      {/* TODO: add seo component for ntlm-hash-generator-cracker */}
+      <div className="mt-8">
+        <NtlmHashGeneratorCrackerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import HtmlInlineCssJsMinifierSeo from "@/components/seo-content/minifier-tools/html-inline-css-js-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import HtmlMinifier from "@/components/minifier-tools/html-minifier";
 
@@ -73,7 +75,9 @@ export default function HtmlInlineCssJsMinifierPage() {
       <div className="mt-8">
         <HtmlMinifier />
       </div>
-      {/* TODO: add seo component for html-inline-css-js-minifier */}
+      <div className="mt-16">
+        <HtmlInlineCssJsMinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

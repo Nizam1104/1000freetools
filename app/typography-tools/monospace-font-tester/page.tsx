@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MonospaceFontTester } from "@/components/font-tools/monospace-font-tester.tsx";
+import MonospaceFontTesterSeo from "@/components/seo-content/typography-tools/monospace-font-tester";
 
 export const metadata: Metadata = {
   title: `Monospace Font Tester | Compare Coding Fonts`,
@@ -71,7 +72,7 @@ export default function MonospaceFontTesterPage() {
         </p>
       </header>
       {<MonospaceFontTester />}
-      {/* TODO: add seo component for monospace-font-tester */}
+      <div className="mt-8"><MonospaceFontTesterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

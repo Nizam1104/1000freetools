@@ -63,6 +63,7 @@ const tools = [
 ];
 
 import EmojiStyleConverter from "@/components/emoji-tools/emoji-style-converter"
+import EmojiStyleConverterSeo from "@/components/seo-content/emoji-tools/emoji-style-converter"
 
 export default function EmojiStyleConverterPage() {
   return (
@@ -72,7 +73,9 @@ export default function EmojiStyleConverterPage() {
         <p className="text-muted-foreground">See how emojis look on iPhone, Android, Facebook, and more. Compare designs side-by-side and convert emoji styles for consistent messaging across platforms.</p>
       </header>
       <EmojiStyleConverter />
-      {/* TODO: add seo component for emoji-style-converter */}
+      <div className="mt-8">
+        <EmojiStyleConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

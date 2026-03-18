@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import AddSubtractTimeFromTimestamp from "@/components/timestamp-tools/add-subtract-time-from-timestamp";
+import AddSubtractTimeTimestampSeo from "@/components/seo-content/timestamp-tools/add-subtract-time-timestamp";
 
 export const metadata: Metadata = {
   title: `Add/Subtract Time from Timestamp | Future/Past Time Tool`,
@@ -71,7 +72,7 @@ export default function AddSubtractTimeTimestampPage() {
         <p className="text-muted-foreground">Need a timestamp for 5 hours from now? Or 2 days ago? Add or subtract any time unit from any timestamp to calculate a new precise timestamp.</p>
       </header>
       <div className="mt-8"><AddSubtractTimeFromTimestamp /></div>
-      {/* TODO: add seo component for add-subtract-time-timestamp */}
+      <div className="mt-16"><AddSubtractTimeTimestampSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

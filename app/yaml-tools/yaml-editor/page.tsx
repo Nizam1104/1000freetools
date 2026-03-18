@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlEditor } from "@/components/yaml-tools/yaml-editor.tsx";
+import YamlEditorSeo from "@/components/seo-content/yaml-tools/yaml-editor";
 
 export const metadata: Metadata = {
   title: `Online YAML Editor | Edit & Validate YAML in Browser`,
@@ -71,7 +72,9 @@ export default function YamlEditorPage() {
         <p className="text-muted-foreground">Edit YAML directly in your browser with our powerful online editor. Features include syntax highlighting, live validation, and easy formatting tools—all for free.</p>
       </header>
       {<YamlEditor />}
-      {/* TODO: add seo component for yaml-editor */}
+      <div className="mt-8">
+        <YamlEditorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

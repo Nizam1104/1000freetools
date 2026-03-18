@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { LinearRegressionCalculator } from "@/components/statistics-tools/linear-regression-calculator";
+import LinearRegressionCalculatorSeo from "@/components/seo-content/statistics-tools/linear-regression-calculator";
 
 export const metadata: Metadata = {
   title: `Free Linear Regression Calculator | Find Slope & Intercept`,
@@ -70,8 +71,12 @@ export default function LinearRegressionCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Linear Regression Calculator</h1>
         <p className="text-muted-foreground">Find the best-fitting straight line for your data. Our linear regression tool calculates the equation, R-squared value, and lets you make predictions based on the model.</p>
       </header>
-      {<LinearRegressionCalculator />}
-      {/* TODO: add seo component for linear-regression-calculator */}
+      <div className="mt-8">
+        <LinearRegressionCalculator />
+      </div>
+      <div className="mt-8">
+        <LinearRegressionCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

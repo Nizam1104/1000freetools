@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeCouponGeneratorSeo from "@/components/seo-content/qr-code-tools/qr-code-coupon-generator";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeCouponGenerator } from "@/components/qr-code-tools/qr-code-coupon-generator.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeCouponGeneratorPage() {
         <p className="text-muted-foreground">Generate QR codes for discounts and promotions. Reveal a unique coupon code when scanned. Set expiration dates and usage limits.</p>
       </header>
       {<QrCodeCouponGenerator />}
-      {/* TODO: add seo component for qr-code-coupon-generator */}
+      <div className="mt-16">
+        <QrCodeCouponGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

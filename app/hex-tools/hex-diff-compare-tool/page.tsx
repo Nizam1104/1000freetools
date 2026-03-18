@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { HexDiffCompareTool } from "@/components/hex-tools/hex-diff-compare-tool.tsx";
+import HexDiffCompareToolSeo from "@/components/seo-content/hex-tools/hex-diff-compare-tool";
 
 export const metadata: Metadata = {
   title: `Hex Diff Tool | Compare Hexadecimal Strings Online`,
@@ -70,8 +71,8 @@ export default function HexDiffCompareToolPage() {
         <h1 className="text-3xl font-bold mb-3">Hex Diff Tool - Compare Hexadecimal Data</h1>
         <p className="text-muted-foreground">Compare two hex strings or files and see exact byte differences. Visual diff makes it easy to spot changes in binary data, firmware, or memory dumps.</p>
       </header>
-      {<HexDiffCompareTool />}
-      {/* TODO: add seo component for hex-diff-compare-tool */}
+      <div className="mt-8"><HexDiffCompareTool /></div>
+      <div className="mt-16"><HexDiffCompareToolSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

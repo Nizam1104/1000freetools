@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { GravitationalPotentialEnergyCalculator } from "@/components/physics-tools/gravitational-potential-energy-calculator";
+import GravitationalPotentialEnergyCalculatorSeo from "@/components/seo-content/physics-tools/gravitational-potential-energy-calculator";
 
 export const metadata: Metadata = {
   title: `Gravitational Potential Energy Calculator | GPE = mgh`,
@@ -70,8 +71,12 @@ export default function GravitationalPotentialEnergyCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Gravitational Potential Energy Calculator</h1>
         <p className="text-muted-foreground">Find the stored energy in an object raised above the ground. Calculate GPE using mass, height, and gravity with this straightforward tool.</p>
       </header>
-      {<GravitationalPotentialEnergyCalculator />}
-      {/* TODO: add seo component for gravitational-potential-energy-calculator */}
+      <div className="mt-8">
+        <GravitationalPotentialEnergyCalculator />
+      </div>
+      <div className="mt-8">
+        <GravitationalPotentialEnergyCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

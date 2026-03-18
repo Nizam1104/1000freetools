@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { VerticalTextGenerator } from "@/components/text-tools/vertical-text-generator.tsx";
+import VerticalTextGeneratorSeo from "@/components/seo-content/typography-tools/vertical-text-generator";
 
 export const metadata: Metadata = {
   title: `Vertical Text Generator | Make Vertical Text Online`,
@@ -69,7 +70,7 @@ export default function VerticalTextGeneratorPage() {
         </p>
       </header>
       {<VerticalTextGenerator />}
-      {/* TODO: add seo component for vertical-text-generator */}
+      <div className="mt-8"><VerticalTextGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

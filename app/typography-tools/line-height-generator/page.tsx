@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { LineHeightGenerator } from "@/components/font-tools/line-height-generator";
+import LineHeightGeneratorSeo from "@/components/seo-content/typography-tools/line-height-generator";
 
 export const metadata: Metadata = {
   title: `Line Height Generator | Calculate Text Leading`,
@@ -69,7 +70,7 @@ export default function LineHeightGeneratorPage() {
         </p>
       </header>
       {<LineHeightGenerator />}
-      {/* TODO: add seo component for line-height-generator */}
+      <div className="mt-8"><LineHeightGeneratorSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

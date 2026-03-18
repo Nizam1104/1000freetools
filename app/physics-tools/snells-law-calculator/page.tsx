@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SnellsLawCalculator } from "@/components/physics-tools/snells-law-calculator";
+import SnellsLawCalculatorSeo from "@/components/seo-content/physics-tools/snells-law-calculator";
 
 export const metadata: Metadata = {
   title: `Snell's Law Calculator | Angle of Refraction Tool`,
@@ -70,8 +71,12 @@ export default function SnellsLawCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Snell's Law Calculator</h1>
         <p className="text-muted-foreground">See how light bends. Calculate the angle of refraction when light passes from air into water, glass, or any other material.</p>
       </header>
-      {<SnellsLawCalculator />}
-      {/* TODO: add seo component for snells-law-calculator */}
+      <div className="mt-8">
+        <SnellsLawCalculator />
+      </div>
+      <div className="mt-8">
+        <SnellsLawCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

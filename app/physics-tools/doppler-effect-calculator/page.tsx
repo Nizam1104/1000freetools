@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { DopplerEffectCalculator } from "@/components/physics-tools/doppler-effect-calculator";
+import DopplerEffectCalculatorSeo from "@/components/seo-content/physics-tools/doppler-effect-calculator";
 
 export const metadata: Metadata = {
   title: `Doppler Effect Calculator | Frequency Shift Tool`,
@@ -70,8 +71,12 @@ export default function DopplerEffectCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Doppler Effect Calculator</h1>
         <p className="text-muted-foreground">Hear the shift. Calculate how motion changes the perceived frequency of sound or light, from passing sirens to redshift in astronomy.</p>
       </header>
-      {<DopplerEffectCalculator />}
-      {/* TODO: add seo component for doppler-effect-calculator */}
+      <div className="mt-8">
+        <DopplerEffectCalculator />
+      </div>
+      <div className="mt-8">
+        <DopplerEffectCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

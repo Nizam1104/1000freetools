@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { ConfidenceIntervalCalculator } from "@/components/statistics-tools/confidence-interval-calculator";
+import ConfidenceIntervalCalculatorSeo from "@/components/seo-content/statistics-tools/confidence-interval-calculator";
 
 export const metadata: Metadata = {
   title: `Confidence Interval Calculator | For Mean & Proportion`,
@@ -70,8 +71,12 @@ export default function ConfidenceIntervalCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Confidence Interval Calculator</h1>
         <p className="text-muted-foreground">Estimate a population parameter with a range of plausible values. Calculate confidence intervals for means or proportions, complete with the margin of error for your chosen confidence level.</p>
       </header>
-      {<ConfidenceIntervalCalculator />}
-      {/* TODO: add seo component for confidence-interval-calculator */}
+      <div className="mt-8">
+        <ConfidenceIntervalCalculator />
+      </div>
+      <div className="mt-8">
+        <ConfidenceIntervalCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

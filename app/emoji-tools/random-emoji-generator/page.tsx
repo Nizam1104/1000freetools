@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import RandomEmojiGeneratorSeo from "@/components/seo-content/emoji-tools/random-emoji-generator";
 
 export const metadata: Metadata = {
   title: `Random Emoji Generator | Get Random Emojis Online`,
@@ -72,7 +73,9 @@ export default function RandomEmojiGeneratorPage() {
         <p className="text-muted-foreground">Get random emojis instantly. Spin the wheel or generate a grid for inspiration, games, or creative projects. Filter by category and copy your favorites.</p>
       </header>
       <RandomEmojiGenerator />
-      {/* TODO: add seo component for random-emoji-generator */}
+      <div className="mt-8">
+        <RandomEmojiGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

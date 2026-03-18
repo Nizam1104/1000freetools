@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import NumberToTimeConverterSeo from "@/components/seo-content/number-tools/number-to-time-converter";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { NumberToTimeConverter } from "@/components/number-tools/number-to-time-converter.tsx";
 
@@ -71,7 +73,9 @@ export default function NumberToTimeConverterPage() {
         <p className="text-muted-foreground">Translate decimal hours (like 2.25) into hours and minutes (2:15). Also convert time back to decimals for payroll, scheduling, and time tracking.</p>
       </header>
       {<NumberToTimeConverter />}
-      {/* TODO: add seo component for number-to-time-converter */}
+      <div className="mt-16">
+        <NumberToTimeConverterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

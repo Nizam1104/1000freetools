@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import TextMinifierSeo from "@/components/seo-content/minifier-tools/text-minifier";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TextMinifier } from "@/components/minifier-tools/text-minifier.tsx";
 
@@ -71,7 +73,9 @@ export default function TextMinifierPage() {
         <p className="text-muted-foreground">Remove unnecessary whitespace and line breaks from any plain text. This tool compresses text into a compact format, ideal for cleaning data, code snippets, or formatted content.</p>
       </header>
       {<TextMinifier />}
-      {/* TODO: add seo component for text-minifier */}
+      <div className="mt-16">
+        <TextMinifierSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

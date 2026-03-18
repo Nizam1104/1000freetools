@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import BinaryChecksumHashGenerator from "@/components/binary-tools/binary-checksum-hash-generator";
+import BinaryChecksumHashGeneratorSeo from "@/components/seo-content/binary-tools/binary-checksum-hash-generator";
 
 export const metadata: Metadata = {
   title: `Binary Checksum Tool | Generate Hash from Binary Data`,
@@ -73,7 +74,9 @@ export default function BinaryChecksumHashGeneratorPage() {
       <div className="mt-8">
         <BinaryChecksumHashGenerator />
       </div>
-      {/* TODO: add seo component for binary-checksum-hash-generator */}
+      <div className="mt-8">
+        <BinaryChecksumHashGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

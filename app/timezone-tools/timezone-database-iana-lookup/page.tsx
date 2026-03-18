@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import TimezoneDatabaseIanaLookupSeo from "@/components/seo-content/timezone-tools/timezone-database-iana-lookup";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TimezoneDatabaseIanaLookup } from "@/components/timezone-tools/timezone-database-iana-lookup.tsx";
 
@@ -71,7 +73,9 @@ export default function TimezoneDatabaseIanaLookupPage() {
         <p className="text-muted-foreground">Look up official IANA time zone identifiers like 'America/Los_Angeles'. Get technical details, UTC offsets, and DST rules used by programmers and systems worldwide.</p>
       </header>
       {<TimezoneDatabaseIanaLookup />}
-      {/* TODO: add seo component for timezone-database-iana-lookup */}
+      <div className="mt-16">
+        <TimezoneDatabaseIanaLookupSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

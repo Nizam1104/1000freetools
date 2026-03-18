@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { YamlToHtmlTable } from "@/components/yaml-tools/yaml-to-html-table.tsx";
+import YamlToHtmlTableSeo from "@/components/seo-content/yaml-tools/yaml-to-html-table";
 
 export const metadata: Metadata = {
   title: `YAML to HTML Table Converter | Free Online Tool`,
@@ -71,7 +72,9 @@ export default function YamlToHtmlTablePage() {
         <p className="text-muted-foreground">Generate styled HTML tables from your YAML data. This free converter creates web-ready tables with optional sorting, styling, and responsive design features.</p>
       </header>
       {<YamlToHtmlTable />}
-      {/* TODO: add seo component for yaml-to-html-table */}
+      <div className="mt-8">
+        <YamlToHtmlTableSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

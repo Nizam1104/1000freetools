@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import BarcodeToBase64 from "@/components/barcode-tools/barcode-to-base64";
+import BarcodeToBase64Seo from "@/components/seo-content/barcode-tools/barcode-to-base64";
 
 export const metadata: Metadata = {
   title: `Barcode to Base64 - Image Data URI Converter`,
@@ -71,7 +72,7 @@ export default function BarcodeToBase64Page() {
         <p className="text-muted-foreground">Convert barcode images to Base64 strings for web development. Embed barcodes directly in HTML or code without hosting image files. Fast and free.</p>
       </header>
       <BarcodeToBase64 />
-      {/* TODO: add seo component for barcode-to-base64 */}
+      <div className="mt-8"><BarcodeToBase64Seo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

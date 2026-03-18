@@ -69,7 +69,6 @@ export default function Utf8ValidatorPage() {
       <div className="mt-8">
         <Utf8ValidatorSeo />
       </div>
-      {/* TODO: add seo component for utf8-validator */}
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CronExpressionSocialMediaPostingSeo from "@/components/seo-content/cron-expression-tools/cron-expression-social-media-posting";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CronExpressionSocialMedia from "@/components/cron-expression-tools/cron-expression-social-media";
 
@@ -73,7 +75,9 @@ export default function CronExpressionSocialMediaPostingPage() {
       <div className="mt-8">
         <CronExpressionSocialMedia />
       </div>
-      {/* TODO: add seo component for cron-expression-social-media-posting */}
+      <div className="mt-16">
+        <CronExpressionSocialMediaPostingSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

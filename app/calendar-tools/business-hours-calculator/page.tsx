@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import BusinessHoursCalculator from "@/components/calendar-tools/business-hours-calculator";
+import BusinessHoursCalculatorSeo from "@/components/seo-content/calendar-tools/business-hours-calculator";
 
 export const metadata: Metadata = {
   title: `Business Hours Calculator | Workday Time Calculator`,
@@ -71,7 +72,7 @@ export default function BusinessHoursCalculatorPage() {
         <p className="text-muted-foreground">Accurately calculate working hours between two timestamps. Exclude weekends, holidays, and after-hours. Essential for project timelines and service level agreements.</p>
       </header>
       <div className="mt-8"><BusinessHoursCalculator /></div>
-      {/* TODO: add seo component for business-hours-calculator */}
+      <BusinessHoursCalculatorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

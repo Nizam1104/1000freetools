@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import XmlXpathTester from "@/components/xml-tools/xml-xpath-tester";
+import XmlXpathTesterSeo from "@/components/seo-content/xml-tools/xml-xpath-tester";
 
 export const metadata: Metadata = {
   title: `XPath Tester Online | Evaluate XPath on XML Free`,
@@ -74,7 +75,9 @@ export default function XmlXpathTesterPage() {
         </p>
       </header>
       <div className="mt-8"><XmlXpathTester /></div>
-      {/* TODO: add seo component for xml-xpath-tester */}
+      <div className="mt-8">
+        <XmlXpathTesterSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

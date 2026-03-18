@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import FiscalYearCalendar from "@/components/calendar-tools/fiscal-year-calendar";
+import FiscalYearCalendarSeo from "@/components/seo-content/calendar-tools/fiscal-year-calendar";
 
 export const metadata: Metadata = {
   title: `Fiscal Year Calendar | Financial Year Planner`,
@@ -71,7 +72,7 @@ export default function FiscalYearCalendarPage() {
         <p className="text-muted-foreground">Create a custom fiscal year calendar for accounting and finance. Set your fiscal start month, highlight quarters and weeks. Essential for budgeting and reporting.</p>
       </header>
       <div className="mt-8"><FiscalYearCalendar /></div>
-      {/* TODO: add seo component for fiscal-year-calendar */}
+      <FiscalYearCalendarSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ExcelCombineMultipleSheetsSeo from "@/components/seo-content/excel-tools/excel-combine-multiple-sheets";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import ExcelMergeCellsTool from "@/components/excel-tools/excel-merge-cells-tool";
 
@@ -73,7 +75,9 @@ export default function ExcelCombineMultipleSheetsPage() {
       <div className="mt-8">
         <ExcelMergeCellsTool />
       </div>
-      {/* TODO: add seo component for excel-combine-multiple-sheets */}
+      <div className="mt-16">
+        <ExcelCombineMultipleSheetsSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

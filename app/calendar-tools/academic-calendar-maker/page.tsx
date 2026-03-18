@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import AcademicCalendarMaker from "@/components/calendar-tools/academic-calendar-maker";
+import AcademicCalendarMakerSeo from "@/components/seo-content/calendar-tools/academic-calendar-maker";
 
 export const metadata: Metadata = {
   title: `Academic Calendar Maker | School Year Planner`,
@@ -71,7 +72,7 @@ export default function AcademicCalendarMakerPage() {
         <p className="text-muted-foreground">Plan the entire school year with this academic calendar tool. Mark semesters, holidays, exams, and breaks. Generate a printable schedule for teachers, students, and parents.</p>
       </header>
       <div className="mt-8"><AcademicCalendarMaker /></div>
-      {/* TODO: add seo component for academic-calendar-maker */}
+      <AcademicCalendarMakerSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

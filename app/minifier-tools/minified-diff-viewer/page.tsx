@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import MinifiedDiffViewerSeo from "@/components/seo-content/minifier-tools/minified-diff-viewer";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MinifiedDiffViewer } from "@/components/minifier-tools/minified-diff-viewer";
 
@@ -71,7 +73,9 @@ export default function MinifiedDiffViewerPage() {
         <p className="text-muted-foreground">Compare original and minified code side-by-side with highlighted differences. This diff viewer shows exactly what was removed during minification, ensuring no functional code was altered.</p>
       </header>
       {<MinifiedDiffViewer />}
-      {/* TODO: add seo component for minified-diff-viewer */}
+      <div className="mt-16">
+        <MinifiedDiffViewerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

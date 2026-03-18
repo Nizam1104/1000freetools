@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SvgGradientGeneratorEditorSeo from "@/components/seo-content/svg-tools/svg-gradient-generator-editor";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgGradientGeneratorEditor } from "@/components/svg-tools/svg-gradient-generator-editor.tsx";
 
@@ -70,7 +72,9 @@ export default function SvgGradientGeneratorEditorPage() {
         </p>
       </header>
       {<SvgGradientGeneratorEditor />}
-      {/* TODO: add seo component for svg-gradient-generator-editor */}
+      <div className="mt-16">
+        <SvgGradientGeneratorEditorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

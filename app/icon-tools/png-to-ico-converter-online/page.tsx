@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { PngToIcoConverterOnline } from "@/components/icon-tools/png-to-ico-converter-online";
+import PngToIcoConverterOnlineSeo from "@/components/seo-content/icon-tools/png-to-ico-converter-online";
 
 export const metadata: Metadata = {
   title: `PNG to ICO Converter | Free Online Tool`,
@@ -71,7 +72,7 @@ export default function PngToIcoConverterOnlinePage() {
         <p className="text-muted-foreground">Turn any PNG image into a Windows ICO file. Our tool lets you embed multiple sizes (16x16 to 256x256) into one ICO, perfect for application or folder icons.</p>
       </header>
       {<PngToIcoConverterOnline />}
-      {/* TODO: add seo component for png-to-ico-converter-online */}
+      <PngToIcoConverterOnlineSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

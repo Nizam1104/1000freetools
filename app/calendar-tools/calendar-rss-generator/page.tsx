@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CalendarRssGenerator from "@/components/calendar-tools/calendar-rss-generator";
+import CalendarRssGeneratorSeo from "@/components/seo-content/calendar-tools/calendar-rss-generator";
 
 export const metadata: Metadata = {
   title: `Calendar RSS Feed Generator | ICS Feed Creator`,
@@ -71,7 +72,7 @@ export default function CalendarRssGeneratorPage() {
         <p className="text-muted-foreground">Turn your event list into an RSS or ICS feed. Let users subscribe to your calendar updates in their favorite app. Simple generator for publishers and organizations.</p>
       </header>
       <div className="mt-8"><CalendarRssGenerator /></div>
-      {/* TODO: add seo component for calendar-rss-generator */}
+      <CalendarRssGeneratorSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

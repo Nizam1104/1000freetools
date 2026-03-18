@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { MachNumberCalculator } from "@/components/physics-tools/mach-number-calculator";
+import MachNumberCalculatorSeo from "@/components/seo-content/physics-tools/mach-number-calculator";
 
 export const metadata: Metadata = {
   title: `Mach Number Calculator | Speed of Sound Ratio Tool`,
@@ -70,8 +71,12 @@ export default function MachNumberCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Mach Number Calculator</h1>
         <p className="text-muted-foreground">How fast is it compared to sound? Calculate the Mach number for aircraft, projectiles, or any object moving through air or other gases.</p>
       </header>
-      {<MachNumberCalculator />}
-      {/* TODO: add seo component for mach-number-calculator */}
+      <div className="mt-8">
+        <MachNumberCalculator />
+      </div>
+      <div className="mt-8">
+        <MachNumberCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

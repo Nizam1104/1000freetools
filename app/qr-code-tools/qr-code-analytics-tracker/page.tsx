@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeAnalyticsTrackerSeo from "@/components/seo-content/qr-code-tools/qr-code-analytics-tracker";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeAnalyticsTracker } from "@/components/qr-code-tools/qr-code-analytics-tracker.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeAnalyticsTrackerPage() {
         <p className="text-muted-foreground">Generate dynamic QR codes and see exactly when and where they are scanned. Get free, real-time data on device types, locations, and scan times to measure your campaign's success.</p>
       </header>
       {<QrCodeAnalyticsTracker />}
-      {/* TODO: add seo component for qr-code-analytics-tracker */}
+      <div className="mt-16">
+        <QrCodeAnalyticsTrackerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

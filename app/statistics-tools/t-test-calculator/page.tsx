@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { TTestCalculator } from "@/components/statistics-tools/t-test-calculator";
+import TTestCalculatorSeo from "@/components/seo-content/statistics-tools/t-test-calculator";
 
 export const metadata: Metadata = {
   title: `Free T-Test Calculator | One, Two & Paired Samples`,
@@ -70,8 +71,12 @@ export default function TTestCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">T-Test Calculator: One, Two, & Paired Samples</h1>
         <p className="text-muted-foreground">Perform statistical t-tests to compare means. Our tool handles one-sample, two independent samples, and paired data tests, giving you p-values and confidence intervals to support your conclusions.</p>
       </header>
-      {<TTestCalculator />}
-      {/* TODO: add seo component for t-test-calculator */}
+      <div className="mt-8">
+        <TTestCalculator />
+      </div>
+      <div className="mt-8">
+        <TTestCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

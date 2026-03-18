@@ -63,6 +63,7 @@ const tools = [
 ];
 
 import EmojiFontGenerator from "@/components/emoji-tools/emoji-font-generator"
+import EmojiFontGeneratorSeo from "@/components/seo-content/emoji-tools/emoji-font-generator"
 
 export default function EmojiFontGeneratorPage() {
   return (
@@ -72,7 +73,9 @@ export default function EmojiFontGeneratorPage() {
         <p className="text-muted-foreground">Decorate your text with emoji fonts. Transform plain words into stylish text using emoji letters and symbols. Perfect for bios, usernames, and social posts.</p>
       </header>
       <EmojiFontGenerator />
-      {/* TODO: add seo component for emoji-font-generator */}
+      <div className="mt-8">
+        <EmojiFontGeneratorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

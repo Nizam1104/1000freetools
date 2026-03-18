@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { GrayCodeEncoderDecoder } from "@/components/encoding-tools/gray-code-encoder-decoder";
+import GrayCodeEncoderDecoderSeo from "@/components/seo-content/encoding-tools/gray-code-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `Gray Code Converter | Binary to Gray Code Tool`,
@@ -72,7 +73,7 @@ export default function GrayCodeEncoderDecoderPage() {
         </p>
       </header>
       {<GrayCodeEncoderDecoder />}
-      {/* TODO: add seo component for gray-code-encoder-decoder */}
+      <GrayCodeEncoderDecoderSeo />
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Other Free Tools

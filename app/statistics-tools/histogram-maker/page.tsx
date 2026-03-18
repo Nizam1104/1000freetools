@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { HistogramMaker } from "@/components/statistics-tools/histogram-maker";
+import HistogramMakerSeo from "@/components/seo-content/statistics-tools/histogram-maker";
 
 export const metadata: Metadata = {
   title: `Free Histogram Maker | Create & Customize Histograms Online`,
@@ -70,8 +71,12 @@ export default function HistogramMakerPage() {
         <h1 className="text-3xl font-bold mb-3">Histogram Maker | Create a Histogram Online</h1>
         <p className="text-muted-foreground">Visualize the frequency distribution of your data with a histogram. Our free tool lets you customize bin sizes, colors, and labels, then download your chart.</p>
       </header>
-      {<HistogramMaker />}
-      {/* TODO: add seo component for histogram-maker */}
+      <div className="mt-8">
+        <HistogramMaker />
+      </div>
+      <div className="mt-8">
+        <HistogramMakerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import QrCodeLinkShortenerSeo from "@/components/seo-content/qr-code-tools/qr-code-link-shortener";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { QrCodeLinkShortener } from "@/components/qr-code-tools/qr-code-link-shortener.tsx";
 
@@ -71,7 +73,9 @@ export default function QrCodeLinkShortenerPage() {
         <p className="text-muted-foreground">Shorten a long URL and get its QR code instantly. Track clicks and scans. Customize the short link for branding. All in one tool.</p>
       </header>
       {<QrCodeLinkShortener />}
-      {/* TODO: add seo component for qr-code-link-shortener */}
+      <div className="mt-16">
+        <QrCodeLinkShortenerSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

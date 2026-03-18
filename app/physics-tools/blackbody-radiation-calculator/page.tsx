@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { BlackbodyRadiationCalculator } from "@/components/physics-tools/blackbody-radiation-calculator";
+import BlackbodyRadiationCalculatorSeo from "@/components/seo-content/physics-tools/blackbody-radiation-calculator";
 
 export const metadata: Metadata = {
   title: `Blackbody Radiation Calculator | Wien's Law & Planck Spectrum`,
@@ -70,8 +71,12 @@ export default function BlackbodyRadiationCalculatorPage() {
         <h1 className="text-3xl font-bold mb-3">Blackbody Radiation Calculator</h1>
         <p className="text-muted-foreground">From stars to lightbulbs, see how temperature shapes the light they emit. Calculate peak color and total power for any hot object.</p>
       </header>
-      {<BlackbodyRadiationCalculator />}
-      {/* TODO: add seo component for blackbody-radiation-calculator */}
+      <div className="mt-8">
+        <BlackbodyRadiationCalculator />
+      </div>
+      <div className="mt-8">
+        <BlackbodyRadiationCalculatorSeo />
+      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />
