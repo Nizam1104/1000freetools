@@ -164,7 +164,7 @@ person:
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What about XML comments?</h3>
             <p className="text-sm text-muted-foreground">
-              XML comments (<!-- -->) are converted to YAML # comments. Comment placement is preserved as closely as possible in the output.
+              XML comments (&lt;!-- --&gt;) are converted to YAML # comments. Comment placement is preserved as closely as possible in the output.
             </p>
           </div>
 

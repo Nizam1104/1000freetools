@@ -105,7 +105,7 @@ export default function BcdBinaryCodedDecimalConverterSeo() {
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
-            <h3 className="font-medium mb-2">Why use BCD instead of binary?</strong></h3>
+            <h3 className="font-medium mb-2">Why use BCD instead of binary?</h3>
             <p className="text-sm text-muted-foreground">
               BCD simplifies decimal display and input. No division needed to extract digits. Hardware for 7-segment displays works directly with BCD.
             </p>

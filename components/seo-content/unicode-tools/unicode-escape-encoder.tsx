@@ -7,10 +7,10 @@ export default function UnicodeEscapeEncoderSeo() {
         <h2 className="text-2xl font-semibold">How the Unicode Escape Encoder Works</h2>
         <div className="space-y-3 text-muted-foreground">
           <p>
-            Enter text to convert Unicode characters to escape sequences. Choose the format: JavaScript (\uXXXX), Java (\uXXXX), Python (\uXXXX or \UXXXXXXXX), HTML (&#xXXXX;), or CSS (\XXXX).
+            Enter text to convert Unicode characters to escape sequences. Choose the format: JavaScript (\\uXXXX), Java (\\uXXXX), Python (\\uXXXX or \\UXXXXXXXX), HTML (&amp;#xXXXX;), or CSS (\\XXXX).
           </p>
           <p>
-            Each Unicode character converts to its escape sequence. 'A' becomes \u0041. Emoji become \uD83D\uDE00 or \u{1F600}. The output is ASCII-safe text.
+            Each Unicode character converts to its escape sequence. 'A' becomes \\u0041. Emoji become \\uD83D\\uDE00 or \\u{"{1F600}"}. The output is ASCII-safe text.
           </p>
           <p>
             Decode escape sequences back to Unicode. The decoder auto-detects the format. Handles mixed escape sequences. Essential for working with Unicode in code.
@@ -72,7 +72,7 @@ export default function UnicodeEscapeEncoderSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Surrogate pairs for emoji.</strong>
-              Emoji need two escapes in some formats. \uD83D\uDE00 for 😀. Newer syntax: \u{1F600}. Depends on language.
+              Emoji need two escapes in some formats. \\uD83D\\uDE00 for 😀. Newer syntax: \\u{"{1F600}"}. Depends on language.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -107,7 +107,7 @@ export default function UnicodeEscapeEncoderSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I encode emoji?</h3>
             <p className="text-sm text-muted-foreground">
-              Emoji are above U+FFFF. JavaScript: \uD83D\uDE00 (surrogate pair) or \u{1F600}. Python: \U0001F600. HTML: &#x1F600;.
+              Emoji are above U+FFFF. JavaScript: \\uD83D\\uDE00 (surrogate pair) or \\u{"{1F600}"}. Python: \\U0001F600. HTML: &amp;#x1F600;.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

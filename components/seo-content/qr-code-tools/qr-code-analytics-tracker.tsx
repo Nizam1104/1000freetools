@@ -113,7 +113,7 @@ export default function QrCodeAnalyticsTrackerSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Where do I see the analytics?</h3>
             <p className="text-sm text-muted-foreground">
-              Google Analytics: Acquisition > Campaigns. Your UTM parameters appear in reports. Set up goals to track conversions.
+              Google Analytics: Acquisition &gt; Campaigns. Your UTM parameters appear in reports. Set up goals to track conversions.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

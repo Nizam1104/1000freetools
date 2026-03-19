@@ -66,7 +66,7 @@ export default function TomlToRubyHashConverterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Ruby hash syntax has variations.</strong>
-              Hash rockets (=>) vs. colon syntax ({ key: value }). String keys vs. symbol keys. The converter uses common conventions but you may need to adjust.
+              Hash rockets (&gt;=) vs. colon syntax ({"{"} key: value {"}"}). String keys vs. symbol keys. The converter uses common conventions but you may need to adjust.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

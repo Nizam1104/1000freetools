@@ -129,7 +129,7 @@ export default function JwtToCurlCommandGeneratorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I send a POST request with JSON body?</h3>
             <p className="text-sm text-muted-foreground">
-              Select POST method, set Content-Type to application/json, and enter your JSON body. The generator adds <code>-H "Content-Type: application/json"</code> and <code>-d '{"key":"value"}'</code> to the cURL command.
+              Select POST method, set Content-Type to application/json, and enter your JSON body. The generator adds the appropriate headers and data flags to the cURL command.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

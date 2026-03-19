@@ -185,7 +185,7 @@ export default function MarkdownFrontMatterEditorSeo() {
             <h3 className="font-medium mb-2">How do I handle multi-line values?</h3>
             <p className="text-sm text-muted-foreground">
               For descriptions or long text, use block strings in YAML (with{" "}
-              <code className="font-mono bg-background px-1.5 py-0.5 rounded">|</code> or <code className="font-mono bg-background px-1.5 py-0.5 rounded">></code>) or multi-line strings in TOML. The editor
+              <code className="font-mono bg-background px-1.5 py-0.5 rounded">|</code> or <code className="font-mono bg-background px-1.5 py-0.5 rounded">&gt;</code>) or multi-line strings in TOML. The editor
               provides text areas that handle multi-line content properly.
             </p>
           </div>

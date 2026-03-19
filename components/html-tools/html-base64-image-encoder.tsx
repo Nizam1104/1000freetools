@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { Download, Copy, RotateCcw, Image, Upload } from "lucide-react";
+import { Download, Copy, RotateCcw, Image as ImageIcon, Upload } from "lucide-react";
 
 const HtmlBase64ImageEncoder: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
@@ -16,6 +16,7 @@ const HtmlBase64ImageEncoder: React.FC = () => {
   const [encoded, setEncoded] = useState(false);
   const [format, setFormat] = useState<"original" | "png" | "jpeg" | "webp">("original");
   const [quality, setQuality] = useState(90);
+  const [isDragOver, setIsDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +40,7 @@ const HtmlBase64ImageEncoder: React.FC = () => {
 
     const reader = new FileReader();
     reader.onload = (event) => {
-      let base64 = event.target?.result as string;
+      const originalBase64 = event.target?.result as string;
 
       // If format conversion is needed
       if (format !== "original") {
@@ -51,16 +52,16 @@ const HtmlBase64ImageEncoder: React.FC = () => {
           const ctx = canvas.getContext("2d");
           if (ctx) {
             ctx.drawImage(img, 0, 0);
-            base64 = canvas.toDataURL(`image/${format}`, quality / 100);
-            setBase64Output(base64);
-            setHtmlOutput(`<img src="${base64}" alt="Encoded image" />`);
+            const convertedBase64 = canvas.toDataURL(`image/${format}`, quality / 100);
+            setBase64Output(convertedBase64);
+            setHtmlOutput(`<img src="${convertedBase64}" alt="Encoded image" />`);
             setEncoded(true);
           }
         };
-        img.src = base64;
+        img.src = originalBase64;
       } else {
-        setBase64Output(base64);
-        setHtmlOutput(`<img src="${base64}" alt="Encoded image" />`);
+        setBase64Output(originalBase64);
+        setHtmlOutput(`<img src="${originalBase64}" alt="Encoded image" />`);
         setEncoded(true);
       }
     };
@@ -73,10 +74,31 @@ const HtmlBase64ImageEncoder: React.FC = () => {
     setHtmlOutput("");
     setImagePreview("");
     setEncoded(false);
+    setIsDragOver(false);
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
   }, []);
+
+  const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragOver(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragOver(false);
+  }, []);
+
+  const handleDrop = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragOver(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file && file.type.startsWith("image/")) {
+      const fakeEvent = { target: { files: [file] } } as unknown as React.ChangeEvent<HTMLInputElement>;
+      handleImageSelect(fakeEvent);
+    }
+  }, [handleImageSelect]);
 
   const handleCopyBase64 = useCallback(() => {
     if (base64Output) {
@@ -91,21 +113,23 @@ const HtmlBase64ImageEncoder: React.FC = () => {
   }, [htmlOutput]);
 
   const handleDownload = useCallback(() => {
-    if (!base64Output) return;
-    
+    if (!htmlOutput) return;
+
     const blob = new Blob([htmlOutput], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.download = "embedded-image.html";
-    link.href = URL.createObjectURL(blob);
+    link.href = url;
     link.click();
-  }, [base64Output, htmlOutput]);
+    URL.revokeObjectURL(url);
+  }, [htmlOutput]);
 
   return (
     <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Image className="w-5 h-5" />
+            <ImageIcon className="w-5 h-5" />
             HTML Base64 Image Encoder
           </CardTitle>
         </CardHeader>
@@ -113,9 +137,16 @@ const HtmlBase64ImageEncoder: React.FC = () => {
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label>Upload Image</Label>
-              <div 
-                className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-gray-400 transition-colors"
+              <div
+                className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
+                  isDragOver
+                    ? "border-blue-500 bg-blue-50"
+                    : "border-gray-300 hover:border-gray-400"
+                }`}
                 onClick={() => fileInputRef.current?.click()}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
               >
                 <Input
                   ref={fileInputRef}
@@ -182,7 +213,7 @@ const HtmlBase64ImageEncoder: React.FC = () => {
 
           <div className="flex gap-2">
             <Button onClick={handleEncode} disabled={!selectedImage}>
-              <Image className="w-4 h-4 mr-2" />
+              <ImageIcon className="w-4 h-4 mr-2" />
               Encode to Base64
             </Button>
             <Button onClick={handleCopyBase64} variant="outline" disabled={!encoded}>

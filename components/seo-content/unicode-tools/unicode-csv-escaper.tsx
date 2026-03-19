@@ -137,7 +137,7 @@ export default function UnicodeCsvEscaperSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I open Unicode CSV in Excel?</h3>
             <p className="text-sm text-muted-foreground">
-              Save with UTF-8 BOM. Or use Data > From Text import. Select UTF-8 encoding. Ensures proper character display.
+              Save with UTF-8 BOM. Or use Data &gt; From Text import. Select UTF-8 encoding. Ensures proper character display.
             </p>
           </div>
         </div>

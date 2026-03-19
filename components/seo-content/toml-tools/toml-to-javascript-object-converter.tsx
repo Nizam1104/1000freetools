@@ -89,7 +89,7 @@ export default function TomlToJavascriptObjectConverterSeo() {
           </div>
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
             <p className="text-sm text-amber-700 dark:text-amber-300">
-              <strong>Pro tip:</strong> For Node.js, consider exporting as ES6 module: export default {...}. For older projects, use module.exports = {...}. Match your project's module system.
+              <strong>Pro tip:</strong> For Node.js, consider exporting as ES6 module: export default {"{"}...{"}"}. For older projects, use module.exports = {"{"}...{"}"}. Match your project's module system.
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function TomlToJavascriptObjectConverterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I use the generated JavaScript?</h3>
             <p className="text-sm text-muted-foreground">
-              Copy into a .js file: const config = {...}; export default config;. Import in your code: import config from './config.js'.
+              Copy into a .js file: const config = {"{"}...{"}"}; export default config;. Import in your code: import config from './config.js'.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -125,7 +125,7 @@ export default function TomlToJavascriptObjectConverterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Can I use this for TypeScript?</h3>
             <p className="text-sm text-muted-foreground">
-              Yes, JavaScript objects are valid TypeScript. Add type annotations: const config: Config = {...}. Or generate TypeScript interfaces separately.
+              Yes, JavaScript objects are valid TypeScript. Add type annotations: const config: Config = {"{"}...{"}"}. Or generate TypeScript interfaces separately.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

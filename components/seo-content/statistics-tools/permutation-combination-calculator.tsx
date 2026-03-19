@@ -113,7 +113,7 @@ export default function PermutationCombinationCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Can r be larger than n?</h3>
             <p className="text-sm text-muted-foreground">
-              No. You can't select more items than available. Both nPr and nCr equal 0 when r > n. The calculator will show an error.
+              No. You can't select more items than available. Both nPr and nCr equal 0 when r {">"} n. The calculator will show an error.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

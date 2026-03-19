@@ -101,7 +101,7 @@ export default function TomlToPythonDictionaryConverterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I load the generated Python dict?</h3>
             <p className="text-sm text-muted-foreground">
-              Copy into a .py file as a variable assignment: config = {...}. Import the module and access config. Or eval() the string (not recommended for untrusted input).
+              Copy into a .py file as a variable assignment: config = {"{"}...{"}"}. Import the module and access config. Or eval() the string (not recommended for untrusted input).
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

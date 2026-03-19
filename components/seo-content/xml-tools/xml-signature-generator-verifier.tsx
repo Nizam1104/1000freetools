@@ -16,7 +16,7 @@ export default function XmlSignatureGeneratorVerifierSeo() {
             <li><strong className="text-foreground">Generate key pair:</strong> A private key (for signing) and public key (for verification) are created using RSA or ECDSA.</li>
             <li><strong className="text-foreground">Create digest:</strong> The XML content is hashed using SHA-256 or similar algorithm to create a unique fingerprint.</li>
             <li><strong className="text-foreground">Sign the digest:</strong> The private key encrypts the digest, creating the digital signature.</li>
-            <li><strong className="text-foreground">Embed signature:</strong> The signature is inserted into the XML as a <Signature> element with key info and algorithms used.</li>
+            <li><strong className="text-foreground">Embed signature:</strong> The signature is inserted into the XML as a <code>{'<Signature>'}</code> element with key info and algorithms used.</li>
           </ol>
           <p className="text-muted-foreground">
             Verification reverses the process: the signature is decrypted with the public key, the content is re-hashed,

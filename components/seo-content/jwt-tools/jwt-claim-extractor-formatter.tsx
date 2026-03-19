@@ -137,7 +137,7 @@ export default function JWTClaimExtractorFormatterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I extract claims in my code?</h3>
             <p className="text-sm text-muted-foreground">
-              Most JWT libraries provide claim access: Node.js (<code className="font-mono text-xs">jwt.decode(token)</code>), Python (<code className="font-mono text-xs">jwt.decode(token, options={"verify_signature": False})</code>). Always verify the signature first in production.
+              Most JWT libraries provide claim access: Node.js (<code className="font-mono text-xs">jwt.decode(token)</code>), Python (<code className="font-mono text-xs">jwt.decode(token, options={"{"}verify_signature: False{"}"})</code>). Always verify the signature first in production.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

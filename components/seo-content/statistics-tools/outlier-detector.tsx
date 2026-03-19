@@ -10,7 +10,7 @@ export default function OutlierDetectorSeo() {
             Enter your dataset as numbers separated by commas, spaces, or newlines. The tool accepts integers and decimals, positive and negative values. Larger datasets provide more reliable outlier detection.
           </p>
           <p>
-            Choose the detection method: IQR (Interquartile Range) or Z-score. IQR method flags values below Q1 - 1.5×IQR or above Q3 + 1.5×IQR. Z-score method flags values with |z| > 3 (or your chosen threshold).
+            Choose the detection method: IQR (Interquartile Range) or Z-score. IQR method flags values below Q1 - 1.5×IQR or above Q3 + 1.5×IQR. Z-score method flags values with |z| {">"} 3 (or your chosen threshold).
           </p>
           <p>
             Results highlight detected outliers in your data. Statistics show how many outliers were found and their impact on mean and standard deviation. Option to remove outliers and recalculate statistics to see the effect.
@@ -137,7 +137,7 @@ export default function OutlierDetectorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I handle outliers in reports?</h3>
             <p className="text-sm text-muted-foreground">
-              State your outlier detection method, threshold, number removed, and justification. Example: "Three values >3 SD from mean were excluded as measurement errors."
+              State your outlier detection method, threshold, number removed, and justification. Example: "Three values {">"}3 SD from mean were excluded as measurement errors."
             </p>
           </div>
         </div>

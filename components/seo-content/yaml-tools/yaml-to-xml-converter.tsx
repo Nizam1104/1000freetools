@@ -151,7 +151,7 @@ XML Output:
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Does it add XML declaration?</h3>
             <p className="text-sm text-muted-foreground">
-              Yes. The output includes <?xml version="1.0"?> declaration by default. This is required for proper XML parsing in most systems.
+              Yes. The output includes &lt;?xml version="1.0"?&gt; declaration by default. This is required for proper XML parsing in most systems.
             </p>
           </div>
 

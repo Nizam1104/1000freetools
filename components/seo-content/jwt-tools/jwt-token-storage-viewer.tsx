@@ -128,7 +128,7 @@ export default function JWTTokenStorageViewerSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What does "token size" tell me?</h3>
             <p className="text-sm text-muted-foreground">
-              JWT size correlates with payload content. Typical tokens are 200-400 characters. Larger tokens (>1KB) may contain excessive claims that should be moved to your database.
+              JWT size correlates with payload content. Typical tokens are 200-400 characters. Larger tokens (&gt;1KB) may contain excessive claims that should be moved to your database.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

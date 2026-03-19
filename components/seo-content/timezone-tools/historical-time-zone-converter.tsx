@@ -129,7 +129,7 @@ export default function HistoricalTimeZoneConverterSeo() {
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Does this account for leap seconds?</h3>
-            <p className="text-sm>
+            <p className="text-sm">
               Leap seconds (added since 1972) aren't typically relevant for timezone conversion. They affect UTC by at most a second. For most historical purposes, leap seconds can be ignored.
             </p>
           </div>

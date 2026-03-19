@@ -14,7 +14,7 @@ export default function XmlEntityEncoderDecoderSeo() {
           </p>
           <ol className="text-muted-foreground space-y-2 list-decimal list-inside">
             <li><strong className="text-foreground">Scan input:</strong> Text is scanned for characters that have special meaning in XML.</li>
-            <li><strong className="text-foreground">Replace with entities:</strong> Special characters are replaced with their entity equivalents (& becomes &amp;amp;, < becomes &amp;lt;, etc.).</li>
+            <li><strong className="text-foreground">Replace with entities:</strong> Special characters are replaced with their entity equivalents (&amp; becomes &amp;amp;, {"<"} becomes &amp;lt;, etc.).</li>
             <li><strong className="text-foreground">Output safe text:</strong> The result is safe to include in XML element content or attributes.</li>
           </ol>
           <p className="text-muted-foreground">

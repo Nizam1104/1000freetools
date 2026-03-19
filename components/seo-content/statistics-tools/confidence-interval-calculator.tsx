@@ -89,7 +89,7 @@ export default function ConfidenceIntervalCalculatorSeo() {
           </div>
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
             <p className="text-sm text-amber-700 dark:text-amber-300">
-              <strong>Pro tip:</strong> Confidence intervals that include the null value (0 for differences, 1 for ratios) indicate non-significant results at the corresponding alpha level. A 95% CI excluding 0 means p < 0.05.
+              <strong>Pro tip:</strong> Confidence intervals that include the null value (0 for differences, 1 for ratios) indicate non-significant results at the corresponding alpha level. A 95% CI excluding 0 means p {"<"} 0.05.
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function ConfidenceIntervalCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What if my sample is small?</h3>
             <p className="text-sm text-muted-foreground">
-              For means with n < 30, ensure data is approximately normal. The t-distribution handles small samples but assumes normality. For proportions, need np ≥ 10 and n(1-p) ≥ 10.
+              For means with n {"<"} 30, ensure data is approximately normal. The t-distribution handles small samples but assumes normality. For proportions, need np ≥ 10 and n(1-p) ≥ 10.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

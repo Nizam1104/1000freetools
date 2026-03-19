@@ -113,7 +113,7 @@ export default function TTestCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I check normality?</h3>
             <p className="text-sm text-muted-foreground">
-              Use histograms, Q-Q plots, or Shapiro-Wilk test. For n > 30, the Central Limit Theorem makes normality less critical for the mean.
+              Use histograms, Q-Q plots, or Shapiro-Wilk test. For n {">"} 30, the Central Limit Theorem makes normality less critical for the mean.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

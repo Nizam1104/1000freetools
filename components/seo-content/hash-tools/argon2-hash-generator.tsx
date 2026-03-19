@@ -26,7 +26,7 @@ export default function Argon2HashGeneratorSeo() {
             </ol>
           </div>
 
-          <div className="rounded-lg border bg-green-500/30 bg-green-500/10 p-4">
+          <div className="rounded-lg border bg-green-500/10 p-4">
             <p className="text-sm text-green-700 dark:text-green-300">
               <strong>Security status:</strong> Argon2 is the current gold standard for password hashing, recommended by OWASP and used by major security frameworks worldwide.
             </p>
@@ -47,7 +47,7 @@ export default function Argon2HashGeneratorSeo() {
           </div>
 
           <div className="rounded-lg border bg-muted/30 p-4">
-            <h3 className="font-medium mb-2>Testing password verification logic</h3>
+            <h3 className="font-medium mb-2">Testing password verification logic</h3>
             <p className="text-sm text-muted-foreground">
               Generate test hashes with known parameters to verify your authentication code works correctly. Ensure your implementation properly validates Argon2 hashes.
             </p>

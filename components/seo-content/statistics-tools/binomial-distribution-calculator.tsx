@@ -113,7 +113,7 @@ export default function BinomialDistributionCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">When is the distribution symmetric?</h3>
             <p className="text-sm text-muted-foreground">
-              When p = 0.5, the distribution is symmetric. When p < 0.5, it skews right. When p > 0.5, it skews left.
+              When p = 0.5, the distribution is symmetric. When p {"<"} 0.5, it skews right. When p {">"} 0.5, it skews left.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

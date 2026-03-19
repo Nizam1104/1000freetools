@@ -72,7 +72,7 @@ export default function UnicodeCharacterEncoderDecoderSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Surrogate pairs for emoji.</strong>
-              Emoji and rare characters need two \u escapes in some formats. JavaScript uses \uD83D\uDE00 for 😀. Newer syntax supports \u{1F600}.
+              Emoji and rare characters need two \\u escapes in some formats. JavaScript uses \\uD83D\\uDE00 for 😀. Newer syntax supports \\u{"{1F600}"}.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -107,7 +107,7 @@ export default function UnicodeCharacterEncoderDecoderSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I encode emoji?</h3>
             <p className="text-sm text-muted-foreground">
-              Emoji are supplementary characters. In JavaScript: \u{1F600} or \uD83D\uDE00. In HTML: &#x1F600; or &#128512;. In CSS: \01F600.
+              Emoji are supplementary characters. In JavaScript: \\u{"{1F600}"} or \\uD83D\\uDE00. In HTML: &amp;#x1F600; or &amp;#128512;. In CSS: \\01F600.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

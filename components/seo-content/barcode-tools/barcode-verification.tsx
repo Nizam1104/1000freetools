@@ -111,7 +111,7 @@ export default function BarcodeVerificationSeo() {
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
-            <h3 className="font-medium mb-2">Can I verify barcodes on curved surfaces?</strong></h3>
+            <h3 className="font-medium mb-2">Can I verify barcodes on curved surfaces?</h3>
             <p className="text-sm text-muted-foreground">
               Curved surfaces distort barcodes and affect verification. Verify on flat samples when possible. Curved surface barcodes need specialized verification equipment.
             </p>

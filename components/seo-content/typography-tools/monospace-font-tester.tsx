@@ -54,7 +54,7 @@ export default function MonospaceFontTesterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Evaluating font ligatures</h3>
             <p className="text-sm text-muted-foreground">
-              Fonts like Fira Code combine characters like => into single ligatures. Test whether ligatures help or hinder your code reading before enabling them in your editor.
+              Fonts like Fira Code combine characters like &gt;= into single ligatures. Test whether ligatures help or hinder your code reading before enabling them in your editor.
             </p>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function MonospaceFontTesterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Are ligatures worth using?</h3>
             <p className="text-sm text-muted-foreground">
-              Some developers love ligatures (=> becomes →). Others find them distracting. Try them for a week. If you notice them, they're probably not helping.
+              Some developers love ligatures (&gt;= becomes →). Others find them distracting. Try them for a week. If you notice them, they're probably not helping.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

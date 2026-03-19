@@ -48,7 +48,7 @@ export default function LigatureGeneratorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Creating coding font previews</h3>
             <p className="text-sm text-muted-foreground">
-              Programming ligatures (=>, ===, !=) are popular in coding fonts. Test how code looks with programming ligatures before switching your editor font.
+              Programming ligatures (&gt;==, ===, !=) are popular in coding fonts. Test how code looks with programming ligatures before switching your editor font.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -125,7 +125,7 @@ export default function LigatureGeneratorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What are programming ligatures?</h3>
             <p className="text-sm text-muted-foreground">
-              Coding fonts like Fira Code combine symbols like => into single glyphs. They make code more readable but are purely visual—the underlying text is unchanged.
+              Coding fonts like Fira Code combine symbols like &gt;= into single glyphs. They make code more readable but are purely visual—the underlying text is unchanged.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

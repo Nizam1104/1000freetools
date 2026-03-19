@@ -30,7 +30,7 @@ export default function PValueCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Research paper reporting</h3>
             <p className="text-sm text-muted-foreground">
-              Report exact p-values in manuscripts. "p = 0.023" is more informative than "p < 0.05". Journals increasingly require exact values.
+              Report exact p-values in manuscripts. "p = 0.023" is more informative than "p {"<"} 0.05". Journals increasingly require exact values.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -72,7 +72,7 @@ export default function PValueCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Smaller p-values indicate stronger evidence.</strong>
-              p < 0.05 is conventionally "significant." p < 0.01 is "highly significant." But these are arbitrary thresholds - report exact values.
+              p {"<"} 0.05 is conventionally "significant." p {"<"} 0.01 is "highly significant." But these are arbitrary thresholds - report exact values.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -113,7 +113,7 @@ export default function PValueCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What's the difference between Z and T?</h3>
             <p className="text-sm text-muted-foreground">
-              Use Z when population SD is known or sample is large (n > 30). Use T when population SD is unknown and estimated from small samples.
+              Use Z when population SD is known or sample is large (n {">"} 30). Use T when population SD is unknown and estimated from small samples.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -137,7 +137,7 @@ export default function PValueCalculatorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What if p is very small (like 0.00001)?</h3>
             <p className="text-sm text-muted-foreground">
-              Report as "p < 0.001" or give the exact value. Very small p-values indicate strong evidence against the null, but check for data errors or violations.
+              Report as "p {"<"} 0.001" or give the exact value. Very small p-values indicate strong evidence against the null, but check for data errors or violations.
             </p>
           </div>
         </div>

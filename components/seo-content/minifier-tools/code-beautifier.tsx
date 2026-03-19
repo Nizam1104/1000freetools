@@ -17,13 +17,13 @@ export default function CodeBeautifierSeo() {
             <div className="text-xs space-y-2">
               <div className="bg-background rounded p-2">
                 <p className="text-muted-foreground mb-1">Minified (1 line):</p>
-                <code className="block whitespace-pre-wrap text-[10px]">function calc(a,b){return a+b;}const result=calc(5,3);console.log(result);</code>
+                <code className="block whitespace-pre-wrap text-[10px]">function calc(a,b) {"{"} return a+b; {"}"} const result=calc(5,3); console.log(result);</code>
               </div>
               <div className="bg-background rounded p-2">
                 <p className="text-muted-foreground mb-1">Beautified (5 lines):</p>
-                <code className="block whitespace-pre-wrap">function calc(a, b) {
+                <code className="block whitespace-pre-wrap">function calc(a, b) {"{"}
   return a + b;
-}
+{"}"}
 const result = calc(5, 3);
 console.log(result);</code>
               </div>

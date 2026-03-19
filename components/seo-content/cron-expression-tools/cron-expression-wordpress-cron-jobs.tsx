@@ -93,7 +93,7 @@ export default function CronExpressionWordpressSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Configure email for output.</strong>
-              Cron emails command output to the server's admin. Redirect output (<code className="font-mono text-xs">> /dev/null 2>&1</code>) if you don't want emails, or set up proper log files.
+              Cron emails command output to the server's admin. Redirect output (<code className="font-mono text-xs">&gt; /dev/null 2&gt;&amp;1</code>) if you don't want emails, or set up proper log files.
             </p>
           </div>
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">

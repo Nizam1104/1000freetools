@@ -113,7 +113,7 @@ Escaped: "Path: C:\\new\\file"`}</pre>
 
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
-              <strong className="text-foreground">Block scalars are alternatives.</strong> For multi-line text, consider YAML block scalars (| or >) instead of escaping newlines.
+              <strong className="text-foreground">Block scalars are alternatives.</strong> For multi-line text, consider YAML block scalars (| or &gt;) instead of escaping newlines.
             </p>
           </div>
 
@@ -154,7 +154,7 @@ Escaped: "Path: C:\\new\\file"`}</pre>
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Can I escape newlines?</h3>
             <p className="text-sm text-muted-foreground">
-              In double quotes: \\n represents a newline character. For actual multi-line strings, use block scalars (| for literal, > for folded) instead of escaping.
+              In double quotes: \\n represents a newline character. For actual multi-line strings, use block scalars (| for literal, &gt; for folded) instead of escaping.
             </p>
           </div>
 

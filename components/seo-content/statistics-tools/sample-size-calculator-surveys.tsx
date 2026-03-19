@@ -84,7 +84,7 @@ export default function SampleSizeCalculatorSurveysSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Finite population correction reduces sample size.</strong>
-              When sampling a large fraction of a small population, you need fewer responses. The correction matters when n/N > 5%.
+              When sampling a large fraction of a small population, you need fewer responses. The correction matters when n/N {">"} 5%.
             </p>
           </div>
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
@@ -107,7 +107,7 @@ export default function SampleSizeCalculatorSurveysSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How does population size affect sample size?</h3>
             <p className="text-sm text-muted-foreground">
-              For large populations (>100,000), it barely matters. For smaller populations, you need proportionally more. Sampling 100 from 200 is very different than 100 from 1,000,000.
+              For large populations (&gt;100,000), it barely matters. For smaller populations, you need proportionally more. Sampling 100 from 200 is very different than 100 from 1,000,000.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
