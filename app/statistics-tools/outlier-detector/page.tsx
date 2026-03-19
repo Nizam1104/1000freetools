@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { OutlierDetector } from "@/components/statistics-tools/outlier-detector";
+import OutlierDetector from "@/components/statistics-tools/outlier-detector";
 import OutlierDetectorSeo from "@/components/seo-content/statistics-tools/outlier-detector";
 
 export const metadata: Metadata = {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtTokenStorageViewerSeo from "@/components/seo-content/jwt-tools/jwt-token-storage-viewer";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtTokenStorageViewer } from "@/components/jwt-tools/jwt-token-storage-viewer.tsx";
+import { JwtTokenStorageViewer } from "@/components/jwt-tools/jwt-token-storage-viewer";
 
 export const metadata: Metadata = {
   title: `Browser JWT Storage Viewer | Inspect Local Tokens`,

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { DopplerEffectCalculator } from "@/components/physics-tools/doppler-effect-calculator";
+import DopplerEffectCalculator from "@/components/physics-tools/doppler-effect-calculator";
 import DopplerEffectCalculatorSeo from "@/components/seo-content/physics-tools/doppler-effect-calculator";
 
 export const metadata: Metadata = {

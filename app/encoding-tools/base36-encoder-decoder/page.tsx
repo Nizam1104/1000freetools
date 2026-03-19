@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { Base36EncoderDecoder } from "@/components/encoding-tools/base36-encoder-decoder";
+import Base36EncoderDecoder from "@/components/encoding-tools/base36-encoder-decoder";
 import Base36EncoderDecoderSeo from "@/components/seo-content/encoding-tools/base36-encoder-decoder";
 
 export const metadata: Metadata = {

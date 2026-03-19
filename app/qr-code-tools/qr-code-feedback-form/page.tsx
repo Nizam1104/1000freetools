@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeFeedbackFormSeo from "@/components/seo-content/qr-code-tools/qr-code-feedback-form";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeFeedbackForm } from "@/components/qr-code-tools/qr-code-feedback-form.tsx";
+import { QrCodeFeedbackForm } from "@/components/qr-code-tools/qr-code-feedback-form";
 
 export const metadata: Metadata = {
   title: `Feedback QR Code Generator | Collect Reviews`,

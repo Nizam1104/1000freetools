@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontPairingTool } from "@/components/font-tools/font-pairing-tool.tsx";
+import FontPairingTool from "@/components/font-tools/font-pairing-tool";
 import FontPairingToolSeo from "@/components/seo-content/typography-tools/font-pairing-tool";
 
 export const metadata: Metadata = {

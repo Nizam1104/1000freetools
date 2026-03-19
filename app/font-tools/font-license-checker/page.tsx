@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import FontLicenseCheckerSeo from "@/components/seo-content/font-tools/font-license-checker";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontLicenseChecker } from "@/components/font-tools/font-license-checker.tsx";
+import FontLicenseChecker from "@/components/font-tools/font-license-checker";
 
 export const metadata: Metadata = {
   title: `Font License Checker | Usage Rights Verifier`,
@@ -73,9 +72,6 @@ export default function FontLicenseCheckerPage() {
         <p className="text-muted-foreground">Check if you can legally use a font for your project. Understand commercial, personal, and web embedding licenses.</p>
       </header>
       {<FontLicenseChecker />}
-      <div className="mt-16">
-        <FontLicenseCheckerSeo />
-      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

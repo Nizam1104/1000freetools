@@ -245,7 +245,7 @@ export default function EmojiTranslatorMeaning() {
       "pizza": "🍕", "burger": "🍔", "fries": "🍟", "popcorn": "🍿",
       "dog": "🐶", "cat": "🐱", "rabbit": "🐰", "bear": "🐻",
       "panda": "🐼", "tiger": "🐯", "cry": "😭", "sad": "😢",
-      "angry": "😠", "excited": "🤩", "party": "🥳", "hug": "🤗",
+      "angry": "😠", "excited": "🤩", "celebration": "🥳", "hug": "🤗",
     }
 
     let result = inputText.toLowerCase()

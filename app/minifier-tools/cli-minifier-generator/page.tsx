@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import CliMinifierGeneratorSeo from "@/components/seo-content/minifier-tools/cli-minifier-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CliMinifierGenerator } from "@/components/minifier-tools/cli-minifier-generator.tsx";
+import CliMinifierGenerator from "@/components/minifier-tools/cli-minifier-generator";
 
 export const metadata: Metadata = {
   title: `CLI Minifier Generator - Create Minification Scripts`,
@@ -74,7 +73,6 @@ export default function CliMinifierGeneratorPage() {
       </header>
       {<CliMinifierGenerator />}
       <div className="mt-16">
-        <CliMinifierGeneratorSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

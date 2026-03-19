@@ -9,8 +9,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Check, Trash2, Info, Wand2 } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<root><item id="1"><name>Item One</name><value>100</value></item><item id="2"><name>Item Two</name><value>200</value></item></root>',
+].join('\n')
+
 export default function XmlFormatterValidator() {
-  const [xmlInput, setXmlInput] = useState<string(`<root><item id="1"><name>Item One</name><value>100</value></item><item id="2"><name>Item Two</name><value>200</value></item></root>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [indentSize, setIndentSize] = useState<string>("2")
   const [mode, setMode] = useState<"format" | "minify">("format")
   const [output, setOutput] = useState<string>("")

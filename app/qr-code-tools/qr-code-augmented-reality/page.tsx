@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeAugmentedRealitySeo from "@/components/seo-content/qr-code-tools/qr-code-augmented-reality";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeAugmentedReality } from "@/components/qr-code-tools/qr-code-augmented-reality.tsx";
+import { QrCodeAugmentedReality } from "@/components/qr-code-tools/qr-code-augmented-reality";
 
 export const metadata: Metadata = {
   title: `AR QR Code Generator | Augmented Reality Trigger`,

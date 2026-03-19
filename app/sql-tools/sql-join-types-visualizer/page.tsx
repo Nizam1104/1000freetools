@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlJoinTypesVisualizer } from "@/components/sql-tools/sql-join-types-visualizer.tsx";
+import { SqlJoinTypesVisualizer } from "@/components/sql-tools/sql-join-types-visualizer";
 import SqlJoinTypesVisualizerSeo from "@/components/seo-content/sql-tools/sql-join-types-visualizer";
 
 export const metadata: Metadata = {

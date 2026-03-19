@@ -3,7 +3,11 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp3OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
@@ -38,40 +42,36 @@ export default function AudioGainAnalyzer() {
         formats: ALL_FORMATS,
       });
 
-      const audioTrack = await input.getPrimaryAudioTrack();
-      if (!audioTrack) {
-        throw new Error("No audio track found");
-      }
-
-      const decoder = await audioTrack.createDecoder();
-      const samples: AudioSample[] = [];
-      
-      for await (const sample of decoder) {
-        samples.push(sample);
-      }
-
-      if (samples.length === 0) {
-        throw new Error("No audio samples found");
-      }
-
       let maxPeak = 0;
       let sumSquares = 0;
       let totalSamples = 0;
       let minPeak = 1;
 
-      for (const sample of samples) {
-        const buffer = sample.toAudioBuffer();
-        for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
-          const channelData = buffer.getChannelData(channel);
-          for (let i = 0; i < channelData.length; i++) {
-            const amp = Math.abs(channelData[i]);
-            if (amp > maxPeak) maxPeak = amp;
-            if (amp > 0.001 && amp < minPeak) minPeak = amp;
-            sumSquares += amp * amp;
-            totalSamples++;
-          }
-        }
-      }
+      const conversion = await Conversion.init({
+        input,
+        output: new Output({
+          format: new Mp3OutputFormat(),
+          target: new BufferTarget(),
+        }),
+        audio: {
+          process: async (sample) => {
+            const buffer = sample.toAudioBuffer();
+            for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
+              const channelData = buffer.getChannelData(channel);
+              for (let i = 0; i < channelData.length; i++) {
+                const amp = Math.abs(channelData[i]);
+                if (amp > maxPeak) maxPeak = amp;
+                if (amp > 0.001 && amp < minPeak) minPeak = amp;
+                sumSquares += amp * amp;
+                totalSamples++;
+              }
+            }
+            return sample;
+          },
+        },
+      });
+
+      await conversion.execute();
 
       const rms = Math.sqrt(sumSquares / totalSamples);
       const peakDb = 20 * Math.log10(maxPeak);
@@ -87,7 +87,7 @@ export default function AudioGainAnalyzer() {
         averageGain,
       });
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to analyze gain");
     } finally {

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import NumberSystemRoundingCalculator from "@/components/number-tools/number-system-rounding-calculator";
-import NumberSystemRoundingCalculatorSeo from "@/components/seo-content/number-tools/number-system-rounding-calculator";
 
 export const metadata: Metadata = {
   title: `Rounding Calculator | Decimal & Significant Figures`,
@@ -75,10 +74,8 @@ export default function RoundingCalculatorPage() {
         <NumberSystemRoundingCalculator />
       </div>
       <div className="mt-8">
-        <NumberSystemRoundingCalculatorSeo />
       </div>
       <div className="mt-16">
-        <RoundingCalculatorSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

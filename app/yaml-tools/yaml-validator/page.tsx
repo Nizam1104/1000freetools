@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import YamlValidatorTool from "@/components/yaml-tools/yaml-validator";
+import { YamlValidator } from "@/components/yaml-tools/yaml-validator";
 import YamlValidatorSeo from "@/components/seo-content/yaml-tools/yaml-validator";
 
 export const metadata: Metadata = {
@@ -77,7 +77,7 @@ export default function YamlValidatorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <YamlValidatorTool />
+        <YamlValidator />
       </div>
       <div className="mt-8">
         <YamlValidatorSeo />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlTagRemoverStripperTool from "@/components/html-tools/html-tag-remover-stripper";
+import { HtmlTagRemoverStripper } from "@/components/html-tools/html-tag-remover-stripper";
 import HtmlTagRemoverStripperSEO from "@/components/seo-content/html-tools/html-tag-remover-stripper";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlTagRemoverStripperPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlTagRemoverStripperTool />
+        <HtmlTagRemoverStripper />
       </div>
       <div className="mt-8">
         <HtmlTagRemoverStripperSEO />

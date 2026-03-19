@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SqlMinifierSeo from "@/components/seo-content/minifier-tools/sql-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SqlMinifier } from "@/components/minifier-tools/sql-minifier";
@@ -74,7 +73,6 @@ export default function SqlMinifierPage() {
       </header>
       {<SqlMinifier />}
       <div className="mt-16">
-        <SqlMinifierSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

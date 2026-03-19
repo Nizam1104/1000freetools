@@ -43,7 +43,8 @@ const tCritical = (df: number, alpha: number): number => {
 
 export default function ConfidenceIntervalCalculator() {
   const [calculationType, setCalculationType] = useState<"mean" | "proportion" | "difference">("mean")
-  
+  const [copied, setCopied] = useState<string | null>(null)
+
   // For mean
   const [sampleMean, setSampleMean] = useState<number>(100)
   const [sampleStdDev, setSampleStdDev] = useState<number>(15)

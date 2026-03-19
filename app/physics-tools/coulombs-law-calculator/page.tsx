@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CoulombsLawCalculator } from "@/components/physics-tools/coulombs-law-calculator";
+import CoulombsLawCalculator from "@/components/physics-tools/coulombs-law-calculator";
 import CoulombsLawCalculatorSeo from "@/components/seo-content/physics-tools/coulombs-law-calculator";
 
 export const metadata: Metadata = {

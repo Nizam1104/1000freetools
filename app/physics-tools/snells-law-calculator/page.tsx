@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SnellsLawCalculator } from "@/components/physics-tools/snells-law-calculator";
+import SnellsLawCalculator from "@/components/physics-tools/snells-law-calculator";
 import SnellsLawCalculatorSeo from "@/components/seo-content/physics-tools/snells-law-calculator";
 
 export const metadata: Metadata = {

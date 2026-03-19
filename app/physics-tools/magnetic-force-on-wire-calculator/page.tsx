@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MagneticForceOnWireCalculator } from "@/components/physics-tools/magnetic-force-on-wire-calculator";
+import MagneticForceOnWireCalculator from "@/components/physics-tools/magnetic-force-on-wire-calculator";
 import MagneticForceOnWireCalculatorSeo from "@/components/seo-content/physics-tools/magnetic-force-on-wire-calculator";
 
 export const metadata: Metadata = {

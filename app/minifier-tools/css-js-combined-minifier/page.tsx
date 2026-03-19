@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import CssJsCombinedMinifierSeo from "@/components/seo-content/minifier-tools/css-js-combined-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CssMinifier from "@/components/minifier-tools/css-minifier";
@@ -76,7 +75,6 @@ export default function CssJsCombinedMinifierPage() {
         <CssMinifier />
       </div>
       <div className="mt-16">
-        <CssJsCombinedMinifierSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FontDuplicateFinderSeo from "@/components/seo-content/font-tools/font-duplicate-finder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import FontSimilarityFinder from "@/components/font-tools/font-similarity-finder";
@@ -74,9 +73,6 @@ export default function FontDuplicateFinderPage() {
       </header>
       <div className="mt-8">
         <FontSimilarityFinder />
-      </div>
-      <div className="mt-16">
-        <FontDuplicateFinderSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

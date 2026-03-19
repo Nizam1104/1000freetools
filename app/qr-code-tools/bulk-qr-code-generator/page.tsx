@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BulkQrCodeGeneratorSeo from "@/components/seo-content/qr-code-tools/bulk-qr-code-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BulkQrCodeGenerator } from "@/components/qr-code-tools/bulk-qr-code-generator.tsx";
+import { BulkQrCodeGenerator } from "@/components/qr-code-tools/bulk-qr-code-generator";
 
 export const metadata: Metadata = {
   title: `Bulk QR Code Generator | Mass Create from CSV`,

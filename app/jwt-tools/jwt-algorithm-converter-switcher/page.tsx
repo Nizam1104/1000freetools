@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtAlgorithmConverterSwitcherSeo from "@/components/seo-content/jwt-tools/jwt-algorithm-converter-switcher";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtAlgorithmConverterSwitcher } from "@/components/jwt-tools/jwt-algorithm-converter-switcher.tsx";
+import JwtAlgorithmConverterSwitcher from "@/components/jwt-tools/jwt-algorithm-converter-switcher";
 
 export const metadata: Metadata = {
   title: `JWT Algorithm Converter | Switch Token Signing Method`,

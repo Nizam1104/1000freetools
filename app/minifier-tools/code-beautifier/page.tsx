@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CodeBeautifierSeo from "@/components/seo-content/minifier-tools/code-beautifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CodeBeautifier } from "@/components/minifier-tools/code-beautifier";
+import CodeBeautifier from "@/components/minifier-tools/code-beautifier";
 
 export const metadata: Metadata = {
   title: `Code Beautifier - Unminify & Format Code Online`,

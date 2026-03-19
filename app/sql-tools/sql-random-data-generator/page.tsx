@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlRandomDataGenerator } from "@/components/sql-tools/sql-random-data-generator.tsx";
+import { SqlRandomDataGenerator } from "@/components/sql-tools/sql-random-data-generator";
 import SqlRandomDataGeneratorSeo from "@/components/seo-content/sql-tools/sql-random-data-generator";
 
 export const metadata: Metadata = {

@@ -38,9 +38,9 @@ export default function PasswordAuditReport() {
     if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++
     if (/\d/.test(password)) score++
     if (/[^a-zA-Z0-9]/.test(password)) score++
-    
+
     if (score <= 2) return "weak"
-    if (score <= 4)
+    if (score <= 4) return "moderate"
     return "strong"
   }, [])
 

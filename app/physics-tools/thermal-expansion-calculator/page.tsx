@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { ThermalExpansionCalculator } from "@/components/physics-tools/thermal-expansion-calculator";
+import ThermalExpansionCalculator from "@/components/physics-tools/thermal-expansion-calculator";
 import ThermalExpansionCalculatorSeo from "@/components/seo-content/physics-tools/thermal-expansion-calculator";
 
 export const metadata: Metadata = {

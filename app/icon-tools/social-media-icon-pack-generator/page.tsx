@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SocialMediaIconPackGenerator } from "@/components/icon-tools/social-media-icon-pack-generator.tsx";
+import SocialMediaIconPackGenerator from "@/components/icon-tools/social-media-icon-pack-generator";
 import SocialMediaIconPackGeneratorSeo from "@/components/seo-content/icon-tools/social-media-icon-pack-generator";
 
 export const metadata: Metadata = {

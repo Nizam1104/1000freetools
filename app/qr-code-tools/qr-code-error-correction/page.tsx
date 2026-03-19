@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeErrorCorrectionSeo from "@/components/seo-content/qr-code-tools/qr-code-error-correction";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeErrorCorrection } from "@/components/qr-code-tools/qr-code-error-correction.tsx";
+import { QrCodeErrorCorrection } from "@/components/qr-code-tools/qr-code-error-correction";
 
 export const metadata: Metadata = {
   title: `QR Code Error Correction Level Tool | L, M, Q, H Comparison`,

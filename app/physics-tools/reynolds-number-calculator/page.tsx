@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { ReynoldsNumberCalculator } from "@/components/physics-tools/reynolds-number-calculator";
+import ReynoldsNumberCalculator from "@/components/physics-tools/reynolds-number-calculator";
 import ReynoldsNumberCalculatorSeo from "@/components/seo-content/physics-tools/reynolds-number-calculator";
 
 export const metadata: Metadata = {

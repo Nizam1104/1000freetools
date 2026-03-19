@@ -41,7 +41,7 @@ export function SqlIndexAdvisorSuggestTool() {
     })
 
     // Analyze WHERE clause for potential indexes
-    const whereMatch = queryLower.match(/where\s+(.+?)(?:order|group|limit|$)/is)
+    const whereMatch = queryLower.match(/where\s+([\s\S]*?)(?:order|group|limit|$)/i)
     if (whereMatch) {
       const whereClause = whereMatch[1]
       
@@ -136,7 +136,7 @@ export function SqlIndexAdvisorSuggestTool() {
     })
 
     // Analyze ORDER BY clause
-    const orderByMatch = queryLower.match(/order\s+by\s+(.+?)(?:limit|$)/is)
+    const orderByMatch = queryLower.match(/order\s+by\s+([\s\S]*?)(?:limit|$)/i)
     if (orderByMatch) {
       const orderByClause = orderByMatch[1]
       const orderColumns = orderByClause.split(',').map(s => s.trim().split(/\s+/)[0])
@@ -155,7 +155,7 @@ export function SqlIndexAdvisorSuggestTool() {
     }
 
     // Analyze GROUP BY clause
-    const groupByMatch = queryLower.match(/group\s+by\s+(.+?)(?:having|order|limit|$)/is)
+    const groupByMatch = queryLower.match(/group\s+by\s+([\s\S]*?)(?:having|order|limit|$)/i)
     if (groupByMatch) {
       const groupByClause = groupByMatch[1]
       const groupColumns = groupByClause.split(',').map(s => s.trim())

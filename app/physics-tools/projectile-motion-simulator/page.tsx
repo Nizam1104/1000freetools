@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { ProjectileMotionSimulator } from "@/components/physics-tools/projectile-motion-simulator";
+import ProjectileMotionSimulator from "@/components/physics-tools/projectile-motion-simulator";
 import ProjectileMotionSimulatorSeo from "@/components/seo-content/physics-tools/projectile-motion-simulator";
 
 export const metadata: Metadata = {

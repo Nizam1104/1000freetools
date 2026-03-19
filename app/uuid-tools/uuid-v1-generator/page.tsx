@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import UuidV1GeneratorSeo from "@/components/seo-content/uuid-tools/uuid-v1-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { UuidV1Generator } from "@/components/uuid-tools/uuid-v1-generator.tsx";
+import { UuidV1Generator } from "@/components/uuid-tools/uuid-v1-generator";
 
 export const metadata: Metadata = {
   title: `UUID v1 Generator | Create Time-Based UUIDs`,

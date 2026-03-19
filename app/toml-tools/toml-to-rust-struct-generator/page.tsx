@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToRustStructGenerator } from "@/components/toml-tools/toml-to-rust-struct-generator.tsx";
+import TomlToRustStructGenerator from "@/components/toml-tools/toml-to-rust-struct-generator";
 import TomlToRustStructGeneratorSeo from "@/components/seo-content/toml-tools/toml-to-rust-struct-generator";
 
 export const metadata: Metadata = {

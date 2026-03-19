@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { IconMetadataEditorOptimizer } from "@/components/icon-tools/icon-metadata-editor-optimizer.tsx";
+import IconMetadataEditorOptimizer from "@/components/icon-tools/icon-metadata-editor-optimizer";
 import IconMetadataEditorOptimizerSeo from "@/components/seo-content/icon-tools/icon-metadata-editor-optimizer";
 
 export const metadata: Metadata = {

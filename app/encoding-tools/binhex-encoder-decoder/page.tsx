@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BinhexEncoderDecoder } from "@/components/encoding-tools/binhex-encoder-decoder";
+import BinhexEncoderDecoder from "@/components/encoding-tools/binhex-encoder-decoder";
 import BinhexEncoderDecoderSeo from "@/components/seo-content/encoding-tools/binhex-encoder-decoder";
 
 export const metadata: Metadata = {

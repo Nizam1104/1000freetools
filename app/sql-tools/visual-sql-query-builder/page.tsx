@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { VisualSqlQueryBuilder } from "@/components/sql-tools/visual-sql-query-builder.tsx";
+import { VisualSqlQueryBuilder } from "@/components/sql-tools/visual-sql-query-builder";
 import VisualSqlQueryBuilderSeo from "@/components/seo-content/sql-tools/visual-sql-query-builder";
 
 export const metadata: Metadata = {

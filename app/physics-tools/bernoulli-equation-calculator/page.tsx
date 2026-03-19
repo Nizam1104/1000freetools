@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BernoulliEquationCalculator } from "@/components/physics-tools/bernoulli-equation-calculator";
+import BernoulliEquationCalculator from "@/components/physics-tools/bernoulli-equation-calculator";
 import BernoulliEquationCalculatorSeo from "@/components/seo-content/physics-tools/bernoulli-equation-calculator";
 
 export const metadata: Metadata = {

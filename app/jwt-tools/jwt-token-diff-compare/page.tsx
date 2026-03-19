@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import JwtTokenDiffCompareSeo from "@/components/seo-content/jwt-tools/jwt-token-diff-compare";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtTokenDiffCompare } from "@/components/jwt-tools/jwt-token-diff-compare.tsx";
+import { JwtTokenDiffCompare } from "@/components/jwt-tools/jwt-token-diff-compare";
 
 export const metadata: Metadata = {
   title: `JWT Compare Tool | Diff Two Tokens Online`,
@@ -74,7 +73,6 @@ export default function JwtTokenDiffComparePage() {
       </header>
       {<JwtTokenDiffCompare />}
       <div className="mt-16">
-        <JwtTokenDiffCompareSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

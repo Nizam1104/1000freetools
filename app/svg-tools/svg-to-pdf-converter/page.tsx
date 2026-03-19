@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SvgToPdfConverterSeo from "@/components/seo-content/svg-tools/svg-to-pdf-converter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SvgToPdfConverter } from "@/components/svg-tools/svg-to-pdf-converter.tsx";
+import SvgToPdfConverter from "@/components/svg-tools/svg-to-pdf-converter";
 
 export const metadata: Metadata = {
   title: `SVG to PDF Converter - Free Online | 1000FreeTools`,

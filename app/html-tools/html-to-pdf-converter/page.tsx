@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlToPdfConverterTool from "@/components/html-tools/html-to-pdf-converter";
+import { HtmlToPdfConverter } from "@/components/html-tools/html-to-pdf-converter";
 import HtmlToPdfConverterSEO from "@/components/seo-content/html-tools/html-to-pdf-converter";
 
 export const metadata: Metadata = {
@@ -71,7 +71,7 @@ export default function HtmlToPdfConverterPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlToPdfConverterTool />
+        <HtmlToPdfConverter />
       </div>
       <div className="mt-8">
         <HtmlToPdfConverterSEO />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { UnicodeSortingTool } from "@/components/unicode-tools/unicode-sorting-tool.tsx";
+import { UnicodeSortingTool } from "@/components/unicode-tools/unicode-sorting-tool";
 import UnicodeSortingToolSeo from "@/components/seo-content/unicode-tools/unicode-sorting-tool";
 
 export const metadata: Metadata = {

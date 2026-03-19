@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownCheatSheetGenerator } from "@/components/markdown-tools/markdown-cheat-sheet-generator.tsx";
+import { MarkdownCheatSheetGenerator } from "@/components/markdown-tools/markdown-cheat-sheet-generator";
 import MarkdownCheatSheetGeneratorSeo from "@/components/seo-content/markdown-tools/markdown-cheat-sheet-generator";
 
 export const metadata: Metadata = {

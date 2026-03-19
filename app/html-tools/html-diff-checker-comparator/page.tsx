@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HtmlDiffCheckerComparatorSeo from "@/components/seo-content/html-tools/html-diff-checker-comparator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HtmlDiffCheckerComparator } from "@/components/html-tools/html-diff-checker-comparator.tsx";
+import HtmlDiffCheckerComparator from "@/components/html-tools/html-diff-checker-comparator";
 
 export const metadata: Metadata = {
   title: `HTML Diff Checker | Compare HTML Files Online`,

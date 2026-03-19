@@ -7,7 +7,7 @@ import {
   Mp3OutputFormat,
   Mp4OutputFormat,
   WebMOutputFormat,
-  WaveOutputFormat,
+  WavOutputFormat,
   BufferTarget,
   BlobSource,
   Conversion,
@@ -71,7 +71,7 @@ export default function AudioFormatConverter() {
           mimeType = "audio/mpeg";
           break;
         case "wav":
-          outputFormatObj = new WaveOutputFormat();
+          outputFormatObj = new WavOutputFormat();
           mimeType = "audio/wav";
           break;
         case "webm":
@@ -99,13 +99,14 @@ export default function AudioFormatConverter() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: mimeType });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to convert format");
     } finally {

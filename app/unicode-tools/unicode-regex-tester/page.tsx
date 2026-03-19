@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { UnicodeRegexTester } from "@/components/unicode-tools/unicode-regex-tester.tsx";
+import { UnicodeRegexTester } from "@/components/unicode-tools/unicode-regex-tester";
 import UnicodeRegexTesterSeo from "@/components/seo-content/unicode-tools/unicode-regex-tester";
 
 export const metadata: Metadata = {

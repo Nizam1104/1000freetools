@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { EscapeUnescapeString } from "@/components/encoding-tools/escape-unescape-string";
+import EscapeUnescapeString from "@/components/encoding-tools/escape-unescape-string";
 import EscapeUnescapeStringSeo from "@/components/seo-content/encoding-tools/escape-unescape-string";
 
 export const metadata: Metadata = {

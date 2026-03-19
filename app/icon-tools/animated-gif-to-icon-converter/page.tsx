@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { AnimatedGifToIconConverter } from "@/components/icon-tools/animated-gif-to-icon-converter.tsx";
+import AnimatedGifToIconConverter from "@/components/icon-tools/animated-gif-to-icon-converter";
 import AnimatedGifToIconConverterSeo from "@/components/seo-content/icon-tools/animated-gif-to-icon-converter";
 
 export const metadata: Metadata = {

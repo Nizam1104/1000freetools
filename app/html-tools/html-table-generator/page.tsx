@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlTableGeneratorTool from "@/components/html-tools/html-table-generator";
+import { HtmlTableGenerator } from "@/components/html-tools/html-table-generator";
 import HtmlTableGeneratorSEO from "@/components/seo-content/html-tools/html-table-generator";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlTableGeneratorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlTableGeneratorTool />
+        <HtmlTableGenerator />
       </div>
       <div className="mt-8">
         <HtmlTableGeneratorSEO />

@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Copy, Check, Clock, Radioactive } from "lucide-react";
+import { Copy, Check, Clock, Atom } from "lucide-react";
 
 const isotopes = [
   { name: "Carbon-14", halfLife: 5730, unit: "years" },
@@ -84,7 +84,7 @@ export default function HalfLifeCalculator() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Radioactive className="w-5 h-5" />
+            <Atom className="w-5 h-5" />
             Half-Life Calculator
           </CardTitle>
         </CardHeader>

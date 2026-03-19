@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HtmlSpecialCharactersLibrarySeo from "@/components/seo-content/html-tools/html-special-characters-library";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HtmlSpecialCharactersLibrary } from "@/components/html-tools/html-special-characters-library.tsx";
+import HtmlSpecialCharactersLibrary from "@/components/html-tools/html-special-characters-library";
 
 export const metadata: Metadata = {
   title: `HTML Special Characters | Symbol Entity Codes`,

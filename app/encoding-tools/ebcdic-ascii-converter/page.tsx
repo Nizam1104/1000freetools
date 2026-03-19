@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { EbcdicAsciiConverter } from "@/components/encoding-tools/ebcdic-ascii-converter";
+import EbcdicAsciiConverter from "@/components/encoding-tools/ebcdic-ascii-converter";
 import EbcdicAsciiConverterSeo from "@/components/seo-content/encoding-tools/ebcdic-ascii-converter";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToTypescriptInterfaceGenerator } from "@/components/toml-tools/toml-to-typescript-interface-generator.tsx";
+import TomlToTypescriptInterfaceGenerator from "@/components/toml-tools/toml-to-typescript-interface-generator";
 import TomlToTypescriptInterfaceGeneratorSeo from "@/components/seo-content/toml-tools/toml-to-typescript-interface-generator";
 
 export const metadata: Metadata = {

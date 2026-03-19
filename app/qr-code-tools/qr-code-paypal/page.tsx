@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodePaypalSeo from "@/components/seo-content/qr-code-tools/qr-code-paypal";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodePaypal } from "@/components/qr-code-tools/qr-code-paypal.tsx";
+import { QrCodePaypal } from "@/components/qr-code-tools/qr-code-paypal";
 
 export const metadata: Metadata = {
   title: `PayPal QR Code Generator | Request Payments`,

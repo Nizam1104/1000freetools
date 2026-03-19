@@ -9,19 +9,23 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Check, Trash2, Info, Download } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<records>',
+  '  <record>',
+  '    <name>John Doe</name>',
+  '    <email>john@example.com</email>',
+  '    <age>30</age>',
+  '  </record>',
+  '  <record>',
+  '    <name>Jane Smith</name>',
+  '    <email>jane@example.com</email>',
+  '    <age>25</age>',
+  '  </record>',
+  '</records>',
+].join('\n')
+
 export default function XmlToCsvConverter() {
-  const [xmlInput, setXmlInput] = useState<string(`<records>
-  <record>
-    <name>John Doe</name>
-    <email>john@example.com</email>
-    <age>30</age>
-  </record>
-  <record>
-    <name>Jane Smith</name>
-    <email>jane@example.com</email>
-    <age>25</age>
-  </record>
-</records>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [rowElement, setRowElement] = useState<string>("record")
   const [delimiter, setDelimiter] = useState<string>(",")
   const [includeHeader, setIncludeHeader] = useState<boolean>(true)

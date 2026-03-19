@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeRestaurantMenuSeo from "@/components/seo-content/qr-code-tools/qr-code-restaurant-menu";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeRestaurantMenu } from "@/components/qr-code-tools/qr-code-restaurant-menu.tsx";
+import { QrCodeRestaurantMenu } from "@/components/qr-code-tools/qr-code-restaurant-menu";
 
 export const metadata: Metadata = {
   title: `Restaurant Menu QR Code | Digital Menu Generator`,

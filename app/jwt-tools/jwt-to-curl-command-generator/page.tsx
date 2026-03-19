@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtToCurlCommandGeneratorSeo from "@/components/seo-content/jwt-tools/jwt-to-curl-command-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtToCurlCommandGenerator } from "@/components/jwt-tools/jwt-to-curl-command-generator.tsx";
+import JwtToCurlCommandGenerator from "@/components/jwt-tools/jwt-to-curl-command-generator";
 
 export const metadata: Metadata = {
   title: `JWT to cURL Generator | Create API Test Commands`,

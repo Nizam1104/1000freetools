@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import UuidEntropyCheckerSeo from "@/components/seo-content/uuid-tools/uuid-entropy-checker";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { UuidEntropyChecker } from "@/components/uuid-tools/uuid-entropy-checker.tsx";
+import { UuidEntropyChecker } from "@/components/uuid-tools/uuid-entropy-checker";
 
 export const metadata: Metadata = {
   title: `UUID Randomness Checker | Analyze UUID v4 Entropy`,

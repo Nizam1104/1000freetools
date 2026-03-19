@@ -43,7 +43,7 @@ export function HexMemoryAddressCalculator() {
         result = baseNum * offsetNum
         break
       case "divide":
-        if (offsetNum === 0n) return "Cannot divide by zero"
+        if (offsetNum === BigInt(0)) return "Cannot divide by zero"
         result = baseNum / offsetNum
         break
       default:
@@ -51,11 +51,11 @@ export function HexMemoryAddressCalculator() {
     }
 
     // Apply address size limit
-    const maxAddress = size === 32 ? 0xFFFFFFFFn : 0xFFFFFFFFFFFFFFFFn
+    const maxAddress = size === 32 ? BigInt(0xFFFFFFFF) : BigInt(0xFFFFFFFFFFFFFFFF)
     const maskedResult = result & maxAddress
 
     // Handle negative results for subtraction
-    const displayResult = result < 0n ? `Negative result: ${result.toString(16).toUpperCase()}` : `0x${maskedResult.toString(16).toUpperCase().padStart(size / 4, '0')}`
+    const displayResult = result < BigInt(0) ? `Negative result: ${result.toString(16).toUpperCase()}` : `0x${maskedResult.toString(16).toUpperCase().padStart(size / 4, '0')}`
 
     return displayResult
   }, [])

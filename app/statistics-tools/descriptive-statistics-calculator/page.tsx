@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { DescriptiveStatisticsCalculator } from "@/components/statistics-tools/descriptive-statistics-calculator.tsx";
+import DescriptiveStatisticsCalculator from "@/components/statistics-tools/descriptive-statistics-calculator";
 import DescriptiveStatisticsCalculatorSeo from "@/components/seo-content/statistics-tools/descriptive-statistics-calculator";
 
 export const metadata: Metadata = {

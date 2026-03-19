@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import InternationalPhoneCallTimeFinderSeo from "@/components/seo-content/timezone-tools/international-phone-call-time-finder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { InternationalPhoneCallTimeFinder } from "@/components/timezone-tools/international-phone-call-time-finder";
+import InternationalPhoneCallTimeFinder from "@/components/timezone-tools/international-phone-call-time-finder";
 
 export const metadata: Metadata = {
   title: `International Call Time Finder | Best Time to Call Abroad`,

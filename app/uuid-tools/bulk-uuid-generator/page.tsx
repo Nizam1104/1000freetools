@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BulkUuidGeneratorSeo from "@/components/seo-content/uuid-tools/bulk-uuid-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BulkUuidGenerator } from "@/components/uuid-tools/bulk-uuid-generator.tsx";
+import { BulkUuidGenerator } from "@/components/uuid-tools/bulk-uuid-generator";
 
 export const metadata: Metadata = {
   title: `Bulk UUID Generator | Create Millions of UUIDs`,

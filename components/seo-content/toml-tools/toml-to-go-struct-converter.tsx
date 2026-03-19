@@ -137,7 +137,7 @@ export default function TomlToGoStructConverterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What about inline tables?</h3>
             <p className="text-sm text-muted-foreground">
-              Inline tables { key = value } are treated like regular tables. They generate nested structs. The TOML syntax difference doesn't affect Go struct generation.
+              Inline tables {"{ key = value }"} are treated like regular tables. They generate nested structs. The TOML syntax difference doesn't affect Go struct generation.
             </p>
           </div>
         </div>

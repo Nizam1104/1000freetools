@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import TomlToJsonConverterTool from "@/components/toml-tools/toml-to-json-converter";
+import { TomlToJsonConverter } from "@/components/toml-tools/toml-to-json-converter";
 import TomlToJsonConverterSEO from "@/components/seo-content/toml-tools/toml-to-json-converter";
 
 export const metadata: Metadata = {
@@ -78,7 +78,7 @@ export default function TomlToJsonConverterPage() {
         </p>
       </header>
       <div className="mt-8">
-        <TomlToJsonConverterTool />
+        <TomlToJsonConverter />
       </div>
       <div className="mt-8">
         <TomlToJsonConverterSEO />

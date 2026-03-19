@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CronExpressionAwsCloudwatchEventsSeo from "@/components/seo-content/cron-expression-tools/cron-expression-aws-cloudwatch-events";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CronExpressionAwsCloudwatchEvents } from "@/components/cron-tools/cron-expression-aws-cloudwatch-events.tsx";
+import { CronExpressionAwsCloudwatchEvents } from "@/components/cron-tools/cron-expression-aws-cloudwatch-events";
 
 export const metadata: Metadata = {
   title: `CRON for AWS CloudWatch Events | EventBridge Tool`,

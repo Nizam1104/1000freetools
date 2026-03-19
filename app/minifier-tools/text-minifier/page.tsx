@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import TextMinifierSeo from "@/components/seo-content/minifier-tools/text-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TextMinifier } from "@/components/minifier-tools/text-minifier.tsx";
+import { TextMinifier } from "@/components/minifier-tools/text-minifier";
 
 export const metadata: Metadata = {
   title: `Text Minifier - Compress & Remove Whitespace Online`,
@@ -74,7 +73,6 @@ export default function TextMinifierPage() {
       </header>
       {<TextMinifier />}
       <div className="mt-16">
-        <TextMinifierSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

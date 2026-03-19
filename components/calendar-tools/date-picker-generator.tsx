@@ -134,7 +134,7 @@ export default function DatePickerGenerator() {
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="first-day">First Day of Week</Label>
-            <Select value={firstDayOfWeek} onValueChange={setFirstDayOfWeek}>
+            <Select value={firstDayOfWeek} onValueChange={(v) => setFirstDayOfWeek(v as "0" | "1")}>
               <SelectTrigger id="first-day">
                 <SelectValue />
               </SelectTrigger>

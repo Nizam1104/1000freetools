@@ -9,6 +9,7 @@ import {
   BlobSource,
   Conversion,
   ALL_FORMATS,
+  AudioSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -78,7 +79,7 @@ export default function AudioPitchChanger() {
             source.start();
 
             const processedBuffer = await offlineCtx.startRendering();
-            return sample.constructor.fromAudioBuffer(processedBuffer);
+            return AudioSample.fromAudioBuffer(processedBuffer, sample.timestamp)[0];
           },
         },
       });
@@ -86,13 +87,14 @@ export default function AudioPitchChanger() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "audio/mpeg" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to change pitch");
     } finally {

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import MinificationAnalyzerSeo from "@/components/seo-content/minifier-tools/minification-analyzer";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MinificationAnalyzer } from "@/components/minifier-tools/minification-analyzer";
+import MinificationAnalyzer from "@/components/minifier-tools/minification-analyzer";
 
 export const metadata: Metadata = {
   title: `Minification Analyzer - Report & Savings Calculator`,
@@ -74,7 +73,6 @@ export default function MinificationAnalyzerPage() {
       </header>
       {<MinificationAnalyzer />}
       <div className="mt-16">
-        <MinificationAnalyzerSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

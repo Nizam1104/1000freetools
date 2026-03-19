@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { IconSearchEngineDuplicateFinder } from "@/components/icon-tools/icon-search-engine-duplicate-finder.tsx";
+import IconSearchEngineDuplicateFinder from "@/components/icon-tools/icon-search-engine-duplicate-finder";
 import IconSearchEngineDuplicateFinderSeo from "@/components/seo-content/icon-tools/icon-search-engine-duplicate-finder";
 
 export const metadata: Metadata = {

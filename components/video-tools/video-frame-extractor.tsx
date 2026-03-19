@@ -3,8 +3,13 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
+  VideoSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -53,7 +58,7 @@ export default function VideoFrameExtractor() {
         setEndFrame(estimatedFrames);
       }
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to read video file");
     } finally {
@@ -84,37 +89,52 @@ export default function VideoFrameExtractor() {
       }
 
       const totalFrames = Math.floor(duration * frameRate);
-      const framesToExtract = extractMode === "single" 
-        ? [frameNumber] 
+      const framesToExtract = extractMode === "single"
+        ? [frameNumber]
         : Array.from({ length: endFrame - startFrame + 1 }, (_, i) => startFrame + i);
 
       const urls: string[] = [];
-      const decoder = await videoTrack.createDecoder();
       let frameCount = 0;
+      let videoWidth = videoTrack.displayWidth;
+      let videoHeight = videoTrack.displayHeight;
 
-      for await (const sample of decoder) {
-        if (framesToExtract.includes(frameCount + 1)) {
-          const canvas = document.createElement("canvas");
-          canvas.width = 640;
-          canvas.height = 640 * (videoTrack.displayHeight / videoTrack.displayWidth);
-          const ctx = canvas.getContext("2d");
+      const output = new Output({
+        format: new Mp4OutputFormat(),
+        target: new BufferTarget(),
+      });
 
-          if (ctx) {
-            const image = sample.toImage();
-            if (image) {
-              ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-              const url = canvas.toDataURL("image/jpeg", 0.9);
-              urls.push(url);
+      const conversion = await Conversion.init({
+        input,
+        output,
+        video: {
+          process: (sample: VideoSample) => {
+            if (framesToExtract.includes(frameCount + 1)) {
+              const canvas = document.createElement("canvas");
+              canvas.width = 640;
+              canvas.height = 640 * (videoHeight / videoWidth);
+              const ctx = canvas.getContext("2d");
+
+              if (ctx) {
+                const image = sample.toCanvasImageSource();
+                if (image) {
+                  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+                  const url = canvas.toDataURL("image/jpeg", 0.9);
+                  urls.push(url);
+                }
+              }
             }
-          }
-        }
-        frameCount++;
-        setProgress(Math.round((frameCount / totalFrames) * 100));
-      }
+            frameCount++;
+            setProgress(Math.round((frameCount / totalFrames) * 100));
+            return null;
+          },
+        },
+      });
+
+      await conversion.execute();
 
       setThumbnailUrls(urls);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to extract frames");
     } finally {

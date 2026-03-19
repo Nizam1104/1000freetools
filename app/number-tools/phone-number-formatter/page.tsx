@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PhoneNumberFormatterSeo from "@/components/seo-content/number-tools/phone-number-formatter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { PhoneNumberFormatter } from "@/components/number-tools/phone-number-formatter.tsx";
+import PhoneNumberFormatter from "@/components/number-tools/phone-number-formatter";
 
 export const metadata: Metadata = {
   title: `Phone Number Formatter | International Formats`,

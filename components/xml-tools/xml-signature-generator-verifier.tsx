@@ -9,11 +9,15 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Check, Trash2, Info, Key, Shield } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<document>',
+  '  <content>This is the content to sign.</content>',
+  '  <timestamp>2024-01-15T10:30:00Z</timestamp>',
+  '</document>',
+].join('\n')
+
 export default function XmlSignatureGeneratorVerifier() {
-  const [xmlInput, setXmlInput] = useState<string(`<document>
-  <content>This is the content to sign.</content>
-  <timestamp>2024-01-15T10:30:00Z</timestamp>
-</document>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [privateKey, setPrivateKey] = useState<string>("")
   const [publicKey, setPublicKey] = useState<string>("")
   const [signature, setSignature] = useState<string>("")

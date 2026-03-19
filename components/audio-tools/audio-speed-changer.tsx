@@ -9,6 +9,7 @@ import {
   BlobSource,
   Conversion,
   ALL_FORMATS,
+  AudioSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -80,7 +81,7 @@ export default function AudioSpeedChanger() {
               source.start();
 
               const processedBuffer = await offlineCtx.startRendering();
-              return sample.constructor.fromAudioBuffer(processedBuffer);
+              return AudioSample.fromAudioBuffer(processedBuffer, sample.timestamp)[0];
             } else {
               const newSampleRate = audioBuffer.sampleRate * playbackRate;
               const offlineCtx = new OfflineAudioContext(
@@ -96,23 +97,23 @@ export default function AudioSpeedChanger() {
               source.start();
 
               const processedBuffer = await offlineCtx.startRendering();
-              
+
               const resampledCtx = new AudioContext({ sampleRate: audioBuffer.sampleRate });
               const resampledBuffer = resampledCtx.createBuffer(
                 processedBuffer.numberOfChannels,
                 processedBuffer.length,
                 audioBuffer.sampleRate
               );
-              
+
               for (let i = 0; i < processedBuffer.numberOfChannels; i++) {
                 resampledBuffer.copyToChannel(
                   processedBuffer.getChannelData(i),
                   i
                 );
               }
-              
+
               await resampledCtx.close();
-              return sample.constructor.fromAudioBuffer(resampledBuffer);
+              return AudioSample.fromAudioBuffer(resampledBuffer, sample.timestamp)[0];
             }
           },
         },
@@ -121,13 +122,14 @@ export default function AudioSpeedChanger() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "audio/mpeg" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to change speed");
     } finally {

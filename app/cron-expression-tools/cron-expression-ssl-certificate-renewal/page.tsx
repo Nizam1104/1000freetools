@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import CronExpressionSslCertificateRenewalSeo from "@/components/seo-content/cron-expression-tools/cron-expression-ssl-certificate-renewal";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CronExpressionSslRenewal from "@/components/cron-expression-tools/cron-expression-ssl-renewal";
@@ -74,9 +73,6 @@ export default function CronExpressionSslCertificateRenewalPage() {
       </header>
       <div className="mt-8">
         <CronExpressionSslRenewal />
-      </div>
-      <div className="mt-16">
-        <CronExpressionSslCertificateRenewalSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

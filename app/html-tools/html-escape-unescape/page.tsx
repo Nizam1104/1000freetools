@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlEscapeUnescapeTool from "@/components/html-tools/html-escape-unescape";
+import { HtmlEscapeUnescape } from "@/components/html-tools/html-escape-unescape";
 import HtmlEscapeUnescapeSEO from "@/components/seo-content/html-tools/html-escape-unescape";
 
 export const metadata: Metadata = {
@@ -71,7 +71,7 @@ export default function HtmlEscapeUnescapePage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlEscapeUnescapeTool />
+        <HtmlEscapeUnescape />
       </div>
       <div className="mt-8">
         <HtmlEscapeUnescapeSEO />

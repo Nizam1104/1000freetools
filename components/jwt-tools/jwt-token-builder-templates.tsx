@@ -15,7 +15,7 @@ interface ClaimTemplate {
   type: "string" | "number" | "boolean" | "array";
 }
 
-export default function JWTTokenBuilderTemplates() {
+export default function JwtTokenBuilderTemplates() {
   const [selectedTemplate, setSelectedTemplate] = useState<"basic" | "oauth" | "api" | "microservice" | "">("");
   const [issuer, setIssuer] = useState("");
   const [subject, setSubject] = useState("");

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { ChiSquareTestCalculator } from "@/components/statistics-tools/chi-square-test-calculator";
+import ChiSquareTestCalculator from "@/components/statistics-tools/chi-square-test-calculator";
 import ChiSquareTestCalculatorSeo from "@/components/seo-content/statistics-tools/chi-square-test-calculator";
 
 export const metadata: Metadata = {

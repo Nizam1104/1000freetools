@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlImageMapGeneratorTool from "@/components/html-tools/html-image-map-generator";
+import { HtmlImageMapGenerator } from "@/components/html-tools/html-image-map-generator";
 import HtmlImageMapGeneratorSEO from "@/components/seo-content/html-tools/html-image-map-generator";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlImageMapGeneratorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlImageMapGeneratorTool />
+        <HtmlImageMapGenerator />
       </div>
       <div className="mt-8">
         <HtmlImageMapGeneratorSEO />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BinomialDistributionCalculator } from "@/components/statistics-tools/binomial-distribution-calculator";
+import BinomialDistributionCalculator from "@/components/statistics-tools/binomial-distribution-calculator";
 import BinomialDistributionCalculatorSeo from "@/components/seo-content/statistics-tools/binomial-distribution-calculator";
 
 export const metadata: Metadata = {

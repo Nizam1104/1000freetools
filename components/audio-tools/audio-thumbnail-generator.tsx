@@ -75,7 +75,7 @@ export default function AudioThumbnailGenerator() {
       const url = canvas.toDataURL("image/png");
       setThumbnailUrl(url);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to generate thumbnail");
     } finally {

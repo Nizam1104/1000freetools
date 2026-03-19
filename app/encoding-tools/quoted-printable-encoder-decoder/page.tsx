@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QuotedPrintableEncoderDecoder } from "@/components/encoding-tools/quoted-printable-encoder-decoder";
+import QuotedPrintableEncoderDecoder from "@/components/encoding-tools/quoted-printable-encoder-decoder";
 import QuotedPrintableEncoderDecoderSeo from "@/components/seo-content/encoding-tools/quoted-printable-encoder-decoder";
 
 export const metadata: Metadata = {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtTokenBuilderTemplatesSeo from "@/components/seo-content/jwt-tools/jwt-token-builder-templates";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtTokenBuilderTemplates } from "@/components/jwt-tools/jwt-token-builder-templates.tsx";
+import JwtTokenBuilderTemplates from "@/components/jwt-tools/jwt-token-builder-templates";
 
 export const metadata: Metadata = {
   title: `JWT Builder with Templates | Create Tokens for OAuth, OIDC`,

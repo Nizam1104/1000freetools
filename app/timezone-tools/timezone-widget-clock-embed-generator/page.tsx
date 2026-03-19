@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TimezoneWidgetClockEmbedGeneratorSeo from "@/components/seo-content/timezone-tools/timezone-widget-clock-embed-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TimezoneWidgetClockEmbedGenerator } from "@/components/timezone-tools/timezone-widget-clock-embed-generator.tsx";
+import TimezoneWidgetClockEmbedGenerator from "@/components/timezone-tools/timezone-widget-clock-embed-generator";
 
 export const metadata: Metadata = {
   title: `Free Time Zone Widget Generator | Embed Live Clock`,

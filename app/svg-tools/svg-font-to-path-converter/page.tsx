@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SvgFontToPathConverterSeo from "@/components/seo-content/svg-tools/svg-font-to-path-converter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SvgFontToPathConverter } from "@/components/svg-tools/svg-font-to-path-converter.tsx";
+import SvgFontToPathConverter from "@/components/svg-tools/svg-font-to-path-converter";
 
 export const metadata: Metadata = {
   title: `SVG Font to Path Converter - Create Text Outlines Online`,

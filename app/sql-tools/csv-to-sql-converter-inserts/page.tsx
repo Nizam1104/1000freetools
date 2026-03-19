@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import CsvToSqlConverter from "@/components/sql-tools/csv-to-sql-converter";
+import { CsvToSqlConverter } from "@/components/sql-tools/csv-to-sql-converter";
 import CsvToSqlConverterInsertsSeo from "@/components/seo-content/sql-tools/csv-to-sql-converter-inserts";
 
 export const metadata: Metadata = {

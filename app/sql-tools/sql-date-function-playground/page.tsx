@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlDateFunctionPlayground } from "@/components/sql-tools/sql-date-function-playground.tsx";
+import { SqlDateFunctionPlayground } from "@/components/sql-tools/sql-date-function-playground";
 import SqlDateFunctionPlaygroundSeo from "@/components/seo-content/sql-tools/sql-date-function-playground";
 
 export const metadata: Metadata = {

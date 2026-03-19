@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import WordpressMinifierSeo from "@/components/seo-content/minifier-tools/wordpress-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { WordpressMinifier } from "@/components/minifier-tools/wordpress-minifier.tsx";
+import { WordpressMinifier } from "@/components/minifier-tools/wordpress-minifier";
 
 export const metadata: Metadata = {
   title: `WordPress Minifier - Compress Themes & Plugins`,
@@ -74,7 +73,6 @@ export default function WordpressMinifierPage() {
       </header>
       {<WordpressMinifier />}
       <div className="mt-16">
-        <WordpressMinifierSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

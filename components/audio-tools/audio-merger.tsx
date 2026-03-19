@@ -69,27 +69,25 @@ export default function AudioMerger() {
           formats: ALL_FORMATS,
         });
 
-        const audioTrack = await input.getPrimaryAudioTrack();
-        if (!audioTrack) {
-          await input.end();
-          throw new Error(`No audio track found in ${file.name}`);
-        }
+        const conversion = await Conversion.init({
+          input,
+          output: new Output({
+            format: new Mp3OutputFormat(),
+            target: new BufferTarget(),
+          }),
+          audio: {
+            process: async (sample) => {
+              const buffer = sample.toAudioBuffer();
+              sampleRate = buffer.sampleRate;
+              numberOfChannels = buffer.numberOfChannels;
+              audioBuffers.push(buffer);
+              return sample;
+            },
+          },
+        });
 
-        const decoder = await audioTrack.createDecoder();
-        const samples: AudioSample[] = [];
-        
-        for await (const sample of decoder) {
-          samples.push(sample);
-        }
-
-        if (samples.length > 0) {
-          const buffer = samples[0].toAudioBuffer();
-          sampleRate = buffer.sampleRate;
-          numberOfChannels = buffer.numberOfChannels;
-          audioBuffers.push(buffer);
-        }
-
-        await input.end();
+        await conversion.execute();
+        await input.dispose();
       }
 
       const totalLength = audioBuffers.reduce((sum, buf) => sum + buf.length, 0);

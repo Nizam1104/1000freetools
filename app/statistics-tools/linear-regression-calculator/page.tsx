@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { LinearRegressionCalculator } from "@/components/statistics-tools/linear-regression-calculator";
+import LinearRegressionCalculator from "@/components/statistics-tools/linear-regression-calculator";
 import LinearRegressionCalculatorSeo from "@/components/seo-content/statistics-tools/linear-regression-calculator";
 
 export const metadata: Metadata = {

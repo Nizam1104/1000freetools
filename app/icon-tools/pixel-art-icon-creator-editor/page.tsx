@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { PixelArtIconCreatorEditor } from "@/components/icon-tools/pixel-art-icon-creator-editor.tsx";
+import PixelArtIconCreatorEditor from "@/components/icon-tools/pixel-art-icon-creator-editor";
 import PixelArtIconCreatorEditorSeo from "@/components/seo-content/icon-tools/pixel-art-icon-creator-editor";
 
 export const metadata: Metadata = {

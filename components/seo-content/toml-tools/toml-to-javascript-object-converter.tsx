@@ -131,7 +131,7 @@ export default function TomlToJavascriptObjectConverterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What about template literals?</h3>
             <p className="text-sm text-muted-foreground">
-              TOML strings become regular JS strings. For template literals with variables, manually convert after generation: `Hello ${name}`.
+              TOML strings become regular JS strings. For template literals with variables, manually convert after generation: {"`Hello ${name}`"}.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

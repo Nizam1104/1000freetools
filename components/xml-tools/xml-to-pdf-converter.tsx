@@ -9,20 +9,24 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Check, Trash2, Info, FileText } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<document>',
+  '  <title>Sample Report</title>',
+  '  <content>',
+  '    <section>',
+  '      <heading>Introduction</heading>',
+  '      <paragraph>This is a sample XML document.</paragraph>',
+  '    </section>',
+  '    <section>',
+  '      <heading>Details</heading>',
+  '      <paragraph>Convert XML to PDF format.</paragraph>',
+  '    </section>',
+  '  </content>',
+  '</document>',
+].join('\n')
+
 export default function XmlToPdfConverter() {
-  const [xmlInput, setXmlInput] = useState<string(`<document>
-  <title>Sample Report</title>
-  <content>
-    <section>
-      <heading>Introduction</heading>
-      <paragraph>This is a sample XML document.</paragraph>
-    </section>
-    <section>
-      <heading>Details</heading>
-      <paragraph>Convert XML to PDF format.</paragraph>
-    </section>
-  </content>
-</document>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [pageSize, setPageSize] = useState<string>("a4")
   const [orientation, setOrientation] = useState<string>("portrait")
   const [fontSize, setFontSize] = useState<string>("12")

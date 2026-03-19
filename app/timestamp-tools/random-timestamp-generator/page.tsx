@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { RandomTimestampGenerator } from "@/components/timestamp-tools/random-timestamp-generator.tsx";
+import { RandomTimestampGenerator } from "@/components/timestamp-tools/random-timestamp-generator";
 import RandomTimestampGeneratorSeo from "@/components/seo-content/timestamp-tools/random-timestamp-generator";
 
 export const metadata: Metadata = {

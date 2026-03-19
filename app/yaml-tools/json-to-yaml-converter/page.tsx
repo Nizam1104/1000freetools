@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import JsonToYamlConverterTool from "@/components/yaml-tools/json-to-yaml-converter";
+import { JsonToYamlConverter } from "@/components/yaml-tools/json-to-yaml-converter";
 import JsonToYamlConverterSeo from "@/components/seo-content/yaml-tools/json-to-yaml-converter";
 
 export const metadata: Metadata = {
@@ -76,7 +76,7 @@ export default function JsonToYamlConverterPage() {
         </p>
       </header>
       <div className="mt-8">
-        <JsonToYamlConverterTool />
+        <JsonToYamlConverter />
       </div>
       <div className="mt-8">
         <JsonToYamlConverterSeo />

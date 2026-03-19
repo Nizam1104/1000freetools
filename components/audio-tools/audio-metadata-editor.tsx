@@ -52,12 +52,12 @@ export default function AudioMetadataEditor() {
         title: tags.title || "",
         artist: tags.artist || "",
         album: tags.album || "",
-        year: tags.year || "",
+        year: tags.date ? new Date(tags.date).getFullYear().toString() : "",
         genre: tags.genre || "",
         comment: tags.comment || "",
       });
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to read metadata");
     }
@@ -92,7 +92,7 @@ export default function AudioMetadataEditor() {
           title: metadata.title || undefined,
           artist: metadata.artist || undefined,
           album: metadata.album || undefined,
-          year: metadata.year || undefined,
+          date: metadata.year ? new Date(parseInt(metadata.year), 0, 1) : undefined,
           genre: metadata.genre || undefined,
           comment: metadata.comment || undefined,
         },
@@ -101,13 +101,14 @@ export default function AudioMetadataEditor() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "audio/mpeg" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to save metadata");
     } finally {

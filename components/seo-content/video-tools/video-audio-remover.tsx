@@ -1,4 +1,4 @@
-const toolData = {
+export const videoAudioRemoverToolData = {
   "toolName": "video-audio-remover",
   "description": "Remove or mute the audio track from a video file, producing a silent video.",
   "h1": "Remove Audio From Video – Mute Video Online Free",

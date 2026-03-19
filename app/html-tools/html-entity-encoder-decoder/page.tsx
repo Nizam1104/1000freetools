@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlEntityEncoderDecoderTool from "@/components/html-tools/html-entity-encoder-decoder";
+import { HtmlEntityEncoderDecoder } from "@/components/html-tools/html-entity-encoder-decoder";
 import HtmlEntityEncoderDecoderSEO from "@/components/seo-content/html-tools/html-entity-encoder-decoder";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlEntityEncoderDecoderPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlEntityEncoderDecoderTool />
+        <HtmlEntityEncoderDecoder />
       </div>
       <div className="mt-8">
         <HtmlEntityEncoderDecoderSEO />

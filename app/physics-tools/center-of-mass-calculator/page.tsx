@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CenterOfMassCalculator } from "@/components/physics-tools/center-of-mass-calculator";
+import CenterOfMassCalculator from "@/components/physics-tools/center-of-mass-calculator";
 import CenterOfMassCalculatorSeo from "@/components/seo-content/physics-tools/center-of-mass-calculator";
 
 export const metadata: Metadata = {

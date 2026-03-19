@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FreeIconMakerOnline } from "@/components/icon-tools/free-icon-maker-online.tsx";
+import FreeIconMakerOnline from "@/components/icon-tools/free-icon-maker-online";
 import FreeIconMakerOnlineSeo from "@/components/seo-content/icon-tools/free-icon-maker-online";
 
 export const metadata: Metadata = {

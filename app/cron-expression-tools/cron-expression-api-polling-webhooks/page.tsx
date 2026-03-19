@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import CronExpressionApiPollingWebhooksSeo from "@/components/seo-content/cron-expression-tools/cron-expression-api-polling-webhooks";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import CronExpressionApiPolling from "@/components/cron-expression-tools/cron-expression-api-polling";
@@ -80,9 +79,6 @@ export default function CronExpressionApiPollingWebhooksPage() {
       </header>
       <div className="mt-8">
         <CronExpressionApiPolling />
-      </div>
-      <div className="mt-16">
-        <CronExpressionApiPollingWebhooksSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

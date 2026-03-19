@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlCommentRemoverExtractorTool from "@/components/html-tools/html-comment-remover-extractor";
+import { HtmlCommentRemoverExtractor } from "@/components/html-tools/html-comment-remover-extractor";
 import HtmlCommentRemoverExtractorSEO from "@/components/seo-content/html-tools/html-comment-remover-extractor";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlCommentRemoverExtractorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlCommentRemoverExtractorTool />
+        <HtmlCommentRemoverExtractor />
       </div>
       <div className="mt-8">
         <HtmlCommentRemoverExtractorSEO />

@@ -8,19 +8,23 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Copy, Check, Trash2, Info, Search } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<root>',
+  '  <book id="1">',
+  '    <title>Book One</title>',
+  '    <author>Author A</author>',
+  '    <price>29.99</price>',
+  '  </book>',
+  '  <book id="2">',
+  '    <title>Book Two</title>',
+  '    <author>Author B</author>',
+  '    <price>39.99</price>',
+  '  </book>',
+  '</root>',
+].join('\n')
+
 export default function XmlXpathTester() {
-  const [xmlInput, setXmlInput] = useState<string(`<root>
-  <book id="1">
-    <title>Book One</title>
-    <author>Author A</author>
-    <price>29.99</price>
-  </book>
-  <book id="2">
-    <title>Book Two</title>
-    <author>Author B</author>
-    <price>39.99</price>
-  </book>
-</root>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [xpathQuery, setXpathQuery] = useState<string>("//book")
   const [result, setResult] = useState<string>("")
   const [error, setError] = useState<string | null>(null)

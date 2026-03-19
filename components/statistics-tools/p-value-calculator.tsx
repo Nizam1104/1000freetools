@@ -43,7 +43,8 @@ const tDistributionPValue = (t: number, df: number): number => {
 export default function PValueCalculator() {
   const [testType, setTestType] = useState<"z" | "t" | "chi2" | "f">("t")
   const [testTail, setTestTail] = useState<"two" | "left" | "right">("two")
-  
+  const [copied, setCopied] = useState<string | null>(null)
+
   // Z-test
   const [zScore, setZScore] = useState<number>(1.96)
   

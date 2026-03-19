@@ -3,7 +3,11 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
@@ -40,7 +44,7 @@ export default function VideoAudioSyncFixer() {
       const fileDuration = await input.computeDuration();
       setDuration(fileDuration);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to read video file");
     } finally {
@@ -73,23 +77,19 @@ export default function VideoAudioSyncFixer() {
       const conversion = await Conversion.init({
         input,
         output,
-        audio: {
-          process: async (sample) => {
-            return sample;
-          },
-        },
       });
 
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "video/mp4" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to fix sync");
     } finally {

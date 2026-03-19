@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CodeMinifierSeo from "@/components/seo-content/minifier-tools/code-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CodeMinifier } from "@/components/minifier-tools/code-minifier.tsx";
+import CodeMinifier from "@/components/minifier-tools/code-minifier";
 
 export const metadata: Metadata = {
   title: `Code Minifier - Compress Multiple Languages Online`,

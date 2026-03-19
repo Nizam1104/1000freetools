@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlQueryToCsvExport } from "@/components/sql-tools/sql-query-to-csv-export.tsx";
+import { SqlQueryToCsvExport } from "@/components/sql-tools/sql-query-to-csv-export";
 import SqlQueryToCsvExportSeo from "@/components/seo-content/sql-tools/sql-query-to-csv-export";
 
 export const metadata: Metadata = {

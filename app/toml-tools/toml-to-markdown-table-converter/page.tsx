@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToMarkdownTableConverter } from "@/components/toml-tools/toml-to-markdown-table-converter";
+import TomlToMarkdownTableConverter from "@/components/toml-tools/toml-to-markdown-table-converter";
 
 export const metadata: Metadata = {
   title: `TOML to Markdown Table Converter | Docs Tool`,
@@ -71,7 +71,6 @@ export default function TomlToMarkdownTableConverterPage() {
         <p className="text-muted-foreground">Document your TOML configuration by converting arrays of tables into readable Markdown tables. This tool creates well-formatted tables for READMEs and documentation sites.</p>
       </header>
       {<TomlToMarkdownTableConverter />}
-      <div className="mt-8"><TomlToMarkdownTableConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

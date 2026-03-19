@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeEventTicketSeo from "@/components/seo-content/qr-code-tools/qr-code-event-ticket";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeEventTicket } from "@/components/qr-code-tools/qr-code-event-ticket.tsx";
+import { QrCodeEventTicket } from "@/components/qr-code-tools/qr-code-event-ticket";
 
 export const metadata: Metadata = {
   title: `Event Ticket QR Code Generator | Printable Tickets`,

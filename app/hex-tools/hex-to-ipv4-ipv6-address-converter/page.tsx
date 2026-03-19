@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HexToIpv4Ipv6AddressConverter } from "@/components/hex-tools/hex-to-ipv4-ipv6-address-converter.tsx";
+import { HexToIpAddressConverter } from "@/components/hex-tools/hex-to-ipv4-ipv6-address-converter";
 import HexToIpv4Ipv6AddressConverterSeo from "@/components/seo-content/hex-tools/hex-to-ipv4-ipv6-address-converter";
 
 export const metadata: Metadata = {
@@ -71,7 +71,7 @@ export default function HexToIpv4Ipv6AddressConverterPage() {
         <h1 className="text-3xl font-bold mb-3">Hex to IP Address Converter (IPv4 & IPv6)</h1>
         <p className="text-muted-foreground">Convert hexadecimal numbers to human-readable IPv4 or IPv6 addresses. Essential for network analysis, packet inspection, and understanding how IP addresses are stored in binary.</p>
       </header>
-      <div className="mt-8"><HexToIpv4Ipv6AddressConverter /></div>
+      <div className="mt-8"><HexToIpAddressConverter /></div>
       <div className="mt-16"><HexToIpv4Ipv6AddressConverterSeo /></div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

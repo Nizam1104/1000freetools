@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtDebuggerTesterSeo from "@/components/seo-content/jwt-tools/jwt-debugger-tester";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtDebuggerTester } from "@/components/jwt-tools/jwt-debugger-tester.tsx";
+import JwtDebuggerTester from "@/components/jwt-tools/jwt-debugger-tester";
 
 export const metadata: Metadata = {
   title: `JWT Debugger Online | Test & Fix Token Validation`,

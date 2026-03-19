@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlPasswordHashGeneratorMd5Sha } from "@/components/sql-tools/sql-password-hash-generator-md5-sha.tsx";
+import { SqlPasswordHashGeneratorMd5Sha } from "@/components/sql-tools/sql-password-hash-generator-md5-sha";
 import SqlPasswordHashGeneratorMd5ShaSeo from "@/components/seo-content/sql-tools/sql-password-hash-generator-md5-sha";
 
 export const metadata: Metadata = {

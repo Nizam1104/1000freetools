@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlCommentRemover } from "@/components/yaml-tools/yaml-comment-remover.tsx";
+import { YamlCommentRemover } from "@/components/yaml-tools/yaml-comment-remover";
 import YamlCommentRemoverSeo from "@/components/seo-content/yaml-tools/yaml-comment-remover";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { ManchesterCodeEncoderDecoder } from "@/components/encoding-tools/manchester-code-encoder-decoder";
+import ManchesterCodeEncoderDecoder from "@/components/encoding-tools/manchester-code-encoder-decoder";
 import ManchesterCodeEncoderDecoderSeo from "@/components/seo-content/encoding-tools/manchester-code-encoder-decoder";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlIndexAdvisorSuggestTool } from "@/components/sql-tools/sql-index-advisor-suggest-tool.tsx";
+import { SqlIndexAdvisorSuggestTool } from "@/components/sql-tools/sql-index-advisor-suggest-tool";
 import SqlIndexAdvisorSuggestToolSeo from "@/components/seo-content/sql-tools/sql-index-advisor-suggest-tool";
 
 export const metadata: Metadata = {

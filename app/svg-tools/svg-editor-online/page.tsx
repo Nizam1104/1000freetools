@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SvgEditorOnlineSeo from "@/components/seo-content/svg-tools/svg-editor-online";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SvgEditorOnline } from "@/components/svg-tools/svg-editor-online.tsx";
+import { SvgEditorOnline } from "@/components/svg-tools/svg-editor-online";
 
 export const metadata: Metadata = {
   title: `Free Online SVG Editor - Create & Edit Vector Graphics`,

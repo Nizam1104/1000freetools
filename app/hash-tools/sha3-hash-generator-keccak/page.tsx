@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { Sha3HashGeneratorKeccak } from "@/components/hash-tools/sha3-hash-generator-keccak.tsx";
+import { Sha3HashGeneratorKeccak } from "@/components/hash-tools/sha3-hash-generator-keccak";
 import Sha3HashGeneratorKeccakSeo from "@/components/seo-content/hash-tools/sha3-hash-generator-keccak";
 
 export const metadata: Metadata = {

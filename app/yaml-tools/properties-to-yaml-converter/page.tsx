@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { PropertiesToYamlConverter } from "@/components/yaml-tools/properties-to-yaml-converter.tsx";
+import { PropertiesToYamlConverter } from "@/components/yaml-tools/properties-to-yaml-converter";
 import PropertiesToYamlConverterSeo from "@/components/seo-content/yaml-tools/properties-to-yaml-converter";
 
 export const metadata: Metadata = {

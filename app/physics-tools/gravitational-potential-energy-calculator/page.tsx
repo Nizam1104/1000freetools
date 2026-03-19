@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { GravitationalPotentialEnergyCalculator } from "@/components/physics-tools/gravitational-potential-energy-calculator";
+import GravitationalPotentialEnergyCalculator from "@/components/physics-tools/gravitational-potential-energy-calculator";
 import GravitationalPotentialEnergyCalculatorSeo from "@/components/seo-content/physics-tools/gravitational-potential-energy-calculator";
 
 export const metadata: Metadata = {

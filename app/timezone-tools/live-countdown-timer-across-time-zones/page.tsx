@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LiveCountdownTimerAcrossTimeZonesSeo from "@/components/seo-content/timezone-tools/live-countdown-timer-across-time-zones";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { LiveCountdownTimerAcrossTimeZones } from "@/components/timezone-tools/live-countdown-timer-across-time-zones";
+import LiveCountdownTimerAcrossTimeZones from "@/components/timezone-tools/live-countdown-timer-across-time-zones";
 
 export const metadata: Metadata = {
   title: `Live Countdown Timer | Synced Across Time Zones`,

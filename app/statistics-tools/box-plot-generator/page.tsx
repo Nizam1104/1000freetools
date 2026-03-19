@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BoxPlotGenerator } from "@/components/statistics-tools/box-plot-generator";
+import BoxPlotGenerator from "@/components/statistics-tools/box-plot-generator";
 import BoxPlotGeneratorSeo from "@/components/seo-content/statistics-tools/box-plot-generator";
 
 export const metadata: Metadata = {

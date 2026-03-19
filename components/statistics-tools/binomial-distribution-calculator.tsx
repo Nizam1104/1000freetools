@@ -27,6 +27,7 @@ export default function BinomialDistributionCalculator() {
   const [p, setP] = useState<number>(0.5)
   const [k, setK] = useState<number>(5)
   const [calculationType, setCalculationType] = useState<"exact" | "cumulative" | "complement">("exact")
+  const [copied, setCopied] = useState<string | null>(null)
 
   const [result, setResult] = useState<{
     probability: number
@@ -68,9 +69,9 @@ export default function BinomialDistributionCalculator() {
       // Generate distribution table
       distribution = []
       for (let i = 0; i <= n; i++) {
-        const p = binomialCoeff(n, i) * Math.pow(p, i) * Math.pow(1 - p, n - i)
-        if (p > 0.0001) {
-          distribution.push({ k: i, prob: p })
+        const probI = binomialCoeff(n, i) * Math.pow(p, i) * Math.pow(1 - p, n - i)
+        if (probI > 0.0001) {
+          distribution.push({ k: i, prob: probI })
         }
       }
 

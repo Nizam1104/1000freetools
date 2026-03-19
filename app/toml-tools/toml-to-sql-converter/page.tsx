@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToSqlConverter } from "@/components/toml-tools/toml-to-sql-converter";
+import TomlToSqlConverter from "@/components/toml-tools/toml-to-sql-converter";
 import TomlToSqlConverterSeo from "@/components/seo-content/toml-tools/toml-to-sql-converter";
 
 export const metadata: Metadata = {

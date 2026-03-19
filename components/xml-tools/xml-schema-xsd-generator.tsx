@@ -8,17 +8,21 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Copy, Check, Trash2, Info, Download } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<person>',
+  '  <name>John Doe</name>',
+  '  <age>30</age>',
+  '  <email>john@example.com</email>',
+  '  <address>',
+  '    <street>123 Main St</street>',
+  '    <city>New York</city>',
+  '    <zip>10001</zip>',
+  '  </address>',
+  '</person>',
+].join('\n')
+
 export default function XmlSchemaXsdGenerator() {
-  const [xmlInput, setXmlInput] = useState<string(`<person>
-  <name>John Doe</name>
-  <age>30</age>
-  <email>john@example.com</email>
-  <address>
-    <street>123 Main St</street>
-    <city>New York</city>
-    <zip>10001</zip>
-  </address>
-</person>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [xsdOutput, setXsdOutput] = useState<string>("")
   const [rootName, setRootName] = useState<string>("root")
   const [targetNamespace, setTargetNamespace] = useState<string>("")

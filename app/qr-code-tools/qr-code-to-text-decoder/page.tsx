@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeToTextDecoderSeo from "@/components/seo-content/qr-code-tools/qr-code-to-text-decoder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeToTextDecoder } from "@/components/qr-code-tools/qr-code-to-text-decoder.tsx";
+import { QrCodeToTextDecoder } from "@/components/qr-code-tools/qr-code-to-text-decoder";
 
 export const metadata: Metadata = {
   title: `Free QR Code Decoder Online | QR Code to Text / URL`,

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { KineticEnergyCalculator } from "@/components/physics-tools/kinetic-energy-calculator";
+import KineticEnergyCalculator from "@/components/physics-tools/kinetic-energy-calculator";
 import KineticEnergyCalculatorSeo from "@/components/seo-content/physics-tools/kinetic-energy-calculator";
 
 export const metadata: Metadata = {

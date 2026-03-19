@@ -36,7 +36,7 @@ export default function TextShadowGenerator() {
   const applyPreset = useCallback((preset: typeof shadowPresets[0]) => {
     setHorizontal(preset.h);
     setVertical(preset.v);
-    setBlur("blur" in preset ? preset.blur : "0");
+    setBlur("blur" in preset ? (preset as any).blur : "0");
     setShadowColor(preset.color);
   }, []);
 
@@ -231,7 +231,7 @@ export default function TextShadowGenerator() {
                 <select
                   id="fontFamily"
                   value={fontFamily}
-                  onChange={(e) => setFontFamily(e.target.value)}
+                  onChange={(e) => setFontFamily(e.target.value || "Arial")}
                   className="w-full mt-1 p-2 border rounded-md bg-background"
                 >
                   <option value="Arial">Arial</option>

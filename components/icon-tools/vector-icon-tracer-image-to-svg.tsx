@@ -22,7 +22,8 @@ const VectorIconTracerImageToSvg: React.FC = () => {
 
     const reader = new FileReader();
     reader.onload = (event) => {
-      const img = new Image();
+      const img = document.createElement("img") as HTMLImageElement;
+      img.src = event.target?.result as string;
       img.onload = () => {
         setImage(img);
         setProcessed(false);

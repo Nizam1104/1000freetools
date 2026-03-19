@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Bug } from "lucide-react";
 
-export default function JWTDebuggerTester() {
+export default function JwtDebuggerTester() {
   const [token, setToken] = useState("");
   const [debugInfo, setDebugInfo] = useState<{
     valid: boolean;
@@ -58,12 +58,12 @@ export default function JWTDebuggerTester() {
     try {
       const headerBase64 = result.parts[0].replace(/-/g, "+").replace(/_/g, "/");
       result.header = JSON.parse(atob(headerBase64));
-      
+
       // Validate header
-      if (!result.header.alg) {
+      if (result.header && !result.header.alg) {
         result.errors.push("Missing 'alg' (algorithm) in header");
       }
-      if (!result.header.typ) {
+      if (result.header && !result.header.typ) {
         result.warnings.push("Missing 'typ' (type) in header");
       }
     } catch {
@@ -74,23 +74,23 @@ export default function JWTDebuggerTester() {
     try {
       const payloadBase64 = result.parts[1].replace(/-/g, "+").replace(/_/g, "/");
       result.payload = JSON.parse(atob(payloadBase64));
-      
+
       // Check for standard claims
-      if (result.payload.exp) {
+      if (result.payload && result.payload.exp) {
         const expTime = new Date((result.payload.exp as number) * 1000);
         if (expTime < new Date()) {
           result.warnings.push("Token has expired");
         } else {
           result.warnings.push(`Token expires: ${expTime.toLocaleString()}`);
         }
-      } else {
+      } else if (result.payload) {
         result.warnings.push("No expiration claim (exp) - token never expires");
       }
 
-      if (!result.payload.iat) {
+      if (result.payload && !result.payload.iat) {
         result.warnings.push("No 'iat' (issued at) claim");
       }
-      if (!result.payload.sub) {
+      if (result.payload && !result.payload.sub) {
         result.warnings.push("No 'sub' (subject) claim");
       }
     } catch {

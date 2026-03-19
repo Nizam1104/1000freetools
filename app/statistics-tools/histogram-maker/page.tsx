@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HistogramMaker } from "@/components/statistics-tools/histogram-maker";
+import HistogramMaker from "@/components/statistics-tools/histogram-maker";
 import HistogramMakerSeo from "@/components/seo-content/statistics-tools/histogram-maker";
 
 export const metadata: Metadata = {

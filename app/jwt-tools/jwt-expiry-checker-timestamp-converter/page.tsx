@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtExpiryCheckerTimestampConverterSeo from "@/components/seo-content/jwt-tools/jwt-expiry-checker-timestamp-converter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtExpiryCheckerTimestampConverter } from "@/components/jwt-tools/jwt-expiry-checker-timestamp-converter";
+import JwtExpiryCheckerTimestampConverter from "@/components/jwt-tools/jwt-expiry-checker-timestamp-converter";
 
 export const metadata: Metadata = {
   title: `JWT Expiry Checker | Convert Token Timestamps Online`,

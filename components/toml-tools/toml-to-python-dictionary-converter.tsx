@@ -93,7 +93,7 @@ max_connections = 100`;
           output += `    ${item.key} = ${item.value}\n`;
         });
       } else {
-        output += `\n    class ${section.capitalize()}:\n`;
+        output += `\n    class ${section.charAt(0).toUpperCase() + section.slice(1)}:\n`;
         items.forEach(item => {
           output += `        ${item.key} = ${item.value}\n`;
         });

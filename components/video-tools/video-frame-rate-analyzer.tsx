@@ -3,8 +3,13 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
+  VideoSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -45,26 +50,37 @@ export default function VideoFrameRateAnalyzer() {
       }
 
       const duration = await input.computeDuration();
-      const decoder = await videoTrack.createDecoder();
       
-      let frameCount = 0;
       const frameTimes: number[] = [];
       let lastTimestamp = -1;
 
-      for await (const sample of decoder) {
-        const timestamp = sample.timestamp;
-        if (lastTimestamp >= 0) {
-          const delta = (timestamp - lastTimestamp) / 1000000;
-          if (delta > 0) {
-            frameTimes.push(1 / delta);
-          }
-        }
-        lastTimestamp = timestamp;
-        frameCount++;
-      }
+      const output = new Output({
+        format: new Mp4OutputFormat(),
+        target: new BufferTarget(),
+      });
 
-      const averageFps = frameTimes.length > 0 
-        ? frameTimes.reduce((a, b) => a + b, 0) / frameTimes.length 
+      const conversion = await Conversion.init({
+        input,
+        output,
+        video: {
+          process: (sample: VideoSample) => {
+            const timestamp = sample.timestamp;
+            if (lastTimestamp >= 0) {
+              const delta = (timestamp - lastTimestamp) / 1000000;
+              if (delta > 0) {
+                frameTimes.push(1 / delta);
+              }
+            }
+            lastTimestamp = timestamp;
+            return null;
+          },
+        },
+      });
+
+      await conversion.execute();
+
+      const averageFps = frameTimes.length > 0
+        ? frameTimes.reduce((a, b) => a + b, 0) / frameTimes.length
         : 0;
       const minFps = frameTimes.length > 0 ? Math.min(...frameTimes) : 0;
       const maxFps = frameTimes.length > 0 ? Math.max(...frameTimes) : 0;
@@ -73,11 +89,11 @@ export default function VideoFrameRateAnalyzer() {
         averageFps,
         minFps,
         maxFps,
-        totalFrames: frameCount,
+        totalFrames: frameTimes.length + 1,
         duration,
       });
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to analyze frame rate");
     } finally {

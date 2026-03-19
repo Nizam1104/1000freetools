@@ -27,7 +27,8 @@ export default function ManchesterCodeEncoderDecoder() {
       if (differential) {
         // Differential Manchester: 0 = transition at start, 1 = no transition at start
         const hasStartTransition = bit === "0"
-        const currentLevel = hasStartTransition ? !prevLevel : prevLevel
+        let currentLevel: boolean = prevLevel
+        currentLevel = hasStartTransition ? !prevLevel : prevLevel
         result.push(currentLevel ? "10" : "01")
         prevLevel = !currentLevel
       } else {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlSchemaValidator } from "@/components/yaml-tools/yaml-schema-validator.tsx";
+import { YamlSchemaValidator } from "@/components/yaml-tools/yaml-schema-validator";
 import YamlSchemaValidatorSeo from "@/components/seo-content/yaml-tools/yaml-schema-validator";
 
 export const metadata: Metadata = {

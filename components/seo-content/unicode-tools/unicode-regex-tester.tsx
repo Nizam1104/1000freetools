@@ -10,7 +10,7 @@ export default function UnicodeRegexTesterSeo() {
             Enter your regular expression pattern and test text. The tester highlights all matches with Unicode-aware matching. See match groups, positions, and captured text.
           </p>
           <p>
-            Unicode regex supports character properties: \p{L} for any letter, \p{Emoji} for emoji, \p{Script=Han} for Chinese characters. Match by category, not just specific characters.
+            Unicode regex supports character properties: {"\\p{L}"} for any letter, {"\\p{Emoji}"} for emoji, {"\\p{Script=Han}"} for Chinese characters. Match by category, not just specific characters.
           </p>
           <p>
             Test flags affect matching: case-insensitive, multiline, dot-all, Unicode mode. Visualize how each flag changes matching behavior. Essential for international text processing.
@@ -24,19 +24,19 @@ export default function UnicodeRegexTesterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Validating international input</h3>
             <p className="text-sm text-muted-foreground">
-              Names from any language? Use \p{L}+ for letters. Not just A-Z. Accept all valid names. Better user experience.
+              Names from any language? Use {"\\p{L}"}+ for letters. Not just A-Z. Accept all valid names. Better user experience.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Extracting emoji from text</h3>
             <p className="text-sm text-muted-foreground">
-              Find all emoji in user content? Use \p{Emoji}+. Extract for analysis or filtering. Process emoji separately.
+              Find all emoji in user content? Use {"\\p{Emoji}"}+. Extract for analysis or filtering. Process emoji separately.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Parsing multilingual content</h3>
             <p className="text-sm text-muted-foreground">
-              Text with mixed scripts? Match specific scripts. \p{Script=Arabic} for Arabic text. Process each script appropriately.
+              Text with mixed scripts? Match specific scripts. {"\\p{Script=Arabic}"} for Arabic text. Process each script appropriately.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -72,7 +72,7 @@ export default function UnicodeRegexTesterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Character properties are powerful.</strong>
-              \p{L} = any letter in any script. \p{N} = any number. \p{P} = punctuation. More flexible than character classes.
+              {"\\p{L}"} = any letter in any script. {"\\p{N}"} = any number. {"\\p{P}"} = punctuation. More flexible than character classes.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -84,7 +84,7 @@ export default function UnicodeRegexTesterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
               <strong className="text-foreground">Script detection is available.</strong>
-              \p{Script=Latin}, \p{Script=Han}, etc. Match text by writing system. Useful for language detection.
+              {"\\p{Script=Latin}"}, {"\\p{Script=Han}"}, etc. Match text by writing system. Useful for language detection.
             </p>
           </div>
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
@@ -107,25 +107,25 @@ export default function UnicodeRegexTesterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I match any letter?</h3>
             <p className="text-sm text-muted-foreground">
-              Use \p{L} or \p{Letter}. Matches A-Z, à-ü, Cyrillic, Arabic, CJK, all letters. Much better than [a-zA-Z].
+              Use {"\\p{L}"} or {"\\p{Letter}"}. Matches A-Z, à-ü, Cyrillic, Arabic, CJK, all letters. Much better than [a-zA-Z].
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Can I match emoji?</h3>
             <p className="text-sm text-muted-foreground">
-              Yes, \p{Emoji} matches all emoji. \p{Emoji_Presentation} for emoji that display as emoji. Useful for filtering.
+              Yes, {"\\p{Emoji}"} matches all emoji. {"\\p{Emoji_Presentation}"} for emoji that display as emoji. Useful for filtering.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What's the /u flag?</h3>
             <p className="text-sm text-muted-foreground">
-              Unicode mode flag. Enables Unicode features in regex. Required for \p{} in JavaScript. Other languages have similar flags.
+              Unicode mode flag. Enables Unicode features in regex. Required for {"\\p{}"} in JavaScript. Other languages have similar flags.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I match a specific script?</h3>
             <p className="text-sm text-muted-foreground">
-              \p{Script=Name}. \p{Script=Han} for Chinese. \p{Script=Arabic} for Arabic. Match by writing system.
+              {"\\p{Script=Name}"}. {"\\p{Script=Han}"} for Chinese. {"\\p{Script=Arabic}"} for Arabic. Match by writing system.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

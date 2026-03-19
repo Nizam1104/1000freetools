@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Base64EncoderDecoderJavascriptSeo from "@/components/seo-content/javascript-tools/base64-encoder-decoder-javascript";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import Base64EncoderDecoder from "@/components/javascript-tools/base64-encoder-decoder";
@@ -75,9 +74,6 @@ export default function Base64EncoderDecoderJavascriptPage() {
       </header>
       <div className="mt-8">
         <Base64EncoderDecoder />
-      </div>
-      <div className="mt-16">
-        <Base64EncoderDecoderJavascriptSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

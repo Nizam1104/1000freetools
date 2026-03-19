@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqliteViewerOnline } from "@/components/sql-tools/sqlite-viewer-online.tsx";
+import { SqliteViewerOnline } from "@/components/sql-tools/sqlite-viewer-online";
 import SqliteViewerOnlineSeo from "@/components/seo-content/sql-tools/sqlite-viewer-online";
 
 export const metadata: Metadata = {

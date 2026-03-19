@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Base64MinifierSeo from "@/components/seo-content/minifier-tools/base64-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { Base64Minifier } from "@/components/minifier-tools/base64-minifier.tsx";
+import Base64Minifier from "@/components/minifier-tools/base64-minifier";
 
 export const metadata: Metadata = {
   title: `Base64 Minifier - Compress & Encode Code Online`,
@@ -74,7 +73,6 @@ export default function Base64MinifierPage() {
       </header>
       {<Base64Minifier />}
       <div className="mt-16">
-        <Base64MinifierSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

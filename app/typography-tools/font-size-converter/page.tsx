@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontSizeConverter } from "@/components/font-tools/font-size-converter.tsx";
+import FontSizeConverter from "@/components/font-tools/font-size-converter";
 import FontSizeConverterSeo from "@/components/seo-content/typography-tools/font-size-converter";
 
 export const metadata: Metadata = {

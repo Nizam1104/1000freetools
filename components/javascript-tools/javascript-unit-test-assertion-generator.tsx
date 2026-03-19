@@ -55,7 +55,7 @@ const JavascriptUnitTestAssertionGenerator: React.FC = () => {
             assertion = `expect(${actualValue || "array"})${not}.toContain(${expectedValue || "item"}${msg});`;
             break;
           case "throws":
-            assertion = `expect(() => ${actualValue || "function"}())${not}.toThrow(${expectedMessage || "'error'"}${msg});`;
+            assertion = `expect(() => ${actualValue || "function"}())${not}.toThrow(${expectedValue || "'error'"}${msg});`;
             break;
           case "matches":
             assertion = `expect(${actualValue || "string"})${not}.toMatch(/${expectedValue || "pattern"}/${msg});`;
@@ -88,7 +88,7 @@ const JavascriptUnitTestAssertionGenerator: React.FC = () => {
             assertion = `expect(${actualValue || "array"}).${notChai}.to.include(${expectedValue || "item"}${msg});`;
             break;
           case "throws":
-            assertion = `expect(() => ${actualValue || "function"}()).${notChai}.to.throw(${expectedMessage || "'error'"}${msg});`;
+            assertion = `expect(() => ${actualValue || "function"}()).${notChai}.to.throw(${expectedValue || "'error'"}${msg});`;
             break;
           case "matches":
             assertion = `expect(${actualValue || "string"}).${notChai}.to.match(/${expectedValue || "pattern"}/${msg});`;

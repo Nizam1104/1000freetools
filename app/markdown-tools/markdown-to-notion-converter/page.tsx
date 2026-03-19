@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownToNotionConverter } from "@/components/markdown-tools/markdown-to-notion-converter.tsx";
+import { MarkdownToNotionConverter } from "@/components/markdown-tools/markdown-to-notion-converter";
 import MarkdownToNotionConverterSeo from "@/components/seo-content/markdown-tools/markdown-to-notion-converter";
 
 export const metadata: Metadata = {

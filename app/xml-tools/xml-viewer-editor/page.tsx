@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import XmlViewerEditorTool from "@/components/xml-tools/xml-viewer-editor";
+import { XmlViewerEditor } from "@/components/xml-tools/xml-viewer-editor";
 import XmlViewerEditorSeo from "@/components/seo-content/xml-tools/xml-viewer-editor";
 
 export const metadata: Metadata = {
@@ -76,7 +76,7 @@ export default function XmlViewerEditorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <XmlViewerEditorTool />
+        <XmlViewerEditor />
       </div>
       <div className="mt-8">
         <XmlViewerEditorSeo />

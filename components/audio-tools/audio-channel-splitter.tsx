@@ -9,6 +9,7 @@ import {
   BlobSource,
   Conversion,
   ALL_FORMATS,
+  AudioSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -50,68 +51,51 @@ export default function AudioChannelSplitter() {
         formats: ALL_FORMATS,
       });
 
+      const fileDuration = await input.computeDuration();
       const audioTrack = await input.getPrimaryAudioTrack();
       if (!audioTrack) {
         throw new Error("No audio track found");
       }
 
-      const decoder = await audioTrack.createDecoder();
-      const samples: AudioSample[] = [];
-      
-      for await (const sample of decoder) {
-        samples.push(sample);
-      }
-
-      if (samples.length === 0) {
-        throw new Error("No audio samples found");
-      }
-
-      const combinedBuffer = samples[0].toAudioBuffer();
-      const numberOfChannels = combinedBuffer.numberOfChannels;
+      const numberOfChannels = audioTrack.numberOfChannels;
       const urls: { url: string; name: string; channel: string }[] = [];
 
       const channelNames = ["Left", "Right", "Center", "LFE", "Left Surround", "Right Surround"];
 
       for (let channel = 0; channel < Math.min(numberOfChannels, 6); channel++) {
-        const outputBuffer = new AudioBuffer({
-          length: combinedBuffer.length,
-          numberOfChannels: 1,
-          sampleRate: combinedBuffer.sampleRate,
+        const output = new Output({
+          format: new Mp3OutputFormat(),
+          target: new BufferTarget(),
         });
 
-        outputBuffer.copyToChannel(
-          combinedBuffer.getChannelData(channel),
-          0
-        );
+        const conversion = await Conversion.init({
+          input,
+          output,
+          audio: {
+            numberOfChannels: 1,
+            process: async (sample) => {
+              const audioBuffer = sample.toAudioBuffer();
+              const outputBuffer = new AudioBuffer({
+                length: audioBuffer.length,
+                numberOfChannels: 1,
+                sampleRate: audioBuffer.sampleRate,
+              });
 
-        const ctx = new AudioContext({ sampleRate: combinedBuffer.sampleRate });
-        const destination = ctx.createMediaStreamDestination();
-        const source = ctx.createBufferSource();
-        source.buffer = outputBuffer;
-        source.connect(destination);
+              outputBuffer.copyToChannel(
+                audioBuffer.getChannelData(channel),
+                0
+              );
 
-        const mediaRecorder = new MediaRecorder(destination.stream, {
-          mimeType: "audio/webm;codecs=opus",
+              return AudioSample.fromAudioBuffer(outputBuffer, sample.timestamp)[0];
+            },
+          },
         });
 
-        const chunks: Blob[] = [];
-        mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+        await conversion.execute();
 
-        const promise = new Promise<Blob>((resolve) => {
-          mediaRecorder.onstop = () => resolve(new Blob(chunks, { type: "audio/webm" }));
-        });
-
-        mediaRecorder.start();
-        source.start();
-
-        const duration = outputBuffer.length / combinedBuffer.sampleRate;
-        setTimeout(() => {
-          mediaRecorder.stop();
-          source.stop();
-          ctx.close();
-        }, duration * 1000);
-
-        const blob = await promise;
+        const buffer = output.target.buffer;
+        if (!buffer) throw new Error("No buffer");
+        const blob = new Blob([buffer], { type: "audio/mpeg" });
         const url = URL.createObjectURL(blob);
 
         urls.push({
@@ -125,7 +109,7 @@ export default function AudioChannelSplitter() {
 
       setResultUrls(urls);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to split channels");
     } finally {

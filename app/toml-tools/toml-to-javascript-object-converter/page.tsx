@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToJavascriptObjectConverter } from "@/components/toml-tools/toml-to-javascript-object-converter.tsx";
+import TomlToJavascriptObjectConverter from "@/components/toml-tools/toml-to-javascript-object-converter";
 import TomlToJavascriptObjectConverterSeo from "@/components/seo-content/toml-tools/toml-to-javascript-object-converter";
 
 export const metadata: Metadata = {

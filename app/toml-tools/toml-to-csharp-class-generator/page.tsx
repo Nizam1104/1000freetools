@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToCsharpClassGenerator } from "@/components/toml-tools/toml-to-csharp-class-generator.tsx";
+import TomlToCsharpClassGenerator from "@/components/toml-tools/toml-to-csharp-class-generator";
 import TomlToCsharpClassGeneratorSeo from "@/components/seo-content/toml-tools/toml-to-csharp-class-generator";
 
 export const metadata: Metadata = {

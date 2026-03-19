@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { NormalDistributionCalculator } from "@/components/statistics-tools/normal-distribution-calculator";
+import NormalDistributionCalculator from "@/components/statistics-tools/normal-distribution-calculator";
 import NormalDistributionCalculatorSeo from "@/components/seo-content/statistics-tools/normal-distribution-calculator";
 
 export const metadata: Metadata = {

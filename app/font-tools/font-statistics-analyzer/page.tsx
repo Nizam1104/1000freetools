@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FontStatisticsAnalyzerSeo from "@/components/seo-content/font-tools/font-statistics-analyzer";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontStatisticsAnalyzer } from "@/components/font-tools/font-statistics-analyzer";
+import FontStatisticsAnalyzer from "@/components/font-tools/font-statistics-analyzer";
 
 export const metadata: Metadata = {
   title: `Font Analyzer | Technical Font Statistics`,

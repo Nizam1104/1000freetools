@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import DaylightSavingTimeCalculatorScheduleSeo from "@/components/seo-content/timezone-tools/daylight-saving-time-calculator-schedule";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { DaylightSavingTimeCalculatorSchedule } from "@/components/timezone-tools/daylight-saving-time-calculator-schedule";
+import DaylightSavingTimeCalculatorSchedule from "@/components/timezone-tools/daylight-saving-time-calculator-schedule";
 
 export const metadata: Metadata = {
   title: `Daylight Saving Time Calculator | DST Dates & Changes`,

@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Key, Download } from "lucide-react";
 
-export default function JWTPublicKeyExtractorJWKGenerator() {
+export default function JwtPublicKeyExtractorJwkGenerator() {
   const [token, setToken] = useState("");
   const [jwkConfig, setJwkConfig] = useState({
     kty: "RSA",

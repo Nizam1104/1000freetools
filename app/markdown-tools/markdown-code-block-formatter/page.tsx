@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownCodeBlockFormatter } from "@/components/markdown-tools/markdown-code-block-formatter.tsx";
+import { MarkdownCodeBlockFormatter } from "@/components/markdown-tools/markdown-code-block-formatter";
 import MarkdownCodeBlockFormatterSeo from "@/components/seo-content/markdown-tools/markdown-code-block-formatter";
 
 export const metadata: Metadata = {

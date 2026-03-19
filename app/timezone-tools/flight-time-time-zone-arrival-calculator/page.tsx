@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FlightTimeTimeZoneArrivalCalculatorSeo from "@/components/seo-content/timezone-tools/flight-time-time-zone-arrival-calculator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FlightTimeTimeZoneArrivalCalculator } from "@/components/timezone-tools/flight-time-time-zone-arrival-calculator";
+import FlightTimeTimeZoneArrivalCalculator from "@/components/timezone-tools/flight-time-time-zone-arrival-calculator";
 
 export const metadata: Metadata = {
   title: `Flight Arrival Time Calculator | Account for Time Zones`,

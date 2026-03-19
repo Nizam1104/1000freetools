@@ -23,7 +23,7 @@ export default function MarkdownToJiraConverterSeo() {
               <li>Headers: <code className="font-mono bg-background px-1.5 py-0.5 rounded"># H1</code> becomes <code className="font-mono bg-background px-1.5 py-0.5 rounded">h1. H1</code></li>
               <li>Bold: <code className="font-mono bg-background px-1.5 py-0.5 rounded">**text**</code> becomes <code className="font-mono bg-background px-1.5 py-0.5 rounded">*text*</code></li>
               <li>Italic: <code className="font-mono bg-background px-1.5 py-0.5 rounded">*text*</code> becomes <code className="font-mono bg-background px-1.5 py-0.5 rounded">_text_</code></li>
-              <li>Code: <code className="font-mono bg-background px-1.5 py-0.5 rounded">`code`</code> becomes <code className="font-mono bg-background px-1.5 py-0.5 rounded">{{code}}</code></li>
+              <li>Code: <code className="font-mono bg-background px-1.5 py-0.5 rounded">{"`code`"}</code> becomes <code className="font-mono bg-background px-1.5 py-0.5 rounded">{"{code}"}</code></li>
               <li>Code blocks: <code className="font-mono bg-background px-1.5 py-0.5 rounded">```</code> becomes <code className="font-mono bg-background px-1.5 py-0.5 rounded">{`{code}`}</code></li>
               <li>Lists: <code className="font-mono bg-background px-1.5 py-0.5 rounded">-</code> becomes <code className="font-mono bg-background px-1.5 py-0.5 rounded">*</code> for bullets</li>
             </ul>

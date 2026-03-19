@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlEscapeUnescape } from "@/components/yaml-tools/yaml-escape-unescape.tsx";
+import { YamlEscapeUnescape } from "@/components/yaml-tools/yaml-escape-unescape";
 import YamlEscapeUnescapeSeo from "@/components/seo-content/yaml-tools/yaml-escape-unescape";
 
 export const metadata: Metadata = {

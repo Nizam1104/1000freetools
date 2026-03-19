@@ -32,7 +32,10 @@ export default function MoonPhaseCalendar() {
     const day = date.getDate()
 
     // Calculate moon phase using a simplified algorithm
-    let c = e = jd = b = 0
+    let c: number
+    let e: number
+    let jd: number
+    let b: number
 
     if (month < 3) {
       year--

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SvgComparisonDiffToolSeo from "@/components/seo-content/svg-tools/svg-comparison-diff-tool";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SvgComparisonDiffTool } from "@/components/svg-tools/svg-comparison-diff-tool.tsx";
+import SvgComparisonDiffTool from "@/components/svg-tools/svg-comparison-diff-tool";
 
 export const metadata: Metadata = {
   title: `SVG Comparison Tool - Diff SVG Files Visually & Code`,

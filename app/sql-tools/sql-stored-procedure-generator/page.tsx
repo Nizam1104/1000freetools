@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlStoredProcedureGenerator } from "@/components/sql-tools/sql-stored-procedure-generator.tsx";
+import { SqlStoredProcedureGenerator } from "@/components/sql-tools/sql-stored-procedure-generator";
 import SqlStoredProcedureGeneratorSeo from "@/components/seo-content/sql-tools/sql-stored-procedure-generator";
 
 export const metadata: Metadata = {

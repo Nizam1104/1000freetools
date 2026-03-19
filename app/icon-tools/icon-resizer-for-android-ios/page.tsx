@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { IconResizerForAndroidIos } from "@/components/icon-tools/icon-resizer-for-android-ios.tsx";
+import IconResizerForAndroidIos from "@/components/icon-tools/icon-resizer-for-android-ios";
 import IconResizerForAndroidIosSeo from "@/components/seo-content/icon-tools/icon-resizer-for-android-ios";
 
 export const metadata: Metadata = {

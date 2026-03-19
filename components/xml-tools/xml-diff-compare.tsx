@@ -8,23 +8,31 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Copy, Check, Trash2, Info, GitCompare } from "lucide-react"
 
+const DEFAULT_XML1 = [
+  '<root>',
+  '  <item id="1">',
+  '    <name>Item One</name>',
+  '    <value>100</value>',
+  '  </item>',
+  '</root>',
+].join('\n')
+
+const DEFAULT_XML2 = [
+  '<root>',
+  '  <item id="1">',
+  '    <name>Item One Updated</name>',
+  '    <value>200</value>',
+  '  </item>',
+  '  <item id="2">',
+  '    <name>Item Two</name>',
+  '    <value>300</value>',
+  '  </item>',
+  '</root>',
+].join('\n')
+
 export default function XmlDiffCompare() {
-  const [xml1, setXml1] = useState<string(`<root>
-  <item id="1">
-    <name>Item One</name>
-    <value>100</value>
-  </item>
-</root>`)}
-  const [xml2, setXml2] = useState<string(`<root>
-  <item id="1">
-    <name>Item One Updated</name>
-    <value>200</value>
-  </item>
-  <item id="2">
-    <name>Item Two</name>
-    <value>300</value>
-  </item>
-</root>`)}
+  const [xml1, setXml1] = useState<string>(DEFAULT_XML1)
+  const [xml2, setXml2] = useState<string>(DEFAULT_XML2)
   const [diffResult, setDiffResult] = useState<string>("")
   const [copied, setCopied] = useState<string | null>(null)
 

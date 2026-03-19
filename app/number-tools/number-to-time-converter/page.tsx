@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import NumberToTimeConverterSeo from "@/components/seo-content/number-tools/number-to-time-converter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { NumberToTimeConverter } from "@/components/number-tools/number-to-time-converter.tsx";
+import NumberToTimeConverter from "@/components/number-tools/number-to-time-converter";
 
 export const metadata: Metadata = {
   title: `Decimal to Time Converter | Hours & Minutes`,

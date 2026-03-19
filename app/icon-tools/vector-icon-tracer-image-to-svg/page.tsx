@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { VectorIconTracerImageToSvg } from "@/components/icon-tools/vector-icon-tracer-image-to-svg.tsx";
+import VectorIconTracerImageToSvg from "@/components/icon-tools/vector-icon-tracer-image-to-svg";
 import VectorIconTracerImageToSvgSeo from "@/components/seo-content/icon-tools/vector-icon-tracer-image-to-svg";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlColorPickerGeneratorTool from "@/components/html-tools/html-color-picker-generator";
+import { HtmlColorPickerGenerator } from "@/components/html-tools/html-color-picker-generator";
 import HtmlColorPickerGeneratorSEO from "@/components/seo-content/html-tools/html-color-picker-generator";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlColorPickerGeneratorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlColorPickerGeneratorTool />
+        <HtmlColorPickerGenerator />
       </div>
       <div className="mt-8">
         <HtmlColorPickerGeneratorSEO />

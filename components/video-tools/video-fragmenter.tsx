@@ -44,7 +44,7 @@ export default function VideoFragmenter() {
       const fileDuration = await input.computeDuration();
       setDuration(fileDuration);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to read video file");
     } finally {
@@ -93,6 +93,7 @@ export default function VideoFragmenter() {
         await conversion.execute();
 
         const buffer = output.target.buffer;
+        if (!buffer) throw new Error("No buffer");
         const blob = new Blob([buffer], { type: "video/mp4" });
         const url = URL.createObjectURL(blob);
 
@@ -106,7 +107,7 @@ export default function VideoFragmenter() {
 
       setResultUrls(urls);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to fragment video");
     } finally {

@@ -56,7 +56,7 @@ timeout = 30`;
 
     const lines = tomlInput.split("\n");
     const structs: { name: string; fields: string[] }[] = [];
-    let currentStruct = { name: structName, fields: [] };
+    let currentStruct = { name: structName, fields: [] as string[] };
     let currentSection = "";
 
     lines.forEach(line => {

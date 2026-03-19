@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import ExcelFormulaGeneratorTool from "@/components/excel-tools/excel-formula-generator";
+import { ExcelFormulaGenerator } from "@/components/excel-tools/excel-formula-generator";
 import ExcelFormulaGeneratorSeo from "@/components/seo-content/excel-tools/excel-formula-generator";
 
 export const metadata: Metadata = {
@@ -78,7 +78,7 @@ export default function ExcelFormulaGeneratorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <ExcelFormulaGeneratorTool />
+        <ExcelFormulaGenerator />
       </div>
       <div className="mt-8">
         <ExcelFormulaGeneratorSeo />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlMetaTagGeneratorTool from "@/components/html-tools/html-meta-tag-generator";
+import { HtmlMetaTagGenerator } from "@/components/html-tools/html-meta-tag-generator";
 import HtmlMetaTagGeneratorSEO from "@/components/seo-content/html-tools/html-meta-tag-generator";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlMetaTagGeneratorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlMetaTagGeneratorTool />
+        <HtmlMetaTagGenerator />
       </div>
       <div className="mt-8">
         <HtmlMetaTagGeneratorSEO />

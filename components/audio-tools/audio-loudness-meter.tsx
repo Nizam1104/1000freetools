@@ -3,7 +3,11 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp3OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
@@ -38,45 +42,41 @@ export default function AudioLoudnessMeter() {
         formats: ALL_FORMATS,
       });
 
-      const audioTrack = await input.getPrimaryAudioTrack();
-      if (!audioTrack) {
-        throw new Error("No audio track found");
-      }
-
-      const decoder = await audioTrack.createDecoder();
-      const samples: AudioSample[] = [];
-      
-      for await (const sample of decoder) {
-        samples.push(sample);
-      }
-
-      if (samples.length === 0) {
-        throw new Error("No audio samples found");
-      }
-
       let sumSquares = 0;
       let totalSamples = 0;
       let maxPeak = 0;
 
-      for (const sample of samples) {
-        const buffer = sample.toAudioBuffer();
-        for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
-          const channelData = buffer.getChannelData(channel);
-          for (let i = 0; i < channelData.length; i++) {
-            const amp = channelData[i];
-            sumSquares += amp * amp;
-            totalSamples++;
-            if (Math.abs(amp) > maxPeak) {
-              maxPeak = Math.abs(amp);
+      const conversion = await Conversion.init({
+        input,
+        output: new Output({
+          format: new Mp3OutputFormat(),
+          target: new BufferTarget(),
+        }),
+        audio: {
+          process: async (sample) => {
+            const buffer = sample.toAudioBuffer();
+            for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
+              const channelData = buffer.getChannelData(channel);
+              for (let i = 0; i < channelData.length; i++) {
+                const amp = channelData[i];
+                sumSquares += amp * amp;
+                totalSamples++;
+                if (Math.abs(amp) > maxPeak) {
+                  maxPeak = Math.abs(amp);
+                }
+              }
             }
-          }
-        }
-      }
+            return sample;
+          },
+        },
+      });
+
+      await conversion.execute();
 
       const rms = Math.sqrt(sumSquares / totalSamples);
       const rmsDb = 20 * Math.log10(rms);
       const truePeakDb = 20 * Math.log10(maxPeak);
-      
+
       const integratedLoudness = rmsDb - 0.691;
       const loudnessRange = Math.max(0, truePeakDb - integratedLoudness);
 
@@ -87,7 +87,7 @@ export default function AudioLoudnessMeter() {
         rms: rmsDb,
       });
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to analyze loudness");
     } finally {

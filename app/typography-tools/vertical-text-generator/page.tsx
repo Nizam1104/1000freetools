@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { VerticalTextGenerator } from "@/components/text-tools/vertical-text-generator.tsx";
+import { VerticalTextGenerator } from "@/components/text-tools/vertical-text-generator";
 import VerticalTextGeneratorSeo from "@/components/seo-content/typography-tools/vertical-text-generator";
 
 export const metadata: Metadata = {

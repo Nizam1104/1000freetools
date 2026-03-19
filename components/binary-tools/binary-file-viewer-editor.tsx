@@ -57,17 +57,17 @@ export default function BinaryFileViewerEditor() {
     }
   }, [])
 
-  const getHexDump = useCallback((): JSX.Element[] => {
+  const getHexDump = useCallback((): React.JSX.Element[] => {
     if (!fileData) return []
 
-    const rows: JSX.Element[] = []
+    const rows: React.JSX.Element[] = []
     for (let i = 0; i < fileData.length; i += bytesPerRow) {
       const rowBytes = fileData.slice(i, i + bytesPerRow)
       const offset = i.toString(16).padStart(8, "0").toUpperCase()
       const isMatch = searchResults.includes(i)
 
-      const hexCells: JSX.Element[] = []
-      const asciiCells: JSX.Element[] = []
+      const hexCells: React.JSX.Element[] = []
+      const asciiCells: React.JSX.Element[] = []
 
       for (let j = 0; j < bytesPerRow; j++) {
         const byte = rowBytes[j]
@@ -205,7 +205,7 @@ export default function BinaryFileViewerEditor() {
 
   const downloadFile = useCallback(() => {
     if (!fileData) return
-    const blob = new Blob([fileData])
+    const blob = new Blob([fileData.buffer as ArrayBuffer])
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url

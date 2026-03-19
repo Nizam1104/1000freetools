@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import NumberUnitConverter from "@/components/number-tools/number-unit-converter";
-import NumberUnitConverterSeo from "@/components/seo-content/number-tools/number-unit-converter";
 
 export const metadata: Metadata = {
   title: `Unit Converter | Bytes, Metric, Imperial Prefixes`,
@@ -75,10 +74,8 @@ export default function UnitConverterPage() {
         <NumberUnitConverter />
       </div>
       <div className="mt-8">
-        <NumberUnitConverterSeo />
       </div>
       <div className="mt-16">
-        <UnitConverterSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

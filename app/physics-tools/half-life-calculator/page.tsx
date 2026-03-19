@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HalfLifeCalculator } from "@/components/physics-tools/half-life-calculator";
+import HalfLifeCalculator from "@/components/physics-tools/half-life-calculator";
 import HalfLifeCalculatorSeo from "@/components/seo-content/physics-tools/half-life-calculator";
 
 export const metadata: Metadata = {

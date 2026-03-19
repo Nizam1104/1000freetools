@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AnimatedSvgLottiePlayerValidatorSeo from "@/components/seo-content/svg-tools/animated-svg-lottie-player-validator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { AnimatedSvgLottiePlayerValidator } from "@/components/svg-tools/animated-svg-lottie-player-validator.tsx";
+import AnimatedSvgLottiePlayerValidator from "@/components/svg-tools/animated-svg-lottie-player-validator";
 
 export const metadata: Metadata = {
   title: `Animated SVG Player - Preview & Validate Lottie JSON`,

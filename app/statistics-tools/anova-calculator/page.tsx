@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { AnovaCalculator } from "@/components/statistics-tools/anova-calculator";
+import AnovaCalculator from "@/components/statistics-tools/anova-calculator";
 import AnovaCalculatorSeo from "@/components/seo-content/statistics-tools/anova-calculator";
 
 export const metadata: Metadata = {

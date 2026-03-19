@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlRegularExpressionTesterRegexp } from "@/components/sql-tools/sql-regular-expression-tester-regexp.tsx";
+import { SqlRegularExpressionTesterRegexp } from "@/components/sql-tools/sql-regular-expression-tester-regexp";
 import SqlRegularExpressionTesterRegexpSeo from "@/components/seo-content/sql-tools/sql-regular-expression-tester-regexp";
 
 export const metadata: Metadata = {

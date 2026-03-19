@@ -45,7 +45,7 @@ export default function AudioTrimmer() {
       setDuration(fileDuration);
       setEndTime(fileDuration);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to read audio file");
     }
@@ -85,13 +85,14 @@ export default function AudioTrimmer() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "audio/mpeg" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to trim audio");
     } finally {

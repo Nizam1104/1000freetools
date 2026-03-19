@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { LigatureGenerator } from "@/components/font-tools/ligature-generator";
+import LigatureGenerator from "@/components/font-tools/ligature-generator";
 import LigatureGeneratorSeo from "@/components/seo-content/typography-tools/ligature-generator";
 
 export const metadata: Metadata = {

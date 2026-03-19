@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { GradientTextGenerator } from "@/components/font-tools/gradient-text-generator";
+import GradientTextGenerator from "@/components/font-tools/gradient-text-generator";
 import GradientTextGeneratorSeo from "@/components/seo-content/typography-tools/gradient-text-generator";
 
 export const metadata: Metadata = {

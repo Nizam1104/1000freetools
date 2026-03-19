@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlEditor } from "@/components/yaml-tools/yaml-editor.tsx";
+import { YamlEditor } from "@/components/yaml-tools/yaml-editor";
 import YamlEditorSeo from "@/components/seo-content/yaml-tools/yaml-editor";
 
 export const metadata: Metadata = {

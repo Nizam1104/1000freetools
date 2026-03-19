@@ -21,13 +21,13 @@ const SMALL_PRIMES = [
 
 // BigInt helper functions
 const modPow = (base: bigint, exp: bigint, mod: bigint): bigint => {
-  let result = 1n
+  let result = BigInt(1)
   base = base % mod
-  while (exp > 0n) {
-    if (exp % 2n === 1n) {
+  while (exp > BigInt(0)) {
+    if (exp % BigInt(2) === BigInt(1)) {
       result = (result * base) % mod
     }
-    exp = exp / 2n
+    exp = exp / BigInt(2)
     base = (base * base) % mod
   }
   return result
@@ -60,7 +60,7 @@ const findPrimitiveRoot = (p: number): number => {
   for (let g = 2; g < p; g++) {
     let isRoot = true
     for (const factor of factors) {
-      if (modPow(BigInt(g), BigInt(phi / factor), BigInt(p)) === 1n) {
+      if (modPow(BigInt(g), BigInt(phi / factor), BigInt(p)) === BigInt(1)) {
         isRoot = false
         break
       }

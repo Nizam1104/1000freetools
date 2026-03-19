@@ -135,7 +135,7 @@ const ianaDatabase: Record<string, Partial<IANAData>> = {
   },
 };
 
-export default function TimezoneDatabaseIANALookup() {
+export default function TimezoneDatabaseIanaLookup() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState<string | null>(null);
   const [timezoneData, setTimezoneData] = useState<IANAData | null>(null);

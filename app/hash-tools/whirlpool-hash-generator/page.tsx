@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { WhirlpoolHashGenerator } from "@/components/hash-tools/whirlpool-hash-generator.tsx";
+import WhirlpoolHashGenerator from "@/components/hash-tools/whirlpool-hash-generator";
 import WhirlpoolHashGeneratorSeo from "@/components/seo-content/hash-tools/whirlpool-hash-generator";
 
 export const metadata: Metadata = {

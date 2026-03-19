@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeDocumentDownloadSeo from "@/components/seo-content/qr-code-tools/qr-code-document-download";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeDocumentDownload } from "@/components/qr-code-tools/qr-code-document-download.tsx";
+import { QrCodeDocumentDownload } from "@/components/qr-code-tools/qr-code-document-download";
 
 export const metadata: Metadata = {
   title: `Document QR Code | Share Files via QR Code`,

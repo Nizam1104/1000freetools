@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlSchemaGeneratorValidator } from "@/components/toml-tools/toml-schema-generator-validator.tsx";
+import TomlSchemaGeneratorValidator from "@/components/toml-tools/toml-schema-generator-validator";
 import TomlSchemaGeneratorValidatorSeo from "@/components/seo-content/toml-tools/toml-schema-generator-validator";
 
 export const metadata: Metadata = {

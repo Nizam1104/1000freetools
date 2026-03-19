@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FileHashCalculatorMultiAlgorithm } from "@/components/hash-tools/file-hash-calculator-multi-algorithm.tsx";
+import FileHashCalculatorMultiAlgorithm from "@/components/hash-tools/file-hash-calculator-multi-algorithm";
 import FileHashCalculatorMultiAlgorithmSeo from "@/components/seo-content/hash-tools/file-hash-calculator-multi-algorithm";
 
 export const metadata: Metadata = {

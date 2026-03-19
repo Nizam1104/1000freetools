@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeCryptoAddressSeo from "@/components/seo-content/qr-code-tools/qr-code-crypto-address";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeCryptoAddress } from "@/components/qr-code-tools/qr-code-crypto-address.tsx";
+import { QrCodeCryptoAddress } from "@/components/qr-code-tools/qr-code-crypto-address";
 
 export const metadata: Metadata = {
   title: `Crypto QR Code Generator | Bitcoin & Ethereum`,

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtTokenSizeCalculatorOptimizerSeo from "@/components/seo-content/jwt-tools/jwt-token-size-calculator-optimizer";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtTokenSizeCalculatorOptimizer } from "@/components/jwt-tools/jwt-token-size-calculator-optimizer.tsx";
+import { JwtTokenSizeCalculatorOptimizer } from "@/components/jwt-tools/jwt-token-size-calculator-optimizer";
 
 export const metadata: Metadata = {
   title: `JWT Size Calculator | Optimize Token Size Online`,

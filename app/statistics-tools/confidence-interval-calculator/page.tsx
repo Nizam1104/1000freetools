@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { ConfidenceIntervalCalculator } from "@/components/statistics-tools/confidence-interval-calculator";
+import ConfidenceIntervalCalculator from "@/components/statistics-tools/confidence-interval-calculator";
 import ConfidenceIntervalCalculatorSeo from "@/components/seo-content/statistics-tools/confidence-interval-calculator";
 
 export const metadata: Metadata = {

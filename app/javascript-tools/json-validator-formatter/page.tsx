@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import JsonValidatorFormatterSeo from "@/components/seo-content/javascript-tools/json-validator-formatter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JsonValidator from "@/components/javascript-tools/json-validator";
@@ -77,7 +76,6 @@ export default function JsonValidatorFormatterPage() {
         <JsonValidator />
       </div>
       <div className="mt-16">
-        <JsonValidatorFormatterSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

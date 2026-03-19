@@ -15,11 +15,11 @@ import {
 function computeCollatz(n: bigint): bigint[] {
   const sequence: bigint[] = [n];
   let current = n;
-  while (current !== 1n) {
-    if (current % 2n === 0n) {
-      current = current / 2n;
+  while (current !== BigInt(1)) {
+    if (current % BigInt(2) === BigInt(0)) {
+      current = current / BigInt(2);
     } else {
-      current = 3n * current + 1n;
+      current = BigInt(3) * current + BigInt(1);
     }
     sequence.push(current);
     if (sequence.length > 1_000_000) break; // safety cap
@@ -109,7 +109,7 @@ export default function CollatzPage() {
       setError("Invalid number.");
       return;
     }
-    if (n < 1n) {
+    if (n < BigInt(1)) {
       setError("Enter a number greater than 0.");
       return;
     }
@@ -128,7 +128,7 @@ export default function CollatzPage() {
     if (e.key === "Enter") handleCalculate();
   };
 
-  const maxVal = sequence ? sequence.reduce((a, b) => (b > a ? b : a), 0n) : 0n;
+  const maxVal = sequence ? sequence.reduce((a, b) => (b > a ? b : a), BigInt(0)) : BigInt(0);
   const maxStep = sequence ? sequence.findIndex((v) => v === maxVal) + 1 : 0;
   const stepsCount = sequence ? sequence.length : 0;
 
@@ -786,7 +786,7 @@ export default function CollatzPage() {
                     const op =
                       i === 0
                         ? null
-                        : stepsToShow[i - 1] % 2n === 0n
+                        : stepsToShow[i - 1] % BigInt(2) === BigInt(0)
                           ? "÷2"
                           : "×3+1";
                     return (
@@ -799,9 +799,9 @@ export default function CollatzPage() {
                         <span className="step-num">#{i + 1}</span>
                         {op && (
                           <span
-                            className={`step-op ${stepsToShow[i - 1] % 2n === 0n ? "even" : "odd"}`}
+                            className={`step-op ${stepsToShow[i - 1] % BigInt(2) === BigInt(0) ? "even" : "odd"}`}
                           >
-                            {stepsToShow[i - 1] % 2n === 0n ? "÷" : "*"}
+                            {stepsToShow[i - 1] % BigInt(2) === BigInt(0) ? "÷" : "*"}
                           </span>
                         )}
                         {!op && <span className="step-op" />}

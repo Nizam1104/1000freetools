@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { IconStyleTransferArtisticFilters } from "@/components/icon-tools/icon-style-transfer-artistic-filters.tsx";
+import IconStyleTransferArtisticFilters from "@/components/icon-tools/icon-style-transfer-artistic-filters";
 import IconStyleTransferArtisticFiltersSeo from "@/components/seo-content/icon-tools/icon-style-transfer-artistic-filters";
 
 export const metadata: Metadata = {

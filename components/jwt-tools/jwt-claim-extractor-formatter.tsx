@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, FileText } from "lucide-react";
 
-export default function JWTClaimExtractorFormatter() {
+export default function JwtClaimExtractorFormatter() {
   const [token, setToken] = useState("");
   const [extractedClaims, setExtractedClaims] = useState<Record<string, unknown>>({});
   const [customClaim, setCustomClaim] = useState("");
@@ -193,10 +193,10 @@ export default function JWTClaimExtractorFormatter() {
         </div>
       )}
 
-      {"error" in extractedClaims && extractedClaims.error && (
+      {"error" in extractedClaims && (extractedClaims as { error?: string }).error && (
         <Card>
           <CardContent className="text-center py-8 text-red-600">
-            <p>{extractedClaims.error}</p>
+            <p>{(extractedClaims as { error?: string }).error}</p>
             <p className="text-sm text-muted-foreground mt-2">Please enter a valid JWT token</p>
           </CardContent>
         </Card>

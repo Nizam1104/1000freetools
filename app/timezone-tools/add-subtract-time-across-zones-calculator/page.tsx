@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AddSubtractTimeAcrossZonesCalculatorSeo from "@/components/seo-content/timezone-tools/add-subtract-time-across-zones-calculator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { AddSubtractTimeAcrossZonesCalculator } from "@/components/timezone-tools/add-subtract-time-across-zones-calculator";
+import AddSubtractTimeAcrossZonesCalculator from "@/components/timezone-tools/add-subtract-time-across-zones-calculator";
 
 export const metadata: Metadata = {
   title: `Add/Subtract Time Calculator | Across Time Zones`,

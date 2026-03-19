@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlValidatorLinterTool from "@/components/html-tools/html-validator-linter";
+import { HtmlValidatorLinter } from "@/components/html-tools/html-validator-linter";
 import HtmlValidatorLinterSEO from "@/components/seo-content/html-tools/html-validator-linter";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlValidatorLinterPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlValidatorLinterTool />
+        <HtmlValidatorLinter />
       </div>
       <div className="mt-8">
         <HtmlValidatorLinterSEO />

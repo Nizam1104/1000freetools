@@ -89,7 +89,7 @@ export default function UnicodeEscapeEncoderSeo() {
           </div>
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
             <p className="text-sm text-amber-700 dark:text-amber-300">
-              <strong>Pro tip:</strong> For modern JavaScript, prefer \u{XXXXX} for characters above U+FFFF. Cleaner than surrogate pairs. Requires ES6+ but much more readable.
+              <strong>Pro tip:</strong> For modern JavaScript, prefer {"\\u{XXXXX}"} for characters above U+FFFF. Cleaner than surrogate pairs. Requires ES6+ but much more readable.
             </p>
           </div>
         </div>

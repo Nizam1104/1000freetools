@@ -3,7 +3,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   Input,
+  Output,
+  Mp3OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
@@ -40,51 +44,54 @@ export default function AudioWaveformGenerator() {
         throw new Error("No audio track found");
       }
 
-      const decoder = await audioTrack.createDecoder();
-      const samples: AudioSample[] = [];
-      
-      for await (const sample of decoder) {
-        samples.push(sample);
-      }
+      // Get audio info for waveform generation
+      const duration = await input.computeDuration();
+      const sampleRate = audioTrack.sampleRate || 44100;
+      const totalSamples = Math.floor(duration * sampleRate);
+      const samplesPerDataPoint = Math.ceil(totalSamples / canvasWidth);
 
-      if (samples.length === 0) {
-        throw new Error("No audio samples found");
-      }
+      // Generate waveform by processing audio
+      const data: number[] = [];
+      let currentMax = 0;
+      let currentCount = 0;
 
-      const combinedBuffer = new AudioBuffer({
-        length: samples.reduce((sum, s) => sum + s.toAudioBuffer().length, 0),
-        numberOfChannels: 1,
-        sampleRate: samples[0].toAudioBuffer().sampleRate,
+      const conversion = await Conversion.init({
+        input,
+        output: new Output({
+          format: new Mp3OutputFormat(),
+          target: new BufferTarget(),
+        }),
+        audio: {
+          process: async (sample) => {
+            const buffer = sample.toAudioBuffer();
+            const channelData = buffer.getChannelData(0);
+            
+            for (let i = 0; i < channelData.length; i++) {
+              const amp = Math.abs(channelData[i]);
+              if (amp > currentMax) currentMax = amp;
+              currentCount++;
+              
+              if (currentCount >= samplesPerDataPoint) {
+                data.push(currentMax);
+                currentMax = 0;
+                currentCount = 0;
+              }
+            }
+            return sample;
+          },
+        },
       });
 
-      let offset = 0;
-      for (const sample of samples) {
-        const buffer = sample.toAudioBuffer();
-        const channelData = buffer.getChannelData(0);
-        combinedBuffer.copyToChannel(channelData, 0, offset);
-        offset += buffer.length;
+      await conversion.execute();
+      
+      // Fill remaining data points if needed
+      while (data.length < canvasWidth) {
+        data.push(currentMax);
       }
+      
+      setWaveformData(data.slice(0, canvasWidth));
 
-      const samplesPerDataPoint = Math.ceil(combinedBuffer.length / canvasWidth);
-      const data: number[] = [];
-
-      for (let i = 0; i < canvasWidth; i++) {
-        const start = i * samplesPerDataPoint;
-        const end = Math.min(start + samplesPerDataPoint, combinedBuffer.length);
-        let max = 0;
-        
-        const channelData = combinedBuffer.getChannelData(0);
-        for (let j = start; j < end; j++) {
-          const amp = Math.abs(channelData[j]);
-          if (amp > max) max = amp;
-        }
-        
-        data.push(max);
-      }
-
-      setWaveformData(data);
-
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to generate waveform");
     } finally {

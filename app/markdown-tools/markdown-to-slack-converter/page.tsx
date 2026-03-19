@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownToSlackConverter } from "@/components/markdown-tools/markdown-to-slack-converter.tsx";
+import { MarkdownToSlackConverter } from "@/components/markdown-tools/markdown-to-slack-converter";
 import MarkdownToSlackConverterSeo from "@/components/seo-content/markdown-tools/markdown-to-slack-converter";
 
 export const metadata: Metadata = {

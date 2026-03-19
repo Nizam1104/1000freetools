@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SvgToBase64EncoderSeo from "@/components/seo-content/svg-tools/svg-to-base64-encoder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SvgToBase64Encoder } from "@/components/svg-tools/svg-to-base64-encoder.tsx";
+import SvgToBase64Encoder from "@/components/svg-tools/svg-to-base64-encoder";
 
 export const metadata: Metadata = {
   title: `SVG to Base64 Encoder - Free Online Converter`,

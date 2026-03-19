@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { Ripemd160HashGenerator } from "@/components/hash-tools/ripemd160-hash-generator.tsx";
+import { Ripemd160HashGenerator } from "@/components/hash-tools/ripemd160-hash-generator";
 import Ripemd160HashGeneratorSeo from "@/components/seo-content/hash-tools/ripemd160-hash-generator";
 
 export const metadata: Metadata = {

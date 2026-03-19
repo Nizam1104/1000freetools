@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import XmlMinifierSeo from "@/components/seo-content/minifier-tools/xml-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { XmlMinifier } from "@/components/minifier-tools/xml-minifier.tsx";
+import { XmlMinifier } from "@/components/minifier-tools/xml-minifier";
 
 export const metadata: Metadata = {
   title: `XML Minifier - Compress & Minify XML Files Online`,
@@ -74,7 +73,6 @@ export default function XmlMinifierPage() {
       </header>
       {<XmlMinifier />}
       <div className="mt-16">
-        <XmlMinifierSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

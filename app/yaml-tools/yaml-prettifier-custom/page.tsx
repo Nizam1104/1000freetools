@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlPrettifierCustom } from "@/components/yaml-tools/yaml-prettifier-custom.tsx";
+import { YamlPrettifierCustom } from "@/components/yaml-tools/yaml-prettifier-custom";
 import YamlPrettifierCustomSeo from "@/components/seo-content/yaml-tools/yaml-prettifier-custom";
 
 export const metadata: Metadata = {

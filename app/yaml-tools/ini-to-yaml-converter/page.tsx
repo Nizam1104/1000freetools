@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { IniToYamlConverter } from "@/components/yaml-tools/ini-to-yaml-converter.tsx";
+import { IniToYamlConverter } from "@/components/yaml-tools/ini-to-yaml-converter";
 import IniToYamlConverterSeo from "@/components/seo-content/yaml-tools/ini-to-yaml-converter";
 
 export const metadata: Metadata = {

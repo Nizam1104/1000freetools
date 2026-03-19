@@ -34,6 +34,7 @@ export default function AbTestSignificanceCalculator() {
   const [variantBVisitors, setVariantBVisitors] = useState<number>(1000)
   const [variantBConversions, setVariantBConversions] = useState<number>(120)
   const [confidenceLevel, setConfidenceLevel] = useState<number>(0.95)
+  const [copied, setCopied] = useState<string | null>(null)
 
   const [result, setResult] = useState<{
     conversionRateA: number

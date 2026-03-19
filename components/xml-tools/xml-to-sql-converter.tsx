@@ -9,19 +9,23 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Check, Trash2, Info, Database } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<users>',
+  '  <user id="1">',
+  '    <name>John Doe</name>',
+  '    <email>john@example.com</email>',
+  '    <age>30</age>',
+  '  </user>',
+  '  <user id="2">',
+  '    <name>Jane Smith</name>',
+  '    <email>jane@example.com</email>',
+  '    <age>25</age>',
+  '  </user>',
+  '</users>',
+].join('\n')
+
 export default function XmlToSqlConverter() {
-  const [xmlInput, setXmlInput] = useState<string(`<users>
-  <user id="1">
-    <name>John Doe</name>
-    <email>john@example.com</email>
-    <age>30</age>
-  </user>
-  <user id="2">
-    <name>Jane Smith</name>
-    <email>jane@example.com</email>
-    <age>25</age>
-  </user>
-</users>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [tableName, setTableName] = useState<string>("users")
   const [sqlType, setSqlType] = useState<string>("insert")
   const [includeDrop, setIncludeDrop] = useState<boolean>(false)

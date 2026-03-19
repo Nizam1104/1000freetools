@@ -35,6 +35,7 @@ export default function StatisticalPowerCalculator() {
   const [tails, setTails] = useState<1 | 2>(2)
   const [testType, setTestType] = useState<"t-test" | "z-test" | "anova" | "correlation">("t-test")
   const [groups, setGroups] = useState<number>(2)
+  const [copied, setCopied] = useState<string | null>(null)
 
   const [result, setResult] = useState<{
     power: number

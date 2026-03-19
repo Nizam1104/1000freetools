@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownToJiraConverter } from "@/components/markdown-tools/markdown-to-jira-converter.tsx";
+import { MarkdownToJiraConverter } from "@/components/markdown-tools/markdown-to-jira-converter";
 import MarkdownToJiraConverterSeo from "@/components/seo-content/markdown-tools/markdown-to-jira-converter";
 
 export const metadata: Metadata = {

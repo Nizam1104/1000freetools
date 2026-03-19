@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HammingCodeEncoderDecoder } from "@/components/encoding-tools/hamming-code-encoder-decoder";
+import HammingCodeEncoderDecoder from "@/components/encoding-tools/hamming-code-encoder-decoder";
 import HammingCodeEncoderDecoderSeo from "@/components/seo-content/encoding-tools/hamming-code-encoder-decoder";
 
 export const metadata: Metadata = {

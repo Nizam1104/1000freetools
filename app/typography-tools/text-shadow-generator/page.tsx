@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TextShadowGenerator } from "@/components/text-tools/text-shadow-generator.tsx";
+import { TextShadowGenerator } from "@/components/text-tools/text-shadow-generator";
 import TextShadowGeneratorSeo from "@/components/seo-content/typography-tools/text-shadow-generator";
 
 export const metadata: Metadata = {

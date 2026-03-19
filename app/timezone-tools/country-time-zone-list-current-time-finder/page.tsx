@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CountryTimeZoneListCurrentTimeFinderSeo from "@/components/seo-content/timezone-tools/country-time-zone-list-current-time-finder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CountryTimeZoneListCurrentTimeFinder } from "@/components/timezone-tools/country-time-zone-list-current-time-finder";
+import CountryTimeZoneListCurrentTimeFinder from "@/components/timezone-tools/country-time-zone-list-current-time-finder";
 
 export const metadata: Metadata = {
   title: `Time Zones by Country | Current Local Time in Every Country`,

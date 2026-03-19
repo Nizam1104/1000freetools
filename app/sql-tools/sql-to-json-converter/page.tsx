@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlToJsonConverter } from "@/components/sql-tools/sql-to-json-converter.tsx";
+import { SqlToJsonConverter } from "@/components/sql-tools/sql-to-json-converter";
 import SqlToJsonConverterSeo from "@/components/seo-content/sql-tools/sql-to-json-converter";
 
 export const metadata: Metadata = {

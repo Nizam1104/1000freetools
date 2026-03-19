@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TextReadabilityAnalyzer } from "@/components/text-tools/text-readability-analyzer.tsx";
+import { TextReadabilityAnalyzer } from "@/components/text-tools/text-readability-analyzer";
 import TextReadabilityAnalyzerSeo from "@/components/seo-content/typography-tools/text-readability-analyzer";
 
 export const metadata: Metadata = {

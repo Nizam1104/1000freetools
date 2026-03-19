@@ -33,16 +33,16 @@ export default function Base58EncoderDecoder() {
     }
 
     // Convert to big integer
-    let value = 0n
+    let value = BigInt(0)
     for (let i = 0; i < bytes.length; i++) {
-      value = value * 256n + BigInt(bytes[i])
+      value = value * BigInt(256) + BigInt(bytes[i])
     }
 
     // Convert to Base58
     let result = ""
-    while (value > 0n) {
-      const remainder = value % 58n
-      value = value / 58n
+    while (value > BigInt(0)) {
+      const remainder = value % BigInt(58)
+      value = value / BigInt(58)
       result = base58[Number(remainder)] + result
     }
 
@@ -70,16 +70,16 @@ export default function Base58EncoderDecoder() {
     }
 
     // Convert from Base58 to big integer
-    let value = 0n
+    let value = BigInt(0)
     for (let i = 0; i < text.length; i++) {
-      value = value * 58n + BigInt(base58.indexOf(text[i]))
+      value = value * BigInt(58) + BigInt(base58.indexOf(text[i]))
     }
 
     // Convert to bytes
     const bytes: number[] = []
-    while (value > 0n) {
-      bytes.unshift(Number(value % 256n))
-      value = value / 256n
+    while (value > BigInt(0)) {
+      bytes.unshift(Number(value % BigInt(256)))
+      value = value / BigInt(256)
     }
 
     // Add leading zeros

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlToPythonDict } from "@/components/yaml-tools/yaml-to-python-dict.tsx";
+import { YamlToPythonDict } from "@/components/yaml-tools/yaml-to-python-dict";
 import YamlToPythonDictSeo from "@/components/seo-content/yaml-tools/yaml-to-python-dict";
 
 export const metadata: Metadata = {

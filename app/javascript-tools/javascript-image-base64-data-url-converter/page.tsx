@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import JavascriptImageBase64DataUrlConverterSeo from "@/components/seo-content/javascript-tools/javascript-image-base64-data-url-converter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptImageToBase64 from "@/components/javascript-tools/javascript-image-to-base64";
@@ -74,9 +73,6 @@ export default function JavascriptImageBase64DataUrlConverterPage() {
       </header>
       <div className="mt-8">
         <JavascriptImageToBase64 />
-      </div>
-      <div className="mt-16">
-        <JavascriptImageBase64DataUrlConverterSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -3,7 +3,11 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp3OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
@@ -37,26 +41,31 @@ export default function AudioSampleExtractor() {
         formats: ALL_FORMATS,
       });
 
-      const audioTrack = await input.getPrimaryAudioTrack();
-      if (!audioTrack) {
-        throw new Error("No audio track found");
-      }
-
       const duration = await input.computeDuration();
       setDuration(duration);
 
-      const decoder = await audioTrack.createDecoder();
       let totalSamplesCount = 0;
-      
-      for await (const sample of decoder) {
-        const buffer = sample.toAudioBuffer();
-        totalSamplesCount += buffer.length;
-      }
 
+      const conversion = await Conversion.init({
+        input,
+        output: new Output({
+          format: new Mp3OutputFormat(),
+          target: new BufferTarget(),
+        }),
+        audio: {
+          process: async (sample) => {
+            const buffer = sample.toAudioBuffer();
+            totalSamplesCount += buffer.length;
+            return sample;
+          },
+        },
+      });
+
+      await conversion.execute();
       setTotalSamples(totalSamplesCount);
       setSamplePosition(0);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to analyze audio");
     } finally {
@@ -79,30 +88,34 @@ export default function AudioSampleExtractor() {
         formats: ALL_FORMATS,
       });
 
-      const audioTrack = await input.getPrimaryAudioTrack();
-      if (!audioTrack) {
-        throw new Error("No audio track found");
-      }
-
-      const decoder = await audioTrack.createDecoder();
       let currentSample = 0;
       let foundValue: number | null = null;
 
-      for await (const sample of decoder) {
-        const buffer = sample.toAudioBuffer();
-        if (currentSample + buffer.length > samplePosition) {
-          const offset = samplePosition - currentSample;
-          if (offset < buffer.length) {
-            foundValue = buffer.getChannelData(0)[offset];
-            break;
-          }
-        }
-        currentSample += buffer.length;
-      }
+      const conversion = await Conversion.init({
+        input,
+        output: new Output({
+          format: new Mp3OutputFormat(),
+          target: new BufferTarget(),
+        }),
+        audio: {
+          process: async (sample) => {
+            const buffer = sample.toAudioBuffer();
+            if (currentSample + buffer.length > samplePosition) {
+              const offset = samplePosition - currentSample;
+              if (offset < buffer.length) {
+                foundValue = buffer.getChannelData(0)[offset];
+              }
+            }
+            currentSample += buffer.length;
+            return sample;
+          },
+        },
+      });
 
+      await conversion.execute();
       setSampleValue(foundValue);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to extract sample");
     } finally {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeLinkShortenerSeo from "@/components/seo-content/qr-code-tools/qr-code-link-shortener";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeLinkShortener } from "@/components/qr-code-tools/qr-code-link-shortener.tsx";
+import QrCodeLinkShortener from "@/components/qr-code-tools/qr-code-link-shortener";
 
 export const metadata: Metadata = {
   title: `URL Shortener with QR Code | Short Link & QR`,

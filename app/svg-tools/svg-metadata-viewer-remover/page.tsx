@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SvgMetadataViewerRemoverSeo from "@/components/seo-content/svg-tools/svg-metadata-viewer-remover";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SvgMetadataViewerRemover } from "@/components/svg-tools/svg-metadata-viewer-remover.tsx";
+import SvgMetadataViewerRemover from "@/components/svg-tools/svg-metadata-viewer-remover";
 
 export const metadata: Metadata = {
   title: `SVG Metadata Remover - View & Clean SVG File Info`,

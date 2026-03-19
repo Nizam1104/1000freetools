@@ -3,8 +3,13 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
+  VideoSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -43,7 +48,7 @@ export default function VideoThumbnailGenerator() {
       setDuration(fileDuration);
       setTimestamp(fileDuration * 0.1);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to read video file");
     } finally {
@@ -82,26 +87,38 @@ export default function VideoThumbnailGenerator() {
         throw new Error("Canvas not supported");
       }
 
-      const decoder = await videoTrack.createDecoder();
-      const targetFrame = Math.floor((timestamp / duration) * 10);
-      let frameCount = 0;
+      const targetTimestamp = timestamp * 1000000; // Convert to microseconds
+      let foundFrame = false;
 
-      for await (const sample of decoder) {
-        if (frameCount >= targetFrame) {
-          const image = sample.toImage();
-          if (image) {
-            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-            break;
-          }
-        }
-        frameCount++;
-      }
+      const output = new Output({
+        format: new Mp4OutputFormat(),
+        target: new BufferTarget(),
+      });
+
+      const conversion = await Conversion.init({
+        input,
+        output,
+        video: {
+          process: (sample: VideoSample) => {
+            if (!foundFrame && sample.timestamp >= targetTimestamp) {
+              const image = sample.toCanvasImageSource();
+              if (image) {
+                ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+                foundFrame = true;
+              }
+            }
+            return null;
+          },
+        },
+      });
+
+      await conversion.execute();
 
       const url = canvas.toDataURL("image/jpeg", 0.9);
       setThumbnailUrl(url);
       setProgress(100);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to generate thumbnail");
     } finally {

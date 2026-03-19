@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SampleSizeCalculatorSurveys } from "@/components/statistics-tools/sample-size-calculator-surveys";
+import SampleSizeCalculatorSurveys from "@/components/statistics-tools/sample-size-calculator-surveys";
 import SampleSizeCalculatorSurveysSeo from "@/components/seo-content/statistics-tools/sample-size-calculator-surveys";
 
 export const metadata: Metadata = {

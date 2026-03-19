@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TTestCalculator } from "@/components/statistics-tools/t-test-calculator";
+import TTestCalculator from "@/components/statistics-tools/t-test-calculator";
 import TTestCalculatorSeo from "@/components/seo-content/statistics-tools/t-test-calculator";
 
 export const metadata: Metadata = {

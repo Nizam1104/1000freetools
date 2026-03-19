@@ -33,6 +33,7 @@ export default function PermutationCombinationCalculator() {
   const [r, setR] = useState<number>(3)
   const [withRepetition, setWithRepetition] = useState<boolean>(false)
   const [calculationType, setCalculationType] = useState<"both" | "permutation" | "combination">("both")
+  const [copied, setCopied] = useState<string | null>(null)
 
   const [result, setResult] = useState<{
     permutation?: number

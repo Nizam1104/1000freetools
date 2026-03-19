@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Terminal } from "lucide-react";
 
-export default function JWTToCurlCommandGenerator() {
+export default function JwtToCurlCommandGenerator() {
   const [token, setToken] = useState("");
   const [method, setMethod] = useState("GET");
   const [url, setUrl] = useState("https://api.example.com/endpoint");

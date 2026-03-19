@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import DynamicQrCodeGeneratorSeo from "@/components/seo-content/qr-code-tools/dynamic-qr-code-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { DynamicQrCodeGenerator } from "@/components/qr-code-tools/dynamic-qr-code-generator.tsx";
+import DynamicQrCodeGenerator from "@/components/qr-code-tools/dynamic-qr-code-generator";
 
 export const metadata: Metadata = {
   title: `Dynamic QR Code Generator | Editable & Trackable`,

@@ -64,13 +64,14 @@ export default function VideoMetadataRemover() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "video/mp4" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to remove metadata");
     } finally {

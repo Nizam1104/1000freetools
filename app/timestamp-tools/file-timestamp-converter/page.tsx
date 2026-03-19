@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FileTimestampConverter } from "@/components/timestamp-tools/file-timestamp-converter.tsx";
+import { FileTimestampConverter } from "@/components/timestamp-tools/file-timestamp-converter";
 import FileTimestampConverterSeo from "@/components/seo-content/timestamp-tools/file-timestamp-converter";
 
 export const metadata: Metadata = {

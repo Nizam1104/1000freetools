@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeAnalyticsTrackerSeo from "@/components/seo-content/qr-code-tools/qr-code-analytics-tracker";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeAnalyticsTracker } from "@/components/qr-code-tools/qr-code-analytics-tracker.tsx";
+import { QrCodeAnalyticsTracker } from "@/components/qr-code-tools/qr-code-analytics-tracker";
 
 export const metadata: Metadata = {
   title: `Free QR Code Analytics Tracker | Dynamic QR Code Scanner Stats`,

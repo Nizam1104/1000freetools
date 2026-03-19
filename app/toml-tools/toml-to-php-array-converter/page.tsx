@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToPhpArrayConverter } from "@/components/toml-tools/toml-to-php-array-converter.tsx";
+import TomlToPhpArrayConverter from "@/components/toml-tools/toml-to-php-array-converter";
 import TomlToPhpArrayConverterSeo from "@/components/seo-content/toml-tools/toml-to-php-array-converter";
 
 export const metadata: Metadata = {

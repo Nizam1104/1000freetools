@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import NumberDivisibilityTester from "@/components/number-tools/number-divisibility-tester";
-import NumberDivisibilityTesterSeo from "@/components/seo-content/number-tools/number-divisibility-tester";
 
 export const metadata: Metadata = {
   title: `Divisibility Tester | Check Division Rules`,
@@ -73,12 +72,6 @@ export default function DivisibilityTesterPage() {
       </header>
       <div className="mt-8">
         <NumberDivisibilityTester />
-      </div>
-      <div className="mt-8">
-        <NumberDivisibilityTesterSeo />
-      </div>
-      <div className="mt-16">
-        <DivisibilityTesterSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

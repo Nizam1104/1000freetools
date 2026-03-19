@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { GrayCodeEncoderDecoder } from "@/components/encoding-tools/gray-code-encoder-decoder";
+import GrayCodeEncoderDecoder from "@/components/encoding-tools/gray-code-encoder-decoder";
 import GrayCodeEncoderDecoderSeo from "@/components/seo-content/encoding-tools/gray-code-encoder-decoder";
 
 export const metadata: Metadata = {

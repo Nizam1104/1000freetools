@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import YamlFormatterBeautifierTool from "@/components/yaml-tools/yaml-formatter-beautifier";
+import { YamlFormatterBeautifier } from "@/components/yaml-tools/yaml-formatter-beautifier";
 import YamlFormatterBeautifierSeo from "@/components/seo-content/yaml-tools/yaml-formatter-beautifier";
 
 export const metadata: Metadata = {
@@ -77,7 +77,7 @@ export default function YamlFormatterBeautifierPage() {
         </p>
       </header>
       <div className="mt-8">
-        <YamlFormatterBeautifierTool />
+        <YamlFormatterBeautifier />
       </div>
       <div className="mt-8">
         <YamlFormatterBeautifierSeo />

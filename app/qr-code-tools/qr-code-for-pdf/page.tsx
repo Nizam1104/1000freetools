@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeForPdfSeo from "@/components/seo-content/qr-code-tools/qr-code-for-pdf";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeForPdf } from "@/components/qr-code-tools/qr-code-for-pdf.tsx";
+import { QrCodeForPdf } from "@/components/qr-code-tools/qr-code-for-pdf";
 
 export const metadata: Metadata = {
   title: `QR Code for PDF | Link PDF File via QR Code`,

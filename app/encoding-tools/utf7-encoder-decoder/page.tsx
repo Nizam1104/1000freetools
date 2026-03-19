@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { Utf7EncoderDecoder } from "@/components/encoding-tools/utf7-encoder-decoder";
+import Utf7EncoderDecoder from "@/components/encoding-tools/utf7-encoder-decoder";
 import Utf7EncoderDecoderSeo from "@/components/seo-content/encoding-tools/utf7-encoder-decoder";
 
 export const metadata: Metadata = {

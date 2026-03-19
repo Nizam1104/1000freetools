@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeWithLogoGeneratorSeo from "@/components/seo-content/qr-code-tools/qr-code-with-logo-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeWithLogoGenerator } from "@/components/qr-code-tools/qr-code-with-logo-generator.tsx";
+import { QrCodeWithLogoGenerator } from "@/components/qr-code-tools/qr-code-with-logo-generator";
 
 export const metadata: Metadata = {
   title: `Free QR Code with Logo Generator | Custom Branded Codes`,

@@ -31,10 +31,11 @@ const normalQuantile = (p: number): number => {
 export default function NormalDistributionCalculator() {
   const [mean, setMean] = useState<number>(100)
   const [stdDev, setStdDev] = useState<number>(15)
-  const [calculationType, setCalculationType] = useState<"between" | "above" | "below" | "outside">("between")
+  const [calculationType, setCalculationType] = useState<"between" | "above" | "below" | "outside" | "percentile">("between")
   const [x1, setX1] = useState<number>(85)
   const [x2, setX2] = useState<number>(115)
   const [percentile, setPercentile] = useState<number>(95)
+  const [copied, setCopied] = useState<string | null>(null)
 
   const [result, setResult] = useState<{
     probability: number

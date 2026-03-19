@@ -34,26 +34,29 @@ export default function AudioCoverArtExtractor() {
       });
 
       const tags = await input.getMetadataTags();
-      
-      if (tags.picture) {
-        const pictureData = tags.picture;
+
+      if (tags.images && tags.images.length > 0) {
+        const pictureData = tags.images[0];
         let mimeType = "image/jpeg";
-        
+
         if (typeof pictureData === "object" && pictureData !== null) {
           const picObj = pictureData as { data?: ArrayBuffer | Uint8Array; type?: string; format?: string };
           if (picObj.type) mimeType = picObj.type;
           if (picObj.format) mimeType = `image/${picObj.format}`;
-          
-          let uint8Array: Uint8Array;
+
+          let arrayBuffer: ArrayBuffer;
           if (picObj.data instanceof Uint8Array) {
-            uint8Array = picObj.data;
+            // Copy the data to a new ArrayBuffer to avoid SharedArrayBuffer issues
+            const copiedData = new Uint8Array(picObj.data.length);
+            copiedData.set(picObj.data);
+            arrayBuffer = copiedData.buffer;
           } else if (picObj.data instanceof ArrayBuffer) {
-            uint8Array = new Uint8Array(picObj.data);
+            arrayBuffer = picObj.data;
           } else {
             throw new Error("Invalid picture data format");
           }
-          
-          const blob = new Blob([uint8Array], { type: mimeType });
+
+          const blob = new Blob([arrayBuffer], { type: mimeType });
           const url = URL.createObjectURL(blob);
           setCoverArtUrl(url);
         }
@@ -61,7 +64,7 @@ export default function AudioCoverArtExtractor() {
         setError("No cover art found in this audio file");
       }
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to extract cover art");
     } finally {

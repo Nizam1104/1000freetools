@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownWordCounter } from "@/components/markdown-tools/markdown-word-counter.tsx";
+import { MarkdownWordCounter } from "@/components/markdown-tools/markdown-word-counter";
 import MarkdownWordCounterSeo from "@/components/seo-content/markdown-tools/markdown-word-counter";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlToHtmlTable } from "@/components/yaml-tools/yaml-to-html-table.tsx";
+import { YamlToHtmlTable } from "@/components/yaml-tools/yaml-to-html-table";
 import YamlToHtmlTableSeo from "@/components/seo-content/yaml-tools/yaml-to-html-table";
 
 export const metadata: Metadata = {

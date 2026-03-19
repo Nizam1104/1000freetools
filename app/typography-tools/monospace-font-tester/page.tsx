@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MonospaceFontTester } from "@/components/font-tools/monospace-font-tester.tsx";
+import MonospaceFontTester from "@/components/font-tools/monospace-font-tester";
 import MonospaceFontTesterSeo from "@/components/seo-content/typography-tools/monospace-font-tester";
 
 export const metadata: Metadata = {

@@ -24,6 +24,7 @@ export default function FiscalYearCalendar() {
   const [fiscalStartMonth, setFiscalStartMonth] = useState<number>(10)
   const [fiscalStartDay, setFiscalStartDay] = useState<number>(1)
   const [preset, setPreset] = useState<string>("US Federal")
+  const [copied, setCopied] = useState<string | null>(null)
 
   const fiscalInfo = useMemo(() => {
     const fiscalYearStart = new Date(selectedYear, fiscalStartMonth - 1, fiscalStartDay)

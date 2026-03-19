@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import RealTimeMinifierSeo from "@/components/seo-content/minifier-tools/real-time-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { RealTimeMinifier } from "@/components/minifier-tools/real-time-minifier.tsx";
+import RealTimeMinifier from "@/components/minifier-tools/real-time-minifier";
 
 export const metadata: Metadata = {
   title: `Real-time Minifier - Live Code Compression`,

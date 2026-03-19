@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { PValueCalculator } from "@/components/statistics-tools/p-value-calculator";
+import PValueCalculator from "@/components/statistics-tools/p-value-calculator";
 import PValueCalculatorSeo from "@/components/seo-content/statistics-tools/p-value-calculator";
 
 export const metadata: Metadata = {

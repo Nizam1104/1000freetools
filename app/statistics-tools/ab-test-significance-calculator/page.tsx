@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { AbTestSignificanceCalculator } from "@/components/statistics-tools/ab-test-significance-calculator";
+import AbTestSignificanceCalculator from "@/components/statistics-tools/ab-test-significance-calculator";
 import AbTestSignificanceCalculatorSeo from "@/components/seo-content/statistics-tools/ab-test-significance-calculator";
 
 export const metadata: Metadata = {

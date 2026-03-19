@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { PhotoelectricEffectCalculator } from "@/components/physics-tools/photoelectric-effect-calculator";
+import PhotoelectricEffectCalculator from "@/components/physics-tools/photoelectric-effect-calculator";
 import PhotoelectricEffectCalculatorSeo from "@/components/seo-content/physics-tools/photoelectric-effect-calculator";
 
 export const metadata: Metadata = {

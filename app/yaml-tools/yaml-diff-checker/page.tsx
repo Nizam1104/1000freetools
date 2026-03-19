@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlDiffChecker } from "@/components/yaml-tools/yaml-diff-checker.tsx";
+import { YamlDiffChecker } from "@/components/yaml-tools/yaml-diff-checker";
 import YamlDiffCheckerSeo from "@/components/seo-content/yaml-tools/yaml-diff-checker";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { DatePatternFinder } from "@/components/date-time-tools/date-pattern-finder.tsx";
+import { DatePatternFinder } from "@/components/date-time-tools/date-pattern-finder";
 import DatePatternFinderSeo from "@/components/seo-content/date-time-tools/date-pattern-finder";
 
 export const metadata: Metadata = {

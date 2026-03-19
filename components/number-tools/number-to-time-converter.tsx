@@ -96,9 +96,9 @@ const NumberToTimeConverter: React.FC = () => {
 
   const handleCopy = useCallback(() => {
     if (converted) {
-      const text = outputFormat === "all" 
+      const text = outputFormat === "all"
         ? `Human: ${converted.human}\nDigital: ${converted.digital}\nISO 8601: ${converted.iso}`
-        : converted[outputFormat as keyof typeof converted];
+        : converted[outputFormat as keyof typeof converted] as string;
       navigator.clipboard.writeText(text);
     }
   }, [converted, outputFormat]);

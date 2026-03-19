@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import JwtTokenLifespanRenewalSimulatorSeo from "@/components/seo-content/jwt-tools/jwt-token-lifespan-renewal-simulator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtTokenLifespanRenewalSimulator } from "@/components/jwt-tools/jwt-token-lifespan-renewal-simulator.tsx";
+import { JwtTokenLifespanRenewalSimulator } from "@/components/jwt-tools/jwt-token-lifespan-renewal-simulator";
 
 export const metadata: Metadata = {
   title: `JWT Lifespan Simulator | Plan Token Expiry & Renewal`,
@@ -74,7 +73,6 @@ export default function JwtTokenLifespanRenewalSimulatorPage() {
       </header>
       {<JwtTokenLifespanRenewalSimulator />}
       <div className="mt-16">
-        <JwtTokenLifespanRenewalSimulatorSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

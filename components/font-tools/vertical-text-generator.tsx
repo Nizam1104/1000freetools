@@ -10,8 +10,8 @@ import { Copy, Check, Type, ArrowDownToLine } from "lucide-react";
 
 export default function VerticalTextGenerator() {
   const [text, setText] = useState("Vertical Text");
-  const [writingMode, setWritingMode] = useState("vertical-rl");
-  const [textOrientation, setTextOrientation] = useState("mixed");
+  const [writingMode, setWritingMode] = useState<"vertical-rl" | "vertical-lr" | "horizontal-tb">("vertical-rl");
+  const [textOrientation, setTextOrientation] = useState<"mixed" | "upright" | "sideways">("mixed");
   const [fontSize, setFontSize] = useState("32");
   const [fontWeight, setFontWeight] = useState("400");
   const [fontFamily, setFontFamily] = useState("Arial");
@@ -67,7 +67,7 @@ export default function VerticalTextGenerator() {
               <select
                 id="writingMode"
                 value={writingMode}
-                onChange={(e) => setWritingMode(e.target.value)}
+                onChange={(e) => setWritingMode(e.target.value as "vertical-rl" | "vertical-lr" | "horizontal-tb")}
                 className="w-full mt-1 p-2 border rounded-md bg-background"
               >
                 <option value="vertical-rl">Vertical Right-to-Left (Traditional)</option>
@@ -81,7 +81,7 @@ export default function VerticalTextGenerator() {
               <select
                 id="textOrientation"
                 value={textOrientation}
-                onChange={(e) => setTextOrientation(e.target.value)}
+                onChange={(e) => setTextOrientation(e.target.value as "mixed" | "upright" | "sideways")}
                 className="w-full mt-1 p-2 border rounded-md bg-background"
               >
                 <option value="mixed">Mixed (Auto)</option>

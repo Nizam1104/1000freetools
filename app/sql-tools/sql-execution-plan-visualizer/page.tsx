@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlExecutionPlanVisualizer } from "@/components/sql-tools/sql-execution-plan-visualizer.tsx";
+import { SqlExecutionPlanVisualizer } from "@/components/sql-tools/sql-execution-plan-visualizer";
 import SqlExecutionPlanVisualizerSeo from "@/components/seo-content/sql-tools/sql-execution-plan-visualizer";
 
 export const metadata: Metadata = {

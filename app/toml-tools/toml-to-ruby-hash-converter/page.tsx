@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TomlToRubyHashConverter } from "@/components/toml-tools/toml-to-ruby-hash-converter";
+import TomlToRubyHashConverter from "@/components/toml-tools/toml-to-ruby-hash-converter";
 import TomlToRubyHashConverterSeo from "@/components/seo-content/toml-tools/toml-to-ruby-hash-converter";
 
 export const metadata: Metadata = {

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SvgMinifierSeo from "@/components/seo-content/minifier-tools/svg-minifier";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import { SvgMinifier } from "@/components/minifier-tools/svg-minifier";
@@ -74,7 +73,6 @@ export default function SvgMinifierPage() {
       </header>
       {<SvgMinifier />}
       <div className="mt-16">
-        <SvgMinifierSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

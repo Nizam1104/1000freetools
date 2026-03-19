@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlToGoStruct } from "@/components/yaml-tools/yaml-to-go-struct.tsx";
+import { YamlToGoStruct } from "@/components/yaml-tools/yaml-to-go-struct";
 import YamlToGoStructSeo from "@/components/seo-content/yaml-tools/yaml-to-go-struct";
 
 export const metadata: Metadata = {

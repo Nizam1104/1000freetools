@@ -40,10 +40,10 @@ export default function HexToDecimalConverter() {
 
   const decimalToHex = useCallback((decimal: string): string => {
     const num = BigInt(decimal)
-    if (num < 0n) {
+    if (num < BigInt(0)) {
       // Convert to two's complement
-      const bits = 64n
-      const maxVal = 1n << bits
+      const bits = BigInt(64)
+      const maxVal = BigInt(1) << bits
       const twosComplement = maxVal + num
       return "0x" + twosComplement.toString(16).toUpperCase().padStart(16, "0")
     }

@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, ArrowRightLeft } from "lucide-react";
 
-export default function JWTBase64URLEncoderDecoder() {
+export default function JwtBase64UrlEncoderDecoder() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState<"encode" | "decode">("encode");

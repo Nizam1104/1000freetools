@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TimezoneDatabaseIanaLookupSeo from "@/components/seo-content/timezone-tools/timezone-database-iana-lookup";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TimezoneDatabaseIanaLookup } from "@/components/timezone-tools/timezone-database-iana-lookup.tsx";
+import TimezoneDatabaseIanaLookup from "@/components/timezone-tools/timezone-database-iana-lookup";
 
 export const metadata: Metadata = {
   title: `IANA Time Zone Lookup | Olson Time Zone Database`,

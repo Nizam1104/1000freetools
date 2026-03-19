@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SimpleHarmonicMotionCalculator } from "@/components/physics-tools/simple-harmonic-motion-calculator";
+import SimpleHarmonicMotionCalculator from "@/components/physics-tools/simple-harmonic-motion-calculator";
 import SimpleHarmonicMotionCalculatorSeo from "@/components/seo-content/physics-tools/simple-harmonic-motion-calculator";
 
 export const metadata: Metadata = {

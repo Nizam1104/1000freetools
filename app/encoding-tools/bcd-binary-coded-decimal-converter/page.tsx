@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BcdBinaryCodedDecimalConverter } from "@/components/encoding-tools/bcd-binary-coded-decimal-converter";
+import BcdBinaryCodedDecimalConverter from "@/components/encoding-tools/bcd-binary-coded-decimal-converter";
 import BcdBinaryCodedDecimalConverterSeo from "@/components/seo-content/encoding-tools/bcd-binary-coded-decimal-converter";
 
 export const metadata: Metadata = {

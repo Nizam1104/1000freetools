@@ -67,14 +67,14 @@ const base58Decode = (str: string): number[] | null => {
 const base58Encode = (bytes: number[]): string => {
   let num = BigInt(0)
   for (const byte of bytes) {
-    num = num * 256n + BigInt(byte)
+    num = num * BigInt(256) + BigInt(byte)
   }
 
   let result = ""
-  while (num > 0n) {
-    const remainder = Number(num % 58n)
+  while (num > BigInt(0)) {
+    const remainder = Number(num % BigInt(58))
     result = BASE58_ALPHABET[remainder] + result
-    num = num / 58n
+    num = num / BigInt(58)
   }
 
   // Add leading '1's for leading zeros

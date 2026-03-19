@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontWeightTester } from "@/components/font-tools/font-weight-tester.tsx";
+import FontWeightTester from "@/components/font-tools/font-weight-tester";
 import FontWeightTesterSeo from "@/components/seo-content/typography-tools/font-weight-tester";
 
 export const metadata: Metadata = {

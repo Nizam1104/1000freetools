@@ -68,7 +68,7 @@ export default function VideoResolutionAnalyzer() {
         codec: videoTrack.codec || "Unknown",
       });
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to analyze resolution");
     } finally {

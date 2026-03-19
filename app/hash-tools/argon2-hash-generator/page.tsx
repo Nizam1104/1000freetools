@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { Argon2HashGenerator } from "@/components/hash-tools/argon2-hash-generator.tsx";
+import Argon2HashGenerator from "@/components/hash-tools/argon2-hash-generator";
 import Argon2HashGeneratorSeo from "@/components/seo-content/hash-tools/argon2-hash-generator";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HexDiffCompareTool } from "@/components/hex-tools/hex-diff-compare-tool.tsx";
+import { HexDiffCompareTool } from "@/components/hex-tools/hex-diff-compare-tool";
 import HexDiffCompareToolSeo from "@/components/seo-content/hex-tools/hex-diff-compare-tool";
 
 export const metadata: Metadata = {

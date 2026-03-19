@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import JavascriptColorConverterPickerSeo from "@/components/seo-content/javascript-tools/javascript-color-converter-picker";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptColorConverter from "@/components/javascript-tools/javascript-color-converter";
@@ -74,9 +73,6 @@ export default function JavascriptColorConverterPickerPage() {
       </header>
       <div className="mt-8">
         <JavascriptColorConverter />
-      </div>
-      <div className="mt-16">
-        <JavascriptColorConverterPickerSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -53,29 +53,29 @@ export default function BinaryChecksumHashGenerator() {
       crc = table[(crc ^ data[i]) & 0xFF] ^ (crc >>> 8)
     }
 
-    return (crc ^ 0xFFFFFFFF) >>> 0
+    return String((crc ^ 0xFFFFFFFF) >>> 0)
   }, [])
 
   const md5 = useCallback(async (data: Uint8Array): Promise<string> => {
-    const hashBuffer = await crypto.subtle.digest("MD5", data)
+    const hashBuffer = await crypto.subtle.digest("MD5", data.buffer as ArrayBuffer)
     const hashArray = Array.from(new Uint8Array(hashBuffer))
     return hashArray.map(b => b.toString(16).padStart(2, "0")).join("")
   }, [])
 
   const sha1 = useCallback(async (data: Uint8Array): Promise<string> => {
-    const hashBuffer = await crypto.subtle.digest("SHA-1", data)
+    const hashBuffer = await crypto.subtle.digest("SHA-1", data.buffer as ArrayBuffer)
     const hashArray = Array.from(new Uint8Array(hashBuffer))
     return hashArray.map(b => b.toString(16).padStart(2, "0")).join("")
   }, [])
 
   const sha256 = useCallback(async (data: Uint8Array): Promise<string> => {
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data)
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data.buffer as ArrayBuffer)
     const hashArray = Array.from(new Uint8Array(hashBuffer))
     return hashArray.map(b => b.toString(16).padStart(2, "0")).join("")
   }, [])
 
   const sha512 = useCallback(async (data: Uint8Array): Promise<string> => {
-    const hashBuffer = await crypto.subtle.digest("SHA-512", data)
+    const hashBuffer = await crypto.subtle.digest("SHA-512", data.buffer as ArrayBuffer)
     const hashArray = Array.from(new Uint8Array(hashBuffer))
     return hashArray.map(b => b.toString(16).padStart(2, "0")).join("")
   }, [])
@@ -85,7 +85,8 @@ export default function BinaryChecksumHashGenerator() {
       setError(null)
 
       // Compute CRC32 synchronously
-      const crcValue = crc32(data).toString(16).padStart(8, "0")
+      const crcValueNum = parseInt(crc32(data), 10) >>> 0
+      const crcValue = crcValueNum.toString(16).padStart(8, "0")
       setChecksumResult(crcValue)
 
       // Compute selected hash

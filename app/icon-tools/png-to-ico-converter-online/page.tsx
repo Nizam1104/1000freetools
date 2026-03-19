@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { PngToIcoConverterOnline } from "@/components/icon-tools/png-to-ico-converter-online";
+import PngToIcoConverterOnline from "@/components/icon-tools/png-to-ico-converter-online";
 import PngToIcoConverterOnlineSeo from "@/components/seo-content/icon-tools/png-to-ico-converter-online";
 
 export const metadata: Metadata = {

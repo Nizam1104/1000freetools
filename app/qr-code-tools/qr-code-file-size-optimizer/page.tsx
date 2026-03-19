@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeFileSizeOptimizerSeo from "@/components/seo-content/qr-code-tools/qr-code-file-size-optimizer";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeFileSizeOptimizer } from "@/components/qr-code-tools/qr-code-file-size-optimizer.tsx";
+import QrCodeFileSizeOptimizer from "@/components/qr-code-tools/qr-code-file-size-optimizer";
 
 export const metadata: Metadata = {
   title: `Free QR Code File Size Optimizer | Compress QR Code Images`,

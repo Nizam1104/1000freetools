@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeAppStore } from "@/components/qr-code-tools/qr-code-app-store.tsx";
+import { QrCodeAppStore } from "@/components/qr-code-tools/qr-code-app-store";
 import QrCodeAppStoreSeo from "@/components/seo-content/qr-code-tools/qr-code-app-store";
 
 export const metadata: Metadata = {

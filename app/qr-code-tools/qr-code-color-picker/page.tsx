@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeColorPickerSeo from "@/components/seo-content/qr-code-tools/qr-code-color-picker";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeColorPicker } from "@/components/qr-code-tools/qr-code-color-picker.tsx";
+import { QrCodeColorPicker } from "@/components/qr-code-tools/qr-code-color-picker";
 
 export const metadata: Metadata = {
   title: `QR Code Designer | Custom Colors, Patterns & Gradients`,

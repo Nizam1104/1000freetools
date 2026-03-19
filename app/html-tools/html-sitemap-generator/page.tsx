@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlSitemapGeneratorTool from "@/components/html-tools/html-sitemap-generator";
+import { HtmlSitemapGenerator } from "@/components/html-tools/html-sitemap-generator";
 import HtmlSitemapGeneratorSEO from "@/components/seo-content/html-tools/html-sitemap-generator";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HtmlSitemapGeneratorPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlSitemapGeneratorTool />
+        <HtmlSitemapGenerator />
       </div>
       <div className="mt-8">
         <HtmlSitemapGeneratorSEO />

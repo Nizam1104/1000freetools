@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HexToFloatDoubleConverter } from "@/components/hex-tools/hex-to-float-double-converter.tsx";
+import { HexToFloatDoubleConverter } from "@/components/hex-tools/hex-to-float-double-converter";
 import HexToFloatDoubleConverterSeo from "@/components/seo-content/hex-tools/hex-to-float-double-converter";
 
 export const metadata: Metadata = {

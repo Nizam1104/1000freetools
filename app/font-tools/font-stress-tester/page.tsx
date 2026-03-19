@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import FontStressTesterSeo from "@/components/seo-content/font-tools/font-stress-tester";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontStressTester } from "@/components/font-tools/font-stress-tester.tsx";
+import FontStressTester from "@/components/font-tools/font-stress-tester";
 
 export const metadata: Metadata = {
   title: `Font Stress Test | Rendering Performance Check`,
@@ -73,9 +72,6 @@ export default function FontStressTesterPage() {
         <p className="text-muted-foreground">Test fonts in extreme conditions to find rendering issues. Check performance at different sizes, weights, and languages.</p>
       </header>
       {<FontStressTester />}
-      <div className="mt-16">
-        <FontStressTesterSeo />
-      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

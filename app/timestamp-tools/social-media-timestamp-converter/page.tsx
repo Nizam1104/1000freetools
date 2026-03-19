@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SocialMediaTimestampConverter } from "@/components/timestamp-tools/social-media-timestamp-converter.tsx";
+import { SocialMediaTimestampConverter } from "@/components/timestamp-tools/social-media-timestamp-converter";
 import SocialMediaTimestampConverterSeo from "@/components/seo-content/timestamp-tools/social-media-timestamp-converter";
 
 export const metadata: Metadata = {

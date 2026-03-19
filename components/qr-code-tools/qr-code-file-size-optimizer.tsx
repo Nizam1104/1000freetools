@@ -34,7 +34,7 @@ const QrCodeFileSizeOptimizer: React.FC = () => {
     
     // Simulate size calculation based on data length and settings
     const baseSize = qrData.length * 100;
-    const ecMultiplier = { L: 0.8, M: 1, Q: 1.2, H: 1.4 }[errorCorrectionLevel];
+    const ecMultiplier = { L: 0.8, M: 1, Q: 1.2, H: 1.4 }[errorCorrectionLevel] ?? 1;
     const scaleMultiplier = scale / 8;
     const qualityMultiplier = quality / 100;
     

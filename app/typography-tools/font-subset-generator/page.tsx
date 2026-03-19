@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontSubsetGenerator } from "@/components/font-tools/font-subset-generator.tsx";
+import { FontSubsetGenerator } from "@/components/font-tools/font-subset-generator";
 import FontSubsetGeneratorSeo from "@/components/seo-content/typography-tools/font-subset-generator";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { StatisticalPowerCalculator } from "@/components/statistics-tools/statistical-power-calculator";
+import StatisticalPowerCalculator from "@/components/statistics-tools/statistical-power-calculator";
 import StatisticalPowerCalculatorSeo from "@/components/seo-content/statistics-tools/statistical-power-calculator";
 
 export const metadata: Metadata = {

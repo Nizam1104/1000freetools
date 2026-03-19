@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BarcodeToCsv } from "@/components/barcode-tools/barcode-to-csv.tsx";
+import BarcodeToCsv from "@/components/barcode-tools/barcode-to-csv";
 import BarcodeToCsvSeo from "@/components/seo-content/barcode-tools/barcode-to-csv";
 
 export const metadata: Metadata = {

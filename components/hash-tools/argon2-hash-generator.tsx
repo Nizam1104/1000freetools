@@ -135,9 +135,9 @@ export default function Argon2HashGenerator() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              type={showPassword ? "text" : "password"}
               className="font-mono text-sm min-h-[80px] pr-20"
               placeholder="Enter password to hash..."
+              style={{ textTransform: showPassword ? 'none' : 'none' }}
             />
             <div className="absolute top-2 right-2 flex gap-2">
               <Button

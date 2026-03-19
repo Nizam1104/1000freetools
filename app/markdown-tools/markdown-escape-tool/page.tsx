@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownEscapeTool } from "@/components/markdown-tools/markdown-escape-tool.tsx";
+import { MarkdownEscapeTool } from "@/components/markdown-tools/markdown-escape-tool";
 import MarkdownEscapeToolSeo from "@/components/seo-content/markdown-tools/markdown-escape-tool";
 
 export const metadata: Metadata = {

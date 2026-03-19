@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlToSqlInsert } from "@/components/yaml-tools/yaml-to-sql-insert.tsx";
+import { YamlToSqlInsert } from "@/components/yaml-tools/yaml-to-sql-insert";
 import YamlToSqlInsertSeo from "@/components/seo-content/yaml-tools/yaml-to-sql-insert";
 
 export const metadata: Metadata = {

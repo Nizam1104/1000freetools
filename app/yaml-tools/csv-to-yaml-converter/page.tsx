@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CsvToYamlConverter } from "@/components/yaml-tools/csv-to-yaml-converter.tsx";
+import { CsvToYamlConverter } from "@/components/yaml-tools/csv-to-yaml-converter";
 import CsvToYamlConverterSeo from "@/components/seo-content/yaml-tools/csv-to-yaml-converter";
 
 export const metadata: Metadata = {

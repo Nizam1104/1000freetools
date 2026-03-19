@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownFrontMatterEditor } from "@/components/markdown-tools/markdown-front-matter-editor.tsx";
+import { MarkdownFrontMatterEditor } from "@/components/markdown-tools/markdown-front-matter-editor";
 import MarkdownFrontMatterEditorSeo from "@/components/seo-content/markdown-tools/markdown-front-matter-editor";
 
 export const metadata: Metadata = {

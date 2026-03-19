@@ -9,19 +9,23 @@ import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Copy, Check, Trash2, Info, Download } from "lucide-react"
 
+const DEFAULT_XMLINPUT = [
+  '<data>',
+  '  <row>',
+  '    <name>Product A</name>',
+  '    <price>$10.00</price>',
+  '    <quantity>100</quantity>',
+  '  </row>',
+  '  <row>',
+  '    <name>Product B</name>',
+  '    <price>$20.00</price>',
+  '    <quantity>50</quantity>',
+  '  </row>',
+  '</data>',
+].join('\n')
+
 export default function XmlToHtmlTableConverter() {
-  const [xmlInput, setXmlInput] = useState<string(`<data>
-  <row>
-    <name>Product A</name>
-    <price>$10.00</price>
-    <quantity>100</quantity>
-  </row>
-  <row>
-    <name>Product B</name>
-    <price>$20.00</price>
-    <quantity>50</quantity>
-  </row>
-</data>`)}
+  const [xmlInput, setXmlInput] = useState<string>(DEFAULT_XMLINPUT)
   const [rowElement, setRowElement] = useState<string>("row")
   const [includeStyles, setIncludeStyles] = useState<boolean>(true)
   const [responsive, setResponsive] = useState<boolean>(true)

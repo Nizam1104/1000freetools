@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeFrameBorderDesignerSeo from "@/components/seo-content/qr-code-tools/qr-code-frame-border-designer";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeFrameBorderDesigner } from "@/components/qr-code-tools/qr-code-frame-border-designer.tsx";
+import QrCodeFrameBorderDesigner from "@/components/qr-code-tools/qr-code-frame-border-designer";
 
 export const metadata: Metadata = {
   title: `Free QR Code Frame & Border Designer | Custom QR Code Styles`,

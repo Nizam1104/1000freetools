@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { NtlmHashGeneratorCracker } from "@/components/hash-tools/ntlm-hash-generator-cracker.tsx";
+import NtlmHashGeneratorCracker from "@/components/hash-tools/ntlm-hash-generator-cracker";
 import NtlmHashGeneratorCrackerSeo from "@/components/seo-content/hash-tools/ntlm-hash-generator-cracker";
 
 export const metadata: Metadata = {

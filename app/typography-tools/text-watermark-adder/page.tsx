@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TextWatermarkAdder } from "@/components/text-tools/text-watermark-adder.tsx";
+import { TextWatermarkAdder } from "@/components/text-tools/text-watermark-adder";
 import TextWatermarkAdderSeo from "@/components/seo-content/typography-tools/text-watermark-adder";
 
 export const metadata: Metadata = {

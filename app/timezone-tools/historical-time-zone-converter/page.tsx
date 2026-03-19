@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HistoricalTimeZoneConverterSeo from "@/components/seo-content/timezone-tools/historical-time-zone-converter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HistoricalTimeZoneConverter } from "@/components/timezone-tools/historical-time-zone-converter";
+import HistoricalTimeZoneConverter from "@/components/timezone-tools/historical-time-zone-converter";
 
 export const metadata: Metadata = {
   title: `Historical Time Zone Converter | Past Date Time Tool`,

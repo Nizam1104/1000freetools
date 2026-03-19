@@ -22,7 +22,8 @@ const normalQuantile = (p: number): number => {
 
 export default function SampleSizeCalculatorSurveys() {
   const [calculationType, setCalculationType] = useState<"proportion" | "mean" | "compare">("proportion")
-  
+  const [copied, setCopied] = useState<string | null>(null)
+
   // For proportion
   const [marginOfError, setMarginOfError] = useState<number>(0.05)
   const [confidenceLevel, setConfidenceLevel] = useState<number>(0.95)

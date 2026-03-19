@@ -101,7 +101,7 @@ export default function TomlToPropertiesConverterSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">How do I load properties in Java?</h3>
             <p className="text-sm text-muted-foreground">
-              Use Properties props = new Properties(); props.load(inputStream);. Then access with props.getProperty("key"). Spring injects @Value("${key}").
+              Use {"Properties props = new Properties(); props.load(inputStream);"}. Then access with {"props.getProperty(\"key\")"}. Spring injects {"@Value(\"${key}\")"}.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

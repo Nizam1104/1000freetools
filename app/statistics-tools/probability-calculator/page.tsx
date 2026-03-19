@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { ProbabilityCalculator } from "@/components/statistics-tools/probability-calculator";
+import ProbabilityCalculator from "@/components/statistics-tools/probability-calculator";
 import ProbabilityCalculatorSeo from "@/components/seo-content/statistics-tools/probability-calculator";
 
 export const metadata: Metadata = {

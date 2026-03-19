@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import UuidVersionConverterSeo from "@/components/seo-content/uuid-tools/uuid-version-converter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { UuidVersionConverter } from "@/components/uuid-tools/uuid-version-converter.tsx";
+import UuidVersionConverter from "@/components/uuid-tools/uuid-version-converter";
 
 export const metadata: Metadata = {
   title: `UUID Version Converter | Generate v3/v5 UUIDs`,

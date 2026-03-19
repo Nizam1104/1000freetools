@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TextToAsciiArtGenerator } from "@/components/text-tools/text-to-ascii-art-generator.tsx";
+import { TextToAsciiArtGenerator } from "@/components/text-tools/text-to-ascii-art-generator";
 import TextToAsciiArtGeneratorSeo from "@/components/seo-content/typography-tools/text-to-ascii-art-generator";
 
 export const metadata: Metadata = {

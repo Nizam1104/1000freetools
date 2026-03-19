@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtBase64UrlEncoderDecoderSeo from "@/components/seo-content/jwt-tools/jwt-base64-url-encoder-decoder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtBase64UrlEncoderDecoder } from "@/components/jwt-tools/jwt-base64-url-encoder-decoder.tsx";
+import JwtBase64UrlEncoderDecoder from "@/components/jwt-tools/jwt-base64-url-encoder-decoder";
 
 export const metadata: Metadata = {
   title: `JWT Base64Url Encoder/Decoder | Encode Token Parts`,

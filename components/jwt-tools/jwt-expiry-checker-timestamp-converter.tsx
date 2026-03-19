@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Clock, AlertTriangle } from "lucide-react";
 
-export default function JWTExpiryCheckerTimestampConverter() {
+export default function JwtExpiryCheckerTimestampConverter() {
   const [token, setToken] = useState("");
   const [expiryInfo, setExpiryInfo] = useState<{
     exp?: number;

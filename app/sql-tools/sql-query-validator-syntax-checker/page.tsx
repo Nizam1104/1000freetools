@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlQueryValidatorSyntaxChecker } from "@/components/sql-tools/sql-query-validator-syntax-checker.tsx";
+import { SqlQueryValidatorSyntaxChecker } from "@/components/sql-tools/sql-query-validator-syntax-checker";
 import SqlQueryValidatorSyntaxCheckerSeo from "@/components/seo-content/sql-tools/sql-query-validator-syntax-checker";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { LeapYearTimestampCalculator } from "@/components/timestamp-tools/leap-year-timestamp-calculator.tsx";
+import { LeapYearTimestampCalculator } from "@/components/timestamp-tools/leap-year-timestamp-calculator";
 import LeapYearTimestampCalculatorSeo from "@/components/seo-content/timestamp-tools/leap-year-timestamp-calculator";
 
 export const metadata: Metadata = {

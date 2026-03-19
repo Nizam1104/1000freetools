@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtClaimExtractorFormatterSeo from "@/components/seo-content/jwt-tools/jwt-claim-extractor-formatter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtClaimExtractorFormatter } from "@/components/jwt-tools/jwt-claim-extractor-formatter.tsx";
+import JwtClaimExtractorFormatter from "@/components/jwt-tools/jwt-claim-extractor-formatter";
 
 export const metadata: Metadata = {
   title: `JWT Claim Extractor | View & Format Token Claims`,

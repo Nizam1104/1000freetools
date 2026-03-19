@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { LineHeightGenerator } from "@/components/font-tools/line-height-generator";
+import LineHeightGenerator from "@/components/font-tools/line-height-generator";
 import LineHeightGeneratorSeo from "@/components/seo-content/typography-tools/line-height-generator";
 
 export const metadata: Metadata = {

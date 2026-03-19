@@ -107,7 +107,7 @@ export default function TomlToRustStructGeneratorSeo() {
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What crates do I need?</h3>
             <p className="text-sm text-muted-foreground">
-              Add to Cargo.toml: serde = { version = "1", features = ["derive"] }, toml = "0.8". These provide serialization traits and TOML parsing.
+              Add to Cargo.toml: {"serde = { version = \"1\", features = [\"derive\"] }"}, {"toml = \"0.8\""}. These provide serialization traits and TOML parsing.
             </p>
           </div>
           <div className="rounded-lg border bg-muted/30 p-4">

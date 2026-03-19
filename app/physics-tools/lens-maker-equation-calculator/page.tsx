@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { LensMakerEquationCalculator } from "@/components/physics-tools/lens-maker-equation-calculator";
+import LensMakerEquationCalculator from "@/components/physics-tools/lens-maker-equation-calculator";
 import LensMakerEquationCalculatorSeo from "@/components/seo-content/physics-tools/lens-maker-equation-calculator";
 
 export const metadata: Metadata = {

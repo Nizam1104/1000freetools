@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import UuidRegexTesterSeo from "@/components/seo-content/uuid-tools/uuid-regex-tester";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { UuidRegexTester } from "@/components/uuid-tools/uuid-regex-tester.tsx";
+import { UuidRegexTester } from "@/components/uuid-tools/uuid-regex-tester";
 
 export const metadata: Metadata = {
   title: `UUID Regex Tester | Generate Regex for UUIDs`,

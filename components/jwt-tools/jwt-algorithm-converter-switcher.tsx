@@ -9,7 +9,7 @@ import { Copy, Check, Key, RefreshCw } from "lucide-react";
 
 const algorithms = ["HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512", "none"];
 
-export default function JWTAlgorithmConverterSwitcher() {
+export default function JwtAlgorithmConverterSwitcher() {
   const [token, setToken] = useState("");
   const [currentAlgorithm, setCurrentAlgorithm] = useState("HS256");
   const [targetAlgorithm, setTargetAlgorithm] = useState("HS512");

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import NumberToScientificNotationConverter from "@/components/number-tools/number-to-scientific-notation-converter";
-import NumberToScientificNotationConverterSeo from "@/components/seo-content/number-tools/number-to-scientific-notation-converter";
 
 export const metadata: Metadata = {
   title: `Scientific Notation Converter | Free Online Tool`,
@@ -75,10 +74,8 @@ export default function ScientificNotationConverterPage() {
         <NumberToScientificNotationConverter />
       </div>
       <div className="mt-8">
-        <NumberToScientificNotationConverterSeo />
       </div>
       <div className="mt-16">
-        <ScientificNotationConverterSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

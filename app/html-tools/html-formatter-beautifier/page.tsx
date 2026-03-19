@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import HtmlFormatterBeautifierTool from "@/components/html-tools/html-formatter-beautifier";
+import { HtmlFormatterBeautifier } from "@/components/html-tools/html-formatter-beautifier";
 import HtmlFormatterBeautifierSEO from "@/components/seo-content/html-tools/html-formatter-beautifier";
 
 export const metadata: Metadata = {
@@ -74,7 +74,7 @@ export default function HtmlFormatterBeautifierPage() {
         </p>
       </header>
       <div className="mt-8">
-        <HtmlFormatterBeautifierTool />
+        <HtmlFormatterBeautifier />
       </div>
       <div className="mt-8">
         <HtmlFormatterBeautifierSEO />

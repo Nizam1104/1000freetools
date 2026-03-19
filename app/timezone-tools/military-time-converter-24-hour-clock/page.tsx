@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MilitaryTimeConverter24HourClockSeo from "@/components/seo-content/timezone-tools/military-time-converter-24-hour-clock";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MilitaryTimeConverter24HourClock } from "@/components/timezone-tools/military-time-converter-24-hour-clock";
+import MilitaryTimeConverter24HourClock from "@/components/timezone-tools/military-time-converter-24-hour-clock";
 
 export const metadata: Metadata = {
   title: `Military Time Converter | 24-Hour Clock Tool`,

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JavascriptUnitTestAssertionGeneratorSeo from "@/components/seo-content/javascript-tools/javascript-unit-test-assertion-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JavascriptUnitTestAssertionGenerator } from "@/components/javascript-tools/javascript-unit-test-assertion-generator.tsx";
+import JavascriptUnitTestAssertionGenerator from "@/components/javascript-tools/javascript-unit-test-assertion-generator";
 
 export const metadata: Metadata = {
   title: `JavaScript Test Generator - Create Unit Tests Online`,

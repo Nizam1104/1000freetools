@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownTaskListGenerator } from "@/components/markdown-tools/markdown-task-list-generator.tsx";
+import { MarkdownTaskListGenerator } from "@/components/markdown-tools/markdown-task-list-generator";
 import MarkdownTaskListGeneratorSeo from "@/components/seo-content/markdown-tools/markdown-task-list-generator";
 
 export const metadata: Metadata = {

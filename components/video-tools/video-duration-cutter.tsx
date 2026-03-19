@@ -46,7 +46,7 @@ export default function VideoDurationCutter() {
       setDuration(fileDuration);
       setEndTime(fileDuration);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to read video file");
     } finally {
@@ -88,13 +88,14 @@ export default function VideoDurationCutter() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "video/mp4" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to cut video");
     } finally {

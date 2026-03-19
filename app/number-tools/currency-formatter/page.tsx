@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CurrencyFormatterSeo from "@/components/seo-content/number-tools/currency-formatter";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CurrencyFormatter } from "@/components/number-tools/currency-formatter";
+import CurrencyFormatter from "@/components/number-tools/currency-formatter";
 
 export const metadata: Metadata = {
   title: `Currency Formatter | International Money Format`,

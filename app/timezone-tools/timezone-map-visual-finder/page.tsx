@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TimezoneMapVisualFinderSeo from "@/components/seo-content/timezone-tools/timezone-map-visual-finder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TimezoneMapVisualFinder } from "@/components/timezone-tools/timezone-map-visual-finder.tsx";
+import TimezoneMapVisualFinder from "@/components/timezone-tools/timezone-map-visual-finder";
 
 export const metadata: Metadata = {
   title: `Interactive Time Zone Map | Visual Time Zone Finder`,

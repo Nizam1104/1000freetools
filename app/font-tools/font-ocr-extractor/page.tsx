@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FontOcrExtractorSeo from "@/components/seo-content/font-tools/font-ocr-extractor";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import FontIdentifier from "@/components/font-tools/font-identifier";
@@ -74,9 +73,6 @@ export default function FontOcrExtractorPage() {
       </header>
       <div className="mt-8">
         <FontIdentifier />
-      </div>
-      <div className="mt-16">
-        <FontOcrExtractorSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>

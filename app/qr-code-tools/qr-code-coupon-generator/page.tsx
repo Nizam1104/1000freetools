@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeCouponGeneratorSeo from "@/components/seo-content/qr-code-tools/qr-code-coupon-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeCouponGenerator } from "@/components/qr-code-tools/qr-code-coupon-generator.tsx";
+import { QrCodeCouponGenerator } from "@/components/qr-code-tools/qr-code-coupon-generator";
 
 export const metadata: Metadata = {
   title: `Coupon QR Code Generator | Discount & Promo Codes`,

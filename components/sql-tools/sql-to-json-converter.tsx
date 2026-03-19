@@ -28,7 +28,7 @@ export function SqlToJsonConverter() {
       const values = match[2].split(',').map(v => v.trim())
       const row: any = {}
       columns.forEach((col, i) => {
-        let val = values[i]?.trim()
+        let val: string | number | boolean | null = values[i]?.trim()
         // Remove quotes
         if ((val?.startsWith("'") && val?.endsWith("'")) || (val?.startsWith('"') && val?.endsWith('"'))) {
           val = val?.slice(1, -1)
@@ -56,7 +56,7 @@ export function SqlToJsonConverter() {
           const values = tableLines[i].split(separator).map(v => v.trim())
           const row: any = {}
           headers.forEach((header, j) => {
-            let val = values[j]
+            let val: string | number | boolean | null = values[j]
             if (val === 'NULL' || val === '') val = null
             else if (!isNaN(Number(val))) val = Number(val)
             else if (val?.toUpperCase() === 'TRUE') val = true
@@ -80,7 +80,7 @@ export function SqlToJsonConverter() {
           const values = lines[i].split(',').map(v => v.trim())
           const row: any = {}
           headers.forEach((header, j) => {
-            let val = values[j]
+            let val: string | number | boolean | null = values[j]
             if (val === 'NULL' || val === '') val = null
             else if (!isNaN(Number(val))) val = Number(val)
             else if ((val?.startsWith("'") && val?.endsWith("'")) || (val?.startsWith('"') && val?.endsWith('"'))) {

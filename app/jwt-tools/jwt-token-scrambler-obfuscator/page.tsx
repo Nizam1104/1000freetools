@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtTokenScramblerObfuscatorSeo from "@/components/seo-content/jwt-tools/jwt-token-scrambler-obfuscator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtTokenScramblerObfuscator } from "@/components/jwt-tools/jwt-token-scrambler-obfuscator.tsx";
+import { JwtTokenScramblerObfuscator } from "@/components/jwt-tools/jwt-token-scrambler-obfuscator";
 
 export const metadata: Metadata = {
   title: `JWT Scrambler Tool | Create Invalid Tokens for Testing`,

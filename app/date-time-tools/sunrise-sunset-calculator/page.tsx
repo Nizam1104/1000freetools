@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SunriseSunsetCalculator } from "@/components/date-time-tools/sunrise-sunset-calculator.tsx";
+import { SunriseSunsetCalculator } from "@/components/date-time-tools/sunrise-sunset-calculator";
 import SunriseSunsetCalculatorSeo from "@/components/seo-content/date-time-tools/sunrise-sunset-calculator";
 
 export const metadata: Metadata = {

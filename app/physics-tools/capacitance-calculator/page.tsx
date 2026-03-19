@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { CapacitanceCalculator } from "@/components/physics-tools/capacitance-calculator";
+import CapacitanceCalculator from "@/components/physics-tools/capacitance-calculator";
 import CapacitanceCalculatorSeo from "@/components/seo-content/physics-tools/capacitance-calculator";
 
 export const metadata: Metadata = {

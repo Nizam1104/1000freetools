@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TimeZoneAbbreviationLookupDecoderSeo from "@/components/seo-content/timezone-tools/time-zone-abbreviation-lookup-decoder";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { TimeZoneAbbreviationLookupDecoder } from "@/components/timezone-tools/time-zone-abbreviation-lookup-decoder";
+import TimeZoneAbbreviationLookupDecoder from "@/components/timezone-tools/time-zone-abbreviation-lookup-decoder";
 
 export const metadata: Metadata = {
   title: `Time Zone Abbreviation Decoder | PST, GMT, IST Explained`,

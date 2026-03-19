@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeSocialMediaSeo from "@/components/seo-content/qr-code-tools/qr-code-social-media";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeSocialMedia } from "@/components/qr-code-tools/qr-code-social-media.tsx";
+import { QrCodeSocialMedia } from "@/components/qr-code-tools/qr-code-social-media";
 
 export const metadata: Metadata = {
   title: `Social Media QR Code | Link All Your Profiles`,

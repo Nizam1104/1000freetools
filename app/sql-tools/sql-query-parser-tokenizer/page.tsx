@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SqlQueryParserTokenizer } from "@/components/sql-tools/sql-query-parser-tokenizer.tsx";
+import { SqlQueryParserTokenizer } from "@/components/sql-tools/sql-query-parser-tokenizer";
 import SqlQueryParserTokenizerSeo from "@/components/seo-content/sql-tools/sql-query-parser-tokenizer";
 
 export const metadata: Metadata = {

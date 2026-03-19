@@ -137,7 +137,7 @@ timeout = 30`;
     
     const blob = new Blob([rustOutput], { type: "text/plain" });
     const link = document.createElement("a");
-    link.download = `${structName.to_lowercase()}.rs`;
+    link.download = `${structName.toLowerCase()}.rs`;
     link.href = URL.createObjectURL(blob);
     link.click();
   }, [rustOutput, structName]);

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import JavascriptRegexTesterDebuggerSeo from "@/components/seo-content/javascript-tools/javascript-regex-tester-debugger";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptRegexTester from "@/components/javascript-tools/javascript-regex-tester";
@@ -76,7 +75,6 @@ export default function JavascriptRegexTesterDebuggerPage() {
         <JavascriptRegexTester />
       </div>
       <div className="mt-16">
-        <JavascriptRegexTesterDebuggerSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SvgGradientGeneratorEditorSeo from "@/components/seo-content/svg-tools/svg-gradient-generator-editor";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { SvgGradientGeneratorEditor } from "@/components/svg-tools/svg-gradient-generator-editor.tsx";
+import SvgGradientGeneratorEditor from "@/components/svg-tools/svg-gradient-generator-editor";
 
 export const metadata: Metadata = {
   title: `SVG Gradient Generator - Create & Edit Gradients Online`,

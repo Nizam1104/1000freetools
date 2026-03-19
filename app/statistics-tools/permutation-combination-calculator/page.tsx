@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { PermutationCombinationCalculator } from "@/components/statistics-tools/permutation-combination-calculator";
+import PermutationCombinationCalculator from "@/components/statistics-tools/permutation-combination-calculator";
 import PermutationCombinationCalculatorSeo from "@/components/seo-content/statistics-tools/permutation-combination-calculator";
 
 export const metadata: Metadata = {

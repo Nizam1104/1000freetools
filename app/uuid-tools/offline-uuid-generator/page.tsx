@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import OfflineUuidGeneratorSeo from "@/components/seo-content/uuid-tools/offline-uuid-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { OfflineUuidGenerator } from "@/components/uuid-tools/offline-uuid-generator.tsx";
+import { OfflineUuidGenerator } from "@/components/uuid-tools/offline-uuid-generator";
 
 export const metadata: Metadata = {
   title: `Offline UUID Generator | Private, Client-Side Tool`,

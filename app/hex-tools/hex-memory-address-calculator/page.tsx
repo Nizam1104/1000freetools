@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { HexMemoryAddressCalculator } from "@/components/hex-tools/hex-memory-address-calculator.tsx";
+import { HexMemoryAddressCalculator } from "@/components/hex-tools/hex-memory-address-calculator";
 import HexMemoryAddressCalculatorSeo from "@/components/seo-content/hex-tools/hex-memory-address-calculator";
 
 export const metadata: Metadata = {

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import JavascriptEncryptionDecryptionToolSeo from "@/components/seo-content/javascript-tools/javascript-encryption-decryption-tool";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import JavascriptEncryptionTool from "@/components/javascript-tools/javascript-encryption-tool";
@@ -75,9 +74,6 @@ export default function JavascriptEncryptionDecryptionToolPage() {
       </header>
       <div className="mt-8">
         <JavascriptEncryptionTool />
-      </div>
-      <div className="mt-16">
-        <JavascriptEncryptionDecryptionToolSeo />
       </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">

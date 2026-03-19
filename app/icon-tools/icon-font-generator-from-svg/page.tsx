@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { IconFontGeneratorFromSvg } from "@/components/icon-tools/icon-font-generator-from-svg.tsx";
+import IconFontGeneratorFromSvg from "@/components/icon-tools/icon-font-generator-from-svg";
 import IconFontGeneratorFromSvgSeo from "@/components/seo-content/icon-tools/icon-font-generator-from-svg";
 
 export const metadata: Metadata = {

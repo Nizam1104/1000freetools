@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { BlackbodyRadiationCalculator } from "@/components/physics-tools/blackbody-radiation-calculator";
+import BlackbodyRadiationCalculator from "@/components/physics-tools/blackbody-radiation-calculator";
 import BlackbodyRadiationCalculatorSeo from "@/components/seo-content/physics-tools/blackbody-radiation-calculator";
 
 export const metadata: Metadata = {

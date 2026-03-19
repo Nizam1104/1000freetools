@@ -3,8 +3,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   Input,
+  Output,
+  Mp3OutputFormat,
+  BufferTarget,
   BlobSource,
   ALL_FORMATS,
+  Conversion,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -40,73 +44,63 @@ export default function AudioFrequencyAnalyzer() {
         throw new Error("No audio track found");
       }
 
-      const decoder = await audioTrack.createDecoder();
-      const samples: AudioSample[] = [];
-      
-      for await (const sample of decoder) {
-        samples.push(sample);
-      }
+      const conversion = await Conversion.init({
+        input,
+        output: new Output({
+          format: new Mp3OutputFormat(),
+          target: new BufferTarget(),
+        }),
+        audio: {
+          process: async (sample: any) => {
+            const buffer = sample.toAudioBuffer();
+            const sampleRate = buffer.sampleRate;
+            const analyserData = new Float32Array(fftSize / 2);
+            const fftResult = new Float32Array(fftSize);
 
-      if (samples.length === 0) {
-        throw new Error("No audio samples found");
-      }
+            const channelData = buffer.getChannelData(0);
+            const toProcess = Math.min(channelData.length, fftSize);
+            
+            for (let i = 0; i < toProcess; i++) {
+              fftResult[i] = channelData[i];
+            }
 
-      const combinedBuffer = new AudioBuffer({
-        length: Math.min(samples.reduce((sum, s) => sum + s.toAudioBuffer().length, 0), 44100 * 10),
-        numberOfChannels: 1,
-        sampleRate: samples[0].toAudioBuffer().sampleRate,
+            for (let i = toProcess; i < fftSize; i++) {
+              fftResult[i] = 0;
+            }
+
+            for (let i = 0; i < fftSize / 2; i++) {
+              let real = 0;
+              let imag = 0;
+              for (let j = 0; j < fftSize; j++) {
+                const angle = (2 * Math.PI * i * j) / fftSize;
+                real += fftResult[j] * Math.cos(angle);
+                imag -= fftResult[j] * Math.sin(angle);
+              }
+              const magnitude = Math.sqrt(real * real + imag * imag) / fftSize;
+              analyserData[i] = magnitude;
+            }
+
+            const nyquist = sampleRate / 2;
+            const data: { freq: number; magnitude: number }[] = [];
+
+            for (let i = 0; i < fftSize / 2; i++) {
+              const freq = (i * nyquist) / (fftSize / 2);
+              if (freq <= 20000) {
+                data.push({
+                  freq,
+                  magnitude: 20 * Math.log10(analyserData[i] + 0.00001),
+                });
+              }
+            }
+
+            setFrequencyData(data);
+            return sample;
+          },
+        },
       });
 
-      let offset = 0;
-      for (const sample of samples) {
-        if (offset >= combinedBuffer.length) break;
-        const buffer = sample.toAudioBuffer();
-        const channelData = buffer.getChannelData(0);
-        const toCopy = Math.min(channelData.length, combinedBuffer.length - offset);
-        combinedBuffer.copyToChannel(channelData.subarray(0, toCopy), 0, offset);
-        offset += toCopy;
-      }
-
-      const analyserData = new Float32Array(fftSize / 2);
-      const fftResult = new Float32Array(fftSize);
-      
-      for (let i = 0; i < combinedBuffer.length; i++) {
-        fftResult[i] = combinedBuffer.getChannelData(0)[i];
-      }
-
-      for (let i = combinedBuffer.length; i < fftSize; i++) {
-        fftResult[i] = 0;
-      }
-
-      for (let i = 0; i < fftSize / 2; i++) {
-        let real = 0;
-        let imag = 0;
-        for (let j = 0; j < fftSize; j++) {
-          const angle = (2 * Math.PI * i * j) / fftSize;
-          real += fftResult[j] * Math.cos(angle);
-          imag -= fftResult[j] * Math.sin(angle);
-        }
-        const magnitude = Math.sqrt(real * real + imag * imag) / fftSize;
-        analyserData[i] = magnitude;
-      }
-
-      const sampleRate = combinedBuffer.sampleRate;
-      const nyquist = sampleRate / 2;
-      const data: { freq: number; magnitude: number }[] = [];
-
-      for (let i = 0; i < fftSize / 2; i++) {
-        const freq = (i * nyquist) / (fftSize / 2);
-        if (freq <= 20000) {
-          data.push({
-            freq,
-            magnitude: 20 * Math.log10(analyserData[i] + 0.00001),
-          });
-        }
-      }
-
-      setFrequencyData(data);
-
-      await input.end();
+      await conversion.execute();
+      await input.dispose();
     } catch (err) {
       setError("Failed to analyze frequency");
     } finally {

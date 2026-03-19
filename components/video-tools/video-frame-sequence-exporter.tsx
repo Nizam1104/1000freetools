@@ -3,8 +3,13 @@
 import React, { useState, useRef } from "react";
 import {
   Input,
+  Output,
+  Mp4OutputFormat,
+  BufferTarget,
   BlobSource,
+  Conversion,
   ALL_FORMATS,
+  VideoSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -41,7 +46,7 @@ export default function VideoFrameSequenceExporter() {
       const fileDuration = await input.computeDuration();
       setDuration(fileDuration);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to read video file");
     } finally {
@@ -72,32 +77,48 @@ export default function VideoFrameSequenceExporter() {
       }
 
       const urls: string[] = [];
-      const decoder = await videoTrack.createDecoder();
       let frameCount = 0;
+      const videoWidth = videoTrack.displayWidth;
+      const videoHeight = videoTrack.displayHeight;
+      const totalFrames = Math.floor(duration * 30);
 
-      for await (const sample of decoder) {
-        if (frameCount % frameInterval === 0) {
-          const canvas = document.createElement("canvas");
-          canvas.width = 320;
-          canvas.height = 320 * (videoTrack.displayHeight / videoTrack.displayWidth);
-          const ctx = canvas.getContext("2d");
+      const output = new Output({
+        format: new Mp4OutputFormat(),
+        target: new BufferTarget(),
+      });
 
-          if (ctx) {
-            const image = sample.toImage();
-            if (image) {
-              ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-              const url = canvas.toDataURL("image/jpeg", 0.8);
-              urls.push(url);
+      const conversion = await Conversion.init({
+        input,
+        output,
+        video: {
+          process: (sample: VideoSample) => {
+            if (frameCount % frameInterval === 0) {
+              const canvas = document.createElement("canvas");
+              canvas.width = 320;
+              canvas.height = 320 * (videoHeight / videoWidth);
+              const ctx = canvas.getContext("2d");
+
+              if (ctx) {
+                const image = sample.toCanvasImageSource();
+                if (image) {
+                  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+                  const url = canvas.toDataURL("image/jpeg", 0.8);
+                  urls.push(url);
+                }
+              }
             }
-          }
-        }
-        frameCount++;
-        setProgress(Math.round((frameCount / (duration * 30)) * 100));
-      }
+            frameCount++;
+            setProgress(Math.round((frameCount / totalFrames) * 100));
+            return null;
+          },
+        },
+      });
+
+      await conversion.execute();
 
       setThumbnailUrls(urls);
 
-      await input.end();
+      input.dispose();
     } catch (err) {
       setError("Failed to export frames");
     } finally {

@@ -1,4 +1,4 @@
-const toolData = {
+export const videoAudioSyncFixerToolData = {
   "toolName": "video-audio-sync-fixer",
   "description": "Fix audio and video synchronization issues by adjusting the audio delay in a video file.",
   "h1": "Fix Audio Video Sync – Audio Delay Fixer for Video Online",

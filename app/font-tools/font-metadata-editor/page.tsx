@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import FontMetadataEditorSeo from "@/components/seo-content/font-tools/font-metadata-editor";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontMetadataEditor } from "@/components/font-tools/font-metadata-editor.tsx";
+import FontMetadataEditor from "@/components/font-tools/font-metadata-editor";
 
 export const metadata: Metadata = {
   title: `Font Metadata Editor | Change Font Info`,
@@ -73,9 +72,6 @@ export default function FontMetadataEditorPage() {
         <p className="text-muted-foreground">Change font names, families, and other metadata directly. Fix font conflicts in Adobe apps and organize your typography library.</p>
       </header>
       {<FontMetadataEditor />}
-      <div className="mt-16">
-        <FontMetadataEditorSeo />
-      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />

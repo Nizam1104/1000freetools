@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { LetterSpacingTool } from "@/components/font-tools/letter-spacing-tool";
+import LetterSpacingTool from "@/components/font-tools/letter-spacing-tool";
 import LetterSpacingToolSeo from "@/components/seo-content/typography-tools/letter-spacing-tool";
 
 export const metadata: Metadata = {

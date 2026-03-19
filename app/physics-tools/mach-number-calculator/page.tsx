@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MachNumberCalculator } from "@/components/physics-tools/mach-number-calculator";
+import MachNumberCalculator from "@/components/physics-tools/mach-number-calculator";
 import MachNumberCalculatorSeo from "@/components/seo-content/physics-tools/mach-number-calculator";
 
 export const metadata: Metadata = {

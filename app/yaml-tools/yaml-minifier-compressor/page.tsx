@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { YamlMinifierCompressor } from "@/components/yaml-tools/yaml-minifier-compressor.tsx";
+import { YamlMinifierCompressor } from "@/components/yaml-tools/yaml-minifier-compressor";
 import YamlMinifierCompressorSeo from "@/components/seo-content/yaml-tools/yaml-minifier-compressor";
 
 export const metadata: Metadata = {

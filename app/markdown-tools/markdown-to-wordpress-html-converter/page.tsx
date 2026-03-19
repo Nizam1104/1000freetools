@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownToWordpressHtmlConverter } from "@/components/markdown-tools/markdown-to-wordpress-html-converter.tsx";
+import { MarkdownToWordpressHtmlConverter } from "@/components/markdown-tools/markdown-to-wordpress-html-converter";
 import MarkdownToWordpressHtmlConverterSeo from "@/components/seo-content/markdown-tools/markdown-to-wordpress-html-converter";
 
 export const metadata: Metadata = {

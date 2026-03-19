@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QrCodeToPdfSeo from "@/components/seo-content/qr-code-tools/qr-code-to-pdf";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { QrCodeToPdf } from "@/components/qr-code-tools/qr-code-to-pdf.tsx";
+import QrCodeToPdf from "@/components/qr-code-tools/qr-code-to-pdf";
 
 export const metadata: Metadata = {
   title: `QR Code to PDF Converter | Merge & Print Codes`,

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import PasswordLeakChecker from "@/components/password-tools/password-leak-checker";
+import { PasswordLeakChecker } from "@/components/password-tools/password-leak-checker";
 import PasswordLeakCheckerSeo from "@/components/seo-content/password-tools/password-leak-checker";
 
 export const metadata: Metadata = {

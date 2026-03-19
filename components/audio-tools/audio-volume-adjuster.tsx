@@ -9,6 +9,7 @@ import {
   BlobSource,
   Conversion,
   ALL_FORMATS,
+  AudioSample,
 } from "mediabunny";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
@@ -82,9 +83,9 @@ export default function AudioVolumeAdjuster() {
 
             const processedBuffer = await offlineCtx.startRendering();
 
-            const processedSample = await sample.constructor.fromAudioBuffer(
-              processedBuffer
-            );
+            const processedSample = AudioSample.fromAudioBuffer(
+              processedBuffer, sample.timestamp
+            )[0];
             return processedSample;
           },
         },
@@ -93,13 +94,14 @@ export default function AudioVolumeAdjuster() {
       await conversion.execute();
 
       const buffer = output.target.buffer;
+      if (!buffer) throw new Error("No buffer");
       const blob = new Blob([buffer], { type: "audio/mpeg" });
       const url = URL.createObjectURL(blob);
 
       setResultUrl(url);
       setProgress(100);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to adjust volume");
     } finally {

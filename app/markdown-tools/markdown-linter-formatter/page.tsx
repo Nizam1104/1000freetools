@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownLinterFormatter } from "@/components/markdown-tools/markdown-linter-formatter.tsx";
+import { MarkdownLinterFormatter } from "@/components/markdown-tools/markdown-linter-formatter";
 import MarkdownLinterFormatterSeo from "@/components/seo-content/markdown-tools/markdown-linter-formatter";
 
 export const metadata: Metadata = {

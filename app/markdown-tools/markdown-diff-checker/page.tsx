@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { MarkdownDiffChecker } from "@/components/markdown-tools/markdown-diff-checker.tsx";
+import { MarkdownDiffChecker } from "@/components/markdown-tools/markdown-diff-checker";
 import MarkdownDiffCheckerSeo from "@/components/seo-content/markdown-tools/markdown-diff-checker";
 
 export const metadata: Metadata = {

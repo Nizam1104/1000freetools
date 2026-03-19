@@ -45,7 +45,7 @@ export default function AudioSplitter() {
 
       const fileDuration = await input.computeDuration();
       setDuration(fileDuration);
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to read audio file");
     }
@@ -108,6 +108,7 @@ export default function AudioSplitter() {
         await conversion.execute();
 
         const buffer = output.target.buffer;
+        if (!buffer) throw new Error("No buffer");
         const blob = new Blob([buffer], { type: "audio/mpeg" });
         const url = URL.createObjectURL(blob);
 
@@ -121,7 +122,7 @@ export default function AudioSplitter() {
 
       setResultUrls(urls);
 
-      await input.end();
+      await input.dispose();
     } catch (err) {
       setError("Failed to split audio");
     } finally {

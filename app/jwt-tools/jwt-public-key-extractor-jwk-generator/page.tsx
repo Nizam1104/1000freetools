@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JwtPublicKeyExtractorJwkGeneratorSeo from "@/components/seo-content/jwt-tools/jwt-public-key-extractor-jwk-generator";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { JwtPublicKeyExtractorJwkGenerator } from "@/components/jwt-tools/jwt-public-key-extractor-jwk-generator.tsx";
+import JwtPublicKeyExtractorJwkGenerator from "@/components/jwt-tools/jwt-public-key-extractor-jwk-generator";
 
 export const metadata: Metadata = {
   title: `JWT Public Key Extractor | Generate JWK Online`,

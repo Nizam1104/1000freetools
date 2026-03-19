@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import FontStyleTransferSeo from "@/components/seo-content/font-tools/font-style-transfer";
 
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import { FontStyleTransfer } from "@/components/font-tools/font-style-transfer.tsx";
+import FontStyleTransfer from "@/components/font-tools/font-style-transfer";
 
 export const metadata: Metadata = {
   title: `Font Style Transfer | Mix Font Characteristics`,
@@ -73,9 +72,6 @@ export default function FontStyleTransferPage() {
         <p className="text-muted-foreground">Mix characteristics from different fonts to create unique hybrid typefaces. Experimental tool for creative typography.</p>
       </header>
       {<FontStyleTransfer />}
-      <div className="mt-16">
-        <FontStyleTransferSeo />
-      </div>
       <div className="mt-16 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-6 text-center">Other Free Tools</h2>
         <ToolLinkCards tools={tools} />
