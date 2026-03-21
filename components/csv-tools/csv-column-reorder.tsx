@@ -193,13 +193,6 @@ export default function CsvColumnReorder() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Column Reorder</h1>
-        <p className="text-muted-foreground">
-          Drag-and-drop interface to reorder CSV columns, or use manual index input
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

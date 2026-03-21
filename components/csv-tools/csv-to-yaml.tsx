@@ -162,13 +162,6 @@ export default function CsvToYaml() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV to YAML Converter</h1>
-        <p className="text-muted-foreground">
-          Convert CSV data to YAML format with type inference options
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

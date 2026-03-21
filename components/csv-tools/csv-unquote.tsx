@@ -171,13 +171,6 @@ export default function CsvUnquote() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Unquote</h1>
-        <p className="text-muted-foreground">
-          Strip unnecessary quote characters from CSV fields while preserving data integrity
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

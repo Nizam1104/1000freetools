@@ -247,13 +247,6 @@ export default function CsvHeaderEditor() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Header Editor</h1>
-        <p className="text-muted-foreground">
-          Edit CSV headers inline, bulk rename (find/replace), case normalization, snake_case/camelCase conversion
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

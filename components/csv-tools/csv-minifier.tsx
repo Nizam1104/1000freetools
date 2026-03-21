@@ -126,13 +126,6 @@ export default function CsvMinifier() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Minifier</h1>
-        <p className="text-muted-foreground">
-          Strip unnecessary whitespace, blank lines, redundant quotes, and BOM markers from CSV files
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

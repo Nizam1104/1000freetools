@@ -248,13 +248,6 @@ export default function DeterminantCalculator() {
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">Matrix Determinant Calculator – Compute Det of Any Matrix</h1>
-        <p className="text-muted-foreground">
-          Calculate the determinant of any square matrix up to 10×10 with our free online determinant calculator. Enter values via textarea or row-by-row input with cofactor expansion steps shown.
-        </p>
-      </div>
-
       <div className="space-y-4">
         <Card>
           <CardContent className="pt-6 space-y-4">

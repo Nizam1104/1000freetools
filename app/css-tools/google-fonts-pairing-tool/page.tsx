@@ -258,7 +258,7 @@ body {
                   letterSpacing: `${letterSpacing}em`,
                 }}
               >
-                <h1
+                <div
                   className="text-4xl font-bold mb-4"
                   style={{
                     fontFamily: headingFont,
@@ -269,7 +269,7 @@ body {
                   }}
                 >
                   The Quick Brown Fox
-                </h1>
+                </div>
                 <p>
                   Typography is the art and technique of arranging type to make written language legible, readable,
                   and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes,

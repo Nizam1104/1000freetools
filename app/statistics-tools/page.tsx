@@ -321,7 +321,7 @@ export default function StatisticsToolsPage() {
               <strong>Assumptions:</strong> Statistical tests have assumptions (normality, equal variance, independence). Verify assumptions before interpreting results.
             </p>
             <p className="text-muted-foreground mb-4">
-              <strong>Sample size:</strong> Small samples may not meet test assumptions. Results may be unreliable for n < 30 without normality.
+              <strong>Sample size:</strong> Small samples may not meet test assumptions. Results may be unreliable for n &lt; 30 without normality.
             </p>
             <p className="text-muted-foreground mb-4">
               <strong>Multiple testing:</strong> Running many tests increases false positive risk. Consider corrections like Bonferroni for multiple comparisons.

@@ -160,13 +160,6 @@ export default function CsvQuoteEscaper() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Quote Escaper</h1>
-        <p className="text-muted-foreground">
-          Apply and normalize quoting to CSV fields according to RFC 4180 standard
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

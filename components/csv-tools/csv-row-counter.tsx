@@ -184,13 +184,6 @@ export default function CsvRowCounter() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Row Counter</h1>
-        <p className="text-muted-foreground">
-          Count total rows, non-empty rows, blank rows, per-column fill rate, null value statistics
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

@@ -75,13 +75,6 @@ export default function PythagoreanTheoremCalculator() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">Pythagorean Theorem Calculator – Find Any Side of a Right Triangle</h1>
-        <p className="text-muted-foreground">
-          Solve for any missing side of a right triangle using the Pythagorean theorem with our free online calculator. Enter two sides and instantly find the third with step-by-step working.
-        </p>
-      </div>
-
       <Card>
         <CardHeader>
           <CardTitle>Pythagorean Theorem Calculator</CardTitle>

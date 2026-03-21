@@ -306,13 +306,6 @@ export default function CsvSplitter() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Splitter</h1>
-        <p className="text-muted-foreground">
-          Split large CSV into multiple smaller files by row count, file size, or column value groups
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

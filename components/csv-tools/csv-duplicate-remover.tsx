@@ -167,13 +167,6 @@ export default function CsvDuplicateRemover() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Duplicate Remover</h1>
-        <p className="text-muted-foreground">
-          Remove duplicate rows (full-row or key-column based deduplication, keep first/last)
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

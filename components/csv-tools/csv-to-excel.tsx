@@ -63,22 +63,22 @@ export default function CsvToExcel() {
     try {
       // Parse CSV
       const workbook = XLSX.utils.book_new();
-      
+
       // Parse CSV text to array of arrays
       const rows: string[][] = [];
       const lines = inputText.split(/\r?\n/);
-      
+
       for (const line of lines) {
         if (line.trim() === "") continue;
-        
+
         // Simple CSV parsing (handles quoted fields)
         const cells: string[] = [];
         let current = "";
         let inQuotes = false;
-        
+
         for (let i = 0; i < line.length; i++) {
           const char = line[i];
-          
+
           if (char === '"') {
             if (inQuotes && line[i + 1] === '"') {
               current += '"';
@@ -104,12 +104,12 @@ export default function CsvToExcel() {
       if (headerStyle && rows.length > 0) {
         const headerRow = 0;
         const range = XLSX.utils.decode_range(worksheet["!ref"] || "A1");
-        
+
         // Style header row
         for (let col = range.s.c; col <= range.e.c; col++) {
           const cellAddress = XLSX.utils.encode_cell({ r: headerRow, c: col });
           if (!worksheet[cellAddress]) continue;
-          
+
           worksheet[cellAddress].s = {
             fill: {
               fgColor: { rgb: "4472C4" },
@@ -136,10 +136,10 @@ export default function CsvToExcel() {
       if (autoFitColumns && rows.length > 0) {
         const colWidths: { wch: number }[] = [];
         const numCols = rows[0].length;
-        
+
         for (let col = 0; col < numCols; col++) {
           let maxWidth = 10; // Default minimum width
-          
+
           for (let row = 0; row < rows.length; row++) {
             const cellValue = rows[row][col] || "";
             const cellWidth = String(cellValue).length;
@@ -147,10 +147,10 @@ export default function CsvToExcel() {
               maxWidth = Math.min(cellWidth, 50); // Cap at 50 characters
             }
           }
-          
+
           colWidths.push({ wch: maxWidth });
         }
-        
+
         worksheet["!cols"] = colWidths;
       }
 
@@ -178,12 +178,6 @@ export default function CsvToExcel() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV to Excel Converter</h1>
-        <p className="text-muted-foreground">
-          Convert CSV data to Excel .xlsx format with formatting, auto-fit columns, and header styling
-        </p>
-      </div>
 
       <div className="space-y-6">
         {/* Input Section */}

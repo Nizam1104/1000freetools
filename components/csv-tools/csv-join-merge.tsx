@@ -196,13 +196,6 @@ export default function CsvJoinMerge() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Join Merge</h1>
-        <p className="text-muted-foreground">
-          SQL-style joins (inner, left, right, full outer) on two CSV files using key column
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Two-column Input Section */}
         <section>

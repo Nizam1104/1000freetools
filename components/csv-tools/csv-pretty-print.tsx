@@ -99,13 +99,6 @@ export default function CsvPrettyPrint() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Pretty Print</h1>
-        <p className="text-muted-foreground">
-          Convert CSV data to a human-readable padded plain-text table format
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

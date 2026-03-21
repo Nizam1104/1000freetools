@@ -883,16 +883,6 @@ const CSVEditor: React.FC = () => {
     <>
       <div className="min-h-screen bg-white dark:bg-zinc-950">
         <div className="max-w-6xl mx-auto px-6 py-8">
-          {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
-              CSV Editor
-            </h1>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              Upload, edit, and export CSV files with ease
-            </p>
-          </div>
-
           {/* File Upload Area */}
           {!csvData.length ? (
             <div className="border border-zinc-200 dark:border-zinc-800 rounded-md p-8 bg-zinc-50 dark:bg-zinc-900">

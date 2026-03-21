@@ -207,13 +207,6 @@ export default function CsvDeduplicator() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Fuzzy Deduplicator</h1>
-        <p className="text-muted-foreground">
-          Advanced fuzzy matching for near-duplicate detection with similarity threshold
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

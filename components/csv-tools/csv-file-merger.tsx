@@ -269,13 +269,6 @@ export default function CsvFileMerger() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV File Merger</h1>
-        <p className="text-muted-foreground">
-          Combine multiple CSV files into one, handles mismatched columns with alignment strategies
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* File Upload Section */}
         <section>

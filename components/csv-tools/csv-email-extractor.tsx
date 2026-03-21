@@ -206,13 +206,6 @@ export default function CsvEmailExtractor() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Email Extractor</h1>
-        <p className="text-muted-foreground">
-          Extract email addresses from CSV with domain filtering and validation
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

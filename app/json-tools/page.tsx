@@ -859,9 +859,9 @@ export default function JsonToolsPage() {
       <section id="tools" className="py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="mb-8">
-            <h1 className="text-3xl font-semibold tracking-tight mb-2">
+            <h2 className="text-3xl font-semibold tracking-tight mb-2">
               All JSON Tools
-            </h1>
+            </h2>
             <p className="text-muted-foreground">
               A comprehensive suite of {tools.length} JSON utilities organized
               by category

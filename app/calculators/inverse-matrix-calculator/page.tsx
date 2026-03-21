@@ -365,13 +365,6 @@ export default function InverseMatrixCalculator() {
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">Matrix Inverse Calculator – Find A⁻¹ of Any Matrix</h1>
-        <p className="text-muted-foreground">
-          Calculate the inverse of any square matrix up to 10×10 with our free online matrix inverse calculator. Enter values via textarea or row-by-row input with step-by-step solutions.
-        </p>
-      </div>
-
       <div className="space-y-4">
         <Card>
           <CardContent className="pt-6 space-y-4">

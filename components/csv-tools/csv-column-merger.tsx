@@ -203,13 +203,6 @@ export default function CsvColumnMerger() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Column Merger</h1>
-        <p className="text-muted-foreground">
-          Combine two or more CSV columns into a single new column with configurable separator
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

@@ -278,13 +278,6 @@ export default function CsvColumnSplitter() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Column Splitter</h1>
-        <p className="text-muted-foreground">
-          Split a single CSV column into multiple columns using delimiter, regex, or fixed-width
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

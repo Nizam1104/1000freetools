@@ -252,13 +252,6 @@ export default function CsvRowFilter() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Row Filter</h1>
-        <p className="text-muted-foreground">
-          Filter CSV rows using conditions (equals, contains, regex, numeric comparisons, date ranges) with AND/OR logic
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>

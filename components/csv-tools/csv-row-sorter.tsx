@@ -193,13 +193,6 @@ export default function CsvRowSorter() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-semibold mb-2">CSV Row Sorter</h1>
-        <p className="text-muted-foreground">
-          Sort CSV rows by one or more columns (asc/desc), supports numeric, alphabetical, date-aware sorting
-        </p>
-      </div>
-
       <div className="space-y-6">
         {/* Input Section */}
         <section>
