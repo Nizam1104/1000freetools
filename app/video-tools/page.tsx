@@ -75,6 +75,91 @@ const videoTools = [
     description: "Adjust video opacity and transparency with custom background",
     href: "/video-tools/video-transparency-maker",
   },
+  {
+    name: "Video Compressor Simple",
+    description: "Simple and fast video compression tool",
+    href: "/video-tools/video-compressor-simple",
+  },
+  {
+    name: "Video Frame Rate Analyzer",
+    description: "Analyze video frame rate and detect issues",
+    href: "/video-tools/video-frame-rate-analyzer",
+  },
+  {
+    name: "Video Resolution Analyzer",
+    description: "Check video resolution and aspect ratio details",
+    href: "/video-tools/video-resolution-analyzer",
+  },
+  {
+    name: "Video Bitrate Changer",
+    description: "Change video bitrate to reduce file size or improve quality",
+    href: "/video-tools/video-bitrate-changer",
+  },
+  {
+    name: "Video Metadata Remover",
+    description: "Remove metadata and EXIF data from videos",
+    href: "/video-tools/video-metadata-remover",
+  },
+  {
+    name: "Video Metadata Editor",
+    description: "Edit and update video metadata tags",
+    href: "/video-tools/video-metadata-editor",
+  },
+  {
+    name: "Video Fragmenter",
+    description: "Split videos into smaller fragments or segments",
+    href: "/video-tools/video-fragmenter",
+  },
+  {
+    name: "Video Keyframe Extractor",
+    description: "Extract keyframes from video files",
+    href: "/video-tools/video-keyframe-extractor",
+  },
+  {
+    name: "Video Track Remover",
+    description: "Remove audio or subtitle tracks from videos",
+    href: "/video-tools/video-track-remover",
+  },
+  {
+    name: "Video Frame Extractor",
+    description: "Extract individual frames from videos as images",
+    href: "/video-tools/video-frame-extractor",
+  },
+  {
+    name: "Video Frame Sequence to Video",
+    description: "Convert sequence of images/frames into a video",
+    href: "/video-tools/video-frame-sequence-to-video",
+  },
+  {
+    name: "Video Audio Sync Fixer",
+    description: "Fix audio sync issues in videos",
+    href: "/video-tools/video-audio-sync-fixer",
+  },
+  {
+    name: "Video Frame Sequence Exporter",
+    description: "Export video as a sequence of frames",
+    href: "/video-tools/video-frame-sequence-exporter",
+  },
+  {
+    name: "Video Audio Remover",
+    description: "Remove audio track from videos - create silent videos",
+    href: "/video-tools/video-audio-remover",
+  },
+  {
+    name: "Video Speed Changer",
+    description: "Change video playback speed - slow motion or fast forward",
+    href: "/video-tools/video-speed-changer",
+  },
+  {
+    name: "Video Duration Cutter",
+    description: "Cut video duration - trim start and end points",
+    href: "/video-tools/video-duration-cutter",
+  },
+  {
+    name: "Video Thumbnail Generator",
+    description: "Generate thumbnails from videos automatically",
+    href: "/video-tools/video-thumbnail-generator",
+  },
 ];
 
 export const metadata: Metadata = {
