@@ -18,11 +18,6 @@ const tools = [
     href: `/ascii-tools/utf8-validator`,
   },
   {
-    name: `Text Differ`,
-    description: `Text Differ: Compare Text and Find Differences`,
-    href: `/ascii-tools/text-differ`,
-  },
-  {
     name: `Leet Speak Converter`,
     description: `Leet Speak Converter: Convert Text to 1337 Online`,
     href: `/ascii-tools/leet-speak-converter`,

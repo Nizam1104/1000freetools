@@ -33,11 +33,6 @@ const tools = [
     href: `/ascii-tools/ascii-code-table`,
   },
   {
-    name: `Text Differ`,
-    description: `Text Differ: Compare Text and Find Differences`,
-    href: `/ascii-tools/text-differ`,
-  },
-  {
     name: `Lorem Ipsum Generator`,
     description: `Lorem Ipsum Generator: Placeholder Text for Designers`,
     href: `/ascii-tools/lorem-ipsum-generator`,

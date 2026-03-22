@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Binary To Hex Converter",
+    "description": "Convert binary to hex. Groups bits, validates input. Simplifies binary data.",
+    "href": "/hex-tools/binary-to-hex-converter"
+  },
+  {
+    "name": "Decimal To Hex Converter",
+    "description": "Decimal to hex conversion. Formatting options, explanations included.",
+    "href": "/hex-tools/decimal-to-hex-converter"
+  },
+  {
+    "name": "Hex Addition Subtraction Calculator",
+    "description": "Add and subtract hex numbers. See carry flags, decimal equivalents.",
+    "href": "/hex-tools/hex-addition-subtraction-calculator"
+  },
+  {
+    "name": "Hex Diff Compare Tool",
+    "description": "Compare hex strings or files. Visual diff for binary data, firmware, memory.",
+    "href": "/hex-tools/hex-diff-compare-tool"
+  },
+  {
+    "name": "Hex File Checksum Calculator",
+    "description": "Calculate CRC, MD5, SHA from hex data. Verify firmware, network packets.",
+    "href": "/hex-tools/hex-file-checksum-calculator"
+  },
+  {
+    "name": "Hex Memory Address Calculator",
+    "description": "Add/subtract hex offsets from base addresses. Reverse engineering, debugging.",
+    "href": "/hex-tools/hex-memory-address-calculator"
+  },
+  {
+    "name": "Hex String Validator Formatter",
+    "description": "Validate and reformat hex strings. Remove invalid chars, add prefixes.",
+    "href": "/hex-tools/hex-string-validator-formatter"
+  },
+  {
+    "name": "Hex To Ascii Table Generator",
+    "description": "Generate hex to ASCII reference tables. Search, filter, export data.",
+    "href": "/hex-tools/hex-to-ascii-table-generator"
+  },
+  {
+    "name": "Hex To Base64 Encoder Decoder",
+    "description": "Encode hex to Base64 or decode back. URL-safe encoding supported.",
+    "href": "/hex-tools/hex-to-base64-encoder-decoder"
+  },
+  {
+    "name": "Hex To Binary Converter",
+    "description": "Hex to binary instantly. Each digit to 4 bits. Assembly, digital logic.",
+    "href": "/hex-tools/hex-to-binary-converter"
+  },
+  {
+    "name": "Hex To Decimal Converter",
+    "description": "Accurate hex to decimal conversion. Handles large values, explains process.",
+    "href": "/hex-tools/hex-to-decimal-converter"
+  },
+  {
+    "name": "Hex To Float Double Converter",
+    "description": "Convert hex to IEEE 754 floats. Visualize sign, exponent, mantissa bits.",
+    "href": "/hex-tools/hex-to-float-double-converter"
+  },
+  {
+    "name": "Hex To Ipv4 Ipv6 Address Converter",
+    "description": "Hex to IPv4/IPv6 addresses. Network analysis, packet inspection.",
+    "href": "/hex-tools/hex-to-ipv4-ipv6-address-converter"
+  },
+  {
+    "name": "Hex To Octal Converter",
+    "description": "Hex to octal via binary. Legacy systems, file permissions.",
+    "href": "/hex-tools/hex-to-octal-converter"
+  },
+  {
+    "name": "Hex To Rgb Color Converter",
+    "description": "Hex color codes to RGB. Live preview, CSS-ready syntax.",
+    "href": "/hex-tools/hex-to-rgb-color-converter"
+  },
+  {
+    "name": "Hex To Text Converter",
+    "description": "Hex to readable text. Multiple encodings, input validation.",
+    "href": "/hex-tools/hex-to-text-converter"
+  },
+  {
+    "name": "Hex To Utf8 String Decoder",
+    "description": "Decode hex as UTF-8. Handles emojis, international text.",
+    "href": "/hex-tools/hex-to-utf8-string-decoder"
+  },
+  {
+    "name": "Hex Xor Calculator",
+    "description": "Bitwise XOR on hex values. Step-by-step binary calculations shown.",
+    "href": "/hex-tools/hex-xor-calculator"
+  },
+  {
+    "name": "Octal To Hex Converter",
+    "description": "Octal to hex conversion. Validates input, explains process.",
+    "href": "/hex-tools/octal-to-hex-converter"
+  },
+  {
+    "name": "Rgb To Hex Color Converter",
+    "description": "RGB to hex codes. Sliders, live preview, perfect for web design.",
+    "href": "/hex-tools/rgb-to-hex-color-converter"
+  },
+  {
+    "name": "Text To Hex Converter",
+    "description": "Text to hex instantly. Unicode support, customizable formatting.",
+    "href": "/hex-tools/text-to-hex-converter"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Unicode Bidirectional Editor",
+    "description": "Edit mixed LTR/RTL text. Visualize and control text direction with Unicode formatting.",
+    "href": "/unicode-tools/unicode-bidirectional-editor"
+  },
+  {
+    "name": "Unicode Character Counter",
+    "description": "Count Unicode chars, code points, bytes. True length across UTF-8, UTF-16.",
+    "href": "/unicode-tools/unicode-character-counter"
+  },
+  {
+    "name": "Unicode Character Inspector",
+    "description": "Inspect every character. Code point, category, script, bidirectional class details.",
+    "href": "/unicode-tools/unicode-character-inspector"
+  },
+  {
+    "name": "Unicode Character Lookup",
+    "description": "Find any Unicode char. Search by name, code point, description. Full details, copy.",
+    "href": "/unicode-tools/unicode-character-lookup"
+  },
+  {
+    "name": "Unicode Character Map",
+    "description": "Browse Unicode by block. Basic Latin, Cyrillic, CJK, Emoji, hundreds more.",
+    "href": "/unicode-tools/unicode-character-map"
+  },
+  {
+    "name": "Unicode Confusables Detector",
+    "description": "Find visually similar Unicode chars. Detect homoglyphs in domains, usernames.",
+    "href": "/unicode-tools/unicode-confusables-detector"
+  },
+  {
+    "name": "Unicode Csv Escaper",
+    "description": "Escape Unicode for CSV/TSV. Handles commas, quotes, newlines correctly.",
+    "href": "/unicode-tools/unicode-csv-escaper"
+  },
+  {
+    "name": "Unicode Emoji Picker",
+    "description": "Find and copy any emoji. Search by name, category, keyword.",
+    "href": "/unicode-tools/unicode-emoji-picker"
+  },
+  {
+    "name": "Unicode Escape Encoder",
+    "description": "Encode/decode Unicode escapes. JavaScript, Python, Java, C syntax supported.",
+    "href": "/unicode-tools/unicode-escape-encoder"
+  },
+  {
+    "name": "Unicode Font Generator",
+    "description": "Create stylized text with Unicode. Bold, italic, cursive for social media.",
+    "href": "/unicode-tools/unicode-font-generator"
+  },
+  {
+    "name": "Unicode Line Break Tool",
+    "description": "See where Unicode allows line/word breaks. Test wrapping for different languages.",
+    "href": "/unicode-tools/unicode-line-break-tool"
+  },
+  {
+    "name": "Unicode Normalizer",
+    "description": "Normalize Unicode to NFC, NFD, NFKC, NFKD. Consistent text comparison, storage.",
+    "href": "/unicode-tools/unicode-normalizer"
+  },
+  {
+    "name": "Unicode Regex Tester",
+    "description": "Test regex with Unicode. Property escapes, script matching for pattern validation.",
+    "href": "/unicode-tools/unicode-regex-tester"
+  },
+  {
+    "name": "Unicode Sorting Tool",
+    "description": "Sort text by Unicode rules. Compare how different locales order characters.",
+    "href": "/unicode-tools/unicode-sorting-tool"
+  },
+  {
+    "name": "Unicode Superscript Generator",
+    "description": "Create superscript/subscript text. Math equations, chemical formulas without formatting.",
+    "href": "/unicode-tools/unicode-superscript-generator"
+  },
+  {
+    "name": "Unicode Text Converter",
+    "description": "Convert between UTF-8, UTF-16, HTML entities. Encode/decode for web dev.",
+    "href": "/unicode-tools/unicode-text-converter"
+  },
+  {
+    "name": "Unicode Url Encoder",
+    "description": "Encode/decode Unicode to percent-encoded URLs. Safe web addresses, query params.",
+    "href": "/unicode-tools/unicode-url-encoder"
+  },
+  {
+    "name": "Unicode Whitespace Remover",
+    "description": "Remove invisible Unicode whitespace. Non-breaking spaces, zero-width spaces, hidden chars.",
+    "href": "/unicode-tools/unicode-whitespace-remover"
+  },
+  {
+    "name": "Unicode Zero Width Tool",
+    "description": "Hide messages using zero-width Unicode chars. Encode/decode for steganography.",
+    "href": "/unicode-tools/unicode-zero-width-tool"
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Font Pairing Tool",
+    "description": "Find perfect font combinations. Browse curated pairs, preview live, get CSS.",
+    "href": "/typography-tools/font-pairing-tool"
+  },
+  {
+    "name": "Font Size Converter",
+    "description": "Convert font sizes between px, pt, em, rem. For screen and print.",
+    "href": "/typography-tools/font-size-converter"
+  },
+  {
+    "name": "Font Subset Generator",
+    "description": "Reduce web font sizes by creating subsets. Specify characters, get optimized WOFF2.",
+    "href": "/typography-tools/font-subset-generator"
+  },
+  {
+    "name": "Font Weight Tester",
+    "description": "Compare all font weights. Thin to black, see how they look with your text.",
+    "href": "/typography-tools/font-weight-tester"
+  },
+  {
+    "name": "Gradient Text Generator",
+    "description": "Make gradient text for websites. Choose colors, direction, copy CSS.",
+    "href": "/typography-tools/gradient-text-generator"
+  },
+  {
+    "name": "Letter Spacing Tool",
+    "description": "Adjust letter spacing with real-time preview. Fine-tune kerning for logos.",
+    "href": "/typography-tools/letter-spacing-tool"
+  },
+  {
+    "name": "Ligature Generator",
+    "description": "Preview typographic ligatures. See where fonts combine 'fi', 'fl' into glyphs.",
+    "href": "/typography-tools/ligature-generator"
+  },
+  {
+    "name": "Line Height Generator",
+    "description": "Find perfect line height for readability. Adjust spacing, see live preview, get CSS.",
+    "href": "/typography-tools/line-height-generator"
+  },
+  {
+    "name": "Monospace Font Tester",
+    "description": "Compare monospace fonts for coding. See your code in different fixed-width fonts.",
+    "href": "/typography-tools/monospace-font-tester"
+  },
+  {
+    "name": "Text Readability Analyzer",
+    "description": "Analyze text readability. Reading ease, contrast, line length scores with suggestions.",
+    "href": "/typography-tools/text-readability-analyzer"
+  },
+  {
+    "name": "Text Shadow Generator",
+    "description": "Create text shadow effects. Adjust settings, copy CSS with one click.",
+    "href": "/typography-tools/text-shadow-generator"
+  },
+  {
+    "name": "Text To Ascii Art Generator",
+    "description": "Turn text into ASCII art. Multiple styles for fun projects, code comments.",
+    "href": "/typography-tools/text-to-ascii-art-generator"
+  },
+  {
+    "name": "Text Watermark Adder",
+    "description": "Add text watermarks to images. Customize text, position, opacity, download.",
+    "href": "/typography-tools/text-watermark-adder"
+  },
+  {
+    "name": "Type Scale Calculator",
+    "description": "Create balanced type scales. Choose base size, ratio, get consistent heading sizes.",
+    "href": "/typography-tools/type-scale-calculator"
+  },
+  {
+    "name": "Vertical Text Generator",
+    "description": "Create vertical text layouts. Asian language styling or design effects.",
+    "href": "/typography-tools/vertical-text-generator"
+  }
+]

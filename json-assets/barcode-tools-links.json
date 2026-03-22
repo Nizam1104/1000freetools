@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Barcode Color Inverter",
+    "description": "Invert barcode colors for dark backgrounds. Keep them scannable.",
+    "href": "/barcode-tools/barcode-color-inverter"
+  },
+  {
+    "name": "Barcode Comparison",
+    "description": "Compare barcode formats. See capacity, size, and use cases side by side.",
+    "href": "/barcode-tools/barcode-comparison"
+  },
+  {
+    "name": "Barcode Data Encoder",
+    "description": "Encode or decode GS1 barcode data. Handles logistics and healthcare formats.",
+    "href": "/barcode-tools/barcode-data-encoder"
+  },
+  {
+    "name": "Barcode Font Encoder",
+    "description": "Encode text for barcode fonts in Word or Excel. Download TTF files included.",
+    "href": "/barcode-tools/barcode-font-encoder"
+  },
+  {
+    "name": "Barcode Generator",
+    "description": "Create barcodes and QR codes instantly. All major 1D and 2D formats.",
+    "href": "/barcode-tools/barcode-generator"
+  },
+  {
+    "name": "Barcode Image Resizer",
+    "description": "Resize barcodes for print or web. Adjust DPI to ensure they scan.",
+    "href": "/barcode-tools/barcode-image-resizer"
+  },
+  {
+    "name": "Barcode Lookup",
+    "description": "Look up product details by barcode. UPC and EAN supported.",
+    "href": "/barcode-tools/barcode-lookup"
+  },
+  {
+    "name": "Barcode Repair",
+    "description": "Fix blurry or scratched barcodes. Clean and reconstruct for scanning.",
+    "href": "/barcode-tools/barcode-repair"
+  },
+  {
+    "name": "Barcode Scanner",
+    "description": "Scan barcodes with your webcam or upload images. Free online reader.",
+    "href": "/barcode-tools/barcode-scanner"
+  },
+  {
+    "name": "Barcode Sequence Generator",
+    "description": "Generate sequential barcodes automatically. Perfect for tickets and asset tags.",
+    "href": "/barcode-tools/barcode-sequence-generator"
+  },
+  {
+    "name": "Barcode To Base64",
+    "description": "Convert barcode images to Base64. Embed directly in HTML or code.",
+    "href": "/barcode-tools/barcode-to-base64"
+  },
+  {
+    "name": "Barcode To Csv",
+    "description": "Scan barcodes and export to CSV. Great for inventory audits.",
+    "href": "/barcode-tools/barcode-to-csv"
+  },
+  {
+    "name": "Barcode To Pdf",
+    "description": "Print barcodes on PDF sheets. Arrange multiple codes for label stock.",
+    "href": "/barcode-tools/barcode-to-pdf"
+  },
+  {
+    "name": "Barcode To Text Converter",
+    "description": "Extract numbers or text from barcode images. Decodes common 1D formats.",
+    "href": "/barcode-tools/barcode-to-text-converter"
+  },
+  {
+    "name": "Barcode Validator",
+    "description": "Verify barcode numbers and calculate check digits. EAN, UPC, ISBN supported.",
+    "href": "/barcode-tools/barcode-validator"
+  },
+  {
+    "name": "Barcode Verification",
+    "description": "Check barcode print quality against ISO standards. Get A-F grading.",
+    "href": "/barcode-tools/barcode-verification"
+  },
+  {
+    "name": "Bulk Barcode Generator",
+    "description": "Create hundreds of barcodes at once. Upload a list, download ZIP or PDF.",
+    "href": "/barcode-tools/bulk-barcode-generator"
+  },
+  {
+    "name": "Inventory Template Generator",
+    "description": "Create printable inventory sheets with barcodes. Customize for your items.",
+    "href": "/barcode-tools/inventory-template-generator"
+  },
+  {
+    "name": "Isbn Barcode Generator",
+    "description": "Generate EAN barcodes for ISBN numbers. Bookland format for retail.",
+    "href": "/barcode-tools/isbn-barcode-generator"
+  },
+  {
+    "name": "Qr Code Analytics Generator",
+    "description": "Create trackable QR codes. Monitor scans in real-time.",
+    "href": "/barcode-tools/qr-code-analytics-generator"
+  }
+]

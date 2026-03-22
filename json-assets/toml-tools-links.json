@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Csv To Toml Converter",
+    "description": "Convert CSV to TOML array of tables. Headers as keys, rows become tables.",
+    "href": "/toml-tools/csv-to-toml-converter"
+  },
+  {
+    "name": "Env To Toml Converter",
+    "description": "Convert .env files to TOML. Groups keys with underscores into nested tables.",
+    "href": "/toml-tools/env-to-toml-converter"
+  },
+  {
+    "name": "Ini To Toml Converter",
+    "description": "Upgrade INI to TOML. Sections become tables, better structure.",
+    "href": "/toml-tools/ini-to-toml-converter"
+  },
+  {
+    "name": "Json To Toml Converter",
+    "description": "Convert JSON to TOML. Proper tables, arrays, key-value formatting.",
+    "href": "/toml-tools/json-to-toml-converter"
+  },
+  {
+    "name": "Properties To Toml Converter",
+    "description": "Convert Java .properties to TOML. Dot-notation keys to nested tables.",
+    "href": "/toml-tools/properties-to-toml-converter"
+  },
+  {
+    "name": "Toml Beautifier Formatter",
+    "description": "Beautify messy TOML. Consistent indentation, spacing for maintainability.",
+    "href": "/toml-tools/toml-beautifier-formatter"
+  },
+  {
+    "name": "Toml Comment Remover",
+    "description": "Strip comments from TOML. Prepares configs for production.",
+    "href": "/toml-tools/toml-comment-remover"
+  },
+  {
+    "name": "Toml Diff Compare",
+    "description": "Compare two TOML files. Highlights key, value, table structure changes.",
+    "href": "/toml-tools/toml-diff-compare"
+  },
+  {
+    "name": "Toml Key Value Extractor",
+    "description": "Extract specific values from TOML. Dot-notation paths or regex queries.",
+    "href": "/toml-tools/toml-key-value-extractor"
+  },
+  {
+    "name": "Toml Merge Tool",
+    "description": "Merge multiple TOML files. Resolve conflicts, handle duplicate keys.",
+    "href": "/toml-tools/toml-merge-tool"
+  },
+  {
+    "name": "Toml Minifier Compressor",
+    "description": "Minify TOML by removing whitespace, comments. Compact for production.",
+    "href": "/toml-tools/toml-minifier-compressor"
+  },
+  {
+    "name": "Toml Schema Generator Validator",
+    "description": "Generate JSON Schema from TOML or validate TOML against schema.",
+    "href": "/toml-tools/toml-schema-generator-validator"
+  },
+  {
+    "name": "Toml To Csharp Class Generator",
+    "description": "Generate C# classes from TOML. POCO with JSON attributes, Newtonsoft/System.Text.Json.",
+    "href": "/toml-tools/toml-to-csharp-class-generator"
+  },
+  {
+    "name": "Toml To Csv Converter",
+    "description": "Export TOML arrays to CSV. Flattens structures to tabular format.",
+    "href": "/toml-tools/toml-to-csv-converter"
+  },
+  {
+    "name": "Toml To Env Converter",
+    "description": "Generate .env or shell exports from TOML. Docker, cloud, CI/CD ready.",
+    "href": "/toml-tools/toml-to-env-converter"
+  },
+  {
+    "name": "Toml To Go Struct Converter",
+    "description": "Generate Go structs from TOML. Idiomatic code with TOML tags.",
+    "href": "/toml-tools/toml-to-go-struct-converter"
+  },
+  {
+    "name": "Toml To Ini Converter",
+    "description": "Downgrade TOML to INI. Tables flatten to sections for legacy software.",
+    "href": "/toml-tools/toml-to-ini-converter"
+  },
+  {
+    "name": "Toml To Java Properties Converter",
+    "description": "Convert TOML to Java .properties. Flattens to dot-notation keys.",
+    "href": "/toml-tools/toml-to-java-properties-converter"
+  },
+  {
+    "name": "Toml To Javascript Object Converter",
+    "description": "Convert TOML to JavaScript objects. Clean code for frontend/backend configs.",
+    "href": "/toml-tools/toml-to-javascript-object-converter"
+  },
+  {
+    "name": "Toml To Json Converter",
+    "description": "Convert TOML to JSON. Handles nested tables, arrays perfectly.",
+    "href": "/toml-tools/toml-to-json-converter"
+  },
+  {
+    "name": "Toml To Markdown Table Converter",
+    "description": "Convert TOML arrays to Markdown tables. For READMEs, documentation.",
+    "href": "/toml-tools/toml-to-markdown-table-converter"
+  },
+  {
+    "name": "Toml To Php Array Converter",
+    "description": "Generate PHP arrays from TOML. Clean code, handles nested structures.",
+    "href": "/toml-tools/toml-to-php-array-converter"
+  },
+  {
+    "name": "Toml To Properties Converter",
+    "description": "Generate Java .properties from TOML. Flattens tables to dot-notation.",
+    "href": "/toml-tools/toml-to-properties-converter"
+  },
+  {
+    "name": "Toml To Python Dictionary Converter",
+    "description": "Convert TOML to Python dicts. Clean code, all data types handled.",
+    "href": "/toml-tools/toml-to-python-dictionary-converter"
+  },
+  {
+    "name": "Toml To Ruby Hash Converter",
+    "description": "Generate Ruby hashes from TOML. Ready for Rails or Ruby projects.",
+    "href": "/toml-tools/toml-to-ruby-hash-converter"
+  },
+  {
+    "name": "Toml To Rust Struct Generator",
+    "description": "Generate Rust structs with Serde attributes from TOML. Production-ready.",
+    "href": "/toml-tools/toml-to-rust-struct-generator"
+  },
+  {
+    "name": "Toml To Sql Converter",
+    "description": "Generate SQL schemas/INSERTs from TOML. MySQL, PostgreSQL, SQLite.",
+    "href": "/toml-tools/toml-to-sql-converter"
+  },
+  {
+    "name": "Toml To Typescript Interface Generator",
+    "description": "Create TypeScript interfaces from TOML. Type-safe definitions.",
+    "href": "/toml-tools/toml-to-typescript-interface-generator"
+  },
+  {
+    "name": "Toml To Xml Converter",
+    "description": "Convert TOML to XML. Customizable mapping for legacy systems.",
+    "href": "/toml-tools/toml-to-xml-converter"
+  },
+  {
+    "name": "Toml To Yaml Converter",
+    "description": "Convert TOML to YAML. Accurate structure translation.",
+    "href": "/toml-tools/toml-to-yaml-converter"
+  },
+  {
+    "name": "Toml Validator Linter",
+    "description": "Validate TOML for errors. Catches syntax issues, duplicate keys, type mismatches.",
+    "href": "/toml-tools/toml-validator-linter"
+  },
+  {
+    "name": "Xml To Toml Converter",
+    "description": "Convert XML to TOML. Elements map to tables, simplifies complex XML.",
+    "href": "/toml-tools/xml-to-toml-converter"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Csv Cleaner",
+    "description": "Clean trailing spaces, blank rows, BOM markers, Windows line endings. Get a corrected file.",
+    "href": "/csv-tools/csv-cleaner"
+  },
+  {
+    "name": "Csv Column Extractor",
+    "description": "Extract specific columns from CSV. Rename, reorder, download trimmed files.",
+    "href": "/csv-tools/csv-column-extractor"
+  },
+  {
+    "name": "Csv Column Merger",
+    "description": "Merge columns with custom templates. First + last name, city + state + zip.",
+    "href": "/csv-tools/csv-column-merger"
+  },
+  {
+    "name": "Csv Column Remover",
+    "description": "Drop unwanted columns before sharing. Preview, select, download.",
+    "href": "/csv-tools/csv-column-remover"
+  },
+  {
+    "name": "Csv Column Reorder",
+    "description": "Rearrange CSV columns visually. Drag headers, rename on the fly.",
+    "href": "/csv-tools/csv-column-reorder"
+  },
+  {
+    "name": "Csv Column Splitter",
+    "description": "Split columns by delimiter, regex, or fixed positions. Names, addresses, more.",
+    "href": "/csv-tools/csv-column-splitter"
+  },
+  {
+    "name": "Csv Column Statistics",
+    "description": "Get count, nulls, min, max, mean, median, top values for every column.",
+    "href": "/csv-tools/csv-column-statistics"
+  },
+  {
+    "name": "Csv Data Normalizer",
+    "description": "Normalize dates, phones, yes/no values. Apply consistent formatting across data.",
+    "href": "/csv-tools/csv-data-normalizer"
+  },
+  {
+    "name": "Csv Deduplicator",
+    "description": "Remove exact and near-duplicates. Fuzzy matching catches 'Jon' vs 'John'.",
+    "href": "/csv-tools/csv-deduplicator"
+  },
+  {
+    "name": "Csv Delimiter Converter",
+    "description": "Switch delimiters safely. Semicolons to pipes, with proper quoting.",
+    "href": "/csv-tools/csv-delimiter-converter"
+  },
+  {
+    "name": "Csv Duplicate Remover",
+    "description": "Remove duplicate rows. Deduplicate on all columns or key fields.",
+    "href": "/csv-tools/csv-duplicate-remover"
+  },
+  {
+    "name": "Csv Editor",
+    "description": "Lightweight CSV editor. Click cells, edit, download. Data stays local.",
+    "href": "/csv-tools/csv-editor"
+  },
+  {
+    "name": "Csv Email Extractor",
+    "description": "Extract and validate email addresses from any column. Deduplicate, export.",
+    "href": "/csv-tools/csv-email-extractor"
+  },
+  {
+    "name": "Csv File Merger",
+    "description": "Merge multiple CSVs into one. Handles mismatched columns, tags sources.",
+    "href": "/csv-tools/csv-file-merger"
+  },
+  {
+    "name": "Csv Formatter",
+    "description": "Fix inconsistent quotes, delimiters, whitespace. Standardize CSV files.",
+    "href": "/csv-tools/csv-formatter"
+  },
+  {
+    "name": "Csv Header Editor",
+    "description": "Rename headers, normalize case, trim spaces. Convert to snake_case or camelCase.",
+    "href": "/csv-tools/csv-header-editor"
+  },
+  {
+    "name": "Csv Join Merge",
+    "description": "Join two CSVs on a key column. Inner, left, right, full outer joins.",
+    "href": "/csv-tools/csv-join-merge"
+  },
+  {
+    "name": "Csv Minifier",
+    "description": "Strip trailing spaces, redundant quotes, blank lines. Leanest file possible.",
+    "href": "/csv-tools/csv-minifier"
+  },
+  {
+    "name": "Csv Pretty Print",
+    "description": "Convert CSV to aligned text tables. Perfect for docs, Slack, terminal output.",
+    "href": "/csv-tools/csv-pretty-print"
+  },
+  {
+    "name": "Csv Quote Escaper",
+    "description": "Apply RFC 4180 quoting. Handle embedded commas and newlines correctly.",
+    "href": "/csv-tools/csv-quote-escaper"
+  },
+  {
+    "name": "Csv Random Row Generator",
+    "description": "Generate fake CSV test data. Define columns, choose row count, download.",
+    "href": "/csv-tools/csv-random-row-generator"
+  },
+  {
+    "name": "Csv Row Counter",
+    "description": "Count rows, blanks, fill rate per column. Fast completeness report.",
+    "href": "/csv-tools/csv-row-counter"
+  },
+  {
+    "name": "Csv Row Filter",
+    "description": "Filter rows by value, range, pattern, or date. AND/OR logic supported.",
+    "href": "/csv-tools/csv-row-filter"
+  },
+  {
+    "name": "Csv Row Sorter",
+    "description": "Sort by any column. Numeric, alphabetic, date-aware. Multi-level sorting.",
+    "href": "/csv-tools/csv-row-sorter"
+  },
+  {
+    "name": "Csv Sample Generator",
+    "description": "Extract random samples by count or percentage. Stratification supported.",
+    "href": "/csv-tools/csv-sample-generator"
+  },
+  {
+    "name": "Csv Splitter",
+    "description": "Split large CSVs into chunks. Equally sized or by key column. ZIP download.",
+    "href": "/csv-tools/csv-splitter"
+  },
+  {
+    "name": "Csv To Array",
+    "description": "Convert CSV columns to JavaScript, Python, PHP, Ruby arrays. Ready to paste.",
+    "href": "/csv-tools/csv-to-array"
+  },
+  {
+    "name": "Csv To Excel",
+    "description": "Convert CSV to Excel workbook. Styled headers, auto-sized columns.",
+    "href": "/csv-tools/csv-to-excel"
+  },
+  {
+    "name": "Csv To Html",
+    "description": "Convert CSV to HTML tables. Styled, responsive, ready to paste into websites.",
+    "href": "/csv-tools/csv-to-html"
+  },
+  {
+    "name": "Csv To Json",
+    "description": "Convert CSV to JSON objects. Smart type inference, optional nesting.",
+    "href": "/csv-tools/csv-to-json"
+  },
+  {
+    "name": "Csv To Markdown",
+    "description": "Convert CSV to Markdown tables. Perfectly aligned for READMEs and wikis.",
+    "href": "/csv-tools/csv-to-markdown"
+  },
+  {
+    "name": "Csv To Sql",
+    "description": "Generate SQL INSERT scripts from CSV. CREATE TABLE + typed INSERT rows.",
+    "href": "/csv-tools/csv-to-sql"
+  },
+  {
+    "name": "Csv To Text",
+    "description": "Transform rows to text using templates. Generate personalized messages at scale.",
+    "href": "/csv-tools/csv-to-text"
+  },
+  {
+    "name": "Csv To Tsv",
+    "description": "Swap commas for tabs safely. Handles fields containing commas correctly.",
+    "href": "/csv-tools/csv-to-tsv"
+  },
+  {
+    "name": "Csv To Xml",
+    "description": "Convert CSV to XML. Control element names, attributes, indentation.",
+    "href": "/csv-tools/csv-to-xml"
+  },
+  {
+    "name": "Csv To Yaml",
+    "description": "Convert CSV to YAML mappings. Automatic type detection for configs.",
+    "href": "/csv-tools/csv-to-yaml"
+  },
+  {
+    "name": "Csv Transpose",
+    "description": "Flip rows to columns and columns to rows. Headers handled correctly.",
+    "href": "/csv-tools/csv-transpose"
+  },
+  {
+    "name": "Csv Unquote",
+    "description": "Strip unnecessary quotes from fields. Reduce file size, cleaner CSV.",
+    "href": "/csv-tools/csv-unquote"
+  },
+  {
+    "name": "Csv Validator",
+    "description": "Expose mismatched columns, rogue delimiters, encoding issues before imports fail.",
+    "href": "/csv-tools/csv-validator"
+  },
+  {
+    "name": "Csv Viewer",
+    "description": "View CSV as a sortable table. No spreadsheet software needed.",
+    "href": "/csv-tools/csv-viewer"
+  }
+]

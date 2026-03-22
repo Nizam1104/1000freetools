@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Base64 Minifier",
+    "description": "Minify code and convert to Base64 in one step. For data URIs, embedded resources.",
+    "href": "/minifier-tools/base64-minifier"
+  },
+  {
+    "name": "Bulk File Minifier",
+    "description": "Minify multiple files from ZIP archive. HTML, CSS, JS. Returns compressed ZIP.",
+    "href": "/minifier-tools/bulk-file-minifier"
+  },
+  {
+    "name": "Cli Minifier Generator",
+    "description": "Generate CLI scripts for local minification. Bash, PowerShell, Node.js commands.",
+    "href": "/minifier-tools/cli-minifier-generator"
+  },
+  {
+    "name": "Code Beautifier",
+    "description": "Make minified code readable again. Reformat HTML, CSS, JS with proper indentation.",
+    "href": "/minifier-tools/code-beautifier"
+  },
+  {
+    "name": "Code Minifier",
+    "description": "Minify multiple languages. HTML, CSS, JS, JSON. Optimize all web assets.",
+    "href": "/minifier-tools/code-minifier"
+  },
+  {
+    "name": "Css Js Combined Minifier",
+    "description": "Minify and combine CSS/JS files. Reduce HTTP requests, faster page loads.",
+    "href": "/minifier-tools/css-js-combined-minifier"
+  },
+  {
+    "name": "Css Minifier",
+    "description": "Minify CSS files. Removes comments, whitespace, optimizes syntax.",
+    "href": "/minifier-tools/css-minifier"
+  },
+  {
+    "name": "Html Inline Css Js Minifier",
+    "description": "Minify HTML with inline CSS/JS. Extracts, compresses, re-inserts embedded code.",
+    "href": "/minifier-tools/html-inline-css-js-minifier"
+  },
+  {
+    "name": "Html Minifier",
+    "description": "Reduce HTML file size. Removes whitespace, comments, redundant code.",
+    "href": "/minifier-tools/html-minifier"
+  },
+  {
+    "name": "Javascript Minifier",
+    "description": "Compress JavaScript files. Removes unnecessary chars, shortens variables.",
+    "href": "/minifier-tools/javascript-minifier"
+  },
+  {
+    "name": "Json Minifier",
+    "description": "Minify JSON for APIs. Removes whitespace without altering data structure.",
+    "href": "/minifier-tools/json-minifier"
+  },
+  {
+    "name": "Minification Analyzer",
+    "description": "Get detailed minification reports. Exact savings, performance estimates.",
+    "href": "/minifier-tools/minification-analyzer"
+  },
+  {
+    "name": "Minified Diff Viewer",
+    "description": "Compare original and minified code side by side. See exactly what was removed.",
+    "href": "/minifier-tools/minified-diff-viewer"
+  },
+  {
+    "name": "Php Minifier",
+    "description": "Compress PHP files. Removes comments, spaces, keeps functionality.",
+    "href": "/minifier-tools/php-minifier"
+  },
+  {
+    "name": "Real Time Minifier",
+    "description": "See minification results live. Edit code, watch compression update instantly.",
+    "href": "/minifier-tools/real-time-minifier"
+  },
+  {
+    "name": "Sql Minifier",
+    "description": "Minify SQL queries. Removes comments, spacing, preserves execution logic.",
+    "href": "/minifier-tools/sql-minifier"
+  },
+  {
+    "name": "Svg Minifier",
+    "description": "Optimize SVG files. Removes redundant data, minifies paths, reduces size.",
+    "href": "/minifier-tools/svg-minifier"
+  },
+  {
+    "name": "Text Minifier",
+    "description": "Remove whitespace from plain text. Compress into compact format.",
+    "href": "/minifier-tools/text-minifier"
+  },
+  {
+    "name": "Wordpress Minifier",
+    "description": "Minify WordPress theme/plugin files. PHP, CSS, JS specific to WP structures.",
+    "href": "/minifier-tools/wordpress-minifier"
+  },
+  {
+    "name": "Xml Minifier",
+    "description": "Compress XML files. Removes spaces, comments, line breaks, keeps structure.",
+    "href": "/minifier-tools/xml-minifier"
+  }
+]

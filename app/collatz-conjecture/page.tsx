@@ -128,7 +128,9 @@ export default function CollatzPage() {
     if (e.key === "Enter") handleCalculate();
   };
 
-  const maxVal = sequence ? sequence.reduce((a, b) => (b > a ? b : a), BigInt(0)) : BigInt(0);
+  const maxVal = sequence
+    ? sequence.reduce((a, b) => (b > a ? b : a), BigInt(0))
+    : BigInt(0);
   const maxStep = sequence ? sequence.findIndex((v) => v === maxVal) + 1 : 0;
   const stepsCount = sequence ? sequence.length : 0;
 
@@ -801,7 +803,9 @@ export default function CollatzPage() {
                           <span
                             className={`step-op ${stepsToShow[i - 1] % BigInt(2) === BigInt(0) ? "even" : "odd"}`}
                           >
-                            {stepsToShow[i - 1] % BigInt(2) === BigInt(0) ? "÷" : "*"}
+                            {stepsToShow[i - 1] % BigInt(2) === BigInt(0)
+                              ? "÷"
+                              : "*"}
                           </span>
                         )}
                         {!op && <span className="step-op" />}

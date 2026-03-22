@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
-import TextDiffer from "@/components/ascii-tools/text-differ";
-import TextDifferSeo from "@/components/seo-content/ascii-tools/text-differ";
+import TextDiffer from "@/components/text-tools/text-differ";
+import TextDifferSeo from "@/components/seo-content/string-tools/text-differ";
 
 export const metadata: Metadata = {
   title: `Text Differ: Compare Text Online and Find Differences`,
   description: `Free text comparison tool. Compare two texts side-by-side and highlight differences. Shows additions, deletions, and changes. Perfect for code review and version control.`,
   alternates: {
-    canonical: `https://1000freetools.com/ascii-tools/text-differ`,
+    canonical: `https://1000freetools.com/text-tools/text-differ`,
   },
 };
 

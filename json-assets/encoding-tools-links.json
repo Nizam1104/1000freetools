@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Ascii Code Converter",
+    "description": "Convert characters to ASCII codes. Decimal, hex, binary, octal formats included.",
+    "href": "/encoding-tools/ascii-code-converter"
+  },
+  {
+    "name": "Base32 Encoder Decoder",
+    "description": "Encode or decode Base32. Human-readable encoding for protocols and apps.",
+    "href": "/encoding-tools/base32-encoder-decoder"
+  },
+  {
+    "name": "Base36 Encoder Decoder",
+    "description": "Convert numbers to Base36. Shorter, case-insensitive strings for URLs and IDs.",
+    "href": "/encoding-tools/base36-encoder-decoder"
+  },
+  {
+    "name": "Base58 Encoder Decoder",
+    "description": "Encode to Base58 for cryptocurrencies. Bitcoin-style addresses with checksum.",
+    "href": "/encoding-tools/base58-encoder-decoder"
+  },
+  {
+    "name": "Base64 Encoder Decoder",
+    "description": "Encode text or files to Base64. Safe for email, web, data storage.",
+    "href": "/encoding-tools/base64-encoder-decoder"
+  },
+  {
+    "name": "Base85 Ascii85 Encoder Decoder",
+    "description": "Encode to Base85/Ascii85. Used in PDFs and binary data representations.",
+    "href": "/encoding-tools/base85-ascii85-encoder-decoder"
+  },
+  {
+    "name": "Bcd Binary Coded Decimal Converter",
+    "description": "Convert decimal to BCD. Each digit as 4 bits. Digital systems and finance.",
+    "href": "/encoding-tools/bcd-binary-coded-decimal-converter"
+  },
+  {
+    "name": "Bcd To Decimal Converter",
+    "description": "BCD to decimal conversion. Financial data, hardware registers, embedded systems.",
+    "href": "/encoding-tools/bcd-to-decimal-converter"
+  },
+  {
+    "name": "Binary Encoder Decoder",
+    "description": "Text to binary and back. Learn, program, or handle low-level data.",
+    "href": "/encoding-tools/binary-encoder-decoder"
+  },
+  {
+    "name": "Binhex Encoder Decoder",
+    "description": "Encode/decode BinHex for classic Mac files. Resource forks supported.",
+    "href": "/encoding-tools/binhex-encoder-decoder"
+  },
+  {
+    "name": "Data Uri Converter",
+    "description": "Turn files into Data URIs. Embed images directly in HTML/CSS.",
+    "href": "/encoding-tools/data-uri-converter"
+  },
+  {
+    "name": "Ebcdic Ascii Converter",
+    "description": "Convert EBCDIC to ASCII and back. Mainframe compatibility.",
+    "href": "/encoding-tools/ebcdic-ascii-converter"
+  },
+  {
+    "name": "Escape Unescape String",
+    "description": "Escape special characters for code or data. Unescape back to original.",
+    "href": "/encoding-tools/escape-unescape-string"
+  },
+  {
+    "name": "Gray Code Encoder Decoder",
+    "description": "Binary to Gray code conversion. Rotary encoders, error correction.",
+    "href": "/encoding-tools/gray-code-encoder-decoder"
+  },
+  {
+    "name": "Gzip Compress Decompress",
+    "description": "Compress with Gzip or decompress. Web optimization, data storage.",
+    "href": "/encoding-tools/gzip-compress-decompress"
+  },
+  {
+    "name": "Hamming Code Encoder Decoder",
+    "description": "Add error-correcting bits with Hamming code. Educational for coding theory.",
+    "href": "/encoding-tools/hamming-code-encoder-decoder"
+  },
+  {
+    "name": "Hex Encoder Decoder",
+    "description": "Text to hex and back. Debugging, network analysis, crypto.",
+    "href": "/encoding-tools/hex-encoder-decoder"
+  },
+  {
+    "name": "Manchester Code Encoder Decoder",
+    "description": "Encode binary to Manchester code. Clock sync for data transmission.",
+    "href": "/encoding-tools/manchester-code-encoder-decoder"
+  },
+  {
+    "name": "Morse Code Translator",
+    "description": "Translate text to Morse code. Audio playback, adjustable speed.",
+    "href": "/encoding-tools/morse-code-translator"
+  },
+  {
+    "name": "Percent Encoding Decoder",
+    "description": "RFC 3986 percent encoding. Encode/decode URI components correctly.",
+    "href": "/encoding-tools/percent-encoding-decoder"
+  },
+  {
+    "name": "Punycode Encoder Decoder",
+    "description": "Unicode domains to Punycode for DNS. IDN encoding/decoding.",
+    "href": "/encoding-tools/punycode-encoder-decoder"
+  },
+  {
+    "name": "Quoted Printable Encoder Decoder",
+    "description": "Quoted-Printable for email. Safe transmission with character sets.",
+    "href": "/encoding-tools/quoted-printable-encoder-decoder"
+  },
+  {
+    "name": "Rot13 Cipher Encoder Decoder",
+    "description": "ROT13 letter substitution. Obscure spoilers, puzzles, light obfuscation.",
+    "href": "/encoding-tools/rot13-cipher-encoder-decoder"
+  },
+  {
+    "name": "Unicode Character Encoder Decoder",
+    "description": "Characters to Unicode code points and back. Character names included.",
+    "href": "/encoding-tools/unicode-character-encoder-decoder"
+  },
+  {
+    "name": "Utf16 Encoder Decoder",
+    "description": "UTF-16 encoding in BE or LE. BOM handling included.",
+    "href": "/encoding-tools/utf16-encoder-decoder"
+  },
+  {
+    "name": "Utf7 Encoder Decoder",
+    "description": "UTF-7 for legacy 7-bit systems. Historical/compatibility testing.",
+    "href": "/encoding-tools/utf7-encoder-decoder"
+  },
+  {
+    "name": "Utf8 Encoder Decoder",
+    "description": "Text to UTF-8 bytes in hex, binary, decimal. Internationalization.",
+    "href": "/encoding-tools/utf8-encoder-decoder"
+  },
+  {
+    "name": "Uuencode Uudecode Tool",
+    "description": "Uuencode binary for email. Legacy file transfer format.",
+    "href": "/encoding-tools/uuencode-uudecode-tool"
+  },
+  {
+    "name": "Xxencode Xxdecode Tool",
+    "description": "XXencode/XXdecode binary-to-text. Different charset than Uuencode.",
+    "href": "/encoding-tools/xxencode-xxdecode-tool"
+  },
+  {
+    "name": "Z85 Base85 Encoder Decoder",
+    "description": "Z85 encoding for ZeroMQ. URL-safe Base85 variant, compact and readable.",
+    "href": "/encoding-tools/z85-base85-encoder-decoder"
+  }
+]

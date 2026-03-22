@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Animated Font Generator",
+    "description": "Make text move, glow, shimmer. Animated fonts for stories, banners, websites.",
+    "href": "/font-tools/animated-font-generator"
+  },
+  {
+    "name": "Font Base64 Encoder",
+    "description": "Convert font files to Base64 for CSS. Embed fonts directly, no external files.",
+    "href": "/font-tools/font-base64-encoder"
+  },
+  {
+    "name": "Font Contrast Checker",
+    "description": "Test text color contrast against WCAG standards. Ensure readability.",
+    "href": "/font-tools/font-contrast-checker"
+  },
+  {
+    "name": "Font Converter",
+    "description": "Convert TTF to WOFF, OTF to SVG. Batch conversions, web optimization.",
+    "href": "/font-tools/font-converter"
+  },
+  {
+    "name": "Font Duplicate Finder",
+    "description": "Find and remove duplicate fonts. Clean up your typography library.",
+    "href": "/font-tools/font-duplicate-finder"
+  },
+  {
+    "name": "Font Generator",
+    "description": "Create unique text styles instantly. Social media, gaming, creative projects.",
+    "href": "/font-tools/font-generator"
+  },
+  {
+    "name": "Font Identifier",
+    "description": "Identify fonts from images. Upload logo or screenshot, get font name.",
+    "href": "/font-tools/font-identifier"
+  },
+  {
+    "name": "Font Kerning Adjuster",
+    "description": "Perfect letter spacing for logos and headlines. Pixel-level control.",
+    "href": "/font-tools/font-kerning-adjuster"
+  },
+  {
+    "name": "Font License Checker",
+    "description": "Check font licenses for commercial, personal, web use. Understand restrictions.",
+    "href": "/font-tools/font-license-checker"
+  },
+  {
+    "name": "Font Metadata Editor",
+    "description": "Edit font names, families, metadata. Fix Adobe conflicts, organize library.",
+    "href": "/font-tools/font-metadata-editor"
+  },
+  {
+    "name": "Font Ocr Extractor",
+    "description": "Extract text from images with font styling. OCR recognizes fonts.",
+    "href": "/font-tools/font-ocr-extractor"
+  },
+  {
+    "name": "Font Pairing",
+    "description": "Find beautiful font combinations. Test and preview pairings in real-time.",
+    "href": "/font-tools/font-pairing"
+  },
+  {
+    "name": "Font Previewer",
+    "description": "See your text in hundreds of fonts. Compare side by side.",
+    "href": "/font-tools/font-previewer"
+  },
+  {
+    "name": "Font Similarity Finder",
+    "description": "Find alternatives to expensive fonts. Similar typefaces at lower cost.",
+    "href": "/font-tools/font-similarity-finder"
+  },
+  {
+    "name": "Font Size Calculator",
+    "description": "Calculate font sizes for any screen or print. Convert px, pt, em, rem.",
+    "href": "/font-tools/font-size-calculator"
+  },
+  {
+    "name": "Font Statistics Analyzer",
+    "description": "Get technical font info. Glyph counts, language support, OpenType features.",
+    "href": "/font-tools/font-statistics-analyzer"
+  },
+  {
+    "name": "Font Stress Tester",
+    "description": "Test fonts at different sizes, weights, languages. Find rendering issues.",
+    "href": "/font-tools/font-stress-tester"
+  },
+  {
+    "name": "Font Style Transfer",
+    "description": "Mix font characteristics to create hybrids. Experimental typography tool.",
+    "href": "/font-tools/font-style-transfer"
+  },
+  {
+    "name": "Font Subsetter",
+    "description": "Remove unused characters from fonts. Faster web fonts for specific languages.",
+    "href": "/font-tools/font-subsetter"
+  },
+  {
+    "name": "Handwriting Font Maker",
+    "description": "Turn your handwriting into a font. Personal projects, signatures, branding.",
+    "href": "/font-tools/handwriting-font-maker"
+  }
+]

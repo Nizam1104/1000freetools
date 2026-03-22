@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Csv To Sql Converter Inserts",
+    "description": "Convert CSV to SQL INSERT statements. Map columns, generate MySQL, PostgreSQL, SQL Server.",
+    "href": "/sql-tools/csv-to-sql-converter-inserts"
+  },
+  {
+    "name": "Json To Sql Converter",
+    "description": "Transform JSON to SQL INSERT commands. Populate database tables from JSON.",
+    "href": "/sql-tools/json-to-sql-converter"
+  },
+  {
+    "name": "Sql Case Converter Upper Lower Proper",
+    "description": "Change SQL keyword case. UPPERCASE, lowercase, Proper Case for team standards.",
+    "href": "/sql-tools/sql-case-converter-upper-lower-proper"
+  },
+  {
+    "name": "Sql Date Function Playground",
+    "description": "Test SQL date functions live. DATE_ADD, DATEDIFF, EXTRACT. MySQL, PostgreSQL.",
+    "href": "/sql-tools/sql-date-function-playground"
+  },
+  {
+    "name": "Sql Diff Compare Schemas Queries",
+    "description": "Compare SQL scripts or schemas. Highlights changes in tables, columns, constraints.",
+    "href": "/sql-tools/sql-diff-compare-schemas-queries"
+  },
+  {
+    "name": "Sql Escape Unescape Tool",
+    "description": "Escape special chars to prevent SQL injection. Unescape strings back.",
+    "href": "/sql-tools/sql-escape-unescape-tool"
+  },
+  {
+    "name": "Sql Execution Plan Visualizer",
+    "description": "Visualize query execution plans. Upload EXPLAIN output, see scans, joins, sorts.",
+    "href": "/sql-tools/sql-execution-plan-visualizer"
+  },
+  {
+    "name": "Sql Formatter Beautifier",
+    "description": "Clean up messy SQL code. Proper indentation, keyword highlighting. All dialects.",
+    "href": "/sql-tools/sql-formatter-beautifier"
+  },
+  {
+    "name": "Sql Index Advisor Suggest Tool",
+    "description": "Get index suggestions for queries. Identifies slow columns, recommends indexes.",
+    "href": "/sql-tools/sql-index-advisor-suggest-tool"
+  },
+  {
+    "name": "Sql Join Types Visualizer",
+    "description": "Understand SQL JOINs visually. INNER, LEFT, RIGHT, FULL with examples, Venn diagrams.",
+    "href": "/sql-tools/sql-join-types-visualizer"
+  },
+  {
+    "name": "Sql Password Hash Generator Md5 Sha",
+    "description": "Generate SQL code for hashed passwords. MD5, SHA1, SHA2. INSERT/UPDATE ready.",
+    "href": "/sql-tools/sql-password-hash-generator-md5-sha"
+  },
+  {
+    "name": "Sql Query Parser Tokenizer",
+    "description": "Parse SQL queries to tokens. Breaks down SELECT, FROM, WHERE into components.",
+    "href": "/sql-tools/sql-query-parser-tokenizer"
+  },
+  {
+    "name": "Sql Query To Csv Export",
+    "description": "Export SQL results to CSV. Custom delimiters, quotes, formatting for spreadsheets.",
+    "href": "/sql-tools/sql-query-to-csv-export"
+  },
+  {
+    "name": "Sql Query Validator Syntax Checker",
+    "description": "Validate SQL for syntax errors. Find mistakes before running, prevent database errors.",
+    "href": "/sql-tools/sql-query-validator-syntax-checker"
+  },
+  {
+    "name": "Sql Random Data Generator",
+    "description": "Generate fake data as SQL INSERT. Define columns, types, create thousands of rows.",
+    "href": "/sql-tools/sql-random-data-generator"
+  },
+  {
+    "name": "Sql Regular Expression Tester Regexp",
+    "description": "Test regex for SQL queries. Simulate REGEXP, LIKE with sample data.",
+    "href": "/sql-tools/sql-regular-expression-tester-regexp"
+  },
+  {
+    "name": "Sql Stored Procedure Generator",
+    "description": "Generate stored procedure boilerplate. Functions, triggers. MySQL, SQL Server.",
+    "href": "/sql-tools/sql-stored-procedure-generator"
+  },
+  {
+    "name": "Sql To Json Converter",
+    "description": "Transform SQL output to JSON. For web APIs, modern applications.",
+    "href": "/sql-tools/sql-to-json-converter"
+  },
+  {
+    "name": "Sqlite Viewer Online",
+    "description": "Open SQLite .db files in browser. View tables, run queries, export data.",
+    "href": "/sql-tools/sqlite-viewer-online"
+  },
+  {
+    "name": "Visual Sql Query Builder",
+    "description": "Build SQL queries visually. Drag-and-drop tables, joins, filters. Generate SQL.",
+    "href": "/sql-tools/visual-sql-query-builder"
+  }
+]

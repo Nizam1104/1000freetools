@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Animated Svg Lottie Player Validator",
+    "description": "Preview animated SVG/Lottie files. Play, pause, adjust speed, check errors.",
+    "href": "/svg-tools/animated-svg-lottie-player-validator"
+  },
+  {
+    "name": "Base64 To Svg Decoder",
+    "description": "Decode Base64 SVG strings to standard SVG. Preview, download for editing.",
+    "href": "/svg-tools/base64-to-svg-decoder"
+  },
+  {
+    "name": "Svg Background Remover",
+    "description": "Remove backgrounds from SVG logos. Identify and change or remove background color.",
+    "href": "/svg-tools/svg-background-remover"
+  },
+  {
+    "name": "Svg Color Changer",
+    "description": "Change SVG colors easily. Replace hex codes or recolor individual elements.",
+    "href": "/svg-tools/svg-color-changer"
+  },
+  {
+    "name": "Svg Comparison Diff Tool",
+    "description": "Compare two SVG files. Visual side-by-side and XML code diff.",
+    "href": "/svg-tools/svg-comparison-diff-tool"
+  },
+  {
+    "name": "Svg Editor Online",
+    "description": "Edit SVG graphics in browser. Draw shapes, add text, apply colors, export.",
+    "href": "/svg-tools/svg-editor-online"
+  },
+  {
+    "name": "Svg Font To Path Converter",
+    "description": "Convert SVG text to vector paths. Ensures fonts display everywhere correctly.",
+    "href": "/svg-tools/svg-font-to-path-converter"
+  },
+  {
+    "name": "Svg Gradient Generator Editor",
+    "description": "Create linear/radial gradients for SVG. Edit colors, stops, angles, copy code.",
+    "href": "/svg-tools/svg-gradient-generator-editor"
+  },
+  {
+    "name": "Svg Merge Tool",
+    "description": "Combine multiple SVGs into one. Arrange side-by-side or stacked.",
+    "href": "/svg-tools/svg-merge-tool"
+  },
+  {
+    "name": "Svg Metadata Viewer Remover",
+    "description": "View and remove hidden SVG metadata. Strip editor info, comments, shrink files.",
+    "href": "/svg-tools/svg-metadata-viewer-remover"
+  },
+  {
+    "name": "Svg Path Editor Simplifier",
+    "description": "Edit and simplify SVG paths. Visualize changes, reduce points, convert commands.",
+    "href": "/svg-tools/svg-path-editor-simplifier"
+  },
+  {
+    "name": "Svg Pattern Generator",
+    "description": "Generate seamless SVG patterns. Stripes, dots, grids. Customize, copy code.",
+    "href": "/svg-tools/svg-pattern-generator"
+  },
+  {
+    "name": "Svg Splitter Extractor",
+    "description": "Split SVG into multiple files. Extract individual icons or elements.",
+    "href": "/svg-tools/svg-splitter-extractor"
+  },
+  {
+    "name": "Svg To Base64 Encoder",
+    "description": "Encode SVG to Base64 data URI. Embed directly in CSS/HTML, reduce HTTP requests.",
+    "href": "/svg-tools/svg-to-base64-encoder"
+  },
+  {
+    "name": "Svg To Ico Converter",
+    "description": "Convert SVG to ICO favicon. Multiple sizes in one file for browsers.",
+    "href": "/svg-tools/svg-to-ico-converter"
+  },
+  {
+    "name": "Svg To Jpg Converter",
+    "description": "Convert SVG to JPG. Adjust quality, size for social media, websites.",
+    "href": "/svg-tools/svg-to-jpg-converter"
+  },
+  {
+    "name": "Svg To Pdf Converter",
+    "description": "Turn SVG into PDF. Combine multiple SVGs, perfect for print shops.",
+    "href": "/svg-tools/svg-to-pdf-converter"
+  },
+  {
+    "name": "Svg To Png Converter",
+    "description": "Convert SVG to PNG. Set exact dimensions, transparent backgrounds, one-click.",
+    "href": "/svg-tools/svg-to-png-converter"
+  },
+  {
+    "name": "Svg To Webp Converter",
+    "description": "Convert SVG to WEBP. Smaller files, excellent quality for modern web.",
+    "href": "/svg-tools/svg-to-webp-converter"
+  },
+  {
+    "name": "Svg Viewer Inspector",
+    "description": "View SVG and explore code. Click elements to see corresponding code.",
+    "href": "/svg-tools/svg-viewer-inspector"
+  }
+]

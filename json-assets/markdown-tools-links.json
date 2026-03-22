@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Html To Markdown Converter",
+    "description": "Convert HTML to Markdown. Headings, links, lists, images handled accurately.",
+    "href": "/markdown-tools/html-to-markdown-converter"
+  },
+  {
+    "name": "Markdown Cheat Sheet Generator",
+    "description": "Create custom Markdown references. Select elements, see examples, download PDF.",
+    "href": "/markdown-tools/markdown-cheat-sheet-generator"
+  },
+  {
+    "name": "Markdown Code Block Formatter",
+    "description": "Format code inside Markdown blocks. Auto-detect language, fix indentation.",
+    "href": "/markdown-tools/markdown-code-block-formatter"
+  },
+  {
+    "name": "Markdown Diff Checker",
+    "description": "Compare two Markdown docs. Highlights text and formatting changes clearly.",
+    "href": "/markdown-tools/markdown-diff-checker"
+  },
+  {
+    "name": "Markdown Escape Tool",
+    "description": "Escape Markdown special chars or unescape. For tutorials and code docs.",
+    "href": "/markdown-tools/markdown-escape-tool"
+  },
+  {
+    "name": "Markdown Front Matter Editor",
+    "description": "Edit YAML/TOML front matter. Update titles, dates, tags for static sites.",
+    "href": "/markdown-tools/markdown-front-matter-editor"
+  },
+  {
+    "name": "Markdown Image Syntax Generator",
+    "description": "Generate Markdown image syntax. Alt text, preview, custom sizing, batch.",
+    "href": "/markdown-tools/markdown-image-syntax-generator"
+  },
+  {
+    "name": "Markdown Link Generator",
+    "description": "Create Markdown links instantly. Perfect syntax, reference-style, URL validation.",
+    "href": "/markdown-tools/markdown-link-generator"
+  },
+  {
+    "name": "Markdown Linter Formatter",
+    "description": "Clean and standardize Markdown. Identifies style issues, auto-fixes.",
+    "href": "/markdown-tools/markdown-linter-formatter"
+  },
+  {
+    "name": "Markdown Preview Editor",
+    "description": "Live Markdown editor with preview. GitHub Flavored, real-time rendering.",
+    "href": "/markdown-tools/markdown-preview-editor"
+  },
+  {
+    "name": "Markdown Table Generator",
+    "description": "Build Markdown tables visually. Adjust alignment, add rows, import CSV.",
+    "href": "/markdown-tools/markdown-table-generator"
+  },
+  {
+    "name": "Markdown Table Of Contents Generator",
+    "description": "Auto-generate TOC from headers. Customizable format and depth.",
+    "href": "/markdown-tools/markdown-table-of-contents-generator"
+  },
+  {
+    "name": "Markdown Task List Generator",
+    "description": "Create Markdown checklists visually. Add tasks, mark complete, generate syntax.",
+    "href": "/markdown-tools/markdown-task-list-generator"
+  },
+  {
+    "name": "Markdown To Html Converter",
+    "description": "Convert Markdown to HTML. All common syntax, live preview, clean output.",
+    "href": "/markdown-tools/markdown-to-html-converter"
+  },
+  {
+    "name": "Markdown To Jira Converter",
+    "description": "Translate Markdown to Jira wiki markup. Preview, copy-paste to tickets.",
+    "href": "/markdown-tools/markdown-to-jira-converter"
+  },
+  {
+    "name": "Markdown To Json Converter",
+    "description": "Transform Markdown to structured JSON. Headers, paragraphs, lists breakdown.",
+    "href": "/markdown-tools/markdown-to-json-converter"
+  },
+  {
+    "name": "Markdown To Notion Converter",
+    "description": "Convert Markdown for Notion. Preserves lists, headers, code blocks.",
+    "href": "/markdown-tools/markdown-to-notion-converter"
+  },
+  {
+    "name": "Markdown To Pdf Converter",
+    "description": "Convert Markdown to PDF. Select templates, customize styling, download.",
+    "href": "/markdown-tools/markdown-to-pdf-converter"
+  },
+  {
+    "name": "Markdown To Slack Converter",
+    "description": "Format Markdown for Slack messages. Bold, italic, code blocks, lists.",
+    "href": "/markdown-tools/markdown-to-slack-converter"
+  },
+  {
+    "name": "Markdown To Wordpress Html Converter",
+    "description": "Convert Markdown to WordPress-ready HTML. Block editor compatible.",
+    "href": "/markdown-tools/markdown-to-wordpress-html-converter"
+  },
+  {
+    "name": "Markdown Word Counter",
+    "description": "Get word, char counts for Markdown. Reading time, header/link tracking.",
+    "href": "/markdown-tools/markdown-word-counter"
+  }
+]

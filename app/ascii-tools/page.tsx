@@ -67,11 +67,6 @@ const asciiTools = [
     href: "/ascii-tools/regex-tester",
   },
   {
-    name: "Text Differ",
-    description: "Compare two text files and highlight differences",
-    href: "/ascii-tools/text-differ",
-  },
-  {
     name: "Text to Binary Converter",
     description: "Convert text to binary representation",
     href: "/ascii-tools/text-to-binary-converter",
@@ -174,8 +169,9 @@ export default function AsciiToolsPage() {
               Free ASCII Tools
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Free online ASCII tools for text conversion, encoding, and analysis.
-              Convert between ASCII, binary, hex, Base64, and more — all in your browser.
+              Free online ASCII tools for text conversion, encoding, and
+              analysis. Convert between ASCII, binary, hex, Base64, and more —
+              all in your browser.
             </p>
           </div>
         </section>
@@ -195,7 +191,8 @@ export default function AsciiToolsPage() {
               Need More Text Tools?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Check out our text tools for more text manipulation utilities, or explore all available tools.
+              Check out our text tools for more text manipulation utilities, or
+              explore all available tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -222,10 +219,17 @@ export default function AsciiToolsPage() {
               What These ASCII Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 18 free ASCII tools that run entirely in your browser. No uploads, no server processing, no waiting. You paste text, click a button, and get results instantly.
+              This is a collection of 18 free ASCII tools that run entirely in
+              your browser. No uploads, no server processing, no waiting. You
+              paste text, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
-              The tools cover four main workflows: converting between ASCII and other representations (binary, hex, decimal, octal, Base64), encoding and decoding text (URL encoding, UTF-8 to UTF-16), analyzing text (character counting, regex testing, text comparison), and generating text (ASCII art, Lorem Ipsum, leet speak, upside-down text).
+              The tools cover four main workflows: converting between ASCII and
+              other representations (binary, hex, decimal, octal, Base64),
+              encoding and decoding text (URL encoding, UTF-8 to UTF-16),
+              analyzing text (character counting, regex testing, text
+              comparison), and generating text (ASCII art, Lorem Ipsum, leet
+              speak, upside-down text).
             </p>
 
             <h2 className="text-2xl font-semibold mb-4">
@@ -241,75 +245,114 @@ export default function AsciiToolsPage() {
               <li>Copy the result or download as a file</li>
             </ol>
             <p className="text-muted-foreground mb-6">
-              Everything happens client-side using JavaScript. Your text stays in your browser tab and never touches any server.
+              Everything happens client-side using JavaScript. Your text stays
+              in your browser tab and never touches any server.
             </p>
 
             <h2 className="text-2xl font-semibold mb-4">
               Who Uses These Tools
             </h2>
             <p className="text-muted-foreground mb-4">
-              <strong>Developers</strong> encode URLs, convert text to binary for data transmission, test regex patterns, or generate Base64-encoded images for embedding in HTML.
+              <strong>Developers</strong> encode URLs, convert text to binary
+              for data transmission, test regex patterns, or generate
+              Base64-encoded images for embedding in HTML.
             </p>
             <p className="text-muted-foreground mb-4">
-              <strong>Security researchers</strong> analyze character encodings, validate UTF-8 data for injection vulnerabilities, or convert between hex and ASCII for reverse engineering.
+              <strong>Security researchers</strong> analyze character encodings,
+              validate UTF-8 data for injection vulnerabilities, or convert
+              between hex and ASCII for reverse engineering.
             </p>
             <p className="text-muted-foreground mb-4">
-              <strong>Students</strong> learn about character encodings, practice binary conversion, or generate Lorem Ipsum text for design mockups.
+              <strong>Students</strong> learn about character encodings,
+              practice binary conversion, or generate Lorem Ipsum text for
+              design mockups.
             </p>
             <p className="text-muted-foreground mb-6">
-              <strong>Writers and designers</strong> create ASCII art for documentation, generate placeholder text, or produce upside-down text for social media posts.
+              <strong>Writers and designers</strong> create ASCII art for
+              documentation, generate placeholder text, or produce upside-down
+              text for social media posts.
             </p>
 
-            <h2 className="text-2xl font-semibold mb-4">
-              Tool Categories
-            </h2>
+            <h2 className="text-2xl font-semibold mb-4">Tool Categories</h2>
 
-            <h3 className="text-xl font-semibold mb-3">Character Encoding Conversion</h3>
+            <h3 className="text-xl font-semibold mb-3">
+              Character Encoding Conversion
+            </h3>
             <p className="text-muted-foreground mb-4">
-              ASCII to Decimal, ASCII to Hex, and ASCII to Octal converters show the numeric code values behind each character. Text to Binary and Binary to Text converters handle 8-bit binary representations. UTF-8 to UTF-16 Converter transforms between Unicode encoding formats.
+              ASCII to Decimal, ASCII to Hex, and ASCII to Octal converters show
+              the numeric code values behind each character. Text to Binary and
+              Binary to Text converters handle 8-bit binary representations.
+              UTF-8 to UTF-16 Converter transforms between Unicode encoding
+              formats.
             </p>
 
-            <h3 className="text-xl font-semibold mb-3">Encoding and Decoding</h3>
+            <h3 className="text-xl font-semibold mb-3">
+              Encoding and Decoding
+            </h3>
             <p className="text-muted-foreground mb-4">
-              Base64 Encoder/Decoder converts text to and from Base64 format — useful for embedding binary data in text protocols. URL Encoder/Decoder handles percent-encoding for safe transmission in URLs.
+              Base64 Encoder/Decoder converts text to and from Base64 format —
+              useful for embedding binary data in text protocols. URL
+              Encoder/Decoder handles percent-encoding for safe transmission in
+              URLs.
             </p>
 
             <h3 className="text-xl font-semibold mb-3">Text Analysis</h3>
             <p className="text-muted-foreground mb-4">
-              Character Counter tallies characters, words, lines, and bytes. Regex Tester validates regular expressions against sample text with match highlighting. Text Differ compares two texts and shows additions, deletions, and changes. UTF-8 Validator checks if text is properly encoded.
+              Character Counter tallies characters, words, lines, and bytes.
+              Regex Tester validates regular expressions against sample text
+              with match highlighting. Text Differ compares two texts and shows
+              additions, deletions, and changes. UTF-8 Validator checks if text
+              is properly encoded.
             </p>
 
             <h3 className="text-xl font-semibold mb-3">Text Generation</h3>
             <p className="text-muted-foreground mb-4">
-              ASCII Art Generator transforms text or images into ASCII character art. Lorem Ipsum Generator produces placeholder text in various lengths. Leet Speak Converter translates text into 1337 format. Upside Down Text Generator flips text using Unicode combining characters.
+              ASCII Art Generator transforms text or images into ASCII character
+              art. Lorem Ipsum Generator produces placeholder text in various
+              lengths. Leet Speak Converter translates text into 1337 format.
+              Upside Down Text Generator flips text using Unicode combining
+              characters.
             </p>
 
             <h3 className="text-xl font-semibold mb-3">Reference Tools</h3>
             <p className="text-muted-foreground mb-4">
-              ASCII Code Table displays all 128 ASCII characters with their decimal, hex, and binary codes. ASCII to Braille Converter maps ASCII characters to Braille patterns for accessibility testing.
+              ASCII Code Table displays all 128 ASCII characters with their
+              decimal, hex, and binary codes. ASCII to Braille Converter maps
+              ASCII characters to Braille patterns for accessibility testing.
             </p>
 
             <h2 className="text-2xl font-semibold mb-4">
               Limitations and Gotchas
             </h2>
             <p className="text-muted-foreground mb-4">
-              <strong>ASCII range:</strong> Standard ASCII covers codes 0-127. Extended ASCII (128-255) varies by code page and isn't universally supported.
+              <strong>ASCII range:</strong> Standard ASCII covers codes 0-127.
+              Extended ASCII (128-255) varies by code page and isn't universally
+              supported.
             </p>
             <p className="text-muted-foreground mb-4">
-              <strong>UTF-8 vs UTF-16:</strong> UTF-8 uses 1-4 bytes per character; UTF-16 uses 2 or 4 bytes. Conversion may change byte order marks (BOM).
+              <strong>UTF-8 vs UTF-16:</strong> UTF-8 uses 1-4 bytes per
+              character; UTF-16 uses 2 or 4 bytes. Conversion may change byte
+              order marks (BOM).
             </p>
             <p className="text-muted-foreground mb-4">
-              <strong>Base64 expansion:</strong> Base64 encoding increases data size by about 33%. Not suitable for compression — only for safe text transmission.
+              <strong>Base64 expansion:</strong> Base64 encoding increases data
+              size by about 33%. Not suitable for compression — only for safe
+              text transmission.
             </p>
             <p className="text-muted-foreground mb-6">
-              <strong>Regex limitations:</strong> The regex tester uses JavaScript regex syntax, which differs slightly from PCRE, Python, or other engines.
+              <strong>Regex limitations:</strong> The regex tester uses
+              JavaScript regex syntax, which differs slightly from PCRE, Python,
+              or other engines.
             </p>
 
-            <h2 className="text-2xl font-semibold mb-4">
-              Why 1000freetools
-            </h2>
+            <h2 className="text-2xl font-semibold mb-4">Why 1000freetools</h2>
             <p className="text-muted-foreground mb-6">
-              Character encoding still trips people up daily. You're debugging an API and see %20 instead of spaces. You need to embed an image in CSS but don't know how to Base64 encode it. You're learning binary and want to verify your conversions. These tools solve those specific moments without requiring software installation or exposing your data to third-party servers.
+              Character encoding still trips people up daily. You're debugging
+              an API and see %20 instead of spaces. You need to embed an image
+              in CSS but don't know how to Base64 encode it. You're learning
+              binary and want to verify your conversions. These tools solve
+              those specific moments without requiring software installation or
+              exposing your data to third-party servers.
             </p>
           </div>
         </section>

@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Audio Bitrate Changer",
+    "description": "Adjust audio bitrate to balance file size and quality. MP3, AAC, OGG supported.",
+    "href": "/audio-tools/audio-bitrate-changer"
+  },
+  {
+    "name": "Audio Channel Remover",
+    "description": "Drop left or right channel from stereo files. Convert to mono in one click.",
+    "href": "/audio-tools/audio-channel-remover"
+  },
+  {
+    "name": "Audio Channel Splitter",
+    "description": "Extract individual channels from stereo audio. Get separate left and right files.",
+    "href": "/audio-tools/audio-channel-splitter"
+  },
+  {
+    "name": "Audio Clip Maker",
+    "description": "Cut portions from audio files. Set in/out points, preview, download.",
+    "href": "/audio-tools/audio-clip-maker"
+  },
+  {
+    "name": "Audio Compressor",
+    "description": "Shrink audio file size without killing quality. Adjust compression level.",
+    "href": "/audio-tools/audio-compressor"
+  },
+  {
+    "name": "Audio Cover Art Adder",
+    "description": "Embed album artwork into audio files. No ID3 editors needed.",
+    "href": "/audio-tools/audio-cover-art-adder"
+  },
+  {
+    "name": "Audio Cover Art Extractor",
+    "description": "Pull embedded cover art from audio files. Save as standalone image.",
+    "href": "/audio-tools/audio-cover-art-extractor"
+  },
+  {
+    "name": "Audio Equalizer Basic",
+    "description": "Tweak frequency balance. Boost bass, cut highs, shape mids.",
+    "href": "/audio-tools/audio-equalizer-basic"
+  },
+  {
+    "name": "Audio Fade In Out",
+    "description": "Add fade-in and fade-out effects. Set duration and curve.",
+    "href": "/audio-tools/audio-fade-in-out"
+  },
+  {
+    "name": "Audio Format Converter",
+    "description": "Convert between MP3, WAV, FLAC, OGG, AAC, M4A. All in-browser.",
+    "href": "/audio-tools/audio-format-converter"
+  },
+  {
+    "name": "Audio Frequency Analyzer",
+    "description": "Visualize frequency spectrum. Spot resonances, understand tonal balance.",
+    "href": "/audio-tools/audio-frequency-analyzer"
+  },
+  {
+    "name": "Audio Gain Analyzer",
+    "description": "Check gain levels, detect clipping, measure peaks and dynamic range.",
+    "href": "/audio-tools/audio-gain-analyzer"
+  },
+  {
+    "name": "Audio Loop Maker",
+    "description": "Create seamless audio loops. Trim and crossfade for smooth playback.",
+    "href": "/audio-tools/audio-loop-maker"
+  },
+  {
+    "name": "Audio Loudness Meter",
+    "description": "Measure LUFS, RMS, and peak levels. Meet Spotify and YouTube standards.",
+    "href": "/audio-tools/audio-loudness-meter"
+  },
+  {
+    "name": "Audio Merger",
+    "description": "Combine multiple audio files into one. Arrange clips, merge, download.",
+    "href": "/audio-tools/audio-merger"
+  },
+  {
+    "name": "Audio Metadata Editor",
+    "description": "Edit ID3 tags: title, artist, album, year, genre. No install needed.",
+    "href": "/audio-tools/audio-metadata-editor"
+  },
+  {
+    "name": "Audio Mono Stereo Converter",
+    "description": "Switch between mono and stereo. Collapse stereo to mono or expand.",
+    "href": "/audio-tools/audio-mono-stereo-converter"
+  },
+  {
+    "name": "Audio Normalizer",
+    "description": "Normalize audio to consistent loudness. No more volume jumps between tracks.",
+    "href": "/audio-tools/audio-normalizer"
+  },
+  {
+    "name": "Audio Pitch Changer",
+    "description": "Shift pitch up or down without changing tempo. Transpose music easily.",
+    "href": "/audio-tools/audio-pitch-changer"
+  },
+  {
+    "name": "Audio Resampler",
+    "description": "Resample audio to different rates. 44.1 kHz, 48 kHz, or lower.",
+    "href": "/audio-tools/audio-resampler"
+  },
+  {
+    "name": "Audio Reverse",
+    "description": "Play audio backwards. Creative sound design made simple.",
+    "href": "/audio-tools/audio-reverse"
+  },
+  {
+    "name": "Audio Sample Extractor",
+    "description": "Pull individual samples from longer files. Precise start/end control.",
+    "href": "/audio-tools/audio-sample-extractor"
+  },
+  {
+    "name": "Audio Sample Rate Converter",
+    "description": "Convert sample rates for music, video, or telephony. Browser-based.",
+    "href": "/audio-tools/audio-sample-rate-converter"
+  },
+  {
+    "name": "Audio Silence Remover",
+    "description": "Strip silent gaps automatically. Speed up podcasts and interviews.",
+    "href": "/audio-tools/audio-silence-remover"
+  },
+  {
+    "name": "Audio Speed Changer",
+    "description": "Change playback speed without affecting pitch. Slow down or speed up.",
+    "href": "/audio-tools/audio-speed-changer"
+  },
+  {
+    "name": "Audio Splitter",
+    "description": "Divide long audio into multiple parts. Split by time, timestamp, or silence.",
+    "href": "/audio-tools/audio-splitter"
+  },
+  {
+    "name": "Audio Thumbnail Generator",
+    "description": "Create visual thumbnails with waveform and metadata. For YouTube, podcasts.",
+    "href": "/audio-tools/audio-thumbnail-generator"
+  },
+  {
+    "name": "Audio Track Extractor",
+    "description": "Isolate tracks from multi-track audio. Pull exactly what you need.",
+    "href": "/audio-tools/audio-track-extractor"
+  },
+  {
+    "name": "Audio Trimmer",
+    "description": "Cut audio precisely in-browser. Select start/end, preview, download.",
+    "href": "/audio-tools/audio-trimmer"
+  },
+  {
+    "name": "Audio Volume Adjuster",
+    "description": "Boost or reduce volume quickly. Make quiet recordings louder.",
+    "href": "/audio-tools/audio-volume-adjuster"
+  },
+  {
+    "name": "Audio Waveform Generator",
+    "description": "Turn audio into waveform images. Export as PNG for thumbnails or posts.",
+    "href": "/audio-tools/audio-waveform-generator"
+  }
+]

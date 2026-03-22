@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Binary Bit Flipper Manipulator",
+    "description": "Flip, set, clear, shift, and rotate binary bits. Visual interface included.",
+    "href": "/binary-tools/binary-bit-flipper-manipulator"
+  },
+  {
+    "name": "Binary Calculator",
+    "description": "Do arithmetic on binary numbers. Add, subtract, multiply, divide, and logic ops.",
+    "href": "/binary-tools/binary-calculator"
+  },
+  {
+    "name": "Binary Checksum Hash Generator",
+    "description": "Generate CRC, MD5, SHA hashes from binary data. Verify file integrity.",
+    "href": "/binary-tools/binary-checksum-hash-generator"
+  },
+  {
+    "name": "Binary Clock Time Converter",
+    "description": "See the current time in binary. Live clock with hours, minutes, seconds as bits.",
+    "href": "/binary-tools/binary-clock-time-converter"
+  },
+  {
+    "name": "Binary Complement Calculator",
+    "description": "Calculate 1's and 2's complements. Essential for computer arithmetic.",
+    "href": "/binary-tools/binary-complement-calculator"
+  },
+  {
+    "name": "Binary File Viewer Editor",
+    "description": "View and edit files at the byte level. Online hex editor for reverse engineering.",
+    "href": "/binary-tools/binary-file-viewer-editor"
+  },
+  {
+    "name": "Binary Gray Code Converter",
+    "description": "Convert between binary and Gray code. Used in encoders and Karnaugh maps.",
+    "href": "/binary-tools/binary-gray-code-converter"
+  },
+  {
+    "name": "Binary Image Steganography",
+    "description": "Hide messages in images using steganography. Embed data in pixel bits.",
+    "href": "/binary-tools/binary-image-steganography"
+  },
+  {
+    "name": "Binary Logic Gate Calculator",
+    "description": "Perform XOR, AND, OR, NOT on binary numbers. See truth tables.",
+    "href": "/binary-tools/binary-logic-gate-calculator"
+  },
+  {
+    "name": "Binary Palindrome Checker",
+    "description": "Check if binary numbers read the same forwards and backwards.",
+    "href": "/binary-tools/binary-palindrome-checker"
+  },
+  {
+    "name": "Binary Pattern Generator Finder",
+    "description": "Generate or search for binary patterns. Create sequences, find matches.",
+    "href": "/binary-tools/binary-pattern-generator-finder"
+  },
+  {
+    "name": "Binary String Splitter Joiner",
+    "description": "Split binary strings into chunks or join fragments. Handle bytes and words.",
+    "href": "/binary-tools/binary-string-splitter-joiner"
+  },
+  {
+    "name": "Binary To Decimal Converter",
+    "description": "Convert binary to decimal instantly. Great for networking and programming.",
+    "href": "/binary-tools/binary-to-decimal-converter"
+  },
+  {
+    "name": "Binary To Hexadecimal Converter",
+    "description": "Turn binary into hex. Compact notation for debugging and low-level work.",
+    "href": "/binary-tools/binary-to-hexadecimal-converter"
+  },
+  {
+    "name": "Binary To Octal Converter",
+    "description": "Convert binary to octal. Groups bits into triplets for compact display.",
+    "href": "/binary-tools/binary-to-octal-converter"
+  },
+  {
+    "name": "Binary To Text Converter",
+    "description": "Decode binary to readable text. ASCII and UTF-8 supported.",
+    "href": "/binary-tools/binary-to-text-converter"
+  },
+  {
+    "name": "Binary Uuid Guid Generator",
+    "description": "Generate UUIDs and see their binary representation. For database work.",
+    "href": "/binary-tools/binary-uuid-guid-generator"
+  },
+  {
+    "name": "Decimal To Binary Converter",
+    "description": "Convert decimal numbers to binary. Free tool for students and developers.",
+    "href": "/binary-tools/decimal-to-binary-converter"
+  },
+  {
+    "name": "Hexadecimal To Binary Converter",
+    "description": "Expand hex digits to 4-bit binary. For memory dumps and machine data.",
+    "href": "/binary-tools/hexadecimal-to-binary-converter"
+  },
+  {
+    "name": "Octal To Binary Converter",
+    "description": "Convert octal to binary. Useful for Unix file permissions.",
+    "href": "/binary-tools/octal-to-binary-converter"
+  },
+  {
+    "name": "Text To Binary Converter",
+    "description": "Turn any text into binary code. Learn, encode, or experiment.",
+    "href": "/binary-tools/text-to-binary-converter"
+  }
+]

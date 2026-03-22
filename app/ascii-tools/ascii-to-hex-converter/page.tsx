@@ -18,11 +18,6 @@ const tools = [
     href: `/ascii-tools/lorem-ipsum-generator`,
   },
   {
-    name: `Text Differ`,
-    description: `Text Differ: Compare Text and Find Differences`,
-    href: `/ascii-tools/text-differ`,
-  },
-  {
     name: `ASCII to Braille Converter`,
     description: `ASCII to Braille Converter: Text to Braille Translator`,
     href: `/ascii-tools/ascii-to-braille-converter`,

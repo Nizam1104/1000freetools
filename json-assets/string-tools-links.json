@@ -1,0 +1,22 @@
+[
+  {
+    "name": "String Reverse",
+    "description": "Reverse strings or text online. Characters, words, or entire string.",
+    "href": "/string-tools/string-reverse"
+  },
+  {
+    "name": "Text Case Converter",
+    "description": "Convert text case instantly. Uppercase, lowercase, title case, camelCase, snake_case.",
+    "href": "/string-tools/text-case-converter"
+  },
+  {
+    "name": "Text Compare Diff Checker",
+    "description": "Compare two texts, see differences. Added, removed, changed content highlighted.",
+    "href": "/string-tools/text-compare-diff-checker"
+  },
+  {
+    "name": "Word Counter Character Counter",
+    "description": "Count words, characters, sentences, paragraphs. Reading time estimates included.",
+    "href": "/string-tools/word-counter-character-counter"
+  }
+]

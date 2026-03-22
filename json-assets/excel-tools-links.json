@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Csv To Excel Converter",
+    "description": "Convert CSV to Excel workbook. Handles commas, tabs, custom delimiters.",
+    "href": "/excel-tools/csv-to-excel-converter"
+  },
+  {
+    "name": "Excel Age Calculator",
+    "description": "Calculate ages from birthdates in Excel. Upload, point to column, get ages.",
+    "href": "/excel-tools/excel-age-calculator"
+  },
+  {
+    "name": "Excel Chart Maker",
+    "description": "Turn spreadsheet data into charts. Bar, line, pie, more. Customize, download.",
+    "href": "/excel-tools/excel-chart-maker"
+  },
+  {
+    "name": "Excel Column Splitter",
+    "description": "Split one column into multiple. By comma, space, or custom character.",
+    "href": "/excel-tools/excel-column-splitter"
+  },
+  {
+    "name": "Excel Combine Multiple Sheets",
+    "description": "Consolidate data from multiple sheets. Stack or merge by key column.",
+    "href": "/excel-tools/excel-combine-multiple-sheets"
+  },
+  {
+    "name": "Excel Compare Two Sheets",
+    "description": "Spot differences between Excel versions. Added rows, deleted values, changes.",
+    "href": "/excel-tools/excel-compare-two-sheets"
+  },
+  {
+    "name": "Excel Conditional Formatting Tool",
+    "description": "Add color rules to highlight cells. Duplicates, ranges, important values.",
+    "href": "/excel-tools/excel-conditional-formatting-tool"
+  },
+  {
+    "name": "Excel Duplicate Remover",
+    "description": "Find and remove duplicate rows. Select columns, keep first or highlight all.",
+    "href": "/excel-tools/excel-duplicate-remover"
+  },
+  {
+    "name": "Excel Formula Extractor",
+    "description": "Extract all formulas from Excel. See cell reference, formula, sheet name.",
+    "href": "/excel-tools/excel-formula-extractor"
+  },
+  {
+    "name": "Excel Formula Generator",
+    "description": "Describe calculations in English, get Excel formulas. VLOOKUP, IF, SUMIF.",
+    "href": "/excel-tools/excel-formula-generator"
+  },
+  {
+    "name": "Excel Json To Csv Converter",
+    "description": "Convert JSON to CSV for Excel. Flatten nested objects into rows and columns.",
+    "href": "/excel-tools/excel-json-to-csv-converter"
+  },
+  {
+    "name": "Excel Merge Cells Tool",
+    "description": "Merge cell contents with separators. Also unmerge and distribute content.",
+    "href": "/excel-tools/excel-merge-cells-tool"
+  },
+  {
+    "name": "Excel Password Remover",
+    "description": "Remove sheet protection from Excel. Forgot password? Unlock in browser.",
+    "href": "/excel-tools/excel-password-remover"
+  },
+  {
+    "name": "Excel Pivot Table Builder",
+    "description": "Build pivot tables online. Drag fields, summarize data, get instructions.",
+    "href": "/excel-tools/excel-pivot-table-builder"
+  },
+  {
+    "name": "Excel Random Data Generator",
+    "description": "Generate fake data for testing. Names, dates, numbers, custom lists.",
+    "href": "/excel-tools/excel-random-data-generator"
+  },
+  {
+    "name": "Excel Remove Blank Rows",
+    "description": "Delete all empty rows automatically. Clean, contiguous data.",
+    "href": "/excel-tools/excel-remove-blank-rows"
+  },
+  {
+    "name": "Excel Sort Data Tool",
+    "description": "Multi-level sort Excel data. Choose columns, order, download organized file.",
+    "href": "/excel-tools/excel-sort-data-tool"
+  },
+  {
+    "name": "Excel Text To Columns Wizard",
+    "description": "Split data like Excel's Text to Columns. Choose delimiter, preview, format.",
+    "href": "/excel-tools/excel-text-to-columns-wizard"
+  },
+  {
+    "name": "Excel To Pdf Converter",
+    "description": "Convert Excel to PDF. Formatting, charts, tables preserved.",
+    "href": "/excel-tools/excel-to-pdf-converter"
+  },
+  {
+    "name": "Excel Vlookup Simulator",
+    "description": "Practice VLOOKUP with sample data. Learn exact vs approximate match.",
+    "href": "/excel-tools/excel-vlookup-simulator"
+  },
+  {
+    "name": "Excel Xml To Csv Converter",
+    "description": "Convert XML to CSV for Excel. Flatten nested structures to columns.",
+    "href": "/excel-tools/excel-xml-to-csv-converter"
+  }
+]

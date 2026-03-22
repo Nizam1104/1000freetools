@@ -45,7 +45,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 const features = [
   {
     icon: Zap,
@@ -72,23 +71,23 @@ const features = [
 const faqs = [
   {
     q: "Are these tools really free?",
-    a: "Yes, all tools on 1000 Free Tools are completely free — no hidden costs, no subscriptions, no registration required.",
+    a: "Yes. All tools on 1000 Free Tools are free — no hidden costs, no subscriptions, no registration required.",
   },
   {
     q: "Is my data safe and private?",
-    a: "Absolutely. All processing happens directly in your browser. Your files never leave your device, ensuring complete privacy and security.",
+    a: "All processing happens directly in your browser. Your files never leave your device.",
   },
   {
     q: "Do I need to install anything?",
-    a: "No installation needed. All tools run directly in your web browser on any device — desktop, tablet, or mobile.",
+    a: "No. All tools run in your web browser on any device — desktop, tablet, or mobile.",
   },
   {
     q: "What file formats are supported?",
-    a: "Our tools support a wide range of formats. For images: JPEG, PNG, WebP, AVIF, and more. Each tool page lists its specific supported formats.",
+    a: "For images: JPEG, PNG, WebP, AVIF, and more. Each tool page lists its specific supported formats.",
   },
   {
     q: "Can I use these tools offline?",
-    a: "Once loaded in your browser, most tools function without an active internet connection, thanks to browser-based processing.",
+    a: "Once loaded, most tools work without an internet connection since processing happens in your browser.",
   },
 ];
 
@@ -202,7 +201,7 @@ export default function Home() {
                 backgroundSize: "200% auto",
               }}
             >
-              you will ever need.
+              you'll actually need.
             </span>
           </h1>
 
@@ -211,9 +210,8 @@ export default function Home() {
             className="animate-fade-in-up delay-200 mx-auto max-w-2xl text-base md:text-lg lg:text-xl text-muted-foreground mb-10 leading-relaxed"
             style={{ animationFillMode: "both" }}
           >
-            Image tools, video editors, design generators, developer utilities —
-            all running directly in your browser. No uploads. No limits. No
-            cost.
+            Image tools, video editors, design generators, developer utilities.
+            All running in your browser. No uploads. No limits. No cost.
           </p>
 
           {/* CTAs - improved touch targets and cursor */}
@@ -247,7 +245,7 @@ export default function Home() {
               { label: "Tools Available", value: "1000+" },
               { label: "Files Processed", value: "Private" },
               { label: "Registration Required", value: "None" },
-              { label: "Cost", value: "$0.00" },
+              { label: "Cost", value: "$0" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="text-2xl md:text-3xl font-bold text-foreground">
@@ -314,7 +312,7 @@ export default function Home() {
               All tools, organized
               <br />
               <span className="text-muted-foreground font-normal">
-                by what you need.
+                by what they do.
               </span>
             </h2>
           </div>
@@ -397,10 +395,10 @@ export default function Home() {
             >
               <Layers className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">More Tools on the Way</h3>
+            <h3 className="text-2xl font-bold mb-2">More Tools Coming</h3>
             <p className="text-muted-foreground max-w-md mx-auto leading-relaxed">
-              PDF utilities, text processing tools, data converters, and many
-              more categories are actively in development. Check back soon.
+              PDF utilities, text processing, data converters, and more are in
+              the works. Check back soon.
             </p>
           </div>
         </div>
@@ -413,9 +411,6 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <div className="mb-12 text-center">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-                FAQ
-              </p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                 Frequently Asked Questions
               </h2>
@@ -470,7 +465,7 @@ export default function Home() {
                 backgroundSize: "200% auto",
               }}
             >
-              right now, for free.
+              right now. For free.
             </span>
           </h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto leading-relaxed">

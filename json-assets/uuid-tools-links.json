@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Bulk Uuid Generator",
+    "description": "Generate thousands or millions of UUIDs (v4) for database seeding, testing, or data migration. Export to CSV, JSON, or SQL.",
+    "href": "/uuid-tools/bulk-uuid-generator"
+  },
+  {
+    "name": "Nil Uuid Generator",
+    "description": "Generate the nil UUID (all zeros) or create UUIDs from custom hex patterns for placeholders and testing.",
+    "href": "/uuid-tools/nil-uuid-generator"
+  },
+  {
+    "name": "Offline Uuid Generator",
+    "description": "Generate UUIDs completely offline in your browser. No data leaves your computer.",
+    "href": "/uuid-tools/offline-uuid-generator"
+  },
+  {
+    "name": "Uuid Case Formatter",
+    "description": "Convert UUIDs between uppercase and lowercase, add or remove hyphens, and handle braces.",
+    "href": "/uuid-tools/uuid-case-formatter"
+  },
+  {
+    "name": "Uuid Collision Checker",
+    "description": "Check a list of UUIDs for duplicates and report the count of unique values.",
+    "href": "/uuid-tools/uuid-collision-checker"
+  },
+  {
+    "name": "Uuid Decoder",
+    "description": "Decode UUID structure to identify version, variant, and extract timestamps from v1 UUIDs.",
+    "href": "/uuid-tools/uuid-decoder"
+  },
+  {
+    "name": "Uuid Entropy Checker",
+    "description": "Analyze UUID v4 randomness for patterns and biases that may indicate weak generation.",
+    "href": "/uuid-tools/uuid-entropy-checker"
+  },
+  {
+    "name": "Uuid Generator",
+    "description": "Generate random UUIDs (v4) for software projects, databases, or any application needing unique keys.",
+    "href": "/uuid-tools/uuid-generator"
+  },
+  {
+    "name": "Uuid Regex Tester",
+    "description": "Test and generate regex patterns for matching UUIDs in various formats.",
+    "href": "/uuid-tools/uuid-regex-tester"
+  },
+  {
+    "name": "Uuid Sort Organize",
+    "description": "Sort UUIDs alphabetically or by embedded timestamp (v1). Remove duplicates and add sequence numbers.",
+    "href": "/uuid-tools/uuid-sort-organize"
+  },
+  {
+    "name": "Uuid Timestamp To Date",
+    "description": "Extract and convert the timestamp from UUID v1 to readable date and time in UTC and local timezone.",
+    "href": "/uuid-tools/uuid-timestamp-to-date"
+  },
+  {
+    "name": "Uuid To Guid Converter",
+    "description": "Convert between standard UUID strings and Microsoft GUID format with braces for Windows and .NET.",
+    "href": "/uuid-tools/uuid-to-guid-converter"
+  },
+  {
+    "name": "Uuid To Qr Code",
+    "description": "Turn any UUID into a scannable QR code. Customize appearance and download for printing.",
+    "href": "/uuid-tools/uuid-to-qr-code"
+  },
+  {
+    "name": "Uuid V1 Generator",
+    "description": "Generate time-based UUID version 1 identifiers with embedded timestamp for sortable unique IDs.",
+    "href": "/uuid-tools/uuid-v1-generator"
+  },
+  {
+    "name": "Uuid Validator",
+    "description": "Validate UUIDs against RFC 4122 format, checking length, hex characters, hyphens, and version bits.",
+    "href": "/uuid-tools/uuid-validator"
+  },
+  {
+    "name": "Uuid Version Converter",
+    "description": "Generate deterministic UUID v3 (MD5) or v5 (SHA-1) from a namespace and name.",
+    "href": "/uuid-tools/uuid-version-converter"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Bernoulli Equation Calculator",
+    "description": "Calculate fluid dynamics. Pressure, speed, height at one point to find another.",
+    "href": "/physics-tools/bernoulli-equation-calculator"
+  },
+  {
+    "name": "Blackbody Radiation Calculator",
+    "description": "See how temperature shapes emitted light. Peak color, total power for hot objects.",
+    "href": "/physics-tools/blackbody-radiation-calculator"
+  },
+  {
+    "name": "Capacitance Calculator",
+    "description": "Design capacitors. Calculate for parallel plates, spheres, cylinders.",
+    "href": "/physics-tools/capacitance-calculator"
+  },
+  {
+    "name": "Center Of Mass Calculator",
+    "description": "Find balance points for object groups. 1D, 2D, or 3D calculations.",
+    "href": "/physics-tools/center-of-mass-calculator"
+  },
+  {
+    "name": "Coulombs Law Calculator",
+    "description": "Find electric force between charges. Enter size, distance, see attraction/repulsion.",
+    "href": "/physics-tools/coulombs-law-calculator"
+  },
+  {
+    "name": "Doppler Effect Calculator",
+    "description": "Calculate how motion changes perceived frequency. Sirens, redshift in astronomy.",
+    "href": "/physics-tools/doppler-effect-calculator"
+  },
+  {
+    "name": "Gravitational Potential Energy Calculator",
+    "description": "Find stored energy from raised objects. Mass, height, gravity to GPE.",
+    "href": "/physics-tools/gravitational-potential-energy-calculator"
+  },
+  {
+    "name": "Half Life Calculator",
+    "description": "Track radioactive decay. Remaining material after time, or decay duration.",
+    "href": "/physics-tools/half-life-calculator"
+  },
+  {
+    "name": "Kinetic Energy Calculator",
+    "description": "Find kinetic energy of moving objects. Mass and velocity to energy or reverse.",
+    "href": "/physics-tools/kinetic-energy-calculator"
+  },
+  {
+    "name": "Lens Maker Equation Calculator",
+    "description": "Design lenses. Curvature, refractive index, thickness to focal length.",
+    "href": "/physics-tools/lens-maker-equation-calculator"
+  },
+  {
+    "name": "Mach Number Calculator",
+    "description": "Compare speed to sound. Mach numbers for aircraft, projectiles, gases.",
+    "href": "/physics-tools/mach-number-calculator"
+  },
+  {
+    "name": "Magnetic Force On Wire Calculator",
+    "description": "Calculate force on current-carrying wire in magnetic field. Motors, electromagnetism.",
+    "href": "/physics-tools/magnetic-force-on-wire-calculator"
+  },
+  {
+    "name": "Ohms Law Calculator",
+    "description": "Calculate voltage, current, resistance, power. Enter two values, get results.",
+    "href": "/physics-tools/ohms-law-calculator"
+  },
+  {
+    "name": "Photoelectric Effect Calculator",
+    "description": "Explore light as particles. Electron energy, work function for different metals.",
+    "href": "/physics-tools/photoelectric-effect-calculator"
+  },
+  {
+    "name": "Physics Calculator",
+    "description": "Solve physics equations instantly. Motion, force, energy. Enter knowns, get answers.",
+    "href": "/physics-tools/physics-calculator"
+  },
+  {
+    "name": "Projectile Motion Simulator",
+    "description": "Visualize projectile paths. Adjust speed, angle, height. Real-time trajectory.",
+    "href": "/physics-tools/projectile-motion-simulator"
+  },
+  {
+    "name": "Reynolds Number Calculator",
+    "description": "Predict laminar or turbulent flow. For pipes, airfoils, any fluid system.",
+    "href": "/physics-tools/reynolds-number-calculator"
+  },
+  {
+    "name": "Simple Harmonic Motion Calculator",
+    "description": "Analyze oscillating systems. Springs, pendulums. Period, frequency, displacement.",
+    "href": "/physics-tools/simple-harmonic-motion-calculator"
+  },
+  {
+    "name": "Snells Law Calculator",
+    "description": "See how light bends. Refraction angle from air to water, glass, any material.",
+    "href": "/physics-tools/snells-law-calculator"
+  },
+  {
+    "name": "Thermal Expansion Calculator",
+    "description": "See how heat changes size. Expansion/contraction for length, area, volume.",
+    "href": "/physics-tools/thermal-expansion-calculator"
+  }
+]

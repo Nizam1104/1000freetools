@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DarkLightModeToggler } from "../utils/DarkLightModesToggler";
+import { FavouriteToggle } from "../utils/FavouriteToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -18,8 +19,8 @@ export default function Header() {
             <span className="text-xl font-semibold sm:hidden">TFT</span>
           </div>
         </Link>
-        <div className="flex items-center">
-          {/* Show search on all pages except landing */}
+        <div className="flex items-center gap-2">
+          <FavouriteToggle />
           <DarkLightModeToggler />
         </div>
       </div>

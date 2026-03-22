@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Case Converter",
+    "description": "Convert text to any case format. snake_case, Title Case, SCREAMING_SNAKE_CASE.",
+    "href": "/text-tools/case-converter"
+  },
+  {
+    "name": "Character Counter",
+    "description": "Count characters for tweets, meta descriptions, SMS. Real-time feedback.",
+    "href": "/text-tools/character-counter"
+  },
+  {
+    "name": "Duplicate Word Remover",
+    "description": "Remove duplicate words from lists, drafts, keyword lists. Lean, clean output.",
+    "href": "/text-tools/duplicate-word-remover"
+  },
+  {
+    "name": "Find And Replace Text",
+    "description": "Find-and-replace in browser. Swap words, fix typos, run regex patterns.",
+    "href": "/text-tools/find-and-replace-text"
+  },
+  {
+    "name": "Lorem Ipsum Generator",
+    "description": "Generate dummy text by word, sentence, or paragraph. Classic Latin, HTML output.",
+    "href": "/text-tools/lorem-ipsum-generator"
+  },
+  {
+    "name": "Random Text Shuffler",
+    "description": "Shuffle lists, sentences, or words randomly. One click, copy button ready.",
+    "href": "/text-tools/random-text-shuffler"
+  },
+  {
+    "name": "Remove Duplicate Lines",
+    "description": "Remove duplicate lines from lists. Case-sensitive option, sorting, live count.",
+    "href": "/text-tools/remove-duplicate-lines"
+  },
+  {
+    "name": "Sentence Counter",
+    "description": "Accurate sentence counting. Handles abbreviations, ellipses, complex punctuation.",
+    "href": "/text-tools/sentence-counter"
+  },
+  {
+    "name": "String Length Calculator",
+    "description": "Know string length in characters, bytes, Unicode code points. For APIs, databases.",
+    "href": "/text-tools/string-length-calculator"
+  },
+  {
+    "name": "Text Line Sorter",
+    "description": "Alphabetize, sort by length, shuffle, or reverse lists. One-click copy.",
+    "href": "/text-tools/text-line-sorter"
+  },
+  {
+    "name": "Text Repeater",
+    "description": "Repeat words, phrases, characters hundreds of times. Choose separator.",
+    "href": "/text-tools/text-repeater"
+  },
+  {
+    "name": "Text Reverser",
+    "description": "Reverse text by characters, words, lines, or upside-down Unicode.",
+    "href": "/text-tools/text-reverser"
+  },
+  {
+    "name": "Text Size Calculator",
+    "description": "See exact byte size in UTF-8, ASCII, Unicode. Before it breaks APIs or databases.",
+    "href": "/text-tools/text-size-calculator"
+  },
+  {
+    "name": "Text To Binary Converter",
+    "description": "Translate text to binary or decode binary to English. ASCII, hex, decimal outputs.",
+    "href": "/text-tools/text-to-binary-converter"
+  },
+  {
+    "name": "Text To Hashtags Generator",
+    "description": "Get platform-optimized hashtag suggestions. Tiered by popularity, ready to copy.",
+    "href": "/text-tools/text-to-hashtags-generator"
+  },
+  {
+    "name": "Text To List Converter",
+    "description": "Turn paragraphs into numbered lists, bullet lists, comma-separated, or JSON arrays.",
+    "href": "/text-tools/text-to-list-converter"
+  },
+  {
+    "name": "Text To Slug Converter",
+    "description": "Turn titles into URL slugs. Hyphens, lowercase, special chars stripped. WordPress ready.",
+    "href": "/text-tools/text-to-slug-converter"
+  },
+  {
+    "name": "Whitespace Remover",
+    "description": "Fix text from PDFs, Word docs, web scrapes. Trailing spaces, double spaces, blank lines gone.",
+    "href": "/text-tools/whitespace-remover"
+  },
+  {
+    "name": "Word Counter",
+    "description": "Instant word, character, sentence, paragraph counts. Reading time, live updates.",
+    "href": "/text-tools/word-counter"
+  },
+  {
+    "name": "Word Frequency Counter",
+    "description": "Find overused/underused words. Ranked frequency table, sortable, filterable, exportable.",
+    "href": "/text-tools/word-frequency-counter"
+  }
+]

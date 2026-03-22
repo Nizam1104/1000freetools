@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface Tool {
   name: string;
-  description: string;
+  description?: string;
   href: string;
 }
 
@@ -23,7 +23,7 @@ const ToolLinkCards: React.FC<ToolLinkCardsProps> = ({ tools }) => {
     return tools.filter(
       (tool) =>
         tool.name.toLowerCase().includes(query) ||
-        tool.description.toLowerCase().includes(query),
+        tool.description?.toLowerCase().includes(query),
     );
   }, [tools, searchQuery]);
 

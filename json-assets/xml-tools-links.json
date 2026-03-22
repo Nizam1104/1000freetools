@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Xml Diff Compare",
+    "description": "Compare two XML files and highlight added, removed, and modified elements and attributes.",
+    "href": "/xml-tools/xml-diff-compare"
+  },
+  {
+    "name": "Xml Entity Encoder Decoder",
+    "description": "Encode special characters to XML entities or decode them back to original characters.",
+    "href": "/xml-tools/xml-entity-encoder-decoder"
+  },
+  {
+    "name": "Xml Formatter Validator",
+    "description": "Format and indent XML for readability. Validate syntax, check for missing tags, and ensure W3C compliance.",
+    "href": "/xml-tools/xml-formatter-validator"
+  },
+  {
+    "name": "Xml Namespace Remover Cleaner",
+    "description": "Strip namespace declarations and prefixes from XML. Remove all or target specific namespaces.",
+    "href": "/xml-tools/xml-namespace-remover-cleaner"
+  },
+  {
+    "name": "Xml Schema Xsd Generator",
+    "description": "Automatically generate XSD schema from XML documents by analyzing structure and data types.",
+    "href": "/xml-tools/xml-schema-xsd-generator"
+  },
+  {
+    "name": "Xml Signature Generator Verifier",
+    "description": "Add digital signatures to XML documents or verify existing ones using W3C XML Signature standard.",
+    "href": "/xml-tools/xml-signature-generator-verifier"
+  },
+  {
+    "name": "Xml Sitemap Generator",
+    "description": "Create standards-compliant XML sitemaps with URLs, priorities, and change frequencies.",
+    "href": "/xml-tools/xml-sitemap-generator"
+  },
+  {
+    "name": "Xml To Csv Converter",
+    "description": "Convert XML data to CSV format. Map elements to columns and extract repeating nodes.",
+    "href": "/xml-tools/xml-to-csv-converter"
+  },
+  {
+    "name": "Xml To Html Table Converter",
+    "description": "Display XML data as HTML tables. Customize columns and styling with CSS.",
+    "href": "/xml-tools/xml-to-html-table-converter"
+  },
+  {
+    "name": "Xml To Json Converter",
+    "description": "Transform XML data into JSON format. Handles nested structures and attributes.",
+    "href": "/xml-tools/xml-to-json-converter"
+  },
+  {
+    "name": "Xml To Pdf Converter",
+    "description": "Generate PDF files from XML data with customizable templates for layout and styling.",
+    "href": "/xml-tools/xml-to-pdf-converter"
+  },
+  {
+    "name": "Xml To Rss Feed Converter",
+    "description": "Convert XML data sources into RSS feeds. Map elements to standard RSS tags.",
+    "href": "/xml-tools/xml-to-rss-feed-converter"
+  },
+  {
+    "name": "Xml To Sql Converter",
+    "description": "Generate SQL INSERT statements from XML data. Map elements to table columns.",
+    "href": "/xml-tools/xml-to-sql-converter"
+  },
+  {
+    "name": "Xml Viewer Editor",
+    "description": "View and edit XML in your browser with tree view, syntax highlighting, and validation.",
+    "href": "/xml-tools/xml-viewer-editor"
+  },
+  {
+    "name": "Xml Xpath Tester",
+    "description": "Write and debug XPath expressions. See matched nodes and results instantly.",
+    "href": "/xml-tools/xml-xpath-tester"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Html Base64 Image Encoder",
+    "description": "Encode images to Base64 data URIs or decode back. Embed images inline in HTML.",
+    "href": "/html-tools/html-base64-image-encoder"
+  },
+  {
+    "name": "Html Color Picker Generator",
+    "description": "Pick colors visually, get hex, RGB, HSL codes. For CSS and HTML designs.",
+    "href": "/html-tools/html-color-picker-generator"
+  },
+  {
+    "name": "Html Comment Remover Extractor",
+    "description": "Strip HTML comments for production or extract them to review notes.",
+    "href": "/html-tools/html-comment-remover-extractor"
+  },
+  {
+    "name": "Html Diff Checker Comparator",
+    "description": "Compare two HTML files. Highlights added, removed, changed lines.",
+    "href": "/html-tools/html-diff-checker-comparator"
+  },
+  {
+    "name": "Html Email Template Builder",
+    "description": "Design responsive email templates. Drag-and-drop, works across email clients.",
+    "href": "/html-tools/html-email-template-builder"
+  },
+  {
+    "name": "Html Entity Encoder Decoder",
+    "description": "Encode special chars to HTML entities or decode back. All named and numeric entities.",
+    "href": "/html-tools/html-entity-encoder-decoder"
+  },
+  {
+    "name": "Html Escape Unescape",
+    "description": "Escape HTML to prevent XSS or unescape to original. Web development essential.",
+    "href": "/html-tools/html-escape-unescape"
+  },
+  {
+    "name": "Html Formatter Beautifier",
+    "description": "Beautify minified HTML. Proper indentation, line breaks, easier debugging.",
+    "href": "/html-tools/html-formatter-beautifier"
+  },
+  {
+    "name": "Html Image Map Generator",
+    "description": "Create clickable image maps. Draw hotspots, define links, get HTML code.",
+    "href": "/html-tools/html-image-map-generator"
+  },
+  {
+    "name": "Html Link Extractor Checker",
+    "description": "Extract all links from HTML or URLs. Check for broken links, get anchor text.",
+    "href": "/html-tools/html-link-extractor-checker"
+  },
+  {
+    "name": "Html Meta Tag Generator",
+    "description": "Generate SEO meta tags. Open Graph, Twitter Cards, standard meta tags.",
+    "href": "/html-tools/html-meta-tag-generator"
+  },
+  {
+    "name": "Html Sitemap Generator",
+    "description": "Create HTML sitemaps from URLs. Clean, navigable link lists for users.",
+    "href": "/html-tools/html-sitemap-generator"
+  },
+  {
+    "name": "Html Special Characters Library",
+    "description": "Browse HTML special characters. Arrows, math symbols, currency, entity codes.",
+    "href": "/html-tools/html-special-characters-library"
+  },
+  {
+    "name": "Html Table Generator",
+    "description": "Build HTML tables visually. Define rows, columns, styles, copy clean code.",
+    "href": "/html-tools/html-table-generator"
+  },
+  {
+    "name": "Html Tag Remover Stripper",
+    "description": "Remove all HTML tags, get plain text. Handles nested tags and scripts.",
+    "href": "/html-tools/html-tag-remover-stripper"
+  },
+  {
+    "name": "Html To Json Converter",
+    "description": "Transform HTML lists or tables to JSON. Parses elements to structured output.",
+    "href": "/html-tools/html-to-json-converter"
+  },
+  {
+    "name": "Html To Pdf Converter",
+    "description": "Convert HTML or URLs to PDF. Preserves layouts, styles, images.",
+    "href": "/html-tools/html-to-pdf-converter"
+  },
+  {
+    "name": "Html Validator Linter",
+    "description": "Validate HTML for errors. Checks syntax, deprecated elements, accessibility.",
+    "href": "/html-tools/html-validator-linter"
+  }
+]

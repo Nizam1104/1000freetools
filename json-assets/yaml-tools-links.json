@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Csv To Yaml Converter",
+    "description": "Convert CSV spreadsheet data into structured YAML for configuration files or data feeds.",
+    "href": "/yaml-tools/csv-to-yaml-converter"
+  },
+  {
+    "name": "Ini To Yaml Converter",
+    "description": "Convert INI configuration files to YAML format with sections and properties.",
+    "href": "/yaml-tools/ini-to-yaml-converter"
+  },
+  {
+    "name": "Json To Yaml Converter",
+    "description": "Transform JSON data into clean, readable YAML with proper syntax and indentation.",
+    "href": "/yaml-tools/json-to-yaml-converter"
+  },
+  {
+    "name": "Properties To Yaml Converter",
+    "description": "Convert Java .properties files to structured YAML with nested mappings from dot-notation keys.",
+    "href": "/yaml-tools/properties-to-yaml-converter"
+  },
+  {
+    "name": "Xml To Yaml Converter",
+    "description": "Convert XML files to cleaner, more readable YAML format.",
+    "href": "/yaml-tools/xml-to-yaml-converter"
+  },
+  {
+    "name": "Yaml Comment Remover",
+    "description": "Remove all comments from YAML files, leaving only functional configuration data.",
+    "href": "/yaml-tools/yaml-comment-remover"
+  },
+  {
+    "name": "Yaml Diff Checker",
+    "description": "Compare two YAML documents and highlight structural differences.",
+    "href": "/yaml-tools/yaml-diff-checker"
+  },
+  {
+    "name": "Yaml Editor",
+    "description": "Edit YAML in your browser with syntax highlighting, live validation, and formatting tools.",
+    "href": "/yaml-tools/yaml-editor"
+  },
+  {
+    "name": "Yaml Escape Unescape",
+    "description": "Escape special characters in YAML strings or unescape them to restore original text.",
+    "href": "/yaml-tools/yaml-escape-unescape"
+  },
+  {
+    "name": "Yaml Formatter Beautifier",
+    "description": "Format and standardize YAML files. Fix indentation and align colons.",
+    "href": "/yaml-tools/yaml-formatter-beautifier"
+  },
+  {
+    "name": "Yaml Key Sorter",
+    "description": "Sort YAML keys alphabetically or in custom order. Organizes top-level and nested structures.",
+    "href": "/yaml-tools/yaml-key-sorter"
+  },
+  {
+    "name": "Yaml Linter",
+    "description": "Check YAML for errors, style issues, and anti-patterns. Get fixes for clean, valid files.",
+    "href": "/yaml-tools/yaml-linter"
+  },
+  {
+    "name": "Yaml Merge Tool",
+    "description": "Combine multiple YAML documents into one. Handle conflicts and deeply merge nested structures.",
+    "href": "/yaml-tools/yaml-merge-tool"
+  },
+  {
+    "name": "Yaml Minifier Compressor",
+    "description": "Reduce YAML file size by removing whitespace and comments without breaking syntax.",
+    "href": "/yaml-tools/yaml-minifier-compressor"
+  },
+  {
+    "name": "Yaml Prettifier Custom",
+    "description": "Format YAML with customizable rules for indentation, line width, quoting, and more.",
+    "href": "/yaml-tools/yaml-prettifier-custom"
+  },
+  {
+    "name": "Yaml Schema Validator",
+    "description": "Validate YAML data against JSON Schema. Check structure, data types, and constraints.",
+    "href": "/yaml-tools/yaml-schema-validator"
+  },
+  {
+    "name": "Yaml To Csv Converter",
+    "description": "Convert YAML data lists to CSV files. Detects headers and flattens nested structures.",
+    "href": "/yaml-tools/yaml-to-csv-converter"
+  },
+  {
+    "name": "Yaml To Env Converter",
+    "description": "Generate environment variable exports from YAML configs for Docker, Kubernetes, or local setups.",
+    "href": "/yaml-tools/yaml-to-env-converter"
+  },
+  {
+    "name": "Yaml To Go Struct",
+    "description": "Generate Go struct definitions from YAML files with type-safe code and YAML tags.",
+    "href": "/yaml-tools/yaml-to-go-struct"
+  },
+  {
+    "name": "Yaml To Graphviz Dot",
+    "description": "Convert YAML graph data to Graphviz DOT format for diagrams and flowcharts.",
+    "href": "/yaml-tools/yaml-to-graphviz-dot"
+  },
+  {
+    "name": "Yaml To Html Table",
+    "description": "Generate styled HTML tables from YAML data with optional sorting and responsive design.",
+    "href": "/yaml-tools/yaml-to-html-table"
+  },
+  {
+    "name": "Yaml To Ini Converter",
+    "description": "Convert YAML configuration files to INI format with section mapping for legacy systems.",
+    "href": "/yaml-tools/yaml-to-ini-converter"
+  },
+  {
+    "name": "Yaml To Json Converter",
+    "description": "Convert YAML configuration files to JSON format with preserved data structure.",
+    "href": "/yaml-tools/yaml-to-json-converter"
+  },
+  {
+    "name": "Yaml To Markdown Table",
+    "description": "Transform YAML data lists into Markdown tables with formatted headers and aligned columns.",
+    "href": "/yaml-tools/yaml-to-markdown-table"
+  },
+  {
+    "name": "Yaml To Properties Converter",
+    "description": "Generate Java .properties files from YAML. Flattens nested structures to key-value pairs.",
+    "href": "/yaml-tools/yaml-to-properties-converter"
+  },
+  {
+    "name": "Yaml To Python Dict",
+    "description": "Generate Python dictionary code from YAML configuration for use in Python projects.",
+    "href": "/yaml-tools/yaml-to-python-dict"
+  },
+  {
+    "name": "Yaml To Sql Insert",
+    "description": "Generate SQL INSERT queries from YAML data. Supports multiple SQL dialects.",
+    "href": "/yaml-tools/yaml-to-sql-insert"
+  },
+  {
+    "name": "Yaml To Toml Converter",
+    "description": "Convert YAML to TOML format for projects using Cargo or pyproject.toml.",
+    "href": "/yaml-tools/yaml-to-toml-converter"
+  },
+  {
+    "name": "Yaml To Xml Converter",
+    "description": "Transform YAML data into XML format. Handles nested structures with customization options.",
+    "href": "/yaml-tools/yaml-to-xml-converter"
+  },
+  {
+    "name": "Yaml Validator",
+    "description": "Validate YAML files for syntax errors and structural issues with line-by-line feedback.",
+    "href": "/yaml-tools/yaml-validator"
+  },
+  {
+    "name": "Yaml Version Converter",
+    "description": "Convert between YAML specifications and formatting styles for compatibility across tools.",
+    "href": "/yaml-tools/yaml-version-converter"
+  }
+]

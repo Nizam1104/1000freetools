@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Binary Decimal Hex Converter",
+    "description": "Convert between binary, decimal, hex, octal instantly. Essential for programmers.",
+    "href": "/number-tools/binary-decimal-hex-converter"
+  },
+  {
+    "name": "Currency Formatter",
+    "description": "Format numbers as currency. US, Europe, UK, Japan. Adjust symbols, separators.",
+    "href": "/number-tools/currency-formatter"
+  },
+  {
+    "name": "Divisibility Tester",
+    "description": "Test if numbers divide evenly. Learn divisibility rules for 2, 3, 5, 9, 10, 11.",
+    "href": "/number-tools/divisibility-tester"
+  },
+  {
+    "name": "Factorial Calculator",
+    "description": "Calculate factorials, permutations, combinations, double factorials, subfactorials.",
+    "href": "/number-tools/factorial-calculator"
+  },
+  {
+    "name": "Gcf Calculator",
+    "description": "Find GCF and LCM quickly. Essential for simplifying fractions, math problems.",
+    "href": "/number-tools/gcf-calculator"
+  },
+  {
+    "name": "Number Base Calculator",
+    "description": "Do math in binary, hex, octal, decimal. Add, subtract, multiply, divide.",
+    "href": "/number-tools/number-base-calculator"
+  },
+  {
+    "name": "Number Pattern Generator",
+    "description": "Generate number sequences. Arithmetic, geometric, squares, cubes, Fibonacci, primes.",
+    "href": "/number-tools/number-pattern-generator"
+  },
+  {
+    "name": "Number Sequence Solver",
+    "description": "Find the next number in a sequence. Analyzes patterns, predicts what comes next.",
+    "href": "/number-tools/number-sequence-solver"
+  },
+  {
+    "name": "Number Sorter",
+    "description": "Sort numbers ascending/descending. Remove duplicates, calculate stats.",
+    "href": "/number-tools/number-sorter"
+  },
+  {
+    "name": "Number To Time Converter",
+    "description": "Convert decimal hours to hours/minutes. For payroll, scheduling, time tracking.",
+    "href": "/number-tools/number-to-time-converter"
+  },
+  {
+    "name": "Number To Words Converter",
+    "description": "Convert numbers to written English. Integers, decimals, currency. US/UK formats.",
+    "href": "/number-tools/number-to-words-converter"
+  },
+  {
+    "name": "Palindrome Number Checker",
+    "description": "Check if numbers are palindromes. See reverse-and-add steps, nearby palindromes.",
+    "href": "/number-tools/palindrome-number-checker"
+  },
+  {
+    "name": "Percentage Calculator",
+    "description": "Solve percentage problems. Discounts, tips, tax, interest, percentage changes.",
+    "href": "/number-tools/percentage-calculator"
+  },
+  {
+    "name": "Phone Number Formatter",
+    "description": "Format digits as phone numbers. Validate, extract from text, create call links.",
+    "href": "/number-tools/phone-number-formatter"
+  },
+  {
+    "name": "Prime Number Checker",
+    "description": "Check if numbers are prime. Shows divisors for composites, finds neighboring primes.",
+    "href": "/number-tools/prime-number-checker"
+  },
+  {
+    "name": "Random Number Generator",
+    "description": "Generate random numbers. Set range, quantity, get truly random results.",
+    "href": "/number-tools/random-number-generator"
+  },
+  {
+    "name": "Roman Numeral Converter",
+    "description": "Convert between numbers and Roman numerals. Historical notation, validates input.",
+    "href": "/number-tools/roman-numeral-converter"
+  },
+  {
+    "name": "Rounding Calculator",
+    "description": "Round to any precision. Standard, banker's, custom methods. Decimals, integers.",
+    "href": "/number-tools/rounding-calculator"
+  },
+  {
+    "name": "Scientific Notation Converter",
+    "description": "Convert to/from scientific notation. Large/small numbers, engineering notation.",
+    "href": "/number-tools/scientific-notation-converter"
+  },
+  {
+    "name": "Unit Converter",
+    "description": "Convert digital storage, metric prefixes, measurements. Real-time updates.",
+    "href": "/number-tools/unit-converter"
+  }
+]

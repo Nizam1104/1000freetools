@@ -18,11 +18,6 @@ const tools = [
     href: `/ascii-tools/utf8-validator`,
   },
   {
-    name: `Text Differ`,
-    description: `Text Differ: Compare Text and Find Differences`,
-    href: `/ascii-tools/text-differ`,
-  },
-  {
     name: `Free Printable Calendar Maker`,
     description: `Create & Print Your Custom Calendar`,
     href: `/calendar-tools/printable-calendar-maker`,

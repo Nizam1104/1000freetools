@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import Script from "next/script";
 
 type FaqItem = {
   question: string;
@@ -11,56 +11,48 @@ type FaqsProps = {
 };
 
 export default function Faqs({ faqs }: FaqsProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 
   return (
-    <div className="w-full mx-auto py-6">
-      <div className="space-y-3">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
-          >
-            <button
-              aria-expanded={openIndex === index}
-              aria-controls={`faq-answer-${index}`}
-              onClick={() => toggleFaq(index)}
-              className="flex justify-between items-center w-full text-left p-4 sm:p-5 md:p-6 hover:bg-opacity-50 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:bg-opacity-50 transition-colors duration-200"
-            >
-              <span className="pr-4 text-sm sm:text-base md:text-lg font-medium flex-grow leading-relaxed">
-                {faq.question}
-              </span>
-              <span
-                className={`flex-shrink-0 text-xl sm:text-2xl font-bold min-w-[24px] sm:min-w-[30px] text-right transition-transform duration-200 ${
-                  openIndex === index ? "rotate-180" : ""
-                }`}
-              >
-                {openIndex === index ? "−" : "+"}
-              </span>
-            </button>
+    <>
+      <Script
+        id="faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <div className="w-full mx-auto py-6">
+        <div className="space-y-3">
+          {faqs.map((faq, index) => (
             <div
-              className={`grid transition-all duration-300 ease-in-out ${
-                openIndex === index
-                  ? "grid-rows-[1fr] opacity-100"
-                  : "grid-rows-[0fr] opacity-0"
-              }`}
+              key={index}
+              className="border rounded-lg overflow-hidden shadow-sm"
             >
-              <div className="overflow-hidden">
-                <div
-                  id={`faq-answer-${index}`}
-                  className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 pt-0 text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300"
-                >
-                  {faq.answer}
-                </div>
+              <div className="flex justify-between items-center w-full text-left px-1 md:px-4 py-1 md:py-4 sm:p-5 md:p-6">
+                <span className="text-sm sm:text-base md:text-lg font-medium leading-relaxed">
+                  {faq.question}
+                </span>
+              </div>
+              <div
+                id={`faq-answer-${index}`}
+                className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 pt-0 text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300"
+              >
+                {faq.answer}
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

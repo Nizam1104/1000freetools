@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Argon2 Hash Generator",
+    "description": "Generate Argon2 hashes for password security. Choose id, i, or d variants.",
+    "href": "/hash-tools/argon2-hash-generator"
+  },
+  {
+    "name": "Base64 Encoder Decoder Hash",
+    "description": "Encode/decode Base64 and generate hashes together. For data integrity checks.",
+    "href": "/hash-tools/base64-encoder-decoder-hash"
+  },
+  {
+    "name": "Bcrypt Hash Generator Verifier",
+    "description": "Hash passwords with bcrypt. Adjustable cost factor, verify existing hashes.",
+    "href": "/hash-tools/bcrypt-hash-generator-verifier"
+  },
+  {
+    "name": "Crc32 Hash Calculator",
+    "description": "Calculate CRC32 checksums. Detect data errors in transfers and storage.",
+    "href": "/hash-tools/crc32-hash-calculator"
+  },
+  {
+    "name": "Custom Salted Hash Generator",
+    "description": "Generate salted hashes. Specify salt or generate random, choose algorithm.",
+    "href": "/hash-tools/custom-salted-hash-generator"
+  },
+  {
+    "name": "File Hash Calculator Multi Algorithm",
+    "description": "Calculate MD5, SHA-1, SHA-256 for files. Upload, get multiple hashes instantly.",
+    "href": "/hash-tools/file-hash-calculator-multi-algorithm"
+  },
+  {
+    "name": "Hash Comparison Duplicate Finder",
+    "description": "Compare hashes to find duplicates. Input directly or generate from text.",
+    "href": "/hash-tools/hash-comparison-duplicate-finder"
+  },
+  {
+    "name": "Hash Identifier Tool",
+    "description": "Identify hash algorithms by format. MD5, SHA-256, bcrypt, more.",
+    "href": "/hash-tools/hash-identifier-tool"
+  },
+  {
+    "name": "Hash To Hex Base64 Converter",
+    "description": "Convert hashes between hex and Base64. Instant format switching.",
+    "href": "/hash-tools/hash-to-hex-base64-converter"
+  },
+  {
+    "name": "Hmac Generator Keyed Hash",
+    "description": "Generate HMAC signatures with secret keys. Message authenticity for APIs.",
+    "href": "/hash-tools/hmac-generator-keyed-hash"
+  },
+  {
+    "name": "Md5 Hash Generator Checker",
+    "description": "Generate MD5 hashes from text or files. Fast checksums for verification.",
+    "href": "/hash-tools/md5-hash-generator-checker"
+  },
+  {
+    "name": "Mysql Password Hash Generator",
+    "description": "Generate MySQL password hashes. OLD_PASSWORD and PASSWORD function mimics.",
+    "href": "/hash-tools/mysql-password-hash-generator"
+  },
+  {
+    "name": "Ntlm Hash Generator Cracker",
+    "description": "Generate NTLM hashes for Windows. Dictionary cracking for security testing.",
+    "href": "/hash-tools/ntlm-hash-generator-cracker"
+  },
+  {
+    "name": "Password Hash Strength Analyzer",
+    "description": "Check password hash strength. Warn about weak algorithms like unsalted MD5.",
+    "href": "/hash-tools/password-hash-strength-analyzer"
+  },
+  {
+    "name": "Ripemd160 Hash Generator",
+    "description": "Generate RIPEMD-160 hashes. Common in cryptocurrency applications.",
+    "href": "/hash-tools/ripemd160-hash-generator"
+  },
+  {
+    "name": "Sha1 Hash Generator Decrypter",
+    "description": "Generate SHA-1 hashes or lookup in database. Legacy compatibility testing.",
+    "href": "/hash-tools/sha1-hash-generator-decrypter"
+  },
+  {
+    "name": "Sha256 Hash Generator",
+    "description": "Compute SHA-256 hashes quickly. Text or file input, secure and reliable.",
+    "href": "/hash-tools/sha256-hash-generator"
+  },
+  {
+    "name": "Sha3 Hash Generator Keccak",
+    "description": "Generate SHA-3 hashes using Keccak. Choose length, NIST-approved standard.",
+    "href": "/hash-tools/sha3-hash-generator-keccak"
+  },
+  {
+    "name": "Sha512 Hash Calculator",
+    "description": "Calculate SHA-512 hashes. 128-character hex for sensitive data protection.",
+    "href": "/hash-tools/sha512-hash-calculator"
+  },
+  {
+    "name": "Whirlpool Hash Generator",
+    "description": "Generate Whirlpool 512-bit hashes. Alternative to SHA families.",
+    "href": "/hash-tools/whirlpool-hash-generator"
+  }
+]
