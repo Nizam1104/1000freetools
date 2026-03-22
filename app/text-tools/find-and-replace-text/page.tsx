@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FindAndReplaceText from "@/components/text-tools/FindAndReplaceText";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,6 +55,39 @@ const faqsData = [
     question: "Can I use find and replace for coding?",
     answer:
       "Yes. Developers use this tool for refactoring code, updating variable names, fixing repeated patterns, and bulk editing configuration files.",
+  },
+];
+
+const relatedTools = [
+  {
+    name: `Text Differ`,
+    description: `Compare two texts side-by-side and highlight differences`,
+    href: `/text-tools/text-differ`,
+  },
+  {
+    name: `Case Converter`,
+    description: `Convert text to UPPERCASE, lowercase, Title Case, camelCase, and more`,
+    href: `/text-tools/case-converter`,
+  },
+  {
+    name: `Whitespace Remover`,
+    description: `Remove extra spaces, tabs, and blank lines from messy text`,
+    href: `/text-tools/whitespace-remover`,
+  },
+  {
+    name: `Duplicate Word Remover`,
+    description: `Remove repeated words from text, keyword lists, and tag clouds`,
+    href: `/text-tools/duplicate-word-remover`,
+  },
+  {
+    name: `Text to Slug Converter`,
+    description: `Convert text to URL-friendly slugs in kebab-case`,
+    href: `/text-tools/text-to-slug-converter`,
+  },
+  {
+    name: `Word Counter`,
+    description: `Count words, characters, sentences, and reading time instantly`,
+    href: `/text-tools/word-counter`,
   },
 ];
 
@@ -171,6 +205,11 @@ export default function FindAndReplaceTextPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
           <Faqs faqs={faqsData} />
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Related Text Tools</h2>
+          <ToolLinkCards tools={relatedTools} />
         </div>
       </section>
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import WordCounter from "@/components/text-tools/WordCounter";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -59,6 +60,39 @@ const faqsData = [
     question: "Does this work for languages other than English?",
     answer:
       "Yes. The word counter processes any text using standard word boundary detection. Character counts work for all languages. Reading time estimates assume similar reading speeds across languages.",
+  },
+];
+
+const relatedTools = [
+  {
+    name: `Text Differ`,
+    description: `Compare two texts side-by-side and highlight differences`,
+    href: `/text-tools/text-differ`,
+  },
+  {
+    name: `Character Counter`,
+    description: `Count characters with/without spaces for Twitter, SMS, meta descriptions`,
+    href: `/text-tools/character-counter`,
+  },
+  {
+    name: `Sentence Counter`,
+    description: `Count sentences and average sentence length in text`,
+    href: `/text-tools/sentence-counter`,
+  },
+  {
+    name: `Word Frequency Counter`,
+    description: `Count word frequency and keyword density in text`,
+    href: `/text-tools/word-frequency-counter`,
+  },
+  {
+    name: `Case Converter`,
+    description: `Convert text to UPPERCASE, lowercase, Title Case, camelCase, and more`,
+    href: `/text-tools/case-converter`,
+  },
+  {
+    name: `Whitespace Remover`,
+    description: `Remove extra spaces, tabs, and blank lines from messy text`,
+    href: `/text-tools/whitespace-remover`,
   },
 ];
 
@@ -163,6 +197,13 @@ export default function WordCounterPage() {
               Frequently Asked Questions
             </h2>
             <Faqs faqs={faqsData} />
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-400 mb-4">
+              Related Text Tools
+            </h2>
+            <ToolLinkCards tools={relatedTools} />
           </div>
         </section>
       </div>

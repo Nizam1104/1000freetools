@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CharacterCounter from "@/components/text-tools/CharacterCounter";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,6 +55,39 @@ const faqsData = [
     question: "How accurate are the platform limits shown?",
     answer:
       "The limits displayed (Twitter 280, SMS 160, etc.) are the official limits as of 2024. Platforms occasionally update these, so always verify with the platform directly for critical use cases.",
+  },
+];
+
+const relatedTools = [
+  {
+    name: `Text Differ`,
+    description: `Compare two texts side-by-side and highlight differences`,
+    href: `/text-tools/text-differ`,
+  },
+  {
+    name: `Word Counter`,
+    description: `Count words, characters, sentences, and reading time instantly`,
+    href: `/text-tools/word-counter`,
+  },
+  {
+    name: `Case Converter`,
+    description: `Convert text to UPPERCASE, lowercase, Title Case, camelCase, and more`,
+    href: `/text-tools/case-converter`,
+  },
+  {
+    name: `Whitespace Remover`,
+    description: `Remove extra spaces, tabs, and blank lines from messy text`,
+    href: `/text-tools/whitespace-remover`,
+  },
+  {
+    name: `Text Size Calculator`,
+    description: `Calculate text size in bytes for different encodings`,
+    href: `/text-tools/text-size-calculator`,
+  },
+  {
+    name: `Sentence Counter`,
+    description: `Count sentences and average sentence length in text`,
+    href: `/text-tools/sentence-counter`,
   },
 ];
 
@@ -174,6 +208,11 @@ export default function CharacterCounterPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
           <Faqs faqs={faqsData} />
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Related Text Tools</h2>
+          <ToolLinkCards tools={relatedTools} />
         </div>
       </section>
     </div>

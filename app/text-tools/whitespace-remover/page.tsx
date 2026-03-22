@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import WhitespaceRemover from "@/components/text-tools/WhitespaceRemover";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,6 +55,39 @@ const faqsData = [
     question: "Can I remove blank lines only?",
     answer:
       "Yes. You can choose to remove only blank lines while preserving the rest of the formatting, or combine multiple cleanup options.",
+  },
+];
+
+const relatedTools = [
+  {
+    name: `Text Differ`,
+    description: `Compare two texts side-by-side and highlight differences`,
+    href: `/text-tools/text-differ`,
+  },
+  {
+    name: `Duplicate Word Remover`,
+    description: `Remove repeated words from text, keyword lists, and tag clouds`,
+    href: `/text-tools/duplicate-word-remover`,
+  },
+  {
+    name: `Remove Duplicate Lines`,
+    description: `Remove duplicates from lists, CSV data, email lists, and keywords`,
+    href: `/text-tools/remove-duplicate-lines`,
+  },
+  {
+    name: `Word Counter`,
+    description: `Count words, characters, sentences, and reading time instantly`,
+    href: `/text-tools/word-counter`,
+  },
+  {
+    name: `Character Counter`,
+    description: `Count characters with/without spaces for Twitter, SMS, meta descriptions`,
+    href: `/text-tools/character-counter`,
+  },
+  {
+    name: `Case Converter`,
+    description: `Convert text to UPPERCASE, lowercase, Title Case, camelCase, and more`,
+    href: `/text-tools/case-converter`,
   },
 ];
 
@@ -174,6 +208,11 @@ export default function WhitespaceRemoverPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
           <Faqs faqs={faqsData} />
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Related Text Tools</h2>
+          <ToolLinkCards tools={relatedTools} />
         </div>
       </section>
     </div>

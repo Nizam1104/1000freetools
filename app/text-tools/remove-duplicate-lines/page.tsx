@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import RemoveDuplicateLines from "@/components/text-tools/RemoveDuplicateLines";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,6 +55,39 @@ const faqsData = [
     question: "What happens to blank lines?",
     answer:
       "Blank lines are treated as duplicates of each other. Only one blank line will remain unless you enable the 'Remove blank lines' option.",
+  },
+];
+
+const relatedTools = [
+  {
+    name: `Text Differ`,
+    description: `Compare two texts side-by-side and highlight differences`,
+    href: `/text-tools/text-differ`,
+  },
+  {
+    name: `Duplicate Word Remover`,
+    description: `Remove repeated words from text, keyword lists, and tag clouds`,
+    href: `/text-tools/duplicate-word-remover`,
+  },
+  {
+    name: `Whitespace Remover`,
+    description: `Remove extra spaces, tabs, and blank lines from messy text`,
+    href: `/text-tools/whitespace-remover`,
+  },
+  {
+    name: `Word Counter`,
+    description: `Count words, characters, sentences, and reading time instantly`,
+    href: `/text-tools/word-counter`,
+  },
+  {
+    name: `Text to List Converter`,
+    description: `Convert text to comma-separated, newline, or custom delimited lists`,
+    href: `/text-tools/text-to-list-converter`,
+  },
+  {
+    name: `Text Line Sorter`,
+    description: `Sort lines of text alphabetically or in reverse order`,
+    href: `/text-tools/text-line-sorter`,
   },
 ];
 
@@ -150,6 +184,11 @@ export default function RemoveDuplicateLinesPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
           <Faqs faqs={faqsData} />
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Related Text Tools</h2>
+          <ToolLinkCards tools={relatedTools} />
         </div>
       </section>
     </div>

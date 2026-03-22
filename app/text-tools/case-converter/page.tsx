@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CaseConverter from "@/components/text-tools/CaseConverter";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,6 +55,39 @@ const faqsData = [
     question: "What is SCREAMING_SNAKE_CASE used for?",
     answer:
       "SCREAMING_SNAKE_CASE is typically used for constants in programming languages like JavaScript, Python, and Java. It signals that a value should not change.",
+  },
+];
+
+const relatedTools = [
+  {
+    name: `Text Differ`,
+    description: `Compare two texts side-by-side and highlight differences`,
+    href: `/text-tools/text-differ`,
+  },
+  {
+    name: `Word Counter`,
+    description: `Count words, characters, sentences, and reading time instantly`,
+    href: `/text-tools/word-counter`,
+  },
+  {
+    name: `Character Counter`,
+    description: `Count characters with/without spaces for Twitter, SMS, meta descriptions`,
+    href: `/text-tools/character-counter`,
+  },
+  {
+    name: `Find and Replace Text`,
+    description: `Bulk edit text with regex support and case-sensitive matching`,
+    href: `/text-tools/find-and-replace-text`,
+  },
+  {
+    name: `Whitespace Remover`,
+    description: `Remove extra spaces, tabs, and blank lines from messy text`,
+    href: `/text-tools/whitespace-remover`,
+  },
+  {
+    name: `Text to Slug Converter`,
+    description: `Convert text to URL-friendly slugs in kebab-case`,
+    href: `/text-tools/text-to-slug-converter`,
   },
 ];
 
@@ -180,6 +214,11 @@ export default function CaseConverterPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
           <Faqs faqs={faqsData} />
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Related Text Tools</h2>
+          <ToolLinkCards tools={relatedTools} />
         </div>
       </section>
     </div>

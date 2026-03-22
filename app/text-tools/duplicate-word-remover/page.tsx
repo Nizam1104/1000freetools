@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DuplicateWordRemover from "@/components/text-tools/DuplicateWordRemover";
 import Faqs from "@/components/utils/Faqs";
+import ToolLinkCards from "@/components/utils/ToolLinkCards";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,6 +55,39 @@ const faqsData = [
     question: "What's the difference between duplicate words and duplicate lines?",
     answer:
       "Duplicate word remover finds repeated words within text (like 'the the'). Duplicate line remover finds repeated entire lines in a list. Use the tool that matches your data format.",
+  },
+];
+
+const relatedTools = [
+  {
+    name: `Text Differ`,
+    description: `Compare two texts side-by-side and highlight differences`,
+    href: `/text-tools/text-differ`,
+  },
+  {
+    name: `Remove Duplicate Lines`,
+    description: `Remove duplicates from lists, CSV data, email lists, and keywords`,
+    href: `/text-tools/remove-duplicate-lines`,
+  },
+  {
+    name: `Whitespace Remover`,
+    description: `Remove extra spaces, tabs, and blank lines from messy text`,
+    href: `/text-tools/whitespace-remover`,
+  },
+  {
+    name: `Word Counter`,
+    description: `Count words, characters, sentences, and reading time instantly`,
+    href: `/text-tools/word-counter`,
+  },
+  {
+    name: `Find and Replace Text`,
+    description: `Bulk edit text with regex support and case-sensitive matching`,
+    href: `/text-tools/find-and-replace-text`,
+  },
+  {
+    name: `Text to List Converter`,
+    description: `Convert text to comma-separated, newline, or custom delimited lists`,
+    href: `/text-tools/text-to-list-converter`,
   },
 ];
 
@@ -147,6 +181,11 @@ export default function DuplicateWordRemoverPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
           <Faqs faqs={faqsData} />
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Related Text Tools</h2>
+          <ToolLinkCards tools={relatedTools} />
         </div>
       </section>
     </div>

@@ -13,39 +13,39 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: `UTF-8 Validator`,
-    description: `UTF-8 Validator: Check and Validate UTF-8 Encoding`,
-    href: `/ascii-tools/utf8-validator`,
+    name: `Case Converter`,
+    description: `Convert text to UPPERCASE, lowercase, Title Case, camelCase, and more`,
+    href: `/text-tools/case-converter`,
   },
   {
-    name: `Leet Speak Converter`,
-    description: `Leet Speak Converter: Convert Text to 1337 Online`,
-    href: `/ascii-tools/leet-speak-converter`,
+    name: `Word Counter`,
+    description: `Count words, characters, sentences, and reading time instantly`,
+    href: `/text-tools/word-counter`,
   },
   {
-    name: `Free Printable Calendar Maker`,
-    description: `Create & Print Your Custom Calendar`,
-    href: `/calendar-tools/printable-calendar-maker`,
+    name: `Character Counter`,
+    description: `Count characters with/without spaces for Twitter, SMS, meta descriptions`,
+    href: `/text-tools/character-counter`,
   },
   {
-    name: `HTML Minifier`,
-    description: `Free HTML Minifier & Compressor`,
-    href: `/minifier-tools/html-minifier`,
+    name: `Find and Replace Text`,
+    description: `Bulk edit text with regex support and case-sensitive matching`,
+    href: `/text-tools/find-and-replace-text`,
   },
   {
-    name: `Unix Timestamp Converter`,
-    description: `Unix Timestamp Converter`,
-    href: `/timestamp-tools/unix-timestamp-converter`,
+    name: `Remove Duplicate Lines`,
+    description: `Remove duplicates from lists, CSV data, email lists, and keywords`,
+    href: `/text-tools/remove-duplicate-lines`,
   },
   {
-    name: `Password Generator`,
-    description: `Free Strong Password Generator`,
-    href: `/password-tools/password-generator`,
+    name: `Duplicate Word Remover`,
+    description: `Remove repeated words from text, keyword lists, and tag clouds`,
+    href: `/text-tools/duplicate-word-remover`,
   },
   {
-    name: `Barcode Generator`,
-    description: `Free Barcode Generator`,
-    href: `/barcode-tools/barcode-generator`,
+    name: `Whitespace Remover`,
+    description: `Remove extra spaces, tabs, and blank lines from messy text`,
+    href: `/text-tools/whitespace-remover`,
   },
 ];
 
