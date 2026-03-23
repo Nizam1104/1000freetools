@@ -1,13 +1,8 @@
 [
   {
-    "name": "Url Blacklist Checker",
-    "description": "Check if a URL is blacklisted for malware, phishing, or spam across multiple security databases.",
-    "href": "/url-tools/url-blacklist-checker"
-  },
-  {
-    "name": "Url Canonicalization Checker",
-    "description": "Check a webpage's canonical tag to find which URL search engines treat as the main version.",
-    "href": "/url-tools/url-canonicalization-checker"
+    "name": "Url Qr Code Generator",
+    "description": "Create scannable QR codes from any URL with customizable colors.",
+    "href": "/url-tools/url-qr-code-generator"
   },
   {
     "name": "Url Case Converter",
@@ -15,9 +10,29 @@
     "href": "/url-tools/url-case-converter"
   },
   {
+    "name": "Url Slug Generator",
+    "description": "Generate clean, SEO-friendly URL slugs from page titles.",
+    "href": "/url-tools/url-slug-generator"
+  },
+  {
     "name": "Url Decoder",
     "description": "Decode percent-encoded URLs to human-readable format.",
     "href": "/url-tools/url-decoder"
+  },
+  {
+    "name": "Url Screenshot Generator",
+    "description": "Capture full-page screenshots of websites on desktop or mobile.",
+    "href": "/url-tools/url-screenshot-generator"
+  },
+  {
+    "name": "Url Encoder",
+    "description": "Encode text with special characters for safe use in web URLs.",
+    "href": "/url-tools/url-encoder"
+  },
+  {
+    "name": "Url Query String Extractor",
+    "description": "Extract query parameters like UTM tags and session IDs from URLs.",
+    "href": "/url-tools/url-query-string-extractor"
   },
   {
     "name": "Url Duplicate Finder",
@@ -30,19 +45,24 @@
     "href": "/url-tools/url-email-link-extractor"
   },
   {
-    "name": "Url Encoder",
-    "description": "Encode text with special characters for safe use in web URLs.",
-    "href": "/url-tools/url-encoder"
+    "name": "Url Ip Address Lookup",
+    "description": "Find the IP address and server location behind any website URL.",
+    "href": "/url-tools/url-ip-address-lookup"
+  },
+  {
+    "name": "Url Blacklist Checker",
+    "description": "Check if a URL is blacklisted for malware, phishing, or spam across multiple security databases.",
+    "href": "/url-tools/url-blacklist-checker"
+  },
+  {
+    "name": "Url Canonicalization Checker",
+    "description": "Check a webpage's canonical tag to find which URL search engines treat as the main version.",
+    "href": "/url-tools/url-canonicalization-checker"
   },
   {
     "name": "Url Expander",
     "description": "Reveal the full destination URL of shortened links without clicking.",
     "href": "/url-tools/url-expander"
-  },
-  {
-    "name": "Url Ip Address Lookup",
-    "description": "Find the IP address and server location behind any website URL.",
-    "href": "/url-tools/url-ip-address-lookup"
   },
   {
     "name": "Url Parser",
@@ -55,34 +75,14 @@
     "href": "/url-tools/url-ping-tool"
   },
   {
-    "name": "Url Qr Code Generator",
-    "description": "Create scannable QR codes from any URL with customizable colors.",
-    "href": "/url-tools/url-qr-code-generator"
-  },
-  {
-    "name": "Url Query String Extractor",
-    "description": "Extract query parameters like UTM tags and session IDs from URLs.",
-    "href": "/url-tools/url-query-string-extractor"
-  },
-  {
     "name": "Url Redirect Checker",
     "description": "Trace redirect chains and see 301, 302, and other status codes.",
     "href": "/url-tools/url-redirect-checker"
   },
   {
-    "name": "Url Screenshot Generator",
-    "description": "Capture full-page screenshots of websites on desktop or mobile.",
-    "href": "/url-tools/url-screenshot-generator"
-  },
-  {
     "name": "Url Shortener",
     "description": "Shorten long URLs into clean, shareable links with optional custom slugs.",
     "href": "/url-tools/url-shortener"
-  },
-  {
-    "name": "Url Slug Generator",
-    "description": "Generate clean, SEO-friendly URL slugs from page titles.",
-    "href": "/url-tools/url-slug-generator"
   },
   {
     "name": "Url Social Media Preview",

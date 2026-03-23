@@ -1,5 +1,35 @@
 [
   {
+    "name": "Toml To Ruby Hash Converter",
+    "description": "Generate Ruby hashes from TOML. Ready for Rails or Ruby projects.",
+    "href": "/toml-tools/toml-to-ruby-hash-converter"
+  },
+  {
+    "name": "Toml Validator Linter",
+    "description": "Validate TOML for errors. Catches syntax issues, duplicate keys, type mismatches.",
+    "href": "/toml-tools/toml-validator-linter"
+  },
+  {
+    "name": "Toml Schema Generator Validator",
+    "description": "Generate JSON Schema from TOML or validate TOML against schema.",
+    "href": "/toml-tools/toml-schema-generator-validator"
+  },
+  {
+    "name": "Toml To Javascript Object Converter",
+    "description": "Convert TOML to JavaScript objects. Clean code for frontend/backend configs.",
+    "href": "/toml-tools/toml-to-javascript-object-converter"
+  },
+  {
+    "name": "Toml Minifier Compressor",
+    "description": "Minify TOML by removing whitespace, comments. Compact for production.",
+    "href": "/toml-tools/toml-minifier-compressor"
+  },
+  {
+    "name": "Json To Toml Converter",
+    "description": "Convert JSON to TOML. Proper tables, arrays, key-value formatting.",
+    "href": "/toml-tools/json-to-toml-converter"
+  },
+  {
     "name": "Csv To Toml Converter",
     "description": "Convert CSV to TOML array of tables. Headers as keys, rows become tables.",
     "href": "/toml-tools/csv-to-toml-converter"
@@ -10,16 +40,6 @@
     "href": "/toml-tools/env-to-toml-converter"
   },
   {
-    "name": "Ini To Toml Converter",
-    "description": "Upgrade INI to TOML. Sections become tables, better structure.",
-    "href": "/toml-tools/ini-to-toml-converter"
-  },
-  {
-    "name": "Json To Toml Converter",
-    "description": "Convert JSON to TOML. Proper tables, arrays, key-value formatting.",
-    "href": "/toml-tools/json-to-toml-converter"
-  },
-  {
     "name": "Properties To Toml Converter",
     "description": "Convert Java .properties to TOML. Dot-notation keys to nested tables.",
     "href": "/toml-tools/properties-to-toml-converter"
@@ -28,6 +48,11 @@
     "name": "Toml Beautifier Formatter",
     "description": "Beautify messy TOML. Consistent indentation, spacing for maintainability.",
     "href": "/toml-tools/toml-beautifier-formatter"
+  },
+  {
+    "name": "Ini To Toml Converter",
+    "description": "Upgrade INI to TOML. Sections become tables, better structure.",
+    "href": "/toml-tools/ini-to-toml-converter"
   },
   {
     "name": "Toml Comment Remover",
@@ -48,16 +73,6 @@
     "name": "Toml Merge Tool",
     "description": "Merge multiple TOML files. Resolve conflicts, handle duplicate keys.",
     "href": "/toml-tools/toml-merge-tool"
-  },
-  {
-    "name": "Toml Minifier Compressor",
-    "description": "Minify TOML by removing whitespace, comments. Compact for production.",
-    "href": "/toml-tools/toml-minifier-compressor"
-  },
-  {
-    "name": "Toml Schema Generator Validator",
-    "description": "Generate JSON Schema from TOML or validate TOML against schema.",
-    "href": "/toml-tools/toml-schema-generator-validator"
   },
   {
     "name": "Toml To Csharp Class Generator",
@@ -90,11 +105,6 @@
     "href": "/toml-tools/toml-to-java-properties-converter"
   },
   {
-    "name": "Toml To Javascript Object Converter",
-    "description": "Convert TOML to JavaScript objects. Clean code for frontend/backend configs.",
-    "href": "/toml-tools/toml-to-javascript-object-converter"
-  },
-  {
     "name": "Toml To Json Converter",
     "description": "Convert TOML to JSON. Handles nested tables, arrays perfectly.",
     "href": "/toml-tools/toml-to-json-converter"
@@ -120,11 +130,6 @@
     "href": "/toml-tools/toml-to-python-dictionary-converter"
   },
   {
-    "name": "Toml To Ruby Hash Converter",
-    "description": "Generate Ruby hashes from TOML. Ready for Rails or Ruby projects.",
-    "href": "/toml-tools/toml-to-ruby-hash-converter"
-  },
-  {
     "name": "Toml To Rust Struct Generator",
     "description": "Generate Rust structs with Serde attributes from TOML. Production-ready.",
     "href": "/toml-tools/toml-to-rust-struct-generator"
@@ -148,11 +153,6 @@
     "name": "Toml To Yaml Converter",
     "description": "Convert TOML to YAML. Accurate structure translation.",
     "href": "/toml-tools/toml-to-yaml-converter"
-  },
-  {
-    "name": "Toml Validator Linter",
-    "description": "Validate TOML for errors. Catches syntax issues, duplicate keys, type mismatches.",
-    "href": "/toml-tools/toml-validator-linter"
   },
   {
     "name": "Xml To Toml Converter",

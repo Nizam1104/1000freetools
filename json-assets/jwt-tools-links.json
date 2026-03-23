@@ -1,23 +1,8 @@
 [
   {
-    "name": "Jwt Algorithm Converter Switcher",
-    "description": "Switch JWT signing algorithms. HS256 to RS256, re-sign with new key.",
-    "href": "/jwt-tools/jwt-algorithm-converter-switcher"
-  },
-  {
     "name": "Jwt Base64 Url Encoder Decoder",
     "description": "Encode/decode JWT Base64Url segments. Inspect raw JSON, fix encoding issues.",
     "href": "/jwt-tools/jwt-base64-url-encoder-decoder"
-  },
-  {
-    "name": "Jwt Claim Extractor Formatter",
-    "description": "Extract and format JWT claims. Standard and custom, human-readable dates.",
-    "href": "/jwt-tools/jwt-claim-extractor-formatter"
-  },
-  {
-    "name": "Jwt Debugger Tester",
-    "description": "Debug JWT validation issues. Simulates verification, highlights errors.",
-    "href": "/jwt-tools/jwt-debugger-tester"
   },
   {
     "name": "Jwt Decoder Validator",
@@ -25,14 +10,19 @@
     "href": "/jwt-tools/jwt-decoder-validator"
   },
   {
+    "name": "Jwt Token Size Calculator Optimizer",
+    "description": "Analyze JWT size. See byte contributions, get tips to reduce token size.",
+    "href": "/jwt-tools/jwt-token-size-calculator-optimizer"
+  },
+  {
+    "name": "Jwt Claim Extractor Formatter",
+    "description": "Extract and format JWT claims. Standard and custom, human-readable dates.",
+    "href": "/jwt-tools/jwt-claim-extractor-formatter"
+  },
+  {
     "name": "Jwt Expiry Checker Timestamp Converter",
     "description": "Check JWT expiry times. Issuance, activation, expiration in local timezone.",
     "href": "/jwt-tools/jwt-expiry-checker-timestamp-converter"
-  },
-  {
-    "name": "Jwt Generator Signer",
-    "description": "Create signed JWTs. Custom claims, algorithms, instant generation.",
-    "href": "/jwt-tools/jwt-generator-signer"
   },
   {
     "name": "Jwt Public Key Extractor Jwk Generator",
@@ -40,9 +30,9 @@
     "href": "/jwt-tools/jwt-public-key-extractor-jwk-generator"
   },
   {
-    "name": "Jwt Secret Key Generator",
-    "description": "Generate secrets for JWT signing. HS256, RSA, ECDSA keys in PEM format.",
-    "href": "/jwt-tools/jwt-secret-key-generator"
+    "name": "Jwt Algorithm Converter Switcher",
+    "description": "Switch JWT signing algorithms. HS256 to RS256, re-sign with new key.",
+    "href": "/jwt-tools/jwt-algorithm-converter-switcher"
   },
   {
     "name": "Jwt To Curl Command Generator",
@@ -50,14 +40,29 @@
     "href": "/jwt-tools/jwt-to-curl-command-generator"
   },
   {
-    "name": "Jwt Token Builder Templates",
-    "description": "Build JWTs from templates. OpenID Connect, OAuth 2.0, API auth.",
-    "href": "/jwt-tools/jwt-token-builder-templates"
+    "name": "Jwt Secret Key Generator",
+    "description": "Generate secrets for JWT signing. HS256, RSA, ECDSA keys in PEM format.",
+    "href": "/jwt-tools/jwt-secret-key-generator"
   },
   {
     "name": "Jwt Token Diff Compare",
     "description": "Compare two JWTs side by side. Spot differences in headers, payloads, signatures.",
     "href": "/jwt-tools/jwt-token-diff-compare"
+  },
+  {
+    "name": "Jwt Debugger Tester",
+    "description": "Debug JWT validation issues. Simulates verification, highlights errors.",
+    "href": "/jwt-tools/jwt-debugger-tester"
+  },
+  {
+    "name": "Jwt Generator Signer",
+    "description": "Create signed JWTs. Custom claims, algorithms, instant generation.",
+    "href": "/jwt-tools/jwt-generator-signer"
+  },
+  {
+    "name": "Jwt Token Builder Templates",
+    "description": "Build JWTs from templates. OpenID Connect, OAuth 2.0, API auth.",
+    "href": "/jwt-tools/jwt-token-builder-templates"
   },
   {
     "name": "Jwt Token Lifespan Renewal Simulator",
@@ -68,11 +73,6 @@
     "name": "Jwt Token Scrambler Obfuscator",
     "description": "Create invalid JWTs for testing. Tamper signatures, corrupt claims.",
     "href": "/jwt-tools/jwt-token-scrambler-obfuscator"
-  },
-  {
-    "name": "Jwt Token Size Calculator Optimizer",
-    "description": "Analyze JWT size. See byte contributions, get tips to reduce token size.",
-    "href": "/jwt-tools/jwt-token-size-calculator-optimizer"
   },
   {
     "name": "Jwt Token Storage Viewer",

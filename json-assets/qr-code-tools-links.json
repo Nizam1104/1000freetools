@@ -1,13 +1,53 @@
 [
   {
-    "name": "Bulk Qr Code Generator",
-    "description": "Generate thousands of QR codes at once. Upload spreadsheet, download ZIP or PDF.",
-    "href": "/qr-code-tools/bulk-qr-code-generator"
+    "name": "Qr Code To Text Decoder",
+    "description": "Decode QR codes to see hidden content. Text, URLs, data. Browser-based, private.",
+    "href": "/qr-code-tools/qr-code-to-text-decoder"
+  },
+  {
+    "name": "Qr Code File Size Optimizer",
+    "description": "Compress QR code images. Maintain scannability while reducing PNG, JPG, SVG size.",
+    "href": "/qr-code-tools/qr-code-file-size-optimizer"
   },
   {
     "name": "Dynamic Qr Code Generator",
     "description": "Create editable QR codes. Track scans, set expiry, add password protection.",
     "href": "/qr-code-tools/dynamic-qr-code-generator"
+  },
+  {
+    "name": "Bulk Qr Code Generator",
+    "description": "Generate thousands of QR codes at once. Upload spreadsheet, download ZIP or PDF.",
+    "href": "/qr-code-tools/bulk-qr-code-generator"
+  },
+  {
+    "name": "Qr Code Coupon Generator",
+    "description": "Generate discount QR codes. Reveal coupons when scanned. Expiry, usage limits.",
+    "href": "/qr-code-tools/qr-code-coupon-generator"
+  },
+  {
+    "name": "Qr Code Email Generator",
+    "description": "Draft emails from QR codes. Pre-fill recipient, subject, message.",
+    "href": "/qr-code-tools/qr-code-email-generator"
+  },
+  {
+    "name": "Qr Code Generator",
+    "description": "Create custom QR codes. Add logo, choose colors, download PNG or vector.",
+    "href": "/qr-code-tools/qr-code-generator"
+  },
+  {
+    "name": "Qr Code With Logo Generator",
+    "description": "Add logos to QR codes. Boosts brand recognition. Stays scannable, high-quality.",
+    "href": "/qr-code-tools/qr-code-with-logo-generator"
+  },
+  {
+    "name": "Qr Code Event Ticket",
+    "description": "Create unique ticket QR codes. Serial numbers, validator for door checks.",
+    "href": "/qr-code-tools/qr-code-event-ticket"
+  },
+  {
+    "name": "Qr Code Scanner",
+    "description": "Scan QR codes from webcam or images. Decodes URLs, text, contact info.",
+    "href": "/qr-code-tools/qr-code-scanner"
   },
   {
     "name": "Qr Code Analytics Tracker",
@@ -35,11 +75,6 @@
     "href": "/qr-code-tools/qr-code-color-picker"
   },
   {
-    "name": "Qr Code Coupon Generator",
-    "description": "Generate discount QR codes. Reveal coupons when scanned. Expiry, usage limits.",
-    "href": "/qr-code-tools/qr-code-coupon-generator"
-  },
-  {
     "name": "Qr Code Crypto Address",
     "description": "QR codes for Bitcoin, Ethereum. Add amount, label for easy payments.",
     "href": "/qr-code-tools/qr-code-crypto-address"
@@ -50,29 +85,14 @@
     "href": "/qr-code-tools/qr-code-document-download"
   },
   {
-    "name": "Qr Code Email Generator",
-    "description": "Draft emails from QR codes. Pre-fill recipient, subject, message.",
-    "href": "/qr-code-tools/qr-code-email-generator"
-  },
-  {
     "name": "Qr Code Error Correction",
     "description": "Adjust error correction levels (L, M, Q, H). Handle damage or logos.",
     "href": "/qr-code-tools/qr-code-error-correction"
   },
   {
-    "name": "Qr Code Event Ticket",
-    "description": "Create unique ticket QR codes. Serial numbers, validator for door checks.",
-    "href": "/qr-code-tools/qr-code-event-ticket"
-  },
-  {
     "name": "Qr Code Feedback Form",
     "description": "Collect reviews via QR. Link to feedback forms, surveys. Easy setup.",
     "href": "/qr-code-tools/qr-code-feedback-form"
-  },
-  {
-    "name": "Qr Code File Size Optimizer",
-    "description": "Compress QR code images. Maintain scannability while reducing PNG, JPG, SVG size.",
-    "href": "/qr-code-tools/qr-code-file-size-optimizer"
   },
   {
     "name": "Qr Code For Crypto Payment",
@@ -100,11 +120,6 @@
     "href": "/qr-code-tools/qr-code-frame-border-designer"
   },
   {
-    "name": "Qr Code Generator",
-    "description": "Create custom QR codes. Add logo, choose colors, download PNG or vector.",
-    "href": "/qr-code-tools/qr-code-generator"
-  },
-  {
     "name": "Qr Code Google Maps",
     "description": "Share locations via QR. Opens in Google Maps. Perfect for venues, stores.",
     "href": "/qr-code-tools/qr-code-google-maps"
@@ -130,11 +145,6 @@
     "href": "/qr-code-tools/qr-code-restaurant-menu"
   },
   {
-    "name": "Qr Code Scanner",
-    "description": "Scan QR codes from webcam or images. Decodes URLs, text, contact info.",
-    "href": "/qr-code-tools/qr-code-scanner"
-  },
-  {
     "name": "Qr Code Sms Generator",
     "description": "Draft text messages from QR. Pre-set number, message body. SMS opt-ins.",
     "href": "/qr-code-tools/qr-code-sms-generator"
@@ -155,19 +165,9 @@
     "href": "/qr-code-tools/qr-code-to-pdf"
   },
   {
-    "name": "Qr Code To Text Decoder",
-    "description": "Decode QR codes to see hidden content. Text, URLs, data. Browser-based, private.",
-    "href": "/qr-code-tools/qr-code-to-text-decoder"
-  },
-  {
     "name": "Qr Code Vcard Generator",
     "description": "Share contact details via QR. Phone, email, social links. Scanners save as contact.",
     "href": "/qr-code-tools/qr-code-vcard-generator"
-  },
-  {
-    "name": "Qr Code With Logo Generator",
-    "description": "Add logos to QR codes. Boosts brand recognition. Stays scannable, high-quality.",
-    "href": "/qr-code-tools/qr-code-with-logo-generator"
   },
   {
     "name": "Qr Code Youtube",

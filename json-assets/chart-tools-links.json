@@ -1,8 +1,53 @@
 [
   {
+    "name": "Radar Chart Generator",
+    "description": "Compare multiple variables on a radar chart. Spot strengths and weaknesses.",
+    "href": "/chart-tools/radar-chart-generator"
+  },
+  {
     "name": "Bar Graph Generator",
     "description": "Create bar charts quickly. Customize colors and labels. Download for reports.",
     "href": "/chart-tools/bar-graph-generator"
+  },
+  {
+    "name": "Gauge Chart Generator",
+    "description": "Show metrics on a gauge. Like a speedometer for your KPIs.",
+    "href": "/chart-tools/gauge-chart-generator"
+  },
+  {
+    "name": "Heat Map Generator",
+    "description": "Turn matrix data into heat maps. Color gradients highlight patterns.",
+    "href": "/chart-tools/heat-map-generator"
+  },
+  {
+    "name": "Sankey Diagram Generator",
+    "description": "Visualize flows and transfers. Show how quantities move between stages.",
+    "href": "/chart-tools/sankey-diagram-generator"
+  },
+  {
+    "name": "Stock Chart Generator",
+    "description": "Create OHLC or candlestick charts. Add moving averages and volume.",
+    "href": "/chart-tools/stock-chart-generator"
+  },
+  {
+    "name": "Word Cloud Generator",
+    "description": "Create word clouds from text. Frequent words appear larger.",
+    "href": "/chart-tools/word-cloud-generator"
+  },
+  {
+    "name": "Scatter Plot Tool",
+    "description": "Analyze correlations with scatter plots. Add trend lines, export charts.",
+    "href": "/chart-tools/scatter-plot-tool"
+  },
+  {
+    "name": "Line Chart Creator",
+    "description": "Plot trends over time. Multiple series, customizable styles.",
+    "href": "/chart-tools/line-chart-creator"
+  },
+  {
+    "name": "Pareto Chart Maker",
+    "description": "Apply the 80/20 rule. Combine bars and lines to find key factors.",
+    "href": "/chart-tools/pareto-chart-maker"
   },
   {
     "name": "Box Plot Maker",
@@ -25,54 +70,14 @@
     "href": "/chart-tools/gantt-chart-maker"
   },
   {
-    "name": "Gauge Chart Generator",
-    "description": "Show metrics on a gauge. Like a speedometer for your KPIs.",
-    "href": "/chart-tools/gauge-chart-generator"
-  },
-  {
-    "name": "Heat Map Generator",
-    "description": "Turn matrix data into heat maps. Color gradients highlight patterns.",
-    "href": "/chart-tools/heat-map-generator"
-  },
-  {
-    "name": "Line Chart Creator",
-    "description": "Plot trends over time. Multiple series, customizable styles.",
-    "href": "/chart-tools/line-chart-creator"
-  },
-  {
     "name": "Org Chart Maker",
     "description": "Build organizational charts. Drag-and-drop hierarchies, add photos.",
     "href": "/chart-tools/org-chart-maker"
   },
   {
-    "name": "Pareto Chart Maker",
-    "description": "Apply the 80/20 rule. Combine bars and lines to find key factors.",
-    "href": "/chart-tools/pareto-chart-maker"
-  },
-  {
     "name": "Pie Chart Maker",
     "description": "Make pie charts in seconds. Upload data, customize, download.",
     "href": "/chart-tools/pie-chart-maker"
-  },
-  {
-    "name": "Radar Chart Generator",
-    "description": "Compare multiple variables on a radar chart. Spot strengths and weaknesses.",
-    "href": "/chart-tools/radar-chart-generator"
-  },
-  {
-    "name": "Sankey Diagram Generator",
-    "description": "Visualize flows and transfers. Show how quantities move between stages.",
-    "href": "/chart-tools/sankey-diagram-generator"
-  },
-  {
-    "name": "Scatter Plot Tool",
-    "description": "Analyze correlations with scatter plots. Add trend lines, export charts.",
-    "href": "/chart-tools/scatter-plot-tool"
-  },
-  {
-    "name": "Stock Chart Generator",
-    "description": "Create OHLC or candlestick charts. Add moving averages and volume.",
-    "href": "/chart-tools/stock-chart-generator"
   },
   {
     "name": "Sunburst Chart Creator",
@@ -88,10 +93,5 @@
     "name": "Venn Diagram Maker",
     "description": "Show overlaps with Venn diagrams. Customize circles, labels, colors.",
     "href": "/chart-tools/venn-diagram-maker"
-  },
-  {
-    "name": "Word Cloud Generator",
-    "description": "Create word clouds from text. Frequent words appear larger.",
-    "href": "/chart-tools/word-cloud-generator"
   }
 ]

@@ -32,6 +32,7 @@ const iconMap: Record<string, LucideIcon> = {
   FileSpreadsheet,
   Code2,
 };
+import SeoAuditorLandingPage from "@/components/utils/seo-auditor-landing-page";
 
 export const metadata: Metadata = {
   title: "1000 Free Tools - Free Online Web Tools & Utilities",
@@ -297,6 +298,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SeoAuditorLandingPage />
 
       {/* ══════════════════════════════
           TOOLS BY CATEGORY

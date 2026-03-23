@@ -1,5 +1,30 @@
 [
   {
+    "name": "Binomial Distribution Calculator",
+    "description": "Calculate binomial probabilities. Exact and cumulative for fixed trials.",
+    "href": "/statistics-tools/binomial-distribution-calculator"
+  },
+  {
+    "name": "Permutation Combination Calculator",
+    "description": "Calculate nPr and nCr. Order matters or doesn't matter for selections.",
+    "href": "/statistics-tools/permutation-combination-calculator"
+  },
+  {
+    "name": "Standard Deviation Calculator",
+    "description": "Calculate std dev and variance. Sample or population formulas, visualizations.",
+    "href": "/statistics-tools/standard-deviation-calculator"
+  },
+  {
+    "name": "Z Score Calculator",
+    "description": "Convert data points to z-scores. Standard deviations from mean, percentiles.",
+    "href": "/statistics-tools/z-score-calculator"
+  },
+  {
+    "name": "Descriptive Statistics Calculator",
+    "description": "Complete dataset summary. Mean, median, mode, range, std dev, quartiles.",
+    "href": "/statistics-tools/descriptive-statistics-calculator"
+  },
+  {
     "name": "Ab Test Significance Calculator",
     "description": "Analyze A/B test results. Control vs variation, statistical significance.",
     "href": "/statistics-tools/ab-test-significance-calculator"
@@ -10,9 +35,19 @@
     "href": "/statistics-tools/anova-calculator"
   },
   {
-    "name": "Binomial Distribution Calculator",
-    "description": "Calculate binomial probabilities. Exact and cumulative for fixed trials.",
-    "href": "/statistics-tools/binomial-distribution-calculator"
+    "name": "Linear Regression Calculator",
+    "description": "Find best-fit lines. Equation, R-squared, predictions from model.",
+    "href": "/statistics-tools/linear-regression-calculator"
+  },
+  {
+    "name": "P Value Calculator",
+    "description": "Find p-values for z, t, chi-square, F tests. Significance levels from stats.",
+    "href": "/statistics-tools/p-value-calculator"
+  },
+  {
+    "name": "Sample Size Calculator Surveys",
+    "description": "Find required sample sizes. Desired margin of error for proportions or means.",
+    "href": "/statistics-tools/sample-size-calculator-surveys"
   },
   {
     "name": "Box Plot Generator",
@@ -35,19 +70,9 @@
     "href": "/statistics-tools/correlation-calculator"
   },
   {
-    "name": "Descriptive Statistics Calculator",
-    "description": "Complete dataset summary. Mean, median, mode, range, std dev, quartiles.",
-    "href": "/statistics-tools/descriptive-statistics-calculator"
-  },
-  {
     "name": "Histogram Maker",
     "description": "Visualize frequency distributions. Customize bins, colors, labels.",
     "href": "/statistics-tools/histogram-maker"
-  },
-  {
-    "name": "Linear Regression Calculator",
-    "description": "Find best-fit lines. Equation, R-squared, predictions from model.",
-    "href": "/statistics-tools/linear-regression-calculator"
   },
   {
     "name": "Normal Distribution Calculator",
@@ -60,29 +85,9 @@
     "href": "/statistics-tools/outlier-detector"
   },
   {
-    "name": "P Value Calculator",
-    "description": "Find p-values for z, t, chi-square, F tests. Significance levels from stats.",
-    "href": "/statistics-tools/p-value-calculator"
-  },
-  {
-    "name": "Permutation Combination Calculator",
-    "description": "Calculate nPr and nCr. Order matters or doesn't matter for selections.",
-    "href": "/statistics-tools/permutation-combination-calculator"
-  },
-  {
     "name": "Probability Calculator",
     "description": "Simple or complex event probabilities. Independent, dependent, conditional.",
     "href": "/statistics-tools/probability-calculator"
-  },
-  {
-    "name": "Sample Size Calculator Surveys",
-    "description": "Find required sample sizes. Desired margin of error for proportions or means.",
-    "href": "/statistics-tools/sample-size-calculator-surveys"
-  },
-  {
-    "name": "Standard Deviation Calculator",
-    "description": "Calculate std dev and variance. Sample or population formulas, visualizations.",
-    "href": "/statistics-tools/standard-deviation-calculator"
   },
   {
     "name": "Statistical Power Calculator",
@@ -93,10 +98,5 @@
     "name": "T Test Calculator",
     "description": "One-sample, two-sample, paired t-tests. P-values, confidence intervals.",
     "href": "/statistics-tools/t-test-calculator"
-  },
-  {
-    "name": "Z Score Calculator",
-    "description": "Convert data points to z-scores. Standard deviations from mean, percentiles.",
-    "href": "/statistics-tools/z-score-calculator"
   }
 ]

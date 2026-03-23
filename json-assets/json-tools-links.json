@@ -1,18 +1,58 @@
 [
   {
+    "name": "JSON Base64 Encode Decode",
+    "description": "Encodes JSON to Base64 and decodes Base64 back to JSON.",
+    "href": "/json-tools/json-base64"
+  },
+  {
+    "name": "JSON JWT Decoder",
+    "description": "Decodes JWT payloads and headers into readable JSON without verification.",
+    "href": "/json-tools/json-jwt-decoder"
+  },
+  {
+    "name": "JSON Escape Unescape Tool",
+    "description": "Escapes or unescapes special characters in JSON strings.",
+    "href": "/json-tools/json-escape-unescape"
+  },
+  {
+    "name": "JSON Env Converter",
+    "description": "Converts JSON configuration into .env key-value format.",
+    "href": "/json-tools/json-env-converter"
+  },
+  {
     "name": "JSON Formatter / Beautifier",
     "description": "Formats raw JSON into a readable, indented structure with configurable spacing, collapsible nodes, and copy/download support.",
     "href": "/json-tools/json-formatter-beautifier"
   },
   {
-    "name": "JSON Minifier",
-    "description": "Removes whitespace, line breaks, and unnecessary characters to reduce JSON size while preserving validity.",
-    "href": "/json-tools/json-minifier"
+    "name": "JSON Encode Decode Tool",
+    "description": "Encodes and decodes JSON strings safely for transport or storage.",
+    "href": "/json-tools/json-encode-decode"
+  },
+  {
+    "name": "JSON Linter",
+    "description": "Detects syntax errors, duplicate keys, trailing commas, and structural issues in JSON.",
+    "href": "/json-tools/json-linter"
+  },
+  {
+    "name": "JSON Size Calculator",
+    "description": "Calculates the size of JSON data in bytes, KB, and MB, with minified vs formatted comparison.",
+    "href": "/json-tools/json-size-calculator"
+  },
+  {
+    "name": "JSON Config File Validator",
+    "description": "Validates JSON configuration files and checks required keys.",
+    "href": "/json-tools/json-config-validator"
   },
   {
     "name": "JSON Validator",
     "description": "Validates JSON syntax, highlights errors with line and column numbers, and explains parsing issues.",
     "href": "/json-tools/json-validator"
+  },
+  {
+    "name": "JSON Minifier",
+    "description": "Removes whitespace, line breaks, and unnecessary characters to reduce JSON size while preserving validity.",
+    "href": "/json-tools/json-minifier"
   },
   {
     "name": "Add Ids to JSON",
@@ -30,11 +70,6 @@
     "href": "/json-tools/json-pretty-print"
   },
   {
-    "name": "JSON Linter",
-    "description": "Detects syntax errors, duplicate keys, trailing commas, and structural issues in JSON.",
-    "href": "/json-tools/json-linter"
-  },
-  {
     "name": "JSON Sorter",
     "description": "Sorts JSON object keys alphabetically (A–Z or Z–A) recursively while keeping values intact.",
     "href": "/json-tools/json-sorter"
@@ -48,11 +83,6 @@
     "name": "JSON Value Search / Filter",
     "description": "Searches JSON by key or value and filters matching nodes with highlight support.",
     "href": "/json-tools/json-value-search"
-  },
-  {
-    "name": "JSON Size Calculator",
-    "description": "Calculates the size of JSON data in bytes, KB, and MB, with minified vs formatted comparison.",
-    "href": "/json-tools/json-size-calculator"
   },
   {
     "name": "JSON to CSV Converter",
@@ -250,29 +280,9 @@
     "href": "/json-tools/json-extract-subjson"
   },
   {
-    "name": "JSON Escape Unescape Tool",
-    "description": "Escapes or unescapes special characters in JSON strings.",
-    "href": "/json-tools/json-escape-unescape"
-  },
-  {
-    "name": "JSON Encode Decode Tool",
-    "description": "Encodes and decodes JSON strings safely for transport or storage.",
-    "href": "/json-tools/json-encode-decode"
-  },
-  {
     "name": "JSON Stringify Parse Playground",
     "description": "Interactive playground to experiment with JSON.stringify and JSON.parse options.",
     "href": "/json-tools/json-stringify-parse"
-  },
-  {
-    "name": "JSON Base64 Encode Decode",
-    "description": "Encodes JSON to Base64 and decodes Base64 back to JSON.",
-    "href": "/json-tools/json-base64"
-  },
-  {
-    "name": "JSON JWT Decoder",
-    "description": "Decodes JWT payloads and headers into readable JSON without verification.",
-    "href": "/json-tools/json-jwt-decoder"
   },
   {
     "name": "JSON Sensitive Data Masker",
@@ -328,16 +338,6 @@
     "name": "JSON API Error Formatter",
     "description": "Generates standardized JSON error responses for APIs.",
     "href": "/json-tools/json-api-error-formatter"
-  },
-  {
-    "name": "JSON Config File Validator",
-    "description": "Validates JSON configuration files and checks required keys.",
-    "href": "/json-tools/json-config-validator"
-  },
-  {
-    "name": "JSON Env Converter",
-    "description": "Converts JSON configuration into .env key-value format.",
-    "href": "/json-tools/json-env-converter"
   },
   {
     "name": "JSON to Fetch Code Generator",

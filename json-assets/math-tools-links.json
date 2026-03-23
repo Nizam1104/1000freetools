@@ -67,6 +67,66 @@
   ],
   "tools": [
     {
+      "name": "Degrees ↔ Radians Converter",
+      "href": "/math-tools/degrees-radians-converter",
+      "category": "trigonometry",
+      "description": "Converts angle measurements between degrees and radians instantly"
+    },
+    {
+      "name": "Area Converter",
+      "href": "/math-tools/area-converter",
+      "category": "unit-converters",
+      "description": "Converts between area units including square meters, square feet, acres, hectares, and more"
+    },
+    {
+      "name": "Data Storage Converter (KB, MB, GB, TB)",
+      "href": "/math-tools/data-storage-converter",
+      "category": "unit-converters",
+      "description": "Converts between digital storage units including bytes, KB, MB, GB, TB, and PB"
+    },
+    {
+      "name": "Decimal to Fraction Converter",
+      "href": "/math-tools/decimal-to-fraction-converter",
+      "category": "fractions-percentages",
+      "description": "Converts any decimal number to its equivalent fraction in simplified form"
+    },
+    {
+      "name": "Fraction to Decimal Converter",
+      "href": "/math-tools/fraction-to-decimal-converter",
+      "category": "fractions-percentages",
+      "description": "Converts any fraction or mixed number to its decimal equivalent"
+    },
+    {
+      "name": "Length Converter",
+      "href": "/math-tools/length-converter",
+      "category": "unit-converters",
+      "description": "Converts between length units including meters, feet, inches, kilometers, miles, and more"
+    },
+    {
+      "name": "Number Base Converter (Binary, Octal, Hex, Decimal)",
+      "href": "/math-tools/number-base-converter",
+      "category": "unit-converters",
+      "description": "Converts numbers between binary, octal, decimal, and hexadecimal number systems"
+    },
+    {
+      "name": "Number Word Converter (e.g. 1234 → one thousand...)",
+      "href": "/math-tools/number-word-converter",
+      "category": "unit-converters",
+      "description": "Converts any number into its full English word form"
+    },
+    {
+      "name": "Pressure Converter",
+      "href": "/math-tools/pressure-converter",
+      "category": "unit-converters",
+      "description": "Converts between pressure units including pascals, bar, psi, atm, mmHg, and more"
+    },
+    {
+      "name": "Roman Numeral Converter",
+      "href": "/math-tools/roman-numeral-converter",
+      "category": "number-theory",
+      "description": "Converts integers to Roman numerals and Roman numerals back to integers"
+    },
+    {
       "name": "2D Function Plotter (y = f(x))",
       "href": "/math-tools/2d-function-plotter",
       "category": "statistics-data-visualization",
@@ -113,12 +173,6 @@
       "href": "/math-tools/area-calculator",
       "category": "geometry",
       "description": "Calculates the area of common 2D shapes including circle, rectangle, triangle, trapezoid, and more"
-    },
-    {
-      "name": "Area Converter",
-      "href": "/math-tools/area-converter",
-      "category": "unit-converters",
-      "description": "Converts between area units including square meters, square feet, acres, hectares, and more"
     },
     {
       "name": "Arithmetic Sequence Calculator",
@@ -253,12 +307,6 @@
       "description": "Converts amounts between major world currencies using static exchange rates"
     },
     {
-      "name": "Data Storage Converter (KB, MB, GB, TB)",
-      "href": "/math-tools/data-storage-converter",
-      "category": "unit-converters",
-      "description": "Converts between digital storage units including bytes, KB, MB, GB, TB, and PB"
-    },
-    {
       "name": "Date Arithmetic (add/subtract days)",
       "href": "/math-tools/date-arithmetic-calculator",
       "category": "other-calculators",
@@ -283,22 +331,10 @@
       "description": "Calculates how many days until or since a specific date from today"
     },
     {
-      "name": "Decimal to Fraction Converter",
-      "href": "/math-tools/decimal-to-fraction-converter",
-      "category": "fractions-percentages",
-      "description": "Converts any decimal number to its equivalent fraction in simplified form"
-    },
-    {
       "name": "Definite Integral Calculator (numerical)",
       "href": "/math-tools/definite-integral-calculator",
       "category": "calculus",
       "description": "Numerically evaluates definite integrals over a specified interval"
-    },
-    {
-      "name": "Degrees ↔ Radians Converter",
-      "href": "/math-tools/degrees-radians-converter",
-      "category": "trigonometry",
-      "description": "Converts angle measurements between degrees and radians instantly"
     },
     {
       "name": "Derivative Calculator (basic rules)",
@@ -415,12 +451,6 @@
       "description": "Calculates addition, subtraction, multiplication, and division of fractions and mixed numbers with simplified results"
     },
     {
-      "name": "Fraction to Decimal Converter",
-      "href": "/math-tools/fraction-to-decimal-converter",
-      "category": "fractions-percentages",
-      "description": "Converts any fraction or mixed number to its decimal equivalent"
-    },
-    {
       "name": "Frequency Distribution Table",
       "href": "/math-tools/frequency-distribution-table",
       "category": "statistics-data-visualization",
@@ -527,12 +557,6 @@
       "href": "/math-tools/leap-year-checker",
       "category": "other-calculators",
       "description": "Determines whether a given year is a leap year or not"
-    },
-    {
-      "name": "Length Converter",
-      "href": "/math-tools/length-converter",
-      "category": "unit-converters",
-      "description": "Converts between length units including meters, feet, inches, kilometers, miles, and more"
     },
     {
       "name": "Limit Calculator (basic)",
@@ -655,12 +679,6 @@
       "description": "Finds the nth term of arithmetic or geometric sequences given initial values"
     },
     {
-      "name": "Number Base Converter (Binary, Octal, Hex, Decimal)",
-      "href": "/math-tools/number-base-converter",
-      "category": "unit-converters",
-      "description": "Converts numbers between binary, octal, decimal, and hexadecimal number systems"
-    },
-    {
       "name": "Number Line Visualizer",
       "href": "/math-tools/number-line-visualizer",
       "category": "other-tools",
@@ -671,12 +689,6 @@
       "href": "/math-tools/number-sorter",
       "category": "other-tools",
       "description": "Sorts a list of numbers in ascending or descending order"
-    },
-    {
-      "name": "Number Word Converter (e.g. 1234 → one thousand...)",
-      "href": "/math-tools/number-word-converter",
-      "category": "unit-converters",
-      "description": "Converts any number into its full English word form"
     },
     {
       "name": "Order of Operations (BODMAS) Solver",
@@ -775,12 +787,6 @@
       "description": "Calculates the present value of a future sum given discount rate and time period"
     },
     {
-      "name": "Pressure Converter",
-      "href": "/math-tools/pressure-converter",
-      "category": "unit-converters",
-      "description": "Converts between pressure units including pascals, bar, psi, atm, mmHg, and more"
-    },
-    {
       "name": "Prime Factorization",
       "href": "/math-tools/prime-factorization-calculator",
       "category": "number-theory",
@@ -857,12 +863,6 @@
       "href": "/math-tools/roi-calculator",
       "category": "financial-mathematics",
       "description": "Calculates Return on Investment (ROI) percentage for any investment"
-    },
-    {
-      "name": "Roman Numeral Converter",
-      "href": "/math-tools/roman-numeral-converter",
-      "category": "number-theory",
-      "description": "Converts integers to Roman numerals and Roman numerals back to integers"
     },
     {
       "name": "Rounding Calculator",

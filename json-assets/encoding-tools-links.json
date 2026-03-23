@@ -1,8 +1,18 @@
 [
   {
-    "name": "Ascii Code Converter",
-    "description": "Convert characters to ASCII codes. Decimal, hex, binary, octal formats included.",
-    "href": "/encoding-tools/ascii-code-converter"
+    "name": "Base64 Encoder Decoder",
+    "description": "Encode text or files to Base64. Safe for email, web, data storage.",
+    "href": "/encoding-tools/base64-encoder-decoder"
+  },
+  {
+    "name": "Punycode Encoder Decoder",
+    "description": "Unicode domains to Punycode for DNS. IDN encoding/decoding.",
+    "href": "/encoding-tools/punycode-encoder-decoder"
+  },
+  {
+    "name": "Base85 Ascii85 Encoder Decoder",
+    "description": "Encode to Base85/Ascii85. Used in PDFs and binary data representations.",
+    "href": "/encoding-tools/base85-ascii85-encoder-decoder"
   },
   {
     "name": "Base32 Encoder Decoder",
@@ -10,24 +20,44 @@
     "href": "/encoding-tools/base32-encoder-decoder"
   },
   {
-    "name": "Base36 Encoder Decoder",
-    "description": "Convert numbers to Base36. Shorter, case-insensitive strings for URLs and IDs.",
-    "href": "/encoding-tools/base36-encoder-decoder"
-  },
-  {
     "name": "Base58 Encoder Decoder",
     "description": "Encode to Base58 for cryptocurrencies. Bitcoin-style addresses with checksum.",
     "href": "/encoding-tools/base58-encoder-decoder"
   },
   {
-    "name": "Base64 Encoder Decoder",
-    "description": "Encode text or files to Base64. Safe for email, web, data storage.",
-    "href": "/encoding-tools/base64-encoder-decoder"
+    "name": "Unicode Character Encoder Decoder",
+    "description": "Characters to Unicode code points and back. Character names included.",
+    "href": "/encoding-tools/unicode-character-encoder-decoder"
   },
   {
-    "name": "Base85 Ascii85 Encoder Decoder",
-    "description": "Encode to Base85/Ascii85. Used in PDFs and binary data representations.",
-    "href": "/encoding-tools/base85-ascii85-encoder-decoder"
+    "name": "Gray Code Encoder Decoder",
+    "description": "Binary to Gray code conversion. Rotary encoders, error correction.",
+    "href": "/encoding-tools/gray-code-encoder-decoder"
+  },
+  {
+    "name": "Escape Unescape String",
+    "description": "Escape special characters for code or data. Unescape back to original.",
+    "href": "/encoding-tools/escape-unescape-string"
+  },
+  {
+    "name": "Z85 Base85 Encoder Decoder",
+    "description": "Z85 encoding for ZeroMQ. URL-safe Base85 variant, compact and readable.",
+    "href": "/encoding-tools/z85-base85-encoder-decoder"
+  },
+  {
+    "name": "Binhex Encoder Decoder",
+    "description": "Encode/decode BinHex for classic Mac files. Resource forks supported.",
+    "href": "/encoding-tools/binhex-encoder-decoder"
+  },
+  {
+    "name": "Ascii Code Converter",
+    "description": "Convert characters to ASCII codes. Decimal, hex, binary, octal formats included.",
+    "href": "/encoding-tools/ascii-code-converter"
+  },
+  {
+    "name": "Base36 Encoder Decoder",
+    "description": "Convert numbers to Base36. Shorter, case-insensitive strings for URLs and IDs.",
+    "href": "/encoding-tools/base36-encoder-decoder"
   },
   {
     "name": "Bcd Binary Coded Decimal Converter",
@@ -45,11 +75,6 @@
     "href": "/encoding-tools/binary-encoder-decoder"
   },
   {
-    "name": "Binhex Encoder Decoder",
-    "description": "Encode/decode BinHex for classic Mac files. Resource forks supported.",
-    "href": "/encoding-tools/binhex-encoder-decoder"
-  },
-  {
     "name": "Data Uri Converter",
     "description": "Turn files into Data URIs. Embed images directly in HTML/CSS.",
     "href": "/encoding-tools/data-uri-converter"
@@ -58,16 +83,6 @@
     "name": "Ebcdic Ascii Converter",
     "description": "Convert EBCDIC to ASCII and back. Mainframe compatibility.",
     "href": "/encoding-tools/ebcdic-ascii-converter"
-  },
-  {
-    "name": "Escape Unescape String",
-    "description": "Escape special characters for code or data. Unescape back to original.",
-    "href": "/encoding-tools/escape-unescape-string"
-  },
-  {
-    "name": "Gray Code Encoder Decoder",
-    "description": "Binary to Gray code conversion. Rotary encoders, error correction.",
-    "href": "/encoding-tools/gray-code-encoder-decoder"
   },
   {
     "name": "Gzip Compress Decompress",
@@ -100,11 +115,6 @@
     "href": "/encoding-tools/percent-encoding-decoder"
   },
   {
-    "name": "Punycode Encoder Decoder",
-    "description": "Unicode domains to Punycode for DNS. IDN encoding/decoding.",
-    "href": "/encoding-tools/punycode-encoder-decoder"
-  },
-  {
     "name": "Quoted Printable Encoder Decoder",
     "description": "Quoted-Printable for email. Safe transmission with character sets.",
     "href": "/encoding-tools/quoted-printable-encoder-decoder"
@@ -113,11 +123,6 @@
     "name": "Rot13 Cipher Encoder Decoder",
     "description": "ROT13 letter substitution. Obscure spoilers, puzzles, light obfuscation.",
     "href": "/encoding-tools/rot13-cipher-encoder-decoder"
-  },
-  {
-    "name": "Unicode Character Encoder Decoder",
-    "description": "Characters to Unicode code points and back. Character names included.",
-    "href": "/encoding-tools/unicode-character-encoder-decoder"
   },
   {
     "name": "Utf16 Encoder Decoder",
@@ -143,10 +148,5 @@
     "name": "Xxencode Xxdecode Tool",
     "description": "XXencode/XXdecode binary-to-text. Different charset than Uuencode.",
     "href": "/encoding-tools/xxencode-xxdecode-tool"
-  },
-  {
-    "name": "Z85 Base85 Encoder Decoder",
-    "description": "Z85 encoding for ZeroMQ. URL-safe Base85 variant, compact and readable.",
-    "href": "/encoding-tools/z85-base85-encoder-decoder"
   }
 ]

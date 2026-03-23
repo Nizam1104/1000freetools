@@ -1,18 +1,23 @@
 [
   {
-    "name": "Academic Calendar Maker",
-    "description": "Plan the school year. Mark semesters, holidays, exams. Print for teachers and parents.",
-    "href": "/calendar-tools/academic-calendar-maker"
-  },
-  {
-    "name": "Advent Calendar Creator",
-    "description": "Make a digital advent calendar. Upload 24 images, share the link.",
-    "href": "/calendar-tools/advent-calendar-creator"
+    "name": "Hijri Calendar Converter",
+    "description": "Convert between Islamic and Gregorian dates. Find Ramadan and Eid dates.",
+    "href": "/calendar-tools/hijri-calendar-converter"
   },
   {
     "name": "Business Hours Calculator",
     "description": "Calculate working hours between dates. Exclude weekends and holidays.",
     "href": "/calendar-tools/business-hours-calculator"
+  },
+  {
+    "name": "Date Picker Generator",
+    "description": "Create a date picker widget for your site. Customize design, format, language.",
+    "href": "/calendar-tools/date-picker-generator"
+  },
+  {
+    "name": "Payday Calculator",
+    "description": "Figure out all your paydates for the year. Adjusted for weekends and holidays.",
+    "href": "/calendar-tools/payday-calculator"
   },
   {
     "name": "Calendar Matrix Generator",
@@ -25,14 +30,34 @@
     "href": "/calendar-tools/calendar-rss-generator"
   },
   {
+    "name": "Pregnancy Due Date Calendar",
+    "description": "Calculate due dates and track pregnancy week by week. See key milestones.",
+    "href": "/calendar-tools/pregnancy-due-date-calendar"
+  },
+  {
     "name": "Calendar Sync Overlay",
     "description": "Overlay multiple calendars. Find common free time across Google, iCal, Outlook.",
     "href": "/calendar-tools/calendar-sync-overlay"
   },
   {
-    "name": "Date Picker Generator",
-    "description": "Create a date picker widget for your site. Customize design, format, language.",
-    "href": "/calendar-tools/date-picker-generator"
+    "name": "Perpetual Calendar",
+    "description": "Look up any date from 1900 to 2100. Find the day of the week instantly.",
+    "href": "/calendar-tools/perpetual-calendar"
+  },
+  {
+    "name": "Seasonal Calendar",
+    "description": "Track solstices, equinoxes, meteor showers, eclipses. Plan around daylight changes.",
+    "href": "/calendar-tools/seasonal-calendar"
+  },
+  {
+    "name": "Academic Calendar Maker",
+    "description": "Plan the school year. Mark semesters, holidays, exams. Print for teachers and parents.",
+    "href": "/calendar-tools/academic-calendar-maker"
+  },
+  {
+    "name": "Advent Calendar Creator",
+    "description": "Make a digital advent calendar. Upload 24 images, share the link.",
+    "href": "/calendar-tools/advent-calendar-creator"
   },
   {
     "name": "Event Countdown",
@@ -45,11 +70,6 @@
     "href": "/calendar-tools/fiscal-year-calendar"
   },
   {
-    "name": "Hijri Calendar Converter",
-    "description": "Convert between Islamic and Gregorian dates. Find Ramadan and Eid dates.",
-    "href": "/calendar-tools/hijri-calendar-converter"
-  },
-  {
     "name": "Moon Phase Calendar",
     "description": "Track moon phases on a calendar. See illumination and moonrise times.",
     "href": "/calendar-tools/moon-phase-calendar"
@@ -60,28 +80,8 @@
     "href": "/calendar-tools/online-calendar-holidays"
   },
   {
-    "name": "Payday Calculator",
-    "description": "Figure out all your paydates for the year. Adjusted for weekends and holidays.",
-    "href": "/calendar-tools/payday-calculator"
-  },
-  {
-    "name": "Perpetual Calendar",
-    "description": "Look up any date from 1900 to 2100. Find the day of the week instantly.",
-    "href": "/calendar-tools/perpetual-calendar"
-  },
-  {
-    "name": "Pregnancy Due Date Calendar",
-    "description": "Calculate due dates and track pregnancy week by week. See key milestones.",
-    "href": "/calendar-tools/pregnancy-due-date-calendar"
-  },
-  {
     "name": "Printable Calendar Maker",
     "description": "Design and print custom calendars. Choose year, layout, style. Download as PDF.",
     "href": "/calendar-tools/printable-calendar-maker"
-  },
-  {
-    "name": "Seasonal Calendar",
-    "description": "Track solstices, equinoxes, meteor showers, eclipses. Plan around daylight changes.",
-    "href": "/calendar-tools/seasonal-calendar"
   }
 ]

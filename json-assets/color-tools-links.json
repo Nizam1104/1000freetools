@@ -1,5 +1,50 @@
 [
   {
+    "name": "HSL to HEX Converter",
+    "description": "Convert HSL color values to HEX format instantly",
+    "href": "/color-tools/hsl-to-hex-converter"
+  },
+  {
+    "name": "RGB to HEX Converter",
+    "description": "Convert RGB color values to HEX format instantly",
+    "href": "/color-tools/rgb-to-hex-converter"
+  },
+  {
+    "name": "HSL to HSV Converter",
+    "description": "Convert HSL color values to HSV format",
+    "href": "/color-tools/hsl-to-hsv-converter"
+  },
+  {
+    "name": "RGB to HSL Converter",
+    "description": "Convert RGB color values to HSL format",
+    "href": "/color-tools/rgb-to-hsl-converter"
+  },
+  {
+    "name": "HEX to RGB Converter",
+    "description": "Convert HEX color codes to RGB values instantly",
+    "href": "/color-tools/hex-to-rgb-converter"
+  },
+  {
+    "name": "HEX to CMYK Converter",
+    "description": "Convert HEX colors to CMYK for print design",
+    "href": "/color-tools/hex-to-cmyk-converter"
+  },
+  {
+    "name": "CSS Color Name Converter",
+    "description": "Convert between CSS color names and their HEX/RGB values",
+    "href": "/color-tools/css-color-name-converter"
+  },
+  {
+    "name": "RGB to CMYK Converter",
+    "description": "Convert RGB colors to CMYK for print production",
+    "href": "/color-tools/rgb-to-cmyk-converter"
+  },
+  {
+    "name": "HEX to HSL Converter",
+    "description": "Convert HEX color codes to HSL values",
+    "href": "/color-tools/hex-to-hsl-converter"
+  },
+  {
     "name": "Gradient Step Generator",
     "description": "Generate smooth color gradients with customizable steps",
     "href": "/color-tools/gradient-step-generator"
@@ -60,29 +105,14 @@
     "href": "/color-tools/color-scale-generator"
   },
   {
-    "name": "HSL to HEX Converter",
-    "description": "Convert HSL color values to HEX format instantly",
-    "href": "/color-tools/hsl-to-hex-converter"
-  },
-  {
     "name": "Palette Duplicate Finder",
     "description": "Find and remove duplicate colors from your palettes",
     "href": "/color-tools/palette-duplicate-finder"
   },
   {
-    "name": "HEX to RGB Converter",
-    "description": "Convert HEX color codes to RGB values instantly",
-    "href": "/color-tools/hex-to-rgb-converter"
-  },
-  {
     "name": "Color History Tool",
     "description": "Track and revisit colors you've used previously",
     "href": "/color-tools/color-history-tool"
-  },
-  {
-    "name": "HEX to CMYK Converter",
-    "description": "Convert HEX colors to CMYK for print design",
-    "href": "/color-tools/hex-to-cmyk-converter"
   },
   {
     "name": "Shade Tint Tone Generator",
@@ -115,11 +145,6 @@
     "href": "/color-tools/random-color-palette-generator"
   },
   {
-    "name": "RGB to HEX Converter",
-    "description": "Convert RGB color values to HEX format instantly",
-    "href": "/color-tools/rgb-to-hex-converter"
-  },
-  {
     "name": "Color Harmony Generator",
     "description": "Create harmonious color schemes (complementary, analogous, etc.)",
     "href": "/color-tools/color-harmony-generator"
@@ -145,16 +170,6 @@
     "href": "/color-tools/palette-comparison-tool"
   },
   {
-    "name": "CSS Color Name Converter",
-    "description": "Convert between CSS color names and their HEX/RGB values",
-    "href": "/color-tools/css-color-name-converter"
-  },
-  {
-    "name": "HSL to HSV Converter",
-    "description": "Convert HSL color values to HSV format",
-    "href": "/color-tools/hsl-to-hsv-converter"
-  },
-  {
     "name": "Monochrome Palette Generator",
     "description": "Generate monochromatic color palettes from a single color",
     "href": "/color-tools/monochrome-palette-generator"
@@ -163,11 +178,6 @@
     "name": "Pastel Palette Generator",
     "description": "Create soft pastel color palettes for gentle designs",
     "href": "/color-tools/pastel-palette-generator"
-  },
-  {
-    "name": "RGB to HSL Converter",
-    "description": "Convert RGB color values to HSL format",
-    "href": "/color-tools/rgb-to-hsl-converter"
   },
   {
     "name": "Warm or Cool Color Detector",
@@ -185,11 +195,6 @@
     "href": "/color-tools/color-palette-generator"
   },
   {
-    "name": "RGB to CMYK Converter",
-    "description": "Convert RGB colors to CMYK for print production",
-    "href": "/color-tools/rgb-to-cmyk-converter"
-  },
-  {
     "name": "Palette Merger",
     "description": "Merge multiple color palettes into one unified palette",
     "href": "/color-tools/palette-merger"
@@ -203,11 +208,6 @@
     "name": "Color Wheel",
     "description": "Interactive color wheel for exploring color relationships",
     "href": "/color-tools/color-wheel"
-  },
-  {
-    "name": "HEX to HSL Converter",
-    "description": "Convert HEX color codes to HSL values",
-    "href": "/color-tools/hex-to-hsl-converter"
   },
   {
     "name": "Extract Colors from Image",

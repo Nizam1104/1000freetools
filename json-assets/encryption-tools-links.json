@@ -5,9 +5,14 @@
     "href": "/encryption-tools/aes-encryption"
   },
   {
-    "name": "Caesar Cipher",
-    "description": "Encode with Caesar cipher or crack with brute force. Educational substitution cipher.",
-    "href": "/encryption-tools/caesar-cipher"
+    "name": "Pgp Encryption",
+    "description": "PGP encryption in browser. Generate keys, encrypt messages, sign data.",
+    "href": "/encryption-tools/pgp-encryption"
+  },
+  {
+    "name": "Text Binary Encryptor",
+    "description": "Convert text to binary with XOR encryption. Learn binary and basic ciphers.",
+    "href": "/encryption-tools/text-binary-encryptor"
   },
   {
     "name": "Crypto Address Validator",
@@ -15,34 +20,9 @@
     "href": "/encryption-tools/crypto-address-validator"
   },
   {
-    "name": "Diffie Hellman Simulator",
-    "description": "Visualize Diffie-Hellman key exchange. See how shared secrets are established.",
-    "href": "/encryption-tools/diffie-hellman-simulator"
-  },
-  {
     "name": "File Checksum Verifier",
     "description": "Calculate MD5 or SHA-256 hashes locally. Verify downloads without uploading files.",
     "href": "/encryption-tools/file-checksum-verifier"
-  },
-  {
-    "name": "Gpg Simulator",
-    "description": "Practice GPG commands in a safe simulator. Generate keys, encrypt, sign.",
-    "href": "/encryption-tools/gpg-simulator"
-  },
-  {
-    "name": "One Time Pad",
-    "description": "Generate one-time pads for unbreakable encryption. Cryptography education.",
-    "href": "/encryption-tools/one-time-pad"
-  },
-  {
-    "name": "Pgp Encryption",
-    "description": "PGP encryption in browser. Generate keys, encrypt messages, sign data.",
-    "href": "/encryption-tools/pgp-encryption"
-  },
-  {
-    "name": "Rsa Key Generator",
-    "description": "Generate RSA key pairs and encrypt messages. Public-key cryptography learning.",
-    "href": "/encryption-tools/rsa-key-generator"
   },
   {
     "name": "Ssl Certificate Decoder",
@@ -50,13 +30,33 @@
     "href": "/encryption-tools/ssl-certificate-decoder"
   },
   {
+    "name": "Rsa Key Generator",
+    "description": "Generate RSA key pairs and encrypt messages. Public-key cryptography learning.",
+    "href": "/encryption-tools/rsa-key-generator"
+  },
+  {
+    "name": "One Time Pad",
+    "description": "Generate one-time pads for unbreakable encryption. Cryptography education.",
+    "href": "/encryption-tools/one-time-pad"
+  },
+  {
+    "name": "Gpg Simulator",
+    "description": "Practice GPG commands in a safe simulator. Generate keys, encrypt, sign.",
+    "href": "/encryption-tools/gpg-simulator"
+  },
+  {
+    "name": "Caesar Cipher",
+    "description": "Encode with Caesar cipher or crack with brute force. Educational substitution cipher.",
+    "href": "/encryption-tools/caesar-cipher"
+  },
+  {
+    "name": "Diffie Hellman Simulator",
+    "description": "Visualize Diffie-Hellman key exchange. See how shared secrets are established.",
+    "href": "/encryption-tools/diffie-hellman-simulator"
+  },
+  {
     "name": "Steganography Tool",
     "description": "Hide text in images using steganography. Embed messages in pixel data.",
     "href": "/encryption-tools/steganography-tool"
-  },
-  {
-    "name": "Text Binary Encryptor",
-    "description": "Convert text to binary with XOR encryption. Learn binary and basic ciphers.",
-    "href": "/encryption-tools/text-binary-encryptor"
   }
 ]

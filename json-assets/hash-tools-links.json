@@ -1,13 +1,33 @@
 [
   {
-    "name": "Argon2 Hash Generator",
-    "description": "Generate Argon2 hashes for password security. Choose id, i, or d variants.",
-    "href": "/hash-tools/argon2-hash-generator"
-  },
-  {
     "name": "Base64 Encoder Decoder Hash",
     "description": "Encode/decode Base64 and generate hashes together. For data integrity checks.",
     "href": "/hash-tools/base64-encoder-decoder-hash"
+  },
+  {
+    "name": "Hash To Hex Base64 Converter",
+    "description": "Convert hashes between hex and Base64. Instant format switching.",
+    "href": "/hash-tools/hash-to-hex-base64-converter"
+  },
+  {
+    "name": "Mysql Password Hash Generator",
+    "description": "Generate MySQL password hashes. OLD_PASSWORD and PASSWORD function mimics.",
+    "href": "/hash-tools/mysql-password-hash-generator"
+  },
+  {
+    "name": "Password Hash Strength Analyzer",
+    "description": "Check password hash strength. Warn about weak algorithms like unsalted MD5.",
+    "href": "/hash-tools/password-hash-strength-analyzer"
+  },
+  {
+    "name": "Md5 Hash Generator Checker",
+    "description": "Generate MD5 hashes from text or files. Fast checksums for verification.",
+    "href": "/hash-tools/md5-hash-generator-checker"
+  },
+  {
+    "name": "Sha1 Hash Generator Decrypter",
+    "description": "Generate SHA-1 hashes or lookup in database. Legacy compatibility testing.",
+    "href": "/hash-tools/sha1-hash-generator-decrypter"
   },
   {
     "name": "Bcrypt Hash Generator Verifier",
@@ -15,19 +35,24 @@
     "href": "/hash-tools/bcrypt-hash-generator-verifier"
   },
   {
+    "name": "Argon2 Hash Generator",
+    "description": "Generate Argon2 hashes for password security. Choose id, i, or d variants.",
+    "href": "/hash-tools/argon2-hash-generator"
+  },
+  {
     "name": "Crc32 Hash Calculator",
     "description": "Calculate CRC32 checksums. Detect data errors in transfers and storage.",
     "href": "/hash-tools/crc32-hash-calculator"
   },
   {
-    "name": "Custom Salted Hash Generator",
-    "description": "Generate salted hashes. Specify salt or generate random, choose algorithm.",
-    "href": "/hash-tools/custom-salted-hash-generator"
-  },
-  {
     "name": "File Hash Calculator Multi Algorithm",
     "description": "Calculate MD5, SHA-1, SHA-256 for files. Upload, get multiple hashes instantly.",
     "href": "/hash-tools/file-hash-calculator-multi-algorithm"
+  },
+  {
+    "name": "Custom Salted Hash Generator",
+    "description": "Generate salted hashes. Specify salt or generate random, choose algorithm.",
+    "href": "/hash-tools/custom-salted-hash-generator"
   },
   {
     "name": "Hash Comparison Duplicate Finder",
@@ -40,24 +65,9 @@
     "href": "/hash-tools/hash-identifier-tool"
   },
   {
-    "name": "Hash To Hex Base64 Converter",
-    "description": "Convert hashes between hex and Base64. Instant format switching.",
-    "href": "/hash-tools/hash-to-hex-base64-converter"
-  },
-  {
     "name": "Hmac Generator Keyed Hash",
     "description": "Generate HMAC signatures with secret keys. Message authenticity for APIs.",
     "href": "/hash-tools/hmac-generator-keyed-hash"
-  },
-  {
-    "name": "Md5 Hash Generator Checker",
-    "description": "Generate MD5 hashes from text or files. Fast checksums for verification.",
-    "href": "/hash-tools/md5-hash-generator-checker"
-  },
-  {
-    "name": "Mysql Password Hash Generator",
-    "description": "Generate MySQL password hashes. OLD_PASSWORD and PASSWORD function mimics.",
-    "href": "/hash-tools/mysql-password-hash-generator"
   },
   {
     "name": "Ntlm Hash Generator Cracker",
@@ -65,19 +75,9 @@
     "href": "/hash-tools/ntlm-hash-generator-cracker"
   },
   {
-    "name": "Password Hash Strength Analyzer",
-    "description": "Check password hash strength. Warn about weak algorithms like unsalted MD5.",
-    "href": "/hash-tools/password-hash-strength-analyzer"
-  },
-  {
     "name": "Ripemd160 Hash Generator",
     "description": "Generate RIPEMD-160 hashes. Common in cryptocurrency applications.",
     "href": "/hash-tools/ripemd160-hash-generator"
-  },
-  {
-    "name": "Sha1 Hash Generator Decrypter",
-    "description": "Generate SHA-1 hashes or lookup in database. Legacy compatibility testing.",
-    "href": "/hash-tools/sha1-hash-generator-decrypter"
   },
   {
     "name": "Sha256 Hash Generator",

@@ -1,13 +1,23 @@
 [
   {
-    "name": "3d Icon Generator From Text",
-    "description": "Generate 3D icons from letters, numbers, symbols. Customize materials, lighting.",
-    "href": "/icon-tools/3d-icon-generator-from-text"
+    "name": "Icon Metadata Editor Optimizer",
+    "description": "Edit icon metadata, remove bloat. Reduce file size, add descriptions.",
+    "href": "/icon-tools/icon-metadata-editor-optimizer"
   },
   {
-    "name": "Accessibility Icon Checker Color Contrast",
-    "description": "Test icon accessibility. Color contrast, color blindness preview, tips.",
-    "href": "/icon-tools/accessibility-icon-checker-color-contrast"
+    "name": "Icon File Format Converter All Types",
+    "description": "Convert ICO, PNG, SVG, JPEG and more. Batch processing, custom settings.",
+    "href": "/icon-tools/icon-file-format-converter-all-types"
+  },
+  {
+    "name": "Png To Ico Converter Online",
+    "description": "Convert PNG to Windows ICO. Embed multiple sizes in one file.",
+    "href": "/icon-tools/png-to-ico-converter-online"
+  },
+  {
+    "name": "Svg To Png Icon Converter",
+    "description": "Convert SVG icons to PNG. Set dimensions, transparent backgrounds, batch.",
+    "href": "/icon-tools/svg-to-png-icon-converter"
   },
   {
     "name": "Animated Gif To Icon Converter",
@@ -15,14 +25,34 @@
     "href": "/icon-tools/animated-gif-to-icon-converter"
   },
   {
-    "name": "Animated Svg Icon Creator",
-    "description": "Design animated SVG icons. Motion effects, custom animations, export code.",
-    "href": "/icon-tools/animated-svg-icon-creator"
-  },
-  {
     "name": "Favicon Generator From Image",
     "description": "Create favicons from any image. Auto-crop, all sizes generated instantly.",
     "href": "/icon-tools/favicon-generator-from-image"
+  },
+  {
+    "name": "Icon Resizer For Android Ios",
+    "description": "Resize icons for app stores. All required dimensions for Google Play, App Store.",
+    "href": "/icon-tools/icon-resizer-for-android-ios"
+  },
+  {
+    "name": "3d Icon Generator From Text",
+    "description": "Generate 3D icons from letters, numbers, symbols. Customize materials, lighting.",
+    "href": "/icon-tools/3d-icon-generator-from-text"
+  },
+  {
+    "name": "Icon Search Engine Duplicate Finder",
+    "description": "Find duplicate icons by looks or name. Scan folders, free up space.",
+    "href": "/icon-tools/icon-search-engine-duplicate-finder"
+  },
+  {
+    "name": "Accessibility Icon Checker Color Contrast",
+    "description": "Test icon accessibility. Color contrast, color blindness preview, tips.",
+    "href": "/icon-tools/accessibility-icon-checker-color-contrast"
+  },
+  {
+    "name": "Animated Svg Icon Creator",
+    "description": "Design animated SVG icons. Motion effects, custom animations, export code.",
+    "href": "/icon-tools/animated-svg-icon-creator"
   },
   {
     "name": "Free Icon Maker Online",
@@ -40,29 +70,9 @@
     "href": "/icon-tools/icon-color-changer-palette-tool"
   },
   {
-    "name": "Icon File Format Converter All Types",
-    "description": "Convert ICO, PNG, SVG, JPEG and more. Batch processing, custom settings.",
-    "href": "/icon-tools/icon-file-format-converter-all-types"
-  },
-  {
     "name": "Icon Font Generator From Svg",
     "description": "Turn SVG icons into icon fonts. Define CSS classes, preview, download.",
     "href": "/icon-tools/icon-font-generator-from-svg"
-  },
-  {
-    "name": "Icon Metadata Editor Optimizer",
-    "description": "Edit icon metadata, remove bloat. Reduce file size, add descriptions.",
-    "href": "/icon-tools/icon-metadata-editor-optimizer"
-  },
-  {
-    "name": "Icon Resizer For Android Ios",
-    "description": "Resize icons for app stores. All required dimensions for Google Play, App Store.",
-    "href": "/icon-tools/icon-resizer-for-android-ios"
-  },
-  {
-    "name": "Icon Search Engine Duplicate Finder",
-    "description": "Find duplicate icons by looks or name. Scan folders, free up space.",
-    "href": "/icon-tools/icon-search-engine-duplicate-finder"
   },
   {
     "name": "Icon Style Transfer Artistic Filters",
@@ -80,19 +90,9 @@
     "href": "/icon-tools/pixel-art-icon-creator-editor"
   },
   {
-    "name": "Png To Ico Converter Online",
-    "description": "Convert PNG to Windows ICO. Embed multiple sizes in one file.",
-    "href": "/icon-tools/png-to-ico-converter-online"
-  },
-  {
     "name": "Social Media Icon Pack Generator",
     "description": "Create matching social media icon sets. Pick style, colors, download pack.",
     "href": "/icon-tools/social-media-icon-pack-generator"
-  },
-  {
-    "name": "Svg To Png Icon Converter",
-    "description": "Convert SVG icons to PNG. Set dimensions, transparent backgrounds, batch.",
-    "href": "/icon-tools/svg-to-png-icon-converter"
   },
   {
     "name": "Vector Icon Tracer Image To Svg",

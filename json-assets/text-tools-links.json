@@ -1,8 +1,43 @@
 [
   {
+    "name": "Text To Slug Converter",
+    "description": "Turn titles into URL slugs. Hyphens, lowercase, special chars stripped. WordPress ready.",
+    "href": "/text-tools/text-to-slug-converter"
+  },
+  {
+    "name": "Text To Hashtags Generator",
+    "description": "Get platform-optimized hashtag suggestions. Tiered by popularity, ready to copy.",
+    "href": "/text-tools/text-to-hashtags-generator"
+  },
+  {
+    "name": "Text To Binary Converter",
+    "description": "Translate text to binary or decode binary to English. ASCII, hex, decimal outputs.",
+    "href": "/text-tools/text-to-binary-converter"
+  },
+  {
     "name": "Case Converter",
     "description": "Convert text to any case format. snake_case, Title Case, SCREAMING_SNAKE_CASE.",
     "href": "/text-tools/case-converter"
+  },
+  {
+    "name": "Text To List Converter",
+    "description": "Turn paragraphs into numbered lists, bullet lists, comma-separated, or JSON arrays.",
+    "href": "/text-tools/text-to-list-converter"
+  },
+  {
+    "name": "Text Size Calculator",
+    "description": "See exact byte size in UTF-8, ASCII, Unicode. Before it breaks APIs or databases.",
+    "href": "/text-tools/text-size-calculator"
+  },
+  {
+    "name": "Lorem Ipsum Generator",
+    "description": "Generate dummy text by word, sentence, or paragraph. Classic Latin, HTML output.",
+    "href": "/text-tools/lorem-ipsum-generator"
+  },
+  {
+    "name": "String Length Calculator",
+    "description": "Know string length in characters, bytes, Unicode code points. For APIs, databases.",
+    "href": "/text-tools/string-length-calculator"
   },
   {
     "name": "Character Counter",
@@ -10,19 +45,14 @@
     "href": "/text-tools/character-counter"
   },
   {
-    "name": "Duplicate Word Remover",
-    "description": "Remove duplicate words from lists, drafts, keyword lists. Lean, clean output.",
-    "href": "/text-tools/duplicate-word-remover"
-  },
-  {
     "name": "Find And Replace Text",
     "description": "Find-and-replace in browser. Swap words, fix typos, run regex patterns.",
     "href": "/text-tools/find-and-replace-text"
   },
   {
-    "name": "Lorem Ipsum Generator",
-    "description": "Generate dummy text by word, sentence, or paragraph. Classic Latin, HTML output.",
-    "href": "/text-tools/lorem-ipsum-generator"
+    "name": "Duplicate Word Remover",
+    "description": "Remove duplicate words from lists, drafts, keyword lists. Lean, clean output.",
+    "href": "/text-tools/duplicate-word-remover"
   },
   {
     "name": "Random Text Shuffler",
@@ -40,11 +70,6 @@
     "href": "/text-tools/sentence-counter"
   },
   {
-    "name": "String Length Calculator",
-    "description": "Know string length in characters, bytes, Unicode code points. For APIs, databases.",
-    "href": "/text-tools/string-length-calculator"
-  },
-  {
     "name": "Text Line Sorter",
     "description": "Alphabetize, sort by length, shuffle, or reverse lists. One-click copy.",
     "href": "/text-tools/text-line-sorter"
@@ -58,31 +83,6 @@
     "name": "Text Reverser",
     "description": "Reverse text by characters, words, lines, or upside-down Unicode.",
     "href": "/text-tools/text-reverser"
-  },
-  {
-    "name": "Text Size Calculator",
-    "description": "See exact byte size in UTF-8, ASCII, Unicode. Before it breaks APIs or databases.",
-    "href": "/text-tools/text-size-calculator"
-  },
-  {
-    "name": "Text To Binary Converter",
-    "description": "Translate text to binary or decode binary to English. ASCII, hex, decimal outputs.",
-    "href": "/text-tools/text-to-binary-converter"
-  },
-  {
-    "name": "Text To Hashtags Generator",
-    "description": "Get platform-optimized hashtag suggestions. Tiered by popularity, ready to copy.",
-    "href": "/text-tools/text-to-hashtags-generator"
-  },
-  {
-    "name": "Text To List Converter",
-    "description": "Turn paragraphs into numbered lists, bullet lists, comma-separated, or JSON arrays.",
-    "href": "/text-tools/text-to-list-converter"
-  },
-  {
-    "name": "Text To Slug Converter",
-    "description": "Turn titles into URL slugs. Hyphens, lowercase, special chars stripped. WordPress ready.",
-    "href": "/text-tools/text-to-slug-converter"
   },
   {
     "name": "Whitespace Remover",

@@ -1,8 +1,43 @@
 [
   {
-    "name": "Animated Emoji Gif Maker",
-    "description": "Turn static emojis into animations. Bounce, spin, create GIFs for Discord or Slack.",
-    "href": "/emoji-tools/animated-emoji-gif-maker"
+    "name": "Emoji Password Generator",
+    "description": "Create passwords using emojis. Mix symbols, letters for secure passphrases.",
+    "href": "/emoji-tools/emoji-password-generator"
+  },
+  {
+    "name": "Emoji Style Converter",
+    "description": "See how emojis look on iPhone, Android, Facebook. Compare side by side.",
+    "href": "/emoji-tools/emoji-style-converter"
+  },
+  {
+    "name": "Emoji To Text Converter",
+    "description": "Translate emoji messages to plain text. Make emoji strings accessible.",
+    "href": "/emoji-tools/emoji-to-text-converter"
+  },
+  {
+    "name": "Random Emoji Generator",
+    "description": "Get random emojis instantly. Spin the wheel or generate grids. Filter by category.",
+    "href": "/emoji-tools/random-emoji-generator"
+  },
+  {
+    "name": "Emoji Art Generator",
+    "description": "Turn text or images into emoji art. Portraits, logos, messages from emojis.",
+    "href": "/emoji-tools/emoji-art-generator"
+  },
+  {
+    "name": "Emoji Font Generator",
+    "description": "Decorate text with emoji fonts. Stylish text for bios, usernames, posts.",
+    "href": "/emoji-tools/emoji-font-generator"
+  },
+  {
+    "name": "Emoji Size Changer",
+    "description": "Resize emojis. Enlarge for posters, shrink for fine print. Download as images.",
+    "href": "/emoji-tools/emoji-size-changer"
+  },
+  {
+    "name": "Emoji Picker Copy Paste",
+    "description": "Find and copy emojis instantly. Browse categories or search by name.",
+    "href": "/emoji-tools/emoji-picker-copy-paste"
   },
   {
     "name": "Bulk Emoji Downloader",
@@ -10,9 +45,14 @@
     "href": "/emoji-tools/bulk-emoji-downloader"
   },
   {
-    "name": "Emoji Art Generator",
-    "description": "Turn text or images into emoji art. Portraits, logos, messages from emojis.",
-    "href": "/emoji-tools/emoji-art-generator"
+    "name": "Emoji Counter",
+    "description": "Count emojis and characters. Check social media limits as you type.",
+    "href": "/emoji-tools/emoji-counter"
+  },
+  {
+    "name": "Animated Emoji Gif Maker",
+    "description": "Turn static emojis into animations. Bounce, spin, create GIFs for Discord or Slack.",
+    "href": "/emoji-tools/animated-emoji-gif-maker"
   },
   {
     "name": "Emoji Background Remover",
@@ -30,16 +70,6 @@
     "href": "/emoji-tools/emoji-combiner-mixer"
   },
   {
-    "name": "Emoji Counter",
-    "description": "Count emojis and characters. Check social media limits as you type.",
-    "href": "/emoji-tools/emoji-counter"
-  },
-  {
-    "name": "Emoji Font Generator",
-    "description": "Decorate text with emoji fonts. Stylish text for bios, usernames, posts.",
-    "href": "/emoji-tools/emoji-font-generator"
-  },
-  {
     "name": "Emoji Keyboard Pc Mac",
     "description": "Virtual emoji keyboard for computer. Click to insert anywhere. No software needed.",
     "href": "/emoji-tools/emoji-keyboard-pc-mac"
@@ -48,16 +78,6 @@
     "name": "Emoji Kitchen Mashup",
     "description": "Mix two emojis into fun sticker mashups. Cowboy ghost, laughing poop.",
     "href": "/emoji-tools/emoji-kitchen-mashup"
-  },
-  {
-    "name": "Emoji Password Generator",
-    "description": "Create passwords using emojis. Mix symbols, letters for secure passphrases.",
-    "href": "/emoji-tools/emoji-password-generator"
-  },
-  {
-    "name": "Emoji Picker Copy Paste",
-    "description": "Find and copy emojis instantly. Browse categories or search by name.",
-    "href": "/emoji-tools/emoji-picker-copy-paste"
   },
   {
     "name": "Emoji Prediction Trends",
@@ -70,24 +90,9 @@
     "href": "/emoji-tools/emoji-quiz-game"
   },
   {
-    "name": "Emoji Size Changer",
-    "description": "Resize emojis. Enlarge for posters, shrink for fine print. Download as images.",
-    "href": "/emoji-tools/emoji-size-changer"
-  },
-  {
     "name": "Emoji Slider Scale",
     "description": "Create emoji rating scales. Sad to happy faces, 1-5 stars. Embed or download.",
     "href": "/emoji-tools/emoji-slider-scale"
-  },
-  {
-    "name": "Emoji Style Converter",
-    "description": "See how emojis look on iPhone, Android, Facebook. Compare side by side.",
-    "href": "/emoji-tools/emoji-style-converter"
-  },
-  {
-    "name": "Emoji To Text Converter",
-    "description": "Translate emoji messages to plain text. Make emoji strings accessible.",
-    "href": "/emoji-tools/emoji-to-text-converter"
   },
   {
     "name": "Emoji Translator Meaning",
@@ -98,10 +103,5 @@
     "name": "Emoji Word Cloud",
     "description": "Turn text into emoji word clouds. Frequent words become big emojis.",
     "href": "/emoji-tools/emoji-word-cloud"
-  },
-  {
-    "name": "Random Emoji Generator",
-    "description": "Get random emojis instantly. Spin the wheel or generate grids. Filter by category.",
-    "href": "/emoji-tools/random-emoji-generator"
   }
 ]

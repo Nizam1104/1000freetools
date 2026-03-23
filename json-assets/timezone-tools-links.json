@@ -1,23 +1,8 @@
 [
   {
-    "name": "Add Subtract Time Across Zones Calculator",
-    "description": "Add/subtract hours across timezones. Calculate deadlines, see results in local time.",
-    "href": "/timezone-tools/add-subtract-time-across-zones-calculator"
-  },
-  {
-    "name": "Country Time Zone List Current Time Finder",
-    "description": "Find all timezones for any country. See current local times in each.",
-    "href": "/timezone-tools/country-time-zone-list-current-time-finder"
-  },
-  {
-    "name": "Daylight Saving Time Calculator Schedule",
-    "description": "Check DST status and transition dates. Spring forward, fall back schedules.",
-    "href": "/timezone-tools/daylight-saving-time-calculator-schedule"
-  },
-  {
-    "name": "Flight Time Time Zone Arrival Calculator",
-    "description": "Calculate arrival times with timezone changes. Essential for layovers, ground transport.",
-    "href": "/timezone-tools/flight-time-time-zone-arrival-calculator"
+    "name": "Time Zone Difference Calculator",
+    "description": "Calculate exact time differences between cities. Hours ahead/behind, now or future.",
+    "href": "/timezone-tools/time-zone-difference-calculator"
   },
   {
     "name": "Historical Time Zone Converter",
@@ -25,9 +10,49 @@
     "href": "/timezone-tools/historical-time-zone-converter"
   },
   {
+    "name": "Military Time Converter 24 Hour Clock",
+    "description": "Convert AM/PM to 24-hour time and back. Learn military time for scheduling.",
+    "href": "/timezone-tools/military-time-converter-24-hour-clock"
+  },
+  {
+    "name": "World Clock Time Zone Converter",
+    "description": "See current time anywhere instantly. Compare timezones, plan calls with interactive map.",
+    "href": "/timezone-tools/world-clock-time-zone-converter"
+  },
+  {
+    "name": "Time Zone Abbreviation Lookup Decoder",
+    "description": "Decode timezone abbreviations. EST, GMT, IST meanings, UTC offsets, regions.",
+    "href": "/timezone-tools/time-zone-abbreviation-lookup-decoder"
+  },
+  {
+    "name": "Add Subtract Time Across Zones Calculator",
+    "description": "Add/subtract hours across timezones. Calculate deadlines, see results in local time.",
+    "href": "/timezone-tools/add-subtract-time-across-zones-calculator"
+  },
+  {
+    "name": "Flight Time Time Zone Arrival Calculator",
+    "description": "Calculate arrival times with timezone changes. Essential for layovers, ground transport.",
+    "href": "/timezone-tools/flight-time-time-zone-arrival-calculator"
+  },
+  {
+    "name": "Daylight Saving Time Calculator Schedule",
+    "description": "Check DST status and transition dates. Spring forward, fall back schedules.",
+    "href": "/timezone-tools/daylight-saving-time-calculator-schedule"
+  },
+  {
     "name": "International Phone Call Time Finder",
     "description": "Find good times to call abroad. Check local business hours, time differences.",
     "href": "/timezone-tools/international-phone-call-time-finder"
+  },
+  {
+    "name": "Timezone Widget Clock Embed Generator",
+    "description": "Add live world clocks to websites. Free, customizable embed code, no coding needed.",
+    "href": "/timezone-tools/timezone-widget-clock-embed-generator"
+  },
+  {
+    "name": "Country Time Zone List Current Time Finder",
+    "description": "Find all timezones for any country. See current local times in each.",
+    "href": "/timezone-tools/country-time-zone-list-current-time-finder"
   },
   {
     "name": "Live Countdown Timer Across Time Zones",
@@ -40,21 +65,6 @@
     "href": "/timezone-tools/meeting-planner-across-time-zones"
   },
   {
-    "name": "Military Time Converter 24 Hour Clock",
-    "description": "Convert AM/PM to 24-hour time and back. Learn military time for scheduling.",
-    "href": "/timezone-tools/military-time-converter-24-hour-clock"
-  },
-  {
-    "name": "Time Zone Abbreviation Lookup Decoder",
-    "description": "Decode timezone abbreviations. EST, GMT, IST meanings, UTC offsets, regions.",
-    "href": "/timezone-tools/time-zone-abbreviation-lookup-decoder"
-  },
-  {
-    "name": "Time Zone Difference Calculator",
-    "description": "Calculate exact time differences between cities. Hours ahead/behind, now or future.",
-    "href": "/timezone-tools/time-zone-difference-calculator"
-  },
-  {
     "name": "Timezone Database Iana Lookup",
     "description": "Lookup IANA timezone IDs. 'America/Los_Angeles', UTC offsets, DST rules.",
     "href": "/timezone-tools/timezone-database-iana-lookup"
@@ -63,15 +73,5 @@
     "name": "Timezone Map Visual Finder",
     "description": "Find timezones on interactive map. Click countries/cities for current time, offsets.",
     "href": "/timezone-tools/timezone-map-visual-finder"
-  },
-  {
-    "name": "Timezone Widget Clock Embed Generator",
-    "description": "Add live world clocks to websites. Free, customizable embed code, no coding needed.",
-    "href": "/timezone-tools/timezone-widget-clock-embed-generator"
-  },
-  {
-    "name": "World Clock Time Zone Converter",
-    "description": "See current time anywhere instantly. Compare timezones, plan calls with interactive map.",
-    "href": "/timezone-tools/world-clock-time-zone-converter"
   }
 ]

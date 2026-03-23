@@ -1,8 +1,23 @@
 [
   {
-    "name": "Add Subtract Time",
-    "description": "Add or subtract hours, minutes, seconds from any time. Calculate future or past times.",
-    "href": "/date-time-tools/add-subtract-time"
+    "name": "Military Time Converter",
+    "description": "Convert between 12-hour and 24-hour time. No more AM/PM confusion.",
+    "href": "/date-time-tools/military-time-converter"
+  },
+  {
+    "name": "Seconds Converter",
+    "description": "Convert seconds to minutes, hours, days. Reverse conversion too.",
+    "href": "/date-time-tools/seconds-converter"
+  },
+  {
+    "name": "Date Calculator",
+    "description": "Calculate days between dates. Add or subtract days for planning.",
+    "href": "/date-time-tools/date-calculator"
+  },
+  {
+    "name": "Time Duration Calculator",
+    "description": "Calculate hours worked or time elapsed. Start and end times to duration.",
+    "href": "/date-time-tools/time-duration-calculator"
   },
   {
     "name": "Age Calculator",
@@ -10,9 +25,34 @@
     "href": "/date-time-tools/age-calculator"
   },
   {
+    "name": "Date Range Calculator",
+    "description": "Find end dates or duration of periods. Billing cycles, project phases.",
+    "href": "/date-time-tools/date-range-calculator"
+  },
+  {
+    "name": "Week Number Calculator",
+    "description": "Find ISO week numbers for dates. Or get dates within a week number.",
+    "href": "/date-time-tools/week-number-calculator"
+  },
+  {
     "name": "Business Days Calculator",
     "description": "Count working days between dates. Exclude weekends and holidays.",
     "href": "/date-time-tools/business-days-calculator"
+  },
+  {
+    "name": "Sunrise Sunset Calculator",
+    "description": "Get sunrise, sunset, daylight hours for any location and date.",
+    "href": "/date-time-tools/sunrise-sunset-calculator"
+  },
+  {
+    "name": "Time Until Calculator",
+    "description": "See time remaining until future events. Updates in real-time.",
+    "href": "/date-time-tools/time-until-calculator"
+  },
+  {
+    "name": "Add Subtract Time",
+    "description": "Add or subtract hours, minutes, seconds from any time. Calculate future or past times.",
+    "href": "/date-time-tools/add-subtract-time"
   },
   {
     "name": "Calendar Generator",
@@ -25,11 +65,6 @@
     "href": "/date-time-tools/countdown-timer"
   },
   {
-    "name": "Date Calculator",
-    "description": "Calculate days between dates. Add or subtract days for planning.",
-    "href": "/date-time-tools/date-calculator"
-  },
-  {
     "name": "Date Difference In Units",
     "description": "See time spans in years, months, weeks, days. Complete breakdown.",
     "href": "/date-time-tools/date-difference-in-units"
@@ -38,11 +73,6 @@
     "name": "Date Pattern Finder",
     "description": "Find dates matching patterns. All Fridays the 13th, recurring dates.",
     "href": "/date-time-tools/date-pattern-finder"
-  },
-  {
-    "name": "Date Range Calculator",
-    "description": "Find end dates or duration of periods. Billing cycles, project phases.",
-    "href": "/date-time-tools/date-range-calculator"
   },
   {
     "name": "Day Counter",
@@ -58,35 +88,5 @@
     "name": "Leap Year Checker",
     "description": "Check if a year has 366 days. See upcoming leap years.",
     "href": "/date-time-tools/leap-year-checker"
-  },
-  {
-    "name": "Military Time Converter",
-    "description": "Convert between 12-hour and 24-hour time. No more AM/PM confusion.",
-    "href": "/date-time-tools/military-time-converter"
-  },
-  {
-    "name": "Seconds Converter",
-    "description": "Convert seconds to minutes, hours, days. Reverse conversion too.",
-    "href": "/date-time-tools/seconds-converter"
-  },
-  {
-    "name": "Sunrise Sunset Calculator",
-    "description": "Get sunrise, sunset, daylight hours for any location and date.",
-    "href": "/date-time-tools/sunrise-sunset-calculator"
-  },
-  {
-    "name": "Time Duration Calculator",
-    "description": "Calculate hours worked or time elapsed. Start and end times to duration.",
-    "href": "/date-time-tools/time-duration-calculator"
-  },
-  {
-    "name": "Time Until Calculator",
-    "description": "See time remaining until future events. Updates in real-time.",
-    "href": "/date-time-tools/time-until-calculator"
-  },
-  {
-    "name": "Week Number Calculator",
-    "description": "Find ISO week numbers for dates. Or get dates within a week number.",
-    "href": "/date-time-tools/week-number-calculator"
   }
 ]

@@ -1,13 +1,58 @@
 [
   {
-    "name": "Csv Cleaner",
-    "description": "Clean trailing spaces, blank rows, BOM markers, Windows line endings. Get a corrected file.",
-    "href": "/csv-tools/csv-cleaner"
+    "name": "Csv Delimiter Converter",
+    "description": "Switch delimiters safely. Semicolons to pipes, with proper quoting.",
+    "href": "/csv-tools/csv-delimiter-converter"
+  },
+  {
+    "name": "Csv Email Extractor",
+    "description": "Extract and validate email addresses from any column. Deduplicate, export.",
+    "href": "/csv-tools/csv-email-extractor"
+  },
+  {
+    "name": "Csv Validator",
+    "description": "Expose mismatched columns, rogue delimiters, encoding issues before imports fail.",
+    "href": "/csv-tools/csv-validator"
   },
   {
     "name": "Csv Column Extractor",
     "description": "Extract specific columns from CSV. Rename, reorder, download trimmed files.",
     "href": "/csv-tools/csv-column-extractor"
+  },
+  {
+    "name": "Csv Minifier",
+    "description": "Strip trailing spaces, redundant quotes, blank lines. Leanest file possible.",
+    "href": "/csv-tools/csv-minifier"
+  },
+  {
+    "name": "Csv Random Row Generator",
+    "description": "Generate fake CSV test data. Define columns, choose row count, download.",
+    "href": "/csv-tools/csv-random-row-generator"
+  },
+  {
+    "name": "Csv Formatter",
+    "description": "Fix inconsistent quotes, delimiters, whitespace. Standardize CSV files.",
+    "href": "/csv-tools/csv-formatter"
+  },
+  {
+    "name": "Csv Sample Generator",
+    "description": "Extract random samples by count or percentage. Stratification supported.",
+    "href": "/csv-tools/csv-sample-generator"
+  },
+  {
+    "name": "Csv Quote Escaper",
+    "description": "Apply RFC 4180 quoting. Handle embedded commas and newlines correctly.",
+    "href": "/csv-tools/csv-quote-escaper"
+  },
+  {
+    "name": "Csv To Array",
+    "description": "Convert CSV columns to JavaScript, Python, PHP, Ruby arrays. Ready to paste.",
+    "href": "/csv-tools/csv-to-array"
+  },
+  {
+    "name": "Csv Cleaner",
+    "description": "Clean trailing spaces, blank rows, BOM markers, Windows line endings. Get a corrected file.",
+    "href": "/csv-tools/csv-cleaner"
   },
   {
     "name": "Csv Column Merger",
@@ -45,11 +90,6 @@
     "href": "/csv-tools/csv-deduplicator"
   },
   {
-    "name": "Csv Delimiter Converter",
-    "description": "Switch delimiters safely. Semicolons to pipes, with proper quoting.",
-    "href": "/csv-tools/csv-delimiter-converter"
-  },
-  {
     "name": "Csv Duplicate Remover",
     "description": "Remove duplicate rows. Deduplicate on all columns or key fields.",
     "href": "/csv-tools/csv-duplicate-remover"
@@ -60,19 +100,9 @@
     "href": "/csv-tools/csv-editor"
   },
   {
-    "name": "Csv Email Extractor",
-    "description": "Extract and validate email addresses from any column. Deduplicate, export.",
-    "href": "/csv-tools/csv-email-extractor"
-  },
-  {
     "name": "Csv File Merger",
     "description": "Merge multiple CSVs into one. Handles mismatched columns, tags sources.",
     "href": "/csv-tools/csv-file-merger"
-  },
-  {
-    "name": "Csv Formatter",
-    "description": "Fix inconsistent quotes, delimiters, whitespace. Standardize CSV files.",
-    "href": "/csv-tools/csv-formatter"
   },
   {
     "name": "Csv Header Editor",
@@ -85,24 +115,9 @@
     "href": "/csv-tools/csv-join-merge"
   },
   {
-    "name": "Csv Minifier",
-    "description": "Strip trailing spaces, redundant quotes, blank lines. Leanest file possible.",
-    "href": "/csv-tools/csv-minifier"
-  },
-  {
     "name": "Csv Pretty Print",
     "description": "Convert CSV to aligned text tables. Perfect for docs, Slack, terminal output.",
     "href": "/csv-tools/csv-pretty-print"
-  },
-  {
-    "name": "Csv Quote Escaper",
-    "description": "Apply RFC 4180 quoting. Handle embedded commas and newlines correctly.",
-    "href": "/csv-tools/csv-quote-escaper"
-  },
-  {
-    "name": "Csv Random Row Generator",
-    "description": "Generate fake CSV test data. Define columns, choose row count, download.",
-    "href": "/csv-tools/csv-random-row-generator"
   },
   {
     "name": "Csv Row Counter",
@@ -120,19 +135,9 @@
     "href": "/csv-tools/csv-row-sorter"
   },
   {
-    "name": "Csv Sample Generator",
-    "description": "Extract random samples by count or percentage. Stratification supported.",
-    "href": "/csv-tools/csv-sample-generator"
-  },
-  {
     "name": "Csv Splitter",
     "description": "Split large CSVs into chunks. Equally sized or by key column. ZIP download.",
     "href": "/csv-tools/csv-splitter"
-  },
-  {
-    "name": "Csv To Array",
-    "description": "Convert CSV columns to JavaScript, Python, PHP, Ruby arrays. Ready to paste.",
-    "href": "/csv-tools/csv-to-array"
   },
   {
     "name": "Csv To Excel",
@@ -188,11 +193,6 @@
     "name": "Csv Unquote",
     "description": "Strip unnecessary quotes from fields. Reduce file size, cleaner CSV.",
     "href": "/csv-tools/csv-unquote"
-  },
-  {
-    "name": "Csv Validator",
-    "description": "Expose mismatched columns, rogue delimiters, encoding issues before imports fail.",
-    "href": "/csv-tools/csv-validator"
   },
   {
     "name": "Csv Viewer",
