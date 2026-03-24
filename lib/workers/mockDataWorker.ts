@@ -402,9 +402,6 @@ const generateMockValue = async (field: Field) => {
     case "directory_path":
       return _faker.system.directoryPath();
 
-    case "mimeType":
-      return _faker.system.mimeType();
-
     case "semver":
       return _faker.system.semver();
 
@@ -509,6 +506,9 @@ const generateMockValue = async (field: Field) => {
 
     case "sha1":
       return _faker.string.alphanumeric({ casing: "lower", length: 40 });
+
+    case "sha256":
+      return _faker.string.alphanumeric({ casing: "lower", length: 64 });
 
     case "artist_name":
       return _faker.person.fullName();

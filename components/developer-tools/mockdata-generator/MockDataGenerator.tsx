@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { Trash2, Plus, Settings, ChevronDown, Copy, Check } from "lucide-react";
+import { Trash2, Plus, Settings, Copy, Check } from "lucide-react";
 import FieldTypesDialog from "./FieldTypesDialog";
 import { getMockDataWorker, releaseMockDataWorker } from "@/lib/workerManager";
 import { toast } from "sonner";
@@ -30,6 +30,14 @@ interface MockField {
   blankPercentage: number;
   options?: string[];
   optionsInput?: string; // Store raw input for "Random Element from Array" fields
+}
+
+interface ParsedSchemaField {
+  name?: string;
+  fieldName?: string;
+  type: string;
+  blankPercentage?: number;
+  options?: string[];
 }
 
 const AIPrompt = `You are a JSON schema generator for a mock data generator tool. I will describe the dataset I need, and you will generate a JSON schema array following these specifications:
@@ -160,9 +168,9 @@ export default function MockDataGenerator() {
     const savedFields = localStorage.getItem("mockDataFields");
     if (savedFields) {
       try {
-        const parsedFields = JSON.parse(savedFields);
+        const parsedFields = JSON.parse(savedFields) as MockField[];
         // Normalize fields to ensure any legacy fields without optionsInput get proper defaults
-        const normalizedFields = parsedFields.map((field: any) => ({
+        const normalizedFields = parsedFields.map((field) => ({
           ...field,
           optionsInput: field.optionsInput ?? (field.options ? field.options.join(", ") : undefined),
         }));
@@ -225,7 +233,7 @@ export default function MockDataGenerator() {
     if (activeTab === "json" && fields.length > 0) {
       // Convert existing fields to JSON schema format
       const existingFieldNames = new Set<string>();
-      const schemaFields: any[] = [];
+      const schemaFields: ParsedSchemaField[] = [];
 
       fields.forEach((field) => {
         const fieldName = field.name.trim();
@@ -237,7 +245,7 @@ export default function MockDataGenerator() {
 
         existingFieldNames.add(fieldName.toLowerCase());
 
-        const schemaField: any = {
+        const schemaField: ParsedSchemaField = {
           fieldName: fieldName,
           type: field.type,
         };
@@ -306,7 +314,7 @@ export default function MockDataGenerator() {
       setCopiedToClipboard(true);
       setTimeout(() => setCopiedToClipboard(false), 2000);
       toast.success("JSON schema copied to clipboard");
-    } catch (error) {
+    } catch {
       toast.error("Failed to copy to clipboard");
     }
   };
@@ -317,10 +325,10 @@ export default function MockDataGenerator() {
       return;
     }
 
-    let parsed: any[];
+    let parsed: ParsedSchemaField[];
     try {
-      parsed = JSON.parse(jsonSchemaText);
-    } catch (error) {
+      parsed = JSON.parse(jsonSchemaText) as ParsedSchemaField[];
+    } catch {
       setJsonError("Invalid JSON format");
       return;
     }
@@ -345,8 +353,18 @@ export default function MockDataGenerator() {
     const newFields: MockField[] = [];
     let skippedCount = 0;
 
+    const fieldRevMap: Record<string, string> = {};
+
+    Object.entries(fieldTypeMapping).forEach(([dialogType, workerType]) => {
+      fieldRevMap[workerType] = dialogType;
+    });
+
     parsed.forEach((schemaField, index) => {
       const fieldName = schemaField.name || schemaField.fieldName;
+      if (!fieldName) {
+        skippedCount++;
+        return;
+      }
 
       // Skip if field with same name already exists
       if (existingFieldNames.has(fieldName.toLowerCase())) {
@@ -357,7 +375,7 @@ export default function MockDataGenerator() {
       newFields.push({
         id: Date.now().toString() + index,
         name: fieldName,
-        type: schemaField.type,
+        type: fieldRevMap[schemaField.type] ?? DEFAULT_FIELD_TYPE,
         blankPercentage: schemaField.blankPercentage ?? 0,
         options: schemaField.options,
         optionsInput: schemaField.options ? schemaField.options.join(", ") : undefined,
@@ -509,10 +527,10 @@ export default function MockDataGenerator() {
   }, [worker, fields, rowCount, exportFormat, downloadFile]);
 
   const addNewFieldToJsonSchema = function () {
-    let parsed: any[];
+    let parsed: ParsedSchemaField[];
     try {
-      parsed = JSON.parse(jsonSchemaText);
-    } catch (error) {
+      parsed = JSON.parse(jsonSchemaText) as ParsedSchemaField[];
+    } catch {
       setJsonError("Invalid JSON format");
       return;
     }
@@ -613,7 +631,7 @@ export default function MockDataGenerator() {
                                   size="sm"
                                   onClick={() => openFieldTypesDialog(field.id)}
                                   aria-label="Choose data type"
-                                  className="flex-shrink-0"
+                                  className="shrink-0"
                                 >
                                   <Settings className="h-4 w-4" />
                                 </Button>
@@ -903,7 +921,7 @@ export default function MockDataGenerator() {
                         try {
                           await navigator.clipboard.writeText(AIPrompt);
                           toast.success("Prompt copied to clipboard!");
-                        } catch (error) {
+                        } catch {
                           toast.error("Failed to copy prompt");
                         }
                       }}

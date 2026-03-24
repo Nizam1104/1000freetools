@@ -592,6 +592,10 @@
 		"description": "A random 40-character lowercase alphanumeric string (SHA1-like)"
 	},
 	{
+		"type": "sha256",
+		"description": "A random 64-character lowercase alphanumeric string (SHA256-like)"
+	},
+	{
 		"type": "slogan",
 		"description": "A randomly generated company slogan"
 	},
