@@ -201,7 +201,7 @@ export default function ExcelToPdfConverter() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Convert Excel to PDF Online for Free</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Convert Excel to PDF Online for Free</h2>
         <p className="text-muted-foreground mt-2">
           Turn your Excel/CSV spreadsheets into professional PDF documents with formatting preserved.
         </p>

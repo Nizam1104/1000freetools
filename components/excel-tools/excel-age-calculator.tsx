@@ -159,7 +159,7 @@ export default function ExcelAgeCalculator() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Calculate Age from Dates in Excel</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Calculate Age from Dates in Excel</h2>
         <p className="text-muted-foreground mt-2">
           Automatically calculate ages from a list of birthdates in your Excel/CSV file.
         </p>

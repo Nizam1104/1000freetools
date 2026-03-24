@@ -148,7 +148,7 @@ export default function AnimatedSvgIconCreator() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Create Animated SVG Icons</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Create Animated SVG Icons</h2>
         <p className="text-muted-foreground mt-2">
           Design engaging animated icons for your website or app with CSS or SMIL animations.
         </p>

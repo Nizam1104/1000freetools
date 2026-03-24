@@ -27,11 +27,6 @@ const yamlTools = [
     href: "/yaml-tools/properties-to-yaml-converter",
   },
   {
-    name: "TOML to YAML Converter",
-    description: "Convert TOML configuration to YAML",
-    href: "/yaml-tools/toml-to-yaml-converter",
-  },
-  {
     name: "XML to YAML Converter",
     description: "Convert XML to YAML format",
     href: "/yaml-tools/xml-to-yaml-converter",
@@ -147,11 +142,6 @@ const yamlTools = [
     href: "/yaml-tools/yaml-to-sql-insert",
   },
   {
-    name: "YAML to TOML Converter",
-    description: "Convert YAML to TOML format",
-    href: "/yaml-tools/yaml-to-toml-converter",
-  },
-  {
     name: "YAML to XML Converter",
     description: "Convert YAML to XML format",
     href: "/yaml-tools/yaml-to-xml-converter",
@@ -169,7 +159,7 @@ const yamlTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free YAML Tools Online - 32 YAML Converter & Editor Tools",
+  title: "Free YAML Tools Online - 31 YAML Converter & Editor Tools",
   description:
     "Free online YAML tools for converting, editing, and validating YAML files. Convert YAML to JSON, XML, CSV and more. All tools run in your browser.",
   openGraph: {
@@ -292,7 +282,7 @@ export default function YamlToolsPage() {
               What These YAML Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 32 free YAML tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste YAML content or upload files, click a button, and get results instantly.
+              This is a collection of 31 free YAML tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste YAML content or upload files, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: converting YAML to other formats (JSON, XML, CSV, TOML, code structures), converting other formats to YAML (JSON, XML, CSV, INI, TOML, Properties), editing and validating YAML (formatter, linter, validator, diff), and transforming YAML data (merge, sort keys, minify).

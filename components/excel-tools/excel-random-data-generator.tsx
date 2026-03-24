@@ -146,7 +146,7 @@ export default function ExcelRandomDataGenerator() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Generate Fake Data for Excel Spreadsheets</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Generate Fake Data for Excel Spreadsheets</h2>
         <p className="text-muted-foreground mt-2">
           Create realistic fake data for testing, demos, or sample spreadsheets.
         </p>

@@ -172,7 +172,7 @@ export default function UuencodeUudecodeTool() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold mb-2">Uuencode/Uudecode Tool</h1>
+        <h2 className="text-2xl font-semibold mb-2">Uuencode/Uudecode Tool</h2>
         <p className="text-sm text-muted-foreground">
           Encode binary data to Uuencode format for email transmission and decode Uuencoded data back to binary.
         </p>

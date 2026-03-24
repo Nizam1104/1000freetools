@@ -11,6 +11,86 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, RefreshCw, Webhook, AlertTriangle, Activity } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function getPollingScript(intervalSeconds: string, endpoint: string, timeout: string, retries: string): string {
+  return `#!/bin/bash
+# API Polling Script (every ${intervalSeconds}s)
+API_URL="${endpoint}"
+TIMEOUT=${timeout}
+MAX_RETRIES=${retries}
+
+for i in $(seq 1 $MAX_RETRIES); do
+  response=$(curl -s -w "\\n%{http_code}" --max-time $TIMEOUT "$API_URL")
+  http_code=$(echo "$response" | tail -n1)
+
+  if [ "$http_code" -eq 200 ]; then
+    echo "Success"
+    exit 0
+  fi
+
+  sleep 5
+done
+
+echo "Failed after $MAX_RETRIES retries"
+exit 1`
+}
+
+function getWebhookRetryScript(endpoint: string, timeout: string): string {
+  return `#!/bin/bash
+# Webhook Retry Script
+WEBHOOK_URL="${endpoint}"
+TIMEOUT=${timeout}
+
+# Get pending webhooks from queue
+webhooks=$(curl -s "http://localhost:3000/webhooks/pending")
+
+echo "$webhooks" | jq -r '.[] | @base64' | while read item; do
+  payload=$(echo "$item" | base64 -d)
+  curl -X POST -H "Content-Type: application/json" \\
+    -d "$payload" --max-time $TIMEOUT "$WEBHOOK_URL"
+done`
+}
+
+function getHealthCheckScript(endpoint: string, timeout: string): string {
+  return `#!/bin/bash
+# Health Check Script
+API_URL="\${endpoint}"
+TIMEOUT=\${timeout}
+
+start=\$(date +%s)
+http_code=\$(curl -s -o /dev/null -w "%{http_code}" --max-time $TIMEOUT "$API_URL")
+end=\$(date +%s)
+latency=\$((end - start))
+
+if [ "$http_code" -eq 200 ]; then
+  echo "OK: API healthy (latency: \${latency}s)"
+  exit 0
+else
+  echo "CRITICAL: API unhealthy (HTTP $http_code)"
+  exit 2
+fi`
+}
+
+function getRateLimitedScript(endpoint: string, timeout: string): string {
+  return `#!/bin/bash
+# Rate-Limited Polling
+API_URL="${endpoint}"
+TIMEOUT=${timeout}
+
+# Check if we should make request
+last_call=$(cat /tmp/last_api_call 2>/dev/null || echo 0)
+now=$(date +%s)
+diff=$((now - last_call))
+
+if [ $diff -lt 3600 ]; then
+  echo "Rate limited: waiting $((3600 - diff))s"
+  exit 0
+fi
+
+# Make request
+curl -s --max-time $TIMEOUT "$API_URL"
+date +%s > /tmp/last_api_call`
+}
+
 export default function CronExpressionApiPolling() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [apiEndpoint, setApiEndpoint] = useState("https://api.example.com/data")
@@ -514,84 +594,4 @@ echo "API poll completed"`,
       </Tabs>
     </div>
   )
-}
-
-function getPollingScript(intervalSeconds: string, endpoint: string, timeout: string, retries: string): string {
-  return `#!/bin/bash
-# API Polling Script (every ${intervalSeconds}s)
-API_URL="${endpoint}"
-TIMEOUT=${timeout}
-MAX_RETRIES=${retries}
-
-for i in $(seq 1 $MAX_RETRIES); do
-  response=$(curl -s -w "\\n%{http_code}" --max-time $TIMEOUT "$API_URL")
-  http_code=$(echo "$response" | tail -n1)
-
-  if [ "$http_code" -eq 200 ]; then
-    echo "Success"
-    exit 0
-  fi
-
-  sleep 5
-done
-
-echo "Failed after $MAX_RETRIES retries"
-exit 1`
-}
-
-function getWebhookRetryScript(endpoint: string, timeout: string): string {
-  return `#!/bin/bash
-# Webhook Retry Script
-WEBHOOK_URL="${endpoint}"
-TIMEOUT=${timeout}
-
-# Get pending webhooks from queue
-webhooks=$(curl -s "http://localhost:3000/webhooks/pending")
-
-echo "$webhooks" | jq -r '.[] | @base64' | while read item; do
-  payload=$(echo "$item" | base64 -d)
-  curl -X POST -H "Content-Type: application/json" \\
-    -d "$payload" --max-time $TIMEOUT "$WEBHOOK_URL"
-done`
-}
-
-function getHealthCheckScript(endpoint: string, timeout: string): string {
-  return `#!/bin/bash
-# Health Check Script
-API_URL="\${endpoint}"
-TIMEOUT=\${timeout}
-
-start=\$(date +%s)
-http_code=\$(curl -s -o /dev/null -w "%{http_code}" --max-time $TIMEOUT "$API_URL")
-end=\$(date +%s)
-latency=\$((end - start))
-
-if [ "$http_code" -eq 200 ]; then
-  echo "OK: API healthy (latency: \${latency}s)"
-  exit 0
-else
-  echo "CRITICAL: API unhealthy (HTTP $http_code)"
-  exit 2
-fi`
-}
-
-function getRateLimitedScript(endpoint: string, timeout: string): string {
-  return `#!/bin/bash
-# Rate-Limited Polling
-API_URL="${endpoint}"
-TIMEOUT=${timeout}
-
-# Check if we should make request
-last_call=$(cat /tmp/last_api_call 2>/dev/null || echo 0)
-now=$(date +%s)
-diff=$((now - last_call))
-
-if [ $diff -lt 3600 ]; then
-  echo "Rate limited: waiting $((3600 - diff))s"
-  exit 0
-fi
-
-# Make request
-curl -s --max-time $TIMEOUT "$API_URL"
-date +%s > /tmp/last_api_call`
 }

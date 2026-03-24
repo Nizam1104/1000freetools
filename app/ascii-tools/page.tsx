@@ -37,21 +37,6 @@ const asciiTools = [
     href: "/ascii-tools/ascii-to-octal-converter",
   },
   {
-    name: "Base64 Encoder/Decoder",
-    description: "Encode text to Base64 or decode Base64 back to text",
-    href: "/ascii-tools/base64-encoder-decoder",
-  },
-  {
-    name: "Binary to Text Converter",
-    description: "Convert binary strings to readable ASCII text",
-    href: "/ascii-tools/binary-to-text-converter",
-  },
-  {
-    name: "Character Counter",
-    description: "Count characters, words, lines, and bytes in text",
-    href: "/ascii-tools/character-counter",
-  },
-  {
     name: "Leet Speak Converter",
     description: "Transform text into leet speak (1337) format",
     href: "/ascii-tools/leet-speak-converter",
@@ -67,19 +52,9 @@ const asciiTools = [
     href: "/ascii-tools/regex-tester",
   },
   {
-    name: "Text to Binary Converter",
-    description: "Convert text to binary representation",
-    href: "/ascii-tools/text-to-binary-converter",
-  },
-  {
     name: "Upside Down Text Generator",
     description: "Flip text upside down using Unicode characters",
     href: "/ascii-tools/upside-down-text-generator",
-  },
-  {
-    name: "URL Encoder/Decoder",
-    description: "Encode text for URLs or decode URL-encoded strings",
-    href: "/ascii-tools/url-encoder-decoder",
   },
   {
     name: "UTF-8 to UTF-16 Converter",
@@ -94,7 +69,7 @@ const asciiTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free ASCII Tools Online - 18 Text Encoding & Conversion Tools",
+  title: "Free ASCII Tools Online - 14 Text Encoding & Conversion Tools",
   description:
     "Free online ASCII tools for text conversion, encoding, and analysis. Convert between ASCII, binary, hex, decimal, Base64, and more. All tools run in your browser.",
   openGraph: {
@@ -219,7 +194,7 @@ export default function AsciiToolsPage() {
               What These ASCII Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 18 free ASCII tools that run entirely in
+              This is a collection of 14 free ASCII tools that run entirely in
               your browser. No uploads, no server processing, no waiting. You
               paste text, click a button, and get results instantly.
             </p>

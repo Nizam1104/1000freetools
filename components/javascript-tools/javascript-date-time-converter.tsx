@@ -122,7 +122,7 @@ export default function JavaScriptDateTimeConverter() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Convert and Format JavaScript Dates & Times</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Convert and Format JavaScript Dates & Times</h2>
         <p className="text-muted-foreground mt-2">
           Work with JavaScript dates, timestamps, and timezones effortlessly.
         </p>

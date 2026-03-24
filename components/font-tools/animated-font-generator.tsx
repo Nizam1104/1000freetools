@@ -132,7 +132,7 @@ ${getAnimationCSS()}
 </style>
 </head>
 <body>
-<h1 class="animated-text">${text}</h1>
+<h1 class="animated-text">${text}</h2>
 </body>
 </html>`
     
@@ -159,7 +159,7 @@ ${getAnimationCSS()}
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Animated Text Creator</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Animated Text Creator</h2>
         <p className="text-muted-foreground mt-2">
           Create animated text with moving, glowing, or gradient effects for social media and websites.
         </p>

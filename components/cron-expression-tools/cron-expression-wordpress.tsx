@@ -11,6 +11,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, Settings, RefreshCw, Package } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function getBackupCommand(wpPath: string): string {
+  return `wp db export /backups/wp-db-$(date +%Y%m%d).sql --path=${wpPath} && \\
+tar -czf /backups/wp-files-$(date +%Y%m%d).tar.gz ${wpPath}/wp-content`
+}
+
+function getAutoUpdateCommand(wpCliPath: string): string {
+  return `${wpCliPath} core update && ${wpCliPath} plugin update --all && ${wpCliPath} theme update --all`
+}
+
 export default function CronExpressionWordpress() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [wpPath, setWpPath] = useState("/var/www/html")
@@ -569,13 +578,4 @@ echo "Security scan completed"`,
       </Tabs>
     </div>
   )
-}
-
-function getBackupCommand(wpPath: string): string {
-  return `wp db export /backups/wp-db-$(date +%Y%m%d).sql --path=${wpPath} && \\
-tar -czf /backups/wp-files-$(date +%Y%m%d).tar.gz ${wpPath}/wp-content`
-}
-
-function getAutoUpdateCommand(wpCliPath: string): string {
-  return `${wpCliPath} core update && ${wpCliPath} plugin update --all && ${wpCliPath} theme update --all`
 }

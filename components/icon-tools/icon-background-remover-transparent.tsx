@@ -69,7 +69,7 @@ export default function IconBackgroundRemover() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Remove Backgrounds from Icons</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Remove Backgrounds from Icons</h2>
         <p className="text-muted-foreground mt-2">
           Automatically remove backgrounds from icon images to create transparent PNGs.
         </p>

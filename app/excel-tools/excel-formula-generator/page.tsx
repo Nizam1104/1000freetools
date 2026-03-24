@@ -23,21 +23,6 @@ const tools = [
     href: `/excel-tools/csv-to-excel-converter`,
   },
   {
-    name: `Excel Duplicate Remover`,
-    description: `Find and Remove Duplicates in Excel Online`,
-    href: `/excel-tools/excel-duplicate-remover`,
-  },
-  {
-    name: `Excel Column Splitter`,
-    description: `Split One Excel Column into Multiple Columns`,
-    href: `/excel-tools/excel-column-splitter`,
-  },
-  {
-    name: `Excel Merge Cells Tool`,
-    description: `Merge or Combine Excel Cells Online`,
-    href: `/excel-tools/excel-merge-cells-tool`,
-  },
-  {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
     href: `/ascii-tools/ascii-to-hex-converter`,

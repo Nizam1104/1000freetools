@@ -136,7 +136,7 @@ export default function Base58EncoderDecoder() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold mb-2">Base58 Encoder/Decoder</h1>
+        <h2 className="text-2xl font-semibold mb-2">Base58 Encoder/Decoder</h2>
         <p className="text-sm text-muted-foreground">
           Encode data to Base58 format (used in Bitcoin addresses) and decode Base58 strings back to original data.
         </p>

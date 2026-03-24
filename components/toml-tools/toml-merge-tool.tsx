@@ -137,7 +137,7 @@ export default function TomlMergeTool() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Merge Multiple TOML Files</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Merge Multiple TOML Files</h2>
         <p className="text-muted-foreground mt-2">
           Combine configurations from two TOML files with conflict resolution options.
         </p>

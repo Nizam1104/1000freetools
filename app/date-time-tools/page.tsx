@@ -92,11 +92,6 @@ const dateTimeTools = [
     href: "/date-time-tools/time-until-calculator",
   },
   {
-    name: "Unix Timestamp Converter",
-    description: "Convert Unix timestamps to readable dates and back",
-    href: "/date-time-tools/unix-timestamp-converter",
-  },
-  {
     name: "Week Number Calculator",
     description: "Find ISO week number for any date",
     href: "/date-time-tools/week-number-calculator",
@@ -104,7 +99,7 @@ const dateTimeTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free Date & Time Tools Online - 19 DateTime Calculators",
+  title: "Free Date & Time Tools Online - 18 DateTime Calculators",
   description:
     "Free online date and time tools for calculations, conversions, and planning. Calculate age, count days, convert timestamps, find day of week. All tools run in your browser.",
   openGraph: {
@@ -227,7 +222,7 @@ export default function DateTimeToolsPage() {
               What These Date & Time Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 19 free date and time tools that run entirely in your browser. No software installation, no subscriptions, no waiting. You pick dates or times, click a button, and get results instantly.
+              This is a collection of 18 free date and time tools that run entirely in your browser. No software installation, no subscriptions, no waiting. You pick dates or times, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: calculating durations and differences (age, business days, time between dates), adding and subtracting time (days, hours, seconds), converting between formats (Unix timestamp, military time, seconds), and finding date information (day of week, week number, leap year, sunrise/sunset).

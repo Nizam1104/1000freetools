@@ -28,16 +28,8 @@ const tools = [
     description: `Generate Excel Formulas from Plain English`,
     href: `/excel-tools/excel-formula-generator`,
   },
-  {
-    name: `Excel Duplicate Remover`,
-    description: `Find and Remove Duplicates in Excel Online`,
-    href: `/excel-tools/excel-duplicate-remover`,
-  },
-  {
-    name: `Excel Column Splitter`,
-    description: `Split One Excel Column into Multiple Columns`,
-    href: `/excel-tools/excel-column-splitter`,
-  },
+
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,

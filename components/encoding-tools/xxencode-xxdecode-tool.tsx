@@ -143,7 +143,7 @@ export default function XxencodeXxdecodeTool() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold mb-2">XXencode/XXdecode Tool</h1>
+        <h2 className="text-2xl font-semibold mb-2">XXencode/XXdecode Tool</h2>
         <p className="text-sm text-muted-foreground">
           Encode binary data to XXencode format and decode XXencoded data. An alternative to Uuencode with a different character set.
         </p>

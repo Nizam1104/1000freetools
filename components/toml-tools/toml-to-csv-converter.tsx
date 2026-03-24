@@ -134,7 +134,7 @@ export default function TomlToCsvConverter() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Convert TOML Arrays to CSV</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Convert TOML Arrays to CSV</h2>
         <p className="text-muted-foreground mt-2">
           Export TOML array-of-tables data to CSV for use in spreadsheets or data analysis.
         </p>

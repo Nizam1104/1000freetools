@@ -146,7 +146,7 @@ export default function ExcelCompareTwoSheets() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Compare Two Excel Files and Find Differences</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Compare Two Excel Files and Find Differences</h2>
         <p className="text-muted-foreground mt-2">
           Upload two CSV/Excel files to find added, removed, and modified rows.
         </p>

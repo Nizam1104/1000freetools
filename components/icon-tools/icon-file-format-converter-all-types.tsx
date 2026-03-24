@@ -65,7 +65,7 @@ export default function IconFileFormatConverter() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Convert Icon Files Between Formats</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Convert Icon Files Between Formats</h2>
         <p className="text-muted-foreground mt-2">
           Convert between ICO, PNG, JPEG, SVG, BMP, TIFF, WEBP, and more icon formats.
         </p>

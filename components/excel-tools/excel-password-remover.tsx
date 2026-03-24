@@ -87,7 +87,7 @@ export default function ExcelPasswordRemover() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Unlock Password Protected Excel Files</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Unlock Password Protected Excel Files</h2>
         <p className="text-muted-foreground mt-2">
           Remove sheet protection from Excel files. Note: This tool cannot crack open-passwords for encrypted files.
         </p>

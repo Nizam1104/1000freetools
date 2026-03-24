@@ -164,7 +164,7 @@ if (false) { var _0x_unused = Math.random() * 100; }
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Obfuscate JavaScript Code for Protection</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Obfuscate JavaScript Code for Protection</h2>
         <p className="text-muted-foreground mt-2">
           Protect your JavaScript source code from theft and reverse engineering with advanced obfuscation.
         </p>

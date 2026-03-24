@@ -11,6 +11,19 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, Shield, Lock, AlertTriangle, CalendarDays } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function getExpiryCheckCommand(domain: string): string {
+  return `echo | openssl s_client -servername ${domain} -connect ${domain}:443 2>/dev/null | openssl x509 -noout -enddate`
+}
+
+function getPreExpiryAlertCommand(domain: string, email: string, days: number): string {
+  return `#!/bin/bash
+expiry=$(echo | openssl s_client -servername ${domain} -connect ${domain}:443 2>/dev/null | openssl x509 -noout -enddate)
+days_left=$(( ($(date -d "$(echo $expiry | cut -d= -f2)" +%s) - $(date +%s)) / 86400 ))
+if [ $days_left -lt ${days} ]; then
+  echo "SSL expires in $days_left days" | mail -s "SSL Alert: ${domain}" ${email}
+fi`
+}
+
 export default function CronExpressionSslRenewal() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [domain, setDomain] = useState("example.com")
@@ -497,17 +510,4 @@ done`,
       </Tabs>
     </div>
   )
-}
-
-function getExpiryCheckCommand(domain: string): string {
-  return `echo | openssl s_client -servername ${domain} -connect ${domain}:443 2>/dev/null | openssl x509 -noout -enddate`
-}
-
-function getPreExpiryAlertCommand(domain: string, email: string, days: number): string {
-  return `#!/bin/bash
-expiry=$(echo | openssl s_client -servername ${domain} -connect ${domain}:443 2>/dev/null | openssl x509 -noout -enddate)
-days_left=$(( ($(date -d "$(echo $expiry | cut -d= -f2)" +%s) - $(date +%s)) / 86400 ))
-if [ $days_left -lt ${days} ]; then
-  echo "SSL expires in $days_left days" | mail -s "SSL Alert: ${domain}" ${email}
-fi`
 }

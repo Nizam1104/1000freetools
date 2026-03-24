@@ -82,11 +82,6 @@ const statisticsTools = [
     href: "/statistics-tools/probability-calculator",
   },
   {
-    name: "Random Number Generator",
-    description: "Generate random numbers with various distributions",
-    href: "/statistics-tools/random-number-generator",
-  },
-  {
     name: "Sample Size Calculator (Surveys)",
     description: "Calculate required sample size for surveys",
     href: "/statistics-tools/sample-size-calculator-surveys",
@@ -114,7 +109,7 @@ const statisticsTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free Statistics Tools Online - 21 Statistical Calculators",
+  title: "Free Statistics Tools Online - 20 Statistical Calculators",
   description:
     "Free online statistics tools for calculating descriptive stats, hypothesis tests, distributions, and regression. A/B test calculator, t-test, ANOVA, chi-square. All tools run in your browser.",
   openGraph: {
@@ -237,7 +232,7 @@ export default function StatisticsToolsPage() {
               What These Statistics Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 21 free statistics tools that run entirely in your browser. No software installation, no server uploads, no waiting. You enter data, select a test or calculation, and get results instantly.
+              This is a collection of 20 free statistics tools that run entirely in your browser. No software installation, no server uploads, no waiting. You enter data, select a test or calculation, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: calculating descriptive statistics (mean, median, standard deviation, variance), performing hypothesis tests (t-tests, ANOVA, chi-square, A/B tests), working with probability distributions (normal, binomial, Z-scores), and creating statistical visualizations (histograms, box plots).

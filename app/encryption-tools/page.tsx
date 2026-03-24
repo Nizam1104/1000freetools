@@ -22,11 +22,6 @@ const encryptionTools = [
     href: "/encryption-tools/crypto-address-validator",
   },
   {
-    name: "Diffie-Hellman Simulator",
-    description: "Simulate Diffie-Hellman key exchange",
-    href: "/encryption-tools/diffie-hellman-simulator",
-  },
-  {
     name: "File Checksum Verifier",
     description: "Verify file integrity using checksums",
     href: "/encryption-tools/file-checksum-verifier",
@@ -37,19 +32,9 @@ const encryptionTools = [
     href: "/encryption-tools/gpg-simulator",
   },
   {
-    name: "JWT Decoder",
-    description: "Decode JSON Web Tokens into readable format",
-    href: "/encryption-tools/jwt-decoder",
-  },
-  {
     name: "One-Time Pad",
     description: "Encrypt/decrypt using one-time pad cipher",
     href: "/encryption-tools/one-time-pad",
-  },
-  {
-    name: "Password Hash Generator",
-    description: "Generate secure password hashes",
-    href: "/encryption-tools/password-hash-generator",
   },
   {
     name: "PGP Encryption",
@@ -67,11 +52,6 @@ const encryptionTools = [
     href: "/encryption-tools/ssl-certificate-decoder",
   },
   {
-    name: "Steganography Tool",
-    description: "Hide messages inside images",
-    href: "/encryption-tools/steganography-tool",
-  },
-  {
     name: "Text Binary Encryptor",
     description: "Encrypt text to binary and decrypt back",
     href: "/encryption-tools/text-binary-encryptor",
@@ -79,7 +59,7 @@ const encryptionTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free Encryption Tools Online - 14 Encryption & Cryptography Tools",
+  title: "Free Encryption Tools Online - 10 Encryption & Cryptography Tools",
   description:
     "Free online encryption tools for encrypting, decrypting, and cryptographic operations. AES, RSA, PGP, Caesar cipher, password hashes. All tools run in your browser.",
   openGraph: {
@@ -202,7 +182,7 @@ export default function EncryptionToolsPage() {
               What These Encryption Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 14 free encryption tools that run entirely in your browser. No software installation, no server uploads. You enter data, choose encryption method, and get results instantly.
+              This is a collection of 10 free encryption tools that run entirely in your browser. No software installation, no server uploads. You enter data, choose encryption method, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: encrypting and decrypting data (AES, PGP, one-time pad), learning cryptography concepts (Caesar cipher, Diffie-Hellman), generating cryptographic keys (RSA key pairs, password hashes), and verifying security artifacts (SSL certificates, crypto addresses, file checksums).

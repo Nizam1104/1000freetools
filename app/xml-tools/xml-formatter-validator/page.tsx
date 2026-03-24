@@ -17,11 +17,7 @@ const tools = [
     description: `Convert XML to JSON Online`,
     href: `/xml-tools/xml-to-json-converter`,
   },
-  {
-    name: `JSON to XML Converter`,
-    description: `Convert JSON to XML in Seconds`,
-    href: `/xml-tools/json-to-xml-converter`,
-  },
+
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,

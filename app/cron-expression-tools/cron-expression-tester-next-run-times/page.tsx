@@ -33,11 +33,7 @@ const tools = [
     description: `English to CRON Expression Converter`,
     href: `/cron-expression-tools/english-to-cron-converter`,
   },
-  {
-    name: `CRON Expression Editor with GUI`,
-    description: `CRON Expression Editor (GUI)`,
-    href: `/cron-expression-tools/cron-expression-editor-gui`,
-  },
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,

@@ -7,11 +7,6 @@ import { Type, ArrowRight } from "lucide-react";
 
 const stringTools = [
   {
-    name: "Base64 Encode/Decode",
-    description: "Encode text to Base64 or decode Base64 to text",
-    href: "/string-tools/base64-encode-decode",
-  },
-  {
     name: "String Reverse",
     description: "Reverse any string or text",
     href: "/string-tools/string-reverse",
@@ -34,7 +29,7 @@ const stringTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free String Tools Online - 5 Text Manipulation Tools",
+  title: "Free String Tools Online - 4 Text Manipulation Tools",
   description:
     "Free online string tools for text manipulation. Reverse text, convert case, count words, Base64 encode/decode. All tools run in your browser.",
   openGraph: {
@@ -152,7 +147,7 @@ export default function StringToolsPage() {
               What These String Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 5 free string tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste text, click a button, and get results instantly.
+              This is a collection of 4 free string tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste text, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               These tools handle common text manipulation tasks: transforming text (reverse, case conversion), encoding/decoding (Base64), comparing texts (diff checker), and analyzing text (word and character counting).

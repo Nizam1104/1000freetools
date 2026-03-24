@@ -76,7 +76,7 @@ body {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Create a Font from Your Handwriting</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Create a Font from Your Handwriting</h2>
         <p className="text-muted-foreground mt-2">
           Turn your handwriting into a usable TrueType font file. Draw each character to create your personal font.
         </p>

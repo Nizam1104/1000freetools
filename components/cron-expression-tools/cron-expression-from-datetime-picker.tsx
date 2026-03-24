@@ -11,6 +11,44 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, Calendar as CalendarIcon, Clock, CalendarDays, Repeat } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function formatTime(hour: number, minute: number): string {
+  const ampm = hour >= 12 ? "PM" : "AM"
+  const displayHour = hour % 12 || 12
+  return `${displayHour}:${minute.toString().padStart(2, "0")} ${ampm}`
+}
+
+function getDaySuffix(day: number): string {
+  if (day >= 11 && day <= 13) return "th"
+  switch (day % 10) {
+    case 1: return "st"
+    case 2: return "nd"
+    case 3: return "rd"
+    default: return "th"
+  }
+}
+
+function generateNextRuns(cron: string, count: number): Date[] {
+  const runs: Date[] = []
+  const now = new Date()
+  const parts = cron.split(" ")
+  const minute = parseInt(parts[0])
+  const hour = parseInt(parts[1])
+
+  let current = new Date(now)
+  current.setMinutes(minute, 0, 0)
+  if (current <= now) {
+    current.setDate(current.getDate() + 1)
+  }
+  current.setHours(hour)
+
+  for (let i = 0; i < count; i++) {
+    runs.push(new Date(current))
+    current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
+  }
+
+  return runs
+}
+
 export default function CronExpressionFromDateTimePicker() {
   const [mode, setMode] = useState<"recurring" | "onetime">("recurring")
   const [selectedDate, setSelectedDate] = useState(() => {
@@ -469,42 +507,4 @@ export default function CronExpressionFromDateTimePicker() {
       </Tabs>
     </div>
   )
-}
-
-function formatTime(hour: number, minute: number): string {
-  const ampm = hour >= 12 ? "PM" : "AM"
-  const displayHour = hour % 12 || 12
-  return `${displayHour}:${minute.toString().padStart(2, "0")} ${ampm}`
-}
-
-function getDaySuffix(day: number): string {
-  if (day >= 11 && day <= 13) return "th"
-  switch (day % 10) {
-    case 1: return "st"
-    case 2: return "nd"
-    case 3: return "rd"
-    default: return "th"
-  }
-}
-
-function generateNextRuns(cron: string, count: number): Date[] {
-  const runs: Date[] = []
-  const now = new Date()
-  const parts = cron.split(" ")
-  const minute = parseInt(parts[0])
-  const hour = parseInt(parts[1])
-
-  let current = new Date(now)
-  current.setMinutes(minute, 0, 0)
-  if (current <= now) {
-    current.setDate(current.getDate() + 1)
-  }
-  current.setHours(hour)
-
-  for (let i = 0; i < count; i++) {
-    runs.push(new Date(current))
-    current = new Date(current.getTime() + 24 * 60 * 60 * 1000)
-  }
-
-  return runs
 }

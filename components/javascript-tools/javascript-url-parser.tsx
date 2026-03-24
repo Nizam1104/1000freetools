@@ -101,7 +101,7 @@ export default function JavaScriptUrlParser() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Parse URLs and Build Query Strings</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Parse URLs and Build Query Strings</h2>
         <p className="text-muted-foreground mt-2">
           Deconstruct any URL into its components or build a new one from scratch with query parameters.
         </p>

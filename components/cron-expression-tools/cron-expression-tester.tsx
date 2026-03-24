@@ -11,6 +11,84 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, Clock, Calendar, AlertCircle, CheckCircle2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function calculateNextRuns(expression: string, startDate: string, count: number, includeSeconds: boolean): Date[] {
+  const runs: Date[] = []
+  const start = new Date(startDate)
+  start.setHours(0, 0, 0, 0)
+
+  const parts = expression.trim().split(/\s+/)
+  const fieldIndex = includeSeconds ? 1 : 0
+
+  // Parse fields
+  const minutes = parseField(parts[fieldIndex], 0, 59)
+  const hours = parseField(parts[fieldIndex + 1], 0, 23)
+  const daysOfMonth = parseField(parts[fieldIndex + 2], 1, 31)
+  const months = parseField(parts[fieldIndex + 3], 1, 12)
+  const daysOfWeek = parseField(parts[fieldIndex + 4], 0, 6)
+
+  const isEveryMinute = parts[fieldIndex] === "*"
+  const isEveryHour = parts[fieldIndex + 1] === "*"
+  const isEveryDay = parts[fieldIndex + 2] === "*" && parts[fieldIndex + 4] === "*"
+
+  let current = new Date(start)
+  current.setHours(hours[0] || 0, minutes[0] || 0, includeSeconds ? 0 : 0, 0)
+
+  // Simple simulation for demonstration
+  const maxIterations = count * 100
+  let iterations = 0
+
+  while (runs.length < count && iterations < maxIterations) {
+    iterations++
+
+    // Check if current time matches the cron expression
+    if (months.includes(current.getMonth() + 1) &&
+        daysOfMonth.includes(current.getDate()) &&
+        daysOfWeek.includes(current.getDay()) &&
+        hours.includes(current.getHours()) &&
+        minutes.includes(current.getMinutes())) {
+      runs.push(new Date(current))
+    }
+
+    // Increment time
+    if (isEveryMinute) {
+      current = new Date(current.getTime() + 60 * 1000)
+    } else if (isEveryHour) {
+      current = new Date(current.getTime() + 60 * 60 * 1000)
+    } else {
+      current = new Date(current.getTime() + 15 * 60 * 1000) // 15 min increments
+    }
+  }
+
+  return runs.slice(0, count)
+}
+
+function parseField(field: string, min: number, max: number): number[] {
+  if (field === "*") {
+    return Array.from({ length: max - min + 1 }, (_, i) => i + min)
+  }
+
+  if (field.includes("/")) {
+    const [base, step] = field.split("/")
+    const stepNum = parseInt(step)
+    if (base === "*") {
+      return Array.from({ length: Math.floor((max - min) / stepNum) + 1 }, (_, i) => min + i * stepNum)
+    }
+    const baseValues = parseField(base, min, max)
+    return baseValues.filter((_, i) => i % stepNum === 0)
+  }
+
+  if (field.includes("-")) {
+    const [start, end] = field.split("-").map(Number)
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+  }
+
+  if (field.includes(",")) {
+    return field.split(",").map(Number)
+  }
+
+  return [parseInt(field)]
+}
+
 export default function CronExpressionTester() {
   const [cronExpression, setCronExpression] = useState("0 9 * * 1-5")
   const [startDate, setStartDate] = useState(() => {
@@ -270,82 +348,4 @@ export default function CronExpressionTester() {
       </Card>
     </div>
   )
-}
-
-function calculateNextRuns(expression: string, startDate: string, count: number, includeSeconds: boolean): Date[] {
-  const runs: Date[] = []
-  const start = new Date(startDate)
-  start.setHours(0, 0, 0, 0)
-
-  const parts = expression.trim().split(/\s+/)
-  const fieldIndex = includeSeconds ? 1 : 0
-
-  // Parse fields
-  const minutes = parseField(parts[fieldIndex], 0, 59)
-  const hours = parseField(parts[fieldIndex + 1], 0, 23)
-  const daysOfMonth = parseField(parts[fieldIndex + 2], 1, 31)
-  const months = parseField(parts[fieldIndex + 3], 1, 12)
-  const daysOfWeek = parseField(parts[fieldIndex + 4], 0, 6)
-
-  const isEveryMinute = parts[fieldIndex] === "*"
-  const isEveryHour = parts[fieldIndex + 1] === "*"
-  const isEveryDay = parts[fieldIndex + 2] === "*" && parts[fieldIndex + 4] === "*"
-
-  let current = new Date(start)
-  current.setHours(hours[0] || 0, minutes[0] || 0, includeSeconds ? 0 : 0, 0)
-
-  // Simple simulation for demonstration
-  const maxIterations = count * 100
-  let iterations = 0
-
-  while (runs.length < count && iterations < maxIterations) {
-    iterations++
-
-    // Check if current time matches the cron expression
-    if (months.includes(current.getMonth() + 1) &&
-        daysOfMonth.includes(current.getDate()) &&
-        daysOfWeek.includes(current.getDay()) &&
-        hours.includes(current.getHours()) &&
-        minutes.includes(current.getMinutes())) {
-      runs.push(new Date(current))
-    }
-
-    // Increment time
-    if (isEveryMinute) {
-      current = new Date(current.getTime() + 60 * 1000)
-    } else if (isEveryHour) {
-      current = new Date(current.getTime() + 60 * 60 * 1000)
-    } else {
-      current = new Date(current.getTime() + 15 * 60 * 1000) // 15 min increments
-    }
-  }
-
-  return runs.slice(0, count)
-}
-
-function parseField(field: string, min: number, max: number): number[] {
-  if (field === "*") {
-    return Array.from({ length: max - min + 1 }, (_, i) => i + min)
-  }
-
-  if (field.includes("/")) {
-    const [base, step] = field.split("/")
-    const stepNum = parseInt(step)
-    if (base === "*") {
-      return Array.from({ length: Math.floor((max - min) / stepNum) + 1 }, (_, i) => min + i * stepNum)
-    }
-    const baseValues = parseField(base, min, max)
-    return baseValues.filter((_, i) => i % stepNum === 0)
-  }
-
-  if (field.includes("-")) {
-    const [start, end] = field.split("-").map(Number)
-    return Array.from({ length: end - start + 1 }, (_, i) => start + i)
-  }
-
-  if (field.includes(",")) {
-    return field.split(",").map(Number)
-  }
-
-  return [parseInt(field)]
 }

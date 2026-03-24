@@ -100,7 +100,7 @@ export default function TomlToXmlConverter() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Convert TOML to XML Format</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Convert TOML to XML Format</h2>
         <p className="text-muted-foreground mt-2">
           Transform TOML configurations to well-formed XML with customizable root element.
         </p>

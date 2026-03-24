@@ -164,7 +164,7 @@ export default function ExcelConditionalFormattingTool() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Apply Conditional Formatting to Excel Online</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Apply Conditional Formatting to Excel Online</h2>
         <p className="text-muted-foreground mt-2">
           Highlight cells based on values, duplicates, or top/bottom rules.
         </p>

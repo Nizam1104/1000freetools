@@ -11,6 +11,59 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, Activity, AlertTriangle, Eye, Server } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function getMonitoringScript(interval: string, endpoint: string, email: string): string {
+  return String.raw`#!/bin/bash
+# Health Check (every \${interval}s)
+ENDPOINT="${endpoint}"
+curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$ENDPOINT" | grep -q "200" || \\
+  echo "Alert: $ENDPOINT is down" | mail -s "Service Alert" \${email}`
+}
+
+function getDiskCheckScript(): string {
+  return `#!/bin/bash
+THRESHOLD=85
+df -h | awk 'NR>1 && int($5) >= '$THRESHOLD' {print "Disk alert: " $6 " is " $5 " full"}'`
+}
+
+function getMemoryCheckScript(): string {
+  return String.raw`#!/bin/bash
+THRESHOLD=90
+usage=$(free | awk '/Mem:/ {printf("%.0f", $3/$2*100)}')
+[ "$usage" -ge "$THRESHOLD" ] && echo "Memory alert: \${usage}% used"`
+}
+
+function getCpuCheckScript(): string {
+  return `#!/bin/bash
+THRESHOLD=80
+load=$(uptime | awk -F'load average:' '{print $2}' | cut -d',' -f1 | tr -d ' ')
+echo "CPU Load: $load"`
+}
+
+function getServiceCheckScript(service: string): string {
+  return String.raw`#!/bin/bash
+systemctl is-active --quiet \${service} || echo "Service alert: \${service} is down"`
+}
+
+function getDatabaseCheckScript(): string {
+  return `#!/bin/bash
+mysqladmin ping -h localhost --silent || echo "Database alert: MySQL is down"`
+}
+
+function getSslCheckScript(domain: string): string {
+  return `#!/bin/bash
+DOMAIN="${domain}"
+expiry=$(echo | openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null | openssl x509 -noout -enddate)
+days_left=$(( ($(date -d "$(echo $expiry | cut -d= -f2)" +%s) - $(date +%s)) / 86400 ))
+[ $days_left -lt 30 ] && echo "SSL alert: Certificate expires in $days_left days"`
+}
+
+function getLogErrorCheckScript(): string {
+  return `#!/bin/bash
+LOG_FILE="/var/log/app/error.log"
+errors=$(grep -c "ERROR\\|CRITICAL" $LOG_FILE 2>/dev/null || echo 0)
+[ "$errors" -gt 10 ] && echo "Error spike: $errors errors found"`
+}
+
 export default function CronExpressionMonitoring() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [checkEndpoint, setCheckEndpoint] = useState("https://api.example.com/health")
@@ -586,57 +639,4 @@ send_pagerduty() {
       </Tabs>
     </div>
   )
-}
-
-function getMonitoringScript(interval: string, endpoint: string, email: string): string {
-  return String.raw`#!/bin/bash
-# Health Check (every \${interval}s)
-ENDPOINT="${endpoint}"
-curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$ENDPOINT" | grep -q "200" || \\
-  echo "Alert: $ENDPOINT is down" | mail -s "Service Alert" \${email}`
-}
-
-function getDiskCheckScript(): string {
-  return `#!/bin/bash
-THRESHOLD=85
-df -h | awk 'NR>1 && int($5) >= '$THRESHOLD' {print "Disk alert: " $6 " is " $5 " full"}'`
-}
-
-function getMemoryCheckScript(): string {
-  return String.raw`#!/bin/bash
-THRESHOLD=90
-usage=$(free | awk '/Mem:/ {printf("%.0f", $3/$2*100)}')
-[ "$usage" -ge "$THRESHOLD" ] && echo "Memory alert: \${usage}% used"`
-}
-
-function getCpuCheckScript(): string {
-  return `#!/bin/bash
-THRESHOLD=80
-load=$(uptime | awk -F'load average:' '{print $2}' | cut -d',' -f1 | tr -d ' ')
-echo "CPU Load: $load"`
-}
-
-function getServiceCheckScript(service: string): string {
-  return String.raw`#!/bin/bash
-systemctl is-active --quiet \${service} || echo "Service alert: \${service} is down"`
-}
-
-function getDatabaseCheckScript(): string {
-  return `#!/bin/bash
-mysqladmin ping -h localhost --silent || echo "Database alert: MySQL is down"`
-}
-
-function getSslCheckScript(domain: string): string {
-  return `#!/bin/bash
-DOMAIN="${domain}"
-expiry=$(echo | openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null | openssl x509 -noout -enddate)
-days_left=$(( ($(date -d "$(echo $expiry | cut -d= -f2)" +%s) - $(date +%s)) / 86400 ))
-[ $days_left -lt 30 ] && echo "SSL alert: Certificate expires in $days_left days"`
-}
-
-function getLogErrorCheckScript(): string {
-  return `#!/bin/bash
-LOG_FILE="/var/log/app/error.log"
-errors=$(grep -c "ERROR\\|CRITICAL" $LOG_FILE 2>/dev/null || echo 0)
-[ "$errors" -gt 10 ] && echo "Error spike: $errors errors found"`
 }

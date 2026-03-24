@@ -32,11 +32,7 @@ const tools = [
     description: `CRON Expression Tester - See Next Run Times`,
     href: `/cron-expression-tools/cron-expression-tester-next-run-times`,
   },
-  {
-    name: `CRON Expression Editor with GUI`,
-    description: `CRON Expression Editor (GUI)`,
-    href: `/cron-expression-tools/cron-expression-editor-gui`,
-  },
+
   {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,

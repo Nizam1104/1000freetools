@@ -100,7 +100,7 @@ const IconFontGeneratorFromSvg: React.FC = () => {
   </style>
 </head>
 <body>
-  <h1>${fontName}</h1>
+  <h1>${fontName}</h2>
   <div class="grid">
 `;
 

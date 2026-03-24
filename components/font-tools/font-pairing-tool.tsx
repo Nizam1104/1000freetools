@@ -79,7 +79,7 @@ body, p, span, div {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Font Pairing Generator</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Font Pairing Generator</h2>
         <p className="text-muted-foreground mt-2">
           Discover perfect font combinations for your designs. Test and preview pairings in real-time.
         </p>
@@ -184,7 +184,7 @@ body, p, span, div {
                   onChange={(e) => setSampleHeading(e.target.value)}
                   className="text-muted-foreground"
                 />
-                <h1
+                <h2
                   style={{
                     fontFamily: headingFont,
                     fontSize: `${headingSize}px`,
@@ -192,7 +192,7 @@ body, p, span, div {
                   className="font-bold"
                 >
                   {sampleHeading}
-                </h1>
+                </h2>
               </div>
 
               <div className="space-y-2">

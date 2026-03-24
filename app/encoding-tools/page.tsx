@@ -92,16 +92,6 @@ const encodingTools = [
     href: "/encoding-tools/hex-encoder-decoder",
   },
   {
-    name: "HTML Entity Encoder/Decoder",
-    description: "Encode/decode HTML entities like &amp; &lt; &gt;",
-    href: "/encoding-tools/html-entity-encoder-decoder",
-  },
-  {
-    name: "JWT Decoder",
-    description: "Decode JSON Web Tokens into readable format",
-    href: "/encoding-tools/jwt-decoder",
-  },
-  {
     name: "Manchester Code Encoder/Decoder",
     description: "Encode/decode Manchester encoding for data transmission",
     href: "/encoding-tools/manchester-code-encoder-decoder",
@@ -132,19 +122,9 @@ const encodingTools = [
     href: "/encoding-tools/rot13-cipher-encoder-decoder",
   },
   {
-    name: "SHA256 Hash Generator",
-    description: "Generate SHA256 hash from text input",
-    href: "/encoding-tools/sha256-hash-generator",
-  },
-  {
     name: "Unicode Character Encoder/Decoder",
     description: "Encode/decode Unicode character representations",
     href: "/encoding-tools/unicode-character-encoder-decoder",
-  },
-  {
-    name: "URL Slug Generator",
-    description: "Create SEO-friendly URL slugs from text",
-    href: "/encoding-tools/url-slug-generator",
   },
   {
     name: "UTF-16 Encoder/Decoder",
@@ -179,7 +159,7 @@ const encodingTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free Encoding Tools Online - 34 Data Encoding & Decoding Tools",
+  title: "Free Encoding Tools Online - 30 Data Encoding & Decoding Tools",
   description:
     "Free online encoding tools for converting, encoding, and decoding data. Base64, URL encoding, HTML entities, Unicode, hashes, and more. All tools run in your browser.",
   openGraph: {
@@ -302,7 +282,7 @@ export default function EncodingToolsPage() {
               What These Encoding Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 34 free encoding tools that run entirely in your browser. No software installation, no server uploads, no waiting. You enter data, select an encoding format, and get results instantly.
+              This is a collection of 30 free encoding tools that run entirely in your browser. No software installation, no server uploads, no waiting. You enter data, select an encoding format, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: encoding text to various formats (Base64, hex, binary, URL encoding), decoding encoded data back to readable text, converting between character encodings (UTF-8, UTF-16, ASCII, EBCDIC), and generating checksums or hashes (SHA256).

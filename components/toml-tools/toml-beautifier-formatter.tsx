@@ -122,7 +122,7 @@ export default function TomlBeautifierFormatter() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Beautify and Format TOML Code</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Beautify and Format TOML Code</h2>
         <p className="text-muted-foreground mt-2">
           Format messy TOML with consistent indentation and spacing, or minify for production.
         </p>

@@ -11,6 +11,98 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, Database, RefreshCw, ArrowRightLeft, Server } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function getEtlScript(source: string, target: string, batch: string): string {
+  return `#!/bin/bash
+# ETL Pipeline
+SOURCE="${source}"
+TARGET="${target}"
+BATCH_SIZE=${batch}
+
+# Extract, Transform, Load
+psql -d $SOURCE -c "COPY data TO STDOUT" | psql -d $TARGET -c "COPY staging FROM STDIN"`
+}
+
+function getSyncScript(source: string, target: string, frequency: string): string {
+  return `#!/bin/bash
+# Data Sync (${frequency})
+SOURCE="${source}"
+TARGET="${target}"
+
+psql -d $SOURCE -c "COPY updated_data TO STDOUT" | psql -d $TARGET -c "COPY staging FROM STDIN ON CONFLICT DO UPDATE"`
+}
+
+function getIncrementalScript(source: string, target: string, batch: string): string {
+  return `#!/bin/bash
+# Incremental Load
+SOURCE="${source}"
+TARGET="${target}"
+BATCH_SIZE=${batch}
+
+last_sync=$(psql -d $TARGET -t -c "SELECT MAX(updated_at) FROM sync_log")
+psql -d $SOURCE -c "COPY (SELECT * FROM data WHERE updated_at > '$last_sync' LIMIT $BATCH) TO STDOUT" | \\
+  psql -d $TARGET -c "COPY staging FROM STDIN"`
+}
+
+function getFullLoadScript(source: string, target: string): string {
+  return `#!/bin/bash
+# Full Data Load
+SOURCE="${source}"
+TARGET="${target}"
+
+psql -d $TARGET -c "TRUNCATE data CASCADE"
+psql -d $SOURCE -c "COPY data TO STDOUT" | psql -d $TARGET -c "COPY data FROM STDIN"`
+}
+
+function getCdcScript(source: string, target: string): string {
+  return `#!/bin/bash
+# CDC Processing
+SOURCE="${source}"
+TARGET="${target}"
+
+psql -d $SOURCE -c "SELECT * FROM pg_logical_slot_get_changes('cdc_slot', NULL, NULL)" | \\
+  python3 /opt/etl/cdc_processor.py --target $TARGET`
+}
+
+function getDataQualityScript(target: string): string {
+  return `#!/bin/bash
+# Data Quality Check
+TARGET="${target}"
+
+# Row count validation
+expected=$(psql -d source -t -c "SELECT COUNT(*) FROM data")
+actual=$(psql -d $TARGET -t -c "SELECT COUNT(*) FROM data")
+[ "$expected" != "$actual" ] && exit 1
+
+# Null check
+nulls=$(psql -d $TARGET -t -c "SELECT COUNT(*) FROM data WHERE critical_col IS NULL")
+[ "$nulls" -gt 0 ] && exit 1`
+}
+
+function getPartitionScript(target: string): string {
+  return `#!/bin/bash
+# Partition Maintenance
+TARGET="\${target}"
+
+# Create next month's partition
+next_month=\$(date -d "next month" +%Y%m)
+psql -d \$TARGET -c "CREATE TABLE IF NOT EXISTS data_\\\${next_month} PARTITION OF data FOR VALUES FROM ('\\\${next_month}-01') TO ('\\\${next_month}-01' + INTERVAL '1 month')"
+
+# Drop old partitions
+old_month=\$(date -d "12 months ago" +%Y%m)
+psql -d \$TARGET -c "DROP TABLE IF EXISTS data_\\\${old_month}"`
+}
+
+function getArchiveScript(target: string): string {
+  return `#!/bin/bash
+# Archive Old Data
+TARGET="${target}"
+
+# Move old data to archive
+psql -d $TARGET -c \\
+  "INSERT INTO archive.data SELECT * FROM data WHERE created_at < NOW() - INTERVAL '1 year'"
+psql -d $TARGET -c "DELETE FROM data WHERE created_at < NOW() - INTERVAL '1 year'"`
+}
+
 export default function CronExpressionDataSync() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [sourceDb, setSourceDb] = useState("production_db")
@@ -527,96 +619,4 @@ echo "Partition maintenance completed"`,
       </Tabs>
     </div>
   )
-}
-
-function getEtlScript(source: string, target: string, batch: string): string {
-  return `#!/bin/bash
-# ETL Pipeline
-SOURCE="${source}"
-TARGET="${target}"
-BATCH_SIZE=${batch}
-
-# Extract, Transform, Load
-psql -d $SOURCE -c "COPY data TO STDOUT" | psql -d $TARGET -c "COPY staging FROM STDIN"`
-}
-
-function getSyncScript(source: string, target: string, frequency: string): string {
-  return `#!/bin/bash
-# Data Sync (${frequency})
-SOURCE="${source}"
-TARGET="${target}"
-
-psql -d $SOURCE -c "COPY updated_data TO STDOUT" | psql -d $TARGET -c "COPY staging FROM STDIN ON CONFLICT DO UPDATE"`
-}
-
-function getIncrementalScript(source: string, target: string, batch: string): string {
-  return `#!/bin/bash
-# Incremental Load
-SOURCE="${source}"
-TARGET="${target}"
-BATCH_SIZE=${batch}
-
-last_sync=$(psql -d $TARGET -t -c "SELECT MAX(updated_at) FROM sync_log")
-psql -d $SOURCE -c "COPY (SELECT * FROM data WHERE updated_at > '$last_sync' LIMIT $BATCH) TO STDOUT" | \\
-  psql -d $TARGET -c "COPY staging FROM STDIN"`
-}
-
-function getFullLoadScript(source: string, target: string): string {
-  return `#!/bin/bash
-# Full Data Load
-SOURCE="${source}"
-TARGET="${target}"
-
-psql -d $TARGET -c "TRUNCATE data CASCADE"
-psql -d $SOURCE -c "COPY data TO STDOUT" | psql -d $TARGET -c "COPY data FROM STDIN"`
-}
-
-function getCdcScript(source: string, target: string): string {
-  return `#!/bin/bash
-# CDC Processing
-SOURCE="${source}"
-TARGET="${target}"
-
-psql -d $SOURCE -c "SELECT * FROM pg_logical_slot_get_changes('cdc_slot', NULL, NULL)" | \\
-  python3 /opt/etl/cdc_processor.py --target $TARGET`
-}
-
-function getDataQualityScript(target: string): string {
-  return `#!/bin/bash
-# Data Quality Check
-TARGET="${target}"
-
-# Row count validation
-expected=$(psql -d source -t -c "SELECT COUNT(*) FROM data")
-actual=$(psql -d $TARGET -t -c "SELECT COUNT(*) FROM data")
-[ "$expected" != "$actual" ] && exit 1
-
-# Null check
-nulls=$(psql -d $TARGET -t -c "SELECT COUNT(*) FROM data WHERE critical_col IS NULL")
-[ "$nulls" -gt 0 ] && exit 1`
-}
-
-function getPartitionScript(target: string): string {
-  return `#!/bin/bash
-# Partition Maintenance
-TARGET="\${target}"
-
-# Create next month's partition
-next_month=\$(date -d "next month" +%Y%m)
-psql -d \$TARGET -c "CREATE TABLE IF NOT EXISTS data_\\\${next_month} PARTITION OF data FOR VALUES FROM ('\\\${next_month}-01') TO ('\\\${next_month}-01' + INTERVAL '1 month')"
-
-# Drop old partitions
-old_month=\$(date -d "12 months ago" +%Y%m)
-psql -d \$TARGET -c "DROP TABLE IF EXISTS data_\\\${old_month}"`
-}
-
-function getArchiveScript(target: string): string {
-  return `#!/bin/bash
-# Archive Old Data
-TARGET="${target}"
-
-# Move old data to archive
-psql -d $TARGET -c \\
-  "INSERT INTO archive.data SELECT * FROM data WHERE created_at < NOW() - INTERVAL '1 year'"
-psql -d $TARGET -c "DELETE FROM data WHERE created_at < NOW() - INTERVAL '1 year'"`
 }

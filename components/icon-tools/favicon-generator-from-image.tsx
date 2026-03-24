@@ -94,7 +94,7 @@ export default function FaviconGeneratorFromImage() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Generate a Favicon from Any Image</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Generate a Favicon from Any Image</h2>
         <p className="text-muted-foreground mt-2">
           Upload a photo, logo, or graphic to create a professional favicon for your website.
         </p>

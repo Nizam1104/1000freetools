@@ -79,7 +79,7 @@ export default function JavaScriptCharacterWordCounter() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Count Characters, Words, and Lines</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Count Characters, Words, and Lines</h2>
         <p className="text-muted-foreground mt-2">
           Analyze your text with precise counts and statistics including reading time estimation.
         </p>

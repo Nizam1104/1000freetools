@@ -19,6 +19,36 @@ export default function CronExpressionDatabaseBackups() {
   const [retentionDays, setRetentionDays] = useState("7")
   const [copied, setCopied] = useState<string | null>(null)
 
+  const getBackupCommand = (type: string, backupType: string): string => {
+    const commands: { [key: string]: { [key: string]: string } } = {
+      mysql: {
+        full: "mysqldump -u [user] -p[password] --all-databases > /backups/mysql_full_$(date +\\%Y\\%m\\%d).sql",
+        incremental: "mysqldump -u [user] -p[password] --all-databases --single-transaction > /backups/mysql_incr_$(date +\\%Y\\%m\\%d).sql",
+        transaction: "mysqlbinlog --read-from-remote-server --host=localhost --user=[user] --password=[password] --raw --result-file=/backups/binlog_$(date +\\%Y\\%m\\%d_\\%H).bin",
+        archive: "mysqldump -u [user] -p[password] --all-databases --compress | gzip > /backups/mysql_archive_$(date +\\%Y\\%m).sql.gz",
+      },
+      postgresql: {
+        full: "pg_dumpall -U [user] > /backups/pg_full_$(date +\\%Y\\%m\\%d).sql",
+        incremental: "pg_basebackup -U [user] -D /backups/pg_base_$(date +\\%Y\\%m\\%d) -Ft -z",
+        transaction: "pg_archivecleanup /backups/pg_wal $(cat /backups/last_backup_label)",
+        archive: "pg_dumpall -U [user] | gzip > /backups/pg_archive_$(date +\\%Y\\%m).sql.gz",
+      },
+      mongodb: {
+        full: "mongodump --out /backups/mongo_$(date +\\%Y\\%m\\%d)",
+        incremental: "mongodump --oplog --out /backups/mongo_oplog_$(date +\\%Y\\%m\\%d)",
+        transaction: "mongodump --oplog --out /backups/mongo_oplog_$(date +\\%Y\\%m\\%d_\\%H)",
+        archive: "mongodump --archive=/backups/mongo_archive_$(date +\\%Y\\%m).gz --gzip",
+      },
+      sqlite: {
+        full: "sqlite3 /path/to/db.sqlite \".backup '/backups/sqlite_$(date +\\%Y\\%m\\%d).db'\"",
+        incremental: "rsync -av /path/to/db.sqlite /backups/sqlite_incr_$(date +\\%Y\\%m\\%d).db",
+        transaction: "cp /path/to/db.sqlite /backups/sqlite_wal_$(date +\\%Y\\%m\\%d_\\%H).db",
+        archive: "sqlite3 /path/to/db.sqlite \".backup '/backups/sqlite_archive_$(date +\\%Y\\%m).db'\" && gzip /backups/sqlite_archive_*.db",
+      },
+    }
+    return commands[type]?.[backupType] || "command not available"
+  }
+
   const backupTemplates = useMemo(() => [
     {
       id: "nightly_full",
@@ -119,36 +149,6 @@ export default function CronExpressionDatabaseBackups() {
   const generateCustomCron = useMemo(() => {
     return `0 ${backupMinute} ${backupHour} * * *`
   }, [backupHour, backupMinute])
-
-  const getBackupCommand = (type: string, backupType: string): string => {
-    const commands: { [key: string]: { [key: string]: string } } = {
-      mysql: {
-        full: "mysqldump -u [user] -p[password] --all-databases > /backups/mysql_full_$(date +\\%Y\\%m\\%d).sql",
-        incremental: "mysqldump -u [user] -p[password] --all-databases --single-transaction > /backups/mysql_incr_$(date +\\%Y\\%m\\%d).sql",
-        transaction: "mysqlbinlog --read-from-remote-server --host=localhost --user=[user] --password=[password] --raw --result-file=/backups/binlog_$(date +\\%Y\\%m\\%d_\\%H).bin",
-        archive: "mysqldump -u [user] -p[password] --all-databases --compress | gzip > /backups/mysql_archive_$(date +\\%Y\\%m).sql.gz",
-      },
-      postgresql: {
-        full: "pg_dumpall -U [user] > /backups/pg_full_$(date +\\%Y\\%m\\%d).sql",
-        incremental: "pg_basebackup -U [user] -D /backups/pg_base_$(date +\\%Y\\%m\\%d) -Ft -z",
-        transaction: "pg_archivecleanup /backups/pg_wal $(cat /backups/last_backup_label)",
-        archive: "pg_dumpall -U [user] | gzip > /backups/pg_archive_$(date +\\%Y\\%m).sql.gz",
-      },
-      mongodb: {
-        full: "mongodump --out /backups/mongo_$(date +\\%Y\\%m\\%d)",
-        incremental: "mongodump --oplog --out /backups/mongo_oplog_$(date +\\%Y\\%m\\%d)",
-        transaction: "mongodump --oplog --out /backups/mongo_oplog_$(date +\\%Y\\%m\\%d_\\%H)",
-        archive: "mongodump --archive=/backups/mongo_archive_$(date +\\%Y\\%m).gz --gzip",
-      },
-      sqlite: {
-        full: "sqlite3 /path/to/db.sqlite \".backup '/backups/sqlite_$(date +\\%Y\\%m\\%d).db'\"",
-        incremental: "rsync -av /path/to/db.sqlite /backups/sqlite_incr_$(date +\\%Y\\%m\\%d).db",
-        transaction: "cp /path/to/db.sqlite /backups/sqlite_wal_$(date +\\%Y\\%m\\%d_\\%H).db",
-        archive: "sqlite3 /path/to/db.sqlite \".backup '/backups/sqlite_archive_$(date +\\%Y\\%m).db'\" && gzip /backups/sqlite_archive_*.db",
-      },
-    }
-    return commands[type]?.[backupType] || "command not available"
-  }
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6">
@@ -520,34 +520,4 @@ find $BACKUP_DIR -type f -mtime +30 -delete`,
       </Card>
     </div>
   )
-}
-
-function getBackupCommand(type: string, backupType: string): string {
-  const commands: { [key: string]: { [key: string]: string } } = {
-    mysql: {
-      full: "mysqldump --all-databases > backup.sql",
-      incremental: "mysqldump --single-transaction > backup.sql",
-      transaction: "mysqlbinlog --raw binlog.* > binlog_backup",
-      archive: "mysqldump --all-databases | gzip > backup.sql.gz",
-    },
-    postgresql: {
-      full: "pg_dumpall > backup.sql",
-      incremental: "pg_basebackup -D backup_dir",
-      transaction: "pg_archivecleanup",
-      archive: "pg_dumpall | gzip > backup.sql.gz",
-    },
-    mongodb: {
-      full: "mongodump --out backup_dir",
-      incremental: "mongodump --oplog",
-      transaction: "mongodump --oplog",
-      archive: "mongodump --archive=backup.gz --gzip",
-    },
-    sqlite: {
-      full: "sqlite3 db.sqlite .backup backup.db",
-      incremental: "rsync db.sqlite backup.db",
-      transaction: "cp db.sqlite backup.db",
-      archive: "sqlite3 db.sqlite .backup backup.db && gzip backup.db",
-    },
-  }
-  return commands[type]?.[backupType] || "command not available"
 }

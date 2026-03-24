@@ -106,7 +106,7 @@ export default function _3DIconGeneratorFromText() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Create 3D Icons from Text</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Create 3D Icons from Text</h2>
         <p className="text-muted-foreground mt-2">
           Generate 3D-style icons from any letter, number, or symbol with customizable materials and lighting.
         </p>

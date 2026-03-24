@@ -116,7 +116,7 @@ export default function JavaScriptStringEscapeUnescape() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Escape and Unescape JavaScript Strings</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Escape and Unescape JavaScript Strings</h2>
         <p className="text-muted-foreground mt-2">
           Escape special characters for safe embedding in code, JSON, HTML, or URLs.
         </p>

@@ -11,6 +11,166 @@ import { Badge } from "@/components/ui/badge"
 import { Copy, Check, AlertCircle, CheckCircle2, XCircle, Languages } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+interface TranslationResult {
+  valid: boolean
+  english: string
+  error?: string
+  breakdown?: string[]
+  fieldDetails?: { name: string; description: string }[]
+}
+
+function translateCronToEnglish(expression: string, includeSeconds: boolean): TranslationResult {
+  try {
+    const parts = expression.trim().split(/\s+/)
+    const expectedFields = includeSeconds ? 6 : 5
+
+    if (parts.length !== expectedFields) {
+      return {
+        valid: false,
+        english: "",
+        error: `Expected ${expectedFields} fields, got ${parts.length}`,
+      }
+    }
+
+    const fieldIndex = includeSeconds ? 1 : 0
+    const breakdown: string[] = []
+    const fieldDetails: { name: string; description: string }[] = []
+
+    // Parse each field
+    const minuteTranslation = translateField(parts[fieldIndex], 0, 59, includeSeconds ? "second" : "minute", includeSeconds ? "seconds" : "minutes")
+    breakdown.push(minuteTranslation.text)
+    fieldDetails.push({ name: includeSeconds ? "Seconds" : "Minute", description: minuteTranslation.desc })
+
+    const hourTranslation = translateField(parts[fieldIndex + 1], 0, 23, "hour", "hours")
+    if (parts[fieldIndex + 1] !== "*") {
+      breakdown.push(hourTranslation.text)
+      fieldDetails.push({ name: "Hour", description: hourTranslation.desc })
+    }
+
+    const dayOfMonthTranslation = translateField(parts[fieldIndex + 2], 1, 31, "day", "days", "of the month")
+    if (parts[fieldIndex + 2] !== "*") {
+      breakdown.push(dayOfMonthTranslation.text)
+      fieldDetails.push({ name: "Day of Month", description: dayOfMonthTranslation.desc })
+    }
+
+    const monthTranslation = translateMonthField(parts[fieldIndex + 3])
+    if (parts[fieldIndex + 3] !== "*") {
+      breakdown.push(monthTranslation.text)
+      fieldDetails.push({ name: "Month", description: monthTranslation.desc })
+    }
+
+    const dayOfWeekTranslation = translateDayOfWeekField(parts[fieldIndex + 4])
+    if (parts[fieldIndex + 4] !== "*") {
+      breakdown.push(dayOfWeekTranslation.text)
+      fieldDetails.push({ name: "Day of Week", description: dayOfWeekTranslation.desc })
+    }
+
+    // Build the full English sentence
+    let english = "The task runs"
+    if (parts[fieldIndex] === "*" && parts[fieldIndex + 1] === "*" && parts[fieldIndex + 2] === "*" &&
+        parts[fieldIndex + 3] === "*" && parts[fieldIndex + 4] === "*") {
+      english = "The task runs every minute"
+    } else {
+      const parts_text = breakdown.join(", ")
+      english = `The task runs ${parts_text}`
+    }
+
+    return {
+      valid: true,
+      english: english + ".",
+      breakdown,
+      fieldDetails,
+    }
+  } catch (error) {
+    return {
+      valid: false,
+      english: "",
+      error: "Failed to parse CRON expression",
+    }
+  }
+}
+
+function translateField(field: string, min: number, max: number, singular: string, plural: string, suffix = ""): { text: string; desc: string } {
+  if (field === "*") {
+    return { text: `every ${plural}`, desc: `Every ${singular} (${min}-${max})` }
+  }
+
+  if (field.includes("/")) {
+    const [base, step] = field.split("/")
+    const stepNum = parseInt(step)
+    if (base === "*") {
+      return { text: `every ${stepNum} ${plural}`, desc: `Every ${stepNum} ${plural} starting from ${min}` }
+    }
+    const baseTranslation = translateField(base, min, max, singular, plural, suffix)
+    return { text: `${baseTranslation.text}, every ${stepNum} ${plural}`, desc: `Every ${stepNum} ${plural} from ${base}` }
+  }
+
+  if (field.includes("-")) {
+    const [start, end] = field.split("-").map(Number)
+    return { text: `from ${start} to ${end} ${plural}`, desc: `Range from ${start} to ${end} ${plural}` }
+  }
+
+  if (field.includes(",")) {
+    const values = field.split(",").map(Number)
+    return { text: `at ${plural} ${values.join(", ")}`, desc: `Specific ${plural}: ${values.join(", ")}` }
+  }
+
+  const num = parseInt(field)
+  if (singular === "hour") {
+    return { text: `at ${formatHour(num)}${suffix ? " " + suffix : ""}`, desc: `At hour ${num} (${formatHour(num)})` }
+  }
+  return { text: `at ${num}${suffix ? " " + suffix : ""}`, desc: `At ${singular} ${num}` }
+}
+
+function translateMonthField(field: string): { text: string; desc: string } {
+  const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+  if (field === "*") {
+    return { text: "every month", desc: "Every month of the year" }
+  }
+
+  if (field.includes(",")) {
+    const months = field.split(",").map((m) => monthNames[parseInt(m)] || m)
+    return { text: `in ${months.join(", ")}`, desc: `Specific months: ${months.join(", ")}` }
+  }
+
+  if (field.includes("-")) {
+    const [start, end] = field.split("-").map((m) => monthNames[parseInt(m)] || m)
+    return { text: `from ${start} to ${end}`, desc: `From ${start} to ${end}` }
+  }
+
+  const month = monthNames[parseInt(field)] || field
+  return { text: `in ${month}`, desc: `In ${month}` }
+}
+
+function translateDayOfWeekField(field: string): { text: string; desc: string } {
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+  if (field === "*") {
+    return { text: "every day of the week", desc: "Every day of the week" }
+  }
+
+  if (field.includes(",")) {
+    const days = field.split(",").map((d) => dayNames[parseInt(d)] || d)
+    return { text: `on ${days.join(", ")}`, desc: `Specific days: ${days.join(", ")}` }
+  }
+
+  if (field.includes("-")) {
+    const [start, end] = field.split("-").map((d) => dayNames[parseInt(d)] || d)
+    return { text: `from ${start} to ${end}`, desc: `From ${start} to ${end}` }
+  }
+
+  const day = dayNames[parseInt(field)] || field
+  return { text: `on ${day}`, desc: `On ${day}` }
+}
+
+function formatHour(hour: number): string {
+  if (hour === 0) return "12 AM"
+  if (hour < 12) return `${hour} AM`
+  if (hour === 12) return "12 PM"
+  return `${hour - 12} PM`
+}
+
 export default function CronToEnglishTranslator() {
   const [cronExpression, setCronExpression] = useState("0 9 * * 1-5")
   const [copied, setCopied] = useState(false)
@@ -204,164 +364,4 @@ export default function CronToEnglishTranslator() {
       </Card>
     </div>
   )
-}
-
-interface TranslationResult {
-  valid: boolean
-  english: string
-  error?: string
-  breakdown?: string[]
-  fieldDetails?: { name: string; description: string }[]
-}
-
-function translateCronToEnglish(expression: string, includeSeconds: boolean): TranslationResult {
-  try {
-    const parts = expression.trim().split(/\s+/)
-    const expectedFields = includeSeconds ? 6 : 5
-
-    if (parts.length !== expectedFields) {
-      return {
-        valid: false,
-        english: "",
-        error: `Expected ${expectedFields} fields, got ${parts.length}`,
-      }
-    }
-
-    const fieldIndex = includeSeconds ? 1 : 0
-    const breakdown: string[] = []
-    const fieldDetails: { name: string; description: string }[] = []
-
-    // Parse each field
-    const minuteTranslation = translateField(parts[fieldIndex], 0, 59, includeSeconds ? "second" : "minute", includeSeconds ? "seconds" : "minutes")
-    breakdown.push(minuteTranslation.text)
-    fieldDetails.push({ name: includeSeconds ? "Seconds" : "Minute", description: minuteTranslation.desc })
-
-    const hourTranslation = translateField(parts[fieldIndex + 1], 0, 23, "hour", "hours")
-    if (parts[fieldIndex + 1] !== "*") {
-      breakdown.push(hourTranslation.text)
-      fieldDetails.push({ name: "Hour", description: hourTranslation.desc })
-    }
-
-    const dayOfMonthTranslation = translateField(parts[fieldIndex + 2], 1, 31, "day", "days", "of the month")
-    if (parts[fieldIndex + 2] !== "*") {
-      breakdown.push(dayOfMonthTranslation.text)
-      fieldDetails.push({ name: "Day of Month", description: dayOfMonthTranslation.desc })
-    }
-
-    const monthTranslation = translateMonthField(parts[fieldIndex + 3])
-    if (parts[fieldIndex + 3] !== "*") {
-      breakdown.push(monthTranslation.text)
-      fieldDetails.push({ name: "Month", description: monthTranslation.desc })
-    }
-
-    const dayOfWeekTranslation = translateDayOfWeekField(parts[fieldIndex + 4])
-    if (parts[fieldIndex + 4] !== "*") {
-      breakdown.push(dayOfWeekTranslation.text)
-      fieldDetails.push({ name: "Day of Week", description: dayOfWeekTranslation.desc })
-    }
-
-    // Build the full English sentence
-    let english = "The task runs"
-    if (parts[fieldIndex] === "*" && parts[fieldIndex + 1] === "*" && parts[fieldIndex + 2] === "*" &&
-        parts[fieldIndex + 3] === "*" && parts[fieldIndex + 4] === "*") {
-      english = "The task runs every minute"
-    } else {
-      const parts_text = breakdown.join(", ")
-      english = `The task runs ${parts_text}`
-    }
-
-    return {
-      valid: true,
-      english: english + ".",
-      breakdown,
-      fieldDetails,
-    }
-  } catch (error) {
-    return {
-      valid: false,
-      english: "",
-      error: "Failed to parse CRON expression",
-    }
-  }
-}
-
-function translateField(field: string, min: number, max: number, singular: string, plural: string, suffix = ""): { text: string; desc: string } {
-  if (field === "*") {
-    return { text: `every ${plural}`, desc: `Every ${singular} (${min}-${max})` }
-  }
-
-  if (field.includes("/")) {
-    const [base, step] = field.split("/")
-    const stepNum = parseInt(step)
-    if (base === "*") {
-      return { text: `every ${stepNum} ${plural}`, desc: `Every ${stepNum} ${plural} starting from ${min}` }
-    }
-    const baseTranslation = translateField(base, min, max, singular, plural, suffix)
-    return { text: `${baseTranslation.text}, every ${stepNum} ${plural}`, desc: `Every ${stepNum} ${plural} from ${base}` }
-  }
-
-  if (field.includes("-")) {
-    const [start, end] = field.split("-").map(Number)
-    return { text: `from ${start} to ${end} ${plural}`, desc: `Range from ${start} to ${end} ${plural}` }
-  }
-
-  if (field.includes(",")) {
-    const values = field.split(",").map(Number)
-    return { text: `at ${plural} ${values.join(", ")}`, desc: `Specific ${plural}: ${values.join(", ")}` }
-  }
-
-  const num = parseInt(field)
-  if (singular === "hour") {
-    return { text: `at ${formatHour(num)}${suffix ? " " + suffix : ""}`, desc: `At hour ${num} (${formatHour(num)})` }
-  }
-  return { text: `at ${num}${suffix ? " " + suffix : ""}`, desc: `At ${singular} ${num}` }
-}
-
-function translateMonthField(field: string): { text: string; desc: string } {
-  const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-  if (field === "*") {
-    return { text: "every month", desc: "Every month of the year" }
-  }
-
-  if (field.includes(",")) {
-    const months = field.split(",").map((m) => monthNames[parseInt(m)] || m)
-    return { text: `in ${months.join(", ")}`, desc: `Specific months: ${months.join(", ")}` }
-  }
-
-  if (field.includes("-")) {
-    const [start, end] = field.split("-").map((m) => monthNames[parseInt(m)] || m)
-    return { text: `from ${start} to ${end}`, desc: `From ${start} to ${end}` }
-  }
-
-  const month = monthNames[parseInt(field)] || field
-  return { text: `in ${month}`, desc: `In ${month}` }
-}
-
-function translateDayOfWeekField(field: string): { text: string; desc: string } {
-  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-  if (field === "*") {
-    return { text: "every day of the week", desc: "Every day of the week" }
-  }
-
-  if (field.includes(",")) {
-    const days = field.split(",").map((d) => dayNames[parseInt(d)] || d)
-    return { text: `on ${days.join(", ")}`, desc: `Specific days: ${days.join(", ")}` }
-  }
-
-  if (field.includes("-")) {
-    const [start, end] = field.split("-").map((d) => dayNames[parseInt(d)] || d)
-    return { text: `from ${start} to ${end}`, desc: `From ${start} to ${end}` }
-  }
-
-  const day = dayNames[parseInt(field)] || field
-  return { text: `on ${day}`, desc: `On ${day}` }
-}
-
-function formatHour(hour: number): string {
-  if (hour === 0) return "12 AM"
-  if (hour < 12) return `${hour} AM`
-  if (hour === 12) return "12 PM"
-  return `${hour - 12} PM`
 }

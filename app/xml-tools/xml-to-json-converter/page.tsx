@@ -17,11 +17,7 @@ const tools = [
     description: `Format and Validate Your XML Instantly`,
     href: `/xml-tools/xml-formatter-validator`,
   },
-  {
-    name: `JSON to XML Converter`,
-    description: `Convert JSON to XML in Seconds`,
-    href: `/xml-tools/json-to-xml-converter`,
-  },
+
   {
     name: `XML Minifier and Compressor`,
     description: `Minify and Compress XML Files`,

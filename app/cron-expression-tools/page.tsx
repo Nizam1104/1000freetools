@@ -37,11 +37,6 @@ const cronExpressionTools = [
     href: "/cron-expression-tools/english-to-cron-converter",
   },
   {
-    name: "Cron Expression Editor (GUI)",
-    description: "Visual editor for building cron expressions with checkboxes",
-    href: "/cron-expression-tools/cron-expression-editor-gui",
-  },
-  {
     name: "Cron Expression Difference Checker",
     description: "Compare two cron expressions and highlight differences",
     href: "/cron-expression-tools/cron-expression-difference-checker",
@@ -50,11 +45,6 @@ const cronExpressionTools = [
     name: "Cron Expression from DateTime Picker",
     description: "Build cron expressions by selecting dates and times visually",
     href: "/cron-expression-tools/cron-expression-from-datetime-picker",
-  },
-  {
-    name: "Cron Expression for Database Backups",
-    description: "Pre-built cron schedules for database backup tasks",
-    href: "/cron-expression-tools/cron-expression-database-backups",
   },
   {
     name: "Cron Expression for SSL Certificate Renewal",
@@ -109,7 +99,7 @@ const cronExpressionTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free Cron Expression Tools Online - 20 Cron Schedule Generators",
+  title: "Free Cron Expression Tools Online - 19 Cron Schedule Generators",
   description:
     "Free online cron expression tools for generating, validating, and testing cron schedules. Convert cron to English, test next run times, build schedules visually. All tools run in your browser.",
   openGraph: {
@@ -232,7 +222,7 @@ export default function CronExpressionToolsPage() {
               What These Cron Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 20 free cron expression tools that run entirely in your browser. No software installation, no server calls, no waiting. You enter a schedule or cron expression, click a button, and get results instantly.
+              This is a collection of 19 free cron expression tools that run entirely in your browser. No software installation, no server calls, no waiting. You enter a schedule or cron expression, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: generating cron expressions from human input, validating and testing cron syntax, converting between cron and plain English, and providing pre-built schedules for common tasks (backups, monitoring, ETL jobs).

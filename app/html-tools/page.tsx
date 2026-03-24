@@ -87,11 +87,6 @@ const htmlTools = [
     href: "/html-tools/html-to-json-converter",
   },
   {
-    name: "HTML to Markdown Converter",
-    description: "Convert HTML content to Markdown format",
-    href: "/html-tools/html-to-markdown-converter",
-  },
-  {
     name: "HTML to PDF Converter",
     description: "Convert HTML pages to PDF documents",
     href: "/html-tools/html-to-pdf-converter",
@@ -104,7 +99,7 @@ const htmlTools = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free HTML Tools Online - 19 HTML Editor & Converter Tools",
+  title: "Free HTML Tools Online - 18 HTML Editor & Converter Tools",
   description:
     "Free online HTML tools for editing, formatting, and converting HTML. HTML validator, formatter, entity encoder, table generator. All tools run in your browser.",
   openGraph: {
@@ -222,7 +217,7 @@ export default function HtmlToolsPage() {
               What These HTML Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 19 free HTML tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste HTML code or upload files, click a button, and get results instantly.
+              This is a collection of 18 free HTML tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste HTML code or upload files, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: editing and formatting HTML (beautifier, comment remover, tag stripper), validating and checking HTML (validator, link checker, diff comparator), generating HTML elements (tables, meta tags, image maps, sitemaps), and converting HTML to other formats (Markdown, JSON, PDF).

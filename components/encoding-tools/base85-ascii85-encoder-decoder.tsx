@@ -164,7 +164,7 @@ export default function Base85Ascii85EncoderDecoder() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold mb-2">Base85 (Ascii85) Encoder/Decoder</h1>
+        <h2 className="text-2xl font-semibold mb-2">Base85 (Ascii85) Encoder/Decoder</h2>
         <p className="text-sm text-muted-foreground">
           Encode data to Base85/Ascii85 format and decode Base85 strings. Used in PDF files and PostScript.
         </p>

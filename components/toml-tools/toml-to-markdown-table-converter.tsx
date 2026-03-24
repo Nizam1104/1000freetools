@@ -246,7 +246,7 @@ timeout = 30`;
               <div className="prose prose-sm max-w-none">
                 <div dangerouslySetInnerHTML={{ 
                   __html: markdownOutput
-                    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+                    .replace(/^# (.+)$/gm, '<h1>$1</h2>')
                     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
                     .replace(/\| (.+) \|\n\| (.+) \|\n/g, '<table><thead><tr>$1</tr></thead><tbody>')
                     .replace(/\| (.+) \|\n/g, '<tr>$1</tr>')

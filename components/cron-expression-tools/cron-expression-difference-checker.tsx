@@ -11,6 +11,175 @@ import { Badge } from "@/components/ui/badge"
 import { Copy, Check, GitCompare, AlertCircle, CheckCircle2, Clock, Calendar } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+interface FieldComparison {
+  valueA: string
+  valueB: string
+  descriptionA: string
+  descriptionB: string
+  different: boolean
+}
+
+interface OverlapDetails {
+  description: string
+  scheduleA: string
+  scheduleB: string
+  overlapTimes?: string
+}
+
+function compareCronExpressions(cronA: string, cronB: string) {
+  const partsA = cronA.trim().split(/\s+/)
+  const partsB = cronB.trim().split(/\s+/)
+
+  if (partsA.length !== 5 || partsB.length !== 5) {
+    return { valid: false, identical: false, summary: "Invalid CRON expression format" }
+  }
+
+  const fields: FieldComparison[] = []
+  let hasDifference = false
+
+  const fieldDescriptions = [
+    (v: string) => describeField(v, 0, 59, "minute"),
+    (v: string) => describeField(v, 0, 23, "hour"),
+    (v: string) => describeField(v, 1, 31, "day"),
+    (v: string) => describeField(v, 1, 12, "month"),
+    (v: string) => describeDayOfWeek(v),
+  ]
+
+  for (let i = 0; i < 5; i++) {
+    const different = partsA[i] !== partsB[i]
+    if (different) hasDifference = true
+
+    fields.push({
+      valueA: partsA[i],
+      valueB: partsB[i],
+      descriptionA: fieldDescriptions[i](partsA[i]),
+      descriptionB: fieldDescriptions[i](partsB[i]),
+      different,
+    })
+  }
+
+  // Generate timeline for 24-hour view
+  const timelineA = generate24HourTimeline(cronA)
+  const timelineB = generate24HourTimeline(cronB)
+
+  // Check for overlaps
+  const overlaps = timelineA.some((slot, idx) => slot.active && timelineB[idx].active)
+
+  const overlapDetails: OverlapDetails | null = overlaps
+    ? {
+        description: "These expressions have overlapping execution times. Both tasks may run simultaneously at certain hours.",
+        scheduleA: describeSchedule(cronA),
+        scheduleB: describeSchedule(cronB),
+        overlapTimes: getOverlapTimes(cronA, cronB),
+      }
+    : {
+        description: "These expressions do not have overlapping execution times. The tasks will run at different times.",
+        scheduleA: describeSchedule(cronA),
+        scheduleB: describeSchedule(cronB),
+      }
+
+  return {
+    valid: true,
+    identical: !hasDifference,
+    summary: hasDifference
+      ? `The expressions differ in ${fields.filter((f) => f.different).length} field(s): ${fields.filter((f) => f.different).map((f, i) => ["Minute", "Hour", "Day", "Month", "Day of Week"][i]).join(", ")}.`
+      : "Both expressions are identical and will execute at the same times.",
+    fields,
+    overlaps,
+    overlapDetails,
+    timelineA,
+    timelineB,
+  }
+}
+
+function describeField(value: string, min: number, max: number, unit: string): string {
+  if (value === "*") return `Every ${unit}`
+  if (value.startsWith("*/")) return `Every ${value.slice(2)} ${unit}s`
+  if (value.includes("-")) {
+    const [start, end] = value.split("-")
+    return `From ${start} to ${end}`
+  }
+  if (value.includes(",")) return `At ${value.replace(/,/g, ", ")}`
+  return `At ${value}`
+}
+
+function describeDayOfWeek(value: string): string {
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  if (value === "*") return "Every day"
+  if (value === "1-5") return "Weekdays (Mon-Fri)"
+  if (value === "0,6") return "Weekends"
+  if (value.includes(",")) {
+    return value.split(",").map((d) => days[parseInt(d)] || d).join(", ")
+  }
+  if (value.includes("-")) {
+    const [start, end] = value.split("-")
+    return `${days[parseInt(start)]} to ${days[parseInt(end)]}`
+  }
+  return days[parseInt(value)] || value
+}
+
+function generate24HourTimeline(cron: string): { active: boolean }[] {
+  const parts = cron.trim().split(/\s+/)
+  const timeline: { active: boolean }[] = []
+
+  const hours = parseField(parts[1], 0, 23)
+
+  for (let h = 0; h < 24; h++) {
+    timeline.push({ active: hours.includes(h) })
+  }
+
+  return timeline
+}
+
+function describeSchedule(cron: string): string {
+  const parts = cron.trim().split(/\s+/)
+  const minute = parts[0]
+  const hour = parts[1]
+  const dayOfWeek = parts[4]
+
+  const hourDesc = hour === "*" ? "every hour" : hour.includes(",") ? `at hours ${hour}` : `at ${formatHour(parseInt(hour))}`
+  const minuteDesc = minute === "*" ? "" : minute === "0" ? "" : `:${minute}`
+  const dayDesc = dayOfWeek === "*" ? "" : dayOfWeek === "1-5" ? " on weekdays" : dayOfWeek === "0" ? " on Sundays" : ` on day ${dayOfWeek}`
+
+  return `${hourDesc}${minuteDesc}${dayDesc}`.trim()
+}
+
+function getOverlapTimes(cronA: string, cronB: string): string {
+  const partsA = cronA.split(/\s+/)
+  const partsB = cronB.split(/\s+/)
+
+  const hoursA = parseField(partsA[1], 0, 23)
+  const hoursB = parseField(partsB[1], 0, 23)
+
+  const commonHours = hoursA.filter((h) => hoursB.includes(h))
+
+  if (commonHours.length === 0) return "No overlapping hours"
+  if (commonHours.length === 24) return "All hours overlap"
+
+  return `Overlap at: ${commonHours.map((h) => formatHour(h)).join(", ")}`
+}
+
+function parseField(field: string, min: number, max: number): number[] {
+  if (field === "*") return Array.from({ length: max - min + 1 }, (_, i) => i + min)
+  if (field.startsWith("*/")) {
+    const step = parseInt(field.slice(2))
+    return Array.from({ length: Math.floor((max - min) / step) + 1 }, (_, i) => min + i * step)
+  }
+  if (field.includes("-")) {
+    const [start, end] = field.split("-").map(Number)
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+  }
+  if (field.includes(",")) return field.split(",").map(Number)
+  return [parseInt(field)]
+}
+
+function formatHour(hour: number): string {
+  if (hour === 0) return "12 AM"
+  if (hour < 12) return `${hour} AM`
+  if (hour === 12) return "12 PM"
+  return `${hour - 12} PM`
+}
+
 export default function CronExpressionDifferenceChecker() {
   const [cronA, setCronA] = useState("0 9 * * 1-5")
   const [cronB, setCronB] = useState("0 10 * * 1-5")
@@ -343,173 +512,4 @@ export default function CronExpressionDifferenceChecker() {
       </Card>
     </div>
   )
-}
-
-interface FieldComparison {
-  valueA: string
-  valueB: string
-  descriptionA: string
-  descriptionB: string
-  different: boolean
-}
-
-interface OverlapDetails {
-  description: string
-  scheduleA: string
-  scheduleB: string
-  overlapTimes?: string
-}
-
-function compareCronExpressions(cronA: string, cronB: string) {
-  const partsA = cronA.trim().split(/\s+/)
-  const partsB = cronB.trim().split(/\s+/)
-
-  if (partsA.length !== 5 || partsB.length !== 5) {
-    return { valid: false, identical: false, summary: "Invalid CRON expression format" }
-  }
-
-  const fields: FieldComparison[] = []
-  let hasDifference = false
-
-  const fieldDescriptions = [
-    (v: string) => describeField(v, 0, 59, "minute"),
-    (v: string) => describeField(v, 0, 23, "hour"),
-    (v: string) => describeField(v, 1, 31, "day"),
-    (v: string) => describeField(v, 1, 12, "month"),
-    (v: string) => describeDayOfWeek(v),
-  ]
-
-  for (let i = 0; i < 5; i++) {
-    const different = partsA[i] !== partsB[i]
-    if (different) hasDifference = true
-
-    fields.push({
-      valueA: partsA[i],
-      valueB: partsB[i],
-      descriptionA: fieldDescriptions[i](partsA[i]),
-      descriptionB: fieldDescriptions[i](partsB[i]),
-      different,
-    })
-  }
-
-  // Generate timeline for 24-hour view
-  const timelineA = generate24HourTimeline(cronA)
-  const timelineB = generate24HourTimeline(cronB)
-
-  // Check for overlaps
-  const overlaps = timelineA.some((slot, idx) => slot.active && timelineB[idx].active)
-
-  const overlapDetails: OverlapDetails | null = overlaps
-    ? {
-        description: "These expressions have overlapping execution times. Both tasks may run simultaneously at certain hours.",
-        scheduleA: describeSchedule(cronA),
-        scheduleB: describeSchedule(cronB),
-        overlapTimes: getOverlapTimes(cronA, cronB),
-      }
-    : {
-        description: "These expressions do not have overlapping execution times. The tasks will run at different times.",
-        scheduleA: describeSchedule(cronA),
-        scheduleB: describeSchedule(cronB),
-      }
-
-  return {
-    valid: true,
-    identical: !hasDifference,
-    summary: hasDifference
-      ? `The expressions differ in ${fields.filter((f) => f.different).length} field(s): ${fields.filter((f) => f.different).map((f, i) => ["Minute", "Hour", "Day", "Month", "Day of Week"][i]).join(", ")}.`
-      : "Both expressions are identical and will execute at the same times.",
-    fields,
-    overlaps,
-    overlapDetails,
-    timelineA,
-    timelineB,
-  }
-}
-
-function describeField(value: string, min: number, max: number, unit: string): string {
-  if (value === "*") return `Every ${unit}`
-  if (value.startsWith("*/")) return `Every ${value.slice(2)} ${unit}s`
-  if (value.includes("-")) {
-    const [start, end] = value.split("-")
-    return `From ${start} to ${end}`
-  }
-  if (value.includes(",")) return `At ${value.replace(/,/g, ", ")}`
-  return `At ${value}`
-}
-
-function describeDayOfWeek(value: string): string {
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  if (value === "*") return "Every day"
-  if (value === "1-5") return "Weekdays (Mon-Fri)"
-  if (value === "0,6") return "Weekends"
-  if (value.includes(",")) {
-    return value.split(",").map((d) => days[parseInt(d)] || d).join(", ")
-  }
-  if (value.includes("-")) {
-    const [start, end] = value.split("-")
-    return `${days[parseInt(start)]} to ${days[parseInt(end)]}`
-  }
-  return days[parseInt(value)] || value
-}
-
-function generate24HourTimeline(cron: string): { active: boolean }[] {
-  const parts = cron.trim().split(/\s+/)
-  const timeline: { active: boolean }[] = []
-
-  const hours = parseField(parts[1], 0, 23)
-
-  for (let h = 0; h < 24; h++) {
-    timeline.push({ active: hours.includes(h) })
-  }
-
-  return timeline
-}
-
-function describeSchedule(cron: string): string {
-  const parts = cron.trim().split(/\s+/)
-  const minute = parts[0]
-  const hour = parts[1]
-  const dayOfWeek = parts[4]
-
-  const hourDesc = hour === "*" ? "every hour" : hour.includes(",") ? `at hours ${hour}` : `at ${formatHour(parseInt(hour))}`
-  const minuteDesc = minute === "*" ? "" : minute === "0" ? "" : `:${minute}`
-  const dayDesc = dayOfWeek === "*" ? "" : dayOfWeek === "1-5" ? " on weekdays" : dayOfWeek === "0" ? " on Sundays" : ` on day ${dayOfWeek}`
-
-  return `${hourDesc}${minuteDesc}${dayDesc}`.trim()
-}
-
-function getOverlapTimes(cronA: string, cronB: string): string {
-  const partsA = cronA.split(/\s+/)
-  const partsB = cronB.split(/\s+/)
-
-  const hoursA = parseField(partsA[1], 0, 23)
-  const hoursB = parseField(partsB[1], 0, 23)
-
-  const commonHours = hoursA.filter((h) => hoursB.includes(h))
-
-  if (commonHours.length === 0) return "No overlapping hours"
-  if (commonHours.length === 24) return "All hours overlap"
-
-  return `Overlap at: ${commonHours.map((h) => formatHour(h)).join(", ")}`
-}
-
-function parseField(field: string, min: number, max: number): number[] {
-  if (field === "*") return Array.from({ length: max - min + 1 }, (_, i) => i + min)
-  if (field.startsWith("*/")) {
-    const step = parseInt(field.slice(2))
-    return Array.from({ length: Math.floor((max - min) / step) + 1 }, (_, i) => min + i * step)
-  }
-  if (field.includes("-")) {
-    const [start, end] = field.split("-").map(Number)
-    return Array.from({ length: end - start + 1 }, (_, i) => start + i)
-  }
-  if (field.includes(",")) return field.split(",").map(Number)
-  return [parseInt(field)]
-}
-
-function formatHour(hour: number): string {
-  if (hour === 0) return "12 AM"
-  if (hour < 12) return `${hour} AM`
-  if (hour === 12) return "12 PM"
-  return `${hour - 12} PM`
 }

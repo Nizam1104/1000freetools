@@ -122,7 +122,7 @@ Character set: ${chars.slice(0, 100).join('')}...`
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Web Font Subsetter</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Web Font Subsetter</h2>
         <p className="text-muted-foreground mt-2">
           Reduce font file sizes by creating subsets containing only the characters you need.
         </p>

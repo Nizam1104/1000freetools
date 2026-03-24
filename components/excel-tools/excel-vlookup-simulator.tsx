@@ -163,7 +163,7 @@ export default function ExcelVlookupSimulator() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Practice and Test Excel VLOOKUP Formulas</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Practice and Test Excel VLOOKUP Formulas</h2>
         <p className="text-muted-foreground mt-2">
           Learn VLOOKUP by simulating lookups between two datasets with exact or approximate match.
         </p>

@@ -11,6 +11,65 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, FileText, Trash2, RotateCcw, FolderOpen } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function getRotationScript(frequency: string, logPath: string, retentionDays: string, compress: boolean): string {
+  return `#!/bin/bash
+# Log Rotation Script (${frequency})
+LOG_DIR="\${logPath}"
+RETENTION_DAYS=\${retentionDays}
+DATE=\$(date +%Y%m%d)
+
+mkdir -p \$LOG_DIR/archive
+
+for log_file in \$LOG_DIR/*.log; do
+  if [ -f "\$log_file" ]; then
+    base_name=\$(basename "\$log_file" .log)
+    ${compress ? `gzip -c "\$log_file" > "\$LOG_DIR/archive/\\\${base_name}_\$DATE.log.gz"
+    > "\$log_file"` : `mv "\$log_file" "\$LOG_DIR/archive/\\\${base_name}_\$DATE.log"
+    touch "\$log_file"`}
+  fi
+done
+
+find \$LOG_DIR/archive -mtime +\$RETENTION_DAYS -delete`
+}
+
+function getCleanupScript(logPath: string, retentionDays: string): string {
+  return `#!/bin/bash
+# Hourly Cleanup Script
+LOG_DIR="${logPath}"
+RETENTION_DAYS=${retentionDays}
+
+find $LOG_DIR -type f -mtime +$RETENTION_DAYS -delete
+find $LOG_DIR -type d -empty -delete`
+}
+
+function getTempCleanupScript(): string {
+  return `#!/bin/bash
+# Temp File Cleanup
+find /tmp -type f -atime +7 -delete
+find /var/tmp -type f -atime +30 -delete`
+}
+
+function getCacheCleanupScript(): string {
+  return `#!/bin/bash
+# Cache Cleanup
+apt-get clean
+yum clean all
+journalctl --vacuum-size=100M
+find ~/.cache -type f -atime +7 -delete`
+}
+
+function getArchiveScript(logPath: string): string {
+  return `#!/bin/bash
+# Log Archive Script
+LOG_DIR="${logPath}"
+ARCHIVE_DIR="/backup/logs"
+DATE=$(date +%Y%m%d)
+
+mkdir -p $ARCHIVE_DIR
+tar -czf $ARCHIVE_DIR/logs_$DATE.tar.gz $LOG_DIR/*.log.*
+# Optional: Upload to cloud storage`
+}
+
 export default function CronExpressionLogRotation() {
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [logPath, setLogPath] = useState("/var/log/myapp")
@@ -530,63 +589,4 @@ echo "Log archival completed: Week \\\${WEEK}"`,
       </Card>
     </div>
   )
-}
-
-function getRotationScript(frequency: string, logPath: string, retentionDays: string, compress: boolean): string {
-  return `#!/bin/bash
-# Log Rotation Script (${frequency})
-LOG_DIR="\${logPath}"
-RETENTION_DAYS=\${retentionDays}
-DATE=\$(date +%Y%m%d)
-
-mkdir -p \$LOG_DIR/archive
-
-for log_file in \$LOG_DIR/*.log; do
-  if [ -f "\$log_file" ]; then
-    base_name=\$(basename "\$log_file" .log)
-    ${compress ? `gzip -c "\$log_file" > "\$LOG_DIR/archive/\\\${base_name}_\$DATE.log.gz"
-    > "\$log_file"` : `mv "\$log_file" "\$LOG_DIR/archive/\\\${base_name}_\$DATE.log"
-    touch "\$log_file"`}
-  fi
-done
-
-find \$LOG_DIR/archive -mtime +\$RETENTION_DAYS -delete`
-}
-
-function getCleanupScript(logPath: string, retentionDays: string): string {
-  return `#!/bin/bash
-# Hourly Cleanup Script
-LOG_DIR="${logPath}"
-RETENTION_DAYS=${retentionDays}
-
-find $LOG_DIR -type f -mtime +$RETENTION_DAYS -delete
-find $LOG_DIR -type d -empty -delete`
-}
-
-function getTempCleanupScript(): string {
-  return `#!/bin/bash
-# Temp File Cleanup
-find /tmp -type f -atime +7 -delete
-find /var/tmp -type f -atime +30 -delete`
-}
-
-function getCacheCleanupScript(): string {
-  return `#!/bin/bash
-# Cache Cleanup
-apt-get clean
-yum clean all
-journalctl --vacuum-size=100M
-find ~/.cache -type f -atime +7 -delete`
-}
-
-function getArchiveScript(logPath: string): string {
-  return `#!/bin/bash
-# Log Archive Script
-LOG_DIR="${logPath}"
-ARCHIVE_DIR="/backup/logs"
-DATE=$(date +%Y%m%d)
-
-mkdir -p $ARCHIVE_DIR
-tar -czf $ARCHIVE_DIR/logs_$DATE.tar.gz $LOG_DIR/*.log.*
-# Optional: Upload to cloud storage`
 }

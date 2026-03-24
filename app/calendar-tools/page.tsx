@@ -37,11 +37,6 @@ const calendarTools = [
     href: "/calendar-tools/calendar-sync-overlay",
   },
   {
-    name: "Date Calculator",
-    description: "Add or subtract days, weeks, months, years from a date",
-    href: "/calendar-tools/date-calculator",
-  },
-  {
     name: "Date Picker Generator",
     description: "Create embeddable date picker components",
     href: "/calendar-tools/date-picker-generator",
@@ -96,20 +91,10 @@ const calendarTools = [
     description: "View astronomical and meteorological season dates",
     href: "/calendar-tools/seasonal-calendar",
   },
-  {
-    name: "Time Zone Converter",
-    description: "Convert times between different time zones",
-    href: "/calendar-tools/time-zone-converter",
-  },
-  {
-    name: "Week Number Calculator",
-    description: "Find the ISO week number for any date",
-    href: "/calendar-tools/week-number-calculator",
-  },
 ];
 
 export const metadata: Metadata = {
-  title: "Free Calendar Tools Online - 20 Date & Calendar Utilities",
+  title: "Free Calendar Tools Online - 17 Date & Calendar Utilities",
   description:
     "Free online calendar tools for date calculations, calendar generation, and event planning. Calculate business days, create calendars, convert time zones. All tools run in your browser.",
   openGraph: {
@@ -232,7 +217,7 @@ export default function CalendarToolsPage() {
               What These Calendar Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 20 free calendar tools that run entirely in your browser. No software installation, no subscriptions, no waiting. You pick a date or upload events, click a button, and get results instantly.
+              This is a collection of 17 free calendar tools that run entirely in your browser. No software installation, no subscriptions, no waiting. You pick a date or upload events, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: calculating dates and durations (add days, find business hours, calculate paydays), generating calendars (printable, academic, fiscal year, moon phases), converting between systems (time zones, Hijri calendar), and planning events (countdowns, holiday calendars, sync overlays).

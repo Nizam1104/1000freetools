@@ -96,7 +96,7 @@ ${selectedIcons.map(icon => `<span class="material-icons">${icon}</span>`).join(
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Find & Download Material Design Icons</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Find & Download Material Design Icons</h2>
         <p className="text-muted-foreground mt-2">
           Browse the official Material Design icon library. Filter by style and download in SVG or PNG.
         </p>

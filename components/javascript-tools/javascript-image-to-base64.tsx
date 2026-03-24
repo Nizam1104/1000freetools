@@ -98,7 +98,7 @@ export default function JavaScriptImageToBase64() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Convert Images to Base64 Data URLs</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Convert Images to Base64 Data URLs</h2>
         <p className="text-muted-foreground mt-2">
           Turn any image into a Base64 Data URL string for embedding directly in HTML or CSS.
         </p>

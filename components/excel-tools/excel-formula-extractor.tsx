@@ -191,7 +191,7 @@ export default function ExcelFormulaExtractor() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Extract All Formulas from an Excel File</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Extract All Formulas from an Excel File</h2>
         <p className="text-muted-foreground mt-2">
           Reverse-engineer spreadsheets by extracting formulas and generating JavaScript equivalents.
         </p>

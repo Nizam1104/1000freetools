@@ -28,16 +28,6 @@ const tools = [
     href: `/excel-tools/excel-formula-generator`,
   },
   {
-    name: `Excel Duplicate Remover`,
-    description: `Find and Remove Duplicates in Excel Online`,
-    href: `/excel-tools/excel-duplicate-remover`,
-  },
-  {
-    name: `Excel Merge Cells Tool`,
-    description: `Merge or Combine Excel Cells Online`,
-    href: `/excel-tools/excel-merge-cells-tool`,
-  },
-  {
     name: `ASCII to Hex Converter`,
     description: `ASCII to Hex Converter: Text to Hexadecimal Translator`,
     href: `/ascii-tools/ascii-to-hex-converter`,

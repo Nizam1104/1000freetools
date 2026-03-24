@@ -61,7 +61,7 @@ export default function FontIdentifier() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">What Font Is This?</h1>
+        <h2 className="text-3xl font-bold tracking-tight">What Font Is This?</h2>
         <p className="text-muted-foreground mt-2">
           Upload an image or screenshot to identify the font used. Get matching fonts and download links.
         </p>

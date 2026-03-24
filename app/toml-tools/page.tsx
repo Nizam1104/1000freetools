@@ -67,11 +67,6 @@ const tomlTools = [
     href: "/toml-tools/toml-schema-generator-validator",
   },
   {
-    name: "TOML to C# Class Generator",
-    description: "Generate C# classes from TOML structure",
-    href: "/toml-tools/toml-to-csharp-class-generator",
-  },
-  {
     name: "TOML to CSV Converter",
     description: "Convert TOML data to CSV format",
     href: "/toml-tools/toml-to-csv-converter",
@@ -85,11 +80,6 @@ const tomlTools = [
     name: "TOML to Go Struct Converter",
     description: "Generate Go structs from TOML",
     href: "/toml-tools/toml-to-go-struct-converter",
-  },
-  {
-    name: "TOML to INI Converter",
-    description: "Convert TOML to INI format",
-    href: "/toml-tools/toml-to-ini-converter",
   },
   {
     name: "TOML to Java Properties Converter",
@@ -166,15 +156,10 @@ const tomlTools = [
     description: "Convert XML to TOML format",
     href: "/toml-tools/xml-to-toml-converter",
   },
-  {
-    name: "YAML to TOML Converter",
-    description: "Convert YAML to TOML format",
-    href: "/toml-tools/yaml-to-toml-converter",
-  },
 ];
 
 export const metadata: Metadata = {
-  title: "Free TOML Tools Online - 33 TOML Converter & Editor Tools",
+  title: "Free TOML Tools Online - 29 TOML Converter & Editor Tools",
   description:
     "Free online TOML tools for converting, editing, and validating TOML configuration files. Convert TOML to JSON, YAML, XML and more. All tools run in your browser.",
   openGraph: {
@@ -297,7 +282,7 @@ export default function TomlToolsPage() {
               What These TOML Tools Do
             </h2>
             <p className="text-muted-foreground mb-6">
-              This is a collection of 33 free TOML tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste TOML content or upload files, click a button, and get results instantly.
+              This is a collection of 29 free TOML tools that run entirely in your browser. No software installation, no server uploads, no waiting. You paste TOML content or upload files, click a button, and get results instantly.
             </p>
             <p className="text-muted-foreground mb-6">
               The tools cover four main workflows: converting TOML to other formats (JSON, YAML, XML, programming language structures), converting other formats to TOML (JSON, YAML, INI, CSV, ENV), editing and validating TOML (formatter, minifier, validator, diff), and extracting or merging TOML data.

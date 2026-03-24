@@ -98,7 +98,7 @@ export default function JavaScriptArrayObjectSorter() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Sort JavaScript Arrays and Objects</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Sort JavaScript Arrays and Objects</h2>
         <p className="text-muted-foreground mt-2">
           Sort arrays of numbers, strings, or complex objects by any property with custom order.
         </p>

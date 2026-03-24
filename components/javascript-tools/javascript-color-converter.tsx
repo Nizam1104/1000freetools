@@ -191,7 +191,7 @@ export default function JavaScriptColorConverter() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Convert Colors and Generate JavaScript Code</h1>
+        <h2 className="text-3xl font-bold tracking-tight">Convert Colors and Generate JavaScript Code</h2>
         <p className="text-muted-foreground mt-2">
           Convert between HEX, RGB, HSL, and named colors with visual preview and code snippets.
         </p>

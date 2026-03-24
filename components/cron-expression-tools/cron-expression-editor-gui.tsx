@@ -12,6 +12,95 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, Check, Sliders, Eye } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+function formatHour(hour: number): string {
+  if (hour === 0) return "12 AM"
+  if (hour < 12) return `${hour} AM`
+  if (hour === 12) return "12 PM"
+  return `${hour - 12} PM`
+}
+
+function getMonthName(month: number): string {
+  const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  return months[month]
+}
+
+function getDayName(day: number): string {
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  return days[day]
+}
+
+function explainCron(expression: string): string {
+  const parts = expression.split(" ")
+  const explanations: string[] = []
+
+  // Minute
+  if (parts[0] === "*") explanations.push("every minute")
+  else if (parts[0].startsWith("*/")) explanations.push(`every ${parts[0].slice(2)} minutes`)
+  else explanations.push(`at minute ${parts[0]}`)
+
+  // Hour
+  if (parts[1] !== "*") {
+    if (parts[1].includes("-")) {
+      const [start, end] = parts[1].split("-")
+      explanations.push(`between ${formatHour(parseInt(start))} and ${formatHour(parseInt(end))}`)
+    } else {
+      explanations.push(`at ${formatHour(parseInt(parts[1]))}`)
+    }
+  }
+
+  // Day of Month
+  if (parts[2] !== "*") {
+    if (parts[2].includes(",")) explanations.push(`on days ${parts[2]}`)
+    else explanations.push(`on day ${parts[2]}`)
+  }
+
+  // Month
+  if (parts[3] !== "*") {
+    if (parts[3].includes(",")) {
+      const months = parts[3].split(",").map((m) => getMonthName(parseInt(m)))
+      explanations.push(`in ${months.join(", ")}`)
+    } else explanations.push(`in ${getMonthName(parseInt(parts[3]))}`)
+  }
+
+  // Day of Week
+  if (parts[4] !== "*") {
+    if (parts[4].includes("-")) {
+      const [start, end] = parts[4].split("-")
+      explanations.push(`from ${getDayName(parseInt(start))} to ${getDayName(parseInt(end))}`)
+    } else if (parts[4].includes(",")) {
+      const days = parts[4].split(",").map((d) => getDayName(parseInt(d)))
+      explanations.push(`on ${days.join(", ")}`)
+    } else {
+      explanations.push(`on ${getDayName(parseInt(parts[4]))}`)
+    }
+  }
+
+  return `Runs ${explanations.join(", ")}`
+}
+
+function buildFieldValue(type: string, value: number, step: number, range: number[], specific: number[], min: number, max: number): string {
+  switch (type) {
+    case "every":
+      return "*"
+    case "specific":
+      return specific.length > 0 ? specific.join(",") : value.toString()
+    case "range":
+      return `${range[0]}-${range[1]}`
+    case "step":
+      return `*/${step}`
+    default:
+      return "*"
+  }
+}
+
+function toggleSpecificValue(values: number[], value: number, setter: (v: number[]) => void, min: number, max: number) {
+  if (values.includes(value)) {
+    setter(values.filter((v) => v !== value))
+  } else {
+    setter([...values, value].sort((a, b) => a - b))
+  }
+}
+
 export default function CronExpressionEditorGui() {
   const [minute, setMinute] = useState("*")
   const [hour, setHour] = useState("*")
@@ -75,29 +164,6 @@ export default function CronExpressionEditorGui() {
       console.error("Failed to copy:", err)
     }
   }, [cronExpression])
-
-  const toggleSpecificValue = (values: number[], value: number, setter: (v: number[]) => void, min: number, max: number) => {
-    if (values.includes(value)) {
-      setter(values.filter((v) => v !== value))
-    } else {
-      setter([...values, value].sort((a, b) => a - b))
-    }
-  }
-
-  const buildFieldValue = (type: string, value: number, step: number, range: number[], specific: number[], min: number, max: number): string => {
-    switch (type) {
-      case "every":
-        return "*"
-      case "specific":
-        return specific.length > 0 ? specific.join(",") : value.toString()
-      case "range":
-        return `${range[0]}-${range[1]}`
-      case "step":
-        return `*/${step}`
-      default:
-        return "*"
-    }
-  }
 
   const resetAll = () => {
     setMinute("*")
@@ -504,70 +570,4 @@ export default function CronExpressionEditorGui() {
       </Card>
     </div>
   )
-}
-
-function formatHour(hour: number): string {
-  if (hour === 0) return "12 AM"
-  if (hour < 12) return `${hour} AM`
-  if (hour === 12) return "12 PM"
-  return `${hour - 12} PM`
-}
-
-function getMonthName(month: number): string {
-  const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  return months[month]
-}
-
-function getDayName(day: number): string {
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  return days[day]
-}
-
-function explainCron(expression: string): string {
-  const parts = expression.split(" ")
-  const explanations: string[] = []
-
-  // Minute
-  if (parts[0] === "*") explanations.push("every minute")
-  else if (parts[0].startsWith("*/")) explanations.push(`every ${parts[0].slice(2)} minutes`)
-  else explanations.push(`at minute ${parts[0]}`)
-
-  // Hour
-  if (parts[1] !== "*") {
-    if (parts[1].includes("-")) {
-      const [start, end] = parts[1].split("-")
-      explanations.push(`between ${formatHour(parseInt(start))} and ${formatHour(parseInt(end))}`)
-    } else {
-      explanations.push(`at ${formatHour(parseInt(parts[1]))}`)
-    }
-  }
-
-  // Day of Month
-  if (parts[2] !== "*") {
-    if (parts[2].includes(",")) explanations.push(`on days ${parts[2]}`)
-    else explanations.push(`on day ${parts[2]}`)
-  }
-
-  // Month
-  if (parts[3] !== "*") {
-    if (parts[3].includes(",")) {
-      const months = parts[3].split(",").map((m) => getMonthName(parseInt(m)))
-      explanations.push(`in ${months.join(", ")}`)
-    } else explanations.push(`in ${getMonthName(parseInt(parts[3]))}`)
-  }
-
-  // Day of Week
-  if (parts[4] !== "*") {
-    if (parts[4].includes("-")) {
-      const [start, end] = parts[4].split("-")
-      explanations.push(`from ${getDayName(parseInt(start))} to ${getDayName(parseInt(end))}`)
-    } else if (parts[4].includes(",")) {
-      const days = parts[4].split(",").map((d) => getDayName(parseInt(d)))
-      explanations.push(`on ${days.join(", ")}`)
-    } else {
-      explanations.push(`on ${getDayName(parseInt(parts[4]))}`)
-    }
-  }
-
-  return `Runs ${explanations.join(", ")}`
 }
