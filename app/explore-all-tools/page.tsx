@@ -15,7 +15,54 @@ import videoToolLinks from "@/json-assets/video-tool-links.json";
 import imageToolLinks from "@/json-assets/image-tool-links.json";
 import mathToolsData from "@/json-assets/math-tools-links.json";
 
+// Additional tool categories
+import asciiToolsLinks from "@/json-assets/ascii-tools-links.json";
+import audioToolsLinks from "@/json-assets/audio-tools-links.json";
+import barcodeToolsLinks from "@/json-assets/barcode-tools-links.json";
+import binaryToolsLinks from "@/json-assets/binary-tools-links.json";
+import calendarToolsLinks from "@/json-assets/calendar-tools-links.json";
+import chartToolsLinks from "@/json-assets/chart-tools-links.json";
+import cronExpressionToolsLinks from "@/json-assets/cron-expression-tools-links.json";
+import cssToolsLinks from "@/json-assets/css-tools-links.json";
+import csvToolsLinks from "@/json-assets/csv-tools-links.json";
+import dateTimeToolsLinks from "@/json-assets/date-time-tools-links.json";
+import developerToolsLinks from "@/json-assets/developer-tools-links.json";
+import emojiToolsLinks from "@/json-assets/emoji-tools-links.json";
+import encodingToolsLinks from "@/json-assets/encoding-tools-links.json";
+import encryptionToolsLinks from "@/json-assets/encryption-tools-links.json";
+import excelToolsLinks from "@/json-assets/excel-tools-links.json";
+import fontToolsLinks from "@/json-assets/font-tools-links.json";
+import funToolsLinks from "@/json-assets/fun-tools-links.json";
+import hashToolsLinks from "@/json-assets/hash-tools-links.json";
+import hexToolsLinks from "@/json-assets/hex-tools-links.json";
+import htmlToolsLinks from "@/json-assets/html-tools-links.json";
+import iconToolsLinks from "@/json-assets/icon-tools-links.json";
+import javascriptToolsLinks from "@/json-assets/javascript-tools-links.json";
+import jwtToolsLinks from "@/json-assets/jwt-tools-links.json";
+import markdownToolsLinks from "@/json-assets/markdown-tools-links.json";
+import minifierToolsLinks from "@/json-assets/minifier-tools-links.json";
+import numberToolsLinks from "@/json-assets/number-tools-links.json";
+import passwordToolsLinks from "@/json-assets/password-tools-links.json";
+import physicsToolsLinks from "@/json-assets/physics-tools-links.json";
+import qrCodeToolsLinks from "@/json-assets/qr-code-tools-links.json";
+import simulatorsLinks from "@/json-assets/simulators-links.json";
+import sqlToolsLinks from "@/json-assets/sql-tools-links.json";
+import statisticsToolsLinks from "@/json-assets/statistics-tools-links.json";
+import stringToolsLinks from "@/json-assets/string-tools-links.json";
+import svgToolsLinks from "@/json-assets/svg-tools-links.json";
+import textToolsLinks from "@/json-assets/text-tools-links.json";
+import timestampToolsLinks from "@/json-assets/timestamp-tools-links.json";
+import timezoneToolsLinks from "@/json-assets/timezone-tools-links.json";
+import tomlToolsLinks from "@/json-assets/toml-tools-links.json";
+import typographyToolsLinks from "@/json-assets/typography-tools-links.json";
+import unicodeToolsLinks from "@/json-assets/unicode-tools-links.json";
+import urlToolsLinks from "@/json-assets/url-tools-links.json";
+import uuidToolsLinks from "@/json-assets/uuid-tools-links.json";
+import xmlToolsLinks from "@/json-assets/xml-tools-links.json";
+import yamlToolsLinks from "@/json-assets/yaml-tools-links.json";
+
 import ToolLinkCards from "@/components/utils/ToolLinkCards";
+import UniversalSearch from "@/components/utils/universal-search";
 
 export const metadata: Metadata = {
   title: "Explore All Tools - 1000 Free Online Tools",
@@ -39,6 +86,14 @@ const toolsByCategory = [
     tools: imageToolLinks,
   },
   {
+    categoryName: "Video Tools",
+    tools: videoToolLinks,
+  },
+  {
+    categoryName: "Audio Tools",
+    tools: audioToolsLinks,
+  },
+  {
     categoryName: "Design Tools",
     tools: [
       {
@@ -51,28 +106,55 @@ const toolsByCategory = [
   },
   {
     categoryName: "Developer Tools",
-    tools: [
-      {
-        name: "Mock Data Generator",
-        description:
-          "Generate realistic test data for your applications to speed up development and testing.",
-        href: "/developer-tools/mock-data-generator",
-      },
-      {
-        name: "Javascript Online Playground",
-        description:
-          "Write, run, and test JavaScript code directly in your browser",
-        href: "/developer-tools/js-online-compiler",
-      },
-    ],
+    tools: developerToolsLinks,
   },
   {
-    categoryName: "Video Tools",
-    tools: videoToolLinks,
+    categoryName: "CSS Tools",
+    tools: cssToolsLinks,
+  },
+  {
+    categoryName: "HTML Tools",
+    tools: htmlToolsLinks,
+  },
+  {
+    categoryName: "JavaScript Tools",
+    tools: javascriptToolsLinks,
   },
   {
     categoryName: "JSON Tools",
     tools: jsonToolLinks,
+  },
+  {
+    categoryName: "CSV Tools",
+    tools: csvToolsLinks,
+  },
+  {
+    categoryName: "SQL Tools",
+    tools: sqlToolsLinks,
+  },
+  {
+    categoryName: "XML Tools",
+    tools: xmlToolsLinks,
+  },
+  {
+    categoryName: "YAML Tools",
+    tools: yamlToolsLinks,
+  },
+  {
+    categoryName: "TOML Tools",
+    tools: tomlToolsLinks,
+  },
+  {
+    categoryName: "Markdown Tools",
+    tools: markdownToolsLinks,
+  },
+  {
+    categoryName: "Text Tools",
+    tools: textToolsLinks,
+  },
+  {
+    categoryName: "String Tools",
+    tools: stringToolsLinks,
   },
   {
     categoryName: "Color Tools",
@@ -90,7 +172,131 @@ const toolsByCategory = [
     categoryName: "Calculators",
     tools: calculators,
   },
-];
+  {
+    categoryName: "Hash Tools",
+    tools: hashToolsLinks,
+  },
+  {
+    categoryName: "Encryption Tools",
+    tools: encryptionToolsLinks,
+  },
+  {
+    categoryName: "Encoding Tools",
+    tools: encodingToolsLinks,
+  },
+  {
+    categoryName: "Password Tools",
+    tools: passwordToolsLinks,
+  },
+  {
+    categoryName: "ASCII Tools",
+    tools: asciiToolsLinks,
+  },
+  {
+    categoryName: "Binary Tools",
+    tools: binaryToolsLinks,
+  },
+  {
+    categoryName: "Hex Tools",
+    tools: hexToolsLinks,
+  },
+  {
+    categoryName: "Unicode Tools",
+    tools: unicodeToolsLinks,
+  },
+  {
+    categoryName: "Number Tools",
+    tools: numberToolsLinks,
+  },
+  {
+    categoryName: "Date & Time Tools",
+    tools: dateTimeToolsLinks,
+  },
+  {
+    categoryName: "Timestamp Tools",
+    tools: timestampToolsLinks,
+  },
+  {
+    categoryName: "Timezone Tools",
+    tools: timezoneToolsLinks,
+  },
+  {
+    categoryName: "Calendar Tools",
+    tools: calendarToolsLinks,
+  },
+  {
+    categoryName: "URL Tools",
+    tools: urlToolsLinks,
+  },
+  {
+    categoryName: "QR Code Tools",
+    tools: qrCodeToolsLinks,
+  },
+  {
+    categoryName: "Barcode Tools",
+    tools: barcodeToolsLinks,
+  },
+  {
+    categoryName: "SVG Tools",
+    tools: svgToolsLinks,
+  },
+  {
+    categoryName: "Icon Tools",
+    tools: iconToolsLinks,
+  },
+  {
+    categoryName: "Font Tools",
+    tools: fontToolsLinks,
+  },
+  {
+    categoryName: "Typography Tools",
+    tools: typographyToolsLinks,
+  },
+  {
+    categoryName: "Chart Tools",
+    tools: chartToolsLinks,
+  },
+  {
+    categoryName: "Excel Tools",
+    tools: excelToolsLinks,
+  },
+  {
+    categoryName: "Statistics Tools",
+    tools: statisticsToolsLinks,
+  },
+  {
+    categoryName: "Physics Tools",
+    tools: physicsToolsLinks,
+  },
+  {
+    categoryName: "Simulators",
+    tools: simulatorsLinks,
+  },
+  {
+    categoryName: "Fun Tools",
+    tools: funToolsLinks,
+  },
+  {
+    categoryName: "Emoji Tools",
+    tools: emojiToolsLinks,
+  },
+  {
+    categoryName: "JWT Tools",
+    tools: jwtToolsLinks,
+  },
+  {
+    categoryName: "Minifier Tools",
+    tools: minifierToolsLinks,
+  },
+  {
+    categoryName: "Cron Expression Tools",
+    tools: cronExpressionToolsLinks,
+  },
+  {
+    categoryName: "UUID Tools",
+    tools: uuidToolsLinks,
+  },
+].sort((a, b) => a.categoryName.localeCompare(b.categoryName));
 
 export default function ExploreAllToolsPage() {
   return (
@@ -107,6 +313,11 @@ export default function ExploreAllToolsPage() {
           </p>
         </div>
       </section>
+
+      <div>
+        <h2>Universal Tool Search</h2>
+        <UniversalSearch />
+      </div>
 
       {/* Accordion Categories */}
       <section className=" mx-auto px-4 pb-12 w-full">
