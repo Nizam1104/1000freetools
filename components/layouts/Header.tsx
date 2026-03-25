@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DarkLightModeToggler } from "../utils/DarkLightModesToggler";
 import { FavouriteToggle } from "../utils/FavouriteToggle";
+import UniversalSearch from "../utils/universal-search";
 
 export default function Header() {
   const pathname = usePathname();
@@ -20,6 +21,7 @@ export default function Header() {
           </div>
         </Link>
         <div className="flex items-center gap-2">
+          <UniversalSearch />
           <FavouriteToggle />
           <DarkLightModeToggler />
         </div>

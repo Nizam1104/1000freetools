@@ -1,0 +1,7392 @@
+{
+  "/ascii-tools": {
+    "/ascii-art-generator": [
+      "text art",
+      "lettering"
+    ],
+    "/ascii-code-table": [
+      "character codes",
+      "symbols"
+    ],
+    "/ascii-to-braille-converter": [
+      "braille",
+      "tactile"
+    ],
+    "/ascii-to-decimal-converter": [
+      "decimal",
+      "numbers"
+    ],
+    "/ascii-to-hex-converter": [
+      "hex",
+      "hexadecimal"
+    ],
+    "/ascii-to-octal-converter": [
+      "octal",
+      "base8"
+    ],
+    "/leet-speak-converter": [
+      "leet",
+      "1337",
+      "hacker text"
+    ],
+    "/lorem-ipsum-generator": [
+      "placeholder text",
+      "dummy text"
+    ],
+    "/regex-tester": [
+      "regex",
+      "pattern match",
+      "regexp"
+    ],
+    "/upside-down-text-generator": [
+      "flip text",
+      "inverted"
+    ],
+    "/utf8-to-utf16-converter": [
+      "utf16",
+      "encoding"
+    ],
+    "/utf8-validator": [
+      "validate",
+      "encoding check"
+    ]
+  },
+  "/audio-tools": {
+    "/audio-bitrate-changer": [
+      "bitrate",
+      "kbps",
+      "quality"
+    ],
+    "/audio-channel-remover": [
+      "mono",
+      "stereo channels"
+    ],
+    "/audio-channel-splitter": [
+      "split channels",
+      "stereo"
+    ],
+    "/audio-clip-maker": [
+      "clip",
+      "cut",
+      "snippet"
+    ],
+    "/audio-compressor": [
+      "compress",
+      "reduce size"
+    ],
+    "/audio-cover-art-adder": [
+      "album art",
+      "thumbnail"
+    ],
+    "/audio-cover-art-extractor": [
+      "extract art",
+      "album image"
+    ],
+    "/audio-equalizer-basic": [
+      "eq",
+      "bass treble"
+    ],
+    "/audio-fade-in-out": [
+      "fade",
+      "smooth transition"
+    ],
+    "/audio-format-converter": [
+      "mp3",
+      "wav",
+      "flac"
+    ],
+    "/audio-frequency-analyzer": [
+      "frequency",
+      "spectrum",
+      "hz"
+    ],
+    "/audio-gain-analyzer": [
+      "gain",
+      "volume level"
+    ],
+    "/audio-loop-maker": [
+      "loop",
+      "repeat"
+    ],
+    "/audio-loudness-meter": [
+      "loudness",
+      "lufs",
+      "db"
+    ],
+    "/audio-merger": [
+      "merge",
+      "join",
+      "combine"
+    ],
+    "/audio-metadata-editor": [
+      "tags",
+      "id3",
+      "metadata"
+    ],
+    "/audio-mono-stereo-converter": [
+      "mono",
+      "stereo"
+    ],
+    "/audio-normalizer": [
+      "normalize",
+      "level"
+    ],
+    "/audio-pitch-changer": [
+      "pitch",
+      "key shift"
+    ],
+    "/audio-resampler": [
+      "resample",
+      "sample rate"
+    ],
+    "/audio-reverse": [
+      "reverse",
+      "backwards"
+    ],
+    "/audio-sample-extractor": [
+      "sample",
+      "extract clip"
+    ],
+    "/audio-sample-rate-converter": [
+      "sample rate",
+      "hz",
+      "khz"
+    ],
+    "/audio-silence-remover": [
+      "silence",
+      "trim gaps"
+    ],
+    "/audio-speed-changer": [
+      "speed",
+      "tempo",
+      "playback"
+    ],
+    "/audio-splitter": [
+      "split",
+      "divide"
+    ],
+    "/audio-thumbnail-generator": [
+      "thumbnail",
+      "preview image"
+    ],
+    "/audio-track-extractor": [
+      "extract track",
+      "isolate"
+    ],
+    "/audio-trimmer": [
+      "trim",
+      "cut",
+      "crop"
+    ],
+    "/audio-volume-adjuster": [
+      "volume",
+      "loudness"
+    ],
+    "/audio-waveform-generator": [
+      "waveform",
+      "visualize"
+    ]
+  },
+  "/barcode-tools": {
+    "/barcode-color-inverter": [
+      "invert",
+      "colors"
+    ],
+    "/barcode-comparison": [
+      "compare",
+      "diff"
+    ],
+    "/barcode-data-encoder": [
+      "encode",
+      "data"
+    ],
+    "/barcode-font-encoder": [
+      "font",
+      "encode"
+    ],
+    "/barcode-generator": [
+      "create",
+      "make"
+    ],
+    "/barcode-image-resizer": [
+      "resize",
+      "scale"
+    ],
+    "/barcode-lookup": [
+      "lookup",
+      "search",
+      "identify"
+    ],
+    "/barcode-repair": [
+      "fix",
+      "restore"
+    ],
+    "/barcode-scanner": [
+      "scan",
+      "read",
+      "decode"
+    ],
+    "/barcode-sequence-generator": [
+      "sequence",
+      "batch",
+      "series"
+    ],
+    "/barcode-to-base64": [
+      "base64",
+      "encode"
+    ],
+    "/barcode-to-csv": [
+      "csv",
+      "export"
+    ],
+    "/barcode-to-pdf": [
+      "pdf",
+      "export"
+    ],
+    "/barcode-to-text-converter": [
+      "text",
+      "decode"
+    ],
+    "/barcode-validator": [
+      "validate",
+      "check"
+    ],
+    "/barcode-verification": [
+      "verify",
+      "authenticate"
+    ],
+    "/bulk-barcode-generator": [
+      "bulk",
+      "batch",
+      "multiple"
+    ],
+    "/inventory-template-generator": [
+      "inventory",
+      "template",
+      "stock"
+    ],
+    "/isbn-barcode-generator": [
+      "isbn",
+      "book"
+    ],
+    "/qr-code-analytics-generator": [
+      "analytics",
+      "tracking",
+      "qr"
+    ]
+  },
+  "/binary-tools": {
+    "/binary-bit-flipper-manipulator": [
+      "flip bits",
+      "toggle"
+    ],
+    "/binary-calculator": [
+      "add",
+      "subtract",
+      "math"
+    ],
+    "/binary-checksum-hash-generator": [
+      "checksum",
+      "hash"
+    ],
+    "/binary-clock-time-converter": [
+      "clock",
+      "time"
+    ],
+    "/binary-complement-calculator": [
+      "complement",
+      "twos complement"
+    ],
+    "/binary-file-viewer-editor": [
+      "file viewer",
+      "hex editor"
+    ],
+    "/binary-gray-code-converter": [
+      "gray code"
+    ],
+    "/binary-image-steganography": [
+      "steganography",
+      "hide data"
+    ],
+    "/binary-logic-gate-calculator": [
+      "logic gate",
+      "AND OR NOT"
+    ],
+    "/binary-palindrome-checker": [
+      "palindrome",
+      "check"
+    ],
+    "/binary-pattern-generator-finder": [
+      "pattern",
+      "sequence"
+    ],
+    "/binary-string-splitter-joiner": [
+      "split",
+      "join"
+    ],
+    "/binary-to-decimal-converter": [
+      "decimal"
+    ],
+    "/binary-to-hexadecimal-converter": [
+      "hex"
+    ],
+    "/binary-to-octal-converter": [
+      "octal"
+    ],
+    "/binary-to-text-converter": [
+      "text",
+      "string"
+    ],
+    "/binary-uuid-guid-generator": [
+      "uuid",
+      "guid"
+    ],
+    "/decimal-to-binary-converter": [
+      "decimal"
+    ],
+    "/hexadecimal-to-binary-converter": [
+      "hex"
+    ],
+    "/octal-to-binary-converter": [
+      "octal"
+    ],
+    "/text-to-binary-converter": [
+      "text",
+      "string"
+    ]
+  },
+  "/calculators": {
+    "/0-100-acceleration-estimator": [
+      "0 to 100",
+      "car speed"
+    ],
+    "/1rm-calculator": [
+      "one rep max",
+      "strength"
+    ],
+    "/4-percent-rule-retirement-calculator": [
+      "4% rule",
+      "retirement withdrawal"
+    ],
+    "/50-30-20-budget-rule-calculator": [
+      "budget",
+      "spending rule"
+    ],
+    "/a-b-test-significance-calculator": [
+      "ab test",
+      "statistical significance"
+    ],
+    "/ac-impedance-calculator": [
+      "impedance",
+      "ac circuit"
+    ],
+    "/acceleration-calculator": [
+      "acceleration",
+      "velocity time"
+    ],
+    "/acoustic-impedance-calculator": [
+      "acoustic",
+      "impedance",
+      "sound"
+    ],
+    "/activity-calorie-calculator": [
+      "activity",
+      "exercise calories"
+    ],
+    "/adc-resolution-calculator": [
+      "adc",
+      "bits resolution"
+    ],
+    "/addition-calculator": [
+      "add",
+      "sum",
+      "plus"
+    ],
+    "/aes-key-size-estimator": [
+      "aes",
+      "encryption key"
+    ],
+    "/age-calculator": [
+      "birthdate",
+      "years old"
+    ],
+    "/air-conditioner-tonnage-calculator": [
+      "ac tonnage",
+      "cooling load"
+    ],
+    "/air-density-calculator": [
+      "air density",
+      "altitude pressure"
+    ],
+    "/alcohol-dilution-calculator": [
+      "dilute",
+      "abv",
+      "proof"
+    ],
+    "/altitude-sickness-risk-calculator": [
+      "altitude sickness",
+      "mountain"
+    ],
+    "/anniversary-calculator": [
+      "anniversary",
+      "years together"
+    ],
+    "/antilog-calculator": [
+      "antilog",
+      "inverse log"
+    ],
+    "/aperture-depth-of-field-calculator": [
+      "aperture",
+      "depth field",
+      "f-stop"
+    ],
+    "/aquarium-co-calculator": [
+      "co2",
+      "aquarium",
+      "fish tank"
+    ],
+    "/aquarium-filtration-calculator": [
+      "filtration",
+      "fish tank flow"
+    ],
+    "/aquarium-volume-calculator": [
+      "tank volume",
+      "fish tank"
+    ],
+    "/arithmetic-sequence-calculator": [
+      "sequence",
+      "common difference"
+    ],
+    "/asphalt-quantity-calculator": [
+      "asphalt",
+      "paving",
+      "road"
+    ],
+    "/attendance-percentage-calculator": [
+      "attendance",
+      "present days"
+    ],
+    "/audio-dynamic-range-calculator": [
+      "dynamic range",
+      "db"
+    ],
+    "/average-calculator": [
+      "mean",
+      "average numbers"
+    ],
+    "/baby-age-calculator": [
+      "baby age",
+      "months weeks"
+    ],
+    "/baby-feeding-chart-calculator": [
+      "feeding schedule",
+      "infant"
+    ],
+    "/baby-sleep-schedule-calculator": [
+      "sleep schedule",
+      "infant nap"
+    ],
+    "/backpack-load-calculator": [
+      "backpack weight",
+      "hiking load"
+    ],
+    "/bacterial-growth-calculator": [
+      "bacteria",
+      "doubling time"
+    ],
+    "/baking-time-adjustment-calculator": [
+      "baking time",
+      "oven adjust"
+    ],
+    "/base-converter-calculator": [
+      "number base",
+      "radix"
+    ],
+    "/basketball-shooting-percentage-calculator": [
+      "shooting %",
+      "field goal"
+    ],
+    "/battery-backup-time-calculator": [
+      "backup time",
+      "ups battery"
+    ],
+    "/battery-c-rate-calculator": [
+      "c rate",
+      "charge rate"
+    ],
+    "/battery-life-calculator": [
+      "battery life",
+      "drain time"
+    ],
+    "/beam-bending-calculator": [
+      "beam",
+      "bending moment"
+    ],
+    "/beer-abv-calculator": [
+      "beer alcohol",
+      "homebrew"
+    ],
+    "/belt-length-calculator": [
+      "belt length",
+      "pulley"
+    ],
+    "/belt-tension-calculator": [
+      "belt tension",
+      "drive"
+    ],
+    "/biorhythm-calculator": [
+      "biorhythm",
+      "physical emotional cycles"
+    ],
+    "/bird-cage-size-calculator": [
+      "bird cage",
+      "parrot space"
+    ],
+    "/blood-alcohol-calculator": [
+      "bac",
+      "drunk driving"
+    ],
+    "/blood-sugar-converter": [
+      "blood sugar",
+      "glucose mg/dl"
+    ],
+    "/bmi-calculator": [
+      "body mass",
+      "weight height"
+    ],
+    "/bmr-calculator": [
+      "metabolic rate",
+      "calories rest"
+    ],
+    "/boat-speed-calculator": [
+      "boat speed",
+      "knots"
+    ],
+    "/body-fat-calculator": [
+      "body fat %",
+      "skinfold"
+    ],
+    "/body-surface-area-calculator": [
+      "body surface",
+      "bsa"
+    ],
+    "/boiler-efficiency-calculator": [
+      "boiler",
+      "efficiency"
+    ],
+    "/bolt-torque-calculator": [
+      "bolt torque",
+      "fastener"
+    ],
+    "/bond-convexity-calculator": [
+      "bond convexity",
+      "duration"
+    ],
+    "/bond-duration-calculator": [
+      "bond duration",
+      "macaulay"
+    ],
+    "/bond-price-calculator": [
+      "bond price",
+      "coupon rate"
+    ],
+    "/bond-yield-calculator": [
+      "bond yield",
+      "ytm"
+    ],
+    "/break-even-discount-calculator": [
+      "break even discount",
+      "price"
+    ],
+    "/break-even-point-calculator": [
+      "break even",
+      "fixed costs"
+    ],
+    "/breathing-exercise-timer": [
+      "breathing",
+      "meditation timer"
+    ],
+    "/brewster-angle-calculator": [
+      "brewster angle",
+      "polarization"
+    ],
+    "/brick-bond-calculator": [
+      "brick bond",
+      "pattern"
+    ],
+    "/brick-calculator": [
+      "bricks",
+      "wall"
+    ],
+    "/business-days-calculator": [
+      "working days",
+      "weekdays"
+    ],
+    "/business-loan-emi-calculator": [
+      "business loan",
+      "emi"
+    ],
+    "/buy-vs-rent-calculator": [
+      "buy vs rent",
+      "mortgage comparison"
+    ],
+    "/calorie-deficit-calculator": [
+      "calorie deficit",
+      "weight loss"
+    ],
+    "/calories-per-serving-calculator": [
+      "serving calories",
+      "nutrition"
+    ],
+    "/camera-exposure-calculator": [
+      "exposure",
+      "shutter aperture iso"
+    ],
+    "/camping-gear-weight-calculator": [
+      "camping gear",
+      "pack weight"
+    ],
+    "/canvas-aspect-ratio-calculator": [
+      "aspect ratio",
+      "canvas dimensions"
+    ],
+    "/car-loan-affordability-calculator": [
+      "car loan",
+      "affordability"
+    ],
+    "/car-loan-calculator": [
+      "car loan",
+      "emi monthly"
+    ],
+    "/carb-intake-calculator": [
+      "carbs",
+      "diet macros"
+    ],
+    "/carbon-footprint-calculator": [
+      "carbon footprint",
+      "co2 emissions"
+    ],
+    "/cargo-volume-calculator": [
+      "cargo volume",
+      "shipping space"
+    ],
+    "/carpet-area-calculator": [
+      "carpet area",
+      "floor size"
+    ],
+    "/cat-calorie-calculator": [
+      "cat food",
+      "feline diet"
+    ],
+    "/ceiling-tile-calculator": [
+      "ceiling tiles",
+      "room"
+    ],
+    "/cell-culture-doubling-calculator": [
+      "cell culture",
+      "doubling time"
+    ],
+    "/cgpa-calculator": [
+      "cgpa",
+      "gpa credits"
+    ],
+    "/charging-cost-ev-calculator": [
+      "ev charging cost",
+      "electric vehicle"
+    ],
+    "/child-height-predictor": [
+      "child height",
+      "growth prediction"
+    ],
+    "/chiller-tonnage-calculator": [
+      "chiller",
+      "cooling tons"
+    ],
+    "/cholesterol-ratio-calculator": [
+      "cholesterol",
+      "hdl ldl ratio"
+    ],
+    "/chord-progression-generator": [
+      "chord progression",
+      "music"
+    ],
+    "/circle-area-calculator": [
+      "circle area",
+      "radius"
+    ],
+    "/clothing-shrinkage-estimator": [
+      "clothing shrink",
+      "washing"
+    ],
+    "/co-emissions-calculator": [
+      "co2",
+      "emissions"
+    ],
+    "/cocktail-abv-calculator": [
+      "cocktail alcohol",
+      "drink strength"
+    ],
+    "/coffee-to-water-ratio-calculator": [
+      "coffee ratio",
+      "brew strength"
+    ],
+    "/column-buckling-calculator": [
+      "column buckling",
+      "euler"
+    ],
+    "/combination-calculator": [
+      "combinations",
+      "nCr"
+    ],
+    "/compound-interest-calculator": [
+      "compound interest",
+      "investment growth"
+    ],
+    "/compounding-frequency-comparison": [
+      "compounding",
+      "interest frequency"
+    ],
+    "/concentration-calculator": [
+      "concentration",
+      "molarity"
+    ],
+    "/concrete-mix-ratio-calculator": [
+      "concrete mix",
+      "cement ratio"
+    ],
+    "/concrete-volume-calculator": [
+      "concrete volume",
+      "slab"
+    ],
+    "/container-load-calculator": [
+      "container load",
+      "shipping"
+    ],
+    "/cooper-test-calculator": [
+      "cooper test",
+      "fitness run"
+    ],
+    "/cost-of-capital-calculator": [
+      "cost of capital",
+      "wacc"
+    ],
+    "/countdown-calculator": [
+      "countdown",
+      "days until"
+    ],
+    "/cpc-cpm-ctr-calculator": [
+      "cpc cpm ctr",
+      "advertising"
+    ],
+    "/credit-card-payoff-calculator": [
+      "credit card debt",
+      "payoff"
+    ],
+    "/cricket-economy-rate-calculator": [
+      "economy rate",
+      "bowling"
+    ],
+    "/cricket-strike-rate-calculator": [
+      "strike rate",
+      "batting"
+    ],
+    "/crop-yield-estimator": [
+      "crop yield",
+      "harvest"
+    ],
+    "/current-calculator": [
+      "electric current",
+      "amps"
+    ],
+    "/curtain-length-calculator": [
+      "curtain length",
+      "window"
+    ],
+    "/customer-acquisition-cost-calculator": [
+      "cac",
+      "marketing cost"
+    ],
+    "/customer-lifetime-value-calculator": [
+      "clv",
+      "customer value"
+    ],
+    "/cycling-calorie-calculator": [
+      "cycling calories",
+      "biking"
+    ],
+    "/dac-resolution-calculator": [
+      "dac",
+      "digital analog"
+    ],
+    "/daily-calorie-needs-calculator": [
+      "daily calories",
+      "tdee"
+    ],
+    "/daily-habit-streak-calculator": [
+      "habit streak",
+      "days"
+    ],
+    "/date-add-subtract-calculator": [
+      "date add",
+      "days from date"
+    ],
+    "/date-difference-calculator": [
+      "date difference",
+      "days between"
+    ],
+    "/db-calculator": [
+      "decibels",
+      "db math"
+    ],
+    "/debt-to-income-ratio-calculator": [
+      "debt income ratio",
+      "dti"
+    ],
+    "/decibel-to-power-converter": [
+      "decibel power",
+      "watts"
+    ],
+    "/decimal-to-fraction-calculator": [
+      "decimal fraction"
+    ],
+    "/deep-sleep-cycle-planner": [
+      "sleep cycles",
+      "deep sleep"
+    ],
+    "/density-calculator": [
+      "density",
+      "mass volume"
+    ],
+    "/depreciation-calculator": [
+      "depreciation",
+      "asset value"
+    ],
+    "/determinant-calculator": [
+      "matrix determinant"
+    ],
+    "/dew-point-calculator": [
+      "dew point",
+      "humidity temperature"
+    ],
+    "/diaper-usage-estimator": [
+      "diapers",
+      "newborn"
+    ],
+    "/dilution-calculator": [
+      "dilution",
+      "concentration"
+    ],
+    "/dilution-factor-calculator": [
+      "dilution factor",
+      "lab"
+    ],
+    "/dimensional-weight-calculator": [
+      "dimensional weight",
+      "shipping"
+    ],
+    "/discount-calculator": [
+      "discount",
+      "sale price"
+    ],
+    "/discount-stacking-calculator": [
+      "stacked discounts",
+      "multiple"
+    ],
+    "/distance-formula-calculator": [
+      "distance formula",
+      "coordinates"
+    ],
+    "/dividend-payout-calculator": [
+      "dividend payout",
+      "shares"
+    ],
+    "/dividend-reinvestment-calculator": [
+      "drip",
+      "reinvest dividends"
+    ],
+    "/division-calculator": [
+      "divide",
+      "quotient"
+    ],
+    "/dna-base-count-calculator": [
+      "dna bases",
+      "nucleotide"
+    ],
+    "/dog-calorie-calculator": [
+      "dog food",
+      "pet diet"
+    ],
+    "/dollar-cost-averaging-calculator": [
+      "dca",
+      "invest regularly"
+    ],
+    "/door-frame-calculator": [
+      "door frame",
+      "dimensions"
+    ],
+    "/dopamine-detox-planner": [
+      "dopamine detox",
+      "digital fast"
+    ],
+    "/doppler-effect-calculator": [
+      "doppler",
+      "frequency shift"
+    ],
+    "/drone-flight-time-estimator": [
+      "drone flight",
+      "battery"
+    ],
+    "/drywall-area-calculator": [
+      "drywall",
+      "wall area"
+    ],
+    "/duty-cycle-calculator": [
+      "duty cycle",
+      "pwm"
+    ],
+    "/dynamic-pricing-calculator": [
+      "dynamic pricing",
+      "demand"
+    ],
+    "/ebitda-calculator": [
+      "ebitda",
+      "earnings"
+    ],
+    "/electric-power-calculator": [
+      "electric power",
+      "watts volts"
+    ],
+    "/electrical-load-calculator": [
+      "electrical load",
+      "amperage"
+    ],
+    "/electricity-appliance-wattage-calculator": [
+      "appliance wattage",
+      "power usage"
+    ],
+    "/electrochemical-cell-potential-calculator": [
+      "cell potential",
+      "emf"
+    ],
+    "/ellipse-area-calculator": [
+      "ellipse area",
+      "semi-axis"
+    ],
+    "/emergency-fund-calculator": [
+      "emergency fund",
+      "savings months"
+    ],
+    "/emi-breakup-visualizer": [
+      "emi breakdown",
+      "principal interest"
+    ],
+    "/emi-for-home-loan-calculator": [
+      "home loan emi",
+      "mortgage monthly"
+    ],
+    "/empirical-formula-calculator": [
+      "empirical formula",
+      "chemistry"
+    ],
+    "/energy-calculator": [
+      "energy",
+      "joules"
+    ],
+    "/energy-consumption-breakdown-calculator": [
+      "energy consumption",
+      "appliances kwh"
+    ],
+    "/engine-displacement-calculator": [
+      "engine displacement",
+      "cc cubic"
+    ],
+    "/entropy-calculator": [
+      "entropy",
+      "thermodynamics"
+    ],
+    "/escape-velocity-calculator": [
+      "escape velocity",
+      "planet gravity"
+    ],
+    "/ev-battery-capacity-estimator": [
+      "ev battery",
+      "kwh capacity"
+    ],
+    "/exam-correction-curve-calculator": [
+      "grade curve",
+      "exam score"
+    ],
+    "/exam-scoring-calculator": [
+      "exam score",
+      "marks"
+    ],
+    "/exponent-calculator": [
+      "exponent",
+      "power"
+    ],
+    "/expression-evaluator": [
+      "math expression",
+      "evaluate"
+    ],
+    "/factorial-calculator": [
+      "factorial",
+      "n!"
+    ],
+    "/fastener-load-calculator": [
+      "fastener",
+      "bolt load"
+    ],
+    "/fat-intake-calculator": [
+      "fat intake",
+      "diet"
+    ],
+    "/fertilizer-requirement-calculator": [
+      "fertilizer",
+      "npk crop"
+    ],
+    "/fibonacci-generator": [
+      "fibonacci",
+      "sequence"
+    ],
+    "/fire-number-calculator": [
+      "fire number",
+      "financial independence"
+    ],
+    "/fixed-deposit-interest-calculator": [
+      "fd interest",
+      "fixed deposit"
+    ],
+    "/flooring-calculator": [
+      "flooring",
+      "tiles sq ft"
+    ],
+    "/focal-length-calculator": [
+      "focal length",
+      "lens camera"
+    ],
+    "/football-goal-conversion-calculator": [
+      "goal conversion",
+      "soccer"
+    ],
+    "/force-calculator": [
+      "force",
+      "mass acceleration"
+    ],
+    "/foundation-volume-calculator": [
+      "foundation volume",
+      "concrete"
+    ],
+    "/fraction-to-decimal-calculator": [
+      "fraction decimal"
+    ],
+    "/freelance-effective-hourly-rate-calculator": [
+      "freelance rate",
+      "effective hourly"
+    ],
+    "/frequency-calculator": [
+      "frequency",
+      "hz period"
+    ],
+    "/fuel-cost-calculator": [
+      "fuel cost",
+      "gas trip"
+    ],
+    "/fuel-efficiency-comparison-calculator": [
+      "fuel efficiency",
+      "mpg comparison"
+    ],
+    "/funnel-drop-off-calculator": [
+      "funnel drop-off",
+      "conversion"
+    ],
+    "/future-value-calculator": [
+      "future value",
+      "investment"
+    ],
+    "/gacha-pull-probability-calculator": [
+      "gacha probability",
+      "pull rates"
+    ],
+    "/gcd-calculator": [
+      "gcd",
+      "greatest common divisor"
+    ],
+    "/gear-ratio-calculator": [
+      "gear ratio",
+      "rpm"
+    ],
+    "/gear-shifting-rpms-calculator": [
+      "gear shift",
+      "rpm speed"
+    ],
+    "/gear-train-efficiency-calculator": [
+      "gear train",
+      "efficiency"
+    ],
+    "/geometric-sequence-calculator": [
+      "geometric sequence",
+      "common ratio"
+    ],
+    "/glycemic-index-calculator": [
+      "glycemic index",
+      "gi food"
+    ],
+    "/glycemic-load-calculator": [
+      "glycemic load",
+      "carbs"
+    ],
+    "/goal-tracker-calculator": [
+      "goal progress",
+      "target"
+    ],
+    "/golden-ratio-calculator": [
+      "golden ratio",
+      "phi"
+    ],
+    "/golden-ratio-layout-generator": [
+      "golden ratio layout",
+      "design"
+    ],
+    "/golf-handicap-calculator": [
+      "golf handicap",
+      "score"
+    ],
+    "/gpa-calculator": [
+      "gpa",
+      "grade point"
+    ],
+    "/gpa-weight-distribution-calculator": [
+      "weighted gpa",
+      "credits"
+    ],
+    "/grade-percentage-calculator": [
+      "grade percentage",
+      "marks"
+    ],
+    "/gravel-quantity-calculator": [
+      "gravel",
+      "cubic yards"
+    ],
+    "/gravitational-field-calculator": [
+      "gravitational field",
+      "g force"
+    ],
+    "/gravitational-force-calculator": [
+      "gravity force",
+      "mass distance"
+    ],
+    "/greenhouse-ventilation-calculator": [
+      "greenhouse ventilation",
+      "airflow"
+    ],
+    "/grid-layout-calculator": [
+      "grid layout",
+      "columns rows"
+    ],
+    "/gross-vs-net-income-calculator": [
+      "gross net income",
+      "salary"
+    ],
+    "/hash-brute-force-time-estimator": [
+      "brute force time",
+      "password crack"
+    ],
+    "/head-loss-darcy-weisbach-calculator": [
+      "head loss",
+      "pipe flow"
+    ],
+    "/heart-rate-recovery-calculator": [
+      "heart rate recovery",
+      "fitness"
+    ],
+    "/heart-rate-zones-calculator": [
+      "heart rate zones",
+      "target bpm"
+    ],
+    "/heat-index-calculator": [
+      "heat index",
+      "feels like"
+    ],
+    "/heat-pump-cop-calculator": [
+      "heat pump cop",
+      "efficiency"
+    ],
+    "/heat-transfer-calculator": [
+      "heat transfer",
+      "thermal"
+    ],
+    "/henderson-hasselbalch-calculator": [
+      "henderson hasselbalch",
+      "buffer ph"
+    ],
+    "/hiking-pace-calculator": [
+      "hiking pace",
+      "trail speed"
+    ],
+    "/horse-feed-calculator": [
+      "horse feed",
+      "hay"
+    ],
+    "/horsepower-to-kw-converter": [
+      "horsepower kw",
+      "power"
+    ],
+    "/hourly-wage-to-salary-calculator": [
+      "hourly wage salary",
+      "annual"
+    ],
+    "/house-construction-cost-estimator": [
+      "construction cost",
+      "build house"
+    ],
+    "/housing-affordability-calculator": [
+      "housing affordability",
+      "income"
+    ],
+    "/humidity-calculator": [
+      "humidity",
+      "relative rh"
+    ],
+    "/hvac-airflow-calculator": [
+      "hvac airflow",
+      "cfm duct"
+    ],
+    "/hvac-btu-calculator": [
+      "hvac btu",
+      "heating cooling"
+    ],
+    "/ideal-bedtime-calculator": [
+      "bedtime",
+      "wake up sleep"
+    ],
+    "/ideal-gas-law-calculator": [
+      "ideal gas",
+      "pv=nrt"
+    ],
+    "/ideal-weight-calculator": [
+      "ideal weight",
+      "height"
+    ],
+    "/indoor-co-level-estimator": [
+      "indoor co2",
+      "ventilation"
+    ],
+    "/inductor-calculations": [
+      "inductor",
+      "inductance henry"
+    ],
+    "/interest-rate-finder-calculator": [
+      "interest rate",
+      "find rate"
+    ],
+    "/interest-vs-principal-split-calculator": [
+      "interest principal",
+      "loan split"
+    ],
+    "/inverse-matrix-calculator": [
+      "inverse matrix",
+      "matrix math"
+    ],
+    "/inverter-capacity-calculator": [
+      "inverter capacity",
+      "watts load"
+    ],
+    "/investment-return-rate-calculator": [
+      "investment return",
+      "roi rate"
+    ],
+    "/irr-calculator": [
+      "irr",
+      "internal rate return"
+    ],
+    "/irrigation-water-calculator": [
+      "irrigation water",
+      "crop field"
+    ],
+    "/iso-noise-predictor": [
+      "iso noise",
+      "camera sensor"
+    ],
+    "/k-d-ratio-calculator": [
+      "kd ratio",
+      "kills deaths gaming"
+    ],
+    "/ketogenic-macro-calculator": [
+      "keto macros",
+      "fat protein carbs"
+    ],
+    "/kidney-function-egfr-calculator": [
+      "egfr",
+      "kidney function"
+    ],
+    "/kinetic-energy-calculator": [
+      "kinetic energy",
+      "mass velocity"
+    ],
+    "/kitchen-measurement-converter": [
+      "kitchen measurements",
+      "cups tbsp"
+    ],
+    "/lactate-threshold-calculator": [
+      "lactate threshold",
+      "running pace"
+    ],
+    "/laminar-turbulent-flow-calculator": [
+      "laminar turbulent",
+      "reynolds"
+    ],
+    "/land-area-converter": [
+      "land area",
+      "acres hectares"
+    ],
+    "/laundry-detergent-calculator": [
+      "laundry detergent",
+      "load amount"
+    ],
+    "/law-of-cosines-calculator": [
+      "law cosines",
+      "triangle sides"
+    ],
+    "/law-of-sines-calculator": [
+      "law sines",
+      "triangle angles"
+    ],
+    "/lcm-calculator": [
+      "lcm",
+      "least common multiple"
+    ],
+    "/lead-conversion-calculator": [
+      "lead conversion",
+      "sales funnel"
+    ],
+    "/lean-body-mass-calculator": [
+      "lean mass",
+      "muscle weight"
+    ],
+    "/led-resistor-calculator": [
+      "led resistor",
+      "current limiting"
+    ],
+    "/lens-equation-calculator": [
+      "lens equation",
+      "focal image"
+    ],
+    "/line-height-calculator": [
+      "line height",
+      "typography"
+    ],
+    "/linear-equation-solver": [
+      "linear equation",
+      "solve x"
+    ],
+    "/livestock-feed-calculator": [
+      "livestock feed",
+      "cattle"
+    ],
+    "/load-progression-calculator": [
+      "progressive overload",
+      "strength training"
+    ],
+    "/loan-amortization-visualizer": [
+      "loan amortization",
+      "schedule"
+    ],
+    "/loan-emi-calculator": [
+      "loan emi",
+      "monthly payment"
+    ],
+    "/loan-payoff-time-calculator": [
+      "loan payoff",
+      "months left"
+    ],
+    "/loan-prepayment-impact-calculator": [
+      "prepayment",
+      "loan savings"
+    ],
+    "/loan-refinancing-calculator": [
+      "refinancing",
+      "new rate"
+    ],
+    "/logarithm-calculator": [
+      "log",
+      "natural log"
+    ],
+    "/loot-probability-calculator": [
+      "loot drop",
+      "game probability"
+    ],
+    "/lump-sum-vs-sip-analyzer": [
+      "lump sum vs sip",
+      "investment"
+    ],
+    "/macro-calculator": [
+      "macros",
+      "protein fat carbs"
+    ],
+    "/manning-equation-calculator": [
+      "manning equation",
+      "open channel flow"
+    ],
+    "/map-scale-calculator": [
+      "map scale",
+      "real distance"
+    ],
+    "/marathon-pace-calculator": [
+      "marathon pace",
+      "race time"
+    ],
+    "/margin-calculator": [
+      "profit margin",
+      "markup"
+    ],
+    "/mark-to-grade-converter": [
+      "marks grade",
+      "percentage"
+    ],
+    "/markup-calculator": [
+      "markup",
+      "selling price"
+    ],
+    "/matrix-addition-calculator": [
+      "matrix addition",
+      "add matrices"
+    ],
+    "/matrix-multiplication-calculator": [
+      "matrix multiply",
+      "dot product"
+    ],
+    "/median-calculator": [
+      "median",
+      "middle value"
+    ],
+    "/meditation-timer-scheduler": [
+      "meditation timer",
+      "mindfulness"
+    ],
+    "/met-calorie-calculator": [
+      "met value",
+      "activity calories"
+    ],
+    "/mileage-calculator": [
+      "mileage",
+      "fuel km"
+    ],
+    "/minimum-payment-calculator": [
+      "minimum payment",
+      "credit card"
+    ],
+    "/mirror-equation-calculator": [
+      "mirror equation",
+      "focal length"
+    ],
+    "/mobile-charging-time-calculator": [
+      "phone charging time",
+      "battery"
+    ],
+    "/mode-calculator": [
+      "mode",
+      "most frequent"
+    ],
+    "/modulo-calculator": [
+      "modulo",
+      "remainder"
+    ],
+    "/molality-calculator": [
+      "molality",
+      "solute solvent"
+    ],
+    "/molarity-calculator": [
+      "molarity",
+      "moles solution"
+    ],
+    "/molecular-mass-calculator": [
+      "molecular mass",
+      "molar weight"
+    ],
+    "/moles-to-volume-converter": [
+      "moles volume",
+      "gas"
+    ],
+    "/momentum-calculator": [
+      "momentum",
+      "mass velocity"
+    ],
+    "/money-saving-challenge-calculator": [
+      "saving challenge",
+      "52 week"
+    ],
+    "/monthly-budget-breakdown-calculator": [
+      "monthly budget",
+      "expenses"
+    ],
+    "/mortar-volume-calculator": [
+      "mortar volume",
+      "brickwork"
+    ],
+    "/mortgage-amortization-schedule": [
+      "mortgage schedule",
+      "monthly breakdown"
+    ],
+    "/mortgage-calculator": [
+      "mortgage",
+      "home loan"
+    ],
+    "/mortgage-refinance-break-even-calculator": [
+      "refinance break even",
+      "closing cost"
+    ],
+    "/mountain-oxygen-calculator": [
+      "mountain oxygen",
+      "altitude"
+    ],
+    "/multiplication-calculator": [
+      "multiply",
+      "product"
+    ],
+    "/net-profit-margin-calculator": [
+      "net profit",
+      "revenue"
+    ],
+    "/noise-exposure-calculator": [
+      "noise exposure",
+      "decibel time"
+    ],
+    "/noise-level-calculator": [
+      "noise level",
+      "db spl"
+    ],
+    "/note-frequency-calculator": [
+      "note frequency",
+      "hz music"
+    ],
+    "/nps-score-calculator": [
+      "nps",
+      "net promoter score"
+    ],
+    "/npv-calculator": [
+      "npv",
+      "net present value"
+    ],
+    "/nuclear-decay-half-life-calculator": [
+      "nuclear decay",
+      "half life"
+    ],
+    "/number-to-words-converter": [
+      "number words",
+      "spell out"
+    ],
+    "/office-space-per-employee-calculator": [
+      "office space",
+      "sq ft employee"
+    ],
+    "/ohms-law-calculator": [
+      "ohms law",
+      "voltage resistance"
+    ],
+    "/online-seller-profit-calculator": [
+      "seller profit",
+      "ecommerce"
+    ],
+    "/operating-margin-calculator": [
+      "operating margin",
+      "ebit"
+    ],
+    "/orbital-period-calculator": [
+      "orbital period",
+      "planet"
+    ],
+    "/oven-temperature-converter": [
+      "oven temp",
+      "celsius fahrenheit"
+    ],
+    "/ovulation-calculator": [
+      "ovulation",
+      "fertile days"
+    ],
+    "/pace-to-speed-converter": [
+      "pace speed",
+      "min/km mph"
+    ],
+    "/paint-cost-estimate-calculator": [
+      "paint cost",
+      "room"
+    ],
+    "/paint-coverage-calculator": [
+      "paint coverage",
+      "sq meter liters"
+    ],
+    "/pallet-stacking-calculator": [
+      "pallet stacking",
+      "warehouse"
+    ],
+    "/parallelogram-area-calculator": [
+      "parallelogram area",
+      "base height"
+    ],
+    "/pascals-triangle-calculator": [
+      "pascals triangle",
+      "binomial"
+    ],
+    "/password-strength-scorer": [
+      "password strength",
+      "security"
+    ],
+    "/payback-period-calculator": [
+      "payback period",
+      "investment return"
+    ],
+    "/pcb-trace-width-calculator": [
+      "pcb trace",
+      "current width"
+    ],
+    "/peak-to-peak-voltage-calculator": [
+      "peak voltage",
+      "vpp rms"
+    ],
+    "/percent-composition-calculator": [
+      "percent composition",
+      "chemistry"
+    ],
+    "/percentage-calculator": [
+      "percentage",
+      "percent of"
+    ],
+    "/percentage-change-calculator": [
+      "percentage change",
+      "increase decrease"
+    ],
+    "/permutation-calculator": [
+      "permutations",
+      "nPr"
+    ],
+    "/perspective-angle-calculator": [
+      "perspective angle",
+      "vanishing point"
+    ],
+    "/pesticide-dilution-calculator": [
+      "pesticide dilution",
+      "spray mix"
+    ],
+    "/pet-age-calculator": [
+      "pet age",
+      "dog human years"
+    ],
+    "/ph-calculator": [
+      "ph",
+      "acid base"
+    ],
+    "/photon-energy-calculator": [
+      "photon energy",
+      "wavelength"
+    ],
+    "/pipe-flow-reynolds-number-calculator": [
+      "pipe flow",
+      "reynolds"
+    ],
+    "/pipe-friction-loss-calculator": [
+      "pipe friction",
+      "pressure loss"
+    ],
+    "/pipe-water-tank-pressure-calculator": [
+      "water pressure",
+      "tank pipe"
+    ],
+    "/pka-pkb-calculator": [
+      "pka pkb",
+      "acid dissociation"
+    ],
+    "/plastering-calculator": [
+      "plastering",
+      "wall area"
+    ],
+    "/poh-calculator": [
+      "poh",
+      "hydroxide"
+    ],
+    "/poster-print-size-calculator": [
+      "poster size",
+      "print dimensions"
+    ],
+    "/potential-energy-calculator": [
+      "potential energy",
+      "height mass"
+    ],
+    "/power-calculator": [
+      "power",
+      "watts"
+    ],
+    "/power-factor-calculator": [
+      "power factor",
+      "ac circuit"
+    ],
+    "/pregnancy-due-date-calculator": [
+      "due date",
+      "last period"
+    ],
+    "/pregnancy-week-calculator": [
+      "pregnancy week",
+      "trimester"
+    ],
+    "/pregnancy-weight-gain-calculator": [
+      "pregnancy weight",
+      "gain"
+    ],
+    "/present-value-calculator": [
+      "present value",
+      "discount rate"
+    ],
+    "/pressure-calculator": [
+      "pressure",
+      "force area"
+    ],
+    "/price-per-unit-comparison-calculator": [
+      "price per unit",
+      "cost compare"
+    ],
+    "/prime-checker": [
+      "prime number",
+      "is prime"
+    ],
+    "/prime-factorization-calculator": [
+      "prime factors",
+      "factorize"
+    ],
+    "/productivity-streak-calculator": [
+      "productivity streak",
+      "habit days"
+    ],
+    "/profit-margin-calculator": [
+      "profit margin",
+      "revenue cost"
+    ],
+    "/protein-absorption-calculator": [
+      "protein absorption",
+      "digestion"
+    ],
+    "/protein-distribution-calculator": [
+      "protein meals",
+      "distribution"
+    ],
+    "/protein-intake-calculator": [
+      "protein intake",
+      "body weight"
+    ],
+    "/pulley-system-calculator": [
+      "pulley",
+      "mechanical advantage"
+    ],
+    "/pump-horsepower-calculator": [
+      "pump horsepower",
+      "flow head"
+    ],
+    "/punnett-square-calculator": [
+      "punnett square",
+      "genetics"
+    ],
+    "/pwm-frequency-calculator": [
+      "pwm frequency",
+      "duty cycle"
+    ],
+    "/pythagorean-theorem-calculator": [
+      "pythagorean",
+      "right triangle sides"
+    ],
+    "/quadratic-equation-solver": [
+      "quadratic",
+      "ax² bx c"
+    ],
+    "/radiation-dose-calculator": [
+      "radiation dose",
+      "mSv"
+    ],
+    "/ramp-slope-calculator": [
+      "ramp slope",
+      "rise run"
+    ],
+    "/random-number-generator": [
+      "random number",
+      "dice roll"
+    ],
+    "/range-calculator": [
+      "range",
+      "max min"
+    ],
+    "/range-estimator-ev": [
+      "ev range",
+      "electric vehicle miles"
+    ],
+    "/ranking-percentile-calculator": [
+      "ranking percentile",
+      "position"
+    ],
+    "/rbc-count-calculator": [
+      "rbc count",
+      "red blood cells"
+    ],
+    "/rc-time-constant-calculator": [
+      "rc time constant",
+      "capacitor"
+    ],
+    "/reaction-rate-constant-calculator": [
+      "reaction rate",
+      "kinetics"
+    ],
+    "/reaction-yield-calculator": [
+      "reaction yield",
+      "percent yield"
+    ],
+    "/recipe-scaler-calculator": [
+      "recipe scale",
+      "servings"
+    ],
+    "/rectangle-area-calculator": [
+      "rectangle area",
+      "length width"
+    ],
+    "/recurring-deposit-calculator": [
+      "recurring deposit",
+      "monthly savings"
+    ],
+    "/refraction-index-calculator": [
+      "refractive index",
+      "snell"
+    ],
+    "/relativistic-energy-calculator": [
+      "relativistic energy",
+      "lorentz"
+    ],
+    "/rent-per-square-foot-calculator": [
+      "rent per sqft",
+      "office space"
+    ],
+    "/rental-roi-calculator": [
+      "rental roi",
+      "property return"
+    ],
+    "/rental-yield-calculator": [
+      "rental yield",
+      "gross net"
+    ],
+    "/resistance-calculator": [
+      "resistance",
+      "ohms"
+    ],
+    "/retirement-age-calculator": [
+      "retirement age",
+      "years left"
+    ],
+    "/retirement-corpus-calculator": [
+      "retirement corpus",
+      "savings goal"
+    ],
+    "/retirement-withdrawal-rate-calculator": [
+      "withdrawal rate",
+      "retirement"
+    ],
+    "/reverse-stock-split-calculator": [
+      "reverse split",
+      "share price"
+    ],
+    "/revision-planner": [
+      "revision plan",
+      "study schedule"
+    ],
+    "/rhombus-area-calculator": [
+      "rhombus area",
+      "diagonal"
+    ],
+    "/richter-scale-to-energy-calculator": [
+      "richter scale",
+      "earthquake energy"
+    ],
+    "/ring-size-calculator": [
+      "ring size",
+      "finger"
+    ],
+    "/rivet-strength-calculator": [
+      "rivet strength",
+      "shear"
+    ],
+    "/rl-time-constant-calculator": [
+      "rl time constant",
+      "inductor"
+    ],
+    "/rlc-resonance-calculator": [
+      "rlc resonance",
+      "frequency"
+    ],
+    "/rms-value-calculator": [
+      "rms voltage",
+      "ac signal"
+    ],
+    "/robot-motor-torque-calculator": [
+      "robot motor",
+      "torque"
+    ],
+    "/roi-calculator": [
+      "roi",
+      "return investment"
+    ],
+    "/roi-calculator-ad": [
+      "ad roi",
+      "advertising return"
+    ],
+    "/roman-numerals-converter": [
+      "roman numerals",
+      "numbers"
+    ],
+    "/roofing-sheets-calculator": [
+      "roofing sheets",
+      "roof area"
+    ],
+    "/room-heater-wattage-calculator": [
+      "room heater",
+      "wattage"
+    ],
+    "/root-calculator": [
+      "square root",
+      "nth root"
+    ],
+    "/rounding-calculator": [
+      "rounding",
+      "decimal places"
+    ],
+    "/royalty-calculator": [
+      "royalty",
+      "license fee"
+    ],
+    "/rpm-calculator": [
+      "rpm",
+      "revolutions"
+    ],
+    "/rsa-key-strength-calculator": [
+      "rsa key",
+      "encryption bits"
+    ],
+    "/rsu-vesting-calculator": [
+      "rsu vesting",
+      "stock"
+    ],
+    "/rule-of-72-calculator": [
+      "rule of 72",
+      "double investment"
+    ],
+    "/running-pace-calculator": [
+      "running pace",
+      "min per km"
+    ],
+    "/running-split-calculator": [
+      "running splits",
+      "race segments"
+    ],
+    "/saas-churn-rate-calculator": [
+      "saas churn",
+      "customer loss"
+    ],
+    "/saas-mrr-arr-calculator": [
+      "mrr arr",
+      "recurring revenue"
+    ],
+    "/safety-factor-calculator": [
+      "safety factor",
+      "structural"
+    ],
+    "/salary-to-hourly-calculator": [
+      "salary hourly",
+      "annual wage"
+    ],
+    "/sand-quantity-calculator": [
+      "sand quantity",
+      "cubic meters"
+    ],
+    "/savings-goal-calculator": [
+      "savings goal",
+      "target date"
+    ],
+    "/savings-vs-investment-comparison": [
+      "savings investment",
+      "returns"
+    ],
+    "/scaffold-board-calculator": [
+      "scaffold boards",
+      "construction"
+    ],
+    "/scale-finder": [
+      "musical scale",
+      "key notes"
+    ],
+    "/scientific-notation-calculator": [
+      "scientific notation",
+      "exponent"
+    ],
+    "/screen-brightness-battery-calculator": [
+      "screen brightness",
+      "battery drain"
+    ],
+    "/screen-time-allowance-calculator": [
+      "screen time allowance",
+      "kids"
+    ],
+    "/screen-time-calculator": [
+      "screen time",
+      "hours daily"
+    ],
+    "/screw-thread-pitch-calculator": [
+      "screw thread pitch",
+      "fastener"
+    ],
+    "/sector-area-calculator": [
+      "sector area",
+      "arc"
+    ],
+    "/seed-rate-calculator": [
+      "seed rate",
+      "planting"
+    ],
+    "/series-parallel-capacitor-calculator": [
+      "capacitor series parallel",
+      "circuit"
+    ],
+    "/series-parallel-resistor-calculator": [
+      "resistor series parallel",
+      "circuit"
+    ],
+    "/shaft-torque-calculator": [
+      "shaft torque",
+      "power rpm"
+    ],
+    "/shoe-size-converter": [
+      "shoe size",
+      "us uk eu"
+    ],
+    "/shutter-speed-calculator": [
+      "shutter speed",
+      "exposure"
+    ],
+    "/signal-to-noise-ratio-calculator": [
+      "snr",
+      "signal noise"
+    ],
+    "/simple-interest-calculator": [
+      "simple interest",
+      "principal rate time"
+    ],
+    "/simplify-fraction-calculator": [
+      "simplify fraction",
+      "reduce"
+    ],
+    "/sip-calculator": [
+      "sip",
+      "monthly investment"
+    ],
+    "/sip-step-up-calculator": [
+      "sip step up",
+      "increase sip"
+    ],
+    "/sleep-cycle-calculator": [
+      "sleep cycles",
+      "rem wake up"
+    ],
+    "/sleep-debt-calculator": [
+      "sleep debt",
+      "hours missed"
+    ],
+    "/sleep-wake-efficiency-calculator": [
+      "sleep efficiency",
+      "quality"
+    ],
+    "/slope-calculator": [
+      "slope",
+      "rise over run"
+    ],
+    "/snells-law-calculator": [
+      "snells law",
+      "refraction"
+    ],
+    "/soil-ph-adjustment-calculator": [
+      "soil ph",
+      "lime sulfur"
+    ],
+    "/solar-irradiance-calculator": [
+      "solar irradiance",
+      "w/m²"
+    ],
+    "/solar-panel-requirement-calculator": [
+      "solar panels",
+      "kwh"
+    ],
+    "/solubility-product-ksp-calculator": [
+      "ksp",
+      "solubility product"
+    ],
+    "/sound-speed-calculator": [
+      "speed of sound",
+      "medium temperature"
+    ],
+    "/speed-calculator": [
+      "speed",
+      "distance time"
+    ],
+    "/speed-to-pace-converter": [
+      "speed pace",
+      "mph min/km"
+    ],
+    "/spring-force-hookes-law-calculator": [
+      "hookes law",
+      "spring constant"
+    ],
+    "/square-area-calculator": [
+      "square area",
+      "side length"
+    ],
+    "/staircase-rise-run-calculator": [
+      "stair rise run",
+      "steps"
+    ],
+    "/standard-deviation-calculator": [
+      "standard deviation",
+      "statistics"
+    ],
+    "/startup-equity-calculator": [
+      "startup equity",
+      "shares ownership"
+    ],
+    "/steel-weight-calculator": [
+      "steel weight",
+      "bar beam"
+    ],
+    "/step-down-sip-calculator": [
+      "step down sip",
+      "reduce investment"
+    ],
+    "/steps-to-calories-calculator": [
+      "steps calories",
+      "walking"
+    ],
+    "/stock-cagr-calculator": [
+      "stock cagr",
+      "growth rate"
+    ],
+    "/stock-split-calculator": [
+      "stock split",
+      "shares price"
+    ],
+    "/stoichiometry-calculator": [
+      "stoichiometry",
+      "moles reaction"
+    ],
+    "/strength-training-pr-estimator": [
+      "personal record",
+      "1rm estimate"
+    ],
+    "/stress-strain-calculator": [
+      "stress strain",
+      "material"
+    ],
+    "/study-hour-efficiency-calculator": [
+      "study efficiency",
+      "focus hours"
+    ],
+    "/study-hour-planner": [
+      "study planner",
+      "schedule"
+    ],
+    "/subscription-pricing-calculator": [
+      "subscription pricing",
+      "monthly annual"
+    ],
+    "/subscription-profit-calculator": [
+      "subscription profit",
+      "mrr"
+    ],
+    "/subtraction-calculator": [
+      "subtract",
+      "difference"
+    ],
+    "/swimming-calorie-calculator": [
+      "swimming calories",
+      "laps"
+    ],
+    "/swimming-lap-pace-calculator": [
+      "swim pace",
+      "lap time"
+    ],
+    "/swp-calculator": [
+      "swp",
+      "systematic withdrawal"
+    ],
+    "/tdee-calculator": [
+      "tdee",
+      "daily energy expenditure"
+    ],
+    "/tea-brewing-strength-calculator": [
+      "tea brewing",
+      "steep time"
+    ],
+    "/telescope-magnification-calculator": [
+      "telescope magnification",
+      "eyepiece"
+    ],
+    "/tempo-to-delay-time-converter": [
+      "tempo delay",
+      "bpm ms"
+    ],
+    "/tennis-win-probability-calculator": [
+      "tennis probability",
+      "match odds"
+    ],
+    "/thermal-expansion-calculator": [
+      "thermal expansion",
+      "material heat"
+    ],
+    "/tile-calculator": [
+      "tiles",
+      "floor area"
+    ],
+    "/time-duration-calculator": [
+      "time duration",
+      "hours minutes"
+    ],
+    "/tire-pressure-adjustment-calculator": [
+      "tire pressure",
+      "psi temperature"
+    ],
+    "/titration-calculator": [
+      "titration",
+      "moles volume"
+    ],
+    "/toddler-growth-chart-calculator": [
+      "toddler growth",
+      "height weight"
+    ],
+    "/torque-calculator": [
+      "torque",
+      "force moment"
+    ],
+    "/torque-to-power-converter": [
+      "torque power",
+      "rpm watts"
+    ],
+    "/trail-difficulty-estimator": [
+      "trail difficulty",
+      "hiking"
+    ],
+    "/trapezoid-area-calculator": [
+      "trapezoid area",
+      "parallel sides"
+    ],
+    "/triangle-area-calculator": [
+      "triangle area",
+      "base height"
+    ],
+    "/trip-cost-estimator": [
+      "trip cost",
+      "travel budget"
+    ],
+    "/tuning-frequency-converter": [
+      "tuning frequency",
+      "pitch hz"
+    ],
+    "/typography-scale-calculator": [
+      "type scale",
+      "font size ratio"
+    ],
+    "/unit-price-calculator": [
+      "unit price",
+      "cost per item"
+    ],
+    "/unix-timestamp-converter": [
+      "unix timestamp",
+      "epoch date"
+    ],
+    "/ups-generator-runtime-calculator": [
+      "ups runtime",
+      "battery load"
+    ],
+    "/ups-load-calculator": [
+      "ups load",
+      "watt va"
+    ],
+    "/valuation-cap-calculator": [
+      "valuation cap",
+      "startup investment"
+    ],
+    "/vapor-pressure-calculator": [
+      "vapor pressure",
+      "liquid temperature"
+    ],
+    "/variance-calculator": [
+      "variance",
+      "statistics spread"
+    ],
+    "/vehicle-depreciation-calculator": [
+      "vehicle depreciation",
+      "car value"
+    ],
+    "/vehicle-turning-radius-calculator": [
+      "turning radius",
+      "steering"
+    ],
+    "/velocity-calculator": [
+      "velocity",
+      "speed direction"
+    ],
+    "/ventilation-rate-calculator": [
+      "ventilation rate",
+      "air changes"
+    ],
+    "/vo2-max-calculator": [
+      "vo2 max",
+      "aerobic fitness"
+    ],
+    "/voltage-calculator": [
+      "voltage",
+      "volts"
+    ],
+    "/volume-of-cone-calculator": [
+      "cone volume",
+      "radius height"
+    ],
+    "/volume-of-cube-calculator": [
+      "cube volume",
+      "side"
+    ],
+    "/volume-of-cuboid-calculator": [
+      "cuboid volume",
+      "box"
+    ],
+    "/volume-of-cylinder-calculator": [
+      "cylinder volume",
+      "radius height"
+    ],
+    "/volume-of-pyramid-calculator": [
+      "pyramid volume",
+      "base height"
+    ],
+    "/volume-of-sphere-calculator": [
+      "sphere volume",
+      "radius"
+    ],
+    "/volumetric-weight-calculator": [
+      "volumetric weight",
+      "shipping"
+    ],
+    "/wacc-calculator": [
+      "wacc",
+      "cost of capital"
+    ],
+    "/waist-to-height-ratio-calculator": [
+      "waist height ratio",
+      "health"
+    ],
+    "/waist-to-hip-ratio-calculator": [
+      "waist hip ratio",
+      "body shape"
+    ],
+    "/walking-calorie-calculator": [
+      "walking calories",
+      "steps"
+    ],
+    "/wallpaper-calculator": [
+      "wallpaper rolls",
+      "room walls"
+    ],
+    "/warehouse-storage-volume-calculator": [
+      "warehouse volume",
+      "storage"
+    ],
+    "/warm-up-calculator": [
+      "warm up",
+      "exercise prep"
+    ],
+    "/water-flow-rate-calculator": [
+      "water flow",
+      "liters per minute"
+    ],
+    "/water-intake-activity-calculator": [
+      "water intake",
+      "hydration"
+    ],
+    "/water-requirement-calculator": [
+      "water requirement",
+      "daily need"
+    ],
+    "/water-tank-volume-calculator": [
+      "water tank",
+      "liters capacity"
+    ],
+    "/wavelength-calculator": [
+      "wavelength",
+      "frequency speed"
+    ],
+    "/wbc-count-calculator": [
+      "wbc",
+      "white blood cells"
+    ],
+    "/wealth-growth-projection-calculator": [
+      "wealth growth",
+      "net worth"
+    ],
+    "/week-number-calculator": [
+      "week number",
+      "iso week"
+    ],
+    "/weight-distribution-calculator": [
+      "weight distribution",
+      "axle load"
+    ],
+    "/weight-loss-time-calculator": [
+      "weight loss time",
+      "deficit"
+    ],
+    "/weighted-average-calculator": [
+      "weighted average",
+      "mean"
+    ],
+    "/welding-strength-calculator": [
+      "weld strength",
+      "joint"
+    ],
+    "/win-rate-estimator": [
+      "win rate",
+      "game stats"
+    ],
+    "/wind-chill-calculator": [
+      "wind chill",
+      "feels like"
+    ],
+    "/window-area-calculator": [
+      "window area",
+      "glass"
+    ],
+    "/wine-abv-calculator": [
+      "wine alcohol",
+      "abv"
+    ],
+    "/wire-gauge-calculator": [
+      "wire gauge",
+      "awg ampacity"
+    ],
+    "/wood-board-feet-calculator": [
+      "board feet",
+      "lumber"
+    ],
+    "/work-calculator": [
+      "work done",
+      "force distance"
+    ],
+    "/work-hours-calculator": [
+      "work hours",
+      "time sheet"
+    ],
+    "/working-capital-calculator": [
+      "working capital",
+      "current assets"
+    ],
+    "/workout-max-reps-estimator": [
+      "max reps",
+      "rep max"
+    ],
+    "/workout-rest-timer": [
+      "rest timer",
+      "sets"
+    ],
+    "/workout-volume-calculator": [
+      "workout volume",
+      "sets reps"
+    ],
+    "/xp-progression-calculator": [
+      "xp progression",
+      "level grinding"
+    ],
+    "/yeast-conversion-calculator": [
+      "yeast substitution",
+      "baking"
+    ],
+    "/yield-to-maturity-calculator": [
+      "ytm",
+      "bond yield"
+    ],
+    "/z-score-calculator": [
+      "z score",
+      "standard deviations"
+    ],
+    "/zodiac-sign-calculator": [
+      "zodiac sign",
+      "birthdate star"
+    ]
+  },
+  "/calendar-tools": {
+    "/academic-calendar-maker": [
+      "school year",
+      "semester"
+    ],
+    "/advent-calendar-creator": [
+      "advent",
+      "christmas countdown"
+    ],
+    "/business-hours-calculator": [
+      "business hours",
+      "open close"
+    ],
+    "/calendar-matrix-generator": [
+      "calendar grid",
+      "month layout"
+    ],
+    "/calendar-rss-generator": [
+      "calendar rss",
+      "feed"
+    ],
+    "/calendar-sync-overlay": [
+      "calendar sync",
+      "overlay"
+    ],
+    "/date-picker-generator": [
+      "date picker",
+      "input field"
+    ],
+    "/event-countdown": [
+      "event countdown",
+      "days until"
+    ],
+    "/fiscal-year-calendar": [
+      "fiscal year",
+      "financial year"
+    ],
+    "/hijri-calendar-converter": [
+      "hijri",
+      "islamic date"
+    ],
+    "/moon-phase-calendar": [
+      "moon phase",
+      "lunar"
+    ],
+    "/online-calendar-holidays": [
+      "holidays",
+      "public days"
+    ],
+    "/payday-calculator": [
+      "payday",
+      "salary date"
+    ],
+    "/perpetual-calendar": [
+      "perpetual calendar",
+      "any year"
+    ],
+    "/pregnancy-due-date-calendar": [
+      "pregnancy calendar",
+      "due date"
+    ],
+    "/printable-calendar-maker": [
+      "printable calendar",
+      "pdf month"
+    ],
+    "/seasonal-calendar": [
+      "seasonal",
+      "spring summer fall"
+    ]
+  },
+  "/chart-tools": {
+    "/bar-graph-generator": [
+      "bar graph",
+      "comparison"
+    ],
+    "/box-plot-maker": [
+      "box plot",
+      "quartiles"
+    ],
+    "/bubble-chart-creator": [
+      "bubble chart",
+      "data size"
+    ],
+    "/flowchart-creator": [
+      "flowchart",
+      "diagram process"
+    ],
+    "/gantt-chart-maker": [
+      "gantt chart",
+      "project timeline"
+    ],
+    "/gauge-chart-generator": [
+      "gauge chart",
+      "speedometer"
+    ],
+    "/heat-map-generator": [
+      "heat map",
+      "intensity grid"
+    ],
+    "/line-chart-creator": [
+      "line chart",
+      "trend"
+    ],
+    "/org-chart-maker": [
+      "org chart",
+      "hierarchy"
+    ],
+    "/pareto-chart-maker": [
+      "pareto chart",
+      "80/20"
+    ],
+    "/pie-chart-maker": [
+      "pie chart",
+      "proportions"
+    ],
+    "/radar-chart-generator": [
+      "radar chart",
+      "spider web"
+    ],
+    "/sankey-diagram-generator": [
+      "sankey diagram",
+      "flow"
+    ],
+    "/scatter-plot-tool": [
+      "scatter plot",
+      "correlation"
+    ],
+    "/stock-chart-generator": [
+      "stock chart",
+      "candlestick"
+    ],
+    "/sunburst-chart-creator": [
+      "sunburst chart",
+      "hierarchy"
+    ],
+    "/timeline-maker": [
+      "timeline",
+      "events"
+    ],
+    "/venn-diagram-maker": [
+      "venn diagram",
+      "overlap sets"
+    ],
+    "/word-cloud-generator": [
+      "word cloud",
+      "text frequency"
+    ]
+  },
+  "/color-tools": {
+    "/advanced-color-picker": [
+      "pick color",
+      "eyedropper"
+    ],
+    "/color-harmony-generator": [
+      "color harmony",
+      "complementary"
+    ],
+    "/color-history-tool": [
+      "color history",
+      "recent"
+    ],
+    "/color-palette-generator": [
+      "palette",
+      "scheme"
+    ],
+    "/color-palettes": [
+      "palettes",
+      "ready made"
+    ],
+    "/color-picker": [
+      "pick color",
+      "hex"
+    ],
+    "/color-scale-generator": [
+      "color scale",
+      "gradient steps"
+    ],
+    "/color-temperature-to-rgb": [
+      "color temperature",
+      "kelvin rgb"
+    ],
+    "/color-wheel": [
+      "color wheel",
+      "hue"
+    ],
+    "/complementary-color-finder": [
+      "complementary",
+      "opposite"
+    ],
+    "/contrast-checker": [
+      "contrast ratio",
+      "accessibility"
+    ],
+    "/css-color-name-converter": [
+      "css name",
+      "color name"
+    ],
+    "/css-gradient-generator": [
+      "gradient css",
+      "linear radial"
+    ],
+    "/css-variables-generator": [
+      "css variables",
+      "custom properties"
+    ],
+    "/custom-color-palette-generator": [
+      "custom palette",
+      "create"
+    ],
+    "/dark-light-mode-preview": [
+      "dark mode",
+      "light mode preview"
+    ],
+    "/dominant-color-finder": [
+      "dominant color",
+      "image"
+    ],
+    "/duotone-palette-generator": [
+      "duotone",
+      "two color"
+    ],
+    "/extract-colors-from-image": [
+      "extract colors",
+      "image"
+    ],
+    "/favorite-colors-manager": [
+      "save colors",
+      "favorites"
+    ],
+    "/gradient-palette-generator": [
+      "gradient palette",
+      "blend"
+    ],
+    "/gradient-step-generator": [
+      "gradient steps",
+      "stops"
+    ],
+    "/hex-to-cmyk-converter": [
+      "cmyk",
+      "print"
+    ],
+    "/hex-to-hsl-converter": [
+      "hsl",
+      "hex"
+    ],
+    "/hex-to-rgb-converter": [
+      "rgb",
+      "hex"
+    ],
+    "/hsl-to-hex-converter": [
+      "hsl hex"
+    ],
+    "/hsl-to-hsv-converter": [
+      "hsv hsb"
+    ],
+    "/monochrome-palette-generator": [
+      "monochrome",
+      "single hue"
+    ],
+    "/palette-comparison-tool": [
+      "compare palettes",
+      "side by side"
+    ],
+    "/palette-contrast-viewer": [
+      "palette contrast",
+      "accessibility"
+    ],
+    "/palette-duplicate-finder": [
+      "duplicate colors",
+      "find same"
+    ],
+    "/palette-export-tool": [
+      "export palette",
+      "download"
+    ],
+    "/palette-merger": [
+      "merge palettes",
+      "combine"
+    ],
+    "/palette-sorter": [
+      "sort palette",
+      "arrange"
+    ],
+    "/pastel-palette-generator": [
+      "pastel",
+      "soft colors"
+    ],
+    "/random-color-palette-generator": [
+      "random palette",
+      "surprise"
+    ],
+    "/rgb-to-cmyk-converter": [
+      "cmyk",
+      "print"
+    ],
+    "/rgb-to-hex-converter": [
+      "rgb hex"
+    ],
+    "/rgb-to-hsl-converter": [
+      "hsl",
+      "rgb"
+    ],
+    "/shade-tint-tone-generator": [
+      "shades tints",
+      "lighter darker"
+    ],
+    "/text-color-suggestion-tool": [
+      "text color",
+      "readable"
+    ],
+    "/warm-or-cool-color-detector": [
+      "warm cool",
+      "temperature"
+    ],
+    "/web-safe-color-picker": [
+      "web safe",
+      "216 colors"
+    ]
+  },
+  "/cron-expression-tools": {
+    "/cron-expression-api-polling-webhooks": [
+      "api polling",
+      "webhook schedule"
+    ],
+    "/cron-expression-aws-cloudwatch-events": [
+      "aws cloudwatch",
+      "scheduled events"
+    ],
+    "/cron-expression-cheat-sheet": [
+      "cheat sheet",
+      "reference"
+    ],
+    "/cron-expression-data-sync-etl": [
+      "data sync",
+      "etl schedule"
+    ],
+    "/cron-expression-database-backups": [
+      "db backup",
+      "scheduled"
+    ],
+    "/cron-expression-difference-checker": [
+      "diff",
+      "compare"
+    ],
+    "/cron-expression-editor-gui": [
+      "gui editor",
+      "visual"
+    ],
+    "/cron-expression-email-scheduling": [
+      "email schedule",
+      "send time"
+    ],
+    "/cron-expression-from-datetime-picker": [
+      "datetime picker",
+      "schedule"
+    ],
+    "/cron-expression-generator": [
+      "create",
+      "schedule"
+    ],
+    "/cron-expression-kubernetes-cronjobs": [
+      "kubernetes",
+      "k8s job"
+    ],
+    "/cron-expression-log-rotation": [
+      "log rotation",
+      "cleanup"
+    ],
+    "/cron-expression-monitoring-alerts": [
+      "monitoring",
+      "alerts"
+    ],
+    "/cron-expression-social-media-posting": [
+      "social media post",
+      "schedule"
+    ],
+    "/cron-expression-ssl-certificate-renewal": [
+      "ssl renewal",
+      "certificate"
+    ],
+    "/cron-expression-tester-next-run-times": [
+      "next run",
+      "test schedule"
+    ],
+    "/cron-expression-validator-explainer": [
+      "validate",
+      "explain"
+    ],
+    "/cron-expression-wordpress-cron-jobs": [
+      "wordpress",
+      "wp-cron"
+    ],
+    "/cron-to-english-translator": [
+      "explain cron",
+      "plain english"
+    ],
+    "/english-to-cron-converter": [
+      "natural language",
+      "schedule"
+    ]
+  },
+  "/css-tools": {
+    "/animation-generator": [
+      "keyframe",
+      "animate"
+    ],
+    "/aspect-ratio-calculator": [
+      "aspect ratio",
+      "responsive"
+    ],
+    "/background-noise-generator": [
+      "noise texture",
+      "background"
+    ],
+    "/border-radius-generator": [
+      "border radius",
+      "rounded corners"
+    ],
+    "/box-shadow-generator": [
+      "box shadow",
+      "drop shadow"
+    ],
+    "/clip-path-maker": [
+      "clip path",
+      "shape mask"
+    ],
+    "/color-contrast-checker": [
+      "contrast",
+      "accessibility wcag"
+    ],
+    "/color-converter": [
+      "color format",
+      "rgb hsl"
+    ],
+    "/color-palette-generator": [
+      "palette",
+      "theme colors"
+    ],
+    "/css-button-generator": [
+      "button style",
+      "ui"
+    ],
+    "/css-calc-builder": [
+      "calc",
+      "math expression"
+    ],
+    "/css-counter-generator": [
+      "counter",
+      "numbered list"
+    ],
+    "/css-filter-generator": [
+      "filter",
+      "blur brightness"
+    ],
+    "/css-font-face-generator": [
+      "font face",
+      "custom font"
+    ],
+    "/css-grid-generator": [
+      "grid layout",
+      "columns"
+    ],
+    "/css-loader-generator": [
+      "loader spinner",
+      "loading"
+    ],
+    "/css-mesh-gradient-generator": [
+      "mesh gradient",
+      "background"
+    ],
+    "/css-minifier": [
+      "minify",
+      "compress"
+    ],
+    "/css-pattern-generator": [
+      "pattern",
+      "background repeat"
+    ],
+    "/css-playground": [
+      "live preview",
+      "sandbox"
+    ],
+    "/css-shape-generator": [
+      "shape",
+      "geometric"
+    ],
+    "/css-spacing-scale-generator": [
+      "spacing scale",
+      "margin padding"
+    ],
+    "/css-specificity-calculator": [
+      "specificity",
+      "selector weight"
+    ],
+    "/css-transition-previewer": [
+      "transition",
+      "hover effect"
+    ],
+    "/css-variable-extractor": [
+      "variables",
+      "custom props extract"
+    ],
+    "/cubic-bezier-editor": [
+      "bezier",
+      "easing curve"
+    ],
+    "/dark-mode-css-generator": [
+      "dark mode",
+      "theme"
+    ],
+    "/flexbox-playground": [
+      "flexbox",
+      "flex layout"
+    ],
+    "/fluid-space-calculator": [
+      "fluid spacing",
+      "clamp"
+    ],
+    "/fluid-typography-calculator": [
+      "fluid type",
+      "responsive font"
+    ],
+    "/glassmorphism-generator": [
+      "glass effect",
+      "frosted"
+    ],
+    "/google-fonts-pairing-tool": [
+      "font pairing",
+      "google fonts"
+    ],
+    "/gradient-generator": [
+      "gradient",
+      "background"
+    ],
+    "/letter-spacing-line-height-visualizer": [
+      "letter spacing",
+      "line height"
+    ],
+    "/media-query-builder": [
+      "media query",
+      "breakpoint"
+    ],
+    "/neumorphism-generator": [
+      "neumorphism",
+      "soft ui"
+    ],
+    "/playground": [
+      "sandbox",
+      "live editor"
+    ],
+    "/print-css-helper": [
+      "print",
+      "page break"
+    ],
+    "/px-rem-converter": [
+      "px rem",
+      "font size"
+    ],
+    "/scroll-snap-builder": [
+      "scroll snap",
+      "carousel"
+    ],
+    "/text-shadow-generator": [
+      "text shadow",
+      "glow"
+    ],
+    "/tint-shade-generator": [
+      "tint shade",
+      "lighter darker"
+    ],
+    "/viewport-unit-converter": [
+      "viewport units",
+      "vw vh"
+    ]
+  },
+  "/csv-tools": {
+    "/csv-cleaner": [
+      "clean data",
+      "fix"
+    ],
+    "/csv-column-extractor": [
+      "extract column",
+      "select"
+    ],
+    "/csv-column-merger": [
+      "merge columns",
+      "combine"
+    ],
+    "/csv-column-remover": [
+      "remove column",
+      "delete"
+    ],
+    "/csv-column-reorder": [
+      "reorder columns",
+      "rearrange"
+    ],
+    "/csv-column-splitter": [
+      "split column",
+      "separate"
+    ],
+    "/csv-column-statistics": [
+      "column stats",
+      "average sum"
+    ],
+    "/csv-data-normalizer": [
+      "normalize data",
+      "standardize"
+    ],
+    "/csv-deduplicator": [
+      "deduplicate",
+      "unique rows"
+    ],
+    "/csv-delimiter-converter": [
+      "delimiter",
+      "comma tab pipe"
+    ],
+    "/csv-duplicate-remover": [
+      "duplicates",
+      "remove"
+    ],
+    "/csv-editor": [
+      "edit",
+      "spreadsheet"
+    ],
+    "/csv-email-extractor": [
+      "email extract",
+      "addresses"
+    ],
+    "/csv-file-merger": [
+      "merge files",
+      "combine"
+    ],
+    "/csv-formatter": [
+      "format",
+      "beautify"
+    ],
+    "/csv-header-editor": [
+      "headers",
+      "rename columns"
+    ],
+    "/csv-join-merge": [
+      "join",
+      "merge tables"
+    ],
+    "/csv-minifier": [
+      "minify",
+      "compress"
+    ],
+    "/csv-pretty-print": [
+      "pretty print",
+      "readable"
+    ],
+    "/csv-quote-escaper": [
+      "quotes",
+      "escape"
+    ],
+    "/csv-random-row-generator": [
+      "random rows",
+      "sample data"
+    ],
+    "/csv-row-counter": [
+      "row count",
+      "lines"
+    ],
+    "/csv-row-filter": [
+      "filter rows",
+      "query"
+    ],
+    "/csv-row-sorter": [
+      "sort rows",
+      "order"
+    ],
+    "/csv-sample-generator": [
+      "sample data",
+      "test"
+    ],
+    "/csv-splitter": [
+      "split file",
+      "chunks"
+    ],
+    "/csv-to-array": [
+      "array",
+      "code"
+    ],
+    "/csv-to-excel": [
+      "excel xlsx"
+    ],
+    "/csv-to-html": [
+      "html table"
+    ],
+    "/csv-to-json": [
+      "json"
+    ],
+    "/csv-to-markdown": [
+      "markdown table"
+    ],
+    "/csv-to-sql": [
+      "sql insert"
+    ],
+    "/csv-to-text": [
+      "plain text"
+    ],
+    "/csv-to-tsv": [
+      "tsv tab"
+    ],
+    "/csv-to-xml": [
+      "xml"
+    ],
+    "/csv-to-yaml": [
+      "yaml"
+    ],
+    "/csv-transpose": [
+      "transpose",
+      "rows columns swap"
+    ],
+    "/csv-unquote": [
+      "remove quotes",
+      "strip"
+    ],
+    "/csv-validator": [
+      "validate",
+      "check errors"
+    ],
+    "/csv-viewer": [
+      "view",
+      "preview"
+    ]
+  },
+  "/date-time-tools": {
+    "/add-subtract-time": [
+      "add time",
+      "subtract hours"
+    ],
+    "/age-calculator": [
+      "age",
+      "birthdate"
+    ],
+    "/business-days-calculator": [
+      "working days",
+      "weekdays"
+    ],
+    "/calendar-generator": [
+      "month calendar",
+      "printable"
+    ],
+    "/countdown-timer": [
+      "countdown",
+      "event timer"
+    ],
+    "/date-calculator": [
+      "date math",
+      "add days"
+    ],
+    "/date-difference-in-units": [
+      "date diff",
+      "days weeks months"
+    ],
+    "/date-pattern-finder": [
+      "date pattern",
+      "recurring"
+    ],
+    "/date-range-calculator": [
+      "date range",
+      "start end"
+    ],
+    "/day-counter": [
+      "days elapsed",
+      "since date"
+    ],
+    "/day-of-week-finder": [
+      "day of week",
+      "what day"
+    ],
+    "/leap-year-checker": [
+      "leap year",
+      "february 29"
+    ],
+    "/military-time-converter": [
+      "military time",
+      "24 hour"
+    ],
+    "/seconds-converter": [
+      "seconds",
+      "hours minutes"
+    ],
+    "/sunrise-sunset-calculator": [
+      "sunrise sunset",
+      "golden hour"
+    ],
+    "/time-duration-calculator": [
+      "duration",
+      "elapsed time"
+    ],
+    "/time-until-calculator": [
+      "time until",
+      "how long"
+    ],
+    "/week-number-calculator": [
+      "week number",
+      "iso"
+    ]
+  },
+  "/design-tools": {
+    "/favicon-generator": [
+      "favicon",
+      "icon 16px 32px"
+    ]
+  },
+  "/developer-tools": {
+    "/js-online-compiler": [
+      "javascript run",
+      "sandbox online"
+    ],
+    "/mock-data-generator": [
+      "mock data",
+      "fake json"
+    ]
+  },
+  "/emoji-tools": {
+    "/animated-emoji-gif-maker": [
+      "animated emoji",
+      "gif"
+    ],
+    "/bulk-emoji-downloader": [
+      "download emoji",
+      "bulk"
+    ],
+    "/emoji-art-generator": [
+      "emoji art",
+      "pattern"
+    ],
+    "/emoji-background-remover": [
+      "emoji background",
+      "transparent"
+    ],
+    "/emoji-calendar-date": [
+      "emoji date",
+      "calendar"
+    ],
+    "/emoji-combiner-mixer": [
+      "combine emoji",
+      "mix"
+    ],
+    "/emoji-counter": [
+      "count emoji",
+      "how many"
+    ],
+    "/emoji-font-generator": [
+      "emoji font",
+      "text style"
+    ],
+    "/emoji-keyboard-pc-mac": [
+      "emoji keyboard",
+      "shortcut"
+    ],
+    "/emoji-kitchen-mashup": [
+      "kitchen mashup",
+      "google emoji"
+    ],
+    "/emoji-password-generator": [
+      "emoji password",
+      "secure"
+    ],
+    "/emoji-picker-copy-paste": [
+      "pick emoji",
+      "copy"
+    ],
+    "/emoji-prediction-trends": [
+      "emoji trends",
+      "popular"
+    ],
+    "/emoji-quiz-game": [
+      "emoji quiz",
+      "game"
+    ],
+    "/emoji-size-changer": [
+      "resize emoji",
+      "large"
+    ],
+    "/emoji-slider-scale": [
+      "rating slider",
+      "emoji scale"
+    ],
+    "/emoji-style-converter": [
+      "style",
+      "platform variant"
+    ],
+    "/emoji-to-text-converter": [
+      "emoji meaning",
+      "text"
+    ],
+    "/emoji-translator-meaning": [
+      "emoji meaning",
+      "translate"
+    ],
+    "/emoji-word-cloud": [
+      "word cloud",
+      "emoji frequency"
+    ],
+    "/random-emoji-generator": [
+      "random emoji",
+      "surprise"
+    ]
+  },
+  "/encoding-tools": {
+    "/ascii-code-converter": [
+      "ascii code",
+      "character"
+    ],
+    "/base32-encoder-decoder": [
+      "base32"
+    ],
+    "/base36-encoder-decoder": [
+      "base36"
+    ],
+    "/base58-encoder-decoder": [
+      "base58",
+      "bitcoin"
+    ],
+    "/base64-encoder-decoder": [
+      "base64"
+    ],
+    "/base85-ascii85-encoder-decoder": [
+      "base85",
+      "ascii85"
+    ],
+    "/bcd-binary-coded-decimal-converter": [
+      "bcd",
+      "binary coded"
+    ],
+    "/bcd-to-decimal-converter": [
+      "bcd decimal"
+    ],
+    "/binary-encoder-decoder": [
+      "binary encode"
+    ],
+    "/binhex-encoder-decoder": [
+      "binhex",
+      "mac"
+    ],
+    "/data-uri-converter": [
+      "data uri",
+      "inline image"
+    ],
+    "/ebcdic-ascii-converter": [
+      "ebcdic",
+      "ibm"
+    ],
+    "/escape-unescape-string": [
+      "escape unescape",
+      "string"
+    ],
+    "/gray-code-encoder-decoder": [
+      "gray code"
+    ],
+    "/gzip-compress-decompress": [
+      "gzip",
+      "compress"
+    ],
+    "/hamming-code-encoder-decoder": [
+      "hamming code",
+      "error correction"
+    ],
+    "/hex-encoder-decoder": [
+      "hex encode"
+    ],
+    "/manchester-code-encoder-decoder": [
+      "manchester code",
+      "signal"
+    ],
+    "/morse-code-translator": [
+      "morse code",
+      "dots dashes"
+    ],
+    "/percent-encoding-decoder": [
+      "url encoding",
+      "percent"
+    ],
+    "/punycode-encoder-decoder": [
+      "punycode",
+      "idn domain"
+    ],
+    "/quoted-printable-encoder-decoder": [
+      "quoted printable",
+      "email"
+    ],
+    "/rot13-cipher-encoder-decoder": [
+      "rot13",
+      "cipher"
+    ],
+    "/unicode-character-encoder-decoder": [
+      "unicode encode"
+    ],
+    "/utf16-encoder-decoder": [
+      "utf16"
+    ],
+    "/utf7-encoder-decoder": [
+      "utf7"
+    ],
+    "/utf8-encoder-decoder": [
+      "utf8"
+    ],
+    "/uuencode-uudecode-tool": [
+      "uuencode",
+      "unix"
+    ],
+    "/xxencode-xxdecode-tool": [
+      "xxencode"
+    ],
+    "/z85-base85-encoder-decoder": [
+      "z85",
+      "zeromq"
+    ]
+  },
+  "/encryption-tools": {
+    "/aes-encryption": [
+      "aes encrypt",
+      "symmetric"
+    ],
+    "/caesar-cipher": [
+      "caesar cipher",
+      "shift letters"
+    ],
+    "/crypto-address-validator": [
+      "crypto address",
+      "validate wallet"
+    ],
+    "/diffie-hellman-simulator": [
+      "diffie hellman",
+      "key exchange"
+    ],
+    "/file-checksum-verifier": [
+      "checksum",
+      "file integrity"
+    ],
+    "/gpg-simulator": [
+      "gpg",
+      "public key"
+    ],
+    "/one-time-pad": [
+      "one time pad",
+      "otp"
+    ],
+    "/pgp-encryption": [
+      "pgp",
+      "encrypt email"
+    ],
+    "/rsa-key-generator": [
+      "rsa key",
+      "public private"
+    ],
+    "/ssl-certificate-decoder": [
+      "ssl cert",
+      "decode x509"
+    ],
+    "/steganography-tool": [
+      "steganography",
+      "hide message image"
+    ],
+    "/text-binary-encryptor": [
+      "encrypt text",
+      "binary"
+    ]
+  },
+  "/excel-tools": {
+    "/csv-to-excel-converter": [
+      "csv import"
+    ],
+    "/excel-age-calculator": [
+      "age formula",
+      "dob"
+    ],
+    "/excel-chart-maker": [
+      "chart",
+      "graph"
+    ],
+    "/excel-column-splitter": [
+      "split column",
+      "text to columns"
+    ],
+    "/excel-combine-multiple-sheets": [
+      "combine sheets",
+      "merge"
+    ],
+    "/excel-compare-two-sheets": [
+      "compare sheets",
+      "diff"
+    ],
+    "/excel-conditional-formatting-tool": [
+      "conditional format",
+      "highlight"
+    ],
+    "/excel-duplicate-remover": [
+      "remove duplicates",
+      "unique"
+    ],
+    "/excel-formula-extractor": [
+      "extract formulas",
+      "list"
+    ],
+    "/excel-formula-generator": [
+      "formula",
+      "function generate"
+    ],
+    "/excel-json-to-csv-converter": [
+      "json to csv"
+    ],
+    "/excel-merge-cells-tool": [
+      "merge cells",
+      "combine"
+    ],
+    "/excel-password-remover": [
+      "remove password",
+      "unlock"
+    ],
+    "/excel-pivot-table-builder": [
+      "pivot table",
+      "summarize"
+    ],
+    "/excel-random-data-generator": [
+      "random data",
+      "test"
+    ],
+    "/excel-remove-blank-rows": [
+      "blank rows",
+      "clean"
+    ],
+    "/excel-sort-data-tool": [
+      "sort data",
+      "order"
+    ],
+    "/excel-text-to-columns-wizard": [
+      "text to columns",
+      "split"
+    ],
+    "/excel-to-pdf-converter": [
+      "pdf export"
+    ],
+    "/excel-vlookup-simulator": [
+      "vlookup",
+      "match lookup"
+    ],
+    "/excel-xml-to-csv-converter": [
+      "xml import",
+      "csv"
+    ]
+  },
+  "/font-tools": {
+    "/animated-font-generator": [
+      "animated text",
+      "moving font"
+    ],
+    "/font-base64-encoder": [
+      "font base64",
+      "embed"
+    ],
+    "/font-contrast-checker": [
+      "font contrast",
+      "readability"
+    ],
+    "/font-converter": [
+      "convert font",
+      "ttf otf woff"
+    ],
+    "/font-duplicate-finder": [
+      "duplicate fonts",
+      "same"
+    ],
+    "/font-generator": [
+      "stylish text",
+      "fancy letters"
+    ],
+    "/font-identifier": [
+      "identify font",
+      "what font"
+    ],
+    "/font-kerning-adjuster": [
+      "kerning",
+      "letter spacing"
+    ],
+    "/font-license-checker": [
+      "license",
+      "commercial use"
+    ],
+    "/font-metadata-editor": [
+      "font metadata",
+      "info edit"
+    ],
+    "/font-ocr-extractor": [
+      "ocr font",
+      "extract text"
+    ],
+    "/font-pairing": [
+      "font pairing",
+      "combine typefaces"
+    ],
+    "/font-previewer": [
+      "preview font",
+      "sample text"
+    ],
+    "/font-similarity-finder": [
+      "similar fonts",
+      "alternatives"
+    ],
+    "/font-size-calculator": [
+      "font size",
+      "px pt em"
+    ],
+    "/font-statistics-analyzer": [
+      "font stats",
+      "character count"
+    ],
+    "/font-stress-tester": [
+      "stress test",
+      "load font"
+    ],
+    "/font-style-transfer": [
+      "style transfer",
+      "artistic font"
+    ],
+    "/font-subsetter": [
+      "subset",
+      "reduce font"
+    ],
+    "/handwriting-font-maker": [
+      "handwriting font",
+      "custom"
+    ]
+  },
+  "/hash-tools": {
+    "/argon2-hash-generator": [
+      "argon2",
+      "password hash"
+    ],
+    "/base64-encoder-decoder-hash": [
+      "base64"
+    ],
+    "/bcrypt-hash-generator-verifier": [
+      "bcrypt",
+      "password"
+    ],
+    "/crc32-hash-calculator": [
+      "crc32",
+      "checksum"
+    ],
+    "/custom-salted-hash-generator": [
+      "salt hash",
+      "custom"
+    ],
+    "/file-hash-calculator-multi-algorithm": [
+      "file hash",
+      "md5 sha"
+    ],
+    "/hash-comparison-duplicate-finder": [
+      "compare hashes",
+      "duplicates"
+    ],
+    "/hash-identifier-tool": [
+      "identify hash",
+      "what hash"
+    ],
+    "/hash-to-hex-base64-converter": [
+      "hash format",
+      "hex base64"
+    ],
+    "/hmac-generator-keyed-hash": [
+      "hmac",
+      "keyed hash"
+    ],
+    "/md5-hash-generator-checker": [
+      "md5"
+    ],
+    "/mysql-password-hash-generator": [
+      "mysql password",
+      "database"
+    ],
+    "/ntlm-hash-generator-cracker": [
+      "ntlm",
+      "windows hash"
+    ],
+    "/password-hash-strength-analyzer": [
+      "hash strength",
+      "security"
+    ],
+    "/ripemd160-hash-generator": [
+      "ripemd160"
+    ],
+    "/sha1-hash-generator-decrypter": [
+      "sha1"
+    ],
+    "/sha256-hash-generator": [
+      "sha256"
+    ],
+    "/sha3-hash-generator-keccak": [
+      "sha3",
+      "keccak"
+    ],
+    "/sha512-hash-calculator": [
+      "sha512"
+    ],
+    "/whirlpool-hash-generator": [
+      "whirlpool"
+    ]
+  },
+  "/hex-tools": {
+    "/binary-to-hex-converter": [
+      "binary"
+    ],
+    "/decimal-to-hex-converter": [
+      "decimal"
+    ],
+    "/hex-addition-subtraction-calculator": [
+      "hex math",
+      "add subtract"
+    ],
+    "/hex-diff-compare-tool": [
+      "hex diff",
+      "compare files"
+    ],
+    "/hex-file-checksum-calculator": [
+      "file checksum",
+      "integrity"
+    ],
+    "/hex-memory-address-calculator": [
+      "memory address",
+      "pointer"
+    ],
+    "/hex-string-validator-formatter": [
+      "validate hex",
+      "format"
+    ],
+    "/hex-to-ascii-table-generator": [
+      "ascii table",
+      "characters"
+    ],
+    "/hex-to-base64-encoder-decoder": [
+      "base64"
+    ],
+    "/hex-to-binary-converter": [
+      "binary"
+    ],
+    "/hex-to-decimal-converter": [
+      "decimal"
+    ],
+    "/hex-to-float-double-converter": [
+      "float double",
+      "ieee754"
+    ],
+    "/hex-to-ipv4-ipv6-address-converter": [
+      "ip address",
+      "network"
+    ],
+    "/hex-to-octal-converter": [
+      "octal"
+    ],
+    "/hex-to-rgb-color-converter": [
+      "rgb color"
+    ],
+    "/hex-to-text-converter": [
+      "text string"
+    ],
+    "/hex-to-utf8-string-decoder": [
+      "utf8 decode"
+    ],
+    "/hex-xor-calculator": [
+      "xor",
+      "bitwise"
+    ],
+    "/octal-to-hex-converter": [
+      "octal"
+    ],
+    "/rgb-to-hex-color-converter": [
+      "rgb color"
+    ],
+    "/text-to-hex-converter": [
+      "text string"
+    ]
+  },
+  "/html-tools": {
+    "/html-base64-image-encoder": [
+      "image base64",
+      "embed"
+    ],
+    "/html-color-picker-generator": [
+      "color picker",
+      "html code"
+    ],
+    "/html-comment-remover-extractor": [
+      "remove comments",
+      "clean"
+    ],
+    "/html-diff-checker-comparator": [
+      "diff",
+      "compare"
+    ],
+    "/html-email-template-builder": [
+      "email template",
+      "newsletter"
+    ],
+    "/html-entity-encoder-decoder": [
+      "entities",
+      "special chars"
+    ],
+    "/html-escape-unescape": [
+      "escape",
+      "unescape"
+    ],
+    "/html-formatter-beautifier": [
+      "format",
+      "beautify"
+    ],
+    "/html-image-map-generator": [
+      "image map",
+      "clickable areas"
+    ],
+    "/html-link-extractor-checker": [
+      "extract links",
+      "urls"
+    ],
+    "/html-meta-tag-generator": [
+      "meta tags",
+      "seo"
+    ],
+    "/html-sitemap-generator": [
+      "sitemap",
+      "pages list"
+    ],
+    "/html-special-characters-library": [
+      "special chars",
+      "symbols"
+    ],
+    "/html-table-generator": [
+      "table",
+      "rows columns"
+    ],
+    "/html-tag-remover-stripper": [
+      "strip tags",
+      "plain text"
+    ],
+    "/html-to-json-converter": [
+      "json"
+    ],
+    "/html-to-pdf-converter": [
+      "pdf"
+    ],
+    "/html-validator-linter": [
+      "validate",
+      "errors"
+    ]
+  },
+  "/icon-tools": {
+    "/3d-icon-generator-from-text": [
+      "3d icon",
+      "text"
+    ],
+    "/accessibility-icon-checker-color-contrast": [
+      "accessibility",
+      "contrast"
+    ],
+    "/animated-gif-to-icon-converter": [
+      "gif icon",
+      "animated"
+    ],
+    "/animated-svg-icon-creator": [
+      "animated svg",
+      "icon"
+    ],
+    "/favicon-generator-from-image": [
+      "favicon",
+      "image"
+    ],
+    "/free-icon-maker-online": [
+      "create icon",
+      "online"
+    ],
+    "/icon-background-remover-transparent": [
+      "background remove",
+      "transparent"
+    ],
+    "/icon-color-changer-palette-tool": [
+      "change color",
+      "recolor"
+    ],
+    "/icon-file-format-converter-all-types": [
+      "format convert",
+      "png svg ico"
+    ],
+    "/icon-font-generator-from-svg": [
+      "icon font",
+      "svg"
+    ],
+    "/icon-metadata-editor-optimizer": [
+      "metadata",
+      "optimize"
+    ],
+    "/icon-resizer-for-android-ios": [
+      "resize",
+      "android ios"
+    ],
+    "/icon-search-engine-duplicate-finder": [
+      "search icons",
+      "duplicates"
+    ],
+    "/icon-style-transfer-artistic-filters": [
+      "style transfer",
+      "filter"
+    ],
+    "/material-design-icon-finder": [
+      "material design",
+      "google icons"
+    ],
+    "/pixel-art-icon-creator-editor": [
+      "pixel art",
+      "8-bit"
+    ],
+    "/png-to-ico-converter-online": [
+      "png ico"
+    ],
+    "/social-media-icon-pack-generator": [
+      "social media icons",
+      "pack"
+    ],
+    "/svg-to-png-icon-converter": [
+      "svg png"
+    ],
+    "/vector-icon-tracer-image-to-svg": [
+      "trace image",
+      "vectorize"
+    ]
+  },
+  "/image-tools": {
+    "/add-watermark-on-image": [
+      "watermark",
+      "stamp"
+    ],
+    "/background-remover": [
+      "remove background",
+      "transparent"
+    ],
+    "/blur-image": [
+      "blur",
+      "soften"
+    ],
+    "/crop-image": [
+      "crop",
+      "trim"
+    ],
+    "/get-text-from-image": [
+      "ocr",
+      "extract text"
+    ],
+    "/image-compressor": [
+      "compress",
+      "reduce size"
+    ],
+    "/image-editor": [
+      "edit",
+      "adjust"
+    ],
+    "/image-filters": [
+      "filters",
+      "effects"
+    ],
+    "/image-format-conversions": [
+      "format",
+      "jpg png webp"
+    ],
+    "/image-to-gif": [
+      "gif",
+      "animate"
+    ],
+    "/image-to-pdf": [
+      "pdf"
+    ],
+    "/pick-color-code-from-image": [
+      "color picker",
+      "eyedropper"
+    ],
+    "/resize-image-dimensions": [
+      "resize",
+      "dimensions"
+    ],
+    "/sharpen-image": [
+      "sharpen",
+      "enhance"
+    ]
+  },
+  "/javascript-tools": {
+    "/base64-encoder-decoder-javascript": [
+      "base64"
+    ],
+    "/javascript-array-object-sorter": [
+      "sort array",
+      "object"
+    ],
+    "/javascript-beautifier-formatter": [
+      "beautify",
+      "format"
+    ],
+    "/javascript-character-word-counter": [
+      "word count",
+      "character"
+    ],
+    "/javascript-color-converter-picker": [
+      "color convert",
+      "picker"
+    ],
+    "/javascript-csv-json-converter": [
+      "csv json"
+    ],
+    "/javascript-date-time-converter": [
+      "date time",
+      "convert"
+    ],
+    "/javascript-diff-checker-comparator": [
+      "diff",
+      "compare"
+    ],
+    "/javascript-encryption-decryption-tool": [
+      "encrypt decrypt"
+    ],
+    "/javascript-function-code-generator": [
+      "function generate",
+      "snippet"
+    ],
+    "/javascript-image-base64-data-url-converter": [
+      "image base64",
+      "data url"
+    ],
+    "/javascript-linter-code-quality-checker": [
+      "lint",
+      "code quality"
+    ],
+    "/javascript-obfuscator-protector": [
+      "obfuscate",
+      "protect"
+    ],
+    "/javascript-object-json-converter": [
+      "object json"
+    ],
+    "/javascript-regex-tester-debugger": [
+      "regex",
+      "test"
+    ],
+    "/javascript-string-escape-unescape": [
+      "string escape"
+    ],
+    "/javascript-unit-test-assertion-generator": [
+      "unit test",
+      "assertion"
+    ],
+    "/javascript-url-parser-query-string-builder": [
+      "url parse",
+      "query string"
+    ],
+    "/json-validator-formatter": [
+      "validate json",
+      "format"
+    ]
+  },
+  "/json-tools": {
+    "/add-id-to-json": [
+      "add id",
+      "uuid"
+    ],
+    "/csv-to-json": [
+      "csv import"
+    ],
+    "/jmespath-query": [
+      "jmespath",
+      "query"
+    ],
+    "/json-api-error-formatter": [
+      "api error",
+      "format"
+    ],
+    "/json-api-formatter": [
+      "api response",
+      "format"
+    ],
+    "/json-api-response-generator": [
+      "api response",
+      "mock"
+    ],
+    "/json-array-generator": [
+      "array",
+      "generate"
+    ],
+    "/json-array-object-counter": [
+      "count",
+      "array size"
+    ],
+    "/json-axios-code-generator": [
+      "axios",
+      "http request"
+    ],
+    "/json-base64": [
+      "base64",
+      "encode"
+    ],
+    "/json-config-validator": [
+      "config",
+      "validate"
+    ],
+    "/json-datetime-generator": [
+      "datetime",
+      "timestamp"
+    ],
+    "/json-depth-analyzer": [
+      "depth",
+      "nested levels"
+    ],
+    "/json-diff": [
+      "diff",
+      "compare"
+    ],
+    "/json-duplicate-key-finder": [
+      "duplicate keys"
+    ],
+    "/json-empty-field-finder": [
+      "empty fields",
+      "null"
+    ],
+    "/json-encode-decode": [
+      "encode decode"
+    ],
+    "/json-enum-generator": [
+      "enum",
+      "constants"
+    ],
+    "/json-env-converter": [
+      "env file",
+      ".env"
+    ],
+    "/json-error-explanation": [
+      "error",
+      "explain parse"
+    ],
+    "/json-escape-unescape": [
+      "escape",
+      "string"
+    ],
+    "/json-explainer": [
+      "explain",
+      "describe"
+    ],
+    "/json-extract-subjson": [
+      "extract",
+      "subset"
+    ],
+    "/json-fetch-code-generator": [
+      "fetch api",
+      "http"
+    ],
+    "/json-filter": [
+      "filter",
+      "query"
+    ],
+    "/json-flatten": [
+      "flatten",
+      "nested"
+    ],
+    "/json-formatter-beautifier": [
+      "format",
+      "beautify"
+    ],
+    "/json-jwt-decoder": [
+      "jwt",
+      "decode token"
+    ],
+    "/json-key-extractor": [
+      "keys",
+      "extract"
+    ],
+    "/json-key-frequency": [
+      "key frequency",
+      "count"
+    ],
+    "/json-key-value-extractor": [
+      "key value",
+      "pairs"
+    ],
+    "/json-linter": [
+      "lint",
+      "check errors"
+    ],
+    "/json-map-reduce": [
+      "map reduce",
+      "transform"
+    ],
+    "/json-merge": [
+      "merge",
+      "combine"
+    ],
+    "/json-minifier": [
+      "minify",
+      "compress"
+    ],
+    "/json-nested-structure": [
+      "nested",
+      "structure view"
+    ],
+    "/json-obfuscator": [
+      "obfuscate",
+      "hide data"
+    ],
+    "/json-pagination-generator": [
+      "pagination",
+      "pages"
+    ],
+    "/json-patch-generator": [
+      "patch",
+      "rfc6902"
+    ],
+    "/json-playground": [
+      "sandbox",
+      "live edit"
+    ],
+    "/json-pretty-print": [
+      "pretty print",
+      "readable"
+    ],
+    "/json-random-object": [
+      "random data",
+      "mock"
+    ],
+    "/json-remove-keys": [
+      "remove keys",
+      "delete"
+    ],
+    "/json-rename-keys": [
+      "rename keys",
+      "transform"
+    ],
+    "/json-schema-example-generator": [
+      "schema example",
+      "mock"
+    ],
+    "/json-schema-validator": [
+      "schema validate",
+      "jsonschema"
+    ],
+    "/json-sensitive-data-maser": [
+      "mask",
+      "redact sensitive"
+    ],
+    "/json-size-calculator": [
+      "size",
+      "bytes kb"
+    ],
+    "/json-sorter": [
+      "sort keys",
+      "order"
+    ],
+    "/json-step-by-step-parser": [
+      "parse",
+      "step debug"
+    ],
+    "/json-stringify-parse": [
+      "stringify",
+      "parse"
+    ],
+    "/json-structure-visualizer": [
+      "structure",
+      "tree view"
+    ],
+    "/json-to-csharp": [
+      "csharp class"
+    ],
+    "/json-to-csv": [
+      "csv"
+    ],
+    "/json-to-excel": [
+      "excel xlsx"
+    ],
+    "/json-to-go": [
+      "golang struct"
+    ],
+    "/json-to-graphql": [
+      "graphql schema"
+    ],
+    "/json-to-java": [
+      "java class"
+    ],
+    "/json-to-javascript": [
+      "javascript object"
+    ],
+    "/json-to-kotlin": [
+      "kotlin data class"
+    ],
+    "/json-to-markdown-table": [
+      "markdown table"
+    ],
+    "/json-to-mongodb": [
+      "mongodb document"
+    ],
+    "/json-to-php": [
+      "php array"
+    ],
+    "/json-to-python": [
+      "python dict"
+    ],
+    "/json-to-sql-insert": [
+      "sql insert"
+    ],
+    "/json-to-swift": [
+      "swift struct"
+    ],
+    "/json-to-text": [
+      "plain text"
+    ],
+    "/json-to-tsv": [
+      "tsv tab"
+    ],
+    "/json-to-typescript": [
+      "typescript interface"
+    ],
+    "/json-to-xml": [
+      "xml"
+    ],
+    "/json-to-yaml": [
+      "yaml"
+    ],
+    "/json-transformer": [
+      "transform",
+      "map"
+    ],
+    "/json-unflatten": [
+      "unflatten",
+      "nested"
+    ],
+    "/json-validator": [
+      "validate",
+      "check"
+    ],
+    "/json-value-search": [
+      "search value",
+      "find"
+    ],
+    "/json-viewer": [
+      "view",
+      "tree"
+    ],
+    "/jsonpath-query": [
+      "jsonpath",
+      "query"
+    ],
+    "/xml-to-json": [
+      "xml import"
+    ],
+    "/yaml-to-json": [
+      "yaml import"
+    ]
+  },
+  "/jwt-tools": {
+    "/jwt-algorithm-converter-switcher": [
+      "algorithm",
+      "hs256 rs256"
+    ],
+    "/jwt-base64-url-encoder-decoder": [
+      "base64url",
+      "encode decode"
+    ],
+    "/jwt-claim-extractor-formatter": [
+      "claims",
+      "payload"
+    ],
+    "/jwt-debugger-tester": [
+      "debug",
+      "test"
+    ],
+    "/jwt-decoder-validator": [
+      "decode",
+      "validate"
+    ],
+    "/jwt-expiry-checker-timestamp-converter": [
+      "expiry",
+      "exp timestamp"
+    ],
+    "/jwt-generator-signer": [
+      "generate",
+      "sign"
+    ],
+    "/jwt-public-key-extractor-jwk-generator": [
+      "public key",
+      "jwk"
+    ],
+    "/jwt-secret-key-generator": [
+      "secret key",
+      "hmac"
+    ],
+    "/jwt-to-curl-command-generator": [
+      "curl",
+      "api request"
+    ],
+    "/jwt-token-builder-templates": [
+      "build token",
+      "template"
+    ],
+    "/jwt-token-diff-compare": [
+      "diff",
+      "compare tokens"
+    ],
+    "/jwt-token-lifespan-renewal-simulator": [
+      "lifespan",
+      "renewal"
+    ],
+    "/jwt-token-scrambler-obfuscator": [
+      "obfuscate",
+      "scramble"
+    ],
+    "/jwt-token-size-calculator-optimizer": [
+      "size",
+      "optimize"
+    ],
+    "/jwt-token-storage-viewer": [
+      "storage",
+      "localstorage cookie"
+    ]
+  },
+  "/markdown-tools": {
+    "/html-to-markdown-converter": [
+      "html import"
+    ],
+    "/markdown-cheat-sheet-generator": [
+      "cheat sheet",
+      "reference"
+    ],
+    "/markdown-code-block-formatter": [
+      "code block",
+      "syntax"
+    ],
+    "/markdown-diff-checker": [
+      "diff",
+      "compare"
+    ],
+    "/markdown-escape-tool": [
+      "escape",
+      "special chars"
+    ],
+    "/markdown-front-matter-editor": [
+      "front matter",
+      "yaml header"
+    ],
+    "/markdown-image-syntax-generator": [
+      "image syntax",
+      "embed"
+    ],
+    "/markdown-link-generator": [
+      "link syntax",
+      "url"
+    ],
+    "/markdown-linter-formatter": [
+      "lint",
+      "format"
+    ],
+    "/markdown-preview-editor": [
+      "preview",
+      "live edit"
+    ],
+    "/markdown-table-generator": [
+      "table",
+      "columns rows"
+    ],
+    "/markdown-table-of-contents-generator": [
+      "toc",
+      "headings"
+    ],
+    "/markdown-task-list-generator": [
+      "task list",
+      "checklist"
+    ],
+    "/markdown-to-html-converter": [
+      "html export"
+    ],
+    "/markdown-to-jira-converter": [
+      "jira format"
+    ],
+    "/markdown-to-json-converter": [
+      "json"
+    ],
+    "/markdown-to-notion-converter": [
+      "notion"
+    ],
+    "/markdown-to-pdf-converter": [
+      "pdf"
+    ],
+    "/markdown-to-slack-converter": [
+      "slack format"
+    ],
+    "/markdown-to-wordpress-html-converter": [
+      "wordpress html"
+    ],
+    "/markdown-word-counter": [
+      "word count",
+      "reading time"
+    ]
+  },
+  "/math-tools": {
+    "/2d-function-plotter": [
+      "plot function",
+      "graph"
+    ],
+    "/absolute-value-calculator": [
+      "absolute value",
+      "|x|"
+    ],
+    "/age-calculator": [
+      "age",
+      "birthdate"
+    ],
+    "/angle-calculator": [
+      "angle",
+      "degrees"
+    ],
+    "/angle-elevation-depression-solver": [
+      "elevation depression",
+      "angle"
+    ],
+    "/annuity-calculator": [
+      "annuity",
+      "payments"
+    ],
+    "/antilogarithm-calculator": [
+      "antilog"
+    ],
+    "/area-calculator": [
+      "area",
+      "shape"
+    ],
+    "/area-converter": [
+      "area units",
+      "sqm acres"
+    ],
+    "/arithmetic-sequence-calculator": [
+      "arithmetic sequence"
+    ],
+    "/arithmetic-series-calculator": [
+      "arithmetic series",
+      "sum"
+    ],
+    "/armstrong-number-checker": [
+      "armstrong number",
+      "narcissistic"
+    ],
+    "/average-calculator": [
+      "average",
+      "mean"
+    ],
+    "/bar-chart-builder": [
+      "bar chart",
+      "data"
+    ],
+    "/big-number-calculator": [
+      "big number",
+      "arbitrary precision"
+    ],
+    "/binary-arithmetic-calculator": [
+      "binary math",
+      "add"
+    ],
+    "/binomial-expansion-calculator": [
+      "binomial expansion",
+      "foil"
+    ],
+    "/bitwise-operations-calculator": [
+      "bitwise",
+      "and or xor"
+    ],
+    "/boolean-expression-evaluator": [
+      "boolean",
+      "logic"
+    ],
+    "/box-plot-generator": [
+      "box plot",
+      "quartiles"
+    ],
+    "/break-even-point-calculator": [
+      "break even",
+      "costs"
+    ],
+    "/cartesian-product-calculator": [
+      "cartesian product",
+      "sets"
+    ],
+    "/circle-calculator": [
+      "circle",
+      "circumference area"
+    ],
+    "/combination-calculator": [
+      "combinations",
+      "nCr"
+    ],
+    "/complement-of-set-calculator": [
+      "complement set"
+    ],
+    "/compound-interest-calculator": [
+      "compound interest"
+    ],
+    "/confidence-interval-calculator": [
+      "confidence interval",
+      "stats"
+    ],
+    "/coordinate-geometry-calculator": [
+      "coordinates",
+      "distance slope"
+    ],
+    "/coordinate-plane-plotter": [
+      "coordinate plane",
+      "plot points"
+    ],
+    "/correlation-coefficient-calculator": [
+      "correlation",
+      "r value"
+    ],
+    "/currency-exchange-calculator": [
+      "exchange rate",
+      "currency"
+    ],
+    "/data-storage-converter": [
+      "storage units",
+      "gb mb tb"
+    ],
+    "/date-arithmetic-calculator": [
+      "date math",
+      "add days"
+    ],
+    "/date-difference-calculator": [
+      "date diff",
+      "days between"
+    ],
+    "/day-of-week-calculator": [
+      "day of week",
+      "what day"
+    ],
+    "/days-until-since-calculator": [
+      "days until",
+      "countdown"
+    ],
+    "/decimal-to-fraction-converter": [
+      "decimal fraction"
+    ],
+    "/definite-integral-calculator": [
+      "definite integral",
+      "area under curve"
+    ],
+    "/degrees-radians-converter": [
+      "degrees radians"
+    ],
+    "/derivative-calculator": [
+      "derivative",
+      "calculus"
+    ],
+    "/dice-roller": [
+      "dice roll",
+      "random"
+    ],
+    "/difference-of-sets-calculator": [
+      "set difference"
+    ],
+    "/digit-sum-calculator": [
+      "digit sum",
+      "digital root"
+    ],
+    "/discount-markup-calculator": [
+      "discount markup",
+      "price"
+    ],
+    "/distance-between-two-points-calculator": [
+      "distance points",
+      "coordinates"
+    ],
+    "/divisibility-check-2-20": [
+      "divisibility",
+      "divide evenly"
+    ],
+    "/divisibility-checker": [
+      "divisible",
+      "remainder"
+    ],
+    "/eigenvalue-calculator": [
+      "eigenvalue",
+      "eigenvector"
+    ],
+    "/emi-loan-calculator": [
+      "emi",
+      "loan payment"
+    ],
+    "/energy-converter": [
+      "energy units",
+      "joules kwh"
+    ],
+    "/equation-balancer": [
+      "balance equation",
+      "chemistry"
+    ],
+    "/estimation-rounding-tool": [
+      "estimate",
+      "round"
+    ],
+    "/eulers-totient-calculator": [
+      "euler totient",
+      "phi"
+    ],
+    "/expand-simplify-binomials": [
+      "expand binomial",
+      "foil"
+    ],
+    "/exponent-calculator": [
+      "exponent",
+      "power"
+    ],
+    "/factor-calculator": [
+      "factors",
+      "divisors"
+    ],
+    "/factorial-calculator": [
+      "factorial",
+      "n!"
+    ],
+    "/factors-list-generator": [
+      "factors list",
+      "all divisors"
+    ],
+    "/fibonacci-generator": [
+      "fibonacci",
+      "sequence"
+    ],
+    "/five-number-summary-calculator": [
+      "five number summary",
+      "quartiles"
+    ],
+    "/fraction-calculator": [
+      "fractions",
+      "add subtract multiply"
+    ],
+    "/fraction-to-decimal-converter": [
+      "fraction decimal"
+    ],
+    "/frequency-distribution-table": [
+      "frequency table",
+      "tally"
+    ],
+    "/future-value-calculator": [
+      "future value",
+      "investment"
+    ],
+    "/gcd-hcf-calculator": [
+      "gcd hcf",
+      "common factor"
+    ],
+    "/geometric-mean-calculator": [
+      "geometric mean"
+    ],
+    "/geometric-sequence-calculator": [
+      "geometric sequence"
+    ],
+    "/geometric-series-calculator": [
+      "geometric series",
+      "sum"
+    ],
+    "/gpa-calculator": [
+      "gpa",
+      "grade point"
+    ],
+    "/gradient-slope-calculator": [
+      "slope gradient",
+      "rise run"
+    ],
+    "/harmonic-mean-calculator": [
+      "harmonic mean"
+    ],
+    "/harmonic-series-calculator": [
+      "harmonic series"
+    ],
+    "/histogram-generator": [
+      "histogram",
+      "frequency"
+    ],
+    "/identity-matrix-generator": [
+      "identity matrix"
+    ],
+    "/inequality-solver": [
+      "inequality",
+      "solve"
+    ],
+    "/intersection-of-sets-calculator": [
+      "intersection",
+      "common elements"
+    ],
+    "/inverse-trig-calculator": [
+      "inverse trig",
+      "arcsin arccos"
+    ],
+    "/law-of-cosines-calculator": [
+      "law cosines",
+      "triangle"
+    ],
+    "/law-of-sines-calculator": [
+      "law sines",
+      "triangle"
+    ],
+    "/lcm-calculator": [
+      "lcm",
+      "common multiple"
+    ],
+    "/leap-year-checker": [
+      "leap year"
+    ],
+    "/length-converter": [
+      "length units",
+      "meters feet"
+    ],
+    "/limit-calculator": [
+      "limit",
+      "calculus"
+    ],
+    "/line-graph-builder": [
+      "line graph",
+      "trend"
+    ],
+    "/linear-equation-solver": [
+      "linear equation",
+      "solve x"
+    ],
+    "/linear-regression-calculator": [
+      "linear regression",
+      "best fit"
+    ],
+    "/logarithm-calculator": [
+      "log",
+      "natural log"
+    ],
+    "/logic-gate-simulator": [
+      "logic gate",
+      "and or"
+    ],
+    "/long-division-calculator": [
+      "long division",
+      "steps"
+    ],
+    "/long-multiplication-calculator": [
+      "long multiplication",
+      "steps"
+    ],
+    "/magic-square-generator": [
+      "magic square",
+      "grid"
+    ],
+    "/matrix-addition-subtraction-calculator": [
+      "matrix add",
+      "subtract"
+    ],
+    "/matrix-determinant-calculator": [
+      "determinant"
+    ],
+    "/matrix-inverse-calculator": [
+      "inverse matrix"
+    ],
+    "/matrix-multiplication-calculator": [
+      "matrix multiply"
+    ],
+    "/matrix-rank-calculator": [
+      "matrix rank"
+    ],
+    "/matrix-trace-calculator": [
+      "trace",
+      "diagonal sum"
+    ],
+    "/matrix-transpose-calculator": [
+      "transpose",
+      "rows columns"
+    ],
+    "/mean-median-mode-calculator": [
+      "mean median mode",
+      "stats"
+    ],
+    "/midpoint-calculator": [
+      "midpoint",
+      "coordinates"
+    ],
+    "/mixed-number-calculator": [
+      "mixed number",
+      "fractions"
+    ],
+    "/modular-arithmetic-calculator": [
+      "modular",
+      "clock math"
+    ],
+    "/modulo-calculator": [
+      "modulo",
+      "remainder"
+    ],
+    "/multiplication-table": [
+      "times table",
+      "multiplication"
+    ],
+    "/normal-distribution-calculator": [
+      "normal distribution",
+      "bell curve"
+    ],
+    "/nth-term-finder": [
+      "nth term",
+      "sequence"
+    ],
+    "/number-base-converter": [
+      "number base",
+      "radix"
+    ],
+    "/number-line-visualizer": [
+      "number line",
+      "plot"
+    ],
+    "/number-sorter": [
+      "sort numbers",
+      "ascending"
+    ],
+    "/number-word-converter": [
+      "number words",
+      "spell"
+    ],
+    "/order-of-operations-solver": [
+      "order operations",
+      "pemdas"
+    ],
+    "/outlier-detector": [
+      "outliers",
+      "anomaly"
+    ],
+    "/palindrome-number-checker": [
+      "palindrome number"
+    ],
+    "/pascals-triangle-generator": [
+      "pascals triangle"
+    ],
+    "/percentage-calculator": [
+      "percentage",
+      "percent"
+    ],
+    "/percentage-change-calculator": [
+      "percentage change"
+    ],
+    "/perfect-number-checker": [
+      "perfect number"
+    ],
+    "/perimeter-calculator": [
+      "perimeter",
+      "shape boundary"
+    ],
+    "/permutation-calculator": [
+      "permutations",
+      "nPr"
+    ],
+    "/pi-digit-generator": [
+      "pi digits",
+      "3.14"
+    ],
+    "/pie-bar-chart-generator": [
+      "pie bar chart",
+      "data"
+    ],
+    "/pie-chart-builder": [
+      "pie chart",
+      "proportions"
+    ],
+    "/polygon-interior-angle-sum-calculator": [
+      "polygon angles",
+      "interior"
+    ],
+    "/polynomial-evaluator": [
+      "polynomial",
+      "evaluate"
+    ],
+    "/power-set-generator": [
+      "power set",
+      "subsets"
+    ],
+    "/present-value-calculator": [
+      "present value",
+      "discount"
+    ],
+    "/pressure-converter": [
+      "pressure units",
+      "psi bar"
+    ],
+    "/prime-factorization-calculator": [
+      "prime factors"
+    ],
+    "/prime-number-checker": [
+      "prime",
+      "is prime"
+    ],
+    "/probability-calculator": [
+      "probability",
+      "odds"
+    ],
+    "/profit-loss-calculator": [
+      "profit loss",
+      "revenue"
+    ],
+    "/pythagorean-theorem-calculator": [
+      "pythagorean",
+      "right triangle"
+    ],
+    "/quadratic-equation-solver": [
+      "quadratic",
+      "abc formula"
+    ],
+    "/random-number-generator": [
+      "random",
+      "dice"
+    ],
+    "/ratio-calculator": [
+      "ratio",
+      "proportion"
+    ],
+    "/reverse-number": [
+      "reverse digits",
+      "flip"
+    ],
+    "/riemann-sum-calculator": [
+      "riemann sum",
+      "integral"
+    ],
+    "/right-triangle-calculator": [
+      "right triangle",
+      "sides angles"
+    ],
+    "/roi-calculator": [
+      "roi",
+      "return"
+    ],
+    "/roman-numeral-converter": [
+      "roman numerals"
+    ],
+    "/rounding-calculator": [
+      "round",
+      "decimal"
+    ],
+    "/sales-tax-vat-calculator": [
+      "tax vat",
+      "total"
+    ],
+    "/scalar-multiplication-calculator": [
+      "scalar multiply",
+      "matrix"
+    ],
+    "/scatter-plot-generator": [
+      "scatter plot",
+      "points"
+    ],
+    "/scientific-calculator": [
+      "scientific",
+      "trig log"
+    ],
+    "/scientific-notation-converter": [
+      "scientific notation"
+    ],
+    "/significant-figures-calculator": [
+      "significant figures",
+      "sig figs"
+    ],
+    "/simple-interest-calculator": [
+      "simple interest"
+    ],
+    "/simplify-expression": [
+      "simplify",
+      "algebra"
+    ],
+    "/slope-calculator": [
+      "slope",
+      "line"
+    ],
+    "/speed-converter": [
+      "speed units",
+      "mph kmh"
+    ],
+    "/square-root-calculator": [
+      "square root",
+      "√"
+    ],
+    "/standard-calculator": [
+      "basic math",
+      "arithmetic"
+    ],
+    "/standard-deviation-variance-calculator": [
+      "std dev",
+      "variance"
+    ],
+    "/subset-checker": [
+      "subset",
+      "set theory"
+    ],
+    "/sudoku-validator": [
+      "sudoku",
+      "valid puzzle"
+    ],
+    "/surface-area-calculator": [
+      "surface area",
+      "shape"
+    ],
+    "/system-of-equations-solver": [
+      "system equations",
+      "simultaneous"
+    ],
+    "/tangent-line-calculator": [
+      "tangent line",
+      "slope point"
+    ],
+    "/taylor-series-approximation": [
+      "taylor series",
+      "approximation"
+    ],
+    "/temperature-converter": [
+      "temperature",
+      "celsius fahrenheit"
+    ],
+    "/time-converter": [
+      "time units",
+      "hours seconds"
+    ],
+    "/time-duration-calculator": [
+      "duration",
+      "hours minutes"
+    ],
+    "/tip-calculator": [
+      "tip",
+      "restaurant"
+    ],
+    "/triangle-solver": [
+      "triangle",
+      "sides angles"
+    ],
+    "/trig-function-calculator": [
+      "trig",
+      "sin cos tan"
+    ],
+    "/trig-identity-verifier": [
+      "trig identity",
+      "verify"
+    ],
+    "/truth-table-generator": [
+      "truth table",
+      "logic"
+    ],
+    "/twos-complement-calculator": [
+      "twos complement",
+      "binary"
+    ],
+    "/union-of-sets-calculator": [
+      "union sets"
+    ],
+    "/unit-circle-reference": [
+      "unit circle",
+      "trig values"
+    ],
+    "/venn-diagram-tool": [
+      "venn diagram",
+      "sets"
+    ],
+    "/volume-calculator": [
+      "volume",
+      "shape"
+    ],
+    "/volume-converter": [
+      "volume units",
+      "liters gallons"
+    ],
+    "/weight-converter": [
+      "weight units",
+      "kg lbs"
+    ],
+    "/weighted-average-calculator": [
+      "weighted average"
+    ],
+    "/z-score-calculator": [
+      "z score",
+      "standard deviation"
+    ]
+  },
+  "/minifier-tools": {
+    "/base64-minifier": [
+      "base64 compress"
+    ],
+    "/bulk-file-minifier": [
+      "bulk",
+      "multiple files"
+    ],
+    "/cli-minifier-generator": [
+      "cli command",
+      "terminal"
+    ],
+    "/code-beautifier": [
+      "beautify",
+      "format code"
+    ],
+    "/code-minifier": [
+      "minify code",
+      "compress"
+    ],
+    "/css-js-combined-minifier": [
+      "css js",
+      "both"
+    ],
+    "/css-minifier": [
+      "css compress"
+    ],
+    "/html-inline-css-js-minifier": [
+      "inline",
+      "all in one"
+    ],
+    "/html-minifier": [
+      "html compress"
+    ],
+    "/javascript-minifier": [
+      "js compress"
+    ],
+    "/json-minifier": [
+      "json compress"
+    ],
+    "/minification-analyzer": [
+      "analyze",
+      "size savings"
+    ],
+    "/minified-diff-viewer": [
+      "diff",
+      "before after"
+    ],
+    "/php-minifier": [
+      "php compress"
+    ],
+    "/real-time-minifier": [
+      "live",
+      "instant"
+    ],
+    "/sql-minifier": [
+      "sql compress"
+    ],
+    "/svg-minifier": [
+      "svg compress",
+      "optimize"
+    ],
+    "/text-minifier": [
+      "text compress",
+      "whitespace"
+    ],
+    "/wordpress-minifier": [
+      "wordpress",
+      "wp optimize"
+    ],
+    "/xml-minifier": [
+      "xml compress"
+    ]
+  },
+  "/number-tools": {
+    "/binary-decimal-hex-converter": [
+      "binary decimal hex"
+    ],
+    "/currency-formatter": [
+      "currency format",
+      "thousands"
+    ],
+    "/divisibility-tester": [
+      "divisible",
+      "remainder"
+    ],
+    "/factorial-calculator": [
+      "factorial",
+      "n!"
+    ],
+    "/gcf-calculator": [
+      "gcf",
+      "common factor"
+    ],
+    "/number-base-calculator": [
+      "number base",
+      "radix math"
+    ],
+    "/number-pattern-generator": [
+      "number pattern",
+      "sequence"
+    ],
+    "/number-sequence-solver": [
+      "sequence",
+      "next term"
+    ],
+    "/number-sorter": [
+      "sort numbers",
+      "order"
+    ],
+    "/number-to-time-converter": [
+      "number time",
+      "decimal hours"
+    ],
+    "/number-to-words-converter": [
+      "number words",
+      "spell out"
+    ],
+    "/palindrome-number-checker": [
+      "palindrome"
+    ],
+    "/percentage-calculator": [
+      "percentage",
+      "percent"
+    ],
+    "/phone-number-formatter": [
+      "phone format",
+      "international"
+    ],
+    "/prime-number-checker": [
+      "prime",
+      "is prime"
+    ],
+    "/random-number-generator": [
+      "random",
+      "generate"
+    ],
+    "/roman-numeral-converter": [
+      "roman numerals"
+    ],
+    "/rounding-calculator": [
+      "round",
+      "decimal places"
+    ],
+    "/scientific-notation-converter": [
+      "scientific notation"
+    ],
+    "/unit-converter": [
+      "unit",
+      "convert"
+    ]
+  },
+  "/password-tools": {
+    "/password-ascii-art-generator": [
+      "ascii art",
+      "visual"
+    ],
+    "/password-audit-report": [
+      "audit",
+      "security report"
+    ],
+    "/password-csv-to-json-converter": [
+      "csv json",
+      "import"
+    ],
+    "/password-disguiser": [
+      "disguise",
+      "mask"
+    ],
+    "/password-entropy-calculator": [
+      "entropy",
+      "bits"
+    ],
+    "/password-expiry-reminder": [
+      "expiry",
+      "remind"
+    ],
+    "/password-game": [
+      "game",
+      "challenge"
+    ],
+    "/password-generator": [
+      "generate",
+      "random secure"
+    ],
+    "/password-hash-generator": [
+      "hash",
+      "md5 bcrypt"
+    ],
+    "/password-history-generator": [
+      "history",
+      "past"
+    ],
+    "/password-keyboard-walk-analyzer": [
+      "keyboard walk",
+      "qwerty"
+    ],
+    "/password-leak-checker": [
+      "leak check",
+      "breach"
+    ],
+    "/password-manager": [
+      "manage",
+      "store"
+    ],
+    "/password-mnemonic-creator": [
+      "mnemonic",
+      "memorable"
+    ],
+    "/password-pattern-generator": [
+      "pattern",
+      "custom rules"
+    ],
+    "/password-policy-generator": [
+      "policy",
+      "rules requirements"
+    ],
+    "/password-pronunciation-generator": [
+      "pronounce",
+      "readable"
+    ],
+    "/password-regex-tester": [
+      "regex",
+      "pattern test"
+    ],
+    "/password-sharing-tool": [
+      "share",
+      "secure send"
+    ],
+    "/password-strength-checker": [
+      "strength",
+      "weak strong"
+    ],
+    "/password-time-to-crack-estimator": [
+      "crack time",
+      "brute force"
+    ]
+  },
+  "/physics-tools": {
+    "/bernoulli-equation-calculator": [
+      "bernoulli",
+      "fluid pressure"
+    ],
+    "/blackbody-radiation-calculator": [
+      "blackbody",
+      "radiation"
+    ],
+    "/capacitance-calculator": [
+      "capacitance",
+      "farads"
+    ],
+    "/center-of-mass-calculator": [
+      "center of mass",
+      "centroid"
+    ],
+    "/coulombs-law-calculator": [
+      "coulombs law",
+      "charge force"
+    ],
+    "/doppler-effect-calculator": [
+      "doppler",
+      "frequency shift"
+    ],
+    "/gravitational-potential-energy-calculator": [
+      "gravitational potential",
+      "height"
+    ],
+    "/half-life-calculator": [
+      "half life",
+      "decay"
+    ],
+    "/kinetic-energy-calculator": [
+      "kinetic energy",
+      "mass velocity"
+    ],
+    "/lens-maker-equation-calculator": [
+      "lens maker",
+      "focal length"
+    ],
+    "/mach-number-calculator": [
+      "mach number",
+      "speed sound"
+    ],
+    "/magnetic-force-on-wire-calculator": [
+      "magnetic force",
+      "wire"
+    ],
+    "/ohms-law-calculator": [
+      "ohms law",
+      "voltage current"
+    ],
+    "/photoelectric-effect-calculator": [
+      "photoelectric",
+      "photon energy"
+    ],
+    "/physics-calculator": [
+      "physics formulas",
+      "general"
+    ],
+    "/projectile-motion-simulator": [
+      "projectile",
+      "trajectory"
+    ],
+    "/reynolds-number-calculator": [
+      "reynolds number",
+      "fluid flow"
+    ],
+    "/simple-harmonic-motion-calculator": [
+      "shm",
+      "oscillation"
+    ],
+    "/snells-law-calculator": [
+      "snells law",
+      "refraction"
+    ],
+    "/thermal-expansion-calculator": [
+      "thermal expansion",
+      "heat"
+    ]
+  },
+  "/qr-code-tools": {
+    "/bulk-qr-code-generator": [
+      "bulk",
+      "multiple"
+    ],
+    "/dynamic-qr-code-generator": [
+      "dynamic",
+      "editable"
+    ],
+    "/qr-code-analytics-tracker": [
+      "analytics",
+      "scans tracking"
+    ],
+    "/qr-code-app-store": [
+      "app store",
+      "download link"
+    ],
+    "/qr-code-augmented-reality": [
+      "ar",
+      "augmented reality"
+    ],
+    "/qr-code-calendar-event": [
+      "calendar event",
+      "ics"
+    ],
+    "/qr-code-color-picker": [
+      "custom color",
+      "design"
+    ],
+    "/qr-code-coupon-generator": [
+      "coupon",
+      "discount"
+    ],
+    "/qr-code-crypto-address": [
+      "crypto",
+      "wallet address"
+    ],
+    "/qr-code-document-download": [
+      "document",
+      "pdf download"
+    ],
+    "/qr-code-email-generator": [
+      "email",
+      "mailto"
+    ],
+    "/qr-code-error-correction": [
+      "error correction",
+      "level"
+    ],
+    "/qr-code-event-ticket": [
+      "event ticket",
+      "venue"
+    ],
+    "/qr-code-feedback-form": [
+      "feedback",
+      "survey"
+    ],
+    "/qr-code-file-size-optimizer": [
+      "optimize",
+      "file size"
+    ],
+    "/qr-code-for-crypto-payment": [
+      "crypto payment",
+      "bitcoin"
+    ],
+    "/qr-code-for-pdf": [
+      "pdf link"
+    ],
+    "/qr-code-for-whatsapp": [
+      "whatsapp",
+      "message"
+    ],
+    "/qr-code-for-wifi": [
+      "wifi",
+      "network password"
+    ],
+    "/qr-code-frame-border-designer": [
+      "frame border",
+      "design"
+    ],
+    "/qr-code-generator": [
+      "create",
+      "make"
+    ],
+    "/qr-code-google-maps": [
+      "google maps",
+      "location"
+    ],
+    "/qr-code-link-shortener": [
+      "short link",
+      "url"
+    ],
+    "/qr-code-paypal": [
+      "paypal",
+      "payment"
+    ],
+    "/qr-code-phone-call": [
+      "phone call",
+      "tel"
+    ],
+    "/qr-code-restaurant-menu": [
+      "menu",
+      "food"
+    ],
+    "/qr-code-scanner": [
+      "scan",
+      "read decode"
+    ],
+    "/qr-code-sms-generator": [
+      "sms",
+      "text message"
+    ],
+    "/qr-code-social-media": [
+      "social media",
+      "profile"
+    ],
+    "/qr-code-spotify": [
+      "spotify",
+      "music"
+    ],
+    "/qr-code-to-pdf": [
+      "pdf export"
+    ],
+    "/qr-code-to-text-decoder": [
+      "decode",
+      "read text"
+    ],
+    "/qr-code-vcard-generator": [
+      "vcard",
+      "contact"
+    ],
+    "/qr-code-with-logo-generator": [
+      "logo",
+      "branded"
+    ],
+    "/qr-code-youtube": [
+      "youtube",
+      "video"
+    ]
+  },
+  "/seo-tools": {
+    "/site-seo-auditor": [
+      "seo audit",
+      "website analysis"
+    ]
+  },
+  "/simulators": {
+    "/bacteria-growth-simulator": [
+      "bacteria growth",
+      "colony"
+    ]
+  },
+  "/sql-tools": {
+    "/csv-to-sql-converter-inserts": [
+      "csv import",
+      "insert"
+    ],
+    "/json-to-sql-converter": [
+      "json import"
+    ],
+    "/sql-case-converter-upper-lower-proper": [
+      "case convert",
+      "uppercase"
+    ],
+    "/sql-date-function-playground": [
+      "date functions",
+      "playground"
+    ],
+    "/sql-diff-compare-schemas-queries": [
+      "diff",
+      "compare"
+    ],
+    "/sql-escape-unescape-tool": [
+      "escape",
+      "string"
+    ],
+    "/sql-execution-plan-visualizer": [
+      "execution plan",
+      "explain"
+    ],
+    "/sql-formatter-beautifier": [
+      "format",
+      "beautify"
+    ],
+    "/sql-index-advisor-suggest-tool": [
+      "index",
+      "optimize"
+    ],
+    "/sql-join-types-visualizer": [
+      "joins",
+      "inner outer"
+    ],
+    "/sql-password-hash-generator-md5-sha": [
+      "password hash",
+      "md5 sha"
+    ],
+    "/sql-query-parser-tokenizer": [
+      "parse query",
+      "tokenize"
+    ],
+    "/sql-query-to-csv-export": [
+      "export csv",
+      "results"
+    ],
+    "/sql-query-validator-syntax-checker": [
+      "validate",
+      "syntax"
+    ],
+    "/sql-random-data-generator": [
+      "random data",
+      "mock"
+    ],
+    "/sql-regular-expression-tester-regexp": [
+      "regexp",
+      "pattern"
+    ],
+    "/sql-stored-procedure-generator": [
+      "stored procedure",
+      "generate"
+    ],
+    "/sql-to-json-converter": [
+      "json export"
+    ],
+    "/sqlite-viewer-online": [
+      "sqlite",
+      "view database"
+    ],
+    "/visual-sql-query-builder": [
+      "visual builder",
+      "drag drop"
+    ]
+  },
+  "/statistics-tools": {
+    "/ab-test-significance-calculator": [
+      "ab test",
+      "significance"
+    ],
+    "/anova-calculator": [
+      "anova",
+      "variance groups"
+    ],
+    "/binomial-distribution-calculator": [
+      "binomial distribution",
+      "probability"
+    ],
+    "/box-plot-generator": [
+      "box plot",
+      "quartiles"
+    ],
+    "/chi-square-test-calculator": [
+      "chi square",
+      "goodness fit"
+    ],
+    "/confidence-interval-calculator": [
+      "confidence interval"
+    ],
+    "/correlation-calculator": [
+      "correlation",
+      "r value"
+    ],
+    "/descriptive-statistics-calculator": [
+      "descriptive stats",
+      "mean median"
+    ],
+    "/histogram-maker": [
+      "histogram",
+      "frequency"
+    ],
+    "/linear-regression-calculator": [
+      "linear regression",
+      "trend line"
+    ],
+    "/normal-distribution-calculator": [
+      "normal distribution",
+      "bell curve"
+    ],
+    "/outlier-detector": [
+      "outliers",
+      "anomaly"
+    ],
+    "/p-value-calculator": [
+      "p value",
+      "hypothesis"
+    ],
+    "/permutation-combination-calculator": [
+      "permutation combination",
+      "counting"
+    ],
+    "/probability-calculator": [
+      "probability",
+      "odds"
+    ],
+    "/sample-size-calculator-surveys": [
+      "sample size",
+      "survey"
+    ],
+    "/standard-deviation-calculator": [
+      "standard deviation",
+      "spread"
+    ],
+    "/statistical-power-calculator": [
+      "statistical power",
+      "beta"
+    ],
+    "/t-test-calculator": [
+      "t test",
+      "hypothesis"
+    ],
+    "/z-score-calculator": [
+      "z score",
+      "standard"
+    ]
+  },
+  "/string-tools": {
+    "/string-reverse": [
+      "reverse string",
+      "flip"
+    ],
+    "/text-case-converter": [
+      "case",
+      "upper lower"
+    ],
+    "/text-compare-diff-checker": [
+      "diff",
+      "compare text"
+    ],
+    "/word-counter-character-counter": [
+      "word count",
+      "characters"
+    ]
+  },
+  "/svg-tools": {
+    "/animated-svg-lottie-player-validator": [
+      "lottie",
+      "animate validate"
+    ],
+    "/base64-to-svg-decoder": [
+      "base64 decode"
+    ],
+    "/svg-background-remover": [
+      "background remove",
+      "transparent"
+    ],
+    "/svg-color-changer": [
+      "change color",
+      "recolor"
+    ],
+    "/svg-comparison-diff-tool": [
+      "diff",
+      "compare"
+    ],
+    "/svg-editor-online": [
+      "edit",
+      "draw"
+    ],
+    "/svg-font-to-path-converter": [
+      "font to path",
+      "outline"
+    ],
+    "/svg-gradient-generator-editor": [
+      "gradient",
+      "fill"
+    ],
+    "/svg-merge-tool": [
+      "merge",
+      "combine"
+    ],
+    "/svg-metadata-viewer-remover": [
+      "metadata",
+      "clean"
+    ],
+    "/svg-path-editor-simplifier": [
+      "path edit",
+      "simplify"
+    ],
+    "/svg-pattern-generator": [
+      "pattern",
+      "repeat"
+    ],
+    "/svg-splitter-extractor": [
+      "split",
+      "extract elements"
+    ],
+    "/svg-to-base64-encoder": [
+      "base64 encode"
+    ],
+    "/svg-to-ico-converter": [
+      "ico icon"
+    ],
+    "/svg-to-jpg-converter": [
+      "jpg"
+    ],
+    "/svg-to-pdf-converter": [
+      "pdf"
+    ],
+    "/svg-to-png-converter": [
+      "png raster"
+    ],
+    "/svg-to-webp-converter": [
+      "webp"
+    ],
+    "/svg-viewer-inspector": [
+      "view",
+      "inspect"
+    ]
+  },
+  "/text-tools": {
+    "/case-converter": [
+      "case",
+      "upper lower title"
+    ],
+    "/character-counter": [
+      "characters",
+      "length"
+    ],
+    "/duplicate-word-remover": [
+      "duplicate words",
+      "unique"
+    ],
+    "/find-and-replace-text": [
+      "find replace",
+      "search"
+    ],
+    "/lorem-ipsum-generator": [
+      "placeholder",
+      "dummy text"
+    ],
+    "/random-text-shuffler": [
+      "shuffle",
+      "randomize"
+    ],
+    "/remove-duplicate-lines": [
+      "duplicate lines",
+      "unique"
+    ],
+    "/sentence-counter": [
+      "sentences",
+      "count"
+    ],
+    "/string-length-calculator": [
+      "string length",
+      "characters"
+    ],
+    "/text-differ": [
+      "diff",
+      "compare"
+    ],
+    "/text-line-sorter": [
+      "sort lines",
+      "alphabetical"
+    ],
+    "/text-repeater": [
+      "repeat text",
+      "duplicate"
+    ],
+    "/text-reverser": [
+      "reverse",
+      "backwards"
+    ],
+    "/text-size-calculator": [
+      "text size",
+      "bytes kb"
+    ],
+    "/text-to-binary-converter": [
+      "binary",
+      "01"
+    ],
+    "/text-to-hashtags-generator": [
+      "hashtags",
+      "social media"
+    ],
+    "/text-to-list-converter": [
+      "list",
+      "bullet points"
+    ],
+    "/text-to-slug-converter": [
+      "slug",
+      "url friendly"
+    ],
+    "/whitespace-remover": [
+      "whitespace",
+      "trim spaces"
+    ],
+    "/word-counter": [
+      "words",
+      "count"
+    ],
+    "/word-frequency-counter": [
+      "word frequency",
+      "most used"
+    ]
+  },
+  "/timestamp-tools": {
+    "/add-subtract-time-timestamp": [
+      "add subtract",
+      "offset"
+    ],
+    "/batch-timestamp-converter": [
+      "batch",
+      "multiple"
+    ],
+    "/countdown-timer-from-timestamp": [
+      "countdown",
+      "event"
+    ],
+    "/current-unix-timestamp": [
+      "current time",
+      "now"
+    ],
+    "/discord-timestamp-generator": [
+      "discord",
+      "relative time"
+    ],
+    "/epoch-timestamp-generator": [
+      "epoch",
+      "generate"
+    ],
+    "/file-timestamp-converter": [
+      "file timestamp",
+      "modified"
+    ],
+    "/gps-timestamp-converter": [
+      "gps time",
+      "utc"
+    ],
+    "/human-date-to-timestamp": [
+      "date to timestamp",
+      "convert"
+    ],
+    "/iso-8601-timestamp-converter": [
+      "iso 8601",
+      "format"
+    ],
+    "/leap-year-timestamp-calculator": [
+      "leap year",
+      "seconds"
+    ],
+    "/milliseconds-timestamp-converter": [
+      "milliseconds",
+      "ms"
+    ],
+    "/random-timestamp-generator": [
+      "random",
+      "generate"
+    ],
+    "/rfc-timestamp-converter": [
+      "rfc 2822",
+      "email date"
+    ],
+    "/social-media-timestamp-converter": [
+      "social media",
+      "relative"
+    ],
+    "/timestamp-difference-calculator": [
+      "difference",
+      "between"
+    ],
+    "/timestamp-to-readable-date": [
+      "readable date",
+      "human format"
+    ],
+    "/timestamp-validator-formatter": [
+      "validate",
+      "format"
+    ],
+    "/timezone-timestamp-converter": [
+      "timezone",
+      "utc offset"
+    ],
+    "/unix-timestamp-converter": [
+      "unix",
+      "epoch"
+    ]
+  },
+  "/timezone-tools": {
+    "/add-subtract-time-across-zones-calculator": [
+      "add time zones",
+      "offset"
+    ],
+    "/country-time-zone-list-current-time-finder": [
+      "country time",
+      "local time"
+    ],
+    "/daylight-saving-time-calculator-schedule": [
+      "dst",
+      "daylight saving"
+    ],
+    "/flight-time-time-zone-arrival-calculator": [
+      "flight arrival",
+      "layover"
+    ],
+    "/historical-time-zone-converter": [
+      "historical time",
+      "past date"
+    ],
+    "/international-phone-call-time-finder": [
+      "call time",
+      "international"
+    ],
+    "/live-countdown-timer-across-time-zones": [
+      "countdown",
+      "global"
+    ],
+    "/meeting-planner-across-time-zones": [
+      "meeting planner",
+      "schedule"
+    ],
+    "/military-time-converter-24-hour-clock": [
+      "military time",
+      "24 hour"
+    ],
+    "/time-zone-abbreviation-lookup-decoder": [
+      "timezone abbreviation",
+      "est pst"
+    ],
+    "/time-zone-difference-calculator": [
+      "timezone difference",
+      "offset hours"
+    ],
+    "/timezone-database-iana-lookup": [
+      "iana",
+      "timezone database"
+    ],
+    "/timezone-map-visual-finder": [
+      "timezone map",
+      "visual"
+    ],
+    "/timezone-widget-clock-embed-generator": [
+      "clock widget",
+      "embed"
+    ],
+    "/world-clock-time-zone-converter": [
+      "world clock",
+      "multiple zones"
+    ]
+  },
+  "/toml-tools": {
+    "/csv-to-toml-converter": [
+      "csv import"
+    ],
+    "/env-to-toml-converter": [
+      ".env import"
+    ],
+    "/ini-to-toml-converter": [
+      "ini import"
+    ],
+    "/json-to-toml-converter": [
+      "json import"
+    ],
+    "/properties-to-toml-converter": [
+      "properties import"
+    ],
+    "/toml-beautifier-formatter": [
+      "format",
+      "beautify"
+    ],
+    "/toml-comment-remover": [
+      "remove comments",
+      "clean"
+    ],
+    "/toml-diff-compare": [
+      "diff",
+      "compare"
+    ],
+    "/toml-key-value-extractor": [
+      "keys values",
+      "extract"
+    ],
+    "/toml-merge-tool": [
+      "merge",
+      "combine"
+    ],
+    "/toml-minifier-compressor": [
+      "minify",
+      "compress"
+    ],
+    "/toml-schema-generator-validator": [
+      "schema",
+      "validate"
+    ],
+    "/toml-to-csharp-class-generator": [
+      "csharp class"
+    ],
+    "/toml-to-csv-converter": [
+      "csv export"
+    ],
+    "/toml-to-env-converter": [
+      ".env export"
+    ],
+    "/toml-to-go-struct-converter": [
+      "golang struct"
+    ],
+    "/toml-to-ini-converter": [
+      "ini export"
+    ],
+    "/toml-to-java-properties-converter": [
+      "java properties"
+    ],
+    "/toml-to-javascript-object-converter": [
+      "javascript object"
+    ],
+    "/toml-to-json-converter": [
+      "json export"
+    ],
+    "/toml-to-markdown-table-converter": [
+      "markdown table"
+    ],
+    "/toml-to-php-array-converter": [
+      "php array"
+    ],
+    "/toml-to-properties-converter": [
+      "properties export"
+    ],
+    "/toml-to-python-dictionary-converter": [
+      "python dict"
+    ],
+    "/toml-to-ruby-hash-converter": [
+      "ruby hash"
+    ],
+    "/toml-to-rust-struct-generator": [
+      "rust struct"
+    ],
+    "/toml-to-sql-converter": [
+      "sql"
+    ],
+    "/toml-to-typescript-interface-generator": [
+      "typescript interface"
+    ],
+    "/toml-to-xml-converter": [
+      "xml"
+    ],
+    "/toml-to-yaml-converter": [
+      "yaml"
+    ],
+    "/toml-validator-linter": [
+      "validate",
+      "lint errors"
+    ],
+    "/xml-to-toml-converter": [
+      "xml import"
+    ]
+  },
+  "/typography-tools": {
+    "/font-pairing-tool": [
+      "font pairing",
+      "combine"
+    ],
+    "/font-size-converter": [
+      "font size",
+      "px pt rem"
+    ],
+    "/font-subset-generator": [
+      "subset",
+      "characters"
+    ],
+    "/font-weight-tester": [
+      "font weight",
+      "bold"
+    ],
+    "/gradient-text-generator": [
+      "gradient text",
+      "colorful"
+    ],
+    "/letter-spacing-tool": [
+      "letter spacing",
+      "kerning"
+    ],
+    "/ligature-generator": [
+      "ligatures",
+      "combined glyphs"
+    ],
+    "/line-height-generator": [
+      "line height",
+      "leading"
+    ],
+    "/monospace-font-tester": [
+      "monospace",
+      "code font"
+    ],
+    "/text-readability-analyzer": [
+      "readability",
+      "flesch"
+    ],
+    "/text-shadow-generator": [
+      "text shadow",
+      "glow"
+    ],
+    "/text-to-ascii-art-generator": [
+      "ascii art",
+      "figlet"
+    ],
+    "/text-watermark-adder": [
+      "watermark",
+      "overlay"
+    ],
+    "/type-scale-calculator": [
+      "type scale",
+      "ratio"
+    ],
+    "/vertical-text-generator": [
+      "vertical text",
+      "rotated"
+    ]
+  },
+  "/unicode-tools": {
+    "/unicode-bidirectional-editor": [
+      "bidi",
+      "rtl ltr"
+    ],
+    "/unicode-character-counter": [
+      "character count",
+      "unicode"
+    ],
+    "/unicode-character-inspector": [
+      "inspect",
+      "code point"
+    ],
+    "/unicode-character-lookup": [
+      "lookup",
+      "find character"
+    ],
+    "/unicode-character-map": [
+      "character map",
+      "all unicode"
+    ],
+    "/unicode-confusables-detector": [
+      "confusables",
+      "lookalike"
+    ],
+    "/unicode-csv-escaper": [
+      "csv escape",
+      "unicode"
+    ],
+    "/unicode-emoji-picker": [
+      "emoji",
+      "pick"
+    ],
+    "/unicode-escape-encoder": [
+      "escape",
+      "\\u encoding"
+    ],
+    "/unicode-font-generator": [
+      "fancy text",
+      "stylish"
+    ],
+    "/unicode-line-break-tool": [
+      "line break",
+      "newline"
+    ],
+    "/unicode-normalizer": [
+      "normalize",
+      "nfc nfd"
+    ],
+    "/unicode-regex-tester": [
+      "regex",
+      "unicode pattern"
+    ],
+    "/unicode-sorting-tool": [
+      "sort",
+      "unicode order"
+    ],
+    "/unicode-superscript-generator": [
+      "superscript",
+      "subscript"
+    ],
+    "/unicode-text-converter": [
+      "text style",
+      "convert"
+    ],
+    "/unicode-url-encoder": [
+      "url encode",
+      "percent"
+    ],
+    "/unicode-whitespace-remover": [
+      "whitespace",
+      "trim"
+    ],
+    "/unicode-zero-width-tool": [
+      "zero width",
+      "invisible chars"
+    ]
+  },
+  "/unit-converters": {
+    "/acceleration": [
+      "m/s²",
+      "g-force"
+    ],
+    "/acceleration-angular": [
+      "angular acceleration",
+      "rad/s²"
+    ],
+    "/age-calculator": [
+      "age",
+      "years months"
+    ],
+    "/angle": [
+      "degrees radians",
+      "gradians"
+    ],
+    "/apparent-magnitude-converter": [
+      "magnitude",
+      "star brightness"
+    ],
+    "/area": [
+      "sqm acres",
+      "hectares"
+    ],
+    "/astronomical-unit-converter": [
+      "au lightyear",
+      "parsec"
+    ],
+    "/audio-bitrate-converter": [
+      "bitrate",
+      "kbps mbps"
+    ],
+    "/baking-pan-size-converter": [
+      "pan size",
+      "inches cm"
+    ],
+    "/bmi-calculator": [
+      "bmi",
+      "weight height"
+    ],
+    "/brick-calculator": [
+      "bricks",
+      "wall"
+    ],
+    "/calorie-burn-rate-converter": [
+      "calorie burn",
+      "met"
+    ],
+    "/cement-sand-aggregate-converter": [
+      "cement",
+      "concrete mix"
+    ],
+    "/charge": [
+      "coulombs",
+      "electric charge"
+    ],
+    "/clothing-size-converter": [
+      "clothing size",
+      "us uk eu"
+    ],
+    "/concentration-molar": [
+      "molarity",
+      "moles"
+    ],
+    "/concentration-solution": [
+      "solution",
+      "mg/l ppm"
+    ],
+    "/concrete-mix-ratio-converter": [
+      "concrete ratio",
+      "cement"
+    ],
+    "/concrete-volume-converter": [
+      "concrete volume",
+      "cubic"
+    ],
+    "/cups-to-grams": [
+      "cups grams",
+      "baking"
+    ],
+    "/cups-to-ml": [
+      "cups ml",
+      "liquid"
+    ],
+    "/current": [
+      "amperes milliamps"
+    ],
+    "/data-storage": [
+      "gb mb tb",
+      "bytes"
+    ],
+    "/date-difference-calculator": [
+      "date diff",
+      "days"
+    ],
+    "/density": [
+      "kg/m³",
+      "g/cm³"
+    ],
+    "/dew-point-calculator": [
+      "dew point",
+      "humidity"
+    ],
+    "/digital-image-resolution": [
+      "dpi ppi",
+      "resolution"
+    ],
+    "/electric-conductance": [
+      "siemens",
+      "mho"
+    ],
+    "/electric-conductivity": [
+      "conductivity",
+      "s/m"
+    ],
+    "/electric-field-strength": [
+      "v/m",
+      "electric field"
+    ],
+    "/electric-potential": [
+      "volts",
+      "millivolts"
+    ],
+    "/electric-resistance": [
+      "ohms",
+      "resistance"
+    ],
+    "/electric-resistivity": [
+      "resistivity",
+      "ohm·m"
+    ],
+    "/electrostatic-capacitance": [
+      "farads",
+      "capacitance"
+    ],
+    "/energy": [
+      "joules kwh",
+      "calories"
+    ],
+    "/exposure-dose-converter": [
+      "radiation dose",
+      "rem sievert"
+    ],
+    "/fabric-gsm-converter": [
+      "gsm",
+      "fabric weight"
+    ],
+    "/floor-area-converter": [
+      "floor area",
+      "sqft sqm"
+    ],
+    "/flow": [
+      "flow rate",
+      "liters/s"
+    ],
+    "/flow-mass": [
+      "mass flow",
+      "kg/s"
+    ],
+    "/flow-molar": [
+      "molar flow",
+      "mol/s"
+    ],
+    "/force": [
+      "newtons",
+      "pounds force"
+    ],
+    "/frequency": [
+      "hz khz mhz",
+      "cycles"
+    ],
+    "/frequency-to-musical-note-converter": [
+      "frequency note",
+      "hz pitch"
+    ],
+    "/fuel-consumption": [
+      "mpg l/100km"
+    ],
+    "/fuel-efficiency-mass": [
+      "fuel mass efficiency"
+    ],
+    "/fuel-efficiency-volume": [
+      "fuel volume efficiency"
+    ],
+    "/heat-density": [
+      "heat density",
+      "j/m³"
+    ],
+    "/heat-flux-density": [
+      "heat flux",
+      "w/m²"
+    ],
+    "/heat-transfer-coefficient": [
+      "heat transfer",
+      "w/m²k"
+    ],
+    "/height-converter": [
+      "height",
+      "feet inches cm"
+    ],
+    "/horsepower-to-animals-converter": [
+      "horsepower animals",
+      "fun"
+    ],
+    "/humidity-ratio-converter": [
+      "humidity ratio",
+      "g/kg"
+    ],
+    "/illumination": [
+      "lux",
+      "foot-candle"
+    ],
+    "/image-dpi-converter": [
+      "dpi ppi",
+      "print resolution"
+    ],
+    "/inductance": [
+      "henry",
+      "millihenry"
+    ],
+    "/ingredient-density-converter": [
+      "ingredient density",
+      "cooking"
+    ],
+    "/length": [
+      "meters feet",
+      "miles km"
+    ],
+    "/light-years-to-parsecs": [
+      "light years parsecs",
+      "astronomy"
+    ],
+    "/linear-charge-density": [
+      "linear charge",
+      "c/m"
+    ],
+    "/linear-current-density": [
+      "linear current",
+      "a/m"
+    ],
+    "/lumber-board-feet-converter": [
+      "board feet",
+      "lumber"
+    ],
+    "/luminance": [
+      "candela/m²",
+      "nits"
+    ],
+    "/luminous-intensity": [
+      "candela",
+      "lumens"
+    ],
+    "/magnetic-field-strength": [
+      "magnetic field",
+      "oersted tesla"
+    ],
+    "/magnetic-flux": [
+      "webers",
+      "magnetic flux"
+    ],
+    "/magnetic-flux-density": [
+      "tesla gauss",
+      "magnetic"
+    ],
+    "/magnetomotive-force": [
+      "mmf",
+      "ampere turns"
+    ],
+    "/mass-flux-density": [
+      "mass flux",
+      "kg/m²s"
+    ],
+    "/moment-of-force": [
+      "torque",
+      "nm lb-ft"
+    ],
+    "/moment-of-inertia": [
+      "moment inertia",
+      "kg·m²"
+    ],
+    "/oven-temperature-converter": [
+      "oven temp",
+      "celsius fahrenheit"
+    ],
+    "/permeability": [
+      "permeability",
+      "magnetic"
+    ],
+    "/planet-weight-converter": [
+      "planet weight",
+      "mars moon"
+    ],
+    "/power": [
+      "watts kilowatts",
+      "horsepower"
+    ],
+    "/pressure": [
+      "psi bar",
+      "pascal atm"
+    ],
+    "/radiation-dose-converter": [
+      "radiation",
+      "sievert rem"
+    ],
+    "/radioactivity-converter": [
+      "radioactivity",
+      "becquerel curie"
+    ],
+    "/rainfall-converter": [
+      "rainfall",
+      "mm inches"
+    ],
+    "/rebar-weight-calculator": [
+      "rebar weight",
+      "steel bar"
+    ],
+    "/ring-size-converter": [
+      "ring size",
+      "us uk"
+    ],
+    "/roofing-sheet-coverage-converter": [
+      "roofing sheets",
+      "coverage"
+    ],
+    "/running-pace-to-speed-converter": [
+      "pace speed",
+      "min/km mph"
+    ],
+    "/shoe-size-converter": [
+      "shoe size",
+      "us uk eu"
+    ],
+    "/sound-pressure-pa-to-db": [
+      "sound pressure",
+      "pascal db"
+    ],
+    "/sourdough-hydration-converter": [
+      "sourdough hydration",
+      "flour water"
+    ],
+    "/specific-heat-capacity": [
+      "specific heat",
+      "j/kg·k"
+    ],
+    "/specific-volume": [
+      "specific volume",
+      "m³/kg"
+    ],
+    "/speed": [
+      "mph kmh",
+      "m/s knots"
+    ],
+    "/surface-charge-density": [
+      "surface charge",
+      "c/m²"
+    ],
+    "/surface-current-density": [
+      "surface current",
+      "a/m"
+    ],
+    "/surface-tension": [
+      "surface tension",
+      "n/m"
+    ],
+    "/temperature": [
+      "celsius fahrenheit",
+      "kelvin"
+    ],
+    "/temperature-interval": [
+      "temperature difference",
+      "delta"
+    ],
+    "/thermal-conductivity": [
+      "thermal conductivity",
+      "w/mk"
+    ],
+    "/thermal-expansion": [
+      "thermal expansion",
+      "coefficient"
+    ],
+    "/thermal-resistance": [
+      "thermal resistance",
+      "k/w"
+    ],
+    "/thread-count-converter": [
+      "thread count",
+      "fabric"
+    ],
+    "/tile-calculator": [
+      "tiles",
+      "floor area"
+    ],
+    "/time": [
+      "hours minutes",
+      "seconds days"
+    ],
+    "/time-duration-calculator": [
+      "duration",
+      "elapsed"
+    ],
+    "/torque": [
+      "nm lb-ft",
+      "torque"
+    ],
+    "/unix-timestamp-converter": [
+      "unix",
+      "epoch date"
+    ],
+    "/velocity-angular": [
+      "angular velocity",
+      "rad/s rpm"
+    ],
+    "/video-frame-rate-converter": [
+      "fps",
+      "frame rate"
+    ],
+    "/viscosity-dynamic": [
+      "dynamic viscosity",
+      "poise"
+    ],
+    "/viscosity-kinematic": [
+      "kinematic viscosity",
+      "stokes"
+    ],
+    "/volume": [
+      "liters gallons",
+      "cubic"
+    ],
+    "/volume-charge-density": [
+      "charge density",
+      "c/m³"
+    ],
+    "/volume-dry": [
+      "dry volume",
+      "bushels"
+    ],
+    "/wavelength": [
+      "wavelength",
+      "nm mm"
+    ],
+    "/weight-and-mass": [
+      "kg lbs",
+      "grams ounces"
+    ],
+    "/wind-speed-converter": [
+      "wind speed",
+      "mph km/h knots"
+    ]
+  },
+  "/url-tools": {
+    "/url-blacklist-checker": [
+      "blacklist",
+      "malicious"
+    ],
+    "/url-canonicalization-checker": [
+      "canonical",
+      "redirect"
+    ],
+    "/url-case-converter": [
+      "case",
+      "uppercase lowercase"
+    ],
+    "/url-decoder": [
+      "decode",
+      "percent encoding"
+    ],
+    "/url-duplicate-finder": [
+      "duplicates",
+      "find same"
+    ],
+    "/url-email-link-extractor": [
+      "extract links",
+      "emails"
+    ],
+    "/url-encoder": [
+      "encode",
+      "percent"
+    ],
+    "/url-expander": [
+      "expand short url",
+      "reveal"
+    ],
+    "/url-ip-address-lookup": [
+      "ip lookup",
+      "domain"
+    ],
+    "/url-parser": [
+      "parse",
+      "components"
+    ],
+    "/url-ping-tool": [
+      "ping",
+      "uptime check"
+    ],
+    "/url-qr-code-generator": [
+      "qr code",
+      "link"
+    ],
+    "/url-query-string-extractor": [
+      "query string",
+      "parameters"
+    ],
+    "/url-redirect-checker": [
+      "redirect",
+      "301 302"
+    ],
+    "/url-screenshot-generator": [
+      "screenshot",
+      "preview"
+    ],
+    "/url-shortener": [
+      "shorten",
+      "short link"
+    ],
+    "/url-slug-generator": [
+      "slug",
+      "seo friendly"
+    ],
+    "/url-social-media-preview": [
+      "social preview",
+      "og tags"
+    ],
+    "/url-source-code-viewer": [
+      "source code",
+      "html"
+    ],
+    "/url-utm-builder": [
+      "utm",
+      "campaign tracking"
+    ],
+    "/url-wayback-machine-checker": [
+      "wayback",
+      "archive"
+    ]
+  },
+  "/uuid-tools": {
+    "/bulk-uuid-generator": [
+      "bulk",
+      "multiple"
+    ],
+    "/nil-uuid-generator": [
+      "nil uuid",
+      "zero"
+    ],
+    "/offline-uuid-generator": [
+      "offline",
+      "local"
+    ],
+    "/uuid-case-formatter": [
+      "format",
+      "uppercase lowercase"
+    ],
+    "/uuid-collision-checker": [
+      "collision",
+      "duplicate"
+    ],
+    "/uuid-decoder": [
+      "decode",
+      "parse"
+    ],
+    "/uuid-entropy-checker": [
+      "entropy",
+      "randomness"
+    ],
+    "/uuid-generator": [
+      "generate",
+      "random"
+    ],
+    "/uuid-regex-tester": [
+      "regex",
+      "validate pattern"
+    ],
+    "/uuid-sort-organize": [
+      "sort",
+      "organize"
+    ],
+    "/uuid-timestamp-to-date": [
+      "timestamp",
+      "v1 date"
+    ],
+    "/uuid-to-guid-converter": [
+      "guid"
+    ],
+    "/uuid-to-qr-code": [
+      "qr code"
+    ],
+    "/uuid-v1-generator": [
+      "v1",
+      "time-based"
+    ],
+    "/uuid-validator": [
+      "validate",
+      "check format"
+    ],
+    "/uuid-version-converter": [
+      "version",
+      "v1 v4"
+    ]
+  },
+  "/video-tools": {
+    "/change-video-fps": [
+      "fps",
+      "frame rate"
+    ],
+    "/crop-video": [
+      "crop",
+      "trim edges"
+    ],
+    "/enhance-video-quality": [
+      "enhance",
+      "upscale"
+    ],
+    "/extract-audio-from-video": [
+      "extract audio",
+      "mp3"
+    ],
+    "/resize-video-dimensions": [
+      "resize",
+      "dimensions"
+    ],
+    "/rotate-video": [
+      "rotate",
+      "flip"
+    ],
+    "/video-audio-remover": [
+      "remove audio",
+      "mute"
+    ],
+    "/video-audio-sync-fixer": [
+      "audio sync",
+      "delay"
+    ],
+    "/video-bitrate-changer": [
+      "bitrate",
+      "quality"
+    ],
+    "/video-color-space-transformation": [
+      "color space",
+      "yuv rgb"
+    ],
+    "/video-compressor": [
+      "compress",
+      "reduce size"
+    ],
+    "/video-compressor-simple": [
+      "compress",
+      "simple"
+    ],
+    "/video-duration-cutter": [
+      "cut duration",
+      "trim"
+    ],
+    "/video-format-converter": [
+      "format",
+      "mp4 avi mov"
+    ],
+    "/video-fragmenter": [
+      "fragment",
+      "chunks"
+    ],
+    "/video-frame-extractor": [
+      "frames",
+      "extract images"
+    ],
+    "/video-frame-rate-analyzer": [
+      "frame rate",
+      "analyze"
+    ],
+    "/video-frame-sequence-exporter": [
+      "frame sequence",
+      "export"
+    ],
+    "/video-frame-sequence-to-video": [
+      "frames to video",
+      "timelapse"
+    ],
+    "/video-grayscale": [
+      "grayscale",
+      "black white"
+    ],
+    "/video-keyframe-extractor": [
+      "keyframes",
+      "extract"
+    ],
+    "/video-metadata-editor": [
+      "metadata",
+      "tags edit"
+    ],
+    "/video-metadata-remover": [
+      "metadata",
+      "strip"
+    ],
+    "/video-metadata-viewer": [
+      "metadata",
+      "info view"
+    ],
+    "/video-overlays": [
+      "overlay",
+      "watermark"
+    ],
+    "/video-player": [
+      "play",
+      "preview"
+    ],
+    "/video-resolution-analyzer": [
+      "resolution",
+      "1080p 4k"
+    ],
+    "/video-speed-changer": [
+      "speed",
+      "slow fast"
+    ],
+    "/video-thumbnail-generator": [
+      "thumbnail",
+      "preview image"
+    ],
+    "/video-track-remover": [
+      "track remove",
+      "audio subtitle"
+    ],
+    "/video-transparency-maker": [
+      "transparency",
+      "alpha channel"
+    ]
+  },
+  "/xml-tools": {
+    "/xml-diff-compare": [
+      "diff",
+      "compare"
+    ],
+    "/xml-entity-encoder-decoder": [
+      "entities",
+      "escape"
+    ],
+    "/xml-formatter-validator": [
+      "format validate",
+      "beautify"
+    ],
+    "/xml-namespace-remover-cleaner": [
+      "namespace",
+      "clean"
+    ],
+    "/xml-schema-xsd-generator": [
+      "xsd schema",
+      "generate"
+    ],
+    "/xml-signature-generator-verifier": [
+      "signature",
+      "xmldsig"
+    ],
+    "/xml-sitemap-generator": [
+      "sitemap",
+      "seo"
+    ],
+    "/xml-to-csv-converter": [
+      "csv"
+    ],
+    "/xml-to-html-table-converter": [
+      "html table"
+    ],
+    "/xml-to-json-converter": [
+      "json"
+    ],
+    "/xml-to-pdf-converter": [
+      "pdf"
+    ],
+    "/xml-to-rss-feed-converter": [
+      "rss feed"
+    ],
+    "/xml-to-sql-converter": [
+      "sql"
+    ],
+    "/xml-viewer-editor": [
+      "view edit",
+      "tree"
+    ],
+    "/xml-xpath-tester": [
+      "xpath",
+      "query"
+    ]
+  },
+  "/yaml-tools": {
+    "/csv-to-yaml-converter": [
+      "csv import"
+    ],
+    "/ini-to-yaml-converter": [
+      "ini import"
+    ],
+    "/json-to-yaml-converter": [
+      "json import"
+    ],
+    "/properties-to-yaml-converter": [
+      "properties import"
+    ],
+    "/xml-to-yaml-converter": [
+      "xml import"
+    ],
+    "/yaml-comment-remover": [
+      "remove comments",
+      "clean"
+    ],
+    "/yaml-diff-checker": [
+      "diff",
+      "compare"
+    ],
+    "/yaml-editor": [
+      "edit",
+      "live"
+    ],
+    "/yaml-escape-unescape": [
+      "escape",
+      "string"
+    ],
+    "/yaml-formatter-beautifier": [
+      "format",
+      "beautify"
+    ],
+    "/yaml-key-sorter": [
+      "sort keys",
+      "alphabetical"
+    ],
+    "/yaml-linter": [
+      "lint",
+      "errors"
+    ],
+    "/yaml-merge-tool": [
+      "merge",
+      "combine"
+    ],
+    "/yaml-minifier-compressor": [
+      "minify",
+      "compress"
+    ],
+    "/yaml-prettifier-custom": [
+      "prettify",
+      "custom indent"
+    ],
+    "/yaml-schema-validator": [
+      "schema",
+      "validate"
+    ],
+    "/yaml-to-csv-converter": [
+      "csv"
+    ],
+    "/yaml-to-env-converter": [
+      ".env"
+    ],
+    "/yaml-to-go-struct": [
+      "golang struct"
+    ],
+    "/yaml-to-graphviz-dot": [
+      "graphviz",
+      "dot graph"
+    ],
+    "/yaml-to-html-table": [
+      "html table"
+    ],
+    "/yaml-to-ini-converter": [
+      "ini"
+    ],
+    "/yaml-to-json-converter": [
+      "json"
+    ],
+    "/yaml-to-markdown-table": [
+      "markdown table"
+    ],
+    "/yaml-to-properties-converter": [
+      "java properties"
+    ],
+    "/yaml-to-python-dict": [
+      "python dict"
+    ],
+    "/yaml-to-sql-insert": [
+      "sql insert"
+    ],
+    "/yaml-to-toml-converter": [
+      "toml"
+    ],
+    "/yaml-to-xml-converter": [
+      "xml"
+    ],
+    "/yaml-validator": [
+      "validate",
+      "check"
+    ],
+    "/yaml-version-converter": [
+      "version",
+      "1.1 1.2"
+    ]
+  }
+}

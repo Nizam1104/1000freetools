@@ -61,16 +61,6 @@ export function SvgEditorOnline() {
 
   return (
     <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
-      <div className="space-y-2">
-        <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <h2 className="text-2xl font-semibold tracking-tight">SVG Editor Online</h2>
-            <p className="text-sm text-muted-foreground">
-              Edit and preview SVG code in real-time
-            </p>
-          </div>
-        </div>
-      </div>
 
       {error && (
         <div className="p-4 bg-destructive/10 border border-destructive rounded-lg text-destructive text-sm">
